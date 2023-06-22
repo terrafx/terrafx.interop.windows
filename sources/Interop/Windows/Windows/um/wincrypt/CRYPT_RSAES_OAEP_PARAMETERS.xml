@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_RSAES_OAEP_PARAMETERS">
-    <summary>
-      <para>The <b>CRYPT_RSAES_OAEP_PARAMETERS</b> structure contains the parameters for an RSAES-OAEP key encryption. This structure is used with the <b>PKCS_RSAES_OAEP_PARAMETERS</b> and <b>szOID_RSAES_OAEP</b> encoding types.</para>
-    </summary>
-    <remarks>
-      <para>RSAES-OAEP is normally used for encrypting AES symmetric keys. Normally, only the hash algorithm <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) will need to be set for encoding. For decoding, all the members are explicitly set.</para>
-    </remarks>
+    <summary>The <b>CRYPT_RSAES_OAEP_PARAMETERS</b> structure contains the parameters for an RSAES-OAEP key encryption. This structure is used with the <b>PKCS_RSAES_OAEP_PARAMETERS</b> and <b>szOID_RSAES_OAEP</b> encoding types.</summary>
   </member>
   <member name="CRYPT_RSAES_OAEP_PARAMETERS.HashAlgorithm">
-    <summary>
-      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that identifies the hash algorithm to use. If this is not set for encoding, the default algorithm is <b>szOID_OIWSEC_sha1</b>.</para>
-    </summary>
+    <summary>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that identifies the hash algorithm to use. If this is not set for encoding, the default algorithm is <b>szOID_OIWSEC_sha1</b>.</summary>
   </member>
   <member name="CRYPT_RSAES_OAEP_PARAMETERS.MaskGenAlgorithm">
-    <summary>
-      <para>A <see cref="CRYPT_MASK_GEN_ALGORITHM" /> structure that identifies the mask generation function to use. If this is not set for encoding, the default algorithm is <b>szOID_RSA_MGF1</b> with the mask generation hash algorithm defaulting to the algorithm specified by the <b>HashAlgorithm</b> member.</para>
-    </summary>
+    <summary>A <see cref="CRYPT_MASK_GEN_ALGORITHM" /> structure that identifies the mask generation function to use. If this is not set for encoding, the default algorithm is <b>szOID_RSA_MGF1</b> with the mask generation hash algorithm defaulting to the algorithm specified by the <b>HashAlgorithm</b> member.</summary>
   </member>
   <member name="CRYPT_RSAES_OAEP_PARAMETERS.PSourceAlgorithm">
-    <summary>
-      <para>A <see cref="CRYPT_PSOURCE_ALGORITHM" /> structure that contains the source of, and possibly the value of, the label to be used. If this is not set for encoding, the default algorithm is <b>szOID_RSA_PSPECIFIED</b> with no OCTET bytes.</para>
-    </summary>
+    <summary>A <see cref="CRYPT_PSOURCE_ALGORITHM" /> structure that contains the source of, and possibly the value of, the label to be used. If this is not set for encoding, the default algorithm is <b>szOID_RSA_PSPECIFIED</b> with no OCTET bytes.</summary>
   </member>
 </doc>

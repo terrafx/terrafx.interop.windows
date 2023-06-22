@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDeviceSpecificProperty.Get4BRange">
-    <summary>
-      <para>The <b>Get4BRange</b> method gets the 4-byte range of the device-specific property value.</para>
-    </summary>
-    <param name="plMin">
-      <para>Pointer to a <b>LONG</b> variable into which the method writes the minimum property value.</para>
-    </param>
-    <param name="plMax">
-      <para>Pointer to a <b>LONG</b> variable into which the method writes the maximum property value.</para>
-    </param>
-    <param name="plStepping">
-      <para>Pointer to a <b>LONG</b> variable into which the method writes the stepping value between consecutive property values in the range  <i>*plMin</i> to  <i>*plMax</i>. If the difference between the maximum and minimum property values is <i>d</i>, and the range is divided into <i>n</i> steps (uniformly sized intervals), then the property can take <i>n</i> + 1 discrete values and the size of the step between consecutive values is d / n.</para>
-    </param>
+    <summary>The <b>Get4BRange</b> method gets the 4-byte range of the device-specific property value.</summary>
+    <param name="plMin">Pointer to a <b>LONG</b> variable into which the method writes the minimum property value.</param>
+    <param name="plMax">Pointer to a <b>LONG</b> variable into which the method writes the maximum property value.</param>
+    <param name="plStepping">Pointer to a <b>LONG</b> variable into which the method writes the stepping value between consecutive property values in the range <i>*plMin</i> to <i>*plMax</i>. If the difference between the maximum and minimum property values is <i>d</i>, and the range is divided into <i>n</i> steps (uniformly sized intervals), then the property can take <i>n</i> + 1 discrete values and the size of the step between consecutive values is d / n.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -22,40 +14,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer <i>plMin</i>, <i>plMax</i>, or <i>plStepping</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer <i>plMin</i>, <i>plMax</i>, or <i>plStepping</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED)</b>
-            </para>
-          </description>
-          <description>
-            <para>The property value is not a 32-bit signed or unsigned integer. For information about this macro, see the Windows SDK documentation.</para>
-          </description>
-        </item>
+          <description>The property value is not a 32-bit signed or unsigned integer. For information about this macro, see the Windows SDK documentation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method reports the range and step size for a property value that is a 32-bit signed or unsigned integer. These two data types are represented by <b>VARENUM</b> enumeration constants VT_I4 and VT_UI4, respectively. If the property value is not a 32-bit integer, then the method returns an error status code. For more information about <b>VARENUM</b>, see the Windows SDK documentation.</para>
-    </remarks>
-    <seealso cref="IDeviceSpecificProperty Interface" />
   </member>
   <member name="IDeviceSpecificProperty.GetType">
-    <summary>
-      <para>The <b>GetType</b> method gets the data type of the device-specific property value.</para>
-    </summary>
-    <param name="pVType">
-      <para>Pointer to a <b>VARTYPE</b> variable into which the method writes a <b>VARTYPE</b> enumeration value that indicates the data type of the device-specific property value. For more information about <b>VARTYPE</b> and <b>VARTYPE</b>, see the Windows SDK documentation.</para>
-    </param>
+    <summary>The <b>GetType</b> method gets the data type of the device-specific property value.</summary>
+    <param name="pVType">Pointer to a <b>VARTYPE</b> variable into which the method writes a <b>VARTYPE</b> enumeration value that indicates the data type of the device-specific property value. For more information about <b>VARTYPE</b> and <b>VARTYPE</b>, see the Windows SDK documentation.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -63,30 +51,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer <i>pVType</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pVType</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IDeviceSpecificProperty Interface" />
   </member>
   <member name="IDeviceSpecificProperty.GetValue">
-    <summary>
-      <para>The <b>GetValue</b> method gets the current value of the device-specific property.</para>
-    </summary>
-    <param name="pvValue">
-      <para>Pointer to a caller-allocated buffer into which the method writes the property value.</para>
-    </param>
-    <param name="pcbValue">
-      <para>[inout] Pointer to a <b>DWORD</b> variable that specifies the size in bytes of the property value. On entry,  <i>*pcbValue</i> contains the size of the caller-allocated buffer (or 0 if <i>pvValue</i> is <b>NULL</b>). Before returning, the method writes the actual size of the property value written to the buffer (or the required size if the buffer is too small or if <i>pvValue</i> is <b>NULL</b>).</para>
-    </param>
+    <summary>The <b>GetValue</b> method gets the current value of the device-specific property.</summary>
+    <param name="pvValue">Pointer to a caller-allocated buffer into which the method writes the property value.</param>
+    <param name="pcbValue">[inout] Pointer to a <b>DWORD</b> variable that specifies the size in bytes of the property value. On entry, <i>*pcbValue</i> contains the size of the caller-allocated buffer (or 0 if <i>pvValue</i> is <b>NULL</b>). Before returning, the method writes the actual size of the property value written to the buffer (or the required size if the buffer is too small or if <i>pvValue</i> is <b>NULL</b>).</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -94,47 +77,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer <i>pcbValue</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer <i>pcbValue</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer pointed to by parameter <i>pvValue</i> is too small to contain the property value, or <i>pvValue</i> is <b>NULL</b> and the size of the property value is fixed rather than variable. For information about this macro, see the Windows SDK documentation.</para>
-          </description>
-        </item>
+          <description>The buffer pointed to by parameter <i>pvValue</i> is too small to contain the property value, or <i>pvValue</i> is <b>NULL</b> and the size of the property value is fixed rather than variable. For information about this macro, see the Windows SDK documentation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the size of the property value is variable rather than fixed, the caller can obtain the required buffer size by calling <b>GetValue</b> with parameter <i>pvValue</i> = <b>NULL</b> and  <i>*pcbValue</i> = 0. The method writes the required buffer size to  <i>*pcbValue</i>. With this information, the caller can allocate a buffer of the required size and call <b>GetValue</b> a second time to obtain the property value.</para>
-      <para>If the caller-allocated buffer is too small to hold the property value, <b>GetValue</b> writes the required buffer size to  <i>*pcbValue</i> and returns an error status code. In this case, it writes nothing to the buffer pointed by <i>pvValue</i>.</para>
-    </remarks>
-    <seealso cref="IDeviceSpecificProperty Interface" />
   </member>
   <member name="IDeviceSpecificProperty.SetValue">
-    <summary>
-      <para>The <b>SetValue</b> method sets the value of the device-specific property.</para>
-    </summary>
-    <param name="pvValue">
-      <para>Pointer to the new value for the device-specific property.</para>
-    </param>
-    <param name="cbValue">
-      <para>The size in bytes of the device-specific property value.</para>
-    </param>
-    <param name="pguidEventContext">
-      <para>Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetValue</b> call changes the state of the control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</para>
-    </param>
+    <summary>The <b>SetValue</b> method sets the value of the device-specific property.</summary>
+    <param name="pvValue">Pointer to the new value for the device-specific property.</param>
+    <param name="cbValue">The size in bytes of the device-specific property value.</param>
+    <param name="pguidEventContext">Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetValue</b> call changes the state of the control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -142,39 +116,44 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer <i>pvValue</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer <i>pvValue</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Parameter <i>cbValue</i> does not match the required size of the property value.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Parameter <i>cbValue</i> does not match the required size of the property value.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IDeviceSpecificProperty Interface" />
   </member>
   <member name="IDeviceSpecificProperty">
     <summary>
@@ -182,11 +161,5 @@
       <para>Typically, a device-specific property is useful only to a client that can infer the meaning of the property value from information such as the part type, part subtype, and part name. The client can obtain this information by calling the <see cref="IPart.GetPartType" />, <see cref="IPart.GetSubType" />, and <see cref="IPart.GetName" /> methods.</para>
       <para>Most Windows audio adapter drivers support the Windows Driver Model (WDM) and use kernel-streaming (KS) properties to represent the hardware control parameters in subunits (referred to as KS nodes). The <b>IDeviceSpecificProperty</b> interface provides convenient access to the KSPROPERTY_AUDIO_DEV_SPECIFIC property of a subunit that has a subtype GUID value of KSNODETYPE_DEV_SPECIFIC. To obtain the subtype GUID of a subunit, call the <see cref="IPart.GetSubType" /> method. For more information about KS properties and KS node types, see the Windows DDK documentation.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IPart.Activate" />
-    <seealso cref="IPart.GetName" />
-    <seealso cref="IPart.GetPartType" />
-    <seealso cref="IPart.GetSubType" />
   </member>
 </doc>

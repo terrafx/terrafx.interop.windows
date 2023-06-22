@@ -5,26 +5,12 @@
   <member name="MONITORINFOEX">
     <summary>
       <para>The <b>MONITORINFOEX</b> structure contains information about a display monitor.</para>
-      <para>The
-<see cref="GetMonitorInfo" /> function stores information into a
-<b>MONITORINFOEX</b>  structure or a
-<see cref="MONITORINFO" /> structure.</para>
-      <para>The
-<b>MONITORINFOEX</b>  structure is a superset of the
-<see cref="MONITORINFO" />  structure. The
-<b>MONITORINFOEX</b>  structure adds a string member to contain a name for the display monitor.</para>
+      <para>The<see cref="GetMonitorInfo" /> function stores information into a<b>MONITORINFOEX</b> structure or a<see cref="MONITORINFO" /> structure.</para>
+      <para>The<b>MONITORINFOEX</b> structure is a superset of the<see cref="MONITORINFO" /> structure. The<b>MONITORINFOEX</b> structure adds a string member to contain a name for the display monitor.</para>
     </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The winuser.h header defines MONITORINFOEX as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
   </member>
   <member name="MONITORINFOEX.szDevice">
-    <summary>
-      <para>A string that specifies the device name of the monitor being used.  Most applications have no use for a display monitor name, and so can save some bytes by using a <see cref="MONITORINFO" /> structure.</para>
-    </summary>
+    <summary>A string that specifies the device name of the monitor being used. Most applications have no use for a display monitor name, and so can save some bytes by using a <see cref="MONITORINFO" /> structure.</summary>
   </member>
   <member name="MONITORINFOEX.tagMONITORINFO">
     <summary>
@@ -45,32 +31,12 @@ The winuser.h header defines MONITORINFOEX as an alias which automatically selec
   <member name="MONITORINFOEX">
     <summary>
       <para>The <b>MONITORINFOEX</b> structure contains information about a display monitor.</para>
-      <para>The
-<see cref="GetMonitorInfo" /> function stores information into a
-<b>MONITORINFOEX</b>  structure or a
-<see cref="MONITORINFO" /> structure.</para>
-      <para>The
-<b>MONITORINFOEX</b>  structure is a superset of the
-<see cref="MONITORINFO" />  structure. The
-<b>MONITORINFOEX</b>  structure adds a string member to contain a name for the display monitor.</para>
+      <para>The<see cref="GetMonitorInfo" /> function stores information into a<b>MONITORINFOEX</b> structure or a<see cref="MONITORINFO" /> structure.</para>
+      <para>The<b>MONITORINFOEX</b> structure is a superset of the<see cref="MONITORINFO" /> structure. The<b>MONITORINFOEX</b> structure adds a string member to contain a name for the display monitor.</para>
     </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The winuser.h header defines MONITORINFOEX as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="GetMonitorInfo" />
-    <seealso cref="MONITORINFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/multiple-display-monitors">Multiple Display Monitors Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/multiple-display-monitors-structures">Multiple Display Monitors Structures</seealso>
   </member>
   <member name="MONITORINFOEX.szDevice">
-    <summary>
-      <para>A string that specifies the device name of the monitor being used.  Most applications have no use for a display monitor name, and so can save some bytes by using a <see cref="MONITORINFO" /> structure.</para>
-    </summary>
+    <summary>A string that specifies the device name of the monitor being used. Most applications have no use for a display monitor name, and so can save some bytes by using a <see cref="MONITORINFO" /> structure.</summary>
   </member>
-  <member name="MONITORINFOEX.tagMONITORINFO">
-    <summary></summary>
-  </member>
+  <member name="MONITORINFOEX.tagMONITORINFO"></member>
 </doc>

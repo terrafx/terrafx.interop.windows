@@ -3,82 +3,45 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS">
-    <summary>
-      <para>Describes I3DL2 (Interactive 3D Audio Rendering Guidelines Level 2.0) parameters for use in the <see cref="ReverbConvertI3DL2ToNative" /> function.</para>
-    </summary>
-    <remarks>
-      <para>There are many preset values defined for the <b>XAUDIO2FX_REVERB_I3DL2_PARAMETERS</b> structure. For more information, see <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2fx-i3dl2-preset">XAUDIO2FX_I3DL2_PRESET</a>.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso cref="ReverbConvertI3DL2ToNative" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2fx-i3dl2-preset">XAUDIO2FX_I3DL2_PRESET</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">XAudio Structures</seealso>
+    <summary>Describes I3DL2 (Interactive 3D Audio Rendering Guidelines Level 2.0) parameters for use in the <see cref="ReverbConvertI3DL2ToNative" /> function.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.WetDryMix">
-    <summary>
-      <para>Percentage of the output that will be reverb. Allowable values are from 0 to 100.</para>
-    </summary>
+    <summary>Percentage of the output that will be reverb. Allowable values are from 0 to 100.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.Room">
-    <summary>
-      <para>Attenuation of the room effect. Allowable values in hundredths of a decibel are from -10000 to 0.</para>
-    </summary>
+    <summary>Attenuation of the room effect. Allowable values in hundredths of a decibel are from -10000 to 0.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.RoomHF">
-    <summary>
-      <para>Attenuation of the room high-frequency effect. Allowable values in hundredths of a decibel are from -10000 to 0.</para>
-    </summary>
+    <summary>Attenuation of the room high-frequency effect. Allowable values in hundredths of a decibel are from -10000 to 0.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.RoomRolloffFactor">
-    <summary>
-      <para>Rolloff factor for the reflected signals. Allowable values are from 0.0 to 10.0. Rolloff factor is ignored for built-in reverb effects.</para>
-    </summary>
+    <summary>Rolloff factor for the reflected signals. Allowable values are from 0.0 to 10.0. Rolloff factor is ignored for built-in reverb effects.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.DecayTime">
-    <summary>
-      <para>Reverberation decay time at low frequencies. Allowable values in seconds are from 0.1 to 20.0.</para>
-    </summary>
+    <summary>Reverberation decay time at low frequencies. Allowable values in seconds are from 0.1 to 20.0.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.DecayHFRatio">
-    <summary>
-      <para>Ratio of the decay time at high frequencies to the decay time at low frequencies. Allowable values are from 0.1 to 2.0.</para>
-    </summary>
+    <summary>Ratio of the decay time at high frequencies to the decay time at low frequencies. Allowable values are from 0.1 to 2.0.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.Reflections">
-    <summary>
-      <para>Attenuation of early reflections relative to <b>Room</b>. Allowable values in hundredths of a decibel are from -10000 to 1000.</para>
-    </summary>
+    <summary>Attenuation of early reflections relative to <b>Room</b>. Allowable values in hundredths of a decibel are from -10000 to 1000.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.ReflectionsDelay">
-    <summary>
-      <para>Delay time of the first reflection relative to the direct path. Allowable values in seconds are from 0.0 to 0.3.</para>
-    </summary>
+    <summary>Delay time of the first reflection relative to the direct path. Allowable values in seconds are from 0.0 to 0.3.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.Reverb">
-    <summary>
-      <para>Attenuation of late reverberation relative to <b>Room</b>. Allowable values in hundredths of a decibel are from -10000 to 2000.</para>
-    </summary>
+    <summary>Attenuation of late reverberation relative to <b>Room</b>. Allowable values in hundredths of a decibel are from -10000 to 2000.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.ReverbDelay">
-    <summary>
-      <para>Time limit between the early reflections and the late reverberation relative to the time of the first reflection. Allowable values in seconds are from 0.0 to 0.1.</para>
-    </summary>
+    <summary>Time limit between the early reflections and the late reverberation relative to the time of the first reflection. Allowable values in seconds are from 0.0 to 0.1.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.Diffusion">
-    <summary>
-      <para>Echo density in the late reverberation decay. Allowable values as a percentage are from 0 to 100.</para>
-    </summary>
+    <summary>Echo density in the late reverberation decay. Allowable values as a percentage are from 0 to 100.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.Density">
-    <summary>
-      <para>Modal density in the late reverberation decay. Allowable values as a percentage are from 0 to 100.</para>
-    </summary>
+    <summary>Modal density in the late reverberation decay. Allowable values as a percentage are from 0 to 100.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.HFReference">
-    <summary>
-      <para>Reference high frequency. Allowable values in Hz are from 20.0 to 20000.0.</para>
-    </summary>
+    <summary>Reference high frequency. Allowable values in Hz are from 20.0 to 20000.0.</summary>
   </member>
 </doc>

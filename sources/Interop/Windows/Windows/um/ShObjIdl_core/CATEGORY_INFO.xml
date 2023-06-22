@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CATEGORY_INFO">
-    <summary>
-      <para>Contains category information. A component category is a group of logically-related Component Object Model (COM) classes that share a common category identifier (CATID).</para>
-    </summary>
+    <summary>Contains category information. A component category is a group of logically-related Component Object Model (COM) classes that share a common category identifier (CATID).</summary>
   </member>
   <member name="CATEGORY_INFO.cif">
-    <summary>
-      <para>Type: <b><see cref="CATEGORYINFO_FLAGS" /></b></para>
-      <para>A flag from <see cref="CATEGORYINFO_FLAGS" /> that specifies the type of information to retrieve.</para>
-    </summary>
+    <summary>A flag from <see cref="CATEGORYINFO_FLAGS" /> that specifies the type of information to retrieve.</summary>
   </member>
   <member name="CATEGORY_INFO.wszName">
-    <summary>
-      <para>Type: <b>WCHAR[260]</b></para>
-      <para>A character array that specifies the name of the category.</para>
-    </summary>
+    <summary>A character array that specifies the name of the category.</summary>
   </member>
 </doc>

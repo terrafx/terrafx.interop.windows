@@ -3,26 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxPackageWriter3.AddPayloadFiles">
-    <summary>
-      <para>Adds one or more payload files to an app package.</para>
-    </summary>
-    <param name="fileCount">
-      <para>The number of payload files to be added to the app package.</para>
-    </param>
-    <param name="payloadFiles">
-      <para>The payload files to be added.</para>
-    </param>
-    <param name="memoryLimit">
-      <para>The memory limit in bytes.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code.</para>
-    </returns>
-    <seealso cref="IAppxPackageWriter3" />
+    <summary>Adds one or more payload files to an app package.</summary>
+    <param name="fileCount">The number of payload files to be added to the app package.</param>
+    <param name="payloadFiles">The payload files to be added.</param>
+    <param name="memoryLimit">The memory limit in bytes.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code.</returns>
   </member>
   <member name="IAppxPackageWriter3">
-    <summary>
-      <para>Provides a write-only object model for app packages.</para>
-    </summary>
+    <summary>Provides a write-only object model for app packages.</summary>
   </member>
 </doc>

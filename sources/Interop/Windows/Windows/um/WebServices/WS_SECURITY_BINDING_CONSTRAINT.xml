@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SECURITY_BINDING_CONSTRAINT">
-    <summary>
-      <para>The base class for all security binding constraint structures.</para>
-    </summary>
+    <summary>The base class for all security binding constraint structures.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_CONSTRAINT.type">
-    <summary>
-      <para>This value depends on which type of security binding constraint that is used.</para>
-    </summary>
+    <summary>This value depends on which type of security binding constraint that is used.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_CONSTRAINT.propertyConstraints">
     <summary>

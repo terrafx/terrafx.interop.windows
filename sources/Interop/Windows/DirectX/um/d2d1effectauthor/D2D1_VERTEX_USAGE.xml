@@ -3,26 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_VERTEX_USAGE">
-    <summary>
-      <para>Indicates whether the vertex buffer changes infrequently or frequently.</para>
-    </summary>
-    <remarks>
-      <para>If a dynamic vertex buffer is created, Direct2D will not necessarily map the buffer directly to a Direct3D vertex buffer. Instead, a system memory copy can be copied to the rendering engine vertex buffer as the effects are rendered.</para>
-    </remarks>
-    <seealso cref="D2D1_BLEND_DESCRIPTION" />
-    <seealso cref="ID2D1BlendTransform" />
+    <summary>Indicates whether the vertex buffer changes infrequently or frequently.</summary>
   </member>
   <member name="D2D1_VERTEX_USAGE.D2D1_VERTEX_USAGE_STATIC">
-    <summary>
-      <para>The created vertex buffer is updated infrequently.</para>
-    </summary>
+    <summary>The created vertex buffer is updated infrequently.</summary>
   </member>
   <member name="D2D1_VERTEX_USAGE.D2D1_VERTEX_USAGE_DYNAMIC">
-    <summary>
-      <para>The created vertex buffer is changed frequently.</para>
-    </summary>
+    <summary>The created vertex buffer is changed frequently.</summary>
   </member>
-  <member name="D2D1_VERTEX_USAGE.D2D1_VERTEX_USAGE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_VERTEX_USAGE.D2D1_VERTEX_USAGE_FORCE_DWORD"></member>
 </doc>

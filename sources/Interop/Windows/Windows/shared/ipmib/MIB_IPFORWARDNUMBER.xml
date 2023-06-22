@@ -3,20 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_IPFORWARDNUMBER">
-    <summary>
-      <para>The
-<b>MIB_IPFORWARDNUMBER</b> structure stores the number of routes in a particular IP routing table.</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetIpForwardTable" />
-    <seealso cref="MIB_IPFORWARDROW" />
-    <seealso cref="MIB_IPFORWARDTABLE" />
+    <summary>The<b>MIB_IPFORWARDNUMBER</b> structure stores the number of routes in a particular IP routing table.</summary>
   </member>
   <member name="MIB_IPFORWARDNUMBER.dwValue">
-    <summary>
-      <para>Specifies the number of routes in the IP routing table.</para>
-    </summary>
+    <summary>Specifies the number of routes in the IP routing table.</summary>
   </member>
 </doc>

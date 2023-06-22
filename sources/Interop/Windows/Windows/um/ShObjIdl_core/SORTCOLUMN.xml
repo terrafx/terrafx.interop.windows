@@ -3,22 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SORTCOLUMN">
-    <summary>
-      <para>Stores information about how to sort a column that is displayed in the folder view.</para>
-    </summary>
-    <remarks>
-      <para>Each column displayed in the folder view (for example, "details" view mode), is associated with a property that has a <see cref="PROPERTYKEY" /> ID. When you want to sort the view by a particular property, you specify the property key for that property.</para>
-    </remarks>
+    <summary>Stores information about how to sort a column that is displayed in the folder view.</summary>
   </member>
   <member name="SORTCOLUMN.propkey">
-    <summary>
-      <para>Type: <b><see cref="PROPERTYKEY" /></b></para>
-      <para>The ID of the column by which the user will sort. A <see cref="PROPERTYKEY" /> structure. For example, for the "Name" column, the property key is PKEY_ItemNameDisplay.</para>
-    </summary>
+    <summary>The ID of the column by which the user will sort. A <see cref="PROPERTYKEY" /> structure. For example, for the "Name" column, the property key is PKEY_ItemNameDisplay.</summary>
   </member>
   <member name="SORTCOLUMN.direction">
     <summary>
-      <para>Type: <b>SORTDIRECTION</b></para>
       <para>The direction in which the items are sorted. One of the following values.</para>
       <h4>SORT_DESCENDING</h4>
       <para>The items are sorted in ascending order. Whether the sort is alphabetical, numerical, and so on, is determined by the data type of the column indicated in <b>propkey</b>.</para>

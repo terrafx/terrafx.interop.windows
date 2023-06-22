@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DATADIR">
-    <summary>
-      <para>Specifies the direction of the data flow. This determines the formats that the resulting enumerator can enumerate.</para>
-    </summary>
-    <seealso cref="IDataObject.EnumFormatEtc" />
-    <seealso cref="OleRegEnumFormatEtc" />
+    <summary>Specifies the direction of the data flow. This determines the formats that the resulting enumerator can enumerate.</summary>
   </member>
   <member name="DATADIR.DATADIR_GET">
-    <summary>
-      <para>Requests that <see cref="IDataObject.EnumFormatEtc" /> supply an enumerator for the formats that can be specified in<see cref="IDataObject.GetData" />.</para>
-    </summary>
+    <summary>Requests that <see cref="IDataObject.EnumFormatEtc" /> supply an enumerator for the formats that can be specified in<see cref="IDataObject.GetData" />.</summary>
   </member>
   <member name="DATADIR.DATADIR_SET">
-    <summary>
-      <para>Requests that <see cref="IDataObject.EnumFormatEtc" /> supply an enumerator for the formats that can be specified in <see cref="IDataObject.SetData" />.</para>
-    </summary>
+    <summary>Requests that <see cref="IDataObject.EnumFormatEtc" /> supply an enumerator for the formats that can be specified in <see cref="IDataObject.SetData" />.</summary>
   </member>
 </doc>

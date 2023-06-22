@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_KEY_PROV_PARAM">
-    <summary>
-      <para>The <b>CRYPT_KEY_PROV_PARAM</b> structure contains information about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key container</a> parameter. This structure is used with the
-<see cref="CRYPT_KEY_PROV_INFO" /> structure.</para>
-    </summary>
-    <seealso cref="CRYPT_KEY_PROV_INFO" />
-    <seealso cref="CryptSetProvParam" />
+    <summary>The <b>CRYPT_KEY_PROV_PARAM</b> structure contains information about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key container</a> parameter. This structure is used with the<see cref="CRYPT_KEY_PROV_INFO" /> structure.</summary>
   </member>
   <member name="CRYPT_KEY_PROV_PARAM.dwParam">
-    <summary>
-      <para>Identifies the parameter. For possible values, see the <i>dwParam</i> parameter of the
-<see cref="CryptSetProvParam" /> function.</para>
-    </summary>
+    <summary>Identifies the parameter. For possible values, see the <i>dwParam</i> parameter of the<see cref="CryptSetProvParam" /> function.</summary>
   </member>
   <member name="CRYPT_KEY_PROV_PARAM.pbData">
-    <summary>
-      <para>The address of a buffer that contains the parameter data. For more information, see the <i>pbData</i> parameter of the
-<see cref="CryptSetProvParam" /> function.</para>
-    </summary>
+    <summary>The address of a buffer that contains the parameter data. For more information, see the <i>pbData</i> parameter of the<see cref="CryptSetProvParam" /> function.</summary>
   </member>
   <member name="CRYPT_KEY_PROV_PARAM.cbData">
-    <summary>
-      <para>The size, in bytes, of the <b>pbData</b> buffer.</para>
-    </summary>
+    <summary>The size, in bytes, of the <b>pbData</b> buffer.</summary>
   </member>
   <member name="CRYPT_KEY_PROV_PARAM.dwFlags">
-    <summary>
-      <para>This member is reserved for future use and is zero.</para>
-    </summary>
+    <summary>This member is reserved for future use and is zero.</summary>
   </member>
 </doc>

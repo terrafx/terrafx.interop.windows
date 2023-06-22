@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAGS">
-    <summary>
-      <para>Specifies whether a video decode conversion operation is supported.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used by the <see cref="D3D12_FEATURE_DATA_VIDEO_DECODE_CONVERSION_SUPPORT" /> structure.</para>
-    </remarks>
+    <summary>Specifies whether a video decode conversion operation is supported.</summary>
   </member>
   <member name="D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAGS.D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAG_NONE">
-    <summary>
-      <para>The video decode conversion operation isn't supported.</para>
-    </summary>
+    <summary>The video decode conversion operation isn't supported.</summary>
   </member>
   <member name="D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAGS.D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAG_SUPPORTED">
-    <summary>
-      <para>The video decode conversion operation is supported.</para>
-    </summary>
+    <summary>The video decode conversion operation is supported.</summary>
   </member>
 </doc>

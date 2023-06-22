@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PaletteFlags">
+    <summary>The <b>PaletteFlags</b> enumeration indicates attributes of the color data in a palette.</summary>
+  </member>
+  <member name="PaletteFlags.PaletteFlagsHasAlpha">
+    <summary>Indicates that one or more of the palette entries contains alpha (transparency) information.</summary>
+  </member>
+  <member name="PaletteFlags.PaletteFlagsGrayScale">
+    <summary>Indicates that the palette contains only grayscale entries.</summary>
+  </member>
+  <member name="PaletteFlags.PaletteFlagsHalftone">
+    <summary>Indicates that the palette is the Windows halftone palette.</summary>
+  </member>
+</doc>

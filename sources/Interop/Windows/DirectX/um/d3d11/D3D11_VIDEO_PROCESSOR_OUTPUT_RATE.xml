@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_PROCESSOR_OUTPUT_RATE">
-    <summary>
-      <para>Specifies the rate at which the video processor produces output frames from an input stream.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
-    <seealso cref="ID3D11VideoContext.VideoProcessorSetStreamOutputRate" />
+    <summary>Specifies the rate at which the video processor produces output frames from an input stream.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_OUTPUT_RATE.D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_NORMAL">
-    <summary>
-      <para>The output is the normal frame rate.</para>
-    </summary>
+    <summary>The output is the normal frame rate.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_OUTPUT_RATE.D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_HALF">
-    <summary>
-      <para>The output is half the frame rate.</para>
-    </summary>
+    <summary>The output is half the frame rate.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_OUTPUT_RATE.D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_CUSTOM">
-    <summary>
-      <para>The output is a custom frame rate.</para>
-    </summary>
+    <summary>The output is a custom frame rate.</summary>
   </member>
 </doc>

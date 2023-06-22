@@ -3,39 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ASSOCDATA">
-    <summary>
-      <para>Used by <see cref="IQueryAssociations.GetData" /> to define the type of data that is to be returned.</para>
-    </summary>
+    <summary>Used by <see cref="IQueryAssociations.GetData" /> to define the type of data that is to be returned.</summary>
   </member>
   <member name="ASSOCDATA.ASSOCDATA_MSIDESCRIPTOR">
-    <summary>
-      <para>The component descriptor to pass to the Windows Installer API.</para>
-    </summary>
+    <summary>The component descriptor to pass to the Windows Installer API.</summary>
   </member>
   <member name="ASSOCDATA.ASSOCDATA_NOACTIVATEHANDLER">
-    <summary>
-      <para>Attempts to activate a window are restricted. There is no data associated with this value.</para>
-    </summary>
+    <summary>Attempts to activate a window are restricted. There is no data associated with this value.</summary>
   </member>
-  <member name="ASSOCDATA.ASSOCDATA_UNUSED1">
-    <summary></summary>
-  </member>
+  <member name="ASSOCDATA.ASSOCDATA_UNUSED1"></member>
   <member name="ASSOCDATA.ASSOCDATA_HASPERUSERASSOC">
-    <summary>
-      <para>Defaults to user specified association.</para>
-    </summary>
+    <summary>Defaults to user specified association.</summary>
   </member>
   <member name="ASSOCDATA.ASSOCDATA_EDITFLAGS">
     <summary>
-      <para>
-        <b>Internet Explorer version 6 or later</b>. Gets the data stored in the EditFlags value of a file association <a href="https://docs.microsoft.com//windows/desktop/shell/fa-progids">PROGID</a> registry key. This value consists of one or more <see cref="FILETYPEATTRIBUTEFLAGS" />. Compare against those values to determine which attributes have been set.</para>
-    </summary>
+      <b>Internet Explorer version 6 or later</b>. Gets the data stored in the EditFlags value of a file association <a href="https://docs.microsoft.com//windows/desktop/shell/fa-progids">PROGID</a> registry key. This value consists of one or more <see cref="FILETYPEATTRIBUTEFLAGS" />. Compare against those values to determine which attributes have been set.</summary>
   </member>
   <member name="ASSOCDATA.ASSOCDATA_VALUE">
     <summary>
-      <para>
-        <b>Internet Explorer version 6 or later</b>. Uses the <i>pwszExtra</i> parameter from the <see cref="IQueryAssociations.GetData" /> method as the value name.</para>
-    </summary>
+      <b>Internet Explorer version 6 or later</b>. Uses the <i>pwszExtra</i> parameter from the <see cref="IQueryAssociations.GetData" /> method as the value name.</summary>
   </member>
   <member name="ASSOCDATA.ASSOCDATA_MAX">
     <summary>

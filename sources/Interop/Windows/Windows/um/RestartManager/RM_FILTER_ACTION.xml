@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RM_FILTER_ACTION">
-    <summary>
-      <para>Specifies the type of modification that is applied to restart or shutdown actions.</para>
-    </summary>
-    <seealso cref="RM_FILTER_INFO" />
-    <seealso cref="RmAddFilter" />
+    <summary>Specifies the type of modification that is applied to restart or shutdown actions.</summary>
   </member>
   <member name="RM_FILTER_ACTION.RmInvalidFilterAction">
-    <summary>
-      <para>An invalid filter action.</para>
-    </summary>
+    <summary>An invalid filter action.</summary>
   </member>
   <member name="RM_FILTER_ACTION.RmNoRestart">
-    <summary>
-      <para>Prevents the restart of the specified application or service.</para>
-    </summary>
+    <summary>Prevents the restart of the specified application or service.</summary>
   </member>
   <member name="RM_FILTER_ACTION.RmNoShutdown">
-    <summary>
-      <para>Prevents the shut down and restart of the specified application or service.</para>
-    </summary>
+    <summary>Prevents the shut down and restart of the specified application or service.</summary>
   </member>
 </doc>

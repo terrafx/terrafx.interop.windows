@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAccountsSettingsPaneInterop.GetForWindow">
+    <summary>Gets an <a href="https://docs.microsoft.com//uwp/api/windows.ui.applicationsettings.accountssettingspane">AccountsSettingsPane</a> object for the window of the active application.</summary>
+    <param name="appWindow">Handle to the window of the active application.</param>
+    <param name="riid">
+      <para>The GUID for the resource interface.</para>
+      <para>The REFIID, or GUID, of the interface to the resource can be obtained by using the __uuidof() macro. For example:</para>
+      <para>
+        <code>__uuidof(AccountSettingsPanel)</code>
+      </para>
+    </param>
+    <param name="accountsSettingsPane">Address of a pointer to a <a href="https://docs.microsoft.com//uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane">AccountSettingsPane</a> object.</param>
+    <returns>If this function succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="IAccountsSettingsPaneInterop.ShowAddAccountForWindowAsync">
+    <summary>Displays the add accounts screen.</summary>
+    <param name="appWindow">Handle to the window of the active application.</param>
+    <param name="riid">
+      <para>The GUID for the resource interface.</para>
+      <para>The REFIID, or GUID, of the interface to the resource can be obtained by using the __uuidof() macro. For example:</para>
+      <para>
+        <code>__uuidof(IAsyncAction)</code>
+      </para>
+    </param>
+    <param name="asyncAction">Address of a pointer to a <a href="https://docs.microsoft.com//uwp/api/Windows.Foundation.IAsyncAction">IAsyncAction</a> object that returns void upon completion.</param>
+    <returns>If this function succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="IAccountsSettingsPaneInterop.ShowManageAccountsForWindowAsync">
+    <summary>Displays the manage accounts screen.</summary>
+    <param name="appWindow">Handle to the window of the active application.</param>
+    <param name="riid">
+      <para>The GUID for the resource interface.</para>
+      <para>The REFIID, or GUID, of the interface to the resource can be obtained by using the __uuidof() macro. For example:</para>
+      <para>
+        <code>__uuidof(IAsyncAction)</code>
+      </para>
+    </param>
+    <param name="asyncAction">Address of a pointer to a <a href="https://docs.microsoft.com//uwp/api/Windows.Foundation.IAsyncAction">IAsyncAction</a> object that returns void upon completion.</param>
+    <returns>If this function succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="IAccountsSettingsPaneInterop">
+    <summary>Enables interoperability with a WinRT <a href="https://docs.microsoft.com//uwp/api/windows.ui.applicationsettings.accountssettingspane">AccountsSettingsPane</a> object and provides access to <b>AccountsSettingsPane</b> members to show the accounts pane.</summary>
+  </member>
+</doc>

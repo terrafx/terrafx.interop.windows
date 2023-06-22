@@ -3,8 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteNumberSubstitution">
-    <summary>
-      <para>Holds the appropriate digits and numeric punctuation for a specified locale.</para>
-    </summary>
+    <summary>Holds the appropriate digits and numeric punctuation for a specified locale.</summary>
   </member>
 </doc>

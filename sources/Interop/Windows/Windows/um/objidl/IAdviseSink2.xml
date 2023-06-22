@@ -3,25 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAdviseSink2.OnLinkSrcChange">
-    <summary>
-      <para>Notifies the container that registered the advise sink that a link source has changed (either name or location), enabling the container to update the link's moniker.</para>
-    </summary>
-    <param name="pmk">
-      <para>A pointer to the <see cref="IMoniker" /> interface identifying the source of a linked object.</para>
-    </param>
-    <remarks>
-      <para>A container of linked objects implements this method to receive notification in the event of a change in the moniker of its link source.</para>
-      <para>
-        <b>OnLinkSrcChange</b> is called by the OLE link object when it receives the <see cref="OnRename" /> notification from the link-source (object) application. The link object updates its moniker and sends the <b>OnLinkSrcChange</b> notification to containers that have implemented <see cref="IAdviseSink2" />.</para>
-      <h3>Notes to Implementers</h3>
-      <para>Nothing prevents a link object from notifying its container of the moniker change by calling <see cref="OnRename" /> instead of <b>OnLinkSrcChange</b>. In practice, however, overloading <b>OnRename</b> to mean either that a link object's moniker has changed or that an embedded object's server name has changed makes it difficult for applications to determine which of these events has occurred. If the two events trigger different processing, as will often be the case, calling a different method for each makes the job of determining which event occurred much easier.</para>
-    </remarks>
-    <seealso cref="IAdviseSink2" />
-    <seealso cref="IAdviseSink.OnRename" />
+    <summary>Notifies the container that registered the advise sink that a link source has changed (either name or location), enabling the container to update the link's moniker.</summary>
+    <param name="pmk">A pointer to the <see cref="IMoniker" /> interface identifying the source of a linked object.</param>
   </member>
   <member name="IAdviseSink2">
-    <summary>
-      <para>The <b>IAdviseSink2</b> interface is an extension of the <see cref="IAdviseSink" /> interface, adding the method <see cref="OnLinkSrcChange" /> to the contract to handle a change in the moniker of a linked object. This avoids overloading the implementation <see cref="IAdviseSink.OnRename" /> to handle the renaming of both embedded objects and linked objects. In applications where different blocks of code might execute depending on which of these two similar events has occurred, using the same method for both events complicates testing and debugging.</para>
-    </summary>
+    <summary>The <b>IAdviseSink2</b> interface is an extension of the <see cref="IAdviseSink" /> interface, adding the method <see cref="OnLinkSrcChange" /> to the contract to handle a change in the moniker of a linked object. This avoids overloading the implementation <see cref="IAdviseSink.OnRename" /> to handle the renaming of both embedded objects and linked objects. In applications where different blocks of code might execute depending on which of these two similar events has occurred, using the same method for both events complicates testing and debugging.</summary>
   </member>
 </doc>

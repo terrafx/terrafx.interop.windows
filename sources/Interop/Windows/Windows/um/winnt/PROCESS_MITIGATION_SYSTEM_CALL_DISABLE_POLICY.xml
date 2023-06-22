@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY">
-    <summary>
-      <para>Used to impose restrictions on what system calls can be invoked by a process.</para>
-    </summary>
+    <summary>Used to impose restrictions on what system calls can be invoked by a process.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME"></member>
   <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.Flags">
-    <summary>
-      <para>This member is reserved for system use.</para>
-    </summary>
+    <summary>This member is reserved for system use.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
-  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisallowWin32kSystemCalls">
-    <summary></summary>
-  </member>
-  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditDisallowWin32kSystemCalls">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisallowWin32kSystemCalls"></member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditDisallowWin32kSystemCalls"></member>
   <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
     <summary>
       <h4>- DisallowWin32kSystemCalls : 1</h4>

@@ -3,478 +3,118 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1DeviceContext2.CreateGradientMesh">
-    <summary>
-      <para>Creates a new <see cref="ID2D1GradientMesh" /> instance using the given array of patches.</para>
-    </summary>
-    <param name="patches">
-      <para>Type: <b>const <see cref="D2D1_GRADIENT_MESH_PATCH" />*</b></para>
-      <para>A pointer to the array containing the patches to be used in this mesh.</para>
-    </param>
-    <param name="patchesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of patches in the patches argument to read.</para>
-    </param>
-    <param name="gradientMesh">
-      <para>Type: <b><see cref="ID2D1GradientMesh" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the new gradient mesh.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates a new <see cref="ID2D1GradientMesh" /> instance using the given array of patches.</summary>
+    <param name="patches">A pointer to the array containing the patches to be used in this mesh.</param>
+    <param name="patchesCount">The number of patches in the patches argument to read.</param>
+    <param name="gradientMesh">When this method returns, contains the address of a pointer to the new gradient mesh.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2.CreateImageSourceFromDxgi">
-    <summary>
-      <para>Creates an image source from a set of DXGI surface(s).  The YCbCr surface(s) are converted to RGBA automatically during subsequent drawing.</para>
-    </summary>
-    <param name="surfaces">
-      <para>Type: [in] <b><see cref="IDXGISurface" />**</b></para>
-      <para>The DXGI surfaces to create the image source from.</para>
-    </param>
-    <param name="surfaceCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of surfaces provided; must be between one and three.</para>
-    </param>
-    <param name="colorSpace">
-      <para>Type: <b><see cref="DXGI_COLOR_SPACE_TYPE" /></b></para>
-      <para>The color space of the input.</para>
-    </param>
-    <param name="options">
-      <para>Type: <b><see cref="D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS" /></b></para>
-      <para>Options controlling color space conversions.</para>
-    </param>
-    <param name="imageSource">
-      <para>Type: [out] <b><see cref="ID2D1ImageSource" />**</b></para>
-      <para>Receives the new image source instance.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <remarks>
-      <para>This method creates an image source, which can be used to draw the image.</para>
-      <para>This method supports surfaces that use a limited set of DXGI formats and DXGI color space types.  Only the below set of combinations of color space types, surface formats, and surface counts are supported:</para>
-      <list type="table">
-        <listheader>
-          <description>Color Space Type</description>
-          <description>Surface Count(s)</description>
-          <description>Surface Format(s)</description>
-        </listheader>
-        <item>
-          <description>DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709</description>
-          <description>1</description>
-          <description>Standard D2D-supported pixel formats:
-<list type="bullet"><item><description>DXGI_FORMAT_A8_UNORM</description></item><item><description>DXGI_FORMAT_R8_UNORM</description></item><item><description>DXGI_FORMAT_R8G8_UNORM</description></item><item><description>DXGI_FORMAT_R8G8B8A8_UNORM</description></item><item><description>DXGI_FORMAT_B8G8R8A8_UNORM</description></item><item><description>DXGI_FORMAT_B8G8R8X8_UNORM</description></item><item><description>DXGI_FORMAT_R8G8B8A8_UNORM_SRGB</description></item><item><description>DXGI_FORMAT_B8G8R8A8_UNORM_SRGB</description></item><item><description>DXGI_FORMAT_R16G16B16A16_FLOAT</description></item><item><description>DXGI_FORMAT_R16G16B16A16_UNORM</description></item><item><description>DXGI_FORMAT_R32G32B32A32_FLOAT</description></item><item><description>DXGI_FORMAT_BC1_UNORM</description></item><item><description>DXGI_FORMAT_BC2_UNORM</description></item><item><description>DXGI_FORMAT_BC3_UNORM</description></item></list></description>
-        </item>
-        <item>
-          <description>DXGI_COLOR_SPACE_YCBCR_FULL_G22_NONE_P709_X601</description>
-          <description>1, 2, 3</description>
-          <description>When Surface count is 1:
-<list type="bullet"><item><description>DXGI_FORMAT_AYUV</description></item><item><description>DXGI_FORMAT_NV12</description></item><item><description>DXGI_FORMAT_YUY2</description></item><item><description>DXGI_FORMAT_P208</description></item><item><description>DXGI_FORMAT_V208</description></item><item><description>DXGI_FORMAT_V408</description></item></list><para>When Surface Count is 2:</para><list type="bullet"><item><description>{DXGI_FORMAT_R8_UNORM, DXGI_FORMAT_R8G8_UNORM}</description></item></list><para>When Surface Count is 3:</para><list type="bullet"><item><description>{DXGI_FORMAT_R8_UNORM, DXGI_FORMAT_R8_UNORM, DXGI_FORMAT_R8_UNORM}</description></item></list></description>
-        </item>
-        <item>
-          <description>DXGI_COLOR_SPACE_YCBCR_STUDIO_G22_LEFT_P601
-DXGI_COLOR_SPACE_YCBCR_FULL_G22_LEFT_P601
-<para>DXGI_COLOR_SPACE_YCBCR_STUDIO_G22_LEFT_P709</para><para>DXGI_COLOR_SPACE_YCBCR_FULL_G22_LEFT_P709</para><para>DXGI_COLOR_SPACE_YCBCR_STUDIO_G22_LEFT_P2020</para><para>DXGI_COLOR_SPACE_YCBCR_FULL_G22_LEFT_P2020</para></description>
-          <description>1,2,3</description>
-          <description>
-            <para>When Surface count is 1:</para>
-            <list type="bullet">
-              <item>
-                <description>DXGI_FORMAT_NV12</description>
-              </item>
-              <item>
-                <description>DXGI_FORMAT_YUY2</description>
-              </item>
-              <item>
-                <description>DXGI_FORMAT_P208</description>
-              </item>
-              <item>
-                <description>DXGI_FORMAT_V208</description>
-              </item>
-            </list>
-            <para>When Surface Count is 2:</para>
-            <list type="bullet">
-              <item>
-                <description>{DXGI_FORMAT_R8_UNORM, DXGI_FORMAT_R8G8_UNORM}</description>
-              </item>
-            </list>
-            <para>When Surface Count is 3:</para>
-            <list type="bullet">
-              <item>
-                <description>{DXGI_FORMAT_R8_UNORM, DXGI_FORMAT_R8_UNORM, DXGI_FORMAT_R8_UNORM}</description>
-              </item>
-            </list>
-          </description>
-        </item>
-      </list>
-      <para>The GPU must also have sufficient support for a pixel format to be supported by D2D.  To determine whether D2D supports a format, call IsDxgiFormatSupported.</para>
-      <para>This API converts YCbCr formats to sRGB using the provided color space type and options.  RGBA data is assumed to be in the desired space, and D2D does not apply any conversion.</para>
-      <para>If multiple surfaces are provided, this method infers whether chroma planes are subsampled (by 2x) from the relative sizes of each
-corresponding source rectangle (or if the source rectangles parameter is NULL, the bounds of each surface).  The second and third rectangle must each
-be equal in size to the first rectangle, or to the first rectangle with one or both dimensions scaled by 0.5 (while rounding up).</para>
-      <para>If provided, the source rectangles must be within the bounds of the corresponding surface.  The source rectangles may have different origins.
-In this case, this method shifts the data from each plane to align with one another.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates an image source from a set of DXGI surface(s). The YCbCr surface(s) are converted to RGBA automatically during subsequent drawing.</summary>
+    <param name="surfaces">The DXGI surfaces to create the image source from.</param>
+    <param name="surfaceCount">The number of surfaces provided; must be between one and three.</param>
+    <param name="colorSpace">The color space of the input.</param>
+    <param name="options">Options controlling color space conversions.</param>
+    <param name="imageSource">Receives the new image source instance.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2.CreateImageSourceFromWic">
-    <summary>
-      <para>Creates an image source object from a WIC bitmap source, while populating all pixel memory within the image source.
-The image is loaded and stored while using a minimal amount of memory.</para>
-    </summary>
-    <param name="wicBitmapSource">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The WIC bitmap source to create the image source from.</para>
-    </param>
-    <param name="loadingOptions">
-      <para>Type: <b><see cref="D2D1_IMAGE_SOURCE_LOADING_OPTIONS" /></b></para>
-      <para>Options for creating the image source.  Default options are used if NULL.</para>
-    </param>
-    <param name="alphaMode">
-      <para>Type: <b><see cref="D2D1_ALPHA_MODE" /></b></para>
-      <para>The alpha mode of the image; this is determined automatically from the source’s pixel format if D2D1_ALPHA_MODE_UNKNOWN is passed.</para>
-    </param>
-    <param name="imageSource">
-      <para>Type: <b><see cref="ID2D1ImageSourceFromWic" />**</b></para>
-      <para>Receives the new image source instance.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <remarks>
-      <para>This method creates an image source which can be used to draw the image.</para>
-      <para>This method supports images that exceed the maximum texture size.  Large images are internally stored within a sparse tile cache.</para>
-      <para>This API supports the same set of pixel formats and alpha modes supported by <a href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1devicecontext-createbitmapfromwicbitmap-overload">CreateBitmapFromWicBitmap</a>.
-If the GPU does not support a given pixel format,
-this method will return D2DERR_UNSUPPORTED_PIXEL_FORMAT.  This method does not apply adjustments such as gamma or
-alpha premultiplication which affect the appearance of the image.</para>
-      <para>The alphaMode parameter must not be set to D2D1_ALPHA_MODE_STRAIGHT.  This method fails if the WIC source uses a
-pixel format with straight alpha, unless the alpha mode is
-overridden by setting the alphaMode parameter to D2D1_ALPHA_MODE_PREMULTIPLIED or D2D1_ALPHA_MODE_IGNORE.</para>
-      <para>If the format of the source has an alpha channel, then D2D1_ALPHA_MODE_IGNORE must be passed.
-If D2D1_ALPHA_MODE_IGNORE is passed and the format of the source does have an alpha
-channel, the alpha channel will be ignored.</para>
-      <para>This method automatically selects an appropriate storage format to minimize GPU memory usage,
-such as using separate luminance and chrominance textures for JPEG images.</para>
-      <para>If the loadingOptions argument is NULL, D2D uses D2D1_IMAGE_SOURCE_LOADING_OPTIONS_NONE.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates an image source object from a WIC bitmap source, while populating all pixel memory within the image source.<br />The image is loaded and stored while using a minimal amount of memory.</summary>
+    <param name="wicBitmapSource">The WIC bitmap source to create the image source from.</param>
+    <param name="loadingOptions">Options for creating the image source. Default options are used if NULL.</param>
+    <param name="alphaMode">The alpha mode of the image; this is determined automatically from the source’s pixel format if D2D1_ALPHA_MODE_UNKNOWN is passed.</param>
+    <param name="imageSource">Receives the new image source instance.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2.CreateImageSourceFromWic">
-    <summary>
-      <para>Creates an image source object from a WIC bitmap source, while populating all pixel memory within the image source.
-The image is loaded and stored while using a minimal amount of memory.</para>
-    </summary>
-    <param name="wicBitmapSource">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The WIC bitmap source to create the image source from.</para>
-    </param>
-    <param name="loadingOptions">
-      <para>Type: <b><see cref="D2D1_IMAGE_SOURCE_LOADING_OPTIONS" /></b></para>
-      <para>Options for creating the image source.  Default options are used if NULL.</para>
-    </param>
-    <param name="imageSource">
-      <para>Type: <b><see cref="ID2D1ImageSourceFromWic" />**</b></para>
-      <para>Receives the new image source instance.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <remarks>
-      <para>This method creates an image source which can be used to draw the image.</para>
-      <para>This method supports images that exceed the maximum texture size.  Large images are internally stored within a sparse tile cache.</para>
-      <para>This API supports the same set of pixel formats and alpha modes supported by <a href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1devicecontext-createbitmapfromwicbitmap-overload">CreateBitmapFromWicBitmap</a>.
-If the GPU does not support a given pixel format,
-this method will return D2DERR_UNSUPPORTED_PIXEL_FORMAT.  This method does not apply adjustments such as gamma
-or alpha premultiplication which affect the appearance of the image.</para>
-      <para>This method automatically selects an appropriate storage format to minimize GPU memory usage., such as using separate
-luminance and chrominance textures for JPEG images.</para>
-      <para>If the loadingOptions argument is NULL, D2D uses D2D1_IMAGE_SOURCE_LOADING_OPTIONS_NONE.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates an image source object from a WIC bitmap source, while populating all pixel memory within the image source.<br />The image is loaded and stored while using a minimal amount of memory.</summary>
+    <param name="wicBitmapSource">The WIC bitmap source to create the image source from.</param>
+    <param name="loadingOptions">Options for creating the image source. Default options are used if NULL.</param>
+    <param name="imageSource">Receives the new image source instance.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2.CreateImageSourceFromWic">
-    <summary>
-      <para>Creates an image source object from a WIC bitmap source, while populating all pixel memory within the image source.
-The image is loaded and stored while using a minimal amount of memory.</para>
-    </summary>
-    <param name="wicBitmapSource">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The WIC bitmap source to create the image source from.</para>
-    </param>
-    <param name="imageSource">
-      <para>Type: <b><see cref="ID2D1ImageSourceFromWic" />**</b></para>
-      <para>Receives the new image source instance.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <remarks>
-      <para>This method creates an image source which can be used to draw the image.</para>
-      <para>This method supports images that exceed the maximum texture size.  Large images are internally stored within a sparse tile cache.</para>
-      <para>This API supports the same set of pixel formats and alpha modes supported by <a href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1devicecontext-createbitmapfromwicbitmap-overload">CreateBitmapFromWicBitmap</a>.
-If the GPU does not support a given pixel format,
-this method will return D2DERR_UNSUPPORTED_PIXEL_FORMAT.  This method does not apply adjustments such as gamma
-or alpha premultiplication which affect the appearance of the image.</para>
-      <para>This method automatically selects an appropriate storage format to minimize GPU memory usage, such as using separate luminance and chrominance textures for JPEG images.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates an image source object from a WIC bitmap source, while populating all pixel memory within the image source.<br />The image is loaded and stored while using a minimal amount of memory.</summary>
+    <param name="wicBitmapSource">The WIC bitmap source to create the image source from.</param>
+    <param name="imageSource">Receives the new image source instance.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2.CreateInk">
-    <summary>
-      <para>Creates a new <see cref="ID2D1Ink" /> object that starts at the given point.</para>
-    </summary>
-    <param name="startPoint">
-      <para>Type: <b>const <see cref="D2D1_INK_POINT" />*</b></para>
-      <para>The starting point of the first segment of the first stroke in the new ink object.</para>
-    </param>
-    <param name="ink">
-      <para>Type: <b><see cref="ID2D1Ink" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new ink object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates a new <see cref="ID2D1Ink" /> object that starts at the given point.</summary>
+    <param name="startPoint">The starting point of the first segment of the first stroke in the new ink object.</param>
+    <param name="ink">When this method returns, contains the address of a pointer to a new ink object.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2.CreateInk">
-    <summary>
-      <para>Creates a new <see cref="ID2D1Ink" /> object that starts at the given point.</para>
-    </summary>
-    <param name="startPoint">
-      <para>Type: <b>const <see cref="D2D1_INK_POINT" /></b></para>
-      <para>The starting point of the first segment of the first stroke in the new ink object.</para>
-    </param>
-    <param name="ink">
-      <para>Type: <b><see cref="ID2D1Ink" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new ink object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates a new <see cref="ID2D1Ink" /> object that starts at the given point.</summary>
+    <param name="startPoint">The starting point of the first segment of the first stroke in the new ink object.</param>
+    <param name="ink">When this method returns, contains the address of a pointer to a new ink object.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2.CreateInkStyle">
-    <summary>
-      <para>Creates a new <see cref="ID2D1InkStyle" /> object, for use with ink
-rendering methods such as <see cref="DrawInk" />.</para>
-    </summary>
-    <param name="inkStyleProperties">
-      <para>Type: <b>const <see cref="D2D1_INK_STYLE_PROPERTIES" /></b></para>
-      <para>The properties of the ink style to be created.</para>
-    </param>
-    <param name="inkStyle">
-      <para>Type: <b><see cref="ID2D1InkStyle" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new ink style object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates a new <see cref="ID2D1InkStyle" /> object, for use with ink rendering methods such as <see cref="DrawInk" />.</summary>
+    <param name="inkStyleProperties">The properties of the ink style to be created.</param>
+    <param name="inkStyle">When this method returns, contains the address of a pointer to a new ink style object.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2.CreateInkStyle">
-    <summary>
-      <para>Creates a new <see cref="ID2D1InkStyle" /> object, for use with ink
-rendering methods such as <see cref="DrawInk" />.</para>
-    </summary>
-    <param name="inkStyleProperties">
-      <para>Type: <b>const <see cref="D2D1_INK_STYLE_PROPERTIES" /></b></para>
-      <para>The properties of the ink style to be created.</para>
-    </param>
-    <param name="inkStyle">
-      <para>Type: <b><see cref="ID2D1InkStyle" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new ink style object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates a new <see cref="ID2D1InkStyle" /> object, for use with ink rendering methods such as <see cref="DrawInk" />.</summary>
+    <param name="inkStyleProperties">The properties of the ink style to be created.</param>
+    <param name="inkStyle">When this method returns, contains the address of a pointer to a new ink style object.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2.CreateLookupTable3D">
-    <summary>
-      <para>Creates a 3D lookup table for mapping a 3-channel input to a 3-channel output. The table data must be provided in 4-channel format.</para>
-    </summary>
-    <param name="precision">
-      <para>Type: <b><see cref="D2D1_BUFFER_PRECISION" /></b></para>
-      <para>Precision of the input lookup table data.</para>
-    </param>
-    <param name="extents">
-      <para>Type: <b>const UINT32*</b></para>
-      <para>Number of lookup table elements per dimension (X, Y, Z).</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>Buffer holding the lookup table data.</para>
-    </param>
-    <param name="dataCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>Size of the lookup table data buffer.</para>
-    </param>
-    <param name="strides">
-      <para>Type: <b>const UINT32*</b></para>
-      <para>An array containing two values.  The first value is the size in bytes from one row (X dimension) of LUT data to the next.
-The second value is the size in bytes from one LUT data plane (X and Y dimensions) to the next.</para>
-    </param>
-    <param name="lookupTable">
-      <para>Type: <b><see cref="ID2D1LookupTable3D" />**</b></para>
-      <para>Receives the new lookup table instance.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates a 3D lookup table for mapping a 3-channel input to a 3-channel output. The table data must be provided in 4-channel format.</summary>
+    <param name="precision">Precision of the input lookup table data.</param>
+    <param name="extents">Number of lookup table elements per dimension (X, Y, Z).</param>
+    <param name="data">Buffer holding the lookup table data.</param>
+    <param name="dataCount">Size of the lookup table data buffer.</param>
+    <param name="strides">An array containing two values. The first value is the size in bytes from one row (X dimension) of LUT data to the next.<br />The second value is the size in bytes from one LUT data plane (X and Y dimensions) to the next.</param>
+    <param name="lookupTable">Receives the new lookup table instance.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2.CreateTransformedImageSource">
-    <summary>
-      <para>Creates an image source which shares resources with an original.</para>
-    </summary>
-    <param name="imageSource">
-      <para>Type: <b><see cref="ID2D1ImageSource" />*</b></para>
-      <para>The original image.</para>
-    </param>
-    <param name="properties">
-      <para>Type: <b>const <see cref="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES" />*</b></para>
-      <para>Properties for the source image.</para>
-    </param>
-    <param name="transformedImageSource">
-      <para>Type: <b><see cref="ID2D1TransformedImageSource" />**</b></para>
-      <para>Receives the new image source.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Creates an image source which shares resources with an original.</summary>
+    <param name="imageSource">The original image.</param>
+    <param name="properties">Properties for the source image.</param>
+    <param name="transformedImageSource">Receives the new image source.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1DeviceContext2.DrawGdiMetafile">
-    <summary>
-      <para>Draws a metafile to the device context using the given source and destination rectangles.</para>
-    </summary>
-    <param name="gdiMetafile">
-      <para>Type: <b><see cref="ID2D1GdiMetafile" />*</b></para>
-      <para>The metafile to draw.</para>
-    </param>
-    <param name="destinationRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The rectangle in the target where the metafile will be drawn, relative to the upper left corner (defined in DIPs) of the render target.
-If NULL is specified, the destination rectangle is {0, 0, w, h}, where w and h are the width and height of the metafile as reported by
-<see cref="ID2D1GdiMetafile.GetBounds" />.</para>
-    </param>
-    <param name="sourceRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The rectangle of the source metafile that will be drawn, relative to the upper left corner (defined in DIPs) of the metafile.
-If NULL is specified, the source rectangle is the value returned by <see cref="ID2D1GdiMetafile1.GetSourceBounds" />.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Draws a metafile to the device context using the given source and destination rectangles.</summary>
+    <param name="gdiMetafile">The metafile to draw.</param>
+    <param name="destinationRectangle">The rectangle in the target where the metafile will be drawn, relative to the upper left corner (defined in DIPs) of the render target. If NULL is specified, the destination rectangle is {0, 0, w, h}, where w and h are the width and height of the metafile as reported by<see cref="ID2D1GdiMetafile.GetBounds" />.</param>
+    <param name="sourceRectangle">The rectangle of the source metafile that will be drawn, relative to the upper left corner (defined in DIPs) of the metafile. If NULL is specified, the source rectangle is the value returned by <see cref="ID2D1GdiMetafile1.GetSourceBounds" />.</param>
   </member>
   <member name="ID2D1DeviceContext2.DrawGdiMetafile">
-    <summary>
-      <para>Draws a metafile to the device context using the given source and destination rectangles.</para>
-    </summary>
-    <param name="gdiMetafile">
-      <para>Type: <b><see cref="ID2D1GdiMetafile" />*</b></para>
-      <para>The metafile to draw.</para>
-    </param>
-    <param name="destinationRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The rectangle in the target where the metafile will be drawn, relative to the upper left corner (defined in DIPs) of the render target.
-If NULL is specified, the destination rectangle is {0, 0, w, h}, where w and h are the width and height of the metafile as reported by <see cref="ID2D1GdiMetafile.GetBounds" />.</para>
-    </param>
-    <param name="sourceRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The rectangle of the source metafile that will be drawn, relative to the upper left corner (defined in DIPs) of the metafile.
-If NULL is specified, the source rectangle is the value returned by <see cref="ID2D1GdiMetafile1.GetSourceBounds" />.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Draws a metafile to the device context using the given source and destination rectangles.</summary>
+    <param name="gdiMetafile">The metafile to draw.</param>
+    <param name="destinationRectangle">The rectangle in the target where the metafile will be drawn, relative to the upper left corner (defined in DIPs) of the render target. If NULL is specified, the destination rectangle is {0, 0, w, h}, where w and h are the width and height of the metafile as reported by <see cref="ID2D1GdiMetafile.GetBounds" />.</param>
+    <param name="sourceRectangle">The rectangle of the source metafile that will be drawn, relative to the upper left corner (defined in DIPs) of the metafile. If NULL is specified, the source rectangle is the value returned by <see cref="ID2D1GdiMetafile1.GetSourceBounds" />.</param>
   </member>
   <member name="ID2D1DeviceContext2.DrawGdiMetafile">
-    <summary>
-      <para>Draws a metafile to the device context using the given source and destination rectangles.</para>
-    </summary>
-    <param name="gdiMetafile">
-      <para>Type: <b><see cref="ID2D1GdiMetafile" />*</b></para>
-      <para>The metafile to draw.</para>
-    </param>
-    <param name="destinationRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The rectangle in the target where the metafile will be drawn, relative to the upper left corner (defined in DIPs) of the render target.
-If NULL is specified, the destination rectangle is {0, 0, w, h}, where w and h are the width and height of the metafile as reported by
-<see cref="ID2D1GdiMetafile.GetBounds" />.</para>
-    </param>
-    <param name="sourceRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The rectangle of the source metafile that will be drawn, relative to the upper left corner (defined in DIPs) of the metafile.
-If NULL is specified, the source rectangle is the value returned by <see cref="ID2D1GdiMetafile1.GetSourceBounds" />.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Draws a metafile to the device context using the given source and destination rectangles.</summary>
+    <param name="gdiMetafile">The metafile to draw.</param>
+    <param name="destinationRectangle">The rectangle in the target where the metafile will be drawn, relative to the upper left corner (defined in DIPs) of the render target. If NULL is specified, the destination rectangle is {0, 0, w, h}, where w and h are the width and height of the metafile as reported by<see cref="ID2D1GdiMetafile.GetBounds" />.</param>
+    <param name="sourceRectangle">The rectangle of the source metafile that will be drawn, relative to the upper left corner (defined in DIPs) of the metafile. If NULL is specified, the source rectangle is the value returned by <see cref="ID2D1GdiMetafile1.GetSourceBounds" />.</param>
   </member>
   <member name="ID2D1DeviceContext2.DrawGradientMesh">
-    <summary>
-      <para>Renders a given gradient mesh to the target.</para>
-    </summary>
-    <param name="gradientMesh">
-      <para>Type: <b><see cref="ID2D1GradientMesh" />*</b></para>
-      <para>The gradient mesh to be rendered.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Renders a given gradient mesh to the target.</summary>
+    <param name="gradientMesh">The gradient mesh to be rendered.</param>
   </member>
   <member name="ID2D1DeviceContext2.DrawInk">
-    <summary>
-      <para>Renders the given ink object using the given brush and ink style.</para>
-    </summary>
-    <param name="ink">
-      <para>Type: <b><see cref="ID2D1Ink" />*</b></para>
-      <para>The ink object to be rendered.</para>
-    </param>
-    <param name="brush">
-      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
-      <para>The brush with which to render the ink object.</para>
-    </param>
-    <param name="inkStyle">
-      <para>Type: <b><see cref="ID2D1InkStyle" />*</b></para>
-      <para>The ink style to use when rendering the ink object.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Renders the given ink object using the given brush and ink style.</summary>
+    <param name="ink">The ink object to be rendered.</param>
+    <param name="brush">The brush with which to render the ink object.</param>
+    <param name="inkStyle">The ink style to use when rendering the ink object.</param>
   </member>
   <member name="ID2D1DeviceContext2.GetGradientMeshWorldBounds">
-    <summary>
-      <para>Returns the world bounds of a given gradient mesh.</para>
-    </summary>
-    <param name="gradientMesh">
-      <para>Type: <b><see cref="ID2D1GradientMesh" />*</b></para>
-      <para>The gradient mesh whose world bounds will be calculated.</para>
-    </param>
-    <param name="pBounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>When this method returns, contains a pointer to the bounds of the gradient mesh, in device independent pixels (DIPs).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <remarks>
-      <para>The world bounds reflect the current DPI, unit mode, and world transform of the context. They indicate which pixels would be impacted by calling DrawGradientMesh with the given gradient mesh.
-They do not reflect the current clip rectangle set on the device context or the extent of the context’s current target.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext2" />
+    <summary>Returns the world bounds of a given gradient mesh.</summary>
+    <param name="gradientMesh">The gradient mesh whose world bounds will be calculated.</param>
+    <param name="pBounds">When this method returns, contains a pointer to the bounds of the gradient mesh, in device independent pixels (DIPs).</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1DeviceContext2">
-    <summary>
-      <para>This interface performs all the same functions as the ID2D1DeviceContext1 interface, plus it enables functionality such as ink rendering, gradient mesh rendering, and improved image loading.</para>
-    </summary>
-    <seealso cref="ID2D1DeviceContext1" />
+    <summary>This interface performs all the same functions as the ID2D1DeviceContext1 interface, plus it enables functionality such as ink rendering, gradient mesh rendering, and improved image loading.</summary>
   </member>
 </doc>

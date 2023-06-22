@@ -3,37 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DAV_CALLBACK_CRED">
-    <summary>
-      <para>Stores user credential information  that was retrieved by the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used by the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function.</para>
-    </remarks>
-    <seealso cref="DAV_CALLBACK_AUTH_BLOB" />
-    <seealso cref="DAV_CALLBACK_AUTH_UNP" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback_freecred">DavFreeCredCallback</seealso>
+    <summary>Stores user credential information that was retrieved by the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function.</summary>
   </member>
   <member name="DAV_CALLBACK_CRED.AuthBlob">
-    <summary>
-      <para>If the <b>bAuthBlobValid</b> member is <b>TRUE</b>, this member is a <see cref="DAV_CALLBACK_AUTH_BLOB" /> structure that contains the user credential information.</para>
-    </summary>
+    <summary>If the <b>bAuthBlobValid</b> member is <b>TRUE</b>, this member is a <see cref="DAV_CALLBACK_AUTH_BLOB" /> structure that contains the user credential information.</summary>
   </member>
   <member name="DAV_CALLBACK_CRED.UNPBlob">
-    <summary>
-      <para>If the <b>bAuthBlobValid</b> member is <b>FALSE</b>, this member is a <see cref="DAV_CALLBACK_AUTH_UNP" /> structure that contains the user credential information.</para>
-    </summary>
+    <summary>If the <b>bAuthBlobValid</b> member is <b>FALSE</b>, this member is a <see cref="DAV_CALLBACK_AUTH_UNP" /> structure that contains the user credential information.</summary>
   </member>
   <member name="DAV_CALLBACK_CRED.bAuthBlobValid">
     <summary>
-      <para>
-        <b>TRUE</b> if the credential information is stored in the <b>AuthBlob</b> member, and the <b>UNPBlob</b> member should be ignored. <b>FALSE</b> if it is stored in the <b>UNPBlob</b> member, and the <b>AuthBlob</b> member should be ignored.</para>
-    </summary>
+      <b>TRUE</b> if the credential information is stored in the <b>AuthBlob</b> member, and the <b>UNPBlob</b> member should be ignored. <b>FALSE</b> if it is stored in the <b>UNPBlob</b> member, and the <b>AuthBlob</b> member should be ignored.</summary>
   </member>
   <member name="DAV_CALLBACK_CRED.bSave">
     <summary>
-      <para>
-        <b>TRUE</b> if the credential information was written to the <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/credential-manager">credential manager</a>, or <b>FALSE</b> otherwise.</para>
-    </summary>
+      <b>TRUE</b> if the credential information was written to the <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/credential-manager">credential manager</a>, or <b>FALSE</b> otherwise.</summary>
   </member>
 </doc>

@@ -3,36 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_TIMESTAMP_PARA">
-    <summary>
-      <para>The <b>CRYPT_TIMESTAMP_PARA</b> structure defines additional parameters for the time stamp request.</para>
-    </summary>
+    <summary>The <b>CRYPT_TIMESTAMP_PARA</b> structure defines additional parameters for the time stamp request.</summary>
   </member>
   <member name="CRYPT_TIMESTAMP_PARA.pszTSAPolicyId">
-    <summary>
-      <para>Optional. A pointer to a null-terminated character string that contains the Time Stamping Authority (TSA) policy under which the time stamp token
-should be provided.</para>
-    </summary>
+    <summary>Optional. A pointer to a null-terminated character string that contains the Time Stamping Authority (TSA) policy under which the time stamp token should be provided.</summary>
   </member>
   <member name="CRYPT_TIMESTAMP_PARA.fRequestCerts">
-    <summary>
-      <para>A Boolean value that specifies whether the TSA must include the certificates
-used to sign the time stamp token in the response .</para>
-    </summary>
+    <summary>A Boolean value that specifies whether the TSA must include the certificates used to sign the time stamp token in the response .</summary>
   </member>
   <member name="CRYPT_TIMESTAMP_PARA.Nonce">
-    <summary>
-      <para>Optional. A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure that contains the nonce value used by the client to verify the
-timeliness of the response when no local clock is available.</para>
-    </summary>
+    <summary>Optional. A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure that contains the nonce value used by the client to verify the timeliness of the response when no local clock is available.</summary>
   </member>
   <member name="CRYPT_TIMESTAMP_PARA.cExtension">
-    <summary>
-      <para>The number of elements in the array pointed to by the <b>rgExtension</b> member.</para>
-    </summary>
+    <summary>The number of elements in the array pointed to by the <b>rgExtension</b> member.</summary>
   </member>
   <member name="CRYPT_TIMESTAMP_PARA.rgExtension">
-    <summary>
-      <para>A pointer to an array of <see cref="CERT_EXTENSION" /> structures that contain extension information that is passed in the request.</para>
-    </summary>
+    <summary>A pointer to an array of <see cref="CERT_EXTENSION" /> structures that contain extension information that is passed in the request.</summary>
   </member>
 </doc>

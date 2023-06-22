@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_GPU_VIRTUAL_ADDRESS_RANGE">
-    <summary>
-      <para>Represents a GPU virtual address range.</para>
-    </summary>
+    <summary>Represents a GPU virtual address range.</summary>
   </member>
   <member name="D3D12_GPU_VIRTUAL_ADDRESS_RANGE.StartAddress">
-    <summary>
-      <para>The beginning of the virtual address range.</para>
-    </summary>
+    <summary>The beginning of the virtual address range.</summary>
   </member>
   <member name="D3D12_GPU_VIRTUAL_ADDRESS_RANGE.SizeInBytes">
-    <summary>
-      <para>The size of the virtual address range, in bytes.</para>
-    </summary>
+    <summary>The size of the virtual address range, in bytes.</summary>
   </member>
 </doc>

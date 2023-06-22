@@ -3,92 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICMetadataQueryWriter.RemoveMetadataByName">
-    <summary>
-      <para>Removes a metadata item from a specific location using a metadata query expression.</para>
-    </summary>
-    <param name="wzName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The name of the metadata item to remove.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>RemoveMetadataByName</b> uses metadata query expressions to remove metadata. For more information on the metadata query language, see the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</a>.</para>
-      <para>If the metadata item is a metadata block, it is removed from the metadata hierarchy.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
-    <seealso cref="IWICMetadataQueryWriter" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Removes a metadata item from a specific location using a metadata query expression.</summary>
+    <param name="wzName">The name of the metadata item to remove.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataQueryWriter.SetMetadataByName">
-    <summary>
-      <para>Sets a metadata item to a specific location.</para>
-    </summary>
-    <param name="wzName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The name of the metadata item.</para>
-    </param>
-    <param name="pvarValue">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>The metadata to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>SetMetadataByName</b> uses metadata query expressions to remove metadata. For more information on the metadata query language, see the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</a>.</para>
-      <para>If the value set is a nested metadata block then use variant type <code>VT_UNKNOWN</code> and <i>pvarValue</i> pointing to the <see cref="IWICMetadataQueryWriter" /> of the new metadata block.
-The ordering of metadata items is at the discretion of the query writer since relative locations are not specified.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
-    <seealso cref="IWICMetadataQueryWriter" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso cref="PROPVARIANT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Sets a metadata item to a specific location.</summary>
+    <param name="wzName">The name of the metadata item.</param>
+    <param name="pvarValue">The metadata to set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataQueryWriter">
-    <summary>
-      <para>Exposes methods for setting or removing metadata blocks and items to an encoder or its image frames using a metadata query expression.</para>
-    </summary>
-    <remarks>
-      <para>A metadata query writer uses metadata query expressions to set or remove metadata. For more information on the metadata query language, see the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</a>.</para>
-      <h4>Examples</h4>
-      <para>The following code demonstrates how to create an XMP query writer and add a new metadata item to it.</para>
-      <code>// Create XMP block
-IWICMetadataQueryWriter *pXMPWriter = NULL;
-
-if (SUCCEEDED(hr))
-{
-    hr = pFactory-&gt;CreateQueryWriter(GUID_MetadataFormatXMP, NULL, &amp;amp;amp;amp;amp;amp;pXMPWriter);
-}
-
-// Write metadata to the XMP writer
-if (SUCCEEDED(hr))
-{
-    PROPVARIANT value;
-    PropVariantInit(&amp;amp;amp;amp;amp;amp;value);
-
-    value.vt = VT_LPWSTR;
-    value.pwszVal = L"Metadata Test Image.";
-
-    hr = pXMPWriter-&gt;SetMetadataByName(L"/dc:title", &amp;amp;amp;amp;amp;amp;value);
-
-    PropVariantClear(&amp;amp;amp;amp;amp;amp;value);
-}
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
-    <seealso cref="IWICMetadataQueryReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Exposes methods for setting or removing metadata blocks and items to an encoder or its image frames using a metadata query expression.</summary>
   </member>
 </doc>

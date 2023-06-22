@@ -3,59 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_PROPORTION">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_PROPORTION</b> enumeration contains values that specify the proportion of the glyph shape by considering additional detail to standard characters.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_PROPORTION</b> enumeration contains values that specify the proportion of the glyph shape by considering additional detail to standard characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_PROPORTION.DWRITE_PANOSE_PROPORTION_ANY">
-    <summary>
-      <para>Any proportion for the text.</para>
-    </summary>
+    <summary>Any proportion for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE_PROPORTION.DWRITE_PANOSE_PROPORTION_NO_FIT">
-    <summary>
-      <para>No fit proportion for the text.</para>
-    </summary>
+    <summary>No fit proportion for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE_PROPORTION.DWRITE_PANOSE_PROPORTION_OLD_STYLE">
-    <summary>
-      <para>Old style proportion for the text.</para>
-    </summary>
+    <summary>Old style proportion for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE_PROPORTION.DWRITE_PANOSE_PROPORTION_MODERN">
-    <summary>
-      <para>Modern proportion for the text.</para>
-    </summary>
+    <summary>Modern proportion for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE_PROPORTION.DWRITE_PANOSE_PROPORTION_EVEN_WIDTH">
-    <summary>
-      <para>Extra width proportion for the text.</para>
-    </summary>
+    <summary>Extra width proportion for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE_PROPORTION.DWRITE_PANOSE_PROPORTION_EXPANDED">
-    <summary>
-      <para>Expanded proportion for the text.</para>
-    </summary>
+    <summary>Expanded proportion for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE_PROPORTION.DWRITE_PANOSE_PROPORTION_CONDENSED">
-    <summary>
-      <para>Condensed proportion for the text.</para>
-    </summary>
+    <summary>Condensed proportion for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE_PROPORTION.DWRITE_PANOSE_PROPORTION_VERY_EXPANDED">
-    <summary>
-      <para>Very expanded proportion for the text.</para>
-    </summary>
+    <summary>Very expanded proportion for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE_PROPORTION.DWRITE_PANOSE_PROPORTION_VERY_CONDENSED">
-    <summary>
-      <para>Very condensed proportion for the text.</para>
-    </summary>
+    <summary>Very condensed proportion for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE_PROPORTION.DWRITE_PANOSE_PROPORTION_MONOSPACED">
-    <summary>
-      <para>Monospaced proportion for the text.</para>
-    </summary>
+    <summary>Monospaced proportion for the text.</summary>
   </member>
 </doc>

@@ -3,23 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_ID_TYPE">
-    <summary>
-      <para>Discriminator for the union in the
-<see cref="FILE_ID_DESCRIPTOR" /> structure.</para>
-    </summary>
-    <seealso cref="FILE_ID_DESCRIPTOR" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-enumerations">File Management Enumerations</seealso>
-    <seealso cref="OpenFileById" />
+    <summary>Discriminator for the union in the<see cref="FILE_ID_DESCRIPTOR" /> structure.</summary>
   </member>
   <member name="FILE_ID_TYPE.FileIdType">
-    <summary>
-      <para>Use the <b>FileId</b> member of the union.</para>
-    </summary>
+    <summary>Use the <b>FileId</b> member of the union.</summary>
   </member>
   <member name="FILE_ID_TYPE.ObjectIdType">
-    <summary>
-      <para>Use the <b>ObjectId</b> member of the union.</para>
-    </summary>
+    <summary>Use the <b>ObjectId</b> member of the union.</summary>
   </member>
   <member name="FILE_ID_TYPE.ExtendedFileIdType">
     <summary>
@@ -29,8 +19,6 @@
     </summary>
   </member>
   <member name="FILE_ID_TYPE.MaximumFileIdType">
-    <summary>
-      <para>This value is used for comparison only. All valid values are less than this value.</para>
-    </summary>
+    <summary>This value is used for comparison only. All valid values are less than this value.</summary>
   </member>
 </doc>

@@ -3,44 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1CommandSink3.DrawSpriteBatch">
-    <summary>
-      <para>Renders part or all of the given sprite batch to the device context using the specified drawing options.</para>
-    </summary>
-    <param name="spriteBatch">
-      <para>Type: <b><see cref="ID2D1SpriteBatch" />*</b></para>
-      <para>The sprite batch to draw.</para>
-    </param>
-    <param name="startIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the first sprite in the sprite batch to draw.</para>
-    </param>
-    <param name="spriteCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of sprites to draw.</para>
-    </param>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap from which the sprites are to be sourced. Each sprite’s source rectangle refers to a portion of this bitmap.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_BITMAP_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode to use when drawing this sprite batch. This determines how Direct2D interpolates pixels within the drawn sprites if scaling is performed.</para>
-    </param>
-    <param name="spriteOptions">
-      <para>Type: <b><see cref="D2D1_SPRITE_OPTIONS" /></b></para>
-      <para>The additional drawing options, if any, to be used for this sprite batch.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID2D1CommandSink3" />
+    <summary>Renders part or all of the given sprite batch to the device context using the specified drawing options.</summary>
+    <param name="spriteBatch">The sprite batch to draw.</param>
+    <param name="startIndex">The index of the first sprite in the sprite batch to draw.</param>
+    <param name="spriteCount">The number of sprites to draw.</param>
+    <param name="bitmap">The bitmap from which the sprites are to be sourced. Each sprite’s source rectangle refers to a portion of this bitmap.</param>
+    <param name="interpolationMode">The interpolation mode to use when drawing this sprite batch. This determines how Direct2D interpolates pixels within the drawn sprites if scaling is performed.</param>
+    <param name="spriteOptions">The additional drawing options, if any, to be used for this sprite batch.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1CommandSink3">
-    <summary>
-      <para>This interface performs all the same functions as the existing <see cref="ID2D1CommandSink2" /> interface.
-It also enables access to sprite batch rendering.</para>
-    </summary>
-    <seealso cref="ID2D1CommandSink2" />
+    <summary>This interface performs all the same functions as the existing <see cref="ID2D1CommandSink2" /> interface. It also enables access to sprite batch rendering.</summary>
   </member>
 </doc>

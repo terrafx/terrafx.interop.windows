@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIASOURCE_STATUS_INFO">
-    <summary>
-      <para>Specifies the status of a media source.</para>
-    </summary>
+    <summary>Specifies the status of a media source.</summary>
   </member>
   <member name="MF_MEDIASOURCE_STATUS_INFO.MF_MEDIASOURCE_STATUS_INFO_FULLYSUPPORTED">
-    <summary>
-      <para>The media source is fully supported.</para>
-    </summary>
+    <summary>The media source is fully supported.</summary>
   </member>
   <member name="MF_MEDIASOURCE_STATUS_INFO.MF_MEDIASOURCE_STATUS_INFO_UNKNOWN">
     <summary>
@@ -21,9 +17,7 @@
             <blockquote>
               <blockquote>
                 <blockquote>
-                  <blockquote>
-                    <para>master</para>
-                  </blockquote>
+                  <blockquote>master</blockquote>
                 </blockquote>
               </blockquote>
             </blockquote>

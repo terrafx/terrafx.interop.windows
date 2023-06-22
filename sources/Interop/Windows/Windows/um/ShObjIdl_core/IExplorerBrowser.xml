@@ -3,42 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IExplorerBrowser.Advise">
-    <summary>
-      <para>Initiates a connection with <see cref="IExplorerBrowser" /> for event callbacks.</para>
-    </summary>
-    <param name="psbe">
-      <para>Type: <b><see cref="IExplorerBrowserEvents" />*</b></para>
-      <para>A pointer to the <see cref="IExplorerBrowserEvents" /> interface of the object to be advised of <see cref="IExplorerBrowser" /> events.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Type: <b>DWORD*</b></para>
-      <para>When this method returns, contains a token that uniquely identifies the event listener.  This allows several event listeners to be subscribed at a time.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by an implementer of  <see cref="IExplorerBrowserEvents" />. The implementer (listener) is advised of ExplorerBrowser view and navigation events by callback of the methods of <b>IExplorerBrowserEvents</b>.</para>
-      <para>Call <b>IExplorerBrowser.Advise</b> to initiate an advisory connection prior to the first <see cref="IExplorerBrowser" /> navigation.  Callbacks to event listeners are made as the browser is browsing.</para>
-      <para>The first browse happens synchronously to a call on <see cref="IExplorerBrowser.BrowseToObject" />, or a similar method. Future callbacks happen asynchronously, as the browser browses.</para>
-      <para>When the connection is no longer needed, call method <see cref="IExplorerBrowser.Unadvise" /> to terminate the connection.</para>
-    </remarks>
-    <seealso cref="IExplorerBrowser" />
-    <seealso cref="OnNavigationComplete" />
-    <seealso cref="OnNavigationFailed" />
-    <seealso cref="OnViewCreated" />
+    <summary>Initiates a connection with <see cref="IExplorerBrowser" /> for event callbacks.</summary>
+    <param name="psbe">A pointer to the <see cref="IExplorerBrowserEvents" /> interface of the object to be advised of <see cref="IExplorerBrowser" /> events.</param>
+    <param name="pdwCookie">When this method returns, contains a token that uniquely identifies the event listener. This allows several event listeners to be subscribed at a time.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.BrowseToIDList">
-    <summary>
-      <para>Browses to a pointer to an item identifier list (PIDL)</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCUIDLIST_RELATIVE</b></para>
-      <para>A pointer to a const <see cref="ITEMIDLIST" /> (item identifier list) that specifies an object's location as the destination to navigate to. This parameter can be <b>NULL</b>. For more information, see Remarks.</para>
-    </param>
+    <summary>Browses to a pointer to an item identifier list (PIDL)</summary>
+    <param name="pidl">A pointer to a const <see cref="ITEMIDLIST" /> (item identifier list) that specifies an object's location as the destination to navigate to. This parameter can be <b>NULL</b>. For more information, see Remarks.</param>
     <param name="uFlags">
-      <para>Type: <b>UINT</b></para>
       <para>A flag that specifies the category of the <i>pidl</i>. This affects how navigation is accomplished. Must be the value zero, or a bitwise combination of the following values.</para>
       <h4>SBSP_ABSOLUTE</h4>
       <para>An absolute PIDL, relative to the desktop.</para>
@@ -54,27 +27,12 @@
       <para>
         <b>Windows Vista and later</b>. This flag indicates that any search text entered by a WordWheel (the Search box in Windows Explorer) should be preserved during this navigation, so that items at the new location are filtered in the same way they were filtered at the previous location.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The parameter <i>pidl</i> may be <b>NULL</b> if the flags specified in <i>uFlags</i> indicate navigation through the built-in TravelLog, that is, SBSP_NAVIGATEBACK or SBSP_NAVIGATEFORWARD.</para>
-      <para>This method supports only a subset of the SBSP flags listed in the shobjidl.h file. Consequently, this method returns E_INVALIDARG if SBSP_NEWBROWSER or SBSP_EXPLOREMODE are specified in <i>uFlags</i>.</para>
-    </remarks>
-    <seealso cref="BrowseObject" />
-    <seealso cref="IExplorerBrowser" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.BrowseToObject">
-    <summary>
-      <para>Browses to an object.</para>
-    </summary>
-    <param name="punk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to an object to browse to. If the object cannot be browsed, an error value is returned.</para>
-    </param>
+    <summary>Browses to an object.</summary>
+    <param name="punk">A pointer to an object to browse to. If the object cannot be browsed, an error value is returned.</param>
     <param name="uFlags">
-      <para>Type: <b>UINT</b></para>
       <para>A flag that specifies the category of the <i>pidl</i>. This affects how navigation is accomplished. Must be the value zero, or a bitwise combination of the following values.</para>
       <h4>SBSP_ABSOLUTE</h4>
       <para>An absolute PIDL, relative to the desktop.</para>
@@ -90,267 +48,70 @@
       <para>
         <b>Windows Vista and later</b>. This flag indicates that any search text entered by a WordWheel (the Search box in Windows Explorer) should be preserved during this navigation, so that items at the new location are filtered in the same way they were filtered at the previous location.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <i>uFlags</i> may be any of the <see cref="EXPLORER_BROWSER_FILL_FLAGS" /> or any of the flags defined in <see cref="BrowseObject" />'s <i>wFlags</i> parameter, except for flags that indicate navigation.</para>
-      <para>This method calls <see cref="GetIDList" /> and browses to the pidl returned.  It operates in the same way as <see cref="IExplorerBrowser.BrowseToIDList" />, except that <i>punk</i> cannot be <b>NULL</b>. Standard usage is to browse to an <see cref="IShellFolder" /> or an <see cref="IShellItem" />. An error will be returned if the object passed in cannot be browsed through. An object that can be browsed through implements either <see cref="IPersistFolder2" /> or <see cref="IPersistIDList" />.</para>
-      <para>The first navigation of <see cref="IExplorerBrowser" /> is synchronous. After that, all navigations are asynchronous. As a result, calls to <b>IExplorerBrowser.BrowseToObject</b> will succeed if you properly set up the pending   navigation, but that does not guarantee the navigation will succeed.  To be informed of success and failure, clients should implement <see cref="IExplorerBrowserEvents" /> and respond appropriately in <see cref="OnNavigationComplete" /> and <see cref="OnNavigationFailed" />.</para>
-    </remarks>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.Destroy">
-    <summary>
-      <para>Destroys the browser.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If method <see cref="IExplorerBrowser.Initialize" /> was called., then method <b>IExplorerBrowser.Destroy</b> must be called to free resources. Failure to call <b>IExplorerBrowser.Destroy</b> may cause a memory leak.</para>
-    </remarks>
+    <summary>Destroys the browser.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.FillFromObject">
-    <summary>
-      <para>Creates a results folder and fills it with items.</para>
-    </summary>
-    <param name="punk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>An interface pointer on the source object that will fill the <see cref="IResultsFolder" />. This can be an <see cref="IDataObject" /> or any object that can be used with <see cref="INamespaceWalk" />.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Type: <b><see cref="EXPLORER_BROWSER_FILL_FLAGS" /></b></para>
-      <para>One of the <see cref="EXPLORER_BROWSER_FILL_FLAGS" /> values.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The object passed via interface pointer <i>punk</i> fills <see cref="IResultsFolder" />.</para>
-      <para>The parameter <i>dwFlags</i> can be any of the <see cref="EXPLORER_BROWSER_FILL_FLAGS" /> or any of the flags defined in <see cref="BrowseObject" />'s <i>wFlags</i> parameter, except for flags that indicate navigation.</para>
-      <para>The parameter <i>punk</i> can be any object that <see cref="INamespaceWalk" /> can consume.  If called with <see cref="EBF_SELECTFROMDATAOBJECT" />, <i>punk</i> must be an <see cref="IDataObject" /> and the namespace will be walked at the parent level of the data object, including all peer items, but selecting only those contained in the data object. This flag is most commonly used when <see cref="FOLDERSETTINGS" /> have <i>FWF_CHECKSELECT</i> enabled, allowing check-selection of a set of items that have been compiled in the data object.</para>
-      <para>
-        <b>Note</b>  If a pointer to an item identifier list (PIDL) in the data object is fully qualified, the parent folder cannot be successfully walked, because desktop folder items would be added to the list.</para>
-      <para>This method may be called more than once, with each successive call adding additional items to the view. <see cref="IExplorerBrowser.RemoveAll" /> may be called to clear the contents of the results folder. This function should be called with <see cref="EBF_NODROPTARGET" /> to prevent users from drag dropping new items into the view, unless this is desired.  Setting <see cref="EBO_NAVIGATEONCE" /> is also recommended so that the browser will stay in the ResultsFolder, preventing the user from navigating to a folder that may be represented in the data object.</para>
-      <para>To manipulate items in the results folder directly, call <see cref="IExplorerBrowser.GetCurrentView" /> to get the view from ExplorerBrowser and then ask the view for results folder using <see cref="GetFolder" />. Using the obtained results folder enables manipulation of the data in the folder with more flexibility than with the methods that <see cref="IExplorerBrowser" /> provides.</para>
-    </remarks>
-    <seealso cref="FOLDERFLAGS" />
-    <seealso cref="IExplorerBrowser" />
+    <summary>Creates a results folder and fills it with items.</summary>
+    <param name="punk">An interface pointer on the source object that will fill the <see cref="IResultsFolder" />. This can be an <see cref="IDataObject" /> or any object that can be used with <see cref="INamespaceWalk" />.</param>
+    <param name="dwFlags">One of the <see cref="EXPLORER_BROWSER_FILL_FLAGS" /> values.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.GetCurrentView">
-    <summary>
-      <para>Gets an interface for the current view of the browser.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the desired interface ID.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the interface pointer requested in <i>riid</i>. This will typically be <see cref="IShellView" />, <see cref="IShellView2" />, <see cref="IFolderView" />, or a related interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use the <b>IID_PPV_ARGS</b> macro.</para>
-    </remarks>
+    <summary>Gets an interface for the current view of the browser.</summary>
+    <param name="riid">A reference to the desired interface ID.</param>
+    <param name="ppv">When this method returns, contains the interface pointer requested in <i>riid</i>. This will typically be <see cref="IShellView" />, <see cref="IShellView2" />, <see cref="IFolderView" />, or a related interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.GetOptions">
-    <summary>
-      <para>Gets the current browser options.</para>
-    </summary>
-    <param name="pdwFlag">
-      <para>Type: <b><see cref="EXPLORER_BROWSER_OPTIONS" />*</b></para>
-      <para>When this method returns, contains the current <see cref="EXPLORER_BROWSER_OPTIONS" /> for the browser.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the current browser options.</summary>
+    <param name="pdwFlag">When this method returns, contains the current <see cref="EXPLORER_BROWSER_OPTIONS" /> for the browser.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.Initialize">
-    <summary>
-      <para>Prepares the browser to be navigated.</para>
-    </summary>
-    <param name="hwndParent">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the owner window or control.</para>
-    </param>
-    <param name="prc">
-      <para>Type: <b>const <see cref="RECT" />*</b></para>
-      <para>A pointer to a <see cref="RECT" /> that contains the coordinates of the bounding rectangle that the browser will occupy. The coordinates are relative to <i>hwndParent</i>.</para>
-    </param>
-    <param name="pfs">
-      <para>Type: <b>const <see cref="FOLDERSETTINGS" />*</b></para>
-      <para>A pointer to a <see cref="FOLDERSETTINGS" /> structure that determines how the folder will be displayed in the view. If this parameter is <b>NULL</b>, then you must call <see cref="IExplorerBrowser.SetFolderSettings" />; otherwise, the default view settings for the folder are used.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>After calling the <b>Initialize</b> method, it is the responsibility of the caller to call the <see cref="Destroy" /> method to destroy the browser and free any memory and windowed resources associated with the browser.</para>
-    </remarks>
+    <summary>Prepares the browser to be navigated.</summary>
+    <param name="hwndParent">A handle to the owner window or control.</param>
+    <param name="prc">A pointer to a <see cref="RECT" /> that contains the coordinates of the bounding rectangle that the browser will occupy. The coordinates are relative to <i>hwndParent</i>.</param>
+    <param name="pfs">A pointer to a <see cref="FOLDERSETTINGS" /> structure that determines how the folder will be displayed in the view. If this parameter is <b>NULL</b>, then you must call <see cref="IExplorerBrowser.SetFolderSettings" />; otherwise, the default view settings for the folder are used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.RemoveAll">
-    <summary>
-      <para>Removes all items from the results folder.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or  E_UNEXPECTED if this method is called before a call to <see cref="IExplorerBrowser.FillFromObject" />.</para>
-    </returns>
-    <remarks>
-      <para>This method removes all results from the  <see cref="IResultsFolder" /> created in method <see cref="IExplorerBrowser.FillFromObject" />.</para>
-    </remarks>
+    <summary>Removes all items from the results folder.</summary>
+    <returns>Returns S_OK if successful, or E_UNEXPECTED if this method is called before a call to <see cref="IExplorerBrowser.FillFromObject" />.</returns>
   </member>
   <member name="IExplorerBrowser.SetEmptyText">
-    <summary>
-      <para>Sets the default empty text.</para>
-    </summary>
-    <param name="pszEmptyText">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a constant, null-terminated, Unicode string that contains the empty text.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The text set is displayed when the Explorer browser view is empty.</para>
-      <para>This method applies the empty text string to the current view and sets the default empty text string that is used when navigating to another location.</para>
-      <para>If this method is not called, the empty text will default to the text provided by the folder that has been navigated to.</para>
-    </remarks>
+    <summary>Sets the default empty text.</summary>
+    <param name="pszEmptyText">A pointer to a constant, null-terminated, Unicode string that contains the empty text.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.SetFolderSettings">
-    <summary>
-      <para>Sets the folder settings for the current view.</para>
-    </summary>
-    <param name="pfs">
-      <para>Type: <b>const <see cref="FOLDERSETTINGS" />*</b></para>
-      <para>A pointer to a <see cref="FOLDERSETTINGS" /> structure that contains the folder settings to be applied.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method also changes the default that will be applied when navigating to another location.</para>
-      <para>To ensure the view state is preserved across sessions, specify the persistence name using <see cref="IExplorerBrowser.SetPropertyBag" />.</para>
-    </remarks>
-    <seealso cref="FOLDERSETTINGS" />
-    <seealso cref="IExplorerBrowser" />
+    <summary>Sets the folder settings for the current view.</summary>
+    <param name="pfs">A pointer to a <see cref="FOLDERSETTINGS" /> structure that contains the folder settings to be applied.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.SetOptions">
-    <summary>
-      <para>Sets the current browser options.</para>
-    </summary>
-    <param name="dwFlag">
-      <para>Type: <b><see cref="EXPLORER_BROWSER_OPTIONS" /></b></para>
-      <para>One or more <see cref="EXPLORER_BROWSER_OPTIONS" /> flags to be set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This action overrides any previous options.</para>
-      <para>Frames are disabled by default. To enable frames and get the default set of panes, set the <see cref="EBO_SHOWFRAMES" /> flag using the <b>SetOptions</b> method. The default panes, listed as <see cref="IExplorerPaneVisibility" /> constants, are these:</para>
-      <list type="bullet">
-        <item>
-          <description>EP_NavPane</description>
-        </item>
-        <item>
-          <description>EP_Commands</description>
-        </item>
-        <item>
-          <description>EP_Commands_Organize</description>
-        </item>
-        <item>
-          <description>EP_Commands_View</description>
-        </item>
-        <item>
-          <description>EP_DetailsPane</description>
-        </item>
-        <item>
-          <description>EP_PreviewPane</description>
-        </item>
-        <item>
-          <description>EP_QueryPane</description>
-        </item>
-        <item>
-          <description>EP_AdvQueryPane</description>
-        </item>
-        <item>
-          <description>EP_StatusBar</description>
-        </item>
-        <item>
-          <description>EP_Ribbon</description>
-        </item>
-      </list>
-      <para>See <see cref="IExplorerPaneVisibility.GetPaneState" /> for more information.</para>
-    </remarks>
+    <summary>Sets the current browser options.</summary>
+    <param name="dwFlag">One or more <see cref="EXPLORER_BROWSER_OPTIONS" /> flags to be set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.SetPropertyBag">
-    <summary>
-      <para>Sets the name of the property bag.</para>
-    </summary>
-    <param name="pszPropertyBag">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a constant, null-terminated, Unicode string that contains the name of the property bag.
-View state information that is specific to the application of the client is stored (persisted) using this name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>ExplorerBrowser can retrieve the properties stored in the property bag by calling function <see cref="SHGetViewStatePropertyBag" />.
-ExplorerBrowser writes to this property bag which is also stored (persisted) in the registry. Persistence occurs automatically when ExplorerBrowser destroys the current view, begins a navigation, or is destroyed. After any of these events, it writes information about the view state in case it has been modified by the user.</para>
-      <para>If no properties have been stored, the default view state of the ExplorerBrowser is used. The default view state is the view state that the user has set for a particular location, or if the view state for a location has not been set (never modified by the user), then the default view state is based on the template for the file type (for example, documents, music and pictures) at the location. All Explorer windows use the same sequence to determine the default view state.</para>
-    </remarks>
+    <summary>Sets the name of the property bag.</summary>
+    <param name="pszPropertyBag">A pointer to a constant, null-terminated, Unicode string that contains the name of the property bag. View state information that is specific to the application of the client is stored (persisted) using this name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.SetRect">
-    <summary>
-      <para>Sets the size and position of the view windows created by the browser.</para>
-    </summary>
-    <param name="phdwp">
-      <para>Type: <b>HDWP*</b></para>
-      <para>A pointer to a <see cref="DeferWindowPos" /> handle. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="rcBrowser">
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>The coordinates that the browser will occupy.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Coordinates are relative to the <i>hwndParent</i> passed in <see cref="IExplorerBrowser.Initialize" />.</para>
-    </remarks>
+    <summary>Sets the size and position of the view windows created by the browser.</summary>
+    <param name="phdwp">A pointer to a <see cref="DeferWindowPos" /> handle. This parameter can be <b>NULL</b>.</param>
+    <param name="rcBrowser">The coordinates that the browser will occupy.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser.Unadvise">
-    <summary>
-      <para>Terminates an advisory connection.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Type: <b>DWORD</b></para>
-      <para>A connection token previously returned from <see cref="IExplorerBrowser.Advise" />. Identifies the connection to be terminated.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Terminates an advisory connection previously established through method <see cref="IExplorerBrowser.Advise" />. The <i>dwCookie</i> parameter identifies the connection to terminate. Failure to call  <b>IExplorerBrowser.Unadvise</b>, may result in a memory leak.</para>
-    </remarks>
+    <summary>Terminates an advisory connection.</summary>
+    <param name="dwCookie">A connection token previously returned from <see cref="IExplorerBrowser.Advise" />. Identifies the connection to be terminated.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowser">
     <summary>
@@ -359,50 +120,5 @@ ExplorerBrowser writes to this property bag which is also stored (persisted) in 
       <para>The Shell provides a default implementation of <b>IExplorerBrowser</b> as CLSID_ExplorerBrowser. Typically, a developer does not need to provide a custom implementation of this interface.</para>
       <para>The Windows Software Development Kit (SDK) provides full samples that demonstrate the use of and interaction with <b>IExplorerBrowser</b>. Download the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940358(v=vs.85)">Explorer Browser Search Sample</a> and the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940357(v=vs.85)">Explorer Browser Custom Contents Sample</a>.</para>
     </summary>
-    <remarks>
-      <para>For example code that shows typical use of <b>IExplorerBrowser</b> and its methods, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940357(v=vs.85)">Explorer Browser Custom Contents</a> and Explorer Browser Custom Contents samples.</para>
-      <para>After calling this object's <see cref="Initialize" /> method, its <see cref="Destroy" /> method must be called to free any windowed resources that were generated in the call to <b>Initialize</b>.</para>
-      <para>The object that hosts the ExplorerBrowser object should derive from <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678965(v=vs.85)">IServiceProvider</a> and implement <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678966(v=vs.85)">QueryService</a> to respond to any queries for service. For example, the number of panes shown by the browser can be controlled by implementing <see cref="IExplorerPaneVisibility" /> and responding to any SID_ExplorerPaneVisibility service requests.</para>
-      <para>Frames are disabled by default. To enable frames and get the default set of panes, set the <see cref="EBO_SHOWFRAMES" /> flag using the <see cref="IExplorerBrowser.SetOptions" /> method. The default panes, listed as <see cref="IExplorerPaneVisibility" /> constants, are these:</para>
-      <list type="bullet">
-        <item>
-          <description>EP_NavPane</description>
-        </item>
-        <item>
-          <description>EP_Commands</description>
-        </item>
-        <item>
-          <description>EP_Commands_Organize</description>
-        </item>
-        <item>
-          <description>EP_Commands_View</description>
-        </item>
-        <item>
-          <description>EP_DetailsPane</description>
-        </item>
-        <item>
-          <description>EP_PreviewPane</description>
-        </item>
-        <item>
-          <description>EP_QueryPane</description>
-        </item>
-        <item>
-          <description>EP_AdvQueryPane</description>
-        </item>
-        <item>
-          <description>EP_StatusBar</description>
-        </item>
-        <item>
-          <description>EP_Ribbon</description>
-        </item>
-      </list>
-      <para>See <see cref="IExplorerPaneVisibility.GetPaneState" /> for more information.</para>
-      <para>Clients of the ExplorerBrowser object can implement the <see cref="ICommDlgBrowser" />, <see cref="ICommDlgBrowser2" />, or <see cref="ICommDlgBrowser3" /> interfaces and respond to an SID_SExplorerBrowserFrame service request in their QueryService implementations that are called when any <b>ICommDlgBrowser</b> interfaces are called on the browser (usually called from the view as a result of user actions). Note that the client does not receive a call to <see cref="ICommDlgBrowser.IncludeObject" /> if a folder filter has been set on the browser by a call to <see cref="IFolderFilterSite.SetFilter" />.</para>
-      <para>To remain compatible with some older applications, the default Shell view (DefView) performs filtering operations (for example, searching operations executed by a search folder) on the UI thread. For new applications, this is typically not desired; the search should execute on a background thread. To stop the UI thread from filtering and instead run filtering on a background thread, provide <see cref="ICommDlgBrowser2" /> through the SID_SExplorerBrowserFrame service request. When <see cref="ICommDlgBrowser2.GetViewFlags" /> is called, it should return CDB2GVF_NOINCLUDEITEM. For example, if you navigate to a search folder in ExplorerBrowser and you do not return CDB2GVF_NOINCLUDEITEM, the view can stop responding until the entire search is complete.</para>
-      <para>The Shell architecture has three main components: the browser, the views, and the data sources (for example, IShellFolder). The ExplorerBrowser object maintains the current location and navigation to other locations throughout the Shell namespace. It also keeps a travel log (forward and back history). The browser is notified when things happen in the view; for example, when the user double-clicks a folder. In response, the browser navigates to that location. The data sources are the objects that supply the items and folders in the namespace. They also have information about the location, such as the properties of the items and what to add to the context menu when the view requests it. Additionally, the data sources know what view should be created to represent their items at a location. In almost all instances, the folders create the Shell's default view (DefView). Therefore, as the browser navigates, it receives an <see cref="IShellFolder" /> object for the new location and asks it what view to create. The browser then creates that view and makes it visible, while hiding and then destroying the view that was showing the previous location. The view is responsible for communicating with <b>IShellFolder</b> for the current location and requesting it to enumerate the items, which allows the view to show these items to the user. As the user interacts with the items, the view communicates with the <b>IShellFolder</b> to get any additional information it needs, such as specific properties of the items or the context menu entries for the item.</para>
-      <para>If an application uses the default implementation provided by CLSID_ExplorerBrowser, inserting it into the window of an application and then browsing to a location, ExplorerBrowser creates the proper <see cref="IShellView" /> as specified by the location that it is browsing to. The application can then ask ExplorerBrowser to give it an interface on the current view, allowing the application to manipulate the view directly if required. The default implementation of the Windows Explorer view object, created by <see cref="SHCreateShellFolderViewEx" />, supports the interface <b>IShellView</b>. You may verify that you have the default Shell folder view object by calling <see cref="IExplorerBrowser.GetCurrentView" /> and then calling <see cref="QueryInterface" /> on the object returned using the interface ID IID_CDefView.</para>
-      <para>
-        <b>Windows 7 and later</b>. CExplorerBrowser can support in-place navigation by using <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678966(v=vs.85)">IServiceProvider.QueryService</a> with the Service ID SID_SlnPlaceBrowser. When using SID_SInPlaceBrowser, the CExplorerBrowser state cannot be set to EBO_NAVIGATEONCE.</para>
-    </remarks>
   </member>
 </doc>

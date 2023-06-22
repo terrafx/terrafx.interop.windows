@@ -3,28 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PLAYTO_SOURCE_CREATEFLAGS">
-    <summary>
-      <para>Contains flags for the <see cref="IPlayToSourceClassFactory.CreateInstance" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Contains flags for the <see cref="IPlayToSourceClassFactory.CreateInstance" /> method.</summary>
   </member>
-  <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_NONE">
-    <summary></summary>
-  </member>
+  <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_NONE"></member>
   <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_IMAGE">
-    <summary>
-      <para>Share images.</para>
-    </summary>
+    <summary>Share images.</summary>
   </member>
   <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_AUDIO">
-    <summary>
-      <para>Share audio.</para>
-    </summary>
+    <summary>Share audio.</summary>
   </member>
   <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_VIDEO">
-    <summary>
-      <para>Share video.</para>
-    </summary>
+    <summary>Share video.</summary>
   </member>
   <member name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_PROTECTED">
     <summary>

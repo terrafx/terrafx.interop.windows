@@ -3,80 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1PathGeometry.GetFigureCount">
-    <summary>
-      <para>Retrieves the number of figures in the path geometry.</para>
-    </summary>
-    <param name="count">
-      <para>Type: <b>UINT32*</b></para>
-      <para>A pointer that receives the number of figures in the path geometry when this method returns. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1PathGeometry" />
+    <summary>Retrieves the number of figures in the path geometry.</summary>
+    <param name="count">A pointer that receives the number of figures in the path geometry when this method returns. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1PathGeometry.GetSegmentCount">
-    <summary>
-      <para>Retrieves the number of segments in the path geometry.</para>
-    </summary>
-    <param name="count">
-      <para>Type: <b>UINT32*</b></para>
-      <para>A pointer that receives the number of segments in the path geometry when this method returns. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1PathGeometry" />
+    <summary>Retrieves the number of segments in the path geometry.</summary>
+    <param name="count">A pointer that receives the number of segments in the path geometry when this method returns. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1PathGeometry.Open">
-    <summary>
-      <para>Retrieves the geometry sink that is used to populate the path geometry with figures and segments.</para>
-    </summary>
-    <param name="geometrySink">
-      <para>Type: <b><see cref="ID2D1GeometrySink" />**</b></para>
-      <para>When this method returns, <i>geometrySink</i> contains the address of a pointer to the geometry sink that is used to populate the path geometry with figures and segments. This parameter is passed uninitialized.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>Because path geometries are immutable and can only be populated once, it is an error to call <b>Open</b> on a path geometry more than once.</para>
-      <para>Note that the fill mode defaults to <see cref="D2D1_FILL_MODE_ALTERNATE" />. To set the fill mode, call <see cref="SetFillMode" /> before the first call to <see cref="BeginFigure" />. Failure to do so will put the geometry sink in an error state.</para>
-    </remarks>
-    <seealso cref="ID2D1PathGeometry" />
+    <summary>Retrieves the geometry sink that is used to populate the path geometry with figures and segments.</summary>
+    <param name="geometrySink">When this method returns, <i>geometrySink</i> contains the address of a pointer to the geometry sink that is used to populate the path geometry with figures and segments. This parameter is passed uninitialized.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1PathGeometry.Stream">
-    <summary>
-      <para>Copies the contents of the path geometry to the specified <see cref="ID2D1GeometrySink" />.</para>
-    </summary>
-    <param name="geometrySink">
-      <para>Type: <b><see cref="ID2D1GeometrySink" />*</b></para>
-      <para>The sink to which the path geometry's contents are copied. Modifying this sink does not change the contents of this path geometry.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1PathGeometry" />
+    <summary>Copies the contents of the path geometry to the specified <see cref="ID2D1GeometrySink" />.</summary>
+    <param name="geometrySink">The sink to which the path geometry's contents are copied. Modifying this sink does not change the contents of this path geometry.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1PathGeometry">
-    <summary>
-      <para>Represents a complex shape that may be composed of arcs, curves, and lines.</para>
-    </summary>
-    <remarks>
-      <para>An <b>ID2D1PathGeometry</b> object enables you to describe a geometric path. To describe an <b>ID2D1PathGeometry</b>  object's path, use the object's  <see cref="Open" /> method to retrieve an <see cref="ID2D1GeometrySink" />. Use the sink to populate the path geometry with figures and segments.</para>
-      <h3>Creating ID2D1PathGeometry Objects</h3>
-      <para>To create a path geometry, use the <see cref="ID2D1Factory.CreatePathGeometry" />  method.</para>
-      <para>
-        <b>ID2D1PathGeometry</b> objects are device-independent resources created by <see cref="ID2D1Factory" />.  In general, you should create geometries once and retain them for the life of the application, or until they need to be modified. For more information about device-independent and device-dependent resources, see  the <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/geometries-how-to-topics">Geometries How-to Topics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-geometries-overview">Geometries Overview</seealso>
-    <seealso cref="ID2D1Factory.CreatePathGeometry" />
-    <seealso cref="ID2D1Geometry" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/path-geometries-overview">Path Geometries Overview</seealso>
+    <summary>Represents a complex shape that may be composed of arcs, curves, and lines.</summary>
   </member>
 </doc>

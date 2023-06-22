@@ -3,37 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_DRAW_TEXT_OPTIONS">
-    <summary>
-      <para>Specifies whether text snapping is suppressed or clipping to the layout rectangle is enabled. This enumeration allows a bitwise combination of its member values.</para>
-    </summary>
-    <seealso cref="DrawText" />
+    <summary>Specifies whether text snapping is suppressed or clipping to the layout rectangle is enabled. This enumeration allows a bitwise combination of its member values.</summary>
   </member>
   <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_NO_SNAP">
-    <summary>
-      <para>Text is not vertically snapped to pixel boundaries. This setting is recommended for text that is being animated.</para>
-    </summary>
+    <summary>Text is not vertically snapped to pixel boundaries. This setting is recommended for text that is being animated.</summary>
   </member>
   <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_CLIP">
-    <summary>
-      <para>Text is clipped to the layout rectangle.</para>
-    </summary>
+    <summary>Text is clipped to the layout rectangle.</summary>
   </member>
   <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT">
-    <summary>
-      <para>In Windows 8.1 and later, text is rendered using color versions of glyphs, if defined by the font.</para>
-    </summary>
+    <summary>In Windows 8.1 and later, text is rendered using color versions of glyphs, if defined by the font.</summary>
   </member>
   <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_DISABLE_COLOR_BITMAP_SNAPPING">
-    <summary>
-      <para>Bitmap origins of color glyph bitmaps are not snapped.</para>
-    </summary>
+    <summary>Bitmap origins of color glyph bitmaps are not snapped.</summary>
   </member>
   <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_NONE">
-    <summary>
-      <para>Text is vertically snapped to pixel boundaries and is not clipped to the layout rectangle.</para>
-    </summary>
+    <summary>Text is vertically snapped to pixel boundaries and is not clipped to the layout rectangle.</summary>
   </member>
-  <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_FORCE_DWORD"></member>
 </doc>

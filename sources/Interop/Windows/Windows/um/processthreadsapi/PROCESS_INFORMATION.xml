@@ -3,39 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_INFORMATION">
-    <summary>
-      <para>Contains information about a newly created process and its primary thread. It is used with the
-<see cref="CreateProcess" />,  <see cref="CreateProcessAsUser" />, <see cref="CreateProcessWithLogonW" />, or <see cref="CreateProcessWithTokenW" /> function.</para>
-    </summary>
-    <remarks>
-      <para>If the function succeeds, be sure to call the <see cref="CloseHandle" /> function to close the <b>hProcess</b> and <b>hThread</b> handles when you are finished with them. Otherwise, when the child process exits, the system cannot clean up the process structures for the child process because the parent process still has open handles to the child process. However, the system will close these handles when the parent process terminates, so the structures related to the child process object would be cleaned up at this point.</para>
-      <h4>Examples</h4>
-      <para>For an example, see
-<a href="https://docs.microsoft.com//windows/desktop/ProcThread/creating-processes">Creating Processes</a>.</para>
-    </remarks>
-    <seealso cref="CreateProcess" />
-    <seealso cref="CreateProcessAsUser" />
-    <seealso cref="CreateProcessWithLogonW" />
-    <seealso cref="CreateProcessWithTokenW" />
+    <summary>Contains information about a newly created process and its primary thread. It is used with the<see cref="CreateProcess" />, <see cref="CreateProcessAsUser" />, <see cref="CreateProcessWithLogonW" />, or <see cref="CreateProcessWithTokenW" /> function.</summary>
   </member>
   <member name="PROCESS_INFORMATION.hProcess">
-    <summary>
-      <para>A handle to the newly created process. The handle is used to specify the process in all functions that perform operations on the process object.</para>
-    </summary>
+    <summary>A handle to the newly created process. The handle is used to specify the process in all functions that perform operations on the process object.</summary>
   </member>
   <member name="PROCESS_INFORMATION.hThread">
-    <summary>
-      <para>A handle to the primary thread of the newly created process. The handle is used to specify the thread in all functions that perform operations on the thread object.</para>
-    </summary>
+    <summary>A handle to the primary thread of the newly created process. The handle is used to specify the thread in all functions that perform operations on the thread object.</summary>
   </member>
   <member name="PROCESS_INFORMATION.dwProcessId">
-    <summary>
-      <para>A value that can be used to identify a process. The value is valid from the time the process is created until all handles to the process are closed and the process object is freed; at this point, the identifier may be reused.</para>
-    </summary>
+    <summary>A value that can be used to identify a process. The value is valid from the time the process is created until all handles to the process are closed and the process object is freed; at this point, the identifier may be reused.</summary>
   </member>
   <member name="PROCESS_INFORMATION.dwThreadId">
-    <summary>
-      <para>A value that can be used to identify a thread. The value is valid from the time the thread is created until all handles to the thread are closed and the thread object is freed; at this point, the identifier may be reused.</para>
-    </summary>
+    <summary>A value that can be used to identify a thread. The value is valid from the time the thread is created until all handles to the thread are closed and the thread object is freed; at this point, the identifier may be reused.</summary>
   </member>
 </doc>

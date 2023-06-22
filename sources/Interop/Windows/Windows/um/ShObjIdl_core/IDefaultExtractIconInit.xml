@@ -3,105 +3,40 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDefaultExtractIconInit.SetDefaultIcon">
-    <summary>
-      <para>Sets the default icon.</para>
-    </summary>
-    <param name="pszFile">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the full icon path, including the file name and extension, as a Unicode string. This pointer can be <b>NULL</b>.</para>
-    </param>
-    <param name="iIcon">
-      <para>Type: <b>int</b></para>
-      <para>The Shell icon ID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the default icon.</summary>
+    <param name="pszFile">A pointer to a buffer that contains the full icon path, including the file name and extension, as a Unicode string. This pointer can be <b>NULL</b>.</param>
+    <param name="iIcon">The Shell icon ID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDefaultExtractIconInit.SetFlags">
-    <summary>
-      <para>Sets GIL_XXX flags. See <see cref="GetIconLocation" /></para>
-    </summary>
-    <param name="uFlags">
-      <para>Type: <b>UINT</b></para>
-      <para>Specifies return flags to get icon location.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets GIL_XXX flags. See <see cref="GetIconLocation" /></summary>
+    <param name="uFlags">Specifies return flags to get icon location.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDefaultExtractIconInit.SetKey">
-    <summary>
-      <para>Sets the registry key from which to load the "DefaultIcon" value.</para>
-    </summary>
-    <param name="hkey">
-      <para>Type: <b>HKEY</b></para>
-      <para>A handle to the registry key.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>It is recommended that any call to <b>IDefaultExtractIconInit.SetKey</b> come before any calls to the SetXxxIcon methods.</para>
-    </remarks>
+    <summary>Sets the registry key from which to load the "DefaultIcon" value.</summary>
+    <param name="hkey">A handle to the registry key.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDefaultExtractIconInit.SetNormalIcon">
-    <summary>
-      <para>Sets the normal icon.</para>
-    </summary>
-    <param name="pszFile">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the full icon path, including the file name and extension, as a Unicode string. This pointer can be <b>NULL</b>.</para>
-    </param>
-    <param name="iIcon">
-      <para>Type: <b>int</b></para>
-      <para>A Shell icon ID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the normal icon.</summary>
+    <param name="pszFile">A pointer to a buffer that contains the full icon path, including the file name and extension, as a Unicode string. This pointer can be <b>NULL</b>.</param>
+    <param name="iIcon">A Shell icon ID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDefaultExtractIconInit.SetOpenIcon">
-    <summary>
-      <para>Sets the icon that allows containers to specify an "open" look.</para>
-    </summary>
-    <param name="pszFile">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the full icon path, including the file name and extension, as a Unicode string. This pointer can be <b>NULL</b>.</para>
-    </param>
-    <param name="iIcon">
-      <para>Type: <b>int</b></para>
-      <para>Shell icon ID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the icon that allows containers to specify an "open" look.</summary>
+    <param name="pszFile">A pointer to a buffer that contains the full icon path, including the file name and extension, as a Unicode string. This pointer can be <b>NULL</b>.</param>
+    <param name="iIcon">Shell icon ID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDefaultExtractIconInit.SetShortcutIcon">
-    <summary>
-      <para>Sets the icon for a shortcut to the object.</para>
-    </summary>
-    <param name="pszFile">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the full icon path, including the file name and extension, as a Unicode string. This pointer can be <b>NULL</b>.</para>
-    </param>
-    <param name="iIcon">
-      <para>Type: <b>int</b></para>
-      <para>Shell icon ID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the icon for a shortcut to the object.</summary>
+    <param name="pszFile">A pointer to a buffer that contains the full icon path, including the file name and extension, as a Unicode string. This pointer can be <b>NULL</b>.</param>
+    <param name="iIcon">Shell icon ID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDefaultExtractIconInit">
-    <summary>
-      <para>Exposes methods to set default icons associated with an object.</para>
-    </summary>
+    <summary>Exposes methods to set default icons associated with an object.</summary>
   </member>
 </doc>

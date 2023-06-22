@@ -3,146 +3,42 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAssocHandler.CreateInvoker">
-    <summary>
-      <para>Retrieves an object that enables the invocation of the associated handler on the current selection.  The invoker includes the ability to verify whether the current selection is supported.</para>
-    </summary>
-    <param name="pdo">
-      <para>Type: <b><see cref="IDataObject" />*</b></para>
-      <para>A pointer to an <see cref="IDataObject" /> that represents the selected item or items on which to invoke the handler. Note that if you have only a single item, <see cref="IAssocHandler.Invoke" /> could be the better choice. See Remarks for more details.</para>
-    </param>
-    <param name="ppInvoker">
-      <para>Type: <b><see cref="IAssocHandlerInvoker" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to an <see cref="IAssocHandlerInvoker" /> object. This object is used to invoke the menu item after ensuring that the selected items are supported by the associated handler.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <see cref="IAssocHandler" /> objects are typically used to populate an <b>Open With</b> menu. When one of those menu items is selected, this method is called to launch the chosen application.</para>
-      <h3>Invoke and CreateInvoker</h3>
-      <para>The <see cref="IDataObject" /> used by these methods can represent either a single file or it may represent a selection of multiple files. Not all applications support the multiple files option. Those applications that do support that scenario might impose other restrictions such as the number of files that can be opened at once, or acceptable combinations of file types.</para>
-      <para>Therefore, an application often must determine whether the handler supports the selection before trying to invoke the handler. For example, an application might enable a menu item only if it knew that the selection in question was supported by that handler.</para>
-      <para>It is generally safe to assume that an application will support invocation on a single item; in those cases the application typically calls <see cref="IAssocHandler.Invoke" />.</para>
-      <para>For multiple selection scenarios, the application should call <b>IAssocHandler.CreateInvoker</b>. That method retrieves an <see cref="IAssocHandlerInvoker" /> object that allows the calling application to first check whether the selection is supported (<see cref="SupportsSelection" />), then to invoke the handler (<see cref="Invoke" />).</para>
-      <para>
-        <see cref="IAssocHandler.Invoke" /> can be called on a selection of multiple files, but it is not recommended due to the large processing load involved and no guarantee of success.</para>
-    </remarks>
-    <seealso cref="IAssocHandler" />
-    <seealso cref="IAssocHandler.Invoke" />
-    <seealso cref="IEnumAssocHandlers" />
+    <summary>Retrieves an object that enables the invocation of the associated handler on the current selection. The invoker includes the ability to verify whether the current selection is supported.</summary>
+    <param name="pdo">A pointer to an <see cref="IDataObject" /> that represents the selected item or items on which to invoke the handler. Note that if you have only a single item, <see cref="IAssocHandler.Invoke" /> could be the better choice. See Remarks for more details.</param>
+    <param name="ppInvoker">When this method returns, contains the address of a pointer to an <see cref="IAssocHandlerInvoker" /> object. This object is used to invoke the menu item after ensuring that the selected items are supported by the associated handler.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAssocHandler.GetIconLocation">
-    <summary>
-      <para>Retrieves the location of the icon associated with the application.</para>
-    </summary>
-    <param name="ppszPath">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to a null-terminated, Unicode string that contains the path to the application's icon.</para>
-    </param>
-    <param name="pIndex">
-      <para>Type: <b>int*</b></para>
-      <para>When this method returns, contains a pointer to the index of the icon within the resource named in <i>ppszPath</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the icon cannot be found, the function will return the path to the executable, and an icon index of zero.</para>
-      <para>For performance reasons, an application may use the Shell image cache to retrieve the icon, rather than loading the icon directly from the path returned.  The path and icon index can be passed directly to <see cref="Shell_GetCachedImageIndex" />. One benefit of this is that the Shell cache can provide a default icon in the event that no icon was available for the application.</para>
-    </remarks>
+    <summary>Retrieves the location of the icon associated with the application.</summary>
+    <param name="ppszPath">When this method returns, contains the address of a pointer to a null-terminated, Unicode string that contains the path to the application's icon.</param>
+    <param name="pIndex">When this method returns, contains a pointer to the index of the icon within the resource named in <i>ppszPath</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAssocHandler.GetName">
-    <summary>
-      <para>Retrieves the full path and file name of the executable file associated with the file type.</para>
-    </summary>
-    <param name="ppsz">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to a null-terminated, Unicode string that contains the full path of the file, including the file name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAssocHandler" />
-    <seealso cref="IAssocHandler.GetUIName" />
+    <summary>Retrieves the full path and file name of the executable file associated with the file type.</summary>
+    <param name="ppsz">When this method returns, contains the address of a pointer to a null-terminated, Unicode string that contains the full path of the file, including the file name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAssocHandler.GetUIName">
-    <summary>
-      <para>Retrieves the display name of an application.</para>
-    </summary>
-    <param name="ppsz">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to a null-terminated, Unicode string that contains the display name of the application.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAssocHandler" />
-    <seealso cref="IAssocHandler.GetName" />
+    <summary>Retrieves the display name of an application.</summary>
+    <param name="ppsz">When this method returns, contains the address of a pointer to a null-terminated, Unicode string that contains the display name of the application.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAssocHandler.Invoke">
-    <summary>
-      <para>Directly invokes the associated handler.</para>
-    </summary>
-    <param name="pdo">
-      <para>Type: <b><see cref="IDataObject" />*</b></para>
-      <para>A pointer to an <see cref="IDataObject" /> that represents the selected item on which to invoke the handler. Note that you should not call <b>IAssocHandler.Invoke</b> with a selection of multiple items. If you have multiple items, call <see cref="IAssocHandler.CreateInvoker" /> instead. See Remarks for more details.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <see cref="IAssocHandler" /> objects are typically used to populate an <b>Open With</b> menu. When one of those menu items is selected, this method is called to launch the chosen application.</para>
-      <h3>Invoke and CreateInvoker</h3>
-      <para>The <see cref="IDataObject" /> used by these methods can represent either a single file or a selection of multiple files. Not all applications support the multiple file option. The applications that do support that scenario might impose other restrictions, such as the number of files that can be opened simultaneously, or the acceptable combination of file types.</para>
-      <para>Therefore, an application often must determine whether the handler supports the selection before trying to invoke the handler. For example, an application might enable a menu item only if it has verified that the selection in question was supported by that handler.</para>
-      <para>It is generally safe to assume that an application will support invocation on a single item, and in those cases the application typically calls <b>IAssocHandler.Invoke</b> based on that assumption.</para>
-      <para>For multiple selection scenarios, however, the application should call <see cref="IAssocHandler.CreateInvoker" />. That method retrieves an <see cref="IAssocHandlerInvoker" /> object that allows the calling application to first check whether the selection is supported (<see cref="SupportsSelection" />), then to invoke the handler (<see cref="Invoke" />).</para>
-      <para>
-        <b>IAssocHandler.Invoke</b> can be called on a selection of multiple files, but it is not recommended because of the large processing load involved and no guarantee that it will succeed.</para>
-    </remarks>
+    <summary>Directly invokes the associated handler.</summary>
+    <param name="pdo">A pointer to an <see cref="IDataObject" /> that represents the selected item on which to invoke the handler. Note that you should not call <b>IAssocHandler.Invoke</b> with a selection of multiple items. If you have multiple items, call <see cref="IAssocHandler.CreateInvoker" /> instead. See Remarks for more details.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAssocHandler.IsRecommended">
-    <summary>
-      <para>Indicates whether the application is registered as a recommended handler for the queried file type.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the program is recommended; otherwise, S_FALSE.</para>
-    </returns>
-    <remarks>
-      <para>Applications that register themselves as handlers for particular file types can specify whether they are recommended handlers. This has no effect on the actual behavior of the applications when launched. It is simply provided as a hint to the user and a value that the UI can utilize programmatically, if desired. For example, the Shell's <b>Open With</b> dialog separates entries into <b>Recommended Programs</b> and <b>Other Programs</b>.</para>
-      <para>Note that program recommendations may change over time. One example is provided when the user chooses an application from the <b>Other Programs</b> of the <b>Open With</b> dialog to open a particular file type. That may cause the Shell to "promote" that application to recommended status for that file type. Because the recommended status may change over time, applications should not cache this value, but query it each time it is needed.</para>
-      <para>If <see cref="SHAssocEnumHandlers" /> was called with the ASSOC_FILTER_RECOMMENDED flag, then only recommended handlers are returned. If the ASSOC_FILTER_NONE flag was used, then you must call <b>IAssocHandler.IsRecommended</b> on each <see cref="IAssocHandler" /> object to determine whether it is recommended or not.</para>
-    </remarks>
+    <summary>Indicates whether the application is registered as a recommended handler for the queried file type.</summary>
+    <returns>Returns S_OK if the program is recommended; otherwise, S_FALSE.</returns>
   </member>
   <member name="IAssocHandler.MakeDefault">
-    <summary>
-      <para>Sets an application as the default application for this file type.</para>
-    </summary>
-    <param name="pszDescription">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated, Unicode string that contains the display name of the application.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAssocHandler" />
-    <seealso cref="IAssocHandler.GetUIName" />
+    <summary>Sets an application as the default application for this file type.</summary>
+    <param name="pszDescription">A pointer to a null-terminated, Unicode string that contains the display name of the application.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAssocHandler">
-    <summary>
-      <para>Exposes methods for operations with a file association dialog box or menu.</para>
-    </summary>
-    <seealso cref="IAssocHandlerInvoker" />
-    <seealso cref="IEnumAssocHandlers" />
-    <seealso cref="SHAssocEnumHandlers" />
+    <summary>Exposes methods for operations with a file association dialog box or menu.</summary>
   </member>
 </doc>

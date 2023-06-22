@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFSensorStreamType">
-    <summary>
-      <para>Specifies whether a stream associated with an <see cref="IMFSensorDevice" /> is an input or an output stream.</para>
-    </summary>
+    <summary>Specifies whether a stream associated with an <see cref="IMFSensorDevice" /> is an input or an output stream.</summary>
   </member>
   <member name="MFSensorStreamType.MFSensorStreamType_Unknown">
-    <summary>
-      <para>The sensor stream type is unknown.</para>
-    </summary>
+    <summary>The sensor stream type is unknown.</summary>
   </member>
   <member name="MFSensorStreamType.MFSensorStreamType_Input">
-    <summary>
-      <para>The sensor stream is an input stream.</para>
-    </summary>
+    <summary>The sensor stream is an input stream.</summary>
   </member>
   <member name="MFSensorStreamType.MFSensorStreamType_Output">
-    <summary>
-      <para>The sensor stream is an output stream.</para>
-    </summary>
+    <summary>The sensor stream is an output stream.</summary>
   </member>
 </doc>

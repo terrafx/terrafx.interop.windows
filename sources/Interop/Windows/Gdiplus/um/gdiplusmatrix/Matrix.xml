@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Matrix.Clone">
+    <summary>The <b>Matrix.Clone</b> method creates a new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that is a copy of this<b>Matrix</b> object.</summary>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object.</returns>
+  </member>
+  <member name="Matrix.Equals">
+    <summary>The <b>Matrix.Equals</b> method determines whether the elements of this matrix are equal to the elements of another matrix.</summary>
+    <param name="matrix">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that is compared with this<b>Matrix</b> object.</param>
+    <returns>If the elements of the two matrices are the same, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Matrix.GetElements">
+    <summary>The <b>Matrix.GetElements</b> method gets the elements of this matrix. The elements are placed in an array in the order m11, m12, m21, m22, m31, m32, where mij denotes the element in row i, column j.</summary>
+    <param name="m">Pointer to an array that receives the matrix elements. The size of the array should be 6 ×<b>sizeof</b>(<b>REAL</b>).</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.GetLastStatus">
+    <summary>The <b>Matrix.GetLastStatus</b> method returns a value that indicates the nature of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The<b>Matrix.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object have failed since the previous call to <b>Matrix.GetLastStatus</b>, then <b>Matrix.GetLastStatus</b> returns Ok.</para>
+      <para>If at least one method invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object has failed since the previous call to <b>Matrix.GetLastStatus</b>, then <b>Matrix.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="Matrix.Invert">
+    <summary>If this matrix is invertible, the <b>Matrix.Invert</b> method replaces the elements of this matrix with the elements of its inverse.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.IsIdentity">
+    <summary>The <b>Matrix.IsIdentity</b> method determines whether this matrix is the identity matrix.</summary>
+    <returns>If this matrix is the identity matrix, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Matrix.IsInvertible">
+    <summary>The <b>Matrix.IsInvertible</b> method determines whether this matrix is invertible.</summary>
+    <returns>If this matrix is invertible, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Matrix.Matrix">
+    <summary>Creates and initializes a <b>Matrix.Matrix</b> object that represents the identity matrix.</summary>
+  </member>
+  <member name="Matrix.Matrix">
+    <summary>Creates a <b>Matrix.Matrix</b> object based on a rectangle and a point.</summary>
+    <param name="rect">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object. The <b>X</b> data member of the rectangle specifies the matrix element in row 1, column 1. The <b>Y</b> data member of the rectangle specifies the matrix element in row 1, column 2. The <b>Width</b> data member of the rectangle specifies the matrix element in row 2, column 1. The <b>Height</b> data member of the rectangle specifies the matrix element in row 2, column 2.</param>
+    <param name="dstplg">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object. The <b>X</b> data member of the point specifies the matrix element in row 3, column 1. The <b>Y</b> data member of the point specifies the matrix element in row 3, column 2.</param>
+  </member>
+  <member name="Matrix.Matrix">
+    <summary>Creates a <b>Matrix.Matrix</b> object based on a rectangle and a point.</summary>
+    <param name="rect">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object. The <b>X</b> data member of the rectangle specifies the matrix element in row 1, column 1. The <b>Y</b> data member of the rectangle specifies the matrix element in row 1, column 2. The <b>Width</b> data member of the rectangle specifies the matrix element in row 2, column 1. The <b>Height</b> data member of the rectangle specifies the matrix element in row 2, column 2.</param>
+    <param name="dstplg">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> object. The <b>X</b> data member of the point specifies the matrix element in row 3, column 1. The <b>Y</b> data member of the point specifies the matrix element in row 3, column 2.</param>
+  </member>
+  <member name="Matrix.Matrix">
+    <summary>Creates and initializes a <b>Matrix.Matrix</b> object that represents the identity matrix.</summary>
+    <param name="nativeMatrix">TBD</param>
+  </member>
+  <member name="Matrix.Matrix">
+    <summary>Creates and initializes a <b>Matrix.Matrix</b> object based on six numbers that define an affine transformation.</summary>
+    <param name="m11">Real number that specifies the element in the first row, first column—horizontal scaling component or cosine of rotation angle.</param>
+    <param name="m12">Real number that specifies the element in the first row, second column—horizontal shear component or sine of rotation angle.</param>
+    <param name="m21">Real number that specifies the element in the second row, first column—vertical shear component or negative sine of rotation angle.</param>
+    <param name="m22">Real number that specifies the element in the second row, second column—vertical scaling component or cosine of rotation angle.</param>
+    <param name="dx">Real number that specifies the element in the third row, first column—horizontal translation component.</param>
+    <param name="dy">Real number that specifies the element in the third row, second column—vertical translation component.</param>
+  </member>
+  <member name="Matrix.Matrix">
+    <summary>Creates and initializes a <b>Matrix.Matrix</b> object that represents the identity matrix.</summary>
+  </member>
+  <member name="Matrix.Multiply">
+    <summary>The <b>Matrix.Multiply</b> method updates this matrix with the product of itself and another matrix.</summary>
+    <param name="matrix">Pointer to a matrix that will be multiplied by this matrix.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. MatrixOrderPrepend specifies that the passed matrix is on the left, and MatrixOrderAppend specifies that the passed matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.OffsetX">
+    <summary>The <b>Matrix.OffsetX</b> method gets the horizontal translation value of this matrix, which is the element in row 3, column 1.</summary>
+    <returns>This method returns the horizontal translation value of this matrix, which is the element in row 3, column 1.</returns>
+  </member>
+  <member name="Matrix.OffsetY">
+    <summary>The <b>Matrix.OffsetY</b> method gets the vertical translation value of this matrix, which is the element in row 3, column 2.</summary>
+    <returns>This method returns the vertical translation value of this matrix, which is the element in row 3, column 2.</returns>
+  </member>
+  <member name="Matrix.Reset">
+    <summary>The <b>Matrix.Reset</b> method updates this matrix with the elements of the identity matrix.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.Rotate">
+    <summary>The <b>Matrix.Rotate</b> method updates this matrix with the product of itself and a rotation matrix.</summary>
+    <param name="angle">Real number that specifies the angle of rotation in degrees. Positive values specify clockwise rotation.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. MatrixOrderPrepend specifies that the rotation matrix is on the left, and MatrixOrderAppend specifies that the rotation matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.RotateAt">
+    <summary>The <b>Matrix.RotateAt</b> method updates this matrix with the product of itself and a matrix that represents rotation about a specified point.</summary>
+    <param name="angle">Real number that specifies the angle of rotation in degrees. Positive values specify clockwise rotation.</param>
+    <param name="center">Reference to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object that specifies the center of the rotation. This is the point about which the rotation takes place.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. MatrixOrderPrepend specifies that the rotation matrix is on the left, and MatrixOrderAppend specifies that the rotation matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.Scale">
+    <summary>The <b>Matrix.Scale</b> method updates this matrix with the product of itself and a scaling matrix.</summary>
+    <param name="scaleX">Real number that specifies the horizontal scale factor.</param>
+    <param name="scaleY">Real number that specifies the vertical scale factor.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. MatrixOrderPrepend specifies that the scaling matrix is on the left, and MatrixOrderAppend specifies that the scaling matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.SetElements">
+    <summary>The <b>Matrix.SetElements</b> method sets the elements of this matrix.</summary>
+    <param name="m11">Real number that specifies the element in the first row, first column.</param>
+    <param name="m12">Real number that specifies the element in the first row, second column.</param>
+    <param name="m21">Real number that specifies the element in the second row, first column.</param>
+    <param name="m22">Real number that specifies the element in the second row, second column.</param>
+    <param name="dx">Real number that specifies the element in the third row, first column.</param>
+    <param name="dy">Real number that specifies the element in the third row, second column.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.Shear">
+    <summary>The <b>Matrix.Shear</b> method updates this matrix with the product of itself and a shearing matrix.</summary>
+    <param name="shearX">Real number that specifies the horizontal shear factor.</param>
+    <param name="shearY">Real number that specifies the vertical shear factor.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. MatrixOrderPrepend specifies that the shearing matrix is on the left, and MatrixOrderAppend specifies that the shearing matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the Status enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.TransformPoints">
+    <summary>The <b>Matrix.TransformPoints</b> method multiplies each point in an array by this matrix. Each point is treated as a row matrix. The multiplication is performed with the row matrix on the left and this matrix on the right.</summary>
+    <param name="pts">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that, on input, contains the points to be transformed and, on output, receives the transformed points. Each point in the array is transformed (multiplied by this matrix) and updated with the result of the transformation.</param>
+    <param name="count">Optional. Integer that specifies the number of points to be transformed. The default value is 1.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.TransformVectors">
+    <summary>The <b>Matrix.TransformVectors</b> method multiplies each vector in an array by this matrix. The translation elements of this matrix (third row) are ignored. Each vector is treated as a row matrix. The multiplication is performed with the row matrix on the left and this matrix on the right.</summary>
+    <param name="pts">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that, on input, contains the vectors to be transformed and, on output, receives the transformed vectors. Each vector in the array is transformed (multiplied by this matrix) and updated with the result of the transformation.</param>
+    <param name="count">Optional. Integer that specifies the number of vectors to be transformed. The default value is 1.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Matrix.Translate">
+    <summary>The <b>Matrix.Translate</b> method updates this matrix with the product of itself and a translation matrix.</summary>
+    <param name="offsetX">Real number that specifies the horizontal component of the translation.</param>
+    <param name="offsetY">Real number that specifies the vertical component of the translation.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. MatrixOrderPrepend specifies that the translation matrix is on the left, and MatrixOrderAppend specifies that the translation matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

@@ -3,45 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MEM_EXTENDED_PARAMETER">
-    <summary>
-      <para>Represents an extended parameter for a function that manages virtual memory.</para>
-    </summary>
+    <summary>Represents an extended parameter for a function that manages virtual memory.</summary>
   </member>
-  <member name="MEM_EXTENDED_PARAMETER.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="MEM_EXTENDED_PARAMETER.DUMMYSTRUCTNAME"></member>
   <member name="MEM_EXTENDED_PARAMETER.DUMMYSTRUCTNAME.Type">
     <summary>
       <para>A <see cref="MEM_EXTENDED_PARAMETER_TYPE" /> value that indicates the type of the parameter.</para>
-      <para>If <i>Type</i> is set to <b>MemExtendedParameterAddressRequirements</b>, then <i>Pointer</i> must be a pointer to a caller-allocated <a href="https://msdn.microsoft.com/en-us/library/mt832846(v=vs.85).aspx">MEM_ADDRESS_REQUIREMENTS</a> structure that specifies the lowest and highest base address and alignment.</para>
+      <para>If <i>Type</i> is set to <b>MemExtendedParameterAddressRequirements</b>, then <i>Pointer</i> must be a pointer to a caller-allocated <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure that specifies the lowest and highest base address and alignment.</para>
       <para>If <i>Type</i> is set to <b>MemExtendedParameterNumaNode</b>, then <i>ULong</i> must be set to the desired node number.</para>
     </summary>
   </member>
   <member name="MEM_EXTENDED_PARAMETER.DUMMYSTRUCTNAME.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
-  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
-  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.ULong64">
-    <summary></summary>
-  </member>
+  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME"></member>
+  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.ULong64"></member>
   <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.Pointer">
-    <summary>
-      <para>If <i>Type</i> is set to <b>MemExtendedParameterAddressRequirements</b>, then <i>Pointer</i> must be a pointer to a caller-allocated <a href="https://msdn.microsoft.com/en-us/library/mt832846(v=vs.85).aspx">MEM_ADDRESS_REQUIREMENTS</a> structure that specifies the lowest and highest base address and alignment.</para>
-    </summary>
+    <summary>If <i>Type</i> is set to <b>MemExtendedParameterAddressRequirements</b>, then <i>Pointer</i> must be a pointer to a caller-allocated <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure that specifies the lowest and highest base address and alignment.</summary>
   </member>
-  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.Size">
-    <summary></summary>
-  </member>
-  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.Handle">
-    <summary></summary>
-  </member>
+  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.Size"></member>
+  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.Handle"></member>
   <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.ULong">
-    <summary>
-      <para>If <i>Type</i> is set to <b>MemExtendedParameterNumaNode</b>, then <i>ULong</i> must be set to the desired node number.</para>
-    </summary>
+    <summary>If <i>Type</i> is set to <b>MemExtendedParameterNumaNode</b>, then <i>ULong</i> must be set to the desired node number.</summary>
   </member>
 </doc>

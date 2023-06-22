@@ -3,538 +3,165 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFileDialogCustomize.AddCheckButton">
-    <summary>
-      <para>Adds a check button (check box) to the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the check button to add.</para>
-    </param>
-    <param name="pszLabel">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the button text as a null-terminated Unicode string.</para>
-    </param>
-    <param name="bChecked">
-      <para>Type: <b>BOOL</b></para>
-      <para>A <b>BOOL</b> indicating the current state of the check button. <b>TRUE</b> if checked; <b>FALSE</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state for this control is enabled and visible.</para>
-    </remarks>
+    <summary>Adds a check button (check box) to the dialog.</summary>
+    <param name="dwIDCtl">The ID of the check button to add.</param>
+    <param name="pszLabel">A pointer to a buffer that contains the button text as a null-terminated Unicode string.</param>
+    <param name="bChecked">A <b>BOOL</b> indicating the current state of the check button. <b>TRUE</b> if checked; <b>FALSE</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.AddComboBox">
-    <summary>
-      <para>Adds a combo box to the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the combo box to add.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state for this control is enabled and visible.</para>
-    </remarks>
+    <summary>Adds a combo box to the dialog.</summary>
+    <param name="dwIDCtl">The ID of the combo box to add.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.AddControlItem">
-    <summary>
-      <para>Adds an item to a container control in the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the container control to which the item is to be added.</para>
-    </param>
-    <param name="dwIDItem">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the item.</para>
-    </param>
-    <param name="pszLabel">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the item's text, which can be either a label or, in the case of a drop-down list, the item itself. This text is a null-terminated Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state for this item is enabled and visible. Items in control groups cannot be changed after they have been created, with the exception of their enabled and visible states.</para>
-      <para>Container controls include option button groups, combo boxes, drop-down lists on the <b>Open</b> or <b>Save</b> button, and menus.</para>
-    </remarks>
+    <summary>Adds an item to a container control in the dialog.</summary>
+    <param name="dwIDCtl">The ID of the container control to which the item is to be added.</param>
+    <param name="dwIDItem">The ID of the item.</param>
+    <param name="pszLabel">A pointer to a buffer that contains the item's text, which can be either a label or, in the case of a drop-down list, the item itself. This text is a null-terminated Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.AddEditBox">
-    <summary>
-      <para>Adds an edit box control to the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the edit box to add.</para>
-    </param>
-    <param name="pszText">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated Unicode string that provides the default text displayed in the edit box.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state for this control is enabled and visible.</para>
-      <para>To add a label next to the edit box, place it in a visual group with <see cref="IFileDialogCustomize.StartVisualGroup" />.</para>
-    </remarks>
+    <summary>Adds an edit box control to the dialog.</summary>
+    <param name="dwIDCtl">The ID of the edit box to add.</param>
+    <param name="pszText">A pointer to a null-terminated Unicode string that provides the default text displayed in the edit box.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.AddMenu">
-    <summary>
-      <para>Adds a menu to the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the menu to add.</para>
-    </param>
-    <param name="pszLabel">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the menu name as a null-terminated Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state for this control is enabled and visible.</para>
-      <para>To add items to this control, use <see cref="IFileDialogCustomize.AddControlItem" />.</para>
-    </remarks>
+    <summary>Adds a menu to the dialog.</summary>
+    <param name="dwIDCtl">The ID of the menu to add.</param>
+    <param name="pszLabel">A pointer to a buffer that contains the menu name as a null-terminated Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.AddPushButton">
-    <summary>
-      <para>Adds a button to the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the button to add.</para>
-    </param>
-    <param name="pszLabel">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the button text as a null-terminated Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state for this control is enabled and visible.</para>
-    </remarks>
+    <summary>Adds a button to the dialog.</summary>
+    <param name="dwIDCtl">The ID of the button to add.</param>
+    <param name="pszLabel">A pointer to a buffer that contains the button text as a null-terminated Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.AddRadioButtonList">
-    <summary>
-      <para>Adds an option button (also known as radio button) group to the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the option button group to add.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state for this control is enabled and visible.</para>
-    </remarks>
+    <summary>Adds an option button (also known as radio button) group to the dialog.</summary>
+    <param name="dwIDCtl">The ID of the option button group to add.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.AddSeparator">
-    <summary>
-      <para>Adds a separator to the dialog, allowing a visual separation of controls.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The control ID of the separator.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state for this control is enabled and visible.</para>
-    </remarks>
+    <summary>Adds a separator to the dialog, allowing a visual separation of controls.</summary>
+    <param name="dwIDCtl">The control ID of the separator.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.AddText">
-    <summary>
-      <para>Adds text content to the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the text to add.</para>
-    </param>
-    <param name="pszText">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the text as a null-terminated Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state for this control is enabled and visible.</para>
-    </remarks>
+    <summary>Adds text content to the dialog.</summary>
+    <param name="dwIDCtl">The ID of the text to add.</param>
+    <param name="pszText">A pointer to a buffer that contains the text as a null-terminated Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.EnableOpenDropDown">
-    <summary>
-      <para>Enables a drop-down list on the <b>Open</b> or <b>Save</b> button in the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the drop-down list.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The Open or Save button label takes on the text of the first item in the drop-down. This overrides any label set by <see cref="IFileDialog.SetOkButtonLabel" />.</para>
-      <para>Use <see cref="IFileDialogCustomize.AddControlItem" /> to add items to the drop-down.</para>
-    </remarks>
+    <summary>Enables a drop-down list on the <b>Open</b> or <b>Save</b> button in the dialog.</summary>
+    <param name="dwIDCtl">The ID of the drop-down list.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.EndVisualGroup">
-    <summary>
-      <para>Stops the addition of elements to a visual group in the dialog.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IFileDialogCustomize" />
-    <seealso cref="IFileDialogCustomize.StartVisualGroup" />
+    <summary>Stops the addition of elements to a visual group in the dialog.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.GetCheckButtonState">
-    <summary>
-      <para>Gets the current state of a check button (check box) in the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the check box.</para>
-    </param>
-    <param name="pbChecked">
-      <para>Type: <b>BOOL*</b></para>
-      <para>The address of a <b>BOOL</b> value that indicates whether the box is checked. <b>TRUE</b> means checked; <b>FALSE</b>, unchecked.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the current state of a check button (check box) in the dialog.</summary>
+    <param name="dwIDCtl">The ID of the check box.</param>
+    <param name="pbChecked">The address of a <b>BOOL</b> value that indicates whether the box is checked. <b>TRUE</b> means checked; <b>FALSE</b>, unchecked.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.GetControlItemState">
-    <summary>
-      <para>Gets the current state of an item in a container control found in the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the container control.</para>
-    </param>
-    <param name="dwIDItem">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the item.</para>
-    </param>
-    <param name="pdwState">
-      <para>Type: <b>CDCONTROLSTATEF*</b></para>
-      <para>A pointer to a variable that receives one of more values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb762483(v=vs.85)">CDCONTROLSTATE</a> enumeration that indicate the current state of the control.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state of a control item is enabled and visible. Items in control groups cannot be changed after they have been created, with the exception of their enabled and visible states.</para>
-      <para>Container controls include option button groups, combo boxes, drop-down lists on the <b>Open</b> or <b>Save</b> button, and menus.</para>
-    </remarks>
+    <summary>Gets the current state of an item in a container control found in the dialog.</summary>
+    <param name="dwIDCtl">The ID of the container control.</param>
+    <param name="dwIDItem">The ID of the item.</param>
+    <param name="pdwState">A pointer to a variable that receives one of more values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb762483(v=vs.85)">CDCONTROLSTATE</a> enumeration that indicate the current state of the control.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.GetControlState">
-    <summary>
-      <para>Gets the current visibility and enabled states of a given control.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the control in question.</para>
-    </param>
-    <param name="pdwState">
-      <para>Type: <b>CDCONTROLSTATEF*</b></para>
-      <para>A pointer to a variable that receives one or more values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb762483(v=vs.85)">CDCONTROLSTATE</a> enumeration that indicate the current state of the control.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the current visibility and enabled states of a given control.</summary>
+    <param name="dwIDCtl">The ID of the control in question.</param>
+    <param name="pdwState">A pointer to a variable that receives one or more values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb762483(v=vs.85)">CDCONTROLSTATE</a> enumeration that indicate the current state of the control.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.GetEditBoxText">
-    <summary>
-      <para>Gets the current text in an edit box control.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the edit box.</para>
-    </param>
-    <param name="ppszText">
-      <para>Type: <b>WCHAR**</b></para>
-      <para>The address of a pointer to a buffer that receives the text as a null-terminated Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>It is the responsibility of the calling application to free the buffer referenced by <i>ppszText</i> when it is no longer needed. Use <see cref="CoTaskMemFree" /> to free the buffer.</para>
-    </remarks>
+    <summary>Gets the current text in an edit box control.</summary>
+    <param name="dwIDCtl">The ID of the edit box.</param>
+    <param name="ppszText">The address of a pointer to a buffer that receives the text as a null-terminated Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.GetSelectedControlItem">
-    <summary>
-      <para>Gets a particular item from specified container controls in the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the container control.</para>
-    </param>
-    <param name="pdwIDItem">
-      <para>Type: <b>DWORD*</b></para>
-      <para>The ID of the item that the user selected in the control.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To determine the user's final choice, this method can be called on option button groups, combo boxes, and drop-down lists on the <b>Open</b> or <b>Save</b> button after the dialog has closed. This method cannot be called on menus.</para>
-      <para>For option button groups and combo boxes, this method can also be called while the dialog is showing, to determine the current choice.</para>
-    </remarks>
+    <summary>Gets a particular item from specified container controls in the dialog.</summary>
+    <param name="dwIDCtl">The ID of the container control.</param>
+    <param name="pdwIDItem">The ID of the item that the user selected in the control.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.MakeProminent">
-    <summary>
-      <para>Places a control in the dialog so that it stands out compared to other added controls.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the control.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method causes the control to be placed near the <b>Open</b> or <b>Save</b> button instead of being grouped with the rest of the custom controls.</para>
-      <para>Only check buttons (check boxes), push buttons, combo boxes, and menus—or a visual group that contains only a single item of one of those types—can be made prominent.</para>
-      <para>Only one control can be marked in this way. If a dialog has only one added control, that control is marked as prominent by default.</para>
-    </remarks>
+    <summary>Places a control in the dialog so that it stands out compared to other added controls.</summary>
+    <param name="dwIDCtl">The ID of the control.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.RemoveAllControlItems">
-    <summary>
-      <para>Not implemented.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the container control from which to remove the items.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Not implemented.</summary>
+    <param name="dwIDCtl">The ID of the container control from which to remove the items.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.RemoveControlItem">
-    <summary>
-      <para>Removes an item from a container control in the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the container control from which the item is to be removed.</para>
-    </param>
-    <param name="dwIDItem">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Container controls include option button groups, combo boxes, drop-down lists on the <b>Open</b> or <b>Save</b> button, and menus.</para>
-    </remarks>
+    <summary>Removes an item from a container control in the dialog.</summary>
+    <param name="dwIDCtl">The ID of the container control from which the item is to be removed.</param>
+    <param name="dwIDItem">The ID of the item.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.SetCheckButtonState">
-    <summary>
-      <para>Sets the state of a check button (check box) in the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the check box.</para>
-    </param>
-    <param name="bChecked">
-      <para>Type: <b>BOOL</b></para>
-      <para>A <b>BOOL</b> value that indicates whether the box is checked. <b>TRUE</b> means checked; <b>FALSE</b>, unchecked.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the state of a check button (check box) in the dialog.</summary>
+    <param name="dwIDCtl">The ID of the check box.</param>
+    <param name="bChecked">A <b>BOOL</b> value that indicates whether the box is checked. <b>TRUE</b> means checked; <b>FALSE</b>, unchecked.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.SetControlItemState">
-    <summary>
-      <para>Sets the current state of an item in a container control found in the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the container control.</para>
-    </param>
-    <param name="dwIDItem">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the item.</para>
-    </param>
-    <param name="dwState">
-      <para>Type: <b>CDCONTROLSTATEF</b></para>
-      <para>One or more values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb762483(v=vs.85)">CDCONTROLSTATE</a> enumeration that indicate the new state of the control.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state of a control item is enabled and visible. Items in control groups cannot be changed after they have been created, with the exception of their enabled and visible states.</para>
-      <para>Container controls include option button groups, combo boxes, drop-down lists on the <b>Open</b> or <b>Save</b> button, and menus.</para>
-    </remarks>
+    <summary>Sets the current state of an item in a container control found in the dialog.</summary>
+    <param name="dwIDCtl">The ID of the container control.</param>
+    <param name="dwIDItem">The ID of the item.</param>
+    <param name="dwState">One or more values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb762483(v=vs.85)">CDCONTROLSTATE</a> enumeration that indicate the new state of the control.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.SetControlItemText">
-    <summary>
-      <para>Sets the text of a control item. For example, the text that accompanies a radio button or an item in a menu.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the container control.</para>
-    </param>
-    <param name="dwIDItem">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the item.</para>
-    </param>
-    <param name="pszLabel">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated buffer that contains a Unicode string with the text.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default state of a control item is enabled and visible. Items in control groups cannot be changed after they have been created, with the exception of their enabled and visible states.</para>
-      <para>Container controls include option button groups, combo boxes, drop-down lists on the <b>Open</b> or <b>Save</b> button, and menus.</para>
-    </remarks>
+    <summary>Sets the text of a control item. For example, the text that accompanies a radio button or an item in a menu.</summary>
+    <param name="dwIDCtl">The ID of the container control.</param>
+    <param name="dwIDItem">The ID of the item.</param>
+    <param name="pszLabel">A pointer to a null-terminated buffer that contains a Unicode string with the text.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.SetControlLabel">
-    <summary>
-      <para>Sets the text associated with a control, such as button text or an edit box label.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the control whose text is to be changed.</para>
-    </param>
-    <param name="pszLabel">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the text as a null-terminated Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Control labels can be changed at any time, including when the dialog is visible.</para>
-    </remarks>
+    <summary>Sets the text associated with a control, such as button text or an edit box label.</summary>
+    <param name="dwIDCtl">The ID of the control whose text is to be changed.</param>
+    <param name="pszLabel">A pointer to a buffer that contains the text as a null-terminated Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.SetControlState">
-    <summary>
-      <para>Sets the current visibility and enabled states of a given control.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the control in question.</para>
-    </param>
-    <param name="dwState">
-      <para>Type: <b>CDCONTROLSTATEF</b></para>
-      <para>One or more values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb762483(v=vs.85)">CDCONTROLSTATE</a> enumeration that indicate the current state of the control.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When the dialog is shown, controls cannot be added or removed, but the existing controls can be hidden or disabled at any time.</para>
-    </remarks>
+    <summary>Sets the current visibility and enabled states of a given control.</summary>
+    <param name="dwIDCtl">The ID of the control in question.</param>
+    <param name="dwState">One or more values from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb762483(v=vs.85)">CDCONTROLSTATE</a> enumeration that indicate the current state of the control.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.SetEditBoxText">
-    <summary>
-      <para>Sets the text in an edit box control found in the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the edit box.</para>
-    </param>
-    <param name="pszText">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the text as a null-terminated Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the text in an edit box control found in the dialog.</summary>
+    <param name="dwIDCtl">The ID of the edit box.</param>
+    <param name="pszText">A pointer to a buffer that contains the text as a null-terminated Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.SetSelectedControlItem">
-    <summary>
-      <para>Sets the selected state of a particular item in an option button group or a combo box found in the dialog.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the container control.</para>
-    </param>
-    <param name="dwIDItem">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the item to display as selected in the control.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the selected state of a particular item in an option button group or a combo box found in the dialog.</summary>
+    <param name="dwIDCtl">The ID of the container control.</param>
+    <param name="dwIDItem">The ID of the item to display as selected in the control.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize.StartVisualGroup">
-    <summary>
-      <para>Declares a visual group in the dialog. Subsequent calls to any "add" method add those elements to this group.</para>
-    </summary>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the visual group.</para>
-    </param>
-    <param name="pszLabel">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains text, as a null-terminated Unicode string, that appears next to the visual group.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Controls will continue to be added to this visual group until you call <see cref="IFileDialogCustomize.EndVisualGroup" />.</para>
-      <para>A visual group can be hidden and disabled like any other control, except that doing so affects all of the controls within it. Individual members of the visual group can also be hidden and disabled singly.</para>
-    </remarks>
+    <summary>Declares a visual group in the dialog. Subsequent calls to any "add" method add those elements to this group.</summary>
+    <param name="dwIDCtl">The ID of the visual group.</param>
+    <param name="pszLabel">A pointer to a buffer that contains text, as a null-terminated Unicode string, that appears next to the visual group.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogCustomize">
-    <summary>
-      <para>Exposes methods that allow an application to add controls to a common file dialog.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>
-        <see cref="IFileDialogControlEvents" /> is implemented
-by the common file open dialog (CLSID_FileOpenDialog) and
-file save dialog (CLSID_FileSaveDialog).</para>
-      <para>Controls are added to the dialog before the dialog is shown. Their layout is implied by the order in which they are added. Once the dialog is shown, controls cannot be added or removed, but the existing controls can be hidden or disabled at any time. Their labels can also be changed at any time.</para>
-      <para>Container controls are controls that can have items added to them. Container controls include combo boxes, menus, the drop-down list attached to the <b>Open</b> button, and any option button groups. The order that items appear in a container is the order in which they were added. There is no facility for reordering them. IDs are scoped to the parent control. Container controls, with the exception of menus, have a selected item.</para>
-      <para>Items with a container control cannot be changed after they have been created, except for their enabled and visible states. However, they can be added and removed at any time. For example, if you needed to change the text of a menu, you would have to remove the current menu and add another with the correct text.</para>
-    </remarks>
+    <summary>Exposes methods that allow an application to add controls to a common file dialog.</summary>
   </member>
 </doc>

@@ -3,43 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_CUMULATIVE_PRODUCT_OPERATOR_DESC">
-    <summary>
-      <para>Multiplies the elements of a tensor along an axis, writing the running tally of the product into the output tensor.</para>
-      <blockquote>
-        <para>[!IMPORTANT]
-This API is available as part of the DirectML standalone redistributable package (see <a href="https://www.nuget.org/packages/microsoft.ai.directml/">Microsoft.AI.DirectML</a> version 1.5 and later. Also see <a href="https://docs.microsoft.com//windows/ai/directml/dml-version-history">DirectML version history</a>.</para>
-      </blockquote>
-    </summary>
+    <summary>Multiplies the elements of a tensor along an axis, writing the running tally of the product into the output tensor.</summary>
   </member>
   <member name="DML_CUMULATIVE_PRODUCT_OPERATOR_DESC.InputTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>A tensor containing the input data. This is typically the same tensor that was provided as the <i>InputTensor</i> to <see cref="DML_BATCH_NORMALIZATION_OPERATOR_DESC" /> in the forward pass.</para>
       <para>The input tensor containing elements to be multiplied.</para>
     </summary>
   </member>
   <member name="DML_CUMULATIVE_PRODUCT_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the resulting cumulative products to. This tensor must have the same sizes and data type as <i>InputTensor</i>.</para>
-    </summary>
+    <summary>The output tensor to write the resulting cumulative products to. This tensor must have the same sizes and data type as <i>InputTensor</i>.</summary>
   </member>
   <member name="DML_CUMULATIVE_PRODUCT_OPERATOR_DESC.Axis">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The index of the dimension to multiply elements over. This value must be less than the <i>DimensionCount</i> of the <i>InputTensor</i>.</para>
-    </summary>
+    <summary>The index of the dimension to multiply elements over. This value must be less than the <i>DimensionCount</i> of the <i>InputTensor</i>.</summary>
   </member>
   <member name="DML_CUMULATIVE_PRODUCT_OPERATOR_DESC.AxisDirection">
-    <summary>
-      <para>Type: <b><see cref="DML_AXIS_DIRECTION" /></b></para>
-      <para>One of the values of the <see cref="DML_AXIS_DIRECTION" /> enumeration. If set to <b>DML_AXIS_DIRECTION_INCREASING</b>, then the product occurs by traversing the tensor along the specified axis by ascending element index. If set to <b>DML_AXIS_DIRECTION_DECREASING</b>, the reverse is true and the product occurs by traversing elements by descending index.</para>
-    </summary>
+    <summary>One of the values of the <see cref="DML_AXIS_DIRECTION" /> enumeration. If set to <b>DML_AXIS_DIRECTION_INCREASING</b>, then the product occurs by traversing the tensor along the specified axis by ascending element index. If set to <b>DML_AXIS_DIRECTION_DECREASING</b>, the reverse is true and the product occurs by traversing elements by descending index.</summary>
   </member>
   <member name="DML_CUMULATIVE_PRODUCT_OPERATOR_DESC.HasExclusiveProduct">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
-      <para>If <b>TRUE</b>, then the value of the current element is excluded when writing the running tally to the output tensor. If <b>FALSE</b>, then the value of the current element is included in the running tally.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, then the value of the current element is excluded when writing the running tally to the output tensor. If <b>FALSE</b>, then the value of the current element is included in the running tally.</summary>
   </member>
 </doc>

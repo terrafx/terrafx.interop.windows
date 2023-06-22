@@ -3,37 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TIMED_TEXT_ERROR_CODE">
-    <summary>
-      <para>Specifies the kind error that occurred with a timed text track.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used to return error information  from the <see cref="IMFTimedTextTrack.GetErrorCode" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the kind error that occurred with a timed text track.</summary>
   </member>
   <member name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_NOERROR">
-    <summary>
-      <para>No error occurred.</para>
-    </summary>
+    <summary>No error occurred.</summary>
   </member>
   <member name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_FATAL">
-    <summary>
-      <para>A fatal error occurred.</para>
-    </summary>
+    <summary>A fatal error occurred.</summary>
   </member>
   <member name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_DATA_FORMAT">
-    <summary>
-      <para>An error occurred with the data format of the timed text track.</para>
-    </summary>
+    <summary>An error occurred with the data format of the timed text track.</summary>
   </member>
   <member name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_NETWORK">
-    <summary>
-      <para>A network error occurred when trying to load the timed text track.</para>
-    </summary>
+    <summary>A network error occurred when trying to load the timed text track.</summary>
   </member>
   <member name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_INTERNAL">
-    <summary>
-      <para>An internal error occurred.</para>
-    </summary>
+    <summary>An internal error occurred.</summary>
   </member>
 </doc>

@@ -3,13 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LOAD_DLL_DEBUG_INFO">
-    <summary>
-      <para>Contains information about a dynamic-link library (DLL) that has just been loaded.</para>
-    </summary>
-    <seealso cref="CREATE_PROCESS_DEBUG_INFO" />
-    <seealso cref="CREATE_THREAD_DEBUG_INFO" />
-    <seealso cref="DEBUG_EVENT" />
-    <seealso cref="DebugActiveProcess" />
+    <summary>Contains information about a dynamic-link library (DLL) that has just been loaded.</summary>
   </member>
   <member name="LOAD_DLL_DEBUG_INFO.hFile">
     <summary>
@@ -18,30 +12,21 @@
     </summary>
   </member>
   <member name="LOAD_DLL_DEBUG_INFO.lpBaseOfDll">
-    <summary>
-      <para>A pointer to the base address of the DLL in the address space of the process loading the DLL.</para>
-    </summary>
+    <summary>A pointer to the base address of the DLL in the address space of the process loading the DLL.</summary>
   </member>
   <member name="LOAD_DLL_DEBUG_INFO.dwDebugInfoFileOffset">
-    <summary>
-      <para>The offset to the debugging information in the file identified by the <b>hFile</b> member, in bytes. The system expects the debugging information to be in CodeView 4.0 format. This format is currently a derivative of Common Object File Format (COFF).</para>
-    </summary>
+    <summary>The offset to the debugging information in the file identified by the <b>hFile</b> member, in bytes. The system expects the debugging information to be in CodeView 4.0 format. This format is currently a derivative of Common Object File Format (COFF).</summary>
   </member>
   <member name="LOAD_DLL_DEBUG_INFO.nDebugInfoSize">
-    <summary>
-      <para>The size of the debugging information in the file, in bytes. If this member is zero, there is no debugging information.</para>
-    </summary>
+    <summary>The size of the debugging information in the file, in bytes. If this member is zero, there is no debugging information.</summary>
   </member>
   <member name="LOAD_DLL_DEBUG_INFO.lpImageName">
     <summary>
       <para>A pointer to the file name associated with <b>hFile</b>. This member may be <b>NULL</b>, or it may contain the address of a string pointer in the address space of the process being debugged. That address may, in turn, either be <b>NULL</b> or point to the actual filename. If <b>fUnicode</b> is a nonzero value, the name string is Unicode; otherwise, it is ANSI.</para>
-      <para>This member is strictly optional. Debuggers must be prepared to handle the case where <b>lpImageName</b> is <b>NULL</b> or *<b>lpImageName</b> (in the address space of the process being debugged) is <b>NULL</b>. Specifically, the system will never provide an image name for a create process event, and it will not likely pass an image name for the first DLL event. The system will also never provide this information in the case of debugging events that originate from a call to the
-<see cref="DebugActiveProcess" /> function.</para>
+      <para>This member is strictly optional. Debuggers must be prepared to handle the case where <b>lpImageName</b> is <b>NULL</b> or *<b>lpImageName</b> (in the address space of the process being debugged) is <b>NULL</b>. Specifically, the system will never provide an image name for a create process event, and it will not likely pass an image name for the first DLL event. The system will also never provide this information in the case of debugging events that originate from a call to the<see cref="DebugActiveProcess" /> function.</para>
     </summary>
   </member>
   <member name="LOAD_DLL_DEBUG_INFO.fUnicode">
-    <summary>
-      <para>A value that indicates whether a filename specified by <b>lpImageName</b> is Unicode or ANSI. A nonzero value for this member indicates Unicode; zero indicates ANSI.</para>
-    </summary>
+    <summary>A value that indicates whether a filename specified by <b>lpImageName</b> is Unicode or ANSI. A nonzero value for this member indicates Unicode; zero indicates ANSI.</summary>
   </member>
 </doc>

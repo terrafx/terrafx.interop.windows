@@ -3,24 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_SECURITY_INFO">
-    <summary>
-      <para>The <b>WINHTTP_SECURITY_INFO</b> structure contains the SChannel connection and cipher information for a request.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with <see cref="WinHttpQueryOption" /> to retrieve security information for a request by specifying the <b>WINHTTP_OPTION_SECURITY_INFO</b> flag.</para>
-    </remarks>
-    <seealso cref="WinHttpQueryOption" />
+    <summary>The <b>WINHTTP_SECURITY_INFO</b> structure contains the SChannel connection and cipher information for a request.</summary>
   </member>
   <member name="WINHTTP_SECURITY_INFO.ConnectionInfo">
     <summary>
-      <para>
-        <see cref="SecPkgContext_ConnectionInfo" /> containing the SChannel connection information for the request.</para>
-    </summary>
+      <see cref="SecPkgContext_ConnectionInfo" /> containing the SChannel connection information for the request.</summary>
   </member>
   <member name="WINHTTP_SECURITY_INFO.CipherInfo">
     <summary>
-      <para>
-        <see cref="SecPkgContext_CipherInfo" /> containing the SChannel cipher information for the request.</para>
-    </summary>
+      <see cref="SecPkgContext_CipherInfo" /> containing the SChannel cipher information for the request.</summary>
   </member>
 </doc>

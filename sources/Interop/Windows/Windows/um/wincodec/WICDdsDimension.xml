@@ -3,36 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICDdsDimension">
-    <summary>
-      <para>Specifies the dimension type of the data contained in DDS image.</para>
-    </summary>
-    <remarks>
-      <para>Both <b>WICDdsTexture2d</b> and <b>WICDdsTextureCube</b> correspond to <see cref="D3D11_RESOURCE_DIMENSION_TEXTURE2D" />. When using <see cref="ID3D11Device.CreateTexture2D" />, they are distinguished by the flag <see cref="D3D11_RESOURCE_MISC_TEXTURECUBE" /> in the structure <see cref="D3D11_TEXTURE2D_DESC" />.</para>
-    </remarks>
-    <seealso cref="IWICDdsDecoder.GetParameters" />
-    <seealso cref="WICDdsParameters" />
+    <summary>Specifies the dimension type of the data contained in DDS image.</summary>
   </member>
   <member name="WICDdsDimension.WICDdsTexture1D">
-    <summary>
-      <para>DDS image contains a 1-dimensional texture .</para>
-    </summary>
+    <summary>DDS image contains a 1-dimensional texture .</summary>
   </member>
   <member name="WICDdsDimension.WICDdsTexture2D">
-    <summary>
-      <para>DDS image contains a 2-dimensional texture .</para>
-    </summary>
+    <summary>DDS image contains a 2-dimensional texture .</summary>
   </member>
   <member name="WICDdsDimension.WICDdsTexture3D">
-    <summary>
-      <para>DDS image contains a 3-dimensional texture .</para>
-    </summary>
+    <summary>DDS image contains a 3-dimensional texture .</summary>
   </member>
   <member name="WICDdsDimension.WICDdsTextureCube">
-    <summary>
-      <para>The DDS image contains a cube texture represented as an array of 6 faces.</para>
-    </summary>
+    <summary>The DDS image contains a cube texture represented as an array of 6 faces.</summary>
   </member>
-  <member name="WICDdsDimension.WICDDSTEXTURE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICDdsDimension.WICDDSTEXTURE_FORCE_DWORD"></member>
 </doc>

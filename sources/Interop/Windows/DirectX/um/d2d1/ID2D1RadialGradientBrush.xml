@@ -3,116 +3,42 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1RadialGradientBrush.GetCenter">
-    <summary>
-      <para>Retrieves the center of the gradient ellipse.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The center of the gradient ellipse. This value is expressed in the brush's coordinate space.</para>
-    </returns>
-    <seealso cref="ID2D1RadialGradientBrush" />
+    <summary>Retrieves the center of the gradient ellipse.</summary>
+    <returns>The center of the gradient ellipse. This value is expressed in the brush's coordinate space.</returns>
   </member>
   <member name="ID2D1RadialGradientBrush.GetGradientOriginOffset">
-    <summary>
-      <para>Retrieves the offset of the gradient origin relative to the gradient ellipse's center.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The offset of the gradient origin from the center of the gradient ellipse. This value is expressed in the brush's coordinate space.</para>
-    </returns>
-    <seealso cref="ID2D1RadialGradientBrush" />
+    <summary>Retrieves the offset of the gradient origin relative to the gradient ellipse's center.</summary>
+    <returns>The offset of the gradient origin from the center of the gradient ellipse. This value is expressed in the brush's coordinate space.</returns>
   </member>
   <member name="ID2D1RadialGradientBrush.GetGradientStopCollection">
-    <summary>
-      <para>Retrieves the <see cref="ID2D1GradientStopCollection" /> associated with this radial gradient brush object.</para>
-    </summary>
-    <param name="gradientStopCollection">
-      <para>Type: <b><see cref="ID2D1GradientStopCollection" />**</b></para>
-      <para>The  <see cref="ID2D1GradientStopCollection" /> object associated with this linear gradient brush object. This parameter is passed uninitialized.</para>
-    </param>
-    <remarks>
-      <para>
-        <see cref="ID2D1GradientStopCollection" /> contains an array of <see cref="D2D1_GRADIENT_STOP" /> structures and additional information, such as the extend mode and the color interpolation mode.</para>
-    </remarks>
-    <seealso cref="D2D1_GRADIENT_STOP" />
-    <seealso cref="ID2D1GradientStopCollection" />
-    <seealso cref="ID2D1RadialGradientBrush" />
+    <summary>Retrieves the <see cref="ID2D1GradientStopCollection" /> associated with this radial gradient brush object.</summary>
+    <param name="gradientStopCollection">The <see cref="ID2D1GradientStopCollection" /> object associated with this linear gradient brush object. This parameter is passed uninitialized.</param>
   </member>
   <member name="ID2D1RadialGradientBrush.GetRadiusX">
-    <summary>
-      <para>Retrieves the x-radius of the gradient ellipse.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x-radius of the gradient ellipse. This value is expressed in the brush's coordinate space.</para>
-    </returns>
-    <seealso cref="ID2D1RadialGradientBrush" />
+    <summary>Retrieves the x-radius of the gradient ellipse.</summary>
+    <returns>The x-radius of the gradient ellipse. This value is expressed in the brush's coordinate space.</returns>
   </member>
   <member name="ID2D1RadialGradientBrush.GetRadiusY">
-    <summary>
-      <para>Retrieves the y-radius of the gradient ellipse.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y-radius of the gradient ellipse. This value is expressed in the brush's coordinate space.</para>
-    </returns>
-    <seealso cref="ID2D1RadialGradientBrush" />
+    <summary>Retrieves the y-radius of the gradient ellipse.</summary>
+    <returns>The y-radius of the gradient ellipse. This value is expressed in the brush's coordinate space.</returns>
   </member>
   <member name="ID2D1RadialGradientBrush.SetCenter">
-    <summary>
-      <para>Specifies the center of the gradient ellipse in the brush's coordinate space.</para>
-    </summary>
-    <param name="center">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The center of the gradient ellipse, in the brush's coordinate space.</para>
-    </param>
-    <seealso cref="ID2D1RadialGradientBrush" />
+    <summary>Specifies the center of the gradient ellipse in the brush's coordinate space.</summary>
+    <param name="center">The center of the gradient ellipse, in the brush's coordinate space.</param>
   </member>
   <member name="ID2D1RadialGradientBrush.SetGradientOriginOffset">
-    <summary>
-      <para>Specifies the offset of the gradient origin relative to the gradient ellipse's center.</para>
-    </summary>
-    <param name="gradientOriginOffset">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The offset of the gradient origin from the center of the gradient ellipse.</para>
-    </param>
-    <seealso cref="ID2D1RadialGradientBrush" />
+    <summary>Specifies the offset of the gradient origin relative to the gradient ellipse's center.</summary>
+    <param name="gradientOriginOffset">The offset of the gradient origin from the center of the gradient ellipse.</param>
   </member>
   <member name="ID2D1RadialGradientBrush.SetRadiusX">
-    <summary>
-      <para>Specifies the x-radius of the gradient ellipse, in the brush's coordinate space.</para>
-    </summary>
-    <param name="radiusX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x-radius of the gradient ellipse. This value is in the brush's coordinate space.</para>
-    </param>
-    <seealso cref="ID2D1RadialGradientBrush" />
+    <summary>Specifies the x-radius of the gradient ellipse, in the brush's coordinate space.</summary>
+    <param name="radiusX">The x-radius of the gradient ellipse. This value is in the brush's coordinate space.</param>
   </member>
   <member name="ID2D1RadialGradientBrush.SetRadiusY">
-    <summary>
-      <para>Specifies the y-radius of the gradient ellipse, in the brush's coordinate space.</para>
-    </summary>
-    <param name="radiusY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y-radius of the gradient ellipse. This value is in the brush's coordinate space.</para>
-    </param>
-    <seealso cref="ID2D1RadialGradientBrush" />
+    <summary>Specifies the y-radius of the gradient ellipse, in the brush's coordinate space.</summary>
+    <param name="radiusY">The y-radius of the gradient ellipse. This value is in the brush's coordinate space.</param>
   </member>
   <member name="ID2D1RadialGradientBrush">
-    <summary>
-      <para>Paints an area with a radial gradient.</para>
-    </summary>
-    <remarks>
-      <para>The <b>ID2D1RadialGradientBrush</b> is similar to the <see cref="ID2D1LinearGradientBrush" /> in that they both map a collection of gradient stops to a gradient. However, the linear gradient has a start and an end point to define the gradient vector, while the radial gradient uses an ellipse and a gradient origin to define its gradient behavior. To define the position and size of the ellipse, use the <see cref="SetCenter" />, <see cref="SetRadiusX" />, and <see cref="SetRadiusY" /> methods to specify the center, x-radius, and y-radius of the ellipse. The gradient origin is the center of the ellipse, unless a gradient offset is specified by using the <see cref="SetGradientOriginOffset" /> method.</para>
-      <para>The brush maps the gradient stop position 0.0f of the gradient origin, and the position 1.0f is mapped to the ellipse boundary. When the gradient origin is within the ellipse, the contents of the ellipse enclose the entire [0, 1] range of the brush gradient stops. If the gradient origin is outside the bounds of the ellipse, the brush still works, but its gradient is not well-defined.</para>
-      <para>The start point and end point are described in the brush space and are mapped to the render target when the brush is used. Note the starting and ending coordinates are absolute, not relative to the render target size. A value of (0, 0) maps to the upper-left corner of the render target, while a value of (1, 1) maps just one pixel diagonally away from (0, 0). If there is a nonidentity brush transform or render target transform, the brush ellipse and gradient origin are also transformed.</para>
-      <para>It is possible to specify an ellipse that does not completely fill area being painted. When this occurs,       the            <see cref="D2D1_EXTEND_MODE" /> and  setting (specified by the  brush     <see cref="ID2D1GradientStopCollection" />) determines how the remaining area is painted.</para>
-      <h3>Creating ID2D1RadialGradientBrush Objects</h3>
-      <para>To create a radial gradient brush, use the <see cref="ID2D1RenderTarget.CreateRadialGradientBrush" /> method of the render target on which the brush will be used. The brush may be used only with the render target that created it or with the compatible targets for that render target.</para>
-      <para>A radial gradient brush is a device-dependent resource: your application should create radial gradient brushes after it initializes the render target with which the brushes will be used, and recreate the brushes whenever the render target needs recreated. (For more information about resources, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-brushes-overview">Brushes Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/how-to-create-a-radial-gradient-brush">How to Create a Radial Gradient Brush</seealso>
-    <seealso cref="ID2D1Brush" />
+    <summary>Paints an area with a radial gradient.</summary>
   </member>
 </doc>

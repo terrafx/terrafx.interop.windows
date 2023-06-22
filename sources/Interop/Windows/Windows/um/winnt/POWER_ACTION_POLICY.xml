@@ -3,150 +3,124 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POWER_ACTION_POLICY">
-    <summary>
-      <para>Contains information used to set the system power state.</para>
-    </summary>
-    <seealso cref="GLOBAL_USER_POWER_POLICY" />
-    <seealso cref="MACHINE_POWER_POLICY" />
-    <seealso cref="USER_POWER_POLICY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Power/wm-powerbroadcast">WM_POWERBROADCAST</seealso>
+    <summary>Contains information used to set the system power state.</summary>
   </member>
   <member name="POWER_ACTION_POLICY.Action">
-    <summary>
-      <para>The requested system power state. This member must be one of the
-<see cref="POWER_ACTION" /> enumeration type values.</para>
-    </summary>
+    <summary>The requested system power state. This member must be one of the<see cref="POWER_ACTION" /> enumeration type values.</summary>
   </member>
   <member name="POWER_ACTION_POLICY.Flags">
     <summary>
-      <para>A flag that controls how to switch the power state. This member can be one or more of the following
-values.</para>
+      <para>A flag that controls how to switch the power state. This member can be one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_ACTION_CRITICAL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x80000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x80000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Forces a critical suspension.</para>
-          </description>
-        </item>
-        <item>
+          <description>Forces a critical suspension.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_ACTION_DISABLE_WAKES</b>
-                </description>
-              </item>
-              <item>
-                <description>0x40000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x40000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Disables all wake events.</para>
-          </description>
-        </item>
-        <item>
+          <description>Disables all wake events.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_ACTION_LIGHTEST_FIRST</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Uses the first lightest available sleep state.</para>
-          </description>
-        </item>
-        <item>
+          <description>Uses the first lightest available sleep state.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_ACTION_LOCK_CONSOLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Requires entry of the system password upon resume from one of the system standby states.</para>
-          </description>
-        </item>
-        <item>
+          <description>Requires entry of the system password upon resume from one of the system standby states.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_ACTION_OVERRIDE_APPS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Has no effect.</para>
-          </description>
-        </item>
-        <item>
+          <description>Has no effect.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_ACTION_QUERY_ALLOWED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Has no effect.</para>
-          </description>
-        </item>
-        <item>
+          <description>Has no effect.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_ACTION_UI_ALLOWED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Applications can prompt the user for directions on how to prepare for suspension. Sets bit 0 in the
-<i>Flags</i> parameter passed in the <i>lParam</i> parameter of
-<a href="https://docs.microsoft.com//windows/desktop/Power/wm-powerbroadcast">WM_POWERBROADCAST</a>.</para>
-          </description>
-        </item>
+          <description>Applications can prompt the user for directions on how to prepare for suspension. Sets bit 0 in the <i>Flags</i> parameter passed in the <i>lParam</i> parameter of <a href="https://docs.microsoft.com//windows/desktop/Power/wm-powerbroadcast">WM_POWERBROADCAST</a>.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -158,108 +132,96 @@ values.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_FORCE_TRIGGER_RESET</b>
-                </description>
-              </item>
-              <item>
-                <description>0x80000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x80000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Clears a user power button press.</para>
-          </description>
-        </item>
-        <item>
+          <description>Clears a user power button press.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_LEVEL_USER_NOTIFY_EXEC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Specifies a program to be executed.</para>
-          </description>
-        </item>
-        <item>
+          <description>Specifies a program to be executed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_LEVEL_USER_NOTIFY_SOUND</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>User notified using sound.</para>
-          </description>
-        </item>
-        <item>
+          <description>User notified using sound.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_LEVEL_USER_NOTIFY_TEXT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>User notified using the UI.</para>
-          </description>
-        </item>
-        <item>
+          <description>User notified using the UI.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_USER_NOTIFY_BUTTON</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates that the power action is in response to a user power button press.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates that the power action is in response to a user power button press.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_USER_NOTIFY_SHUTDOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates a power action of shutdown/off.</para>
-          </description>
-        </item>
+          <description>Indicates a power action of shutdown/off.</description>
+        </listheader>
       </list>
     </summary>
   </member>

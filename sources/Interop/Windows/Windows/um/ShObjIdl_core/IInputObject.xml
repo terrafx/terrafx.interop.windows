@@ -3,53 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IInputObject.HasFocusIO">
-    <summary>
-      <para>Determines if one of the object's windows has the keyboard focus.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if one of the object's windows has the keyboard focus, or S_FALSE otherwise.</para>
-    </returns>
+    <summary>Determines if one of the object's windows has the keyboard focus.</summary>
+    <returns>Returns S_OK if one of the object's windows has the keyboard focus, or S_FALSE otherwise.</returns>
   </member>
   <member name="IInputObject.TranslateAcceleratorIO">
-    <summary>
-      <para>Enables the object to process keyboard accelerators.</para>
-    </summary>
-    <param name="pMsg">
-      <para>Type: <b>LPMSG</b></para>
-      <para>The address of an <see cref="MSG" /> structure that contains the keyboard message that is being translated.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns <b>S_OK</b> if the accelerator was translated, or <b>S_FALSE</b> otherwise.</para>
-    </returns>
+    <summary>Enables the object to process keyboard accelerators.</summary>
+    <param name="pMsg">The address of an <see cref="MSG" /> structure that contains the keyboard message that is being translated.</param>
+    <returns>Returns <b>S_OK</b> if the accelerator was translated, or <b>S_FALSE</b> otherwise.</returns>
   </member>
   <member name="IInputObject.UIActivateIO">
-    <summary>
-      <para>UI-activates or deactivates the object.</para>
-    </summary>
-    <param name="fActivate">
-      <para>Type: <b>BOOL</b></para>
-      <para>Indicates if the object is being activated or deactivated. If this value is nonzero, the object is being activated. If this value is zero, the object is being deactivated.</para>
-    </param>
-    <param name="pMsg">
-      <para>Type: <b><see cref="MSG" />*</b></para>
-      <para>A pointer to an <see cref="MSG" /> structure that contains the message that caused the activation change. This value may be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>UI-activates or deactivates the object.</summary>
+    <param name="fActivate">Indicates if the object is being activated or deactivated. If this value is nonzero, the object is being activated. If this value is zero, the object is being deactivated.</param>
+    <param name="pMsg">A pointer to an <see cref="MSG" /> structure that contains the message that caused the activation change. This value may be <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IInputObject">
-    <summary>
-      <para>Exposes methods that change UI activation and process accelerators for a user input object contained in the Shell.</para>
-    </summary>
-    <remarks>
-      <para>Implement <b>IInputObject</b> if you are implementing a Shell object that takes user input.</para>
-      <para>You do not call this interface directly. <b>IInputObject</b> is used by the Shell or the browser to notify the object of UI activation changes and to translate keyboard accelerators.</para>
-      <para>
-        <b>IInputObject</b> is derived from <see cref="IUnknown" />. The listed methods are specific to <b>IInputObject</b>.</para>
-    </remarks>
+    <summary>Exposes methods that change UI activation and process accelerators for a user input object contained in the Shell.</summary>
   </member>
 </doc>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SourceInfo">
+    <summary>Represents information about an object’s XAML source document.</summary>
+  </member>
+  <member name="SourceInfo.FileName">
+    <summary>The name of the source document file where the element is declared.</summary>
+  </member>
+  <member name="SourceInfo.LineNumber">
+    <summary>The line number in the source document where the element is declared.</summary>
+  </member>
+  <member name="SourceInfo.ColumnNumber">
+    <summary>The position on the line in the source document where the element is declared.</summary>
+  </member>
+  <member name="SourceInfo.CharPosition">
+    <summary>The character position in the source document.</summary>
+  </member>
+  <member name="SourceInfo.Hash">
+    <summary>The hash of the source document.</summary>
+  </member>
+</doc>

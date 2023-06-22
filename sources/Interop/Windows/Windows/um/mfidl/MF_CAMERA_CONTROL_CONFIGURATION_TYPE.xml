@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_CAMERA_CONTROL_CONFIGURATION_TYPE">
+    <summary>Specifies the configuration type of a camera control.</summary>
+  </member>
+  <member name="MF_CAMERA_CONTROL_CONFIGURATION_TYPE.MF_CAMERA_CONTROL_CONFIGURATION_TYPE_PRESTART">
+    <summary>The camera control must be configured before streaming begins.</summary>
+  </member>
+  <member name="MF_CAMERA_CONTROL_CONFIGURATION_TYPE.MF_CAMERA_CONTROL_CONFIGURATION_TYPE_POSTSTART">
+    <summary>The camera control must be configured after streaming has started.</summary>
+  </member>
+</doc>

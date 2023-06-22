@@ -4,48 +4,29 @@
 <doc>
   <member name="DVINFO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>DVINFO</b> structure describes the format of a digital video (DV) stream.</para>
     </summary>
-    <remarks>
-      <para>The AAUX and VAUX packs are defined in IEC 61834-4.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dv-data-in-the-avi-file-format">DV Data in the AVI File Format</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvinfo-field-settings-in-the-msdv-driver">DVINFO Field Settings in the MSDV Driver</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="DVINFO.dwDVAAuxSrc">
-    <summary>
-      <para>Specifies the audio auxiliary (AAUX) source pack for the first audio block.</para>
-    </summary>
+    <summary>Specifies the audio auxiliary (AAUX) source pack for the first audio block.</summary>
   </member>
   <member name="DVINFO.dwDVAAuxCtl">
-    <summary>
-      <para>Specifies the AAUX source control Pack for the first audio block.</para>
-    </summary>
+    <summary>Specifies the AAUX source control Pack for the first audio block.</summary>
   </member>
   <member name="DVINFO.dwDVAAuxSrc1">
-    <summary>
-      <para>Specifies the AAUX source pack for the second audio block.</para>
-    </summary>
+    <summary>Specifies the AAUX source pack for the second audio block.</summary>
   </member>
   <member name="DVINFO.dwDVAAuxCtl1">
-    <summary>
-      <para>Specifies the AAUX source control pack for the second audio block.</para>
-    </summary>
+    <summary>Specifies the AAUX source control pack for the second audio block.</summary>
   </member>
   <member name="DVINFO.dwDVVAuxSrc">
-    <summary>
-      <para>Specifies the video auxiliary (VAUX) source pack.</para>
-    </summary>
+    <summary>Specifies the video auxiliary (VAUX) source pack.</summary>
   </member>
   <member name="DVINFO.dwDVVAuxCtl">
-    <summary>
-      <para>Specifies the VAUX source control pack.</para>
-    </summary>
+    <summary>Specifies the VAUX source control pack.</summary>
   </member>
   <member name="DVINFO.dwDVReserved">
-    <summary>
-      <para>Reserved. Set this array to zero.</para>
-    </summary>
+    <summary>Reserved. Set this array to zero.</summary>
   </member>
 </doc>

@@ -39,12 +39,8 @@
     </summary>
   </member>
   <member name="IRendezvousSession.SendContextData">
-    <summary>
-      <para>Sends the context data to the remote <a href="https://docs.microsoft.com//previous-versions/windows/desktop/remoteassist/remoteassist-rendezvousapplication">RendezvousApplication</a>.</para>
-    </summary>
-    <param name="bstrData">
-      <para>A <b>BSTR</b> specifying context data for the application.</para>
-    </param>
+    <summary>Sends the context data to the remote <a href="https://docs.microsoft.com//previous-versions/windows/desktop/remoteassist/remoteassist-rendezvousapplication">RendezvousApplication</a>.</summary>
+    <param name="bstrData">A <b>BSTR</b> specifying context data for the application.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -52,61 +48,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The context data was sent successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context data was sent successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The context data passed to the method is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The context data passed to the method is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>There is not enough memory available to send the context data.</para>
-          </description>
-        </item>
+          <description>There is not enough memory available to send the context data.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IRendezvousSession.Terminate">
-    <summary>
-      <para>Terminates the remote <a href="https://docs.microsoft.com//previous-versions/windows/desktop/remoteassist/remoteassist-rendezvousapplication">RendezvousApplication</a>.</para>
-    </summary>
-    <param name="hr">
-      <para>The <b>HRESULT</b> from the application termination.</para>
-    </param>
-    <param name="bstrAppData">
-      <para>Application data.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Terminates the remote <a href="https://docs.microsoft.com//previous-versions/windows/desktop/remoteassist/remoteassist-rendezvousapplication">RendezvousApplication</a>.</summary>
+    <param name="hr">The <b>HRESULT</b> from the application termination.</param>
+    <param name="bstrAppData">Application data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IRendezvousSession">
-    <summary>
-      <para>Exposes methods that send data about the session and that can terminate it.</para>
-    </summary>
-    <remarks>
-      <para>The instant messaging (IM) application implements this interface and passes the object that implements <b>IRendezvousSession</b> and supports the <a href="https://docs.microsoft.com//previous-versions/ms715092(v=vs.85)">DRendezvousSessionEvents</a> connection point.</para>
-      <para>The Windows Remote Assistance application calls <b>IRendezvousSession</b>-&gt;<see cref="AddRef" /> to retain the session after the call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nf-rendezvoussession-irendezvousapplication-setrendezvoussession">SetRendezvousSession</a> completes.</para>
-      <para>The Windows Remote Assistance application calls <b>IRendezvousSession</b>-&gt;<see cref="Release" /> when the session is complete.</para>
-    </remarks>
+    <summary>Exposes methods that send data about the session and that can terminate it.</summary>
   </member>
 </doc>

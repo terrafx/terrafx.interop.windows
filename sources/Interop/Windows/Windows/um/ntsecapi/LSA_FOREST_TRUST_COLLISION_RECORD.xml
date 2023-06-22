@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_FOREST_TRUST_COLLISION_RECORD">
+    <summary>The <b>LSA_FOREST_TRUST_COLLISION_RECORD</b> structure contains information about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Local Security Authority</a> forest trust collision.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_COLLISION_RECORD.Index">
+    <summary>Index of this collision record in the array of <b>LSA_FOREST_TRUST_COLLISION_RECORD</b> structures pointed to by the <b>Entries</b> member of the <see cref="LSA_FOREST_TRUST_COLLISION_INFORMATION" /> structure.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_COLLISION_RECORD.Type">
+    <summary>
+      <para>Type of the collision. The following table shows the possible values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CollisionTdo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Collision between <a href="https://docs.microsoft.com//windows/desktop/SecMgmt/trusteddomain-object">TrustedDomain</a> objects.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CollisionXref</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Collision between cross-references.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CollisionOther</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Collision that is not a collision between <a href="https://docs.microsoft.com//windows/desktop/SecMgmt/trusteddomain-object">TrustedDomain</a> objects or cross-references.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_COLLISION_RECORD.Flags">
+    <summary>
+      <para>Flags that provide more information about the collision. The following table lists the possible values for this member when the <b>Type</b> member is CollisionTdo.</para>
+      <h4>LSA_TLN_DISABLED_NEW (0x00000001)</h4>
+      <h4>LSA_TLN_DISABLED_ADMIN (0x00000002)</h4>
+      <h4>LSA_TLN_DISABLED_CONFLICT (0x00000004)</h4>
+      <para>The following table lists the possible values for this member when the <b>Type</b> member is CollisionXref.</para>
+      <h4>LSA_SID_DISABLED_ADMIN (0x00000001)</h4>
+      <h4>LSA_SID_DISABLED_CONFLICT (0x00000002)</h4>
+      <h4>LSA_NB_DISABLED_ADMIN (0x00000004)</h4>
+      <h4>LSA_NB_DISABLED_CONFLICT (0x00000008)</h4>
+    </summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_COLLISION_RECORD.Name">
+    <summary>
+      <see cref="LSA_UNICODE_STRING" /> structure that contains the name of the collision record.</summary>
+  </member>
+</doc>

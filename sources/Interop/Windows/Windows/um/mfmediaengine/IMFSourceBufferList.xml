@@ -3,30 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSourceBufferList.GetLength">
-    <summary>
-      <para>Gets the number of <see cref="IMFSourceBuffer" /> objects  in the list.</para>
-    </summary>
-    <returns>
-      <para>The number of source buffers in the list.</para>
-    </returns>
-    <seealso cref="IMFSourceBufferList" />
+    <summary>Gets the number of <see cref="IMFSourceBuffer" /> objects in the list.</summary>
+    <returns>The number of source buffers in the list.</returns>
   </member>
   <member name="IMFSourceBufferList.GetSourceBuffer">
-    <summary>
-      <para>Gets the <see cref="IMFSourceBuffer" /> at the specified index in the list.</para>
-    </summary>
-    <param name="index">
-      <para>The index of the source buffer to get.</para>
-    </param>
-    <returns>
-      <para>The source buffer.</para>
-    </returns>
-    <seealso cref="IMFSourceBufferList" />
+    <summary>Gets the <see cref="IMFSourceBuffer" /> at the specified index in the list.</summary>
+    <param name="index">The index of the source buffer to get.</param>
+    <returns>The source buffer.</returns>
   </member>
   <member name="IMFSourceBufferList">
-    <summary>
-      <para>Represents a collection of <see cref="IMFSourceBuffer" /> objects.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Represents a collection of <see cref="IMFSourceBuffer" /> objects.</summary>
   </member>
 </doc>

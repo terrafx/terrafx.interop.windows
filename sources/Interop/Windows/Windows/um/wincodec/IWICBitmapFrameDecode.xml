@@ -3,77 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICBitmapFrameDecode.GetColorContexts">
-    <summary>
-      <para>Retrieves the <see cref="IWICColorContext" /> associated with the image frame.</para>
-    </summary>
+    <summary>Retrieves the <see cref="IWICColorContext" /> associated with the image frame.</summary>
     <param name="cCount">
-      <para>Type: <b>UINT</b></para>
       <para>The number of color contexts to retrieve.</para>
       <para>This value must be the size of, or smaller than, the size available to <i>ppIColorContexts</i>.</para>
     </param>
-    <param name="ppIColorContexts">
-      <para>Type: <b><see cref="IWICColorContext" />**</b></para>
-      <para>A pointer that receives a pointer to the <see cref="IWICColorContext" /> objects.</para>
-    </param>
-    <param name="pcActualCount">
-      <para>Type: <b>UINT*</b></para>
-      <para>A pointer that receives the number of color contexts contained in the image frame.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If NULL is passed for <i>ppIColorContexts</i>, and 0 is passed for <i>cCount</i>, this method will return the total number of color contexts in the image in <i>pcActualCount</i>.</para>
-      <para>The <i>ppIColorContexts</i> array must be filled with valid data: each <see cref="IWICColorContext*" /> in the array must have been created using <see cref="IWICImagingFactory.CreateColorContext" />.</para>
-    </remarks>
+    <param name="ppIColorContexts">A pointer that receives a pointer to the <see cref="IWICColorContext" /> objects.</param>
+    <param name="pcActualCount">A pointer that receives the number of color contexts contained in the image frame.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapFrameDecode.GetMetadataQueryReader">
-    <summary>
-      <para>Retrieves a metadata query reader for the frame.</para>
-    </summary>
-    <param name="ppIMetadataQueryReader">
-      <para>Type: <b><see cref="IWICMetadataQueryReader" />**</b></para>
-      <para>When this method returns, contains a pointer to the frame's metadata query reader.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For image formats with one frame (JPG, PNG, JPEG-XR), the frame-level query reader of the first frame is used to access all image metadata, and the decoder-level query reader isn’t used. For formats with more than one frame (GIF, TIFF), the frame-level query reader for a given frame is used to access metadata specific to that frame, and in the case of GIF a decoder-level metadata reader will be present. If the decoder doesn’t support metadata (BMP, ICO), this will return <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-error-codes">WINCODEC_ERR_UNSUPPORTEDOPERATION</a>.</para>
-    </remarks>
-    <seealso cref="IWICBitmapFrameDecode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Retrieves a metadata query reader for the frame.</summary>
+    <param name="ppIMetadataQueryReader">When this method returns, contains a pointer to the frame's metadata query reader.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapFrameDecode.GetThumbnail">
-    <summary>
-      <para>Retrieves a small preview of the frame, if supported by the codec.</para>
-    </summary>
-    <param name="ppIThumbnail">
-      <para>Type: <b><see cref="IWICBitmapSource" />**</b></para>
-      <para>A pointer that receives a pointer to the <see cref="IWICBitmapSource" /> of the thumbnail.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Not all formats support thumbnails. Joint Photographic Experts Group (JPEG), Tagged Image File Format (TIFF), and Microsoft Windows Digital Photo (WDP) support thumbnails.</para>
-      <h3>Note to Implementers</h3>
-      <para>If the codec does not support thumbnails, return WINCODEC_ERROR_CODECNOTHUMBNAIL rather than E_NOTIMPL.</para>
-    </remarks>
+    <summary>Retrieves a small preview of the frame, if supported by the codec.</summary>
+    <param name="ppIThumbnail">A pointer that receives a pointer to the <see cref="IWICBitmapSource" /> of the thumbnail.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapFrameDecode">
-    <summary>
-      <para>Defines methods for decoding individual image frames of an encoded file.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/dotnet/netframework-3.0/ms771770(v=vs.85)">AITCodec Sample CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso cref="IWICBitmapSource" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
+    <summary>Defines methods for decoding individual image frames of an encoded file.</summary>
   </member>
 </doc>

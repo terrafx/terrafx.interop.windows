@@ -3,36 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_PROVIDER_REGDEFUSAGE">
-    <summary>
-      <para>The <b>CRYPT_PROVIDER_REGDEFUSAGE</b> structure is used by the <see cref="WintrustAddDefaultForUsage" /> function to register callback information about a provider's default usage.</para>
-    </summary>
-    <seealso cref="CRYPT_PROVIDER_DEFUSAGE" />
-    <seealso cref="WINTRUST_DATA" />
-    <seealso cref="WintrustAddDefaultForUsage" />
+    <summary>The <b>CRYPT_PROVIDER_REGDEFUSAGE</b> structure is used by the <see cref="WintrustAddDefaultForUsage" /> function to register callback information about a provider's default usage.</summary>
   </member>
   <member name="CRYPT_PROVIDER_REGDEFUSAGE.cbStruct">
-    <summary>
-      <para>Size, in bytes, of this structure.</para>
-    </summary>
+    <summary>Size, in bytes, of this structure.</summary>
   </member>
   <member name="CRYPT_PROVIDER_REGDEFUSAGE.pgActionID">
-    <summary>
-      <para>GUID that specifies the provider's default action.</para>
-    </summary>
+    <summary>GUID that specifies the provider's default action.</summary>
   </member>
   <member name="CRYPT_PROVIDER_REGDEFUSAGE.pwszDllName">
-    <summary>
-      <para>Pointer to the name of the provider DLL.</para>
-    </summary>
+    <summary>Pointer to the name of the provider DLL.</summary>
   </member>
   <member name="CRYPT_PROVIDER_REGDEFUSAGE.pwszLoadCallbackDataFunctionName">
-    <summary>
-      <para>Pointer to the name of the function that loads the callback data to be returned when the <see cref="WintrustGetDefaultForUsage" /> function is called with the <i>dwAction</i> parameter set to <b>DWACTION_ALLOCANDFILL</b>. This information also exists in the <see cref="WINTRUST_DATA" /> structure.</para>
-    </summary>
+    <summary>Pointer to the name of the function that loads the callback data to be returned when the <see cref="WintrustGetDefaultForUsage" /> function is called with the <i>dwAction</i> parameter set to <b>DWACTION_ALLOCANDFILL</b>. This information also exists in the <see cref="WINTRUST_DATA" /> structure.</summary>
   </member>
   <member name="CRYPT_PROVIDER_REGDEFUSAGE.pwszFreeCallbackDataFunctionName">
-    <summary>
-      <para>Pointer to the name of the function that frees allocated memory when the <see cref="WintrustGetDefaultForUsage" /> function is called with the <i>dwAction</i> parameter set to <b>DWACTION_FREE</b>. This information also exists in the <see cref="WINTRUST_DATA" /> structure.</para>
-    </summary>
+    <summary>Pointer to the name of the function that frees allocated memory when the <see cref="WintrustGetDefaultForUsage" /> function is called with the <i>dwAction</i> parameter set to <b>DWACTION_FREE</b>. This information also exists in the <see cref="WINTRUST_DATA" /> structure.</summary>
   </member>
 </doc>

@@ -5,36 +5,20 @@
   <member name="DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC">
     <summary>
       <para>Performs the following linear quantization function on every element in <i>InputTensor</i> with respect to its corresponding element in <i>ScaleTensor</i> and <i>ZeroPointTensor</i>, placing the results in the corresponding element of <i>OutputTensor</i>.</para>
-      <code>// For uint8 output, Min = 0, Max = 255
-// For int8 output, Min = -128, Max = 127
-f(input, scale, zero_point) = clamp(round(input / scale) + zero_point, Min, Max)
-</code>
+      <code>// For uint8 output, Min = 0, Max = 255 // For int8 output, Min = -128, Max = 127 f(input, scale, zero_point) = clamp(round(input / scale) + zero_point, Min, Max)</code>
       <para>Quantizing involves converting to a lower-precision data type in order to accelerate arithmetic. It's a common way to increase performance at the cost of precision. A group of 8-bit values can be computed faster than a group of 32-bit values can.</para>
     </summary>
-    <seealso cref="DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC" />
   </member>
   <member name="DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor containing the inputs.</para>
-    </summary>
+    <summary>The tensor containing the inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC.ScaleTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor containing the scales.</para>
-    </summary>
+    <summary>The tensor containing the scales. If <i>InputTensor</i> is <b>INT32</b>, then <i>ScaleTensor</i> must be <b>FLOAT32</b>. Otherwise, <i>ScaleTensor</i> must have the same <i>DataType</i> as <i>InputTensor</i>.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC.ZeroPointTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor containing the desired zero point for the quantization.</para>
-    </summary>
+    <summary>The tensor containing the desired zero point for the quantization.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
 </doc>

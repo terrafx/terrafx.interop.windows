@@ -3,38 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXPLORERPANESTATE">
-    <summary>
-      <para>Indicate flags used by <see cref="IExplorerPaneVisibility.GetPaneState" /> to get the current state of the given Windows Explorer pane.</para>
-    </summary>
+    <summary>Indicate flags used by <see cref="IExplorerPaneVisibility.GetPaneState" /> to get the current state of the given Windows Explorer pane.</summary>
   </member>
   <member name="EXPLORERPANESTATE.EPS_DONTCARE">
-    <summary>
-      <para>Do not make any modifications to the pane.</para>
-    </summary>
+    <summary>Do not make any modifications to the pane.</summary>
   </member>
   <member name="EXPLORERPANESTATE.EPS_DEFAULT_ON">
-    <summary>
-      <para>Set the default state of the pane to "on", but respect any user-modified persisted state.</para>
-    </summary>
+    <summary>Set the default state of the pane to "on", but respect any user-modified persisted state.</summary>
   </member>
   <member name="EXPLORERPANESTATE.EPS_DEFAULT_OFF">
-    <summary>
-      <para>Set the default state of the pane to "off".</para>
-    </summary>
+    <summary>Set the default state of the pane to "off".</summary>
   </member>
   <member name="EXPLORERPANESTATE.EPS_STATEMASK">
-    <summary>
-      <para>Unused.</para>
-    </summary>
+    <summary>Unused.</summary>
   </member>
   <member name="EXPLORERPANESTATE.EPS_INITIALSTATE">
-    <summary>
-      <para>Ignore any persisted state from the user, but the user can still modify the state.</para>
-    </summary>
+    <summary>Ignore any persisted state from the user, but the user can still modify the state.</summary>
   </member>
   <member name="EXPLORERPANESTATE.EPS_FORCE">
-    <summary>
-      <para>Users cannot modify the state, that is, they do not have the ability to show or hide the given pane. This option implies EPS_INITIALSTATE.</para>
-    </summary>
+    <summary>Users cannot modify the state, that is, they do not have the ability to show or hide the given pane. This option implies EPS_INITIALSTATE.</summary>
   </member>
 </doc>

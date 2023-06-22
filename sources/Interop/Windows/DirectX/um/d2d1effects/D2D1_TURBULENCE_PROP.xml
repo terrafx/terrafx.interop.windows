@@ -3,24 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_TURBULENCE_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/turbulence">Turbulence effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/turbulence">Turbulence effect</a>.</summary>
   </member>
   <member name="D2D1_TURBULENCE_PROP.D2D1_TURBULENCE_PROP_OFFSET">
     <summary>
       <para>The coordinates where the turbulence output is generated.</para>
-      <para>The algorithm used to generate the Perlin noise is position dependent, so a different offset results in a different output.
-This property is not bounded and the units are specified in DIPs.</para>
-      <para>
-        <b>Note</b>  The offset does not have the same effect as a translation because the noise function output is infinite and the function will wrap around the tile.</para>
-      <para>The type is <see cref="D2D1_VECTOR_2F" />.</para>
-      <para>The default value is {0.0f, 0.0f}.</para>
-    </summary>
+      <para>The algorithm used to generate the Perlin noise is position dependent, so a different offset results in a different output. This property is not bounded and the units are specified in DIPs.</para>
+      <div>
+        <b>Note</b>  The offset does not have the same effect as a translation because the noise function output is infinite and the function will wrap around the tile.</div>The type is <see cref="D2D1_VECTOR_2F" />. <para>The default value is {0.0f, 0.0f}.</para></summary>
   </member>
-  <member name="D2D1_TURBULENCE_PROP.D2D1_TURBULENCE_PROP_SIZE">
-    <summary></summary>
-  </member>
+  <member name="D2D1_TURBULENCE_PROP.D2D1_TURBULENCE_PROP_SIZE"></member>
   <member name="D2D1_TURBULENCE_PROP.D2D1_TURBULENCE_PROP_BASE_FREQUENCY">
     <summary>
       <para>The base frequencies in the X and Y direction. This property is a float and must be greater than 0. The units are specified in 1/DIPs.</para>
@@ -60,7 +52,5 @@ This property is not bounded and the units are specified in DIPs.</para>
       <para>The default value is FALSE.</para>
     </summary>
   </member>
-  <member name="D2D1_TURBULENCE_PROP.D2D1_TURBULENCE_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_TURBULENCE_PROP.D2D1_TURBULENCE_PROP_FORCE_DWORD"></member>
 </doc>

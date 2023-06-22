@@ -3,27 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDMLDeviceChild.GetDevice">
-    <summary>
-      <para>Retrieves the DirectML device that was used to create this object.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLDevice" />.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>A pointer to a memory block that receives a pointer to the DirectML device. This is the address of a pointer to an <see cref="IDMLDevice" />, representing  the DirectML device.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLDeviceChild" />
+    <summary>Retrieves the DirectML device that was used to create this object.</summary>
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLDevice" />.</param>
+    <param name="ppv">A pointer to a memory block that receives a pointer to the DirectML device. This is the address of a pointer to an <see cref="IDMLDevice" />, representing the DirectML device.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLDeviceChild">
-    <summary>
-      <para>An interface implemented by all objects created from the DirectML device. The <b>IDMLDeviceChild</b> interface inherits from <see cref="IDMLObject" />.</para>
-    </summary>
-    <seealso cref="IDMLObject" />
+    <summary>An interface implemented by all objects created from the DirectML device. The <b>IDMLDeviceChild</b> interface inherits from <see cref="IDMLObject" />.</summary>
   </member>
 </doc>

@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264">
-    <summary>
-      <para>Represents the GOP structure for H.264 video encoding.</para>
-    </summary>
+    <summary>Represents the GOP structure for H.264 video encoding.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264.GOPLength">
-    <summary>
-      <para>The distance between I-frames in the sequence, or the number of pictures on a GOP. If set to 0, only the first frame will be an I frame (infinite GOP).</para>
-    </summary>
+    <summary>The distance between I-frames in the sequence, or the number of pictures on a GOP. If set to 0, only the first frame will be an I frame (infinite GOP).</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264.PPicturePeriod">
     <summary>
@@ -45,22 +41,12 @@
     </summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264.pic_order_cnt_type">
-    <summary>
-      <para>Specifies the picture order count type filter mode as defined in the H264 standard under pic_order_cnt_type in the sequence parameter set. The value of pic_order_cnt_type shall be in the range of 0 to 2, inclusive.</para>
-    </summary>
+    <summary>Specifies the picture order count type filter mode as defined in the H264 standard under pic_order_cnt_type in the sequence parameter set. The value of pic_order_cnt_type shall be in the range of 0 to 2, inclusive.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264.log2_max_frame_num_minus4">
-    <summary>
-      <para>Specifies the value of the variable MaxFrameNum that is used in frame_num related derivations as follows:
-MaxFrameNum = 2^(log2_max_frame_num_minus4 + 4)
-The value of log2_max_frame_num_minus4 shall be in the range of 0 to 12, inclusive.</para>
-    </summary>
+    <summary>Specifies the value of the variable MaxFrameNum that is used in frame_num related derivations as follows: MaxFrameNum = 2^(log2_max_frame_num_minus4 + 4) The value of log2_max_frame_num_minus4 shall be in the range of 0 to 12, inclusive.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264.log2_max_pic_order_cnt_lsb_minus4">
-    <summary>
-      <para>Specifies the value of the variable MaxPicOrderCntLsb that is used in the decoding process for picture order count as specified in clause 8.2.1 as follows:
-MaxPicOrderCntLsb = 2^ (log2_max_pic_order_cnt_lsb_minus4 + 4)
-The value of log2_max_pic_order_cnt_lsb_minus4 shall be in the range of 0 to 12, inclusive.</para>
-    </summary>
+    <summary>Specifies the value of the variable MaxPicOrderCntLsb that is used in the decoding process for picture order count as specified in clause 8.2.1 as follows: MaxPicOrderCntLsb = 2^ (log2_max_pic_order_cnt_lsb_minus4 + 4) The value of log2_max_pic_order_cnt_lsb_minus4 shall be in the range of 0 to 12, inclusive.</summary>
   </member>
 </doc>

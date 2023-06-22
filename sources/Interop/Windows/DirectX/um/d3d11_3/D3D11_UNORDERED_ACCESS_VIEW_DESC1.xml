@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1">
-    <summary>
-      <para>Describes the subresources from a resource that are accessible using an unordered-access view.</para>
-    </summary>
-    <remarks>
-      <para>An unordered-access-view description is passed into <see cref="ID3D11Device3.CreateUnorderedAccessView1" /> to create a view.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Describes the subresources from a resource that are accessible using an unordered-access view.</summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.CD3D11_UNORDERED_ACCESS_VIEW_DESC1">
-    <summary>
-      <para>TBD</para>
-    </summary>
+    <summary>TBD</summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.D3D11_UNORDERED_ACCESS_VIEW_DESC1">
     <summary>
@@ -33,96 +25,34 @@
       <h4>- Texture3D</h4>
       <para>A <see cref="D3D11_TEX3D_UAV" /> structure that specifies subresources in a 3D texture that can be accessed.</para>
       <h4>- ViewDimension</h4>
-      <para>A <see cref="D3D11_UAV_DIMENSION" />-typed value that  specifies the resource type of the view. This type is the same as the resource type of the underlying resource. This member also determines which _UAV to use in the union below.</para>
-    </summary>
-  </member>
-  <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.r">
-    <summary>
-      <para>A <see cref="D3D11_BUFFER_UAV" /> structure that specifies which buffer elements can be accessed.</para>
-    </summary>
-  </member>
-  <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.t">
-    <summary>
-      <para>A <see cref="DXGI_FORMAT" />-typed value that specifies the data format.</para>
-    </summary>
-  </member>
-  <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.re1D">
-    <summary>
-      <para>A <see cref="D3D11_TEX1D_UAV" /> structure that specifies the subresources in a 1D texture that can be accessed.</para>
-    </summary>
-  </member>
-  <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.re1DArray">
-    <summary>
-      <para>A <see cref="D3D11_TEX1D_ARRAY_UAV" /> structure that specifies the subresources in a 1D texture array that can be accessed.</para>
-    </summary>
-  </member>
-  <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.re2D">
-    <summary>
-      <para>A <see cref="D3D11_TEX2D_UAV1" /> structure that specifies the subresources in a 2D texture that can be accessed.</para>
-    </summary>
-  </member>
-  <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.re2DArray">
-    <summary>
-      <para>A <see cref="D3D11_TEX2D_ARRAY_UAV1" /> structure that specifies the subresources in a 2D texture array that can be accessed.</para>
-    </summary>
-  </member>
-  <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.re3D">
-    <summary>
-      <para>A <see cref="D3D11_TEX3D_UAV" /> structure that specifies subresources in a 3D texture that can be accessed.</para>
-    </summary>
-  </member>
-  <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.imension">
-    <summary>
-      <para>A <see cref="D3D11_UAV_DIMENSION" />-typed value that  specifies the resource type of the view. This type is the same as the resource type of the underlying resource. This member also determines which _UAV to use in the union below.</para>
+      <para>A <see cref="D3D11_UAV_DIMENSION" />-typed value that specifies the resource type of the view. This type is the same as the resource type of the underlying resource. This member also determines which _UAV to use in the union below.</para>
     </summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1">
-    <summary>
-      <para>Describes the subresources from a resource that are accessible using an unordered-access view.</para>
-    </summary>
-    <remarks>
-      <para>An unordered-access-view description is passed into <see cref="ID3D11Device3.CreateUnorderedAccessView1" /> to create a view.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Describes the subresources from a resource that are accessible using an unordered-access view.</summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.Format">
-    <summary>
-      <para>A <see cref="DXGI_FORMAT" />-typed value that specifies the data format.</para>
-    </summary>
+    <summary>A <see cref="DXGI_FORMAT" />-typed value that specifies the data format.</summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.ViewDimension">
-    <summary>
-      <para>A <see cref="D3D11_UAV_DIMENSION" />-typed value that  specifies the resource type of the view. This type is the same as the resource type of the underlying resource. This member also determines which _UAV to use in the union below.</para>
-    </summary>
+    <summary>A <see cref="D3D11_UAV_DIMENSION" />-typed value that specifies the resource type of the view. This type is the same as the resource type of the underlying resource. This member also determines which _UAV to use in the union below.</summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.Buffer">
-    <summary>
-      <para>A <see cref="D3D11_BUFFER_UAV" /> structure that specifies which buffer elements can be accessed.</para>
-    </summary>
+    <summary>A <see cref="D3D11_BUFFER_UAV" /> structure that specifies which buffer elements can be accessed.</summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.Texture1D">
-    <summary>
-      <para>A <see cref="D3D11_TEX1D_UAV" /> structure that specifies the subresources in a 1D texture that can be accessed.</para>
-    </summary>
+    <summary>A <see cref="D3D11_TEX1D_UAV" /> structure that specifies the subresources in a 1D texture that can be accessed.</summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.Texture1DArray">
-    <summary>
-      <para>A <see cref="D3D11_TEX1D_ARRAY_UAV" /> structure that specifies the subresources in a 1D texture array that can be accessed.</para>
-    </summary>
+    <summary>A <see cref="D3D11_TEX1D_ARRAY_UAV" /> structure that specifies the subresources in a 1D texture array that can be accessed.</summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.Texture2D">
-    <summary>
-      <para>A <see cref="D3D11_TEX2D_UAV1" /> structure that specifies the subresources in a 2D texture that can be accessed.</para>
-    </summary>
+    <summary>A <see cref="D3D11_TEX2D_UAV1" /> structure that specifies the subresources in a 2D texture that can be accessed.</summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.Texture2DArray">
-    <summary>
-      <para>A <see cref="D3D11_TEX2D_ARRAY_UAV1" /> structure that specifies the subresources in a 2D texture array that can be accessed.</para>
-    </summary>
+    <summary>A <see cref="D3D11_TEX2D_ARRAY_UAV1" /> structure that specifies the subresources in a 2D texture array that can be accessed.</summary>
   </member>
   <member name="D3D11_UNORDERED_ACCESS_VIEW_DESC1.Texture3D">
-    <summary>
-      <para>A <see cref="D3D11_TEX3D_UAV" /> structure that specifies subresources in a 3D texture that can be accessed.</para>
-    </summary>
+    <summary>A <see cref="D3D11_TEX3D_UAV" /> structure that specifies subresources in a 3D texture that can be accessed.</summary>
   </member>
 </doc>

@@ -3,42 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MSHCTX">
-    <summary>
-      <para>Specifies the destination context, which is the process in which the unmarshaling is to be done.</para>
-    </summary>
-    <seealso cref="CoGetMarshalSizeMax" />
-    <seealso cref="CoGetStandardMarshal" />
-    <seealso cref="CoMarshalInterface" />
-    <seealso cref="IMarshal" />
-    <seealso cref="IRpcChannelBuffer" />
-    <seealso cref="IStdMarshalInfo" />
+    <summary>Specifies the destination context, which is the process in which the unmarshaling is to be done.</summary>
   </member>
   <member name="MSHCTX.MSHCTX_LOCAL">
-    <summary>
-      <para>The unmarshaling process is local and has shared memory access with the marshaling process.</para>
-    </summary>
+    <summary>The unmarshaling process is local and has shared memory access with the marshaling process.</summary>
   </member>
   <member name="MSHCTX.MSHCTX_NOSHAREDMEM">
-    <summary>
-      <para>The unmarshaling process does not have shared memory access with the marshaling process.</para>
-    </summary>
+    <summary>The unmarshaling process does not have shared memory access with the marshaling process.</summary>
   </member>
   <member name="MSHCTX.MSHCTX_DIFFERENTMACHINE">
-    <summary>
-      <para>The unmarshaling process is on a different computer. The marshaling code cannot assume that a particular piece of application code is installed on that computer.</para>
-    </summary>
+    <summary>The unmarshaling process is on a different computer. The marshaling code cannot assume that a particular piece of application code is installed on that computer.</summary>
   </member>
   <member name="MSHCTX.MSHCTX_INPROC">
-    <summary>
-      <para>The unmarshaling will be done in another apartment in the same process.</para>
-    </summary>
+    <summary>The unmarshaling will be done in another apartment in the same process.</summary>
   </member>
   <member name="MSHCTX.MSHCTX_CROSSCTX">
-    <summary>
-      <para>Create a new context in the current apartment.</para>
-    </summary>
+    <summary>Create a new context in the current apartment.</summary>
   </member>
-  <member name="MSHCTX.MSHCTX_RESERVED1">
-    <summary></summary>
-  </member>
+  <member name="MSHCTX.MSHCTX_RESERVED1"></member>
 </doc>

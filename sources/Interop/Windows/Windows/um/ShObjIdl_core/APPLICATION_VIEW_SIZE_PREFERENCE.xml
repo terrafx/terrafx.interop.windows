@@ -3,43 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPLICATION_VIEW_SIZE_PREFERENCE">
-    <summary>
-      <para>Defines the set of possible general window (app view) size preferences. Used by <see cref="ILaunchSourceViewSizePreference.GetSourceViewSizePreference" /> and <see cref="ILaunchTargetViewSizePreference.GetTargetViewSizePreference" />.</para>
-    </summary>
-    <seealso cref="IApplicationDesignModeSettings2.GetApplicationViewOrientation" />
-    <seealso cref="IApplicationDesignModeSettings2.SetApplicationViewOrientation" />
+    <summary>Defines the set of possible general window (app view) size preferences. Used by <see cref="ILaunchSourceViewSizePreference.GetSourceViewSizePreference" /> and <see cref="ILaunchTargetViewSizePreference.GetTargetViewSizePreference" />.</summary>
   </member>
   <member name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_DEFAULT">
-    <summary>
-      <para>The app does not specify a window size preference. Windows, rather than the app, sets the size preference, which defaults to <b>AVSP_USE_HALF</b>.</para>
-    </summary>
+    <summary>The app does not specify a window size preference. Windows, rather than the app, sets the size preference, which defaults to <b>AVSP_USE_HALF</b>.</summary>
   </member>
   <member name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_USE_LESS">
-    <summary>
-      <para>Prefers to use less than 50% of the available horizontal screen pixels.</para>
-    </summary>
+    <summary>Prefers to use less than 50% of the available horizontal screen pixels.</summary>
   </member>
   <member name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_USE_HALF">
-    <summary>
-      <para>Prefers to use 50% (half) of the available horizontal screen pixels.</para>
-    </summary>
+    <summary>Prefers to use 50% (half) of the available horizontal screen pixels.</summary>
   </member>
   <member name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_USE_MORE">
-    <summary>
-      <para>Prefers to use more than 50% of the available horizontal screen pixels.</para>
-    </summary>
+    <summary>Prefers to use more than 50% of the available horizontal screen pixels.</summary>
   </member>
   <member name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_USE_MINIMUM">
-    <summary>
-      <para>Prefers to use the minimum horizontal pixel width (either 320 or 500 pixels) specified in the app's manifest.</para>
-    </summary>
+    <summary>Prefers to use the minimum horizontal pixel width (either 320 or 500 pixels) specified in the app's manifest.</summary>
   </member>
   <member name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_USE_NONE">
-    <summary>
-      <para>The window has no visible component.</para>
-    </summary>
+    <summary>The window has no visible component.</summary>
   </member>
-  <member name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_CUSTOM">
-    <summary></summary>
-  </member>
+  <member name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_CUSTOM"></member>
 </doc>

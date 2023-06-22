@@ -3,922 +3,427 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Properties.GetPropertyCount">
-    <summary>
-      <para>Gets the number of top-level properties.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>This method returns the number of custom (non-system) properties that can be accessed by the object.</para>
-    </returns>
-    <remarks>
-      <para>This method returns the number of custom properties on the <see cref="ID2D1Properties" /> interface. System properties and sub-properties are part of a closed set, and are enumerable by iterating over this closed set.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+    <summary>Gets the number of top-level properties.</summary>
+    <returns>This method returns the number of custom (non-system) properties that can be accessed by the object.</returns>
   </member>
   <member name="ID2D1Properties.GetPropertyIndex">
-    <summary>
-      <para>Gets the index corresponding to the given property name.</para>
-    </summary>
-    <param name="name">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The name of the property to retrieve.</para>
-    </param>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the corresponding property name.</para>
-    </returns>
-    <remarks>
-      <para>If the property doesn't exist, then this method returns <a href="https://docs.microsoft.com//windows/win32/direct2d/direct2d-constants#d2d1_invalid_property_index-uintmax">D2D1_INVALID_PROPERTY_INDEX</a>. This reserved value will never map to a valid index, and will cause <b>NULL</b> or sentinel values to be returned from other parts of the property interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/direct2d/direct2d-constants#d2d1_invalid_property_index-uintmax">D2D1_INVALID_PROPERTY_INDEX</seealso>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+    <summary>Gets the index corresponding to the given property name.</summary>
+    <param name="name">The name of the property to retrieve.</param>
+    <returns>The index of the corresponding property name.</returns>
   </member>
   <member name="ID2D1Properties.GetPropertyName">
-    <summary>
-      <para>Gets the property name that corresponds to the given index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the property for which the name is being returned.</para>
-    </param>
-    <param name="name">
-      <para>Type: <b>PWSTR</b></para>
-      <para>When this method returns, contains the name being retrieved.</para>
-    </param>
-    <param name="nameCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of characters in the <i>name</i> buffer.</para>
-    </param>
+    <summary>Gets the property name that corresponds to the given index.</summary>
+    <param name="index">The index of the property for which the name is being returned.</param>
+    <param name="name">When this method returns, contains the name being retrieved.</param>
+    <param name="nameCount">The number of characters in the <i>name</i> buffer.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)</description>
           <description>The supplied buffer was too small to accommodate the data.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns an empty string if <i>index</i> is invalid. If the method returns <b>RESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)</b>, <i>name</i> will still be filled and truncated.</para>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
   </member>
   <member name="ID2D1Properties.GetPropertyName">
-    <summary>
-      <para>Gets the property name that corresponds to the given index. This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>U</b></para>
-      <para>The index of the property for which the name is being returned.</para>
-    </param>
-    <param name="name">
-      <para>Type: <b>PWSTR</b></para>
-      <para>When this method returns, contains the name being retrieved.</para>
-    </param>
-    <param name="nameCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of characters in the <i>name</i> buffer.</para>
-    </param>
+    <summary>Gets the property name that corresponds to the given index. This is a template overload. See Remarks.</summary>
+    <param name="index">The index of the property for which the name is being returned.</param>
+    <param name="name">When this method returns, contains the name being retrieved.</param>
+    <param name="nameCount">The number of characters in the <i>name</i> buffer.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)</description>
           <description>The supplied buffer was too small to accommodate the data.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <para>This method returns an empty string if <i>index</i> is invalid. If the method returns <b>RESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)</b>, <i>name</i> will still be filled and truncated.</para>
-      <code>template&lt;typename U&gt;
-HRESULT GetPropertyName(
-U index,
-_Out_writes_(nameCount) PWSTR name,
-UINT32 nameCount
-) CONST;
-</code>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+        </listheader>
+      </list>�</returns>
   </member>
   <member name="ID2D1Properties.GetPropertyNameLength">
-    <summary>
-      <para>Gets  the number of characters for the given property name.  This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>U</b></para>
-      <para>The index of the property name to retrieve.</para>
-    </param>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>This method returns the size in characters of the name corresponding to the given property index, or zero if the property index does not exist.</para>
-    </returns>
-    <remarks>
-      <para>The value returned by this method can be used to ensure that the buffer size for <see cref="GetPropertyName" /> is appropriate.</para>
-      <code>template&lt;typename U&gt;
-UINT32 GetPropertyNameLength(
-U index
-) CONST;
-</code>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+    <summary>Gets the number of characters for the given property name. This is a template overload. See Remarks.</summary>
+    <param name="index">The index of the property name to retrieve.</param>
+    <returns>This method returns the size in characters of the name corresponding to the given property index, or zero if the property index does not exist.</returns>
   </member>
   <member name="ID2D1Properties.GetPropertyNameLength">
-    <summary>
-      <para>Gets  the number of characters for the given property name.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the property name to retrieve.</para>
-    </param>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>This method returns the size in characters of the name corresponding to the given property index, or zero if the property index does not exist.</para>
-    </returns>
-    <remarks>
-      <para>The value returned by this method can be used to ensure that the buffer size for <see cref="GetPropertyName" /> is appropriate.</para>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+    <summary>Gets the number of characters for the given property name.</summary>
+    <param name="index">The index of the property name to retrieve.</param>
+    <returns>This method returns the size in characters of the name corresponding to the given property index, or zero if the property index does not exist.</returns>
   </member>
   <member name="ID2D1Properties.GetSubProperties">
-    <summary>
-      <para>Gets the sub-properties of the provided property by index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the  sub-properties to be retrieved.</para>
-    </param>
-    <param name="subProperties">
-      <para>Type: <b><see cref="ID2D1Properties" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the sub-properties.</para>
-    </param>
+    <summary>Gets the sub-properties of the provided property by index.</summary>
+    <param name="index">The index of the sub-properties to be retrieved.</param>
+    <param name="subProperties">When this method returns, contains the address of a pointer to the sub-properties.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_NO_SUBPROPERTIES</description>
           <description>The specified property does not exist.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If there are no sub-properties, <i>subProperties</i> will be <b>NULL</b>, and <b>D2DERR_NO_SUBPROPERTIES</b> will be returned.</para>
-    </remarks>
-    <seealso cref="ID2D1Properties" />
   </member>
   <member name="ID2D1Properties.GetSubProperties">
-    <summary>
-      <para>Gets the sub-properties of the provided property by index. This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>U</b></para>
-      <para>The index of the  sub-properties to be retrieved.</para>
-    </param>
-    <param name="subProperties">
-      <para>Type: <b><see cref="ID2D1Properties" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the sub-properties.</para>
-    </param>
+    <summary>Gets the sub-properties of the provided property by index. This is a template overload. See Remarks.</summary>
+    <param name="index">The index of the sub-properties to be retrieved.</param>
+    <param name="subProperties">When this method returns, contains the address of a pointer to the sub-properties.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_NO_SUBPROPERTIES</description>
           <description>The specified property does not exist.</description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <para>If there are no sub-properties, <i>subProperties</i> will be <b>NULL</b>, and <b>D2DERR_NO_SUBPROPERTIES</b> will be returned.</para>
-      <code>template&lt;typename U&gt;
-HRESULT GetSubProperties(
-U index,
-_Outptr_opt_ ID2D1Properties **subProperties
-) CONST;
-</code>
-    </remarks>
-    <seealso cref="ID2D1Properties" />
+        </listheader>
+      </list>�</returns>
   </member>
   <member name="ID2D1Properties.GetType">
     <summary>
       <para>Gets the <see cref="D2D1_PROPERTY_TYPE" /> of the selected property.</para>
       <para>This is a template overload. See Remarks.</para>
     </summary>
-    <param name="index">
-      <para>Type: <b>U</b></para>
-      <para>The index of the property for which the type will be retrieved.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_PROPERTY_TYPE" /></b></para>
-      <para>This method returns a <see cref="D2D1_PROPERTY_TYPE" />-typed value for the type of the selected property.</para>
-    </returns>
-    <remarks>
-      <para>If the property does not exist, the method returns <see cref="D2D1_PROPERTY_TYPE_UNKNOWN" />.</para>
-      <code>template&lt;typename U&gt;
-D2D1_PROPERTY_TYPE GetType(
-U index
-) CONST;
-</code>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_PROPERTY_TYPE" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1Properties" />
+    <param name="index">The index of the property for which the type will be retrieved.</param>
+    <returns>This method returns a <see cref="D2D1_PROPERTY_TYPE" />-typed value for the type of the selected property.</returns>
   </member>
   <member name="ID2D1Properties.GetType">
-    <summary>
-      <para>Gets the <see cref="D2D1_PROPERTY_TYPE" /> of the selected property.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the property for which the type will be retrieved.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_PROPERTY_TYPE" /></b></para>
-      <para>This method returns a <see cref="D2D1_PROPERTY_TYPE" />-typed value for the type of the selected property.</para>
-    </returns>
-    <remarks>
-      <para>If the property does not exist, the method returns <see cref="D2D1_PROPERTY_TYPE_UNKNOWN" />.</para>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_PROPERTY_TYPE" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1Properties" />
+    <summary>Gets the <see cref="D2D1_PROPERTY_TYPE" /> of the selected property.</summary>
+    <param name="index">The index of the property for which the type will be retrieved.</param>
+    <returns>This method returns a <see cref="D2D1_PROPERTY_TYPE" />-typed value for the type of the selected property.</returns>
   </member>
   <member name="ID2D1Properties.GetValue">
-    <summary>
-      <para>Gets  the value of the property by index. This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>U</b></para>
-      <para>The index of the property from which the value is to be obtained.</para>
-    </param>
-    <returns>
-      <para>Type: <b>T</b></para>
-      <para>Returns the value requested.</para>
-    </returns>
-    <remarks>
-      <code>template&lt;typename T, typename U&gt;
-T GetValue(
-U index
-) const;
-</code>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+    <summary>Gets the value of the property by index. This is a template overload. See Remarks.</summary>
+    <param name="index">The index of the property from which the value is to be obtained.</param>
+    <returns>Returns the value requested.</returns>
   </member>
   <member name="ID2D1Properties.GetValue">
-    <summary>
-      <para>Gets  the value of the specified property by index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the property from which the data is to be obtained.</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>BYTE*</b></para>
-      <para>When this method returns, contains a pointer to the data requested.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of bytes in the data to be retrieved.</para>
-    </param>
+    <summary>Gets the value of the specified property by index.</summary>
+    <param name="index">The index of the property from which the data is to be obtained.</param>
+    <param name="data">When this method returns, contains a pointer to the data requested.</param>
+    <param name="dataSize">The number of bytes in the data to be retrieved.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
   </member>
   <member name="ID2D1Properties.GetValue">
-    <summary>
-      <para>Gets  the value of the specified property by index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the property from which the data is to be obtained.</para>
-    </param>
-    <param name="type">
-      <para>TBD</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>BYTE*</b></para>
-      <para>When this method returns, contains a pointer to the data requested.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of bytes in the data to be retrieved.</para>
-    </param>
+    <summary>Gets the value of the specified property by index.</summary>
+    <param name="index">The index of the property from which the data is to be obtained.</param>
+    <param name="type">TBD</param>
+    <param name="data">When this method returns, contains a pointer to the data requested.</param>
+    <param name="dataSize">The number of bytes in the data to be retrieved.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
   </member>
   <member name="ID2D1Properties.GetValue">
-    <summary>
-      <para>Gets  the value of the specified property by index. This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>U</b></para>
-      <para>The index of the property from which the data is to be obtained.</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>BYTE*</b></para>
-      <para>When this method returns, contains a pointer to the data requested.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of bytes in the data to be retrieved.</para>
-    </param>
+    <summary>Gets the value of the specified property by index. This is a template overload. See Remarks.</summary>
+    <param name="index">The index of the property from which the data is to be obtained.</param>
+    <param name="data">When this method returns, contains a pointer to the data requested.</param>
+    <param name="dataSize">The number of bytes in the data to be retrieved.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <code>template&lt;typename U&gt;
-HRESULT GetValue(
-U index,
-_Out_writes_(dataSize) BYTE *data,
-UINT32 dataSize
-) CONST;
-</code>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+        </listheader>
+      </list>�</returns>
   </member>
   <member name="ID2D1Properties.GetValue">
-    <summary>
-      <para>Gets  the value of the property by index. This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>U</b></para>
-      <para>The index of the property from which the value is to be obtained.</para>
-    </param>
-    <param name="value">
-      <para>Type: <b>T*</b></para>
-      <para>When this method returns, contains a pointer to the value.</para>
-    </param>
+    <summary>Gets the value of the property by index. This is a template overload. See Remarks.</summary>
+    <param name="index">The index of the property from which the value is to be obtained.</param>
+    <param name="value">When this method returns, contains a pointer to the value.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <code>template&lt;typename T, typename U&gt;
-HRESULT GetValue(
-U index,
-_Out_ T *value
-) const;
-</code>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+        </listheader>
+      </list>�</returns>
   </member>
   <member name="ID2D1Properties.GetValueByName">
-    <summary>
-      <para>Gets the property value by name. This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="propertyName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The property name to get.</para>
-    </param>
+    <summary>Gets the property value by name. This is a template overload. See Remarks.</summary>
+    <param name="propertyName">The property name to get.</param>
   </member>
   <member name="ID2D1Properties.GetValueByName">
-    <summary>
-      <para>Gets the property value by name.</para>
-    </summary>
-    <param name="name">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The property name to get.</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>BYTE*</b></para>
-      <para>When this method returns, contains the buffer with  the data value.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of bytes in the data to be retrieved.</para>
-    </param>
+    <summary>Gets the property value by name.</summary>
+    <param name="name">The property name to get.</param>
+    <param name="data">When this method returns, contains the buffer with the data value.</param>
+    <param name="dataSize">The number of bytes in the data to be retrieved.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>name</i> does not exist, no information is retrieved.</para>
-      <para>Any error not in the standard set returned by a property implementation will be mapped into the standard error range.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
   </member>
   <member name="ID2D1Properties.GetValueByName">
-    <summary>
-      <para>Gets the property value by name.</para>
-    </summary>
-    <param name="name">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The property name to get.</para>
-    </param>
-    <param name="type">
-      <para>TBD</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>BYTE*</b></para>
-      <para>When this method returns, contains the buffer with  the data value.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of bytes in the data to be retrieved.</para>
-    </param>
+    <summary>Gets the property value by name.</summary>
+    <param name="name">The property name to get.</param>
+    <param name="type">TBD</param>
+    <param name="data">When this method returns, contains the buffer with the data value.</param>
+    <param name="dataSize">The number of bytes in the data to be retrieved.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>name</i> does not exist, no information is retrieved.</para>
-      <para>Any error not in the standard set returned by a property implementation will be mapped into the standard error range.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
   </member>
   <member name="ID2D1Properties.GetValueByName">
-    <summary>
-      <para>Gets the property value by name. This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="propertyName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The property name to get.</para>
-    </param>
-    <param name="value">
-      <para>Type: <b>T*</b></para>
-      <para>When this method returns, contains the value.</para>
-    </param>
+    <summary>Gets the property value by name. This is a template overload. See Remarks.</summary>
+    <param name="propertyName">The property name to get.</param>
+    <param name="value">When this method returns, contains the value.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <para>If <i>propertyName</i> does not exist, no information is retrieved.</para>
-      <para>Any error not in the standard set returned by a property implementation will be mapped into the standard error range.</para>
-      <code>template&lt;typename T&gt;
-HRESULT GetValueByName(
-_In_ PCWSTR propertyName,
-_Out_ T *value
-) const;
-</code>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+        </listheader>
+      </list>�</returns>
   </member>
   <member name="ID2D1Properties.GetValueSize">
-    <summary>
-      <para>Gets the size of the property value in bytes, using the property index. This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>U</b></para>
-      <para>The index of the property.</para>
-    </param>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>This method returns size of the value in bytes, using the property index</para>
-    </returns>
-    <remarks>
-      <para>This method returns zero if <i>index</i> does not exist.</para>
-      <code>template&lt;typename U&gt;
-UINT32 GetValueSize(
-U index
-) CONST;
-</code>
-    </remarks>
-    <seealso cref="ID2D1Properties" />
+    <summary>Gets the size of the property value in bytes, using the property index. This is a template overload. See Remarks.</summary>
+    <param name="index">The index of the property.</param>
+    <returns>This method returns size of the value in bytes, using the property index</returns>
   </member>
   <member name="ID2D1Properties.GetValueSize">
-    <summary>
-      <para>Gets the size of the property value in bytes, using the property index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the property.</para>
-    </param>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>This method returns size of the value in bytes, using the property index</para>
-    </returns>
-    <remarks>
-      <para>This method returns zero if <i>index</i> does not exist.</para>
-    </remarks>
-    <seealso cref="ID2D1Properties" />
+    <summary>Gets the size of the property value in bytes, using the property index.</summary>
+    <param name="index">The index of the property.</param>
+    <returns>This method returns size of the value in bytes, using the property index</returns>
   </member>
   <member name="ID2D1Properties.SetValue">
-    <summary>
-      <para>Sets the corresponding  property by index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the property to set.</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>The data to set.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of bytes in the data to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
-      <list type="table">
-        <listheader>
-          <description>HRESULT</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>S_OK</description>
-          <description>No error occurred.</description>
-        </item>
-        <item>
-          <description>D2DERR_INVALID_PROPERTY</description>
-          <description>The specified property does not exist.</description>
-        </item>
-        <item>
-          <description>E_OUTOFMEMORY</description>
-          <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
-          <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
-          <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
-          <description>E_INVALIDARG</description>
-          <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
-          <description>E_FAIL</description>
-          <description>Unspecified failure.</description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <para>If the property does not exist, the request is ignored and <b>D2DERR_INVALID_PROPERTY</b> is returned.</para>
-      <para>Any error not in the standard set returned by a property implementation will be mapped into the standard error range.</para>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
-  </member>
-  <member name="ID2D1Properties.SetValue">
-    <summary>
-      <para>Sets the corresponding  property by index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the property to set.</para>
-    </param>
-    <param name="type">
-      <para>TBD</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>The data to set.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of bytes in the data to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
-      <list type="table">
-        <listheader>
-          <description>HRESULT</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>S_OK</description>
-          <description>No error occurred.</description>
-        </item>
-        <item>
-          <description>D2DERR_INVALID_PROPERTY</description>
-          <description>The specified property does not exist.</description>
-        </item>
-        <item>
-          <description>E_OUTOFMEMORY</description>
-          <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
-          <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
-          <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
-          <description>E_INVALIDARG</description>
-          <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
-          <description>E_FAIL</description>
-          <description>Unspecified failure.</description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <para>If the property does not exist, the request is ignored and <b>D2DERR_INVALID_PROPERTY</b> is returned.</para>
-      <para>Any error not in the standard set returned by a property implementation will be mapped into the standard error range.</para>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
-  </member>
-  <member name="ID2D1Properties.SetValue">
-    <summary>
-      <para>Sets the corresponding  property by index. This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="index">
-      <para>The index of the property to set.</para>
-    </param>
-    <param name="data">
-      <para>The data to set.</para>
-    </param>
-    <param name="dataSize">
-      <para>The number of bytes in the data to set.</para>
-    </param>
+    <summary>Sets the corresponding property by index.</summary>
+    <param name="index">The index of the property to set.</param>
+    <param name="data">The data to set.</param>
+    <param name="dataSize">The number of bytes in the data to set.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -926,56 +431,39 @@ U index
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <code>template&lt;typename U&gt;
-HRESULT SetValue(
-U index,
-_In_reads_(dataSize) CONST BYTE *data,
-UINT32 dataSize
-);
-</code>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
   </member>
   <member name="ID2D1Properties.SetValue">
-    <summary>
-      <para>Sets the corresponding  property by index. This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="index">
-      <para>The index of the property to set.</para>
-    </param>
-    <param name="value">
-      <para>The data to set.</para>
-    </param>
+    <summary>Sets the corresponding property by index.</summary>
+    <param name="index">The index of the property to set.</param>
+    <param name="type">TBD</param>
+    <param name="data">The data to set.</param>
+    <param name="dataSize">The number of bytes in the data to set.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -983,112 +471,151 @@ UINT32 dataSize
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <code>template&lt;typename T, typename U&gt;
-HRESULT SetValue(
-U index,
-_In_ const T &amp;value
-);
-</code>
-    </remarks>
-    <seealso cref="D2D1_PROPERTY" />
-    <seealso cref="D2D1_SUBPROPERTY" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+  </member>
+  <member name="ID2D1Properties.SetValue">
+    <summary>Sets the corresponding property by index. This is a template overload. See Remarks.</summary>
+    <param name="index">The index of the property to set.</param>
+    <param name="data">The data to set.</param>
+    <param name="dataSize">The number of bytes in the data to set.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>HRESULT</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>S_OK</description>
+          <description>No error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>D2DERR_INVALID_PROPERTY</description>
+          <description>The specified property does not exist.</description>
+        </listheader>
+        <listheader>
+          <description>E_OUTOFMEMORY</description>
+          <description>Failed to allocate necessary memory.</description>
+        </listheader>
+        <listheader>
+          <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
+          <description>Failed to allocate required video memory.</description>
+        </listheader>
+        <listheader>
+          <description>E_INVALIDARG</description>
+          <description>One or more arguments are invalid.</description>
+        </listheader>
+        <listheader>
+          <description>E_FAIL</description>
+          <description>Unspecified failure.</description>
+        </listheader>
+      </list>�</returns>
+  </member>
+  <member name="ID2D1Properties.SetValue">
+    <summary>Sets the corresponding property by index. This is a template overload. See Remarks.</summary>
+    <param name="index">The index of the property to set.</param>
+    <param name="value">The data to set.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>HRESULT</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>S_OK</description>
+          <description>No error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>D2DERR_INVALID_PROPERTY</description>
+          <description>The specified property does not exist.</description>
+        </listheader>
+        <listheader>
+          <description>E_OUTOFMEMORY</description>
+          <description>Failed to allocate necessary memory.</description>
+        </listheader>
+        <listheader>
+          <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
+          <description>Failed to allocate required video memory.</description>
+        </listheader>
+        <listheader>
+          <description>E_INVALIDARG</description>
+          <description>One or more arguments are invalid.</description>
+        </listheader>
+        <listheader>
+          <description>E_FAIL</description>
+          <description>Unspecified failure.</description>
+        </listheader>
+      </list>�</returns>
   </member>
   <member name="ID2D1Properties.SetValueByName">
-    <summary>
-      <para>Sets the named property to the given value.</para>
-    </summary>
-    <param name="name">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The name of the property to set.</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>The data to set.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of bytes in the data to set.</para>
-    </param>
+    <summary>Sets the named property to the given value.</summary>
+    <param name="name">The name of the property to set.</param>
+    <param name="data">The data to set.</param>
+    <param name="dataSize">The number of bytes in the data to set.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the property does not exist, the request is ignored and the method returns <b>D2DERR_INVALID_PROPERTY</b>.</para>
-      <para>Any error not in the standard set returned by a property implementation will be mapped into the standard error range.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
   </member>
   <member name="ID2D1Properties.SetValueByName">
-    <summary>
-      <para>Sets the named property to the given value.  This is a template overload. See Remarks.</para>
-    </summary>
-    <param name="propertyName">
-      <para>The name of the property to set.</para>
-    </param>
-    <param name="value">
-      <para>The data to set.  The method will convert this type to a BYTE* before setting it as the property value.</para>
-    </param>
+    <summary>Sets the named property to the given value. This is a template overload. See Remarks.</summary>
+    <param name="propertyName">The name of the property to set.</param>
+    <param name="value">The data to set. The method will convert this type to a BYTE* before setting it as the property value.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -1096,287 +623,73 @@ _In_ const T &amp;value
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <code>template&lt;typename T&gt;
-HRESULT SetValueByName(
-_In_ PCWSTR propertyName,
-_In_ const T &amp;value
-);
-</code>
-    </remarks>
-    <seealso cref="ID2D1Properties" />
+        </listheader>
+      </list>�</returns>
   </member>
   <member name="ID2D1Properties.SetValueByName">
-    <summary>
-      <para>Sets the named property to the given value.</para>
-    </summary>
-    <param name="name">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The name of the property to set.</para>
-    </param>
-    <param name="type">
-      <para>TBD</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>The data to set.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of bytes in the data to set.</para>
-    </param>
+    <summary>Sets the named property to the given value.</summary>
+    <param name="name">The name of the property to set.</param>
+    <param name="type">TBD</param>
+    <param name="data">The data to set.</param>
+    <param name="dataSize">The number of bytes in the data to set.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INVALID_PROPERTY</description>
           <description>The specified property does not exist.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUT_OF_VIDEO_MEMORY</description>
           <description>Failed to allocate required video memory.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>Unspecified failure.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the property does not exist, the request is ignored and the method returns <b>D2DERR_INVALID_PROPERTY</b>.</para>
-      <para>Any error not in the standard set returned by a property implementation will be mapped into the standard error range.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
   </member>
   <member name="ID2D1Properties">
-    <summary>
-      <para>Represents a set of run-time bindable and discoverable properties that allow a data-driven application to modify the state of a Direct2D effect.</para>
-    </summary>
-    <remarks>
-      <para>This interface supports access through either indices or property names. In addition to top-level properties, each property in an <b>ID2D1Properties</b> object may contain an <b>ID2D1Properties</b> object, which stores metadata describing the parent property.</para>
-      <h3>Overview</h3>
-      <para>The <b>ID2D1Properties</b> interface exposes a set of run-time bindable and discoverable properties that allow a data-driven application such as an effect graph authoring tool or an animation system to modify the state of a Direct2D effect.</para>
-      <para>The interface supports access through either indices or property names. In addition to top-level properties, each property in an <b>ID2D1Properties</b> may contain a sub-<b>ID2D1Properties</b> interface, which stores metadata describing its parent property. Sub-properties are accessed by requesting this sub-interface by property index, or by using a property name string separated by a dot (.).</para>
-      <para>The interface is intentionally designed to avoid dependencies on a run-time basis. All allocation is done by the caller of the API and <b>VARIANT</b> types are not used. The property interface generally is designed not to return failures where the application could trivially change their calling sequence in order to avoid the condition. For example, since the number of properties supported by the instance is returned by the <see cref="GetPropertyCount" /> method, other methods that take a property index do not return a failure, unless they also use the plug-in effect's property system.</para>
-      <para>The interface is primarily based upon an index-based access model, and it supports nested sub-properties within properties. Unlike a directory structure, the property itself has a value and a type and might optionally support sub-properties (directories are not files). These are normally metadata that describe the property, but, this is also used to specify arrays of objects. In order to simplify accessing sub-properties and to allow name-based access, two helper methods – <see cref="GetValueByName" /> – are defined. These use a "dotted" notation in order to allow sub-properties to be directly specified, for example:</para>
-      <code>alphaMode = pEffect-&gt;GetValueByName&lt;UINT32&gt;(L"Inputs.0.AlphaMode");
-</code>
-      <para>Or:</para>
-      <code>pEffect-&gt;SetValueByName&lt;UINT32&gt;(
-            L"Inputs.0.AlphaMode",
-            DXGI_ALPHA_MODE_PREMULTIPLIED);
-
-</code>
-      <h3>Standard Effect Properties</h3>
-      <list type="table">
-        <listheader>
-          <description>Property name/index</description>
-          <description>Property type</description>
-          <description>Property description</description>
-        </listheader>
-        <item>
-          <description>CLSID / D2D1_PROPERTY_CLSID</description>
-          <description>D2D1_PROPERTY_TYPE_CLSID</description>
-          <description>The CLSID of the effect.</description>
-        </item>
-        <item>
-          <description>DisplayName / D2D1_PROPERTY_DISPLAYNAME</description>
-          <description>D2D1_PROPERTY_TYPE_STRING</description>
-          <description>A displayable, localized name for the effect.</description>
-        </item>
-        <item>
-          <description>Author / D2D1_PROPERTY_AUTHOR</description>
-          <description>D2D1_PROPERTY_TYPE_STRING</description>
-          <description>The author of the effect.</description>
-        </item>
-        <item>
-          <description>Category / D2D1_PROPERTY_CATEGORY</description>
-          <description>D2D1_PROPERTY_TYPE_STRING</description>
-          <description>The category of the effect. </description>
-        </item>
-        <item>
-          <description>Description / D2D1_PROPERTY_DESCRIPTION</description>
-          <description>D2D1_PROPERTY_TYPE_STRING</description>
-          <description>A description of the effect. </description>
-        </item>
-        <item>
-          <description>Inputs / D2D1_PROPERTY_INPUTS</description>
-          <description>D2D1_PROPERTY_TYPE_ARRAY
-<b>Note</b>  Elements of this array are of type D2D1_PROPERTY_TYPE_STRING.
-</description>
-          <description>An array of names for the effect’s inputs. Each element of the array is a localized string specifying the name of an input.</description>
-        </item>
-      </list>
-      <h3>Standard Sub-Properties</h3>
-      <para>The following are standard sub-properties that can be used for meta-data access, and may be available on both system and custom properties. Please see the <see cref="D2D1_SUBPROPERTY" /> and <see cref="D2D1_PROPERTY_TYPE" /> enumerations for more information.</para>
-      <list type="table">
-        <listheader>
-          <description>Property name/index</description>
-          <description>Property type</description>
-          <description>Property description</description>
-        </listheader>
-        <item>
-          <description>DisplayName / D2D1_SUBPROPERTY_DISPLAYNAME</description>
-          <description>D2D1_PROPERTY_TYPE_STRING</description>
-          <description>
-            <para>A displayable, localized name for the parent property.</para>
-            <para>This sub-property is present on all  top-level properties.</para>
-          </description>
-        </item>
-        <item>
-          <description>IsReadOnly / D2D1_SUBPROPERTY_ISREADONLY</description>
-          <description>D2D1_PROPERTY_TYPE_BOOL</description>
-          <description>
-            <para>A value indicating whether the parent property can be written to.</para>
-            <para>This sub-property is present on all  top-level properties.</para>
-          </description>
-        </item>
-        <item>
-          <description>Default / D2D1_SUBPROPERTY_DEFAULT</description>
-          <description>Same as parent property.</description>
-          <description>
-            <para>The default value for the property.</para>
-            <para>This sub-property is optionally present on all properties.</para>
-          </description>
-        </item>
-        <item>
-          <description>Min / D2D1_SUBPROPERTY_MIN</description>
-          <description>Same as parent property.
-<b>Note</b>  Applicable only to numeric-type properties.
-</description>
-          <description>
-            <para>The minimum value that the parent property supports being set to.</para>
-          </description>
-        </item>
-        <item>
-          <description>Max / D2D1_SUBPROPERTY_MAX</description>
-          <description>Same as parent property.
-<b>Note</b>  Applicable only to numeric-type properties.
-</description>
-          <description>
-            <para>The maximum value that the parent property supports being set to.</para>
-          </description>
-        </item>
-        <item>
-          <description>Fields / D2D1_SUBPROPERTY_FIELDS</description>
-          <description>Array / D2D1_PROPERTY_TYPE_ARRAY
-<b>Note</b>  Applicable only when the parent property is of type <b>Enum</b>.
-</description>
-          <description>
-            <para>The set of valid values that can be set to the parent property.</para>
-            <para>Each value in this array is a name/index pair. The indices can be set to the parent and the names are localized values designed for consumption by UI. See the following section for more details.</para>
-          </description>
-        </item>
-      </list>
-      <h3>Array-Type Sub-Properties</h3>
-      <para>See <see cref="ID2D1Properties.GetType" /> and <see cref="D2D1_PROPERTY_TYPE" /> for more information. If the property type is <b>D2D1_PROPERTY_TYPE_ARRAY</b>, the value of the property will be considered to be a <b>UINT</b> that has the count of array elements. The next sub-property will directly map the index to the requested property value. For example:</para>
-      <code>Inputs: UINT32 – 2
-        Inputs.0 : &lt;Type&gt; – First input
-        Inputs.1 : &lt;Type&gt; – Second input
-
-</code>
-      <para>The above example makes use of the following sub-properties, which will appear on <b>ARRAY</b>-type properties. Note that the numbered properties are not system properties, and are in the normal (0x0 – 0x80000000) range.</para>
-      <list type="table">
-        <listheader>
-          <description>Property name</description>
-          <description>Property index</description>
-          <description>Property description</description>
-        </listheader>
-        <item>
-          <description>Property.0</description>
-          <description>0</description>
-          <description>First element of the property array.</description>
-        </item>
-        <item>
-          <description>...</description>
-          <description>...</description>
-          <description>...</description>
-        </item>
-        <item>
-          <description>Property.N</description>
-          <description>N</description>
-          <description>
-            <i>N</i>th element of the property array.</description>
-        </item>
-      </list>
-      <para>The type of each sub-element will be whatever the type of the array is. In the example above, this was an array of strings.</para>
-      <h3>Enum-Type Sub-Properties</h3>
-      <para>If the property has type <b>D2D1_PROPERTY_TYPE_ENUM</b> then the property will have the value of the corresponding enumeration. There will be a sub-array of fields that will conform to the general rules for array sub-properties and consist of the name/value pairs. For example:</para>
-      <code>PixelFormat: ENUM – The pixel format value
-        PixelFormat.Fields: UINT32 – The number of fields
-        PixelFormat.Fields.0:String – The name of the first enum
-        PixelFormat.Fields.0.Index: UINT32 – The value of the enumeration.
-
-</code>
-      <para>The above example makes use of the following sub-properties. Please see the <see cref="D2D1_SUBPROPERTY" /> and <see cref="D2D1_PROPERTY_TYPE" /> enumerations for more information.</para>
-      <list type="table">
-        <listheader>
-          <description>Property name</description>
-          <description>Property index</description>
-          <description>Property description</description>
-        </listheader>
-        <item>
-          <description>Property.Fields</description>
-          <description>D2D1_SUBPROPERTY_FIELDS</description>
-          <description>An array type property that gives information about each field in the enumeration.</description>
-        </item>
-        <item>
-          <description>Property.Fields.N</description>
-          <description>N</description>
-          <description>An array element that gives the name of the <i>N</i>th enumeration value.</description>
-        </item>
-        <item>
-          <description>Property.Fields.N.Index</description>
-          <description>D2D1_SUBPROPERTY_INDEX</description>
-          <description>The index which corresponds to the <i>N</i>th enumeration value.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="IUnknown" />
+    <summary>Represents a set of run-time bindable and discoverable properties that allow a data-driven application to modify the state of a Direct2D effect.</summary>
   </member>
 </doc>

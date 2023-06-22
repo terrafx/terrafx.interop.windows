@@ -3,10 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFactory1">
-    <summary>
-      <para>The root factory interface for all <a href="https://docs.microsoft.com//windows/win32/DirectWrite/direct-write-portal">DirectWrite</a> objects.</para>
-    </summary>
-    <seealso cref="IDWriteFactory" />
-    <seealso cref="IDWriteFactory1" />
+    <summary>The root factory interface for all <a href="https://docs.microsoft.com//windows/win32/DirectWrite/direct-write-portal">DirectWrite</a> objects.</summary>
   </member>
 </doc>

@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_MAPPED_RECT">
-    <summary>
-      <para>Describes a mapped rectangle that is used to access a surface.</para>
-    </summary>
-    <remarks>
-      <para>The <b>DXGI_MAPPED_RECT</b> structure is initialized by the <see cref="IDXGISurface.Map" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+    <summary>Describes a mapped rectangle that is used to access a surface.</summary>
   </member>
   <member name="DXGI_MAPPED_RECT.Pitch">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">INT</a></b></para>
-      <para>A value that describes the width, in bytes, of the surface.</para>
-    </summary>
+    <summary>A value that describes the width, in bytes, of the surface.</summary>
   </member>
   <member name="DXGI_MAPPED_RECT.pBits">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a>*</b></para>
-      <para>A pointer to the image buffer of the surface.</para>
-    </summary>
+    <summary>A pointer to the image buffer of the surface.</summary>
   </member>
 </doc>

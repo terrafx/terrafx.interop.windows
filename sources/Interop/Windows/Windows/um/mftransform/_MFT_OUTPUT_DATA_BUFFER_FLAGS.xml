@@ -3,37 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="_MFT_OUTPUT_DATA_BUFFER_FLAGS">
-    <summary>
-      <para>Defines flags for the <see cref="IMFTransform.ProcessOutput" /> method.</para>
-    </summary>
-    <remarks>
-      <para>The values in this enumeration are not bit flags, so they should not be combined with a bitwise <b>OR</b>. Also, the caller should test for these flags with the equality operator, not a bitwise <b>AND</b>:</para>
-      <code>// Correct.
-if (Buffer.dwStatus == MFT_OUTPUT_DATA_BUFFER_STREAM_END)
-{
-    ...
-}
-
-// Incorrect.
-if ((Buffer.dwStatus &amp;amp;amp;amp;amp;amp;amp; MFT_OUTPUT_DATA_BUFFER_STREAM_END) != 0)
-{
-    ...
-}
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+    <summary>Defines flags for the <see cref="IMFTransform.ProcessOutput" /> method.</summary>
   </member>
   <member name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_INCOMPLETE">
-    <summary>
-      <para>The MFT can still generate output from this stream without receiving any more input. Call <see cref="ProcessOutput" /> again to process the next batch of input data.</para>
-    </summary>
+    <summary>The MFT can still generate output from this stream without receiving any more input. Call <see cref="ProcessOutput" /> again to process the next batch of input data.</summary>
   </member>
   <member name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_FORMAT_CHANGE">
-    <summary>
-      <para>The format has changed on this output stream, or there is a new preferred format for this stream. When this flag is set, the MFT clears the media type for the stream. The <see cref="ProcessOutput" /> method returns MF_E_TRANSFORM_STREAM_CHANGE and generates no output for any stream. Further calls to <see cref="IMFTransform.ProcessInput" /> or <b>ProcessOutput</b> will fail until the client sets a new media type.</para>
-    </summary>
+    <summary>The format has changed on this output stream, or there is a new preferred format for this stream. When this flag is set, the MFT clears the media type for the stream. The <see cref="ProcessOutput" /> method returns MF_E_TRANSFORM_STREAM_CHANGE and generates no output for any stream. Further calls to <see cref="IMFTransform.ProcessInput" /> or <b>ProcessOutput</b> will fail until the client sets a new media type.</summary>
   </member>
   <member name="_MFT_OUTPUT_DATA_BUFFER_FLAGS.MFT_OUTPUT_DATA_BUFFER_STREAM_END">
     <summary>

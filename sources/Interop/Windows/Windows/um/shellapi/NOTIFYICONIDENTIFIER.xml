@@ -3,46 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NOTIFYICONIDENTIFIER">
-    <summary>
-      <para>Contains information used by <see cref="Shell_NotifyIconGetRect" /> to identify the icon for which to retrieve the bounding rectangle.</para>
-    </summary>
-    <remarks>
-      <para>The icon can be identified to <see cref="Shell_NotifyIconGetRect" /> through this structure in two ways:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <i>guidItem</i> alone (recommended)</description>
-        </item>
-        <item>
-          <description>
-            <i>hWnd</i> plus <i>uID</i></description>
-        </item>
-      </list>
-      <para>If <i>guidItem</i> is not <b>GUID_NULL</b>, <i>hWnd</i> and <i>uID</i> are ignored.</para>
-    </remarks>
+    <summary>Contains information used by <see cref="Shell_NotifyIconGetRect" /> to identify the icon for which to retrieve the bounding rectangle.</summary>
   </member>
   <member name="NOTIFYICONIDENTIFIER.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="NOTIFYICONIDENTIFIER.hWnd">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the parent window used by the notification's callback function. For more information, see the <i>hWnd</i> member of the <see cref="NOTIFYICONDATA" /> structure.</para>
-    </summary>
+    <summary>A handle to the parent window used by the notification's callback function. For more information, see the <i>hWnd</i> member of the <see cref="NOTIFYICONDATA" /> structure.</summary>
   </member>
   <member name="NOTIFYICONIDENTIFIER.uID">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The application-defined identifier of the notification icon. Multiple icons can be associated with a single <i>hWnd</i>, each with their own <i>uID</i>.</para>
-    </summary>
+    <summary>The application-defined identifier of the notification icon. Multiple icons can be associated with a single <i>hWnd</i>, each with their own <i>uID</i>.</summary>
   </member>
   <member name="NOTIFYICONIDENTIFIER.guidItem">
-    <summary>
-      <para>Type: <b>GUID</b></para>
-      <para>A registered GUID that identifies the icon. Use <b>GUID_NULL</b> if the icon is not identified by a GUID.</para>
-    </summary>
+    <summary>A registered GUID that identifies the icon. Use <b>GUID_NULL</b> if the icon is not identified by a GUID.</summary>
   </member>
 </doc>

@@ -3,54 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_GLYPH_IMAGE_DATA">
-    <summary>
-      <para>Data for a single glyph from GetGlyphImageData.</para>
-    </summary>
+    <summary>Data for a single glyph from GetGlyphImageData.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_DATA.imageData">
-    <summary>
-      <para>Pointer to the glyph data.</para>
-    </summary>
+    <summary>Pointer to the glyph data.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_DATA.imageDataSize">
-    <summary>
-      <para>Size of glyph data in bytes.</para>
-    </summary>
+    <summary>Size of glyph data in bytes.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_DATA.uniqueDataId">
-    <summary>
-      <para>Unique identifier for the glyph data. Clients may use this to cache a parsed/decompressed version and tell whether a repeated call to the same font returns the same data.</para>
-    </summary>
+    <summary>Unique identifier for the glyph data. Clients may use this to cache a parsed/decompressed version and tell whether a repeated call to the same font returns the same data.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_DATA.pixelsPerEm">
-    <summary>
-      <para>Pixels per em of the returned data. For non-scalable raster data (PNG/TIFF/JPG), this can be larger or smaller than requested from GetGlyphImageData when there isn't an exact match.
-For scaling intermediate sizes, use: desired pixels per em * font em size / actual pixels per em.</para>
-    </summary>
+    <summary>Pixels per em of the returned data. For non-scalable raster data (PNG/TIFF/JPG), this can be larger or smaller than requested from GetGlyphImageData when there isn't an exact match. For scaling intermediate sizes, use: desired pixels per em * font em size / actual pixels per em.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_DATA.pixelSize">
-    <summary>
-      <para>Size of image when the format is pixel data.</para>
-    </summary>
+    <summary>Size of image when the format is pixel data.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_DATA.horizontalLeftOrigin">
-    <summary>
-      <para>Left origin along the horizontal Roman baseline.</para>
-    </summary>
+    <summary>Left origin along the horizontal Roman baseline.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_DATA.horizontalRightOrigin">
-    <summary>
-      <para>Right origin along the horizontal Roman baseline.</para>
-    </summary>
+    <summary>Right origin along the horizontal Roman baseline.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_DATA.verticalTopOrigin">
-    <summary>
-      <para>Top origin along the vertical central baseline.</para>
-    </summary>
+    <summary>Top origin along the vertical central baseline.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_DATA.verticalBottomOrigin">
-    <summary>
-      <para>Bottom origin along vertical central baseline.</para>
-    </summary>
+    <summary>Bottom origin along vertical central baseline.</summary>
   </member>
 </doc>

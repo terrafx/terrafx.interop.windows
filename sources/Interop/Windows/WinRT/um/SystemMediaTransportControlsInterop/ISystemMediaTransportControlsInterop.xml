@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISystemMediaTransportControlsInterop.GetForWindow">
+    <summary>Gets an instance of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/mediatransport/isystemmediatransportcontrols">ISystemMediaTransportControls</a> interface for the specified window.</summary>
+    <param name="appWindow">The top-level app window for which the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/mediatransport/isystemmediatransportcontrols">ISystemMediaTransportControls</a> interface is retrieved.</param>
+    <param name="riid">A reference to the IID of the interface to retrieve.</param>
+    <param name="mediaTransportControl">Receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/mediatransport/isystemmediatransportcontrols">ISystemMediaTransportControls</a> that corresponds to the <i>appWindow</i> window.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="ISystemMediaTransportControlsInterop">
+    <summary>
+      <para>Enables interoperability with a WinRT a <a href="https://docs.microsoft.com//uwp/api/windows.media.systemmediatransportcontrols">SystemMediaTransportControls</a> object.</para>
+      <para>This interface is implemented by the Windows.Media.SystemMediaTransportControls activation factory.</para>
+    </summary>
+  </member>
+</doc>

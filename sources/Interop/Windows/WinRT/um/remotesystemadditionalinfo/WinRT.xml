@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.HSTRING_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">TBD</param>
+    <param name="unnamedParam2">
+      <para>TBD</para>
+      <h4>- pFlags [in]</h4>
+      <para>The data used by RPC.</para>
+      <h4>- ppidl [in]</h4>
+      <para>The string.</para>
+    </param>
+  </member>
+  <member name="WinRT.HSTRING_UserFree64">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The string.</param>
+  </member>
+  <member name="WinRT.HSTRING_UserMarshal">
+    <summary>Marshals an <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a> object into the RPC buffer.</summary>
+    <param name="unnamedParam1">TBD</param>
+    <param name="unnamedParam2">TBD</param>
+    <param name="unnamedParam3">
+      <para>TBD</para>
+      <h4>- pBuffer [in, out]</h4>
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+      <h4>- pFlags [in]</h4>
+      <para>The data used by RPC.</para>
+      <h4>- ppidl [in]</h4>
+      <para>The string.</para>
+    </param>
+    <returns>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</returns>
+  </member>
+  <member name="WinRT.HSTRING_UserMarshal64">
+    <summary>Marshals an <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a> object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The string.</param>
+    <returns>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</returns>
+  </member>
+  <member name="WinRT.HSTRING_UserSize">
+    <summary>Calculates the wire size of the <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a> object, and gets its handle and data.</summary>
+    <param name="unnamedParam1">TBD</param>
+    <param name="unnamedParam2">TBD</param>
+    <param name="unnamedParam3">
+      <para>TBD</para>
+      <h4>- StartingSize [in]</h4>
+      <para>The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a> object to be properly aligned when it will be marshaled to the buffer.</para>
+      <h4>- pFlags [in]</h4>
+      <para>The data used by RPC.</para>
+      <h4>- ppidl [in]</h4>
+      <para>The string.</para>
+    </param>
+    <returns>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</returns>
+  </member>
+  <member name="WinRT.HSTRING_UserSize64">
+    <summary>Calculates the wire size of the <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a> object, and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a> object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The string.</param>
+    <returns>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</returns>
+  </member>
+  <member name="WinRT.HSTRING_UserUnmarshal">
+    <summary>Unmarshals an <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a> object from the RPC buffer.</summary>
+    <param name="unnamedParam1">TBD</param>
+    <param name="unnamedParam2">TBD</param>
+    <param name="unnamedParam3">
+      <para>TBD</para>
+      <h4>- pBuffer [in]</h4>
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+      <h4>- pFlags [in]</h4>
+      <para>The data used by RPC.</para>
+      <h4>- ppidl [out]</h4>
+      <para>The string.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory for this function to perform.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.HSTRING_UserUnmarshal64">
+    <summary>Unmarshals an <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a> object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The string.</param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory for this function to perform.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+</doc>

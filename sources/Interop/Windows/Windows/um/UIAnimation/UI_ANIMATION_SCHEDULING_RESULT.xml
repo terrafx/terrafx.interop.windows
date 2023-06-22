@@ -3,41 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UI_ANIMATION_SCHEDULING_RESULT">
-    <summary>
-      <para>Defines results for storyboard scheduling.</para>
-    </summary>
-    <remarks>
-      <para>
-        <see cref="IUIAnimationStoryboard.Schedule" /> returns UI_ANIMATION_SCHEDULING_DEFERRED only if the application attempts to schedule a storyboard during a callback to <see cref="IUIAnimationStoryboardEventHandler.OnStoryboardStatusChanged" />.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard.Schedule" />
+    <summary>Defines results for storyboard scheduling.</summary>
   </member>
   <member name="UI_ANIMATION_SCHEDULING_RESULT.UI_ANIMATION_SCHEDULING_UNEXPECTED_FAILURE">
-    <summary>
-      <para>Scheduling failed for an unexpected reason.</para>
-    </summary>
+    <summary>Scheduling failed for an unexpected reason.</summary>
   </member>
   <member name="UI_ANIMATION_SCHEDULING_RESULT.UI_ANIMATION_SCHEDULING_INSUFFICIENT_PRIORITY">
     <summary>
-      <para>Scheduling failed because
-a scheduling conflict occurred and the currently scheduled storyboard has higher priority.</para>
-      <para>For more information, see <see cref="IUIAnimationPriorityComparison.HasPriority" />.</para>
+      <para>Scheduling failed because a scheduling conflict occurred and the currently scheduled storyboard has higher priority.</para>
+      <code> For more information, see &lt;a href="/windows/desktop/api/uianimation/nf-uianimation-iuianimationprioritycomparison-haspriority"&gt;IUIAnimationPriorityComparison.HasPriority&lt;/a&gt;.</code>
     </summary>
   </member>
   <member name="UI_ANIMATION_SCHEDULING_RESULT.UI_ANIMATION_SCHEDULING_ALREADY_SCHEDULED">
-    <summary>
-      <para>Scheduling failed because
-the storyboard is already scheduled.</para>
-    </summary>
+    <summary>Scheduling failed because the storyboard is already scheduled.</summary>
   </member>
   <member name="UI_ANIMATION_SCHEDULING_RESULT.UI_ANIMATION_SCHEDULING_SUCCEEDED">
-    <summary>
-      <para>Scheduling succeeded.</para>
-    </summary>
+    <summary>Scheduling succeeded.</summary>
   </member>
   <member name="UI_ANIMATION_SCHEDULING_RESULT.UI_ANIMATION_SCHEDULING_DEFERRED">
-    <summary>
-      <para>Scheduling is deferred and will be attempted when the current callback completes.</para>
-    </summary>
+    <summary>Scheduling is deferred and will be attempted when the current callback completes.</summary>
   </member>
 </doc>

@@ -4,77 +4,39 @@
 <doc>
   <member name="AM_DVD_GRAPH_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>AM_DVD_GRAPH_FLAGS</b> enumeration specifies how the DVD Navigator builds a DVD playback graph. These flags are used with the <see cref="IDvdGraphBuilder.RenderDvdVideoVolume" /> method.</para>
     </summary>
-    <remarks>
-      <para>Do not combine more than one of the following flags:</para>
-      <list type="bullet">
-        <item>
-          <description>AM_DVD_HWDEC_PREFER</description>
-        </item>
-        <item>
-          <description>AM_DVD_HWDEC_ONLY</description>
-        </item>
-        <item>
-          <description>AM_DVD_SWDEC_PREFER</description>
-        </item>
-        <item>
-          <description>AM_DVD_SWDEC_ONLY</description>
-        </item>
-      </list>
-      <para>If you have already selected a video renderer by calling <see cref="IDvdGraphBuilder.GetDvdInterface" />, do not set the <b>AM_DVD_VMR9_ONLY</b> or <b>AM_DVD_EVR_ONLY</b> flag.</para>
-      <para>To use the VMR-9, the decoder's <see cref="IAMDecoderCaps.GetDecoderCaps" /> method must return the <b>AM_GETDECODERCAP_QUERY_VMR9_SUPPORT</b> flag. To use the EVR, the decoder's <b>GetDecoderCaps</b> method must return the <b>AM_GETDECODERCAP_QUERY_EVR_SUPPORT</b> flag.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IDvdGraphBuilder.RenderDvdVideoVolume" />
   </member>
   <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_HWDEC_PREFER">
-    <summary>
-      <para>Use a hardware decoder if possible. If none is available, use a software decoder. This is the default setting. Hardware DVD decoders are registered under the CLSID_DVDHWDecodersCategory filter category. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-categories">Filter Categories</a>.</para>
-    </summary>
+    <summary>Use a hardware decoder if possible. If none is available, use a software decoder. This is the default setting. Hardware DVD decoders are registered under the CLSID_DVDHWDecodersCategory filter category. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-categories">Filter Categories</a>.</summary>
   </member>
   <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_HWDEC_ONLY">
-    <summary>
-      <para>Use a hardware decoder; do not use a software decoder. Do not combine this flag with the AM_DVD_VMR9_ONLY or AM_DVD_EVR_ONLY flag.</para>
-    </summary>
+    <summary>Use a hardware decoder; do not use a software decoder. Do not combine this flag with the AM_DVD_VMR9_ONLY or AM_DVD_EVR_ONLY flag.</summary>
   </member>
   <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_SWDEC_PREFER">
-    <summary>
-      <para>Use a software decoder if possible. If none is available, use a hardware decoder.</para>
-    </summary>
+    <summary>Use a software decoder if possible. If none is available, use a hardware decoder.</summary>
   </member>
   <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_SWDEC_ONLY">
-    <summary>
-      <para>Use a software decoder; do not use a hardware decoder.</para>
-    </summary>
+    <summary>Use a software decoder; do not use a hardware decoder.</summary>
   </member>
   <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_NOVPE">
-    <summary>
-      <para>Do not show video on the computer monitor. Use of this flag should be limited only to the combination of a hardware DVD-Video decoder and a display device with a port that can connect to a TV. A set-top box type of device that can play back DVD-Video could play DVD titles to be viewed on a TV set rather than a computer monitor.</para>
-    </summary>
+    <summary>Do not show video on the computer monitor. Use of this flag should be limited only to the combination of a hardware DVD-Video decoder and a display device with a port that can connect to a TV. A set-top box type of device that can play back DVD-Video could play DVD titles to be viewed on a TV set rather than a computer monitor.</summary>
   </member>
   <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_DO_NOT_CLEAR">
     <summary>
-      <para>Do not clear the filter graph before building the DVD playback graph. By default, the <see cref="RenderDvdVideoVolume" /> method removes any existing filters from the graph before it builds the DVD playback graph. <b>Note</b>  Applies to Windows Vista and later.</para>
+      <para>Do not clear the filter graph before building the DVD playback graph. By default, the <see cref="RenderDvdVideoVolume" /> method removes any existing filters from the graph before it builds the DVD playback graph. <div><b>Note</b>  Applies to Windows Vista and later.</div></para>
     </summary>
   </member>
   <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_VMR9_ONLY">
-    <summary>
-      <para>Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-9">Video Mixing Renderer Filter 9</a> (VMR-9) for rendering; fail if the VMR-9 is not available. Do not combine this flag with the AM_DVD_EVR_ONLY flag.</para>
-    </summary>
+    <summary>Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-9">Video Mixing Renderer Filter 9</a> (VMR-9) for rendering; fail if the VMR-9 is not available. Do not combine this flag with the AM_DVD_EVR_ONLY flag.</summary>
   </member>
   <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_EVR_ONLY">
     <summary>
-      <para>Use the Enhanced Video Renderer (EVR) for rendering; fail if the EVR is not available. <b>Note</b>  Applies to Windows Vista and later.</para>
+      <para>Use the Enhanced Video Renderer (EVR) for rendering; fail if the EVR is not available. <div><b>Note</b>  Applies to Windows Vista and later.</div></para>
     </summary>
   </member>
-  <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_EVR_QOS">
-    <summary></summary>
-  </member>
-  <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_ADAPT_GRAPH">
-    <summary></summary>
-  </member>
-  <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_MASK">
-    <summary></summary>
-  </member>
+  <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_EVR_QOS"></member>
+  <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_ADAPT_GRAPH"></member>
+  <member name="AM_DVD_GRAPH_FLAGS.AM_DVD_MASK"></member>
 </doc>

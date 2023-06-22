@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_COLORMANAGEMENT_PROP">
-    <summary>
-      <para>Identifiers for the properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/color-management">Color management effect</a>.</para>
-    </summary>
+    <summary>Identifiers for the properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/color-management">Color management effect</a>.</summary>
   </member>
   <member name="D2D1_COLORMANAGEMENT_PROP.D2D1_COLORMANAGEMENT_PROP_SOURCE_COLOR_CONTEXT">
     <summary>
@@ -49,7 +47,5 @@
       <para>The default value is D2D1_COLORMANAGEMENT_QUALITY_NORMAL.</para>
     </summary>
   </member>
-  <member name="D2D1_COLORMANAGEMENT_PROP.D2D1_COLORMANAGEMENT_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_COLORMANAGEMENT_PROP.D2D1_COLORMANAGEMENT_PROP_FORCE_DWORD"></member>
 </doc>

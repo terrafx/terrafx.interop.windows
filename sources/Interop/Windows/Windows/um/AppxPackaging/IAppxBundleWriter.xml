@@ -3,119 +3,80 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxBundleWriter.AddPayloadPackage">
-    <summary>
-      <para>Adds a new app package to the bundle.</para>
-    </summary>
-    <param name="fileName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
-      <para>The name of the payload file. The file name path must be relative to the root of the package.</para>
-    </param>
-    <param name="packageStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>An <see cref="IStream" /> that provides the contents of <i>fileName</i>.
-The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</para>
-    </param>
+    <summary>Adds a new app package to the bundle.</summary>
+    <param name="fileName">The name of the payload file. The file name path must be relative to the root of the package.</param>
+    <param name="packageStream">An <see cref="IStream" /> that provides the contents of <i>fileName</i>. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table. Error OPC codes, in addition to  OPC_E_DUPLICATE_PART may result. If the method fails, the bundle writer will close in a failed state and can't be used any more.</para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table. Error OPC codes, in addition to OPC_E_DUPLICATE_PART may result. If the method fails, the bundle writer will close in a failed state and can't be used any more.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOT_VALID_STATE </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOT_VALID_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The writer is closed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The writer is closed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_INVALID_NAME)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The file name specified is not a valid file name or is a reserved name for a footprint file.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_INVALID_NAME)</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OPC_E_DUPLICATE_PART</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The file name specified is not a valid file name or is a reserved name for a footprint file.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>OPC_E_DUPLICATE_PART</b>
-            </para>
-          </description>
-          <description>
-            <para>The file name specified is already in use in the bundle.</para>
-          </description>
-        </item>
+          <description>The file name specified is already in use in the bundle.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When the <see cref="AddPayloadFile" /> method succeeds the contents of the specified <i>fileName</i> are written to the package and a corresponding entry is made in the package block map.</para>
-      <para>
-        <b>AddPayloadPackage</b> reads the content of the app package from <i>packageStream</i> and stores the content in the bundle with the given <i>fileName</i>.</para>
-      <para>
-        <b>AddPayloadPackage</b> can fail if:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <i>packageStream</i> doesn't deliver a valid app package</description>
-        </item>
-        <item>
-          <description>The app package delivered by <i>packageStream</i> is in a different package family than an app package already added to the bundle</description>
-        </item>
-        <item>
-          <description>The app package delivered by <i>packageStream</i> is targeted to an architecture that can't reside in the same bundle as another app package already added to the bundle</description>
-        </item>
-        <item>
-          <description>The app package delivered by <i>packageStream</i> has a block map that uses a different hash method than an app package already added to the bundle</description>
-        </item>
-        <item>
-          <description>
-            <i>fileName</i> isn't a valid file name, is a reserved name, or is already used by another app package added to the bundle</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IAppxBundleWriter" />
   </member>
   <member name="IAppxBundleWriter.Close">
-    <summary>
-      <para>Finalizes the bundle package by writing footprint files at the end of the package, and closes the writer’s output stream.</para>
-    </summary>
+    <summary>Finalizes the bundle package by writing footprint files at the end of the package, and closes the writer’s output stream.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOT_VALID_STATE </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOT_VALID_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The writer is closed.</para>
-          </description>
-        </item>
+          <description>The writer is closed.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAppxBundleWriter" />
   </member>
   <member name="IAppxBundleWriter">
-    <summary>
-      <para>Provides a write-only object model for bundle packages.</para>
-    </summary>
-    <remarks>
-      <para>You can use the <see cref="CreateBundleWriter" /> method of the <see cref="IAppxBundleFactory" /> interface to retrieve the <b>IAppxBundleWriter</b> object.</para>
-      <para>You can add only app packages to the writer.  The writer automatically generates footprint files, such as, the bundle’s manifest and block map.</para>
-    </remarks>
+    <summary>Provides a write-only object model for bundle packages.</summary>
   </member>
 </doc>

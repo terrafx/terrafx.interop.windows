@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ATTACHMENT_ACTION">
-    <summary>
-      <para>Provides a set of flags to be used with <see cref="IAttachmentExecute.Prompt" /> to indicate the action to be performed upon user confirmation.</para>
-    </summary>
+    <summary>Provides a set of flags to be used with <see cref="IAttachmentExecute.Prompt" /> to indicate the action to be performed upon user confirmation.</summary>
   </member>
   <member name="ATTACHMENT_ACTION.ATTACHMENT_ACTION_CANCEL">
-    <summary>
-      <para>Cancel</para>
-    </summary>
+    <summary>Cancel</summary>
   </member>
   <member name="ATTACHMENT_ACTION.ATTACHMENT_ACTION_SAVE">
-    <summary>
-      <para>Save</para>
-    </summary>
+    <summary>Save</summary>
   </member>
   <member name="ATTACHMENT_ACTION.ATTACHMENT_ACTION_EXEC">
-    <summary>
-      <para>Execute</para>
-    </summary>
+    <summary>Execute</summary>
   </member>
 </doc>

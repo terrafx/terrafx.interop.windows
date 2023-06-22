@@ -3,50 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_FORMAT_SUPPORT2">
-    <summary>
-      <para>Unordered resource support options for a compute shader resource (see <see cref="ID3D11Device.CheckFeatureSupport" />).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>Unordered resource support options for a compute shader resource (see <see cref="ID3D11Device.CheckFeatureSupport" />).</summary>
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_ADD">
-    <summary>
-      <para>Format supports atomic add.</para>
-    </summary>
+    <summary>Format supports atomic add.</summary>
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_BITWISE_OPS">
-    <summary>
-      <para>Format supports atomic bitwise operations.</para>
-    </summary>
+    <summary>Format supports atomic bitwise operations.</summary>
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_COMPARE_STORE_OR_COMPARE_EXCHANGE">
-    <summary>
-      <para>Format supports atomic compare with store or exchange.</para>
-    </summary>
+    <summary>Format supports atomic compare with store or exchange.</summary>
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_EXCHANGE">
-    <summary>
-      <para>Format supports atomic exchange.</para>
-    </summary>
+    <summary>Format supports atomic exchange.</summary>
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_SIGNED_MIN_OR_MAX">
-    <summary>
-      <para>Format supports atomic min and max.</para>
-    </summary>
+    <summary>Format supports atomic min and max.</summary>
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_UNSIGNED_MIN_OR_MAX">
-    <summary>
-      <para>Format supports atomic unsigned min and max.</para>
-    </summary>
+    <summary>Format supports atomic unsigned min and max.</summary>
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_UAV_TYPED_LOAD">
-    <summary>
-      <para>Format supports a typed load.</para>
-    </summary>
+    <summary>Format supports a typed load.</summary>
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_UAV_TYPED_STORE">
-    <summary>
-      <para>Format supports a typed store.</para>
-    </summary>
+    <summary>Format supports a typed store.</summary>
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_OUTPUT_MERGER_LOGIC_OP">
     <summary>
@@ -64,16 +45,12 @@
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_SHAREABLE">
     <summary>
-      <para>Format supports shareable resources.
-<b>Note</b>  <see cref="DXGI_FORMAT_R8G8B8A8_UNORM" /> and <b>DXGI_FORMAT_R8G8B8A8_UNORM_SRGB</b> are never shareable when using feature level 9, even if the device indicates optional feature support for <b>D3D11_FORMAT_SUPPORT_SHAREABLE</b>.
-Attempting to create shared resources with DXGI formats <b>DXGI_FORMAT_R8G8B8A8_UNORM</b> and <b>DXGI_FORMAT_R8G8B8A8_UNORM_SRGB</b> will always fail unless the feature level is 10_0 or higher.</para>
+      <para>Format supports shareable resources.<div><b>Note</b>  <see cref="DXGI_FORMAT_R8G8B8A8_UNORM" /> and <b>DXGI_FORMAT_R8G8B8A8_UNORM_SRGB</b> are never shareable when using feature level 9, even if the device indicates optional feature support for <b>D3D11_FORMAT_SUPPORT_SHAREABLE</b>. Attempting to create shared resources with DXGI formats <b>DXGI_FORMAT_R8G8B8A8_UNORM</b> and <b>DXGI_FORMAT_R8G8B8A8_UNORM_SRGB</b> will always fail unless the feature level is 10_0 or higher.</div></para>
       <para>
         <b>Direct3D 11:  </b>This value is not supported until Direct3D 11.2.</para>
     </summary>
   </member>
   <member name="D3D11_FORMAT_SUPPORT2.D3D11_FORMAT_SUPPORT2_MULTIPLANE_OVERLAY">
-    <summary>
-      <para>Format supports multi-plane overlays.</para>
-    </summary>
+    <summary>Format supports multi-plane overlays.</summary>
   </member>
 </doc>

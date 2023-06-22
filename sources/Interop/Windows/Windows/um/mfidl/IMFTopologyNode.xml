@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFTopologyNode.CloneFrom">
-    <summary>
-      <para>Copies the data from another topology node into this node.</para>
-    </summary>
-    <param name="pNode">
-      <para>A pointer to the <see cref="IMFTopologyNode" /> interface of the node to copy.</para>
-    </param>
+    <summary>Copies the data from another topology node into this node.</summary>
+    <param name="pNode">A pointer to the <see cref="IMFTopologyNode" /> interface of the node to copy.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,49 +12,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The node types do not match.</para>
-          </description>
-        </item>
+          <description>The node types do not match.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The two nodes must have the same node type. To get the node type, call <see cref="IMFTopologyNode.GetNodeType" />.</para>
-      <para>This method copies the object pointer, preferred types, and attributes from <i>pNode</i> to this node. It also copies the <a href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</a> that uniquely identifies each node in a topology. It does not duplicate any of the connections from <i>pNode</i> to other nodes.</para>
-      <para>The purpose of this method is to copy nodes from one topology to another. Do not use duplicate nodes within the same topology.</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.ConnectOutput">
-    <summary>
-      <para>Connects an output stream from this node to the input stream of another node.</para>
-    </summary>
-    <param name="dwOutputIndex">
-      <para>Zero-based index of the output stream on this node.</para>
-    </param>
-    <param name="pDownstreamNode">
-      <para>Pointer to the <see cref="IMFTopologyNode" /> interface of the node to connect to.</para>
-    </param>
-    <param name="dwInputIndexOnDownstreamNode">
-      <para>Zero-based index of the input stream on the other node.</para>
-    </param>
+    <summary>Connects an output stream from this node to the input stream of another node.</summary>
+    <param name="dwOutputIndex">Zero-based index of the output stream on this node.</param>
+    <param name="pDownstreamNode">Pointer to the <see cref="IMFTopologyNode" /> interface of the node to connect to.</param>
+    <param name="dwInputIndexOnDownstreamNode">Zero-based index of the input stream on the other node.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -66,67 +51,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The method failed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method failed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid parameter.</para>
-          </description>
-        </item>
+          <description>Invalid parameter.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Node connections represent data flow from one node to the next. The streams are logical, and are specified by index.</para>
-      <para>If the node is already connected at the specified output, the method breaks the existing connection. If <i>dwOutputIndex</i> or <i>dwInputIndexOnDownstreamNode</i> specify streams that do not exist yet, the method adds as many streams as needed.</para>
-      <para>This method checks for certain invalid conditions:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>An output node cannot have any output connections. If you call this method on an output node, the method returns E_FAIL.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>A node cannot be connected to itself. If <i>pDownstreamNode</i> specifies the same node as the method call, the method returns E_INVALIDARG.</para>
-          </description>
-        </item>
-      </list>
-      <para>However, if the method succeeds, it does not guarantee that the node connection is valid. It is possible to create a partial topology that the topology loader cannot resolve. If so, the <see cref="IMFTopoLoader.Load" /> method will fail.</para>
-      <para>To break an existing node connection, call <see cref="IMFTopologyNode.DisconnectOutput" />.</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.DisconnectOutput">
-    <summary>
-      <para>Disconnects an output stream on this node.</para>
-    </summary>
-    <param name="dwOutputIndex">
-      <para>Zero-based index of the output stream to disconnect.</para>
-    </param>
+    <summary>Disconnects an output stream on this node.</summary>
+    <param name="dwOutputIndex">Zero-based index of the output stream to disconnect.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -134,57 +100,50 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>dwOutputIndex</i> parameter is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>dwOutputIndex</i> parameter is out of range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified output stream is not connected to another node.</para>
-          </description>
-        </item>
+          <description>The specified output stream is not connected to another node.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the specified output stream is connected to another node, this method breaks the connection.</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.GetInput">
-    <summary>
-      <para>Retrieves the node that is connected to a specified input stream on this node.</para>
-    </summary>
-    <param name="dwInputIndex">
-      <para>Zero-based index of an input stream on this node.</para>
-    </param>
-    <param name="ppUpstreamNode">
-      <para>Receives a pointer to the <see cref="IMFTopologyNode" /> interface of the node that is connected to the specified input stream. The caller must release the interface.</para>
-    </param>
-    <param name="pdwOutputIndexOnUpstreamNode">
-      <para>Receives the index of the output stream that is connected to this node's input stream.</para>
-    </param>
+    <summary>Retrieves the node that is connected to a specified input stream on this node.</summary>
+    <param name="dwInputIndex">Zero-based index of an input stream on this node.</param>
+    <param name="ppUpstreamNode">Receives a pointer to the <see cref="IMFTopologyNode" /> interface of the node that is connected to the specified input stream. The caller must release the interface.</param>
+    <param name="pdwOutputIndexOnUpstreamNode">Receives the index of the output stream that is connected to this node's input stream.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -192,48 +151,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The index is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The index is out of range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified input stream is not connected to another node.</para>
-          </description>
-        </item>
+          <description>The specified input stream is not connected to another node.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.GetInputCount">
-    <summary>
-      <para>Retrieves the number of input streams that currently exist on this node.</para>
-    </summary>
-    <param name="pcInputs">
-      <para>Receives the number of input streams.</para>
-    </param>
+    <summary>Retrieves the number of input streams that currently exist on this node.</summary>
+    <param name="pcInputs">Receives the number of input streams.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -241,35 +200,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The input streams may or may not be connected to output streams on other nodes. To get the node that is connected to a specified input stream, call <see cref="IMFTopologyNode.GetInput" />.</para>
-      <para>The <see cref="IMFTopologyNode.ConnectOutput" /> and <see cref="IMFTopologyNode.SetInputPrefType" /> methods add new input streams as needed.</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.GetInputPrefType">
-    <summary>
-      <para>Retrieves the preferred media type for an input stream on this node.</para>
-    </summary>
-    <param name="dwInputIndex">
-      <para>Zero-based index of the input stream.</para>
-    </param>
-    <param name="ppType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface of the media type. The caller must release the interface.</para>
-    </param>
+    <summary>Retrieves the preferred media type for an input stream on this node.</summary>
+    <param name="dwInputIndex">Zero-based index of the input stream.</param>
+    <param name="ppType">Receives a pointer to the <see cref="IMFMediaType" /> interface of the media type. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -277,62 +226,60 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>This node does not have a preferred input type.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This node does not have a preferred input type.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid stream index.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>This node is a source node.</para>
-          </description>
-        </item>
+          <description>This node is a source node.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Source nodes cannot have inputs. If this method is called on a source node, it returns E_NOTIMPL.</para>
-      <para>The preferred input type provides a hint to the topology loader. In a fully resolved topology, there is no guarantee that every topology node will have a preferred input type. To get the actual media type for a node, you must get a pointer to the node's underlying object. (For more information, see <see cref="MF_TOPOLOGY_TYPE" /> enumeration.)</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.GetNodeType">
-    <summary>
-      <para>Retrieves the node type.</para>
-    </summary>
-    <param name="pType">
-      <para>Receives the node type, specified as a member of the <see cref="MF_TOPOLOGY_TYPE" /> enumeration.</para>
-    </param>
+    <summary>Retrieves the node type.</summary>
+    <param name="pType">Receives the node type, specified as a member of the <see cref="MF_TOPOLOGY_TYPE" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -340,28 +287,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.GetObject">
-    <summary>
-      <para>Gets the object associated with this node.</para>
-    </summary>
-    <param name="ppObject">
-      <para>Receives a pointer to the object's <b>IUnknown</b> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets the object associated with this node.</summary>
+    <param name="ppObject">Receives a pointer to the object's <b>IUnknown</b> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -369,44 +312,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no object associated with this node.</para>
-          </description>
-        </item>
+          <description>There is no object associated with this node.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.GetOutput">
-    <summary>
-      <para>Retrieves the node that is connected to a specified output stream on this node.</para>
-    </summary>
-    <param name="dwOutputIndex">
-      <para>Zero-based index of an output stream on this node.</para>
-    </param>
-    <param name="ppDownstreamNode">
-      <para>Receives a pointer to the <see cref="IMFTopologyNode" /> interface of the node that is connected to the specified output stream. The caller must release the interface.</para>
-    </param>
-    <param name="pdwInputIndexOnDownstreamNode">
-      <para>Receives the index of the input stream that is connected to this node's output stream.</para>
-    </param>
+    <summary>Retrieves the node that is connected to a specified output stream on this node.</summary>
+    <param name="dwOutputIndex">Zero-based index of an output stream on this node.</param>
+    <param name="ppDownstreamNode">Receives a pointer to the <see cref="IMFTopologyNode" /> interface of the node that is connected to the specified output stream. The caller must release the interface.</param>
+    <param name="pdwInputIndexOnDownstreamNode">Receives the index of the input stream that is connected to this node's output stream.</param>
     <returns>
       <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -414,48 +351,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The index is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The index is out of range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified input stream is not connected to another node.</para>
-          </description>
-        </item>
+          <description>The specified input stream is not connected to another node.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.GetOutputCount">
-    <summary>
-      <para>Retrieves the number of output streams that currently exist on this node.</para>
-    </summary>
-    <param name="pcOutputs">
-      <para>Receives the number of output streams.</para>
-    </param>
+    <summary>Retrieves the number of output streams that currently exist on this node.</summary>
+    <param name="pcOutputs">Receives the number of output streams.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -463,35 +400,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The output streams may or may not be connected to input streams on other nodes. To get the node that is connected to a specific output stream on this node, call <see cref="IMFTopologyNode.GetOutput" />.</para>
-      <para>The <see cref="IMFTopologyNode.ConnectOutput" /> and <see cref="IMFTopologyNode.SetOutputPrefType" /> methods add new input streams as needed.</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.GetOutputPrefType">
-    <summary>
-      <para>Retrieves the preferred media type for an output stream on this node.</para>
-    </summary>
-    <param name="dwOutputIndex">
-      <para>Zero-based index of the output stream.</para>
-    </param>
-    <param name="ppType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface of the media type. The caller must release the interface.</para>
-    </param>
+    <summary>Retrieves the preferred media type for an output stream on this node.</summary>
+    <param name="dwOutputIndex">Zero-based index of the output stream.</param>
+    <param name="ppType">Receives a pointer to the <see cref="IMFMediaType" /> interface of the media type. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -499,83 +426,66 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>This node does not have a preferred output type.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This node does not have a preferred output type.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid stream index.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>This node is an output node.</para>
-          </description>
-        </item>
+          <description>This node is an output node.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Output nodes cannot have outputs. If this method is called on an output node, it returns E_NOTIMPL.</para>
-      <para>The preferred output type provides a hint to the topology loader. In a fully resolved topology, there is no guarantee that every topology node will have a preferred output type. To get the actual media type for a node, you must get a pointer to the node's underlying object. (For more information, see <see cref="MF_TOPOLOGY_TYPE" /> enumeration.)</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.GetTopoNodeID">
-    <summary>
-      <para>Retrieves the identifier of the node.</para>
-    </summary>
-    <param name="pID">
-      <para>Receives the identifier.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When a node is first created, it is assigned an identifier. Node identifiers are unique within a topology, but can be reused across several topologies. The topology loader uses the identifier to look up nodes in the previous topology, so that it can reuse objects from the previous topology.</para>
-      <para>To find a node in a topology by its identifier, call <see cref="IMFTopology.GetNodeByID" />.</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
+    <summary>Retrieves the identifier of the node.</summary>
+    <param name="pID">Receives the identifier.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTopologyNode.SetInputPrefType">
-    <summary>
-      <para>Sets the preferred media type for an input stream on this node.</para>
-    </summary>
-    <param name="dwInputIndex">
-      <para>Zero-based index of the input stream.</para>
-    </param>
-    <param name="pType">
-      <para>Pointer to the <see cref="IMFMediaType" /> interface of the media type.</para>
-    </param>
+    <summary>Sets the preferred media type for an input stream on this node.</summary>
+    <param name="dwInputIndex">Zero-based index of the input stream.</param>
+    <param name="pType">Pointer to the <see cref="IMFMediaType" /> interface of the media type.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -583,44 +493,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>This node is a source node.</para>
-          </description>
-        </item>
+          <description>This node is a source node.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The preferred type is a hint for the topology loader.</para>
-      <para>Do not call this method after loading a topology or setting a topology on the Media Session. Changing the preferred type on a running topology can cause connection errors.</para>
-      <para>If no input stream exists at the specified index, the method creates new streams up to and including the specified index number.</para>
-      <para>Source nodes cannot have inputs. If this method is called on a source node, it returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.SetObject">
-    <summary>
-      <para>Sets the object associated with this node.</para>
-    </summary>
-    <param name="pObject">
-      <para>A pointer to the object's <b>IUnknown</b> interface. Use the value <b>NULL</b> to clear an object that was previous set.</para>
-    </param>
+    <summary>Sets the object associated with this node.</summary>
+    <param name="pObject">A pointer to the object's <b>IUnknown</b> interface. Use the value <b>NULL</b> to clear an object that was previous set.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -628,59 +530,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>All node types support this method, but the object pointer is not used by every node type.</para>
-      <list type="table">
-        <listheader>
-          <description>Node type</description>
-          <description>Object pointer</description>
-        </listheader>
-        <item>
-          <description>Source node.</description>
-          <description>Not used.</description>
-        </item>
-        <item>
-          <description>Transform node.</description>
-          <description>
-            <see cref="IMFTransform" /> or <see cref="IMFActivate" /> interface.</description>
-        </item>
-        <item>
-          <description>Output node</description>
-          <description>
-            <see cref="IMFStreamSink" /> or <see cref="IMFActivate" /> interface.</description>
-        </item>
-        <item>
-          <description>Tee node.</description>
-          <description>Not used.</description>
-        </item>
-      </list>
-      <para>If the object supports <b>IPersist</b>, <b>IPersistStorage</b>, or <b>IPersistPropertyBag</b>, the method gets the object's CLSID and sets the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-transform-objectid-attribute">MF_TOPONODE_TRANSFORM_OBJECTID</a> attribute on the node.</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.SetOutputPrefType">
-    <summary>
-      <para>Sets the preferred media type for an output stream on this node.</para>
-    </summary>
-    <param name="dwOutputIndex">
-      <para>Zero-based index of the output stream.</para>
-    </param>
-    <param name="pType">
-      <para>Pointer to the <see cref="IMFMediaType" /> interface of the media type.</para>
-    </param>
+    <summary>Sets the preferred media type for an output stream on this node.</summary>
+    <param name="dwOutputIndex">Zero-based index of the output stream.</param>
+    <param name="pType">Pointer to the <see cref="IMFMediaType" /> interface of the media type.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -688,44 +556,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>This node is an output node.</para>
-          </description>
-        </item>
+          <description>This node is an output node.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The preferred type is a hint for the topology loader.</para>
-      <para>Do not call this method after loading a topology or setting a topology on the Media Session. Changing the preferred type on a running topology can cause connection errors.</para>
-      <para>If no output stream exists at the specified index, the method creates new streams up to and including the specified index number.</para>
-      <para>Output nodes cannot have outputs. If this method is called on an output node, it returns E_NOTIMPL</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode.SetTopoNodeID">
-    <summary>
-      <para>Sets the identifier for the node.</para>
-    </summary>
-    <param name="ullTopoID">
-      <para>The identifier for the node.</para>
-    </param>
+    <summary>Sets the identifier for the node.</summary>
+    <param name="ullTopoID">The identifier for the node.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -733,60 +593,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</a> has already been set for this object.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</a> has already been set for this object.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When a node is first created, it is assigned an identifier. Typically there is no reason for an application to override the identifier. Within a topology, each node identifier should be unique.</para>
-    </remarks>
-    <seealso cref="IMFTopologyNode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopologyNode">
     <summary>
       <para>Represents a node in a topology. The following node types are supported:</para>
       <list type="bullet">
         <item>
-          <description>Output node. Represents a media sink.
-</description>
+          <description>Output node. Represents a media sink.</description>
         </item>
         <item>
-          <description>Source node. Represents a media stream.
-</description>
+          <description>Source node. Represents a media stream.</description>
         </item>
         <item>
-          <description>Transform node. Represents a Media Foundation Transform (MFT).
-</description>
+          <description>Transform node. Represents a Media Foundation Transform (MFT).</description>
         </item>
         <item>
-          <description>Tee node. Delivers a media stream to two or more nodes.
-</description>
+          <description>Tee node. Delivers a media stream to two or more nodes.</description>
         </item>
-      </list>To create a new node, call the <see cref="MFCreateTopologyNode" /> function.
-</summary>
-    <seealso cref="IMFAttributes" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topology-node-attributes">Topology Node Attributes</seealso>
+      </list>To create a new node, call the <see cref="MFCreateTopologyNode" /> function.</summary>
   </member>
 </doc>

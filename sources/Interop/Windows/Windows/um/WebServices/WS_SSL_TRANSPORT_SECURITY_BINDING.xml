@@ -4,45 +4,33 @@
 <doc>
   <member name="WS_SSL_TRANSPORT_SECURITY_BINDING">
     <summary>
-      <para>The security binding subtype for specifying the use of SSL/TLS
-protocol based transport security.</para>
-      <para>This security binding is supported only with the
-<see cref="WS_HTTP_CHANNEL_BINDING" />.</para>
+      <para>The security binding subtype for specifying the use of SSL/TLS protocol based transport security.</para>
+      <para>This security binding is supported only with the<see cref="WS_HTTP_CHANNEL_BINDING" />.</para>
       <para>With this security binding, the following security binding properties may be specified:</para>
       <list type="bullet">
         <item>
           <description>
-            <see cref="WS_SECURITY_BINDING_PROPERTY_CERT_FAILURES_TO_IGNORE" /> (client side only)
-</description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_CERT_FAILURES_TO_IGNORE" /> (client side only)</description>
         </item>
         <item>
           <description>
-            <see cref="WS_SECURITY_BINDING_PROPERTY_DISABLE_CERT_REVOCATION_CHECK" /> (client side only)
-</description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_DISABLE_CERT_REVOCATION_CHECK" /> (client side only)</description>
         </item>
         <item>
           <description>
-            <see cref="WS_SECURITY_BINDING_PROPERTY_REQUIRE_SSL_CLIENT_CERT" /> (server side only)
-</description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_REQUIRE_SSL_CLIENT_CERT" /> (server side only)</description>
         </item>
       </list>
     </summary>
   </member>
   <member name="WS_SSL_TRANSPORT_SECURITY_BINDING.binding">
-    <summary>
-      <para>The base type from which this security binding subtype and all other security binding subtypes derive.</para>
-    </summary>
+    <summary>The base type from which this security binding subtype and all other security binding subtypes derive.</summary>
   </member>
   <member name="WS_SSL_TRANSPORT_SECURITY_BINDING.localCertCredential">
     <summary>
       <para>The local certificate credential to be used with this security binding.</para>
-      <para>Server side: When SSL is used for transport security with <see cref="WS_HTTP_CHANNEL_BINDING" />, the server certificate must be
-registered by the application using the httpcfg
-tool and this field must be set to <b>NULL</b>.  In all other cases, the
-server SSL certificate must be specified using this field.</para>
-      <para>Client side: If a client certificate is to be used with SSL, it must
-be specified using this field.  If no client certificate is to be
-used, this field must be set to <b>NULL</b>.</para>
+      <para>Server side: When SSL is used for transport security with <see cref="WS_HTTP_CHANNEL_BINDING" />, the server certificate must be registered by the application using the httpcfg tool and this field must be set to <b>NULL</b>. In all other cases, the server SSL certificate must be specified using this field.</para>
+      <para>Client side: If a client certificate is to be used with SSL, it must be specified using this field. If no client certificate is to be used, this field must be set to <b>NULL</b>.</para>
     </summary>
   </member>
 </doc>

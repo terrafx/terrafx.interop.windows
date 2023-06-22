@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CHANGER_SEND_VOLUME_TAG_INFORMATION">
-    <summary>
-      <para>Contains information that the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_query_volume_tags">IOCTL_CHANGER_QUERY_VOLUME_TAGS</a> control code uses to determine the volume information to be retrieved.</para>
-    </summary>
-    <seealso cref="CHANGER_ELEMENT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_query_volume_tags">IOCTL_CHANGER_QUERY_VOLUME_TAGS</seealso>
+    <summary>Contains information that the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_query_volume_tags">IOCTL_CHANGER_QUERY_VOLUME_TAGS</a> control code uses to determine the volume information to be retrieved.</summary>
   </member>
   <member name="CHANGER_SEND_VOLUME_TAG_INFORMATION.StartingElement">
-    <summary>
-      <para>A
-<see cref="CHANGER_ELEMENT" /> structure that represents the starting element for which information is to be retrieved.</para>
-    </summary>
+    <summary>A<see cref="CHANGER_ELEMENT" /> structure that represents the starting element for which information is to be retrieved.</summary>
   </member>
   <member name="CHANGER_SEND_VOLUME_TAG_INFORMATION.ActionCode">
     <summary>
@@ -24,228 +16,190 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ASSERT_ALTERNATE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Define the alternate volume tag of a volume that currently has none defined.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_ASSERT.</para>
-          </description>
-        </item>
-        <item>
+          <description>Define the alternate volume tag of a volume that currently has none defined. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_ASSERT.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ASSERT_PRIMARY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x8</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Define the primary volume tag of a volume that currently has none defined.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_ASSERT.</para>
-          </description>
-        </item>
-        <item>
+          <description>Define the primary volume tag of a volume that currently has none defined. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_ASSERT.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>REPLACE_ALTERNATE</b>
-                </description>
-              </item>
-              <item>
-                <description>0xB</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xB</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Replace the alternate volume tag with a new tag.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_REPLACE.</para>
-          </description>
-        </item>
-        <item>
+          <description>Replace the alternate volume tag with a new tag. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_REPLACE.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>REPLACE_PRIMARY</b>
-                </description>
-              </item>
-              <item>
-                <description>0xA</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xA</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Replace the primary volume tag with a new tag.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_REPLACE.</para>
-          </description>
-        </item>
-        <item>
+          <description>Replace the primary volume tag with a new tag. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_REPLACE.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SEARCH_ALL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Search all defined volume tags.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para>
-          </description>
-        </item>
-        <item>
+          <description>Search all defined volume tags. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SEARCH_ALL_NO_SEQ</b>
-                </description>
-              </item>
-              <item>
-                <description>0x4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Search all defined volume tags, but ignore sequence numbers.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para>
-          </description>
-        </item>
-        <item>
+          <description>Search all defined volume tags, but ignore sequence numbers. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SEARCH_ALT_NO_SEQ</b>
-                </description>
-              </item>
-              <item>
-                <description>0x6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Search only alternate volume tags, but ignore sequence numbers.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para>
-          </description>
-        </item>
-        <item>
+          <description>Search only alternate volume tags, but ignore sequence numbers. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SEARCH_ALTERNATE</b>
-                </description>
-              </item>
-              <item>
-                <description>02</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>02</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Search only alternate volume tags.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para>
-          </description>
-        </item>
-        <item>
+          <description>Search only alternate volume tags. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SEARCH_PRI_NO_SEQ</b>
-                </description>
-              </item>
-              <item>
-                <description>05</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>05</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Search only primary volume tags but ignore sequence numbers.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para>
-          </description>
-        </item>
-        <item>
+          <description>Search only primary volume tags but ignore sequence numbers. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SEARCH_PRIMARY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Search only primary volume tags.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para>
-          </description>
-        </item>
-        <item>
+          <description>Search only primary volume tags. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_SEARCH.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>UNDEFINE_ALTERNATE</b>
-                </description>
-              </item>
-              <item>
-                <description>0xD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Clear the alternate volume tag.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_UNDEFINE.</para>
-          </description>
-        </item>
-        <item>
+          <description>Clear the alternate volume tag. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_UNDEFINE.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>UNDEFINE_PRIMARY</b>
-                </description>
-              </item>
-              <item>
-                <description>0xC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Clear the primary volume tag.</para>
-            <para>Requires that <b>Features0</b> is CHANGER_VOLUME_UNDEFINE.</para>
-          </description>
-        </item>
+          <description>Clear the primary volume tag. <para>Requires that <b>Features0</b> is CHANGER_VOLUME_UNDEFINE.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CHANGER_SEND_VOLUME_TAG_INFORMATION.VolumeIDTemplate">
-    <summary>
-      <para>The template that the device uses to search for volume IDs. For search operations, the template can include wildcard characters to search for volumes that match the template. Supported wildcard characters include the asterisk (*) and question mark (?). For other operations, the template must specify a single volume.</para>
-    </summary>
+    <summary>The template that the device uses to search for volume IDs. For search operations, the template can include wildcard characters to search for volumes that match the template. Supported wildcard characters include the asterisk (*) and question mark (?). For other operations, the template must specify a single volume.</summary>
   </member>
 </doc>

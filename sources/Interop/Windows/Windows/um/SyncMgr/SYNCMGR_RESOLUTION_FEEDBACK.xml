@@ -3,24 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGR_RESOLUTION_FEEDBACK">
-    <summary>
-      <para>Describes Sync Manager resolution feedback. Used by <see cref="ISyncMgrResolutionHandler" />.</para>
-    </summary>
+    <summary>Describes Sync Manager resolution feedback. Used by <see cref="ISyncMgrResolutionHandler" />.</summary>
   </member>
   <member name="SYNCMGR_RESOLUTION_FEEDBACK.SYNCMGR_RF_CONTINUE">
-    <summary>
-      <para>Proceed to the next conflict.</para>
-    </summary>
+    <summary>Proceed to the next conflict.</summary>
   </member>
   <member name="SYNCMGR_RESOLUTION_FEEDBACK.SYNCMGR_RF_REFRESH">
     <summary>
-      <para>
-        <b>Apply to All</b> is stopped and the dialog will be displayed for this conflict.</para>
-    </summary>
+      <b>Apply to All</b> is stopped and the dialog will be displayed for this conflict.</summary>
   </member>
   <member name="SYNCMGR_RESOLUTION_FEEDBACK.SYNCMGR_RF_CANCEL">
-    <summary>
-      <para>Cancels resolution of any more conflicts in the set.</para>
-    </summary>
+    <summary>Cancels resolution of any more conflicts in the set.</summary>
   </member>
 </doc>

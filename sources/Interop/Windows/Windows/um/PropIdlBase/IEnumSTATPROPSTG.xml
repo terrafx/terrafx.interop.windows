@@ -3,11 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumSTATPROPSTG.Clone">
-    <summary>
-      <para>The <b>Clone</b> method creates an enumerator that contains the same enumeration state as the current <see cref="STATPROPSTG" /> structure enumerator. Using this method, a client can record a particular point in the enumeration sequence and then return to that point later. The new enumerator supports the same <see cref="IEnumSTATPROPSTG" /> interface.</para>
-    </summary>
+    <summary>The <b>Clone</b> method creates an enumerator that contains the same enumeration state as the current <see cref="STATPROPSTG" /> structure enumerator. Using this method, a client can record a particular point in the enumeration sequence and then return to that point later. The new enumerator supports the same <see cref="IEnumSTATPROPSTG" /> interface.</summary>
     <param name="ppenum">
-      <para>A pointer to the variable that receives the  <see cref="IEnumSTATPROPSTG" /> interface pointer.</para>
+      <code>A pointer to the variable that receives the &lt;a href="/windows/desktop/api/propidl/nn-propidl-ienumstatpropstg"&gt;IEnumSTATPROPSTG&lt;/a&gt; interface pointer.</code>
       <para>If the method is unsuccessful, the value of the <i>ppenum</i> parameter is undefined.</para>
     </param>
     <returns>
@@ -17,52 +15,50 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>ppenum</i> parameter is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>ppenum</i> parameter is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Insufficient memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected exception occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected exception occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumSTATPROPSTG.Next">
-    <summary>
-      <para>The <b>Next</b> method retrieves a specified number of <see cref="STATPROPSTG" /> structures, that follow subsequently in the enumeration sequence. If fewer than the requested number of <see cref="STATPROPSTG" /> structures exist in the enumeration sequence, it retrieves the remaining <b>STATPROPSTG</b> structures.</para>
-    </summary>
-    <param name="celt">
-      <para>The number of <see cref="STATPROPSTG" /> structures requested.</para>
-    </param>
-    <param name="rgelt">
-      <para>An array of <see cref="STATPROPSTG" /> structures returned.</para>
-    </param>
-    <param name="pceltFetched">
-      <para>The number of <see cref="STATPROPSTG" /> structures  retrieved in the <i>rgelt</i> parameter.</para>
-    </param>
+    <summary>The <b>Next</b> method retrieves a specified number of <see cref="STATPROPSTG" /> structures, that follow subsequently in the enumeration sequence. If fewer than the requested number of <see cref="STATPROPSTG" /> structures exist in the enumeration sequence, it retrieves the remaining <b>STATPROPSTG</b> structures.</summary>
+    <param name="celt">The number of <see cref="STATPROPSTG" /> structures requested.</param>
+    <param name="rgelt">An array of <see cref="STATPROPSTG" /> structures returned.</param>
+    <param name="pceltFetched">The number of <see cref="STATPROPSTG" /> structures retrieved in the <i>rgelt</i> parameter.</param>
     <returns>
       <para>This method supports the following return values.</para>
       <list type="table">
@@ -70,33 +66,35 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The number of <see cref="STATPROPSTG" /> structures returned is equal to the number specified in the <i>celt</i> parameter.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The number of <see cref="STATPROPSTG" /> structures returned is equal to the number specified in the <i>celt</i> parameter.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The number of <see cref="STATPROPSTG" /> structures returned is less than the number specified in the <i>celt</i> parameter.</para>
-          </description>
-        </item>
+          <description>The number of <see cref="STATPROPSTG" /> structures returned is less than the number specified in the <i>celt</i> parameter.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumSTATPROPSTG.Reset">
-    <summary>
-      <para>The <b>Reset</b> method resets the enumeration sequence to the beginning of the <see cref="STATPROPSTG" /> structure array.</para>
-    </summary>
+    <summary>The <b>Reset</b> method resets the enumeration sequence to the beginning of the <see cref="STATPROPSTG" /> structure array.</summary>
     <returns>
       <para>This method supports the S_OK return value.</para>
       <list type="table">
@@ -104,45 +102,33 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The enumeration sequence was successfully reset to the beginning of the enumeration.</para>
-          </description>
-        </item>
+          <description>The enumeration sequence was successfully reset to the beginning of the enumeration.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumSTATPROPSTG.Skip">
-    <summary>
-      <para>The <b>Skip</b> method skips the specified number of <see cref="STATPROPSTG" /> structures in the enumeration sequence.</para>
-    </summary>
-    <param name="celt">
-      <para>The number of <see cref="STATPROPSTG" /> structures to skip.</para>
-    </param>
-    <returns>
-      <para>This method supports the following return values:</para>
-    </returns>
-    <remarks>
-      <para>A positive value for the <i>celt</i> parameter skips forward in the <see cref="STATPROPSTG" /> structure enumeration. A negative value for the <i>celt</i> parameter skips backward in the <b>STATPROPSTG</b> structure enumeration.</para>
-    </remarks>
+    <summary>The <b>Skip</b> method skips the specified number of <see cref="STATPROPSTG" /> structures in the enumeration sequence.</summary>
+    <param name="celt">The number of <see cref="STATPROPSTG" /> structures to skip.</param>
+    <returns>This method supports the following return values:</returns>
   </member>
   <member name="IEnumSTATPROPSTG">
     <summary>
-      <para>The
-<b>IEnumSTATPROPSTG</b> interface iterates through an array of
-<see cref="STATPROPSTG" /> structures. The <b>STATPROPSTG</b> structures contain statistical data about properties in a property set. <b>IEnumSTATPROPSTG</b> has the same methods as all enumerator interfaces: <see cref="Next" />, <see cref="Skip" />, <see cref="Reset" />, and
-<see cref="Clone" />.</para>
+      <para>The<b>IEnumSTATPROPSTG</b> interface iterates through an array of<see cref="STATPROPSTG" /> structures. The <b>STATPROPSTG</b> structures contain statistical data about properties in a property set. <b>IEnumSTATPROPSTG</b> has the same methods as all enumerator interfaces: <see cref="Next" />, <see cref="Skip" />, <see cref="Reset" />, and<see cref="Clone" />.</para>
       <para>The implementation defines the order in which the properties in the set are enumerated. Properties that are present when the enumerator is created, and are not removed during the enumeration, will be enumerated only once. Properties added or deleted while the enumeration is in progress may or may not be enumerated, but will never be enumerated more than once.</para>
       <para>
         <a href="https://docs.microsoft.com//windows/desktop/Stg/reserved-property-identifiers">Reserved property identifiers</a>, properties with a property ID of 0 (dictionary), 1 (code page indicator), or greater than or equal to 0x80000000 are not enumerated.</para>
       <para>Enumeration of a nonsimple property does not necessarily indicate that the property can be read successfully through a call to <see cref="IPropertyStorage.ReadMultiple" />. This is because the performance overhead of checking existence of the indirect stream or storage is prohibitive during property enumeration.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/enumall-sample">EnumAll Sample</seealso>
-    <seealso cref="IPropertyStorage.Enum" />
   </member>
 </doc>

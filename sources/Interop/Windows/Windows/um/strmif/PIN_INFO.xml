@@ -4,29 +4,17 @@
 <doc>
   <member name="PIN_INFO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>PIN_INFO</code> structure contains information about a pin.</para>
     </summary>
-    <remarks>
-      <para>If the name of an output pin begins with a tilde (~), the filter graph manager ignores the pin when it builds a graph. During a call to <see cref="IGraphBuilder.Connect" />, <see cref="IGraphBuilder.Render" />, or <see cref="IGraphBuilder.RenderFile" />, if the pin appears on an intermediate filter, the filter graph manager does not render the pin. However, it renders the pin if you explicitly pass the pin to the <b>Connect</b> or <b>Render</b> method.</para>
-      <para>Use a tilde if the pin delivers a secondary stream that should not be rendered by default, or if the pin requires special code to render correctly. For example, DVD filters should use it for pins that deliver subpicture or closed captioning data. Video capture filters should use it for capture pins (but not preview pins).</para>
-      <para>The <b>pFilter</b> member has an outstanding reference count. The application must release the interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso cref="IPin.QueryPinInfo" />
   </member>
   <member name="PIN_INFO.pFilter">
-    <summary>
-      <para>Pointer to the <see cref="IBaseFilter" /> interface of the owning filter.</para>
-    </summary>
+    <summary>Pointer to the <see cref="IBaseFilter" /> interface of the owning filter.</summary>
   </member>
   <member name="PIN_INFO.dir">
-    <summary>
-      <para>Direction of the pin (input or output).</para>
-    </summary>
+    <summary>Direction of the pin (input or output).</summary>
   </member>
   <member name="PIN_INFO.achName">
-    <summary>
-      <para>Name of the pin.</para>
-    </summary>
+    <summary>Name of the pin.</summary>
   </member>
 </doc>

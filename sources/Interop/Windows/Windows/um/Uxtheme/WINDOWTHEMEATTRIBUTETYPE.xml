@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINDOWTHEMEATTRIBUTETYPE">
-    <summary>
-      <para>Specifies the type of visual style attribute to set on a window.</para>
-    </summary>
-    <seealso cref="SetWindowThemeAttribute" />
+    <summary>Specifies the type of visual style attribute to set on a window.</summary>
   </member>
   <member name="WINDOWTHEMEATTRIBUTETYPE.WTA_NONCLIENT">
-    <summary>
-      <para>Non-client area window attributes will be set.</para>
-    </summary>
+    <summary>Non-client area window attributes will be set.</summary>
   </member>
 </doc>

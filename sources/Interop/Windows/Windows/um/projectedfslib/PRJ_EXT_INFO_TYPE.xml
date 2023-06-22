@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_EXT_INFO_TYPE">
-    <summary>
-      <para>Specifies extended information types for <see cref="PRJ_EXTENDED_INFO" />.</para>
-    </summary>
+    <summary>Specifies extended information types for <see cref="PRJ_EXTENDED_INFO" />.</summary>
   </member>
   <member name="PRJ_EXT_INFO_TYPE.PRJ_EXT_INFO_TYPE_SYMLINK">
-    <summary>
-      <para>This <see cref="PRJ_EXTENDED_INFO" /> specifies the target of a symbolic link.</para>
-    </summary>
+    <summary>This <see cref="PRJ_EXTENDED_INFO" /> specifies the target of a symbolic link.</summary>
   </member>
 </doc>

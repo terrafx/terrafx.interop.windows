@@ -7,26 +7,14 @@
       <para>Rearranges blocks of spatial data into depth. The operator outputs a copy of the input tensor where values from the height and width dimensions are moved to the depth dimension.</para>
       <para>This is the inverse transformation of <see cref="DML_DEPTH_TO_SPACE_OPERATOR_DESC" />.</para>
     </summary>
-    <remarks>
-      <para>A newer version of this operator, <see cref="DML_SPACE_TO_DEPTH1_OPERATOR_DESC" />, was introduced in <code>DML_FEATURE_LEVEL_2_1</code>.</para>
-    </remarks>
   </member>
   <member name="DML_SPACE_TO_DEPTH_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to read from. The input tensor's dimensions are <code>{ Batch, Channels, Height, Width }</code>.</para>
-    </summary>
+    <summary>The tensor to read from. The input tensor's dimensions are <code>{ Batch, Channels, Height, Width }</code>.</summary>
   </member>
   <member name="DML_SPACE_TO_DEPTH_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to write the results to. The output tensor's dimensions are <code>{ Batch, Channels / (BlockSize * BlockSize), Height * BlockSize, Width * BlockSize }</code>.</para>
-    </summary>
+    <summary>The tensor to write the results to. The output tensor's dimensions are <code>{ Batch, Channels / (BlockSize * BlockSize), Height * BlockSize, Width * BlockSize }</code>.</summary>
   </member>
   <member name="DML_SPACE_TO_DEPTH_OPERATOR_DESC.BlockSize">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The width and height of the Blocks that are moved.</para>
-    </summary>
+    <summary>The width and height of the Blocks that are moved.</summary>
   </member>
 </doc>

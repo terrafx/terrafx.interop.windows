@@ -3,65 +3,37 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SID_NAME_USE">
-    <summary>
-      <para>The <b>SID_NAME_USE</b> enumeration contains values that specify the type of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/access-control">Access Control Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/authorization-enumerations">Authorization Enumerations</seealso>
-    <seealso cref="LookupAccountName" />
-    <seealso cref="LookupAccountSid" />
+    <summary>The <b>SID_NAME_USE</b> enumeration contains values that specify the type of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID).</summary>
   </member>
   <member name="SID_NAME_USE.SidTypeUser">
-    <summary>
-      <para>A user SID.</para>
-    </summary>
+    <summary>A user SID.</summary>
   </member>
   <member name="SID_NAME_USE.SidTypeGroup">
-    <summary>
-      <para>A group SID.</para>
-    </summary>
+    <summary>A group SID.</summary>
   </member>
   <member name="SID_NAME_USE.SidTypeDomain">
-    <summary>
-      <para>A domain SID.</para>
-    </summary>
+    <summary>A domain SID.</summary>
   </member>
   <member name="SID_NAME_USE.SidTypeAlias">
-    <summary>
-      <para>An alias SID.</para>
-    </summary>
+    <summary>An alias SID.</summary>
   </member>
   <member name="SID_NAME_USE.SidTypeWellKnownGroup">
-    <summary>
-      <para>A SID for a well-known group.</para>
-    </summary>
+    <summary>A SID for a well-known group.</summary>
   </member>
   <member name="SID_NAME_USE.SidTypeDeletedAccount">
-    <summary>
-      <para>A SID for a deleted account.</para>
-    </summary>
+    <summary>A SID for a deleted account.</summary>
   </member>
   <member name="SID_NAME_USE.SidTypeInvalid">
-    <summary>
-      <para>A SID that is not valid.</para>
-    </summary>
+    <summary>A SID that is not valid.</summary>
   </member>
   <member name="SID_NAME_USE.SidTypeUnknown">
-    <summary>
-      <para>A SID of unknown type.</para>
-    </summary>
+    <summary>A SID of unknown type.</summary>
   </member>
   <member name="SID_NAME_USE.SidTypeComputer">
-    <summary>
-      <para>A SID for a computer.</para>
-    </summary>
+    <summary>A SID for a computer.</summary>
   </member>
   <member name="SID_NAME_USE.SidTypeLabel">
-    <summary>
-      <para>A mandatory integrity label SID.</para>
-    </summary>
+    <summary>A mandatory integrity label SID.</summary>
   </member>
-  <member name="SID_NAME_USE.SidTypeLogonSession">
-    <summary></summary>
-  </member>
+  <member name="SID_NAME_USE.SidTypeLogonSession"></member>
 </doc>

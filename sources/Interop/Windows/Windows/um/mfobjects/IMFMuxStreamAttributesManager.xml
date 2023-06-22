@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMuxStreamAttributesManager.GetAttributes">
-    <summary>
-      <para>Gets the <see cref="IMFAttributes" /> for the substream with the specified index.</para>
-    </summary>
-    <param name="dwMuxStreamIndex">
-      <para>The index of the substream for which attributes are retrieved.</para>
-    </param>
-    <param name="ppStreamAttributes">
-      <para>The attributes for the specified substream.</para>
-    </param>
+    <summary>Gets the <see cref="IMFAttributes" /> for the substream with the specified index.</summary>
+    <param name="dwMuxStreamIndex">The index of the substream for which attributes are retrieved.</param>
+    <param name="ppStreamAttributes">The attributes for the specified substream.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -19,47 +13,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>The stream specified substream index is invalid. Call <see cref="GetStreamCount" /> to get the number of substreams managed by the multiplexed media source.</para>
-          </description>
-        </item>
+          <description>The stream specified substream index is invalid. Call <see cref="GetStreamCount" /> to get the number of substreams managed by the multiplexed media source.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMuxStreamMediaTypeManager" />
   </member>
   <member name="IMFMuxStreamAttributesManager.GetStreamCount">
-    <summary>
-      <para>Gets the count of substreams managed by the multiplexed media source.</para>
-    </summary>
-    <param name="pdwMuxStreamCount">
-      <para>The count of substreams managed by the multiplexed media source.</para>
-    </param>
+    <summary>Gets the count of substreams managed by the multiplexed media source.</summary>
+    <param name="pdwMuxStreamCount">The count of substreams managed by the multiplexed media source.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -67,33 +62,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
+          <description>Invalid argument.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMuxStreamMediaTypeManager" />
   </member>
   <member name="IMFMuxStreamAttributesManager">
-    <summary>
-      <para>Provides access to the <see cref="IMFAttributes" /> of the substreams of a multiplexed media source.</para>
-    </summary>
+    <summary>Provides access to the <see cref="IMFAttributes" /> of the substreams of a multiplexed media source.</summary>
   </member>
 </doc>

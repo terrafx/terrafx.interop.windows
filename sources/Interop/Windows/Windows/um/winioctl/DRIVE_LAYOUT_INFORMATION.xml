@@ -5,14 +5,8 @@
   <member name="DRIVE_LAYOUT_INFORMATION">
     <summary>
       <para>Contains information about the partitions of a drive.</para>
-      <blockquote>
-        <para>[!NOTE]
-<b>DRIVE_LAYOUT_INFORMATION</b> is superseded <see cref="DRIVE_LAYOUT_INFORMATION_EX" /> structure.</para>
-      </blockquote>
+      <blockquote>[!NOTE]<b>DRIVE_LAYOUT_INFORMATION</b> is superseded <see cref="DRIVE_LAYOUT_INFORMATION_EX" /> structure.</blockquote>
     </summary>
-    <seealso cref="DRIVE_LAYOUT_INFORMATION_EX" />
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_get_drive_layout.md">IOCTL_DISK_GET_DRIVE_LAYOUT</seealso>
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_set_drive_layout.md">IOCTL_DISK_SET_DRIVE_LAYOUT</seealso>
   </member>
   <member name="DRIVE_LAYOUT_INFORMATION.PartitionCount">
     <summary>
@@ -21,13 +15,9 @@
     </summary>
   </member>
   <member name="DRIVE_LAYOUT_INFORMATION.Signature">
-    <summary>
-      <para>The drive signature value.</para>
-    </summary>
+    <summary>The drive signature value.</summary>
   </member>
   <member name="DRIVE_LAYOUT_INFORMATION.PartitionEntry">
-    <summary>
-      <para>A variable-sized array of <see cref="PARTITION_INFORMATION" /> structures, one structure for each partition on a drive.</para>
-    </summary>
+    <summary>A variable-sized array of <see cref="PARTITION_INFORMATION" /> structures, one structure for each partition on a drive.</summary>
   </member>
 </doc>

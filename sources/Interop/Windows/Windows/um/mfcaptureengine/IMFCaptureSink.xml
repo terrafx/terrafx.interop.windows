@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFCaptureSink.AddStream">
-    <summary>
-      <para>Connects a stream from the capture source to this capture sink.</para>
-    </summary>
+    <summary>Connects a stream from the capture source to this capture sink.</summary>
     <param name="dwSourceStreamIndex">
       <para>The source stream to connect. The value can be any of the following.</para>
       <list type="table">
@@ -13,71 +11,67 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream. To get the number of streams, call <see cref="IMFCaptureSource.GetDeviceStreamCount" />.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream. To get the number of streams, call <see cref="IMFCaptureSource.GetDeviceStreamCount" />.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_PHOTO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFB</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFB</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first image stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first image stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_CAPTURE_ENGINE_FIRST_SOURCE_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
+          <description>The first audio stream.</description>
+        </listheader>
       </list>
     </param>
     <param name="pMediaType">
@@ -98,9 +92,7 @@
       <para>A pointer to the <see cref="IMFAttributes" /> interface. For compressed streams, you can use this parameter to configure the encoder. This parameter can also be <b>NULL</b>.</para>
       <para>For the preview sink, set this parameter to <b>NULL</b>.</para>
     </param>
-    <param name="pdwSinkStreamIndex">
-      <para>Receives the index of the new stream on the capture sink. Note that this index will not necessarily match the value of <i>dwSourceStreamIndex</i>.</para>
-    </param>
+    <param name="pdwSinkStreamIndex">Receives the index of the new stream on the capture sink. Note that this index will not necessarily match the value of <i>dwSourceStreamIndex</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -108,50 +100,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDMEDIATYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The format specified in <i>pMediaType</i> is not valid for this capture sink.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDMEDIATYPE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The format specified in <i>pMediaType</i> is not valid for this capture sink.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwSourceStreamIndex</i> parameter is invalid, or the specified source stream was already connected to this sink.</para>
-          </description>
-        </item>
+          <description>The <i>dwSourceStreamIndex</i> parameter is invalid, or the specified source stream was already connected to this sink.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFCaptureSink" />
   </member>
   <member name="IMFCaptureSink.GetOutputMediaType">
-    <summary>
-      <para>Gets the output format for a stream on this capture sink.</para>
-    </summary>
-    <param name="dwSinkStreamIndex">
-      <para>The zero-based index of the stream to query. The index is returned in the <i>pdwSinkStreamIndex</i> parameter of the <see cref="IMFCaptureSink.AddStream" /> method.</para>
-    </param>
-    <param name="ppMediaType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the pointer.</para>
-    </param>
+    <summary>Gets the output format for a stream on this capture sink.</summary>
+    <param name="dwSinkStreamIndex">The zero-based index of the stream to query. The index is returned in the <i>pdwSinkStreamIndex</i> parameter of the <see cref="IMFCaptureSink.AddStream" /> method.</param>
+    <param name="ppMediaType">Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the pointer.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -159,46 +150,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwSinkStreamIndex</i> parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The <i>dwSinkStreamIndex</i> parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFCaptureSink" />
   </member>
   <member name="IMFCaptureSink.GetService">
-    <summary>
-      <para>Queries the underlying <a href="https://docs.microsoft.com//windows/desktop/medfound/sink-writer">Sink Writer</a> object for an interface.</para>
-    </summary>
-    <param name="dwSinkStreamIndex">
-      <para>The zero-based index of the stream to query. The index is returned in the <i>pdwSinkStreamIndex</i> parameter of the <see cref="IMFCaptureSink.AddStream" /> method.</para>
-    </param>
-    <param name="rguidService">
-      <para>A service identifier GUID. Currently, the value must be <b>GUID_NULL</b>.</para>
-    </param>
-    <param name="riid">
-      <para>A service identifier GUID. Currently, the value must be <b>IID_IMFSinkWriter</b>.</para>
-    </param>
-    <param name="ppUnknown">
-      <para>Receives a pointer to the <see cref="IUnknown" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Queries the underlying <a href="https://docs.microsoft.com//windows/desktop/medfound/sink-writer">Sink Writer</a> object for an interface.</summary>
+    <param name="dwSinkStreamIndex">The zero-based index of the stream to query. The index is returned in the <i>pdwSinkStreamIndex</i> parameter of the <see cref="IMFCaptureSink.AddStream" /> method.</param>
+    <param name="rguidService">A service identifier GUID. Currently, the value must be <b>GUID_NULL</b>.</param>
+    <param name="riid">A service identifier GUID. Currently, the value must be <b>IID_IMFSinkWriter</b>.</param>
+    <param name="ppUnknown">Receives a pointer to the <see cref="IUnknown" /> interface. The caller must release the interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -206,54 +190,59 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid request.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid request.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid stream number.</para>
-          </description>
-        </item>
+          <description>Invalid stream number.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFCaptureSink" />
   </member>
   <member name="IMFCaptureSink.Prepare">
-    <summary>
-      <para>Prepares the capture sink by loading any required pipeline components, such as encoders, video processors, and media sinks.</para>
-    </summary>
+    <summary>Prepares the capture sink by loading any required pipeline components, such as encoders, video processors, and media sinks.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -261,45 +250,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid request.</para>
-          </description>
-        </item>
+          <description>Invalid request.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Calling this method is optional. This method gives the application an opportunity to configure the pipeline components before they are used. The method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_SINK_PREPARED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method.  After this event is received, call <see cref="IMFCaptureSink.GetService" /> to configure individual components.</para>
-      <para>Before calling this method, configure the capture sink by adding at least one stream. To add a stream, call <see cref="IMFCaptureSink.AddStream" />.</para>
-      <para>The <b>Prepare</b> method fails if the capture sink is currently in use. For example, calling <b>Prepare</b> on the preview sink fails if the capture engine is currently previewing.</para>
-    </remarks>
-    <seealso cref="IMFCaptureSink" />
   </member>
   <member name="IMFCaptureSink.RemoveAllStreams">
-    <summary>
-      <para>Removes all streams from the capture sink.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>You can use this method to reconfigure the sink.</para>
-    </remarks>
-    <seealso cref="IMFCaptureSink" />
+    <summary>Removes all streams from the capture sink.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IMFCaptureSink">
+    <summary>Controls a capture sink, which is an object that receives one or more streams from a capture device.</summary>
   </member>
 </doc>

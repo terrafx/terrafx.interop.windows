@@ -3,100 +3,41 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfLangBarEventSink.GetItemFloatingRect">
-    <summary>
-      <para>Not currently used.</para>
-    </summary>
-    <param name="dwThreadId">
-      <para>Not currently used.</para>
-    </param>
-    <param name="rguid">
-      <para>Not currently used.</para>
-    </param>
-    <param name="prc">
-      <para>Not currently used.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Not currently used.</summary>
+    <param name="dwThreadId">Not currently used.</param>
+    <param name="rguid">Not currently used.</param>
+    <param name="prc">Not currently used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfLangBarEventSink.OnModalInput">
-    <summary>
-      <para>Not currently used.</para>
-    </summary>
-    <param name="dwThreadId">
-      <para>Not currently used.</para>
-    </param>
-    <param name="uMsg">
-      <para>Not currently used.</para>
-    </param>
-    <param name="wParam">
-      <para>Not currently used.</para>
-    </param>
-    <param name="lParam">
-      <para>Not currently used.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Not currently used.</summary>
+    <param name="dwThreadId">Not currently used.</param>
+    <param name="uMsg">Not currently used.</param>
+    <param name="wParam">Not currently used.</param>
+    <param name="lParam">Not currently used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfLangBarEventSink.OnSetFocus">
-    <summary>
-      <para>Called when the thread the event sink was installed from receives the input focus.</para>
-    </summary>
-    <param name="dwThreadId">
-      <para>Contains the current thread identifier. This is the same value returned from <see cref="GetCurrentThreadId" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="GetCurrentThreadId" />
-    <seealso cref="ITfLangBarEventSink" />
+    <summary>Called when the thread the event sink was installed from receives the input focus.</summary>
+    <param name="dwThreadId">Contains the current thread identifier. This is the same value returned from <see cref="GetCurrentThreadId" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfLangBarEventSink.OnThreadItemChange">
-    <summary>
-      <para>Called when a language bar item changes.</para>
-    </summary>
-    <param name="dwThreadId">
-      <para>Contains the current thread identifier. This is the same value returned from <see cref="GetCurrentThreadId" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="GetCurrentThreadId" />
-    <seealso cref="ITfLangBarEventSink" />
+    <summary>Called when a language bar item changes.</summary>
+    <param name="dwThreadId">Contains the current thread identifier. This is the same value returned from <see cref="GetCurrentThreadId" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfLangBarEventSink.OnThreadTerminate">
-    <summary>
-      <para>Not currently used.</para>
-    </summary>
-    <param name="dwThreadId">
-      <para>Not currently used.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Not currently used.</summary>
+    <param name="dwThreadId">Not currently used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfLangBarEventSink.ShowFloating">
-    <summary>
-      <para>Called when <see cref="ITfLangBarMgr.ShowFloating" /> is called.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Contains the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-sft--constants">TF_SFT_*</a> values passed to <b>ITfLangBarMgr.ShowFloating</b>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ITfLangBarEventSink" />
-    <seealso cref="ITfLangBarMgr.ShowFloating " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-sft--constants">TF_SFT_* Constants
-</seealso>
+    <summary>Called when <see cref="ITfLangBarMgr.ShowFloating" /> is called.</summary>
+    <param name="dwFlags">Contains the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-sft--constants">TF_SFT_*</a> values passed to <b>ITfLangBarMgr.ShowFloating</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfLangBarEventSink">
-    <summary>
-      <para>The <b>ITfLangBarEventSink</b> interface is implemented by an application or text service and used by the language bar to supply notifications of certain events that occur in the language bar. The application or text service installs this event sink by calling <see cref="ITfLangBarMgr.AdviseEventSink" />.</para>
-    </summary>
-    <seealso cref="ITfLangBarMgr.AdviseEventSink " />
-    <seealso cref="ITfLangBarMgr.ShowFloating " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfLangBarEventSink</b> interface is implemented by an application or text service and used by the language bar to supply notifications of certain events that occur in the language bar. The application or text service installs this event sink by calling <see cref="ITfLangBarMgr.AdviseEventSink" />.</summary>
   </member>
 </doc>

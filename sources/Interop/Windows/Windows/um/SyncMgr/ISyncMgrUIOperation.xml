@@ -3,61 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrUIOperation.Run">
-    <summary>
-      <para>Performs the actual display of UI for a handler or sync item when requested to do so by Sync Center.</para>
-    </summary>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window used to display the UI.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. Returns S_FALSE or another error code if this method is called to confirm an operation, such as activating a handler or disabling a sync item, but that operation should not be executed.</para>
-    </returns>
-    <remarks>
-      <para>The handler itself, not the UI, is expected to use the <see cref="ISyncMgrControl" /> interface to notify Sync Center of changes to its state that come about through choices made by the user in the UI.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the outline of an implementation of this method. In this case, the implementation is that which would be returned when <see cref="GetObject" /> is called with the SYNCMGR_OBJECTID_QueryBeforeDelete object ID.</para>
-      <code>STDMETHODIMP CQueryBeforeDelete.Run(__in HWND hwndOwner)
-{
-    HRESULT hr = S_OK;
-
-    // Display a dialog confirming that the user wants to delete the item.
-
-    return hr;
-}
-
-</code>
-    </remarks>
+    <summary>Performs the actual display of UI for a handler or sync item when requested to do so by Sync Center.</summary>
+    <param name="hwndOwner">A handle to the window used to display the UI.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. Returns S_FALSE or another error code if this method is called to confirm an operation, such as activating a handler or disabling a sync item, but that operation should not be executed.</returns>
   </member>
   <member name="ISyncMgrUIOperation">
-    <summary>
-      <para>Exposes a method through which a sync handler or sync item can display a UI object when requested to do so by Sync Center.</para>
-    </summary>
-    <remarks>
-      <para>Handlers implement <b>ISyncMgrUIOperation</b> to provide UI for a particular action. Each separate action (browse, schedule, enable/disable, activate/deactivate, and delete) requires a separate implementation.</para>
-      <para>A handler should only implement this interface for operations for which it wants to present UI.</para>
-      <para>The following summarizes the steps Sync Center takes to instantiate and use this interface.</para>
-      <list type="number">
-        <item>
-          <description>Sync Center creates a separate thread for the UI operation.</description>
-        </item>
-        <item>
-          <description>Sync Center creates a new instance of the handler.</description>
-        </item>
-        <item>
-          <description>If the operation involves only a handler, Sync Center calls <see cref="ISyncMgrHandler.GetObject" /> with the appropriate <b>SYNCMGR_OBJECTID</b> object ID to obtain a pointer to the <b>ISyncMgrUIOperation</b> that implements that UI object. For example, Sync Center calls <b>ISyncMgrHandler.GetObject</b> with <b>SYNCMGR_OBJECTID_QueryBeforeDelete</b> to obtain an object that is called to display UI when the user chooses to delete the handler, asking for a confirmation that they do indeed want to delete it.</description>
-        </item>
-        <item>
-          <description>If the operation involves a sync item, Sync Center makes a series of calls, including the following:
-<list type="number"><item><description><see cref="QueryInterface" /> is called on the <see cref="ISyncMgrHandler" /> interface to retrieve an instance of <see cref="ISyncMgrSyncItemContainer" />.</description></item><item><description><see cref="ISyncMgrSyncItemContainer.GetSyncItem" /> is called to obtain a pointer to the <see cref="ISyncMgrSyncItem" /> instance representing the item.</description></item><item><description><see cref="ISyncMgrSyncItem.GetObject" /> is called with the appropriate <b>SYNCMGR_OBJECTID</b> object ID to obtain a pointer to the <b>ISyncMgrUIOperation</b> that implements the UI object.</description></item></list></description>
-        </item>
-        <item>
-          <description>Sync Center calls the UI object's <see cref="Run" /> method to display the UI.</description>
-        </item>
-      </list>
-      <para>By implementing the UI as a separate interface, the display of the UI can be performed independently of synchronization. <b>ISyncMgrUIOperation</b> should be implemented on a different object than either <see cref="ISyncMgrHandler" /> or <see cref="ISyncMgrSyncItem" />.</para>
-      <para>If the user requests an action, then requests that same action again before the first has completed, the UI for the initial action is activated and brought to the foreground.</para>
-    </remarks>
+    <summary>Exposes a method through which a sync handler or sync item can display a UI object when requested to do so by Sync Center.</summary>
   </member>
 </doc>

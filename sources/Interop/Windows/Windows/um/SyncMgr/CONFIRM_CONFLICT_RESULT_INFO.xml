@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CONFIRM_CONFLICT_RESULT_INFO">
-    <summary>
-      <para>Defines conflict result information structure.</para>
-    </summary>
+    <summary>Defines conflict result information structure.</summary>
   </member>
   <member name="CONFIRM_CONFLICT_RESULT_INFO.pszNewName">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>The new item name.</para>
-    </summary>
+    <summary>The new item name.</summary>
   </member>
   <member name="CONFIRM_CONFLICT_RESULT_INFO.iItemIndex">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The item index.</para>
-    </summary>
+    <summary>The item index.</summary>
   </member>
 </doc>

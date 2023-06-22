@@ -3,31 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWMNCRENDERINGPOLICY">
-    <summary>
-      <para>Flags used by the <see cref="DwmSetWindowAttribute" /> function to specify the non-client area rendering policy.</para>
-    </summary>
-    <remarks>
-      <para>To use a <b>DWMNCRENDERINGPOLICY</b> value, set the <i>dwAttribute</i> parameter of the <see cref="DwmSetWindowAttribute" /> function to <b>DWMWA_NCRENDERING_POLICY</b>. Set the <i>pvAttribute</i> parameter to the <b>DWMNCRENDERINGPOLICY</b> value.</para>
-    </remarks>
+    <summary>Flags used by the <see cref="DwmSetWindowAttribute" /> function to specify the non-client area rendering policy.</summary>
   </member>
   <member name="DWMNCRENDERINGPOLICY.DWMNCRP_USEWINDOWSTYLE">
-    <summary>
-      <para>The non-client rendering area is rendered based on the window style.</para>
-    </summary>
+    <summary>The non-client rendering area is rendered based on the window style.</summary>
   </member>
   <member name="DWMNCRENDERINGPOLICY.DWMNCRP_DISABLED">
-    <summary>
-      <para>The non-client area rendering is disabled; the window style is ignored.</para>
-    </summary>
+    <summary>The non-client area rendering is disabled; the window style is ignored.</summary>
   </member>
   <member name="DWMNCRENDERINGPOLICY.DWMNCRP_ENABLED">
-    <summary>
-      <para>The non-client area rendering is enabled; the window style is ignored.</para>
-    </summary>
+    <summary>The non-client area rendering is enabled; the window style is ignored.</summary>
   </member>
   <member name="DWMNCRENDERINGPOLICY.DWMNCRP_LAST">
-    <summary>
-      <para>The maximum recognized <see cref="DWMNCRENDERINGPOLICY" /> value, used for validation purposes.</para>
-    </summary>
+    <summary>The maximum recognized <see cref="DWMNCRENDERINGPOLICY" /> value, used for validation purposes.</summary>
   </member>
 </doc>

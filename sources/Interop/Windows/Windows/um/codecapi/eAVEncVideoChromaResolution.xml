@@ -4,34 +4,23 @@
 <doc>
   <member name="eAVEncVideoChromaResolution">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies chroma resolution. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoinputchromaresolution-property">AVEncVideoInputChromaResolution</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideooutputchromaresolution-property">AVEncVideoOutputChromaResolution</a> properties.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncVideoChromaResolution.eAVEncVideoChromaResolution_SameAsSource">
-    <summary>
-      <para>Use the same chroma resolution as the input video. This flag applies to the <b>AVEncVideoOutputChromaResolution</b> property only.</para>
-    </summary>
+    <summary>Use the same chroma resolution as the input video. This flag applies to the <b>AVEncVideoOutputChromaResolution</b> property only.</summary>
   </member>
   <member name="eAVEncVideoChromaResolution.eAVEncVideoChromaResolution_444">
-    <summary>
-      <para>4:4:4 (no downsampling).</para>
-    </summary>
+    <summary>4:4:4 (no downsampling).</summary>
   </member>
   <member name="eAVEncVideoChromaResolution.eAVEncVideoChromaResolution_422">
-    <summary>
-      <para>4:2:2 (2:1 horizontal downsampling, with no vertical downsampling).</para>
-    </summary>
+    <summary>4:2:2 (2:1 horizontal downsampling, with no vertical downsampling).</summary>
   </member>
   <member name="eAVEncVideoChromaResolution.eAVEncVideoChromaResolution_420">
-    <summary>
-      <para>4:2:0 (2:1 horizontal downsampling, with 2:1 vertical downsampling).</para>
-    </summary>
+    <summary>4:2:0 (2:1 horizontal downsampling, with 2:1 vertical downsampling).</summary>
   </member>
   <member name="eAVEncVideoChromaResolution.eAVEncVideoChromaResolution_411">
-    <summary>
-      <para>4:1:1 (4:1 horizontal downsampling, with no vertical downsampling).</para>
-    </summary>
+    <summary>4:1:1 (4:1 horizontal downsampling, with no vertical downsampling).</summary>
   </member>
 </doc>

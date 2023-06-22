@@ -3,38 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NL_ADDRESS_TYPE">
-    <summary>
-      <para>The NL_ADDRESS_TYPE enumeration type specifies the IP address type of the network layer.</para>
-    </summary>
+    <summary>The NL_ADDRESS_TYPE enumeration type specifies the IP address type of the network layer.</summary>
   </member>
   <member name="NL_ADDRESS_TYPE.NlatUnspecified">
-    <summary>
-      <para>The unspecified IP address. For example, for IPv4, this address is 0.0.0.0.</para>
-    </summary>
+    <summary>The unspecified IP address. For example, for IPv4, this address is 0.0.0.0.</summary>
   </member>
   <member name="NL_ADDRESS_TYPE.NlatUnicast">
-    <summary>
-      <para>Any IPv4 or IPv6 unicast address.</para>
-    </summary>
+    <summary>Any IPv4 or IPv6 unicast address.</summary>
   </member>
   <member name="NL_ADDRESS_TYPE.NlatAnycast">
-    <summary>
-      <para>An IPv6 anycast address.</para>
-    </summary>
+    <summary>An IPv6 anycast address.</summary>
   </member>
   <member name="NL_ADDRESS_TYPE.NlatMulticast">
-    <summary>
-      <para>An IPv4 or IPv6 multicast address.</para>
-    </summary>
+    <summary>An IPv4 or IPv6 multicast address.</summary>
   </member>
   <member name="NL_ADDRESS_TYPE.NlatBroadcast">
-    <summary>
-      <para>An IPv4 broadcast address.</para>
-    </summary>
+    <summary>An IPv4 broadcast address.</summary>
   </member>
   <member name="NL_ADDRESS_TYPE.NlatInvalid">
-    <summary>
-      <para>An invalid IP address.</para>
-    </summary>
+    <summary>An invalid IP address.</summary>
   </member>
 </doc>

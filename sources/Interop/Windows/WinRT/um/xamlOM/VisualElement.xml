@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VisualElement">
+    <summary>Represents a XAML element in the Live Visual Tree in Microsoft Visual Studio.</summary>
+  </member>
+  <member name="VisualElement.Handle">
+    <summary>A handle to the object.</summary>
+  </member>
+  <member name="VisualElement.SrcInfo">
+    <summary>Information about the XAML source document.</summary>
+  </member>
+  <member name="VisualElement.Type">
+    <summary>The type of the object.</summary>
+  </member>
+  <member name="VisualElement.Name">
+    <summary>The name of the XAML element, if it has an <a href="https://docs.microsoft.com//windows/uwp/xaml-platform/x-name-attribute">x:Name</a> defined in markup.</summary>
+  </member>
+  <member name="VisualElement.NumChildren">
+    <summary>The number of children the XAML element has.</summary>
+  </member>
+</doc>

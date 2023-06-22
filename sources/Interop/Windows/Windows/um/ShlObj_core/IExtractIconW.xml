@@ -3,44 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IExtractIconW.Extract">
-    <summary>
-      <para>Extracts an icon image from the specified location.</para>
-    </summary>
-    <param name="pszFile">
-      <para>Type: <b>PCTSTR</b></para>
-      <para>A pointer to a null-terminated string that specifies the icon location.</para>
-    </param>
-    <param name="nIconIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the icon in the file pointed to by <i>pszFile</i>.</para>
-    </param>
-    <param name="phiconLarge">
-      <para>Type: <b>HICON*</b></para>
-      <para>A pointer to an <b>HICON</b> value that receives the handle to the large icon. This parameter may be <b>NULL</b>.</para>
-    </param>
-    <param name="phiconSmall">
-      <para>Type: <b>HICON*</b></para>
-      <para>A pointer to an <b>HICON</b> value that receives the handle to the small icon. This parameter may be <b>NULL</b>.</para>
-    </param>
-    <param name="nIconSize">
-      <para>Type: <b>UINT</b></para>
-      <para>The desired size of the icon, in pixels. The low word contains the size of the large icon, and the high word contains the size of the small icon. The size specified can be the width or height. The width of an icon always equals its height.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the function extracted the icon, or S_FALSE if the calling application should extract the icon.</para>
-    </returns>
-    <remarks>
-      <para>The icon location and index are the same values returned by the <see cref="IExtractIcon.GetIconLocation" /> method. If <b>IExtractIcon.Extract</b> function returns S_FALSE, these values must specify an icon file name and index that form legal parameters for a call to <see cref="ExtractIcon" />. If <b>IExtractIcon.Extract</b> does not return S_FALSE, no assumptions should be made about the meanings of the <i>pszFile</i> and <i>nIconIndex</i> parameters.</para>
-    </remarks>
-    <seealso cref="IExtractIcon" />
+    <summary>Extracts an icon image from the specified location.</summary>
+    <param name="pszFile">A pointer to a null-terminated string that specifies the icon location.</param>
+    <param name="nIconIndex">The index of the icon in the file pointed to by <i>pszFile</i>.</param>
+    <param name="phiconLarge">A pointer to an <b>HICON</b> value that receives the handle to the large icon. This parameter may be <b>NULL</b>.</param>
+    <param name="phiconSmall">A pointer to an <b>HICON</b> value that receives the handle to the small icon. This parameter may be <b>NULL</b>.</param>
+    <param name="nIconSize">The desired size of the icon, in pixels. The low word contains the size of the large icon, and the high word contains the size of the small icon. The size specified can be the width or height. The width of an icon always equals its height.</param>
+    <returns>Returns S_OK if the function extracted the icon, or S_FALSE if the calling application should extract the icon.</returns>
   </member>
   <member name="IExtractIconW.GetIconLocation">
-    <summary>
-      <para>Gets the location and index of an icon.</para>
-    </summary>
+    <summary>Gets the location and index of an icon.</summary>
     <param name="uFlags">
-      <para>Type: <b>UINT</b></para>
       <para>One or more of the following values. This parameter can also be <b>NULL</b>.</para>
       <h4>GIL_ASYNC (0x0020)</h4>
       <para>Set this flag to determine whether the icon should be extracted asynchronously. If the icon can be extracted rapidly, this flag is usually ignored. If extraction will take more time, <b>GetIconLocation</b> should return E_PENDING. See the Remarks for further discussion.</para>
@@ -55,20 +28,10 @@
       <h4>GIL_CHECKSHIELD (0x0200)</h4>
       <para>Explicitly return either GIL_SHIELD or GIL_FORCENOSHIELD in <i>pwFlags</i>. Do not block if GIL_ASYNC is set.</para>
     </param>
-    <param name="pszIconFile">
-      <para>Type: <b>PTSTR</b></para>
-      <para>A pointer to a buffer that receives the icon location. The icon location is a null-terminated string that identifies the file that contains the icon.</para>
-    </param>
-    <param name="cchMax">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the buffer, in characters, pointed to by <i>pszIconFile</i>.</para>
-    </param>
-    <param name="piIndex">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to an <b>int</b> that receives the index of the icon in the file pointed to by <i>pszIconFile</i>.</para>
-    </param>
+    <param name="pszIconFile">A pointer to a buffer that receives the icon location. The icon location is a null-terminated string that identifies the file that contains the icon.</param>
+    <param name="cchMax">The size of the buffer, in characters, pointed to by <i>pszIconFile</i>.</param>
+    <param name="piIndex">A pointer to an <b>int</b> that receives the index of the icon in the file pointed to by <i>pszIconFile</i>.</param>
     <param name="pwFlags">
-      <para>Type: <b>UINT*</b></para>
       <para>A pointer to a <b>UINT</b> value that receives zero or a combination of the following values.</para>
       <h4>GIL_DONTCACHE (0x0010)</h4>
       <para>The physical image bits for this icon are not cached by the calling application.</para>
@@ -88,54 +51,20 @@
       <para>
         <b>Windows Vista only</b>. The calling application must not stamp the icon with the UAC shield.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the function returned a valid location, or S_FALSE if the Shell should use a default icon. If the <b>GIL_ASYNC</b> flag is set in <i>uFlags</i>, the method can return E_PENDING to indicate that icon extraction will be time-consuming.</para>
-    </returns>
-    <remarks>
-      <para>When a client sets the <b>GIL_ASYNC</b> flag in <i>uFlags</i> and receives E_PENDING as a return value, it typically creates a background thread to extract the icon. It calls <b>GetIconLocation</b> from that thread, without the <b>GIL_ASYNC</b> flag, to retrieve the icon location. It then calls <see cref="IExtractIcon.Extract" /> to extract the icon. Returning E_PENDING implies that the object is free threaded. In other words, it can safely be called concurrently by multiple threads.</para>
-      <para>The <b>GIL_DEFAULTICON</b> flag is usually set in the case where the desired icon is found, but that icon is not present in the icon cache. Icon extraction is a low priority background process, and as such may be delayed by other processes. The default icon will be displayed in place of the final icon during the time that it takes for that final icon to be extracted, added to the cache, and made available.</para>
-    </remarks>
+    <returns>Returns S_OK if the function returned a valid location, or S_FALSE if the Shell should use a default icon. If the <b>GIL_ASYNC</b> flag is set in <i>uFlags</i>, the method can return E_PENDING to indicate that icon extraction will be time-consuming.</returns>
   </member>
   <member name="IExtractIconW.Extract">
-    <summary>
-      <para>Extracts an icon image from the specified location.</para>
-    </summary>
-    <param name="pszFile">
-      <para>Type: <b>PCTSTR</b></para>
-      <para>A pointer to a null-terminated string that specifies the icon location.</para>
-    </param>
-    <param name="nIconIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the icon in the file pointed to by <i>pszFile</i>.</para>
-    </param>
-    <param name="phiconLarge">
-      <para>Type: <b>HICON*</b></para>
-      <para>A pointer to an <b>HICON</b> value that receives the handle to the large icon. This parameter may be <b>NULL</b>.</para>
-    </param>
-    <param name="phiconSmall">
-      <para>Type: <b>HICON*</b></para>
-      <para>A pointer to an <b>HICON</b> value that receives the handle to the small icon. This parameter may be <b>NULL</b>.</para>
-    </param>
-    <param name="nIconSize">
-      <para>Type: <b>UINT</b></para>
-      <para>The desired size of the icon, in pixels. The low word contains the size of the large icon, and the high word contains the size of the small icon. The size specified can be the width or height. The width of an icon always equals its height.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the function extracted the icon, or S_FALSE if the calling application should extract the icon.</para>
-    </returns>
-    <remarks>
-      <para>The icon location and index are the same values returned by the <see cref="IExtractIcon.GetIconLocation" /> method. If <b>IExtractIcon.Extract</b> function returns S_FALSE, these values must specify an icon file name and index that form legal parameters for a call to <see cref="ExtractIcon" />. If <b>IExtractIcon.Extract</b> does not return S_FALSE, no assumptions should be made about the meanings of the <i>pszFile</i> and <i>nIconIndex</i> parameters.</para>
-    </remarks>
-    <seealso cref="IExtractIcon" />
+    <summary>Extracts an icon image from the specified location.</summary>
+    <param name="pszFile">A pointer to a null-terminated string that specifies the icon location.</param>
+    <param name="nIconIndex">The index of the icon in the file pointed to by <i>pszFile</i>.</param>
+    <param name="phiconLarge">A pointer to an <b>HICON</b> value that receives the handle to the large icon. This parameter may be <b>NULL</b>.</param>
+    <param name="phiconSmall">A pointer to an <b>HICON</b> value that receives the handle to the small icon. This parameter may be <b>NULL</b>.</param>
+    <param name="nIconSize">The desired size of the icon, in pixels. The low word contains the size of the large icon, and the high word contains the size of the small icon. The size specified can be the width or height. The width of an icon always equals its height.</param>
+    <returns>Returns S_OK if the function extracted the icon, or S_FALSE if the calling application should extract the icon.</returns>
   </member>
   <member name="IExtractIconW.GetIconLocation">
-    <summary>
-      <para>Gets the location and index of an icon.</para>
-    </summary>
+    <summary>Gets the location and index of an icon.</summary>
     <param name="uFlags">
-      <para>Type: <b>UINT</b></para>
       <para>One or more of the following values. This parameter can also be <b>NULL</b>.</para>
       <h4>GIL_ASYNC (0x0020)</h4>
       <para>Set this flag to determine whether the icon should be extracted asynchronously. If the icon can be extracted rapidly, this flag is usually ignored. If extraction will take more time, <b>GetIconLocation</b> should return E_PENDING. See the Remarks for further discussion.</para>
@@ -150,20 +79,10 @@
       <h4>GIL_CHECKSHIELD (0x0200)</h4>
       <para>Explicitly return either GIL_SHIELD or GIL_FORCENOSHIELD in <i>pwFlags</i>. Do not block if GIL_ASYNC is set.</para>
     </param>
-    <param name="pszIconFile">
-      <para>Type: <b>PTSTR</b></para>
-      <para>A pointer to a buffer that receives the icon location. The icon location is a null-terminated string that identifies the file that contains the icon.</para>
-    </param>
-    <param name="cchMax">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the buffer, in characters, pointed to by <i>pszIconFile</i>.</para>
-    </param>
-    <param name="piIndex">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to an <b>int</b> that receives the index of the icon in the file pointed to by <i>pszIconFile</i>.</para>
-    </param>
+    <param name="pszIconFile">A pointer to a buffer that receives the icon location. The icon location is a null-terminated string that identifies the file that contains the icon.</param>
+    <param name="cchMax">The size of the buffer, in characters, pointed to by <i>pszIconFile</i>.</param>
+    <param name="piIndex">A pointer to an <b>int</b> that receives the index of the icon in the file pointed to by <i>pszIconFile</i>.</param>
     <param name="pwFlags">
-      <para>Type: <b>UINT*</b></para>
       <para>A pointer to a <b>UINT</b> value that receives zero or a combination of the following values.</para>
       <h4>GIL_DONTCACHE (0x0010)</h4>
       <para>The physical image bits for this icon are not cached by the calling application.</para>
@@ -212,13 +131,6 @@
       <h5>- uFlags.GIL_OPENICON (0x0001)</h5>
       <para>The icon is in the open state if both open-state and closed-state images are available. If this flag is not specified, the icon is in the normal or closed state. This flag is typically used for folder objects.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the function returned a valid location, or S_FALSE if the Shell should use a default icon. If the <b>GIL_ASYNC</b> flag is set in <i>uFlags</i>, the method can return E_PENDING to indicate that icon extraction will be time-consuming.</para>
-    </returns>
-    <remarks>
-      <para>When a client sets the <b>GIL_ASYNC</b> flag in <i>uFlags</i> and receives E_PENDING as a return value, it typically creates a background thread to extract the icon. It calls <b>GetIconLocation</b> from that thread, without the <b>GIL_ASYNC</b> flag, to retrieve the icon location. It then calls <see cref="IExtractIcon.Extract" /> to extract the icon. Returning E_PENDING implies that the object is free threaded. In other words, it can safely be called concurrently by multiple threads.</para>
-      <para>The <b>GIL_DEFAULTICON</b> flag is usually set in the case where the desired icon is found, but that icon is not present in the icon cache. Icon extraction is a low priority background process, and as such may be delayed by other processes. The default icon will be displayed in place of the final icon during the time that it takes for that final icon to be extracted, added to the cache, and made available.</para>
-    </remarks>
+    <returns>Returns S_OK if the function returned a valid location, or S_FALSE if the Shell should use a default icon. If the <b>GIL_ASYNC</b> flag is set in <i>uFlags</i>, the method can return E_PENDING to indicate that icon extraction will be time-consuming.</returns>
   </member>
 </doc>

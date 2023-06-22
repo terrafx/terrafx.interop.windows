@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MSV1_0_LM20_LOGON">
+    <summary>
+      <para>The <b>MSV1_0_LM20_LOGON</b> structure contains logon information used in network logons.</para>
+      <para>It is used by<see cref="LsaLogonUser" />.</para>
+    </summary>
+  </member>
+  <member name="MSV1_0_LM20_LOGON.MessageType">
+    <summary>
+      <para>A <see cref="MSV1_0_LOGON_SUBMIT_TYPE" /> value that specifies the type of logon being requested. This member must be set to <b>MsV1_0Lm20Logon</b> or <b>MsV1_0NetworkLogon</b>.</para>
+      <para>If this member is set to <b>MsV1_0Lm20Logon</b>, the MSV1_0 package ignores the <b>ParameterControl</b> member.</para>
+    </summary>
+  </member>
+  <member name="MSV1_0_LM20_LOGON.LogonDomainName">
+    <summary>A <see cref="UNICODE_STRING" /> that contains the name of the logon domain. The specified domain name must be a Windows domain (or mixed domain) that is in the trusted domain list of this computer. If the logon domain name is not known (for example, for clients that do not supply this information), this member should be passed in as a zero-length string. This domain is the authenticating authority.</summary>
+  </member>
+  <member name="MSV1_0_LM20_LOGON.UserName">
+    <summary>A <see cref="UNICODE_STRING" /> that represents the account name of the user. The name can be up to 255 bytes long. The name is treated as case insensitive.</summary>
+  </member>
+  <member name="MSV1_0_LM20_LOGON.Workstation">
+    <summary>A <see cref="UNICODE_STRING" /> that contains the computer name of the client workstation from which the user logon request was initiated.</summary>
+  </member>
+  <member name="MSV1_0_LM20_LOGON.ChallengeToClient">
+    <summary>Contains the challenge returned from a previous call to<see cref="LsaCallAuthenticationPackage" />, when <b>MsV1_0Lm20ChallengeRequest</b> was specified as the message type. For more information, see the description of <b>MsV1_0Lm20ChallengeRequest</b> in<see cref="MSV1_0_PROTOCOL_MESSAGE_TYPE" />. This enables the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">authentication package</a> to determine whether the challenge response is correct.</summary>
+  </member>
+  <member name="MSV1_0_LM20_LOGON.CaseSensitiveChallengeResponse">
+    <summary>
+      <para>Contains some function of the case-sensitive <a href="https://docs.microsoft.com//windows/desktop/SecGloss/u-gly">Unicode</a> password of the client. Typically, it will be the <b>ChallengeToClient</b> member encrypted by a case-sensitive version of the password.</para>
+      <para>Some clients will simply supply the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">plaintext</a> case-sensitive <a href="https://docs.microsoft.com//windows/desktop/SecGloss/u-gly">Unicode</a> password. In that case, this member points to that <i>plaintext</i> password. The<a href="https://docs.microsoft.com//windows/desktop/SecAuthN/msv1-0-authentication-package">MSV1_0 Authentication Package</a> may accept this nonencrypted form depending on a configuration option.</para>
+      <para>Some clients do not support case-sensitive <a href="https://docs.microsoft.com//windows/desktop/SecGloss/u-gly">Unicode</a> passwords. In that case, this member should contain a zero-length string.</para>
+    </summary>
+  </member>
+  <member name="MSV1_0_LM20_LOGON.CaseInsensitiveChallengeResponse">
+    <summary>
+      <para>Contains some function of the case-insensitive multiple-byte character set (MBCS) password of the client. Typically, it will be the <b>ChallengeToClient</b> member encrypted by a case-insensitive version of the password.</para>
+      <para>Clients that support only MBCS and not <a href="https://docs.microsoft.com//windows/desktop/SecGloss/u-gly">Unicode</a> supply a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">plaintext</a> case-insensitive MBCS password. In that case, this member points to that <i>plaintext</i> password. The MSV1_0 authentication package will accept this nonencrypted form depending on a configuration option.</para>
+    </summary>
+  </member>
+  <member name="MSV1_0_LM20_LOGON.ParameterControl">
+    <summary>
+      <para>Specifies attributes of the other parameters. This can be one or more of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_CLEARTEXT_PASSWORD_ALLOWED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>02</term>
+              </listheader>
+            </list>
+          </description>
+          <description>LanMan2.0 or LanMan1.0 send a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">plaintext</a> password instead of a challenge response. To allow plaintext passwords to be used in the NetworkLogon message, an application must supply this flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_UPDATE_LOGON_STATISTICS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>04</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Update the logon statistics for the account. If this flag is not set, the bad password count is set to zero upon successful logon.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_RETURN_USER_PARAMETERS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>08</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is specified, the <b>UserParameters</b> member of the <see cref="MSV1_0_LM20_LOGON_PROFILE" /> return buffer is valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_DONT_TRY_GUEST_ACCOUNT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Prevents the user from logging on with a guest account.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_ALLOW_SERVER_TRUST_ACCOUNT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>20</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, domain controller accounts can be used for authentication; otherwise, only user accounts can be used.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_RETURN_PASSWORD_EXPIRY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>40</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the password expiration time to be returned in the <b>LogoffTime</b> member of the <see cref="MSV1_0_LM20_LOGON_PROFILE" /> structure returned in the output buffer.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_USE_CLIENT_CHALLENGE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>80</term>
+              </listheader>
+            </list>
+          </description>
+          <description> Denotes that the CaseInsensitiveChallengeResponse contains a client challenge in the first 8 bytes.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_TRY_GUEST_ACCOUNT_ONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the user to log on using the guest account.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_RETURN_PROFILE_PATH</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns the profile path for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/e-gly">Encrypting File System</a> (EFS). The profile path is used by EFS to locate the profile of the user and find the user's keys for encrypting and decrypting files. This information is not returned to the caller; it is stored within the LSA and used by internal processes.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_TRY_SPECIFIED_DOMAIN_ONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>400</term>
+              </listheader>
+            </list>
+          </description>
+          <description>In normal operation, the <b>LogonDomainName</b> member is used as a suggestion. The package (using the NetLogon service) will continue passing the logon request to domain controllers higher in the trusted domain path until one authoritatively rejects the logon. 								<para>This flag overrides that behavior so that only the specified domain controller will attempt to process the logon. If <b>LogonDomainName</b> is blank, the logon will not be attempted.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_ALLOW_WORKSTATION_TRUST_ACCOUNT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>800</term>
+              </listheader>
+            </list>
+          </description>
+          <description> Permits remote-boot clients to log on using a computer account.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_CLEARTEXT_PASSWORD_SUPPLIED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4000</term>
+              </listheader>
+            </list>
+          </description>
+          <description> Permits the user of a clear text password.<para><b>Windows XP and Windows Server 2003:  </b>Not supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_USE_DOMAIN_FOR_ROUTING_ONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>8000</term>
+              </listheader>
+            </list>
+          </description>
+          <description> Permits the domain to be used for routing only. <para><b>Windows XP and Windows Server 2003:  </b>Not supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_ALLOW_MSVCHAPV2</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10000</term>
+              </listheader>
+            </list>
+          </description>
+          <description> Permits SubAuthentication log on.<para><b>Windows XP and Windows Server 2003:  </b>Not supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_S4U2SELF</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>20000</term>
+              </listheader>
+            </list>
+          </description>
+          <description> Permits S4U clients to log on without a password.<para><b>Windows Vista, Windows Server 2003 with SP2, Windows XP and Windows Server 2003:  </b>Not supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_CHECK_LOGONHOURS_FOR_S4U</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>40000</term>
+              </listheader>
+            </list>
+          </description>
+          <description> Check the log on hours for a S4U log on client.<para><b>Windows Vista, Windows Server 2003 with SP2, Windows XP and Windows Server 2003:  </b>Not supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_INTERNET_DOMAIN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>80000</term>
+              </listheader>
+            </list>
+          </description>
+          <description> Permits log on for Internet users. This flag should be used by calls from authentication packages directly and not from netlogon.<para><b>Windows 7, Windows Server 2008 R2, Windows Vista, Windows Server 2008, Windows XP and Windows Server 2003:  </b>Not supported.</para></description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+</doc>

@@ -3,42 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAPO_REGISTRATION_PROPERTIES">
-    <summary>
-      <para>Describes general characteristics of an XAPO. Used with
-<see cref="IXAPO.GetRegistrationProperties" />, <see cref="CXAPOParametersBase.CXAPOParametersBase" />, and
-<see cref="CXAPOBase.CXAPOBase" />.</para>
-    </summary>
-    <remarks>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9);
-Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">Structures</seealso>
+    <summary>Describes general characteristics of an XAPO. Used with<see cref="IXAPO.GetRegistrationProperties" />, <see cref="CXAPOParametersBase.CXAPOParametersBase" />, and<see cref="CXAPOBase.CXAPOBase" />.</summary>
   </member>
   <member name="XAPO_REGISTRATION_PROPERTIES.clsid">
-    <summary>
-      <para>COM class ID for use with the CoCreateInstance function.</para>
-    </summary>
+    <summary>COM class ID for use with the CoCreateInstance function.</summary>
   </member>
   <member name="XAPO_REGISTRATION_PROPERTIES.FriendlyName">
-    <summary>
-      <para>Friendly name, a unicode string.</para>
-    </summary>
+    <summary>Friendly name, a unicode string.</summary>
   </member>
   <member name="XAPO_REGISTRATION_PROPERTIES.CopyrightInfo">
-    <summary>
-      <para>Copyright information, a unicode string.</para>
-    </summary>
+    <summary>Copyright information, a unicode string.</summary>
   </member>
   <member name="XAPO_REGISTRATION_PROPERTIES.MajorVersion">
-    <summary>
-      <para>Major version number.</para>
-    </summary>
+    <summary>Major version number.</summary>
   </member>
   <member name="XAPO_REGISTRATION_PROPERTIES.MinorVersion">
-    <summary>
-      <para>Minor version number.</para>
-    </summary>
+    <summary>Minor version number.</summary>
   </member>
   <member name="XAPO_REGISTRATION_PROPERTIES.Flags">
     <summary>
@@ -48,79 +28,55 @@ Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>XAPO_FLAG_INPLACE_SUPPORTED</description>
-          <description>
-            <para>XAPO supports in-place processing: the input stream buffer and output stream buffer
-can be the same buffer depending on the input.</para>
-            <para>For example, consider an effect which may be ran in stereo to 5.1 mode or
-mono to mono mode.  When set to stereo to 5.1, it will be run with separate
-input and output buffers as format conversion is not permitted in-place.
-However, if configured to run mono to mono, the same XAPO can be run
-in-place.  Thus the same implementation may be conveniently reused
-for various input/output configurations, while taking advantage of
-in-place processing when possible.</para>
-          </description>
-        </item>
-        <item>
+          <description>XAPO supports in-place processing: the input stream buffer and output stream buffer can be the same buffer depending on the input.<para>For example, consider an effect which may be ran in stereo to 5.1 mode or mono to mono mode. When set to stereo to 5.1, it will be run with separate input and output buffers as format conversion is not permitted in-place. However, if configured to run mono to mono, the same XAPO can be run in-place. Thus the same implementation may be conveniently reused for various input/output configurations, while taking advantage of in-place processing when possible.</para></description>
+        </listheader>
+        <listheader>
           <description>XAPO_FLAG_INPLACE_REQUIRED</description>
-          <description>XAPO requires in-place processing: the input stream buffer and output stream buffer must
-be the same buffer.  When the XAPO_FLAG_INPLACE_REQUIRED is used the XAPO cannot perform
-format conversions.</description>
-        </item>
-        <item>
+          <description>XAPO requires in-place processing: the input stream buffer and output stream buffer must be the same buffer. When the XAPO_FLAG_INPLACE_REQUIRED is used the XAPO cannot perform format conversions.</description>
+        </listheader>
+        <listheader>
           <description>XAPO_FLAG_CHANNELS_MUST_MATCH</description>
           <description>Channel count of the input and output streams must match.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XAPO_FLAG_FRAMERATE_MUST_MATCH</description>
           <description>Framerate of input and output streams must match.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XAPO_FLAG_BITSPERSAMPLE_MUST_MATCH</description>
           <description>Bit depth and container size of input and output streams must match.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XAPO_FLAG_BUFFERCOUNT_MUST_MATCH</description>
-          <description>Number of input and output buffers must match, applies to
-<see cref="XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS" />. When the XAPO_FLAG_BUFFERCOUNT_MUST_MATCH flag is set
-<b>XAPO_REGISTRATION_PROPERTIES</b>.<b>MinInputBufferCount</b> must equal
-<b>XAPO_REGISTRATION_PROPERTIES</b>.<b>MinOutputBufferCount</b> and
-<b>XAPO_REGISTRATION_PROPERTIES</b>.<b>MaxInputBufferCount</b> must equal
-<b>XAPO_REGISTRATION_PROPERTIES</b>.<b>MaxOutputBufferCount</b>.
-</description>
-        </item>
-        <item>
+          <description>Number of input and output buffers must match, applies to 			<see cref="XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS" />. When the XAPO_FLAG_BUFFERCOUNT_MUST_MATCH flag is set <b>XAPO_REGISTRATION_PROPERTIES</b>.<b>MinInputBufferCount</b> must equal <b>XAPO_REGISTRATION_PROPERTIES</b>.<b>MinOutputBufferCount</b> and <b>XAPO_REGISTRATION_PROPERTIES</b>.<b>MaxInputBufferCount</b> must equal <b>XAPO_REGISTRATION_PROPERTIES</b>.<b>MaxOutputBufferCount</b>. 				</description>
+        </listheader>
+        <listheader>
           <description>XAPOBASE_DEFAULT_FLAG</description>
-          <description>XAPO_FLAG_CHANNELS_MUST_MATCH | XAPO_FLAG_FRAMERATE_MUST_MATCH |
-XAPO_FLAG_BITSPERSAMPLE_MUST_MATCH | XAPO_FLAG_BUFFERCOUNT_MUST_MATCH | XAPO_FLAG_INPLACE_SUPPORTED
-</description>
-        </item>
+          <description>XAPO_FLAG_CHANNELS_MUST_MATCH | XAPO_FLAG_FRAMERATE_MUST_MATCH | XAPO_FLAG_BITSPERSAMPLE_MUST_MATCH | XAPO_FLAG_BUFFERCOUNT_MUST_MATCH | XAPO_FLAG_INPLACE_SUPPORTED</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="XAPO_REGISTRATION_PROPERTIES.MinInputBufferCount">
-    <summary>
-      <para>Minimum number of input streams required for processing.</para>
-    </summary>
+    <summary>Minimum number of input streams required for processing.</summary>
   </member>
   <member name="XAPO_REGISTRATION_PROPERTIES.MaxInputBufferCount">
     <summary>
       <para>Maximum number of input streams required for processing.</para>
-      <para>
-        <b>Note</b>  <i>MaxInputBufferCount</i> is currently limited to a value of 1.</para>
+      <div>
+        <b>Note</b>  <i>MaxInputBufferCount</i> is currently limited to a value of 1.</div>
     </summary>
   </member>
   <member name="XAPO_REGISTRATION_PROPERTIES.MinOutputBufferCount">
-    <summary>
-      <para>Minimum number of output streams required for processing.</para>
-    </summary>
+    <summary>Minimum number of output streams required for processing.</summary>
   </member>
   <member name="XAPO_REGISTRATION_PROPERTIES.MaxOutputBufferCount">
     <summary>
       <para>Maximum number of output streams required for processing.</para>
-      <para>
-        <b>Note</b>  <i>MaxOutputBufferCount</i> is currently limited to a value of 1.</para>
+      <div>
+        <b>Note</b>  <i>MaxOutputBufferCount</i> is currently limited to a value of 1.</div>
     </summary>
   </member>
 </doc>

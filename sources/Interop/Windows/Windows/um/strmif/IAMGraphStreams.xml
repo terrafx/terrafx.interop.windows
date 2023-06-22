@@ -4,20 +4,13 @@
 <doc>
   <member name="IAMGraphStreams.FindUpstreamInterface">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>FindUpstreamInterface</code> method searches the filter graph for a specified interface, upstream from a specified pin.</para>
     </summary>
-    <param name="pPin">
-      <para>Pointer to the <see cref="IPin" /> interface of a pin. The pin must belong to a filter in the filter graph.</para>
-    </param>
-    <param name="riid">
-      <para>Reference to an interface identifier (IID) that specifies the interface to find.</para>
-    </param>
-    <param name="ppvInterface">
-      <para>Address of a void pointer. If the method succeeds, this variable receives a pointer to the interface specified by <i>riid</i>.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Combination of flags from the <see cref="AM_INTF_SEARCH_FLAGS" /> enumeration, specifying what to search (pins or filters).</para>
-    </param>
+    <param name="pPin">Pointer to the <see cref="IPin" /> interface of a pin. The pin must belong to a filter in the filter graph.</param>
+    <param name="riid">Reference to an interface identifier (IID) that specifies the interface to find.</param>
+    <param name="ppvInterface">Address of a void pointer. If the method succeeds, this variable receives a pointer to the interface specified by <i>riid</i>.</param>
+    <param name="dwFlags">Combination of flags from the <see cref="AM_INTF_SEARCH_FLAGS" /> enumeration, specifying what to search (pins or filters).</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -25,74 +18,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>Interface not found.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid pointer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <para>If <i>dwFlags</i> is zero, this method searches for the interface in the following order:</para>
-      <list type="number">
-        <item>
-          <description>It queries the pin specified by <i>pPin</i>.</description>
-        </item>
-        <item>
-          <description>
-            <para>If <i>pPin</i> is an input pin, it calls <b>FindUpstreamInterface</b> recursively on the output pin that is connected to <i>pPin</i>, if any.</para>
-            <para>If <i>pPin</i> is an output pin, it queries the filter that owns <i>pPin</i>. Then it creates a list of input pins on the filter that have internal connections to <i>pPin</i>, and calls <code>FindUpstreamInterface</code> recursively on those input pins.</para>
-            <para>To create a list of input pins with internal connections, the method does the following:</para>
             <list type="bullet">
-              <item>
-                <description>Calls <see cref="IPin.QueryInternalConnections" />.</description>
-              </item>
-              <item>
-                <description>If that fails, calls <see cref="IBaseFilter.EnumPins" /> and looks for input pins.</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
             </list>
           </description>
-        </item>
+          <description>Interface not found.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid pointer.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
       </list>
-      <para>It stops at the first object it finds that supports the interface. You can limit the objects that are searched (filters, input pin, or output pins) by setting <i>dwFlags</i> to a non-zero value.</para>
-      <para>
-        <b>Note</b>  The <see cref="ICaptureGraphBuilder2.FindInterface" /> method implements a more general approach to this problem, and in most situations is preferred.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMGraphStreams Interface" />
+    </returns>
   </member>
   <member name="IAMGraphStreams.SetMaxGraphLatency">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetMaxGraphLatency</code> method sets the maximum latency for the graph. You must call the <see cref="IAMGraphStreams.SyncUsingStreamOffset" /> method before calling this method.</para>
     </summary>
-    <param name="rtMaxGraphLatency">
-      <para>Specifies the maximum latency in 100-nanosecond units.</para>
-    </param>
+    <param name="rtMaxGraphLatency">Specifies the maximum latency in 100-nanosecond units.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -100,53 +70,44 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failure</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>At connection time, some live source filters use the maximum latency to determine the size of buffer to allocate. Calling this method before constructing the graph can help to ensure that sufficient buffers are allocated for the expected latency.</para>
-      <para>If you call this method before calling <b>SyncUsingStreamOffset</b>, the method returns E_FAIL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMGraphStreams Interface" />
   </member>
   <member name="IAMGraphStreams.SyncUsingStreamOffset">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SyncUsingStreamOffset</code> method enables or disables synchronization using time-stamp offsets.</para>
     </summary>
-    <param name="bUseStreamOffset">
-      <para>Boolean value indicating whether to use a time-stamp offset. If <b>TRUE</b>, live sources will use a time-stamp offset to synchronize streams.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful, or an error code otherwise.</para>
-    </returns>
-    <remarks>
-      <para>By default, the filter graph does not attempt to synchronize live streams by means of time-stamp offsets. Call this method with a value of <b>TRUE</b> if you want the filter graph to determine the maximum latency in the graph and adjust time stamps accordingly. For more information, see <see cref="IAMPushSource.SetStreamOffset" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMGraphStreams Interface" />
+    <param name="bUseStreamOffset">Boolean value indicating whether to use a time-stamp offset. If <b>TRUE</b>, live sources will use a time-stamp offset to synchronize streams.</param>
+    <returns>Returns S_OK if successful, or an error code otherwise.</returns>
   </member>
   <member name="IAMGraphStreams">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IAMGraphStreams</code> interface controls a filter graph that renders a live source. A live source is one that streams data in real time, such as a capture device or a network broadcast. The Filter Graph Manager implements this interface.</para>
       <para>Applications can use this interface to specify how the graph handles latency and synchronization when it renders a live source. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/live-sources">Live Sources</a>.</para>
     </summary>

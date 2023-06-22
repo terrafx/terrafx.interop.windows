@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_RENDER_PASS_ENDING_ACCESS">
-    <summary>
-      <para>Describes the access to resource(s) that is requested by an application at the transition out of a render pass.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/rendering">Rendering</seealso>
+    <summary>Describes the access to resource(s) that is requested by an application at the transition out of a render pass.</summary>
   </member>
   <member name="D3D12_RENDER_PASS_ENDING_ACCESS.Type">
-    <summary>
-      <para>A <see cref="D3D12_RENDER_PASS_ENDING_ACCESS_TYPE" />. The type of access being requested.</para>
-    </summary>
+    <summary>A <see cref="D3D12_RENDER_PASS_ENDING_ACCESS_TYPE" />. The type of access being requested.</summary>
   </member>
   <member name="D3D12_RENDER_PASS_ENDING_ACCESS.Resolve">
-    <summary>
-      <para>A <see cref="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS" />. Appropriate when  <b>Type</b> is <see cref="D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_RESOLVE" />. Description of the resource to resolve to.</para>
-    </summary>
+    <summary>A <see cref="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS" />. Appropriate when <b>Type</b> is <see cref="D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_RESOLVE" />. Description of the resource to resolve to.</summary>
   </member>
 </doc>

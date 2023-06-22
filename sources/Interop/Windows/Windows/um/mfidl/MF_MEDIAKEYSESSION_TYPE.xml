@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIAKEYSESSION_TYPE">
-    <summary>
-      <para>Specifies the type of a Content Decryption Module (CDM) session, represented by an <see cref="IMFContentDecryptionModuleSession" /> object.</para>
-    </summary>
-    <remarks>
-      <para>Pass a member of this enumeration into <see cref="IMFContentDecryptionModule.CreateSession" /></para>
-    </remarks>
-    <seealso cref="IMFContentDecryptionModule.CreateSession" />
+    <summary>Specifies the type of a Content Decryption Module (CDM) session, represented by an <see cref="IMFContentDecryptionModuleSession" /> object.</summary>
   </member>
   <member name="MF_MEDIAKEYSESSION_TYPE.MF_MEDIAKEYSESSION_TYPE_TEMPORARY">
-    <summary>
-      <para>A session for which the license, key(s) and record of or data related to the session are not persisted.</para>
-    </summary>
+    <summary>A session for which the license, key(s) and record of or data related to the session are not persisted.</summary>
   </member>
   <member name="MF_MEDIAKEYSESSION_TYPE.MF_MEDIAKEYSESSION_TYPE_PERSISTENT_LICENSE">
-    <summary>
-      <para>A session for which the license (and potentially other data related to the session) will be persisted.</para>
-    </summary>
+    <summary>A session for which the license (and potentially other data related to the session) will be persisted.</summary>
   </member>
   <member name="MF_MEDIAKEYSESSION_TYPE.MF_MEDIAKEYSESSION_TYPE_PERSISTENT_RELEASE_MESSAGE">
-    <summary>
-      <para>A record of license destruction.</para>
-    </summary>
+    <summary>A record of license destruction.</summary>
   </member>
   <member name="MF_MEDIAKEYSESSION_TYPE.MF_MEDIAKEYSESSION_TYPE_PERSISTENT_USAGE_RECORD">
-    <summary>
-      <para>A record of license usage.</para>
-    </summary>
+    <summary>A record of license usage.</summary>
   </member>
 </doc>

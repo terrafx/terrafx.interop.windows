@@ -5,134 +5,12 @@
   <member name="SHGDNF">
     <summary>
       <para>Defines the values used with the <see cref="IShellFolder.GetDisplayNameOf" /> and <see cref="IShellFolder.SetNameOf" /> methods to specify the type of file or folder names used by those methods.</para>
-      <para>
-        <b>Note</b>  Prior to Windows 7, these values were packaged as the SHGNO enumeration.</para>
+      <div>
+        <b>Note</b>  Prior to Windows 7, these values were packaged as the SHGNO enumeration.</div>
     </summary>
-    <remarks>
-      <para>The <b>SHGDNF</b> type is defined in Shobjidl.h as shown here.</para>
-      <code>typedef DWORD SHGDNF;
-</code>
-      <para>This enumeration consists of two groups of values. The first group—SHGDN_NORMAL and SHGDN_INFOLDER—specifies the name's type. The second group—SHGDN_FOREDITING, SHGDN_FORADDRESSBAR, and SHGDN_FORPARSING—consists of modifiers to the first group that specify name retrieval options.</para>
-      <para>If SHGDN_FORPARSING is set and SHGDN_INFOLDER is not set, <see cref="IShellFolder.GetDisplayNameOf" /> can accept a PIDL that contains more than an <see cref="SHITEMID" /> structure. Otherwise, only a single-level PIDL can be passed.</para>
-      <para>
-        <b>Note</b> While the parsing name returned by file system objects is the object's fully qualified path, virtual folders might use something quite different. For example, some virtual folders use a GUID as the parsing name and return a string of the form ".{GUID}". To check whether the object is part of the file system, call <see cref="IShellFolder.GetAttributesOf" /> and see if the <b>SFGAO_FILESYSTEM</b> flag is set. Developers who implement <see cref="IShellFolder.GetDisplayNameOf" /> are encouraged to return parse names that are as close to the display names as possible, because the end user often needs to type or edit these names.</para>
-      <para>The numeric value of SHGDN_NORMAL is zero, so you cannot test for the presence of this bit. Consider SHGDN_NORMAL a default setting that is used if no other flag in that group is set.</para>
-      <para>
-        <b>Example</b>
-      </para>
-      <para>The following tables illustrate an example of possible return values for five different flag options and three different item types.</para>
-      <para>These are the flag options.</para>
-      <list type="table">
-        <listheader>
-          <description>Number</description>
-          <description>Flags</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>1</description>
-          <description>SHGDN_FORPARSING</description>
-          <description>Returns the fully qualified parsing name.</description>
-        </item>
-        <item>
-          <description>2</description>
-          <description>SHGDN_INFOLDER | SHGDN_FORPARSING</description>
-          <description>Returns the parsing name relative to the parent folder.</description>
-        </item>
-        <item>
-          <description>3</description>
-          <description>SHGDN_INFOLDER | SHGDN_FOREDITING</description>
-          <description>Returns the editing name relative to the parent folder.</description>
-        </item>
-        <item>
-          <description>4</description>
-          <description>SHGDN_INFOLDER</description>
-          <description>Returns the display name relative to the parent folder.</description>
-        </item>
-        <item>
-          <description>5</description>
-          <description>SHGDN_NORMAL</description>
-          <description>Returns the display name relative to the desktop and not to a specific folder.</description>
-        </item>
-      </list>
-      <para>These are the sample item types.</para>
-      <list type="table">
-        <listheader>
-          <description>Letter</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>A</description>
-          <description>The C: drive on the local computer, whose volume label is C_DRIVE.</description>
-        </item>
-        <item>
-          <description>B</description>
-          <description>A printer named Laser on a computer called Mailroom.</description>
-        </item>
-        <item>
-          <description>C</description>
-          <description>The file C:\Directory\File.txt (when file-name extensions are hidden).</description>
-        </item>
-      </list>
-      <para>The following table describes the display names as they would be returned.</para>
-      <list type="table">
-        <listheader>
-          <description></description>
-          <description>A</description>
-          <description>B</description>
-          <description>C</description>
-        </listheader>
-        <item>
-          <description>1</description>
-          <description>C:\</description>
-          <description>\\Mailroom\Laser</description>
-          <description>C:\Directory\File.txt</description>
-        </item>
-        <item>
-          <description>2</description>
-          <description>C:\</description>
-          <description>Laser</description>
-          <description>File.txt</description>
-        </item>
-        <item>
-          <description>3</description>
-          <description>C_DRIVE</description>
-          <description>Laser</description>
-          <description>File</description>
-        </item>
-        <item>
-          <description>4</description>
-          <description>C_DRIVE (C:)</description>
-          <description>Laser</description>
-          <description>File</description>
-        </item>
-        <item>
-          <description>5</description>
-          <description>C_DRIVE (C:)</description>
-          <description>Laser on Mailroom</description>
-          <description>File</description>
-        </item>
-      </list>
-      <para>
-        <b>Remarks on examples</b>
-      </para>
-      <list type="bullet">
-        <item>
-          <description>A3: The C: drive presents its volume name for editing, rather than the entire string "C_DRIVE (C:)".</description>
-        </item>
-        <item>
-          <description>B1-B5: The display name of the remote printer changes depending on whether it is being shown relative to its parent. When shown relative to its parent, it needs only its printer name, but when shown outside its parent, it shows both its printer name and its computer name.</description>
-        </item>
-        <item>
-          <description>C3: File.txt presents only its base name for editing instead of its full name.</description>
-        </item>
-      </list>
-      <para>For further discussion of the <see cref="IShellFolder" /> interface, see <a href="https://docs.microsoft.com//windows/desktop/shell/folder-info">Getting Information About the Contents of a Folder</a>.</para>
-    </remarks>
   </member>
   <member name="SHGDNF.SHGDN_NORMAL">
-    <summary>
-      <para>When not combined with another flag, return the parent-relative name that identifies the item, suitable for displaying to the user. This name often does not include extra information such as the file name extension and does not need to be unique. This name might include information that identifies the folder that contains the item. For instance, this flag could cause <see cref="IShellFolder.GetDisplayNameOf" /> to return the string "<b>username</b> (on <b>Machine</b>)" for a particular user's folder.</para>
-    </summary>
+    <summary>When not combined with another flag, return the parent-relative name that identifies the item, suitable for displaying to the user. This name often does not include extra information such as the file name extension and does not need to be unique. This name might include information that identifies the folder that contains the item. For instance, this flag could cause <see cref="IShellFolder.GetDisplayNameOf" /> to return the string "<b>username</b> (on <b>Machine</b>)" for a particular user's folder.</summary>
   </member>
   <member name="SHGDNF.SHGDN_INFOLDER">
     <summary>
@@ -141,18 +19,12 @@
     </summary>
   </member>
   <member name="SHGDNF.SHGDN_FOREDITING">
-    <summary>
-      <para>The name is used for in-place editing when the user renames the item.</para>
-    </summary>
+    <summary>The name is used for in-place editing when the user renames the item.</summary>
   </member>
   <member name="SHGDNF.SHGDN_FORADDRESSBAR">
-    <summary>
-      <para>The name is displayed in an address bar combo box.</para>
-    </summary>
+    <summary>The name is displayed in an address bar combo box.</summary>
   </member>
   <member name="SHGDNF.SHGDN_FORPARSING">
-    <summary>
-      <para>The name is used for parsing. That is, it can be passed to <see cref="IShellFolder.ParseDisplayName" /> to recover the object's PIDL. The form this name takes depends on the particular object. When SHGDN_FORPARSING is used alone, the name is relative to the desktop. When combined with SHGDN_INFOLDER, the name is relative to the folder from which the request was made.</para>
-    </summary>
+    <summary>The name is used for parsing. That is, it can be passed to <see cref="IShellFolder.ParseDisplayName" /> to recover the object's PIDL. The form this name takes depends on the particular object. When SHGDN_FORPARSING is used alone, the name is relative to the desktop. When combined with SHGDN_INFOLDER, the name is relative to the folder from which the request was made.</summary>
   </member>
 </doc>

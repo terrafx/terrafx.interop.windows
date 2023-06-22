@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMuxStreamMediaTypeManager.AddStreamConfiguration">
-    <summary>
-      <para>Registers a stream configuration, which defines a set of substreams that can be included  the  multiplexed output.</para>
-    </summary>
-    <param name="ullStreamMask">
-      <para>A bitmask value where the bits that are on represent the indices of the substreams that are included in the stream configuration.</para>
-    </param>
+    <summary>Registers a stream configuration, which defines a set of substreams that can be included the multiplexed output.</summary>
+    <param name="ullStreamMask">A bitmask value where the bits that are on represent the indices of the substreams that are included in the stream configuration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,63 +12,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified configuration is already registered.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The supplied bitmask has bits set that are invalid for the media source.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified configuration is already registered.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The supplied bitmask has bits set that are invalid for the media source.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>There is insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>There is insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Stream configurations are ordered within the <see cref="IMFMuxStreamMediaTypeManager" /> by the numeric value of the bitmask.</para>
-    </remarks>
-    <seealso cref="IMFMuxStreamMediaTypeManager" />
   </member>
   <member name="IMFMuxStreamMediaTypeManager.GetMediaType">
-    <summary>
-      <para>Gets the <see cref="IMFMediaType" /> of the substream with the specified index.</para>
-    </summary>
-    <param name="dwMuxStreamIndex">
-      <para>The index of the substream for which the media type is retrieved.</para>
-    </param>
-    <param name="ppMediaType">
-      <para>The media type of the substream with the specified index.</para>
-    </param>
+    <summary>Gets the <see cref="IMFMediaType" /> of the substream with the specified index.</summary>
+    <param name="dwMuxStreamIndex">The index of the substream for which the media type is retrieved.</param>
+    <param name="ppMediaType">The media type of the substream with the specified index.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -80,60 +74,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream specified substream index is invalid. Call <see cref="GetStreamCount" /> to get the number of substreams managed by the multiplexed media source.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDMEDIATYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>The stream specified substream index is invalid. Call <see cref="GetStreamCount" /> to get the number of substreams managed by the multiplexed media source.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDMEDIATYPE</b>
-            </para>
-          </description>
-          <description>
-            <para>The media type of the specified substream is invalid.</para>
-          </description>
-        </item>
+          <description>The media type of the specified substream is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMuxStreamMediaTypeManager" />
   </member>
   <member name="IMFMuxStreamMediaTypeManager.GetStreamConfiguration">
-    <summary>
-      <para>Gets the stream configuration with the specified index, which defines a set of substreams that can be included  the  multiplexed output.</para>
-    </summary>
-    <param name="ulIndex">
-      <para>The index of the configuration to retrieve.</para>
-    </param>
-    <param name="pullStreamMask">
-      <para>The index of the configuration to retrieve.</para>
-    </param>
+    <summary>Gets the stream configuration with the specified index, which defines a set of substreams that can be included the multiplexed output.</summary>
+    <param name="ulIndex">The index of the configuration to retrieve.</param>
+    <param name="pullStreamMask">The index of the configuration to retrieve.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -141,40 +136,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDINDEX</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified configuration index is not valid.</para>
-          </description>
-        </item>
+          <description>The specified configuration index is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Stream configurations are ordered within the <see cref="IMFMuxStreamMediaTypeManager" /> by the numeric value of the bitmask.</para>
-    </remarks>
-    <seealso cref="IMFMuxStreamMediaTypeManager" />
   </member>
   <member name="IMFMuxStreamMediaTypeManager.GetStreamConfigurationCount">
-    <summary>
-      <para>Gets the count of registered stream configurations, which define set of substreams that can be included  the  multiplexed output.</para>
-    </summary>
-    <param name="pdwCount">
-      <para>The number of registered stream configurations.</para>
-    </param>
+    <summary>Gets the count of registered stream configurations, which define set of substreams that can be included the multiplexed output.</summary>
+    <param name="pdwCount">The number of registered stream configurations.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -182,37 +173,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
+          <description>Invalid argument.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMuxStreamMediaTypeManager" />
   </member>
   <member name="IMFMuxStreamMediaTypeManager.GetStreamCount">
-    <summary>
-      <para>Gets the count of substreams managed by the multiplexed media source.</para>
-    </summary>
-    <param name="pdwMuxStreamCount">
-      <para>The count of substreams managed by the multiplexed media source.</para>
-    </param>
+    <summary>Gets the count of substreams managed by the multiplexed media source.</summary>
+    <param name="pdwMuxStreamCount">The count of substreams managed by the multiplexed media source.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -220,37 +210,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
+          <description>Invalid argument.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMuxStreamMediaTypeManager" />
   </member>
   <member name="IMFMuxStreamMediaTypeManager.RemoveStreamConfiguration">
-    <summary>
-      <para>Unregisters a stream configuration, which defines a set of substreams that can be included  the  multiplexed output.</para>
-    </summary>
-    <param name="ullStreamMask">
-      <para>A bitmask value where the bits that are on represent the indices of the substreams that are included in the stream configuration.</para>
-    </param>
+    <summary>Unregisters a stream configuration, which defines a set of substreams that can be included the multiplexed output.</summary>
+    <param name="ullStreamMask">A bitmask value where the bits that are on represent the indices of the substreams that are included in the stream configuration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -258,43 +247,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified configuration is not currently registered.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The specified configuration is not currently registered.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>There is insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>There is insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMuxStreamMediaTypeManager" />
   </member>
   <member name="IMFMuxStreamMediaTypeManager">
-    <summary>
-      <para>Enables the management of stream configurations for a multiplexed media source. A stream configuration defines a set of substreams that can be included  the  multiplexed output.</para>
-    </summary>
+    <summary>Enables the management of stream configurations for a multiplexed media source. A stream configuration defines a set of substreams that can be included the multiplexed output.</summary>
   </member>
 </doc>

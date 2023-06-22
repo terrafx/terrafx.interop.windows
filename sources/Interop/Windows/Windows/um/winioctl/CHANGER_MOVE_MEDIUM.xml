@@ -3,35 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CHANGER_MOVE_MEDIUM">
-    <summary>
-      <para>Contains information that the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_move_medium">IOCTL_CHANGER_MOVE_MEDIUM</a> control code uses to move a piece of media to a destination.</para>
-    </summary>
-    <seealso cref="CHANGER_ELEMENT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_move_medium">IOCTL_CHANGER_MOVE_MEDIUM</seealso>
+    <summary>Contains information that the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_move_medium">IOCTL_CHANGER_MOVE_MEDIUM</a> control code uses to move a piece of media to a destination.</summary>
   </member>
   <member name="CHANGER_MOVE_MEDIUM.Transport">
-    <summary>
-      <para>A
-<see cref="CHANGER_ELEMENT" /> structure that indicates which transport element to use for the move operation.</para>
-    </summary>
+    <summary>A<see cref="CHANGER_ELEMENT" /> structure that indicates which transport element to use for the move operation.</summary>
   </member>
   <member name="CHANGER_MOVE_MEDIUM.Source">
-    <summary>
-      <para>A
-<see cref="CHANGER_ELEMENT" /> structure that indicates the element that contains the media that is to be moved.</para>
-    </summary>
+    <summary>A<see cref="CHANGER_ELEMENT" /> structure that indicates the element that contains the media that is to be moved.</summary>
   </member>
   <member name="CHANGER_MOVE_MEDIUM.Destination">
-    <summary>
-      <para>A
-<see cref="CHANGER_ELEMENT" /> structure that indicates the element that is the destination of the media originally at <b>Source</b>.</para>
-    </summary>
+    <summary>A<see cref="CHANGER_ELEMENT" /> structure that indicates the element that is the destination of the media originally at <b>Source</b>.</summary>
   </member>
   <member name="CHANGER_MOVE_MEDIUM.Flip">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the media should be flipped. Otherwise, it should not. This member is valid only if the <b>Features0</b> member of the
-<see cref="GET_CHANGER_PARAMETERS" /> structure is CHANGER_MEDIUM_FLIP.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the media should be flipped. Otherwise, it should not. This member is valid only if the <b>Features0</b> member of the<see cref="GET_CHANGER_PARAMETERS" /> structure is CHANGER_MEDIUM_FLIP.</summary>
   </member>
 </doc>

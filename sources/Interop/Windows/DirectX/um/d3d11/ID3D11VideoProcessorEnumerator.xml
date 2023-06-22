@@ -3,106 +3,44 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11VideoProcessorEnumerator.CheckVideoProcessorFormat">
-    <summary>
-      <para>Queries whether the video processor supports a specified video format.</para>
-    </summary>
-    <param name="Format">
-      <para>The video format to query, specified as a <see cref="DXGI_FORMAT" /> value.</para>
-    </param>
-    <param name="pFlags">
-      <para>Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoProcessorEnumerator" />
+    <summary>Queries whether the video processor supports a specified video format.</summary>
+    <param name="Format">The video format to query, specified as a <see cref="DXGI_FORMAT" /> value.</param>
+    <param name="pFlags">Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps">
-    <summary>
-      <para>Gets the capabilities of the video processor.</para>
-    </summary>
-    <param name="pCaps">
-      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_CAPS" /> structure that receives the capabilities.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoProcessorEnumerator" />
+    <summary>Gets the capabilities of the video processor.</summary>
+    <param name="pCaps">A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_CAPS" /> structure that receives the capabilities.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoProcessorEnumerator.GetVideoProcessorContentDesc">
-    <summary>
-      <para>Gets the content description that was used to create this enumerator.</para>
-    </summary>
-    <param name="pContentDesc">
-      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_CONTENT_DESC" /> structure that receives the content description.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoProcessorEnumerator" />
+    <summary>Gets the content description that was used to create this enumerator.</summary>
+    <param name="pContentDesc">A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_CONTENT_DESC" /> structure that receives the content description.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoProcessorEnumerator.GetVideoProcessorCustomRate">
-    <summary>
-      <para>Gets a list of custom frame rates that a video processor supports.</para>
-    </summary>
-    <param name="TypeIndex">
-      <para>The zero-based index of the frame-rate capability group. To get the maxmum index, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps " /> and check the <b>RateConversionCapsCount</b> member of the <see cref="D3D11_VIDEO_PROCESSOR_CAPS" /> structure.</para>
-    </param>
+    <summary>Gets a list of custom frame rates that a video processor supports.</summary>
+    <param name="TypeIndex">The zero-based index of the frame-rate capability group. To get the maxmum index, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>RateConversionCapsCount</b> member of the <see cref="D3D11_VIDEO_PROCESSOR_CAPS" /> structure.</param>
     <param name="CustomRateIndex">
       <para>The zero-based index of the custom rate to retrieve. To get the maximum index, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorRateConversionCaps" /> and check the <b>CustomRateCount</b> member of the <see cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" /> structure.</para>
       <para>This index value is always relative to the capability group specified in the <i>TypeIndex</i> parameter.</para>
     </param>
-    <param name="pRate">
-      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE" /> structure that receives the custom rate.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoProcessorEnumerator" />
+    <param name="pRate">A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE" /> structure that receives the custom rate.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoProcessorEnumerator.GetVideoProcessorFilterRange">
-    <summary>
-      <para>Gets the range of values for an image filter.</para>
-    </summary>
-    <param name="Filter">
-      <para>The type of image filter, specified as a <see cref="D3D11_VIDEO_PROCESSOR_FILTER" /> value.</para>
-    </param>
-    <param name="pRange">
-      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_FILTER_RANGE" /> structure. The method fills the structure with the range of values for the specified filter.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoProcessorEnumerator" />
+    <summary>Gets the range of values for an image filter.</summary>
+    <param name="Filter">The type of image filter, specified as a <see cref="D3D11_VIDEO_PROCESSOR_FILTER" /> value.</param>
+    <param name="pRange">A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_FILTER_RANGE" /> structure. The method fills the structure with the range of values for the specified filter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoProcessorEnumerator.GetVideoProcessorRateConversionCaps">
-    <summary>
-      <para>Returns a group of video processor capabilities that are associated with frame-rate conversion, including deinterlacing and inverse telecine.</para>
-    </summary>
-    <param name="TypeIndex">
-      <para>The zero-based index of the group to retrieve. To get the maximum index, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>RateConversionCapsCount</b> member of the <see cref="D3D11_VIDEO_PROCESSOR_CAPS" /> structure.</para>
-    </param>
-    <param name="pCaps">
-      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" /> structure that receives the frame-rate conversion capabilities.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The capabilities defined in the <see cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" /> structure are interdependent. Therefore, the driver can support multiple, distinct groups of these capabilities.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoProcessorEnumerator" />
+    <summary>Returns a group of video processor capabilities that are associated with frame-rate conversion, including deinterlacing and inverse telecine.</summary>
+    <param name="TypeIndex">The zero-based index of the group to retrieve. To get the maximum index, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>RateConversionCapsCount</b> member of the <see cref="D3D11_VIDEO_PROCESSOR_CAPS" /> structure.</param>
+    <param name="pCaps">A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" /> structure that receives the frame-rate conversion capabilities.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoProcessorEnumerator">
-    <summary>
-      <para>Enumerates the video processor capabilities of a Microsoft Direct3D 11 device.</para>
-    </summary>
-    <remarks>
-      <para>To get a pointer to this interface, call <see cref="ID3D11VideoDevice.CreateVideoProcessorEnumerator" />.</para>
-      <para>To create an instance of the video processor, pass the <b>ID3D11VideoProcessorEnumerator</b> pointer to the <see cref="ID3D11VideoDevice.CreateVideoProcessor" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
-    <seealso cref="ID3D11DeviceChild" />
-    <seealso cref="ID3D11VideoProcessorEnumerator" />
+    <summary>Enumerates the video processor capabilities of a Microsoft Direct3D 11 device.</summary>
   </member>
 </doc>

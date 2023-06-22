@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_SERIALIZED_DATA_TYPE">
-    <summary>
-      <para>Specifies the type of serialized data. Use a value from this enumeration when calling <see cref="ID3D12Device5.CheckDriverMatchingIdentifier" />.</para>
-    </summary>
+    <summary>Specifies the type of serialized data. Use a value from this enumeration when calling <see cref="ID3D12Device5.CheckDriverMatchingIdentifier" />.</summary>
   </member>
   <member name="D3D12_SERIALIZED_DATA_TYPE.D3D12_SERIALIZED_DATA_RAYTRACING_ACCELERATION_STRUCTURE">
-    <summary>
-      <para>The serialized data is a raytracing acceleration structure.</para>
-    </summary>
+    <summary>The serialized data is a raytracing acceleration structure.</summary>
   </member>
 </doc>

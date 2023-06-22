@@ -3,72 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_QUALITY_DROP_MODE">
-    <summary>
-      <para>Specifies how aggressively a pipeline component should drop samples.</para>
-    </summary>
-    <remarks>
-      <para>In drop mode, a component drops samples, more or less aggressively depending on the level of the drop mode. The specific algorithm used depends on the component. Mode 1 is the least aggressive mode, and mode 5 is the most aggressive. A component is not required to implement all five levels.</para>
-      <para>For example, suppose an encoded video stream has three B-frames between each pair of P-frames. A decoder might implement the following drop modes:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>Mode 1: Drop one out of every three B frames.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Mode 2: Drop one out of every two B frames.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Mode 3: Drop all delta frames.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Modes 4 and 5: Unsupported.</para>
-          </description>
-        </item>
-      </list>
-      <para>The enhanced video renderer (EVR) can drop video frames before sending them to the EVR mixer.</para>
-    </remarks>
-    <seealso cref="IMFQualityAdvise" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies how aggressively a pipeline component should drop samples.</summary>
   </member>
   <member name="MF_QUALITY_DROP_MODE.MF_DROP_MODE_NONE">
-    <summary>
-      <para>Normal processing of samples. Drop mode is disabled.</para>
-    </summary>
+    <summary>Normal processing of samples. Drop mode is disabled.</summary>
   </member>
   <member name="MF_QUALITY_DROP_MODE.MF_DROP_MODE_1">
-    <summary>
-      <para>First drop mode (least aggressive).</para>
-    </summary>
+    <summary>First drop mode (least aggressive).</summary>
   </member>
   <member name="MF_QUALITY_DROP_MODE.MF_DROP_MODE_2">
-    <summary>
-      <para>Second drop mode.</para>
-    </summary>
+    <summary>Second drop mode.</summary>
   </member>
   <member name="MF_QUALITY_DROP_MODE.MF_DROP_MODE_3">
-    <summary>
-      <para>Third drop mode.</para>
-    </summary>
+    <summary>Third drop mode.</summary>
   </member>
   <member name="MF_QUALITY_DROP_MODE.MF_DROP_MODE_4">
-    <summary>
-      <para>Fourth drop mode.</para>
-    </summary>
+    <summary>Fourth drop mode.</summary>
   </member>
   <member name="MF_QUALITY_DROP_MODE.MF_DROP_MODE_5">
-    <summary>
-      <para>Fifth drop mode (most aggressive, if it is supported; see Remarks).</para>
-    </summary>
+    <summary>Fifth drop mode (most aggressive, if it is supported; see Remarks).</summary>
   </member>
   <member name="MF_QUALITY_DROP_MODE.MF_NUM_DROP_MODES">
-    <summary>
-      <para>Maximum number of drop modes. This value is not a valid flag.</para>
-    </summary>
+    <summary>Maximum number of drop modes. This value is not a valid flag.</summary>
   </member>
 </doc>

@@ -3,26 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_HW_FIRMWARE_ACTIVATE">
-    <summary>
-      <para>This structure contains information about the downloaded firmware to activate.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_firmware_activate">IOCTL_STORAGE_FIRMWARE_ACTIVATE</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_firmware_download">IOCTL_STORAGE_FIRMWARE_DOWNLOAD</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_firmware_get_info">IOCTL_STORAGE_FIRMWARE_GET_INFO</seealso>
-    <seealso cref="STORAGE_HW_FIRMWARE_DOWNLOAD" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/storage-hw-firmware-info">STORAGE_HW_FIRMWARE_INFO</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/storage-hw-firmware-info-query">STORAGE_HW_FIRMWARE_INFO_QUERY</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/storage-hw-firmware-slot-info">STORAGE_HW_FIRMWARE_SLOT_INFO</seealso>
+    <summary>This structure contains information about the downloaded firmware to activate.</summary>
   </member>
   <member name="STORAGE_HW_FIRMWARE_ACTIVATE.Version">
-    <summary>
-      <para>The version of this structure. This should be set to sizeof(STORAGE_HW_FIRMWARE_ACTIVATE).</para>
-    </summary>
+    <summary>The version of this structure. This should be set to sizeof(STORAGE_HW_FIRMWARE_ACTIVATE).</summary>
   </member>
   <member name="STORAGE_HW_FIRMWARE_ACTIVATE.Size">
-    <summary>
-      <para>The size of this structure. This should be set to sizeof(STORAGE_HW_FIRMWARE_ACTIVATE).</para>
-    </summary>
+    <summary>The size of this structure. This should be set to sizeof(STORAGE_HW_FIRMWARE_ACTIVATE).</summary>
   </member>
   <member name="STORAGE_HW_FIRMWARE_ACTIVATE.Flags">
     <summary>
@@ -32,25 +19,21 @@
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER</description>
           <description>Indicates that the target of the request is a controller or adapter, different than the device handle or object itself (e.g. NVMe SSD or HBA).</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>STORAGE_HW_FIRMWARE_REQUEST_FLAG_SWITCH_TO_EXISTING_FIRMWARE</description>
           <description>Indicates that the existing firmware image in the specified slot should be activated.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="STORAGE_HW_FIRMWARE_ACTIVATE.Slot">
-    <summary>
-      <para>The slot with the firmware image that is to be activated.</para>
-    </summary>
+    <summary>The slot with the firmware image that is to be activated.</summary>
   </member>
   <member name="STORAGE_HW_FIRMWARE_ACTIVATE.Reserved0">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
 </doc>

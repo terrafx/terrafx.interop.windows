@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TIMED_TEXT_SCROLL_MODE">
-    <summary>
-      <para>Specifies how text appears when the parent element is scrolled.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies how text appears when the parent element is scrolled.</summary>
   </member>
   <member name="MF_TIMED_TEXT_SCROLL_MODE.MF_TIMED_TEXT_SCROLL_MODE_POP_ON">
-    <summary>
-      <para>Text pops on when the parent element is scrolled.</para>
-    </summary>
+    <summary>Text pops on when the parent element is scrolled.</summary>
   </member>
   <member name="MF_TIMED_TEXT_SCROLL_MODE.MF_TIMED_TEXT_SCROLL_MODE_ROLL_UP">
-    <summary>
-      <para>Text rolls up when the parent element is scrolled.</para>
-    </summary>
+    <summary>Text rolls up when the parent element is scrolled.</summary>
   </member>
 </doc>

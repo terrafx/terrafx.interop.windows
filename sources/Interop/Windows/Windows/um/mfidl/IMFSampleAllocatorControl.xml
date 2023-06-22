@@ -3,47 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSampleAllocatorControl.GetAllocatorUsage">
-    <summary>
-      <para>Retrieves the sample allocator usage for the specified output stream.</para>
-    </summary>
-    <param name="dwOutputStreamID">
-      <para>The ID of the output stream whose sample allocator usage is requested.</para>
-    </param>
-    <param name="pdwInputStreamID">
-      <para>If the allocator usage is <see cref="MFSampleAllocatorUsage_DoesNotAllocate" />, then this output parameter is set to the ID of the input stream that the output samples are coming from. For all other allocator usage values, this parameter is ignored.</para>
-    </param>
-    <param name="peUsage">
-      <para>A member of the <see cref="MFSampleAllocatorUsage" /> enumeration specifying the sample allocator usage of the specified output stream.</para>
-    </param>
-    <returns>
-      <para>The method returns an <b>HRESULT</b>.</para>
-    </returns>
+    <summary>Retrieves the sample allocator usage for the specified output stream.</summary>
+    <param name="dwOutputStreamID">The ID of the output stream whose sample allocator usage is requested.</param>
+    <param name="pdwInputStreamID">If the allocator usage is <see cref="MFSampleAllocatorUsage_DoesNotAllocate" />, then this output parameter is set to the ID of the input stream that the output samples are coming from. For all other allocator usage values, this parameter is ignored.</param>
+    <param name="peUsage">A member of the <see cref="MFSampleAllocatorUsage" /> enumeration specifying the sample allocator usage of the specified output stream.</param>
+    <returns>The method returns an <b>HRESULT</b>.</returns>
   </member>
   <member name="IMFSampleAllocatorControl.SetDefaultAllocator">
-    <summary>
-      <para>Sets the default sample allocator to use for the specified output stream.</para>
-    </summary>
-    <param name="dwOutputStreamID">
-      <para>The ID of the output stream that the <i>pAllocator</i> parameter applies to.</para>
-    </param>
-    <param name="pAllocator">
-      <para>Receives a pointer to a sample allocator to use for the specified output stream. The
-allocator supports one of the MF allocator interfaces, such as <see cref="IMFVideoCaptureSampleAllocator" /> or <see cref="IMFVideoSampleAllocatorEx" />.</para>
-    </param>
-    <returns>
-      <para>The method returns an <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>The system calls this method to provide components with a sample allocator that allows the component to allocate samples using memory that is accessible from within a container.</para>
-      <para>Components that use the provided allocator should return <see cref="MFSampleAllocatorUsage_UsesProvidedAllocator" /> from calls to <see cref="IMFSampleAllocatorControl.GetAllocatorUsage" />.</para>
-    </remarks>
+    <summary>Sets the default sample allocator to use for the specified output stream.</summary>
+    <param name="dwOutputStreamID">The ID of the output stream that the <i>pAllocator</i> parameter applies to.</param>
+    <param name="pAllocator">Receives a pointer to a sample allocator to use for the specified output stream. The allocator supports one of the MF allocator interfaces, such as <see cref="IMFVideoCaptureSampleAllocator" /> or <see cref="IMFVideoSampleAllocatorEx" />.</param>
+    <returns>The method returns an <b>HRESULT</b>.</returns>
   </member>
   <member name="IMFSampleAllocatorControl">
-    <summary>
-      <para>Implemented by video capture sources and transforms. Allows the system to provide components with a sample allocator to allocate samples using memory that is accessible from within a container.</para>
-    </summary>
-    <remarks>
-      <para>Components that do not implement this interface, or do not use the allocator provided by the system, can still allocate samples, but when running from inside a container, the system will have to copy all samples into container memory, which is less efficient.</para>
-    </remarks>
+    <summary>Implemented by video capture sources and transforms. Allows the system to provide components with a sample allocator to allocate samples using memory that is accessible from within a container.</summary>
   </member>
 </doc>

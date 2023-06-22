@@ -3,25 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.DWRITE_MAKE_FONT_AXIS_TAG">
-    <summary>
-      <para>Creates an OpenType tag for a font axis.</para>
-    </summary>
-    <param name="a">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">CHAR</a></b></para>
-      <para>The first character in the tag.</para>
-    </param>
-    <param name="b">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">CHAR</a></b></para>
-      <para>The second character in the tag.</para>
-    </param>
-    <param name="c">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">CHAR</a></b></para>
-      <para>The third character in the tag.</para>
-    </param>
-    <param name="d">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">CHAR</a></b></para>
-      <para>The fourth character in the tag.</para>
-    </param>
-    <seealso cref="DWRITE_MAKE_OPENTYPE_TAG macro" />
+    <summary>Creates an OpenType tag for a font axis.</summary>
+    <param name="a">The first character in the tag.</param>
+    <param name="b">The second character in the tag.</param>
+    <param name="c">The third character in the tag.</param>
+    <param name="d">The fourth character in the tag.</param>
   </member>
 </doc>

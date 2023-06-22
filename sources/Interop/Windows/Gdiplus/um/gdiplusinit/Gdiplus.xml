@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Gdiplus.GdiplusShutdown">
+    <summary>The <b>GdiplusShutdown</b> function cleans up resources used by Windows GDI+. Each call to <see cref="GdiplusStartup" /> should be paired with a call to <b>GdiplusShutdown</b>.</summary>
+    <param name="token">Token returned by a previous call to <see cref="GdiplusStartup" />.</param>
+  </member>
+  <member name="Gdiplus.GdiplusStartup">
+    <summary>The <b>GdiplusStartup</b> function initializes Windows GDI+. Call <b>GdiplusStartup</b> before making any other GDI+ calls, and call <see cref="GdiplusShutdown" /> when you have finished using GDI+.</summary>
+    <param name="token">Pointer to a <b>ULONG_PTR</b> that receives a token. Pass the token to <see cref="GdiplusShutdown" /> when you have finished using GDI+.</param>
+    <param name="input">Pointer to a <see cref="GdiplusStartupInput" /> structure that contains the GDI+ version, a pointer to a debug callback function, a Boolean value that specifies whether to suppress the background thread, and a Boolean value that specifies whether to suppress external image codecs.</param>
+    <param name="output">Pointer to a <see cref="GdiplusStartupOutput" /> structure that receives a pointer to a notification hook function and a pointer to a notification unhook function. If the <b>SuppressBackgroundThread</b> data member of the <i>input</i> parameter is <b>FALSE</b>, then this parameter can be <b>NULL</b>.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>Ok</b>, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the function fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

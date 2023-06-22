@@ -4,96 +4,57 @@
 <doc>
   <member name="IQualProp.get_AvgFrameRate">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_AvgFrameRate</code> method retrieves the actual average frame rate since streaming started.</para>
     </summary>
-    <param name="piAvgFrameRate">
-      <para>Pointer to a variable that receives the actual number of frames per second, multiplied by 100. For example, an average frame rate of 30 frames per second will be represented as 3000.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>The actual frame rate during playback might be less than the authored frame rate. For more information on actual versus authored frame rates, see the Remarks section for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IQualProp Interface" />
+    <param name="piAvgFrameRate">Pointer to a variable that receives the actual number of frames per second, multiplied by 100. For example, an average frame rate of 30 frames per second will be represented as 3000.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IQualProp.get_AvgSyncOffset">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_AvgSyncOffset</code> method retrieves the average time difference between when the video frames should have been displayed and when they actually were.</para>
     </summary>
-    <param name="piAvg">
-      <para>Pointer to the time difference, expressed in milliseconds.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IQualProp Interface" />
+    <param name="piAvg">Pointer to the time difference, expressed in milliseconds.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IQualProp.get_DevSyncOffset">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_DevSyncOffset</code> method retrieves the average time difference between when the video frames should have been displayed and when they actually were. This method is the same as the <see cref="IQualProp.get_AvgSyncOffset" /> method except that the value returned is calculated as a standard deviation rather than as a simple average.</para>
     </summary>
-    <param name="piDev">
-      <para>Pointer to a value denoting the accuracy of the video frames displayed.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>When playing video from networks, the presentation can often be disrupted by network glitches. For this reason, expressing the accuracy of video frames by a simple average is inappropriate. Looking at a standard deviation provides a better idea of the overall accuracy.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IQualProp Interface" />
+    <param name="piDev">Pointer to a value denoting the accuracy of the video frames displayed.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IQualProp.get_FramesDrawn">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_FramesDrawn</code> method retrieves the number of frames actually drawn since streaming started.</para>
     </summary>
-    <param name="pcFramesDrawn">
-      <para>Pointer to the number of frames drawn since streaming started.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IQualProp Interface" />
+    <param name="pcFramesDrawn">Pointer to the number of frames drawn since streaming started.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IQualProp.get_FramesDroppedInRenderer">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_FramesDroppedInRenderer</code> method retrieves the number of frames dropped by the renderer.</para>
     </summary>
-    <param name="pcFrames">
-      <para>Pointer to the number of frames dropped by the renderer.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>The property page uses this method to retrieve data from the renderer.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IQualProp Interface" />
+    <param name="pcFrames">Pointer to the number of frames dropped by the renderer.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IQualProp.get_Jitter">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>get_Jitter</b> method gets the jitter (variation in time) between successive frames delivered to the video renderer.</para>
     </summary>
-    <param name="iJitter">
-      <para>Receives the standard deviation of the interframe time, in milliseconds.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IQualProp Interface" />
+    <param name="iJitter">Receives the standard deviation of the interframe time, in milliseconds.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IQualProp">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IQualProp</b> interface provides methods for retrieving performance information from video renderers. The values returned through the interface are reset each time the filter is stopped. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-renderer-filter">Video Renderer</a> filter and the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/full-screen-renderer-filter">Full Screen Renderer</a> filter expose this interface.</para>
       <para>Applications can use this interface to retrieve video performance information.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
   </member>
 </doc>

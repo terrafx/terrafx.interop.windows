@@ -3,33 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleUndoManager.Add">
-    <summary>
-      <para>Adds a simple undo unit to the collection. While a parent undo unit is open, the undo manager adds undo units to it by calling <see cref="IOleParentUndoUnit.Add" />.</para>
-    </summary>
-    <param name="pUU">
-      <para>An <see cref="IOleUndoUnit" /> pointer to the undo unit to be added.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK if the specified unit was successfully added, the parent unit was blocked, or the undo manager is disabled.</para>
-    </returns>
-    <remarks>
-      <para>This method is implemented the same as <see cref="IOleParentUndoUnit.Add" />. The parent undo unit or undo manager must accept any undo unit given to it, unless it is blocked. If it is blocked, it should do nothing but return S_OK.</para>
-      <h3>Notes to Implementers</h3>
-      <para>If the undo manager is in the base state, it should put the new unit on the undo stack and discard the entire redo stack. If the undo manager is in the undo state, it should put new units on the redo stack. If the undo manager is in the redo state, it should put units on the undo stack without affecting the redo stack.</para>
-    </remarks>
-    <seealso cref="IOleParentUndoUnit.Add" />
-    <seealso cref="IOleUndoManager" />
+    <summary>Adds a simple undo unit to the collection. While a parent undo unit is open, the undo manager adds undo units to it by calling <see cref="IOleParentUndoUnit.Add" />.</summary>
+    <param name="pUU">An <see cref="IOleUndoUnit" /> pointer to the undo unit to be added.</param>
+    <returns>This method returns S_OK if the specified unit was successfully added, the parent unit was blocked, or the undo manager is disabled.</returns>
   </member>
   <member name="IOleUndoManager.Close">
-    <summary>
-      <para>Closes the specified parent undo unit.</para>
-    </summary>
-    <param name="pPUU">
-      <para>A pointer to an <see cref="IOleParentUndoUnit" /> interface for the currently open parent unit to be closed.</para>
-    </param>
-    <param name="fCommit">
-      <para>Indicates whether to keep or discard the unit. If <b>TRUE</b>, the unit is kept in the collection. If <b>FALSE</b>, the unit is discarded. This parameter is used to allow the client to discard an undo unit under construction if an error or a cancellation occurs.</para>
-    </param>
+    <summary>Closes the specified parent undo unit.</summary>
+    <param name="pPUU">A pointer to an <see cref="IOleParentUndoUnit" /> interface for the currently open parent unit to be closed.</param>
+    <param name="fCommit">Indicates whether to keep or discard the unit. If <b>TRUE</b>, the unit is kept in the collection. If <b>FALSE</b>, the unit is discarded. This parameter is used to allow the client to discard an undo unit under construction if an error or a cancellation occurs.</param>
     <returns>
       <para>This method returns S_OK if the undo manager had an open parent undo unit and it was successfully closed. If the undo manager is disabled, it should immediately return S_OK and do nothing else. Other possible return values include the following.</para>
       <list type="table">
@@ -37,50 +18,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The parent undo unit did not have an open child and it was successfully closed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The parent undo unit did not have an open child and it was successfully closed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>If <i>pPUU</i> does not match the currently open parent undo unit, then implementations of this method should return E_INVALIDARG without changing any internal state unless the parent unit is blocked.</para>
-          </description>
-        </item>
+          <description>If <i>pPUU</i> does not match the currently open parent undo unit, then implementations of this method should return E_INVALIDARG without changing any internal state unless the parent unit is blocked.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is implemented the same as <see cref="IOleParentUndoUnit.Close" />. A parent undo unit knows it is being closed when it returns S_FALSE from this method. At that time, it should terminate any communication with other objects which may be giving data to it through private interfaces.</para>
-      <h3>Notes to Callers</h3>
-      <para>An error return indicates a fatal error condition.</para>
-      <para>The parent unit or undo manager must accept the undo unit if <i>fCommit</i> is <b>TRUE</b>.</para>
-      <h3>Note to Implementers</h3>
-      <para>To process a close request, a parent undo unit first checks to see if it has an open child unit. If it does not, it returns S_FALSE.</para>
-      <para>If it does have a child unit open, it calls the <b>IOleUndoManager.Close</b> method on the child. If the child returns S_FALSE, then the parent undo unit verifies that <i>pPUU</i> points to the child unit, and closes that child undo unit. If the child returns S_OK then it handled the close internally and its parent should do nothing.</para>
-      <para>If the parent unit is blocked, it should check the <i>pPUU</i> parameter to determine the appropriate return code. If <i>pPUU</i> is pointing to itself, then it should return S_FALSE.</para>
-      <para>Otherwise, it should return S_OK; the <i>fCommit</i> parameter is ignored; and no action is taken.</para>
-      <para>If <i>pPUU</i> does not match the currently open parent undo unit, then implementations of this method should return E_INVALIDARG without changing any internal state. The only exception to this is if the unit is blocked.</para>
-    </remarks>
-    <seealso cref="IOleParentUndoUnit.Close" />
-    <seealso cref="IOleUndoManager" />
   </member>
   <member name="IOleUndoManager.DiscardFrom">
-    <summary>
-      <para>Instructs the undo manager to discard the specified undo unit and all undo units below it on the undo or redo stack.</para>
-    </summary>
-    <param name="pUU">
-      <para>An <see cref="IOleUndoUnit" /> pointer to the undo unit to be discarded. This parameter can be <b>NULL</b> to discard the entire undo or redo stack. If the parameter is not <b>NULL</b> then the stack will not be discarded.</para>
-    </param>
+    <summary>Instructs the undo manager to discard the specified undo unit and all undo units below it on the undo or redo stack.</summary>
+    <param name="pUU">An <see cref="IOleUndoUnit" /> pointer to the undo unit to be discarded. This parameter can be <b>NULL</b> to discard the entire undo or redo stack. If the parameter is not <b>NULL</b> then the stack will not be discarded.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -88,43 +55,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified undo unit was not found in the stacks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified undo unit was not found in the stacks.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The undo manager is disabled.</para>
-          </description>
-        </item>
+          <description>The undo manager is disabled.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The undo manager first searches the undo stack for the given unit, and if not found there searches the redo stack. After it has been found, the given unit and all below it on the same stack are discarded. The undo unit may be a child of a parent unit contained by the undo manager, as determined by calling <see cref="IOleParentUndoUnit.FindUnit" />. If it is a child unit, then the root unit containing the given unit and all units below it on the appropriate stack are discarded.</para>
-      <para>If there is an open parent unit and the <b>DiscardFrom</b> method is called and the <i>pUU</i> parameter is <b>NULL</b>, the undo manager should immediately release and discard the open parent unit without calling the <see cref="IOleUndoManager.Close" /> first. When the object that opened the parent unit attempts to close it, <b>IOleUndoManager.Close</b> will return S_FALSE. If a parent unit is open, throw it away and discard the stack. If the parent unit is not open, just throw the stack away. If the <i>pUU</i> parameter is not <b>NULL</b>, then any open parent units should be left open.</para>
-    </remarks>
-    <seealso cref="IOleParentUndoUnit.FindUnit" />
-    <seealso cref="IOleUndoManager" />
-    <seealso cref="IOleUndoManager.Close" />
   </member>
   <member name="IOleUndoManager.Enable">
-    <summary>
-      <para>Enables or disables the undo manager.</para>
-    </summary>
-    <param name="fEnable">
-      <para>Indicates whether to enable or disable the undo manager. If <b>TRUE</b>, the undo manager should be enabled. If <b>FALSE</b>, the undo manager should be disabled.</para>
-    </param>
+    <summary>Enables or disables the undo manager.</summary>
+    <param name="fEnable">Indicates whether to enable or disable the undo manager. If <b>TRUE</b>, the undo manager should be enabled. If <b>FALSE</b>, the undo manager should be disabled.</param>
     <returns>
       <para>This method returns S_OK if the undo manager was successfully enabled or disabled. Other possible return values include the following.</para>
       <list type="table">
@@ -132,31 +92,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There is an open undo unit on the stack or the undo manager is currently performing an undo or a redo.</para>
-          </description>
-        </item>
+          <description>There is an open undo unit on the stack or the undo manager is currently performing an undo or a redo.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The undo manager should clear both stacks when making the transition from enabled to disabled.</para>
-      <para>If the undo manager is disabled, each method in <see cref="IOleUndoManager" /> must behave as specified. See each method for details.</para>
-    </remarks>
-    <seealso cref="IOleUndoManager" />
   </member>
   <member name="IOleUndoManager.EnumRedoable">
-    <summary>
-      <para>Creates an enumerator object that the caller can use to iterate through a series of top-level undo units from the redo stack.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Address of <see cref="IEnumOleUndoUnits" /> pointer variable that receives the interface pointer to the enumerator object.</para>
-    </param>
+    <summary>Creates an enumerator object that the caller can use to iterate through a series of top-level undo units from the redo stack.</summary>
+    <param name="ppEnum">Address of <see cref="IEnumOleUndoUnits" /> pointer variable that receives the interface pointer to the enumerator object.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -164,32 +117,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The undo manager is disabled.</para>
-          </description>
-        </item>
+          <description>The undo manager is disabled.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A new enumerator object is created each time this method is called. If the series of enumerated items changes over time, the results of enumeration operations can vary from one call to the next.</para>
-      <para>This method calls <see cref="IUnknown.AddRef" /> on the new enumerator object to increment its reference count. The caller is responsible for calling <see cref="IUnknown.Release" /> on the enumerator object when it is no longer needed.</para>
-    </remarks>
-    <seealso cref="IEnumOleUndoUnits" />
-    <seealso cref="IOleUndoManager" />
   </member>
   <member name="IOleUndoManager.EnumUndoable">
-    <summary>
-      <para>Creates an enumerator object that the caller can use to iterate through a series of top-level undo units from the undo stack.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Address of <see cref="IEnumOleUndoUnits" /> pointer variable that receives the interface pointer to the enumerator object.</para>
-    </param>
+    <summary>Creates an enumerator object that the caller can use to iterate through a series of top-level undo units from the undo stack.</summary>
+    <param name="ppEnum">Address of <see cref="IEnumOleUndoUnits" /> pointer variable that receives the interface pointer to the enumerator object.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -197,32 +142,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The undo manager is disabled.</para>
-          </description>
-        </item>
+          <description>The undo manager is disabled.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A new enumerator object is created each time this method is called. If the series of enumerated items changes over time, the results of enumeration operations can vary from one call to the next.</para>
-      <para>This method calls <see cref="IUnknown.AddRef" /> on the new enumerator object to increment its reference count. The caller is responsible for calling <see cref="IUnknown.Release" /> on the enumerator object when it is no longer needed.</para>
-    </remarks>
-    <seealso cref="IEnumOleUndoUnits" />
-    <seealso cref="IOleUndoManager" />
   </member>
   <member name="IOleUndoManager.GetLastRedoDescription">
-    <summary>
-      <para>Retrieves the description for the top-level undo unit that is on top of the redo stack.</para>
-    </summary>
-    <param name="pBstr">
-      <para>A pointer to a string that contains a description of the top-level undo unit on the redo stack.</para>
-    </param>
+    <summary>Retrieves the description for the top-level undo unit that is on top of the redo stack.</summary>
+    <param name="pBstr">A pointer to a string that contains a description of the top-level undo unit on the redo stack.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -230,41 +167,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The undo stack is empty.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The undo stack is empty.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The undo manager is disabled.</para>
-          </description>
-        </item>
+          <description>The undo manager is disabled.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method provides a convenient shortcut for the host application to add a description to its <b>Edit Redo</b> menu item. The <i>pBstr</i> parameter is a string allocated with the standard string allocator. The caller is responsible for freeing this string.</para>
-    </remarks>
-    <seealso cref="IOleUndoManager" />
-    <seealso cref="IOleUndoManager.GetLastUndoDescription" />
   </member>
   <member name="IOleUndoManager.GetLastUndoDescription">
-    <summary>
-      <para>Retrieves the description for the top-level undo unit that is on top of the undo stack.</para>
-    </summary>
-    <param name="pBstr">
-      <para>A pointer to a string that contains a description of the top-level undo unit on the undo stack.</para>
-    </param>
+    <summary>Retrieves the description for the top-level undo unit that is on top of the undo stack.</summary>
+    <param name="pBstr">A pointer to a string that contains a description of the top-level undo unit on the undo stack.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -272,79 +204,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The undo stack is empty.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The undo stack is empty.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The undo manager is disabled.</para>
-          </description>
-        </item>
+          <description>The undo manager is disabled.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method provides a convenient shortcut for the host application to add a description to its <b>Edit Undo</b> menu item. The <i>pBstr</i> parameter is a string allocated with the standard string allocator. The caller is responsible for freeing this string.</para>
-    </remarks>
-    <seealso cref="IOleUndoManager" />
-    <seealso cref="IOleUndoManager.GetLastRedoDescription" />
   </member>
   <member name="IOleUndoManager.GetOpenParentState">
-    <summary>
-      <para>Retrieves state information about the innermost open parent undo unit.</para>
-    </summary>
-    <param name="pdwState">
-      <para>A pointer to a variable that receives the state information. This information is a value taken from the <see cref="UASFLAGS" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK if there is an open parent unit and its state was successfully returned or the undo manager is disabled; otherwise, S_FALSE.</para>
-    </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <para>When checking for a normal state, use the UAS_MASK value to mask unused bits in the <i>pdwState</i> parameter to this method for future compatibility.</para>
-      <h3>Notes to Implementers</h3>
-      <para>If there is an open parent unit, this method calls <see cref="IOleParentUndoUnit.GetParentState" />.</para>
-      <para>If the undo manager is disabled, it should fill the <i>pdwState</i> parameter with UAS_BLOCKED and return S_OK.</para>
-    </remarks>
-    <seealso cref="IOleUndoManager" />
-    <seealso cref="UASFLAGS" />
+    <summary>Retrieves state information about the innermost open parent undo unit.</summary>
+    <param name="pdwState">A pointer to a variable that receives the state information. This information is a value taken from the <see cref="UASFLAGS" /> enumeration.</param>
+    <returns>This method returns S_OK if there is an open parent unit and its state was successfully returned or the undo manager is disabled; otherwise, S_FALSE.</returns>
   </member>
   <member name="IOleUndoManager.Open">
-    <summary>
-      <para>Opens a new parent undo unit, which becomes part of its containing unit's undo stack.</para>
-    </summary>
-    <param name="pPUU">
-      <para>An <see cref="IOleParentUndoUnit" /> pointer to the parent undo unit to be opened.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK if the parent undo unit was successfully opened or if a currently open unit is blocked. If the undo manager is currently disabled, it will return S_OK and do nothing else.</para>
-    </returns>
-    <remarks>
-      <para>This method is implemented the same as <see cref="IOleParentUndoUnit.Open" />. The specified parent unit is created and remains open. The undo manager then calls the <see cref="IOleUndoManager.Add" /> or <b>IOleUndoManager.Open</b> methods on this parent unit to add new units to it. This parent unit receives any additional undo units until its <see cref="IOleUndoManager.Close" /> method is called.</para>
-      <para>The parent unit specified by <i>pPUU</i> is not added to the undo stack until its <see cref="IOleUndoManager.Close" /> method is called with the <i>fCommit</i> parameter set to <b>TRUE</b>.</para>
-      <para>The parent undo unit or undo manager must contain any undo unit given to it unless it is blocked. If it is blocked, it must return S_OK but should do nothing else.</para>
-    </remarks>
-    <seealso cref="IOleParentUndoUnit" />
-    <seealso cref="IOleUndoManager" />
+    <summary>Opens a new parent undo unit, which becomes part of its containing unit's undo stack.</summary>
+    <param name="pPUU">An <see cref="IOleParentUndoUnit" /> pointer to the parent undo unit to be opened.</param>
+    <returns>This method returns S_OK if the parent undo unit was successfully opened or if a currently open unit is blocked. If the undo manager is currently disabled, it will return S_OK and do nothing else.</returns>
   </member>
   <member name="IOleUndoManager.RedoTo">
-    <summary>
-      <para>Instructs the undo manager to invoke undo actions back through the redo stack, down to and including the specified undo unit.</para>
-    </summary>
-    <param name="pUU">
-      <para>An <see cref="IOleUndoUnit" /> pointer to the top level unit to redo. If this parameter is <b>NULL</b>, the most recently added top level unit is used.</para>
-    </param>
+    <summary>Instructs the undo manager to invoke undo actions back through the redo stack, down to and including the specified undo unit.</summary>
+    <param name="pUU">An <see cref="IOleUndoUnit" /> pointer to the top level unit to redo. If this parameter is <b>NULL</b>, the most recently added top level unit is used.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -352,58 +251,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified undo unit is not on the redo stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified undo unit is not on the redo stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ABORT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Both the undo attempt and the rollback attempt failed. The undo manager should never propagate the E_ABORT obtained from a contained undo unit. Instead, it should map any E_ABORT values returned from other undo units to E_FAIL.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_ABORT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Both the undo attempt and the rollback attempt failed. The undo manager should never propagate the E_ABORT obtained from a contained undo unit. Instead, it should map any E_ABORT values returned from other undo units to E_FAIL.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The undo manager is disabled.</para>
-          </description>
-        </item>
+          <description>The undo manager is disabled.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method calls the <see cref="IOleUndoUnit.Do" /> method on each top-level undo unit. Then, it releases that undo unit.</para>
-      <para>Note that the specified undo unit must be a top-level unit, typically retrieved through <see cref="IOleUndoManager.EnumRedoable" />.</para>
-      <para>In case an error is returned from the undo unit, the undo manager needs to attempt to rollback the state of the document to recover from the error by performing actions on the undo stack.</para>
-      <para>No matter what the success of the rollback, the undo manager should always clear both stacks before returning the error.</para>
-      <para>If the undo manager has called the <see cref="IOleUndoUnit.Do" /> method on more than one top-level unit, it should only rollback the unit that returned the error. The top-level units that succeeded should not be rolled back.</para>
-      <para>The undo manager must also keep track of whether units were added to the opposite stack so it won't attempt rollback if nothing was added. See the <see cref="IOleUndoManager" /> interface for detailed description of error handling.</para>
-    </remarks>
-    <seealso cref="IOleUndoManager" />
-    <seealso cref="IOleUndoManager.EnumRedoable" />
-    <seealso cref="IOleUndoManager.UndoTo" />
-    <seealso cref="IOleUndoUnit.Do" />
   </member>
   <member name="IOleUndoManager.UndoTo">
-    <summary>
-      <para>Instructs the undo manager to invoke undo actions back through the undo stack, down to and including the specified undo unit.</para>
-    </summary>
-    <param name="pUU">
-      <para>Pointer to the top level unit to undo. If this parameter is <b>NULL</b>, the most recently added top level unit is used.</para>
-    </param>
+    <summary>Instructs the undo manager to invoke undo actions back through the undo stack, down to and including the specified undo unit.</summary>
+    <param name="pUU">Pointer to the top level unit to undo. If this parameter is <b>NULL</b>, the most recently added top level unit is used.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -411,84 +300,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified undo unit is not on the undo stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified undo unit is not on the undo stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ABORT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Both the undo attempt and the rollback attempt failed. The undo manager should never propagate the E_ABORT obtained from a contained undo unit. Instead, it should map any E_ABORT values returned from other undo units to E_FAIL. The undo manager should map any E_ABORT value returned from other undo units to E_FAIL because the caller of <see cref="IOleUndoManager.UndoTo" /> knows that the undo attempt and the rollback attempt failed and this is the only reason for the return value of E_ABORT.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_ABORT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Both the undo attempt and the rollback attempt failed. The undo manager should never propagate the E_ABORT obtained from a contained undo unit. Instead, it should map any E_ABORT values returned from other undo units to E_FAIL. The undo manager should map any E_ABORT value returned from other undo units to E_FAIL because the caller of <see cref="IOleUndoManager.UndoTo" /> knows that the undo attempt and the rollback attempt failed and this is the only reason for the return value of E_ABORT.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The undo manager is disabled.</para>
-          </description>
-        </item>
+          <description>The undo manager is disabled.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method calls the <see cref="IOleUndoUnit.Do" /> method on each top-level undo unit. Then, it releases that undo unit.</para>
-      <para>Note that the specified undo unit must be a top-level unit, typically retrieved through <see cref="IOleUndoManager.EnumUndoable" />.</para>
-      <para>In case an error is returned from the undo unit, the undo manager needs to attempt to rollback the state of the document to recover from the error by performing actions on the redo stack.</para>
-      <para>No matter what the success of the rollback, the undo manager should always clear both stacks before returning the error.</para>
-      <para>If the undo manager has called the <see cref="Do" /> method on more than one top-level unit, it should only rollback the unit that returned the error. The top-level units that succeeded should not be rolled back.</para>
-      <para>The undo manager must also keep track of whether units were added to the opposite stack so it won't attempt rollback if nothing was added. See the <see cref="IOleUndoManager" /> interface for detailed description of error handling.</para>
-      <h3>Notes to Callers</h3>
-      <para>It is possible for an undo unit to return E_ABORT as a failure, but that has no specific meaning on <see cref="IOleUndoUnit" />. Because the undo manager will typically return the error code given by the failed undo unit, and E_ABORT does have a specific meaning on <b>IOleUndoManager.UndoTo</b>, the undo manager should never pass on E_ABORT because the caller will interpret that as the rollback failing when in fact it may have succeeded.</para>
-    </remarks>
-    <seealso cref="IOleUndoManager" />
-    <seealso cref="IOleUndoManager.EnumUndoable" />
-    <seealso cref="IOleUndoManager.RedoTo" />
-    <seealso cref="IOleUndoUnit.Do" />
   </member>
   <member name="IOleUndoManager">
-    <summary>
-      <para>The <b>IOleUndoManager</b> interface enables containers to implement multi-level undo and redo operations for actions that occur within contained controls.</para>
-    </summary>
-    <remarks>
-      <para>The control must create an undo unit with the <see cref="IOleUndoUnit" /> interface or a parent undo unit with the <see cref="IOleParentUndoUnit" /> interface derived from <b>IOleUndoUnit</b>. Both of these interfaces perform the undo action and the parent undo unit additionally can contain nested undo units.</para>
-      <para>The undo manager provides a centralized undo and redo service. It manages parent undo units and simple undo units on the undo and redo stacks. Whether an object is UI-active or not, it can deposit undo units on these stacks by calling methods in the undo manager.</para>
-      <para>The centralized undo manager then has the data necessary to support the undo and redo user interface for the host application and can discard undo information gradually as the stack becomes full.</para>
-      <para>The undo manager is implemented as a service and objects obtain a pointer to <b>IOleUndoManger</b> from the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678965(v=vs.85)">IServiceProvider</a> interface. It is usually implemented by the container. The service manages two stacks, the undo stack and the redo stack, each of which contains undo units generated by embedded objects or by the container application itself.</para>
-      <para>Undo units are typically generated in response to actions taken by the end user. An object does not generate undo actions for programmatic events. In fact, programmatic events should clear the undo stack since the programmatic event can possibly invalidate assumptions made by the undo units on the stack.</para>
-      <para>When the object's state changes, it creates an undo unit encapsulating all the information needed to undo that change. The object calls methods in the undo manager to place its undo units on the stack. Then, when the end user selects an Undo operation, the undo manager takes the top undo unit off the stack, invokes its action by calling its <see cref="IOleUndoUnit.Do" /> method, and then releases it. When an end user selects a Redo operation, the undo manager takes the top redo unit off the stack, invokes its action by calling its <b>IOleUndoUnit.Do</b> method, and then releases it.</para>
-      <para>The undo manager has three states: the base state, the undo state, and the redo state. It begins in the base state. To perform an action from the undo stack, it puts itself into the undo state, calls <see cref="IOleUndoUnit.Do" /> on the undo unit, and goes back to the base state. To perform an action from the redo stack, it puts itself into the redo state, calls <b>IOleUndoUnit.Do</b> on the undo unit, and goes back to the base state.</para>
-      <para>If the undo manager receives a new undo unit while in the base state, it places the unit on the undo stack and discards the entire redo stack. While it is in the undo state, it puts incoming units on the redo stack. While it is in the redo state, it places them on the undo stack without flushing the redo stack.</para>
-      <para>The undo manager also allows objects to discard the undo or redo stack starting from any object in either stack.</para>
-      <para>The host application determines the scope of an undo manager. For example, in one application, the scope might be at the document level; a separate undo manager is maintained for each document; and undo is managed independently for each document. However, another application maintain one undo manager, and therefore one undo scope, for the entire application.</para>
-      <h4>Error Handling</h4>
-      <para>Having an undo operation fail and leaving the document in an unstable state is something the undo manager, undo units, and the application itself all have to work together to avoid. As a result, there are certain requirements that undo units, the undo manager, and the application or component using undo must conform to.</para>
-      <para>To perform an undo, the undo manager calls <see cref="IOleUndoUnit.Do" /> on one or more undo units which can, in turn, contain more units. If a unit somewhere in the hierarchy fails, the error will eventually reach the undo manager, which is responsible for making an attempt to roll back the state of the document to what it was before the call to the last top-level unit. The undo manager performs the rollback by calling <b>IOleUndoUnit.Do</b> on the unit that was added to the redo stack during the undo attempt. If the rollback also fails, then the undo manager is forced to abandon everything and return to the application. The undo manager indicates whether the rollback succeeded, and the application can take different actions based on this, such as reinitializing components so they're in a known state.</para>
-      <para>All the steps in adding an undo unit to the stack should be performed atomically. That is, all steps must succeed or none of them should succeed.</para>
-      <para>The host application that provides the undo manager decides what action to take when undo fails. At the very least, it should inform the user of the failure. The host application will be told by the undo manager whether the undo succeeded and whether the attempted rollback succeeded. In case both the undo and rollback failed, the host application can present the user with several options, including immediately shutting down the application.</para>
-      <para>Simple undo units must not change the state of any object if they return failure. This includes the state of the redo stack or undo stack if performing a redo. They are also required to put a corresponding unit on the redo or undo stack if they succeed. The application should be stable before and after the unit is called.</para>
-      <para>Parent undo units have the same requirements as simple units, with one exception. If one or more children succeeded prior to another child's failure, the parent unit must commit its corresponding unit on the redo stack and return the failure to its parent. If no children succeeded, the parent unit should commit its redo unit only if it has made a state change that needs to be rolled back. For example, suppose a parent unit contains three simple units. The first two succeed and added units to the redo stack, but the third one failed. At this point, the parent unit commits its redo unit and returns the failure.</para>
-      <para>As a side effect, the parent unit should never make state changes that depend on the success of their children. Doing this will cause the rollback behavior to break. If a parent unit makes state changes, it should do them before calling any children. Then, if the state change fails, it should not commit its redo unit, it should not call any children, and it should return the failure to its parent.</para>
-      <para>The undo manager has one primary requirement for error handling: to attempt rollback when an undo or redo fails.</para>
-      <h4>Non-compliant Objects</h4>
-      <para>Objects that do not support multi-level undo can cause serious problems for a global undo service. Since the object cannot be relied on to properly update the undo manager, any units submitted by other objects are also suspect, because their units may rely on the state of the non-compliant object. Attempting to undo a compliant object's units may not be successful, because the state in the non-compliant object will not match.</para>
-      <para>To detect objects that do not support multi-level undo, check for the OLEMISC_SUPPORTSMULTILEVELUNDO value. An object that can participate in the global undo service sets this value.</para>
-      <para>When an object without this value is added to a user-visible undo context, the best practice is to disable the undo user interface for this context. Alternatively, a dialog could be presented to the user, asking them whether to attempt to provide partial undo support, working around the non-compliance of the new object.</para>
-      <para>In addition, non-compliant objects may be added to nested containers. In this case, the nested container needs to notify the undo manager that undo can no longer be safely supported by calling <see cref="IOleUndoManager.Enable" /> with <b>FALSE</b>.</para>
-    </remarks>
-    <seealso cref="IOleParentUndoUnit" />
-    <seealso cref="IOleUndoUnit" />
+    <summary>The <b>IOleUndoManager</b> interface enables containers to implement multi-level undo and redo operations for actions that occur within contained controls.</summary>
   </member>
 </doc>

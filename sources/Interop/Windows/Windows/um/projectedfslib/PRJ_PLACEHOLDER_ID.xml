@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_PLACEHOLDER_ID">
-    <summary>
-      <para>Defines the length of a placeholder identifier.</para>
-    </summary>
+    <summary>Defines the length of a placeholder identifier.</summary>
   </member>
   <member name="PRJ_PLACEHOLDER_ID.PRJ_PLACEHOLDER_ID_LENGTH">
-    <summary>
-      <para>The length of a placeholder identifier.</para>
-    </summary>
+    <summary>The length of a placeholder identifier.</summary>
   </member>
 </doc>

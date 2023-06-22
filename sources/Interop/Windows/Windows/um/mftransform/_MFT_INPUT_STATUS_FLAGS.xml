@@ -3,16 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="_MFT_INPUT_STATUS_FLAGS">
-    <summary>
-      <para>Indicates the status of an input stream on a Media Foundation transform (MFT).</para>
-    </summary>
-    <seealso cref="IMFTransform.GetInputStatus" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+    <summary>Indicates the status of an input stream on a Media Foundation transform (MFT).</summary>
   </member>
   <member name="_MFT_INPUT_STATUS_FLAGS.MFT_INPUT_STATUS_ACCEPT_DATA">
-    <summary>
-      <para>The input stream can receive more data at this time. To deliver more input data, call <see cref="IMFTransform.ProcessInput" />.</para>
-    </summary>
+    <summary>The input stream can receive more data at this time. To deliver more input data, call <see cref="IMFTransform.ProcessInput" />.</summary>
   </member>
 </doc>

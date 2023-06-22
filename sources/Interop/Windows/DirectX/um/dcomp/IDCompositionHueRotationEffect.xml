@@ -3,45 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionHueRotationEffect.SetAngle">
-    <summary>
-      <para>Sets the angle to rotate the hue.</para>
-    </summary>
+    <summary>Sets the angle to rotate the hue.</summary>
     <param name="amountDegrees">
-      <para>Type: <b>float</b></para>
       <para>The angle to rotate the hue. The effect calculates a color matrix based on the rotation angle (θ) according to the following matrix equations:</para>
-      <para>
-        <img alt="Matrix equation" src="https://docs.microsoft.com/windows/win32/api/dcompmages/hue_formula.png" />
-      </para>
+      <img alt="Matrix equation" src="https://docs.microsoft.com/windows/win32/api/dcomp/images/hue_formula.png" />
     </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionHueRotationEffect" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionHueRotationEffect.SetAngle">
-    <summary>
-      <para>Sets the angle to rotate the hue.</para>
-    </summary>
+    <summary>Sets the angle to rotate the hue.</summary>
     <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the angle value changes over time.
-The effect calculates a color matrix based on the rotation angle (θ) according to the following matrix equations:</para>
-      <para>
-        <img alt="Matrix equation" src="https://docs.microsoft.com/windows/win32/api/dcompmages/hue_formula.png" />
-      </para>
-      <para>This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionHueRotationEffect" />
+      <para>An animation that represents how the angle value changes over time. The effect calculates a color matrix based on the rotation angle (θ) according to the following matrix equations:</para>
+      <img alt="Matrix equation" src="https://docs.microsoft.com/windows/win32/api/dcomp/images/hue_formula.png" />This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionHueRotationEffect">
-    <summary>
-      <para>The hue rotate effect alters the hue of an image by applying a color matrix based on the rotation angle.</para>
-    </summary>
-    <seealso cref="IDCompositionFilterEffect" />
+    <summary>The hue rotate effect alters the hue of an image by applying a color matrix based on the rotation angle.</summary>
   </member>
 </doc>

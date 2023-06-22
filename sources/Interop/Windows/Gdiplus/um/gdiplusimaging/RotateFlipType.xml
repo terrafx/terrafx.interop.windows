@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RotateFlipType">
+    <summary>The <b>RotateFlipType</b> enumeration specifies the direction of an image's rotation and the axis used to flip the image.</summary>
+  </member>
+  <member name="RotateFlipType.RotateNoneFlipNone">
+    <summary>Specifies no rotation and no flipping.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate90FlipNone">
+    <summary>Specifies a 90-degree rotation without flipping.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate180FlipNone">
+    <summary>Specifies a 180-degree rotation without flipping.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate270FlipNone">
+    <summary>Specifies a 270-degree rotation without flipping.</summary>
+  </member>
+  <member name="RotateFlipType.RotateNoneFlipX">
+    <summary>Specifies no rotation and a horizontal flip.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate90FlipX">
+    <summary>Specifies a 90-degree rotation followed by a horizontal flip.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate180FlipX">
+    <summary>Specifies a 180-degree rotation followed by a horizontal flip.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate270FlipX">
+    <summary>Specifies a 270-degree rotation followed by a horizontal flip.</summary>
+  </member>
+  <member name="RotateFlipType.RotateNoneFlipY">
+    <summary>Specifies no rotation and a vertical flip.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate90FlipY">
+    <summary>Specifies a 90-degree rotation followed by a vertical flip.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate180FlipY">
+    <summary>Specifies a 180-degree rotation followed by a vertical flip.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate270FlipY">
+    <summary>Specifies a 270-degree rotation followed by a vertical flip.</summary>
+  </member>
+  <member name="RotateFlipType.RotateNoneFlipXY">
+    <summary>Specifies no rotation, a horizontal flip, and then a vertical flip.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate90FlipXY">
+    <summary>Specifies a 90-degree rotation followed by a horizontal flip and then a vertical flip.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate180FlipXY">
+    <summary>Specifies a 180-degree rotation followed by a horizontal flip and then a vertical flip.</summary>
+  </member>
+  <member name="RotateFlipType.Rotate270FlipXY">
+    <summary>Specifies a 270-degree rotation followed by a horizontal flip and then a vertical flip.</summary>
+  </member>
+</doc>

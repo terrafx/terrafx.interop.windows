@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWeakReferenceSource.GetWeakReference">
+    <summary>Retrieves a weak reference from an <see cref="IWeakReferenceSource" />.</summary>
+    <param name="weakReference">The weak reference.</param>
+    <returns>If this method succeeds, then it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IWeakReferenceSource">
+    <summary>
+      <para>Represents a source object to which a weak reference can be retrieved.</para>
+      <blockquote>
+        <para>[!NOTE] With only a few exceptions, weak reference support is on by default for Windows Runtime types that you consume or author in <a href="https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a>, WRL, and C++/CX. <b>Windows.UI.Composition</b> and <b>Windows.Devices.Input.PenDevice</b> are examples of exceptions—that is, namespaces where weak reference support is <i>not</i> on for those types.</para>
+        <para>If you're authoring types, then see <a href="https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/weak-references#weak-references-in-cwinrt">Weak references in C++/WinRT</a>.</para>
+      </blockquote>
+    </summary>
+  </member>
+</doc>

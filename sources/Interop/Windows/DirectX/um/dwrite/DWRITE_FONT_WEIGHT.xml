@@ -3,103 +3,57 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FONT_WEIGHT">
-    <summary>
-      <para>Represents the density of a typeface, in terms of the lightness or heaviness of the strokes. The enumerated values correspond to the usWeightClass definition in the OpenType specification. The <i>usWeightClass</i> represents an integer value between 1 and 999. Lower values indicate lighter weights; higher values indicate heavier weights.</para>
-    </summary>
-    <remarks>
-      <para>Weight differences are generally differentiated by an increased stroke or thickness that is associated with a given character in a typeface, as compared to a "normal" character from that same typeface.
-The following illustration shows an example of Normal and UltraBold weights for the Palatino Linotype typeface.</para>
-      <para>
-        <img alt="Illustration of the letter &quot;W&quot; in Normal and UltraBold weights" src="https://docs.microsoft.com/windows/win32/api/dwritemages/FontWeight_for_Palatino.png" />
-      </para>
-      <para>
-        <b>Note</b>  Not all weights are available for all typefaces. When a weight is not available for a typeface, the closest matching weight is returned.</para>
-      <para>Font weight values less than 1 or greater than 999 are considered invalid, and they are rejected by font API functions.</para>
-    </remarks>
+    <summary>Represents the density of a typeface, in terms of the lightness or heaviness of the strokes. The enumerated values correspond to the usWeightClass definition in the OpenType specification. The <i>usWeightClass</i> represents an integer value between 1 and 999. Lower values indicate lighter weights; higher values indicate heavier weights.</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_THIN">
-    <summary>
-      <para>Predefined font weight : Thin (100).</para>
-    </summary>
+    <summary>Predefined font weight : Thin (100).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_EXTRA_LIGHT">
-    <summary>
-      <para>Predefined font weight : Extra-light (200).</para>
-    </summary>
+    <summary>Predefined font weight : Extra-light (200).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_ULTRA_LIGHT">
-    <summary>
-      <para>Predefined font weight : Ultra-light (200).</para>
-    </summary>
+    <summary>Predefined font weight : Ultra-light (200).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_LIGHT">
-    <summary>
-      <para>Predefined font weight : Light (300).</para>
-    </summary>
+    <summary>Predefined font weight : Light (300).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_SEMI_LIGHT">
-    <summary>
-      <para>Predefined font weight : Semi-Light (350).</para>
-    </summary>
+    <summary>Predefined font weight : Semi-Light (350).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_NORMAL">
-    <summary>
-      <para>Predefined font weight : Normal (400).</para>
-    </summary>
+    <summary>Predefined font weight : Normal (400).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_REGULAR">
-    <summary>
-      <para>Predefined font weight : Regular (400).</para>
-    </summary>
+    <summary>Predefined font weight : Regular (400).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_MEDIUM">
-    <summary>
-      <para>Predefined font weight : Medium (500).</para>
-    </summary>
+    <summary>Predefined font weight : Medium (500).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_DEMI_BOLD">
-    <summary>
-      <para>Predefined font weight : Demi-bold (600).</para>
-    </summary>
+    <summary>Predefined font weight : Demi-bold (600).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_SEMI_BOLD">
-    <summary>
-      <para>Predefined font weight : Semi-bold (600).</para>
-    </summary>
+    <summary>Predefined font weight : Semi-bold (600).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_BOLD">
-    <summary>
-      <para>Predefined font weight : Bold (700).</para>
-    </summary>
+    <summary>Predefined font weight : Bold (700).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_EXTRA_BOLD">
-    <summary>
-      <para>Predefined font weight : Extra-bold (800).</para>
-    </summary>
+    <summary>Predefined font weight : Extra-bold (800).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_ULTRA_BOLD">
-    <summary>
-      <para>Predefined font weight : Ultra-bold (800).</para>
-    </summary>
+    <summary>Predefined font weight : Ultra-bold (800).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_BLACK">
-    <summary>
-      <para>Predefined font weight : Black (900).</para>
-    </summary>
+    <summary>Predefined font weight : Black (900).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_HEAVY">
-    <summary>
-      <para>Predefined font weight : Heavy (900).</para>
-    </summary>
+    <summary>Predefined font weight : Heavy (900).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_EXTRA_BLACK">
-    <summary>
-      <para>Predefined font weight : Extra-black (950).</para>
-    </summary>
+    <summary>Predefined font weight : Extra-black (950).</summary>
   </member>
   <member name="DWRITE_FONT_WEIGHT.DWRITE_FONT_WEIGHT_ULTRA_BLACK">
-    <summary>
-      <para>Predefined font weight : Ultra-black (950).</para>
-    </summary>
+    <summary>Predefined font weight : Ultra-black (950).</summary>
   </member>
 </doc>

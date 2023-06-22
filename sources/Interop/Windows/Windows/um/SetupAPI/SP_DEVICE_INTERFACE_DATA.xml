@@ -3,28 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_DEVICE_INTERFACE_DATA">
-    <summary>
-      <para>An SP_DEVICE_INTERFACE_DATA structure defines a device interface in a device information set.</para>
-    </summary>
-    <remarks>
-      <para>A SetupAPI function that takes an instance of the SP_DEVICE_INTERFACE_DATA structure as a parameter verifies whether the <b>cbSize</b> member of the supplied structure is equal to the size, in bytes, of the structure. If the <b>cbSize</b> member is not set correctly, the function will fail and set an error code of ERROR_INVALID_USER_BUFFER.</para>
-    </remarks>
-    <seealso cref="SP_DEVICE_INTERFACE_DETAIL_DATA" />
-    <seealso cref="SetupDiCreateDeviceInterface" />
-    <seealso cref="SetupDiEnumDeviceInterfaces" />
-    <seealso cref="SetupDiGetDeviceInterfaceAlias" />
-    <seealso cref="SetupDiOpenDeviceInterface" />
-    <seealso cref="SetupDiSetDeviceInterfaceDefault" />
+    <summary>An SP_DEVICE_INTERFACE_DATA structure defines a device interface in a device information set.</summary>
   </member>
   <member name="SP_DEVICE_INTERFACE_DATA.cbSize">
-    <summary>
-      <para>The size, in bytes, of the SP_DEVICE_INTERFACE_DATA structure. For more information, see the Remarks section.</para>
-    </summary>
+    <summary>The size, in bytes, of the SP_DEVICE_INTERFACE_DATA structure. For more information, see the Remarks section.</summary>
   </member>
   <member name="SP_DEVICE_INTERFACE_DATA.InterfaceClassGuid">
-    <summary>
-      <para>The GUID for the class to which the device interface belongs.</para>
-    </summary>
+    <summary>The GUID for the class to which the device interface belongs.</summary>
   </member>
   <member name="SP_DEVICE_INTERFACE_DATA.Flags">
     <summary>
@@ -38,8 +23,6 @@
     </summary>
   </member>
   <member name="SP_DEVICE_INTERFACE_DATA.Reserved">
-    <summary>
-      <para>Reserved. Do not use.</para>
-    </summary>
+    <summary>Reserved. Do not use.</summary>
   </member>
 </doc>

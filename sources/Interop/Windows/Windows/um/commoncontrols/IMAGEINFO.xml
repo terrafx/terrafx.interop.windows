@@ -3,39 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGEINFO">
-    <summary>
-      <para>Contains information about an image in an image list. This structure is used with the <see cref="IImageList.GetImageInfo" /> function.</para>
-    </summary>
+    <summary>Contains information about an image in an image list. This structure is used with the <see cref="IImageList.GetImageInfo" /> function.</summary>
   </member>
   <member name="IMAGEINFO.hbmImage">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HBITMAP</a></b></para>
-      <para>A handle to the bitmap that contains the images.</para>
-    </summary>
+    <summary>A handle to the bitmap that contains the images.</summary>
   </member>
   <member name="IMAGEINFO.hbmMask">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HBITMAP</a></b></para>
-      <para>A handle to a monochrome bitmap that contains the masks for the images. If the image list does not contain a mask, this member is <b>NULL</b>.</para>
-    </summary>
+    <summary>A handle to a monochrome bitmap that contains the masks for the images. If the image list does not contain a mask, this member is <b>NULL</b>.</summary>
   </member>
   <member name="IMAGEINFO.Unused1">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Not used. This member should always be zero.</para>
-    </summary>
+    <summary>Not used. This member should always be zero.</summary>
   </member>
   <member name="IMAGEINFO.Unused2">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Not used. This member should always be zero.</para>
-    </summary>
+    <summary>Not used. This member should always be zero.</summary>
   </member>
   <member name="IMAGEINFO.rcImage">
-    <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>The bounding rectangle of the specified image within the bitmap specified by
-<b>hbmImage</b>.</para>
-    </summary>
+    <summary>The bounding rectangle of the specified image within the bitmap specified by<b>hbmImage</b>.</summary>
   </member>
 </doc>

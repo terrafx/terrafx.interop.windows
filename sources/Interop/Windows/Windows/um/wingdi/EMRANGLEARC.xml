@@ -3,36 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRANGLEARC">
-    <summary>
-      <para>The <b>EMRANGLEARC</b> structure contains members for the <see cref="AngleArc" /> enhanced metafile record.</para>
-    </summary>
-    <seealso cref="AngleArc" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRANGLEARC</b> structure contains members for the <see cref="AngleArc" /> enhanced metafile record.</summary>
   </member>
   <member name="EMRANGLEARC.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRANGLEARC.ptlCenter">
-    <summary>
-      <para>Logical coordinates of a circle's center.</para>
-    </summary>
+    <summary>Logical coordinates of a circle's center.</summary>
   </member>
   <member name="EMRANGLEARC.nRadius">
-    <summary>
-      <para>A circle's radius, in logical units.</para>
-    </summary>
+    <summary>A circle's radius, in logical units.</summary>
   </member>
   <member name="EMRANGLEARC.eStartAngle">
-    <summary>
-      <para>An arc's start angle, in degrees.</para>
-    </summary>
+    <summary>An arc's start angle, in degrees.</summary>
   </member>
   <member name="EMRANGLEARC.eSweepAngle">
-    <summary>
-      <para>An arc's sweep angle, in degrees.</para>
-    </summary>
+    <summary>An arc's sweep angle, in degrees.</summary>
   </member>
 </doc>

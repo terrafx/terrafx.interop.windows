@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D12VideoProcessor1.GetProtectedResourceSession">
-    <summary>
-      <para>Gets the <see cref="ID3D12ProtectedResourceSession" /> that was passed into <see cref="ID3D12VideoDevice2.CreateVideoProcessor1" /> when the <see cref="ID3D12VideoProcessor1" /> was created.</para>
-    </summary>
-    <param name="riid">
-      <para>The globally unique identifier (GUID) for the <b>ID3D12ProtectedResourceSession</b> interface.</para>
-    </param>
-    <param name="ppProtectedSession">
-      <para>Receives a void pointer representing the <b>ID3D12ProtectedResourceSession</b> interface.</para>
-    </param>
-    <returns>
-      <para>This method returns HRESULT.</para>
-    </returns>
+    <summary>Gets the <see cref="ID3D12ProtectedResourceSession" /> that was passed into <see cref="ID3D12VideoDevice2.CreateVideoProcessor1" /> when the <see cref="ID3D12VideoProcessor1" /> was created.</summary>
+    <param name="riid">The globally unique identifier (GUID) for the <b>ID3D12ProtectedResourceSession</b> interface.</param>
+    <param name="ppProtectedSession">Receives a void pointer representing the <b>ID3D12ProtectedResourceSession</b> interface.</param>
+    <returns>This method returns HRESULT.</returns>
   </member>
   <member name="ID3D12VideoProcessor1">
-    <summary>
-      <para>Provides methods for getting information about the parameters to the call to <see cref="ID3D12VideoDevice2.CreateVideoProcessor1" /> that created the video processor.</para>
-    </summary>
-    <seealso cref="ID3D12VideoProcessor" />
+    <summary>Provides methods for getting information about the parameters to the call to <see cref="ID3D12VideoDevice2.CreateVideoProcessor1" /> that created the video processor.</summary>
   </member>
 </doc>

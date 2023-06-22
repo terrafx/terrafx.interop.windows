@@ -3,55 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFTimedTextTrackList.GetLength">
-    <summary>
-      <para>Gets the length, in tracks, of the timed-text-track list.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>DWORD</b></para>
-      <para>Returns the length, in tracks, of the timed-text-track list.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrackList" />
+    <summary>Gets the length, in tracks, of the timed-text-track list.</summary>
+    <returns>Returns the length, in tracks, of the timed-text-track list.</returns>
   </member>
   <member name="IMFTimedTextTrackList.GetTrack">
-    <summary>
-      <para>Gets a text track in the list from the index of the track.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>DWORD</b></para>
-      <para>The index of the track in the list to retrieve.</para>
-    </param>
-    <param name="track">
-      <para>Type: <b><see cref="IMFTimedTextTrack" />**</b></para>
-      <para>A pointer to a memory block that receives a pointer to the <see cref="IMFTimedTextTrack" /> interface for the timed-text track.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrackList" />
+    <summary>Gets a text track in the list from the index of the track.</summary>
+    <param name="index">The index of the track in the list to retrieve.</param>
+    <param name="track">A pointer to a memory block that receives a pointer to the <see cref="IMFTimedTextTrack" /> interface for the timed-text track.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTimedTextTrackList.GetTrackById">
-    <summary>
-      <para>Gets a text track in the list from the identifier of the track.</para>
-    </summary>
-    <param name="trackId">
-      <para>Type: <b>DWORD</b></para>
-      <para>The identifier of the track in the list to retrieve.</para>
-    </param>
-    <param name="track">
-      <para>Type: <b><see cref="IMFTimedTextTrack" />**</b></para>
-      <para>A pointer to a memory block that receives a pointer to the <see cref="IMFTimedTextTrack" /> interface for the timed-text track.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrackList" />
+    <summary>Gets a text track in the list from the identifier of the track.</summary>
+    <param name="trackId">The identifier of the track in the list to retrieve.</param>
+    <param name="track">A pointer to a memory block that receives a pointer to the <see cref="IMFTimedTextTrack" /> interface for the timed-text track.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTimedTextTrackList">
-    <summary>
-      <para>Represents a list of timed-text tracks.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Represents a list of timed-text tracks.</summary>
   </member>
 </doc>

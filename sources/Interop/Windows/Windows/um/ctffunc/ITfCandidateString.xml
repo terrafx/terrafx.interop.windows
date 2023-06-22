@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfCandidateString.GetIndex">
-    <param name="pnIndex">
-      <para>Pointer to a <b>ULONG</b> value that receives the zero-based index of the candidate string object within the candidate list.</para>
-    </param>
+    <param name="pnIndex">Pointer to a <b>ULONG</b> value that receives the zero-based index of the candidate string object within the candidate list.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -13,38 +11,37 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pnIndex</i> is invalid.
-</description>
-        </item>
+            <i>pnIndex</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCandidateList " />
-    <seealso cref="ITfCandidateString" />
   </member>
   <member name="ITfCandidateString.GetString">
-    <summary>
-      <para>Obtains the text of the candidate string object.</para>
-    </summary>
-    <param name="pbstr">
-      <para>Pointer to a <b>BSTR</b> value that receives the text of the candidate string object. The caller must release this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</para>
-    </param>
+    <summary>Obtains the text of the candidate string object.</summary>
+    <param name="pbstr">Pointer to a <b>BSTR</b> value that receives the text of the candidate string object. The caller must release this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -52,40 +49,45 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pbstr</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>pbstr</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCandidateString" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</seealso>
   </member>
   <member name="ITfCandidateString">
     <summary>

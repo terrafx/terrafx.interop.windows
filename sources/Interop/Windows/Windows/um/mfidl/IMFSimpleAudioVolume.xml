@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSimpleAudioVolume.GetMasterVolume">
-    <summary>
-      <para>Retrieves the master volume level.</para>
-    </summary>
-    <param name="pfLevel">
-      <para>Receives the volume level. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation).</para>
-    </param>
+    <summary>Retrieves the master volume level.</summary>
+    <param name="pfLevel">Receives the volume level. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation).</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,51 +12,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The audio renderer is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_STREAMSINK_REMOVED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The audio renderer is not initialized.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_STREAMSINK_REMOVED</b>
-            </para>
-          </description>
-          <description>
-            <para>The audio renderer was removed from the pipeline.</para>
-          </description>
-        </item>
+          <description>The audio renderer was removed from the pipeline.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If an external event changes the master volume, the audio renderer sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/meaudiosessionvolumechanged">MEAudioSessionVolumeChanged</a> event, which the Media Session forwards to the application.</para>
-    </remarks>
-    <seealso cref="IMFSimpleAudioVolume" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
   <member name="IMFSimpleAudioVolume.GetMute">
-    <summary>
-      <para>Queries whether the audio is muted.</para>
-    </summary>
-    <param name="pbMute">
-      <para>Receives a Boolean value. If <b>TRUE</b>, the audio is muted; otherwise, the audio is not muted.</para>
-    </param>
+    <summary>Queries whether the audio is muted.</summary>
+    <param name="pbMute">Receives a Boolean value. If <b>TRUE</b>, the audio is muted; otherwise, the audio is not muted.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -68,51 +61,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The audio renderer is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_STREAMSINK_REMOVED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The audio renderer is not initialized.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_STREAMSINK_REMOVED</b>
-            </para>
-          </description>
-          <description>
-            <para>The audio renderer was removed from the pipeline.</para>
-          </description>
-        </item>
+          <description>The audio renderer was removed from the pipeline.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Calling <see cref="IMFSimpleAudioVolume.SetMasterVolume" /> to set the volume does not change whether the audio is muted.</para>
-    </remarks>
-    <seealso cref="IMFSimpleAudioVolume" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
   <member name="IMFSimpleAudioVolume.SetMasterVolume">
-    <summary>
-      <para>Sets the master volume level.</para>
-    </summary>
-    <param name="fLevel">
-      <para>Volume level. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation).</para>
-    </param>
+    <summary>Sets the master volume level.</summary>
+    <param name="fLevel">Volume level. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation).</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -120,51 +110,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The audio renderer is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_STREAMSINK_REMOVED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The audio renderer is not initialized.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_STREAMSINK_REMOVED</b>
-            </para>
-          </description>
-          <description>
-            <para>The audio renderer was removed from the pipeline.</para>
-          </description>
-        </item>
+          <description>The audio renderer was removed from the pipeline.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Events outside of the application can change the master volume level. For example, the user can change the volume from the system volume-control program (SndVol). If an external event changes the master volume, the audio renderer sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/meaudiosessionvolumechanged">MEAudioSessionVolumeChanged</a> event, which the Media Session forwards to the application.</para>
-    </remarks>
-    <seealso cref="IMFSimpleAudioVolume" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
   <member name="IMFSimpleAudioVolume.SetMute">
-    <summary>
-      <para>Mutes or unmutes the audio.</para>
-    </summary>
-    <param name="bMute">
-      <para>Specify <b>TRUE</b> to mute the audio, or <b>FALSE</b> to unmute the audio.</para>
-    </param>
+    <summary>Mutes or unmutes the audio.</summary>
+    <param name="bMute">Specify <b>TRUE</b> to mute the audio, or <b>FALSE</b> to unmute the audio.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -172,70 +159,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The audio renderer is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_STREAMSINK_REMOVED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The audio renderer is not initialized.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_STREAMSINK_REMOVED</b>
-            </para>
-          </description>
-          <description>
-            <para>The audio renderer was removed from the pipeline.</para>
-          </description>
-        </item>
+          <description>The audio renderer was removed from the pipeline.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method does not change the volume level returned by the <see cref="IMFSimpleAudioVolume.GetMasterVolume" /> function.</para>
-    </remarks>
-    <seealso cref="IMFSimpleAudioVolume" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
   <member name="IMFSimpleAudioVolume">
     <summary>
       <para>Controls the master volume level of the audio session associated with the streaming audio renderer (SAR) and the audio capture source.</para>
-      <para>The SAR and the audio capture source expose this interface as a service. To get a pointer to the interface, call <see cref="IMFGetService.GetService" />. For the SAR, use the service identifier MR_POLICY_VOLUME_SERVICE. For the audio capture source, use the service identifier MR_CAPTURE_POLICY_VOLUME_SERVICE.  You can call <b>GetService</b> directly on the SAR or the audio capture source, or call it on the Media Session.</para>
+      <para>The SAR and the audio capture source expose this interface as a service. To get a pointer to the interface, call <see cref="IMFGetService.GetService" />. For the SAR, use the service identifier MR_POLICY_VOLUME_SERVICE. For the audio capture source, use the service identifier MR_CAPTURE_POLICY_VOLUME_SERVICE. You can call <b>GetService</b> directly on the SAR or the audio capture source, or call it on the Media Session.</para>
     </summary>
-    <remarks>
-      <para>To control the volume levels of individual channels, use the <see cref="IMFAudioStreamVolume" /> interface. The <b>IMFAudioStreamVolume</b>   interface is supported by the SAR only.</para>
-      <para>Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation). For each channel, the attenuation level is the product of:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>The master volume level of the audio session.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>The volume level of the channel.</para>
-          </description>
-        </item>
-      </list>
-      <para>For example, if the master volume is 0.8 and the channel volume is 0.5, the attenuation for that channel is 0.8 × 0.5 = 0.4. Volume levels can exceed 1.0 (positive gain), but the audio engine clips any audio samples that exceed zero decibels. To change the volume level of individual channels, use the <see cref="IMFAudioStreamVolume" /> interface.</para>
-      <para>Use the following formula to convert the volume level to the decibel (dB) scale:</para>
-      <para>Attenuation (dB) = 20 * log10(<i>Level</i>)</para>
-      <para>For example, a volume level of 0.50 represents 6.02 dB of attenuation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
 </doc>

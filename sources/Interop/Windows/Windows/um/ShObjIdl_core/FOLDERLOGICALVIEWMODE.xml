@@ -3,50 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FOLDERLOGICALVIEWMODE">
-    <summary>
-      <para>Used by <see cref="IFolderViewSettings.GetViewMode" /> and <see cref="ISearchFolderItemFactory.SetFolderLogicalViewMode" /> to describe the view mode.</para>
-    </summary>
+    <summary>Used by <see cref="IFolderViewSettings.GetViewMode" /> and <see cref="ISearchFolderItemFactory.SetFolderLogicalViewMode" /> to describe the view mode.</summary>
   </member>
   <member name="FOLDERLOGICALVIEWMODE.FLVM_UNSPECIFIED">
-    <summary>
-      <para>The view is not specified.</para>
-    </summary>
+    <summary>The view is not specified.</summary>
   </member>
   <member name="FOLDERLOGICALVIEWMODE.FLVM_FIRST">
-    <summary>
-      <para>The minimum valid enumeration value. Used for validation purposes only.</para>
-    </summary>
+    <summary>The minimum valid enumeration value. Used for validation purposes only.</summary>
   </member>
   <member name="FOLDERLOGICALVIEWMODE.FLVM_DETAILS">
-    <summary>
-      <para>Details view.</para>
-    </summary>
+    <summary>Details view.</summary>
   </member>
   <member name="FOLDERLOGICALVIEWMODE.FLVM_TILES">
-    <summary>
-      <para>Tiles view.</para>
-    </summary>
+    <summary>Tiles view.</summary>
   </member>
   <member name="FOLDERLOGICALVIEWMODE.FLVM_ICONS">
-    <summary>
-      <para>Icons view.</para>
-    </summary>
+    <summary>Icons view.</summary>
   </member>
   <member name="FOLDERLOGICALVIEWMODE.FLVM_LIST">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. List view.</para>
-    </summary>
+      <b>Windows 7 and later</b>. List view.</summary>
   </member>
   <member name="FOLDERLOGICALVIEWMODE.FLVM_CONTENT">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. Content view.</para>
-    </summary>
+      <b>Windows 7 and later</b>. Content view.</summary>
   </member>
   <member name="FOLDERLOGICALVIEWMODE.FLVM_LAST">
-    <summary>
-      <para>The maximum valid enumeration value. Used for validation purposes only.</para>
-    </summary>
+    <summary>The maximum valid enumeration value. Used for validation purposes only.</summary>
   </member>
 </doc>

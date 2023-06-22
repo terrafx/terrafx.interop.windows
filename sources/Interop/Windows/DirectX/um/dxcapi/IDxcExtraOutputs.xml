@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcExtraOutputs.GetOutput">
+    <summary>Retrieves the specified output.</summary>
+    <param name="uIndex">The index of the output to retrieve</param>
+    <param name="iid">The interface ID of the output interface.</param>
+    <param name="ppvObject">The optiopnal address of the pointer that receives a pointer to the output, if there is one.</param>
+    <param name="ppOutputType">The optional address of the pointer to receive the output type name blob, if there is one.</param>
+    <param name="ppOutputName">The optional address of a pointer to receive the output name blob, if there is one.</param>
+    <returns>The specified output.</returns>
+  </member>
+  <member name="IDxcExtraOutputs.GetOutputCount">
+    <summary>Retrieves the number of outputs available.</summary>
+  </member>
+  <member name="IDxcExtraOutputs">
+    <summary>
+      <para>Represents additional outputs from a DXC operation.</para>
+      <para>This can be used to obtain outputs that don't have an explicit <b>DXC_OUT_KIND</b>. Use <b>DXC_OUT_EXTRA_OUTPUTS</b> to obtain instances of this.</para>
+    </summary>
+  </member>
+</doc>

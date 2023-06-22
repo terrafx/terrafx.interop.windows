@@ -3,50 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSinkWriterCallback.OnFinalize">
-    <summary>
-      <para>Called when the <see cref="IMFSinkWriter.Finalize" /> method completes.</para>
-    </summary>
-    <param name="hrStatus">
-      <para>The status code for the <see cref="Finalize" /> operation. If the value is an error code, the output file might be invalid.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value. Currently, the sink writer ignores the return value.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSinkWriterCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sink-writer">Sink Writer</seealso>
+    <summary>Called when the <see cref="IMFSinkWriter.Finalize" /> method completes.</summary>
+    <param name="hrStatus">The status code for the <see cref="Finalize" /> operation. If the value is an error code, the output file might be invalid.</param>
+    <returns>Returns an <b>HRESULT</b> value. Currently, the sink writer ignores the return value.</returns>
   </member>
   <member name="IMFSinkWriterCallback.OnMarker">
-    <summary>
-      <para>Called when the <see cref="IMFSinkWriter.PlaceMarker" /> method completes.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>The zero-based index of the stream. This parameter equals the value of the <i>dwStreamIndex</i> parameter in the <see cref="PlaceMarker" /> method.</para>
-    </param>
-    <param name="pvContext">
-      <para>The application-defined value that was given in the <i>pvContext</i> parameter in the <see cref="PlaceMarker" /> method.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value. Currently, the sink writer ignores the return value.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSinkWriterCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sink-writer">Sink Writer</seealso>
+    <summary>Called when the <see cref="IMFSinkWriter.PlaceMarker" /> method completes.</summary>
+    <param name="dwStreamIndex">The zero-based index of the stream. This parameter equals the value of the <i>dwStreamIndex</i> parameter in the <see cref="PlaceMarker" /> method.</param>
+    <param name="pvContext">The application-defined value that was given in the <i>pvContext</i> parameter in the <see cref="PlaceMarker" /> method.</param>
+    <returns>Returns an <b>HRESULT</b> value. Currently, the sink writer ignores the return value.</returns>
   </member>
   <member name="IMFSinkWriterCallback">
-    <summary>
-      <para>Callback interface for the Microsoft Media Foundation sink writer.</para>
-    </summary>
-    <remarks>
-      <para>Set the callback pointer by setting the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sink-writer-async-callback">MF_SINK_WRITER_ASYNC_CALLBACK</a> attribute when you first create the sink writer.</para>
-      <para>The callback methods can be called from any thread, so an object that implements this interface must be thread-safe.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sink-writer">Sink Writer</seealso>
+    <summary>Callback interface for the Microsoft Media Foundation sink writer.</summary>
   </member>
 </doc>

@@ -3,16 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS">
-    <summary>
-      <para>The <b>SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS</b> structure checks if any certificates in the chain have weak  cryptography and checks if a third party root certificate is compliant with the Microsoft Root Program requirements. An error string will be provided if either condition is not met.</para>
-    </summary>
-    <seealso cref="CertVerifyCertificateChainPolicy" />
+    <summary>The <b>SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS</b> structure checks if any certificates in the chain have weak cryptography and checks if a third party root certificate is compliant with the Microsoft Root Program requirements. An error string will be provided if either condition is not met.</summary>
   </member>
   <member name="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS.cbSize">
     <summary>
-      <para>
-        <b>DWORD</b> value that specifies the size, in bytes, of this structure. This value must be set to a value greater than or equal to sizeof(SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS).</para>
-    </summary>
+      <b>DWORD</b> value that specifies the size, in bytes, of this structure. This value must be set to a value greater than or equal to sizeof(SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS).</summary>
   </member>
   <member name="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS.dwErrorLevel">
     <summary>
@@ -23,57 +18,51 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_POLICY_SSL_F12_SUCCESS_LEVEL</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No certificate errors.</para>
-          </description>
-        </item>
-        <item>
+          <description>No certificate errors.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_POLICY_SSL_F12_WARNING_LEVEL</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Certificate warning level.</para>
-          </description>
-        </item>
-        <item>
+          <description>Certificate warning level.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_POLICY_SSL_F12_ERROR_LEVEL</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Certificate error level.</para>
-          </description>
-        </item>
+          <description>Certificate error level.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -86,70 +75,59 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_POLICY_SSL_F12_NONE_CATEGORY</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No certificate errors.</para>
-          </description>
-        </item>
-        <item>
+          <description>No certificate errors.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_POLICY_SSL_F12_WEAK_CRYPTO_CATEGORY</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Errors in this category with the <b>dwErrorLevel</b>: <b>CERT_CHAIN_POLICY_SSL_F12_WARNING_LEVEL</b> are errors associated with all other roots including enterprise.</para>
-            <para>Errors in this category with the <b>dwErrorLevel</b>: <b>CERT_CHAIN_POLICY_SSL_F12_ERROR_LEVEL</b> are errors associated with the third party root certificate.</para>
-          </description>
-        </item>
-        <item>
+          <description>Errors in this category with the <b>dwErrorLevel</b>: <b>CERT_CHAIN_POLICY_SSL_F12_WARNING_LEVEL</b> are errors associated with all other roots including enterprise.<para>Errors in this category with the <b>dwErrorLevel</b>: <b>CERT_CHAIN_POLICY_SSL_F12_ERROR_LEVEL</b> are errors associated with the third party root certificate.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_POLICY_SSL_F12_ROOT_PROGRAM_CATEGORY</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Errors in this category with the <b>dwErrorLevel</b>: <b>CERT_CHAIN_POLICY_SSL_F12_WARNING_LEVEL</b> are all errors with root program compliance failures.</para>
-          </description>
-        </item>
+          <description>Errors in this category with the <b>dwErrorLevel</b>: <b>CERT_CHAIN_POLICY_SSL_F12_WARNING_LEVEL</b> are all errors with root program compliance failures.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS.dwReserved">
     <summary>
-      <para>
-        <b>DWORD</b> value reserved for future use.</para>
-    </summary>
+      <b>DWORD</b> value reserved for future use.</summary>
   </member>
   <member name="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS.wszErrorText">
-    <summary>
-      <para>The error string provided if any certificates in the chain have weak cryptography or if the third party root certificate is not compliant with the Microsoft Root Program requirements.</para>
-    </summary>
+    <summary>The error string provided if any certificates in the chain have weak cryptography or if the third party root certificate is not compliant with the Microsoft Root Program requirements.</summary>
   </member>
 </doc>

@@ -3,119 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGISwapChain3.CheckColorSpaceSupport">
-    <summary>
-      <para>Checks the swap chain's support for color space.</para>
-    </summary>
-    <param name="ColorSpace">
-      <para>Type: <b><see cref="DXGI_COLOR_SPACE_TYPE" /></b></para>
-      <para>A <see cref="DXGI_COLOR_SPACE_TYPE" />-typed value that specifies color space type to check support for.</para>
-    </param>
-    <param name="pColorSpaceSupport">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>A pointer to a variable that receives a combination of <see cref="DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for color space support.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns <b>S_OK</b> on success, or it returns one of the error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</para>
-    </returns>
-    <seealso cref="IDXGISwapChain3" />
+    <summary>Checks the swap chain's support for color space.</summary>
+    <param name="ColorSpace">A <see cref="DXGI_COLOR_SPACE_TYPE" />-typed value that specifies color space type to check support for.</param>
+    <param name="pColorSpaceSupport">A pointer to a variable that receives a combination of <see cref="DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for color space support.</param>
+    <returns>This method returns <b>S_OK</b> on success, or it returns one of the error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</returns>
   </member>
   <member name="IDXGISwapChain3.GetCurrentBackBufferIndex">
-    <summary>
-      <para>Gets the index of the swap chain's current back buffer.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Returns the index of the current back buffer.</para>
-    </returns>
-    <seealso cref="IDXGISwapChain3" />
+    <summary>Gets the index of the swap chain's current back buffer.</summary>
+    <returns>Returns the index of the current back buffer.</returns>
   </member>
   <member name="IDXGISwapChain3.ResizeBuffers1">
-    <summary>
-      <para>Changes the swap chain's back buffer size, format, and number of buffers, where the swap chain was created using a D3D12 command queue as an input device.
-This should be called when the application window is resized.</para>
-    </summary>
-    <param name="BufferCount">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of buffers in the swap chain (including all back and front buffers).
-This number can be different from the number of buffers with which you created the swap chain.
-This number can't be greater than <b>DXGI_MAX_SWAP_CHAIN_BUFFERS</b>.
-Set this number to zero to preserve the existing number of buffers in the swap chain.
-You can't specify less than two buffers for the flip presentation model.</para>
-    </param>
-    <param name="Width">
-      <para>Type: <b>UINT</b></para>
-      <para>The new width of the back buffer.
-If you specify zero, DXGI will use the width of the client area of the target window.
-You can't specify the width as zero if you called the <see cref="IDXGIFactory2.CreateSwapChainForComposition" /> method to create the swap chain for a composition surface.</para>
-    </param>
-    <param name="Height">
-      <para>Type: <b>UINT</b></para>
-      <para>The new height of the back buffer.
-If you specify zero, DXGI will use the height of the client area of the target window.
-You can't specify the height as zero if you called the <see cref="IDXGIFactory2.CreateSwapChainForComposition" /> method to create the swap chain for a composition surface.</para>
-    </param>
-    <param name="Format">
-      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
-      <para>A <see cref="DXGI_FORMAT" />-typed value for the new format of the back buffer.
-Set this value to <see cref="DXGI_FORMAT_UNKNOWN" /> to preserve the existing format of the back buffer.
-The flip presentation model supports a more restricted set of formats than the bit-block transfer (bitblt) model.</para>
-    </param>
-    <param name="SwapChainFlags">
-      <para>Type: <b>UINT</b></para>
-      <para>A combination of <see cref="DXGI_SWAP_CHAIN_FLAG" />-typed values that are combined by using a bitwise OR operation.
-The resulting value specifies options for swap-chain behavior.</para>
-    </param>
-    <param name="pCreationNodeMask">
-      <para>Type: <b>const UINT*</b></para>
-      <para>An array of UINTs, of total size <i>BufferCount</i>, where the value indicates which node the back buffer should be created on.
-Buffers created using <b>ResizeBuffers1</b> with a non-null <i>pCreationNodeMask</i> array are visible to all nodes.</para>
-    </param>
-    <param name="ppPresentQueue">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>An array of command queues (<see cref="ID3D12CommandQueue" /> instances), of total size <i>BufferCount</i>.
-Each queue provided must match the corresponding creation node mask specified in the <i>pCreationNodeMask</i> array.
-When <b>Present()</b> is called, in addition to rotating to the next buffer for the next frame, the swapchain will also rotate through these command queues.
-This allows the app to control which queue requires synchronization for a given present operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns S_OK if successful; an error code otherwise.
-For a list of error codes, see <a href="https://docs.microsoft.com//windows/win32/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
-    </returns>
-    <remarks>
-      <para>This method is only valid to call when the swapchain was created using a D3D12 command queue (<see cref="ID3D12CommandQueue" />) as an input device.</para>
-      <para>When a swapchain is created on a multi-GPU adapter, the backbuffers are all created on node 1 and only a single command queue is supported.
-<b>ResizeBuffers1</b> enables applications to create backbuffers on different nodes, allowing a different command queue to be used with each node.
-These capabilities enable Alternate Frame Rendering (AFR) techniques to be used with the swapchain.
-See <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</para>
-      <para>The only difference between <see cref="IDXGISwapChain.ResizeBuffers" /> in Windows 8 versus Windows 7 is with
-flip presentation model swap chains that you create with the <see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" /> or DXGI_SWAP_EFFECT_FLIP_DISCARD value set.
-In Windows 8, you must call <b>ResizeBuffers</b> to realize a transition between full-screen mode and windowed mode;
-otherwise, your next call to the <see cref="IDXGISwapChain.Present" /> method fails.</para>
-      <para>Also see the Remarks section in <see cref="IDXGISwapChain.ResizeBuffers" />, all of which is relevant to <b>ResizeBuffers1</b>.</para>
-    </remarks>
-    <seealso cref="IDXGISwapChain3" />
+    <summary>Changes the swap chain's back buffer size, format, and number of buffers, where the swap chain was created using a D3D12 command queue as an input device. This should be called when the application window is resized.</summary>
+    <param name="BufferCount">The number of buffers in the swap chain (including all back and front buffers). This number can be different from the number of buffers with which you created the swap chain. This number can't be greater than <b>DXGI_MAX_SWAP_CHAIN_BUFFERS</b>. Set this number to zero to preserve the existing number of buffers in the swap chain. You can't specify less than two buffers for the flip presentation model.</param>
+    <param name="Width">The new width of the back buffer. If you specify zero, DXGI will use the width of the client area of the target window. You can't specify the width as zero if you called the <see cref="IDXGIFactory2.CreateSwapChainForComposition" /> method to create the swap chain for a composition surface.</param>
+    <param name="Height">The new height of the back buffer. If you specify zero, DXGI will use the height of the client area of the target window. You can't specify the height as zero if you called the <see cref="IDXGIFactory2.CreateSwapChainForComposition" /> method to create the swap chain for a composition surface.</param>
+    <param name="Format">A <see cref="DXGI_FORMAT" />-typed value for the new format of the back buffer. Set this value to <see cref="DXGI_FORMAT_UNKNOWN" /> to preserve the existing format of the back buffer. The flip presentation model supports a more restricted set of formats than the bit-block transfer (bitblt) model.</param>
+    <param name="SwapChainFlags">A combination of <see cref="DXGI_SWAP_CHAIN_FLAG" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for swap-chain behavior.</param>
+    <param name="pCreationNodeMask">An array of UINTs, of total size <i>BufferCount</i>, where the value indicates which node the back buffer should be created on. Buffers created using <b>ResizeBuffers1</b> with a non-null <i>pCreationNodeMask</i> array are visible to all nodes.</param>
+    <param name="ppPresentQueue">An array of command queues (<see cref="ID3D12CommandQueue" /> instances), of total size <i>BufferCount</i>. Each queue provided must match the corresponding creation node mask specified in the <i>pCreationNodeMask</i> array. When <b>Present()</b> is called, in addition to rotating to the next buffer for the next frame, the swapchain will also rotate through these command queues. This allows the app to control which queue requires synchronization for a given present operation.</param>
+    <returns>Returns S_OK if successful; an error code otherwise. For a list of error codes, see <a href="https://docs.microsoft.com//windows/win32/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
   </member>
   <member name="IDXGISwapChain3.SetColorSpace1">
-    <summary>
-      <para>Sets the color space used by the swap chain.</para>
-    </summary>
-    <param name="ColorSpace">
-      <para>Type: <b><see cref="DXGI_COLOR_SPACE_TYPE" /></b></para>
-      <para>A <see cref="DXGI_COLOR_SPACE_TYPE" />-typed value that specifies the color space to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns <b>S_OK</b> on success, or it returns one of the error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</para>
-    </returns>
-    <seealso cref="IDXGISwapChain3" />
+    <summary>Sets the color space used by the swap chain.</summary>
+    <param name="ColorSpace">A <see cref="DXGI_COLOR_SPACE_TYPE" />-typed value that specifies the color space to set.</param>
+    <returns>This method returns <b>S_OK</b> on success, or it returns one of the error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</returns>
   </member>
   <member name="IDXGISwapChain3">
-    <summary>
-      <para>Extends <see cref="IDXGISwapChain2" /> with methods to support getting the index of the swap chain's current back buffer and support for color space.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGISwapChain2" />
+    <summary>Extends <see cref="IDXGISwapChain2" /> with methods to support getting the index of the swap chain's current back buffer and support for color space.</summary>
   </member>
 </doc>

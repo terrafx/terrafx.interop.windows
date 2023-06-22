@@ -3,78 +3,46 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC">
-    <summary>
-      <para>Describes a compressed buffer for decoding.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
-    <seealso cref="ID3D11VideoContext.SubmitDecoderBuffers" />
+    <summary>Describes a compressed buffer for decoding.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.BufferType">
-    <summary>
-      <para>The type of buffer, specified as a member of the <see cref="D3D11_VIDEO_DECODER_BUFFER_TYPE" /> enumeration.</para>
-    </summary>
+    <summary>The type of buffer, specified as a member of the <see cref="D3D11_VIDEO_DECODER_BUFFER_TYPE" /> enumeration.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.BufferIndex">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.DataOffset">
-    <summary>
-      <para>The offset of the relevant data from the beginning of the buffer, in bytes. This value must be zero.</para>
-    </summary>
+    <summary>The offset of the relevant data from the beginning of the buffer, in bytes. This value must be zero.</summary>
   </member>
-  <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.DataSize">
-    <summary></summary>
-  </member>
+  <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.DataSize"></member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.FirstMBaddress">
-    <summary>
-      <para>The macroblock address of the first macroblock in the buffer. The macroblock address is given in raster scan order.</para>
-    </summary>
+    <summary>The macroblock address of the first macroblock in the buffer. The macroblock address is given in raster scan order.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.NumMBsInBuffer">
-    <summary>
-      <para>The number of macroblocks of data in the buffer. This count includes skipped macroblocks.</para>
-    </summary>
+    <summary>The number of macroblocks of data in the buffer. This count includes skipped macroblocks.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.Width">
-    <summary>
-      <para>Reserved. Set to zero.</para>
-    </summary>
+    <summary>Reserved. Set to zero.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.Height">
-    <summary>
-      <para>Reserved. Set to zero.</para>
-    </summary>
+    <summary>Reserved. Set to zero.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.Stride">
-    <summary>
-      <para>Reserved. Set to zero.</para>
-    </summary>
+    <summary>Reserved. Set to zero.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.ReservedBits">
-    <summary>
-      <para>Reserved. Set to zero.</para>
-    </summary>
+    <summary>Reserved. Set to zero.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.pIV">
-    <summary>
-      <para>A pointer to a buffer that contains an initialization vector (IV) for encrypted data. If the decode buffer does not contain encrypted data, set this member to <b>NULL</b>.</para>
-    </summary>
+    <summary>A pointer to a buffer that contains an initialization vector (IV) for encrypted data. If the decode buffer does not contain encrypted data, set this member to <b>NULL</b>.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.IVSize">
-    <summary>
-      <para>The size of the buffer specified in the <b>pIV</b> parameter. If <b>pIV</b> is <b>NULL</b>, set this member to zero.</para>
-    </summary>
+    <summary>The size of the buffer specified in the <b>pIV</b> parameter. If <b>pIV</b> is <b>NULL</b>, set this member to zero.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.PartialEncryption">
-    <summary>
-      <para>If <b>TRUE</b>, the video surfaces are partially encrypted.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, the video surfaces are partially encrypted.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_BUFFER_DESC.EncryptedBlockInfo">
-    <summary>
-      <para>A <see cref="D3D11_ENCRYPTED_BLOCK_INFO" /> structure that specifies which bytes of the surface are encrypted.</para>
-    </summary>
+    <summary>A <see cref="D3D11_ENCRYPTED_BLOCK_INFO" /> structure that specifies which bytes of the surface are encrypted.</summary>
   </member>
 </doc>

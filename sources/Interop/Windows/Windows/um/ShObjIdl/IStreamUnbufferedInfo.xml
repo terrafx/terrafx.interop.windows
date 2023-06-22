@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IStreamUnbufferedInfo.GetSectorSize">
-    <summary>
-      <para>Retrieves the number of bytes per sector on the disk currently being used.  When using unbuffered input/output (I/O), it is important to know the size of the sectors on the disk being read in order to ensure proper byte alignment.</para>
-    </summary>
-    <param name="pcbSectorSize">
-      <para>Type: <b>ULONG*</b></para>
-      <para>When this method returns successfully, contains a pointer to a <b>ULONG</b> value that represents the number of bytes per sector for the disk.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves the number of bytes per sector on the disk currently being used. When using unbuffered input/output (I/O), it is important to know the size of the sectors on the disk being read in order to ensure proper byte alignment.</summary>
+    <param name="pcbSectorSize">When this method returns successfully, contains a pointer to a <b>ULONG</b> value that represents the number of bytes per sector for the disk.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IStreamUnbufferedInfo">
-    <summary>
-      <para>Exposes a method that determines the sector size as an aid to byte alignment.</para>
-    </summary>
+    <summary>Exposes a method that determines the sector size as an aid to byte alignment.</summary>
   </member>
 </doc>

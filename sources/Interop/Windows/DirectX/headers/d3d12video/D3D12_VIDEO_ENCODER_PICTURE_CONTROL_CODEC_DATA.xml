@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA">
-    <summary>
-      <para>Represents the picture level control elements for the associated <see cref="EncodeFrame" /> command for multiple codecs.</para>
-    </summary>
-    <remarks>
-      <para>Slice-level picture reference lists reordering is unsupported.</para>
-      <para>Weighted inter-prediction is unsupported.</para>
-    </remarks>
+    <summary>Represents the picture level control elements for the associated <see cref="EncodeFrame" /> command for multiple codecs.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA.DataSize">
-    <summary>
-      <para>The data size of the provided picture level control structure.</para>
-    </summary>
+    <summary>The data size of the provided picture level control structure.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA.pH264PicData">
-    <summary>
-      <para>A pointer to a <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264" /> representing the picture level control elements for H.264 encoding.</para>
-    </summary>
+    <summary>A pointer to a <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264" /> representing the picture level control elements for H.264 encoding.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA.pHEVCPicData">
-    <summary>
-      <para>A pointer to a <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC" /> representing the picture level control elements for H.264 encoding.</para>
-    </summary>
+    <summary>A pointer to a <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC" /> representing the picture level control elements for H.264 encoding.</summary>
   </member>
 </doc>

@@ -3,72 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IContext.EnumContextProps">
-    <summary>
-      <para>Returns an <see cref="IEnumContextProps" /> interface pointer that can be used to enumerate the context properties in this context.</para>
-    </summary>
-    <param name="ppEnumContextProps">
-      <para>The address of the variable that receives the new <see cref="IEnumContextProps" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IContext" />
-    <seealso cref="IEnumContextProps" />
+    <summary>Returns an <see cref="IEnumContextProps" /> interface pointer that can be used to enumerate the context properties in this context.</summary>
+    <param name="ppEnumContextProps">The address of the variable that receives the new <see cref="IEnumContextProps" /> interface pointer.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IContext.GetProperty">
-    <summary>
-      <para>Retrieves the specified context property from the context.</para>
-    </summary>
-    <param name="rGuid">
-      <para>The GUID that uniquely identifies the context property to be retrieved.</para>
-    </param>
-    <param name="pFlags">
-      <para>The address of the variable that receives the flags associated with the property.</para>
-    </param>
-    <param name="ppUnk">
-      <para>The address of the variable that receives the <see cref="IUnknown" /> interface pointer of the requested context property.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IContext" />
+    <summary>Retrieves the specified context property from the context.</summary>
+    <param name="rGuid">The GUID that uniquely identifies the context property to be retrieved.</param>
+    <param name="pFlags">The address of the variable that receives the flags associated with the property.</param>
+    <param name="ppUnk">The address of the variable that receives the <see cref="IUnknown" /> interface pointer of the requested context property.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IContext.RemoveProperty">
-    <summary>
-      <para>Removes the specified context property from the context.</para>
-    </summary>
-    <param name="rPolicyId">
-      <para>The GUID that uniquely identifies the context property to be removed.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IContext" />
+    <summary>Removes the specified context property from the context.</summary>
+    <param name="rPolicyId">The GUID that uniquely identifies the context property to be removed.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IContext.SetProperty">
-    <summary>
-      <para>Adds the specified context property to the object context.</para>
-    </summary>
-    <param name="rpolicyId">
-      <para>A GUID that uniquely identifies this context property.</para>
-    </param>
-    <param name="flags">
-      <para>This parameter is reserved and must be zero.</para>
-    </param>
-    <param name="pUnk">
-      <para>A pointer to the context property to be added.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IContext" />
+    <summary>Adds the specified context property to the object context.</summary>
+    <param name="rpolicyId">A GUID that uniquely identifies this context property.</param>
+    <param name="flags">This parameter is reserved and must be zero.</param>
+    <param name="pUnk">A pointer to the context property to be added.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IContext">
-    <summary>
-      <para>Supports setting COM+ context properties.</para>
-    </summary>
-    <remarks>
-      <para>An instance of this interface for the current context can be obtained using <see cref="CoGetObjectContext" />.</para>
-    </remarks>
+    <summary>Supports setting COM+ context properties.</summary>
   </member>
 </doc>

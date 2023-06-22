@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TRANSLATEURL_IN_FLAGS">
-    <summary>
-      <para>The <b>TRANSLATEURL_IN_FLAGS</b> enumerated values are used with the <see cref="TranslateURL" /> function to determine how it will execute.</para>
-    </summary>
+    <summary>The <b>TRANSLATEURL_IN_FLAGS</b> enumerated values are used with the <see cref="TranslateURL" /> function to determine how it will execute.</summary>
   </member>
   <member name="TRANSLATEURL_IN_FLAGS.TRANSLATEURL_FL_GUESS_PROTOCOL">
-    <summary>
-      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <see cref="TranslateURL" />, the system automatically chooses a scheme and adds it to the URL.</para>
-    </summary>
+    <summary>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <see cref="TranslateURL" />, the system automatically chooses a scheme and adds it to the URL.</summary>
   </member>
   <member name="TRANSLATEURL_IN_FLAGS.TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL">
-    <summary>
-      <para>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <see cref="TranslateURL" />, the system adds the default protocol to the URL.</para>
-    </summary>
+    <summary>If the protocol scheme is not specified in the <i>pcszURL</i> parameter to <see cref="TranslateURL" />, the system adds the default protocol to the URL.</summary>
   </member>
 </doc>

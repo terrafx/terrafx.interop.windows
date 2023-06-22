@@ -3,39 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INFCONTEXT">
-    <summary>
-      <para>The
-<b>INFCONTEXT</b> structure stores context information that functions such as
-<see cref="SetupGetLineText" /> use to navigate INF files.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/overview">Overview</seealso>
-    <seealso cref="SetupFindFirstLine" />
-    <seealso cref="SetupFindNextLine" />
-    <seealso cref="SetupFindNextMatchLine" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/structures--setup-api-">Structures</seealso>
+    <summary>The<b>INFCONTEXT</b> structure stores context information that functions such as<see cref="SetupGetLineText" /> use to navigate INF files.</summary>
   </member>
   <member name="INFCONTEXT.Inf">
-    <summary>
-      <para>Handle to the INF file returned by
-<see cref="SetupOpenInfFile" />.</para>
-    </summary>
+    <summary>Handle to the INF file returned by<see cref="SetupOpenInfFile" />.</summary>
   </member>
   <member name="INFCONTEXT.CurrentInf">
-    <summary>
-      <para>Pointer to the current INF file. The <b>Inf</b> member may point to multiple files if they were appended to the open INF file using
-<see cref="SetupOpenAppendInfFile" />.</para>
-    </summary>
+    <summary>Pointer to the current INF file. The <b>Inf</b> member may point to multiple files if they were appended to the open INF file using<see cref="SetupOpenAppendInfFile" />.</summary>
   </member>
   <member name="INFCONTEXT.Section">
-    <summary>
-      <para>Section in the current INF file.</para>
-    </summary>
+    <summary>Section in the current INF file.</summary>
   </member>
   <member name="INFCONTEXT.Line">
     <summary>
       <para>Line of the current section in the INF file.</para>
-      <para>
-        <b>Note</b>    The setup functions use this structure internally and it must not be accessed or modified by applications. It is included here for informational purposes only.</para>
+      <div>
+        <b>Note</b>    The setup functions use this structure internally and it must not be accessed or modified by applications. It is included here for informational purposes only.</div>
     </summary>
   </member>
 </doc>

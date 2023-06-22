@@ -2,26 +2,25 @@
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
-  <member name="DirectX.DXGIGetDebugInterface1">
+  <member name="DirectX.CreateDXGIFactory2">
     <summary>
-      <para>Retrieves an interface that Windows Store apps use for debugging the Microsoft DirectX Graphics Infrastructure (DXGI).</para>
+      <para>Creates a DXGI 1.3 factory that you can use to generate other DXGI objects.</para>
+      <para>In Windows 8, any DXGI factory created while DXGIDebug.dll was present on the system would load and use it. Starting in Windows 8.1, apps explicitly request that DXGIDebug.dll be loaded instead. Use <b>CreateDXGIFactory2</b> and specify the DXGI_CREATE_FACTORY_DEBUG flag to request DXGIDebug.dll; the DLL will be loaded if it is present on the system.</para>
     </summary>
     <param name="Flags">
-      <para>Not used.</para>
+      <para>Valid values include the <b>DXGI_CREATE_FACTORY_DEBUG (0x01)</b> flag, and zero.</para>
+      <div>
+        <b>Note</b>  This flag will be set by the D3D runtime if:<list type="bullet"><item><description>The system creates an implicit factory during device creation.</description></item><item><description>The D3D11_CREATE_DEVICE_DEBUG flag is specified during device creation, for example using <see cref="D3D11CreateDevice" /> (or the swapchain method, or the Direct3D 10 equivalents).</description></item></list></div>
     </param>
-    <param name="riid">
-      <para>The globally unique identifier (GUID) of the requested interface type, which can be the identifier for the <see cref="IDXGIDebug" />, <see cref="IDXGIDebug1" />, or <see cref="IDXGIInfoQueue" /> interfaces.</para>
-    </param>
-    <param name="pDebug">
-      <para>A pointer to a buffer that receives a pointer to the debugging interface.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <b>DXGIGetDebugInterface1</b> function returns  <b>E_NOINTERFACE</b> on systems without the Windows Software Development Kit (SDK) installed, because it's a development-time aid.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-functions">DXGI Functions</seealso>
-    <seealso cref="IDXGIDebug1" />
+    <param name="riid">The globally unique identifier (GUID) of the <see cref="IDXGIFactory2" /> object referenced by the <i>ppFactory</i> parameter.</param>
+    <param name="ppFactory">Address of a pointer to an <see cref="IDXGIFactory2" /> object.</param>
+    <returns>Returns S_OK if successful; an error code otherwise. For a list of error codes, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
+  </member>
+  <member name="DirectX.DXGIGetDebugInterface1">
+    <summary>Retrieves an interface that Windows Store apps use for debugging the Microsoft DirectX Graphics Infrastructure (DXGI).</summary>
+    <param name="Flags">Not used.</param>
+    <param name="riid">The globally unique identifier (GUID) of the requested interface type, which can be the identifier for the <see cref="IDXGIDebug" />, <see cref="IDXGIDebug1" />, or <see cref="IDXGIInfoQueue" /> interfaces.</param>
+    <param name="pDebug">A pointer to a buffer that receives a pointer to the debugging interface.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

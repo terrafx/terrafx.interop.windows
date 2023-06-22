@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_FAULT_CODE">
-    <summary>
-      <para>Represents a fault code.</para>
-    </summary>
+    <summary>Represents a fault code.</summary>
   </member>
   <member name="WS_FAULT_CODE.value">
-    <summary>
-      <para>The local name and namespace URI that identify the fault code.</para>
-    </summary>
+    <summary>The local name and namespace URI that identify the fault code.</summary>
   </member>
   <member name="WS_FAULT_CODE.subCode">
-    <summary>
-      <para>Pointer to the next fault code in the list.</para>
-    </summary>
+    <summary>Pointer to the next fault code in the list.</summary>
   </member>
 </doc>

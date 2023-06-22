@@ -4,48 +4,17 @@
 <doc>
   <member name="eAVDDSurroundMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies whether the audio is encoded in Dolby Surround. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avddsurroundmode-property">AVDDSurroundMode</a> property.</para>
     </summary>
-    <remarks>
-      <para>If the audio stream is Dolby AC-3, this property reflects the value of the dsurmod field in the bit stream.</para>
-      <list type="table">
-        <listheader>
-          <description>Bit field
-</description>
-          <description>Value
-</description>
-        </listheader>
-        <item>
-          <description>00</description>
-          <description>eAVDDSurroundMode_NotIndicated</description>
-        </item>
-        <item>
-          <description>01</description>
-          <description>eAVDDSurroundMode_No</description>
-        </item>
-        <item>
-          <description>10</description>
-          <description>eAVDDSurroundMode_Yes</description>
-        </item>
-      </list>
-      <para>If the audio stream is any other format, the value is eAVDDSurroundMode_No.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVDDSurroundMode.eAVDDSurroundMode_NotIndicated">
-    <summary>
-      <para>The bit stream does not indicate whether the audio is encoded in Dolby Surround.</para>
-    </summary>
+    <summary>The bit stream does not indicate whether the audio is encoded in Dolby Surround.</summary>
   </member>
   <member name="eAVDDSurroundMode.eAVDDSurroundMode_No">
-    <summary>
-      <para>The bit stream is not encoded in Dolby Surround.</para>
-    </summary>
+    <summary>The bit stream is not encoded in Dolby Surround.</summary>
   </member>
   <member name="eAVDDSurroundMode.eAVDDSurroundMode_Yes">
-    <summary>
-      <para>The bit stream is encoded in Dolby Surround.</para>
-    </summary>
+    <summary>The bit stream is encoded in Dolby Surround.</summary>
   </member>
 </doc>

@@ -3,98 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INameSpaceTreeControl2.GetControlStyle">
-    <summary>
-      <para>Gets the display styles set for the namespace object's treeview controls.</para>
-    </summary>
-    <param name="nstcsMask">
-      <para>Type: <b><see cref="NSTCSTYLE" /></b></para>
-      <para>One or more of the <see cref="NSTCSTYLE" /> constants that specify the values for which the method should retrieve the current settings.</para>
-    </param>
-    <param name="pnstcsStyle">
-      <para>Type: <b><see cref="NSTCSTYLE" />*</b></para>
-      <para>Pointer to a value that, when this method returns successfully, receives the values requested in <i>nstcsMask</i>. If the bit that represents the individual <see cref="NSTCSTYLE" /> value is 0, that value is not set. If the value is 1, it is the current setting. Bit values in positions not specifically requested in <i>nstcsMask</i> do not necessarily reflect the current settings and should not be used.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="INameSpaceTreeControl2" />
-    <seealso cref="INameSpaceTreeControl2.GetControlStyle2" />
-    <seealso cref="INameSpaceTreeControl2.SetControlStyle" />
-    <seealso cref="NSTCSTYLE" />
+    <summary>Gets the display styles set for the namespace object's treeview controls.</summary>
+    <param name="nstcsMask">One or more of the <see cref="NSTCSTYLE" /> constants that specify the values for which the method should retrieve the current settings.</param>
+    <param name="pnstcsStyle">Pointer to a value that, when this method returns successfully, receives the values requested in <i>nstcsMask</i>. If the bit that represents the individual <see cref="NSTCSTYLE" /> value is 0, that value is not set. If the value is 1, it is the current setting. Bit values in positions not specifically requested in <i>nstcsMask</i> do not necessarily reflect the current settings and should not be used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl2.GetControlStyle2">
-    <summary>
-      <para>Gets the extended display styles set for the namespace object's treeview controls.</para>
-    </summary>
-    <param name="nstcsMask">
-      <para>Type: <b><see cref="NSTCSTYLE2" /></b></para>
-      <para>One or more of the <see cref="NSTCSTYLE2" /> constants that specify the values for which the method should retrieve the current settings.</para>
-    </param>
-    <param name="pnstcsStyle">
-      <para>Type: <b><see cref="NSTCSTYLE2" />*</b></para>
-      <para>Pointer to a value that, when this method returns successfully, receives the values requested in <i>nstcsMask</i>. If the bit that represents the individual <see cref="NSTCSTYLE2" /> value is 0, that value is not set. If the value is 1, it is the current setting. Bit values in positions not specifically requested in <i>nstcsMask</i> do not necessarily reflect the current settings and should not be used.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="INameSpaceTreeControl2" />
-    <seealso cref="INameSpaceTreeControl2.GetControlStyle" />
-    <seealso cref="INameSpaceTreeControl2.SetControlStyle2" />
-    <seealso cref="NSTCSTYLE2" />
+    <summary>Gets the extended display styles set for the namespace object's treeview controls.</summary>
+    <param name="nstcsMask">One or more of the <see cref="NSTCSTYLE2" /> constants that specify the values for which the method should retrieve the current settings.</param>
+    <param name="pnstcsStyle">Pointer to a value that, when this method returns successfully, receives the values requested in <i>nstcsMask</i>. If the bit that represents the individual <see cref="NSTCSTYLE2" /> value is 0, that value is not set. If the value is 1, it is the current setting. Bit values in positions not specifically requested in <i>nstcsMask</i> do not necessarily reflect the current settings and should not be used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl2.SetControlStyle">
-    <summary>
-      <para>Sets the display styles for the namespace object's treeview controls.</para>
-    </summary>
-    <param name="nstcsMask">
-      <para>Type: <b><see cref="NSTCSTYLE" /></b></para>
-      <para>One or more of the <see cref="NSTCSTYLE" /> constants that specify the styles for which the method should set new values.</para>
-    </param>
-    <param name="nstcsStyle">
-      <para>Type: <b><see cref="NSTCSTYLE" /></b></para>
-      <para>A bitmap that contains the new values for the styles specified in <i>nstcsMask</i>. If the bit that represents the individual <see cref="NSTCSTYLE" /> value is 0, that style is not used. If the value is 1, the style is applied to the treeview. Styles in positions not specified in <i>nstcsMask</i> are left at their current setting regardless of their bit's value in this bitmap.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="INameSpaceTreeControl2" />
-    <seealso cref="INameSpaceTreeControl2.GetControlStyle" />
-    <seealso cref="INameSpaceTreeControl2.SetControlStyle2" />
-    <seealso cref="NSTCSTYLE" />
+    <summary>Sets the display styles for the namespace object's treeview controls.</summary>
+    <param name="nstcsMask">One or more of the <see cref="NSTCSTYLE" /> constants that specify the styles for which the method should set new values.</param>
+    <param name="nstcsStyle">A bitmap that contains the new values for the styles specified in <i>nstcsMask</i>. If the bit that represents the individual <see cref="NSTCSTYLE" /> value is 0, that style is not used. If the value is 1, the style is applied to the treeview. Styles in positions not specified in <i>nstcsMask</i> are left at their current setting regardless of their bit's value in this bitmap.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl2.SetControlStyle2">
-    <summary>
-      <para>Sets the extended display styles for the namespace object's treeview controls.</para>
-    </summary>
-    <param name="nstcsMask">
-      <para>Type: <b><see cref="NSTCSTYLE2" /></b></para>
-      <para>One or more of the <see cref="NSTCSTYLE2" /> constants that specify the styles for which the method should set new values.</para>
-    </param>
-    <param name="nstcsStyle">
-      <para>Type: <b><see cref="NSTCSTYLE2" /></b></para>
-      <para>A bitmap that contains the new values for the styles specified in <i>nstcsMask</i>. If the bit that represents the individual <see cref="NSTCSTYLE2" /> value is 0, that style is not used. If the value is 1, the style is applied to the treeview. Styles in positions not specified in <i>nstcsMask</i> are left at their current setting regardless of their bit's value in this bitmap.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="INameSpaceTreeControl2" />
-    <seealso cref="INameSpaceTreeControl2.GetControlStyle2" />
-    <seealso cref="INameSpaceTreeControl2.SetControlStyle" />
-    <seealso cref="NSTCSTYLE2" />
+    <summary>Sets the extended display styles for the namespace object's treeview controls.</summary>
+    <param name="nstcsMask">One or more of the <see cref="NSTCSTYLE2" /> constants that specify the styles for which the method should set new values.</param>
+    <param name="nstcsStyle">A bitmap that contains the new values for the styles specified in <i>nstcsMask</i>. If the bit that represents the individual <see cref="NSTCSTYLE2" /> value is 0, that style is not used. If the value is 1, the style is applied to the treeview. Styles in positions not specified in <i>nstcsMask</i> are left at their current setting regardless of their bit's value in this bitmap.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl2">
-    <summary>
-      <para>Extends the <see cref="INameSpaceTreeControl" /> interface by providing methods that get and set the display styles of treeview controls for use with Shell namespace items.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="INameSpaceTreeControl" /> interface, from which it inherits.</para>
-      <para>Use class identifier (CLSID) CLSID_NameSpaceTreeControl to instantiate an instance of this interface.</para>
-      <h3>When to Implement</h3>
-      <para>An implementation of this interface is provided with Windows. Third parties should not implement their own versions.</para>
-    </remarks>
+    <summary>Extends the <see cref="INameSpaceTreeControl" /> interface by providing methods that get and set the display styles of treeview controls for use with Shell namespace items.</summary>
   </member>
 </doc>

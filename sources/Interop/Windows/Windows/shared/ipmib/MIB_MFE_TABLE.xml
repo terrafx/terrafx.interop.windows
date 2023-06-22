@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_MFE_TABLE">
-    <summary>
-      <para>The
-<b>MIB_MFE_TABLE</b> structure contains a table of Multicast Forwarding Entries (MFEs).</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Server 2008and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="MIB_IPMCAST_MFE" />
+    <summary>The<b>MIB_MFE_TABLE</b> structure contains a table of Multicast Forwarding Entries (MFEs).</summary>
   </member>
   <member name="MIB_MFE_TABLE.dwNumEntries">
-    <summary>
-      <para>The number of MFEs in the table.</para>
-    </summary>
+    <summary>The number of MFEs in the table.</summary>
   </member>
   <member name="MIB_MFE_TABLE.table">
-    <summary>
-      <para>A pointer to a table of MFEs implemented as an array of
-<see cref="MIB_IPMCAST_MFE" /> structures.</para>
-    </summary>
+    <summary>A pointer to a table of MFEs implemented as an array of<see cref="MIB_IPMCAST_MFE" /> structures.</summary>
   </member>
 </doc>

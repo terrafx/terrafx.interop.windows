@@ -4,11 +4,10 @@
 <doc>
   <member name="IDMOQualityControl.GetStatus">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetStatus</code> method determines whether quality control is active.</para>
     </summary>
-    <param name="pdwFlags">
-      <para>Pointer to a variable that receives the quality control status. If quality control is disabled, the value is zero. If quality control is enabled, the value is DMO_QUALITY_STATUS_ENABLED.</para>
-    </param>
+    <param name="pdwFlags">Pointer to a variable that receives the quality control status. If quality control is disabled, the value is zero. If quality control is enabled, the value is DMO_QUALITY_STATUS_ENABLED.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -16,37 +15,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>NULL</b> pointer value
-</description>
-        </item>
-        <item>
+            <b>NULL</b> pointer value</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IDMOQualityControl Interface" />
   </member>
   <member name="IDMOQualityControl.SetNow">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetNow</code> method specifies the earliest time stamp that the DMO will deliver.</para>
     </summary>
-    <param name="rtNow">
-      <para>Reference time specifying the earliest time stamp to deliver.</para>
-    </param>
+    <param name="rtNow">Reference time specifying the earliest time stamp to deliver.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -54,42 +56,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failure</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If quality control is enabled, the DMO discards any samples whose time stamp is less than <i>rtNow</i>. Samples whose time stamp is <i>rtNow</i> or later are processed as efficiently as possible. Depending on the implementation, the DMO might drop some samples to keep pace.</para>
-      <para>If quality control is disabled, this method has no immediate effect. However, the DMO stores the specified reference time. It uses this value if quality control is enabled at a later time. To enable quality control, call the <see cref="IDMOQualityControl.SetStatus" /> method.</para>
-      <para>If incoming samples are not time-stamped, the DMO never performs quality control. The application sets the time stamp in the <see cref="IMediaObject.ProcessInput" /> method.</para>
-    </remarks>
-    <seealso cref="IDMOQualityControl Interface" />
   </member>
   <member name="IDMOQualityControl.SetStatus">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetStatus</code> method enables or disables quality control.</para>
     </summary>
-    <param name="dwFlags">
-      <para>Value that specifies whether to enable or disable quality control. Use DMO_QUALITY_STATUS_ENABLED to enable quality control, or zero to disable quality control.</para>
-    </param>
+    <param name="dwFlags">Value that specifies whether to enable or disable quality control. Use DMO_QUALITY_STATUS_ENABLED to enable quality control, or zero to disable quality control.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -97,36 +96,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>With quality control enabled, the DMO attempts to deliver samples on time. It can skip late samples if necessary. With quality control disabled, the DMO delivers every sample. If you enable quality control, call the <see cref="IDMOQualityControl.SetNow" /> method to specify the earliest time stamp that the DMO should process. Otherwise, the call to <code>SetStatus</code> succeeds but the DMO does not perform quality control.</para>
-      <para>By default, quality control is disabled.</para>
-    </remarks>
-    <seealso cref="IDMOQualityControl Interface" />
   </member>
   <member name="IDMOQualityControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IDMOQualityControl</code> interface supports quality control on a Microsoft DirectX Media Object (DMO).</para>
       <para>A DMO exposes this interface if it can respond to late samples. When quality control is enabled, the DMO attempts to process samples on time, discarding late samples if necessary. When quality control is disabled, the DMO processes every sample. By default, quality control is disabled.</para>
       <para>Applications use this interface to enable or disable quality control. Using quality control is appropriate when you are viewing media data in real time. If you are capturing data to a file, do not enable quality control, because the DMO might discard samples. It does not matter in file capture whether samples arrive late, and you do not want to lose the data.</para>
@@ -138,7 +137,6 @@
         <item>
           <description>Call the <see cref="IDMOQualityControl.SetStatus" /> method with the DMO_QUALITY_STATUS_ENABLED flag.</description>
         </item>
-      </list>To disable quality control, call <b>SetStatus</b> with no flag.
-</summary>
+      </list>To disable quality control, call <b>SetStatus</b> with no flag.</summary>
   </member>
 </doc>

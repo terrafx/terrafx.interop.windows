@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfKeyEventSink.OnKeyDown">
-    <summary>
-      <para>Called when a key down event occurs.</para>
-    </summary>
-    <param name="pic">
-      <para>Pointer to the input context that receives the key event.</para>
-    </param>
-    <param name="wParam">
-      <para>Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="pfEaten">
-      <para>Pointer to a BOOL that, on exit, indicates if the key event was handled. If this value receives <b>TRUE</b>, the key event was handled. If this value is <b>FALSE</b>, the key event was not handled.</para>
-    </param>
+    <summary>Called when a key down event occurs.</summary>
+    <param name="pic">Pointer to the input context that receives the key event.</param>
+    <param name="wParam">Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="lParam">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="pfEaten">Pointer to a BOOL that, on exit, indicates if the key event was handled. If this value receives <b>TRUE</b>, the key event was handled. If this value is <b>FALSE</b>, the key event was not handled.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -25,37 +15,27 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfKeyEventSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</seealso>
   </member>
   <member name="ITfKeyEventSink.OnKeyUp">
-    <summary>
-      <para>Called when a key up event occurs.</para>
-    </summary>
-    <param name="pic">
-      <para>Pointer to the input context that receives the key event.</para>
-    </param>
-    <param name="wParam">
-      <para>Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</para>
-    </param>
-    <param name="pfEaten">
-      <para>Pointer to a BOOL that, on exit, indicates if the key event was handled. If this value receives <b>TRUE</b>, the key event was handled. If this value receives <b>FALSE</b>, the key event was not handled.</para>
-    </param>
+    <summary>Called when a key up event occurs.</summary>
+    <param name="pic">Pointer to the input context that receives the key event.</param>
+    <param name="wParam">Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</param>
+    <param name="lParam">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</param>
+    <param name="pfEaten">Pointer to a BOOL that, on exit, indicates if the key event was handled. If this value receives <b>TRUE</b>, the key event was handled. If this value receives <b>FALSE</b>, the key event was not handled.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -63,63 +43,39 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfKeyEventSink.OnPreservedKey">
-    <summary>
-      <para>Called when a preserved key event occurs.</para>
-    </summary>
-    <param name="pic">
-      <para>Pointer to the input context that receives the key event.</para>
-    </param>
-    <param name="rguid">
-      <para>Contains the command GUID of the preserved key.</para>
-    </param>
-    <param name="pfEaten">
-      <para>Pointer to a BOOL value that, on exit, indicates if the preserved key event was handled. If this value receives <b>TRUE</b>, the preserved key event was handled. If this value receives <b>FALSE</b>, the preserved key event was not handled.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when a preserved key event occurs.</summary>
+    <param name="pic">Pointer to the input context that receives the key event.</param>
+    <param name="rguid">Contains the command GUID of the preserved key.</param>
+    <param name="pfEaten">Pointer to a BOOL value that, on exit, indicates if the preserved key event was handled. If this value receives <b>TRUE</b>, the preserved key event was handled. If this value receives <b>FALSE</b>, the preserved key event was not handled.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfKeyEventSink.OnSetFocus">
-    <summary>
-      <para>Called when a TSF text service receives or loses the keyboard focus.</para>
-    </summary>
-    <param name="fForeground">
-      <para>If <b>TRUE</b>, the test service receives the focus. Otherwise the text service loses the focus.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when a TSF text service receives or loses the keyboard focus.</summary>
+    <param name="fForeground">If <b>TRUE</b>, the test service receives the focus. Otherwise the text service loses the focus.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfKeyEventSink.OnTestKeyDown">
-    <summary>
-      <para>Called to determine if a text service will handle a key down event.</para>
-    </summary>
-    <param name="pic">
-      <para>Pointer to the input context that receives the key event.</para>
-    </param>
-    <param name="wParam">
-      <para>Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="pfEaten">
-      <para>Pointer to a BOOL that, on exit, indicates if the key event would be handled. If this value receives <b>TRUE</b>, the key event would be handled. If this value is <b>FALSE</b>, the key event would not be handled.</para>
-    </param>
+    <summary>Called to determine if a text service will handle a key down event.</summary>
+    <param name="pic">Pointer to the input context that receives the key event.</param>
+    <param name="wParam">Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="lParam">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="pfEaten">Pointer to a BOOL that, on exit, indicates if the key event would be handled. If this value receives <b>TRUE</b>, the key event would be handled. If this value is <b>FALSE</b>, the key event would not be handled.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -127,37 +83,27 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfKeyEventSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</seealso>
   </member>
   <member name="ITfKeyEventSink.OnTestKeyUp">
-    <summary>
-      <para>Called to determine if a text service will handle a key up event.</para>
-    </summary>
-    <param name="pic">
-      <para>Pointer to the input context that receives the key event.</para>
-    </param>
-    <param name="wParam">
-      <para>Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</para>
-    </param>
-    <param name="pfEaten">
-      <para>Pointer to a BOOL that, on exit, indicates if the key event would be handled. If this value receives <b>TRUE</b>, the key event would be handled. If this value receives <b>FALSE</b>, the key event would not be handled.</para>
-    </param>
+    <summary>Called to determine if a text service will handle a key up event.</summary>
+    <param name="pic">Pointer to the input context that receives the key event.</param>
+    <param name="wParam">Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</param>
+    <param name="lParam">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</param>
+    <param name="pfEaten">Pointer to a BOOL that, on exit, indicates if the key event would be handled. If this value receives <b>TRUE</b>, the key event would be handled. If this value receives <b>FALSE</b>, the key event would not be handled.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -165,26 +111,22 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfKeyEventSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</seealso>
   </member>
   <member name="ITfKeyEventSink">
-    <summary>
-      <para>The <b>ITfKeyEventSink</b> interface is implemented by a text service to receive keyboard and focus event notifications. To install this event sink, call <see cref="ITfKeystrokeMgr.AdviseKeyEventSink" />.</para>
-    </summary>
-    <seealso cref="ITfKeystrokeMgr.AdviseKeyEventSink " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfKeyEventSink</b> interface is implemented by a text service to receive keyboard and focus event notifications. To install this event sink, call <see cref="ITfKeystrokeMgr.AdviseKeyEventSink" />.</summary>
   </member>
 </doc>

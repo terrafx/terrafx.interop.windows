@@ -3,53 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEM_CONDITION_FLAG_TYPE">
-    <summary>
-      <para>Contains flags used with the <see cref="IWbemClassObject.GetNames" /> method.</para>
-    </summary>
+    <summary>Contains flags used with the <see cref="IWbemClassObject.GetNames" /> method.</summary>
   </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_ALWAYS">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_ONLY_IF_TRUE">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_ONLY_IF_FALSE">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_ONLY_IF_IDENTICAL">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_MASK_PRIMARY_CONDITION">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_KEYS_ONLY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_REFS_ONLY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_LOCAL_ONLY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_PROPAGATED_ONLY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_SYSTEM_ONLY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_NONSYSTEM_ONLY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_MASK_CONDITION_ORIGIN">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_CLASS_OVERRIDES_ONLY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES">
-    <summary></summary>
-  </member>
-  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_MASK_CLASS_CONDITION">
-    <summary></summary>
-  </member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_ALWAYS"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_ONLY_IF_TRUE"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_ONLY_IF_FALSE"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_ONLY_IF_IDENTICAL"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_MASK_PRIMARY_CONDITION"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_KEYS_ONLY"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_REFS_ONLY"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_LOCAL_ONLY"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_PROPAGATED_ONLY"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_SYSTEM_ONLY"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_NONSYSTEM_ONLY"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_MASK_CONDITION_ORIGIN"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_CLASS_OVERRIDES_ONLY"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES"></member>
+  <member name="WBEM_CONDITION_FLAG_TYPE.WBEM_MASK_CLASS_CONDITION"></member>
 </doc>

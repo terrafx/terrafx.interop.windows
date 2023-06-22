@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AdjustableArrowCap.AdjustableArrowCap">
+    <summary>Creates an adjustable arrow line cap with the specified height and width. The arrow line cap can be filled or nonfilled. The middle inset defaults to zero.</summary>
+    <param name="height">Real number that specifies the length, in units, of the arrow from its base to its point.</param>
+    <param name="width">Real number that specifies the distance, in units, between the corners of the base of the arrow.</param>
+    <param name="isFilled">Boolean value that specifies whether the arrow is filled. The default value is <b>TRUE</b>.</param>
+  </member>
+  <member name="AdjustableArrowCap.GetHeight">
+    <summary>The <b>AdjustableArrowCap.GetHeight</b> method gets the height of the arrow cap. The height is the distance from the base of the arrow to its vertex.</summary>
+    <returns>This method returns the height of the arrow cap.</returns>
+  </member>
+  <member name="AdjustableArrowCap.GetMiddleInset">
+    <summary>The <b>AdjustableArrowCap.GetMiddleInset</b> method gets the value of the inset. The middle inset is the number of units that the midpoint of the base shifts towards the vertex.</summary>
+    <returns>This method returns the inset value.</returns>
+  </member>
+  <member name="AdjustableArrowCap.GetWidth">
+    <summary>The <b>AdjustableArrowCap.GetWidth</b> method gets the width of the arrow cap. The width is the distance between the endpoints of the base of the arrow.</summary>
+    <returns>This method returns the width of the arrow cap.</returns>
+  </member>
+  <member name="AdjustableArrowCap.IsFilled">
+    <summary>The <b>AdjustableArrowCap.IsFilled</b> method determines whether the arrow cap is filled.</summary>
+    <returns>If the arrow cap is filled, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="AdjustableArrowCap.SetFillState">
+    <summary>The <b>AdjustableArrowCap.SetFillState</b> method sets the fill state of the arrow cap. If the arrow cap is not filled, only the outline is drawn.</summary>
+    <param name="isFilled">Boolean value that specifies whether the arrow cap is filled.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="AdjustableArrowCap.SetHeight">
+    <summary>The <b>AdjustableArrowCap.SetHeight</b> method sets the height of the arrow cap. This is the distance from the base of the arrow to its vertex.</summary>
+    <param name="height">Real number that specifies the height, in units, for the arrow cap.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="AdjustableArrowCap.SetMiddleInset">
+    <summary>The <b>AdjustableArrowCap.SetMiddleInset</b> method sets the number of units that the midpoint of the base shifts towards the vertex.</summary>
+    <param name="middleInset">Real number that specifies the number of units that the midpoint of the base shifts towards the vertex.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="AdjustableArrowCap.SetWidth">
+    <summary>The <b>AdjustableArrowCap.SetWidth</b> method sets the width of the arrow cap. The width is the distance between the endpoints of the base of the arrow.</summary>
+    <param name="width">Real number that specifies the distance, in units, between the two corners of the base of the arrow.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+</doc>

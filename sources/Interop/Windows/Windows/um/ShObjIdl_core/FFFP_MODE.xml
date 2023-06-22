@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FFFP_MODE">
-    <summary>
-      <para>Describes match criteria. Used by methods of the <see cref="IKnownFolderManager" /> interface.</para>
-    </summary>
+    <summary>Describes match criteria. Used by methods of the <see cref="IKnownFolderManager" /> interface.</summary>
   </member>
   <member name="FFFP_MODE.FFFP_EXACTMATCH">
-    <summary>
-      <para>Exact match.</para>
-    </summary>
+    <summary>Exact match.</summary>
   </member>
   <member name="FFFP_MODE.FFFP_NEARESTPARENTMATCH">
-    <summary>
-      <para>Nearest parent match.</para>
-    </summary>
+    <summary>Nearest parent match.</summary>
   </member>
 </doc>

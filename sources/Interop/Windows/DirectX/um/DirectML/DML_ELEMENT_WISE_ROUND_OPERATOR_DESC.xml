@@ -9,21 +9,14 @@
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_ROUND_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input tensor to read from.</para>
-    </summary>
+    <summary>The input tensor to read from.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_ROUND_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_ROUND_OPERATOR_DESC.RoundingMode">
     <summary>
-      <para>Type: <b><see cref="DML_ROUNDING_MODE" /></b></para>
-      <para>A <see cref="DML_ROUNDING_MODE" /> determining the direction to round towards.</para>
+      <para>A <a href="https://microsoft.github.io/windows-docs-rs/doc/windows/win32/ai/machinelearning/directml/struct.dml_rounding_mode.html">DML_ROUNDING_MODE</a> determining the direction to round towards.</para>
       <list type="bullet">
         <item>
           <description>If <b>DML_ROUNDING_MODE_HALVES_TO_NEAREST_EVEN</b>: values are rounded to the nearest integer, with halfway values (for example, 0.5) being rounded toward the nearest even integer.</description>

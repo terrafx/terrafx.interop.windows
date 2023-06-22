@@ -3,37 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_RESOURCE_DIMENSION">
-    <summary>
-      <para>Identifies the type of resource being used.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used in <see cref="ID3D11Resource.GetType" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-enums">Resource Enumerations</seealso>
+    <summary>Identifies the type of resource being used.</summary>
   </member>
   <member name="D3D11_RESOURCE_DIMENSION.D3D11_RESOURCE_DIMENSION_UNKNOWN">
-    <summary>
-      <para>Resource is of unknown type.</para>
-    </summary>
+    <summary>Resource is of unknown type.</summary>
   </member>
   <member name="D3D11_RESOURCE_DIMENSION.D3D11_RESOURCE_DIMENSION_BUFFER">
-    <summary>
-      <para>Resource is a buffer.</para>
-    </summary>
+    <summary>Resource is a buffer.</summary>
   </member>
   <member name="D3D11_RESOURCE_DIMENSION.D3D11_RESOURCE_DIMENSION_TEXTURE1D">
-    <summary>
-      <para>Resource is a 1D texture.</para>
-    </summary>
+    <summary>Resource is a 1D texture.</summary>
   </member>
   <member name="D3D11_RESOURCE_DIMENSION.D3D11_RESOURCE_DIMENSION_TEXTURE2D">
-    <summary>
-      <para>Resource is a 2D texture.</para>
-    </summary>
+    <summary>Resource is a 2D texture.</summary>
   </member>
   <member name="D3D11_RESOURCE_DIMENSION.D3D11_RESOURCE_DIMENSION_TEXTURE3D">
-    <summary>
-      <para>Resource is a 3D texture.</para>
-    </summary>
+    <summary>Resource is a 3D texture.</summary>
   </member>
 </doc>

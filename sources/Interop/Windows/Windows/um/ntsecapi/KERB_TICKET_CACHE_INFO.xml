@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_TICKET_CACHE_INFO">
+    <summary>
+      <para>The <b>KERB_TICKET_CACHE_INFO</b> structure contains information about a cached <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> ticket. The Kerberos ticket is defined in Internet <a href="http://www.ietf.org/rfc/rfc4120.txt">RFC 4120</a>. For more information, see <a href="https://www.ietf.org/">http://www.ietf.org</a>.</para>
+      <para>It can be used both for retrieving tickets and querying the ticket cache. The<see cref="KERB_QUERY_TKT_CACHE_RESPONSE" /> structure uses this structure.</para>
+    </summary>
+  </member>
+  <member name="KERB_TICKET_CACHE_INFO.ServerName">
+    <summary>A<see cref="UNICODE_STRING" /> that contains the name of the server the ticket applies to. This name is combined with the <b>RealmName</b> value to create the full name <b>ServerName</b>@<b>RealmName</b>.</summary>
+  </member>
+  <member name="KERB_TICKET_CACHE_INFO.RealmName">
+    <summary>A <see cref="UNICODE_STRING" /> that contains the name of the realm the ticket applies to.</summary>
+  </member>
+  <member name="KERB_TICKET_CACHE_INFO.StartTime">
+    <summary>A <see cref="FILETIME" /> structure that contains the time at which the ticket becomes valid. If the <b>starttime</b> member of the ticket is not set, this value defaults to the time when the ticket was initially authenticated, <b>authtime</b>. The <b>starttime</b> member of a ticket is optional.</summary>
+  </member>
+  <member name="KERB_TICKET_CACHE_INFO.EndTime">
+    <summary>A <see cref="FILETIME" /> structure that contains the time when the ticket expires.</summary>
+  </member>
+  <member name="KERB_TICKET_CACHE_INFO.RenewTime">
+    <summary>If KERB_TICKET_FLAGS_renewable is set in <b>TicketFlags</b>, this member is a <see cref="FILETIME" /> structure that contains the time beyond which the ticket cannot be renewed.</summary>
+  </member>
+  <member name="KERB_TICKET_CACHE_INFO.EncryptionType">
+    <summary>The type of encryption used in the ticket.</summary>
+  </member>
+  <member name="KERB_TICKET_CACHE_INFO.TicketFlags">
+    <summary>
+      <para>The ticket flags, as defined in Internet <a href="http://www.ietf.org/rfc/rfc4120.txt">RFC 4120</a>. These flags can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_forwardable</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x40000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ticket-granting server can issue a new ticket-granting ticket with a different network address based on the presented ticket.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_forwarded</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ticket has either been forwarded or was issued based on authentication that involved a forwarded ticket-granting ticket.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_hw_authent</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00100000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The protocol employed for initial authentication required the use of hardware expected to be possessed solely by the named client. The hardware authentication method is selected by the KDC and the strength of the method is not indicated.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_initial</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00400000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ticket was issued by using the Authentication Service protocol instead of being based on a ticket-granting ticket.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_invalid</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x01000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ticket is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_may_postdate</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x04000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates to the ticket-granting server that a postdated ticket can be issued based on this ticket-granting ticket.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_ok_as_delegate</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The target of the ticket is trusted by the directory service for delegation. Thus, clients may delegate their <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">credentials</a> to the server, which lets the server act as the client when talking to other services.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_postdated</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x02000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ticket has been postdated. The end-service can check the ticket's <b>authtime</b> member to see when the original authentication occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_pre_authent</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00200000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>During initial authentication, the client was authenticated by the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Key Distribution Center</a> (KDC) before a ticket was issued. The strength of the preauthentication method is not indicated, but is acceptable to the KDC.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_proxiable</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates to the ticket-granting server that only nonticket-granting tickets can be issued based on this ticket but with a different network addresses.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_proxy</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x08000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ticket is a proxy.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_renewable</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00800000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ticket is renewable. If this flag is set, the time limit for renewing the ticket is set in <b>RenewTime</b>. A renewable ticket can be used to obtain a replacement ticket that expires at a later date.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_reserved</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x80000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved for future use. Do not set this flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_TICKET_FLAGS_reserved1</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+</doc>

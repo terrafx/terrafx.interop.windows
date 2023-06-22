@@ -3,40 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWM_THUMBNAIL_PROPERTIES">
-    <summary>
-      <para>Specifies Desktop Window Manager (DWM) thumbnail properties. Used by the <see cref="DwmUpdateThumbnailProperties" /> function.</para>
-    </summary>
+    <summary>Specifies Desktop Window Manager (DWM) thumbnail properties. Used by the <see cref="DwmUpdateThumbnailProperties" /> function.</summary>
   </member>
   <member name="DWM_THUMBNAIL_PROPERTIES.dwFlags">
-    <summary>
-      <para>A bitwise combination of <a href="https://docs.microsoft.com//windows/desktop/dwm/dwm-tnp-constants">DWM thumbnail constant</a> values that indicates which members of this structure are set.</para>
-    </summary>
+    <summary>A bitwise combination of <a href="https://docs.microsoft.com//windows/desktop/dwm/dwm-tnp-constants">DWM thumbnail constant</a> values that indicates which members of this structure are set.</summary>
   </member>
   <member name="DWM_THUMBNAIL_PROPERTIES.rcDestination">
-    <summary>
-      <para>The area in the destination window where the thumbnail will be rendered.</para>
-    </summary>
+    <summary>The area in the destination window where the thumbnail will be rendered.</summary>
   </member>
   <member name="DWM_THUMBNAIL_PROPERTIES.rcSource">
-    <summary>
-      <para>The region of the source window to use as the thumbnail. By default, the entire window is used as the thumbnail.</para>
-    </summary>
+    <summary>The region of the source window to use as the thumbnail. By default, the entire window is used as the thumbnail.</summary>
   </member>
   <member name="DWM_THUMBNAIL_PROPERTIES.opacity">
-    <summary>
-      <para>The opacity with which to render the thumbnail. 0 is fully transparent while 255 is fully opaque. The default value is 255.</para>
-    </summary>
+    <summary>The opacity with which to render the thumbnail. 0 is fully transparent while 255 is fully opaque. The default value is 255.</summary>
   </member>
   <member name="DWM_THUMBNAIL_PROPERTIES.fVisible">
     <summary>
-      <para>
-        <b>TRUE</b> to make the thumbnail visible; otherwise, <b>FALSE</b>. The default is <b>FALSE</b>.</para>
-    </summary>
+      <b>TRUE</b> to make the thumbnail visible; otherwise, <b>FALSE</b>. The default is <b>FALSE</b>.</summary>
   </member>
   <member name="DWM_THUMBNAIL_PROPERTIES.fSourceClientAreaOnly">
     <summary>
-      <para>
-        <b>TRUE</b> to use only the thumbnail source's client area; otherwise, <b>FALSE</b>. The default is <b>FALSE</b>.</para>
-    </summary>
+      <b>TRUE</b> to use only the thumbnail source's client area; otherwise, <b>FALSE</b>. The default is <b>FALSE</b>.</summary>
   </member>
 </doc>

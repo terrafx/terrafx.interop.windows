@@ -3,34 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMLVLINK">
-    <summary>
-      <para>Contains information about an <a href="https://docs.microsoft.com//windows/desktop/Controls/lvn-linkclick">LVN_LINKCLICK</a> notification code.</para>
-    </summary>
+    <summary>Contains information about an <a href="https://docs.microsoft.com//windows/desktop/Controls/lvn-linkclick">LVN_LINKCLICK</a> notification code.</summary>
   </member>
   <member name="NMLVLINK.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains basic information about the notification code.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains basic information about the notification code.</summary>
   </member>
   <member name="NMLVLINK.link">
     <summary>
-      <para>Type: <b><see cref="LITEM" /></b></para>
-      <para>
-        <see cref="LITEM" /> structure that contains information about the link that was clicked.</para>
-    </summary>
+      <see cref="LITEM" /> structure that contains information about the link that was clicked.</summary>
   </member>
   <member name="NMLVLINK.iItem">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Index of the item that contains the link.</para>
-    </summary>
+    <summary>Index of the item that contains the link.</summary>
   </member>
   <member name="NMLVLINK.iSubItem">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Subitem, if any. This member may be <b>NULL</b>. For a link in a group header, this is the group identifier, as set in <see cref="LVGROUP" />.</para>
-    </summary>
+    <summary>Subitem, if any. This member may be <b>NULL</b>. For a link in a group header, this is the group identifier, as set in <see cref="LVGROUP" />.</summary>
   </member>
 </doc>

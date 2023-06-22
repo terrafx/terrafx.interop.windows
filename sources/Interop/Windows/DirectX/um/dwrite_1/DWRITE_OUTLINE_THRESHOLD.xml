@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_OUTLINE_THRESHOLD">
-    <summary>
-      <para>The <b>DWRITE_OUTLINE_THRESHOLD</b> enumeration contains values that specify the policy used by the <see cref="IDWriteFontFace1.GetRecommendedRenderingMode" /> method to determine whether to render glyphs in outline mode.</para>
-    </summary>
-    <remarks>
-      <para>Glyphs are rendered in outline mode by default at large sizes for performance reasons, but how large (that is, the outline threshold) depends on the quality of outline rendering. If the graphics system renders anti-aliased outlines, a relatively low threshold is used. But if the graphics system renders aliased outlines, a much higher threshold is used.</para>
-    </remarks>
-    <seealso cref="IDWriteFontFace1.GetRecommendedRenderingMode" />
+    <summary>The <b>DWRITE_OUTLINE_THRESHOLD</b> enumeration contains values that specify the policy used by the <see cref="IDWriteFontFace1.GetRecommendedRenderingMode" /> method to determine whether to render glyphs in outline mode.</summary>
   </member>
   <member name="DWRITE_OUTLINE_THRESHOLD.DWRITE_OUTLINE_THRESHOLD_ANTIALIASED">
-    <summary>
-      <para>Graphics system renders anti-aliased outlines.</para>
-    </summary>
+    <summary>Graphics system renders anti-aliased outlines.</summary>
   </member>
   <member name="DWRITE_OUTLINE_THRESHOLD.DWRITE_OUTLINE_THRESHOLD_ALIASED">
-    <summary>
-      <para>Graphics system renders aliased outlines.</para>
-    </summary>
+    <summary>Graphics system renders aliased outlines.</summary>
   </member>
 </doc>

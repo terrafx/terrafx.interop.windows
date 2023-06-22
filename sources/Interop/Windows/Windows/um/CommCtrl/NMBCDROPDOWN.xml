@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMBCDROPDOWN">
-    <summary>
-      <para>Contains information about a <a href="https://docs.microsoft.com//windows/desktop/Controls/bcn-dropdown">BCN_DROPDOWN</a> notification.</para>
-    </summary>
+    <summary>Contains information about a <a href="https://docs.microsoft.com//windows/desktop/Controls/bcn-dropdown">BCN_DROPDOWN</a> notification.</summary>
   </member>
   <member name="NMBCDROPDOWN.hdr">
-    <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>An <see cref="NMHDR" /> structure containing information about the notification.</para>
-    </summary>
+    <summary>An <see cref="NMHDR" /> structure containing information about the notification.</summary>
   </member>
   <member name="NMBCDROPDOWN.rcButton">
-    <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>A <see cref="RECT" /> structure that contains the client area of the button.</para>
-    </summary>
+    <summary>A <see cref="RECT" /> structure that contains the client area of the button.</summary>
   </member>
 </doc>

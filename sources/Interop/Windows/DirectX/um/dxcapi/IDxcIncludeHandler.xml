@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcIncludeHandler.LoadSource">
+    <summary>Load a source file to be included by the compiler.</summary>
+    <param name="pFilename">The candidate file name.</param>
+    <param name="ppIncludeSource">The resultant source object for the included file; or <code>nullptr</code> if not found.</param>
+  </member>
+  <member name="IDxcIncludeHandler">
+    <summary>
+      <para>Interface for handling include directives. To customize the handling of include directives, you can provide an implementation of this interface.</para>
+      <para>To create a default implementation that reads include files from the filesystem, call <see cref="IDxcUtils.CreateDefaultIncludeHandler" />.</para>
+    </summary>
+  </member>
+</doc>

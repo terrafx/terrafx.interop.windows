@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_HASH_MESSAGE_PARA">
-    <summary>
-      <para>The <b>CRYPT_HASH_MESSAGE_PARA</b> structure contains data for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hashing</a> messages.</para>
-    </summary>
-    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
-    <seealso cref="CryptHashMessage" />
-    <seealso cref="CryptVerifyDetachedMessageHash" />
-    <seealso cref="CryptVerifyMessageHash" />
+    <summary>The <b>CRYPT_HASH_MESSAGE_PARA</b> structure contains data for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hashing</a> messages.</summary>
   </member>
   <member name="CRYPT_HASH_MESSAGE_PARA.cbSize">
-    <summary>
-      <para>Size of this structure in bytes.</para>
-    </summary>
+    <summary>Size of this structure in bytes.</summary>
   </member>
   <member name="CRYPT_HASH_MESSAGE_PARA.dwMsgEncodingType">
     <summary>
@@ -41,13 +33,9 @@
   </member>
   <member name="CRYPT_HASH_MESSAGE_PARA.HashAlgorithm">
     <summary>
-      <para>
-        <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> containing the algorithm for generating the hash of the message.</para>
-    </summary>
+      <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> containing the algorithm for generating the hash of the message.</summary>
   </member>
   <member name="CRYPT_HASH_MESSAGE_PARA.pvHashAuxInfo">
-    <summary>
-      <para>Not currently used, and must be set to <b>NULL</b>.</para>
-    </summary>
+    <summary>Not currently used, and must be set to <b>NULL</b>.</summary>
   </member>
 </doc>

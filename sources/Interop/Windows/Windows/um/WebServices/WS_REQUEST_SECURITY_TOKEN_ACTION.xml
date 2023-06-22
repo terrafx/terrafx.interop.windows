@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_REQUEST_SECURITY_TOKEN_ACTION">
-    <summary>
-      <para>Defines which set of actions to use when negotiating security tokens using WS-Trust.</para>
-    </summary>
+    <summary>Defines which set of actions to use when negotiating security tokens using WS-Trust.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_ACTION.WS_REQUEST_SECURITY_TOKEN_ACTION_ISSUE">
-    <summary>
-      <para>Use the "request" action defined in WS-Trust.</para>
-    </summary>
+    <summary>Use the "request" action defined in WS-Trust.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_ACTION.WS_REQUEST_SECURITY_TOKEN_ACTION_NEW_CONTEXT">
-    <summary>
-      <para>Use the "request" action defined in WS-SecureConversation.</para>
-    </summary>
+    <summary>Use the "request" action defined in WS-SecureConversation.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_ACTION.WS_REQUEST_SECURITY_TOKEN_ACTION_RENEW_CONTEXT">
-    <summary>
-      <para>Use the "renew" action defined in WS-SecureConversation. Requires <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_EXISTING_TOKEN" />.</para>
-    </summary>
+    <summary>Use the "renew" action defined in WS-SecureConversation. Requires <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_EXISTING_TOKEN" />.</summary>
   </member>
 </doc>

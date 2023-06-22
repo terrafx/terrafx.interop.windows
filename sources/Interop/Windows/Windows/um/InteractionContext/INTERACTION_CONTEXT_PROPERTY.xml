@@ -3,31 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INTERACTION_CONTEXT_PROPERTY">
-    <summary>
-      <para>Specifies properties of the  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getpropertyinteractioncontext">GetPropertyInteractionContext</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setpropertyinteractioncontext">SetPropertyInteractionContext</seealso>
+    <summary>Specifies properties of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_PROPERTY.INTERACTION_CONTEXT_PROPERTY_MEASUREMENT_UNITS">
-    <summary>
-      <para>Measurement units used by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object: himetric (0.01mm) or screen pixels.</para>
-    </summary>
+    <summary>Measurement units used by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object: himetric (0.01mm) or screen pixels.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_PROPERTY.INTERACTION_CONTEXT_PROPERTY_INTERACTION_UI_FEEDBACK">
-    <summary>
-      <para>UI feedback is provided.</para>
-    </summary>
+    <summary>UI feedback is provided.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_PROPERTY.INTERACTION_CONTEXT_PROPERTY_FILTER_POINTERS">
-    <summary>
-      <para>Pointer filtering is active.</para>
-    </summary>
+    <summary>Pointer filtering is active.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_PROPERTY.INTERACTION_CONTEXT_PROPERTY_MAX">
-    <summary>
-      <para>Maximum number of interactions exceeded.</para>
-    </summary>
+    <summary>Maximum number of interactions exceeded.</summary>
   </member>
 </doc>

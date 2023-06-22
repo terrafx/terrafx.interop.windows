@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HANDLE_SHARING_OPTIONS">
+    <summary>Defines the requested sharing mode of the file handle.</summary>
+  </member>
+  <member name="HANDLE_SHARING_OPTIONS.HSO_SHARE_NONE">
+    <summary>Prevents other processes from opening a file if they request delete, read, or write access.</summary>
+  </member>
+  <member name="HANDLE_SHARING_OPTIONS.HSO_SHARE_READ">
+    <summary>Enables subsequent open operations on a file to request read access. Otherwise, other processes cannot open the file if they request read access.</summary>
+  </member>
+  <member name="HANDLE_SHARING_OPTIONS.HSO_SHARE_WRITE">
+    <summary>Enables subsequent open operations on a file to request write access. Otherwise, other processes cannot open the file if they request write access.</summary>
+  </member>
+  <member name="HANDLE_SHARING_OPTIONS.HSO_SHARE_DELETE">
+    <summary>Enables subsequent open operations on a file to request delete access. Otherwise, other processes cannot open the file if they request delete access.</summary>
+  </member>
+</doc>

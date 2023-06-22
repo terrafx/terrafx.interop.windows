@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BitmapDescription">
+    <summary>Represents information about the bitmap stored in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/nn-xamlom-ibitmapdata">IBitmapData</a>.</summary>
+  </member>
+  <member name="BitmapDescription.Width">
+    <summary>The width of the bitmap.</summary>
+  </member>
+  <member name="BitmapDescription.Height">
+    <summary>The height of the bitmap.</summary>
+  </member>
+  <member name="BitmapDescription.Format">
+    <summary>The format of the bitmap.</summary>
+  </member>
+  <member name="BitmapDescription.AlphaMode">
+    <summary>The alpha mode of the bitmap.</summary>
+  </member>
+</doc>

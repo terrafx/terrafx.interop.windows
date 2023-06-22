@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="interop.Int64FromLuid">
+    <summary>Converts from a LUID to a 64-bit signed integer.</summary>
+    <param name="Luid">The LUID to convert.</param>
+    <returns>The LUID converted to a 64-bit signed integer.</returns>
+  </member>
+  <member name="interop.LuidFromInt64">
+    <summary>Converts from a 64-bit signed integer to a LUID.</summary>
+    <param name="Int64">The 64-bit signed integer to convert.</param>
+    <returns>The 64-bit signed integer converted to a LUID.</returns>
+  </member>
+</doc>

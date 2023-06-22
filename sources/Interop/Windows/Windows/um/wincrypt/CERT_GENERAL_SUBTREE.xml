@@ -3,30 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_GENERAL_SUBTREE">
-    <summary>
-      <para>The <b>CERT_GENERAL_SUBTREE</b> structure is used in
-<see cref="CERT_NAME_CONSTRAINTS_INFO" /> structure. This structure provides the identity of a certificate that can be included or excluded.</para>
-    </summary>
+    <summary>The <b>CERT_GENERAL_SUBTREE</b> structure is used in<see cref="CERT_NAME_CONSTRAINTS_INFO" /> structure. This structure provides the identity of a certificate that can be included or excluded.</summary>
   </member>
   <member name="CERT_GENERAL_SUBTREE.Base">
     <summary>
-      <para>
-        <see cref="CERT_ALT_NAME_ENTRY" /> containing a base name identifier of a certificate.</para>
-    </summary>
+      <see cref="CERT_ALT_NAME_ENTRY" /> containing a base name identifier of a certificate.</summary>
   </member>
   <member name="CERT_GENERAL_SUBTREE.dwMinimum">
-    <summary>
-      <para>Currently not used.</para>
-    </summary>
+    <summary>Currently not used.</summary>
   </member>
   <member name="CERT_GENERAL_SUBTREE.fMaximum">
-    <summary>
-      <para>Currently not used.</para>
-    </summary>
+    <summary>Currently not used.</summary>
   </member>
   <member name="CERT_GENERAL_SUBTREE.dwMaximum">
-    <summary>
-      <para>Currently not used.</para>
-    </summary>
+    <summary>Currently not used.</summary>
   </member>
 </doc>

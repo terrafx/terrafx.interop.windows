@@ -3,32 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIDIOUTCAPS">
-    <summary>
-      <para>The <b>MIDIOUTCAPS</b> structure describes the capabilities of a MIDI output device.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/midi-structures">MIDI Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/musical-instrument-digital-interface--midi">Musical Instrument Digital Interface (MIDI)</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/dd798487(v=vs.85)">midiStreamOut</seealso>
+    <summary>The <b>MIDIOUTCAPS</b> structure describes the capabilities of a MIDI output device.</summary>
   </member>
   <member name="MIDIOUTCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier of the device driver for the MIDI output device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier of the device driver for the MIDI output device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIOUTCAPS.wPid">
-    <summary>
-      <para>Product identifier of the MIDI output device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Product identifier of the MIDI output device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIOUTCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the MIDI output device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the MIDI output device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="MIDIOUTCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="MIDIOUTCAPS.wTechnology">
     <summary>
@@ -38,79 +25,101 @@
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MOD_MIDIPORT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_MIDIPORT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>MIDI hardware port.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>MIDI hardware port.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_SYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MOD_SYNTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_SQSYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Square wave synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Synthesizer.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_FMSYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>FM synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MOD_SQSYNTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_MAPPER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Microsoft MIDI mapper.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Square wave synthesizer.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_WAVETABLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Hardware wavetable synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MOD_FMSYNTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_SWSYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>FM synthesizer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MOD_MAPPER</b>
-          </description>
-          <description>
-            <para>Microsoft MIDI mapper.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MOD_WAVETABLE</b>
-          </description>
-          <description>
-            <para>Hardware wavetable synthesizer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MOD_SWSYNTH</b>
-          </description>
-          <description>
-            <para>Software synthesizer.</para>
-          </description>
-        </item>
+          <description>Software synthesizer.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MIDIOUTCAPS.wVoices">
-    <summary>
-      <para>Number of voices supported by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</para>
-    </summary>
+    <summary>Number of voices supported by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</summary>
   </member>
   <member name="MIDIOUTCAPS.wNotes">
-    <summary>
-      <para>Maximum number of simultaneous notes that can be played by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</para>
-    </summary>
+    <summary>Maximum number of simultaneous notes that can be played by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</summary>
   </member>
   <member name="MIDIOUTCAPS.wChannelMask">
-    <summary>
-      <para>Channels that an internal synthesizer device responds to, where the least significant bit refers to channel 0 and the most significant bit to channel 15. Port devices that transmit on all channels set this member to 0xFFFF.</para>
-    </summary>
+    <summary>Channels that an internal synthesizer device responds to, where the least significant bit refers to channel 0 and the most significant bit to channel 15. Port devices that transmit on all channels set this member to 0xFFFF.</summary>
   </member>
   <member name="MIDIOUTCAPS.dwSupport">
     <summary>
@@ -120,75 +129,70 @@
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MIDICAPS_CACHE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_CACHE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Supports patch caching.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Supports patch caching.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_LRVOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Supports separate left and right volume control.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MIDICAPS_LRVOLUME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_STREAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Provides direct support for the <a href="https://docs.microsoft.com//previous-versions/dd798487(v=vs.85)">midiStreamOut</a> function.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Supports separate left and right volume control.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_VOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>MIDICAPS_STREAM</b>
-          </description>
-          <description>
-            <para>Provides direct support for the <a href="https://docs.microsoft.com//previous-versions/dd798487(v=vs.85)">midiStreamOut</a> function.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MIDICAPS_VOLUME</b>
-          </description>
-          <description>
-            <para>Supports volume control.</para>
-          </description>
-        </item>
-      </list>
-      <para>If a device supports volume changes, the MIDICAPS_VOLUME flag will be set for the dwSupport member. If a device supports separate volume changes on the left and right channels, both the MIDICAPS_VOLUME and the MIDICAPS_LRVOLUME flags will be set for this member.</para>
-    </summary>
+          <description>Supports volume control.</description>
+        </listheader>
+      </list> <para>If a device supports volume changes, the MIDICAPS_VOLUME flag will be set for the dwSupport member. If a device supports separate volume changes on the left and right channels, both the MIDICAPS_VOLUME and the MIDICAPS_LRVOLUME flags will be set for this member.</para></summary>
   </member>
   <member name="MIDIOUTCAPS">
-    <summary>
-      <para>The <b>MIDIOUTCAPS</b> structure describes the capabilities of a MIDI output device.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The mmeapi.h header defines MIDIOUTCAPS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/midi-structures">MIDI Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/musical-instrument-digital-interface--midi">Musical Instrument Digital Interface (MIDI)</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/dd798487(v=vs.85)">midiStreamOut</seealso>
+    <summary>The <b>MIDIOUTCAPS</b> structure describes the capabilities of a MIDI output device.</summary>
   </member>
   <member name="MIDIOUTCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier of the device driver for the MIDI output device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier of the device driver for the MIDI output device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIOUTCAPS.wPid">
-    <summary>
-      <para>Product identifier of the MIDI output device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Product identifier of the MIDI output device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIOUTCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the MIDI output device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the MIDI output device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="MIDIOUTCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="MIDIOUTCAPS.wTechnology">
     <summary>
@@ -198,79 +202,101 @@ The mmeapi.h header defines MIDIOUTCAPS as an alias which automatically selects 
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MOD_MIDIPORT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_MIDIPORT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>MIDI hardware port.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>MIDI hardware port.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_SYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MOD_SYNTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_SQSYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Square wave synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Synthesizer.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_FMSYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>FM synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MOD_SQSYNTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_MAPPER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Microsoft MIDI mapper.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Square wave synthesizer.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_WAVETABLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Hardware wavetable synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MOD_FMSYNTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_SWSYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>FM synthesizer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MOD_MAPPER</b>
-          </description>
-          <description>
-            <para>Microsoft MIDI mapper.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MOD_WAVETABLE</b>
-          </description>
-          <description>
-            <para>Hardware wavetable synthesizer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MOD_SWSYNTH</b>
-          </description>
-          <description>
-            <para>Software synthesizer.</para>
-          </description>
-        </item>
+          <description>Software synthesizer.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MIDIOUTCAPS.wVoices">
-    <summary>
-      <para>Number of voices supported by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</para>
-    </summary>
+    <summary>Number of voices supported by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</summary>
   </member>
   <member name="MIDIOUTCAPS.wNotes">
-    <summary>
-      <para>Maximum number of simultaneous notes that can be played by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</para>
-    </summary>
+    <summary>Maximum number of simultaneous notes that can be played by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</summary>
   </member>
   <member name="MIDIOUTCAPS.wChannelMask">
-    <summary>
-      <para>Channels that an internal synthesizer device responds to, where the least significant bit refers to channel 0 and the most significant bit to channel 15. Port devices that transmit on all channels set this member to 0xFFFF.</para>
-    </summary>
+    <summary>Channels that an internal synthesizer device responds to, where the least significant bit refers to channel 0 and the most significant bit to channel 15. Port devices that transmit on all channels set this member to 0xFFFF.</summary>
   </member>
   <member name="MIDIOUTCAPS.dwSupport">
     <summary>
@@ -280,75 +306,70 @@ The mmeapi.h header defines MIDIOUTCAPS as an alias which automatically selects 
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MIDICAPS_CACHE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_CACHE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Supports patch caching.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Supports patch caching.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_LRVOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Supports separate left and right volume control.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MIDICAPS_LRVOLUME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_STREAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Provides direct support for the <a href="https://docs.microsoft.com//previous-versions/dd798487(v=vs.85)">midiStreamOut</a> function.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Supports separate left and right volume control.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_VOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>MIDICAPS_STREAM</b>
-          </description>
-          <description>
-            <para>Provides direct support for the <a href="https://docs.microsoft.com//previous-versions/dd798487(v=vs.85)">midiStreamOut</a> function.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MIDICAPS_VOLUME</b>
-          </description>
-          <description>
-            <para>Supports volume control.</para>
-          </description>
-        </item>
-      </list>
-      <para>If a device supports volume changes, the MIDICAPS_VOLUME flag will be set for the dwSupport member. If a device supports separate volume changes on the left and right channels, both the MIDICAPS_VOLUME and the MIDICAPS_LRVOLUME flags will be set for this member.</para>
-    </summary>
+          <description>Supports volume control.</description>
+        </listheader>
+      </list> <para>If a device supports volume changes, the MIDICAPS_VOLUME flag will be set for the dwSupport member. If a device supports separate volume changes on the left and right channels, both the MIDICAPS_VOLUME and the MIDICAPS_LRVOLUME flags will be set for this member.</para></summary>
   </member>
   <member name="MIDIOUTCAPS">
-    <summary>
-      <para>The <b>MIDIOUTCAPS</b> structure describes the capabilities of a MIDI output device.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The mmeapi.h header defines MIDIOUTCAPS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/midi-structures">MIDI Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/musical-instrument-digital-interface--midi">Musical Instrument Digital Interface (MIDI)</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/dd798487(v=vs.85)">midiStreamOut</seealso>
+    <summary>The <b>MIDIOUTCAPS</b> structure describes the capabilities of a MIDI output device.</summary>
   </member>
   <member name="MIDIOUTCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier of the device driver for the MIDI output device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier of the device driver for the MIDI output device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIOUTCAPS.wPid">
-    <summary>
-      <para>Product identifier of the MIDI output device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Product identifier of the MIDI output device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIOUTCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the MIDI output device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the MIDI output device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="MIDIOUTCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="MIDIOUTCAPS.wTechnology">
     <summary>
@@ -358,79 +379,101 @@ The mmeapi.h header defines MIDIOUTCAPS as an alias which automatically selects 
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MOD_MIDIPORT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_MIDIPORT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>MIDI hardware port.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>MIDI hardware port.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_SYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MOD_SYNTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_SQSYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Square wave synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Synthesizer.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_FMSYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>FM synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MOD_SQSYNTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_MAPPER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Microsoft MIDI mapper.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Square wave synthesizer.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_WAVETABLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Hardware wavetable synthesizer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MOD_FMSYNTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MOD_SWSYNTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>FM synthesizer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MOD_MAPPER</b>
-          </description>
-          <description>
-            <para>Microsoft MIDI mapper.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MOD_WAVETABLE</b>
-          </description>
-          <description>
-            <para>Hardware wavetable synthesizer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MOD_SWSYNTH</b>
-          </description>
-          <description>
-            <para>Software synthesizer.</para>
-          </description>
-        </item>
+          <description>Software synthesizer.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MIDIOUTCAPS.wVoices">
-    <summary>
-      <para>Number of voices supported by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</para>
-    </summary>
+    <summary>Number of voices supported by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</summary>
   </member>
   <member name="MIDIOUTCAPS.wNotes">
-    <summary>
-      <para>Maximum number of simultaneous notes that can be played by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</para>
-    </summary>
+    <summary>Maximum number of simultaneous notes that can be played by an internal synthesizer device. If the device is a port, this member is not meaningful and is set to 0.</summary>
   </member>
   <member name="MIDIOUTCAPS.wChannelMask">
-    <summary>
-      <para>Channels that an internal synthesizer device responds to, where the least significant bit refers to channel 0 and the most significant bit to channel 15. Port devices that transmit on all channels set this member to 0xFFFF.</para>
-    </summary>
+    <summary>Channels that an internal synthesizer device responds to, where the least significant bit refers to channel 0 and the most significant bit to channel 15. Port devices that transmit on all channels set this member to 0xFFFF.</summary>
   </member>
   <member name="MIDIOUTCAPS.dwSupport">
     <summary>
@@ -440,40 +483,54 @@ The mmeapi.h header defines MIDIOUTCAPS as an alias which automatically selects 
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MIDICAPS_CACHE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_CACHE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Supports patch caching.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Supports patch caching.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_LRVOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Supports separate left and right volume control.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MIDICAPS_LRVOLUME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_STREAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Provides direct support for the <a href="https://docs.microsoft.com//previous-versions/dd798487(v=vs.85)">midiStreamOut</a> function.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Supports separate left and right volume control.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIDICAPS_VOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>MIDICAPS_STREAM</b>
-          </description>
-          <description>
-            <para>Provides direct support for the <a href="https://docs.microsoft.com//previous-versions/dd798487(v=vs.85)">midiStreamOut</a> function.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MIDICAPS_VOLUME</b>
-          </description>
-          <description>
-            <para>Supports volume control.</para>
-          </description>
-        </item>
-      </list>
-      <para>If a device supports volume changes, the MIDICAPS_VOLUME flag will be set for the dwSupport member. If a device supports separate volume changes on the left and right channels, both the MIDICAPS_VOLUME and the MIDICAPS_LRVOLUME flags will be set for this member.</para>
-    </summary>
+          <description>Supports volume control.</description>
+        </listheader>
+      </list> <para>If a device supports volume changes, the MIDICAPS_VOLUME flag will be set for the dwSupport member. If a device supports separate volume changes on the left and right channels, both the MIDICAPS_VOLUME and the MIDICAPS_LRVOLUME flags will be set for this member.</para></summary>
   </member>
 </doc>

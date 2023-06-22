@@ -3,57 +3,29 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_OFFLOAD_TOKEN">
-    <summary>
-      <para>Contains the token used to represent a portion of a file used in by offload read and write operations specified
-by <b>DeviceDsmAction_OffloadRead</b> or <b>DeviceDsmAction_OffloadWrite</b></para>
-      <para>actions for the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a></para>
-      <para>control code.</para>
-    </summary>
+    <summary>Contains the token used to represent a portion of a file used in by offload read and write operations specified by <b>DeviceDsmAction_OffloadRead</b> or <b>DeviceDsmAction_OffloadWrite</b>actions for the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a>control code.</summary>
   </member>
   <member name="STORAGE_OFFLOAD_TOKEN.TokenType">
     <summary>
       <para>A 32-bit unsigned integer which defines the type of <b>Token</b>.</para>
       <h4>STORAGE_OFFLOAD_TOKEN_TYPE_WELL_KNOWN (0xFFFFFFFF)</h4>
-      <para>The <b>Token</b> member uses a well-known format. The first two bytes of the
-<b>Token</b> member are a 16-bit unsigned integer that describes the region.
-The possible values are either <b>STORAGE_OFFLOAD_PATTERN_ZERO</b> or
-<b>STORAGE_OFFLOAD_PATTERN_ZERO_WITH_PROTECTION_INFO</b>.
-<b>STORAGE_OFFLOAD_PATTERN_ZERO</b> (0x0001) is a well-known token that indicates that the
-region represented has all bits set to zero.
-<b>STORAGE_OFFLOAD_PATTERN_ZERO_WITH_PROTECTION_INFO</b> is a well-known token that indicates
-that the data in the region represented has all bits set to zero and the corresponding protection information
-is valid.</para>
+      <para>The <b>Token</b> member uses a well-known format. The first two bytes of the<b>Token</b> member are a 16-bit unsigned integer that describes the region. The possible values are either <b>STORAGE_OFFLOAD_PATTERN_ZERO</b> or<b>STORAGE_OFFLOAD_PATTERN_ZERO_WITH_PROTECTION_INFO</b>.<b>STORAGE_OFFLOAD_PATTERN_ZERO</b> (0x0001) is a well-known token that indicates that the region represented has all bits set to zero.<b>STORAGE_OFFLOAD_PATTERN_ZERO_WITH_PROTECTION_INFO</b> is a well-known token that indicates that the data in the region represented has all bits set to zero and the corresponding protection information is valid.</para>
       <h4>0x00000000–0xFFFFFFFE</h4>
       <para>The <b>Token</b> member uses a vendor-specific format.</para>
     </summary>
   </member>
   <member name="STORAGE_OFFLOAD_TOKEN.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="STORAGE_OFFLOAD_TOKEN.TokenIdLength">
-    <summary>
-      <para>The length of the token data in <b>Token</b>.</para>
-    </summary>
+    <summary>The length of the token data in <b>Token</b>.</summary>
   </member>
-  <member name="STORAGE_OFFLOAD_TOKEN.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_OFFLOAD_TOKEN.DUMMYUNIONNAME.StorageOffloadZeroDataToken">
-    <summary></summary>
-  </member>
+  <member name="STORAGE_OFFLOAD_TOKEN.DUMMYUNIONNAME"></member>
+  <member name="STORAGE_OFFLOAD_TOKEN.DUMMYUNIONNAME.StorageOffloadZeroDataToken"></member>
   <member name="STORAGE_OFFLOAD_TOKEN.DUMMYUNIONNAME.StorageOffloadZeroDataToken.Reserved2">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="STORAGE_OFFLOAD_TOKEN.DUMMYUNIONNAME.Token">
-    <summary>
-      <para>If the <b>TokenType</b> member is
-<b>STORAGE_OFFLOAD_TOKEN_TYPE_WELL_KNOWN</b> then the first two bytes are a 16-bit unsigned
-integer that describes the range. Otherwise this is a vendor-specific format.</para>
-    </summary>
+    <summary>If the <b>TokenType</b> member is<b>STORAGE_OFFLOAD_TOKEN_TYPE_WELL_KNOWN</b> then the first two bytes are a 16-bit unsigned integer that describes the range. Otherwise this is a vendor-specific format.</summary>
   </member>
 </doc>

@@ -4,33 +4,23 @@
 <doc>
   <member name="AMTunerModeType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the frequency of a TV tuner (cable or antenna).</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="AMTunerModeType.AMTUNER_MODE_DEFAULT">
-    <summary>
-      <para>Indicates default tuner mode.</para>
-    </summary>
+    <summary>Indicates default tuner mode.</summary>
   </member>
   <member name="AMTunerModeType.AMTUNER_MODE_TV">
-    <summary>
-      <para>Indicates TV tuner mode.</para>
-    </summary>
+    <summary>Indicates TV tuner mode.</summary>
   </member>
   <member name="AMTunerModeType.AMTUNER_MODE_FM_RADIO">
-    <summary>
-      <para>Indicates FM radio tuner mode.</para>
-    </summary>
+    <summary>Indicates FM radio tuner mode.</summary>
   </member>
   <member name="AMTunerModeType.AMTUNER_MODE_AM_RADIO">
-    <summary>
-      <para>Indicates AM radio tuner mode.</para>
-    </summary>
+    <summary>Indicates AM radio tuner mode.</summary>
   </member>
   <member name="AMTunerModeType.AMTUNER_MODE_DSS">
-    <summary>
-      <para>Indicates Digital Satellite Service (DSS) tuner mode.</para>
-    </summary>
+    <summary>Indicates Digital Satellite Service (DSS) tuner mode.</summary>
   </member>
 </doc>

@@ -3,17 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRL_CONTEXT">
-    <summary>
-      <para>The <b>CRL_CONTEXT</b> structure contains both the encoded and decoded representations of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL). CRL contexts returned by any CryptoAPI function must be freed by calling the
-<see cref="CertFreeCRLContext" /> function.</para>
-    </summary>
-    <seealso cref="CRL_INFO" />
-    <seealso cref="CRYPT_SIGN_MESSAGE_PARA" />
-    <seealso cref="CertAddCRLContextToStore" />
-    <seealso cref="CertAddEncodedCRLToStore" />
-    <seealso cref="CertCreateCRLContext" />
-    <seealso cref="CertFreeCRLContext" />
-    <seealso cref="CertGetCRLFromStore" />
+    <summary>The <b>CRL_CONTEXT</b> structure contains both the encoded and decoded representations of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL). CRL contexts returned by any CryptoAPI function must be freed by calling the<see cref="CertFreeCRLContext" /> function.</summary>
   </member>
   <member name="CRL_CONTEXT.dwCertEncodingType">
     <summary>
@@ -31,24 +21,15 @@
     </summary>
   </member>
   <member name="CRL_CONTEXT.pbCrlEncoded">
-    <summary>
-      <para>A pointer to the encoded CRL information.</para>
-    </summary>
+    <summary>A pointer to the encoded CRL information.</summary>
   </member>
   <member name="CRL_CONTEXT.cbCrlEncoded">
-    <summary>
-      <para>The size, in bytes, of the encoded CRL information.</para>
-    </summary>
+    <summary>The size, in bytes, of the encoded CRL information.</summary>
   </member>
   <member name="CRL_CONTEXT.pCrlInfo">
-    <summary>
-      <para>A pointer to
-<see cref="CRL_INFO" /> structure containing the CRL information.</para>
-    </summary>
+    <summary>A pointer to<see cref="CRL_INFO" /> structure containing the CRL information.</summary>
   </member>
   <member name="CRL_CONTEXT.hCertStore">
-    <summary>
-      <para>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate store</a>.</para>
-    </summary>
+    <summary>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate store</a>.</summary>
   </member>
 </doc>

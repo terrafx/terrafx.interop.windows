@@ -3,55 +3,35 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXPLORER_BROWSER_OPTIONS">
-    <summary>
-      <para>These flags are used with <see cref="IExplorerBrowser.GetOptions" /> and <see cref="IExplorerBrowser.SetOptions" />.</para>
-    </summary>
+    <summary>These flags are used with <see cref="IExplorerBrowser.GetOptions" /> and <see cref="IExplorerBrowser.SetOptions" />.</summary>
   </member>
   <member name="EXPLORER_BROWSER_OPTIONS.EBO_NONE">
-    <summary>
-      <para>No options.</para>
-    </summary>
+    <summary>No options.</summary>
   </member>
   <member name="EXPLORER_BROWSER_OPTIONS.EBO_NAVIGATEONCE">
-    <summary>
-      <para>Do not navigate further than the initial navigation.</para>
-    </summary>
+    <summary>Do not navigate further than the initial navigation.</summary>
   </member>
   <member name="EXPLORER_BROWSER_OPTIONS.EBO_SHOWFRAMES">
-    <summary>
-      <para>Use the following standard panes: Commands Module pane, Navigation pane, Details pane, and Preview pane. An implementer of <see cref="IExplorerPaneVisibility" /> can modify the components of the Commands Module that  are shown. For more information see, <see cref="IExplorerPaneVisibility.GetPaneState" />. If EBO_SHOWFRAMES is not set, Explorer browser uses a single view object.</para>
-    </summary>
+    <summary>Use the following standard panes: Commands Module pane, Navigation pane, Details pane, and Preview pane. An implementer of <see cref="IExplorerPaneVisibility" /> can modify the components of the Commands Module that are shown. For more information see, <see cref="IExplorerPaneVisibility.GetPaneState" />. If EBO_SHOWFRAMES is not set, Explorer browser uses a single view object.</summary>
   </member>
   <member name="EXPLORER_BROWSER_OPTIONS.EBO_ALWAYSNAVIGATE">
-    <summary>
-      <para>Always navigate, even if you are attempting to navigate to the current folder.</para>
-    </summary>
+    <summary>Always navigate, even if you are attempting to navigate to the current folder.</summary>
   </member>
   <member name="EXPLORER_BROWSER_OPTIONS.EBO_NOTRAVELLOG">
-    <summary>
-      <para>Do not update the travel log.</para>
-    </summary>
+    <summary>Do not update the travel log.</summary>
   </member>
   <member name="EXPLORER_BROWSER_OPTIONS.EBO_NOWRAPPERWINDOW">
-    <summary>
-      <para>Do not use a wrapper window. This flag is used with legacy clients that need the browser parented directly on themselves.</para>
-    </summary>
+    <summary>Do not use a wrapper window. This flag is used with legacy clients that need the browser parented directly on themselves.</summary>
   </member>
   <member name="EXPLORER_BROWSER_OPTIONS.EBO_HTMLSHAREPOINTVIEW">
-    <summary>
-      <para>Show WebView for sharepoint sites.</para>
-    </summary>
+    <summary>Show WebView for sharepoint sites.</summary>
   </member>
   <member name="EXPLORER_BROWSER_OPTIONS.EBO_NOBORDER">
     <summary>
-      <para>
-        <b>Introduced in Windows Vista</b>. Do not draw a border around the browser window.</para>
-    </summary>
+      <b>Introduced in Windows Vista</b>. Do not draw a border around the browser window.</summary>
   </member>
   <member name="EXPLORER_BROWSER_OPTIONS.EBO_NOPERSISTVIEWSTATE">
     <summary>
-      <para>
-        <b>Introduced in Windows Vista</b>. Do not persist the view state.</para>
-    </summary>
+      <b>Introduced in Windows Vista</b>. Do not persist the view state.</summary>
   </member>
 </doc>

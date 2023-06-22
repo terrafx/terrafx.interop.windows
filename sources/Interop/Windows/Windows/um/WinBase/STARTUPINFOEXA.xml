@@ -3,57 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STARTUPINFOEXA">
-    <summary>
-      <para>Specifies the window station, desktop, standard handles, and attributes for a new process. It is used with the
-<see cref="CreateProcess" /> and
-<see cref="CreateProcessAsUser" /> functions.</para>
-    </summary>
-    <remarks>
-      <para>Be sure to set the <b>cb</b> member of the <see cref="STARTUPINFO" /> structure to <code>sizeof(STARTUPINFOEX)</code>.</para>
-      <blockquote>
-        <para>[!NOTE]
-The winbase.h header defines STARTUPINFOEX as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="CreateProcess" />
-    <seealso cref="CreateProcessAsUser" />
-    <seealso cref="InitializeProcThreadAttributeList" />
+    <summary>Specifies the window station, desktop, standard handles, and attributes for a new process. It is used with the<see cref="CreateProcess" /> and<see cref="CreateProcessAsUser" /> functions.</summary>
   </member>
   <member name="STARTUPINFOEXA.StartupInfo">
-    <summary>
-      <para>A <see cref="STARTUPINFO" /> structure.</para>
-    </summary>
+    <summary>A <see cref="STARTUPINFO" /> structure.</summary>
   </member>
   <member name="STARTUPINFOEXA.lpAttributeList">
-    <summary>
-      <para>An attribute list. This list is created by the <see cref="InitializeProcThreadAttributeList" /> function.</para>
-    </summary>
+    <summary>An attribute list. This list is created by the <see cref="InitializeProcThreadAttributeList" /> function.</summary>
   </member>
   <member name="STARTUPINFOEXA">
-    <summary>
-      <para>Specifies the window station, desktop, standard handles, and attributes for a new process. It is used with the
-<see cref="CreateProcess" /> and
-<see cref="CreateProcessAsUser" /> functions.</para>
-    </summary>
-    <remarks>
-      <para>Be sure to set the <b>cb</b> member of the <see cref="STARTUPINFO" /> structure to <code>sizeof(STARTUPINFOEX)</code>.</para>
-      <blockquote>
-        <para>[!NOTE]
-The winbase.h header defines STARTUPINFOEX as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="CreateProcess" />
-    <seealso cref="CreateProcessAsUser" />
-    <seealso cref="InitializeProcThreadAttributeList" />
+    <summary>Specifies the window station, desktop, standard handles, and attributes for a new process. It is used with the<see cref="CreateProcess" /> and<see cref="CreateProcessAsUser" /> functions.</summary>
   </member>
   <member name="STARTUPINFOEXA.StartupInfo">
-    <summary>
-      <para>A <see cref="STARTUPINFO" /> structure.</para>
-    </summary>
+    <summary>A <see cref="STARTUPINFO" /> structure.</summary>
   </member>
   <member name="STARTUPINFOEXA.lpAttributeList">
-    <summary>
-      <para>An attribute list. This list is created by the <see cref="InitializeProcThreadAttributeList" /> function.</para>
-    </summary>
+    <summary>An attribute list. This list is created by the <see cref="InitializeProcThreadAttributeList" /> function.</summary>
   </member>
 </doc>

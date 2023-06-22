@@ -3,41 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_DISPLAYATTRIBUTE">
-    <summary>
-      <para>The <b>TF_DISPLAYATTRIBUTE</b> structure contains display attribute data for rendering text.</para>
-    </summary>
-    <seealso cref="TF_DA_ATTR_INFO " />
-    <seealso cref="TF_DA_COLOR " />
-    <seealso cref="TF_DA_LINESTYLE " />
+    <summary>The <b>TF_DISPLAYATTRIBUTE</b> structure contains display attribute data for rendering text.</summary>
   </member>
   <member name="TF_DISPLAYATTRIBUTE.crText">
-    <summary>
-      <para>Contains a <see cref="TF_DA_COLOR" /> structure that defines the text foreground color.</para>
-    </summary>
+    <summary>Contains a <see cref="TF_DA_COLOR" /> structure that defines the text foreground color.</summary>
   </member>
   <member name="TF_DISPLAYATTRIBUTE.crBk">
-    <summary>
-      <para>Contains a <b>TF_DA_COLOR</b> structure that defines the text background color.</para>
-    </summary>
+    <summary>Contains a <b>TF_DA_COLOR</b> structure that defines the text background color.</summary>
   </member>
   <member name="TF_DISPLAYATTRIBUTE.lsStyle">
-    <summary>
-      <para>Contains a <see cref="TF_DA_LINESTYLE" /> enumeration value that defines the underline style.</para>
-    </summary>
+    <summary>Contains a <see cref="TF_DA_LINESTYLE" /> enumeration value that defines the underline style.</summary>
   </member>
   <member name="TF_DISPLAYATTRIBUTE.fBoldLine">
-    <summary>
-      <para>A BOOL value that specifies if the underline should be bold or normal weight. If this value is nonzero, the underline should be bold. If this value is zero, the underline should be normal.</para>
-    </summary>
+    <summary>A BOOL value that specifies if the underline should be bold or normal weight. If this value is nonzero, the underline should be bold. If this value is zero, the underline should be normal.</summary>
   </member>
   <member name="TF_DISPLAYATTRIBUTE.crLine">
-    <summary>
-      <para>Contains a <b>TF_DA_COLOR</b> structure that defines the color of the underline.</para>
-    </summary>
+    <summary>Contains a <b>TF_DA_COLOR</b> structure that defines the color of the underline.</summary>
   </member>
   <member name="TF_DISPLAYATTRIBUTE.bAttr">
-    <summary>
-      <para>Contains a <see cref="TF_DA_ATTR_INFO" /> value that defines text conversion display attribute data.</para>
-    </summary>
+    <summary>Contains a <see cref="TF_DA_ATTR_INFO" /> value that defines text conversion display attribute data.</summary>
   </member>
 </doc>

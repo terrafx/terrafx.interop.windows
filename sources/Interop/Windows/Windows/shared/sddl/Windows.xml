@@ -1,0 +1,1331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.ConvertSecurityDescriptorToStringSecurityDescriptor">
+    <summary>
+      <para>The <b>ConvertSecurityDescriptorToStringSecurityDescriptor</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> to a string format. You can use the string format to store or transmit the security descriptor.</para>
+      <para>To convert the string-format security descriptor back to a valid, functional security descriptor, call the<see cref="ConvertStringSecurityDescriptorToSecurityDescriptor" /> function.</para>
+    </summary>
+    <param name="SecurityDescriptor">A pointer to the security descriptor to convert. The security descriptor can be in<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/absolute-and-self-relative-security-descriptors">absolute or self-relative format</a>.</param>
+    <param name="RequestedStringSDRevision">Specifies the revision level of the output <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityInformation">
+      <para>Specifies a combination of the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-information">SECURITY_INFORMATION</a> bit flags to indicate the components of the security descriptor to include in the output string.</para>
+      <para>The BACKUP_SECURITY_INFORMATION flag is not applicable to this function. If the BACKUP_SECURITY_INFORMATION flag is passed in, the <i>SecurityInformation</i> parameter returns TRUE with <b>null</b> string output.</para>
+    </param>
+    <param name="StringSecurityDescriptor">A pointer to a variable that receives a pointer to a <b>null</b>-terminated security descriptor string. For a description of the string format, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">Security Descriptor String Format</a>. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <param name="StringSecurityDescriptorLen">A pointer to a variable that receives the size, in <b>TCHAR</b>s, of the security descriptor string returned in the <i>StringSecurityDescriptor</i> buffer. This parameter can be <b>NULL</b> if you do not need to retrieve the size. The size represents the size of the buffer in <b>WCHAR</b>s, not the number of <b>WCHAR</b>s in the string.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor could not be found in an account lookup operation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_ACL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control list</a> (ACL) is not valid. This error is returned if the SE_DACL_PRESENT flag is set in the input security descriptor and the DACL is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSecurityDescriptorToStringSecurityDescriptorA">
+    <summary>
+      <para>The <b>ConvertSecurityDescriptorToStringSecurityDescriptor</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> to a string format. You can use the string format to store or transmit the security descriptor.</para>
+      <para>To convert the string-format security descriptor back to a valid, functional security descriptor, call the<see cref="ConvertStringSecurityDescriptorToSecurityDescriptor" /> function.</para>
+    </summary>
+    <param name="SecurityDescriptor">A pointer to the security descriptor to convert. The security descriptor can be in<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/absolute-and-self-relative-security-descriptors">absolute or self-relative format</a>.</param>
+    <param name="RequestedStringSDRevision">Specifies the revision level of the output <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityInformation">
+      <para>Specifies a combination of the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-information">SECURITY_INFORMATION</a> bit flags to indicate the components of the security descriptor to include in the output string.</para>
+      <para>The BACKUP_SECURITY_INFORMATION flag is not applicable to this function. If the BACKUP_SECURITY_INFORMATION flag is passed in, the <i>SecurityInformation</i> parameter returns TRUE with <b>null</b> string output.</para>
+    </param>
+    <param name="StringSecurityDescriptor">A pointer to a variable that receives a pointer to a <b>null</b>-terminated security descriptor string. For a description of the string format, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">Security Descriptor String Format</a>. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <param name="StringSecurityDescriptorLen">A pointer to a variable that receives the size, in <b>TCHAR</b>s, of the security descriptor string returned in the <i>StringSecurityDescriptor</i> buffer. This parameter can be <b>NULL</b> if you do not need to retrieve the size. The size represents the size of the buffer in <b>WCHAR</b>s, not the number of <b>WCHAR</b>s in the string.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor could not be found in an account lookup operation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_ACL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control list</a> (ACL) is not valid. This error is returned if the SE_DACL_PRESENT flag is set in the input security descriptor and the DACL is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSecurityDescriptorToStringSecurityDescriptorW">
+    <summary>
+      <para>The <b>ConvertSecurityDescriptorToStringSecurityDescriptor</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> to a string format. You can use the string format to store or transmit the security descriptor.</para>
+      <para>To convert the string-format security descriptor back to a valid, functional security descriptor, call the<see cref="ConvertStringSecurityDescriptorToSecurityDescriptor" /> function.</para>
+    </summary>
+    <param name="SecurityDescriptor">A pointer to the security descriptor to convert. The security descriptor can be in<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/absolute-and-self-relative-security-descriptors">absolute or self-relative format</a>.</param>
+    <param name="RequestedStringSDRevision">Specifies the revision level of the output <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityInformation">
+      <para>Specifies a combination of the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-information">SECURITY_INFORMATION</a> bit flags to indicate the components of the security descriptor to include in the output string.</para>
+      <para>The BACKUP_SECURITY_INFORMATION flag is not applicable to this function. If the BACKUP_SECURITY_INFORMATION flag is passed in, the <i>SecurityInformation</i> parameter returns TRUE with <b>null</b> string output.</para>
+    </param>
+    <param name="StringSecurityDescriptor">A pointer to a variable that receives a pointer to a <b>null</b>-terminated security descriptor string. For a description of the string format, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">Security Descriptor String Format</a>. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <param name="StringSecurityDescriptorLen">A pointer to a variable that receives the size, in <b>TCHAR</b>s, of the security descriptor string returned in the <i>StringSecurityDescriptor</i> buffer. This parameter can be <b>NULL</b> if you do not need to retrieve the size. The size represents the size of the buffer in <b>WCHAR</b>s, not the number of <b>WCHAR</b>s in the string.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor could not be found in an account lookup operation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_ACL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control list</a> (ACL) is not valid. This error is returned if the SE_DACL_PRESENT flag is set in the input security descriptor and the DACL is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSecurityDescriptorToStringSecurityDescriptor">
+    <summary>
+      <para>The <b>ConvertSecurityDescriptorToStringSecurityDescriptor</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> to a string format. You can use the string format to store or transmit the security descriptor.</para>
+      <para>To convert the string-format security descriptor back to a valid, functional security descriptor, call the<see cref="ConvertStringSecurityDescriptorToSecurityDescriptor" /> function.</para>
+    </summary>
+    <param name="SecurityDescriptor">A pointer to the security descriptor to convert. The security descriptor can be in<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/absolute-and-self-relative-security-descriptors">absolute or self-relative format</a>.</param>
+    <param name="RequestedStringSDRevision">Specifies the revision level of the output <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityInformation">
+      <para>Specifies a combination of the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-information">SECURITY_INFORMATION</a> bit flags to indicate the components of the security descriptor to include in the output string.</para>
+      <para>The BACKUP_SECURITY_INFORMATION flag is not applicable to this function. If the BACKUP_SECURITY_INFORMATION flag is passed in, the <i>SecurityInformation</i> parameter returns TRUE with <b>null</b> string output.</para>
+    </param>
+    <param name="StringSecurityDescriptor">A pointer to a variable that receives a pointer to a <b>null</b>-terminated security descriptor string. For a description of the string format, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">Security Descriptor String Format</a>. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <param name="StringSecurityDescriptorLen">A pointer to a variable that receives the size, in <b>TCHAR</b>s, of the security descriptor string returned in the <i>StringSecurityDescriptor</i> buffer. This parameter can be <b>NULL</b> if you do not need to retrieve the size. The size represents the size of the buffer in <b>WCHAR</b>s, not the number of <b>WCHAR</b>s in the string.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor could not be found in an account lookup operation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_ACL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control list</a> (ACL) is not valid. This error is returned if the SE_DACL_PRESENT flag is set in the input security descriptor and the DACL is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSecurityDescriptorToStringSecurityDescriptorA">
+    <summary>
+      <para>The <b>ConvertSecurityDescriptorToStringSecurityDescriptor</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> to a string format. You can use the string format to store or transmit the security descriptor.</para>
+      <para>To convert the string-format security descriptor back to a valid, functional security descriptor, call the<see cref="ConvertStringSecurityDescriptorToSecurityDescriptor" /> function.</para>
+    </summary>
+    <param name="SecurityDescriptor">A pointer to the security descriptor to convert. The security descriptor can be in<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/absolute-and-self-relative-security-descriptors">absolute or self-relative format</a>.</param>
+    <param name="RequestedStringSDRevision">Specifies the revision level of the output <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityInformation">
+      <para>Specifies a combination of the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-information">SECURITY_INFORMATION</a> bit flags to indicate the components of the security descriptor to include in the output string.</para>
+      <para>The BACKUP_SECURITY_INFORMATION flag is not applicable to this function. If the BACKUP_SECURITY_INFORMATION flag is passed in, the <i>SecurityInformation</i> parameter returns TRUE with <b>null</b> string output.</para>
+    </param>
+    <param name="StringSecurityDescriptor">A pointer to a variable that receives a pointer to a <b>null</b>-terminated security descriptor string. For a description of the string format, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">Security Descriptor String Format</a>. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <param name="StringSecurityDescriptorLen">A pointer to a variable that receives the size, in <b>TCHAR</b>s, of the security descriptor string returned in the <i>StringSecurityDescriptor</i> buffer. This parameter can be <b>NULL</b> if you do not need to retrieve the size. The size represents the size of the buffer in <b>WCHAR</b>s, not the number of <b>WCHAR</b>s in the string.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor could not be found in an account lookup operation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_ACL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control list</a> (ACL) is not valid. This error is returned if the SE_DACL_PRESENT flag is set in the input security descriptor and the DACL is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSecurityDescriptorToStringSecurityDescriptorW">
+    <summary>
+      <para>The <b>ConvertSecurityDescriptorToStringSecurityDescriptor</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> to a string format. You can use the string format to store or transmit the security descriptor.</para>
+      <para>To convert the string-format security descriptor back to a valid, functional security descriptor, call the<see cref="ConvertStringSecurityDescriptorToSecurityDescriptor" /> function.</para>
+    </summary>
+    <param name="SecurityDescriptor">A pointer to the security descriptor to convert. The security descriptor can be in<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/absolute-and-self-relative-security-descriptors">absolute or self-relative format</a>.</param>
+    <param name="RequestedStringSDRevision">Specifies the revision level of the output <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityInformation">
+      <para>Specifies a combination of the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-information">SECURITY_INFORMATION</a> bit flags to indicate the components of the security descriptor to include in the output string.</para>
+      <para>The BACKUP_SECURITY_INFORMATION flag is not applicable to this function. If the BACKUP_SECURITY_INFORMATION flag is passed in, the <i>SecurityInformation</i> parameter returns TRUE with <b>null</b> string output.</para>
+    </param>
+    <param name="StringSecurityDescriptor">A pointer to a variable that receives a pointer to a <b>null</b>-terminated security descriptor string. For a description of the string format, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">Security Descriptor String Format</a>. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <param name="StringSecurityDescriptorLen">A pointer to a variable that receives the size, in <b>TCHAR</b>s, of the security descriptor string returned in the <i>StringSecurityDescriptor</i> buffer. This parameter can be <b>NULL</b> if you do not need to retrieve the size. The size represents the size of the buffer in <b>WCHAR</b>s, not the number of <b>WCHAR</b>s in the string.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor could not be found in an account lookup operation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_ACL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control list</a> (ACL) is not valid. This error is returned if the SE_DACL_PRESENT flag is set in the input security descriptor and the DACL is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSidToStringSid">
+    <summary>
+      <para>The <b>ConvertSidToStringSid</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) to a string format suitable for display, storage, or transmission.</para>
+      <para>To convert the string-format SID back to a valid, functional SID, call the<see cref="ConvertStringSidToSid" /> function.</para>
+    </summary>
+    <param name="Sid">A pointer to the <see cref="SID" /> structure to be converted.</param>
+    <param name="StringSid">A pointer to a variable that receives a pointer to a null-terminated SID string. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_ENOUGH_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SID is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters contains a value that is not valid. This is most often a pointer that is not valid.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSidToStringSidA">
+    <summary>
+      <para>The <b>ConvertSidToStringSid</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) to a string format suitable for display, storage, or transmission.</para>
+      <para>To convert the string-format SID back to a valid, functional SID, call the<see cref="ConvertStringSidToSid" /> function.</para>
+    </summary>
+    <param name="Sid">A pointer to the <see cref="SID" /> structure to be converted.</param>
+    <param name="StringSid">A pointer to a variable that receives a pointer to a null-terminated SID string. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_ENOUGH_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SID is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters contains a value that is not valid. This is most often a pointer that is not valid.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSidToStringSidW">
+    <summary>
+      <para>The <b>ConvertSidToStringSid</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) to a string format suitable for display, storage, or transmission.</para>
+      <para>To convert the string-format SID back to a valid, functional SID, call the<see cref="ConvertStringSidToSid" /> function.</para>
+    </summary>
+    <param name="Sid">A pointer to the <see cref="SID" /> structure to be converted.</param>
+    <param name="StringSid">A pointer to a variable that receives a pointer to a null-terminated SID string. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_ENOUGH_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SID is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters contains a value that is not valid. This is most often a pointer that is not valid.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSidToStringSid">
+    <summary>
+      <para>The <b>ConvertSidToStringSid</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) to a string format suitable for display, storage, or transmission.</para>
+      <para>To convert the string-format SID back to a valid, functional SID, call the<see cref="ConvertStringSidToSid" /> function.</para>
+    </summary>
+    <param name="Sid">A pointer to the <see cref="SID" /> structure to be converted.</param>
+    <param name="StringSid">A pointer to a variable that receives a pointer to a null-terminated SID string. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_ENOUGH_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SID is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters contains a value that is not valid. This is most often a pointer that is not valid.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSidToStringSidA">
+    <summary>
+      <para>The <b>ConvertSidToStringSid</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) to a string format suitable for display, storage, or transmission.</para>
+      <para>To convert the string-format SID back to a valid, functional SID, call the<see cref="ConvertStringSidToSid" /> function.</para>
+    </summary>
+    <param name="Sid">A pointer to the <see cref="SID" /> structure to be converted.</param>
+    <param name="StringSid">A pointer to a variable that receives a pointer to a null-terminated SID string. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_ENOUGH_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SID is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters contains a value that is not valid. This is most often a pointer that is not valid.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertSidToStringSidW">
+    <summary>
+      <para>The <b>ConvertSidToStringSid</b> function converts a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) to a string format suitable for display, storage, or transmission.</para>
+      <para>To convert the string-format SID back to a valid, functional SID, call the<see cref="ConvertStringSidToSid" /> function.</para>
+    </summary>
+    <param name="Sid">A pointer to the <see cref="SID" /> structure to be converted.</param>
+    <param name="StringSid">A pointer to a variable that receives a pointer to a null-terminated SID string. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_ENOUGH_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SID is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters contains a value that is not valid. This is most often a pointer that is not valid.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSecurityDescriptorToSecurityDescriptor">
+    <summary>The <b>ConvertStringSecurityDescriptorToSecurityDescriptor</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> into a valid, functional security descriptor. This function retrieves a security descriptor that the<see cref="ConvertSecurityDescriptorToStringSecurityDescriptor" /> function converted to string format.</summary>
+    <param name="StringSecurityDescriptor">A pointer to a null-terminated string containing the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">string-format security descriptor</a> to convert.</param>
+    <param name="StringSDRevision">Specifies the revision level of the <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityDescriptor">A pointer to a variable that receives a pointer to the converted security descriptor. The returned security descriptor is <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">self-relative</a>. To free the returned buffer, call the<see cref="LocalFree" /> function. To convert the security descriptor to an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">absolute security descriptor</a>, use the<see cref="MakeAbsoluteSD" /> function.</param>
+    <param name="SecurityDescriptorSize">A pointer to a variable that receives the size, in bytes, of the converted security descriptor. This parameter can be NULL.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. <b>GetLastError</b> may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SDDL revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor string could not be found in an account lookup operation.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSecurityDescriptorToSecurityDescriptorA">
+    <summary>The <b>ConvertStringSecurityDescriptorToSecurityDescriptor</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> into a valid, functional security descriptor. This function retrieves a security descriptor that the<see cref="ConvertSecurityDescriptorToStringSecurityDescriptor" /> function converted to string format.</summary>
+    <param name="StringSecurityDescriptor">A pointer to a null-terminated string containing the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">string-format security descriptor</a> to convert.</param>
+    <param name="StringSDRevision">Specifies the revision level of the <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityDescriptor">A pointer to a variable that receives a pointer to the converted security descriptor. The returned security descriptor is <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">self-relative</a>. To free the returned buffer, call the<see cref="LocalFree" /> function. To convert the security descriptor to an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">absolute security descriptor</a>, use the<see cref="MakeAbsoluteSD" /> function.</param>
+    <param name="SecurityDescriptorSize">A pointer to a variable that receives the size, in bytes, of the converted security descriptor. This parameter can be NULL.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. <b>GetLastError</b> may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SDDL revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor string could not be found in an account lookup operation.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSecurityDescriptorToSecurityDescriptorW">
+    <summary>The <b>ConvertStringSecurityDescriptorToSecurityDescriptor</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> into a valid, functional security descriptor. This function retrieves a security descriptor that the<see cref="ConvertSecurityDescriptorToStringSecurityDescriptor" /> function converted to string format.</summary>
+    <param name="StringSecurityDescriptor">A pointer to a null-terminated string containing the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">string-format security descriptor</a> to convert.</param>
+    <param name="StringSDRevision">Specifies the revision level of the <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityDescriptor">A pointer to a variable that receives a pointer to the converted security descriptor. The returned security descriptor is <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">self-relative</a>. To free the returned buffer, call the<see cref="LocalFree" /> function. To convert the security descriptor to an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">absolute security descriptor</a>, use the<see cref="MakeAbsoluteSD" /> function.</param>
+    <param name="SecurityDescriptorSize">A pointer to a variable that receives the size, in bytes, of the converted security descriptor. This parameter can be NULL.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. <b>GetLastError</b> may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SDDL revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor string could not be found in an account lookup operation.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSecurityDescriptorToSecurityDescriptor">
+    <summary>The <b>ConvertStringSecurityDescriptorToSecurityDescriptor</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> into a valid, functional security descriptor. This function retrieves a security descriptor that the<see cref="ConvertSecurityDescriptorToStringSecurityDescriptor" /> function converted to string format.</summary>
+    <param name="StringSecurityDescriptor">A pointer to a null-terminated string containing the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">string-format security descriptor</a> to convert.</param>
+    <param name="StringSDRevision">Specifies the revision level of the <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityDescriptor">A pointer to a variable that receives a pointer to the converted security descriptor. The returned security descriptor is <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">self-relative</a>. To free the returned buffer, call the<see cref="LocalFree" /> function. To convert the security descriptor to an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">absolute security descriptor</a>, use the<see cref="MakeAbsoluteSD" /> function.</param>
+    <param name="SecurityDescriptorSize">A pointer to a variable that receives the size, in bytes, of the converted security descriptor. This parameter can be NULL.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. <b>GetLastError</b> may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SDDL revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor string could not be found in an account lookup operation.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSecurityDescriptorToSecurityDescriptorA">
+    <summary>The <b>ConvertStringSecurityDescriptorToSecurityDescriptor</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> into a valid, functional security descriptor. This function retrieves a security descriptor that the<see cref="ConvertSecurityDescriptorToStringSecurityDescriptor" /> function converted to string format.</summary>
+    <param name="StringSecurityDescriptor">A pointer to a null-terminated string containing the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">string-format security descriptor</a> to convert.</param>
+    <param name="StringSDRevision">Specifies the revision level of the <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityDescriptor">A pointer to a variable that receives a pointer to the converted security descriptor. The returned security descriptor is <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">self-relative</a>. To free the returned buffer, call the<see cref="LocalFree" /> function. To convert the security descriptor to an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">absolute security descriptor</a>, use the<see cref="MakeAbsoluteSD" /> function.</param>
+    <param name="SecurityDescriptorSize">A pointer to a variable that receives the size, in bytes, of the converted security descriptor. This parameter can be NULL.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. <b>GetLastError</b> may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SDDL revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor string could not be found in an account lookup operation.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSecurityDescriptorToSecurityDescriptorW">
+    <summary>The <b>ConvertStringSecurityDescriptorToSecurityDescriptor</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security descriptor</a> into a valid, functional security descriptor. This function retrieves a security descriptor that the<see cref="ConvertSecurityDescriptorToStringSecurityDescriptor" /> function converted to string format.</summary>
+    <param name="StringSecurityDescriptor">A pointer to a null-terminated string containing the<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/security-descriptor-string-format">string-format security descriptor</a> to convert.</param>
+    <param name="StringSDRevision">Specifies the revision level of the <i>StringSecurityDescriptor</i> string. Currently this value must be SDDL_REVISION_1.</param>
+    <param name="SecurityDescriptor">A pointer to a variable that receives a pointer to the converted security descriptor. The returned security descriptor is <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">self-relative</a>. To free the returned buffer, call the<see cref="LocalFree" /> function. To convert the security descriptor to an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">absolute security descriptor</a>, use the<see cref="MakeAbsoluteSD" /> function.</param>
+    <param name="SecurityDescriptorSize">A pointer to a variable that receives the size, in bytes, of the converted security descriptor. This parameter can be NULL.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. <b>GetLastError</b> may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A parameter is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_UNKNOWN_REVISION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SDDL revision level is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NONE_MAPPED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) in the input security descriptor string could not be found in an account lookup operation.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSidToSid">
+    <summary>The <b>ConvertStringSidToSid</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) into a valid, functional SID. You can use this function to retrieve a SID that the<see cref="ConvertSidToStringSid" /> function converted to string format.</summary>
+    <param name="StringSid">
+      <para>A pointer to a null-terminated string containing the string-format SID to convert.</para>
+      <para>The SID string can use either the standard S-<i>R</i>-<i>I</i>-<i>S</i>-<i>S</i>… format for SID strings, or the SID string constant format, such as "BA" for built-in administrators. For more information about SID string notation, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/sid-components">SID Components</a>.</para>
+    </param>
+    <param name="Sid">A pointer to a variable that receives a pointer to the converted SID. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid parameter.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid SID.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSidToSidA">
+    <summary>The <b>ConvertStringSidToSid</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) into a valid, functional SID. You can use this function to retrieve a SID that the<see cref="ConvertSidToStringSid" /> function converted to string format.</summary>
+    <param name="StringSid">
+      <para>A pointer to a null-terminated string containing the string-format SID to convert.</para>
+      <para>The SID string can use either the standard S-<i>R</i>-<i>I</i>-<i>S</i>-<i>S</i>… format for SID strings, or the SID string constant format, such as "BA" for built-in administrators. For more information about SID string notation, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/sid-components">SID Components</a>.</para>
+    </param>
+    <param name="Sid">A pointer to a variable that receives a pointer to the converted SID. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid parameter.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid SID.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSidToSidW">
+    <summary>The <b>ConvertStringSidToSid</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) into a valid, functional SID. You can use this function to retrieve a SID that the<see cref="ConvertSidToStringSid" /> function converted to string format.</summary>
+    <param name="StringSid">
+      <para>A pointer to a null-terminated string containing the string-format SID to convert.</para>
+      <para>The SID string can use either the standard S-<i>R</i>-<i>I</i>-<i>S</i>-<i>S</i>… format for SID strings, or the SID string constant format, such as "BA" for built-in administrators. For more information about SID string notation, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/sid-components">SID Components</a>.</para>
+    </param>
+    <param name="Sid">A pointer to a variable that receives a pointer to the converted SID. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid parameter.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid SID.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSidToSid">
+    <summary>The <b>ConvertStringSidToSid</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) into a valid, functional SID. You can use this function to retrieve a SID that the<see cref="ConvertSidToStringSid" /> function converted to string format.</summary>
+    <param name="StringSid">
+      <para>A pointer to a null-terminated string containing the string-format SID to convert.</para>
+      <para>The SID string can use either the standard S-<i>R</i>-<i>I</i>-<i>S</i>-<i>S</i>… format for SID strings, or the SID string constant format, such as "BA" for built-in administrators. For more information about SID string notation, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/sid-components">SID Components</a>.</para>
+    </param>
+    <param name="Sid">A pointer to a variable that receives a pointer to the converted SID. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid parameter.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid SID.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSidToSidA">
+    <summary>The <b>ConvertStringSidToSid</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) into a valid, functional SID. You can use this function to retrieve a SID that the<see cref="ConvertSidToStringSid" /> function converted to string format.</summary>
+    <param name="StringSid">
+      <para>A pointer to a null-terminated string containing the string-format SID to convert.</para>
+      <para>The SID string can use either the standard S-<i>R</i>-<i>I</i>-<i>S</i>-<i>S</i>… format for SID strings, or the SID string constant format, such as "BA" for built-in administrators. For more information about SID string notation, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/sid-components">SID Components</a>.</para>
+    </param>
+    <param name="Sid">A pointer to a variable that receives a pointer to the converted SID. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid parameter.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid SID.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.ConvertStringSidToSidW">
+    <summary>The <b>ConvertStringSidToSid</b> function converts a string-format <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) into a valid, functional SID. You can use this function to retrieve a SID that the<see cref="ConvertSidToStringSid" /> function converted to string format.</summary>
+    <param name="StringSid">
+      <para>A pointer to a null-terminated string containing the string-format SID to convert.</para>
+      <para>The SID string can use either the standard S-<i>R</i>-<i>I</i>-<i>S</i>-<i>S</i>… format for SID strings, or the SID string constant format, such as "BA" for built-in administrators. For more information about SID string notation, see<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/sid-components">SID Components</a>.</para>
+    </param>
+    <param name="Sid">A pointer to a variable that receives a pointer to the converted SID. To free the returned buffer, call the<see cref="LocalFree" /> function.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The <b>GetLastError</b> function may return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid parameter.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid SID.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+</doc>

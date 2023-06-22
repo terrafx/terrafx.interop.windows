@@ -3,29 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NC_ADDRESS">
-    <summary>
-      <para>Contains information that describes a network address.</para>
-    </summary>
-    <remarks>
-      <para>This structure is sent with the <see cref="NetAddr_GetAddress" /> macro.</para>
-    </remarks>
+    <summary>Contains information that describes a network address.</summary>
   </member>
   <member name="NC_ADDRESS.pAddrInfo">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/shell/hkey-type">NET_ADDRESS_INFO</a>*</b></para>
-      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/shell/hkey-type">NET_ADDRESS_INFO</a>  structure that describes the network address, either a named address or an IP address.</para>
-    </summary>
+    <summary>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/shell/hkey-type">NET_ADDRESS_INFO</a> structure that describes the network address, either a named address or an IP address.</summary>
   </member>
   <member name="NC_ADDRESS.PortNumber">
-    <summary>
-      <para>Type: <b>USHORT</b></para>
-      <para>The network port number, if the address described by <b>pAddrInfo</b> is an IP address.</para>
-    </summary>
+    <summary>The network port number, if the address described by <b>pAddrInfo</b> is an IP address.</summary>
   </member>
   <member name="NC_ADDRESS.PrefixLength">
-    <summary>
-      <para>Type: <b>BYTE</b></para>
-      <para>The prefix length corresponding to the address, if the address described by <b>pAddrInfo</b> is an IP address.</para>
-    </summary>
+    <summary>The prefix length corresponding to the address, if the address described by <b>pAddrInfo</b> is an IP address.</summary>
   </member>
 </doc>

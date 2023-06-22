@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_OBJECT_ATTRIBUTES">
+    <summary>
+      <para>The <b>LSA_OBJECT_ATTRIBUTES</b> structure is used with the<see cref="LsaOpenPolicy" /> function to specify the attributes of the connection to the <a href="https://docs.microsoft.com//windows/desktop/SecMgmt/policy-object">Policy</a> object.</para>
+      <para>When you call <see cref="LsaOpenPolicy" />, initialize the members of this structure to <b>NULL</b> or zero because the function does not use the information.</para>
+    </summary>
+  </member>
+  <member name="LSA_OBJECT_ATTRIBUTES.Length">
+    <summary>Specifies the size, in bytes, of the <b>LSA_OBJECT_ATTRIBUTES</b> structure.</summary>
+  </member>
+  <member name="LSA_OBJECT_ATTRIBUTES.RootDirectory">
+    <summary>Should be <b>NULL</b>.</summary>
+  </member>
+  <member name="LSA_OBJECT_ATTRIBUTES.ObjectName">
+    <summary>Should be <b>NULL</b>.</summary>
+  </member>
+  <member name="LSA_OBJECT_ATTRIBUTES.Attributes">
+    <summary>Should be zero.</summary>
+  </member>
+  <member name="LSA_OBJECT_ATTRIBUTES.SecurityDescriptor">
+    <summary>Should be <b>NULL</b>.</summary>
+  </member>
+  <member name="LSA_OBJECT_ATTRIBUTES.SecurityQualityOfService">
+    <summary>Should be <b>NULL</b>.</summary>
+  </member>
+</doc>

@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IProvideClassInfo.GetClassInfo">
-    <summary>
-      <para>Retrieves a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a> interface for the object's type information. The type information for an object corresponds to the object's <a href="https://msdn.microsoft.com/">coclass</a> entry in a type library.</para>
-    </summary>
-    <param name="ppTI">
-      <para>A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a> pointer variable that receives the interface pointer to the object's type information. The caller is responsible for calling <see cref="Release" /> on the returned interface pointer if this method returns successfully.</para>
-    </param>
+    <summary>Retrieves a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a> interface for the object's type information. The type information for an object corresponds to the object's <a href="https://msdn.microsoft.com/">coclass</a> entry in a type library.</summary>
+    <param name="ppTI">A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a> pointer variable that receives the interface pointer to the object's type information. The caller is responsible for calling <see cref="Release" /> on the returned interface pointer if this method returns successfully.</param>
     <returns>
       <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
       <list type="table">
@@ -16,40 +12,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The address in <i>ppTI</i> is not valid. For example, it may be <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The address in <i>ppTI</i> is not valid. For example, it may be <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Implementers</h3>
-      <para>This method must call <see cref="AddRef" /> before returning. If the object loads the type information from a type library, the type library itself will call <b>AddRef</b> in creating the pointer.</para>
-      <para>Because the caller cannot specify a locale identifier (LCID) when calling this method, this method must assume the neutral language, that is, LANGID_NEUTRAL, and use this value to determine what locale-specific type information to return.</para>
-      <para>This method must be implemented; E_NOTIMPL is not an acceptable return value.</para>
-    </remarks>
-    <seealso cref="IProvideClassInfo" />
   </member>
   <member name="IProvideClassInfo">
-    <summary>
-      <para>Provides access to the type information for an object's coclass entry in its type library.</para>
-    </summary>
-    <seealso href="https://msdn.microsoft.com/">coclass</seealso>
+    <summary>Provides access to the type information for an object's coclass entry in its type library.</summary>
   </member>
 </doc>

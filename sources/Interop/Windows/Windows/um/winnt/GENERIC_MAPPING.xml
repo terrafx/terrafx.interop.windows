@@ -3,34 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GENERIC_MAPPING">
-    <summary>
-      <para>The <b>GENERIC_MAPPING</b> structure defines the mapping of generic access rights to specific and standard access rights for an object. When a client application requests generic access to an object, that request is mapped to the access rights defined in this structure.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/access-mask">ACCESS_MASK</seealso>
-    <seealso cref="AccessCheck" />
-    <seealso cref="AccessCheckAndAuditAlarm" />
-    <seealso cref="CreatePrivateObjectSecurity" />
-    <seealso cref="MapGenericMask" />
-    <seealso cref="SetPrivateObjectSecurity" />
+    <summary>The <b>GENERIC_MAPPING</b> structure defines the mapping of generic access rights to specific and standard access rights for an object. When a client application requests generic access to an object, that request is mapped to the access rights defined in this structure.</summary>
   </member>
   <member name="GENERIC_MAPPING.GenericRead">
-    <summary>
-      <para>Specifies an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access mask</a> defining read access to an object.</para>
-    </summary>
+    <summary>Specifies an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access mask</a> defining read access to an object.</summary>
   </member>
   <member name="GENERIC_MAPPING.GenericWrite">
-    <summary>
-      <para>Specifies an access mask defining write access to an object.</para>
-    </summary>
+    <summary>Specifies an access mask defining write access to an object.</summary>
   </member>
   <member name="GENERIC_MAPPING.GenericExecute">
-    <summary>
-      <para>Specifies an access mask defining execute access to an object.</para>
-    </summary>
+    <summary>Specifies an access mask defining execute access to an object.</summary>
   </member>
   <member name="GENERIC_MAPPING.GenericAll">
-    <summary>
-      <para>Specifies an access mask defining all possible types of access to an object.</para>
-    </summary>
+    <summary>Specifies an access mask defining all possible types of access to an object.</summary>
   </member>
 </doc>

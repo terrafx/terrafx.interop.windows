@@ -3,365 +3,311 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IContactPropertyCollection.GetPropertyArrayElementID">
-    <summary>
-      <para>Retrieves the unique ID for a given element in a property array.</para>
-    </summary>
-    <param name="pszArrayElementID">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>On success, contains the unique ID for the element.</para>
-    </param>
-    <param name="cchArrayElementID">
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies caller-allocated buffer size in characters.</para>
-    </param>
-    <param name="pdwcchArrayElementIDRequired">
-      <para>Type: <b>DWORD*</b></para>
-      <para>On failure, contains the required size for <i>pszArrayElementID</i>.</para>
-    </param>
+    <summary>Retrieves the unique ID for a given element in a property array.</summary>
+    <param name="pszArrayElementID">On success, contains the unique ID for the element.</param>
+    <param name="cchArrayElementID">Specifies caller-allocated buffer size in characters.</param>
+    <param name="pdwcchArrayElementIDRequired">On failure, contains the required size for <i>pszArrayElementID</i>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Query is successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Array node does not have a unique array element ID.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Query is successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Array node does not have a unique array element ID.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <i>pszArrayElementID</i> was not large enough to store the value.
-The required buffer size is stored in *<i>pdwcchArrayElementIDRequired</i>.
-</description>
-        </item>
+            <i>pszArrayElementID</i> was not large enough to store the value. 					The required buffer size is stored in *<i>pdwcchArrayElementIDRequired</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  Valid only when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nf-icontact-icontactpropertycollection-getpropertytype">IContactPropertyCollection.GetPropertyType</a></para>
-      <para>returns CGD_ARRAY_NODE for the current property.</para>
-    </remarks>
   </member>
   <member name="IContactPropertyCollection.GetPropertyModificationDate">
-    <summary>
-      <para>Retrieves the last modification date for the current property in the enumeration.
-If not modified, contact creation date is returned.</para>
-    </summary>
-    <param name="pftModificationDate">
-      <para>Type: <b><see cref="FILETIME" />*</b></para>
-      <para>Specifies the last modified date as a UTC FILETIME.</para>
-    </param>
+    <summary>Retrieves the last modification date for the current property in the enumeration. If not modified, contact creation date is returned.</summary>
+    <param name="pftModificationDate">Specifies the last modified date as a UTC FILETIME.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Query is successful.</para>
-          </description>
-        </item>
+          <description>Query is successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IContactPropertyCollection.GetPropertyName">
-    <summary>
-      <para>Retrieves the name for the current property in the enumeration.</para>
-    </summary>
-    <param name="pszPropertyName">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>On success, contains the name to use for querying on <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactproperties">IContactProperties</a>.
-EX: toplevel -or- toplevel/secondlevel[4]/thirdlevel.</para>
-    </param>
-    <param name="cchPropertyName">
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies caller-allocated buffer size in characters.</para>
-    </param>
-    <param name="pdwcchPropertyNameRequired">
-      <para>Type: <b>DWORD*</b></para>
-      <para>On failure, contains the required size for <i>pszPropertyName</i>.</para>
-    </param>
+    <summary>Retrieves the name for the current property in the enumeration.</summary>
+    <param name="pszPropertyName">On success, contains the name to use for querying on <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactproperties">IContactProperties</a>. EX: toplevel -or- toplevel/secondlevel[4]/thirdlevel.</param>
+    <param name="cchPropertyName">Specifies caller-allocated buffer size in characters.</param>
+    <param name="pdwcchPropertyNameRequired">On failure, contains the required size for <i>pszPropertyName</i>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Query is successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Query is successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <i>pszPropertyName</i> was not large enough to store the value.
-The required buffer size is stored in *<i>pdwcchPropertyNameRequired</i>.
-</description>
-        </item>
+            <i>pszPropertyName</i> was not large enough to store the value. 					The required buffer size is stored in *<i>pdwcchPropertyNameRequired</i>.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IContactPropertyCollection.GetPropertyType">
-    <summary>
-      <para>Retrieves the type for the current property in the enumeration.</para>
-    </summary>
+    <summary>Retrieves the type for the current property in the enumeration.</summary>
     <param name="pdwType">
-      <para>Type: <b>DWORD*</b></para>
       <para>Specifies the type of property.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CGD_UNKNOWN_PROPERTY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
             </list>
           </description>
-          <description></description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CGD_STRING_PROPERTY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description></description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CGD_DATE_PROPERTY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description></description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CGD_BINARY_PROPERTY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description></description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CGD_ARRAY_NODE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description></description>
-        </item>
+        </listheader>
       </list>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Query is successful.</para>
-          </description>
-        </item>
+          <description>Query is successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IContactPropertyCollection.GetPropertyVersion">
-    <summary>
-      <para>Retrieves the version number for the current property in the enumeration.</para>
-    </summary>
-    <param name="pdwVersion">
-      <para>Type: <b>DWORD*</b></para>
-      <para>Specifies the version of the property.</para>
-    </param>
+    <summary>Retrieves the version number for the current property in the enumeration.</summary>
+    <param name="pdwVersion">Specifies the version of the property.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Query is successful.</para>
-          </description>
-        </item>
+          <description>Query is successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IContactPropertyCollection.Next">
-    <summary>
-      <para>Moves to the next property.</para>
-    </summary>
+    <summary>Moves to the next property.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Move is successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Move is successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Could not move, positioned at the end of the collection.</para>
-          </description>
-        </item>
+          <description>Could not move, positioned at the end of the collection.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  After S_FALSE, further calls to interface's query methods will fail.</para>
-    </remarks>
   </member>
   <member name="IContactPropertyCollection.Reset">
-    <summary>
-      <para>Resets enumeration of properties.</para>
-    </summary>
+    <summary>Resets enumeration of properties.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Reset is successful.</para>
-          </description>
-        </item>
+          <description>Reset is successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  Collection has been reset to the location before the first element (if any elements are present),
-so you must call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nf-icontact-icontactpropertycollection-next">IContactPropertyCollection.Next</a> to begin querying data.</para>
-    </remarks>
   </member>
   <member name="IContactPropertyCollection">
-    <summary>
-      <para>Do not use. Used to filter contact data, based on a label or property set. Enumerates contact properties
-exposed with an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactproperties">IContactProperties</a> object. For each property,
-the name, type, version, and modification date can be retrieved.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  Changing the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactproperties">IContactProperties</a> properties object
-while enumerating properties with this interface results in undefined behavior.</para>
-    </remarks>
+    <summary>Do not use. Used to filter contact data, based on a label or property set. Enumerates contact properties exposed with an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactproperties">IContactProperties</a> object. For each property, the name, type, version, and modification date can be retrieved.</summary>
   </member>
 </doc>

@@ -4,79 +4,61 @@
 <doc>
   <member name="CameraControlProperty">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>CameraControlProperty</code> enumeration specifies a setting on a camera.</para>
     </summary>
-    <remarks>
-      <para>For a given property, a particular device might implement only a subset of the listed range.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IAMCameraControl Interface" />
   </member>
   <member name="CameraControlProperty.CameraControl_Pan">
-    <summary>
-      <para>Specifies the camera's pan setting, in degrees. Values range from –180 to +180, with the default set to zero. Positive values are clockwise from the origin (the camera rotates clockwise when viewed from above), and negative values are counterclockwise from the origin.</para>
-    </summary>
+    <summary>Specifies the camera's pan setting, in degrees. Values range from –180 to +180, with the default set to zero. Positive values are clockwise from the origin (the camera rotates clockwise when viewed from above), and negative values are counterclockwise from the origin.</summary>
   </member>
   <member name="CameraControlProperty.CameraControl_Tilt">
-    <summary>
-      <para>Specifies the camera's tilt setting, in degrees. Values range from –180 to +180, with the default set to zero. Positive values point the imaging plane up, and negative values point the imaging plane down.</para>
-    </summary>
+    <summary>Specifies the camera's tilt setting, in degrees. Values range from –180 to +180, with the default set to zero. Positive values point the imaging plane up, and negative values point the imaging plane down.</summary>
   </member>
   <member name="CameraControlProperty.CameraControl_Roll">
-    <summary>
-      <para>Specifies the camera's roll setting, in degrees. Values range from –180 to +180, with the default set to zero. Positive values cause a clockwise rotation of the camera along the image-viewing axis, and negative values cause a counterclockwise rotation of the camera.</para>
-    </summary>
+    <summary>Specifies the camera's roll setting, in degrees. Values range from –180 to +180, with the default set to zero. Positive values cause a clockwise rotation of the camera along the image-viewing axis, and negative values cause a counterclockwise rotation of the camera.</summary>
   </member>
   <member name="CameraControlProperty.CameraControl_Zoom">
-    <summary>
-      <para>Specifies the camera's zoom setting, in millimeters. Values range from 10 to 600, and the default is specific to the device.</para>
-    </summary>
+    <summary>Specifies the camera's zoom setting, in millimeters. Values range from 10 to 600, and the default is specific to the device.</summary>
   </member>
   <member name="CameraControlProperty.CameraControl_Exposure">
     <summary>
       <para>Specifies the exposure setting, in log base 2 seconds. In other words, for values less than zero, the exposure time is 1/2^n seconds, and for values zero or above, the exposure time is 2^n seconds. For example:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Seconds
-</description>
+          <description>Value</description>
+          <description>Seconds</description>
         </listheader>
-        <item>
+        <listheader>
           <description>-3</description>
           <description>1/8</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>-2</description>
           <description>1/4</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>-1</description>
           <description>1/2</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>0</description>
           <description>1</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>1</description>
           <description>2</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>2</description>
           <description>4</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CameraControlProperty.CameraControl_Iris">
-    <summary>
-      <para>Specifies the camera's iris setting, in units of fₛₜₒₚ* 10.</para>
-    </summary>
+    <summary>Specifies the camera's iris setting, in units of fₛₜₒₚ* 10.</summary>
   </member>
   <member name="CameraControlProperty.CameraControl_Focus">
-    <summary>
-      <para>Specifies the camera's focus setting, as the distance to the optimally focused target, in millimeters. The range and default value are specific to the device.</para>
-    </summary>
+    <summary>Specifies the camera's focus setting, as the distance to the optimally focused target, in millimeters. The range and default value are specific to the device.</summary>
   </member>
 </doc>

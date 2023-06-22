@@ -3,35 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ERole">
-    <summary>
-      <para>The <b>ERole</b> enumeration defines constants that indicate the role that the system has assigned to an audio endpoint device.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="IMMDeviceEnumerator.GetDefaultAudioEndpoint" /> and <see cref="IMMNotificationClient.OnDefaultDeviceChanged" /> methods use the constants defined in the <b>ERole</b> enumeration.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles">Device Roles</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-enumerations">Core Audio Enumerations</seealso>
-    <seealso cref="IMMDeviceEnumerator.GetDefaultAudioEndpoint" />
-    <seealso cref="IMMNotificationClient.OnDefaultDeviceChanged" />
+    <summary>The <b>ERole</b> enumeration defines constants that indicate the role that the system has assigned to an audio endpoint device.</summary>
   </member>
   <member name="ERole.eConsole">
-    <summary>
-      <para>Games, system notification sounds, and voice commands.</para>
-    </summary>
+    <summary>Games, system notification sounds, and voice commands.</summary>
   </member>
   <member name="ERole.eMultimedia">
-    <summary>
-      <para>Music, movies, narration, and live music recording.</para>
-    </summary>
+    <summary>Music, movies, narration, and live music recording.</summary>
   </member>
   <member name="ERole.eCommunications">
-    <summary>
-      <para>Voice communications (talking to another person).</para>
-    </summary>
+    <summary>Voice communications (talking to another person).</summary>
   </member>
   <member name="ERole.ERole_enum_count">
-    <summary>
-      <para>The number of members in the <see cref="ERole" /> enumeration (not counting the ERole_enum_count member).</para>
-    </summary>
+    <summary>The number of members in the <see cref="ERole" /> enumeration (not counting the ERole_enum_count member).</summary>
   </member>
 </doc>

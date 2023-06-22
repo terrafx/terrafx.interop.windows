@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CharacterRange.CharacterRange">
+    <summary>Creates a <b>CharacterRange.CharacterRange</b> object and initializes the data members to the values specified.</summary>
+    <param name="first">Integer that specifies the first position of this range. For example, if<i>first</i> is set to 0, then the first position of this range is position 0 in the string.</param>
+    <param name="length">Integer that specifies the number of positions in this range.</param>
+  </member>
+  <member name="CharacterRange.CharacterRange">
+    <summary>Creates a <b>CharacterRange.CharacterRange</b> object with the data members set to zero.</summary>
+  </member>
+</doc>

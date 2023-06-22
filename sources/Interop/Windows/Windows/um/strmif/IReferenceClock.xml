@@ -4,20 +4,13 @@
 <doc>
   <member name="IReferenceClock.AdviseTime">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>AdviseTime</code> method creates a one-shot advise request.</para>
     </summary>
-    <param name="baseTime">
-      <para>Base reference time, in 100-nanosecond units. See Remarks.</para>
-    </param>
-    <param name="streamTime">
-      <para>Stream offset time, in 100-nanosecond units. See Remarks.</para>
-    </param>
-    <param name="hEvent">
-      <para>Handle to an event, created by the caller.</para>
-    </param>
-    <param name="pdwAdviseCookie">
-      <para>Pointer to a variable that receives an identifier for the advise request.</para>
-    </param>
+    <param name="baseTime">Base reference time, in 100-nanosecond units. See Remarks.</param>
+    <param name="streamTime">Stream offset time, in 100-nanosecond units. See Remarks.</param>
+    <param name="hEvent">Handle to an event, created by the caller.</param>
+    <param name="pdwAdviseCookie">Pointer to a variable that receives an identifier for the advise request.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -25,62 +18,64 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid time values.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid time values.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failure.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method creates a one-shot advise request for the reference time <i>rtBaseTime</i> + <i>rtStreamTime</i>. The sum must be greater than zero and less than MAX_TIME, or the method returns E_INVALIDARG. At the requested time, the clock signals the event specified in the <i>hEvent</i> parameter.</para>
-      <para>To cancel the notification before the time is reached, call the <see cref="Unadvise" /> method and pass the <i>pdwAdviseToken</i> value returned from this call. After the notification has occurred, the clock automatically clears it, so it is not necessary to call <b>Unadvise</b>. However, it is not an error to do so.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IReferenceClock Interface" />
   </member>
   <member name="IReferenceClock.GetTime">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetTime</code> method retrieves the current reference time.</para>
     </summary>
-    <param name="pTime">
-      <para>Pointer to a variable that receives the current time, in 100-nanosecond units.</para>
-    </param>
+    <param name="pTime">Pointer to a variable that receives the current time, in 100-nanosecond units.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -88,48 +83,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Returned time is the same as the previous value.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Returned time is the same as the previous value.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IReferenceClock Interface" />
   </member>
   <member name="IReferenceClock.Unadvise">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Unadvise</code> method removes a pending advise request.</para>
     </summary>
-    <param name="dwAdviseCookie">
-      <para>Identifier of the request to remove. Use the value returned by <see cref="IReferenceClock.AdviseTime" /> or <see cref="IReferenceClock.AdvisePeriodic" /> in the <i>pdwAdviseToken</i> parameter.</para>
-    </param>
+    <param name="dwAdviseCookie">Identifier of the request to remove. Use the value returned by <see cref="IReferenceClock.AdviseTime" /> or <see cref="IReferenceClock.AdvisePeriodic" /> in the <i>pdwAdviseToken</i> parameter.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -137,38 +136,41 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Not found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Not found.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IReferenceClock Interface" />
   </member>
   <member name="IReferenceClock">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IReferenceClock</code> interface provides the reference time for the filter graph.</para>
       <para>Filters that can act as a reference clock can expose this interface. It is also exposed by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/system-reference-clock">System Reference Clock</a>. The filter graph manager uses this interface to synchronize the filter graph. Applications can use this interface to retrieve the current reference time, or to request notification of an elapsed time.</para>
       <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-and-clocks-in-directshow">Time and Clocks in DirectShow</a>.</para>
       <para>
-        <b>Filter developers: </b>Implement this interface if you are writing a filter that generates reliable clock times. For example, audio renderers implement this interface, because audio sound boards usually contain a reference clock. Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasereferenceclock">CBaseReferenceClock</a> class to implement this interface.</para>
+        <b>Filter developers:</b>Implement this interface if you are writing a filter that generates reliable clock times. For example, audio renderers implement this interface, because audio sound boards usually contain a reference clock. Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasereferenceclock">CBaseReferenceClock</a> class to implement this interface.</para>
       <para>To increase the chances that a non-rendering filter will be selected by the Filter Graph Manager as the reference close, follow these steps:</para>
       <list type="number">
         <item>

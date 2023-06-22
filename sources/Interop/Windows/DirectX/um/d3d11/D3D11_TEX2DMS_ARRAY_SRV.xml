@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TEX2DMS_ARRAY_SRV">
-    <summary>
-      <para>Specifies the subresources from an array of multisampled 2D textures to use in a shader-resource view.</para>
-    </summary>
-    <remarks>
-      <para>This structure is one member of a shader-resource-view description (see <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" />).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Specifies the subresources from an array of multisampled 2D textures to use in a shader-resource view.</summary>
   </member>
   <member name="D3D11_TEX2DMS_ARRAY_SRV.FirstArraySlice">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The index of the first texture to use in an array of textures.</para>
-    </summary>
+    <summary>The index of the first texture to use in an array of textures.</summary>
   </member>
   <member name="D3D11_TEX2DMS_ARRAY_SRV.ArraySize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of textures to use.</para>
-    </summary>
+    <summary>Number of textures to use.</summary>
   </member>
 </doc>

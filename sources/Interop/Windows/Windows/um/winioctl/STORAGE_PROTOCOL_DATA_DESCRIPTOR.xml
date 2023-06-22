@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_PROTOCOL_DATA_DESCRIPTOR">
+    <summary>This structure is used in conjunction with <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> to return protocol-specific data from a storage device or adapter. .</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_DATA_DESCRIPTOR.Version">
+    <summary>The version of this structure.</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_DATA_DESCRIPTOR.Size">
+    <summary>The total size of the descriptor, including the space for all protocol data.</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_DATA_DESCRIPTOR.ProtocolSpecificData">
+    <summary>The protocol-specific data, of type <see cref="STORAGE_PROTOCOL_SPECIFIC_DATA" />.</summary>
+  </member>
+</doc>

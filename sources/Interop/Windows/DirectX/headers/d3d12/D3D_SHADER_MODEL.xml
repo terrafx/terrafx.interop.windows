@@ -3,36 +3,29 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D_SHADER_MODEL">
-    <summary>
-      <para>Specifies a shader model.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the <see cref="D3D12_FEATURE_DATA_SHADER_MODEL" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
+    <summary>Specifies a shader model.</summary>
   </member>
   <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_5_1">
-    <summary>
-      <para>Indicates shader model 5.1.</para>
-    </summary>
+    <summary>Indicates shader model 5.1.</summary>
   </member>
   <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_0">
-    <summary>
-      <para>Indicates shader model 6.0.</para>
-    </summary>
+    <summary>Indicates shader model 6.0. Compiling a shader model 6.0 shader requires using the DXC compiler (see <a href="https://github.com/microsoft/directxshadercompiler">DirectX Shader Compiler</a>), and is not supported by legacy <b>FXC</b>.</summary>
   </member>
   <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_1">
-    <summary>
-      <para>Indicates shader model 6.1.</para>
-    </summary>
+    <summary>Indicates shader model 6.1.</summary>
   </member>
-  <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_2">
-    <summary></summary>
-  </member>
-  <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_3">
-    <summary></summary>
-  </member>
+  <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_2"></member>
+  <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_3"></member>
   <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_4">
-    <summary></summary>
+    <summary>Shader model 6.4 support was added in Windows 10, Version 1903, and is required for DirectX Raytracing (DXR).</summary>
+  </member>
+  <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_5">
+    <summary>Shader model 6.5 support was added in Windows 10, Version 2004, and is required for Direct Machine Learning.</summary>
+  </member>
+  <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_6">
+    <summary>Shader model 6.6 support was added in Windows 11 and the DirectX 12 Agility SDK.</summary>
+  </member>
+  <member name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_7">
+    <summary>Shader model 6.7 support was added in the DirectX 12 Agility SDK v1.6. See <a href="https://devblogs.microsoft.com/directx/shader-model-6-7/">Agility SDK 1.606.3: Shader Model 6.7 is now publicly available!</a> on the DirectX developer blog.</summary>
   </member>
 </doc>

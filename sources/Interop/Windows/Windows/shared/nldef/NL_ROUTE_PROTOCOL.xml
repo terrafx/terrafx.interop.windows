@@ -3,107 +3,58 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NL_ROUTE_PROTOCOL">
-    <summary>
-      <para>The NL_ROUTE_PROTOCOL enumeration type defines the routing mechanism that an IP route was added with,
-as described in RFC 4292.</para>
-    </summary>
-    <remarks>
-      <para>For more information about RFC 4292, see the
-<a href="https://www.ietf.org/rfc/rfc4292.txt">IP Forwarding Table MIB</a> memo by the
-Network Working Group.</para>
-      <para>Note that the
-Nldef.h header is automatically included by the
-Netioapi.h header file. Your driver should never use the
-Nldef.h header file directly.</para>
-    </remarks>
+    <summary>The NL_ROUTE_PROTOCOL enumeration type defines the routing mechanism that an IP route was added with, as described in RFC 4292.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolOther">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolLocal">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolNetMgmt">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolIcmp">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolEgp">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolGgp">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolHello">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolRip">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolIsIs">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolEsIs">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolCisco">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolBbn">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolOspf">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolBgp">
-    <summary>
-      <para>Reserved for system use. Do not use this value in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use this value in your driver.</summary>
   </member>
-  <member name="NL_ROUTE_PROTOCOL.RouteProtocolIdpr">
-    <summary></summary>
-  </member>
-  <member name="NL_ROUTE_PROTOCOL.RouteProtocolEigrp">
-    <summary></summary>
-  </member>
-  <member name="NL_ROUTE_PROTOCOL.RouteProtocolDvmrp">
-    <summary></summary>
-  </member>
-  <member name="NL_ROUTE_PROTOCOL.RouteProtocolRpl">
-    <summary></summary>
-  </member>
+  <member name="NL_ROUTE_PROTOCOL.RouteProtocolIdpr"></member>
+  <member name="NL_ROUTE_PROTOCOL.RouteProtocolEigrp"></member>
+  <member name="NL_ROUTE_PROTOCOL.RouteProtocolDvmrp"></member>
+  <member name="NL_ROUTE_PROTOCOL.RouteProtocolRpl"></member>
   <member name="NL_ROUTE_PROTOCOL.RouteProtocolDhcp">
     <summary>
       <h4>- MIB_IPPROTO_BBN</h4>
-      <para>The Bolt, Beranek, and Newman (BBN) Interior Gateway Protocol (IGP) that used the Shortest Path
-First (SPF) algorithm. This protocol was an early dynamic routing protocol.</para>
+      <para>The Bolt, Beranek, and Newman (BBN) Interior Gateway Protocol (IGP) that used the Shortest Path First (SPF) algorithm. This protocol was an early dynamic routing protocol.</para>
       <h4>- MIB_IPPROTO_BGP</h4>
       <para>The Border Gateway Protocol (BGP), a dynamic routing protocol.</para>
       <h4>- MIB_IPPROTO_CISCO</h4>
@@ -111,38 +62,25 @@ First (SPF) algorithm. This protocol was an early dynamic routing protocol.</par
       <h4>- MIB_IPPROTO_EGP</h4>
       <para>The Exterior Gateway Protocol (EGP), a dynamic routing protocol.</para>
       <h4>- MIB_IPPROTO_ES_IS</h4>
-      <para>The End System-to-Intermediate System (ES-IS) protocol, a dynamic routing protocol. The ES-IS
-protocol was developed for use in the Open Systems Interconnection (OSI) protocol suite.</para>
+      <para>The End System-to-Intermediate System (ES-IS) protocol, a dynamic routing protocol. The ES-IS protocol was developed for use in the Open Systems Interconnection (OSI) protocol suite.</para>
       <h4>- MIB_IPPROTO_GGP</h4>
       <para>The Gateway-to-Gateway Protocol (GGP), a dynamic routing protocol.</para>
       <h4>- MIB_IPPROTO_HELLO</h4>
-      <para>The Hello protocol, a dynamic routing protocol. This value is a historical entry that is no longer
-used and was an early routing protocol that was used by the original ARPANET routers that ran special
-software call fuzzball or hellospeak, as described in RFC 891. For more information, see
-<a href="https://www.ietf.org/rfc/rfc891.txt">DCN Local-Network Protocols</a>.</para>
+      <para>The Hello protocol, a dynamic routing protocol. This value is a historical entry that is no longer used and was an early routing protocol that was used by the original ARPANET routers that ran special software call fuzzball or hellospeak, as described in RFC 891. For more information, see<a href="https://www.ietf.org/rfc/rfc891.txt">DCN Local-Network Protocols</a>.</para>
       <h4>- MIB_IPPROTO_ICMP</h4>
       <para>The result of an ICMP redirect.</para>
       <h4>- MIB_IPPROTO_IS_IS</h4>
-      <para>The Intermediate System-to-Intermediate System (IS-IS) protocol, a dynamic routing protocol. The
-IS-IS protocol was developed for use in the Open Systems Interconnection (OSI) protocol suite.</para>
+      <para>The Intermediate System-to-Intermediate System (IS-IS) protocol, a dynamic routing protocol. The IS-IS protocol was developed for use in the Open Systems Interconnection (OSI) protocol suite.</para>
       <h4>- MIB_IPPROTO_LOCAL</h4>
       <para>A local interface.</para>
       <h4>- MIB_IPPROTO_NETMGMT</h4>
-      <para>A static route. This value is used to identify route information for IP routing set through
-network management such as the Dynamic Host Configuration Protocol (DCHP) or the Simple Network
-Management Protocol (SNMP), or by calls to the
-<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff546209(v=vs.85)">CreateIpForwardEntry2</a>,
-<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff546365(v=vs.85)">DeleteIpForwardEntry2</a>, or
-<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff570773(v=vs.85)">SetIpForwardEntry2</a> functions.</para>
+      <para>A static route. This value is used to identify route information for IP routing set through network management such as the Dynamic Host Configuration Protocol (DCHP) or the Simple Network Management Protocol (SNMP), or by calls to the<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff546209(v=vs.85)">CreateIpForwardEntry2</a>,<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff546365(v=vs.85)">DeleteIpForwardEntry2</a>, or<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff570773(v=vs.85)">SetIpForwardEntry2</a> functions.</para>
       <h4>- MIB_IPPROTO_NT_AUTOSTATIC</h4>
-      <para>A Windows-specific entry that is added originally by a routing protocol, but which is now
-static.</para>
+      <para>A Windows-specific entry that is added originally by a routing protocol, but which is now static.</para>
       <h4>- MIB_IPPROTO_NT_STATIC</h4>
-      <para>A Windows-specific entry that is added as a static route from the routing user interface or a
-routing command.</para>
+      <para>A Windows-specific entry that is added as a static route from the routing user interface or a routing command.</para>
       <h4>- MIB_IPPROTO_NT_STATIC_NON_DOD</h4>
-      <para>A Windows-specific entry that is added as a static route from the routing user interface or a
-routing command, except that these routes do not cause Dial On Demand (DOD).</para>
+      <para>A Windows-specific entry that is added as a static route from the routing user interface or a routing command, except that these routes do not cause Dial On Demand (DOD).</para>
       <h4>- MIB_IPPROTO_OSPF</h4>
       <para>The Open Shortest Path First (OSPF) protocol, a dynamic routing protocol.</para>
       <h4>- MIB_IPPROTO_OTHER</h4>

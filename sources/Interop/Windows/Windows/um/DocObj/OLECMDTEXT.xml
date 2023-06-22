@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OLECMDTEXT">
-    <summary>
-      <para>Specifies a text name or status string for a single command identifier.</para>
-    </summary>
-    <seealso cref="IOleCommandTarget.QueryStatus" />
-    <seealso cref="OLECMDTEXTF" />
+    <summary>Specifies a text name or status string for a single command identifier.</summary>
   </member>
   <member name="OLECMDTEXT.cmdtextf">
-    <summary>
-      <para>A value from the <see cref="OLECMDTEXTF" /> enumeration describing whether the <b>rgwz</b> member contains a command name or status text.</para>
-    </summary>
+    <summary>A value from the <see cref="OLECMDTEXTF" /> enumeration describing whether the <b>rgwz</b> member contains a command name or status text.</summary>
   </member>
   <member name="OLECMDTEXT.cwActual">
-    <summary>
-      <para>The number of characters actually written into the <b>rgwz</b> buffer before <see cref="IOleCommandTarget.QueryStatus" /> returns.</para>
-    </summary>
+    <summary>The number of characters actually written into the <b>rgwz</b> buffer before <see cref="IOleCommandTarget.QueryStatus" /> returns.</summary>
   </member>
   <member name="OLECMDTEXT.cwBuf">
-    <summary>
-      <para>The number of elements in the <b>rgwz</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgwz</b> array.</summary>
   </member>
   <member name="OLECMDTEXT.rgwz">
-    <summary>
-      <para>A caller-allocated array of wide characters to receive the command name or status text.</para>
-    </summary>
+    <summary>A caller-allocated array of wide characters to receive the command name or status text.</summary>
   </member>
 </doc>

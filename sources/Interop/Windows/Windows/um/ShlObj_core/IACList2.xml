@@ -3,11 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IACList2.GetOptions">
-    <summary>
-      <para>Gets the current autocomplete options.</para>
-    </summary>
+    <summary>Gets the current autocomplete options.</summary>
     <param name="pdwFlag">
-      <para>Type: <b>DWORD*</b></para>
       <para>A pointer to a value that will hold the current option flag when the method returns. This can be a combination of the following values.</para>
       <h4>ACLO_CURRENTDIR</h4>
       <para>Enumerate the current working directory.</para>
@@ -24,18 +21,11 @@
       <h4>ACLO_NONE</h4>
       <para>Do not enumerate anything.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM error value otherwise.</para>
-    </returns>
-    <seealso cref="IACList2" />
+    <returns>Returns S_OK if successful, or a COM error value otherwise.</returns>
   </member>
   <member name="IACList2.SetOptions">
-    <summary>
-      <para>Sets the current autocomplete options.</para>
-    </summary>
+    <summary>Sets the current autocomplete options.</summary>
     <param name="dwFlag">
-      <para>Type: <b>DWORD</b></para>
       <para>New option flags. Use these flags to ask the client to include the names of the files and subfolders of the specified folders the next time the client's <see cref="IEnumString" /> interface is called. This parameter can contain one or more of the following flags.</para>
       <h4>ACLO_CURRENTDIR</h4>
       <para>Enumerate the current working directory.</para>
@@ -52,23 +42,9 @@
       <h4>ACLO_NONE</h4>
       <para>Do not enumerate anything.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM error value otherwise.</para>
-    </returns>
-    <seealso cref="IACList2" />
+    <returns>Returns S_OK if successful, or a COM error value otherwise.</returns>
   </member>
   <member name="IACList2">
-    <summary>
-      <para>Extends the <see cref="IACList" /> interface to enable clients of an autocomplete object to retrieve and set option flags.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IACList" /> interface from which it inherits.</para>
-      <h3>When to Implement</h3>
-      <para>
-        <see cref="Autocompletion" /> clients implement this interface to enable the autocomplete object to retrieve and set options. The options are basically a request that the client generate a list with the names of all the files and subfolders contained by one or more specified folders. The autocomplete object then calls the client's <see cref="IEnumString" /> interface to request the strings.</para>
-      <h3>When to Use</h3>
-      <para>Typically, this interface is not used directly by applications.</para>
-    </remarks>
+    <summary>Extends the <see cref="IACList" /> interface to enable clients of an autocomplete object to retrieve and set option flags.</summary>
   </member>
 </doc>

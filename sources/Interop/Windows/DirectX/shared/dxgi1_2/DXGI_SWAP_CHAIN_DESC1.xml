@@ -3,126 +3,40 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_SWAP_CHAIN_DESC1">
-    <summary>
-      <para>Describes a swap chain.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used by the <see cref="CreateSwapChainForHwnd" />,  <see cref="CreateSwapChainForCoreWindow" />, <see cref="CreateSwapChainForComposition" />, <see cref="CreateSwapChainForCompositionSurfaceHandle" />, and <see cref="GetDesc1" /> methods.</para>
-      <para>
-        <b>Note</b>  You cannot cast a
-<b>DXGI_SWAP_CHAIN_DESC1</b> to a
-<see cref="DXGI_SWAP_CHAIN_DESC" /> and vice versa. An
-application must explicitly use the
-<see cref="IDXGISwapChain1.GetDesc1" /> method to
-retrieve the newer version of the swap-chain description structure.</para>
-      <para>In full-screen mode, there is a dedicated front buffer; in windowed mode, the desktop is the front buffer.</para>
-      <para>For a <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-flip-model">flip-model</a> swap chain (that is, a swap
-chain that has the
-<see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" /></para>
-      <para>value set in the <b>SwapEffect</b> member), you must set the
-<b>Format</b> member to
-<see cref="DXGI_FORMAT_R16G16B16A16_FLOAT" />,
-<b>DXGI_FORMAT_B8G8R8A8_UNORM</b>, or
-<b>DXGI_FORMAT_R8G8B8A8_UNORM</b>; you must set the
-<b>Count</b> member of the
-<see cref="DXGI_SAMPLE_DESC" /> structure that the
-<b>SampleDesc</b> member specifies to one and the <b>Quality</b> member
-of <b>DXGI_SAMPLE_DESC</b> to zero because multiple
-sample antialiasing (MSAA) is not supported; you must set the <b>BufferCount</b> member to
-from two to sixteen. For more info about flip-model swap chain, see
-DXGI Flip Model.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
-    <seealso cref="IDXGISwapChain1.GetDesc1" />
+    <summary>Describes a swap chain.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.Width">
-    <summary>
-      <para>A value that describes the resolution width. If you specify the width as zero when you call the
-<see cref="IDXGIFactory2.CreateSwapChainForHwnd" /></para>
-      <para>method to create a swap chain, the runtime obtains the width from the output window and assigns this width value
-to the swap-chain description. You can subsequently call the
-<see cref="IDXGISwapChain1.GetDesc1" /> method to
-retrieve the assigned width value. You cannot specify the width as zero when you call the
-<see cref="IDXGIFactory2.CreateSwapChainForComposition" /></para>
-      <para>method.</para>
-    </summary>
+    <summary>A value that describes the resolution width. If you specify the width as zero when you call the<see cref="IDXGIFactory2.CreateSwapChainForHwnd" />method to create a swap chain, the runtime obtains the width from the output window and assigns this width value to the swap-chain description. You can subsequently call the<see cref="IDXGISwapChain1.GetDesc1" /> method to retrieve the assigned width value. You cannot specify the width as zero when you call the<see cref="IDXGIFactory2.CreateSwapChainForComposition" />method.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.Height">
-    <summary>
-      <para>A value that describes the resolution height. If you specify the height as zero when you call the
-<see cref="IDXGIFactory2.CreateSwapChainForHwnd" /></para>
-      <para>method to create a swap chain, the runtime obtains the height from the output window and assigns this height
-value to the swap-chain description. You can subsequently call the
-<see cref="IDXGISwapChain1.GetDesc1" /> method to
-retrieve the assigned height value. You cannot specify the height as zero when you call the
-<see cref="IDXGIFactory2.CreateSwapChainForComposition" /></para>
-      <para>method.</para>
-    </summary>
+    <summary>A value that describes the resolution height. If you specify the height as zero when you call the<see cref="IDXGIFactory2.CreateSwapChainForHwnd" />method to create a swap chain, the runtime obtains the height from the output window and assigns this height value to the swap-chain description. You can subsequently call the<see cref="IDXGISwapChain1.GetDesc1" /> method to retrieve the assigned height value. You cannot specify the height as zero when you call the<see cref="IDXGIFactory2.CreateSwapChainForComposition" />method.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.Format">
-    <summary>
-      <para>A <see cref="DXGI_FORMAT" /> structure that describes the
-display format.</para>
-    </summary>
+    <summary>A <see cref="DXGI_FORMAT" /> structure that describes the display format.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.Stereo">
-    <summary>
-      <para>Specifies whether the full-screen display mode or the swap-chain back buffer is stereo.
-<b>TRUE</b> if stereo; otherwise, <b>FALSE</b>. If you specify stereo, you
-must also specify a flip-model swap chain (that is, a swap chain that has the
-<see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" /></para>
-      <para>value set in the <b>SwapEffect</b> member).</para>
-    </summary>
+    <summary>Specifies whether the full-screen display mode or the swap-chain back buffer is stereo.<b>TRUE</b> if stereo; otherwise, <b>FALSE</b>. If you specify stereo, you must also specify a flip-model swap chain (that is, a swap chain that has the<see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" />value set in the <b>SwapEffect</b> member).</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.SampleDesc">
-    <summary>
-      <para>A <see cref="DXGI_SAMPLE_DESC" /> structure that
-describes multi-sampling parameters. This member is valid only with bit-block transfer (bitblt) model swap
-chains.</para>
-    </summary>
+    <summary>A <see cref="DXGI_SAMPLE_DESC" /> structure that describes multi-sampling parameters. This member is valid only with bit-block transfer (bitblt) model swap chains.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.BufferUsage">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-usage">DXGI_USAGE</a>-typed value that describes the
-surface usage and CPU access options for the back buffer. The back buffer can be used for shader input or
-render-target output.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-usage">DXGI_USAGE</a>-typed value that describes the surface usage and CPU access options for the back buffer. The back buffer can be used for shader input or render-target output.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.BufferCount">
-    <summary>
-      <para>A value that describes the number of buffers in the swap chain. When you create a full-screen swap chain,
-you typically include the front buffer in this value.</para>
-    </summary>
+    <summary>A value that describes the number of buffers in the swap chain. When you create a full-screen swap chain, you typically include the front buffer in this value.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.Scaling">
-    <summary>
-      <para>A <see cref="DXGI_SCALING" />-typed value that identifies
-resize behavior if the size of the back buffer is not equal to the target output.</para>
-    </summary>
+    <summary>A <see cref="DXGI_SCALING" />-typed value that identifies resize behavior if the size of the back buffer is not equal to the target output.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.SwapEffect">
-    <summary>
-      <para>A <see cref="DXGI_SWAP_EFFECT" />-typed value
-that describes the presentation model that is used by the swap chain and options for handling the contents of
-the presentation buffer after presenting a surface. You must specify the
-<see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" /></para>
-      <para>value when you call the
-<see cref="IDXGIFactory2.CreateSwapChainForComposition" /></para>
-      <para>method because this method supports only <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-flip-model">flip
-presentation model</a>.</para>
-    </summary>
+    <summary>A <see cref="DXGI_SWAP_EFFECT" />-typed value that describes the presentation model that is used by the swap chain and options for handling the contents of the presentation buffer after presenting a surface. You must specify the<see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" />value when you call the<see cref="IDXGIFactory2.CreateSwapChainForComposition" />method because this method supports only <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-flip-model">flip
+presentation model</a>.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.AlphaMode">
-    <summary>
-      <para>A <see cref="DXGI_ALPHA_MODE" />-typed value that
-identifies the transparency behavior of the swap-chain back buffer.</para>
-    </summary>
+    <summary>A <see cref="DXGI_ALPHA_MODE" />-typed value that identifies the transparency behavior of the swap-chain back buffer.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC1.Flags">
-    <summary>
-      <para>A combination of
-<see cref="DXGI_SWAP_CHAIN_FLAG" />-typed values that are
-combined by using a bitwise OR operation. The resulting value specifies options for swap-chain behavior.</para>
-    </summary>
+    <summary>A combination of<see cref="DXGI_SWAP_CHAIN_FLAG" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for swap-chain behavior.</summary>
   </member>
 </doc>

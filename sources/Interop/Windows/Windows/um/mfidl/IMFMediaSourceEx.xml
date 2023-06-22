@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaSourceEx.GetSourceAttributes">
-    <summary>
-      <para>Gets an attribute store for the media source.</para>
-    </summary>
-    <param name="ppAttributes">
-      <para>Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets an attribute store for the media source.</summary>
+    <param name="ppAttributes">Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,43 +12,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The media source does not support source-level attributes.</para>
-          </description>
-        </item>
+          <description>The media source does not support source-level attributes.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Use the <see cref="IMFAttributes" /> pointer to get or set attributes that apply to the entire source. For stream-level attributes, use the <see cref="IMFMediaSourceEx.GetStreamAttributes" /> method instead.</para>
-    </remarks>
-    <seealso cref="IMFMediaSourceEx" />
   </member>
   <member name="IMFMediaSourceEx.GetStreamAttributes">
-    <summary>
-      <para>Gets an attribute store for a stream on the media source.</para>
-    </summary>
-    <param name="dwStreamIdentifier">
-      <para>The identifier of the stream. To get the identifier, call <see cref="IMFStreamDescriptor.GetStreamIdentifier" /> on the stream descriptor.</para>
-    </param>
-    <param name="ppAttributes">
-      <para>Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets an attribute store for a stream on the media source.</summary>
+    <param name="dwStreamIdentifier">The identifier of the stream. To get the identifier, call <see cref="IMFStreamDescriptor.GetStreamIdentifier" /> on the stream descriptor.</param>
+    <param name="ppAttributes">Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -60,50 +50,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The media source does not support stream-level attributes.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The media source does not support stream-level attributes.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid stream identifier.</para>
-          </description>
-        </item>
+          <description>Invalid stream identifier.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Use the <see cref="IMFAttributes" /> pointer to get or set attributes that apply to the specified stream. For attributes that apply to the entire source, use the <see cref="IMFMediaSourceEx.GetSourceAttributes" /> method instead.</para>
-    </remarks>
-    <seealso cref="IMFMediaSourceEx" />
   </member>
   <member name="IMFMediaSourceEx.SetD3DManager">
-    <summary>
-      <para>Sets a pointer to the Microsoft DirectX Graphics Infrastructure (DXGI) Device Manager on the media source.</para>
-    </summary>
-    <param name="pManager">
-      <para>A pointer to the <see cref="IUnknown" /> interface of the DXGI Manager. The media source should query this pointer for the <see cref="IMFDXGIDeviceManager" /> interface.</para>
-    </param>
+    <summary>Sets a pointer to the Microsoft DirectX Graphics Infrastructure (DXGI) Device Manager on the media source.</summary>
+    <param name="pManager">A pointer to the <see cref="IUnknown" /> interface of the DXGI Manager. The media source should query this pointer for the <see cref="IMFDXGIDeviceManager" /> interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -111,39 +99,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The media source does not support source-level attributes.</para>
-          </description>
-        </item>
+          <description>The media source does not support source-level attributes.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMediaSourceEx" />
   </member>
   <member name="IMFMediaSourceEx">
     <summary>
       <para>Extends the <see cref="IMFMediaSource" /> interface to provide additional capabilities for a media source.</para>
       <para>To get a pointer to this interface, call <see cref="QueryInterface" /> on the media source.</para>
     </summary>
-    <remarks>
-      <para>Implementations of this interface can return <b>E_NOTIMPL</b> for any methods that are not required by the media source.</para>
-    </remarks>
-    <seealso cref="IMFMediaSource" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

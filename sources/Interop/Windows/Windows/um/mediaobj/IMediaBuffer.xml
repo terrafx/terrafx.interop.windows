@@ -4,14 +4,11 @@
 <doc>
   <member name="IMediaBuffer.GetBufferAndLength">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetBufferAndLength</code> method retrieves the buffer and the size of the valid data in the buffer.</para>
     </summary>
-    <param name="ppBuffer">
-      <para>Address of a pointer that receives the buffer array. Can be <b>NULL</b> if <i>pcbLength</i> is not <b>NULL</b>.</para>
-    </param>
-    <param name="pcbLength">
-      <para>Pointer to a variable that receives the size of the valid data, in bytes. Can be <b>NULL</b> if <i>ppBuffer</i> is not <b>NULL</b>.</para>
-    </param>
+    <param name="ppBuffer">Address of a pointer that receives the buffer array. Can be <b>NULL</b> if <i>pcbLength</i> is not <b>NULL</b>.</param>
+    <param name="pcbLength">Pointer to a variable that receives the size of the valid data, in bytes. Can be <b>NULL</b> if <i>ppBuffer</i> is not <b>NULL</b>.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -19,68 +16,54 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>NULL</b> pointer argument
-</description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Either parameter can be <b>NULL</b>, in which case it does not receive a value. At least one parameter must be non-<b>NULL</b>. If both parameters are <b>NULL</b>, the method returns E_POINTER.</para>
-      <para>The value returned in the <i>pcbLength</i> parameter is the size of the valid data in the buffer, not the buffer's allocated size. To obtain the buffer's allocated size, call the <see cref="IMediaBuffer.GetMaxLength" /> method.</para>
-    </remarks>
-    <seealso cref="IMediaBuffer Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/implementing-imediabuffer">Implementing IMediaBuffer</seealso>
   </member>
   <member name="IMediaBuffer.GetMaxLength">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetMaxLength</code> method retrieves the maximum number of bytes this buffer can hold.</para>
     </summary>
-    <param name="pcbMaxLength">
-      <para>Pointer to a variable that receives the buffer's maximum size, in bytes.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</para>
-    </returns>
-    <seealso cref="IMediaBuffer Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/implementing-imediabuffer">Implementing IMediaBuffer</seealso>
+    <param name="pcbMaxLength">Pointer to a variable that receives the buffer's maximum size, in bytes.</param>
+    <returns>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</returns>
   </member>
   <member name="IMediaBuffer.SetLength">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetLength</code> method specifies the length of the data currently in the buffer.</para>
     </summary>
-    <param name="cbLength">
-      <para>Size of the data, in bytes. The value must not exceed the buffer's maximum size. Call the <see cref="IMediaBuffer.GetMaxLength" /> method to obtain the maximum size.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</para>
-    </returns>
-    <remarks>
-      <para>This method sets the size of the valid data currently in the buffer, not the buffer's allocated size.</para>
-    </remarks>
-    <seealso cref="IMediaBuffer Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/implementing-imediabuffer">Implementing IMediaBuffer</seealso>
+    <param name="cbLength">Size of the data, in bytes. The value must not exceed the buffer's maximum size. Call the <see cref="IMediaBuffer.GetMaxLength" /> method to obtain the maximum size.</param>
+    <returns>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</returns>
   </member>
   <member name="IMediaBuffer">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IMediaBuffer</code> interface provides methods for manipulating a data buffer. Buffers passed to the <b>IMediaObject.ProcessInput</b> and <b>ProcessOutput</b> methods must implement this interface.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/implementing-imediabuffer">Implementing IMediaBuffer</seealso>
   </member>
 </doc>

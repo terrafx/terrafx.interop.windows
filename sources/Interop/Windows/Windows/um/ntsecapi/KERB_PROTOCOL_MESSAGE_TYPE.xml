@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE">
+    <summary>
+      <para>The <b>KERB_PROTOCOL_MESSAGE_TYPE</b> enumeration lists the types of messages that can be sent to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> authentication package by calling the <see cref="LsaCallAuthenticationPackage" /> function.</para>
+      <para>Each message corresponds to a dispatch routine and causes the Kerberos authentication package to perform a different task.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbDebugRequestMessage">
+    <summary>Reserved.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbQueryTicketCacheMessage">
+    <summary>This dispatch routine returns information about all of the cached tickets for the specified user <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbChangeMachinePasswordMessage">
+    <summary>This constant is reserved.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbVerifyPacMessage">
+    <summary>This constant is reserved.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbRetrieveTicketMessage">
+    <summary>This dispatch routine retrieves the ticket-granting ticket from the ticket cache of the specified user logon session.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbUpdateAddressesMessage">
+    <summary>This constant is reserved.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbPurgeTicketCacheMessage">
+    <summary>This dispatch routine allows selected tickets to be removed from the user logon session's ticket cache. It can also remove all cached tickets.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbChangePasswordMessage">
+    <summary>
+      <para>This message causes the use of Kerberos Password Change Protocol to change the user's password in a Windows domain or configured non-Windows Kerberos realm that supports this service. The caller must know the current password to change the password for an account.</para>
+      <para>When changing the password of an account in a non-Windows Kerberos realm, the local computer's registry is consulted to locate the Kerberos password service for the requested domain name.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbRetrieveEncodedTicketMessage">
+    <summary>This message retrieves the specified ticket, either from the cache, if it is already there, or by requesting it from the Kerberos key distribution center (KDC).</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbDecryptDataMessage">
+    <summary>This constant is reserved.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbAddBindingCacheEntryMessage">
+    <summary>This constant is reserved.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbSetPasswordMessage">
+    <summary>
+      <para>This message uses a modified Kerberos Password Change Protocol to change the user's password in the domain or configured non-Windows Kerberos realm that supports this service. The caller must have permission to set the password for the target account. The caller does not need to know the current password for the account.</para>
+      <para>When changing the password for an account in a non-Windows Kerberos realm, the local computer registry is used to locate the Kerberos password service for the requested domain name.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbSetPasswordExMessage">
+    <summary>This message extends <b>KerbSetPasswordMessage</b> by specifying the client name and realm.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbAddExtraCredentialsMessage">
+    <summary>This message is to add, remove, or replace an extra credential. The <b>SeTcbPrivilege</b> is required to alter another logon account's credentials.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbQueryTicketCacheExMessage">
+    <summary>This message extends <b>KerbQueryTicketCacheMessage</b> by specifying the client name and realm.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbPurgeTicketCacheExMessage">
+    <summary>This message extends <b>KerbPurgeTicketCacheMessage</b> by specifying the client name and realm.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbRefreshSmartcardCredentialsMessage">
+    <summary>This message is a request to refresh the smart card credentials.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbQuerySupplementalCredentialsMessage">
+    <summary>This constant is reserved.</summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbTransferCredentialsMessage">
+    <summary>
+      <para>The dispatch routine transfers credentials from one <see cref="LUID" /> to another <b>LUID</b>. The <b>SeTcbPrivilege</b> is required.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbQueryTicketCacheEx2Message">
+    <summary>
+      <para>The dispatch routine queries the Kerberos ticket cache for the specified logon session. The session key type and branch ID are returned in addition to the other information returned when using the <b>KerbQueryTicketCacheMessage</b> message type. The <b>SeTcbPrivilege</b> is required.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbSubmitTicketMessage">
+    <summary>
+      <para>The dispatch routine gets the tickets from the KDC and updates the ticket cache. The <b>SeTcbPrivilege</b> is required to access another logon account's ticket cache.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbAddExtraCredentialsExMessage">
+    <summary>
+      <para>The dispatch routine adds, modifies, or deletes an extra credential in one or more <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">service principal names</a> (SPNs). The <b>SeTcbPrivilege</b> is required to change extra credentials in another user's logon session.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbQueryKdcProxyCacheMessage">
+    <summary>
+      <para>This message returned information about the KDC proxy cached tickets.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbPurgeKdcProxyCacheMessage">
+    <summary>
+      <para>This message allows selected KDC proxy tickets to be removed.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbQueryTicketCacheEx3Message">
+    <summary>
+      <para>The dispatch routine queries the Kerberos ticket cache for the specified logon session. The number of tickets information is returned in addition to the other information returned when using the <b>KerbQueryTicketCacheEx2Message</b> message type. The <b>SeTcbPrivilege</b> is required.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbCleanupMachinePkinitCredsMessage">
+    <summary>
+      <para>This message is to clean up and remove any PKINIT device credentials from the computer.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbAddBindingCacheEntryExMessage">
+    <summary>
+      <para>This message is for adding a binding cache entry. The <b>SeTcbPrivilege</b> is required.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbQueryBindingCacheMessage">
+    <summary>
+      <para>This message queries the binding cache for the number of entries and their data.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbPurgeBindingCacheMessage">
+    <summary>
+      <para>This message is to clean up entries in the binding cache.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbPinKdcMessage"></member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbUnpinAllKdcsMessage"></member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbQueryDomainExtendedPoliciesMessage">
+    <summary>
+      <para>This message queries for a list of the extended domain policies.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="KERB_PROTOCOL_MESSAGE_TYPE.KerbQueryS4U2ProxyCacheMessage">
+    <summary>
+      <para>This message queries the proxy cache for the information about a service for user (S4U) logon.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This constant is not supported.</para>
+      <h4>- KerbVerifyCredentialsMessage</h4>
+      <para>This constant is reserved.</para>
+    </summary>
+  </member>
+</doc>

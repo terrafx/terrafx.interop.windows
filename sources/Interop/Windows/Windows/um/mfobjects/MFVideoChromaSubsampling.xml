@@ -3,70 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFVideoChromaSubsampling">
-    <summary>
-      <para>Contains flags that define the chroma encoding scheme for Y'Cb'Cr' data.</para>
-    </summary>
-    <remarks>
-      <para>These flags are used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-chroma-siting-attribute">MF_MT_VIDEO_CHROMA_SITING</a> attribute.</para>
-      <para>For more information about these values, see the remarks for the <see cref="DXVA2_VideoChromaSubSampling" /> enumeration, which is the DirectX Video Acceleration (DXVA) equivalent of this enumeration.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/extended-color-information">Extended Color Information</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/video-media-types">Video Media Types</seealso>
+    <summary>Contains flags that define the chroma encoding scheme for Y'Cb'Cr' data.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_Unknown">
-    <summary>
-      <para>Unknown encoding scheme.</para>
-    </summary>
+    <summary>Unknown encoding scheme.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_ProgressiveChroma">
-    <summary>
-      <para>Chroma should be reconstructed as if the underlying video was progressive content, rather than skipping fields or applying chroma filtering to minimize artifacts from reconstructing 4:2:0 interlaced chroma.</para>
-    </summary>
+    <summary>Chroma should be reconstructed as if the underlying video was progressive content, rather than skipping fields or applying chroma filtering to minimize artifacts from reconstructing 4:2:0 interlaced chroma.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_Horizontally_Cosited">
-    <summary>
-      <para>Chroma samples are aligned horizontally with the luma samples, or with multiples of the luma samples. If this flag is not set, chroma samples are located 1/2 pixel to the right of the corresponding luma sample.</para>
-    </summary>
+    <summary>Chroma samples are aligned horizontally with the luma samples, or with multiples of the luma samples. If this flag is not set, chroma samples are located 1/2 pixel to the right of the corresponding luma sample.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_Vertically_Cosited">
-    <summary>
-      <para>Chroma samples are aligned vertically with the luma samples, or with multiples of the luma samples. If this flag is not set, chroma samples are located 1/2 pixel down from the corresponding luma sample.</para>
-    </summary>
+    <summary>Chroma samples are aligned vertically with the luma samples, or with multiples of the luma samples. If this flag is not set, chroma samples are located 1/2 pixel down from the corresponding luma sample.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_Vertically_AlignedChromaPlanes">
-    <summary>
-      <para>The U and V planes are aligned vertically. If this flag is not set, the chroma planes are assumed to be out of phase by 1/2 chroma sample, alternating between a line of U followed by a line of V.</para>
-    </summary>
+    <summary>The U and V planes are aligned vertically. If this flag is not set, the chroma planes are assumed to be out of phase by 1/2 chroma sample, alternating between a line of U followed by a line of V.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_MPEG2">
-    <summary>
-      <para>Specifies the chroma encoding scheme for MPEG-2 video. Chroma samples are aligned horizontally with the luma samples, but are not aligned vertically. The U and V planes are aligned vertically.</para>
-    </summary>
+    <summary>Specifies the chroma encoding scheme for MPEG-2 video. Chroma samples are aligned horizontally with the luma samples, but are not aligned vertically. The U and V planes are aligned vertically.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_MPEG1">
-    <summary>
-      <para>Specifies the chroma encoding scheme for MPEG-1 video.</para>
-    </summary>
+    <summary>Specifies the chroma encoding scheme for MPEG-1 video.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_DV_PAL">
-    <summary>
-      <para>Specifies the chroma encoding scheme for PAL DV video.</para>
-    </summary>
+    <summary>Specifies the chroma encoding scheme for PAL DV video.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_Cosited">
-    <summary>
-      <para>Chroma samples are aligned vertically and horizontally with the luma samples. YUV formats such as 4:4:4, 4:2:2, and 4:1:1 are always cosited in both directions and should use this flag.</para>
-    </summary>
+    <summary>Chroma samples are aligned vertically and horizontally with the luma samples. YUV formats such as 4:4:4, 4:2:2, and 4:1:1 are always cosited in both directions and should use this flag.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_Last">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="MFVideoChromaSubsampling.MFVideoChromaSubsampling_ForceDWORD">
-    <summary>
-      <para>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</para>
-    </summary>
+    <summary>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</summary>
   </member>
 </doc>

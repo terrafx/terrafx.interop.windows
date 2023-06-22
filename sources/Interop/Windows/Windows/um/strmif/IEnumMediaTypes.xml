@@ -4,11 +4,10 @@
 <doc>
   <member name="IEnumMediaTypes.Clone">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Clone</code> method makes a copy of the enumerator. The returned object starts with the same enumeration state as the original.</para>
     </summary>
-    <param name="ppEnum">
-      <para>Receives a pointer to the <see cref="IEnumMediaTypes" /> interface of the new enumerator. The caller must release the interface.</para>
-    </param>
+    <param name="ppEnum">Receives a pointer to the <see cref="IEnumMediaTypes" /> interface of the new enumerator. The caller must release the interface.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -16,68 +15,66 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_ENUM_OUT_OF_SYNC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Insufficient memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_ENUM_OUT_OF_SYNC</b>
-            </para>
-          </description>
-          <description>
-            <para>The pin's state has changed and is now inconsistent with the enumerator.</para>
-          </description>
-        </item>
+          <description>The pin's state has changed and is now inconsistent with the enumerator.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the set of media types changes, the enumerator is no longer consistent with the pin, and the method returns VFW_E_ENUM_OUT_OF_SYNC. Discard any data obtained from previous calls to the enumerator, because it might be invalid. Update the enumerator by calling the <see cref="Reset" /> method. You can then call the <code>Clone</code> method safely.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/enumerating-media-types">Enumerating Media Types</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumMediaTypes Interface" />
   </member>
   <member name="IEnumMediaTypes.Next">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>Next</b> method retrieves a specified number of media types.</para>
     </summary>
-    <param name="cMediaTypes">
-      <para>The number of media types to retrieve.</para>
-    </param>
-    <param name="ppMediaTypes">
-      <para>The address of an array of <see cref="AM_MEDIA_TYPE" /> pointers. The number of elements in the array is given in the <i>cMediaTypes</i> parameter.</para>
-    </param>
-    <param name="pcFetched">
-      <para>Receives the number of media types returned in <i>ppMediaTypes</i>. This parameter can be <b>NULL</b> if <i>cMediaTypes</i> is 1.</para>
-    </param>
+    <param name="cMediaTypes">The number of media types to retrieve.</param>
+    <param name="ppMediaTypes">The address of an array of <see cref="AM_MEDIA_TYPE" /> pointers. The number of elements in the array is given in the <i>cMediaTypes</i> parameter.</param>
+    <param name="pcFetched">Receives the number of media types returned in <i>ppMediaTypes</i>. This parameter can be <b>NULL</b> if <i>cMediaTypes</i> is 1.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -85,84 +82,83 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Did not retrieve as many media types as requested.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Did not retrieve as many media types as requested.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_ENUM_OUT_OF_SYNC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_ENUM_OUT_OF_SYNC</b>
-            </para>
-          </description>
-          <description>
-            <para>The pin's state has changed and is now inconsistent with the enumerator.</para>
-          </description>
-        </item>
+          <description>The pin's state has changed and is now inconsistent with the enumerator.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The caller passes an array of <see cref="AM_MEDIA_TYPE" /> pointers in <i>ppMediaTypes</i>. The method allocates a number <b>AM_MEDIA_TYPE</b> structures equal to <i>cMediaTypes</i> or to the number of media types that remain in the enumeration, whichever is less. The number of structures allocated is returned in <i>pcFetched</i>. Delete each structure by calling the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/deletemediatype">DeleteMediaType</a> function.</para>
-      <para>If the set of media types changes, the enumerator becomes inconsistent with the owning pin. In that case, the method returns VFW_E_ENUM_OUT_OF_SYNC. Discard any data obtained from previous calls to the enumerator, because it might be invalid. Update the enumerator by calling the <see cref="IEnumMediaTypes.Reset" /> method. You can then call the <b>Next</b> method safely.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/enumerating-media-types">Enumerating Media Types</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumMediaTypes Interface" />
   </member>
   <member name="IEnumMediaTypes.Reset">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Reset</code> method resets the enumeration sequence to the beginning.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/enumerating-media-types">Enumerating Media Types</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumMediaTypes Interface" />
+    <returns>Returns S_OK.</returns>
   </member>
   <member name="IEnumMediaTypes.Skip">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Skip</code> method skips over a specified number of media types.</para>
     </summary>
-    <param name="cMediaTypes">
-      <para>Number of media types to skip.</para>
-    </param>
+    <param name="cMediaTypes">Number of media types to skip.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -170,52 +166,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Skipped past the end of the sequence.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Skipped past the end of the sequence.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_ENUM_OUT_OF_SYNC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_ENUM_OUT_OF_SYNC</b>
-            </para>
-          </description>
-          <description>
-            <para>The pin's state has changed and is now inconsistent with the enumerator.</para>
-          </description>
-        </item>
+          <description>The pin's state has changed and is now inconsistent with the enumerator.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the set of media types changes, the enumerator is no longer consistent with the pin, and the method returns VFW_E_ENUM_OUT_OF_SYNC. Discard any data obtained from previous calls to the enumerator, because it might be invalid. Update the enumerator by calling the <see cref="IEnumMediaTypes.Reset" /> method. You can then call the <code>Skip</code> method safely.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/enumerating-media-types">Enumerating Media Types</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumMediaTypes Interface" />
   </member>
   <member name="IEnumMediaTypes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IEnumMediaTypes</b> interface enumerates a pin's preferred media types. To obtain this interface, call the <see cref="IPin.EnumMediaTypes" /> method on the pin. Filters use this interface when they connect to other filters. Applications can also use it to examine a pin's preferred media types. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/enumerating-objects-in-a-filter-graph">Enumerating Objects in a Filter Graph</a>.</para>
       <para>This interface implements a standard Component Object Model (COM) collection object.</para>
       <para>If a pin's set of preferred media types changes, some methods on this interface return <b>VFW_E_ENUM_OUT_OF_SYNC</b>. Call the <see cref="IEnumMediaTypes.Reset" /> method to resynchronize the enumerator.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/enumerating-media-types">Enumerating Media Types</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
   </member>
 </doc>

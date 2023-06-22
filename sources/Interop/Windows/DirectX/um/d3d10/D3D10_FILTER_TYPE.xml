@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_FILTER_TYPE">
-    <summary>
-      <para>Types of magnification or minification sampler filters.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+    <summary>Types of magnification or minification sampler filters.</summary>
   </member>
   <member name="D3D10_FILTER_TYPE.D3D10_FILTER_TYPE_POINT">
-    <summary>
-      <para>Point filtering used as a texture magnification or minification filter. The texel with coordinates nearest to the desired pixel value is used. The texture filter to be used between mipmap levels is nearest-point mipmap filtering. The rasterizer uses the color from the texel of the nearest mipmap texture.</para>
-    </summary>
+    <summary>Point filtering used as a texture magnification or minification filter. The texel with coordinates nearest to the desired pixel value is used. The texture filter to be used between mipmap levels is nearest-point mipmap filtering. The rasterizer uses the color from the texel of the nearest mipmap texture.</summary>
   </member>
   <member name="D3D10_FILTER_TYPE.D3D10_FILTER_TYPE_LINEAR">
-    <summary>
-      <para>Bilinear interpolation filtering used as a texture magnification or minification filter. A weighted average of a 2 x 2 area of texels surrounding the desired pixel is used. The texture filter to use between mipmap levels is trilinear mipmap interpolation. The rasterizer linearly interpolates pixel color, using the texels of the two nearest mipmap textures.</para>
-    </summary>
+    <summary>Bilinear interpolation filtering used as a texture magnification or minification filter. A weighted average of a 2 x 2 area of texels surrounding the desired pixel is used. The texture filter to use between mipmap levels is trilinear mipmap interpolation. The rasterizer linearly interpolates pixel color, using the texels of the two nearest mipmap textures.</summary>
   </member>
 </doc>

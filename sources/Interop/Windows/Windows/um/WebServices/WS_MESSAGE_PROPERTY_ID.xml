@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_MESSAGE_PROPERTY_ID">
-    <summary>
-      <para>Each message property is of type <see cref="WS_MESSAGE_PROPERTY" />, is identified by an ID, and has an associated
-value.</para>
-    </summary>
+    <summary>Each message property is of type <see cref="WS_MESSAGE_PROPERTY" />, is identified by an ID, and has an associated value.</summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_STATE">
     <summary>
@@ -18,46 +15,34 @@ value.</para>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_HEAP">
     <summary>
       <para>This property is used with <see cref="WsGetMessageProperty" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-heap">WS_HEAP</a> of the message.  The heap is
-owned by the message.  A user of a message is free to make additional
-allocations within this heap.  Allocations within the heap are freed
-when a message is reset/freed.</para>
-      <para>The user of the returned heap should not call <see cref="WsResetHeap" /> on the heap.  This will result in undefined behavior.</para>
-      <para>The message object will not use the heap object unless one of
-the message APIs is invoked.</para>
-      <para>This property is available in all message states except <see cref="WS_MESSAGE_STATE_EMPTY" />.
-Using the heap of an empty message will result in undefined behavior.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-heap">WS_HEAP</a> of the message. The heap is owned by the message. A user of a message is free to make additional allocations within this heap. Allocations within the heap are freed when a message is reset/freed.</para>
+      <para>The user of the returned heap should not call <see cref="WsResetHeap" /> on the heap. This will result in undefined behavior.</para>
+      <para>The message object will not use the heap object unless one of the message APIs is invoked.</para>
+      <para>This property is available in all message states except <see cref="WS_MESSAGE_STATE_EMPTY" />. Using the heap of an empty message will result in undefined behavior.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_ENVELOPE_VERSION">
     <summary>
       <para>This property is used with <see cref="WsGetMessageProperty" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure  is the <see cref="WS_ENVELOPE_VERSION" /> of the message.</para>
-      <para>When creating a message using <see cref="WsCreateMessage" />, the
-envelope version is specified as an explicit parameter (instead
-of as a property).</para>
-      <para>This property may be specified when message properties are specified using
-the <see cref="WS_MESSAGE_PROPERTIES" /> structure.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is the <see cref="WS_ENVELOPE_VERSION" /> of the message.</para>
+      <para>When creating a message using <see cref="WsCreateMessage" />, the envelope version is specified as an explicit parameter (instead of as a property).</para>
+      <para>This property may be specified when message properties are specified using the <see cref="WS_MESSAGE_PROPERTIES" /> structure.</para>
       <para>This property is available in all message states except <see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_ADDRESSING_VERSION">
     <summary>
       <para>This property is used with <see cref="WsGetMessageProperty" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure  is the <see cref="WS_ADDRESSING_VERSION" /> of the message.</para>
-      <para>When creating a message using <see cref="WsCreateMessage" />, the
-addressing version is specified as an explicit parameter (instead
-of as a property).</para>
-      <para>This property may be specified when message properties are specified using
-the <see cref="WS_MESSAGE_PROPERTIES" /> structure.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is the <see cref="WS_ADDRESSING_VERSION" /> of the message.</para>
+      <para>When creating a message using <see cref="WsCreateMessage" />, the addressing version is specified as an explicit parameter (instead of as a property).</para>
+      <para>This property may be specified when message properties are specified using the <see cref="WS_MESSAGE_PROPERTIES" /> structure.</para>
       <para>This property is available in all message states except <see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_HEADER_BUFFER">
     <summary>
       <para>This property is used with <see cref="WsGetMessageProperty" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure  is a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> that holds the headers
-of the message (as well as the envelope and body elements).</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> that holds the headers of the message (as well as the envelope and body elements).</para>
       <para>This buffer is valid until the message is reset/freed.</para>
       <para>This property is available in all message states except <see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
     </summary>
@@ -65,21 +50,9 @@ of the message (as well as the envelope and body elements).</para>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_HEADER_POSITION">
     <summary>
       <para>This property is used with <see cref="WsGetMessageProperty" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure  is the <see cref="WS_XML_NODE_POSITION" /> of the header element within the header buffer (the element that contains all
-the message headers as children).  The header buffer itself can be
-obtained using <see cref="WS_MESSAGE_PROPERTY_HEADER_BUFFER" />.</para>
-      <para>An application can use the <see cref="WS_XML_NODE_POSITION" /> returned as a starting
-point when reading or writing headers manually (when not using <see cref="WsSetHeader" />,
-<see cref="WsGetHeader" />, <see cref="WsGetCustomHeader" /> or <see cref="WsAddCustomHeader" />).
-For example, the position can be passed to <see cref="WsSetWriterPosition" /> or
-<see cref="WsSetReaderPosition" /> to position an <a href="https://docs.microsoft.com//windows/desktop/wsw/xml-reader">XML Reader</a> or <a href="https://docs.microsoft.com//windows/desktop/wsw/xml-writer">XML Writer</a> within the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> containing the headers.  Additionally,
-<see cref="WsMoveReader" /> or <see cref="WsMoveWriter" /> can be used to move relative
-to the position that was set.</para>
-      <para>When the headers of a message are read (via <see cref="WsReadMessageStart" /> or
-<see cref="WsReadEnvelopeStart" />, a header element is automatically added to the
-header buffer if one is not present in the message being read.  When a message is initialized
-(via <see cref="WsInitializeMessage" />), a header element is added automatically
-to the message.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is the <see cref="WS_XML_NODE_POSITION" /> of the header element within the header buffer (the element that contains all the message headers as children). The header buffer itself can be obtained using <see cref="WS_MESSAGE_PROPERTY_HEADER_BUFFER" />.</para>
+      <para>An application can use the <see cref="WS_XML_NODE_POSITION" /> returned as a starting point when reading or writing headers manually (when not using <see cref="WsSetHeader" />,<see cref="WsGetHeader" />, <see cref="WsGetCustomHeader" /> or <see cref="WsAddCustomHeader" />).<br />For example, the position can be passed to <see cref="WsSetWriterPosition" /> or<see cref="WsSetReaderPosition" /> to position an <a href="https://docs.microsoft.com//windows/desktop/wsw/xml-reader">XML Reader</a> or <a href="https://docs.microsoft.com//windows/desktop/wsw/xml-writer">XML Writer</a> within the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> containing the headers. Additionally,<see cref="WsMoveReader" /> or <see cref="WsMoveWriter" /> can be used to move relative to the position that was set.</para>
+      <para>When the headers of a message are read (via <see cref="WsReadMessageStart" /> or<see cref="WsReadEnvelopeStart" />, a header element is automatically added to the header buffer if one is not present in the message being read. When a message is initialized (via <see cref="WsInitializeMessage" />), a header element is added automatically to the message.</para>
       <para>This property is available in all message states except <see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
       <para>The header position is valid until the message is reset or freed.</para>
     </summary>
@@ -87,43 +60,32 @@ to the message.</para>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_BODY_READER">
     <summary>
       <para>This property is used with <see cref="WsGetMessageProperty" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure  is a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-reader">WS_XML_READER</a> that can be used to read
-the body of the message.</para>
-      <para>The reader is owned by the message object, and is valid only
-until either <see cref="WsFreeMessage" /> or <see cref="WsResetMessage" /> are called.</para>
-      <para>This property is only available when the message is
-in <see cref="WS_MESSAGE_STATE_READING" /> state.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-reader">WS_XML_READER</a> that can be used to read the body of the message.</para>
+      <para>The reader is owned by the message object, and is valid only until either <see cref="WsFreeMessage" /> or <see cref="WsResetMessage" /> are called.</para>
+      <para>This property is only available when the message is in <see cref="WS_MESSAGE_STATE_READING" /> state.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_BODY_WRITER">
     <summary>
       <para>This property is used with <see cref="WsGetMessageProperty" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure  is a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-writer">WS_XML_WRITER</a> that can be used to write
-the body of the message.</para>
-      <para>This property is only available when the message is in
-<see cref="WS_MESSAGE_STATE_WRITING" /> state.</para>
-      <para>The writer is owned by the message object, and is valid only
-until either <see cref="WsFreeMessage" /> or <see cref="WsResetMessage" /> are called.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-writer">WS_XML_WRITER</a> that can be used to write the body of the message.</para>
+      <para>This property is only available when the message is in<see cref="WS_MESSAGE_STATE_WRITING" /> state.</para>
+      <para>The writer is owned by the message object, and is valid only until either <see cref="WsFreeMessage" /> or <see cref="WsResetMessage" /> are called.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_IS_ADDRESSED">
     <summary>
       <para>This property is used with <see cref="WsGetMessageProperty" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure  is a <b>BOOL</b> indicating whether the message has
-been addressed.</para>
-      <para>When a message is created or reset, this property is
-set to <b>FALSE</b>.</para>
-      <para>When a message is read (<see cref="WsReadMessageStart" /> or
-<see cref="WsReadEnvelopeStart" />, then this property is
-set to <b>TRUE</b>.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <b>BOOL</b> indicating whether the message has been addressed.</para>
+      <para>When a message is created or reset, this property is set to <b>FALSE</b>.</para>
+      <para>When a message is read (<see cref="WsReadMessageStart" /> or<see cref="WsReadEnvelopeStart" />, then this property is set to <b>TRUE</b>.</para>
       <para>This property is available in all message states except <see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
       <para>See <see cref="WsAddressMessage" /> for more information.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_HEAP_PROPERTIES">
     <summary>
-      <para>This property is used with <see cref="WsCreateMessage" /> to specify the properties
-of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-heap">WS_HEAP</a> associated with the message.</para>
+      <para>This property is used with <see cref="WsCreateMessage" /> to specify the properties of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-heap">WS_HEAP</a> associated with the message.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is of type <see cref="WS_HEAP_PROPERTIES" />.</para>
       <para>The heap is used to buffer the headers of the message.</para>
       <para>The following heap properties may be specified:</para>
@@ -143,11 +105,8 @@ of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-heap">WS_HEAP
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_XML_READER_PROPERTIES">
     <summary>
-      <para>This property is used with <see cref="WsCreateMessage" /> to specify properties
-that apply to <a href="https://docs.microsoft.com//windows/desktop/wsw/xml-reader">XML Readers</a> that are used with the message.</para>
-      <para>These XML Reader properties are used by the message object when reading headers.
-In addition, channels use these properties for the readers that they create to read
-messages.</para>
+      <para>This property is used with <see cref="WsCreateMessage" /> to specify properties that apply to <a href="https://docs.microsoft.com//windows/desktop/wsw/xml-reader">XML Readers</a> that are used with the message.</para>
+      <para>These XML Reader properties are used by the message object when reading headers. In addition, channels use these properties for the readers that they create to read messages.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is of type <see cref="WS_XML_READER_PROPERTIES" />.</para>
       <para>The following properties may be specified:</para>
       <list type="bullet">
@@ -206,11 +165,8 @@ messages.</para>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_XML_WRITER_PROPERTIES">
     <summary>
-      <para>This property is used with <see cref="WsCreateMessage" /> to specify the properties
-of the <a href="https://docs.microsoft.com//windows/desktop/wsw/xml-writer">XML Writers</a> that are used with the message.</para>
-      <para>These XML Writer properties are used by the message object when writing headers.
-In addition, channels use these properties for the writers that they create to write
-messages.</para>
+      <para>This property is used with <see cref="WsCreateMessage" /> to specify the properties of the <a href="https://docs.microsoft.com//windows/desktop/wsw/xml-writer">XML Writers</a> that are used with the message.</para>
+      <para>These XML Writer properties are used by the message object when writing headers. In addition, channels use these properties for the writers that they create to write messages.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is of type <see cref="WS_XML_WRITER_PROPERTIES" />.</para>
       <para>The following properties may be specified:</para>
       <list type="bullet">
@@ -256,145 +212,87 @@ messages.</para>
     <summary>
       <para>This property is used with <see cref="WsGetMessageProperty" /> or <see cref="WsSetMessageProperty" /> to indicate whether a message contains a fault.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <b>BOOL</b>.</para>
-      <para>When a message is read (<see cref="WsReadMessageStart" /> or <see cref="WsReadEnvelopeStart" />),
-this property is set according to whether the first element of the body is a fault
-element.  An application can test this property as a way of deciding whether
-to read the body as a fault.  To read the body as a fault, use <see cref="WsReadBody" /></para>
-      <para>with <see cref="WS_FAULT_TYPE" /> to obtain a <see cref="WS_FAULT" />.</para>
-      <para>When a message is written (<see cref="WsWriteMessageStart" /> or <see cref="WsWriteEnvelopeStart" />)
-this property can be used to indicate whether or not the application will write a fault
-in the body.  Some channels will use this information in order to determine how to
-send the message.  For example, HTTP will send a 500 status code for faults instead of 200.</para>
-      <para>When a message is initialized using <see cref="WsInitializeMessage" /> with
-<see cref="WS_FAULT_MESSAGE" />, the property is set to <b>TRUE</b>.
-For other <b>WS_MESSAGE_INITIALIZATION</b> values, the property is set to <b>FALSE</b>.</para>
+      <para>When a message is read (<see cref="WsReadMessageStart" /> or <see cref="WsReadEnvelopeStart" />), this property is set according to whether the first element of the body is a fault element. An application can test this property as a way of deciding whether to read the body as a fault. To read the body as a fault, use <see cref="WsReadBody" />with <see cref="WS_FAULT_TYPE" /> to obtain a <see cref="WS_FAULT" />.</para>
+      <para>When a message is written (<see cref="WsWriteMessageStart" /> or <see cref="WsWriteEnvelopeStart" />) this property can be used to indicate whether or not the application will write a fault in the body. Some channels will use this information in order to determine how to send the message. For example, HTTP will send a 500 status code for faults instead of 200.</para>
+      <para>When a message is initialized using <see cref="WsInitializeMessage" /> with<see cref="WS_FAULT_MESSAGE" />, the property is set to <b>TRUE</b>.<br />For other <b>WS_MESSAGE_INITIALIZATION</b> values, the property is set to <b>FALSE</b>.</para>
       <para>This property is available in all message states except <see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_MAX_PROCESSED_HEADERS">
     <summary>
-      <para>This property is used with <see cref="WsCreateMessage" /> to specify the maximum number of headers
-that will be allowed when processing the message headers.</para>
+      <para>This property is used with <see cref="WsCreateMessage" /> to specify the maximum number of headers that will be allowed when processing the message headers.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <b>ULONG</b>.</para>
-      <para>The purpose of this limit is to put an upper bound on the number of iterations
-spent scanning for a header.</para>
-      <para>Since an application can directly modify the contents of the header buffer,
-this limit is not enforced in all cases.  It is only enforced when one of
-the header access APIs are used (<see cref="WsSetHeader" />, <see cref="WsGetHeader" />,
-<see cref="WsGetCustomHeader" />, or <see cref="WsGetMappedHeader" />).</para>
+      <para>The purpose of this limit is to put an upper bound on the number of iterations spent scanning for a header.</para>
+      <para>Since an application can directly modify the contents of the header buffer, this limit is not enforced in all cases. It is only enforced when one of the header access APIs are used (<see cref="WsSetHeader" />, <see cref="WsGetHeader" />,<see cref="WsGetCustomHeader" />, or <see cref="WsGetMappedHeader" />).</para>
       <para>The default value is 64.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_USERNAME">
     <summary>
-      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the sender's
-username from a received message, if username/password based security
-is on, or if a custom channel has set the value.</para>
+      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the sender's username from a received message, if username/password based security is on, or if a custom channel has set the value.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <see cref="WS_STRING" /> structure.</para>
       <para>The returned value is good until the message is freed or reset.</para>
-      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set
-the sender's username from the message if it supports username/password
-based security.  The function will make a copy of the value specified.</para>
-      <para>This property is available in all message states except
-<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
+      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set the sender's username from the message if it supports username/password based security. The function will make a copy of the value specified.</para>
+      <para>This property is available in all message states except<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_ENCODED_CERT">
     <summary>
-      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the sender's
-certificate from a received message as encoded bytes, if
-a certificate-based security mode (such as SSL) is on,
-or if a custom channel has set the value.</para>
+      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the sender's certificate from a received message as encoded bytes, if a certificate-based security mode (such as SSL) is on, or if a custom channel has set the value.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <see cref="WS_BYTES" /> structure.</para>
       <para>The returned value is good until the message is freed or reset.</para>
-      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set
-the sender's certificate from a received message if it supports
-a certificate-based security mode.  The function will make a copy of the value specified.</para>
-      <para>This property is available in all message states except
-<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
+      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set the sender's certificate from a received message if it supports a certificate-based security mode. The function will make a copy of the value specified.</para>
+      <para>This property is available in all message states except<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_TRANSPORT_SECURITY_WINDOWS_TOKEN">
     <summary>
-      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the Windows
-token representing the sender from a received message.  This property is
-available in the following cases:</para>
+      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the Windows token representing the sender from a received message. This property is available in the following cases:</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <b>HANDLE</b>.</para>
       <list type="bullet">
         <item>
           <description>
-            <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING" /> is being used.
-</description>
+            <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING" /> is being used.</description>
         </item>
         <item>
           <description>
-            <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> is being used
-and the translation from client certificate to Windows token
-has been enabled at the http.sys config level.
-</description>
+            <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> is being used and the translation from client certificate to Windows token has been enabled at the http.sys config level.</description>
         </item>
         <item>
-          <description>A custom channel implementation has set the value.
-</description>
+          <description>A custom channel implementation has set the value.</description>
         </item>
-      </list>
-      <para>The returned value is good until the message is freed or reset.</para>
-      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set
-the sender's certificate from a received message if it supports
-a certificate-based security mode.  The function will duplicate the handle specified.</para>
-      <para>This property is available in all message states except
-<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
-    </summary>
+      </list>The returned value is good until the message is freed or reset. <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set the sender's certificate from a received message if it supports a certificate-based security mode. The function will duplicate the handle specified.</para><para>This property is available in all message states except<see cref="WS_MESSAGE_STATE_EMPTY" />.</para></summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_HTTP_HEADER_AUTH_WINDOWS_TOKEN">
     <summary>
-      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the Windows
-token representing the sender from a received message, if the
-<see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" /> is used,
-or if a custom channel has set the value.</para>
+      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the Windows token representing the sender from a received message, if the<see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" /> is used, or if a custom channel has set the value.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <b>HANDLE</b>.</para>
       <para>The returned value is good until the message is freed or reset.</para>
-      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set
-the windows token representing the sender from a received message.
-The function will duplicate the handle specified.</para>
-      <para>This property is available in all message states except
-<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
+      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set the windows token representing the sender from a received message. The function will duplicate the handle specified.</para>
+      <para>This property is available in all message states except<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_MESSAGE_SECURITY_WINDOWS_TOKEN">
     <summary>
-      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the Windows
-token representing the sender from a received message, if a message security
-binding such as <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING" /> is used,
-or if a custom channel has set the value.</para>
+      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the Windows token representing the sender from a received message, if a message security binding such as <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING" /> is used, or if a custom channel has set the value.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <b>HANDLE</b>.</para>
       <para>The returned value is good until the message is freed or reset.</para>
-      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set
-the token representing the sender from a received message.
-The function will duplicate the handle specified.</para>
-      <para>This property is available in all message states except
-<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
+      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set the token representing the sender from a received message. The function will duplicate the handle specified.</para>
+      <para>This property is available in all message states except<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_SAML_ASSERTION">
     <summary>
-      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the SAML assertion
-representing the sender from a received message, if the
-<see cref="WS_SAML_MESSAGE_SECURITY_BINDING" /> is used on the server side,
-or if a custom channel has set the value.</para>
+      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the SAML assertion representing the sender from a received message, if the<see cref="WS_SAML_MESSAGE_SECURITY_BINDING" /> is used on the server side, or if a custom channel has set the value.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a>.</para>
       <para>The returned value is good until the message is freed or reset.</para>
-      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set
-the SAML assertion representing the sender from a received message.
-The function will duplicate the buffer specified.</para>
-      <para>This property is available in all message states except
-<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
+      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set the SAML assertion representing the sender from a received message. The function will duplicate the buffer specified.</para>
+      <para>This property is available in all message states except<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
     </summary>
   </member>
   <member name="WS_MESSAGE_PROPERTY_ID.WS_MESSAGE_PROPERTY_SECURITY_CONTEXT">
     <summary>
-      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the secure conversation handle if the
-<see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING" /> is used on the server side.</para>
+      <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the secure conversation handle if the<see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING" /> is used on the server side.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-security-context">WS_SECURITY_CONTEXT</a>.</para>
       <para>The returned value is good until the message is freed or reset.</para>
     </summary>
@@ -403,14 +301,10 @@ The function will duplicate the buffer specified.</para>
     <summary>
       <para>This property is used with <see cref="WsGetMessageProperty" /> to retrieve the message's security protection level.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_MESSAGE_PROPERTY" /> structure is a <see cref="WS_PROTECTION_LEVEL" /> value.</para>
-      <para>If the channel does not use security, or if security verification failed, the protection level is set to
-<see cref="WS_PROTECTION_LEVEL_NONE" />. Otherwise it is set to the level requested by the application.</para>
-      <para>This property may be used to determine the status of the security verification when <see cref="WS_CHANNEL_PROPERTY_ALLOW_UNSECURED_FAULTS" /></para>
-      <para>is set to <b>FALSE</b>.</para>
-      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set
-the protection level of a received message.</para>
-      <para>This property is available in all message states except
-<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
+      <para>If the channel does not use security, or if security verification failed, the protection level is set to<see cref="WS_PROTECTION_LEVEL_NONE" />. Otherwise it is set to the level requested by the application.</para>
+      <para>This property may be used to determine the status of the security verification when <see cref="WS_CHANNEL_PROPERTY_ALLOW_UNSECURED_FAULTS" />is set to <b>FALSE</b>.</para>
+      <para>A custom channel can use <see cref="WsSetMessageProperty" /> to set the protection level of a received message.</para>
+      <para>This property is available in all message states except<see cref="WS_MESSAGE_STATE_EMPTY" />.</para>
     </summary>
   </member>
 </doc>

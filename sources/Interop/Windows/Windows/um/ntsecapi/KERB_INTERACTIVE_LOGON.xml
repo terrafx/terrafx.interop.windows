@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_INTERACTIVE_LOGON">
+    <summary>
+      <para>The <b>KERB_INTERACTIVE_LOGON</b> structure contains information about an interactive <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>.</para>
+      <para>It is used by<see cref="LsaLogonUser" /> with the Kerberos security package using LOGON32_PROVIDER_WINNT50 or LOGON32_PROVIDER_DEFAULT.</para>
+    </summary>
+  </member>
+  <member name="KERB_INTERACTIVE_LOGON.MessageType">
+    <summary>
+      <see cref="KERB_LOGON_SUBMIT_TYPE" /> value identifying the type of logon request being made. This member must be set to <b>KerbInteractiveLogon</b>.</summary>
+  </member>
+  <member name="KERB_INTERACTIVE_LOGON.LogonDomainName">
+    <summary>
+      <see cref="UNICODE_STRING" /> specifying the name of the target logon domain.</summary>
+  </member>
+  <member name="KERB_INTERACTIVE_LOGON.UserName">
+    <summary>
+      <see cref="UNICODE_STRING" /> specifying the user name.</summary>
+  </member>
+  <member name="KERB_INTERACTIVE_LOGON.Password">
+    <summary>
+      <see cref="UNICODE_STRING" /> specifying the user password. When you have finished using the password, remove the sensitive information from memory by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa366877(v=vs.85)">SecureZeroMemory</a>. For more information on protecting the password, see <a href="https://docs.microsoft.com//windows/desktop/SecBP/handling-passwords">Handling Passwords</a>.</summary>
+  </member>
+</doc>

@@ -3,64 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFContentDecryptionModuleAccess.CreateContentDecryptionModule">
-    <summary>
-      <para>Creates a <see cref="IMFContentDecryptionModule" /> that represents a Content Decryption Module (CDM) for a DRM key system.</para>
-    </summary>
-    <param name="contentDecryptionModuleProperties">
-      <para>An <see cref="IPropertyStore" /> object containing the properties for the CDM.</para>
-    </param>
-    <param name="contentDecryptionModule">
-      <para>Receives the created <b>IMFContentDecryptionModule</b> object.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>The following properties are supported for the <i>contentDecryptionModuleProperties</i> parameter.</para>
-      <para>| Property                                      |Description
-|-----------------------------------------------|---------------------------------------------------------------|
-| <a href="https://docs.microsoft.com//windows/win32/medfound/mf-contentdecryptionmodule-inprivatestorepath">MF_CONTENTDECRYPTIONMODULE_INPRIVATESTOREPATH</a> | A file path representing a storage location the Content Decryption Module (CDM) can use for content-specific data.|
-| <a href="https://docs.microsoft.com//windows/win32/medfound/mf-contentdecryptionmodule-storepath">MF_CONTENTDECRYPTIONMODULE_STOREPATH</a> | A file path representing a storage location the Content Decryption Module (CDM) can use for initialization. The path specified with this property will also be used for content-specific data if the <b>MF_CONTENTDECRYPTIONMODULE_INPRIVATESTOREPATH</b> property isn't set. |</para>
-    </remarks>
+    <summary>Creates a <see cref="IMFContentDecryptionModule" /> that represents a Content Decryption Module (CDM) for a DRM key system.</summary>
+    <param name="contentDecryptionModuleProperties">An <see cref="IPropertyStore" /> object containing the properties for the CDM.</param>
+    <param name="contentDecryptionModule">Receives the created <b>IMFContentDecryptionModule</b> object.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModuleAccess.GetConfiguration">
-    <summary>
-      <para>Returns the supported combination of configuration options.</para>
-    </summary>
-    <param name="configuration">
-      <para>Receives a reference to an <see cref="IPropertyStore" /> object containing the configuration options for the CDM.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>GetConfiguration</b> is based on the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/2017/rec-encrypted-media-20170918/#dom-mediakeysystemaccess-getconfiguration">MediaKeySystemAccess.keySystem</a>.</para>
-    </remarks>
+    <summary>Returns the supported combination of configuration options.</summary>
+    <param name="configuration">Receives a reference to an <see cref="IPropertyStore" /> object containing the configuration options for the CDM.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModuleAccess.GetKeySystem">
-    <summary>
-      <para>Gets a string identifying the Key System being used by the Content Decryption Module (CDM).</para>
-    </summary>
-    <param name="keySystem">
-      <para>Receives a pointer to an <b>LPWSTR</b> identifying the Key System.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>The <i>keySystem</i> memory must be allocated and freed using <see cref="CoTaskMem" />.</para>
-      <para>
-        <b>GetKeySystem</b> is based on the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/2017/rec-encrypted-media-20170918/#dom-mediakeysystemaccess-keysystem">MediaKeySystemAccess.getConfiguration</a>.</para>
-    </remarks>
+    <summary>Gets a string identifying the Key System being used by the Content Decryption Module (CDM).</summary>
+    <param name="keySystem">Receives a pointer to an <b>LPWSTR</b> identifying the Key System.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModuleAccess">
-    <summary>
-      <para>Provides access to a media key system.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IMFContentDecryptionModuleAccess</b> is based on the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/2017/rec-encrypted-media-20170918/#mediakeysystemaccess-interface">MediaKeySystemAccess</a>.</para>
-    </remarks>
+    <summary>Provides access to a media key system.</summary>
   </member>
 </doc>

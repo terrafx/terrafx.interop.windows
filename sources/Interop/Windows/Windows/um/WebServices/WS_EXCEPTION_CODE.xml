@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_EXCEPTION_CODE">
-    <summary>
-      <para>The structured exception codes thrown by this component.  These
-exceptions are fatal and should not be handled by the application.</para>
-    </summary>
+    <summary>The structured exception codes thrown by this component. These exceptions are fatal and should not be handled by the application.</summary>
   </member>
   <member name="WS_EXCEPTION_CODE.WS_EXCEPTION_CODE_USAGE_FAILURE">
-    <summary>
-      <para>This exception occurs to indicate that usage of the web services component
-has violated the API contract.</para>
-    </summary>
+    <summary>This exception occurs to indicate that usage of the web services component has violated the API contract.</summary>
   </member>
   <member name="WS_EXCEPTION_CODE.WS_EXCEPTION_CODE_INTERNAL_FAILURE">
-    <summary>
-      <para>This exception occurs to indicate that an internal error occurred in the
-web services component.</para>
-    </summary>
+    <summary>This exception occurs to indicate that an internal error occurred in the web services component.</summary>
   </member>
 </doc>

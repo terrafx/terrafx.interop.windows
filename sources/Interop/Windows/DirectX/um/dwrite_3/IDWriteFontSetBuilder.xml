@@ -3,77 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontSetBuilder.AddFontFaceReference">
-    <summary>
-      <para>Adds a reference to a font to the set being built. The necessary metadata will automatically be extracted from the font upon calling CreateFontSet.</para>
-    </summary>
-    <param name="fontFaceReference">
-      <para>Type: <b><see cref="IDWriteFontFaceReference" />*</b></para>
-      <para>Font face reference object to add to the set.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteFontSetBuilder" />
+    <summary>Adds a reference to a font to the set being built. The necessary metadata will automatically be extracted from the font upon calling CreateFontSet.</summary>
+    <param name="fontFaceReference">Font face reference object to add to the set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontSetBuilder.AddFontFaceReference">
-    <summary>
-      <para>Adds a reference to a font to the set being built. The necessary metadata will automatically be extracted from the font upon calling CreateFontSet.</para>
-    </summary>
-    <param name="fontFaceReference">
-      <para>Type: <b><see cref="IDWriteFontFaceReference" />*</b></para>
-      <para>Font face reference object to add to the set.</para>
-    </param>
-    <param name="properties">
-      <para>List of properties to associate with the reference.</para>
-    </param>
-    <param name="propertyCount">
-      <para>The number of properties specified.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteFontSetBuilder" />
+    <summary>Adds a reference to a font to the set being built. The necessary metadata will automatically be extracted from the font upon calling CreateFontSet.</summary>
+    <param name="fontFaceReference">Font face reference object to add to the set.</param>
+    <param name="properties">List of properties to associate with the reference.</param>
+    <param name="propertyCount">The number of properties specified.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontSetBuilder.AddFontSet">
-    <summary>
-      <para>Appends an existing font set to the one being built, allowing
-one to aggregate two sets or to essentially extend an existing one.</para>
-    </summary>
-    <param name="fontSet">
-      <para>Type: <b><see cref="IDWriteFontSet" />*</b></para>
-      <para>Font set to append font face references from.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteFontSetBuilder" />
+    <summary>Appends an existing font set to the one being built, allowing one to aggregate two sets or to essentially extend an existing one.</summary>
+    <param name="fontSet">Font set to append font face references from.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontSetBuilder.CreateFontSet">
-    <summary>
-      <para>Creates a font set from all the font face references added so
-far with AddFontFaceReference.</para>
-    </summary>
-    <param name="fontSet">
-      <para>Type: <b><see cref="IDWriteFontSet" />**</b></para>
-      <para>Contains the newly created font set object, or nullptr in case of failure.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Creating a font set takes less time if the references were added with metadata rather than needing to extract the metadata from the
-font file.</para>
-    </remarks>
-    <seealso cref="IDWriteFontSetBuilder" />
+    <summary>Creates a font set from all the font face references added so far with AddFontFaceReference.</summary>
+    <param name="fontSet">Contains the newly created font set object, or nullptr in case of failure.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontSetBuilder">
-    <summary>
-      <para>Contains methods for building a font set.</para>
-    </summary>
-    <seealso cref="IUnknown" />
+    <summary>Contains methods for building a font set.</summary>
   </member>
 </doc>

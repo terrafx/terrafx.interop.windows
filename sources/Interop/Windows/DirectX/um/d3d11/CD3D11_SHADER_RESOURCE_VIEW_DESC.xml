@@ -3,152 +3,66 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CD3D11_SHADER_RESOURCE_VIEW_DESC.CD3D11_SHADER_RESOURCE_VIEW_DESC">
-    <summary>
-      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with a <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" /> structure.</para>
-    </summary>
-    <param name="o">
-      <para>Type: <b>const <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" /></b></para>
-      <para>Address of the <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" /> structure that initializes the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure.</para>
-    </param>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</seealso>
+    <summary>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with a <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" /> structure.</summary>
+    <param name="o">Address of the <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" /> structure that initializes the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure.</param>
   </member>
   <member name="CD3D11_SHADER_RESOURCE_VIEW_DESC.CD3D11_SHADER_RESOURCE_VIEW_DESC">
-    <summary>
-      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" /> values.</para>
-    </summary>
-    <param name="viewDimension">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff476217(v=vs.85)">D3D11_SRV_DIMENSION</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff476217(v=vs.85)">D3D11_SRV_DIMENSION</a>-typed value that specifies the resource type of the view.</para>
-    </param>
-    <param name="format">
-      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
-      <para>A <see cref="DXGI_FORMAT" />-typed value that specifies the viewing format.</para>
-    </param>
+    <summary>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" /> values.</summary>
+    <param name="viewDimension">A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff476217(v=vs.85)">D3D11_SRV_DIMENSION</a>-typed value that specifies the resource type of the view.</param>
+    <param name="format">A <see cref="DXGI_FORMAT" />-typed value that specifies the viewing format.</param>
     <param name="mostDetailedMip">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Index of the most detailed mipmap level to use; this number is from 0 to <i>mipLevels</i> -1. For a buffer, this is the number of bytes between the beginning of the buffer and the first element to access.</para>
       <para>
         <b>FirstElement</b> of <see cref="D3D11_BUFFER_SRV" />.</para>
     </param>
-    <param name="mipLevels">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The maximum number of mipmap levels for the view.  For a buffer, this is the total number of elements in the view. <b>NumElements</b> of <see cref="D3D11_BUFFER_SRV" />.</para>
-    </param>
+    <param name="mipLevels">The maximum number of mipmap levels for the view. For a buffer, this is the total number of elements in the view. <b>NumElements</b> of <see cref="D3D11_BUFFER_SRV" />.</param>
     <param name="firstArraySlice">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>The index of the first element to use in an array of elements.</para>
       <para>
         <b>First2DArrayFace</b> of <see cref="D3D11_TEXCUBE_ARRAY_SRV" />.</para>
     </param>
-    <param name="arraySize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of elements in the array. <b>NumCubes</b> of <see cref="D3D11_TEXCUBE_ARRAY_SRV" />.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A <see cref="D3D11_BUFFEREX_SRV_FLAG" />-typed value that identifies view options for a buffer. For <see cref="D3D11_BUFFEREX_SRV" /> only.</para>
-    </param>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</seealso>
+    <param name="arraySize">Number of elements in the array. <b>NumCubes</b> of <see cref="D3D11_TEXCUBE_ARRAY_SRV" />.</param>
+    <param name="flags">A <see cref="D3D11_BUFFEREX_SRV_FLAG" />-typed value that identifies view options for a buffer. For <see cref="D3D11_BUFFEREX_SRV" /> only.</param>
   </member>
   <member name="CD3D11_SHADER_RESOURCE_VIEW_DESC.CD3D11_SHADER_RESOURCE_VIEW_DESC">
-    <summary>
-      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with <b>D3D11_BUFFEREX_SRV</b> values.</para>
-    </summary>
-    <param name="unnamedParam1">
-      <para>A pointer to a <b>ID3D11Buffer</b> interface for a buffer.</para>
-    </param>
-    <param name="format">
-      <para>A <b>DXGI_FORMAT</b>-typed value that specifies the viewing format.</para>
-    </param>
-    <param name="firstElement">
-      <para>Number of bytes between the beginning of the buffer and the first element to access.</para>
-    </param>
-    <param name="numElements">
-      <para>Total number of elements in the view.</para>
-    </param>
-    <param name="flags">
-      <para>A <b>D3D11_BUFFEREX_SRV_FLAG</b>-typed value that identifies view options for a buffer.</para>
-    </param>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</seealso>
+    <summary>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with <b>D3D11_BUFFEREX_SRV</b> values.</summary>
+    <param name="unnamedParam1">A pointer to a <b>ID3D11Buffer</b> interface for a buffer.</param>
+    <param name="format">A <b>DXGI_FORMAT</b>-typed value that specifies the viewing format.</param>
+    <param name="firstElement">Number of bytes between the beginning of the buffer and the first element to access.</param>
+    <param name="numElements">Total number of elements in the view.</param>
+    <param name="flags">A <b>D3D11_BUFFEREX_SRV_FLAG</b>-typed value that identifies view options for a buffer.</param>
   </member>
   <member name="CD3D11_SHADER_RESOURCE_VIEW_DESC.CD3D11_SHADER_RESOURCE_VIEW_DESC">
-    <summary>
-      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with <b>D3D11_TEX1D_SRV</b> or <b>D3D11_TEX1D_ARRAY_SRV</b> values.</para>
-    </summary>
-    <param name="pTex1D">
-      <para>A pointer to a <b>ID3D11Texture1D</b> interface for a 1D texture.</para>
-    </param>
-    <param name="viewDimension">
-      <para>A <b>D3D11_SRV_DIMENSION</b>-typed value that specifies the resource type of the view.</para>
-    </param>
-    <param name="format">
-      <para>A <b>DXGI_FORMAT</b>-typed value that specifies the viewing format.</para>
-    </param>
-    <param name="mostDetailedMip">
-      <para>Index of the most detailed mipmap level to use; this number is from 0 to <i>mipLevels</i> -1.</para>
-    </param>
-    <param name="mipLevels">
-      <para>The maximum number of mipmap levels for the view.</para>
-    </param>
-    <param name="firstArraySlice">
-      <para>The index of the first element to use in an array of elements.</para>
-    </param>
-    <param name="arraySize">
-      <para>Number of elements in the array.</para>
-    </param>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</seealso>
+    <summary>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with <b>D3D11_TEX1D_SRV</b> or <b>D3D11_TEX1D_ARRAY_SRV</b> values.</summary>
+    <param name="pTex1D">A pointer to a <b>ID3D11Texture1D</b> interface for a 1D texture.</param>
+    <param name="viewDimension">A <b>D3D11_SRV_DIMENSION</b>-typed value that specifies the resource type of the view.</param>
+    <param name="format">A <b>DXGI_FORMAT</b>-typed value that specifies the viewing format.</param>
+    <param name="mostDetailedMip">Index of the most detailed mipmap level to use; this number is from 0 to <i>mipLevels</i> -1.</param>
+    <param name="mipLevels">The maximum number of mipmap levels for the view.</param>
+    <param name="firstArraySlice">The index of the first element to use in an array of elements.</param>
+    <param name="arraySize">Number of elements in the array.</param>
   </member>
   <member name="CD3D11_SHADER_RESOURCE_VIEW_DESC.CD3D11_SHADER_RESOURCE_VIEW_DESC">
-    <summary>
-      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with 2D texture values.</para>
-    </summary>
-    <param name="pTex2D">
-      <para>A pointer to a <b>ID3D11Texture2D</b> interface for a 2D texture.</para>
-    </param>
-    <param name="viewDimension">
-      <para>A <b>D3D11_SRV_DIMENSION</b>-typed value that specifies the resource type of the view.</para>
-    </param>
-    <param name="format">
-      <para>A <b>DXGI_FORMAT</b>-typed value that specifies the viewing format.</para>
-    </param>
-    <param name="mostDetailedMip">
-      <para>Index of the most detailed mipmap level to use; this number is from 0 to <i>mipLevels</i> -1.</para>
-    </param>
-    <param name="mipLevels">
-      <para>The maximum number of mipmap levels for the view.</para>
-    </param>
-    <param name="firstArraySlice">
-      <para>The index of the first element to use in an array of elements.
-<b>First2DArrayFace</b> of <b>D3D11_TEXCUBE_ARRAY_SRV</b>.</para>
-    </param>
-    <param name="arraySize">
-      <para>Number of elements in the array.
-<b>NumCubes</b> of <b>D3D11_TEXCUBE_ARRAY_SRV</b>.</para>
-    </param>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</seealso>
+    <summary>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with 2D texture values.</summary>
+    <param name="pTex2D">A pointer to a <b>ID3D11Texture2D</b> interface for a 2D texture.</param>
+    <param name="viewDimension">A <b>D3D11_SRV_DIMENSION</b>-typed value that specifies the resource type of the view.</param>
+    <param name="format">A <b>DXGI_FORMAT</b>-typed value that specifies the viewing format.</param>
+    <param name="mostDetailedMip">Index of the most detailed mipmap level to use; this number is from 0 to <i>mipLevels</i> -1.</param>
+    <param name="mipLevels">The maximum number of mipmap levels for the view.</param>
+    <param name="firstArraySlice">The index of the first element to use in an array of elements.<b>First2DArrayFace</b> of <b>D3D11_TEXCUBE_ARRAY_SRV</b>.</param>
+    <param name="arraySize">Number of elements in the array.<b>NumCubes</b> of <b>D3D11_TEXCUBE_ARRAY_SRV</b>.</param>
   </member>
   <member name="CD3D11_SHADER_RESOURCE_VIEW_DESC.CD3D11_SHADER_RESOURCE_VIEW_DESC">
-    <summary>
-      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with 3D texture  values.</para>
-    </summary>
-    <param name="pTex3D">
-      <para>A pointer to a <b>ID3D11Texture3D</b> interface for a 3D texture.</para>
-    </param>
-    <param name="format">
-      <para>A <b>DXGI_FORMAT</b>-typed value that specifies the viewing format.</para>
-    </param>
-    <param name="mostDetailedMip">
-      <para>Index of the most detailed mipmap level to use; this number is from 0 to <i>mipLevels</i> -1.</para>
-    </param>
-    <param name="mipLevels">
-      <para>The maximum number of mipmap levels for the view.</para>
-    </param>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</seealso>
+    <summary>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure that is initialized with 3D texture values.</summary>
+    <param name="pTex3D">A pointer to a <b>ID3D11Texture3D</b> interface for a 3D texture.</param>
+    <param name="format">A <b>DXGI_FORMAT</b>-typed value that specifies the viewing format.</param>
+    <param name="mostDetailedMip">Index of the most detailed mipmap level to use; this number is from 0 to <i>mipLevels</i> -1.</param>
+    <param name="mipLevels">The maximum number of mipmap levels for the view.</param>
   </member>
   <member name="CD3D11_SHADER_RESOURCE_VIEW_DESC.CD3D11_SHADER_RESOURCE_VIEW_DESC">
-    <summary>
-      <para>Instantiates a new instance of an uninitialized <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</seealso>
+    <summary>Instantiates a new instance of an uninitialized <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151684(v=vs.85)">CD3D11_SHADER_RESOURCE_VIEW_DESC</a> structure.</summary>
+  </member>
+  <member name="CD3D11_SHADER_RESOURCE_VIEW_DESC">
+    <summary>Represents a shader-resource view and provides convenience methods for creating shader-resource views.</summary>
   </member>
 </doc>

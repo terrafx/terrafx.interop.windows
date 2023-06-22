@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMC_TAGGED_OTHER_MSG">
-    <summary>
-      <para>The <b>CMC_TAGGED_OTHER_MSG</b> structure is used in the
-<see cref="CMC_DATA_INFO" /> and
-<see cref="CMC_RESPONSE_INFO" /> structures.</para>
-    </summary>
+    <summary>The <b>CMC_TAGGED_OTHER_MSG</b> structure is used in the<see cref="CMC_DATA_INFO" /> and<see cref="CMC_RESPONSE_INFO" /> structures.</summary>
   </member>
   <member name="CMC_TAGGED_OTHER_MSG.dwBodyPartID">
     <summary>
-      <para>
-        <b>DWORD</b> identifying the tagged other message.</para>
-    </summary>
+      <b>DWORD</b> identifying the tagged other message.</summary>
   </member>
   <member name="CMC_TAGGED_OTHER_MSG.pszObjId">
-    <summary>
-      <para>Object identifier (OID) of the other message.</para>
-    </summary>
+    <summary>Object identifier (OID) of the other message.</summary>
   </member>
   <member name="CMC_TAGGED_OTHER_MSG.Value">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_OBJID_BLOB</a> structure that contains the encoded other message information.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_OBJID_BLOB</a> structure that contains the encoded other message information.</summary>
   </member>
 </doc>

@@ -3,29 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRCREATECOLORSPACEW">
-    <summary>
-      <para>The <b>EMRCREATECOLORSPACEW</b> structure contains members for the <see cref="CreateColorSpace" /> enhanced metafile record.
-It differs from <see cref="EMRCREATECOLORSPACE" /> in that it has a Unicode logical color space and also has an optional array containing raw source profile data.</para>
-    </summary>
-    <seealso cref="CreateColorSpace" />
-    <seealso cref="EMRCREATECOLORSPACE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRCREATECOLORSPACEW</b> structure contains members for the <see cref="CreateColorSpace" /> enhanced metafile record. It differs from <see cref="EMRCREATECOLORSPACE" /> in that it has a Unicode logical color space and also has an optional array containing raw source profile data.</summary>
   </member>
   <member name="EMRCREATECOLORSPACEW.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRCREATECOLORSPACEW.ihCS">
-    <summary>
-      <para>Index of the color space in handle table.</para>
-    </summary>
+    <summary>Index of the color space in handle table.</summary>
   </member>
   <member name="EMRCREATECOLORSPACEW.lcs">
-    <summary>
-      <para>Logical color space. Note, this is the Unicode version of the structure.</para>
-    </summary>
+    <summary>Logical color space. Note, this is the Unicode version of the structure.</summary>
   </member>
   <member name="EMRCREATECOLORSPACEW.dwFlags">
     <summary>
@@ -35,21 +22,17 @@ It differs from <see cref="EMRCREATECOLORSPACE" /> in that it has a Unicode logi
           <description>Flag</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>CREATECOLORSPACE_EMBEDED</description>
           <description>Indicates that a color space is embedded in the metafile.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="EMRCREATECOLORSPACEW.cbData">
-    <summary>
-      <para>Size of the raw source profile data in bytes, if it is attached.</para>
-    </summary>
+    <summary>Size of the raw source profile data in bytes, if it is attached.</summary>
   </member>
   <member name="EMRCREATECOLORSPACEW.Data">
-    <summary>
-      <para>An array containing the source profile data. The size of the array is <b>cbData</b>.</para>
-    </summary>
+    <summary>An array containing the source profile data. The size of the array is <b>cbData</b>.</summary>
   </member>
 </doc>

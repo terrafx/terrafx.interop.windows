@@ -3,47 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE">
-    <summary>
-      <para>Defines the range of supported values for an image filter.</para>
-    </summary>
-    <remarks>
-      <para>The multiplier enables the filter range to have a fractional step value.</para>
-      <para>For example, a hue filter might have an actual range of [–180.0 ... +180.0] with a step size of 0.25. The device would report the following range and multiplier:</para>
-      <list type="bullet">
-        <item>
-          <description>Minimum: –720</description>
-        </item>
-        <item>
-          <description>Maximum: +720</description>
-        </item>
-        <item>
-          <description>Multiplier: 0.25</description>
-        </item>
-      </list>
-      <para>In this case,  a filter value of 2 would be interpreted by the device as 0.50 (or 2 × 0.25).</para>
-      <para>The device should use  a multiplier that can be represented exactly as a base-2 fraction.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
-    <seealso cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorFilterRange" />
+    <summary>Defines the range of supported values for an image filter.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE.Minimum">
-    <summary>
-      <para>The minimum value of the filter.</para>
-    </summary>
+    <summary>The minimum value of the filter.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE.Maximum">
-    <summary>
-      <para>The maximum value of the filter.</para>
-    </summary>
+    <summary>The maximum value of the filter.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE.Default">
-    <summary>
-      <para>The default value of the filter.</para>
-    </summary>
+    <summary>The default value of the filter.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE.Multiplier">
-    <summary>
-      <para>A multiplier. Use the following formula to translate the filter setting into the actual filter value: <i>Actual Value</i> = <i>Set Value</i> × <i>Multiplier</i>.</para>
-    </summary>
+    <summary>A multiplier. Use the following formula to translate the filter setting into the actual filter value: <i>Actual Value</i> = <i>Set Value</i> × <i>Multiplier</i>.</summary>
   </member>
 </doc>

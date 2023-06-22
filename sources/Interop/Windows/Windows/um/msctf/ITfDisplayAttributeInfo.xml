@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfDisplayAttributeInfo.GetAttributeInfo">
-    <summary>
-      <para>Obtains the display attribute data.</para>
-    </summary>
-    <param name="pda">
-      <para>Pointer to a <see cref="TF_DISPLAYATTRIBUTE" /> structure that receives display attribute data.</para>
-    </param>
+    <summary>Obtains the display attribute data.</summary>
+    <param name="pda">Pointer to a <see cref="TF_DISPLAYATTRIBUTE" /> structure that receives display attribute data.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,40 +12,37 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pda</i> is invalid.
-</description>
-        </item>
+            <i>pda</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfDisplayAttributeInfo interface" />
-    <seealso cref="ITfDisplayAttributeMgr.OnUpdateInfo" />
-    <seealso cref="TF_DISPLAYATTRIBUTE structure" />
-    <seealso cref="ITfDisplayAttributeInfo.SetAttributeInfo" />
   </member>
   <member name="ITfDisplayAttributeInfo.GetDescription">
-    <summary>
-      <para>Obtains the description string of the display attribute.</para>
-    </summary>
-    <param name="pbstrDesc">
-      <para>Pointer to a BSTR value that receives the description string. This value must be allocated using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</a>. The caller must free this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</para>
-    </param>
+    <summary>Obtains the description string of the display attribute.</summary>
+    <param name="pbstrDesc">Pointer to a BSTR value that receives the description string. This value must be allocated using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</a>. The caller must free this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -57,39 +50,37 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pbstrDesc</i> is invalid.
-</description>
-        </item>
+            <i>pbstrDesc</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfDisplayAttributeInfo interface" />
-    <seealso cref="SysAllocString function" />
-    <seealso cref="SysFreeString function" />
   </member>
   <member name="ITfDisplayAttributeInfo.GetGUID">
-    <summary>
-      <para>Obtains the GUID for the display attribute.</para>
-    </summary>
-    <param name="pguid">
-      <para>Pointer to a GUID value that receives the GUID for the display attribute.</para>
-    </param>
+    <summary>Obtains the GUID for the display attribute.</summary>
+    <param name="pguid">Pointer to a GUID value that receives the GUID for the display attribute.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -97,34 +88,36 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pguid</i> is invalid.
-</description>
-        </item>
+            <i>pguid</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfDisplayAttributeInfo interface" />
   </member>
   <member name="ITfDisplayAttributeInfo.Reset">
-    <summary>
-      <para>Resets the display attribute data to its default value.</para>
-    </summary>
+    <summary>Resets the display attribute data to its default value.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -132,41 +125,36 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The display attribute provider does not support attribute modification.</para>
-          </description>
-        </item>
+          <description>The display attribute provider does not support attribute modification.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The implementation of this method should not call <see cref="ITfDisplayAttributeMgr.OnUpdateInfo" /> in response to this method. The caller must do so. This avoids redundant notifications if more than one attribute is modified. The caller must eventually call <b>ITfDisplayAttributeMgr.OnUpdateInfo</b> so that other clients will receive an attribute update notification.</para>
-    </remarks>
-    <seealso cref="ITfDisplayAttributeInfo interface" />
-    <seealso cref="ITfDisplayAttributeMgr.OnUpdateInfo" />
   </member>
   <member name="ITfDisplayAttributeInfo.SetAttributeInfo">
-    <summary>
-      <para>Sets the new attribute data.</para>
-    </summary>
-    <param name="pda">
-      <para>Pointer to a <see cref="TF_DISPLAYATTRIBUTE" /> structure that contains the new display attribute data.</para>
-    </param>
+    <summary>Sets the new attribute data.</summary>
+    <param name="pda">Pointer to a <see cref="TF_DISPLAYATTRIBUTE" /> structure that contains the new display attribute data.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -174,57 +162,47 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The display attribute provider does not support attribute modification.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The display attribute provider does not support attribute modification.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pda</i> is invalid.
-</description>
-        </item>
+            <i>pda</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The implementation of this method should not call <see cref="ITfDisplayAttributeMgr.OnUpdateInfo" /> in response to this method. The caller must do so. This avoids redundant notifications if more than one attribute is modified. The caller must eventually call <b>ITfDisplayAttributeMgr.OnUpdateInfo</b> so that other clients will receive an attribute update notification.</para>
-    </remarks>
-    <seealso cref="ITfDisplayAttributeInfo interface" />
-    <seealso cref="ITfDisplayAttributeMgr.OnUpdateInfo" />
-    <seealso cref="TF_DISPLAYATTRIBUTE structure" />
-    <seealso cref="ITfDisplayAttributeInfo.GetAttributeInfo" />
   </member>
   <member name="ITfDisplayAttributeInfo">
-    <summary>
-      <para>The <b>ITfDisplayAttributeInfo</b> interface is implemented by a text service to provide display attribute data. This interface is used by any component, most often an application, that must determine how text displays.</para>
-    </summary>
-    <remarks>
-      <para>An application obtains an instance of this interface by calling <see cref="ITfDisplayAttributeMgr.GetDisplayAttributeInfo" /> or <see cref="IEnumTfDisplayAttributeInfo.Next" />.</para>
-      <para>A text service supplies an instance of this interface in its <see cref="ITfDisplayAttributeProvider.GetDisplayAttributeInfo" /> method.</para>
-    </remarks>
-    <seealso cref="IEnumTfDisplayAttributeInfo.Next " />
-    <seealso cref="ITfDisplayAttributeMgr.GetDisplayAttributeInfo " />
-    <seealso cref="ITfDisplayAttributeProvider.GetDisplayAttributeInfo " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfDisplayAttributeInfo</b> interface is implemented by a text service to provide display attribute data. This interface is used by any component, most often an application, that must determine how text displays.</summary>
   </member>
 </doc>

@@ -3,499 +3,413 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICMPV6_ECHO_REPLY">
-    <summary>
-      <para>The
-<b>ICMPV6_ECHO_REPLY</b> structure describes the data returned in response to an IPv6 echo request.</para>
-    </summary>
-    <remarks>
-      <para>The <b>ICMPV6_ECHO_REPLY</b> structure is used by the <see cref="Icmp6ParseReplies" /> function to return the response to an IPv6 echo request. The reply data that contains the message body from the ICMPV6 response follows the <b>ICMPV6_ECHO_REPLY</b> structure in memory.</para>
-      <para>For IPv6, some of the possible values for the <b>Status</b> member are specified in
-RFC 2163. For more information, see <a href="http://tools.ietf.org/html/rfc2463">www.ietf.org/rfc/rfc2463.txt</a>.</para>
-      <para>The <see cref="GetIpErrorString" /> function can be used to retrieve the IP helper error string for the <b>IP_STATUS</b> error code in the <b>Status</b> member.</para>
-      <para>The <b>ICMPV6_ECHO_REPLY</b> structure is defined in public header files included in the Microsoft Windows Software Development Kit (SDK), but this structure is used by the <see cref="Icmp6ParseReplies" /> function on Windows XP and later.</para>
-      <para>In the Windows SDK, the <b>ICMPV6_ECHO_REPLY_LH</b> structure is defined  when compiling an
-application if the target platform is Windows XP and later
-(<code>NTDDI_VERSION &gt;= NTDDI_XP</code>,
-<code>_WIN32_WINNT &gt;= 0x0501</code>, or
-<code>WINVER &gt;= 0x0501</code>). The <b>ICMPV6_ECHO_REPLY_LH</b> structure is typedefed to the <b>ICMPV6_ECHO_REPLY</b> structure. When compiling an application if the target
-platform is not Windows XP and later, the
-<b>ICMPV6_ECHO_REPLY</b> structure is undefined.</para>
-      <para>This structure is defined in the <i>Ipexport.h</i> header file which is automatically included in the <i>Iphlpapi.h</i> header file. The <i>Ipexport.h</i> header file should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetIpErrorString" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
-    <seealso cref="IPV6_ADDRESS_EX" />
-    <seealso cref="IP_OPTION_INFORMATION" />
-    <seealso cref="Icmp6CreateFile" />
-    <seealso cref="Icmp6ParseReplies" />
-    <seealso cref="Icmp6SendEcho2" />
-    <seealso cref="IcmpCloseHandle" />
+    <summary>The<b>ICMPV6_ECHO_REPLY</b> structure describes the data returned in response to an IPv6 echo request.</summary>
   </member>
   <member name="ICMPV6_ECHO_REPLY.Address">
-    <summary>
-      <para>Type: <b>IPV6_ADDRESS_EX</b></para>
-      <para>The replying IPv6 address, in the form of an <see cref="IPV6_ADDRESS_EX" /> structure.</para>
-    </summary>
+    <summary>The replying IPv6 address, in the form of an <see cref="IPV6_ADDRESS_EX" /> structure.</summary>
   </member>
   <member name="ICMPV6_ECHO_REPLY.Status">
     <summary>
-      <para>Type: <b>ULONG</b></para>
       <para>The status of the echo request, in the form of an <b>IP_STATUS</b> code. The possible values for this member are defined in the <i>Ipexport.h</i> header file.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The status was success.</para>
-          </description>
-        </item>
-        <item>
+          <description>The status was success.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_BUF_TOO_SMALL</b>
-                </description>
-              </item>
-              <item>
-                <description>11001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The reply buffer was too small.</para>
-          </description>
-        </item>
-        <item>
+          <description>The reply buffer was too small.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_DEST_NET_UNREACHABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>11002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The destination network was unreachable. In IPv6 terminology, this status value is also defined as <b>IP_DEST_NO_ROUTE</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The destination network was unreachable. In IPv6 terminology, this status value is also defined as <b>IP_DEST_NO_ROUTE</b>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_DEST_HOST_UNREACHABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>11003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The destination host was unreachable. In IPv6 terminology, this status value is also defined as <b>IP_DEST_ADDR_UNREACHABLE</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The destination host was unreachable. In IPv6 terminology, this status value is also defined as <b>IP_DEST_ADDR_UNREACHABLE</b>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_DEST_PROT_UNREACHABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>11004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The destination protocol was unreachable. In IPv6 terminology, this status value is also defined as <b>IP_DEST_PROHIBITED</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The destination protocol was unreachable. In IPv6 terminology, this status value is also defined as <b>IP_DEST_PROHIBITED</b>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_DEST_PORT_UNREACHABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>11005</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11005</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The destination port was unreachable.</para>
-          </description>
-        </item>
-        <item>
+          <description>The destination port was unreachable.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_NO_RESOURCES</b>
-                </description>
-              </item>
-              <item>
-                <description>11006</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11006</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Insufficient IP resources were available.</para>
-          </description>
-        </item>
-        <item>
+          <description>Insufficient IP resources were available.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>IP_BAD_OPTION </b>
-                </description>
-              </item>
-              <item>
-                <description>11007</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>IP_BAD_OPTION</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11007</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A bad IP option was specified.</para>
-          </description>
-        </item>
-        <item>
+          <description>A bad IP option was specified.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_HW_ERROR</b>
-                </description>
-              </item>
-              <item>
-                <description>11008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A hardware error occurred.</para>
-          </description>
-        </item>
-        <item>
+          <description>A hardware error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_PACKET_TOO_BIG</b>
-                </description>
-              </item>
-              <item>
-                <description>11009</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11009</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The packet was too big.</para>
-          </description>
-        </item>
-        <item>
+          <description>The packet was too big.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_REQ_TIMED_OUT</b>
-                </description>
-              </item>
-              <item>
-                <description>11010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The request timed out.</para>
-          </description>
-        </item>
-        <item>
+          <description>The request timed out.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_BAD_REQ</b>
-                </description>
-              </item>
-              <item>
-                <description>11011</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11011</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A bad request.</para>
-          </description>
-        </item>
-        <item>
+          <description>A bad request.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_BAD_ROUTE</b>
-                </description>
-              </item>
-              <item>
-                <description>11012</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11012</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A bad route.</para>
-          </description>
-        </item>
-        <item>
+          <description>A bad route.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_TTL_EXPIRED_TRANSIT</b>
-                </description>
-              </item>
-              <item>
-                <description>11013</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11013</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The hop limit for IPv6 expired in transit. In IPv6 terminology, this status value is also defined as <b>IP_HOP_LIMIT_EXCEEDED</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The hop limit for IPv6 expired in transit. In IPv6 terminology, this status value is also defined as <b>IP_HOP_LIMIT_EXCEEDED</b>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_TTL_EXPIRED_REASSEM</b>
-                </description>
-              </item>
-              <item>
-                <description>11014</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11014</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The hop limit for IPv6 expired during fragment reassembly. In IPv6 terminology, this status value is also defined as <b>IP_REASSEMBLY_TIME_EXCEEDED</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The hop limit for IPv6 expired during fragment reassembly. In IPv6 terminology, this status value is also defined as <b>IP_REASSEMBLY_TIME_EXCEEDED</b>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_PARAM_PROBLEM</b>
-                </description>
-              </item>
-              <item>
-                <description>11015</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11015</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A parameter problem. In IPv6 terminology, this status value is also defined as <b>IP_PARAMETER_PROBLEM</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>A parameter problem. In IPv6 terminology, this status value is also defined as <b>IP_PARAMETER_PROBLEM</b>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_SOURCE_QUENCH</b>
-                </description>
-              </item>
-              <item>
-                <description>11016</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11016</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Datagrams are arriving too fast to be processed and datagrams may have been discarded.</para>
-          </description>
-        </item>
-        <item>
+          <description>Datagrams are arriving too fast to be processed and datagrams may have been discarded.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_OPTION_TOO_BIG</b>
-                </description>
-              </item>
-              <item>
-                <description>11017</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11017</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An IP option was too big.</para>
-          </description>
-        </item>
-        <item>
+          <description>An IP option was too big.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_BAD_DESTINATION</b>
-                </description>
-              </item>
-              <item>
-                <description>11018</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11018</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A bad destination.</para>
-          </description>
-        </item>
-        <item>
+          <description>A bad destination.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_DEST_UNREACHABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>11040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The destination was unreachable.</para>
-          </description>
-        </item>
-        <item>
+          <description>The destination was unreachable.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_TIME_EXCEEDED</b>
-                </description>
-              </item>
-              <item>
-                <description>11041</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11041</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The time was exceeded.</para>
-          </description>
-        </item>
-        <item>
+          <description>The time was exceeded.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_BAD_HEADER</b>
-                </description>
-              </item>
-              <item>
-                <description>11042</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11042</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A bad IP header was encountered.</para>
-          </description>
-        </item>
-        <item>
+          <description>A bad IP header was encountered.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_UNRECOGNIZED_NEXT_HEADER</b>
-                </description>
-              </item>
-              <item>
-                <description>11043</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11043</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An unrecognized next header was encountered.</para>
-          </description>
-        </item>
-        <item>
+          <description>An unrecognized next header was encountered.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ICMP_ERROR</b>
-                </description>
-              </item>
-              <item>
-                <description>11044</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11044</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An ICMP error occurred.</para>
-          </description>
-        </item>
-        <item>
+          <description>An ICMP error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_DEST_SCOPE_MISMATCH</b>
-                </description>
-              </item>
-              <item>
-                <description>11045</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11045</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A destination scope ID mismatch occurred.</para>
-          </description>
-        </item>
-        <item>
+          <description>A destination scope ID mismatch occurred.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_GENERAL_FAILURE</b>
-                </description>
-              </item>
-              <item>
-                <description>11050</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11050</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A general failure. This error can be returned for some malformed ICMP packets.</para>
-          </description>
-        </item>
+          <description>A general failure. This error can be returned for some malformed ICMP packets.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="ICMPV6_ECHO_REPLY.RoundTripTime">
-    <summary>
-      <para>Type: <b>unsigned int</b></para>
-      <para>The round trip time, in milliseconds.</para>
-    </summary>
+    <summary>The round trip time, in milliseconds.</summary>
   </member>
 </doc>

@@ -3,222 +3,67 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICBitmapEncoder.Commit">
-    <summary>
-      <para>Commits all changes for the image and closes the stream.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To finalize an image, both the frame <see cref="Commit" /> and the encoder <b>Commit</b> must be called. However, only call the encoder  <b>Commit</b> method after all frames have been committed.</para>
-      <para>After the encoder has been committed, it can't be re-initialized or reused with another stream. A new encoder interface must be created, for example, with <see cref="IWICImagingFactory.CreateEncoder" />.</para>
-      <para>For the encoder <b>Commit</b> to succeed, you must at a minimum call  <see cref="IWICBitmapEncoder.Initialize" /> and either <see cref="IWICBitmapFrameEncode.WriteSource" /> or <see cref="IWICBitmapFrameEncode.WritePixels" />.</para>
-      <para>
-        <see cref="IWICBitmapFrameEncode.WriteSource" /> specifies all parameters needed to encode the image data. <see cref="IWICBitmapFrameEncode.WritePixels" /> requires that you also call <see cref="IWICBitmapFrameEncode.SetSize" />, <see cref="IWICBitmapFrameEncode.SetPixelFormat" />, and <see cref="IWICBitmapFrameEncode.SetPalette" /> (if the pixel format is indexed).</para>
-    </remarks>
-    <seealso cref="Commit" />
-    <seealso cref="IWICBitmapEncoder" />
+    <summary>Commits all changes for the image and closes the stream.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapEncoder.CreateNewFrame">
-    <summary>
-      <para>Creates a new <see cref="IWICBitmapFrameEncode" /> instance.</para>
-    </summary>
-    <param name="ppIFrameEncode">
-      <para>Type: <b><see cref="IWICBitmapFrameEncode" />**</b></para>
-      <para>A pointer that receives a pointer to the new instance of an <see cref="IWICBitmapFrameEncode" />.</para>
-    </param>
-    <param name="ppIEncoderOptions">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</a>**</b></para>
-      <para>Optional. Receives the named properties to use for subsequent frame initialization. See Remarks.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The parameter <i>ppIEncoderOptions</i> can be used to receive an <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</a> that can then be used to specify encoder options. This is done by passing a pointer to a <b>NULL</b> IPropertyBag2 pointer in <i>ppIEncoderOptions</i>. The returned IPropertyBag2 is initialized with all encoder options that are available for the given format, at their default values. To specify non-default encoding behavior, set the needed encoder options on the IPropertyBag2 and pass it to <see cref="IWICBitmapFrameEncode.Initialize" />.</para>
-      <para>
-        <b>Note</b>  Do not pass in a pointer to an initialized <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</a>. The pointer will be overwritten, and the original IPropertyBag2 will not be freed.</para>
-      <para>Otherwise, you can pass <b>NULL</b> in <i>ppIEncoderOptions</i> if you do not intend to specify encoder options.</para>
-      <para>See <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-creating-encoder">Encoding Overview</a> for an example of how to set encoder options.</para>
-      <para>For formats that support encoding multiple frames (for example, TIFF, JPEG-XR), you can work on only one frame at a time. This means that you must call <see cref="IWICBitmapFrameEncode.Commit" /> before you call <b>CreateNewFrame</b> again.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-creating-encoder">Encoding Overview</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</seealso>
-    <seealso cref="IWICBitmapEncoder" />
+    <summary>Creates a new <see cref="IWICBitmapFrameEncode" /> instance.</summary>
+    <param name="ppIFrameEncode">A pointer that receives a pointer to the new instance of an <see cref="IWICBitmapFrameEncode" />.</param>
+    <param name="ppIEncoderOptions">Optional. Receives the named properties to use for subsequent frame initialization. See Remarks.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapEncoder.GetContainerFormat">
-    <summary>
-      <para>Retrieves the encoder's container format.</para>
-    </summary>
-    <param name="pguidContainerFormat">
-      <para>Type: <b>GUID*</b></para>
-      <para>A pointer that receives the encoder's container format GUID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IWICBitmapEncoder" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</seealso>
+    <summary>Retrieves the encoder's container format.</summary>
+    <param name="pguidContainerFormat">A pointer that receives the encoder's container format GUID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapEncoder.GetEncoderInfo">
-    <summary>
-      <para>Retrieves an <see cref="IWICBitmapEncoderInfo" /> for the encoder.</para>
-    </summary>
-    <param name="ppIEncoderInfo">
-      <para>Type: <b><see cref="IWICBitmapEncoderInfo" />**</b></para>
-      <para>A pointer that receives a pointer to an <see cref="IWICBitmapEncoderInfo" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves an <see cref="IWICBitmapEncoderInfo" /> for the encoder.</summary>
+    <param name="ppIEncoderInfo">A pointer that receives a pointer to an <see cref="IWICBitmapEncoderInfo" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapEncoder.GetMetadataQueryWriter">
-    <summary>
-      <para>Retrieves a metadata query writer for the encoder.</para>
-    </summary>
-    <param name="ppIMetadataQueryWriter">
-      <para>Type: <b><see cref="IWICMetadataQueryWriter" />**</b></para>
-      <para>When this method returns, contains a pointer to the encoder's metadata query writer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
-    <seealso cref="IWICBitmapEncoder" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Retrieves a metadata query writer for the encoder.</summary>
+    <param name="ppIMetadataQueryWriter">When this method returns, contains a pointer to the encoder's metadata query writer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapEncoder.Initialize">
-    <summary>
-      <para>Initializes the encoder with an <see cref="IStream" /> which tells the encoder where to encode the bits.</para>
-    </summary>
-    <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>The output stream.</para>
-    </param>
-    <param name="cacheOption">
-      <para>Type: <b><see cref="WICBitmapEncoderCacheOption" /></b></para>
-      <para>The <see cref="WICBitmapEncoderCacheOption" /> used on initialization.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Initializes the encoder with an <see cref="IStream" /> which tells the encoder where to encode the bits.</summary>
+    <param name="pIStream">The output stream.</param>
+    <param name="cacheOption">The <see cref="WICBitmapEncoderCacheOption" /> used on initialization.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapEncoder.SetColorContexts">
-    <summary>
-      <para>Sets the <see cref="IWICColorContext" /> objects for the encoder.</para>
-    </summary>
-    <param name="cCount">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of <see cref="IWICColorContext" /> to set.</para>
-    </param>
-    <param name="ppIColorContext">
-      <para>Type: <b><see cref="IWICColorContext" />**</b></para>
-      <para>A pointer an <see cref="IWICColorContext" /> pointer containing the color contexts to set for the encoder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the <see cref="IWICColorContext" /> objects for the encoder.</summary>
+    <param name="cCount">The number of <see cref="IWICColorContext" /> to set.</param>
+    <param name="ppIColorContext">A pointer an <see cref="IWICColorContext" /> pointer containing the color contexts to set for the encoder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapEncoder.SetPalette">
-    <summary>
-      <para>Sets the global palette for the image.</para>
-    </summary>
-    <param name="pIPalette">
-      <para>Type: <b><see cref="IWICPalette" />*</b></para>
-      <para>The <see cref="IWICPalette" /> to use as the global palette.</para>
-    </param>
+    <summary>Sets the global palette for the image.</summary>
+    <param name="pIPalette">The <see cref="IWICPalette" /> to use as the global palette.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise.</para>
       <para>Returns WINCODEC_ERR_UNSUPPORTEDOPERATION if the feature is not supported by the encoder.</para>
     </returns>
-    <remarks>
-      <para>Only GIF images support an optional global palette, and you must set the global palette before adding any frames to the image. You only need to set the palette for indexed pixel formats.</para>
-    </remarks>
   </member>
   <member name="IWICBitmapEncoder.SetPreview">
-    <summary>
-      <para>Sets the global preview for the image.</para>
-    </summary>
-    <param name="pIPreview">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The <see cref="IWICBitmapSource" /> to use as the global preview.</para>
-    </param>
+    <summary>Sets the global preview for the image.</summary>
+    <param name="pIPreview">The <see cref="IWICBitmapSource" /> to use as the global preview.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise.</para>
       <para>Returns WINCODEC_ERR_UNSUPPORTEDOPERATION if the feature is not supported by the encoder.</para>
     </returns>
   </member>
   <member name="IWICBitmapEncoder.SetThumbnail">
-    <summary>
-      <para>Sets the global thumbnail for the image.</para>
-    </summary>
-    <param name="pIThumbnail">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The <see cref="IWICBitmapSource" /> to set as the global thumbnail.</para>
-    </param>
+    <summary>Sets the global thumbnail for the image.</summary>
+    <param name="pIThumbnail">The <see cref="IWICBitmapSource" /> to set as the global thumbnail.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise.</para>
       <para>Returns WINCODEC_ERR_UNSUPPORTEDOPERATION if the feature is not supported by the encoder.</para>
     </returns>
   </member>
   <member name="IWICBitmapEncoder">
-    <summary>
-      <para>Defines methods for setting an encoder's properties such as thumbnails, frames, and palettes.</para>
-    </summary>
-    <remarks>
-      <para>There are a number of concrete implementations of this interface representing each of the standard encoders provided by the platform including bitmap (BMP), Portable Network Graphics (PNG), Joint Photographic Experts Group (JPEG), Graphics Interchange Format (GIF), Tagged Image File Format (TIFF), and Microsoft Windows Digital Photo (WDP). The following table includes the class identifier (CLSID) for each native encoder.</para>
-      <list type="table">
-        <listheader>
-          <description>CLSID Name</description>
-          <description>CLSID</description>
-        </listheader>
-        <item>
-          <description>CLSID_WICBmpEncoder</description>
-          <description>0x69be8bb4, 0xd66d, 0x47c8, 0x86, 0x5a, 0xed, 0x15, 0x89, 0x43, 0x37, 0x82</description>
-        </item>
-        <item>
-          <description>CLSID_WICGifEncoder</description>
-          <description>0x114f5598, 0xb22, 0x40a0, 0x86, 0xa1, 0xc8, 0x3e, 0xa4, 0x95, 0xad, 0xbd</description>
-        </item>
-        <item>
-          <description>CLSID_WICHeifEncoder</description>
-          <description>0x0dbecec1, 0x9eb3, 0x4860, 0x9c, 0x6f, 0xdd, 0xbe, 0x86, 0x63, 0x45, 0x75</description>
-        </item>
-        <item>
-          <description>CLSID_WICJpegEncoder</description>
-          <description>0x1a34f5c1, 0x4a5a, 0x46dc, 0xb6, 0x44, 0x1f, 0x45, 0x67, 0xe7, 0xa6, 0x76</description>
-        </item>
-        <item>
-          <description>CLSID_WICPngEncoder</description>
-          <description>0x27949969, 0x876a, 0x41d7, 0x94, 0x47, 0x56, 0x8f, 0x6a, 0x35, 0xa4, 0xdc</description>
-        </item>
-        <item>
-          <description>CLSID_WICTiffEncoder</description>
-          <description>0x0131be10, 0x2001, 0x4c5f, 0xa9, 0xb0, 0xcc, 0x88, 0xfa, 0xb6, 0x4c, 0xe8</description>
-        </item>
-        <item>
-          <description>CLSID_WICWmpEncoder</description>
-          <description>0xac4ce3cb, 0xe1c1, 0x44cd, 0x82, 0x15, 0x5a, 0x16, 0x65, 0x50, 0x9e, 0xc2</description>
-        </item>
-      </list>
-      <para>Additionally this interface may be sub-classed to provide support for third party codecs as part of the extensibility model. See the <a href="https://docs.microsoft.com//previous-versions/ms771770(v=vs.100)">AITCodec Sample CODEC</a>.</para>
-      <para>CLSID_WICHeifDecoder operates on HEIF (High Efficiency Image Format) images.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/ms771770(v=vs.100)">AITCodec Sample CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
+    <summary>Defines methods for setting an encoder's properties such as thumbnails, frames, and palettes.</summary>
   </member>
 </doc>

@@ -3,29 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPATCHERQUEUE_THREAD_APARTMENTTYPE">
-    <summary>
-      <para>Specifies the threading apartment type for a new <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>.</para>
-    </summary>
-    <remarks>
-      <para>This value is relevant when <see cref="DispatcherQueueOptions.threadType" /> is  <b>DQTYPE_THREAD_DEDICATED</b>. Use <b>DQTAT_COM_NONE</b> when <b>DispatcherQueueOptions.threadType</b> is <b>DQTYPE_THREAD_CURRENT</b>.</para>
-      <para>Introduced in Windows 10, version 1709.</para>
-    </remarks>
-    <seealso cref="CreateDispatcherQueueController" />
-    <seealso cref="DispatcherQueueOptions" />
+    <summary>Specifies the threading apartment type for a new <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>.</summary>
   </member>
   <member name="DISPATCHERQUEUE_THREAD_APARTMENTTYPE.DQTAT_COM_NONE">
-    <summary>
-      <para>No COM threading apartment type specified.</para>
-    </summary>
+    <summary>No COM threading apartment type specified.</summary>
   </member>
   <member name="DISPATCHERQUEUE_THREAD_APARTMENTTYPE.DQTAT_COM_ASTA">
-    <summary>
-      <para>Specifies an application single-threaded apartment (ASTA) COM threading apartment.</para>
-    </summary>
+    <summary>Specifies an application single-threaded apartment (ASTA) COM threading apartment.</summary>
   </member>
   <member name="DISPATCHERQUEUE_THREAD_APARTMENTTYPE.DQTAT_COM_STA">
-    <summary>
-      <para>Specifies a single-threaded apartment (STA) COM threading apartment.</para>
-    </summary>
+    <summary>Specifies a single-threaded apartment (STA) COM threading apartment.</summary>
   </member>
 </doc>

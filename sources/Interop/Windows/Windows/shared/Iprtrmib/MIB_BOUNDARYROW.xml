@@ -3,23 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_BOUNDARYROW">
-    <summary>
-      <para>The <b>MIB_BOUNDARYROW</b> structure contains the IPv4 group address value and mask for a multicast boundary.</para>
-    </summary>
-    <remarks>
-      <para>Note that the <i>Iprtrmib.h</i> header file is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Iprtrmib.h</i> header file should never be used directly.</para>
-    </remarks>
+    <summary>The <b>MIB_BOUNDARYROW</b> structure contains the IPv4 group address value and mask for a multicast boundary.</summary>
   </member>
   <member name="MIB_BOUNDARYROW.dwGroupAddress">
     <summary>
       <para>The 32-bit integer representation of the IPv4 group address which, when combined with the corresponding value in <b>dwGroupMask</b>, identifies the group range for which the scoped boundary exists.</para>
-      <para>
-        <b>Note</b>  Scoped addresses must come from the range 239.<i>.</i>.* as specified in <a href="https://www.ietf.org/rfc/rfc2365.txt">RFC 2365</a>.</para>
+      <div>
+        <b>Note</b>  Scoped addresses must come from the range 239.*.*.* as specified in <a href="https://www.ietf.org/rfc/rfc2365.txt">RFC 2365</a>.</div>
     </summary>
   </member>
   <member name="MIB_BOUNDARYROW.dwGroupMask">
-    <summary>
-      <para>The 32-bit integer representation of the IPv4 group address mask which, when combined with the corresponding value in <b>dwGroupAddress</b>, identifies the group range for which the scoped boundary exists.</para>
-    </summary>
+    <summary>The 32-bit integer representation of the IPv4 group address mask which, when combined with the corresponding value in <b>dwGroupAddress</b>, identifies the group range for which the scoped boundary exists.</summary>
   </member>
 </doc>

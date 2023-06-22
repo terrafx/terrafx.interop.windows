@@ -3,420 +3,140 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.BitmapBrushProperties1">
-    <summary>
-      <para>Creates a <see cref="D2D1_BITMAP_BRUSH_PROPERTIES1" /> structure.</para>
-    </summary>
-    <param name="extendModeX">
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>A value that specifies how the brush horizontally tiles those areas that extend past its bitmap. The default value is <see cref="D2D1_EXTEND_MODE_CLAMP" />.</para>
-    </param>
-    <param name="extendModeY">
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>A value that specifies how the brush vertically tiles those areas that extend past its bitmap. The default value is <see cref="D2D1_EXTEND_MODE_CLAMP" />.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>A value that specifies the interpolation algorithm that is used when images are scaled or rotated. The default value is <see cref="D2D1_INTERPOLATION_MODE_LINEAR" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_BITMAP_BRUSH_PROPERTIES1" /></b></para>
-      <para>A structure that describes the extend modes and the interpolation mode of an <see cref="ID2D1BitmapBrush1" />.</para>
-    </returns>
+    <summary>Creates a <see cref="D2D1_BITMAP_BRUSH_PROPERTIES1" /> structure.</summary>
+    <param name="extendModeX">A value that specifies how the brush horizontally tiles those areas that extend past its bitmap. The default value is <see cref="D2D1_EXTEND_MODE_CLAMP" />.</param>
+    <param name="extendModeY">A value that specifies how the brush vertically tiles those areas that extend past its bitmap. The default value is <see cref="D2D1_EXTEND_MODE_CLAMP" />.</param>
+    <param name="interpolationMode">A value that specifies the interpolation algorithm that is used when images are scaled or rotated. The default value is <see cref="D2D1_INTERPOLATION_MODE_LINEAR" />.</param>
+    <returns>A structure that describes the extend modes and the interpolation mode of an <see cref="ID2D1BitmapBrush1" />.</returns>
   </member>
   <member name="DirectX.BitmapProperties1">
-    <summary>
-      <para>Creates a <see cref="D2D1_BITMAP_PROPERTIES1" /> structure.</para>
-    </summary>
-    <param name="bitmapOptions">
-      <para>Type: <b><see cref="D2D1_BITMAP_OPTIONS" /></b></para>
-      <para>A combination of <see cref="D2D1_BITMAP_OPTIONS" />-typed values that specify how the bitmap can be used.</para>
-    </param>
-    <param name="pixelFormat">
-      <para>Type: <b>const <see cref="D2D1_PIXEL_FORMAT" /></b></para>
-      <para>The bitmap's pixel format and alpha mode. The default value is a <see cref="D2D1_PIXEL_FORMAT" /> with a <b>format</b> of <see cref="DXGI_FORMAT_UNKNOWN" /> and an <b>alphaMode</b> of  <see cref="D2D1_ALPHA_MODE_UNKNOWN" />. For more information about pixel formats, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</para>
-    </param>
-    <param name="dpiX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The horizontal dpi of the bitmap. The default value is 96.0f.</para>
-    </param>
-    <param name="dpiY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The vertical dpi of the bitmap. The default value is 96.0f.</para>
-    </param>
-    <param name="colorContext">
-      <para>Type: <b><see cref="ID2D1ColorContext" />*</b></para>
-      <para>An optional pointer to the <see cref="ID2D1ColorContext" /> interface for a color context to use with the bitmap. If you don't want to specify a color context, set this parameter to <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_BITMAP_PROPERTIES1" /></b></para>
-      <para>A <see cref="D2D1_BITMAP_PROPERTIES1" /> structure that describes the bitmap.</para>
-    </returns>
+    <summary>Creates a <see cref="D2D1_BITMAP_PROPERTIES1" /> structure.</summary>
+    <param name="bitmapOptions">A combination of <see cref="D2D1_BITMAP_OPTIONS" />-typed values that specify how the bitmap can be used.</param>
+    <param name="pixelFormat">The bitmap's pixel format and alpha mode. The default value is a <see cref="D2D1_PIXEL_FORMAT" /> with a <b>format</b> of <see cref="DXGI_FORMAT_UNKNOWN" /> and an <b>alphaMode</b> of <see cref="D2D1_ALPHA_MODE_UNKNOWN" />. For more information about pixel formats, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</param>
+    <param name="dpiX">The horizontal dpi of the bitmap. The default value is 96.0f.</param>
+    <param name="dpiY">The vertical dpi of the bitmap. The default value is 96.0f.</param>
+    <param name="colorContext">An optional pointer to the <see cref="ID2D1ColorContext" /> interface for a color context to use with the bitmap. If you don't want to specify a color context, set this parameter to <b>NULL</b>.</param>
+    <returns>A <see cref="D2D1_BITMAP_PROPERTIES1" /> structure that describes the bitmap.</returns>
   </member>
   <member name="DirectX.ConvertColorSpace">
-    <summary>
-      <para>Convert a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a> from one color space to another.</para>
-    </summary>
-    <param name="sourceColorSpace">
-      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
-      <para>The color space of the input.</para>
-    </param>
-    <param name="destinationColorSpace">
-      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
-      <para>The desired color space of the output.</para>
-    </param>
-    <param name="color">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
-      <para>The input color.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
-      <para>The converted color in the new color space.</para>
-    </returns>
+    <summary>Convert a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a> from one color space to another.</summary>
+    <param name="sourceColorSpace">The color space of the input.</param>
+    <param name="destinationColorSpace">The desired color space of the output.</param>
+    <param name="color">The input color.</param>
+    <returns>The converted color in the new color space.</returns>
   </member>
   <member name="DirectX.CreationProperties">
-    <summary>
-      <para>Returns a  <see cref="D2D1_CREATION_PROPERTIES" /> that describes root-level creation details.</para>
-    </summary>
-    <param name="threadingMode">
-      <para>Type: <b><see cref="D2D1_THREADING_MODE" /></b></para>
-      <para>The threading mode with which the corresponding root objects are created.</para>
-    </param>
-    <param name="debugLevel">
-      <para>Type: <b><see cref="D2D1_DEBUG_LEVEL" /></b></para>
-      <para>The debug level that the root objects should be created with.</para>
-    </param>
-    <param name="options">
-      <para>Type: <b><see cref="D2D1_DEVICE_CONTEXT_OPTIONS" /></b></para>
-      <para>The device context options that the root objects should be created with.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_CREATION_PROPERTIES" /></b></para>
-      <para>The filled creation properties structure.</para>
-    </returns>
+    <summary>Returns a <see cref="D2D1_CREATION_PROPERTIES" /> that describes root-level creation details.</summary>
+    <param name="threadingMode">The threading mode with which the corresponding root objects are created.</param>
+    <param name="debugLevel">The debug level that the root objects should be created with.</param>
+    <param name="options">The device context options that the root objects should be created with.</param>
+    <returns>The filled creation properties structure.</returns>
   </member>
   <member name="DirectX.DrawingStateDescription1">
-    <summary>
-      <para>Creates a D2D1_DRAWING_STATE_DESCRIPTION1 structure.</para>
-    </summary>
-    <param name="antialiasMode">
-      <para>Type: <b><see cref="D2D1_ANTIALIAS_MODE" /></b></para>
-      <para>The antialiasing mode for subsequent non-text drawing operations. The default value is  <see cref="D2D1_ANTIALIAS_MODE_PER_PRIMITIVE" />.</para>
-    </param>
-    <param name="textAntialiasMode">
-      <para>Type: <b><see cref="D2D1_TEXT_ANTIALIAS_MODE" /></b></para>
-      <para>The antialiasing mode for subsequent text and glyph drawing operations. The default value is <see cref="D2D1_TEXT_ANTIALIAS_MODE_DEFAULT" />.</para>
-    </param>
-    <param name="tag1">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-tag">D2D1_TAG</a></b></para>
-      <para>A label for subsequent drawing operations. The default value is 0.</para>
-    </param>
-    <param name="tag2">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-tag">D2D1_TAG</a></b></para>
-      <para>A label for subsequent drawing operations. The default value is 0.</para>
-    </param>
-    <param name="transform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>The transformation to be applied to subsequent drawing operations.  The default value is provided by the <see cref=" D2D1.IdentityMatrix" /> function, which returns the identity matrix.</para>
-    </param>
-    <param name="primitiveBlend">
-      <para>Type: <b><see cref="D2D1_PRIMITIVE_BLEND" /></b></para>
-      <para>The blend mode of the Direct2D device context.</para>
-    </param>
-    <param name="unitMode">
-      <para>Type: <b><see cref="D2D1_UNIT_MODE" /></b></para>
-      <para>The unit  mode of the drawing operations.  The default is DIPs.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_DRAWING_STATE_DESCRIPTION1" /></b></para>
-      <para>A structure that describes the drawing state of a render target.</para>
-    </returns>
+    <summary>Creates a D2D1_DRAWING_STATE_DESCRIPTION1 structure.</summary>
+    <param name="antialiasMode">The antialiasing mode for subsequent non-text drawing operations. The default value is <see cref="D2D1_ANTIALIAS_MODE_PER_PRIMITIVE" />.</param>
+    <param name="textAntialiasMode">The antialiasing mode for subsequent text and glyph drawing operations. The default value is <see cref="D2D1_TEXT_ANTIALIAS_MODE_DEFAULT" />.</param>
+    <param name="tag1">A label for subsequent drawing operations. The default value is 0.</param>
+    <param name="tag2">A label for subsequent drawing operations. The default value is 0.</param>
+    <param name="transform">The transformation to be applied to subsequent drawing operations. The default value is provided by the <see cref="D2D1.IdentityMatrix" /> function, which returns the identity matrix.</param>
+    <param name="primitiveBlend">The blend mode of the Direct2D device context.</param>
+    <param name="unitMode">The unit mode of the drawing operations. The default is DIPs.</param>
+    <returns>A structure that describes the drawing state of a render target.</returns>
   </member>
   <member name="DirectX.EffectInputDescription">
-    <summary>
-      <para>Creates a <see cref="D2D1_EFFECT_INPUT_DESCRIPTION" /> structure.</para>
-    </summary>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />*</b></para>
-      <para>The effect whose input connection is being specified.</para>
-    </param>
-    <param name="inputIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The input index of the effect that is being considered.</para>
-    </param>
-    <param name="inputRectangle">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The amount of data that would be available on the input. This can be used to query this information when the data is not yet available.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_EFFECT_INPUT_DESCRIPTION" /></b></para>
-      <para>The filled description structure that describes the input to the effect.</para>
-    </returns>
+    <summary>Creates a <see cref="D2D1_EFFECT_INPUT_DESCRIPTION" /> structure.</summary>
+    <param name="effect">The effect whose input connection is being specified.</param>
+    <param name="inputIndex">The input index of the effect that is being considered.</param>
+    <param name="inputRectangle">The amount of data that would be available on the input. This can be used to query this information when the data is not yet available.</param>
+    <returns>The filled description structure that describes the input to the effect.</returns>
   </member>
   <member name="DirectX.ImageBrushProperties">
-    <summary>
-      <para>Creates a <see cref="D2D1_IMAGE_BRUSH_PROPERTIES" /> structure.</para>
-    </summary>
-    <param name="sourceRectangle">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The source rectangle in the image space from which the image will be tiled or interpolated.</para>
-    </param>
-    <param name="extendModeX">
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>The extend mode in the image x-axis.</para>
-    </param>
-    <param name="extendModeY">
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>The extend mode in the image y-axis.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode to use when scaling the image brush.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_IMAGE_BRUSH_PROPERTIES" /></b></para>
-      <para>The struct that describes the image brush.</para>
-    </returns>
+    <summary>Creates a <see cref="D2D1_IMAGE_BRUSH_PROPERTIES" /> structure.</summary>
+    <param name="sourceRectangle">The source rectangle in the image space from which the image will be tiled or interpolated.</param>
+    <param name="extendModeX">The extend mode in the image x-axis.</param>
+    <param name="extendModeY">The extend mode in the image y-axis.</param>
+    <param name="interpolationMode">The interpolation mode to use when scaling the image brush.</param>
+    <returns>The struct that describes the image brush.</returns>
   </member>
   <member name="DirectX.LayerParameters1">
-    <summary>
-      <para>Returns a <see cref="D2D1_LAYER_PARAMETERS1" /> struct that contains the content bounds, mask information, opacity settings, and other options for a layer resource.</para>
-    </summary>
-    <param name="contentBounds">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The content bounds of the layer. Content outside these bounds is not guaranteed to render.</para>
-    </param>
-    <param name="geometricMask">
-      <para>Type: <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometric mask specifies the area of the layer that is composited into the render target.</para>
-    </param>
-    <param name="maskAntialiasMode">
-      <para>Type: <b><see cref="D2D1_ANTIALIAS_MODE" /></b></para>
-      <para>A value that specifies the antialiasing mode for the geometricMask.</para>
-    </param>
-    <param name="maskTransform">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>A value that specifies the transform that is applied to the geometric mask when composing the layer.</para>
-    </param>
-    <param name="opacity">
-      <para>Type: <b>FLOAT</b></para>
-      <para>An opacity value that is applied uniformly to all resources in the layer when compositing to the target.</para>
-    </param>
-    <param name="opacityBrush">
-      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
-      <para>A brush that is used to modify the opacity of the layer. The brush
-is mapped to the layer, and the alpha channel of each mapped brush pixel is multiplied against the corresponding layer pixel.</para>
-    </param>
-    <param name="layerOptions">
-      <para>Type: <b><see cref="D2D1_LAYER_OPTIONS1" /></b></para>
-      <para>Additional options for the layer creation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_LAYER_PARAMETERS1" /></b></para>
-      <para>The filled layer parameters struct.</para>
-    </returns>
+    <summary>Returns a <see cref="D2D1_LAYER_PARAMETERS1" /> struct that contains the content bounds, mask information, opacity settings, and other options for a layer resource.</summary>
+    <param name="contentBounds">The content bounds of the layer. Content outside these bounds is not guaranteed to render.</param>
+    <param name="geometricMask">The geometric mask specifies the area of the layer that is composited into the render target.</param>
+    <param name="maskAntialiasMode">A value that specifies the antialiasing mode for the geometricMask.</param>
+    <param name="maskTransform">A value that specifies the transform that is applied to the geometric mask when composing the layer.</param>
+    <param name="opacity">An opacity value that is applied uniformly to all resources in the layer when compositing to the target.</param>
+    <param name="opacityBrush">A brush that is used to modify the opacity of the layer. The brush is mapped to the layer, and the alpha channel of each mapped brush pixel is multiplied against the corresponding layer pixel.</param>
+    <param name="layerOptions">Additional options for the layer creation.</param>
+    <returns>The filled layer parameters struct.</returns>
   </member>
   <member name="DirectX.Point2L">
-    <summary>
-      <para>Returns a point struct of long integers.</para>
-    </summary>
-    <param name="x">
-      <para>Type: <b>INT32</b></para>
-      <para>The x-coordinate of the point.</para>
-    </param>
-    <param name="y">
-      <para>Type: <b>INT32</b></para>
-      <para>The y-coordinate of the point.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847948(v=vs.85)">D2D1_POINT_2L</a></b></para>
-      <para>A POINT structure that defines the x- and y- coordinates of a point.</para>
-    </returns>
+    <summary>Returns a point struct of long integers.</summary>
+    <param name="x">The x-coordinate of the point.</param>
+    <param name="y">The y-coordinate of the point.</param>
+    <returns>A POINT structure that defines the x- and y- coordinates of a point.</returns>
   </member>
   <member name="DirectX.PrintControlProperties">
-    <summary>
-      <para>Returns a filled <see cref="D2D1_PRINT_CONTROL_PROPERTIES" /> structure.</para>
-    </summary>
-    <param name="fontSubsetMode">
-      <para>Type: <b><see cref="D2D1_PRINT_FONT_SUBSET_MODE" /></b></para>
-      <para>The mode to use for selecting fonts for printing.</para>
-    </param>
-    <param name="rasterDpi">
-      <para>Type: <b>FLOAT</b></para>
-      <para>DPI for rasterization of all unsupported D2D commands or options, defaults to150.0</para>
-    </param>
-    <param name="colorSpace">
-      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
-      <para>Color space for vector graphics in XPS package</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_PRINT_CONTROL_PROPERTIES" /></b></para>
-      <para>The creation properties for a <see cref="ID2D1PrintControl" /> object.</para>
-    </returns>
+    <summary>Returns a filled <see cref="D2D1_PRINT_CONTROL_PROPERTIES" /> structure.</summary>
+    <param name="fontSubsetMode">The mode to use for selecting fonts for printing.</param>
+    <param name="rasterDpi">DPI for rasterization of all unsupported D2D commands or options, defaults to150.0</param>
+    <param name="colorSpace">Color space for vector graphics in XPS package</param>
+    <returns>The creation properties for a <see cref="ID2D1PrintControl" /> object.</returns>
   </member>
   <member name="DirectX.RectL">
-    <summary>
-      <para>Returns a filled D2D1_RECT_L structure.</para>
-    </summary>
-    <param name="left">
-      <para>Type: <b>INT32</b></para>
-      <para>The x-coordinate of the upper-left corner of the rectangle.</para>
-    </param>
-    <param name="top">
-      <para>Type: <b>INT32</b></para>
-      <para>The y-coordinate of the upper-left corner of the rectangle.</para>
-    </param>
-    <param name="right">
-      <para>Type: <b>INT32</b></para>
-      <para>The x-coordinate of the lower-right corner of the rectangle.</para>
-    </param>
-    <param name="bottom">
-      <para>Type: <b>INT32</b></para>
-      <para>The y-coordinate of the lower-right corner of the rectangle.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a></b></para>
-      <para>The RECT structure defines the coordinates of the upper-left and lower-right corners of a rectangle.</para>
-    </returns>
+    <summary>Returns a filled D2D1_RECT_L structure.</summary>
+    <param name="left">The x-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="top">The y-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="right">The x-coordinate of the lower-right corner of the rectangle.</param>
+    <param name="bottom">The y-coordinate of the lower-right corner of the rectangle.</param>
+    <returns>The RECT structure defines the coordinates of the upper-left and lower-right corners of a rectangle.</returns>
   </member>
   <member name="DirectX.RenderingControls">
-    <summary>
-      <para>Returns a filled D2D1_RENDERING_CONTROLS structure.</para>
-    </summary>
-    <param name="bufferPrecision">
-      <para>Type: <b><see cref="D2D1_BUFFER_PRECISION" /></b></para>
-      <para>The buffer precision used by default if the buffer precision is not otherwise specified by the effect or the transform.</para>
-    </param>
-    <param name="tileSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-u">D2D1_SIZE_U</a></b></para>
-      <para>The minimum tile allocation size to be used by the imaging effect renderer.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_RENDERING_CONTROLS" /></b></para>
-      <para>Describes limitations to be applied to an imaging effect renderer.</para>
-    </returns>
+    <summary>Returns a filled D2D1_RENDERING_CONTROLS structure.</summary>
+    <param name="bufferPrecision">The buffer precision used by default if the buffer precision is not otherwise specified by the effect or the transform.</param>
+    <param name="tileSize">The minimum tile allocation size to be used by the imaging effect renderer.</param>
+    <returns>Describes limitations to be applied to an imaging effect renderer.</returns>
   </member>
   <member name="DirectX.SetDpiCompensatedEffectInput">
-    <summary>
-      <para>Sets a bitmap as an effect input, while inserting a DPI compensation effect
-to preserve visual appearance as the device context's DPI changes.</para>
-    </summary>
-    <param name="deviceContext">
-      <para>Type: <b><see cref="ID2D1DeviceContext" />*</b></para>
-      <para>The device context that is the creator of the effect.</para>
-    </param>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />*</b></para>
-      <para>The function sets the input of this effect.</para>
-    </param>
-    <param name="inputIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the input to be set.</para>
-    </param>
-    <param name="inputBitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The input bitmap.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode for the DPI compensation effect.</para>
-    </param>
-    <param name="borderMode">
-      <para>Type: <b><see cref="D2D1_BORDER_MODE" /></b></para>
-      <para>The border mode for the DPI compensation effect.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets a bitmap as an effect input, while inserting a DPI compensation effect to preserve visual appearance as the device context's DPI changes.</summary>
+    <param name="deviceContext">The device context that is the creator of the effect.</param>
+    <param name="effect">The function sets the input of this effect.</param>
+    <param name="inputIndex">The index of the input to be set.</param>
+    <param name="inputBitmap">The input bitmap.</param>
+    <param name="interpolationMode">The interpolation mode for the DPI compensation effect.</param>
+    <param name="borderMode">The border mode for the DPI compensation effect.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="DirectX.StrokeStyleProperties1">
-    <summary>
-      <para>Returns a filled D2D1_STROKE_STYLE_PROPERTIES1 structure.</para>
-    </summary>
-    <param name="startCap">
-      <para>The cap to use at the start of each open figure.</para>
-    </param>
-    <param name="endCap">
-      <para>The cap to use at the end of each open figure.</para>
-    </param>
-    <param name="dashCap">
-      <para>The cap to use at the start and end of each dash.</para>
-    </param>
-    <param name="lineJoin">
-      <para>The line join to use.</para>
-    </param>
-    <param name="miterLimit">
-      <para>The limit beyond which miters are either clamped or converted to bevels.</para>
-    </param>
-    <param name="dashStyle">
-      <para>The type of dash to use.</para>
-    </param>
-    <param name="dashOffset">
-      <para>The location of the first dash, relative to the start of the figure.</para>
-    </param>
-    <param name="transformType">
-      <para>The rule that determines what render target properties affect the nib of the stroke.</para>
-    </param>
-    <returns>
-      <para>Describes the stroke that outlines a shape.</para>
-    </returns>
+    <summary>Returns a filled D2D1_STROKE_STYLE_PROPERTIES1 structure.</summary>
+    <param name="startCap">The cap to use at the start of each open figure.</param>
+    <param name="endCap">The cap to use at the end of each open figure.</param>
+    <param name="dashCap">The cap to use at the start and end of each dash.</param>
+    <param name="lineJoin">The line join to use.</param>
+    <param name="miterLimit">The limit beyond which miters are either clamped or converted to bevels.</param>
+    <param name="dashStyle">The type of dash to use.</param>
+    <param name="dashOffset">The location of the first dash, relative to the start of the figure.</param>
+    <param name="transformType">The rule that determines what render target properties affect the nib of the stroke.</param>
+    <returns>Describes the stroke that outlines a shape.</returns>
   </member>
   <member name="DirectX.Vector2F">
-    <summary>
-      <para>Returns a filled <see cref="D2D1_VECTOR_2F" /> structure.</para>
-    </summary>
-    <param name="x">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x value of the vector.</para>
-    </param>
-    <param name="y">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y value of the vector.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_VECTOR_2F" /></b></para>
-      <para>A vector of 2 FLOAT values (x, y).</para>
-    </returns>
+    <summary>Returns a filled <see cref="D2D1_VECTOR_2F" /> structure.</summary>
+    <param name="x">The x value of the vector.</param>
+    <param name="y">The y value of the vector.</param>
+    <returns>A vector of 2 FLOAT values (x, y).</returns>
   </member>
   <member name="DirectX.Vector3F">
-    <summary>
-      <para>Returns a filled <see cref="D2D1_VECTOR_3F" /> structure.</para>
-    </summary>
-    <param name="x">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x value of the vector.</para>
-    </param>
-    <param name="y">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x value of the vector.</para>
-    </param>
-    <param name="z">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x value of the vector.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_VECTOR_3F" /></b></para>
-      <para>A vector of 3 FLOAT values (x, y, z).</para>
-    </returns>
+    <summary>Returns a filled <see cref="D2D1_VECTOR_3F" /> structure.</summary>
+    <param name="x">The x value of the vector.</param>
+    <param name="y">The x value of the vector.</param>
+    <param name="z">The x value of the vector.</param>
+    <returns>A vector of 3 FLOAT values (x, y, z).</returns>
   </member>
   <member name="DirectX.Vector4F">
-    <summary>
-      <para>Returns a filled <see cref="D2D1_VECTOR_4F" /> structure.</para>
-    </summary>
-    <param name="x">
-      <para>The x value of the vector.</para>
-    </param>
-    <param name="y">
-      <para>The y  value of the vector.</para>
-    </param>
-    <param name="z">
-      <para>The z value of the vector.</para>
-    </param>
-    <param name="w">
-      <para>The w value of the vector.</para>
-    </param>
-    <returns>
-      <para>A vector of 4 FLOAT values (x, y, z, w).</para>
-    </returns>
+    <summary>Returns a filled <see cref="D2D1_VECTOR_4F" /> structure.</summary>
+    <param name="x">The x value of the vector.</param>
+    <param name="y">The y value of the vector.</param>
+    <param name="z">The z value of the vector.</param>
+    <param name="w">The w value of the vector.</param>
+    <returns>A vector of 4 FLOAT values (x, y, z, w).</returns>
   </member>
 </doc>

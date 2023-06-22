@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TouchPredictionParameters">
-    <summary>
-      <para>Contains hardware input details that can be used to predict touch targets and help compensate for hardware latency when processing touch and gesture input that contains distance and velocity data.</para>
-    </summary>
-    <remarks>
-      <para>By default, touch prediction is activated. For information on getting pointer data without deactivating touch prediction, see <see cref="GetUnpredictedMessagePos" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/structures">Structures</seealso>
+    <summary>Contains hardware input details that can be used to predict touch targets and help compensate for hardware latency when processing touch and gesture input that contains distance and velocity data.</summary>
   </member>
   <member name="TouchPredictionParameters.cbSize">
-    <summary>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="TouchPredictionParameters.dwLatency">
-    <summary>
-      <para>Latency in milliseconds.</para>
-    </summary>
+    <summary>Latency in milliseconds.</summary>
   </member>
   <member name="TouchPredictionParameters.dwSampleTime">
-    <summary>
-      <para>Sample time in milliseconds (used to calculate velocity).</para>
-    </summary>
+    <summary>Sample time in milliseconds (used to calculate velocity).</summary>
   </member>
   <member name="TouchPredictionParameters.bUseHWTimeStamp">
-    <summary>
-      <para>Use timestamps provided by the hardware.</para>
-    </summary>
+    <summary>Use timestamps provided by the hardware.</summary>
   </member>
 </doc>

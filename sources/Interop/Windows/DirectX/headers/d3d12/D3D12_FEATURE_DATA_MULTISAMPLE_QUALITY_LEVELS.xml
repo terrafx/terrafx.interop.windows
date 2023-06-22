@@ -3,34 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS">
-    <summary>
-      <para>Describes the multi-sampling image quality levels for a given format and sample count.</para>
-    </summary>
-    <remarks>
-      <para>See <see cref="D3D12_FEATURE" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-structures">Core Structures</seealso>
-    <seealso cref="D3D12_FEATURE" />
+    <summary>Describes the multi-sampling image quality levels for a given format and sample count.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS.Format">
-    <summary>
-      <para>A <see cref="DXGI_FORMAT" />-typed value for the format to return info about.</para>
-    </summary>
+    <summary>A <see cref="DXGI_FORMAT" />-typed value for the format to return info about.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS.SampleCount">
-    <summary>
-      <para>The number of multi-samples per pixel to return info about.</para>
-    </summary>
+    <summary>The number of multi-samples per pixel to return info about.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS.Flags">
-    <summary>
-      <para>Flags to control quality levels, as a bitwise-OR'd combination of <see cref="D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS" /> enumeration constants.
-The resulting value specifies options for determining quality levels.</para>
-    </summary>
+    <summary>Flags to control quality levels, as a bitwise-OR'd combination of <see cref="D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS" /> enumeration constants. The resulting value specifies options for determining quality levels.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS.NumQualityLevels">
-    <summary>
-      <para>The number of quality levels.</para>
-    </summary>
+    <summary>The number of quality levels.</summary>
   </member>
 </doc>

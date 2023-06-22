@@ -3,33 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEngineEME.get_Keys">
-    <summary>
-      <para>Gets the media keys object associated with the media engine or <b>null</b> if there is not a media keys object.</para>
-    </summary>
-    <param name="keys">
-      <para>The media keys object associated with the media engine or <b>null</b> if there is not a media keys object.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEME" />
+    <summary>Gets the media keys object associated with the media engine or <b>null</b> if there is not a media keys object.</summary>
+    <param name="keys">The media keys object associated with the media engine or <b>null</b> if there is not a media keys object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEME.SetMediaKeys">
-    <summary>
-      <para>Sets the media keys object to use with the media engine.</para>
-    </summary>
-    <param name="keys">
-      <para>The media keys.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEME" />
+    <summary>Sets the media keys object to use with the media engine.</summary>
+    <param name="keys">The media keys.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEME">
-    <summary>
-      <para>Implemented by the media engine to add encrypted media extensions methods.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Implemented by the media engine to add encrypted media extensions methods.</summary>
   </member>
 </doc>

@@ -3,105 +3,45 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_DEVICE_DESCRIPTOR">
-    <summary>
-      <para>Used in conjunction with the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code
-to retrieve the storage device descriptor data for a device.</para>
-    </summary>
-    <remarks>
-      <para>An application can determine the required buffer size by issuing a
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code
-passing a <see cref="STORAGE_DESCRIPTOR_HEADER" /> structure
-for the output buffer, and then using the returned <b>Size</b> member of the
-<b>STORAGE_DESCRIPTOR_HEADER</b> structure to allocate
-a buffer of the proper size.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
-    <seealso cref="STORAGE_ADAPTER_DESCRIPTOR" />
-    <seealso cref="STORAGE_DESCRIPTOR_HEADER" />
-    <seealso cref="STORAGE_DEVICE_DESCRIPTOR" />
-    <seealso cref="STORAGE_DEVICE_ID_DESCRIPTOR" />
+    <summary>Used in conjunction with the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code to retrieve the storage device descriptor data for a device.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.Version">
-    <summary>
-      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
-the structure.</para>
-    </summary>
+    <summary>Contains the size of this structure, in bytes. The value of this member will change as members are added to the structure.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.Size">
-    <summary>
-      <para>Specifies the total size of the descriptor, in bytes, which may include vendor ID, product ID, product
-revision, device serial number strings and bus-specific data which are appended to the structure.</para>
-    </summary>
+    <summary>Specifies the total size of the descriptor, in bytes, which may include vendor ID, product ID, product revision, device serial number strings and bus-specific data which are appended to the structure.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.DeviceType">
-    <summary>
-      <para>Specifies the device type as defined by the Small Computer Systems Interface (SCSI) specification.</para>
-    </summary>
+    <summary>Specifies the device type as defined by the Small Computer Systems Interface (SCSI) specification.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.DeviceTypeModifier">
-    <summary>
-      <para>Specifies the device type modifier, if any, as defined by the SCSI specification. If no device type
-modifier exists, this member is zero.</para>
-    </summary>
+    <summary>Specifies the device type modifier, if any, as defined by the SCSI specification. If no device type modifier exists, this member is zero.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.RemovableMedia">
-    <summary>
-      <para>Indicates when <b>TRUE</b> that the device's media (if any) is removable. If the device
-has no media, this member should be ignored. When <b>FALSE</b> the device's media is not
-removable.</para>
-    </summary>
+    <summary>Indicates when <b>TRUE</b> that the device's media (if any) is removable. If the device has no media, this member should be ignored. When <b>FALSE</b> the device's media is not removable.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.CommandQueueing">
-    <summary>
-      <para>Indicates when <b>TRUE</b> that the device supports multiple outstanding commands (SCSI
-tagged queuing or equivalent). When <b>FALSE</b>, the device does not support SCSI-tagged
-queuing or the equivalent.</para>
-    </summary>
+    <summary>Indicates when <b>TRUE</b> that the device supports multiple outstanding commands (SCSI tagged queuing or equivalent). When <b>FALSE</b>, the device does not support SCSI-tagged queuing or the equivalent.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.VendorIdOffset">
-    <summary>
-      <para>Specifies the byte offset from the beginning of the structure to a null-terminated ASCII string that
-contains the device's vendor ID. If the device has no vendor ID, this member is zero.</para>
-    </summary>
+    <summary>Specifies the byte offset from the beginning of the structure to a null-terminated ASCII string that contains the device's vendor ID. If the device has no vendor ID, this member is zero.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.ProductIdOffset">
-    <summary>
-      <para>Specifies the byte offset from the beginning of the structure to a null-terminated ASCII string that
-contains the device's product ID. If the device has no product ID, this member is zero.</para>
-    </summary>
+    <summary>Specifies the byte offset from the beginning of the structure to a null-terminated ASCII string that contains the device's product ID. If the device has no product ID, this member is zero.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.ProductRevisionOffset">
-    <summary>
-      <para>Specifies the byte offset from the beginning of the structure to a null-terminated ASCII string that
-contains the device's product revision string. If the device has no product revision string, this member is
-zero.</para>
-    </summary>
+    <summary>Specifies the byte offset from the beginning of the structure to a null-terminated ASCII string that contains the device's product revision string. If the device has no product revision string, this member is zero.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.SerialNumberOffset">
-    <summary>
-      <para>Specifies the byte offset from the beginning of the structure to a null-terminated ASCII string that
-contains the device's serial number. If the device has no serial number, this member is zero.</para>
-    </summary>
+    <summary>Specifies the byte offset from the beginning of the structure to a null-terminated ASCII string that contains the device's serial number. If the device has no serial number, this member is zero.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.BusType">
-    <summary>
-      <para>Specifies an enumerator value of type
-<see cref="STORAGE_BUS_TYPE" /> that indicates the type of bus to
-which the device is connected. This should be used to interpret the raw device properties at the end of this
-structure (if any).</para>
-    </summary>
+    <summary>Specifies an enumerator value of type<see cref="STORAGE_BUS_TYPE" /> that indicates the type of bus to which the device is connected. This should be used to interpret the raw device properties at the end of this structure (if any).</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.RawPropertiesLength">
-    <summary>
-      <para>Indicates the number of bytes of bus-specific data that have been appended to this descriptor.</para>
-    </summary>
+    <summary>Indicates the number of bytes of bus-specific data that have been appended to this descriptor.</summary>
   </member>
   <member name="STORAGE_DEVICE_DESCRIPTOR.RawDeviceProperties">
-    <summary>
-      <para>Contains an array of length one that serves as a place holder for the first byte of the bus specific
-property data.</para>
-    </summary>
+    <summary>Contains an array of length one that serves as a place holder for the first byte of the bus specific property data.</summary>
   </member>
 </doc>

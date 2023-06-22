@@ -3,388 +3,117 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10EffectVariable.AsBlend">
-    <summary>
-      <para>Get a effect-blend variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectBlendVariable" />*</b></para>
-      <para>A pointer to an effect blend variable. See <see cref="ID3D10EffectBlendVariable" />.</para>
-    </returns>
-    <remarks>
-      <para>AsBlend returns a version of the effect variable that has been specialized to an effect-blend variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain effect-blend data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a effect-blend variable.</summary>
+    <returns>A pointer to an effect blend variable. See <see cref="ID3D10EffectBlendVariable" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsConstantBuffer">
-    <summary>
-      <para>Get a constant buffer.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectConstantBuffer" />*</b></para>
-      <para>A pointer to a constant buffer. See <see cref="ID3D10EffectConstantBuffer" />.</para>
-    </returns>
-    <remarks>
-      <para>AsConstantBuffer returns a version of the effect variable that has been specialized to a constant buffer. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain constant buffer data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a constant buffer.</summary>
+    <returns>A pointer to a constant buffer. See <see cref="ID3D10EffectConstantBuffer" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsDepthStencil">
-    <summary>
-      <para>Get a depth-stencil variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectDepthStencilVariable" />*</b></para>
-      <para>A pointer to a depth-stencil variable. See <see cref="ID3D10EffectDepthStencilVariable" />.</para>
-    </returns>
-    <remarks>
-      <para>AsDepthStencil returns a version of the effect variable that has been specialized to a depth-stencil variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain depth-stencil data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a depth-stencil variable.</summary>
+    <returns>A pointer to a depth-stencil variable. See <see cref="ID3D10EffectDepthStencilVariable" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsDepthStencilView">
-    <summary>
-      <para>Get a depth-stencil-view variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectDepthStencilViewVariable" />*</b></para>
-      <para>A pointer to a depth-stencil-view variable. See <see cref="ID3D10EffectDepthStencilViewVariable Interface" />.</para>
-    </returns>
-    <remarks>
-      <para>This method returns a version of the effect variable that has been specialized to a depth-stencil-view variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain depth-stencil-view data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a depth-stencil-view variable.</summary>
+    <returns>A pointer to a depth-stencil-view variable. See <see cref="ID3D10EffectDepthStencilViewVariable Interface" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsMatrix">
-    <summary>
-      <para>Get a matrix variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectMatrixVariable" />*</b></para>
-      <para>A pointer to a matrix variable. See <see cref="ID3D10EffectMatrixVariable" />.</para>
-    </returns>
-    <remarks>
-      <para>AsMatrix returns a version of the effect variable that has been specialized to a matrix variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain matrix data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a matrix variable.</summary>
+    <returns>A pointer to a matrix variable. See <see cref="ID3D10EffectMatrixVariable" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsRasterizer">
-    <summary>
-      <para>Get a rasterizer variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectRasterizerVariable" />*</b></para>
-      <para>A pointer to a rasterizer variable. See <see cref="ID3D10EffectRasterizerVariable" />.</para>
-    </returns>
-    <remarks>
-      <para>AsRasterizer returns a version of the effect variable that has been specialized to a rasterizer variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain rasterizer data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a rasterizer variable.</summary>
+    <returns>A pointer to a rasterizer variable. See <see cref="ID3D10EffectRasterizerVariable" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsRenderTargetView">
-    <summary>
-      <para>Get a render-target-view variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectRenderTargetViewVariable" />*</b></para>
-      <para>A pointer to a render-target-view variable. See <see cref="ID3D10EffectRenderTargetViewVariable Interface" />.</para>
-    </returns>
-    <remarks>
-      <para>This method returns a version of the effect variable that has been specialized to a render-target-view variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain render-target-view data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a render-target-view variable.</summary>
+    <returns>A pointer to a render-target-view variable. See <see cref="ID3D10EffectRenderTargetViewVariable Interface" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsSampler">
-    <summary>
-      <para>Get a sampler variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectSamplerVariable" />*</b></para>
-      <para>A pointer to a sampler variable. See <see cref="ID3D10EffectSamplerVariable" />.</para>
-    </returns>
-    <remarks>
-      <para>AsSampler returns a version of the effect variable that has been specialized to a sampler variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain sampler data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a sampler variable.</summary>
+    <returns>A pointer to a sampler variable. See <see cref="ID3D10EffectSamplerVariable" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsScalar">
-    <summary>
-      <para>Get a scalar variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectScalarVariable" />*</b></para>
-      <para>A pointer to a scalar variable. See <see cref="ID3D10EffectScalarVariable" />.</para>
-    </returns>
-    <remarks>
-      <para>AsScalar returns a version of the effect variable that has been specialized to a scalar variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain scalar data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a scalar variable.</summary>
+    <returns>A pointer to a scalar variable. See <see cref="ID3D10EffectScalarVariable" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsShader">
-    <summary>
-      <para>Get a shader variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectShaderVariable" />*</b></para>
-      <para>A pointer to a shader variable. See <see cref="ID3D10EffectShaderVariable" />.</para>
-    </returns>
-    <remarks>
-      <para>AsShader returns a version of the effect variable that has been specialized to a shader variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain shader data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a shader variable.</summary>
+    <returns>A pointer to a shader variable. See <see cref="ID3D10EffectShaderVariable" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsShaderResource">
-    <summary>
-      <para>Get a shader-resource variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectShaderResourceVariable" />*</b></para>
-      <para>A pointer to a shader-resource variable. See <see cref="ID3D10EffectShaderResourceVariable" />.</para>
-    </returns>
-    <remarks>
-      <para>AsShaderResource returns a version of the effect variable that has been specialized to a shader-resource variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain shader-resource data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a shader-resource variable.</summary>
+    <returns>A pointer to a shader-resource variable. See <see cref="ID3D10EffectShaderResourceVariable" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsString">
-    <summary>
-      <para>Get a string variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectStringVariable" />*</b></para>
-      <para>A pointer to a string variable. See <see cref="ID3D10EffectStringVariable" />.</para>
-    </returns>
-    <remarks>
-      <para>AsString returns a version of the effect variable that has been specialized to a string variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain string data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a string variable.</summary>
+    <returns>A pointer to a string variable. See <see cref="ID3D10EffectStringVariable" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.AsVector">
-    <summary>
-      <para>Get a vector variable.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectVectorVariable" />*</b></para>
-      <para>A pointer to a vector variable. See <see cref="ID3D10EffectVectorVariable" />.</para>
-    </returns>
-    <remarks>
-      <para>AsVector returns a version of the effect variable that has been specialized to a vector variable. Similar to a cast, this specialization will return an invalid object if the effect variable does not contain vector data.</para>
-      <para>Applications can test the returned object for validity by calling <see cref="IsValid" />.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a vector variable.</summary>
+    <returns>A pointer to a vector variable. See <see cref="ID3D10EffectVectorVariable" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.GetAnnotationByIndex">
-    <summary>
-      <para>Get an annotation by index.</para>
-    </summary>
-    <param name="Index">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A zero-based index.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</para>
-    </returns>
-    <remarks>
-      <para>Annotations can be attached to a technique, a pass or a global variable. For the syntax, see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-effect-annotation-syntax">Annotation Syntax (Direct3D 10)</a>.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get an annotation by index.</summary>
+    <param name="Index">A zero-based index.</param>
+    <returns>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.GetAnnotationByName">
-    <summary>
-      <para>Get an annotation by name.</para>
-    </summary>
-    <param name="Name">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The annotation name.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.  Note that if the annotation is not found the <b>ID3D10EffectVariable Interface</b> returned will be empty. The <see cref="ID3D10EffectVariable.IsValid" /> method should be called to determine whether the annotation was found.</para>
-    </returns>
-    <remarks>
-      <para>Annotations can be attached to a technique, a pass or a global variable. For the syntax, see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-effect-annotation-syntax">Annotation Syntax (Direct3D 10)</a>.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get an annotation by name.</summary>
+    <param name="Name">The annotation name.</param>
+    <returns>A pointer to an <see cref="ID3D10EffectVariable Interface" />. Note that if the annotation is not found the <b>ID3D10EffectVariable Interface</b> returned will be empty. The <see cref="ID3D10EffectVariable.IsValid" /> method should be called to determine whether the annotation was found.</returns>
   </member>
   <member name="ID3D10EffectVariable.GetDesc">
-    <summary>
-      <para>Get a description.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D10_EFFECT_VARIABLE_DESC" />*</b></para>
-      <para>A pointer to an effect-variable description (see <see cref="D3D10_EFFECT_VARIABLE_DESC" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a description.</summary>
+    <param name="pDesc">A pointer to an effect-variable description (see <see cref="D3D10_EFFECT_VARIABLE_DESC" />).</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectVariable.GetElement">
-    <summary>
-      <para>Get an array element.</para>
-    </summary>
-    <param name="Index">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A zero-based index; otherwise 0.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</para>
-    </returns>
-    <remarks>
-      <para>If the effect variable is an array, use this method to return one of the elements.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get an array element.</summary>
+    <param name="Index">A zero-based index; otherwise 0.</param>
+    <returns>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.GetMemberByIndex">
-    <summary>
-      <para>Get a structure member by index.</para>
-    </summary>
-    <param name="Index">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A zero-based index.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</para>
-    </returns>
-    <remarks>
-      <para>If the effect variable is a structure, use this method to look up a member by index.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a structure member by index.</summary>
+    <param name="Index">A zero-based index.</param>
+    <returns>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.GetMemberByName">
-    <summary>
-      <para>Get a structure member by name.</para>
-    </summary>
-    <param name="Name">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>Member name.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</para>
-    </returns>
-    <remarks>
-      <para>If the effect variable is a structure, use this method to look up a member by name.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a structure member by name.</summary>
+    <param name="Name">Member name.</param>
+    <returns>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.GetMemberBySemantic">
-    <summary>
-      <para>Get a structure member by semantic.</para>
-    </summary>
-    <param name="Semantic">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The semantic.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</para>
-    </returns>
-    <remarks>
-      <para>If the effect variable is a structure, use this method to look up a member by attached semantic.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a structure member by semantic.</summary>
+    <param name="Semantic">The semantic.</param>
+    <returns>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.GetParentConstantBuffer">
-    <summary>
-      <para>Get a constant buffer.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectConstantBuffer" />*</b></para>
-      <para>A pointer to a <see cref="ID3D10EffectConstantBuffer Interface" />.</para>
-    </returns>
-    <remarks>
-      <para>Effect variables are read-from or written-to a constant buffer.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get a constant buffer.</summary>
+    <returns>A pointer to a <see cref="ID3D10EffectConstantBuffer Interface" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.GetRawValue">
-    <summary>
-      <para>Get data.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>void*</b></para>
-      <para>A pointer to the variable.</para>
-    </param>
-    <param name="Offset">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The offset (in bytes) from the beginning of the pointer to the data.</para>
-    </param>
-    <param name="ByteCount">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of bytes to get.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This method does no conversion or type checking; it is therefore a very quick way to access array items.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get data.</summary>
+    <param name="pData">A pointer to the variable.</param>
+    <param name="Offset">The offset (in bytes) from the beginning of the pointer to the data.</param>
+    <param name="ByteCount">The number of bytes to get.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectVariable.GetType">
-    <summary>
-      <para>Get type information.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectType" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10EffectType Interface" />.</para>
-    </returns>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Get type information.</summary>
+    <returns>A pointer to an <see cref="ID3D10EffectType Interface" />.</returns>
   </member>
   <member name="ID3D10EffectVariable.IsValid">
-    <summary>
-      <para>Compare the data type with the data stored.</para>
-    </summary>
+    <summary>Compare the data type with the data stored.</summary>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> if the syntax is valid; otherwise <b>FALSE</b>.</para>
-    </returns>
-    <remarks>
-      <para>This method checks that the data type matches the data stored after casting one interface to another (using any of the As methods).</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+      <b>TRUE</b> if the syntax is valid; otherwise <b>FALSE</b>.</returns>
   </member>
   <member name="ID3D10EffectVariable.SetRawValue">
-    <summary>
-      <para>Set data.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>void*</b></para>
-      <para>A pointer to the variable.</para>
-    </param>
-    <param name="Offset">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The offset (in bytes) from the beginning of the pointer to the data.</para>
-    </param>
-    <param name="ByteCount">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of bytes to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This method does no conversion or type checking; it is therefore a very quick way to access array items.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectVariable Interface" />
+    <summary>Set data.</summary>
+    <param name="pData">A pointer to the variable.</param>
+    <param name="Offset">The offset (in bytes) from the beginning of the pointer to the data.</param>
+    <param name="ByteCount">The number of bytes to set.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
 </doc>

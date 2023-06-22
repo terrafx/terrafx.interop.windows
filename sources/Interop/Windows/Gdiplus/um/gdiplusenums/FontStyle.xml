@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FontStyle">
+    <summary>The <b>FontStyle</b> enumeration specifies the style of the typeface of a font. Styles can be combined.</summary>
+  </member>
+  <member name="FontStyle.FontStyleRegular">
+    <summary>Specifies normal weight or thickness of the typeface.</summary>
+  </member>
+  <member name="FontStyle.FontStyleBold">
+    <summary>Specifies bold typeface. Bold is a heavier weight or thickness.</summary>
+  </member>
+  <member name="FontStyle.FontStyleItalic">
+    <summary>Specifies italic typeface, which produces a noticeable slant to the vertical stems of the characters.</summary>
+  </member>
+  <member name="FontStyle.FontStyleBoldItalic">
+    <summary>Specifies the typeface as both bold and italic.</summary>
+  </member>
+  <member name="FontStyle.FontStyleUnderline">
+    <summary>Specifies underline, which displays a line underneath the baseline of the characters.</summary>
+  </member>
+  <member name="FontStyle.FontStyleStrikeout">
+    <summary>Specifies strikeout, which displays a horizontal line drawn through the middle of the characters.</summary>
+  </member>
+</doc>

@@ -3,69 +3,41 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1ImageSource.OfferResources">
-    <summary>
-      <para>Allows the operating system to free the video memory of resources by discarding their content.</para>
-    </summary>
+    <summary>Allows the operating system to free the video memory of resources by discarding their content.</summary>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>
         <b>OfferResources</b> returns:</para>
       <list type="bullet">
         <item>
           <description>
-            <b>S_OK</b> if resources were successfully offered
-</description>
+            <b>S_OK</b> if resources were successfully offered</description>
         </item>
         <item>
           <description>
-            <b>E_INVALIDARG</b> if a resource in the array or the priority is invalid
-</description>
+            <b>E_INVALIDARG</b> if a resource in the array or the priority is invalid</description>
         </item>
       </list>
     </returns>
-    <seealso cref="ID2D1ImageSource" />
   </member>
   <member name="ID2D1ImageSource.TryReclaimResources">
-    <summary>
-      <para>Restores access to resources that were previously offered by calling <see cref="OfferResources" />.</para>
-    </summary>
-    <param name="resourcesDiscarded">
-      <para>Type: <b>BOOL*</b></para>
-      <para>Returns with TRUE if the corresponding resource’s content was discarded and is now undefined, or FALSE if the corresponding resource’s old content is still intact.
-The caller can pass in NULL, if the caller intends to fill the resources with new content regardless of whether the old content was discarded.</para>
-    </param>
+    <summary>Restores access to resources that were previously offered by calling <see cref="OfferResources" />.</summary>
+    <param name="resourcesDiscarded">Returns with TRUE if the corresponding resource’s content was discarded and is now undefined, or FALSE if the corresponding resource’s old content is still intact. The caller can pass in NULL, if the caller intends to fill the resources with new content regardless of whether the old content was discarded.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>
         <b>ReclaimResources</b> returns:</para>
       <list type="bullet">
         <item>
           <description>
-            <b>S_OK</b> if resources were successfully reclaimed
-</description>
+            <b>S_OK</b> if resources were successfully reclaimed</description>
         </item>
         <item>
           <description>
-            <b>E_INVALIDARG</b> if the resources are invalid
-</description>
+            <b>E_INVALIDARG</b> if the resources are invalid</description>
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>After you call <see cref="OfferResources" /> to offer one or more resources,
-you must call <b>TryReclaimResources</b> before you can use those resources again.
-You must check the value in the <b>resourcesDiscarded</b> to determine whether the resource’s content was discarded.
-If a resource’s content was discarded while it was offered, its current content is undefined. Therefore, you must overwrite the resource’s content before you use the resource.</para>
-    </remarks>
-    <seealso cref="ID2D1ImageSource" />
   </member>
   <member name="ID2D1ImageSource">
-    <summary>
-      <para>Represents a producer of pixels that can fill an arbitrary 2D plane.</para>
-    </summary>
-    <seealso cref="I2D1DeviceContext2.CreateImageSourceFromWic" />
-    <seealso cref="ID2D1DeviceContext2.CreateImageSourceFromDxgi" />
-    <seealso cref="ID2D1Image" />
-    <seealso cref="ID2D1ImageSourceFromWic" />
+    <summary>Represents a producer of pixels that can fill an arbitrary 2D plane.</summary>
   </member>
 </doc>

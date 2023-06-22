@@ -3,29 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WRITE_CACHE_CHANGE">
-    <summary>
-      <para>Indicates whether the write cache features of a device are changeable.</para>
-    </summary>
-    <remarks>
-      <para>The <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> request returns a <b>WRITE_CACHE_CHANGE</b> value in the <see cref="STORAGE_WRITE_CACHE_PROPERTY" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-enumeration-types">Disk Management Enumeration Types</seealso>
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
-    <seealso cref="STORAGE_WRITE_CACHE_PROPERTY" />
+    <summary>Indicates whether the write cache features of a device are changeable.</summary>
   </member>
   <member name="WRITE_CACHE_CHANGE.WriteCacheChangeUnknown">
-    <summary>
-      <para>The system cannot report the write cache change capability of the device.</para>
-    </summary>
+    <summary>The system cannot report the write cache change capability of the device.</summary>
   </member>
   <member name="WRITE_CACHE_CHANGE.WriteCacheNotChangeable">
-    <summary>
-      <para>Host software cannot change the characteristics of the device's write cache.</para>
-    </summary>
+    <summary>Host software cannot change the characteristics of the device's write cache.</summary>
   </member>
   <member name="WRITE_CACHE_CHANGE.WriteCacheChangeable">
-    <summary>
-      <para>Host software can change the characteristics of the device's write cache.</para>
-    </summary>
+    <summary>Host software can change the characteristics of the device's write cache.</summary>
   </member>
 </doc>

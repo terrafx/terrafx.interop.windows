@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RO_ERROR_REPORTING_FLAGS">
+    <summary>Specifies the behavior of the <see cref="RoOriginateError" /> and <see cref="RoTransformError" /> functions.</summary>
+  </member>
+  <member name="RO_ERROR_REPORTING_FLAGS.RO_ERROR_REPORTING_NONE">
+    <summary>Error functions raise structured exceptions when a debugger is attached.</summary>
+  </member>
+  <member name="RO_ERROR_REPORTING_FLAGS.RO_ERROR_REPORTING_SUPPRESSEXCEPTIONS">
+    <summary>Error functions do not raise structured exceptions, even when a debugger is present. Override the behavior of this flag by setting the <b>ForceExceptions</b> flag.</summary>
+  </member>
+  <member name="RO_ERROR_REPORTING_FLAGS.RO_ERROR_REPORTING_FORCEEXCEPTIONS">
+    <summary>Error functions raise structured exceptions, even if no debugger is present. This flag supercedes the <b>RO_ERROR_REPORTING_SUPPRESSEXCEPTIONS</b> flag. If this flag is set, structured exceptions are raised even if the <b>RO_ERROR_REPORTING_SUPPRESSEXCEPTIONS</b> flag is set.</summary>
+  </member>
+  <member name="RO_ERROR_REPORTING_FLAGS.RO_ERROR_REPORTING_USESETERRORINFO">
+    <summary>Error functions report error strings through a COM object that is attached to the COM channel through the <see cref="SetRestrictedErrorInfo" /> infrastructure. For the <b>SetRestrictedErrorInfo</b> call to succeed, the thread must be initialized into COM.</summary>
+  </member>
+  <member name="RO_ERROR_REPORTING_FLAGS.RO_ERROR_REPORTING_SUPPRESSSETERRORINFO">
+    <summary>Error functions do not report error strings through a COM object that is attached to the COM channel through the <see cref="SetRestrictedErrorInfo" /> infrastructure.</summary>
+  </member>
+</doc>

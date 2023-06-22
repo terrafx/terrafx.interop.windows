@@ -3,107 +3,60 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRALPHABLEND">
-    <summary>
-      <para>The <b>EMRALPHABLEND</b> structure contains members for the <see cref="AlphaBlend" /> enhanced metafile record.</para>
-    </summary>
-    <remarks>
-      <para>This structure is to be used during metafile playback.</para>
-    </remarks>
-    <seealso cref="AlphaBlend" />
-    <seealso cref="BITMAPINFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="RGB" />
+    <summary>The <b>EMRALPHABLEND</b> structure contains members for the <see cref="AlphaBlend" /> enhanced metafile record.</summary>
   </member>
   <member name="EMRALPHABLEND.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRALPHABLEND.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
   <member name="EMRALPHABLEND.xDest">
-    <summary>
-      <para>The x coordinate, in logical units, of the upper-left corner of the destination rectangle.</para>
-    </summary>
+    <summary>The x coordinate, in logical units, of the upper-left corner of the destination rectangle.</summary>
   </member>
   <member name="EMRALPHABLEND.yDest">
-    <summary>
-      <para>The y coordinate, in logical units, of the upper-left corner of the destination rectangle.</para>
-    </summary>
+    <summary>The y coordinate, in logical units, of the upper-left corner of the destination rectangle.</summary>
   </member>
   <member name="EMRALPHABLEND.cxDest">
-    <summary>
-      <para>Logical width of the destination rectangle.</para>
-    </summary>
+    <summary>Logical width of the destination rectangle.</summary>
   </member>
   <member name="EMRALPHABLEND.cyDest">
-    <summary>
-      <para>Logical height of the destination rectangle.</para>
-    </summary>
+    <summary>Logical height of the destination rectangle.</summary>
   </member>
   <member name="EMRALPHABLEND.dwRop">
-    <summary>
-      <para>Stores the <see cref="BLENDFUNCTION" /> structure.</para>
-    </summary>
+    <summary>Stores the <see cref="BLENDFUNCTION" /> structure.</summary>
   </member>
   <member name="EMRALPHABLEND.xSrc">
-    <summary>
-      <para>Logical x coordinate of the upper-left corner of the source rectangle.</para>
-    </summary>
+    <summary>Logical x coordinate of the upper-left corner of the source rectangle.</summary>
   </member>
   <member name="EMRALPHABLEND.ySrc">
-    <summary>
-      <para>Logical y coordinate of the upper-left corner of the source rectangle.</para>
-    </summary>
+    <summary>Logical y coordinate of the upper-left corner of the source rectangle.</summary>
   </member>
   <member name="EMRALPHABLEND.xformSrc">
-    <summary>
-      <para>World-space to page-space transformation of the source device context.</para>
-    </summary>
+    <summary>World-space to page-space transformation of the source device context.</summary>
   </member>
   <member name="EMRALPHABLEND.crBkColorSrc">
-    <summary>
-      <para>Background color (the RGB value) of the source device context. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</para>
-    </summary>
+    <summary>Background color (the RGB value) of the source device context. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</summary>
   </member>
   <member name="EMRALPHABLEND.iUsageSrc">
-    <summary>
-      <para>Source bitmap information color table usage (DIB_RGB_COLORS).</para>
-    </summary>
+    <summary>Source bitmap information color table usage (DIB_RGB_COLORS).</summary>
   </member>
   <member name="EMRALPHABLEND.offBmiSrc">
-    <summary>
-      <para>Offset to the source <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Offset to the source <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRALPHABLEND.cbBmiSrc">
-    <summary>
-      <para>Size of the source <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Size of the source <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRALPHABLEND.offBitsSrc">
-    <summary>
-      <para>Offset to the source bitmap bits.</para>
-    </summary>
+    <summary>Offset to the source bitmap bits.</summary>
   </member>
   <member name="EMRALPHABLEND.cbBitsSrc">
-    <summary>
-      <para>Size of the source bitmap bits.</para>
-    </summary>
+    <summary>Size of the source bitmap bits.</summary>
   </member>
   <member name="EMRALPHABLEND.cxSrc">
-    <summary>
-      <para>Width of source rectangle in logical units.</para>
-    </summary>
+    <summary>Width of source rectangle in logical units.</summary>
   </member>
   <member name="EMRALPHABLEND.cySrc">
-    <summary>
-      <para>Height of the source rectangle in logical units.</para>
-    </summary>
+    <summary>Height of the source rectangle in logical units.</summary>
   </member>
 </doc>

@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_MEMORY_EXHAUSTION_TYPE">
-    <summary>
-      <para>Represents the different memory exhaustion types.</para>
-    </summary>
+    <summary>Represents the different memory exhaustion types.</summary>
   </member>
   <member name="PROCESS_MEMORY_EXHAUSTION_TYPE.PMETypeFailFastOnCommitFailure">
-    <summary>
-      <para>Anytime memory management fails an allocation due to an inability to commit memory, it will cause the process to trigger a Windows Error Reporting report and then terminate immediately with <b>STATUS_COMMITMENT_LIMIT</b>.
-The failure cannot be caught and handled by the app.</para>
-    </summary>
+    <summary>Anytime memory management fails an allocation due to an inability to commit memory, it will cause the process to trigger a Windows Error Reporting report and then terminate immediately with <b>STATUS_COMMITMENT_LIMIT</b>. The failure cannot be caught and handled by the app.</summary>
   </member>
   <member name="PROCESS_MEMORY_EXHAUSTION_TYPE.PMETypeMax">
-    <summary>
-      <para>The maximum value for this enumeration. This value may change in a future version.</para>
-    </summary>
+    <summary>The maximum value for this enumeration. This value may change in a future version.</summary>
   </member>
 </doc>

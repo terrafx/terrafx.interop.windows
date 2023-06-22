@@ -3,74 +3,45 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_SYMBOL_KIND">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_SYMBOL_KIND</b> enumeration contains values that specify the kind of symbol set.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_SYMBOL_KIND</b> enumeration contains values that specify the kind of symbol set.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_ANY">
-    <summary>
-      <para>Any kind of symbol set.</para>
-    </summary>
+    <summary>Any kind of symbol set.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_NO_FIT">
-    <summary>
-      <para>No fit for the kind of symbol set.</para>
-    </summary>
+    <summary>No fit for the kind of symbol set.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_MONTAGES">
-    <summary>
-      <para>The kind of symbol set is montages.</para>
-    </summary>
+    <summary>The kind of symbol set is montages.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_PICTURES">
-    <summary>
-      <para>The kind of symbol set is pictures.</para>
-    </summary>
+    <summary>The kind of symbol set is pictures.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_SHAPES">
-    <summary>
-      <para>The kind of symbol set is shapes.</para>
-    </summary>
+    <summary>The kind of symbol set is shapes.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_SCIENTIFIC">
-    <summary>
-      <para>The kind of symbol set is scientific symbols.</para>
-    </summary>
+    <summary>The kind of symbol set is scientific symbols.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_MUSIC">
-    <summary>
-      <para>The kind of symbol set is music symbols.</para>
-    </summary>
+    <summary>The kind of symbol set is music symbols.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_EXPERT">
-    <summary>
-      <para>The kind of symbol set is expert symbols.</para>
-    </summary>
+    <summary>The kind of symbol set is expert symbols.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_PATTERNS">
-    <summary>
-      <para>The kind of symbol set is patterns.</para>
-    </summary>
+    <summary>The kind of symbol set is patterns.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_BOARDERS">
-    <summary>
-      <para>The kind of symbol set is boarders.</para>
-    </summary>
+    <summary>The kind of symbol set is boarders.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_ICONS">
-    <summary>
-      <para>The kind of symbol set is icons.</para>
-    </summary>
+    <summary>The kind of symbol set is icons.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_LOGOS">
-    <summary>
-      <para>The kind of symbol set is logos.</para>
-    </summary>
+    <summary>The kind of symbol set is logos.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_KIND.DWRITE_PANOSE_SYMBOL_KIND_INDUSTRY_SPECIFIC">
-    <summary>
-      <para>The kind of symbol set is industry specific.</para>
-    </summary>
+    <summary>The kind of symbol set is industry specific.</summary>
   </member>
 </doc>

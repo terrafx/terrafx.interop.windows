@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPX_ENCRYPTED_PACKAGE_SETTINGS2">
-    <summary>
-      <para>Encrypted Windows app package settings. This structure expands on <see cref="APPX_ENCRYPTED_PACKAGE_SETTINGS" />.</para>
-    </summary>
+    <summary>Encrypted Windows app package settings. This structure expands on <see cref="APPX_ENCRYPTED_PACKAGE_SETTINGS" />.</summary>
   </member>
   <member name="APPX_ENCRYPTED_PACKAGE_SETTINGS2.keyLength">
-    <summary>
-      <para>The key length.</para>
-    </summary>
+    <summary>The key length.</summary>
   </member>
   <member name="APPX_ENCRYPTED_PACKAGE_SETTINGS2.encryptionAlgorithm">
-    <summary>
-      <para>The encryption algorithm used.</para>
-    </summary>
+    <summary>The encryption algorithm used.</summary>
   </member>
   <member name="APPX_ENCRYPTED_PACKAGE_SETTINGS2.blockMapHashAlgorithm">
-    <summary>
-      <para>The Uri of the block map hash algorithm.</para>
-    </summary>
+    <summary>The Uri of the block map hash algorithm.</summary>
   </member>
   <member name="APPX_ENCRYPTED_PACKAGE_SETTINGS2.options">
-    <summary>
-      <para>Additional options for encrypted packages. Options come from the <see cref="APPX_ENCRYPTED_PACKAGE_OPTIONS" /> enum.</para>
-    </summary>
+    <summary>Additional options for encrypted packages. Options come from the <see cref="APPX_ENCRYPTED_PACKAGE_OPTIONS" /> enum.</summary>
   </member>
 </doc>

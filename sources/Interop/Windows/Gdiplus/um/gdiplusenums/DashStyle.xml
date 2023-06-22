@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DashStyle">
+    <summary>The <b>DashStyle</b> enumeration specifies the line style of a line drawn with a Windows GDI+ pen. The line can be drawn by using one of several predefined styles or a custom style.</summary>
+  </member>
+  <member name="DashStyle.DashStyleSolid">
+    <summary>Specifies a solid line.</summary>
+  </member>
+  <member name="DashStyle.DashStyleDash">
+    <summary>Specifies a dashed line.</summary>
+  </member>
+  <member name="DashStyle.DashStyleDot">
+    <summary>Specifies a dotted line.</summary>
+  </member>
+  <member name="DashStyle.DashStyleDashDot">
+    <summary>Specifies an alternating dash-dot line.</summary>
+  </member>
+  <member name="DashStyle.DashStyleDashDotDot">
+    <summary>Specifies an alternating dash-dot-dot line.</summary>
+  </member>
+  <member name="DashStyle.DashStyleCustom">
+    <summary>Specifies a user-defined, custom dashed line.</summary>
+  </member>
+</doc>

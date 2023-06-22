@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfUIElement.GetDescription">
-    <summary>
-      <para>The <b>ITfUIElement.GetDescription</b> method returns the description of the UI element.</para>
-    </summary>
-    <param name="pbstrDescription">
-      <para>[in] A pointer to BSTR that contains the description of the UI element.</para>
-    </param>
+    <summary>The <b>ITfUIElement.GetDescription</b> method returns the description of the UI element.</summary>
+    <param name="pbstrDescription">[in] A pointer to BSTR that contains the description of the UI element.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,46 +12,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfUIElement.GetGUID">
-    <summary>
-      <para>The <b>ITfUIElement.GetGUID</b> method returns the unique id of this UI element.</para>
-    </summary>
-    <param name="pguid">
-      <para>[out] A pointer to receive the GUID of the UI element.</para>
-    </param>
+    <summary>The <b>ITfUIElement.GetGUID</b> method returns the unique id of this UI element.</summary>
+    <param name="pguid">[out] A pointer to receive the GUID of the UI element.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -63,46 +61,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfUIElement.IsShown">
-    <summary>
-      <para>The <b>ITfUIElement.IsShown</b> method returns true if the UI is currently shown by a text service; otherwise false.</para>
-    </summary>
-    <param name="pbShow">
-      <para>[out] A pointer to bool of the current show status of the original UI of this element.</para>
-    </param>
+    <summary>The <b>ITfUIElement.IsShown</b> method returns true if the UI is currently shown by a text service; otherwise false.</summary>
+    <param name="pbShow">[out] A pointer to bool of the current show status of the original UI of this element.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -110,46 +110,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfUIElement.Show">
-    <summary>
-      <para>The <b>ITfUIElement.Show</b> method shows the text service's UI of this UI element.</para>
-    </summary>
-    <param name="bShow">
-      <para>[in] <b>TRUE</b> to show the original UI of the element. <b>FALSE</b> to hide the original UI of the element.</para>
-    </param>
+    <summary>The <b>ITfUIElement.Show</b> method shows the text service's UI of this UI element.</summary>
+    <param name="bShow">[in] <b>TRUE</b> to show the original UI of the element. <b>FALSE</b> to hide the original UI of the element.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -157,35 +159,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfUIElement">
-    <summary>
-      <para>The <see cref="ITfUIElement" /> interface is a base interface of the UIElement object and is implemented by a text service.</para>
-    </summary>
-    <remarks>
-      <para>A text service may implement some other UIElement interface such as <see cref="ITfCandidateListUIElement" /> in the same object that can be obtained by QI. A text service may implement only the <b>ITfUIElement</b> interface to a UI object that does not have to be drawn by the application but the show status can be controlled by the application. A text service that is categorized by GUID_TFCAT_TIPCAP_UIELEMENTENABLED needs to implement ITfUIElement for any UI object.</para>
-    </remarks>
+    <summary>The <see cref="ITfUIElement" /> interface is a base interface of the UIElement object and is implemented by a text service.</summary>
   </member>
 </doc>

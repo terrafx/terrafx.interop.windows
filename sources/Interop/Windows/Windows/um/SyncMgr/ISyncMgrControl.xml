@@ -3,620 +3,108 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrControl.ActivateHandler">
-    <summary>
-      <para>Activates or deactivates a handler.</para>
-    </summary>
+    <summary>Activates or deactivates a handler.</summary>
     <param name="fActivate">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to activate; <b>FALSE</b> to deactivate.</para>
-    </param>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to a window that can be used by the handler to display any necessary UI. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="nControlFlags">
-      <para>Type: <b><see cref="SYNCMGR_CONTROL_FLAGS" /></b></para>
-      <para>A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the activation or deactivation of the handler should be performed synchronously or asynchronously.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An active handler appears in the Sync Center folder; an inactive handler appears in the Sync Setup folder.</para>
-      <para>If the specified handler returns <see cref="SYNCMGR_HCM_QUERY_BEFORE_ACTIVATE" /> or <see cref="SYNCMGR_HCM_QUERY_BEFORE_DEACTIVATE" /> in the mask returned from the <see cref="GetCapabilities" /> method, the query operation is requested before the handler is activated or deactivated. If no query UI is requested or once the user confirms the operation, the handler's <see cref="Activate" /> method is called.</para>
-      <para>If SYNCMGR_CF_WAIT is set in the <i>nControlFlags</i> parameter, <b>ActivateHandler</b> does not return until Sync Center has processed this notification.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrControl.ActivateHandler</b> by a handler's procedure.</para>
-      <code>void MiscProc(...)
-{
-    ...
-
-    // Get the Sync Center control object.
-    ISyncMgrControl *pControl = NULL;
-
-    hr = CoCreateInstance(CLSID_SyncMgrControl,
-                          CLSCTX_SERVER,
-                          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pControl));
-    if (SUCCEEDED(hr))
-    {
-        // Tell Sync Center to activate our handler.
-        hr = pControl-&gt;ActivateHandler(TRUE,
-                                       s_szMySyncHandlerID,
-                                       hwndOwner,
-                                       SYNCMGR_CF_NOWAIT);
-        pControl-&gt;Release();
-    }
-
-    ...
-
-}
-
-</code>
-    </remarks>
+      <b>TRUE</b> to activate; <b>FALSE</b> to deactivate.</param>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="hwndOwner">A handle to a window that can be used by the handler to display any necessary UI. This value can be <b>NULL</b>.</param>
+    <param name="nControlFlags">A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the activation or deactivation of the handler should be performed synchronously or asynchronously.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.EnableHandler">
-    <summary>
-      <para>Enables or disables a handler.</para>
-    </summary>
+    <summary>Enables or disables a handler.</summary>
     <param name="fEnable">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to enable; <b>FALSE</b> to disable.</para>
-    </param>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to a window that can be used by the handler to display any necessary UI. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="nControlFlags">
-      <para>Type: <b><see cref="SYNCMGR_CONTROL_FLAGS" /></b></para>
-      <para>A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the enabling or disabling of the handler should be performed synchronously or asynchronously.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An active handler appears in the Sync Center folder; an inactive handler appears in the Sync Setup folder.</para>
-      <para>If the specified handler returns <see cref="SYNCMGR_HCM_QUERY_BEFORE_ENABLE" /> or <see cref="SYNCMGR_HCM_QUERY_BEFORE_DISABLE" /> in the mask returned from the <see cref="GetCapabilities" /> method, the user is presented with a confirmation dialog requested before the handler is enabled or disabled. If no query UI is requested or once the user confirms the operation, the handler's <see cref="Enable" /> method is called.</para>
-      <para>If SYNCMGR_CF_WAIT is set in the <i>nControlFlags</i> parameter, <b>EnableHandler</b> does not return until Sync Center has processed this notification.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrControl.EnableHandler</b> by a handler's procedure.</para>
-      <code>void MiscProc(...)
-{
-    ...
-
-    // Get the Sync Center control object.
-    ISyncMgrControl *pControl = NULL;
-
-    hr = CoCreateInstance(CLSID_SyncMgrControl,
-                          CLSCTX_SERVER,
-                          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pControl));
-    if (SUCCEEDED(hr))
-    {
-        // Tell Sync Center to enable our handler.
-        hr = pControl-&gt;EnableHandler(TRUE,
-                                     s_szMySyncHandlerID,
-                                     hwnd,
-                                     SYNCMGR_CF_NOWAIT);
-        pControl-&gt;Release();
-    }
-
-    ...
-
-}
-
-</code>
-    </remarks>
+      <b>TRUE</b> to enable; <b>FALSE</b> to disable.</param>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="hwndOwner">A handle to a window that can be used by the handler to display any necessary UI. This value can be <b>NULL</b>.</param>
+    <param name="nControlFlags">A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the enabling or disabling of the handler should be performed synchronously or asynchronously.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.EnableItem">
-    <summary>
-      <para>Enables or disables a sync item managed by a specified handler.</para>
-    </summary>
+    <summary>Enables or disables a sync item managed by a specified handler.</summary>
     <param name="fEnable">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to enable; <b>FALSE</b> to disable.</para>
-    </param>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to a window that can be used by the item to display any necessary UI. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="nControlFlags">
-      <para>Type: <b><see cref="SYNCMGR_CONTROL_FLAGS" /></b></para>
-      <para>A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the enabling or disabling of the item should be performed synchronously or asynchronously.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An <i>enabled</i> item is an item that can be synchronized.</para>
-      <para>If the specified item returns <see cref="SYNCMGR_ICM_QUERY_BEFORE_ENABLE" /> or <see cref="SYNCMGR_ICM_QUERY_BEFORE_DISABLE" /> in the mask returned from the <see cref="GetCapabilities" /> method, the user is presented with a confirmation dialog box requested before the item is enabled or disabled. If no query UI is requested or once the user confirms the operation, the item's <see cref="Enable" /> method is called.</para>
-      <para>If SYNCMGR_CF_WAIT is set in the <i>nControlFlags</i> parameter, <b>EnableItem</b> does not return until Sync Center has processed this notification.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <see cref="ISyncMgrControl.EnableHandler" /> by a handler's procedure.</para>
-      <code>void MiscProc(...)
-{
-    ...
-
-    // Get the Sync Center control object.
-    ISyncMgrControl *pControl = NULL;
-
-    hr = CoCreateInstance(CLSID_SyncMgrControl,
-                          CLSCTX_SERVER,
-                          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pControl));
-    if (SUCCEEDED(hr))
-    {
-        // Tell Sync Center to disable the item.
-        hr = pControl-&gt;EnableItem(FALSE,
-                                  s_szMySyncHandlerID,
-                                  s_szMySyncHandlerMusicContentID,
-                                  hwnd,
-                                  SYNCMGR_CF_WAIT);
-        pControl-&gt;Release();
-    }
-
-    ...
-
-}
-
-</code>
-    </remarks>
+      <b>TRUE</b> to enable; <b>FALSE</b> to disable.</param>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="pszItemID">A pointer to a buffer containing the unique ID of the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="hwndOwner">A handle to a window that can be used by the item to display any necessary UI. This value can be <b>NULL</b>.</param>
+    <param name="nControlFlags">A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the enabling or disabling of the item should be performed synchronously or asynchronously.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.StartHandlerSync">
-    <summary>
-      <para>Initiates the synchronization of all items managed by a particular handler.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler to synchronize. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that the handler can use to display any necessary UI. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="punk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to an <see cref="IUnknown" /> to be passed to <see cref="Synchronize" />. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="nSyncControlFlags">
-      <para>Type: <b><see cref="SYNCMGR_SYNC_CONTROL_FLAGS" /></b></para>
-      <para>A member of the <see cref="SYNCMGR_SYNC_CONTROL_FLAGS" /> enumeration that specifies whether an item found in both a current sync and a queued sync should be synchronized again when the queued sync is performed.</para>
-    </param>
-    <param name="pResult">
-      <para>Type: <b><see cref="ISyncMgrSyncResult" />*</b></para>
-      <para>A pointer to an instance of <see cref="ISyncMgrSyncResult" />, whose <see cref="Result" /> method is called when the synchronization ends, either through success, failure, or cancellation. The <b>Result</b> method is called with the aggregated state of the handler synchronization. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Initiates the synchronization of all items managed by a particular handler.</summary>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler to synchronize. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="hwndOwner">A handle to the window that the handler can use to display any necessary UI. This value can be <b>NULL</b>.</param>
+    <param name="punk">A pointer to an <see cref="IUnknown" /> to be passed to <see cref="Synchronize" />. This parameter can be <b>NULL</b>.</param>
+    <param name="nSyncControlFlags">A member of the <see cref="SYNCMGR_SYNC_CONTROL_FLAGS" /> enumeration that specifies whether an item found in both a current sync and a queued sync should be synchronized again when the queued sync is performed.</param>
+    <param name="pResult">A pointer to an instance of <see cref="ISyncMgrSyncResult" />, whose <see cref="Result" /> method is called when the synchronization ends, either through success, failure, or cancellation. The <b>Result</b> method is called with the aggregated state of the handler synchronization. This parameter can be <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.StartItemSync">
-    <summary>
-      <para>Initiates the synchronization of specified items managed by a particular handler.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler that manages the items. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="ppszItemIDs">
-      <para>Type: <b>LPCWSTR*</b></para>
-      <para>The address of a pointer to a buffer containing an array of IDs of the items to be synchronized. Each ID is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character. This array is passed to <see cref="Synchronize" />.</para>
-    </param>
-    <param name="cItems">
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of IDs in <i>ppszItemIDs</i>.</para>
-    </param>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that the item can use to display any necessary UI. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="punk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to an <see cref="IUnknown" /> to be passed to <see cref="Synchronize" />. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="nSyncControlFlags">
-      <para>Type: <b><see cref="SYNCMGR_SYNC_CONTROL_FLAGS" /></b></para>
-      <para>A member of the <see cref="SYNCMGR_SYNC_CONTROL_FLAGS" /> enumeration that specifies whether an item found in both a current sync and a queued sync should be synchronized again when the queued sync is performed.</para>
-    </param>
-    <param name="pResult">
-      <para>Type: <b><see cref="ISyncMgrSyncResult" />*</b></para>
-      <para>A pointer to an instance of <see cref="ISyncMgrSyncResult" />, whose <see cref="Result" /> method is called when the synchronization ends, either through success, failure, or cancellation. The <b>Result</b> method is called with the aggregated state of the handler synchronization. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is analogous to <see cref="UpdateItems" />.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrControl.StartItemSync</b> by a handler's procedure.</para>
-      <code>void CMyDeviceHandler.MiscProc(...)
-{
-    ...
-
-    // Get the Sync Center control object.
-    ISyncMgrControl *pControl = NULL;
-
-    hr = CoCreateInstance(CLSID_SyncMgrControl,
-                          CLSCTX_SERVER,
-                          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pControl));
-    if (SUCCEEDED(hr))
-    {
-        // Synchronize one sync item for the sync handler.
-        hr = pControl-&gt;StartItemSync(s_szMySyncHandlerID,
-                                     s_szMySyncHandlerMusicContentID,
-                                     1,
-                                     _hwnd,
-                                     NULL,
-                                     NULL);
-        pControl-&gt;Release();
-    }
-
-    ...
-
-}
-
-</code>
-    </remarks>
+    <summary>Initiates the synchronization of specified items managed by a particular handler.</summary>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler that manages the items. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="ppszItemIDs">The address of a pointer to a buffer containing an array of IDs of the items to be synchronized. Each ID is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character. This array is passed to <see cref="Synchronize" />.</param>
+    <param name="cItems">The number of IDs in <i>ppszItemIDs</i>.</param>
+    <param name="hwndOwner">A handle to the window that the item can use to display any necessary UI. This value can be <b>NULL</b>.</param>
+    <param name="punk">A pointer to an <see cref="IUnknown" /> to be passed to <see cref="Synchronize" />. This parameter can be <b>NULL</b>.</param>
+    <param name="nSyncControlFlags">A member of the <see cref="SYNCMGR_SYNC_CONTROL_FLAGS" /> enumeration that specifies whether an item found in both a current sync and a queued sync should be synchronized again when the queued sync is performed.</param>
+    <param name="pResult">A pointer to an instance of <see cref="ISyncMgrSyncResult" />, whose <see cref="Result" /> method is called when the synchronization ends, either through success, failure, or cancellation. The <b>Result</b> method is called with the aggregated state of the handler synchronization. This parameter can be <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.StartSyncAll">
-    <summary>
-      <para>Synchronizes all items managed by all handlers.</para>
-    </summary>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to a window that can be used by a handler or item to display any necessary UI. This value can be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is analogous to <see cref="UpdateAll" />.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrControl.StartSyncAll</b> by a handler's procedure.</para>
-      <code>void CMyDeviceHandler.MiscProc(...)
-{
-    ...
-
-    // Get the Sync Center control object.
-    ISyncMgrControl *pControl = NULL;
-
-    hr = CoCreateInstance(CLSID_SyncMgrControl,
-                          CLSCTX_SERVER,
-                          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pControl));
-    if (SUCCEEDED(hr))
-    {
-        // Synchronize all sync items for all sync handlers.
-        hr = pControl-&gt;StartSyncAll(_hwnd);
-        pControl-&gt;Release();
-    }
-
-    ...
-
-}
-
-</code>
-    </remarks>
+    <summary>Synchronizes all items managed by all handlers.</summary>
+    <param name="hwndOwner">A handle to a window that can be used by a handler or item to display any necessary UI. This value can be <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.StopHandlerSync">
-    <summary>
-      <para>Stops the synchronization of a specified handler.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Stops the synchronization of a specified handler.</summary>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.StopItemSync">
-    <summary>
-      <para>Stops the synchronization of specified items managed by a particular handler.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>a pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="ppszItemIDs">
-      <para>Type: <b>LPCWSTR*</b></para>
-      <para>The address of a pointer to a buffer containing an array of IDs of the items to stop synchronizing. Each ID is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="cItems">
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of IDs in <i>ppszItemIDs</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Stops the synchronization of specified items managed by a particular handler.</summary>
+    <param name="pszHandlerID">a pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="ppszItemIDs">The address of a pointer to a buffer containing an array of IDs of the items to stop synchronizing. Each ID is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="cItems">The number of IDs in <i>ppszItemIDs</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.StopSyncAll">
-    <summary>
-      <para>Stops the synchronization of all items managed by all handlers.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Stops the synchronization of all items managed by all handlers.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.UpdateConflicts">
-    <summary>
-      <para>Informs Sync Center that conflicts have been added for a specific handler or item.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler that manages the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character. This parameter can be <b>NULL</b> if the event occurred on the handler rather than on a specific item.</para>
-    </param>
-    <param name="nControlFlags">
-      <para>Type: <b><see cref="SYNCMGR_CONTROL_FLAGS" /></b></para>
-      <para>A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the update should be performed synchronously or asynchronously.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If SYNCMGR_CF_WAIT is set in the <i>nControlFlags</i> parameter, <b>UpdateConflicts</b> does not return until Sync Center has loaded the specified handler, retrieved the handler's conflict store, and reloaded all conflicts from that store. If the handler is provided by a handler collection, the handler collection is also loaded to reload the handler.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <see cref="ISyncMgrControl.UpdateEvents" /> by a handler's procedure.</para>
-      <code>void CMyDeviceHandler.Synchronize(...)
-{
-    ...
-    // Add conflicts to the event store.
-
-    // Get the Sync Center control object.
-    ISyncMgrControl *pControl = NULL;
-
-    hr = CoCreateInstance(CLSID_SyncMgrControl,
-                          CLSCTX_SERVER,
-                          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pControl));
-    if (SUCCEEDED(hr))
-    {
-        // Tell Sync Center that we added events to our event store.
-        // By passing NULL in pszItemID, we tell Sync Center that the conflict
-        // occurred on the handler rather than a specific item.
-        hr = pControl-&gt;UpdateConflicts(s_szMyDeviceSyncHandlerID,
-                                       NULL,
-                                       SYNCMGR_CF_NOWAIT);
-        pControl-&gt;Release();
-    }
-
-    ...
-
-}
-
-</code>
-    </remarks>
+    <summary>Informs Sync Center that conflicts have been added for a specific handler or item.</summary>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler that manages the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="pszItemID">A pointer to a buffer containing the unique ID of the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character. This parameter can be <b>NULL</b> if the event occurred on the handler rather than on a specific item.</param>
+    <param name="nControlFlags">A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the update should be performed synchronously or asynchronously.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.UpdateEvents">
-    <summary>
-      <para>Informs Sync Center that events have been added for a specific handler or item.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler that manages the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character. This parameter can be <b>NULL</b> if the event occurred on the handler rather than on a specific item.</para>
-    </param>
-    <param name="nControlFlags">
-      <para>Type: <b><see cref="SYNCMGR_CONTROL_FLAGS" /></b></para>
-      <para>A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the update should be performed synchronously or asynchronously.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If SYNCMGR_CF_WAIT is set in the <i>nControlFlags</i> parameter, <b>UpdateEvents</b> does not return until Sync Center has loaded the specified handler, retrieved the handler's event store, and reloaded all events from that store. If the handler is provided by a handler collection, the handler collection is also loaded to reload the handler.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrControl.UpdateEvents</b> by a handler's procedure.</para>
-      <code>void CMyDeviceHandler.Synchronize(...)
-{
-    ...
-    // Add events to the event store.
-
-    // Get the Sync Center control object.
-    ISyncMgrControl *pControl = NULL;
-
-    hr = CoCreateInstance(CLSID_SyncMgrControl,
-                          CLSCTX_SERVER,
-                          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pControl));
-    if (SUCCEEDED(hr))
-    {
-        // Tell Sync Center that we added events to our event store.
-        // By passing NULL in pszItemID, we tell Sync Center that the event
-        // occurred on the handler rather than a specific item.
-        hr = pControl-&gt;UpdateEvents(s_szMyDeviceSyncHandlerID,
-                                    NULL,
-                                    SYNCMGR_CF_NOWAIT);
-        pControl-&gt;Release();
-    }
-
-    ...
-
-}
-
-</code>
-    </remarks>
+    <summary>Informs Sync Center that events have been added for a specific handler or item.</summary>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler that manages the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="pszItemID">A pointer to a buffer containing the unique ID of the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character. This parameter can be <b>NULL</b> if the event occurred on the handler rather than on a specific item.</param>
+    <param name="nControlFlags">A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the update should be performed synchronously or asynchronously.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.UpdateHandler">
-    <summary>
-      <para>Instructs Sync Center to reenumerate the items managed by a handler or informs it that properties of the handler have changed.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="nControlFlags">
-      <para>Type: <b><see cref="SYNCMGR_CONTROL_FLAGS" /></b></para>
-      <para>A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the update should be performed synchronously or asynchronously.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If SYNCMGR_CF_WAIT is set in the <i>nControlFlags</i> parameter, <b>UpdateHandler</b> does not return until Sync Center has loaded the specified handler and reloaded all handler and item information. If the handler is provided by a handler collection, the handler collection is also loaded to reload the handler.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrControl.UpdateHandler</b> by a handler's procedure.</para>
-      <code>void CMyDeviceHandler.MiscProc(...)
-{
-    ...
-
-    // Get the Sync Center control object.
-    ISyncMgrControl *pControl = NULL;
-
-    hr = CoCreateInstance(CLSID_SyncMgrControl,
-                          CLSCTX_SERVER,
-                          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pControl));
-    if (SUCCEEDED(hr))
-    {
-        // Tell Sync Center that properties on the handler have changed.
-        hr = pControl-&gt;UpdateHandler(s_szMySyncHandlerID, SYNCMGR_CF_WAIT);
-        pControl-&gt;Release();
-    }
-
-    ...
-
-}
-
-</code>
-    </remarks>
+    <summary>Instructs Sync Center to reenumerate the items managed by a handler or informs it that properties of the handler have changed.</summary>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="nControlFlags">A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the update should be performed synchronously or asynchronously.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.UpdateHandlerCollection">
-    <summary>
-      <para>Instructs Sync Center to reenumerate the handler collection, or informs it that properties of a handler in the handler collection have changed.</para>
-    </summary>
-    <param name="rclsidCollectionID">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>A reference to the handler collection's CLSID.</para>
-    </param>
-    <param name="nControlFlags">
-      <para>Type: <b><see cref="SYNCMGR_CONTROL_FLAGS" /></b></para>
-      <para>A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the update should be performed synchronously or asynchronously.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If SYNCMGR_CF_WAIT is set in the <i>nControlFlags</i> parameter, <b>UpdateHandlerCollection</b> does not return until Sync Center has loaded the specified handler collection and reloaded all handler and item information.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrControl.UpdateHandlerCollection</b> by a handler's procedure.</para>
-      <code>void CMyDeviceHandler.MiscProc(...)
-{
-    ...
-
-    // Get the Sync Center control object.
-    ISyncMgrControl *pControl = NULL;
-
-    hr = CoCreateInstance(CLSID_SyncMgrControl,
-                          CLSCTX_SERVER,
-                          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pControl));
-    if (SUCCEEDED(hr))
-    {
-        // Tell Sync Center that a new computer has been added.
-        hr = pControl-&gt;UpdateHandlerCollection(CLSID_FRSHandlerCollection,
-                                               SYNCMGR_CF_NOWAIT);
-        pControl-&gt;Release();
-    }
-
-    ...
-
-}
-
-</code>
-    </remarks>
+    <summary>Instructs Sync Center to reenumerate the handler collection, or informs it that properties of a handler in the handler collection have changed.</summary>
+    <param name="rclsidCollectionID">A reference to the handler collection's CLSID.</param>
+    <param name="nControlFlags">A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the update should be performed synchronously or asynchronously.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl.UpdateItem">
-    <summary>
-      <para>Informs Sync Center that properties of a sync item have changed.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler that manages the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="nControlFlags">
-      <para>Type: <b><see cref="SYNCMGR_CONTROL_FLAGS" /></b></para>
-      <para>A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the update should be performed synchronously or asynchronously.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If SYNCMGR_CF_WAIT is set in the <i>nControlFlags</i> parameter, <b>UpdateItem</b> does not return until Sync Center has loaded the specified handler and reloaded all handler and item information. If the handler is provided by a handler collection, the handler collection is also loaded to reload the handler.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrControl.UpdateItem</b> by a handler's procedure.</para>
-      <code>void CMyDeviceHandler.MiscProc(...)
-{
-    ...
-
-    // Get the Sync Center control object.
-    ISyncMgrControl *pControl = NULL;
-
-    hr = CoCreateInstance(CLSID_SyncMgrControl,
-                          CLSCTX_SERVER,
-                          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pControl));
-    if (SUCCEEDED(hr))
-    {
-        // Tell Sync Center that properties of the item have changed.
-        hr = pControl-&gt;UpdateItem(s_szMySyncHandlerID,
-                                  s_szMySyncHandlerMusicContentID,
-                                  SYNCMGR_CF_WAIT);
-        pControl-&gt;Release();
-    }
-
-    ...
-
-}
-
-</code>
-    </remarks>
+    <summary>Informs Sync Center that properties of a sync item have changed.</summary>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler that manages the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="pszItemID">A pointer to a buffer containing the unique ID of the item. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="nControlFlags">A value from the <see cref="SYNCMGR_CONTROL_FLAGS" /> enumeration specifying whether the update should be performed synchronously or asynchronously.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrControl">
-    <summary>
-      <para>Exposes methods that allow an application or handler to start or stop a synchronization, notify Sync Center of changes to the set of handlers or items, or notify of changes to property values.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>ISyncMgrControl</b> is implemented by Sync Center. It can be instantiated by an application or handler as the CLSID_SyncMgrControl object, which is implemented as a Component Object Model (COM) local server. As a result, calls to <b>ISyncMgrControl</b> methods could take considerable time. Those calls should not be made on a UI thread.</para>
-      <para>All methods of this interface queue their requests with Sync Center.</para>
-      <para>
-        <b>ISyncMgrControl</b> is a replacement for <see cref="ISyncMgrSynchronizeInvoke" />.</para>
-    </remarks>
+    <summary>Exposes methods that allow an application or handler to start or stop a synchronization, notify Sync Center of changes to the set of handlers or items, or notify of changes to property values.</summary>
   </member>
 </doc>

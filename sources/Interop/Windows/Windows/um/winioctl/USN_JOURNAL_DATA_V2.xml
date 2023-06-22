@@ -3,70 +3,34 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="USN_JOURNAL_DATA_V2">
-    <summary>
-      <para>Represents an update sequence number (USN) change journal, its records, and its capacity. This structure is the output buffer for the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a> control code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</seealso>
-    <seealso cref="USN_JOURNAL_DATA_V0" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh802707(v=vs.85)">USN_JOURNAL_DATA_V1</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+    <summary>Represents an update sequence number (USN) change journal, its records, and its capacity. This structure is the output buffer for the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a> control code.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.UsnJournalID">
-    <summary>
-      <para>The current journal identifier. A journal is assigned a new identifier on creation and can be stamped with
-a new identifier in the course of its existence. The NTFS file system uses this identifier for an integrity
-check.</para>
-    </summary>
+    <summary>The current journal identifier. A journal is assigned a new identifier on creation and can be stamped with a new identifier in the course of its existence. The NTFS file system uses this identifier for an integrity check.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.FirstUsn">
-    <summary>
-      <para>The number of first record that can be read from the journal.</para>
-    </summary>
+    <summary>The number of first record that can be read from the journal.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.NextUsn">
-    <summary>
-      <para>The number of next record to be written to the journal.</para>
-    </summary>
+    <summary>The number of next record to be written to the journal.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.LowestValidUsn">
-    <summary>
-      <para>The first record that was written into the journal for this journal instance. Enumerating the files or
-directories on a volume can return a USN lower than this value (in other words, a
-<b>FirstUsn</b> member value less than the <b>LowestValidUsn</b> member
-value). If it does, the journal has been stamped with a new identifier since the last USN was written. In this
-case, <b>LowestValidUsn</b> may indicate a discontinuity in the journal, in which changes to
-some or all files or directories on the volume may have occurred that are not recorded in the change
-journal.</para>
-    </summary>
+    <summary>The first record that was written into the journal for this journal instance. Enumerating the files or directories on a volume can return a USN lower than this value (in other words, a<b>FirstUsn</b> member value less than the <b>LowestValidUsn</b> member value). If it does, the journal has been stamped with a new identifier since the last USN was written. In this case, <b>LowestValidUsn</b> may indicate a discontinuity in the journal, in which changes to some or all files or directories on the volume may have occurred that are not recorded in the change journal.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.MaxUsn">
-    <summary>
-      <para>The largest USN that the change journal supports. An administrator must delete the change journal as the
-value of <b>NextUsn</b> approaches this value.</para>
-    </summary>
+    <summary>The largest USN that the change journal supports. An administrator must delete the change journal as the value of <b>NextUsn</b> approaches this value.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.MaximumSize">
-    <summary>
-      <para>The target maximum size for the change journal, in bytes. The change journal can grow larger than this
-value, but it is then truncated at the next NTFS file system checkpoint to less than this value.</para>
-    </summary>
+    <summary>The target maximum size for the change journal, in bytes. The change journal can grow larger than this value, but it is then truncated at the next NTFS file system checkpoint to less than this value.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.AllocationDelta">
-    <summary>
-      <para>The number of bytes of disk memory added to the end and removed from the beginning of the change journal
-each time memory is allocated or deallocated. In other words, allocation and deallocation take place in units of
-this size. An integer multiple of a cluster size is a reasonable value for this member.</para>
-    </summary>
+    <summary>The number of bytes of disk memory added to the end and removed from the beginning of the change journal each time memory is allocated or deallocated. In other words, allocation and deallocation take place in units of this size. An integer multiple of a cluster size is a reasonable value for this member.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.MinSupportedMajorVersion">
-    <summary>
-      <para>The minimum version of the USN change journal that the file system supports.</para>
-    </summary>
+    <summary>The minimum version of the USN change journal that the file system supports.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.MaxSupportedMajorVersion">
-    <summary>
-      <para>The maximum version of the USN change journal that the file system supports.</para>
-    </summary>
+    <summary>The maximum version of the USN change journal that the file system supports.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.Flags">
     <summary>
@@ -76,42 +40,38 @@ this size. An integer multiple of a cluster size is a reasonable value for this 
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0x00000000</para>
-          </description>
-          <description>
-            <para>Range tracking is not turned on for the volume.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
             </list>
           </description>
+          <description>Range tracking is not turned on for the volume.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Range tracking is turned on for the volume.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>Range tracking is turned on for the volume.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.RangeTrackChunkSize">
-    <summary>
-      <para>The granularity of tracked ranges. Valid only when you also set the <b>Flags</b> member to <b>FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE</b>.</para>
-    </summary>
+    <summary>The granularity of tracked ranges. Valid only when you also set the <b>Flags</b> member to <b>FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE</b>.</summary>
   </member>
   <member name="USN_JOURNAL_DATA_V2.RangeTrackFileSizeThreshold">
-    <summary>
-      <para>File size threshold to start tracking range for files with equal or larger size. Valid only when you also set the <b>Flags</b> member to <b>FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE</b>.</para>
-    </summary>
+    <summary>File size threshold to start tracking range for files with equal or larger size. Valid only when you also set the <b>Flags</b> member to <b>FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE</b>.</summary>
   </member>
 </doc>

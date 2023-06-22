@@ -3,120 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSourceReaderCallback.OnEvent">
-    <summary>
-      <para>Called when the source reader receives certain events from the media source.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>For stream events, the value is the zero-based index of the stream that sent the event. For source events, the value is <b>MF_SOURCE_READER_MEDIASOURCE</b>.</para>
-    </param>
-    <param name="pEvent">
-      <para>A pointer to the <see cref="IMFMediaEvent" /> interface of the event.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value. Currently, the source reader ignores the return value.</para>
-    </returns>
-    <remarks>
-      <para>In the current implementation,  the source reader uses this method to forward the following events to the application:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstarted">MEBufferingStarted</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstopped">MEBufferingStopped</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/meconnectend">MEConnectEnd</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/meconnectstart">MEConnectStart</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/meextendedtype">MEExtendedType</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mesourcecharacteristicschanged">MESourceCharacteristicsChanged</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mesourcemetadatachanged">MESourceMetadataChanged</a>
-          </description>
-        </item>
-      </list>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReaderCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+    <summary>Called when the source reader receives certain events from the media source.</summary>
+    <param name="dwStreamIndex">For stream events, the value is the zero-based index of the stream that sent the event. For source events, the value is <b>MF_SOURCE_READER_MEDIASOURCE</b>.</param>
+    <param name="pEvent">A pointer to the <see cref="IMFMediaEvent" /> interface of the event.</param>
+    <returns>Returns an <b>HRESULT</b> value. Currently, the source reader ignores the return value.</returns>
   </member>
   <member name="IMFSourceReaderCallback.OnFlush">
-    <summary>
-      <para>Called when the <see cref="IMFSourceReader.Flush" /> method completes.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>The index of the stream that was flushed, or <b>MF_SOURCE_READER_ALL_STREAMS</b> if all streams were flushed.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value. Currently, the source reader ignores the return value.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReaderCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+    <summary>Called when the <see cref="IMFSourceReader.Flush" /> method completes.</summary>
+    <param name="dwStreamIndex">The index of the stream that was flushed, or <b>MF_SOURCE_READER_ALL_STREAMS</b> if all streams were flushed.</param>
+    <returns>Returns an <b>HRESULT</b> value. Currently, the source reader ignores the return value.</returns>
   </member>
   <member name="IMFSourceReaderCallback.OnReadSample">
-    <summary>
-      <para>Called when the <see cref="IMFSourceReader.ReadSample" /> method completes.</para>
-    </summary>
-    <param name="hrStatus">
-      <para>The status code. If an error occurred while processing the next sample, this parameter contains the error code.</para>
-    </param>
-    <param name="dwStreamIndex">
-      <para>The zero-based index of the stream that delivered the sample.</para>
-    </param>
-    <param name="dwStreamFlags">
-      <para>A bitwise <b>OR</b> of zero or more flags from the <see cref="MF_SOURCE_READER_FLAG" /> enumeration.</para>
-    </param>
-    <param name="llTimestamp">
-      <para>The time stamp of the sample, or the time of the stream event indicated in <i>dwStreamFlags</i>. The time is given in 100-nanosecond units.</para>
-    </param>
-    <param name="pSample">
-      <para>A pointer to the <see cref="IMFSample" /> interface of a media sample. This parameter might be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value. Currently, the source reader ignores the return value.</para>
-    </returns>
-    <remarks>
-      <para>The <i>pSample</i> parameter might be <b>NULL</b>. For example, when the source reader reaches the end of a stream, <i>dwStreamFlags</i> contains the <b>MF_SOURCE_READERF_ENDOFSTREAM</b> flag, and <i>pSample</i> is <b>NULL</b>.</para>
-      <para>If there is a gap in the stream, <i>dwStreamFlags</i> contains the <b>MF_SOURCE_READERF_STREAMTICK</b> flag, <i>pSample</i> is <b>NULL</b>, and <i>llTimestamp</i> indicates the time when the gap occurred.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReaderCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+    <summary>Called when the <see cref="IMFSourceReader.ReadSample" /> method completes.</summary>
+    <param name="hrStatus">The status code. If an error occurred while processing the next sample, this parameter contains the error code.</param>
+    <param name="dwStreamIndex">The zero-based index of the stream that delivered the sample.</param>
+    <param name="dwStreamFlags">A bitwise <b>OR</b> of zero or more flags from the <see cref="MF_SOURCE_READER_FLAG" /> enumeration.</param>
+    <param name="llTimestamp">The time stamp of the sample, or the time of the stream event indicated in <i>dwStreamFlags</i>. The time is given in 100-nanosecond units.</param>
+    <param name="pSample">A pointer to the <see cref="IMFSample" /> interface of a media sample. This parameter might be <b>NULL</b>.</param>
+    <returns>Returns an <b>HRESULT</b> value. Currently, the source reader ignores the return value.</returns>
   </member>
   <member name="IMFSourceReaderCallback">
-    <summary>
-      <para>Callback interface for the Microsoft Media Foundation source reader.</para>
-    </summary>
-    <remarks>
-      <para>Use the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-source-reader-async-callback">MF_SOURCE_READER_ASYNC_CALLBACK</a> attribute to set the callback pointer when you first create the source reader object.</para>
-      <para>The callback methods can be called from any thread, so an object that implements this interface must be thread-safe.</para>
-      <para>If you do not specify a callback pointer, the source reader operates synchronously.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-the-source-reader-in-asynchronous-mode">Using the Source Reader in Asynchronous Mode</seealso>
+    <summary>Callback interface for the Microsoft Media Foundation source reader.</summary>
   </member>
 </doc>

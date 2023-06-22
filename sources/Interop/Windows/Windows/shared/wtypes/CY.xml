@@ -8,16 +8,8 @@
       <para>The CURRENCY data type is useful for calculations involving money, or for any fixed-point calculation where accuracy is particularly important.</para>
     </summary>
   </member>
-  <member name="CY.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
-  <member name="CY.Lo">
-    <summary></summary>
-  </member>
-  <member name="CY.Hi">
-    <summary></summary>
-  </member>
-  <member name="CY.int64">
-    <summary></summary>
-  </member>
+  <member name="CY.DUMMYSTRUCTNAME"></member>
+  <member name="CY.Lo"></member>
+  <member name="CY.Hi"></member>
+  <member name="CY.int64"></member>
 </doc>

@@ -4,29 +4,19 @@
 <doc>
   <member name="TIMECODE_SAMPLE">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>TIMECODE_SAMPLE</code> structure contains complete timecode information.</para>
     </summary>
-    <remarks>
-      <para>The upper 16 bits in <b>dwFlags</b> are reserved; set to zero.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso cref="IAMTimecodeReader.GetTimecode" />
   </member>
   <member name="TIMECODE_SAMPLE.qwTick">
-    <summary>
-      <para>Reference time, in 100-nanosecond units.</para>
-    </summary>
+    <summary>Reference time, in 100-nanosecond units.</summary>
   </member>
   <member name="TIMECODE_SAMPLE.timecode">
     <summary>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/getting-timecode-from-the-device">TIMECODE</a> structure.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/DirectShow/getting-timecode-from-the-device">TIMECODE</a> structure.</summary>
   </member>
   <member name="TIMECODE_SAMPLE.dwUser">
-    <summary>
-      <para>Packed SMPTE userbits.</para>
-    </summary>
+    <summary>Packed SMPTE userbits.</summary>
   </member>
   <member name="TIMECODE_SAMPLE.dwFlags">
     <summary>
@@ -36,86 +26,126 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>AM_TIMECODE_FLAG_FCM</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AM_TIMECODE_FLAG_FCM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Frame code mode; 0 = nondrop; 1 = drop.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Frame code mode; 0 = nondrop; 1 = drop.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AM_TIMECODE_FLAG_CF</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Color frame flag.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>AM_TIMECODE_FLAG_CF</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AM_TIMECODE_FLAG_FIELD</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Field flag.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Color frame flag.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AM_TIMECODE_FLAG_DF</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Drop frame flag (from flags in actual timecode on external media).</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>AM_TIMECODE_FLAG_FIELD</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AM_TIMECODE_COLORFRAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Specifies frame in color sequence.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Field flag.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AM_TIMECODE_COLORSEQUENCE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Duration in frames of complete sequence.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>AM_TIMECODE_FLAG_DF</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AM_TIMECODE_FILMSEQUENCE_TYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One of the FILM_SEQUENCE_XXX defines.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Drop frame flag (from flags in actual timecode on external media).</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_DEVCAP_TIMECODE_READ</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Read SMPTE timecode; applies to DV camcorders.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>AM_TIMECODE_COLORFRAME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_DEVCAP_ATN_READ</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Read the absolute track number (ATN); applies to DV camcorders. This constant is defined in the header file Xprtdefs.h.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Specifies frame in color sequence.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_DEVCAP_RTC_READ</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>AM_TIMECODE_COLORSEQUENCE</b>
-          </description>
-          <description>
-            <para>Duration in frames of complete sequence.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>AM_TIMECODE_FILMSEQUENCE_TYPE</b>
-          </description>
-          <description>
-            <para>One of the FILM_SEQUENCE_XXX defines.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ED_DEVCAP_TIMECODE_READ</b>
-          </description>
-          <description>
-            <para>Read SMPTE timecode; applies to DV camcorders.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ED_DEVCAP_ATN_READ</b>
-          </description>
-          <description>
-            <para>Read the absolute track number (ATN); applies to DV camcorders. This constant is defined in the header file Xprtdefs.h.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ED_DEVCAP_RTC_READ</b>
-          </description>
-          <description>
-            <para>Read the relative time counter (RTC); applies to MPEG camcorders. This constant is defined in the header file Xprtdefs.h.</para>
-          </description>
-        </item>
+          <description>Read the relative time counter (RTC); applies to MPEG camcorders. This constant is defined in the header file Xprtdefs.h.</description>
+        </listheader>
       </list>
     </summary>
   </member>

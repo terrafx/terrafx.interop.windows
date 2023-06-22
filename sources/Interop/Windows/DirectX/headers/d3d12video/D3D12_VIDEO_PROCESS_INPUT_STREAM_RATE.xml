@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE">
-    <summary>
-      <para>Provides information about the stream rate.</para>
-    </summary>
+    <summary>Provides information about the stream rate.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE.OutputIndex">
     <summary>
@@ -54,32 +52,16 @@
       <para>The zero-based index number of the input frame or field. The InputFrameOrField member is a zero-based number that indicates the frame or the field number of the input surface. For example, with the following input-frame-or-field number, the driver can perform the indicated video processing:</para>
       <list type="bullet">
         <item>
-          <description>Progressive format and interlaced format at normal rate:</description>
+          <description>Progressive format and interlaced format at normal rate:<list type="bullet"><item><description><i>InputFrameOrField</i> = 0, 1, 2,...</description></item></list></description>
         </item>
         <item>
-          <description>
-            <i>InputFrameOrField</i> = 0, 1, 2,...</description>
+          <description>Progressive format and interlaced format at half rate:<list type="bullet"><item><description><i>InputFrameOrField</i> = 0, 2, 4,...</description></item></list></description>
         </item>
         <item>
-          <description>Progressive format and interlaced format at half rate:</description>
+          <description>Interlaced format at 4/5 custom rate (3:2 inverse telecine, OutputFrames=4 and InputFrameOrField=10):<list type="bullet"><item><description><i>InputFrameOrField</i> = 0, 0, 0, 0, 10, 10, 10, 10, 20, 20, 20, 20,...</description></item></list></description>
         </item>
         <item>
-          <description>
-            <i>InputFrameOrField</i> = 0, 2, 4,...</description>
-        </item>
-        <item>
-          <description>Interlaced format at 4/5 custom rate (3:2 inverse telecine, OutputFrames=4 and InputFrameOrField=10):</description>
-        </item>
-        <item>
-          <description>
-            <i>InputFrameOrField</i> = 0, 0, 0, 0, 10, 10, 10, 10, 20, 20, 20, 20,...</description>
-        </item>
-        <item>
-          <description>Interlaced format at 4/15 custom rate (8:7 inverse telecine, OutputFrames=2 and InputFrameOrField=15):</description>
-        </item>
-        <item>
-          <description>
-            <i>InputFrameOrField</i> = 0, 0, 15, 15, 30, 30,...</description>
+          <description>Interlaced format at 4/15 custom rate (8:7 inverse telecine, OutputFrames=2 and InputFrameOrField=15):<list type="bullet"><item><description><i>InputFrameOrField</i> = 0, 0, 15, 15, 30, 30,...</description></item></list></description>
         </item>
       </list>
     </summary>

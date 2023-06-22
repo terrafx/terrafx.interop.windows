@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAPO_LOCKFORPROCESS_PARAMETERS">
-    <summary>
-      <para>Defines stream buffer parameters that remain constant while an XAPO is locked. Used with the <see cref="IXAPO.LockForProcess" /> method.</para>
-    </summary>
-    <remarks>
-      <para>The byte size of the respective stream buffer must be at least <i>MaxFrameCount</i> × (<i>pFormat</i>-&gt;nBlockAlign) bytes.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">Structures</seealso>
+    <summary>Defines stream buffer parameters that remain constant while an XAPO is locked. Used with the <see cref="IXAPO.LockForProcess" /> method.</summary>
   </member>
   <member name="XAPO_LOCKFORPROCESS_PARAMETERS.pFormat">
-    <summary>
-      <para>A WAVFORMATEX describing the format for the stream buffer.</para>
-    </summary>
+    <summary>A WAVFORMATEX describing the format for the stream buffer.</summary>
   </member>
   <member name="XAPO_LOCKFORPROCESS_PARAMETERS.MaxFrameCount">
-    <summary>
-      <para>Maximum number of frames in the stream buffer that <see cref="IXAPO.Process" /> would ever be required to handle, irrespective of dynamic parameter settings.</para>
-    </summary>
+    <summary>Maximum number of frames in the stream buffer that <see cref="IXAPO.Process" /> would ever be required to handle, irrespective of dynamic parameter settings.</summary>
   </member>
 </doc>

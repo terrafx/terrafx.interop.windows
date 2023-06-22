@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.DirectDrawCreate">
-    <summary>
-      <para>Creates an instance of a DirectDraw object. A DirectDraw object that is created by using this function does not support the complete set of Direct3D interfaces in DirectX 7.0. To create a DirectDraw object that is capable of exposing all of the features of Direct3D in DirectX 7.0, use the <see cref="DirectDrawCreateEx" /> function.</para>
-    </summary>
+    <summary>Creates an instance of a DirectDraw object. A DirectDraw object that is created by using this function does not support the complete set of Direct3D interfaces in DirectX 7.0. To create a DirectDraw object that is capable of exposing all of the features of Direct3D in DirectX 7.0, use the <see cref="DirectDrawCreateEx" /> function.</summary>
     <param name="lpGUID">
       <para>A pointer to the globally unique identifier (GUID) that represents the driver to be created. This can be NULL to indicate the active display driver, or you can pass one of the following flags to restrict the active display driver's behavior for debugging purposes:</para>
-      <list type="bullet">
-        <item>
-          <description>DDCREATE_EMULATIONONLY - The DirectDraw object uses emulation for all features; it does not take advantage of any hardware-supported features.</description>
-        </item>
-        <item>
-          <description>DDCREATE_HARDWAREONLY - The DirectDraw object never emulates features not supported by the hardware. Attempts to call methods that require unsupported features fail, returning DDERR_UNSUPPORTED.</description>
-        </item>
-      </list>
+      <h4>DDCREATE_EMULATIONONLY</h4>
+      <para>The DirectDraw object uses emulation for all features; it does not take advantage of any hardware-supported features.</para>
+      <h4>DDCREATE_HARDWAREONLY</h4>
+      <para>The DirectDraw object never emulates features not supported by the hardware. Attempts to call methods that require unsupported features fail, returning DDERR_UNSUPPORTED.</para>
     </param>
-    <param name="lplpDD">
-      <para>A pointer to a variable to be set to a valid <b>IDirectDraw</b> interface pointer if the call succeeds.</para>
-    </param>
-    <param name="pUnkOuter">
-      <para>Allows for future compatibility with COM aggregation features. Presently, however, this function returns an error if this parameter is anything but NULL.</para>
-    </param>
+    <param name="lplpDD">A pointer to a variable to be set to a valid <b>IDirectDraw</b> interface pointer if the call succeeds.</param>
+    <param name="pUnkOuter">Allows for future compatibility with COM aggregation features. Presently, however, this function returns an error if this parameter is anything but NULL.</param>
     <returns>
       <para>If the function succeeds, the return value is DD_OK.</para>
       <para>If it fails, the function can return one of the following error values:</para>
@@ -47,25 +37,12 @@
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>This function attempts to initialize a DirectDraw object, and then sets a pointer to the object if the call succeeds.</para>
-      <para>On computers with multiple monitors, if you specify NULL for <i>lpGUID</i>, the DirectDraw object runs in emulation mode when the normal cooperative level is set. To make use of hardware acceleration on these computers, specify the device's GUID.</para>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>DirectDrawCreate</b> function.</para>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawCreateClipper">
-    <summary>
-      <para>Creates an instance of a DirectDrawClipper object that is not associated with a DirectDraw object.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Currently not used and must be set to 0.</para>
-    </param>
-    <param name="lplpDDClipper">
-      <para>Address of a pointer to be filled with the address of the new DirectDrawClipper object.</para>
-    </param>
-    <param name="pUnkOuter">
-      <para>Allows for future compatibility with COM aggregation features. Currently, this function returns an error if this parameter is not NULL.</para>
-    </param>
+    <summary>Creates an instance of a DirectDrawClipper object that is not associated with a DirectDraw object.</summary>
+    <param name="dwFlags">Currently not used and must be set to 0.</param>
+    <param name="lplpDDClipper">Address of a pointer to be filled with the address of the new DirectDrawClipper object.</param>
+    <param name="pUnkOuter">Allows for future compatibility with COM aggregation features. Currently, this function returns an error if this parameter is not NULL.</param>
     <returns>
       <para>If the function succeeds, the return value is DD_OK.</para>
       <para>If it fails, the function can return one of the following error values:</para>
@@ -78,36 +55,19 @@
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>You can call <b>DirectDrawCreateClipper</b> before any DirectDraw objects are created. Because these DirectDrawClipper objects are not owned by any DirectDraw object, they are not automatically released when an application's objects are released. If the application does not explicitly release the DirectDrawClipper objects, DirectDraw releases them when the application terminates.</para>
-      <para>To create a DirectDrawClipper object that is owned by a specific DirectDraw object, use the <see cref="IDirectDraw7.CreateClipper" /> method.</para>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>DirectDrawCreateClipper</b> function.</para>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawCreateEx">
-    <summary>
-      <para>Creates an instance of a DirectDraw object that supports the set of Direct3D interfaces in DirectX 7.0. To use the features of Direct3D in DirectX 7.0, create a DirectDraw object with this function.</para>
-    </summary>
+    <summary>Creates an instance of a DirectDraw object that supports the set of Direct3D interfaces in DirectX 7.0. To use the features of Direct3D in DirectX 7.0, create a DirectDraw object with this function.</summary>
     <param name="lpGuid">
       <para>A pointer to the globally unique identifier (GUID) that represents the driver to be created. This can be NULL to indicate the active display driver, or you can pass one of the following flags to restrict the active display driver's behavior for debugging purposes:</para>
-      <list type="bullet">
-        <item>
-          <description>DDCREATE_EMULATIONONLY - The DirectDraw object uses emulation for all features; it does not take advantage of any hardware-supported features.</description>
-        </item>
-        <item>
-          <description>DDCREATE_HARDWAREONLY - The DirectDraw object never emulates features not supported by the hardware. Attempts to call methods that require unsupported features fail, returning DDERR_UNSUPPORTED.</description>
-        </item>
-      </list>
+      <h4>DDCREATE_EMULATIONONLY</h4>
+      <para>The DirectDraw object uses emulation for all features; it does not take advantage of any hardware-supported features.</para>
+      <h4>DDCREATE_HARDWAREONLY</h4>
+      <para>The DirectDraw object never emulates features not supported by the hardware. Attempts to call methods that require unsupported features fail, returning DDERR_UNSUPPORTED.</para>
     </param>
-    <param name="lplpDD">
-      <para>A pointer to a variable to be set to a valid <see cref="IDirectDraw7" /> interface pointer if the call succeeds.</para>
-    </param>
-    <param name="iid">
-      <para>This parameter must be set to IID_IDirectDraw7. This function fails and returns DDERR_INVALIDPARAMS if any other interface is specified.</para>
-    </param>
-    <param name="pUnkOuter">
-      <para>Allows for future compatibility with COM aggregation features. Currently, this function returns an error if this parameter is not NULL.</para>
-    </param>
+    <param name="lplpDD">A pointer to a variable to be set to a valid <see cref="IDirectDraw7" /> interface pointer if the call succeeds.</param>
+    <param name="iid">This parameter must be set to IID_IDirectDraw7. This function fails and returns DDERR_INVALIDPARAMS if any other interface is specified.</param>
+    <param name="pUnkOuter">Allows for future compatibility with COM aggregation features. Currently, this function returns an error if this parameter is not NULL.</param>
     <returns>
       <para>If the function succeeds, the return value is DD_OK.</para>
       <para>If it fails, the function can return one of the following error values:</para>
@@ -132,335 +92,179 @@
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>This function attempts to initialize a DirectDraw object, and then sets a pointer to the object if the call succeeds.</para>
-      <para>On computers with multiple monitors, if you specify NULL for <i>lpGUID</i>, the DirectDraw object runs in emulation mode when the normal cooperative level is set. To make use of hardware acceleration on these computers, specify the device's GUID.</para>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>DirectDrawCreateEx</b> function.</para>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawEnumerate">
     <summary>
       <para>This function is superseded by the <see cref="DirectDrawEnumerateEx" /> function.</para>
       <para>The <b>DirectDrawEnumerate</b> function enumerates the primary DirectDraw display device and a nondisplay device (such as a 3-D accelerator that has no 2-D capabilities), if one is installed. The NULL entry always identifies the primary display device shared with the GDI.</para>
     </summary>
-    <param name="lpCallback">
-      <para>Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbacka">DDEnumCallback</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</para>
-    </param>
-    <param name="lpContext">
-      <para>Address of an application-defined context to be passed to the enumeration callback function each time that it is called.</para>
-    </param>
+    <param name="lpCallback">Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbacka">DDEnumCallback</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</param>
+    <param name="lpContext">Address of an application-defined context to be passed to the enumeration callback function each time that it is called.</param>
     <returns>
       <para>If the function succeeds, the return value is <b>DD_OK</b>.</para>
       <para>If it fails, the function returns <b>DDERR_INVALIDPARAMS</b>.</para>
     </returns>
-    <remarks>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>DirectDrawEnumerate</b> function.</para>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawEnumerateA">
     <summary>
       <para>This function is superseded by the <see cref="DirectDrawEnumerateEx" /> function.</para>
       <para>The <b>DirectDrawEnumerate</b> function enumerates the primary DirectDraw display device and a nondisplay device (such as a 3-D accelerator that has no 2-D capabilities), if one is installed. The NULL entry always identifies the primary display device shared with the GDI.</para>
     </summary>
-    <param name="lpCallback">
-      <para>Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbacka">DDEnumCallback</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</para>
-    </param>
-    <param name="lpContext">
-      <para>Address of an application-defined context to be passed to the enumeration callback function each time that it is called.</para>
-    </param>
+    <param name="lpCallback">Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbacka">DDEnumCallback</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</param>
+    <param name="lpContext">Address of an application-defined context to be passed to the enumeration callback function each time that it is called.</param>
     <returns>
       <para>If the function succeeds, the return value is <b>DD_OK</b>.</para>
       <para>If it fails, the function returns <b>DDERR_INVALIDPARAMS</b>.</para>
     </returns>
-    <remarks>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>DirectDrawEnumerate</b> function.</para>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawEnumerateEx">
-    <summary>
-      <para>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</para>
-    </summary>
-    <param name="lpCallback">
-      <para>Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</para>
-    </param>
-    <param name="lpContext">
-      <para>Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</para>
-    </param>
+    <summary>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</summary>
+    <param name="lpCallback">Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</param>
+    <param name="lpContext">Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</param>
     <param name="dwFlags">
       <para>Flags that specify the enumeration scope. This parameter can be 0 or a combination of the following flags. If the value is 0, the function enumerates only the primary display device.</para>
-      <list type="bullet">
-        <item>
-          <description>DDENUM_ATTACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_DETACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are not attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_NONDISPLAYDEVICES - The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</description>
-        </item>
-      </list>
+      <h4>DDENUM_ATTACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are attached to the desktop.</para>
+      <h4>DDENUM_DETACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are not attached to the desktop.</para>
+      <h4>DDENUM_NONDISPLAYDEVICES</h4>
+      <para>The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is <b>DD_OK</b>.</para>
       <para>If it fails, the function returns <b>DDERR_INVALIDPARAMS</b>.</para>
     </returns>
-    <remarks>
-      <para>On computers with multiple monitors, <b>DirectDrawEnumerateEx</b> enumerates multiple display devices.</para>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll. To retrieve the address of the <b>DirectDrawEnumerateEx</b> function, call the <see cref="GetProcAddress" /> Win32 function with the "DirectDrawEnumerateExA" (ANSI) or "DirectDrawEnumerateExW" (Unicode) process name strings.</para>
-      <blockquote>
-        <para>[!NOTE]
-The ddraw.h header defines DirectDrawEnumerateEx as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawEnumerateExA">
-    <summary>
-      <para>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</para>
-    </summary>
-    <param name="lpCallback">
-      <para>Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</para>
-    </param>
-    <param name="lpContext">
-      <para>Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</para>
-    </param>
+    <summary>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</summary>
+    <param name="lpCallback">Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</param>
+    <param name="lpContext">Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</param>
     <param name="dwFlags">
       <para>Flags that specify the enumeration scope. This parameter can be 0 or a combination of the following flags. If the value is 0, the function enumerates only the primary display device.</para>
-      <list type="bullet">
-        <item>
-          <description>DDENUM_ATTACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_DETACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are not attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_NONDISPLAYDEVICES - The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</description>
-        </item>
-      </list>
+      <h4>DDENUM_ATTACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are attached to the desktop.</para>
+      <h4>DDENUM_DETACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are not attached to the desktop.</para>
+      <h4>DDENUM_NONDISPLAYDEVICES</h4>
+      <para>The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is <b>DD_OK</b>.</para>
       <para>If it fails, the function returns <b>DDERR_INVALIDPARAMS</b>.</para>
     </returns>
-    <remarks>
-      <para>On computers with multiple monitors, <b>DirectDrawEnumerateEx</b> enumerates multiple display devices.</para>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll. To retrieve the address of the <b>DirectDrawEnumerateEx</b> function, call the <see cref="GetProcAddress" /> Win32 function with the "DirectDrawEnumerateExA" (ANSI) or "DirectDrawEnumerateExW" (Unicode) process name strings.</para>
-      <blockquote>
-        <para>[!NOTE]
-The ddraw.h header defines DirectDrawEnumerateEx as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawEnumerateExW">
-    <summary>
-      <para>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</para>
-    </summary>
-    <param name="lpCallback">
-      <para>Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</para>
-    </param>
-    <param name="lpContext">
-      <para>Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</para>
-    </param>
+    <summary>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</summary>
+    <param name="lpCallback">Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</param>
+    <param name="lpContext">Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</param>
     <param name="dwFlags">
       <para>Flags that specify the enumeration scope. This parameter can be 0 or a combination of the following flags. If the value is 0, the function enumerates only the primary display device.</para>
-      <list type="bullet">
-        <item>
-          <description>DDENUM_ATTACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_DETACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are not attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_NONDISPLAYDEVICES - The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</description>
-        </item>
-      </list>
+      <h4>DDENUM_ATTACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are attached to the desktop.</para>
+      <h4>DDENUM_DETACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are not attached to the desktop.</para>
+      <h4>DDENUM_NONDISPLAYDEVICES</h4>
+      <para>The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is <b>DD_OK</b>.</para>
       <para>If it fails, the function returns <b>DDERR_INVALIDPARAMS</b>.</para>
     </returns>
-    <remarks>
-      <para>On computers with multiple monitors, <b>DirectDrawEnumerateEx</b> enumerates multiple display devices.</para>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll. To retrieve the address of the <b>DirectDrawEnumerateEx</b> function, call the <see cref="GetProcAddress" /> Win32 function with the "DirectDrawEnumerateExA" (ANSI) or "DirectDrawEnumerateExW" (Unicode) process name strings.</para>
-      <blockquote>
-        <para>[!NOTE]
-The ddraw.h header defines DirectDrawEnumerateEx as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawEnumerateEx">
-    <summary>
-      <para>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</para>
-    </summary>
-    <param name="lpCallback">
-      <para>Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</para>
-    </param>
-    <param name="lpContext">
-      <para>Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</para>
-    </param>
+    <summary>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</summary>
+    <param name="lpCallback">Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</param>
+    <param name="lpContext">Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</param>
     <param name="dwFlags">
       <para>Flags that specify the enumeration scope. This parameter can be 0 or a combination of the following flags. If the value is 0, the function enumerates only the primary display device.</para>
-      <list type="bullet">
-        <item>
-          <description>DDENUM_ATTACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_DETACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are not attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_NONDISPLAYDEVICES - The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</description>
-        </item>
-        <item>
-          <description>DDENUM_ATTACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_DETACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are not attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_NONDISPLAYDEVICES - The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</description>
-        </item>
-      </list>
+      <h4>DDENUM_ATTACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are attached to the desktop.</para>
+      <h4>DDENUM_DETACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are not attached to the desktop.</para>
+      <h4>DDENUM_NONDISPLAYDEVICES</h4>
+      <para>The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</para>
+      <h5>- dwFlags.DDENUM_ATTACHEDSECONDARYDEVICES</h5>
+      <para>The function enumerates the primary device and any display devices that are attached to the desktop.</para>
+      <h5>- dwFlags.DDENUM_DETACHEDSECONDARYDEVICES</h5>
+      <para>The function enumerates the primary device and any display devices that are not attached to the desktop.</para>
+      <h5>- dwFlags.DDENUM_NONDISPLAYDEVICES</h5>
+      <para>The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is <b>DD_OK</b>.</para>
       <para>If it fails, the function returns <b>DDERR_INVALIDPARAMS</b>.</para>
     </returns>
-    <remarks>
-      <para>On computers with multiple monitors, <b>DirectDrawEnumerateEx</b> enumerates multiple display devices.</para>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll. To retrieve the address of the <b>DirectDrawEnumerateEx</b> function, call the <see cref="GetProcAddress" /> Win32 function with the "DirectDrawEnumerateExA" (ANSI) or "DirectDrawEnumerateExW" (Unicode) process name strings.</para>
-      <blockquote>
-        <para>[!NOTE]
-The ddraw.h header defines DirectDrawEnumerateEx as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawEnumerateExA">
-    <summary>
-      <para>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</para>
-    </summary>
-    <param name="lpCallback">
-      <para>Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</para>
-    </param>
-    <param name="lpContext">
-      <para>Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</para>
-    </param>
+    <summary>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</summary>
+    <param name="lpCallback">Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</param>
+    <param name="lpContext">Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</param>
     <param name="dwFlags">
       <para>Flags that specify the enumeration scope. This parameter can be 0 or a combination of the following flags. If the value is 0, the function enumerates only the primary display device.</para>
-      <list type="bullet">
-        <item>
-          <description>DDENUM_ATTACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_DETACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are not attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_NONDISPLAYDEVICES - The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</description>
-        </item>
-        <item>
-          <description>DDENUM_ATTACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_DETACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are not attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_NONDISPLAYDEVICES - The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</description>
-        </item>
-      </list>
+      <h4>DDENUM_ATTACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are attached to the desktop.</para>
+      <h4>DDENUM_DETACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are not attached to the desktop.</para>
+      <h4>DDENUM_NONDISPLAYDEVICES</h4>
+      <para>The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</para>
+      <h5>- dwFlags.DDENUM_ATTACHEDSECONDARYDEVICES</h5>
+      <para>The function enumerates the primary device and any display devices that are attached to the desktop.</para>
+      <h5>- dwFlags.DDENUM_DETACHEDSECONDARYDEVICES</h5>
+      <para>The function enumerates the primary device and any display devices that are not attached to the desktop.</para>
+      <h5>- dwFlags.DDENUM_NONDISPLAYDEVICES</h5>
+      <para>The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is <b>DD_OK</b>.</para>
       <para>If it fails, the function returns <b>DDERR_INVALIDPARAMS</b>.</para>
     </returns>
-    <remarks>
-      <para>On computers with multiple monitors, <b>DirectDrawEnumerateEx</b> enumerates multiple display devices.</para>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll. To retrieve the address of the <b>DirectDrawEnumerateEx</b> function, call the <see cref="GetProcAddress" /> Win32 function with the "DirectDrawEnumerateExA" (ANSI) or "DirectDrawEnumerateExW" (Unicode) process name strings.</para>
-      <blockquote>
-        <para>[!NOTE]
-The ddraw.h header defines DirectDrawEnumerateEx as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawEnumerateExW">
-    <summary>
-      <para>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</para>
-    </summary>
-    <param name="lpCallback">
-      <para>Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</para>
-    </param>
-    <param name="lpContext">
-      <para>Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</para>
-    </param>
+    <summary>Enumerates all DirectDraw devices that are installed on the computer. The NULL entry always identifies the primary display device that is shared with GDI.</summary>
+    <param name="lpCallback">Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbackexa">DDEnumCallbackEx</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</param>
+    <param name="lpContext">Address of an application-defined value to be passed to the enumeration callback function each time that it is called.</param>
     <param name="dwFlags">
       <para>Flags that specify the enumeration scope. This parameter can be 0 or a combination of the following flags. If the value is 0, the function enumerates only the primary display device.</para>
-      <list type="bullet">
-        <item>
-          <description>DDENUM_ATTACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_DETACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are not attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_NONDISPLAYDEVICES - The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</description>
-        </item>
-        <item>
-          <description>DDENUM_ATTACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_DETACHEDSECONDARYDEVICES - The function enumerates the primary device and any display devices that are not attached to the desktop.</description>
-        </item>
-        <item>
-          <description>DDENUM_NONDISPLAYDEVICES - The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</description>
-        </item>
-      </list>
+      <h4>DDENUM_ATTACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are attached to the desktop.</para>
+      <h4>DDENUM_DETACHEDSECONDARYDEVICES</h4>
+      <para>The function enumerates the primary device and any display devices that are not attached to the desktop.</para>
+      <h4>DDENUM_NONDISPLAYDEVICES</h4>
+      <para>The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</para>
+      <h5>- dwFlags.DDENUM_ATTACHEDSECONDARYDEVICES</h5>
+      <para>The function enumerates the primary device and any display devices that are attached to the desktop.</para>
+      <h5>- dwFlags.DDENUM_DETACHEDSECONDARYDEVICES</h5>
+      <para>The function enumerates the primary device and any display devices that are not attached to the desktop.</para>
+      <h5>- dwFlags.DDENUM_NONDISPLAYDEVICES</h5>
+      <para>The function enumerates the primary device and any nondisplay devices, such as 3-D accelerators that have no 2-D capabilities.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is <b>DD_OK</b>.</para>
       <para>If it fails, the function returns <b>DDERR_INVALIDPARAMS</b>.</para>
     </returns>
-    <remarks>
-      <para>On computers with multiple monitors, <b>DirectDrawEnumerateEx</b> enumerates multiple display devices.</para>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll. To retrieve the address of the <b>DirectDrawEnumerateEx</b> function, call the <see cref="GetProcAddress" /> Win32 function with the "DirectDrawEnumerateExA" (ANSI) or "DirectDrawEnumerateExW" (Unicode) process name strings.</para>
-      <blockquote>
-        <para>[!NOTE]
-The ddraw.h header defines DirectDrawEnumerateEx as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawEnumerate">
     <summary>
       <para>This function is superseded by the <see cref="DirectDrawEnumerateEx" /> function.</para>
       <para>The <b>DirectDrawEnumerate</b> function enumerates the primary DirectDraw display device and a nondisplay device (such as a 3-D accelerator that has no 2-D capabilities), if one is installed. The NULL entry always identifies the primary display device shared with the GDI.</para>
     </summary>
-    <param name="lpCallback">
-      <para>Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbacka">DDEnumCallback</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</para>
-    </param>
-    <param name="lpContext">
-      <para>Address of an application-defined context to be passed to the enumeration callback function each time that it is called.</para>
-    </param>
+    <param name="lpCallback">Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbacka">DDEnumCallback</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</param>
+    <param name="lpContext">Address of an application-defined context to be passed to the enumeration callback function each time that it is called.</param>
     <returns>
       <para>If the function succeeds, the return value is <b>DD_OK</b>.</para>
       <para>If it fails, the function returns <b>DDERR_INVALIDPARAMS</b>.</para>
     </returns>
-    <remarks>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>DirectDrawEnumerate</b> function.</para>
-    </remarks>
   </member>
   <member name="DirectX.DirectDrawEnumerateW">
     <summary>
       <para>This function is superseded by the <see cref="DirectDrawEnumerateEx" /> function.</para>
       <para>The <b>DirectDrawEnumerate</b> function enumerates the primary DirectDraw display device and a nondisplay device (such as a 3-D accelerator that has no 2-D capabilities), if one is installed. The NULL entry always identifies the primary display device shared with the GDI.</para>
     </summary>
-    <param name="lpCallback">
-      <para>Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbacka">DDEnumCallback</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</para>
-    </param>
-    <param name="lpContext">
-      <para>Address of an application-defined context to be passed to the enumeration callback function each time that it is called.</para>
-    </param>
+    <param name="lpCallback">Address of a <a href="https://docs.microsoft.com//windows/desktop/api/ddraw/nc-ddraw-lpddenumcallbacka">DDEnumCallback</a> function to be called with a description of each enumerated DirectDraw-enabled hardware abstraction layer (HAL).</param>
+    <param name="lpContext">Address of an application-defined context to be passed to the enumeration callback function each time that it is called.</param>
     <returns>
       <para>If the function succeeds, the return value is <b>DD_OK</b>.</para>
       <para>If it fails, the function returns <b>DDERR_INVALIDPARAMS</b>.</para>
     </returns>
-    <remarks>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the <b>DirectDrawEnumerate</b> function.</para>
-    </remarks>
   </member>
 </doc>

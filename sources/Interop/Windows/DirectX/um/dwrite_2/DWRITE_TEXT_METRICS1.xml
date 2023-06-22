@@ -6,17 +6,11 @@
     <summary>
       <para>Contains the metrics associated with text after layout.All coordinates are in device independent pixels (DIPs).</para>
       <para>
-        <b>DWRITE_TEXT_METRICS1</b> extends <see cref="DWRITE_TEXT_METRICS" /></para>
-      <para>to include the height of the formatted text.</para>
+        <b>DWRITE_TEXT_METRICS1</b> extends <see cref="DWRITE_TEXT_METRICS" />to include the height of the formatted text.</para>
     </summary>
   </member>
   <member name="DWRITE_TEXT_METRICS1.heightIncludingTrailingWhitespace">
-    <summary>
-      <para>The height of the formatted text taking into account the trailing whitespace at the end of each line. This is
-pertinent for vertical text.</para>
-    </summary>
+    <summary>The height of the formatted text taking into account the trailing whitespace at the end of each line. This is pertinent for vertical text.</summary>
   </member>
-  <member name="DWRITE_TEXT_METRICS1.DWRITE_TEXT_METRICS">
-    <summary></summary>
-  </member>
+  <member name="DWRITE_TEXT_METRICS1.DWRITE_TEXT_METRICS"></member>
 </doc>

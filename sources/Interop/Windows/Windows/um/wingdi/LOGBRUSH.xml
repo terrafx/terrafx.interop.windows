@@ -3,23 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LOGBRUSH">
-    <summary>
-      <para>The <b>LOGBRUSH</b> structure defines the style, color, and pattern of a physical brush. It is used by the <see cref="CreateBrushIndirect" /> and <see cref="ExtCreatePen" /> functions.</para>
-    </summary>
-    <remarks>
-      <para>Although <b>lbColor</b> controls the foreground color of a hatch brush, the <see cref="SetBkMode" /> and <see cref="SetBkColor" /> functions control the background color.</para>
-    </remarks>
-    <seealso cref="BITMAPINFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/brush-structures">Brush Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/brushes">Brushes Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
-    <seealso cref="CreateBrushIndirect" />
-    <seealso cref="CreateDIBSection" />
-    <seealso cref="ExtCreatePen" />
-    <seealso cref="LOGBRUSH32" />
-    <seealso cref="RGB" />
-    <seealso cref="SetBkColor" />
-    <seealso cref="SetBkMode" />
+    <summary>The <b>LOGBRUSH</b> structure defines the style, color, and pattern of a physical brush. It is used by the <see cref="CreateBrushIndirect" /> and <see cref="ExtCreatePen" /> functions.</summary>
   </member>
   <member name="LOGBRUSH.lbStyle">
     <summary>
@@ -29,42 +13,42 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>BS_DIBPATTERN</description>
           <description>A pattern brush defined by a device-independent bitmap (DIB) specification. If <b>lbStyle</b> is BS_DIBPATTERN, the <b>lbHatch</b> member contains a handle to a packed DIB. For more information, see discussion in <b>lbHatch</b>.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BS_DIBPATTERN8X8</description>
           <description>See BS_DIBPATTERN.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BS_DIBPATTERNPT</description>
           <description>A pattern brush defined by a device-independent bitmap (DIB) specification. If <b>lbStyle</b> is BS_DIBPATTERNPT, the <b>lbHatch</b> member contains a pointer to a packed DIB. For more information, see discussion in <b>lbHatch</b>.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BS_HATCHED</description>
           <description>Hatched brush.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BS_HOLLOW</description>
           <description>Hollow brush.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BS_NULL</description>
           <description>Same as BS_HOLLOW.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BS_PATTERN</description>
           <description>Pattern brush defined by a memory bitmap.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BS_PATTERN8X8</description>
           <description>See BS_PATTERN.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BS_SOLID</description>
           <description>Solid brush.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -77,17 +61,15 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>DIB_PAL_COLORS</description>
           <description>The color table consists of an array of 16-bit indexes into the currently realized logical palette.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DIB_RGB_COLORS</description>
           <description>The color table contains literal RGB values.</description>
-        </item>
-      </list>
-      <para>If <b>lbStyle</b> is BS_HATCHED or BS_SOLID, <b>lbColor</b> is a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> color value. To create a <b>COLORREF</b> color value, use the <see cref="RGB" /> macro.</para>
-    </summary>
+        </listheader>
+      </list> <para>If <b>lbStyle</b> is BS_HATCHED or BS_SOLID, <b>lbColor</b> is a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> color value. To create a <b>COLORREF</b> color value, use the <see cref="RGB" /> macro.</para></summary>
   </member>
   <member name="LOGBRUSH.lbHatch">
     <summary>
@@ -100,33 +82,30 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>HS_BDIAGONAL</description>
           <description>A 45-degree upward, left-to-right hatch</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>HS_CROSS</description>
           <description>Horizontal and vertical cross-hatch</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>HS_DIAGCROSS</description>
           <description>45-degree crosshatch</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>HS_FDIAGONAL</description>
           <description>A 45-degree downward, left-to-right hatch</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>HS_HORIZONTAL</description>
           <description>Horizontal hatch</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>HS_VERTICAL</description>
           <description>Vertical hatch</description>
-        </item>
-      </list>
-      <para>If <b>lbStyle</b> is BS_PATTERN, <b>lbHatch</b> is a handle to the bitmap that defines the pattern. The bitmap cannot be a DIB section bitmap, which is created by the <see cref="CreateDIBSection" /> function.</para>
-      <para>If <b>lbStyle</b> is BS_SOLID or BS_HOLLOW, <b>lbHatch</b> is ignored.</para>
-    </summary>
+        </listheader>
+      </list> <para>If <b>lbStyle</b> is BS_PATTERN, <b>lbHatch</b> is a handle to the bitmap that defines the pattern. The bitmap cannot be a DIB section bitmap, which is created by the <see cref="CreateDIBSection" /> function.</para><para>If <b>lbStyle</b> is BS_SOLID or BS_HOLLOW, <b>lbHatch</b> is ignored.</para></summary>
   </member>
 </doc>

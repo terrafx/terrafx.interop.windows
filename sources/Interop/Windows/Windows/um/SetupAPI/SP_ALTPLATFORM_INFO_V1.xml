@@ -4,19 +4,13 @@
 <doc>
   <member name="SP_ALTPLATFORM_INFO_V1">
     <summary>
-      <para>This structure is used to pass information for an alternate platform to
-<see cref="SetupQueryInfOriginalFileInformation" />.</para>
+      <para>This structure is used to pass information for an alternate platform to<see cref="SetupQueryInfOriginalFileInformation" />.</para>
       <para>Setup implicitly uses the <b>SP_ALTPLATFORM_INFO_V1</b> structure if USE_SP_ALTPLATFORM_INFO_V1 is set to 1 or if _WIN32_WINNT is less than or equal to 0x500. This version is for use with Windows 2000.</para>
       <para>Setup implicitly uses the <see cref="SP_ALTPLATFORM_INFO_V2" /> structure if USE_SP_ALTPLATFORM_INFO_V1 is 0 or undefined and _WIN32_WINNT is set to 0x501.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/overview">Overview</seealso>
-    <seealso cref="SP_ALTPLATFORM_INFO_V2" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/structures--setup-api-">Structures</seealso>
   </member>
   <member name="SP_ALTPLATFORM_INFO_V1.cbSize">
-    <summary>
-      <para>Size of this structure, in bytes.</para>
-    </summary>
+    <summary>Size of this structure, in bytes.</summary>
   </member>
   <member name="SP_ALTPLATFORM_INFO_V1.Platform">
     <summary>
@@ -26,43 +20,43 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>VER_PLATFORM_WIN32_WINDOWS</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VER_PLATFORM_WIN32_WINDOWS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Legacy operating systems.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Legacy operating systems.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VER_PLATFORM_WIN32_NT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>VER_PLATFORM_WIN32_NT</b>
-          </description>
-          <description>
-            <para>Windows Server 2008, Windows Vista, Windows Server 2003, Windows XP, or Windows 2000.</para>
-          </description>
-        </item>
+          <description>Windows Server 2008, Windows Vista, Windows Server 2003, Windows XP, or Windows 2000.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SP_ALTPLATFORM_INFO_V1.MajorVersion">
-    <summary>
-      <para>Major version of the operating system.</para>
-    </summary>
+    <summary>Major version of the operating system.</summary>
   </member>
   <member name="SP_ALTPLATFORM_INFO_V1.MinorVersion">
-    <summary>
-      <para>Minor version of the operating system.</para>
-    </summary>
+    <summary>Minor version of the operating system.</summary>
   </member>
   <member name="SP_ALTPLATFORM_INFO_V1.ProcessorArchitecture">
-    <summary>
-      <para>Processor architecture. This must be PROCESSOR_ARCHITECTURE_INTEL, PROCESSOR_ARCHITECTURE_ALPHA, PROCESSOR_ARCHITECTURE_IA64, PROCESSOR_ARCHITECTURE_ALPHA64.</para>
-    </summary>
+    <summary>Processor architecture. This must be PROCESSOR_ARCHITECTURE_INTEL, PROCESSOR_ARCHITECTURE_ALPHA, PROCESSOR_ARCHITECTURE_IA64, PROCESSOR_ARCHITECTURE_ALPHA64.</summary>
   </member>
   <member name="SP_ALTPLATFORM_INFO_V1.Reserved">
-    <summary>
-      <para>Must be set to zero.</para>
-    </summary>
+    <summary>Must be set to zero.</summary>
   </member>
 </doc>

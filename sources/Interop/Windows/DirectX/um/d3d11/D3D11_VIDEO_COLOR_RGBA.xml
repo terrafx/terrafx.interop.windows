@@ -3,36 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_COLOR_RGBA">
-    <summary>
-      <para>Specifies an RGB color value.</para>
-    </summary>
-    <remarks>
-      <para>The RGB values have a nominal range of [0...1]. For an RGB format with  <i>n</i> bits per channel, the value of each color component is calculated as follows:</para>
-      <para>
-        <code>val = f * ((1 &lt;&lt; n)-1)</code>
-      </para>
-      <para>For example, for RGB-32 (8 bits per channel), <code>val = BYTE(f * 255.0)</code>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Specifies an RGB color value.</summary>
   </member>
   <member name="D3D11_VIDEO_COLOR_RGBA.R">
-    <summary>
-      <para>The red value.</para>
-    </summary>
+    <summary>The red value.</summary>
   </member>
   <member name="D3D11_VIDEO_COLOR_RGBA.G">
-    <summary>
-      <para>The green value.</para>
-    </summary>
+    <summary>The green value.</summary>
   </member>
   <member name="D3D11_VIDEO_COLOR_RGBA.B">
-    <summary>
-      <para>The blue value.</para>
-    </summary>
+    <summary>The blue value.</summary>
   </member>
   <member name="D3D11_VIDEO_COLOR_RGBA.A">
-    <summary>
-      <para>The alpha value. Values range from 0 (transparent) to 1 (opaque).</para>
-    </summary>
+    <summary>The alpha value. Values range from 0 (transparent) to 1 (opaque).</summary>
   </member>
 </doc>

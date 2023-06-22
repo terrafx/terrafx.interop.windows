@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICY_INFORMATION_CLASS">
+    <summary>The <b>POLICY_INFORMATION_CLASS</b> enumeration defines values that indicate the type of information to set or query in a <a href="https://docs.microsoft.com//windows/desktop/SecMgmt/policy-object">Policy</a> object.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyAuditLogInformation">
+    <summary>This value is obsolete.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyAuditEventsInformation">
+    <summary>Query or set the auditing rules of the system. You can enable or disable auditing and specify the types of events that are audited. Use the<see cref="POLICY_AUDIT_EVENTS_INFO" /> structure.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyPrimaryDomainInformation">
+    <summary>This value is obsolete. Use the <b>PolicyDnsDomainInformation</b> value instead.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyPdAccountInformation">
+    <summary>This value is obsolete.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyAccountDomainInformation">
+    <summary>Query or set the name and SID of the account domain of the system. Use the<see cref="POLICY_ACCOUNT_DOMAIN_INFO" /> structure.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyLsaServerRoleInformation">
+    <summary>Query or set the role of an LSA server. Use the<see cref="POLICY_LSA_SERVER_ROLE_INFO" /> structure.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyReplicaSourceInformation">
+    <summary>This value is obsolete.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyDefaultQuotaInformation">
+    <summary>This value is obsolete.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyModificationInformation">
+    <summary>Query or set information about the creation time and last modification of the LSA database. Use the<see cref="POLICY_MODIFICATION_INFO" /> structure.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyAuditFullSetInformation">
+    <summary>This value is obsolete.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyAuditFullQueryInformation">
+    <summary>This value is obsolete.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyDnsDomainInformation">
+    <summary>Query or set Domain Name System (DNS) information about the account domain associated with a <a href="https://docs.microsoft.com//windows/desktop/SecMgmt/policy-object">Policy</a> object. Use the<see cref="POLICY_DNS_DOMAIN_INFO" /> structure.</summary>
+  </member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyDnsDomainInformationInt"></member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyLocalAccountDomainInformation"></member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyMachineAccountInformation"></member>
+  <member name="POLICY_INFORMATION_CLASS.PolicyLastEntry"></member>
+</doc>

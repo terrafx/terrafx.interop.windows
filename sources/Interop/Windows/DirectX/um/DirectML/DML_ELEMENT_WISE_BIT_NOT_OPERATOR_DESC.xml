@@ -10,15 +10,9 @@
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input tensor to read from.</para>
-    </summary>
+    <summary>The input tensor to read from.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
 </doc>

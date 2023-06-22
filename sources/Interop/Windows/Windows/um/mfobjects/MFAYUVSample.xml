@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFAYUVSample">
-    <summary>
-      <para>Describes a 4:4:4:4 Y'Cb'Cr' sample.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Describes a 4:4:4:4 Y'Cb'Cr' sample.</summary>
   </member>
   <member name="MFAYUVSample.bCrValue">
-    <summary>
-      <para>Cr (chroma difference) value.</para>
-    </summary>
+    <summary>Cr (chroma difference) value.</summary>
   </member>
   <member name="MFAYUVSample.bCbValue">
-    <summary>
-      <para>Cb (chroma difference) value.</para>
-    </summary>
+    <summary>Cb (chroma difference) value.</summary>
   </member>
   <member name="MFAYUVSample.bYValue">
-    <summary>
-      <para>Y (luma) value.</para>
-    </summary>
+    <summary>Y (luma) value.</summary>
   </member>
   <member name="MFAYUVSample.bSampleAlpha8">
-    <summary>
-      <para>Alpha value.</para>
-    </summary>
+    <summary>Alpha value.</summary>
   </member>
 </doc>

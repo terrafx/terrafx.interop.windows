@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LPDDSURFACEDESC">
+    <summary>The DDSURFACEDESC structure contains a description of a surface to be created by the driver.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.dwSize">
+    <summary>Specifies the size in bytes of this DDSURFACEDESC structure. This member must be initialized before the structure is used.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.dwFlags">
+    <summary>
+      <para>Specifies a set of flags that determine what members of the DDSURFACEDESC structure contain valid data. This member can be one or more of the following flags:</para>
+    </summary>
+  </member>
+  <member name="LPDDSURFACEDESC.dwHeight">
+    <summary>Specifies the height of surface, in pixels.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.dwWidth">
+    <summary>Specifies the width of the surface, in pixels.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.DUMMYUNIONNAMEN">
+    <summary>N/A</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.DUMMYUNIONNAMEN.lPitch">
+    <summary>Specifies the number of bytes between the beginnings of two adjacent scan lines; that is, the number of bytes to add to the beginning address of one scan line to reach the beginning address of the next scan line below it. The driver's <a href="https://docs.microsoft.com//windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurface">DdCreateSurface</a> callback must return this value.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.DUMMYUNIONNAMEN.dwLinearSize">
+    <summary>Specifies the size in bytes of a formless, late-allocated, optimized surface.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.dwBackBufferCount">
+    <summary>Specifies the number of back buffers associated with the surface.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.DUMMYUNIONNAMEN.dwMipMapCount">
+    <summary>Specifies the number of mipmap levels.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.DUMMYUNIONNAMEN.dwZBufferBitDepth">
+    <summary>Specifies the depth of z-buffer in bits per pixel.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.DUMMYUNIONNAMEN.dwRefreshRate">
+    <summary>Specifies the refresh rate in hertz of the monitor (used when the display mode is described).</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.dwAlphaBitDepth">
+    <summary>Specifies the depth of the alpha buffer in bits per pixel.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.dwReserved">
+    <summary>Reserved, and should be set to zero.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.lpSurface">
+    <summary>Specifies the address of the associated surface memory.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.ddckCKDestOverlay">
+    <summary>Specifies the color key for destination overlay use.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.ddckCKDestBlt">
+    <summary>Specifies the color key for destination blt use.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.ddckCKSrcOverlay">
+    <summary>Specifies the color key for source overlay use.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.ddckCKSrcBlt">
+    <summary>Specifies the color key for source blt use.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.ddpfPixelFormat">
+    <summary>Specifies a <see cref="DDPIXELFORMAT" /> structure that describes the pixel format of the surface.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC.ddsCaps">
+    <summary>Specifies a <see cref="DDSCAPS" /> structure that contains the Microsoft DirectDrawMicrosoft surface capabilities.</summary>
+  </member>
+</doc>

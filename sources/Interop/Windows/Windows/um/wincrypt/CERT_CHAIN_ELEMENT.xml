@@ -3,46 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_CHAIN_ELEMENT">
-    <summary>
-      <para>The <b>CERT_CHAIN_ELEMENT</b> structure is a single element in a simple certificate chain. Each element has a pointer to a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate context</a>, a pointer to a structure that indicates the error status and information status of the certificate, and a pointer to a structure that indicates the revocation status of the certificate.</para>
-    </summary>
-    <seealso cref="CERT_REVOCATION_INFO" />
-    <seealso cref="CERT_SIMPLE_CHAIN" />
-    <seealso cref="CERT_TRUST_STATUS" />
+    <summary>The <b>CERT_CHAIN_ELEMENT</b> structure is a single element in a simple certificate chain. Each element has a pointer to a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate context</a>, a pointer to a structure that indicates the error status and information status of the certificate, and a pointer to a structure that indicates the revocation status of the certificate.</summary>
   </member>
   <member name="CERT_CHAIN_ELEMENT.cbSize">
-    <summary>
-      <para>Size of this structure in bytes.</para>
-    </summary>
+    <summary>Size of this structure in bytes.</summary>
   </member>
   <member name="CERT_CHAIN_ELEMENT.pCertContext">
-    <summary>
-      <para>A pointer to a certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a>.</para>
-    </summary>
+    <summary>A pointer to a certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a>.</summary>
   </member>
   <member name="CERT_CHAIN_ELEMENT.TrustStatus">
-    <summary>
-      <para>Structure indicating the status of the certificate. The structure includes an error status code and an information status code. For information about status code values, see CERT_TRUST_STATUS.</para>
-    </summary>
+    <summary>Structure indicating the status of the certificate. The structure includes an error status code and an information status code. For information about status code values, see CERT_TRUST_STATUS.</summary>
   </member>
   <member name="CERT_CHAIN_ELEMENT.pRevocationInfo">
-    <summary>
-      <para>A pointer to a CERT_REVOCATION_INFO structure with information on the revocation status of the certificate. If revocation checking was not enabled, <b>pRevocationInfo</b> is <b>NULL</b>.</para>
-    </summary>
+    <summary>A pointer to a CERT_REVOCATION_INFO structure with information on the revocation status of the certificate. If revocation checking was not enabled, <b>pRevocationInfo</b> is <b>NULL</b>.</summary>
   </member>
   <member name="CERT_CHAIN_ELEMENT.pIssuanceUsage">
-    <summary>
-      <para>A pointer to a CERT_ENHKEY_USAGE structure. If <b>NULL</b>, any issuance policy is acceptable.</para>
-    </summary>
+    <summary>A pointer to a CERT_ENHKEY_USAGE structure. If <b>NULL</b>, any issuance policy is acceptable.</summary>
   </member>
   <member name="CERT_CHAIN_ELEMENT.pApplicationUsage">
-    <summary>
-      <para>A pointer to a CERT_ENHKEY_USAGE structure. If <b>NULL</b>, any enhanced key usage is acceptable.</para>
-    </summary>
+    <summary>A pointer to a CERT_ENHKEY_USAGE structure. If <b>NULL</b>, any enhanced key usage is acceptable.</summary>
   </member>
   <member name="CERT_CHAIN_ELEMENT.pwszExtendedErrorInfo">
-    <summary>
-      <para>A pointer to a <b>null</b>-terminated wide character string that contains extended error information. If <b>NULL</b>, there is no extended error information.</para>
-    </summary>
+    <summary>A pointer to a <b>null</b>-terminated wide character string that contains extended error information. If <b>NULL</b>, there is no extended error information.</summary>
   </member>
 </doc>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcVersionInfo.GetFlags"></member>
+  <member name="IDxcVersionInfo.GetVersion"></member>
+  <member name="IDxcVersionInfo">
+    <summary>
+      <para>Represents PDB version information.</para>
+      <para>To obtain an instance of this interface, call <see cref="IDxcPdbUtils.GetVersionInfo" />.</para>
+    </summary>
+  </member>
+</doc>

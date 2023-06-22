@@ -3,57 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_SHADER_DEBUG_SCOPETYPE">
-    <summary>
-      <para>Scope types.</para>
-    </summary>
-    <remarks>
-      <para>The <b>D3D10_SHADER_DEBUG_SCOPETYPE</b> enumeration is used to specify scope type in the <see cref="D3D10_SHADER_DEBUG_SCOPE_INFO" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-enums">Shader Enumerations</seealso>
+    <summary>Scope types.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPETYPE.D3D10_SHADER_DEBUG_SCOPE_GLOBAL">
-    <summary>
-      <para>Global scope.</para>
-    </summary>
+    <summary>Global scope.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPETYPE.D3D10_SHADER_DEBUG_SCOPE_BLOCK">
-    <summary>
-      <para>Block scope.</para>
-    </summary>
+    <summary>Block scope.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPETYPE.D3D10_SHADER_DEBUG_SCOPE_FORLOOP">
-    <summary>
-      <para>For loop scope.</para>
-    </summary>
+    <summary>For loop scope.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPETYPE.D3D10_SHADER_DEBUG_SCOPE_STRUCT">
-    <summary>
-      <para>Structure scope.</para>
-    </summary>
+    <summary>Structure scope.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPETYPE.D3D10_SHADER_DEBUG_SCOPE_FUNC_PARAMS">
-    <summary>
-      <para>Function parameter scope.</para>
-    </summary>
+    <summary>Function parameter scope.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPETYPE.D3D10_SHADER_DEBUG_SCOPE_STATEBLOCK">
-    <summary>
-      <para>State block scope.</para>
-    </summary>
+    <summary>State block scope.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPETYPE.D3D10_SHADER_DEBUG_SCOPE_NAMESPACE">
-    <summary>
-      <para>Name space scope.</para>
-    </summary>
+    <summary>Name space scope.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPETYPE.D3D10_SHADER_DEBUG_SCOPE_ANNOTATION">
-    <summary>
-      <para>Annotation scope.</para>
-    </summary>
+    <summary>Annotation scope.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPETYPE.D3D10_SHADER_DEBUG_SCOPE_FORCE_DWORD">
-    <summary>
-      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</para>
-    </summary>
+    <summary>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</summary>
   </member>
 </doc>

@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_VISIBILITY">
-    <summary>
-      <para>Specifies a value for the SVG visibility property.</para>
-    </summary>
+    <summary>Specifies a value for the SVG visibility property.</summary>
   </member>
   <member name="D2D1_SVG_VISIBILITY.D2D1_SVG_VISIBILITY_VISIBLE">
-    <summary>
-      <para>The element is visible.</para>
-    </summary>
+    <summary>The element is visible.</summary>
   </member>
   <member name="D2D1_SVG_VISIBILITY.D2D1_SVG_VISIBILITY_HIDDEN">
-    <summary>
-      <para>The element is invisible.</para>
-    </summary>
+    <summary>The element is invisible.</summary>
   </member>
-  <member name="D2D1_SVG_VISIBILITY.D2D1_SVG_VISIBILITY_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SVG_VISIBILITY.D2D1_SVG_VISIBILITY_FORCE_DWORD"></member>
 </doc>

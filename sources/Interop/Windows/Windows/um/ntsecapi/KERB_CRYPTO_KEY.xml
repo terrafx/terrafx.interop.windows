@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_CRYPTO_KEY">
+    <summary>The <b>KERB_CRYPTO_KEY</b> structure contains information about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> cryptographic <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">session key</a>.</summary>
+  </member>
+  <member name="KERB_CRYPTO_KEY.KeyType">
+    <summary>
+      <para>Indicates the type of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">session key</a> stored in the structure. It can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_DES_CBC_CRC</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">DES</a> encryption in <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cipher-block-chaining</a> mode with a CRC-32 checksum.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_DES_CBC_MD4</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use DES encryption in cipher-block-chaining mode with a MD4 checksum.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_DES_CBC_MD5</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use DES encryption in cipher-block-chaining mode with a MD5 checksum.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_NULL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use no encryption.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_RC4_HMAC_NT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use the RC4 <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">stream cipher</a> with a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a>-based <a href="https://docs.microsoft.com//windows/desktop/SecGloss/m-gly">Message Authentication Code</a> (MAC).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_RC4_MD4</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use the RC4 stream cipher with the MD4 hash function.</description>
+        </listheader>
+      </list> <para>Values greater than 127 are reserved for local values and may change without notice.</para></summary>
+  </member>
+  <member name="KERB_CRYPTO_KEY.Length">
+    <summary>Specifies the length, in bytes, of the cryptographic <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">session key</a>.</summary>
+  </member>
+  <member name="KERB_CRYPTO_KEY.Value">
+    <summary>Contains the cryptographic session key.</summary>
+  </member>
+</doc>

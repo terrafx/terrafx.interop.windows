@@ -3,13 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OCSP_REQUEST_INFO">
-    <summary>
-      <para>The <b>OCSP_REQUEST_INFO</b> structure contains information for an  <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) request as specified by <a href="https://www.ietf.org/rfc/rfc2560.txt">RFC 2560</a>. The RFC specifies that a single request can contain a sequence of certificates for which statuses are required. The  <b>rgRequestEntry</b> member of this structure contains an <see cref="OCSP_REQUEST_ENTRY" /> structure for each certificate in a sequence.</para>
-    </summary>
-    <seealso cref="CERT_ALT_NAME_ENTRY" />
-    <seealso cref="CERT_EXTENSION" />
-    <seealso cref="OCSP_REQUEST_ENTRY" />
-    <seealso href="https://www.ietf.org/rfc/rfc2560.txt">RFC 2560 Online Certificate Status Protocol</seealso>
+    <summary>The <b>OCSP_REQUEST_INFO</b> structure contains information for an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) request as specified by <a href="https://www.ietf.org/rfc/rfc2560.txt">RFC 2560</a>. The RFC specifies that a single request can contain a sequence of certificates for which statuses are required. The <b>rgRequestEntry</b> member of this structure contains an <see cref="OCSP_REQUEST_ENTRY" /> structure for each certificate in a sequence.</summary>
   </member>
   <member name="OCSP_REQUEST_INFO.dwVersion">
     <summary>
@@ -18,28 +12,18 @@
     </summary>
   </member>
   <member name="OCSP_REQUEST_INFO.pRequestorName">
-    <summary>
-      <para>A pointer to a <see cref="CERT_ALT_NAME_ENTRY" /> structure that contains the name bound to the certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> of the requester.</para>
-    </summary>
+    <summary>A pointer to a <see cref="CERT_ALT_NAME_ENTRY" /> structure that contains the name bound to the certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> of the requester.</summary>
   </member>
   <member name="OCSP_REQUEST_INFO.cRequestEntry">
-    <summary>
-      <para>The number of elements in the <b>rgRequestEntry</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgRequestEntry</b> array.</summary>
   </member>
   <member name="OCSP_REQUEST_INFO.rgRequestEntry">
-    <summary>
-      <para>An array of pointers to <see cref="OCSP_REQUEST_ENTRY" /> structures.</para>
-    </summary>
+    <summary>An array of pointers to <see cref="OCSP_REQUEST_ENTRY" /> structures.</summary>
   </member>
   <member name="OCSP_REQUEST_INFO.cExtension">
-    <summary>
-      <para>The number of elements in the <b>rgExtension</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgExtension</b> array.</summary>
   </member>
   <member name="OCSP_REQUEST_INFO.rgExtension">
-    <summary>
-      <para>An array of pointers to <see cref="CERT_EXTENSION" /> structures, each of which contains information about the request.</para>
-    </summary>
+    <summary>An array of pointers to <see cref="CERT_EXTENSION" /> structures, each of which contains information about the request.</summary>
   </member>
 </doc>

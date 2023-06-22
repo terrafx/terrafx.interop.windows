@@ -3,37 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_GEOMETRY_RELATION">
-    <summary>
-      <para>Describes how one geometry object is spatially related to another geometry object.</para>
-    </summary>
-    <seealso cref="ID2D1Geometry.CompareWithGeometry" />
+    <summary>Describes how one geometry object is spatially related to another geometry object.</summary>
   </member>
   <member name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_UNKNOWN">
-    <summary>
-      <para>The relationship between the two geometries cannot be determined. This value is never returned by any D2D method.</para>
-    </summary>
+    <summary>The relationship between the two geometries cannot be determined. This value is never returned by any D2D method.</summary>
   </member>
   <member name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_DISJOINT">
-    <summary>
-      <para>The two geometries  do not intersect at all.</para>
-    </summary>
+    <summary>The two geometries do not intersect at all.</summary>
   </member>
   <member name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_IS_CONTAINED">
-    <summary>
-      <para>The instance geometry is entirely contained by  the passed-in geometry.</para>
-    </summary>
+    <summary>The instance geometry is entirely contained by the passed-in geometry.</summary>
   </member>
   <member name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_CONTAINS">
-    <summary>
-      <para>The instance geometry entirely contains the passed-in geometry.</para>
-    </summary>
+    <summary>The instance geometry entirely contains the passed-in geometry.</summary>
   </member>
   <member name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_OVERLAP">
-    <summary>
-      <para>The two geometries overlap but neither completely contains the other.</para>
-    </summary>
+    <summary>The two geometries overlap but neither completely contains the other.</summary>
   </member>
-  <member name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_FORCE_DWORD"></member>
 </doc>

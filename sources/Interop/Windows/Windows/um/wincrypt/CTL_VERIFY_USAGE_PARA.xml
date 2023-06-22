@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CTL_VERIFY_USAGE_PARA">
-    <summary>
-      <para>The <b>CTL_VERIFY_USAGE_PARA</b> structure contains parameters used by
-<see cref="CertVerifyCTLUsage" /> to establish the validity of a CTL's usage.</para>
-    </summary>
-    <seealso cref="CertVerifyCTLUsage" />
+    <summary>The <b>CTL_VERIFY_USAGE_PARA</b> structure contains parameters used by<see cref="CertVerifyCTLUsage" /> to establish the validity of a CTL's usage.</summary>
   </member>
   <member name="CTL_VERIFY_USAGE_PARA.cbSize">
-    <summary>
-      <para>Size of this structure in bytes.</para>
-    </summary>
+    <summary>Size of this structure in bytes.</summary>
   </member>
   <member name="CTL_VERIFY_USAGE_PARA.ListIdentifier">
     <summary>
@@ -23,23 +17,15 @@
     </summary>
   </member>
   <member name="CTL_VERIFY_USAGE_PARA.cCtlStore">
-    <summary>
-      <para>The count of stores to be searched for a matching CTL.</para>
-    </summary>
+    <summary>The count of stores to be searched for a matching CTL.</summary>
   </member>
   <member name="CTL_VERIFY_USAGE_PARA.rghCtlStore">
-    <summary>
-      <para>Array of handles of stores to be searched to find a matching CTL.</para>
-    </summary>
+    <summary>Array of handles of stores to be searched to find a matching CTL.</summary>
   </member>
   <member name="CTL_VERIFY_USAGE_PARA.cSignerStore">
-    <summary>
-      <para>Count of stores to be searched for acceptable CTL signers.</para>
-    </summary>
+    <summary>Count of stores to be searched for acceptable CTL signers.</summary>
   </member>
   <member name="CTL_VERIFY_USAGE_PARA.rghSignerStore">
-    <summary>
-      <para>Array of handles of stores to be searched for acceptable CTL signers.</para>
-    </summary>
+    <summary>Array of handles of stores to be searched for acceptable CTL signers.</summary>
   </member>
 </doc>

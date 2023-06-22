@@ -3,470 +3,265 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFolderView2.DoRename">
-    <summary>
-      <para>Starts a rename operation on the current selection.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Starts a rename operation on the current selection.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.GetCurrentFolderFlags">
-    <summary>
-      <para>Gets the currently applied folder flags.</para>
-    </summary>
-    <param name="pdwFlags">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to a <b>DWORD</b> with any <see cref="FOLDERFLAGS" /> that have been applied to the folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the currently applied folder flags.</summary>
+    <param name="pdwFlags">A pointer to a <b>DWORD</b> with any <see cref="FOLDERFLAGS" /> that have been applied to the folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.GetGroupBy">
-    <summary>
-      <para>Retrieves the property and sort order used for grouping items in the folder display.</para>
-    </summary>
-    <param name="pkey">
-      <para>Type: <b><see cref="PROPERTYKEY" />*</b></para>
-      <para>A pointer to the <see cref="PROPERTYKEY" /> by which the view is grouped.</para>
-    </param>
-    <param name="pfAscending">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A pointer to a value of type <b>BOOL</b> that indicates sort order of the groups.</para>
-    </param>
+    <summary>Retrieves the property and sort order used for grouping items in the folder display.</summary>
+    <param name="pkey">A pointer to the <see cref="PROPERTYKEY" /> by which the view is grouped.</param>
+    <param name="pfAscending">A pointer to a value of type <b>BOOL</b> that indicates sort order of the groups.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The view is grouped.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The view is grouped.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The view is not grouped.</para>
-          </description>
-        </item>
+          <description>The view is not grouped.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IFolderView2.GetGroupSubsetCount">
-    <summary>
-      <para>Gets the count of visible rows displayed for a group's subset.</para>
-    </summary>
-    <param name="pcVisibleRows">
-      <para>Type: <b>UINT*</b></para>
-      <para>The number of rows currently visible.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If group subsetting is disabled the number of rows is zero.</para>
-    </remarks>
+    <summary>Gets the count of visible rows displayed for a group's subset.</summary>
+    <param name="pcVisibleRows">The number of rows currently visible.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.GetItem">
-    <summary>
-      <para>Retrieves an object that represents a specified item.</para>
-    </summary>
-    <param name="iItem">
-      <para>Type: <b>int</b></para>
-      <para>The zero-based index of the item to retrieve.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>Reference to the desired IID to represent the item, such as IID_IShellItem.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IShellItem" />.</para>
-    </param>
+    <summary>Retrieves an object that represents a specified item.</summary>
+    <param name="iItem">The zero-based index of the item to retrieve.</param>
+    <param name="riid">Reference to the desired IID to represent the item, such as IID_IShellItem.</param>
+    <param name="ppv">When this method returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IShellItem" />.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if the specified item was found, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The index in <i>iItem</i> is out of range.</para>
-          </description>
-        </item>
+          <description>The index in <i>iItem</i> is out of range.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFolderView2" />
-    <seealso cref="IFolderView2.GetSelectedItem" />
   </member>
   <member name="IFolderView2.GetSelectedItem">
-    <summary>
-      <para>Locates the currently selected item at or after a given index.</para>
-    </summary>
-    <param name="iStart">
-      <para>Type: <b>int</b></para>
-      <para>The index position from which to start searching for the currently selected item.</para>
-    </param>
-    <param name="piItem">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to a value that receives the index of the item in the view.</para>
-    </param>
+    <summary>Locates the currently selected item at or after a given index.</summary>
+    <param name="iStart">The index position from which to start searching for the currently selected item.</param>
+    <param name="piItem">A pointer to a value that receives the index of the item in the view.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if a selected item was found, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Item not found. Note that this is a success code. The operation was successful in searching the view, it simply did not find a currently selected item after the given index (<i>iStart</i>). It is possible that no item was selected, or that the selected item had an index less than <i>iStart</i>.</para>
-          </description>
-        </item>
+          <description>Item not found. Note that this is a success code. The operation was successful in searching the view, it simply did not find a currently selected item after the given index (<i>iStart</i>). It is possible that no item was selected, or that the selected item had an index less than <i>iStart</i>.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IFolderView2.GetSelection">
-    <summary>
-      <para>Gets the current selection as an IShellItemArray.</para>
-    </summary>
-    <param name="fNoneImpliesFolder">
-      <para>Type: <b>BOOL</b></para>
-      <para>If <b>TRUE</b>, this method returns an IShellItemArray containing the parent folder when there is no current selection.</para>
-    </param>
-    <param name="ppsia">
-      <para>Type: <b><see cref="IShellItemArray" />**</b></para>
-      <para>The address of a pointer to an IShellItemArray.</para>
-    </param>
+    <summary>Gets the current selection as an IShellItemArray.</summary>
+    <param name="fNoneImpliesFolder">If <b>TRUE</b>, this method returns an IShellItemArray containing the parent folder when there is no current selection.</param>
+    <param name="ppsia">The address of a pointer to an IShellItemArray.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values, or an error otherwise.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The operation completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The operation completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The IShellItemArray returned has zero items.</para>
-          </description>
-        </item>
+          <description>The IShellItemArray returned has zero items.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IFolderView2.GetSelectionState">
-    <summary>
-      <para>Gets the selection state including check state.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCUITEMID_CHILD</b></para>
-      <para>A PIDL of the item.</para>
-    </param>
-    <param name="pdwFlags">
-      <para>Type: <b>DWORD*</b></para>
-      <para>Zero or one of the following <see cref="_SVSIF" /> constants that specify the current type of selection: <b>SVSI_FOCUSED</b>, <b>SVSI_SELECT</b>, <b>SVSI_CHECK</b>, or <b>SVSI_CHECK2</b>. Other <b>_SVSIF</b> constants are not returned by this API.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the selection state including check state.</summary>
+    <param name="pidl">A PIDL of the item.</param>
+    <param name="pdwFlags">Zero or one of the following <see cref="_SVSIF" /> constants that specify the current type of selection: <b>SVSI_FOCUSED</b>, <b>SVSI_SELECT</b>, <b>SVSI_CHECK</b>, or <b>SVSI_CHECK2</b>. Other <b>_SVSIF</b> constants are not returned by this API.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.GetSortColumnCount">
-    <summary>
-      <para>Gets the count of sort columns currently applied to the view.</para>
-    </summary>
-    <param name="pcColumns">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to an <b>int</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Returns E_INVALIDARG if the column count provided does not equal the count of sort columns in the view.</para>
-    </remarks>
+    <summary>Gets the count of sort columns currently applied to the view.</summary>
+    <param name="pcColumns">A pointer to an <b>int</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.GetSortColumns">
-    <summary>
-      <para>Gets the sort columns currently applied to the view.</para>
-    </summary>
-    <param name="rgSortColumns">
-      <para>Type: <b>const <see cref="SORTCOLUMN" />*</b></para>
-      <para>A pointer to a <see cref="SORTCOLUMN" /> structure. The size of this structure is determined by <i>cColumns</i>.</para>
-    </param>
-    <param name="cColumns">
-      <para>Type: <b>int</b></para>
-      <para>The count of columns to sort by.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the sort columns currently applied to the view.</summary>
+    <param name="rgSortColumns">A pointer to a <see cref="SORTCOLUMN" /> structure. The size of this structure is determined by <i>cColumns</i>.</param>
+    <param name="cColumns">The count of columns to sort by.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.GetViewModeAndIconSize">
-    <summary>
-      <para>Gets the current view mode and icon size applied to the view.</para>
-    </summary>
-    <param name="puViewMode">
-      <para>Type: <b><see cref="FOLDERVIEWMODE" />*</b></para>
-      <para>A pointer to the current <see cref="FOLDERVIEWMODE" />.</para>
-    </param>
-    <param name="piImageSize">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to the size of the icon in pixels.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the current view mode and icon size applied to the view.</summary>
+    <param name="puViewMode">A pointer to the current <see cref="FOLDERVIEWMODE" />.</param>
+    <param name="piImageSize">A pointer to the size of the icon in pixels.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.GetVisibleItem">
-    <summary>
-      <para>Gets the next visible item in relation to a given index in the view.</para>
-    </summary>
-    <param name="iStart">
-      <para>Type: <b>int</b></para>
-      <para>The zero-based position at which to start searching for a visible item.</para>
-    </param>
+    <summary>Gets the next visible item in relation to a given index in the view.</summary>
+    <param name="iStart">The zero-based position at which to start searching for a visible item.</param>
     <param name="fPrevious">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to find the first visible item before <i>iStart</i>. <b>FALSE</b> to find the first visible item after <i>iStart</i>.</para>
-    </param>
-    <param name="piItem">
-      <para>Type: <b>int*</b></para>
-      <para>When this method returns, contains a pointer to a value that receives the index of the visible item in the view.</para>
-    </param>
+      <b>TRUE</b> to find the first visible item before <i>iStart</i>. <b>FALSE</b> to find the first visible item after <i>iStart</i>.</param>
+    <param name="piItem">When this method returns, contains a pointer to a value that receives the index of the visible item in the view.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Item retrieved.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Item retrieved.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Item not found. Note that this is a success code.</para>
-          </description>
-        </item>
+          <description>Item not found. Note that this is a success code.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IFolderView2.InvokeVerbOnSelection">
-    <summary>
-      <para>Invokes the given verb on the current selection.</para>
-    </summary>
-    <param name="pszVerb">
-      <para>Type: <b>LPCSTR</b></para>
-      <para>A pointer to a Unicode string containing a verb.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <i>pszVerb</i> is <b>NULL</b>, then the default verb is invoked on the selection.</para>
-    </remarks>
+    <summary>Invokes the given verb on the current selection.</summary>
+    <param name="pszVerb">A pointer to a Unicode string containing a verb.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.IsMoveInSameFolder">
-    <summary>
-      <para>Checks to see if this view sourced the current drag-and-drop or cut-and-paste operation (used by drop target objects).</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Checks to see if this view sourced the current drag-and-drop or cut-and-paste operation (used by drop target objects).</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.SetCurrentFolderFlags">
-    <summary>
-      <para>Sets and applies specified folder flags.</para>
-    </summary>
-    <param name="dwMask">
-      <para>Type: <b>DWORD</b></para>
-      <para>The value of type <b>DWORD</b> that specifies the bitmask indicating which items in the structure are desired or valid.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>The value of type <b>DWORD</b> that contains one or more <see cref="FOLDERFLAGS" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>For Windows 7 or later:</b> This method must be used in combination with the <i>FVO_CUSTOMPOSITION</i> flag from the <see cref="FOLDERVIEWOPTIONS" /> enumeration.</para>
-    </remarks>
+    <summary>Sets and applies specified folder flags.</summary>
+    <param name="dwMask">The value of type <b>DWORD</b> that specifies the bitmask indicating which items in the structure are desired or valid.</param>
+    <param name="dwFlags">The value of type <b>DWORD</b> that contains one or more <see cref="FOLDERFLAGS" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.SetGroupBy">
-    <summary>
-      <para>Groups the view by the given property key and direction.</para>
-    </summary>
-    <param name="key">
-      <para>Type: <b>REFPROPERTYKEY</b></para>
-      <para>A <see cref="PROPERTYKEY" /> by which the view should be grouped.</para>
-    </param>
-    <param name="fAscending">
-      <para>Type: <b>BOOL</b></para>
-      <para>A value of type <b>BOOL</b> to indicate sort order of the groups.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Groups the view by the given property key and direction.</summary>
+    <param name="key">A <see cref="PROPERTYKEY" /> by which the view should be grouped.</param>
+    <param name="fAscending">A value of type <b>BOOL</b> to indicate sort order of the groups.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.SetGroupSubsetCount">
-    <summary>
-      <para>Turns on group subsetting and sets the number of visible rows of items in each group.</para>
-    </summary>
-    <param name="cVisibleRows">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of rows to be visible.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <i>cVisibleRows</i> is zero, subsetting is turned off.</para>
-    </remarks>
+    <summary>Turns on group subsetting and sets the number of visible rows of items in each group.</summary>
+    <param name="cVisibleRows">The number of rows to be visible.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.SetRedraw">
-    <summary>
-      <para>Sets redraw on and off.</para>
-    </summary>
-    <param name="fRedrawOn">
-      <para>Type: <b>BOOL</b></para>
-      <para>a <b>BOOL</b> value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets redraw on and off.</summary>
+    <param name="fRedrawOn">a <b>BOOL</b> value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.SetSortColumns">
-    <summary>
-      <para>Sets and sorts the view by the given sort columns.</para>
-    </summary>
-    <param name="rgSortColumns">
-      <para>Type: <b>const <see cref="SORTCOLUMN" />*</b></para>
-      <para>A pointer to a <see cref="SORTCOLUMN" /> structure. The size of this structure is determined by <i>cColumns</i>.</para>
-    </param>
-    <param name="cColumns">
-      <para>Type: <b>int</b></para>
-      <para>The count of columns to sort by.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets and sorts the view by the given sort columns.</summary>
+    <param name="rgSortColumns">A pointer to a <see cref="SORTCOLUMN" /> structure. The size of this structure is determined by <i>cColumns</i>.</param>
+    <param name="cColumns">The count of columns to sort by.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.SetText">
-    <summary>
-      <para>Sets the default text to be used when there are no items in the view.</para>
-    </summary>
+    <summary>Sets the default text to be used when there are no items in the view.</summary>
     <param name="iType">
-      <para>Type: <b>FVTEXTTYPE</b></para>
       <para>This value should be set to the following flag.</para>
       <h4>FVST_EMPTYTEXT</h4>
       <para>Set the text to display when there are no items in the view.</para>
     </param>
-    <param name="pwszText">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a Unicode string that contains the text to be used.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="pwszText">A pointer to a Unicode string that contains the text to be used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2.SetViewModeAndIconSize">
-    <summary>
-      <para>Sets and applies the view mode and image size.</para>
-    </summary>
-    <param name="uViewMode">
-      <para>Type: <b><see cref="FOLDERVIEWMODE" /></b></para>
-      <para>The <see cref="FOLDERVIEWMODE" /> to be applied.</para>
-    </param>
-    <param name="iImageSize">
-      <para>Type: <b>int</b></para>
-      <para>The size of the image in pixels.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <i>iImageSize</i> is -1 then the current default icon size for the view mode is used.</para>
-    </remarks>
+    <summary>Sets and applies the view mode and image size.</summary>
+    <param name="uViewMode">The <see cref="FOLDERVIEWMODE" /> to be applied.</param>
+    <param name="iImageSize">The size of the image in pixels.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView2">
-    <summary>
-      <para>Exposes methods that retrieve information about a folder's display options, select specified items in that folder, and set the folder's view mode.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IFolderView" /> interface, from which it inherits.</para>
-    </remarks>
+    <summary>Exposes methods that retrieve information about a folder's display options, select specified items in that folder, and set the folder's view mode.</summary>
   </member>
 </doc>

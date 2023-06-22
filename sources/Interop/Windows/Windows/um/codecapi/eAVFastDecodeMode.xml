@@ -4,29 +4,20 @@
 <doc>
   <member name="eAVFastDecodeMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the video decoding speed. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecvideofastdecodemode">AVDecVideoFastDecodeMode</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVFastDecodeMode.eVideoDecodeCompliant">
-    <summary>
-      <para>Use normal decoding.</para>
-    </summary>
+    <summary>Use normal decoding.</summary>
   </member>
   <member name="eAVFastDecodeMode.eVideoDecodeOptimalLF">
-    <summary>
-      <para>Use the optimal loop filter.</para>
-    </summary>
+    <summary>Use the optimal loop filter.</summary>
   </member>
   <member name="eAVFastDecodeMode.eVideoDecodeDisableLF">
-    <summary>
-      <para>Disable the loop filter.</para>
-    </summary>
+    <summary>Disable the loop filter.</summary>
   </member>
   <member name="eAVFastDecodeMode.eVideoDecodeFastest">
-    <summary>
-      <para>Use the fastest decoding mode.</para>
-    </summary>
+    <summary>Use the fastest decoding mode.</summary>
   </member>
 </doc>

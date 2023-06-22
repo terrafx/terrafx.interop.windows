@@ -3,90 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IHWEventHandler.HandleEvent">
-    <summary>
-      <para>Handles AutoPlay device events for which there is no content of the type the application is registered to handle.</para>
-    </summary>
-    <param name="pszDeviceID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string buffer that contains the device ID.</para>
-    </param>
-    <param name="pszAltDeviceID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string buffer that contains the alternate device ID. The alternate device ID is more human-readable than the primary device ID.</para>
-    </param>
-    <param name="pszEventType">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string buffer that contains the event type. The event types include DeviceArrival, DeviceRemoval, MediaArrival, and MediaRemoval.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The event types are not C/C++ language constants; they are literal text strings.</para>
-    </remarks>
-    <seealso cref="IHWEventHandler" />
-    <seealso cref="IHWEventHandler.HandleEventWithContent" />
+    <summary>Handles AutoPlay device events for which there is no content of the type the application is registered to handle.</summary>
+    <param name="pszDeviceID">A pointer to a string buffer that contains the device ID.</param>
+    <param name="pszAltDeviceID">A pointer to a string buffer that contains the alternate device ID. The alternate device ID is more human-readable than the primary device ID.</param>
+    <param name="pszEventType">A pointer to a string buffer that contains the event type. The event types include DeviceArrival, DeviceRemoval, MediaArrival, and MediaRemoval.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IHWEventHandler.HandleEventWithContent">
-    <summary>
-      <para>Not implemented.</para>
-    </summary>
-    <param name="pszDeviceID">
-      <para>This parameter is unused.</para>
-    </param>
-    <param name="pszAltDeviceID">
-      <para>This parameter is unused.</para>
-    </param>
-    <param name="pszEventType">
-      <para>This parameter is unused.</para>
-    </param>
-    <param name="pszContentTypeHandler">
-      <para>This parameter is unused.</para>
-    </param>
-    <param name="pdataobject">
-      <para>This parameter is unused.</para>
-    </param>
-    <returns>
-      <para>This method does not return a value.</para>
-    </returns>
+    <summary>Not implemented.</summary>
+    <param name="pszDeviceID">This parameter is unused.</param>
+    <param name="pszAltDeviceID">This parameter is unused.</param>
+    <param name="pszEventType">This parameter is unused.</param>
+    <param name="pszContentTypeHandler">This parameter is unused.</param>
+    <param name="pdataobject">This parameter is unused.</param>
+    <returns>This method does not return a value.</returns>
   </member>
   <member name="IHWEventHandler.Initialize">
-    <summary>
-      <para>Initializes an object that contains an implementation of the <see cref="IHWEventHandler" /> interface.</para>
-    </summary>
+    <summary>Initializes an object that contains an implementation of the <see cref="IHWEventHandler" /> interface.</summary>
     <param name="pszParams">
-      <para>Type: <b>LPCWSTR</b></para>
       <para>A pointer to a string buffer that contains the string from the following registry value.</para>
       <code>
-        <b>HKEY_LOCAL_MACHINE</b>
-        <b>Software</b>
-        <b>Microsoft</b>
-        <b>Windows</b>
-        <b>CurrentVersion</b>
-        <b>Explorer</b>
-        <b>AutoPlayHandlers</b>
-        <b>Handlers</b>
-        <i>HandlerName</i>
-        <b>InitCmdLine</b> = string</code>
+        <b>HKEY_LOCAL_MACHINE</b>   <b>Software</b>      <b>Microsoft</b>         <b>Windows</b>            <b>CurrentVersion</b>               <b>Explorer</b>                  <b>AutoPlayHandlers</b>                     <b>Handlers</b>                        <i>HandlerName</i>                           <b>InitCmdLine</b> = string</code>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method receives the registry string stored in the InitCmdLine value under the</para>
-      <para>
-        <b>AutoPlayHandlers</b>\<b>Handlers</b>\<i>HandlerName</i> key. Applications that have registered with AutoPlay as event handlers place this string into the registry as part of the registration process.</para>
-    </remarks>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IHWEventHandler">
-    <summary>
-      <para>Called by AutoPlay to implement the handling of registered media types.</para>
-    </summary>
-    <remarks>
-      <para>Developers supporting this interface must expose it in a Component Object Model (COM) server.</para>
-      <para>All applications registered as AutoPlay media handlers must implement this interface. Handlers that implement this interface should return quickly from calls to <see cref="IHWEventHandler.HandleEvent" /> and  <see cref="IHWEventHandler2.HandleEventWithHWND" /> so they won't block the AutoPlay dialog from closing. Additionally, if a local server must be launched for the creation of this handler, it should not block the CreateInstance call; it should return as soon as possible.</para>
-    </remarks>
+    <summary>Called by AutoPlay to implement the handling of registered media types.</summary>
   </member>
 </doc>

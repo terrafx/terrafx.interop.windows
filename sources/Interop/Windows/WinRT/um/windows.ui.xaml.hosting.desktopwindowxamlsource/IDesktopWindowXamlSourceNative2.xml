@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDesktopWindowXamlSourceNative2.PreTranslateMessage">
+    <summary>Enables the WinRT XAML framework to process a Windows message for a <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> object that hosts a WinRT XAML control.</summary>
+    <param name="message">The Windows message to process.</param>
+    <param name="result">True if the message was processed; otherwise, false.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDesktopWindowXamlSourceNative2">
+    <summary>Provides a method that enables the WinRT XAML framework to process Windows messages for a <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> object that hosts a WinRT XAML control.</summary>
+  </member>
+</doc>

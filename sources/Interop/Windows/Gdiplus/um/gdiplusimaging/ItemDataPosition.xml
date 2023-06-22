@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ItemDataPosition">
+    <summary>The <b>ItemDataPosition</b> enumeration is used to specify the location of custom metadata in an image file.</summary>
+  </member>
+  <member name="ItemDataPosition.ItemDataPositionAfterHeader">
+    <summary>Specifies that custom metadata is stored after the file header. Valid for JPEG, PNG, and GIF.</summary>
+  </member>
+  <member name="ItemDataPosition.ItemDataPositionAfterPalette">
+    <summary>Specifies that custom metadata is stored after the palette. Valid for PNG.</summary>
+  </member>
+  <member name="ItemDataPosition.ItemDataPositionAfterBits">
+    <summary>Specifies that custom metadata is stored after the pixel data. Valid for GIF and PNG.</summary>
+  </member>
+</doc>

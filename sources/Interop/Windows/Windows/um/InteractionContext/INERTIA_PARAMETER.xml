@@ -3,45 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INERTIA_PARAMETER">
-    <summary>
-      <para>Specifies the inertia values for a manipulation (translation, rotation, scaling).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setinertiaparameterinteractioncontext">SetInertiaParameterInteractionContext</seealso>
+    <summary>Specifies the inertia values for a manipulation (translation, rotation, scaling).</summary>
   </member>
   <member name="INERTIA_PARAMETER.INERTIA_PARAMETER_TRANSLATION_DECELERATION">
-    <summary>
-      <para>The rate of deceleration, in degrees/ms².</para>
-    </summary>
+    <summary>The rate of deceleration, in degrees/ms².</summary>
   </member>
   <member name="INERTIA_PARAMETER.INERTIA_PARAMETER_TRANSLATION_DISPLACEMENT">
-    <summary>
-      <para>The relative change in screen location, in DIPs.</para>
-    </summary>
+    <summary>The relative change in screen location, in DIPs.</summary>
   </member>
   <member name="INERTIA_PARAMETER.INERTIA_PARAMETER_ROTATION_DECELERATION">
-    <summary>
-      <para>The rate of deceleration, in degrees/ms².</para>
-    </summary>
+    <summary>The rate of deceleration, in degrees/ms².</summary>
   </member>
   <member name="INERTIA_PARAMETER.INERTIA_PARAMETER_ROTATION_ANGLE">
-    <summary>
-      <para>The relative change in angle of rotation, in radians.</para>
-    </summary>
+    <summary>The relative change in angle of rotation, in radians.</summary>
   </member>
   <member name="INERTIA_PARAMETER.INERTIA_PARAMETER_EXPANSION_DECELERATION">
-    <summary>
-      <para>The rate of deceleration, in degrees/ms².</para>
-    </summary>
+    <summary>The rate of deceleration, in degrees/ms².</summary>
   </member>
   <member name="INERTIA_PARAMETER.INERTIA_PARAMETER_EXPANSION_EXPANSION">
-    <summary>
-      <para>The relative change in size, in pixels.</para>
-    </summary>
+    <summary>The relative change in size, in pixels.</summary>
   </member>
   <member name="INERTIA_PARAMETER.INERTIA_PARAMETER_MAX">
-    <summary>
-      <para>Maximum number of interactions exceeded.</para>
-    </summary>
+    <summary>Maximum number of interactions exceeded.</summary>
   </member>
 </doc>

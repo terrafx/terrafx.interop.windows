@@ -3,97 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TCP_ESTATS_SEND_BUFF_ROD_v0">
-    <summary>
-      <para>The <b>TCP_ESTATS_SEND_BUFF_ROD_v0</b> structure contains read-only dynamic information for extended TCP statistics on output queuing for a TCP connection.</para>
-    </summary>
-    <remarks>
-      <para>The <b>TCP_ESTATS_SEND_BUFF_ROD_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
-      <para>The <b>TCP_ESTATS_SEND_BUFF_ROD_v0</b> is defined as version 0 of the structure for  read-only dynamic information for extended TCP statistics on output queuing for a TCP connection.  This information is available after the connection has been established.</para>
-      <para>The <b>TCP_ESTATS_SEND_BUFF_ROD_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsSendBuff</b> is passed in the <i>EstatsType</i> parameter. Extended TCP statistics need to be enabled to retrieve this structure.</para>
-      <para>The members of this structure are defined in the IETF RFC on the TCP Extended Statistics MIB. For more information, see <a href="http://tools.ietf.org/html/rfc4898">http://www.ietf.org/rfc/rfc4898.txt</a>.</para>
-      <para>The following is the mapping of the members in the <b>TCP_ESTATS_SEND_BUFF_ROD_v0</b> structure to the entries defined in RFC 4898 for extended TCP statistics:</para>
-      <list type="table">
-        <listheader>
-          <description>Term</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>
-            <b>CurRetxQueue</b>
-          </description>
-          <description>
-            <para>tcpEStatsStackCurRetxQueue</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MaxRetxQueue</b>
-          </description>
-          <description>
-            <para>tcpEStatsStackMaxRetxQueue</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CurAppWQueue</b>
-          </description>
-          <description>
-            <para>tcpEStatsAppCurAppWQueue</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MaxAppWQueue</b>
-          </description>
-          <description>
-            <para>tcpEStatsAppMaxAppWQueue</para>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="GetPerTcp6ConnectionEStats" />
-    <seealso cref="GetPerTcpConnectionEStats" />
-    <seealso cref="TCP_ESTATS_TYPE" />
+    <summary>The <b>TCP_ESTATS_SEND_BUFF_ROD_v0</b> structure contains read-only dynamic information for extended TCP statistics on output queuing for a TCP connection.</summary>
   </member>
   <member name="TCP_ESTATS_SEND_BUFF_ROD_v0.CurRetxQueue">
-    <summary>
-      <para>Type: <b>SIZE_T</b></para>
-      <para>The current number of bytes of data occupying the
-retransmit queue.</para>
-    </summary>
+    <summary>The current number of bytes of data occupying the retransmit queue.</summary>
   </member>
   <member name="TCP_ESTATS_SEND_BUFF_ROD_v0.MaxRetxQueue">
-    <summary>
-      <para>Type: <b>SIZE_T</b></para>
-      <para>The maximum number of bytes of data occupying the
-retransmit queue.</para>
-    </summary>
+    <summary>The maximum number of bytes of data occupying the retransmit queue.</summary>
   </member>
   <member name="TCP_ESTATS_SEND_BUFF_ROD_v0.CurAppWQueue">
     <summary>
-      <para>Type: <b>SIZE_T</b></para>
-      <para>The current number of bytes of application data buffered
-by TCP, pending the first transmission (to the left of
-SND.NXT or SndMax).</para>
-      <para>This data will generally be transmitted
-(and SND.NXT advanced to the left) as soon as there is an
-available congestion window or receiver window.  This is the amount of data readily available for
-transmission, without scheduling the application.  TCP
-performance may suffer if there is insufficient queued
-write data.</para>
+      <para>The current number of bytes of application data buffered by TCP, pending the first transmission (to the left of SND.NXT or SndMax).</para>
+      <para>This data will generally be transmitted (and SND.NXT advanced to the left) as soon as there is an available congestion window or receiver window. This is the amount of data readily available for transmission, without scheduling the application. TCP performance may suffer if there is insufficient queued write data.</para>
     </summary>
   </member>
   <member name="TCP_ESTATS_SEND_BUFF_ROD_v0.MaxAppWQueue">
     <summary>
-      <para>Type: <b>SIZE_T</b></para>
-      <para>The maximum number of bytes of application data buffered
-by TCP, pending the first transmission.</para>
-      <para>This is the maximum
-value of the <b>CurAppWQueue</b> member.  The <b>MaxAppWQueue</b> and  <b>CurAppWQueue</b> members can
-be used to determine if insufficient queued data is steady
-state (suggesting insufficient queue space) or transient
-(suggesting insufficient application performance or
-excessive CPU load or scheduler latency).</para>
+      <para>The maximum number of bytes of application data buffered by TCP, pending the first transmission.</para>
+      <para>This is the maximum value of the <b>CurAppWQueue</b> member. The <b>MaxAppWQueue</b> and <b>CurAppWQueue</b> members can be used to determine if insufficient queued data is steady state (suggesting insufficient queue space) or transient (suggesting insufficient application performance or excessive CPU load or scheduler latency).</para>
     </summary>
   </member>
 </doc>

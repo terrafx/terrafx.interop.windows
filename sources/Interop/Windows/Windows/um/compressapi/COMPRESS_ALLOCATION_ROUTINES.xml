@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COMPRESS_ALLOCATION_ROUTINES">
-    <summary>
-      <para>A structure containing optional memory allocation and deallocation routines.</para>
-    </summary>
+    <summary>A structure containing optional memory allocation and deallocation routines.</summary>
   </member>
   <member name="COMPRESS_ALLOCATION_ROUTINES.Allocate">
-    <summary>
-      <para>Callback that allocates memory.</para>
-    </summary>
+    <summary>Callback that allocates memory.</summary>
   </member>
   <member name="COMPRESS_ALLOCATION_ROUTINES.Free">
-    <summary>
-      <para>Callback that deallocates memory.</para>
-    </summary>
+    <summary>Callback that deallocates memory.</summary>
   </member>
   <member name="COMPRESS_ALLOCATION_ROUTINES.UserContext">
-    <summary>
-      <para>A pointer to context information for the allocation or deallocation routine defined by the user.</para>
-    </summary>
+    <summary>A pointer to context information for the allocation or deallocation routine defined by the user.</summary>
   </member>
 </doc>

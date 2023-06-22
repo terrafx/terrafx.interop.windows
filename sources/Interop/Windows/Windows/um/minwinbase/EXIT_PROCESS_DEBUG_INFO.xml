@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXIT_PROCESS_DEBUG_INFO">
-    <summary>
-      <para>Contains the exit code for a terminating process.</para>
-    </summary>
-    <seealso cref="DEBUG_EVENT" />
+    <summary>Contains the exit code for a terminating process.</summary>
   </member>
   <member name="EXIT_PROCESS_DEBUG_INFO.dwExitCode">
-    <summary>
-      <para>The exit code for the process.</para>
-    </summary>
+    <summary>The exit code for the process.</summary>
   </member>
 </doc>

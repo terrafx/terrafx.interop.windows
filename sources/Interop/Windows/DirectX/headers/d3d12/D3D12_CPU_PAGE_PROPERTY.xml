@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_CPU_PAGE_PROPERTY">
-    <summary>
-      <para>Specifies the CPU-page properties for the heap.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the <see cref="D3D12_HEAP_PROPERTIES" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
+    <summary>Specifies the CPU-page properties for the heap.</summary>
   </member>
   <member name="D3D12_CPU_PAGE_PROPERTY.D3D12_CPU_PAGE_PROPERTY_UNKNOWN">
-    <summary>
-      <para>The CPU-page property is unknown.</para>
-    </summary>
+    <summary>The CPU-page property is unknown.</summary>
   </member>
   <member name="D3D12_CPU_PAGE_PROPERTY.D3D12_CPU_PAGE_PROPERTY_NOT_AVAILABLE">
-    <summary>
-      <para>The CPU cannot access the heap, therefore no page properties are available.</para>
-    </summary>
+    <summary>The CPU cannot access the heap, therefore no page properties are available.</summary>
   </member>
   <member name="D3D12_CPU_PAGE_PROPERTY.D3D12_CPU_PAGE_PROPERTY_WRITE_COMBINE">
-    <summary>
-      <para>The CPU-page property is write-combined.</para>
-    </summary>
+    <summary>The CPU-page property is write-combined.</summary>
   </member>
   <member name="D3D12_CPU_PAGE_PROPERTY.D3D12_CPU_PAGE_PROPERTY_WRITE_BACK">
-    <summary>
-      <para>The CPU-page property is write-back.</para>
-    </summary>
+    <summary>The CPU-page property is write-back.</summary>
   </member>
 </doc>

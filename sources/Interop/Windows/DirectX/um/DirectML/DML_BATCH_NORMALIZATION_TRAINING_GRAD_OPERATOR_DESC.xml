@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC">
+    <summary>
+      <para>Computes backpropagation gradients for <see cref="batch normalization training" />.</para>
+      <para>This operator performs multiple computations, which are detailed in the separate output descriptions.</para>
+      <para>Any dimension in <i>MeanTensor</i>, <i>VarianceTensor</i>, and <i>ScaleTensor</i> can be set to 1, and be automatically broadcast to match <i>InputTensor</i>, but otherwise must equal the corresponding dimension's size from <i>InputTensor</i>.</para>
+      <para>
+        <i>OutputScaleGradientTensor</i> and <i>OutputBiasGradientTensor</i> are computed using sums across the set of dimensions for which <i>MeanTensor</i>, <i>ScaleTensor</i> and <i>VarianceTensor</i> sizes equal one.</para>
+    </summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC.InputTensor">
+    <summary>A tensor containing the input data. This is typically the same tensor that was provided as the <i>InputTensor</i> to <see cref="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC" /> in the forward pass.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC.InputGradientTensor">
+    <summary>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC.MeanTensor">
+    <summary>A tensor containing the mean data. This is typically the same tensor that was returned by <i>MeanTensor</i> from <see cref="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC" /> in the forward pass.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC.VarianceTensor">
+    <summary>A tensor containing the variance data. This is typically the same tensor that was returned as the <i>OutputVarianceTensor</i> from <see cref="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC" /> in the forward pass.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC.ScaleTensor">
+    <summary>A tensor containing the scale data.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC.OutputGradientTensor">
+    <summary>
+      <para>For every corresponding value in the inputs:</para>
+      <code>Coef0 = 1.0f / sqrt(Variance + Epsilon) Coef1 = InputGradient * (Input - mean(Input)) InputGradientCentered = InputGradient - mean(InputGradient) InputCentered = InputCentered - mean(InputCentered) OutputGradient = Scale * Coef0 * (InputGradientCentered - InputCentered * mean(Coef1) / (Variance + Epsilon))</code>
+    </summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC.OutputScaleGradientTensor">
+    <summary>The following computation is done or every corresponding value in the inputs: <code>OutputScaleGradient = sum(InputGradient * (Input - Mean) / sqrt(Variance + Epsilon))</code></summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC.OutputBiasGradientTensor">
+    <summary>The following computation is done or every corresponding value in the inputs: <code>OutputBiasGradient = sum(InputGradient)</code></summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC.Epsilon">
+    <summary>A small float value added to the variance to avoid zero.</summary>
+  </member>
+</doc>

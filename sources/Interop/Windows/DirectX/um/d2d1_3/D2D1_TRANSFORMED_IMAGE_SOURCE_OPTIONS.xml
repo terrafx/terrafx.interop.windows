@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS">
-    <summary>
-      <para>Option flags for transformed image sources.</para>
-    </summary>
+    <summary>Option flags for transformed image sources.</summary>
   </member>
   <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS.D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS_NONE">
-    <summary>
-      <para>No option flags.</para>
-    </summary>
+    <summary>No option flags.</summary>
   </member>
   <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS.D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS_DISABLE_DPI_SCALE">
-    <summary>
-      <para>Prevents the image source from being automatically scaled (by a ratio of the context DPI divided by 96) while drawn.</para>
-    </summary>
+    <summary>Prevents the image source from being automatically scaled (by a ratio of the context DPI divided by 96) while drawn.</summary>
   </member>
-  <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS.D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS.D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS_FORCE_DWORD"></member>
 </doc>

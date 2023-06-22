@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_INPUTPROCESSORPROFILE">
-    <summary>
-      <para>This structure contains data for the input processor profile.</para>
-    </summary>
+    <summary>This structure contains data for the input processor profile.</summary>
   </member>
   <member name="TF_INPUTPROCESSORPROFILE.dwProfileType">
     <summary>
@@ -15,41 +13,31 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>TF_PROFILETYPE_INPUTPROCESSOR</description>
           <description>This is a text service.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TF_PROFILETYPE_KEYBOARDLAYOUT</description>
           <description>This is a keyboard layout.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="TF_INPUTPROCESSORPROFILE.langid">
-    <summary>
-      <para>The language id for this profile.</para>
-    </summary>
+    <summary>The language id for this profile.</summary>
   </member>
   <member name="TF_INPUTPROCESSORPROFILE.clsid">
-    <summary>
-      <para>The CLSID of the text service. This is CLSID_NULL if this profile is a keyboard layout.</para>
-    </summary>
+    <summary>The CLSID of the text service. This is CLSID_NULL if this profile is a keyboard layout.</summary>
   </member>
   <member name="TF_INPUTPROCESSORPROFILE.guidProfile">
-    <summary>
-      <para>The guidProfile of the text services. This is GUID_NULL if this profile is a keyboard layout.</para>
-    </summary>
+    <summary>The guidProfile of the text services. This is GUID_NULL if this profile is a keyboard layout.</summary>
   </member>
   <member name="TF_INPUTPROCESSORPROFILE.catid">
-    <summary>
-      <para>The category of this text service. This category is GUID_TFCAT_TIP_KEYBOARD, GUID_TFCAT_TIP_SPEECH, GUID_TFCAT_TIP_HANDWRITING or something in GUID_TFCAT_CATEGORY_OF_TIP.</para>
-    </summary>
+    <summary>The category of this text service. This category is GUID_TFCAT_TIP_KEYBOARD, GUID_TFCAT_TIP_SPEECH, GUID_TFCAT_TIP_HANDWRITING or something in GUID_TFCAT_CATEGORY_OF_TIP.</summary>
   </member>
   <member name="TF_INPUTPROCESSORPROFILE.hklSubstitute">
-    <summary>
-      <para>The keyboard layout handle of the substitute for this text service. This can be <b>NULL</b> if the text service does not have a substitute or this profile is a keyboard layout.</para>
-    </summary>
+    <summary>The keyboard layout handle of the substitute for this text service. This can be <b>NULL</b> if the text service does not have a substitute or this profile is a keyboard layout.</summary>
   </member>
   <member name="TF_INPUTPROCESSORPROFILE.dwCaps">
     <summary>
@@ -59,43 +47,41 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>TF_IPP_CAPS_DISABLEONTRANSITORY</description>
           <description>This text service profile is disabled on transitory context.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TF_IPP_CAPS_SECUREMODESUPPORT</description>
           <description>This text service supports the secure mode. This is categorized in GUID_TFCAT_TIPCAP_SECUREMODE.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TF_IPP_CAPS_UIELEMENTENABLED</description>
           <description>This text service supports the UIElement. This is categorized in GUID_TFCAT_TIPCAP_UIELEMENTENABLED.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TF_IPP_CAPS_COMLESSSUPPORT</description>
           <description>This text service can be activated without COM. This is categorized in GUID_TFCAT_TIPCAP_COMLESS.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TF_IPP_CAPS_WOW16SUPPORT</description>
           <description>This text service can be activated on 16bit task. This is categorized in GUID_TFCAT_TIPCAP_WOW16.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TF_IPP_CAPS_IMMERSIVESUPPORT</description>
           <description>
             <b>Starting with Windows 8:</b> This text service has been tested to run properly in a Windows Store app.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TF_IPP_CAPS_SYSTRAYSUPPORT</description>
           <description>
-            <b>Starting with Windows 8:</b> This text service supports inclusion in the System Tray.  This is used for text services that do not set the TF_IPP_CAPS_IMMERSIVESUPPORT flag but  are still compatible with the System Tray.</description>
-        </item>
+            <b>Starting with Windows 8:</b> This text service supports inclusion in the System Tray. This is used for text services that do not set the TF_IPP_CAPS_IMMERSIVESUPPORT flag but are still compatible with the System Tray.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="TF_INPUTPROCESSORPROFILE.hkl">
-    <summary>
-      <para>The keyboard layout handle. This is <b>NULL</b> if this profile is a text service.</para>
-    </summary>
+    <summary>The keyboard layout handle. This is <b>NULL</b> if this profile is a text service.</summary>
   </member>
   <member name="TF_INPUTPROCESSORPROFILE.dwFlags">
     <summary>
@@ -105,18 +91,18 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>TF_IPP_FLAG_ACTIVE</description>
           <description>This profile is now active.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TF_IPP_FLAG_ENABLED</description>
           <description>This profile is enabled.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TF_IPP_FLAG_SUBSTITUTEDBYINPUTPROCESSOR</description>
           <description>This profile is substituted by a text service.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>

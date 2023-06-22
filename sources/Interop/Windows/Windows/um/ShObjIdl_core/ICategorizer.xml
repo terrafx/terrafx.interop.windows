@@ -3,109 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICategorizer.CompareCategory">
-    <summary>
-      <para>Determines the relative order of two items in their item identifier lists, and hence in the UI.</para>
-    </summary>
-    <param name="csfFlags">
-      <para>Type: <b><see cref="CATSORT_FLAGS" /></b></para>
-      <para>A flag that specifies how the comparison should be performed. The parameter should be one of the values in <see cref="CATSORT_FLAGS" />.</para>
-    </param>
-    <param name="dwCategoryId1">
-      <para>Type: <b>DWORD</b></para>
-      <para>A <b>DWORD</b> that specifies the first category identifier to use in the comparison.</para>
-    </param>
-    <param name="dwCategoryId2">
-      <para>Type: <b>DWORD</b></para>
-      <para>A <b>DWORD</b> that specifies the second category identifier to use in the comparison.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method is successful, the CODE field of the HRESULT contains a value that specifies the outcome of the comparison, otherwise it returns a COM error code.</para>
-    </returns>
-    <remarks>
-      <para>The following table shows the values returned in the CODE field of the HRESULT.</para>
-      <list type="table">
-        <listheader>
-          <description>Less than zero </description>
-          <description>The first item should precede the second (<i>dwCategoryId1</i> &lt; <i>dwCategoryId2</i>).</description>
-        </listheader>
-        <item>
-          <description>Greater than zero </description>
-          <description>The first item should follow the second (<i>dwCategoryId1</i> &gt; <i>dwCategoryId2</i>).</description>
-        </item>
-        <item>
-          <description>Zero </description>
-          <description>The two items are the same (<i>dwCategoryId1</i> = <i>dwCategoryId2</i>).</description>
-        </item>
-      </list>
-    </remarks>
+    <summary>Determines the relative order of two items in their item identifier lists, and hence in the UI.</summary>
+    <param name="csfFlags">A flag that specifies how the comparison should be performed. The parameter should be one of the values in <see cref="CATSORT_FLAGS" />.</param>
+    <param name="dwCategoryId1">A <b>DWORD</b> that specifies the first category identifier to use in the comparison.</param>
+    <param name="dwCategoryId2">A <b>DWORD</b> that specifies the second category identifier to use in the comparison.</param>
+    <returns>If this method is successful, the CODE field of the HRESULT contains a value that specifies the outcome of the comparison, otherwise it returns a COM error code.</returns>
   </member>
   <member name="ICategorizer.GetCategory">
-    <summary>
-      <para>Gets a list of categories associated with a list of identifiers.</para>
-    </summary>
-    <param name="cidl">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of items in an item identifier list array.</para>
-    </param>
-    <param name="apidl">
-      <para>Type: <b>PCUITEMID_CHILD_ARRAY*</b></para>
-      <para>A pointer to an array of <i>cidl</i> item identifier list pointers.</para>
-    </param>
-    <param name="rgCategoryIds">
-      <para>Type: <b>DWORD*</b></para>
-      <para>When this method returns, contains a pointer to an array of <i>cidl</i> category identifiers.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <b>ICategorizer.GetCategory</b> method accepts an array of pointers to item identifier lists (PIDLs) and fills an array of category identifiers.</para>
-      <para>
-        <b>Important</b>   The value -1 is an invalid category identifier.</para>
-    </remarks>
+    <summary>Gets a list of categories associated with a list of identifiers.</summary>
+    <param name="cidl">The number of items in an item identifier list array.</param>
+    <param name="apidl">A pointer to an array of <i>cidl</i> item identifier list pointers.</param>
+    <param name="rgCategoryIds">When this method returns, contains a pointer to an array of <i>cidl</i> category identifiers.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICategorizer.GetCategoryInfo">
-    <summary>
-      <para>Gets information about a category, such as the default display and the text to display in the UI.</para>
-    </summary>
-    <param name="dwCategoryId">
-      <para>Type: <b>DWORD</b></para>
-      <para>A <b>DWORD</b> that specifies a category identifier.</para>
-    </param>
-    <param name="pci">
-      <para>Type: <b><see cref="CATEGORY_INFO" />*</b></para>
-      <para>When this method returns, contains a pointer to a <see cref="CATEGORY_INFO" /> structure that contains the category information.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets information about a category, such as the default display and the text to display in the UI.</summary>
+    <param name="dwCategoryId">A <b>DWORD</b> that specifies a category identifier.</param>
+    <param name="pci">When this method returns, contains a pointer to a <see cref="CATEGORY_INFO" /> structure that contains the category information.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICategorizer.GetDescription">
-    <summary>
-      <para>Gets the name of a categorizer, such as <i>Group By Device Type</i>, that can be displayed in the UI.</para>
-    </summary>
-    <param name="pszDesc">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>When this method returns, contains a pointer to a string of length <i>cch</i> that contains the categorizer name.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of characters in the <i>pszDesc</i> buffer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In the case of the system folder view object, if the description at <i>pszDesc</i> matches one of the category names listed in the folder's <b>Arrange Icons By</b> menu, a dot is placed by that name when the menu is displayed, either through the <b>View</b> menu or through the context menu.</para>
-    </remarks>
+    <summary>Gets the name of a categorizer, such as <i>Group By Device Type</i>, that can be displayed in the UI.</summary>
+    <param name="pszDesc">When this method returns, contains a pointer to a string of length <i>cch</i> that contains the categorizer name.</param>
+    <param name="cch">The number of characters in the <i>pszDesc</i> buffer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICategorizer">
-    <summary>
-      <para>Exposes methods that are used to obtain information about item identifier lists.</para>
-    </summary>
+    <summary>Exposes methods that are used to obtain information about item identifier lists.</summary>
   </member>
 </doc>

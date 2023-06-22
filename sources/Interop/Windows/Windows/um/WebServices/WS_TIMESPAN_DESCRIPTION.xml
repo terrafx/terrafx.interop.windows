@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_TIMESPAN_DESCRIPTION">
-    <summary>
-      <para>This type description is used with <see cref="WS_TIMESPAN_TYPE" /> and is optional.
-It is used to specify constraints on the set of values
-which can be deserialized.</para>
-    </summary>
+    <summary>This type description is used with <see cref="WS_TIMESPAN_TYPE" /> and is optional. It is used to specify constraints on the set of values which can be deserialized.</summary>
   </member>
   <member name="WS_TIMESPAN_DESCRIPTION.minValue">
-    <summary>
-      <para>The minimum value.</para>
-    </summary>
+    <summary>The minimum value.</summary>
   </member>
   <member name="WS_TIMESPAN_DESCRIPTION.maxValue">
-    <summary>
-      <para>The maximum value.</para>
-    </summary>
+    <summary>The maximum value.</summary>
   </member>
 </doc>

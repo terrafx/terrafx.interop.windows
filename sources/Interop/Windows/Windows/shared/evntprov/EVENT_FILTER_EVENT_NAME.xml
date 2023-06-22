@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EVENT_FILTER_EVENT_NAME">
+    <summary>
+      <para>The <b>EVENT_FILTER_EVENT_NAME</b> structure defines event IDs used in an<see cref="EVENT_FILTER_DESCRIPTOR" />structure for an event name or stalk walk name filter.</para>
+      <para>This filter will only be applied to events that are otherwise enabled on the logging session, via level/keyword in the enable call.</para>
+    </summary>
+  </member>
+  <member name="EVENT_FILTER_EVENT_NAME.MatchAnyKeyword">
+    <summary>Bitmask of keywords that determine the category of events to filter on.</summary>
+  </member>
+  <member name="EVENT_FILTER_EVENT_NAME.MatchAllKeyword">
+    <summary>This bitmask is optional. This mask further restricts the category of events that you want to filter on. If the event's keyword meets the <b>MatchAnyKeyword</b>condition, the provider will filter the event only if all of the bits in this mask exist in the event's keyword. This mask is not used if <b>MatchAnyKeyword</b>is zero.</summary>
+  </member>
+  <member name="EVENT_FILTER_EVENT_NAME.Level">
+    <summary>Defines the severity level of the event to filter on.</summary>
+  </member>
+  <member name="EVENT_FILTER_EVENT_NAME.FilterIn">
+    <summary>
+      <para>
+        <b>True</b> to filter the events matching the provided names in; <b>false</b> to filter them out.</para>
+      <para>When used for the <b>EVENT_FILTER_TYPE_STACKWALK_NAME</b>filter type, the filtered in events will have stacks collected for them.</para>
+    </summary>
+  </member>
+  <member name="EVENT_FILTER_EVENT_NAME.NameCount">
+    <summary>The number of names in the <b>Names</b> member.</summary>
+  </member>
+  <member name="EVENT_FILTER_EVENT_NAME.Names">
+    <summary>An <b>NameCount</b> long array of null-terminated, UTF-8 event names.</summary>
+  </member>
+</doc>

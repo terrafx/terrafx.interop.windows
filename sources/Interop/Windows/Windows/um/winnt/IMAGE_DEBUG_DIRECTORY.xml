@@ -3,30 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGE_DEBUG_DIRECTORY">
-    <summary>
-      <para>Represents the debug directory format.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+    <summary>Represents the debug directory format.</summary>
   </member>
   <member name="IMAGE_DEBUG_DIRECTORY.Characteristics">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="IMAGE_DEBUG_DIRECTORY.TimeDateStamp">
-    <summary>
-      <para>The ime and date the debugging information was created.</para>
-    </summary>
+    <summary>The time and date the debugging information was created.</summary>
   </member>
   <member name="IMAGE_DEBUG_DIRECTORY.MajorVersion">
-    <summary>
-      <para>The major version number of the debugging information format.</para>
-    </summary>
+    <summary>The major version number of the debugging information format.</summary>
   </member>
   <member name="IMAGE_DEBUG_DIRECTORY.MinorVersion">
-    <summary>
-      <para>The minor version number of the debugging information format.</para>
-    </summary>
+    <summary>The minor version number of the debugging information format.</summary>
   </member>
   <member name="IMAGE_DEBUG_DIRECTORY.Type">
     <summary>
@@ -36,158 +25,136 @@
           <description>Constant</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DEBUG_TYPE_UNKNOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Unknown value, ignored by all tools.</para>
-          </description>
-        </item>
-        <item>
+          <description>Unknown value, ignored by all tools.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DEBUG_TYPE_COFF</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>COFF debugging information (line numbers, symbol table, and string table). This type of debugging information is also pointed to by fields in the file headers.</para>
-          </description>
-        </item>
-        <item>
+          <description>COFF debugging information (line numbers, symbol table, and string table). This type of debugging information is also pointed to by fields in the file headers.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DEBUG_TYPE_CODEVIEW</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>CodeView debugging information. The format of the data block is described by the CodeView 4.0 specification.</para>
-          </description>
-        </item>
-        <item>
+          <description>CodeView debugging information. The format of the data block is described by the CodeView 4.0 specification.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DEBUG_TYPE_FPO</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Frame pointer omission (FPO) information. This information tells the debugger how to interpret nonstandard stack frames, which use the EBP register for a purpose other than as a frame pointer.</para>
-          </description>
-        </item>
-        <item>
+          <description>Frame pointer omission (FPO) information. This information tells the debugger how to interpret nonstandard stack frames, which use the EBP register for a purpose other than as a frame pointer.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DEBUG_TYPE_MISC</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Miscellaneous information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Miscellaneous information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DEBUG_TYPE_EXCEPTION</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Exception information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Exception information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DEBUG_TYPE_FIXUP</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Fixup information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Fixup information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DEBUG_TYPE_BORLAND</b>
-                </description>
-              </item>
-              <item>
-                <description>9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Borland debugging information.</para>
-          </description>
-        </item>
+          <description>Borland debugging information.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IMAGE_DEBUG_DIRECTORY.SizeOfData">
-    <summary>
-      <para>The size of the debugging information, in bytes. This value does not include the debug directory itself.</para>
-    </summary>
+    <summary>The size of the debugging information, in bytes. This value does not include the debug directory itself.</summary>
   </member>
   <member name="IMAGE_DEBUG_DIRECTORY.AddressOfRawData">
-    <summary>
-      <para>The address of the debugging information when the image is loaded, relative to the image base.</para>
-    </summary>
+    <summary>The address of the debugging information when the image is loaded, relative to the image base.</summary>
   </member>
   <member name="IMAGE_DEBUG_DIRECTORY.PointerToRawData">
-    <summary>
-      <para>A file pointer to the debugging information.</para>
-    </summary>
+    <summary>A file pointer to the debugging information.</summary>
   </member>
 </doc>

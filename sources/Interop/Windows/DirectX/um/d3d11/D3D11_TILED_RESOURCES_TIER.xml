@@ -3,23 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TILED_RESOURCES_TIER">
-    <summary>
-      <para>Indicates the tier level at which tiled resources are supported.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
-    <seealso cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" />
+    <summary>Indicates the tier level at which tiled resources are supported.</summary>
   </member>
   <member name="D3D11_TILED_RESOURCES_TIER.D3D11_TILED_RESOURCES_NOT_SUPPORTED">
-    <summary>
-      <para>Tiled resources are not supported.</para>
-    </summary>
+    <summary>Tiled resources are not supported.</summary>
   </member>
   <member name="D3D11_TILED_RESOURCES_TIER.D3D11_TILED_RESOURCES_TIER_1">
     <summary>
       <para>Tier_1 tiled resources are supported.</para>
       <para>The device supports calls to <see cref="CreateTexture2D" /> and so on with the <see cref="D3D11_RESOURCE_MISC_TILED" /> flag.</para>
       <para>The device supports calls to <see cref="CreateBuffer" /> with the <see cref="D3D11_RESOURCE_MISC_TILE_POOL" /> flag.</para>
-      <para>If you access tiles (read or write) that are <b>NULL</b>-mapped, you get undefined behavior, which includes device-removed.  Apps can map all tiles to a single "default" tile to avoid this condition.</para>
+      <para>If you access tiles (read or write) that are <b>NULL</b>-mapped, you get undefined behavior, which includes device-removed. Apps can map all tiles to a single "default" tile to avoid this condition.</para>
     </summary>
   </member>
   <member name="D3D11_TILED_RESOURCES_TIER.D3D11_TILED_RESOURCES_TIER_2">
@@ -28,17 +22,13 @@
       <para>Superset of Tier_1 functionality, which includes this additional support:</para>
       <list type="bullet">
         <item>
-          <description>On Tier_1, if the size of a texture mipmap level is an integer multiple of the standard tile shape for its format, it is guaranteed to be nonpacked. On Tier_2, this guarantee is expanded to include mipmap levels whose size is at least one standard tile shape.
-For more info, see <see cref="D3D11_PACKED_MIP_DESC" />.
-</description>
+          <description>On Tier_1, if the size of a texture mipmap level is an integer multiple of the standard tile shape for its format, it is guaranteed to be nonpacked. On Tier_2, this guarantee is expanded to include mipmap levels whose size is at least one standard tile shape. For more info, see <see cref="D3D11_PACKED_MIP_DESC" />.</description>
         </item>
         <item>
-          <description>Shader instructions are available for clamping level-of-detail (LOD) and for obtaining status about the shader operation. For info about one of these shader instructions, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sample-s-float--int-uint-">Sample(S,float,int,float,uint)</a>.
-</description>
+          <description>Shader instructions are available for clamping level-of-detail (LOD) and for obtaining status about the shader operation. For info about one of these shader instructions, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sample-s-float--int-uint-">Sample(S,float,int,float,uint)</a>.</description>
         </item>
         <item>
-          <description>Reading from <b>NULL</b>-mapped tiles treat that sampled value as zero.  Writes to <b>NULL</b>-mapped tiles are discarded.
-</description>
+          <description>Reading from <b>NULL</b>-mapped tiles treat that sampled value as zero. Writes to <b>NULL</b>-mapped tiles are discarded.</description>
         </item>
       </list>
     </summary>

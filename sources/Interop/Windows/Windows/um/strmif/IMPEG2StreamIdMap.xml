@@ -4,67 +4,36 @@
 <doc>
   <member name="IMPEG2StreamIdMap.EnumStreamIdMap">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>EnumStreamIdMap</code> method returns a collection of all the mapped Stream IDs on this pin.</para>
     </summary>
     <param name="ppIEnumStreamIdMap">
-      <para>
-        <see cref="IEnumStreamIdMap" /> interface pointer that will be set to the returned collection.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Currently, there is only one stream ID mapped to a given pin, therefore this collection will contain a single item.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMPEG2StreamIdMap Interface" />
+      <see cref="IEnumStreamIdMap" /> interface pointer that will be set to the returned collection.</param>
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMPEG2StreamIdMap.MapStreamId">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>MapStreamId</code> method maps the Stream ID of an elementary stream within an MPEG-2 program stream to a media content type and substream filtering information.</para>
     </summary>
-    <param name="ulStreamId">
-      <para>The stream ID of the PES stream.</para>
-    </param>
-    <param name="MediaSampleContent">
-      <para>Specifies the contents of the stream. Currently the only value supported is MPEG2_PROGRAM_ELEMENTARY_STREAM (defined as 0x00000001 in axextend.idl).</para>
-    </param>
-    <param name="ulSubstreamFilterValue">
-      <para>Specifies which substream within this elementary stream to pass on to the downstream decoder. Only the low-order byte can contain a valid filter value. If <i>iDataOffset</i> = 0, this parameter is ignored.</para>
-    </param>
-    <param name="iDataOffset">
-      <para>The byte offset into the payload at which the substream begins.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, an error code is returned. If a Stream ID of MEDIA_PROGRAM_STREAM_MAP, MEDIA_PROGRAM_DIRECTORY_PES_PACKET or MEDIA_PROGRAM_PACK_HEADER is attempted, this method returns E_NOTIMPL.</para>
-    </returns>
-    <remarks>
-      <para>The Stream ID mapped by this method is the stream ID in the PES header. Substream filtering is most commonly used to provide multiple channels on a single audio stream.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMPEG2StreamIdMap Interface" />
+    <param name="ulStreamId">The stream ID of the PES stream.</param>
+    <param name="MediaSampleContent">Specifies the contents of the stream. Currently the only value supported is MPEG2_PROGRAM_ELEMENTARY_STREAM (defined as 0x00000001 in axextend.idl).</param>
+    <param name="ulSubstreamFilterValue">Specifies which substream within this elementary stream to pass on to the downstream decoder. Only the low-order byte can contain a valid filter value. If <i>iDataOffset</i> = 0, this parameter is ignored.</param>
+    <param name="iDataOffset">The byte offset into the payload at which the substream begins.</param>
+    <returns>Returns S_OK if successful. If the method fails, an error code is returned. If a Stream ID of MEDIA_PROGRAM_STREAM_MAP, MEDIA_PROGRAM_DIRECTORY_PES_PACKET or MEDIA_PROGRAM_PACK_HEADER is attempted, this method returns E_NOTIMPL.</returns>
   </member>
   <member name="IMPEG2StreamIdMap.UnmapStreamId">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>UnmapStreamId</code> method unmaps the Stream ID mapping created in a previous call to <b>MapStreamId</b>.</para>
     </summary>
-    <param name="culStreamId">
-      <para>The number of elements in the <i>pulStreamID</i> array.</para>
-    </param>
-    <param name="pulStreamId">
-      <para>Array of Stream IDs mapped for this pin.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>There is typically only one stream ID mapped to a given pin, therefore <i>pulStreamID</i> will typically contain a single element.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMPEG2StreamIdMap Interface" />
+    <param name="culStreamId">The number of elements in the <i>pulStreamID</i> array.</param>
+    <param name="pulStreamId">Array of Stream IDs mapped for this pin.</param>
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMPEG2StreamIdMap">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>This interface is implemented on each output pin of the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mpeg-2-demultiplexer">MPEG-2 Demultiplexer</a> filter (Demux) and is used in program stream mode only. It is called by applications or other filters to associate the pin with a specified Stream ID and to inform the pin whether substream filtering is required on the stream. This interface is not exposed when the filter is playing back a file (pull-mode).</para>
       <para>For transport streams, use the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/bdaiface/nn-bdaiface-impeg2pidmap">IMPEG2PIDMap</a> interface.</para>
     </summary>

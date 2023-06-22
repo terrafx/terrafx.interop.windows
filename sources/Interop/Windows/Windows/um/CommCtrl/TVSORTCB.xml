@@ -3,38 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TVSORTCB">
-    <summary>
-      <para>Contains information used to sort child items in a tree-view control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tvm-sortchildrencb">TVM_SORTCHILDRENCB</a> message. This structure is identical to the
-<b>TV_SORTCB</b> structure, but it has been renamed to follow current naming conventions.</para>
-    </summary>
-    <remarks>
-      <para>The callback function specified by <b>lpfnCompare</b> has the following form:</para>
-      <code>
-int CALLBACK CompareFunc(LPARAM lParam1, LPARAM lParam2, LPARAM lParamSort);
-
-</code>
-      <para>The callback function must return a negative value if the first item should precede the second, a positive value if the first item should follow the second, or zero if the two items are equivalent.</para>
-      <para>The <i>lParam1</i> and <i>lParam2</i> parameters correspond to the lParam member of the <see cref="TVITEM" /> structure for the two items being compared. The <i>lParamSort</i> parameter corresponds to the <b>lParam</b> member of this structure.</para>
-    </remarks>
+    <summary>Contains information used to sort child items in a tree-view control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tvm-sortchildrencb">TVM_SORTCHILDRENCB</a> message. This structure is identical to the<b>TV_SORTCB</b> structure, but it has been renamed to follow current naming conventions.</summary>
   </member>
   <member name="TVSORTCB.hParent">
-    <summary>
-      <para>Type: <b>HTREEITEM</b></para>
-      <para>Handle to the parent item.</para>
-    </summary>
+    <summary>Handle to the parent item.</summary>
   </member>
   <member name="TVSORTCB.lpfnCompare">
-    <summary>
-      <para>Type: <b>PFNTVCOMPARE</b></para>
-      <para>Address of an application-defined callback function, which is called during a sort operation each time the relative order of two list items needs to be compared.</para>
-    </summary>
+    <summary>Address of an application-defined callback function, which is called during a sort operation each time the relative order of two list items needs to be compared.</summary>
   </member>
   <member name="TVSORTCB.lParam">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
-      <para>Application-defined value that gets passed as the
-<i>lParamSort</i> argument in the callback function specified in
-<b>lpfnCompare</b>.</para>
-    </summary>
+    <summary>Application-defined value that gets passed as the<i>lParamSort</i> argument in the callback function specified in<b>lpfnCompare</b>.</summary>
   </member>
 </doc>

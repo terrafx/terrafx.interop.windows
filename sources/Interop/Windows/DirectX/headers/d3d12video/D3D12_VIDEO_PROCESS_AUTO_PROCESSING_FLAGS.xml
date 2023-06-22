@@ -3,61 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS">
-    <summary>
-      <para>Specifies the automatic processing features that a video processor can support.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used by the <see cref="D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT" /> structure.</para>
-    </remarks>
+    <summary>Specifies the automatic processing features that a video processor can support.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_NONE">
-    <summary>
-      <para>No automatic processing features are supported.</para>
-    </summary>
+    <summary>No automatic processing features are supported.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_DENOISE">
-    <summary>
-      <para>Denoise is supported.</para>
-    </summary>
+    <summary>Denoise is supported.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_DERINGING">
-    <summary>
-      <para>Deringing is supported.</para>
-    </summary>
+    <summary>Deringing is supported.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_EDGE_ENHANCEMENT">
-    <summary>
-      <para>Edge enhancement is supported.</para>
-    </summary>
+    <summary>Edge enhancement is supported.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_COLOR_CORRECTION">
-    <summary>
-      <para>Color correction is supported.</para>
-    </summary>
+    <summary>Color correction is supported.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_FLESH_TONE_MAPPING">
-    <summary>
-      <para>Flesh tone mapping is supported.</para>
-    </summary>
+    <summary>Flesh tone mapping is supported.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_IMAGE_STABILIZATION">
-    <summary>
-      <para>Image stabilization is supported.</para>
-    </summary>
+    <summary>Image stabilization is supported.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_SUPER_RESOLUTION">
-    <summary>
-      <para>Enhanced image resolution is supported.</para>
-    </summary>
+    <summary>Enhanced image resolution is supported.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_ANAMORPHIC_SCALING">
-    <summary>
-      <para>Anamorphic scaling is supported.</para>
-    </summary>
+    <summary>Anamorphic scaling is supported.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_CUSTOM">
-    <summary>
-      <para>Additional processing features, not described by the other flags, are available.</para>
-    </summary>
+    <summary>Additional processing features, not described by the other flags, are available.</summary>
   </member>
 </doc>

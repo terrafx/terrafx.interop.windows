@@ -4,70 +4,12 @@
 <doc>
   <member name="HEAACWAVEINFO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Contains format data for an Advanced Audio Coding (AAC) or High-Efficiency Advanced Audio Coding (HE-AAC) stream.</para>
     </summary>
-    <remarks>
-      <para>This format structure is used to describe MPEG-2 AAC and MPEG-4 HE-AAC streams, including HE-AAC version 1 and HE-AAC version 2.</para>
-      <para>The <b>WAVEFORMATEX</b> structure defined in the <b>wfx</b> member contains the following values.</para>
-      <list type="table">
-        <listheader>
-          <description>Member</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>
-            <b>wFormatTag</b>
-          </description>
-          <description>Must be <b>WAVE_FORMAT_MPEG_HEAAC</b> (0x1610).</description>
-        </item>
-        <item>
-          <description>
-            <b>nChannels</b>
-          </description>
-          <description>The number of channels in the core AAC stream, including the low frequency (LFE) channel, if present.
-If parametric stereo (PS)
-is used, the value might differ from the number of channels in the decoded stream. If unknown, set to zero.</description>
-        </item>
-        <item>
-          <description>
-            <b>nSamplesPerSec</b>
-          </description>
-          <description>The sampling rate of the core AAC stream. The value must be one of the supported
-sampling rates, from 8000 to 96000 Hz, defined in MPEG-2.  If spectral band replication (SBR) is used, the value might differ from the sampling rate of the decoded stream. If unknown, set to zero.</description>
-        </item>
-        <item>
-          <description>
-            <b>nAvgBytesPerSec</b>
-          </description>
-          <description>The average bytes per second, calculated from the average bit rate of
-the compressed stream. If unknown, set to zero.</description>
-        </item>
-        <item>
-          <description>
-            <b>nBlockAlign</b>
-          </description>
-          <description>Set to 1.</description>
-        </item>
-        <item>
-          <description>
-            <b>wBitsPerSample</b>
-          </description>
-          <description>The desired number of bits per sample in the decoded PCM audio stream. If unknown, set to zero.</description>
-        </item>
-        <item>
-          <description>
-            <b>cbSize</b>
-          </description>
-          <description>Specifies the size, in bytes, of the format data after the <b>WAVEFORMATEX</b> structure.</description>
-        </item>
-      </list>
-    </remarks>
   </member>
   <member name="HEAACWAVEINFO.wfx">
-    <summary>
-      <para>A <b>WAVEFORMATEX</b> structure that describes the core AAC stream,
-without SBR or PS extensions. See Remarks.</para>
-    </summary>
+    <summary>A <b>WAVEFORMATEX</b> structure that describes the core AAC stream, without SBR or PS extensions. See Remarks.</summary>
   </member>
   <member name="HEAACWAVEINFO.wPayloadType">
     <summary>
@@ -77,45 +19,51 @@ without SBR or PS extensions. See Remarks.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>0</para>
+            <list type="bullet">
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream contains raw_data_block elements only.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The stream contains raw_data_block elements only.</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Audio Data Transport Stream (ADTS). The stream contains an adts_sequence, as defined by MPEG-2.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>1</para>
+            <list type="bullet">
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
           </description>
+          <description>Audio Data Interchange Format (ADIF). The stream contains an adif_sequence, as defined by MPEG-2.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Audio Data Transport Stream (ADTS). The stream contains an adts_sequence, as defined by MPEG-2.</para>
+            <list type="bullet">
+              <listheader>
+                <term>3</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>2</para>
-          </description>
-          <description>
-            <para>Audio Data Interchange Format (ADIF). The stream contains an adif_sequence, as defined by MPEG-2.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>3</para>
-          </description>
-          <description>
-            <para>The stream contains an MPEG-4 audio transport stream with a synchronization layer (LOAS) and a multiplex layer (LATM).</para>
-          </description>
-        </item>
+          <description>The stream contains an MPEG-4 audio transport stream with a synchronization layer (LOAS) and a multiplex layer (LATM).</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="HEAACWAVEINFO.wAudioProfileLevelIndication">
-    <summary>
-      <para>Contains the value of the <b>audioProfileLevelIndication</b> field, as defined by ISO/IEC 14496-3 (MPEG-4 Audio). If the value is unknown, set this member to zero or 0xFE ("no audio profile specified").</para>
-    </summary>
+    <summary>Contains the value of the <b>audioProfileLevelIndication</b> field, as defined by ISO/IEC 14496-3 (MPEG-4 Audio). If the value is unknown, set this member to zero or 0xFE ("no audio profile specified").</summary>
   </member>
   <member name="HEAACWAVEINFO.wStructType">
     <summary>
@@ -125,27 +73,22 @@ without SBR or PS extensions. See Remarks.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>0</para>
+            <list type="bullet">
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The data that follows the <b>HEAACWAVEINFO</b> structure contains the value of AudioSpecificConfig(), as defined by ISO/IEC 14496-3.</para>
-            <para>The size of the data is <code>wfx.cbSize - sizeof(HEAACWAVEINFO) + sizeof(WAVEFORMATEX)</code>. If the size is greater than zero, you can access the data by casting the <b>HEAACWAVEINFO</b> structure to a <see cref="HEAACWAVEFORMAT" /> structure.</para>
-          </description>
-        </item>
-      </list>
-      <para>All other values for this member are reserved.</para>
-    </summary>
+          <description>The data that follows the <b>HEAACWAVEINFO</b> structure contains the value of AudioSpecificConfig(), as defined by ISO/IEC 14496-3. <para>The size of the data is <code>wfx.cbSize - sizeof(HEAACWAVEINFO) + sizeof(WAVEFORMATEX)</code>. If the size is greater than zero, you can access the data by casting the <b>HEAACWAVEINFO</b> structure to a <see cref="HEAACWAVEFORMAT" /> structure.</para></description>
+        </listheader>
+      </list> <para>All other values for this member are reserved.</para></summary>
   </member>
   <member name="HEAACWAVEINFO.wReserved1">
-    <summary>
-      <para>Reserved. Set to zero.</para>
-    </summary>
+    <summary>Reserved. Set to zero.</summary>
   </member>
   <member name="HEAACWAVEINFO.dwReserved2">
-    <summary>
-      <para>Reserved. Set to zero.</para>
-    </summary>
+    <summary>Reserved. Set to zero.</summary>
   </member>
 </doc>

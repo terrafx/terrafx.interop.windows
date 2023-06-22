@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISurfaceImageSourceNativeWithD2D.BeginDraw">
+    <summary>Initiates an update to the associated <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.media.imaging.surfaceimagesource">SurfaceImageSource</a> or <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.media.imaging.virtualsurfaceimagesource">VirtualSurfaceImageSource</a>.</summary>
+    <param name="updateRect">The region of the surface that will be drawn into.</param>
+    <param name="iid">IID used to lookup the object for drawing.</param>
+    <param name="updateObject">Receives a COM pointer to the drawing object. Based on <i>iid</i>, this may be either an <see cref="IDXGISurface" />, when not using batched drawing, or a shared <see cref="ID2D1DeviceContext" />, when using batched Direct2D drawing to improve performance when updating Direct2D content across multiple surfaces.</param>
+    <param name="offset">Receives the point (x,y) offset of the surface that will be drawn into.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ISurfaceImageSourceNativeWithD2D.EndDraw">
+    <summary>Closes the surface draw operation.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ISurfaceImageSourceNativeWithD2D.ResumeDraw">
+    <summary>Resume the drawing operation.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ISurfaceImageSourceNativeWithD2D.SetDevice">
+    <summary>Sets the Microsoft DirectX Graphics Infrastructure (DXGI) or Direct2D device, created with <b>D3D11_CREATE_DEVICE_BGRA_SUPPORT</b>, that will draw the surface.</summary>
+    <param name="device">Pointer to the DXGI device interface. You can pass an <see cref="ID2D1Device" /> to signal that this surface participates in Direct2D batching to improve performance when updating Direct2D content across multiple surfaces. The device must have multithreading supported enabled if the app draws to the surface from a background thread.</param>
+    <returns>This method fails when the SurfaceImageSource is larger than the maximum texture size supported by the Direct3D device. Apps should use VirtualSurfaceImageSource for surfaces larger than the maximum texture size supported by the Direct3D device.</returns>
+  </member>
+  <member name="ISurfaceImageSourceNativeWithD2D.SuspendDraw">
+    <summary>Suspends the drawing operation.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ISurfaceImageSourceNativeWithD2D">
+    <summary>Provides the implementation of a shared Microsoft DirectX surface which is displayed in a <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.media.imaging.surfaceimagesource">SurfaceImageSource</a> or <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.media.imaging.virtualsurfaceimagesource">VirtualSurfaceImageSource</a>.</summary>
+  </member>
+</doc>

@@ -4,215 +4,128 @@
 <doc>
   <member name="IOverlay.Advise">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Advise</code> method sets up an advise link for the overlay events specified by the <i>dwInterests</i> parameter.</para>
     </summary>
-    <param name="pOverlayNotify">
-      <para>Pointer to the notification interface.</para>
-    </param>
+    <param name="pOverlayNotify">Pointer to the notification interface.</param>
     <param name="dwInterests">
       <para>Callbacks of interest, which can be any subset of the following events.</para>
       <list type="table">
         <listheader>
-          <description>Event
-</description>
-          <description>Description
-</description>
+          <description>Event</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ADVISE_NONE</description>
           <description>No changes.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ADVISE_CLIPPING</description>
           <description>Change in clipping region (synchronized with the window).</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ADVISE_PALETTE</description>
           <description>Change in palette.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ADVISE_COLORKEY</description>
           <description>Change of chroma key value.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ADVISE_POSITION</description>
           <description>Change in position of video window (not synchronized with the window).</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ADVISE_DISPLAY_CHANGE</description>
           <description>Called on <a href="https://docs.microsoft.com//windows/desktop/gdi/wm-displaychange">WM_DISPLAYCHANGE</a>. The <b>WM_DISPLAYCHANGE</b> message is sent to all windows when the display resolution has changed.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ADVISE_ALL2</description>
           <description>All of the above.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method sets up an advise link for the <see cref="IOverlayNotify" /> interface to receive notifications. If one of these events occurs, the appropriate entry point in the <i>pOverlayNotify</i> parameter passed in is called (<see cref="IOverlayNotify.OnClipChange" />, <see cref="IOverlayNotify.OnColorKeyChange" />, <see cref="IOverlayNotify.OnPaletteChange" />, or <see cref="IOverlayNotify.OnPositionChange" />).</para>
-      <para>Only one advise link can be set on any given <see cref="IOverlay" /> interface. Trying to set another notification interface on second and subsequent calls returns VFW_E_ADVISE_ALREADY_SET. You can cancel an advise link by using <see cref="IOverlay.Unadvise" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IOverlay Interface" />
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOverlay.GetClipList">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetClipList</code> method retrieves the clipping list.</para>
     </summary>
-    <param name="pSourceRect">
-      <para>Pointer to the bounding client rectangle.</para>
-    </param>
-    <param name="pDestinationRect">
-      <para>Pointer to the destination rectangle.</para>
-    </param>
-    <param name="ppRgnData">
-      <para>Address of a pointer to the header and data describing clipping. If successful, free the allocated memory by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <see cref="IOverlay" /> implementation allocates the memory for the clipping rectangles, because it can vary in length. The filter calling this method should free the memory (using <b>CoTaskMemFree</b>) when it is finished with it.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IOverlay Interface" />
+    <param name="pSourceRect">Pointer to the bounding client rectangle.</param>
+    <param name="pDestinationRect">Pointer to the destination rectangle.</param>
+    <param name="ppRgnData">Address of a pointer to the header and data describing clipping. If successful, free the allocated memory by calling <see cref="CoTaskMemFree" />.</param>
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOverlay.GetColorKey">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetColorKey</code> method retrieves the current color key used for chroma keying.</para>
     </summary>
-    <param name="pColorKey">
-      <para>Pointer to a variable that receives the current color key for chroma keying.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If you change the color key by using the <see cref="IOverlay.SetColorKey" /> method, all the advise links receive an <see cref="IOverlayNotify.OnColorKeyChange" /> callback method with the new color.</para>
-      <para>If no color key is currently being used, this method returns VFW_E_NO_COLOR_KEY_SET.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IOverlay Interface" />
+    <param name="pColorKey">Pointer to a variable that receives the current color key for chroma keying.</param>
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOverlay.GetDefaultColorKey">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDefaultColorKey</code> method retrieves the default color key used for a chroma key overlay.</para>
     </summary>
-    <param name="pColorKey">
-      <para>Pointer to a variable that receives the default color key.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>A filter using color keys can get a default color from the video renderer. The default color key can then be installed into the window using <see cref="IOverlay.SetColorKey" />. The colors returned through this method vary depending on the current display mode. If the colors are 8-bit palettized, they will be bright system colors (such as magenta). If the display is in a true-color mode, they will be shades of black.</para>
-      <para>The <see cref="IOverlay" /> interface is used to ensure that separate instances of the renderer on the same computer get different color keys so that overlays do not conflict.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IOverlay Interface" />
+    <param name="pColorKey">Pointer to a variable that receives the default color key.</param>
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOverlay.GetPalette">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetPalette</code> method retrieves the current system palette.</para>
     </summary>
-    <param name="pdwColors">
-      <para>Pointer to a variable that receives the number of colors present.</para>
-    </param>
-    <param name="ppPalette">
-      <para>Receives a pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structure describing the palette.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IOverlay Interface" />
+    <param name="pdwColors">Pointer to a variable that receives the number of colors present.</param>
+    <param name="ppPalette">Receives a pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structure describing the palette.</param>
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOverlay.GetVideoPosition">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetVideoPosition</code> method retrieves the current video source and destination rectangles.</para>
     </summary>
-    <param name="pSourceRect">
-      <para>Pointer to a <b>RECT</b> structure that receives the source rectangle.</para>
-    </param>
-    <param name="pDestinationRect">
-      <para>Pointer to to a <b>RECT</b> structure that receives the destination rectangle.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IOverlay Interface" />
+    <param name="pSourceRect">Pointer to a <b>RECT</b> structure that receives the source rectangle.</param>
+    <param name="pDestinationRect">Pointer to to a <b>RECT</b> structure that receives the destination rectangle.</param>
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOverlay.GetWindowHandle">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetWindowHandle</code> method retrieves the current window handle.</para>
     </summary>
-    <param name="pHwnd">
-      <para>Receives the window handle.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IOverlay Interface" />
+    <param name="pHwnd">Receives the window handle.</param>
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOverlay.SetColorKey">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetColorKey</code> method changes the color key.</para>
     </summary>
-    <param name="pColorKey">
-      <para>Pointer to the color key value to be set. If successful, the actual color key value selected is copied to this parameter.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful, E_POINTER if <i>pColorKey</i> is <b>NULL</b>, or E_INVALIDARG if the value of <i>pColorKey</i> is invalid for the current palette or pixel format.</para>
-    </returns>
-    <remarks>
-      <para>If you change the color key using the <code>SetColorKey</code> method, all the advise links will receive an <see cref="IOverlayNotify.OnColorKeyChange" /> callback method with the new color.</para>
-      <para>When using <see cref="IOverlay.Advise" /> on a palettized display, a filter can either install a color key (using <code>SetColorKey</code>) or install a palette (using <see cref="IOverlay.SetPalette" />), but not both. This is because color keys in this mode require a palette to be realized that would conflict with <b>SetPalette</b>. Color keys can be uninstalled by requesting a color key with the CK_NOCOLORKEY flag. Likewise, any palette installed through <b>SetPalette</b> can be uninstalled by calling <b>SetPalette</b> and passing in <b>NULL</b> parameters (that is, SetPalette(0,<b>NULL</b>)).</para>
-      <para>Trying to set a palette when a color key is installed returns a VFW_E_PALETTE_SET error. Trying to set a color key when a palette is installed returns VFW_E_COLOR_KEY_SET.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IOverlay Interface" />
+    <param name="pColorKey">Pointer to the color key value to be set. If successful, the actual color key value selected is copied to this parameter.</param>
+    <returns>Returns S_OK if successful, E_POINTER if <i>pColorKey</i> is <b>NULL</b>, or E_INVALIDARG if the value of <i>pColorKey</i> is invalid for the current palette or pixel format.</returns>
   </member>
   <member name="IOverlay.SetPalette">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetPalette</code> method sets the palette.</para>
     </summary>
-    <param name="dwColors">
-      <para>Number of colors present.</para>
-    </param>
-    <param name="pPalette">
-      <para>Pointer to colors to use for the palette.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method sets a logical palette for the window. The window is not guaranteed to always have the colors requested in the actual system device palette. The Microsoft® Windows® operating system only guarantees those colors when the window is the foreground active window. The current device palette can be obtained by calling <see cref="IOverlay.GetPalette" />.</para>
-      <para>If the device does not have a palette, it returns VFW_E_NO_DISPLAY_PALETTE.</para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/overlay-mixer-filter">Overlay Mixer</a> filter returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IOverlay Interface" />
+    <param name="dwColors">Number of colors present.</param>
+    <param name="pPalette">Pointer to colors to use for the palette.</param>
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOverlay.Unadvise">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Unadvise</code> method terminates the advise link established with the <see cref="IOverlayNotify" /> interface.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method terminates the advise link established by using the <see cref="IOverlay.Advise" /> method. Only one advise link can be maintained at any one time.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IOverlay Interface" />
+    <returns>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOverlay">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IOverlay</code> interface provides information so that a filter can write directly to video memory while placing the video in the correct window position. It is implemented on the input pin of the video renderer and communicates with an upstream filter (typically a video decompressor) by calling that filter's <see cref="IOverlayNotify" /> methods to notify it of changes to the video window.</para>
       <para>This interface has no relationship to the DirectDraw® overlay capability. The Microsoft video renderer draws data it receives through the <see cref="IMemInputPin" /> interface, using DirectDraw overlays when available. This interface, used in place of <b>IMemInputPin</b>, is intended to provide notification support for any upstream filter that bypasses the renderer's drawing capabilities, but needs notifications of other display properties.</para>
       <para>See the <see cref="IOverlayNotify" /> reference page for more information on how the <code>IOverlay</code> and <b>IOverlayNotify</b> interfaces work together.</para>

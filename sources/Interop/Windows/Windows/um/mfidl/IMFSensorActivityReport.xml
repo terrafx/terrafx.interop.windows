@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSensorActivityReport.GetFriendlyName">
-    <summary>
-      <para>Gets the friendly name for the sensor associated with the report.</para>
-    </summary>
-    <param name="FriendlyName">
-      <para>The string into which the sensor friendly name is written.</para>
-    </param>
-    <param name="cchFriendlyName">
-      <para>The character count of the <i>FriendlyName</i> string.</para>
-    </param>
-    <param name="pcchWritten">
-      <para>Receives the number of characters that were written into the <i>FriendlyName</i> string.</para>
-    </param>
+    <summary>Gets the friendly name for the sensor associated with the report.</summary>
+    <param name="FriendlyName">The string into which the sensor friendly name is written.</param>
+    <param name="cchFriendlyName">The character count of the <i>FriendlyName</i> string.</param>
+    <param name="pcchWritten">Receives the number of characters that were written into the <i>FriendlyName</i> string.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -22,40 +14,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pcchWritten</i> parameter is null.</para>
-          </description>
-        </item>
+          <description>The <i>pcchWritten</i> parameter is null.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorActivityReport" />
   </member>
   <member name="IMFSensorActivityReport.GetProcessActivity">
-    <summary>
-      <para>Gets an <see cref="IMFSensorProcessActivity" /> object representing the current process activity of a sensor.</para>
-    </summary>
-    <param name="Index">
-      <para>The index of the <see cref="IMFSensorProcessActivity" /> to retrieve. This value must be less than the value returned by <see cref="GetProcessCount" />.</para>
-    </param>
-    <param name="ppProcessActivity">
-      <para>A pointer to the  <see cref="IMFSensorProcessActivity" /> associated with the specified index.</para>
-    </param>
+    <summary>Gets an <see cref="IMFSensorProcessActivity" /> object representing the current process activity of a sensor.</summary>
+    <param name="Index">The index of the <see cref="IMFSensorProcessActivity" /> to retrieve. This value must be less than the value returned by <see cref="GetProcessCount" />.</param>
+    <param name="ppProcessActivity">A pointer to the <see cref="IMFSensorProcessActivity" /> associated with the specified index.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -63,37 +52,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>ppProcessActivity</i> parameter is null.</para>
-          </description>
-        </item>
+          <description>The <i>ppProcessActivity</i> parameter is null.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorActivityReport" />
   </member>
   <member name="IMFSensorActivityReport.GetProcessCount">
-    <summary>
-      <para>Gets the count of <see cref="IMFSensorProcessActivity" /> objects, representing the current activity of a process associated with the sensor, that are available to be retrieved.</para>
-    </summary>
-    <param name="pcCount">
-      <para>A pointer in which the process count is stored.</para>
-    </param>
+    <summary>Gets the count of <see cref="IMFSensorProcessActivity" /> objects, representing the current activity of a process associated with the sensor, that are available to be retrieved.</summary>
+    <param name="pcCount">A pointer in which the process count is stored.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -101,43 +89,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pulCount</i> parameter is null.</para>
-          </description>
-        </item>
+          <description>The <i>pulCount</i> parameter is null.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorActivityReport" />
   </member>
   <member name="IMFSensorActivityReport.GetSymbolicLink">
-    <summary>
-      <para>Gets the symbolic link for the sensor associated with the report.</para>
-    </summary>
-    <param name="SymbolicLink">
-      <para>The string into which the sensor symbolic link is written.</para>
-    </param>
-    <param name="cchSymbolicLink">
-      <para>The character count of the <i>SymbolicLink</i> string.</para>
-    </param>
-    <param name="pcchWritten">
-      <para>Receives the number of characters that were written into the <i>SymbolicLink</i> string.</para>
-    </param>
+    <summary>Gets the symbolic link for the sensor associated with the report.</summary>
+    <param name="SymbolicLink">The string into which the sensor symbolic link is written.</param>
+    <param name="cchSymbolicLink">The character count of the <i>SymbolicLink</i> string.</param>
+    <param name="pcchWritten">Receives the number of characters that were written into the <i>SymbolicLink</i> string.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -145,33 +128,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pcchWritten</i> parameter is null.</para>
-          </description>
-        </item>
+          <description>The <i>pcchWritten</i> parameter is null.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorActivityReport" />
   </member>
   <member name="IMFSensorActivityReport">
-    <summary>
-      <para>Represents an activity report for a sensor.</para>
-    </summary>
+    <summary>Represents an activity report for a sensor.</summary>
   </member>
 </doc>

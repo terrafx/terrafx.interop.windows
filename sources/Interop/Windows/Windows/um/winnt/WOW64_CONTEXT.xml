@@ -3,33 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WOW64_CONTEXT">
-    <summary>
-      <para>Represents a context frame on WOW64. Refer to the header file WinNT.h for the definition of this structure.</para>
-    </summary>
-    <remarks>
-      <para>In the following versions of Windows, Slot 1 of Thread Local Storage (TLS) holds a pointer to a structure that contains a <b>WOW64_CONTEXT</b> structure starting at offset 4. This might change in later versions of Windows.</para>
-      <list type="table">
-        <listheader>
-          <description>Windows Vista</description>
-          <description>Windows Server 2008</description>
-        </listheader>
-        <item>
-          <description>Windows 7</description>
-          <description>Windows Server 2008 R2</description>
-        </item>
-        <item>
-          <description>Windows 8</description>
-          <description>Windows Server 2012</description>
-        </item>
-        <item>
-          <description>Windows 8.1</description>
-          <description>Windows Server 2012 R2</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/thread-environment-block--debugging-notes-">Thread Environment Block (Debugging Notes)</seealso>
-    <seealso cref="WOW64_FLOATING_SAVE_AREA" />
-    <seealso cref="Wow64GetThreadContext" />
-    <seealso cref="Wow64SetThreadContext" />
+    <summary>Represents a context frame on WOW64. Refer to the header file WinNT.h for the definition of this structure.</summary>
   </member>
 </doc>

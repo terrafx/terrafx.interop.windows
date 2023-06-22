@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D_SHADER_DATA">
-    <summary>
-      <para>Describes shader data.</para>
-    </summary>
-    <remarks>
-      <para>An array of <b>D3D_SHADER_DATA</b> structures is passed to <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompressshaders">D3DCompressShaders</a> to compress the shader data into a more compact form.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-structs">Structures</seealso>
+    <summary>Describes shader data.</summary>
   </member>
   <member name="D3D_SHADER_DATA.pBytecode">
-    <summary>
-      <para>A pointer to shader data.</para>
-    </summary>
+    <summary>A pointer to shader data.</summary>
   </member>
   <member name="D3D_SHADER_DATA.BytecodeLength">
-    <summary>
-      <para>Length of shader data that <b>pBytecode</b> points to.</para>
-    </summary>
+    <summary>Length of shader data that <b>pBytecode</b> points to.</summary>
   </member>
 </doc>

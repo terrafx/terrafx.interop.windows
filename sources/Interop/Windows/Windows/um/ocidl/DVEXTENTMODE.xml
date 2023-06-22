@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DVEXTENTMODE">
-    <summary>
-      <para>Indicates whether the sizing mode is content or integral sizing.</para>
-    </summary>
-    <seealso cref="DVEXTENTINFO" />
-    <seealso cref="IViewObjectEx.GetNaturalExtent" />
+    <summary>Indicates whether the sizing mode is content or integral sizing.</summary>
   </member>
   <member name="DVEXTENTMODE.DVEXTENT_CONTENT">
-    <summary>
-      <para>Indicates that the container will ask the object how big it wants to be to exactly fit its content, for example, in snap-to-size operations.</para>
-    </summary>
+    <summary>Indicates that the container will ask the object how big it wants to be to exactly fit its content, for example, in snap-to-size operations.</summary>
   </member>
   <member name="DVEXTENTMODE.DVEXTENT_INTEGRAL">
-    <summary>
-      <para>Indicates that the container will provide a proposed size to the object for its use in resizing.</para>
-    </summary>
+    <summary>Indicates that the container will provide a proposed size to the object for its use in resizing.</summary>
   </member>
 </doc>

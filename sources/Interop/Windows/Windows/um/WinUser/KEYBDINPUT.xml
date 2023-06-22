@@ -3,122 +3,89 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="KEYBDINPUT">
-    <summary>
-      <para>Contains information about a simulated keyboard event.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b> INPUT_KEYBOARD</b> supports nonkeyboard-input methods—such as handwriting recognition or voice recognition—as if it were text input by using the <b>KEYEVENTF_UNICODE</b> flag. If <b>KEYEVENTF_UNICODE</b> is specified, <see cref="SendInput" /> sends a <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a> or <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a> message to the foreground thread's message queue with <i>wParam</i> equal to <b>VK_PACKET</b>. Once <see cref="GetMessage" /> or <see cref="PeekMessage" /> obtains this message, passing the message to
-<see cref="TranslateMessage" /> posts a <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-char">WM_CHAR</a> message with the Unicode character originally specified by <b>wScan</b>. This Unicode character will automatically be converted to the appropriate ANSI value if it is posted to an ANSI window.</para>
-      <para>Set the <b>KEYEVENTF_SCANCODE</b> flag to define keyboard input in terms of the scan code. This is useful to simulate a physical keystroke regardless of which keyboard is currently being used. The virtual key value of a key may alter depending on the current keyboard layout or what other keys were pressed, but the scan code will always be the same.</para>
-    </remarks>
-    <seealso cref="GetMessageExtraInfo" />
-    <seealso cref="INPUT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/keyboard-input">Keyboard Input</seealso>
-    <seealso cref="SendInput" />
+    <summary>Contains information about a simulated keyboard event.</summary>
   </member>
   <member name="KEYBDINPUT.wVk">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/inputdev/virtual-key-codes">virtual-key code</a>. The code must be a value in the range 1 to 254. If the <b>dwFlags</b> member specifies <b>KEYEVENTF_UNICODE</b>, <b>wVk</b> must be 0.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/inputdev/virtual-key-codes">virtual-key code</a>. The code must be a value in the range 1 to 254. If the <b>dwFlags</b> member specifies <b>KEYEVENTF_UNICODE</b>, <b>wVk</b> must be 0.</summary>
   </member>
   <member name="KEYBDINPUT.wScan">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>A hardware scan code for the key. If <b>dwFlags</b> specifies <b>KEYEVENTF_UNICODE</b>, <b>wScan</b> specifies a Unicode character which is to be sent to the foreground application.</para>
-    </summary>
+    <summary>A hardware scan code for the key. If <b>dwFlags</b> specifies <b>KEYEVENTF_UNICODE</b>, <b>wScan</b> specifies a Unicode character which is to be sent to the foreground application.</summary>
   </member>
   <member name="KEYBDINPUT.dwFlags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Specifies various aspects of a keystroke. This member can be certain combinations of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>KEYEVENTF_EXTENDEDKEY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If specified, the scan code was preceded by a prefix byte that has the value 0xE0 (224).</para>
-          </description>
-        </item>
-        <item>
+          <description>If specified, the <b>wScan</b> scan code consists of a sequence of two bytes, where the first byte has a value of 0xE0. See <a href="https://docs.microsoft.com//windows/win32/inputdev/about-keyboard-input#extended-key-flag">Extended-Key Flag</a> for more info.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>KEYEVENTF_KEYUP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If specified, the key is being released. If not specified, the key is being pressed.</para>
-          </description>
-        </item>
-        <item>
+          <description>If specified, the key is being released. If not specified, the key is being pressed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>KEYEVENTF_SCANCODE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If specified, <b>wScan</b> identifies the key and <b>wVk</b> is ignored.</para>
-          </description>
-        </item>
-        <item>
+          <description>If specified, <b>wScan</b> identifies the key and <b>wVk</b> is ignored.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>KEYEVENTF_UNICODE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If specified, the system synthesizes a <b>VK_PACKET</b> keystroke. The <b>wVk</b> parameter must be zero. This flag can only be combined with the <b>KEYEVENTF_KEYUP</b> flag. For more information, see the Remarks section.</para>
-          </description>
-        </item>
+          <description> If specified, the system synthesizes a <b>VK_PACKET</b> keystroke. The <b>wVk</b> parameter must be zero. This flag can only be combined with the <b>KEYEVENTF_KEYUP</b> flag. For more information, see the Remarks section.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="KEYBDINPUT.time">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The time stamp for the event, in milliseconds. If this parameter is zero, the system will provide its own time stamp.</para>
-    </summary>
+    <summary>The time stamp for the event, in milliseconds. If this parameter is zero, the system will provide its own time stamp.</summary>
   </member>
   <member name="KEYBDINPUT.dwExtraInfo">
-    <summary>
-      <para>Type: <b>ULONG_PTR</b></para>
-      <para>An additional value associated with the keystroke. Use the <see cref="GetMessageExtraInfo" /> function to obtain this information.</para>
-    </summary>
+    <summary>An additional value associated with the keystroke. Use the <see cref="GetMessageExtraInfo" /> function to obtain this information.</summary>
   </member>
 </doc>

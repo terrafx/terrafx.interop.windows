@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFRatio">
-    <summary>
-      <para>Represents a ratio.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Represents a ratio.</summary>
   </member>
   <member name="MFRatio.Numerator">
-    <summary>
-      <para>Numerator of the ratio.</para>
-    </summary>
+    <summary>Numerator of the ratio.</summary>
   </member>
   <member name="MFRatio.Denominator">
-    <summary>
-      <para>Denominator of the ratio.</para>
-    </summary>
+    <summary>Denominator of the ratio.</summary>
   </member>
 </doc>

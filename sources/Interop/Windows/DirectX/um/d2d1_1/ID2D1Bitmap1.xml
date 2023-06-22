@@ -3,140 +3,85 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Bitmap1.GetColorContext">
-    <summary>
-      <para>Gets the color context information associated with the bitmap.</para>
-    </summary>
-    <param name="colorContext">
-      <para>Type: <b><see cref="ID2D1ColorContext" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the  color context interface associated with the bitmap.</para>
-    </param>
-    <remarks>
-      <para>If the bitmap was created without specifying a color context, the returned context is <b>NULL</b>.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap1" />
+    <summary>Gets the color context information associated with the bitmap.</summary>
+    <param name="colorContext">When this method returns, contains the address of a pointer to the color context interface associated with the bitmap.</param>
   </member>
   <member name="ID2D1Bitmap1.GetOptions">
-    <summary>
-      <para>Gets the options used in creating the bitmap.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_BITMAP_OPTIONS" /></b></para>
-      <para>This method returns the options used.</para>
-    </returns>
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1Bitmap1.GetColorContext" />
+    <summary>Gets the options used in creating the bitmap.</summary>
+    <returns>This method returns the options used.</returns>
   </member>
   <member name="ID2D1Bitmap1.GetSurface">
-    <summary>
-      <para>Gets either the surface that was specified when the bitmap was created, or the default surface created when the bitmap was created.</para>
-    </summary>
-    <param name="dxgiSurface">
-      <para>Type: <b><see cref="IDXGISurface" />**</b></para>
-      <para>The underlying DXGI surface for the bitmap.</para>
-    </param>
+    <summary>Gets either the surface that was specified when the bitmap was created, or the default surface created when the bitmap was created.</summary>
+    <param name="dxgiSurface">The underlying DXGI surface for the bitmap.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_BITMAP_BOUND_AS_TARGET</description>
           <description>Cannot draw with a bitmap that is currently bound as the target bitmap.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The bitmap used must have been created from a DXGI surface render target, a derived render target, or a device context created from an <see cref="ID2D1Device" />.</para>
-      <para>The returned surface can be used with Microsoft Direct3D or any other API that interoperates with shared surfaces. The application must transitively ensure that the surface is usable on the Direct3D device that is used in this context. For example, if using the surface with Direct2D  then the Direct2D render target must have been created through <see cref="ID2D1Factory.CreateDxgiSurfaceRenderTarget" /> or on a device context created on the same device.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext.CreateBitmap" />
-    <seealso cref="ID2D1DeviceContext.CreateBitmapFromDxgiSurface" />
-    <seealso cref="ID2D1RenderTarget.CreateSharedBitmap" />
   </member>
   <member name="ID2D1Bitmap1.Map">
-    <summary>
-      <para>Maps  the given bitmap into memory.</para>
-    </summary>
-    <param name="options">
-      <para>Type: <b><see cref="D2D1_MAP_OPTIONS" /></b></para>
-      <para>The options used in mapping the bitmap into memory.</para>
-    </param>
-    <param name="mappedRect">
-      <para>Type: <b><see cref="D2D1_MAPPED_RECT" />*</b></para>
-      <para>When this method returns, contains a reference to the rectangle that is mapped into memory.</para>
-    </param>
+    <summary>Maps the given bitmap into memory.</summary>
+    <param name="options">The options used in mapping the bitmap into memory.</param>
+    <param name="mappedRect">When this method returns, contains a reference to the rectangle that is mapped into memory.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are not valid</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_DEVICELOST</description>
           <description>The device has been lost but cannot be reset at this time.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  You can't use bitmaps for some purposes while mapped. Particularly, the <see cref="ID2D1Bitmap.CopyFromBitmap" /> method doesn't work if either the source or destination bitmap is mapped.</para>
-      <para>The bitmap must have been created with the <b>D2D1_BITMAP_OPTIONS_CPU_READ</b> flag specified.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext.CreateBitmap" />
-    <seealso cref="ID2D1DeviceContext.CreateBitmapFromDxgiSurface" />
-    <seealso cref="ID2D1RenderTarget.CreateSharedBitmap" />
   </member>
   <member name="ID2D1Bitmap1.Unmap">
-    <summary>
-      <para>Unmaps the bitmap from memory.</para>
-    </summary>
+    <summary>Unmaps the bitmap from memory.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are not valid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_POINTER</description>
           <description>Pointer is not valid.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Any memory returned from the <see cref="Map" /> call is now invalid and may be reclaimed by the operating system or used for other purposes.</para>
-      <para>The bitmap must have been previously mapped.</para>
-    </remarks>
-    <seealso cref="D2D1_BITMAP_OPTIONS" />
-    <seealso cref="D2D1_MAPPED_RECT" />
-    <seealso cref="ID2D1Bitmap1" />
+  </member>
+  <member name="ID2D1Bitmap1">
+    <summary>Represents a bitmap that can be used as a surface for an <see cref="ID2D1DeviceContext" /> or mapped into system memory, and can contain additional color context information.</summary>
   </member>
 </doc>

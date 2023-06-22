@@ -3,38 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS">
-    <summary>
-      <para>Specifies errors encountered during the <see cref="ID3D12VideoEncodeCommandList2.EncodeFrame" /> operation.</para>
-    </summary>
+    <summary>Specifies errors encountered during the <see cref="ID3D12VideoEncodeCommandList2.EncodeFrame" /> operation.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_NO_ERROR">
-    <summary>
-      <para>No error.</para>
-    </summary>
+    <summary>No error.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_CODEC_PICTURE_CONTROL_NOT_SUPPORTED">
-    <summary>
-      <para>Specified codec picture control not supported.</para>
-    </summary>
+    <summary>Specified codec picture control not supported.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_SUBREGION_LAYOUT_CONFIGURATION_NOT_SUPPORTED">
-    <summary>
-      <para>Specified subregion layout subregion not supported.</para>
-    </summary>
+    <summary>Specified subregion layout subregion not supported.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_INVALID_REFERENCE_PICTURES">
-    <summary>
-      <para>Invalid reference pictures provided.</para>
-    </summary>
+    <summary>Invalid reference pictures provided.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_RECONFIGURATION_REQUEST_NOT_SUPPORTED">
-    <summary>
-      <para>Reconfiguration request is unsupported.</para>
-    </summary>
+    <summary>Reconfiguration request is unsupported.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_INVALID_METADATA_BUFFER_SOURCE">
-    <summary>
-      <para>Invalid metadata buffer source.</para>
-    </summary>
+    <summary>Invalid metadata buffer source.</summary>
   </member>
 </doc>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVisualTreeServiceCallback2.OnElementStateChanged">
+    <summary>Communicates the state of an element in the visual tree when it changes.</summary>
+    <param name="element">The XAML element in the visual tree.</param>
+    <param name="elementState">The state of the element.</param>
+    <param name="context">The path to the element.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeServiceCallback2">
+    <summary>Represents additional capabilities of an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/nn-xamlom-ivisualtreeservicecallback">IVisualTreeServiceCallback</a> object.</summary>
+  </member>
+</doc>

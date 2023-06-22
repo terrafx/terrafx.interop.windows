@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICreateTypeLib2.DeleteTypeInfo">
-    <summary>
-      <para>Deletes a specified type information from the type library.</para>
-    </summary>
-    <param name="szName">
-      <para>The name of the type information to remove.</para>
-    </param>
+    <summary>Deletes a specified type information from the type library.</summary>
+    <param name="szName">The name of the type information to remove.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,50 +12,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more of the arguments is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib2">ICreateTypeLib2</seealso>
   </member>
   <member name="ICreateTypeLib2.SetCustData">
-    <summary>
-      <para>Sets a value to custom data.</para>
-    </summary>
-    <param name="guid">
-      <para>The unique identifier for the data.</para>
-    </param>
-    <param name="pVarVal">
-      <para>The data to store (any variant except an object).</para>
-    </param>
+    <summary>Sets a value to custom data.</summary>
+    <param name="guid">The unique identifier for the data.</param>
+    <param name="pVarVal">The data to store (any variant except an object).</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -67,47 +62,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more of the arguments is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib2">ICreateTypeLib2</seealso>
   </member>
   <member name="ICreateTypeLib2.SetHelpStringContext">
-    <summary>
-      <para>Sets the Help string context number.</para>
-    </summary>
-    <param name="dwHelpStringContext">
-      <para>The Help string context number.</para>
-    </param>
+    <summary>Sets the Help string context number.</summary>
+    <param name="dwHelpStringContext">The Help string context number.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -115,47 +111,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more of the arguments is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib2">ICreateTypeLib2</seealso>
   </member>
   <member name="ICreateTypeLib2.SetHelpStringDll">
-    <summary>
-      <para>Sets the DLL name to be used for Help string lookup (for localization purposes).</para>
-    </summary>
-    <param name="szFileName">
-      <para>The DLL file name.</para>
-    </param>
+    <summary>Sets the DLL name to be used for Help string lookup (for localization purposes).</summary>
+    <param name="szFileName">The DLL file name.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -163,44 +160,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more of the arguments is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib2">ICreateTypeLib2</seealso>
   </member>
   <member name="ICreateTypeLib2">
-    <summary>
-      <para>Provides the methods for creating and managing the component or file that contains type information. Derives from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</a>. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo">ICreateTypeInfo</a> instance returned from <b>ICreateTypeLib</b> can be accessed through a <b>QueryInterface</b> call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/using-type-building-interfaces-and-functions">Type Building Interfaces and Functions </seealso>
+    <summary>Provides the methods for creating and managing the component or file that contains type information. Derives from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</a>. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo">ICreateTypeInfo</a> instance returned from <b>ICreateTypeLib</b> can be accessed through a <b>QueryInterface</b> call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</a>.</summary>
   </member>
 </doc>

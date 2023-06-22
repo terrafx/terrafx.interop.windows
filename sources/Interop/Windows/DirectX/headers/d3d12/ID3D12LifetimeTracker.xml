@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D12LifetimeTracker.DestroyOwnedObject">
-    <summary>
-      <para>Destroys a lifetime-tracked object.</para>
-    </summary>
-    <param name="pObject">
-      <para>Type: <b><see cref="ID3D12DeviceChild" />*</b></para>
-      <para>A pointer to an <b>ID3D12DeviceChild</b> interface representing the lifetime-tracked object.</para>
-    </param>
+    <summary>Destroys a lifetime-tracked object.</summary>
+    <param name="pObject">A pointer to an <b>ID3D12DeviceChild</b> interface representing the lifetime-tracked object.</param>
   </member>
   <member name="ID3D12LifetimeTracker">
-    <summary>
-      <para>Represents facilities for controlling the lifetime a lifetime-tracked object.</para>
-    </summary>
+    <summary>Represents facilities for controlling the lifetime a lifetime-tracked object.</summary>
   </member>
 </doc>

@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_KEY_VERIFY_MESSAGE_PARA">
-    <summary>
-      <para>The <b>CRYPT_KEY_VERIFY_MESSAGE_PARA</b> structure contains information needed to verify signed messages without a certificate for the signer.</para>
-    </summary>
+    <summary>The <b>CRYPT_KEY_VERIFY_MESSAGE_PARA</b> structure contains information needed to verify signed messages without a certificate for the signer.</summary>
   </member>
   <member name="CRYPT_KEY_VERIFY_MESSAGE_PARA.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CRYPT_KEY_VERIFY_MESSAGE_PARA.dwMsgEncodingType">
     <summary>
@@ -31,7 +27,7 @@
     <summary>
       <para>This member is not used and should be set to <b>NULL</b>.</para>
       <para>
-        <b>Windows Server 2003 and Windows XP:  </b>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP) to be used to verify a signed message. The CSP identified by this handle is used for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hashing</a> and for signature verification.Unless there is a strong reason for using a specific cryptographic provider, set this member to  zero to use the default RSA or DSS provider.</para>
+        <b>Windows Server 2003 and Windows XP:  </b>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP) to be used to verify a signed message. The CSP identified by this handle is used for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hashing</a> and for signature verification.Unless there is a strong reason for using a specific cryptographic provider, set this member to zero to use the default RSA or DSS provider.</para>
       <para>This member's data type is <b>HCRYPTPROV</b>.</para>
     </summary>
   </member>

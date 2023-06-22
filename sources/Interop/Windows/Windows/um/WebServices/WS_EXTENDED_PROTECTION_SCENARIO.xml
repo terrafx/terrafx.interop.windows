@@ -4,21 +4,14 @@
 <doc>
   <member name="WS_EXTENDED_PROTECTION_SCENARIO">
     <summary>
-      <para>Defines how <a href="https://docs.microsoft.com//windows/desktop/wsw/extended-protection">Extended Protection</a> is validated. For most configurations, the runtime can automatically determine what needs to
-be validated based on the presence of the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" />. However, if the SSL connection is terminated at
-an intermediary such as a proxy prior to reaching the server then the validation method must change, and this scenario cannot be automatically detected.</para>
+      <para>Defines how <a href="https://docs.microsoft.com//windows/desktop/wsw/extended-protection">Extended Protection</a> is validated. For most configurations, the runtime can automatically determine what needs to be validated based on the presence of the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" />. However, if the SSL connection is terminated at an intermediary such as a proxy prior to reaching the server then the validation method must change, and this scenario cannot be automatically detected.</para>
       <para>Only available on the server.</para>
     </summary>
   </member>
   <member name="WS_EXTENDED_PROTECTION_SCENARIO.WS_EXTENDED_PROTECTION_SCENARIO_BOUND_SERVER">
-    <summary>
-      <para>There is no SSL connection between the client and the server, or the SSL connection is terminated at the server. This is the default.</para>
-    </summary>
+    <summary>There is no SSL connection between the client and the server, or the SSL connection is terminated at the server. This is the default.</summary>
   </member>
   <member name="WS_EXTENDED_PROTECTION_SCENARIO.WS_EXTENDED_PROTECTION_SCENARIO_TERMINATED_SSL">
-    <summary>
-      <para>An SSL connection exists but is terminated at an intermediary. The connection between the intermediary and the server may or may not
-use SSL. When this property is set, <see cref="WS_SECURITY_PROPERTY_ID" /> must be set as well.</para>
-    </summary>
+    <summary>An SSL connection exists but is terminated at an intermediary. The connection between the intermediary and the server may or may not use SSL. When this property is set, <see cref="WS_SECURITY_PROPERTY_ID" /> must be set as well.</summary>
   </member>
 </doc>

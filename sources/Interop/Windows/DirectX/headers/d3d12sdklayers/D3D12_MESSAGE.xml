@@ -3,37 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_MESSAGE">
-    <summary>
-      <para>A debug message in the Information Queue.</para>
-    </summary>
-    <remarks>
-      <para>This structure is returned from <see cref="ID3D12InfoQueue.GetMessage" /> as part of the Information Queue feature (see <see cref="ID3D12InfoQueue" />).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-sdklayers-structures">Debug Layer Structures</seealso>
+    <summary>A debug message in the Information Queue.</summary>
   </member>
   <member name="D3D12_MESSAGE.Category">
-    <summary>
-      <para>The category of the message. See <see cref="D3D12_MESSAGE_CATEGORY" />.</para>
-    </summary>
+    <summary>The category of the message. See <see cref="D3D12_MESSAGE_CATEGORY" />.</summary>
   </member>
   <member name="D3D12_MESSAGE.Severity">
-    <summary>
-      <para>The severity of the message. See  <see cref="D3D12_MESSAGE_SEVERITY" />.</para>
-    </summary>
+    <summary>The severity of the message. See <see cref="D3D12_MESSAGE_SEVERITY" />.</summary>
   </member>
   <member name="D3D12_MESSAGE.ID">
-    <summary>
-      <para>The ID of the message. See <see cref="D3D12_MESSAGE_ID" />.</para>
-    </summary>
+    <summary>The ID of the message. See <see cref="D3D12_MESSAGE_ID" />.</summary>
   </member>
   <member name="D3D12_MESSAGE.pDescription">
-    <summary>
-      <para>The message string.</para>
-    </summary>
+    <summary>The message string.</summary>
   </member>
   <member name="D3D12_MESSAGE.DescriptionByteLength">
-    <summary>
-      <para>The length of <i>pDescription</i>, in bytes.</para>
-    </summary>
+    <summary>The length of <i>pDescription</i>, in bytes.</summary>
   </member>
 </doc>

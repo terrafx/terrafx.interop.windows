@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TOKEN_MANDATORY_POLICY">
-    <summary>
-      <para>The <b>TOKEN_MANDATORY_POLICY</b> structure specifies the mandatory integrity policy for a token.</para>
-    </summary>
-    <seealso cref="TOKEN_INFORMATION_CLASS" />
+    <summary>The <b>TOKEN_MANDATORY_POLICY</b> structure specifies the mandatory integrity policy for a token.</summary>
   </member>
   <member name="TOKEN_MANDATORY_POLICY.Policy">
     <summary>
@@ -16,74 +13,66 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TOKEN_MANDATORY_POLICY_OFF</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No mandatory integrity policy is enforced for the token.</para>
-          </description>
-        </item>
-        <item>
+          <description>No mandatory integrity policy is enforced for the token.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TOKEN_MANDATORY_POLICY_NO_WRITE_UP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A process associated with the token cannot write to objects that have a greater mandatory integrity level.</para>
-          </description>
-        </item>
-        <item>
+          <description>A process associated with the token cannot write to objects that have a greater mandatory integrity level.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TOKEN_MANDATORY_POLICY_NEW_PROCESS_MIN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A process created with the token has an integrity level that is the lesser of the parent-process integrity level and the executable-file integrity level.</para>
-          </description>
-        </item>
-        <item>
+          <description>A process created with the token has an integrity level that is the lesser of the parent-process integrity level and the executable-file integrity level.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TOKEN_MANDATORY_POLICY_VALID_MASK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A combination of <b>TOKEN_MANDATORY_POLICY_NO_WRITE_UP</b> and <b>TOKEN_MANDATORY_POLICY_NEW_PROCESS_MIN</b>.</para>
-          </description>
-        </item>
+          <description>A combination of <b>TOKEN_MANDATORY_POLICY_NO_WRITE_UP</b> and <b>TOKEN_MANDATORY_POLICY_NEW_PROCESS_MIN</b>.</description>
+        </listheader>
       </list>
     </summary>
   </member>

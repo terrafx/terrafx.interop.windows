@@ -3,50 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMCUSTOMTEXT">
-    <summary>
-      <para>Contains information used with custom text notification.</para>
-    </summary>
+    <summary>Contains information used with custom text notification.</summary>
   </member>
   <member name="NMCUSTOMTEXT.hdr">
-    <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>An <see cref="NMHDR" /> structure that contains additional information about this notification.</para>
-    </summary>
+    <summary>An <see cref="NMHDR" /> structure that contains additional information about this notification.</summary>
   </member>
   <member name="NMCUSTOMTEXT.hDC">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HDC</a></b></para>
-      <para>The device context to draw to.</para>
-    </summary>
+    <summary>The device context to draw to.</summary>
   </member>
   <member name="NMCUSTOMTEXT.lpString">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
-      <para>The string to draw.</para>
-    </summary>
+    <summary>The string to draw.</summary>
   </member>
   <member name="NMCUSTOMTEXT.nCount">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Length of lpString.</para>
-    </summary>
+    <summary>Length of lpString.</summary>
   </member>
   <member name="NMCUSTOMTEXT.lpRect">
-    <summary>
-      <para>Type: <b>LPRECT</b></para>
-      <para>The rect to draw in.</para>
-    </summary>
+    <summary>The rect to draw in.</summary>
   </member>
   <member name="NMCUSTOMTEXT.uFormat">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>One or more of the DT_* flags. For more information, see the description of the <i>uFormat</i> parameter of the <see cref="DrawText" /> function. This may be <b>NULL</b>.</para>
-    </summary>
+    <summary>One or more of the DT_* flags. For more information, see the description of the <i>uFormat</i> parameter of the <see cref="DrawText" /> function. This may be <b>NULL</b>.</summary>
   </member>
   <member name="NMCUSTOMTEXT.fLink">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Whether the text is a link.</para>
-    </summary>
+    <summary>Whether the text is a link.</summary>
   </member>
 </doc>

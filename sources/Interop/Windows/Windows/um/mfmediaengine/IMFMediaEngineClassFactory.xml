@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEngineClassFactory.CreateError">
+    <summary>Creates a media error object.</summary>
+    <param name="ppError">Receives a pointer to the <see cref="IMFMediaError" /> interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IMFMediaEngineClassFactory.CreateInstance">
+    <summary>Creates a new instance of the Media Engine.</summary>
+    <param name="dwFlags">A bitwise <b>OR</b> of zero or more flags from the <see cref="MF_MEDIA_ENGINE_CREATEFLAGS" /> enumeration.</param>
+    <param name="pAttr">
+      <para>A pointer to the <see cref="IMFAttributes" /> interface of an attribute store.</para>
+      <para>This parameter specifies configuration attributes for the Media Engine. Call <see cref="MFCreateAttributes" /> to create the attribute store. Then, set one or more attributes from the list of <a href="https://docs.microsoft.com//windows/desktop/medfound/media-engine-attributes">Media Engine Attributes</a>. For details, see Remarks.</para>
+    </param>
+    <param name="ppPlayer">Receives a pointer to the <see cref="IMFMediaEngine" /> interface. The caller must release the interface.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_ATTRIBUTENOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A required attribute was missing from <i>pAttr</i>, or an invalid combination of attributes was used.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IMFMediaEngineClassFactory.CreateTimeRange">
+    <summary>Creates a time range object.</summary>
+    <param name="ppTimeRange">Receives a pointer to the <see cref="IMFMediaTimeRange" /> interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IMFMediaEngineClassFactory">
+    <summary>Creates an instance of the Media Engine.</summary>
+  </member>
+</doc>

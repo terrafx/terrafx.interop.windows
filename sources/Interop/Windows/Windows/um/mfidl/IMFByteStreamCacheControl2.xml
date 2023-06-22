@@ -3,56 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFByteStreamCacheControl2.GetByteRanges">
-    <summary>
-      <para>Gets the ranges of bytes that are currently stored in the cache.</para>
-    </summary>
-    <param name="pcRanges">
-      <para>Receives the number of ranges returned in the <i>ppRanges</i> array.</para>
-    </param>
-    <param name="ppRanges">
-      <para>Receives an array of <see cref="MF_BYTE_STREAM_CACHE_RANGE" /> structures. Each structure specifies a range of bytes stored in the cache. The caller must free the array by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFByteStreamCacheControl2" />
+    <summary>Gets the ranges of bytes that are currently stored in the cache.</summary>
+    <param name="pcRanges">Receives the number of ranges returned in the <i>ppRanges</i> array.</param>
+    <param name="ppRanges">Receives an array of <see cref="MF_BYTE_STREAM_CACHE_RANGE" /> structures. Each structure specifies a range of bytes stored in the cache. The caller must free the array by calling <see cref="CoTaskMemFree" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFByteStreamCacheControl2.IsBackgroundTransferActive">
-    <summary>
-      <para>Queries whether background transfer is active.</para>
-    </summary>
-    <param name="pfActive">
-      <para>Receives the value <b>TRUE</b> if background transfer is currently active, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Background transfer might stop because the cache limit was reached (see <see cref="IMFByteStreamCacheControl2.SetCacheLimit" />) or because the <see cref="IMFByteStreamCacheControl.StopBackgroundTransfer" /> method was called.</para>
-    </remarks>
-    <seealso cref="IMFByteStreamCacheControl2" />
+    <summary>Queries whether background transfer is active.</summary>
+    <param name="pfActive">Receives the value <b>TRUE</b> if background transfer is currently active, or <b>FALSE</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFByteStreamCacheControl2.SetCacheLimit">
-    <summary>
-      <para>Limits the cache size.</para>
-    </summary>
-    <param name="qwBytes">
-      <para>The maximum number of bytes to store in the cache, or <b>ULONGLONG_MAX </b> for no limit.  The default value is no limit.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFByteStreamCacheControl2" />
+    <summary>Limits the cache size.</summary>
+    <param name="qwBytes">The maximum number of bytes to store in the cache, or <b>ULONGLONG_MAX</b> for no limit. The default value is no limit.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFByteStreamCacheControl2">
-    <summary>
-      <para>Controls how a network byte stream transfers data to a local cache. This interface extends the <see cref="IMFByteStreamCacheControl" /> interface.</para>
-    </summary>
-    <remarks>
-      <para>Byte streams object in Microsoft Media Foundation can optionally implement this interface. To get a pointer to this interface, call <see cref="QueryInterface" /> on the byte stream object.</para>
-    </remarks>
-    <seealso cref="IMFByteStream" />
-    <seealso cref="IMFByteStreamCacheControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Controls how a network byte stream transfers data to a local cache. This interface extends the <see cref="IMFByteStreamCacheControl" /> interface.</summary>
   </member>
 </doc>

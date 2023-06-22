@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_FORMAT">
-    <summary>
-      <para>Defines the combination of a pixel format and color space for a resource content description.</para>
-    </summary>
+    <summary>Defines the combination of a pixel format and color space for a resource content description.</summary>
   </member>
   <member name="D3D12_VIDEO_FORMAT.Format">
-    <summary>
-      <para>A value from the <see cref="DXGI_FORMAT" /> enumeration, specifying the DXGI format of the data.</para>
-    </summary>
+    <summary>A value from the <see cref="DXGI_FORMAT" /> enumeration, specifying the DXGI format of the data.</summary>
   </member>
   <member name="D3D12_VIDEO_FORMAT.ColorSpace">
-    <summary>
-      <para>A value from the <see cref="DXGI_COLOR_SPACE_TYPE" /> enumeration, specifying the color space of the data.</para>
-    </summary>
+    <summary>A value from the <see cref="DXGI_COLOR_SPACE_TYPE" /> enumeration, specifying the color space of the data.</summary>
   </member>
 </doc>

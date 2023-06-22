@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CSPLATFORM">
-    <summary>
-      <para>Contains an operating system platform and processor architecture.</para>
-    </summary>
-    <seealso cref="QUERYCONTEXT" />
+    <summary>Contains an operating system platform and processor architecture.</summary>
   </member>
   <member name="CSPLATFORM.dwPlatformId">
-    <summary>
-      <para>The operating system platform. See the <b>dwPlatformId</b> member of <see cref="OSVERSIONINFO" />.</para>
-    </summary>
+    <summary>The operating system platform. See the <b>dwPlatformId</b> member of <see cref="OSVERSIONINFO" />.</summary>
   </member>
   <member name="CSPLATFORM.dwVersionHi">
-    <summary>
-      <para>The major version of the operating system.</para>
-    </summary>
+    <summary>The major version of the operating system.</summary>
   </member>
   <member name="CSPLATFORM.dwVersionLo">
-    <summary>
-      <para>The minor version of the operating system.</para>
-    </summary>
+    <summary>The minor version of the operating system.</summary>
   </member>
   <member name="CSPLATFORM.dwProcessorArch">
-    <summary>
-      <para>The processor architecture.
-See the <b>wProcessorArchitecture</b> member of <see cref="SYSTEM_INFO" />.</para>
-    </summary>
+    <summary>The processor architecture. See the <b>wProcessorArchitecture</b> member of <see cref="SYSTEM_INFO" />.</summary>
   </member>
 </doc>

@@ -3,99 +3,52 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMofCompiler.CompileBuffer">
-    <summary>
-      <para>The <b>IMofCompiler.CompileBuffer</b> method compiles either a buffer containing binary MOF data or a text buffer in ASCII format. Binary MOF files contain parsed data and  must be stored in the database.
-The <b>CompileBuffer</b> method only accepts multi-byte character arrays (string buffers) that are not <b>NULL</b>-terminated.</para>
-    </summary>
-    <param name="BuffSize">
-      <para>Size of the data pointed to by the <i>pBuffer</i> parameter.</para>
-    </param>
-    <param name="pBuffer">
-      <para>Pointer to the binary MOF file data or a text buffer in ASCII format.</para>
-    </param>
+    <summary>The <b>IMofCompiler.CompileBuffer</b> method compiles either a buffer containing binary MOF data or a text buffer in ASCII format. Binary MOF files contain parsed data and must be stored in the database. The <b>CompileBuffer</b> method only accepts multi-byte character arrays (string buffers) that are not <b>NULL</b>-terminated.</summary>
+    <param name="BuffSize">Size of the data pointed to by the <i>pBuffer</i> parameter.</param>
+    <param name="pBuffer">Pointer to the binary MOF file data or a text buffer in ASCII format.</param>
     <param name="ServerAndNamespace">
       <para>Name of the server and namespace.</para>
-      <para>This parameter is ignored unless the <i>pBuffer</i> parameter points to a text buffer.  If the text MOF is passed without a <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/-pragma">#pragma</a> statement, then the MOF file is compiled into the default namespace. If <i>pBuffer</i> points to a binary MOF file, then the <i>ServerAndNamespace</i> parameter must be <b>NULL</b>.</para>
+      <para>This parameter is ignored unless the <i>pBuffer</i> parameter points to a text buffer. If the text MOF is passed without a <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/-pragma">#pragma</a> statement, then the MOF file is compiled into the default namespace. If <i>pBuffer</i> points to a binary MOF file, then the <i>ServerAndNamespace</i> parameter must be <b>NULL</b>.</para>
     </param>
     <param name="User">
       <para>Name of the user requesting the service.</para>
       <para>This parameter specifies the credentials for compiling on remote computers. If the value is <b>NULL</b>, then the user context is whatever the current process is using. This is always ignored when connecting to the local computer. For more information, see the Remarks section.</para>
     </param>
-    <param name="Authority">
-      <para>Specifies the credentials for compiling on remote computers. If the value is <b>NULL</b>, the authority context is whatever the current process is using. This parameter is always ignored when connecting to the local computer. For more information, see the Remarks section.</para>
-    </param>
-    <param name="Password">
-      <para>Specifies the credentials for compiling on remote computers. If the value is <b>NULL</b>, the password of the current context is used. This parameter is always ignored when connecting to the local computer.</para>
-    </param>
+    <param name="Authority">Specifies the credentials for compiling on remote computers. If the value is <b>NULL</b>, the authority context is whatever the current process is using. This parameter is always ignored when connecting to the local computer. For more information, see the Remarks section.</param>
+    <param name="Password">Specifies the credentials for compiling on remote computers. If the value is <b>NULL</b>, the password of the current context is used. This parameter is always ignored when connecting to the local computer.</param>
     <param name="lOptionFlags">
       <para>You can combine one or more of the following flags.</para>
       <h4>WBEM_FLAG_CHECK_ONLY</h4>
       <para>Performs only a syntax check.</para>
       <h4>WBEM_FLAG_AUTORECOVER</h4>
-      <para>If the method is successful, it adds the file name  to the list of files to be compiled during automatic database recovery.</para>
-      <para>This flag cannot be combined with  the namespace, class, or instance flags.</para>
+      <para>If the method is successful, it adds the file name to the list of files to be compiled during automatic database recovery.</para>
+      <para>This flag cannot be combined with the namespace, class, or instance flags.</para>
       <h4>WBEM_FLAG_CONSOLE_PRINT</h4>
       <para>Sends various useful messages to the console.</para>
       <h4>WBEM_FLAG_DONT_ADD_TO_LIST</h4>
       <para>Prevents the addition of the file to the list of files to be compiled during automatic database recovery.</para>
       <para>This flag is not compatible with <b>WBEM_FLAG_AUTORECOVER</b>.</para>
     </param>
-    <param name="lClassFlags">
-      <para>This parameter is ignored because the binary MOF file already contains the information. The parameter value should be 0.</para>
-    </param>
-    <param name="lInstanceFlags">
-      <para>Ignored because the binary MOF file already contains the information. The parameter value should be 0.</para>
-    </param>
+    <param name="lClassFlags">This parameter is ignored because the binary MOF file already contains the information. The parameter value should be 0.</param>
+    <param name="lInstanceFlags">Ignored because the binary MOF file already contains the information. The parameter value should be 0.</param>
     <param name="pInfo">
       <para>Pointer to a <see cref="WBEM_COMPILE_STATUS_INFO" /> that describes an error.</para>
-      <para>If the parameter value is not <b>NULL</b>, an error has occurred, and the structure is filled  with error information.</para>
+      <para>If the parameter value is not <b>NULL</b>, an error has occurred, and the structure is filled with error information.</para>
     </param>
-    <returns>
-      <para>This method returns <b>WBEM_S_NO_ERROR</b> if successful. If the method is unsuccessful, it returns <b>WBEM_S_FALSE</b>.</para>
-    </returns>
-    <remarks>
-      <para>If the <i>User</i> parameter takes the form &lt;<i>domain\user</i>&gt;, the <i>Authority</i> parameter must be <b>NULL</b>.</para>
-      <para>Binary MOF data can be generated by the
-<see cref="CreateBMOF" /> method, which stores the binary MOF data into a file that can be read before calling the
-<b>CompileBuffer</b> method.</para>
-    </remarks>
-    <seealso cref="IMofCompiler" />
-    <seealso cref="WBEM_COMPILER_OPTIONS" />
+    <returns>This method returns <b>WBEM_S_NO_ERROR</b> if successful. If the method is unsuccessful, it returns <b>WBEM_S_FALSE</b>.</returns>
   </member>
   <member name="IMofCompiler.CompileFile">
-    <summary>
-      <para>The <b>IMofCompiler.CompileFile</b> method compiles a MOF file (including
-binary MOFs) and stores the information in the
-<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/gloss-w">WMI repository</a>.
-This method performs the same operation as the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/mofcomp">Mofcomp</a></para>
-      <para>command.</para>
-    </summary>
-    <param name="FileName">
-      <para>The name of the file to be compiled.</para>
-    </param>
+    <summary>The <b>IMofCompiler.CompileFile</b> method compiles a MOF file (including binary MOFs) and stores the information in the<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/gloss-w">WMI repository</a>. This method performs the same operation as the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/mofcomp">Mofcomp</a>command.</summary>
+    <param name="FileName">The name of the file to be compiled.</param>
     <param name="ServerAndNamespace">
       <para>The path to the default namespace where any classes or instance are written.</para>
-      <para>You can specify a namespace on a remote computer ("\computer\root", for
-example). This value can be overridden by the <b>#pragma</b> command and should not be used if
-auto recovery is desired. If <b>NULL</b>, then the root\default namespace on the local
-computer is the default.</para>
+      <para>You can specify a namespace on a remote computer ("\computer\root", for example). This value can be overridden by the <b>#pragma</b> command and should not be used if auto recovery is desired. If <b>NULL</b>, then the root\default namespace on the local computer is the default.</para>
     </param>
-    <param name="User">
-      <para>A value that specifies the credentials used to compile on remote computers. If the value is
-<b>NULL</b>, the user context is whatever the calling process is using. This is always
-ignored when connecting to the local computer. For more information, see the Remarks section.</para>
-    </param>
-    <param name="Authority">
-      <para>A value that specifies the credentials for compiling on remote computers. If the value is
-<b>NULL</b>, the authority context is whatever the calling process is using. This is always
-ignored when connecting to the local computer. For more information, see the Remarks section.</para>
-    </param>
-    <param name="Password">
-      <para>A value that specifies the credentials for compiling on remote computers. If the value is <b>NULL</b>, the password of the current context is used. This is always ignored when connecting to the local computer.</para>
-    </param>
+    <param name="User">A value that specifies the credentials used to compile on remote computers. If the value is<b>NULL</b>, the user context is whatever the calling process is using. This is always ignored when connecting to the local computer. For more information, see the Remarks section.</param>
+    <param name="Authority">A value that specifies the credentials for compiling on remote computers. If the value is<b>NULL</b>, the authority context is whatever the calling process is using. This is always ignored when connecting to the local computer. For more information, see the Remarks section.</param>
+    <param name="Password">A value that specifies the credentials for compiling on remote computers. If the value is <b>NULL</b>, the password of the current context is used. This is always ignored when connecting to the local computer.</param>
     <param name="lOptionFlags">
-      <para>A parameter that, when the
-<b>CompileFile</b> method is used, enables the combination of one or more of the following flags.</para>
+      <para>A parameter that, when the<b>CompileFile</b> method is used, enables the combination of one or more of the following flags.</para>
       <h4>WBEM_FLAG_CHECK_ONLY</h4>
       <para>Performs only a syntax check.</para>
       <h4>WBEM_FLAG_AUTORECOVER</h4>
@@ -133,29 +86,17 @@ ignored when connecting to the local computer. For more information, see the Rem
     </param>
     <param name="pInfo">
       <para>Pointer to a <see cref="WBEM_COMPILE_STATUS_INFO" /> that describes an error.</para>
-      <para>If the parameter value is not <b>NULL</b>, an error has occurred, and the structure is filled  with error information.</para>
+      <para>If the parameter value is not <b>NULL</b>, an error has occurred, and the structure is filled with error information.</para>
     </param>
     <returns>
       <para>This method can return one of these values.</para>
       <para>2</para>
       <para>Warning that <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/pragma-autorecover">#pragma autorecover</a> statement is not present. This statement should be one the first line of the MOF file.</para>
     </returns>
-    <remarks>
-      <para>If the <i>User</i> parameter is in the form of &lt;<i>domain\user</i>&gt;, the <i>Authority</i> parameter must be <b>NULL</b>.</para>
-    </remarks>
-    <seealso cref="IMofCompiler" />
-    <seealso cref="WBEM_CHANGE_FLAG_TYPE" />
-    <seealso cref="WBEM_COMPILER_OPTIONS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/mofcomp">mofcomp</seealso>
   </member>
   <member name="IMofCompiler.CreateBMOF">
-    <summary>
-      <para>The <b>IMofCompiler.CreateBMOF</b> method creates a binary MOF file. File creation is accomplished by parsing a regular MOF file and storing a binary representation of the classes and instances into a special file format. Typically, this data binary large object (BLOB) is stored as a resource in an executable file, which can later be extracted for a call to the
-<see cref="CompileBuffer" /> method. The <b>IMofCompiler.CreateBMOF</b> can also be used to create a localized MOF file (.mfl).</para>
-    </summary>
-    <param name="TextFileName">
-      <para>The name of the text file to be parsed.</para>
-    </param>
+    <summary>The <b>IMofCompiler.CreateBMOF</b> method creates a binary MOF file. File creation is accomplished by parsing a regular MOF file and storing a binary representation of the classes and instances into a special file format. Typically, this data binary large object (BLOB) is stored as a resource in an executable file, which can later be extracted for a call to the<see cref="CompileBuffer" /> method. The <b>IMofCompiler.CreateBMOF</b> can also be used to create a localized MOF file (.mfl).</summary>
+    <param name="TextFileName">The name of the text file to be parsed.</param>
     <param name="BMOFFileName">
       <para>
         <b>Binary MOF file:  </b>The name of the file in which the resulting binary MOF data is to be stored.</para>
@@ -163,30 +104,18 @@ ignored when connecting to the local computer. For more information, see the Rem
         <b>Localized MOF file:  </b>The <i>BMOFFileName</i> string must contain the following comma-separated values:</para>
       <list type="bullet">
         <item>
-          <description>
-            <para>a&lt;locale&gt;</para>
-            <para>Specifies the locale information. This value must start with a preceding comma. For more information, see the description of the <b>-ADMENDMENT</b> switch for the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/mofcomp">mofcomp</a> utility.</para>
-          </description>
+          <description>a&lt;locale&gt;<para>Specifies the locale information. This value must start with a preceding comma. For more information, see the description of the <b>-ADMENDMENT</b> switch for the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/mofcomp">mofcomp</a> utility.</para></description>
         </item>
         <item>
-          <description>
-            <para>n&lt;filename.mof&gt;</para>
-            <para>The name of the file in which the resulting binary MOF data is to be stored.</para>
-          </description>
+          <description>n&lt;filename.mof&gt;<para>The name of the file in which the resulting binary MOF data is to be stored.</para></description>
         </item>
         <item>
-          <description>
-            <para>l&lt;filename.mfl&gt;</para>
-            <para>The name of the file in which the resulting localized MOF data is to be stored.</para>
-          </description>
+          <description>l&lt;filename.mfl&gt;<para>The name of the file in which the resulting localized MOF data is to be stored.</para></description>
         </item>
-      </list>
-      <para>For example,  <i>BMOFFileName</i>=",aMS_409,nmyFile.mof,lmyFile.mfl".</para>
-    </param>
+      </list>For example, <i>BMOFFileName</i>=",aMS_409,nmyFile.mof,lmyFile.mfl".</param>
     <param name="ServerAndNamespace">
       <para>The path of the default namespace, where classes or instances are written.</para>
-      <para>You can use this parameter to specify a namespace on a remote computer ("\computer\root", for example). This value may be overridden by the
-<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/-pragma">#pragma</a> command and should not be used if you use autorecovery. If the parameter value is <b>NULL</b>, the root\default namespace on the local computer is the default.</para>
+      <para>You can use this parameter to specify a namespace on a remote computer ("\computer\root", for example). This value may be overridden by the<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/-pragma">#pragma</a> command and should not be used if you use autorecovery. If the parameter value is <b>NULL</b>, the root\default namespace on the local computer is the default.</para>
     </param>
     <param name="lOptionFlags">
       <para>You can combine one or more of the following flags.</para>
@@ -222,39 +151,11 @@ ignored when connecting to the local computer. For more information, see the Rem
     </param>
     <param name="pInfo">
       <para>Pointer to a <see cref="WBEM_COMPILE_STATUS_INFO" /> that describes an error.</para>
-      <para>If the parameter value is not <b>NULL</b>, an error has occurred, and the structure is filled  with error information.</para>
+      <para>If the parameter value is not <b>NULL</b>, an error has occurred, and the structure is filled with error information.</para>
     </param>
-    <returns>
-      <para>This method returns <b>WBEM_S_NO_ERROR</b> if successful. If the method is unsuccessful, it returns <b>WBEM_S_FALSE</b>.</para>
-    </returns>
-    <seealso cref="IMofCompiler" />
-    <seealso cref="WBEM_CHANGE_FLAG_TYPE" />
-    <seealso cref="WBEM_COMPILER_OPTIONS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/mofcomp">mofcomp</seealso>
+    <returns>This method returns <b>WBEM_S_NO_ERROR</b> if successful. If the method is unsuccessful, it returns <b>WBEM_S_FALSE</b>.</returns>
   </member>
   <member name="IMofCompiler">
-    <summary>
-      <para>The
-<b>IMofCompiler</b> interface, implemented by Mofd.dll, provides a COM interface that is used by the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/gloss-m">Managed Object Format</a> (MOF) compiler and any other applications that compile MOF files. Objects defined as classes in the MOF files can be obtained using the <b>CLSID_MofCompiler</b> CLSID value.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Windows 8:  </b>When installing a provider the <b>IMofCompiler</b> interface treats the [Key] and [Static] qualifiers as true if they are present, regardless of their actual values. Other qualifiers are treated as false if they are present but not explicitly set to true.</para>
-      <h4>Examples</h4>
-      <para>The following code is an example of how to create a pointer to an <b>IMofCompiler</b> object.</para>
-      <code>IMofCompiler *pMof = NULL;
-CoCreateInstance(
-    CLSID_MofCompiler,
-    0,
-    CLSCTX_INPROC_SERVER,
-    IID_IMofCompiler,
-    (LPVOID *) &amp;amp;amp;amp;amp;amp;pMof);
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/com-api-for-wmi">COM API for
-WMI</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/mof-data-types">MOF Data Types</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/running-the-mof-compiler-on-a-file">Running the MOF Compiler on a File</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/mofcomp">mofcomp</seealso>
+    <summary>The<b>IMofCompiler</b> interface, implemented by Mofd.dll, provides a COM interface that is used by the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/gloss-m">Managed Object Format</a> (MOF) compiler and any other applications that compile MOF files. Objects defined as classes in the MOF files can be obtained using the <b>CLSID_MofCompiler</b> CLSID value.</summary>
   </member>
 </doc>

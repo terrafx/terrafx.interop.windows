@@ -3,244 +3,144 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE">
-    <summary>
-      <para>The <b>DWRITE_PANOSE</b> union describes typeface classification values that you use with <see cref="IDWriteFont1.GetPanose" /> to select and match the font.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  The <b>familyKind</b> member (index 0) is the only stable entry in the 10-byte array because all the entries that follow can change dynamically depending on the context of the first member.</para>
-    </remarks>
-    <seealso cref="DWRITE_PANOSE_FAMILY" />
-    <seealso cref="IDWriteFont1.GetPanose" />
+    <summary>The <b>DWRITE_PANOSE</b> union describes typeface classification values that you use with <see cref="IDWriteFont1.GetPanose" /> to select and match the font.</summary>
   </member>
   <member name="DWRITE_PANOSE.values">
-    <summary>
-      <para>A 10-byte array of typeface classification values.</para>
-    </summary>
+    <summary>A 10-byte array of typeface classification values.</summary>
   </member>
   <member name="DWRITE_PANOSE.familyKind">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_FAMILY" />-typed value that specifies the typeface classification values to get.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_FAMILY" />-typed value that specifies the typeface classification values to get.</summary>
   </member>
   <member name="DWRITE_PANOSE.text">
-    <summary>
-      <para>The text structure.</para>
-    </summary>
+    <summary>The text structure.</summary>
   </member>
   <member name="DWRITE_PANOSE.text.familyKind">
-    <summary>
-      <para>The <see cref="DWRITE_PANOSE_FAMILY_TEXT_DISPLAY" /> value (2) that specifies text display typeface classification.</para>
-    </summary>
+    <summary>The <see cref="DWRITE_PANOSE_FAMILY_TEXT_DISPLAY" /> value (2) that specifies text display typeface classification.</summary>
   </member>
   <member name="DWRITE_PANOSE.text.serifStyle">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SERIF_STYLE" />-typed value that specifies the serif style of text.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SERIF_STYLE" />-typed value that specifies the serif style of text.</summary>
   </member>
   <member name="DWRITE_PANOSE.text.weight">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_WEIGHT" />-typed value that specifies the weight of the text.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_WEIGHT" />-typed value that specifies the weight of the text.</summary>
   </member>
   <member name="DWRITE_PANOSE.text.proportion">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_PROPORTION" />-typed value that specifies the proportion for the text.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_PROPORTION" />-typed value that specifies the proportion for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE.text.contrast">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_CONTRAST" />-typed value that specifies the contrast for the text.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_CONTRAST" />-typed value that specifies the contrast for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE.text.strokeVariation">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_STROKE_VARIATION" />-typed value that specifies the stroke variation for the text.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_STROKE_VARIATION" />-typed value that specifies the stroke variation for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE.text.armStyle">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_ARM_STYLE" />-typed value that specifies the arm style of text.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_ARM_STYLE" />-typed value that specifies the arm style of text.</summary>
   </member>
   <member name="DWRITE_PANOSE.text.letterform">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_LETTERFORM" />-typed value that specifies the letter form for the text.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_LETTERFORM" />-typed value that specifies the letter form for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE.text.midline">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_MIDLINE" />-typed value that specifies the midline for the text.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_MIDLINE" />-typed value that specifies the midline for the text.</summary>
   </member>
   <member name="DWRITE_PANOSE.text.xHeight">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_XHEIGHT" />-typed value that specifies the relative size of lowercase text.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_XHEIGHT" />-typed value that specifies the relative size of lowercase text.</summary>
   </member>
   <member name="DWRITE_PANOSE.script">
-    <summary>
-      <para>The script structure.</para>
-    </summary>
+    <summary>The script structure.</summary>
   </member>
   <member name="DWRITE_PANOSE.script.familyKind">
-    <summary>
-      <para>The <see cref="DWRITE_PANOSE_FAMILY_SCRIPT" /> value (3) that specifies script typeface classification.</para>
-    </summary>
+    <summary>The <see cref="DWRITE_PANOSE_FAMILY_SCRIPT" /> value (3) that specifies script typeface classification.</summary>
   </member>
   <member name="DWRITE_PANOSE.script.toolKind">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_TOOL_KIND" />-typed value that specifies the kind of tool for the script.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_TOOL_KIND" />-typed value that specifies the kind of tool for the script.</summary>
   </member>
   <member name="DWRITE_PANOSE.script.weight">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_WEIGHT" />-typed value that specifies the weight of the script.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_WEIGHT" />-typed value that specifies the weight of the script.</summary>
   </member>
   <member name="DWRITE_PANOSE.script.spacing">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SPACING" />-typed value that specifies the spacing of the script.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SPACING" />-typed value that specifies the spacing of the script.</summary>
   </member>
   <member name="DWRITE_PANOSE.script.aspectRatio">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_ASPECT_RATIO" />-typed value that specifies the aspect ratio of the script.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_ASPECT_RATIO" />-typed value that specifies the aspect ratio of the script.</summary>
   </member>
   <member name="DWRITE_PANOSE.script.contrast">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_CONTRAST" />-typed value that specifies the contrast for the script.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_CONTRAST" />-typed value that specifies the contrast for the script.</summary>
   </member>
   <member name="DWRITE_PANOSE.script.scriptTopology">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SCRIPT_TOPOLOGY" />-typed value that specifies the script topology.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SCRIPT_TOPOLOGY" />-typed value that specifies the script topology.</summary>
   </member>
   <member name="DWRITE_PANOSE.script.scriptForm">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SCRIPT_FORM" />-typed value that specifies the script form.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SCRIPT_FORM" />-typed value that specifies the script form.</summary>
   </member>
   <member name="DWRITE_PANOSE.script.finials">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_FINIALS" />-typed value that specifies the script finials.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_FINIALS" />-typed value that specifies the script finials.</summary>
   </member>
   <member name="DWRITE_PANOSE.script.xAscent">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_XASCENT" />-typed value that specifies the relative size of lowercase letters.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_XASCENT" />-typed value that specifies the relative size of lowercase letters.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative">
-    <summary>
-      <para>The decorative structure.</para>
-    </summary>
+    <summary>The decorative structure.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative.familyKind">
-    <summary>
-      <para>The <see cref="DWRITE_PANOSE_FAMILY_DECORATIVE" /> value (4) that specifies decorative typeface classification.</para>
-    </summary>
+    <summary>The <see cref="DWRITE_PANOSE_FAMILY_DECORATIVE" /> value (4) that specifies decorative typeface classification.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative.decorativeClass">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_DECORATIVE_CLASS" />-typed value that specifies the class of the decorative typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_DECORATIVE_CLASS" />-typed value that specifies the class of the decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative.weight">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_WEIGHT" />-typed value that specifies the weight of the decorative typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_WEIGHT" />-typed value that specifies the weight of the decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative.aspect">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_ASPECT" />-typed value that specifies the aspect of the decorative typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_ASPECT" />-typed value that specifies the aspect of the decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative.contrast">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_CONTRAST" />-typed value that specifies the contrast for the decorative typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_CONTRAST" />-typed value that specifies the contrast for the decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative.serifVariant">
-    <summary>
-      <para>The serif variant of the decorative typeface.</para>
-    </summary>
+    <summary>The serif variant of the decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative.fill">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_FILL" />-typed value that specifies the fill of the decorative typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_FILL" />-typed value that specifies the fill of the decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative.lining">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_LINING" />-typed value that specifies the lining of the decorative typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_LINING" />-typed value that specifies the lining of the decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative.decorativeTopology">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_DECORATIVE_TOPOLOGY" />-typed value that specifies the decorative topology.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_DECORATIVE_TOPOLOGY" />-typed value that specifies the decorative topology.</summary>
   </member>
   <member name="DWRITE_PANOSE.decorative.characterRange">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_CHARACTER_RANGES" />-typed value that specifies the character range of the decorative typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_CHARACTER_RANGES" />-typed value that specifies the character range of the decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol">
-    <summary>
-      <para>The symbol structure.</para>
-    </summary>
+    <summary>The symbol structure.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol.familyKind">
-    <summary>
-      <para>The <see cref="DWRITE_PANOSE_FAMILY_SYMBOL" /> value (5) that specifies symbol typeface classification.</para>
-    </summary>
+    <summary>The <see cref="DWRITE_PANOSE_FAMILY_SYMBOL" /> value (5) that specifies symbol typeface classification.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol.symbolKind">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SYMBOL_KIND" />-typed value that specifies the kind of symbol set.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SYMBOL_KIND" />-typed value that specifies the kind of symbol set.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol.weight">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_WEIGHT" />-typed value that specifies the weight of the symbol typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_WEIGHT" />-typed value that specifies the weight of the symbol typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol.spacing">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SPACING" />-typed value that specifies the spacing of the symbol typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SPACING" />-typed value that specifies the spacing of the symbol typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol.aspectRatioAndContrast">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio and contrast of the symbol typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio and contrast of the symbol typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol.aspectRatio94">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio 94 of the symbol typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio 94 of the symbol typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol.aspectRatio119">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio 119 of the symbol typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio 119 of the symbol typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol.aspectRatio157">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio 157 of the symbol typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio 157 of the symbol typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol.aspectRatio163">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio 163 of the symbol typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio 163 of the symbol typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE.symbol.aspectRatio211">
-    <summary>
-      <para>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio 211 of the symbol typeface.</para>
-    </summary>
+    <summary>A <see cref="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO" />-typed value that specifies the aspect ratio 211 of the symbol typeface.</summary>
   </member>
 </doc>

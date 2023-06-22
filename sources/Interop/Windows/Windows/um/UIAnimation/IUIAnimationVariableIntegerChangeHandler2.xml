@@ -3,108 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IUIAnimationVariableIntegerChangeHandler2.OnIntegerValueChanged">
-    <summary>
-      <para>Handles events that occur when the integer value of an animation variable changes in the specified dimension.</para>
-    </summary>
-    <param name="storyboard">
-      <para>The storyboard that is animating the animation variable specified by the <i>variable</i> parameter.</para>
-    </param>
-    <param name="variable">
-      <para>The animation variable that has been updated.</para>
-    </param>
+    <summary>Handles events that occur when the integer value of an animation variable changes in the specified dimension.</summary>
+    <param name="storyboard">The storyboard that is animating the animation variable specified by the <i>variable</i> parameter.</param>
+    <param name="variable">The animation variable that has been updated.</param>
     <param name="newValue">
       <para>The new integer value of the animation variable.</para>
-      <para>
-        <b>Note</b>  The rounding mode for an animation variable is specified using the <see cref="SetRoundingMode" /> method.</para>
+      <div>
+        <b>Note</b>  The rounding mode for an animation variable is specified using the <see cref="SetRoundingMode" /> method.</div>
     </param>
     <param name="previousValue">
       <para>The previous integer value of the animation variable.</para>
-      <para>
-        <b>Note</b>  The rounding mode for an animation variable is specified using the <see cref="SetRoundingMode" /> method.</para>
+      <div>
+        <b>Note</b>  The rounding mode for an animation variable is specified using the <see cref="SetRoundingMode" /> method.</div>
     </param>
-    <param name="cDimension">
-      <para>The dimension in which the integer value of the animation variable changed.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method receives updates as <b>INT32</b> values.
-To receive updates as <b>DOUBLE</b> values, use the <see cref="OnValueChanged" /> method.</para>
-      <para>
-        <b>OnIntegerValueChanged</b> events might occur less frequently than <see cref="OnValueChanged" /> events because values such as 2.2, 2.3, and 2.4 would all be rounded to the same integer.</para>
-      <para>By default, a call made in a callback method to any other animation method results in the call failing and returning <b>UI_E_ILLEGAL_REENTRANCY</b>. However, there are exceptions to this default. The following methods can be successfully called from <b>OnIntegerValueChanged</b>:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="GetValue" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="GetFinalValue" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="GetPreviousValue" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="GetIntegerValue" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="GetFinalIntegerValue" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="GetPreviousIntegerValue" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="GetCurrentStoryboard" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="GetVariableFromTag" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="GetStoryboardFromTag" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="GetTag" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="GetTag" />
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IUIAnimationVariableChangeHandler2" />
-    <seealso cref="IUIAnimationVariableIntegerChangeHandler2" />
-    <seealso cref="OnValueChanged" />
-    <seealso cref="SetVariableIntegerChangeHandler" />
-    <seealso cref="UI_ANIMATION_ROUNDING_MODE" />
+    <param name="cDimension">The dimension in which the integer value of the animation variable changed.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationVariableIntegerChangeHandler2">
-    <summary>
-      <para>Defines a method for handling animation variable update events. <b>IUIAnimationVariableIntegerChangeHandler2</b> handles events that occur in a specified dimension.</para>
-    </summary>
-    <seealso cref="IUIAnimationVariable2.GetIntegerValue" />
-    <seealso cref="IUIAnimationVariable2.SetVariableIntegerChangeHandler" />
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/-interfaces-main">Interfaces</seealso>
+    <summary>Defines a method for handling animation variable update events. <b>IUIAnimationVariableIntegerChangeHandler2</b> handles events that occur in a specified dimension.</summary>
   </member>
 </doc>

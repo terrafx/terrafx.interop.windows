@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_CONTENT_INFO">
-    <summary>
-      <para>The <b>CRYPT_CONTENT_INFO</b> structure contains data encoded in the PKCS #7 ContentInfo data format.</para>
-    </summary>
+    <summary>The <b>CRYPT_CONTENT_INFO</b> structure contains data encoded in the PKCS #7 ContentInfo data format.</summary>
   </member>
   <member name="CRYPT_CONTENT_INFO.pszObjId">
-    <summary>
-      <para>Object identifier (OID) of the type of data contained in the <b>Content</b> member. ContentType in PKCS #7 defines a set of predefined OIDs. However, additional OIDs can be defined and used.</para>
-    </summary>
+    <summary>Object identifier (OID) of the type of data contained in the <b>Content</b> member. ContentType in PKCS #7 defines a set of predefined OIDs. However, additional OIDs can be defined and used.</summary>
   </member>
   <member name="CRYPT_CONTENT_INFO.Content">
-    <summary>
-      <para>The data encoded in the PKCS #7 ContentInfo data format.</para>
-    </summary>
+    <summary>The data encoded in the PKCS #7 ContentInfo data format.</summary>
   </member>
 </doc>

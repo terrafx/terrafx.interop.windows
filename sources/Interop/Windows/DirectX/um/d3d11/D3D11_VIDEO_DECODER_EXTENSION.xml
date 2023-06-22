@@ -3,47 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_DECODER_EXTENSION">
-    <summary>
-      <para>Contains driver-specific data for the <see cref="ID3D11VideoContext.DecoderExtension" /> method.</para>
-    </summary>
-    <remarks>
-      <para>The exact meaning of each structure member depends on the value of <b>Function</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Contains driver-specific data for the <see cref="ID3D11VideoContext.DecoderExtension" /> method.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_EXTENSION.Function">
-    <summary>
-      <para>The function number. This number identifies the operation to perform. Currently no function numbers are defined.</para>
-    </summary>
+    <summary>The function number. This number identifies the operation to perform. Currently no function numbers are defined.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_EXTENSION.pPrivateInputData">
-    <summary>
-      <para>A pointer to a buffer that contains input data for the driver.</para>
-    </summary>
+    <summary>A pointer to a buffer that contains input data for the driver.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_EXTENSION.PrivateInputDataSize">
-    <summary>
-      <para>The size of the <b>pPrivateInputData</b> buffer, in bytes.</para>
-    </summary>
+    <summary>The size of the <b>pPrivateInputData</b> buffer, in bytes.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_EXTENSION.pPrivateOutputData">
-    <summary>
-      <para>A pointer to a buffer that the driver can use to write output data.</para>
-    </summary>
+    <summary>A pointer to a buffer that the driver can use to write output data.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_EXTENSION.PrivateOutputDataSize">
-    <summary>
-      <para>The size of the <b>pPrivateOutputData</b> buffer, in bytes.</para>
-    </summary>
+    <summary>The size of the <b>pPrivateOutputData</b> buffer, in bytes.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_EXTENSION.ResourceCount">
-    <summary>
-      <para>The number of elements in the <b>ppResourceList</b> array. If <b>ppResourceList</b> is <b>NULL</b>, set <b>ResourceCount</b> to zero.</para>
-    </summary>
+    <summary>The number of elements in the <b>ppResourceList</b> array. If <b>ppResourceList</b> is <b>NULL</b>, set <b>ResourceCount</b> to zero.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_EXTENSION.ppResourceList">
-    <summary>
-      <para>The address of an array of <see cref="ID3D11Resource" /> pointers. Use this member to pass Direct3D resources to the driver.</para>
-    </summary>
+    <summary>The address of an array of <see cref="ID3D11Resource" /> pointers. Use this member to pass Direct3D resources to the driver.</summary>
   </member>
 </doc>

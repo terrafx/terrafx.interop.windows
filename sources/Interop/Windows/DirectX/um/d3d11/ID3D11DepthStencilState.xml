@@ -3,26 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11DepthStencilState.GetDesc">
-    <summary>
-      <para>Gets the description for depth-stencil state that you used to create the depth-stencil-state object.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D11_DEPTH_STENCIL_DESC" />*</b></para>
-      <para>A pointer to a <see cref="D3D11_DEPTH_STENCIL_DESC" /> structure that receives a description of the depth-stencil state.</para>
-    </param>
-    <remarks>
-      <para>You use the description for depth-stencil state in a call to the <see cref="ID3D11Device.CreateDepthStencilState" /> method to create the depth-stencil-state object.</para>
-    </remarks>
-    <seealso cref="ID3D11DepthStencilState" />
+    <summary>Gets the description for depth-stencil state that you used to create the depth-stencil-state object.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D11_DEPTH_STENCIL_DESC" /> structure that receives a description of the depth-stencil state.</param>
   </member>
   <member name="ID3D11DepthStencilState">
-    <summary>
-      <para>The depth-stencil-state interface holds a description for depth-stencil state that you can bind to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>.</para>
-    </summary>
-    <remarks>
-      <para>To create a depth-stencil-state object, call <see cref="ID3D11Device.CreateDepthStencilState" />. To bind the depth-stencil-state object to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>, call <see cref="ID3D11DeviceContext.OMSetDepthStencilState" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D11DeviceChild" />
+    <summary>The depth-stencil-state interface holds a description for depth-stencil state that you can bind to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>.</summary>
   </member>
 </doc>

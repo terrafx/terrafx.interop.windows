@@ -4,66 +4,34 @@
 <doc>
   <member name="WS_CERT_SIGNED_SAML_AUTHENTICATOR">
     <summary>
-      <para>The type for specifying a SAML token authenticator based on an array
-of expected issuer certificates.  When an authenticator of this type
-is used, an incoming SAML token will be accepted if only if it has a
-valid XML signature created with any one of the specified X.509
-certificates.  Thus, the specified X.509 certificates represent a
-'allow list' of trusted SAML issuers.</para>
-      <para>No revocation or chain trust checks are done by the runtime on the
-specified certificates: so, it is up to the application to make sure
-that the certificates are valid before they are specified in this
-structure.</para>
-      <para>As indicated above, the validation of the received SAML is limited to
-making sure that it was signed correctly by one of the specified
-certificates.  The application may then extract the SAML assertion
-using <see cref="WsGetMessageProperty" /> with the key
-<see cref="WS_MESSAGE_PROPERTY_SAML_ASSERTION" /> and do
-additional validator or processing.</para>
+      <para>The type for specifying a SAML token authenticator based on an array of expected issuer certificates. When an authenticator of this type is used, an incoming SAML token will be accepted if only if it has a valid XML signature created with any one of the specified X.509 certificates. Thus, the specified X.509 certificates represent a 'allow list' of trusted SAML issuers.</para>
+      <para>No revocation or chain trust checks are done by the runtime on the specified certificates: so, it is up to the application to make sure that the certificates are valid before they are specified in this structure.</para>
+      <para>As indicated above, the validation of the received SAML is limited to making sure that it was signed correctly by one of the specified certificates. The application may then extract the SAML assertion using <see cref="WsGetMessageProperty" /> with the key<see cref="WS_MESSAGE_PROPERTY_SAML_ASSERTION" /> and do additional validator or processing.</para>
     </summary>
   </member>
   <member name="WS_CERT_SIGNED_SAML_AUTHENTICATOR.authenticator">
-    <summary>
-      <para>The base type from which this type and all other SAML authenticator
-types derive.</para>
-    </summary>
+    <summary>The base type from which this type and all other SAML authenticator types derive.</summary>
   </member>
   <member name="WS_CERT_SIGNED_SAML_AUTHENTICATOR.trustedIssuerCerts">
     <summary>
-      <para>The array of acceptable SAML issuers, identified by their X.509
-certificates.  This field is required.</para>
-      <para>The certificate handles are duplicated and the copies are kept for
-internal use.  The application continues to own the certificate
-handles supplied here and is responsible for freeing them anytime
-after the listener creation call that uses this structure returns.</para>
+      <para>The array of acceptable SAML issuers, identified by their X.509 certificates. This field is required.</para>
+      <para>The certificate handles are duplicated and the copies are kept for internal use. The application continues to own the certificate handles supplied here and is responsible for freeing them anytime after the listener creation call that uses this structure returns.</para>
     </summary>
   </member>
   <member name="WS_CERT_SIGNED_SAML_AUTHENTICATOR.trustedIssuerCertCount">
-    <summary>
-      <para>The count of X.509 certificates specified in trustedIssuerCerts.</para>
-    </summary>
+    <summary>The count of X.509 certificates specified in trustedIssuerCerts.</summary>
   </member>
   <member name="WS_CERT_SIGNED_SAML_AUTHENTICATOR.decryptionCert">
     <summary>
       <para>The certificate for decrypting incoming SAML tokens.</para>
-      <para>The certificate handle is duplicated and the copy is kept for internal
-use.  The application continues to own the certificate handle supplied
-here and is responsible for freeing it anytime after the listener
-creation call that uses this structure returns.</para>
+      <para>The certificate handle is duplicated and the copy is kept for internal use. The application continues to own the certificate handle supplied here and is responsible for freeing it anytime after the listener creation call that uses this structure returns.</para>
     </summary>
   </member>
-  <member name="WS_CERT_SIGNED_SAML_AUTHENTICATOR._CERT_CONTEXT">
-    <summary></summary>
-  </member>
+  <member name="WS_CERT_SIGNED_SAML_AUTHENTICATOR._CERT_CONTEXT"></member>
   <member name="WS_CERT_SIGNED_SAML_AUTHENTICATOR.samlValidator">
-    <summary>
-      <para>An optional callback to enable the application to additional
-validation on the SAML assertion if the signature validation passes.</para>
-    </summary>
+    <summary>An optional callback to enable the application to additional validation on the SAML assertion if the signature validation passes.</summary>
   </member>
   <member name="WS_CERT_SIGNED_SAML_AUTHENTICATOR.samlValidatorCallbackState">
-    <summary>
-      <para>The state to be passed back when invoking the samlValidator callback.</para>
-    </summary>
+    <summary>The state to be passed back when invoking the samlValidator callback.</summary>
   </member>
 </doc>

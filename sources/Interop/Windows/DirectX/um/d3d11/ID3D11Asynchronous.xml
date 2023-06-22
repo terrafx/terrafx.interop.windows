@@ -3,37 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11Asynchronous.GetDataSize">
-    <summary>
-      <para>Get the size of the data (in bytes) that is output when calling <see cref="ID3D11DeviceContext.GetData" />.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Size of the data (in bytes) that is output when calling GetData.</para>
-    </returns>
-    <seealso cref="ID3D11Asynchronous" />
+    <summary>Get the size of the data (in bytes) that is output when calling <see cref="ID3D11DeviceContext.GetData" />.</summary>
+    <returns>Size of the data (in bytes) that is output when calling GetData.</returns>
   </member>
   <member name="ID3D11Asynchronous">
-    <summary>
-      <para>This interface encapsulates methods for retrieving data from the GPU asynchronously.</para>
-    </summary>
-    <remarks>
-      <para>There are three types of asynchronous interfaces, all of which inherit this interface:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="ID3D11Query" /> - Queries information from the GPU.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11Predicate" /> - Determines whether a piece of geometry should be processed or not depending on the results of a previous draw call.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11Counter" /> - Measures GPU performance.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D11DeviceChild" />
+    <summary>This interface encapsulates methods for retrieving data from the GPU asynchronously.</summary>
   </member>
 </doc>

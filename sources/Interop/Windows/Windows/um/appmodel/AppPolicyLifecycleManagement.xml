@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AppPolicyLifecycleManagement">
-    <summary>
-      <para>The AppPolicyLifecycleManagement enumeration indicates whether a process is lifecycle-managed or not.</para>
-    </summary>
+    <summary>The AppPolicyLifecycleManagement enumeration indicates whether a process is lifecycle-managed or not.</summary>
   </member>
   <member name="AppPolicyLifecycleManagement.AppPolicyLifecycleManagement_Unmanaged">
-    <summary>
-      <para>Indicates that the process's lifecycle is not managed.</para>
-    </summary>
+    <summary>Indicates that the process's lifecycle is not managed.</summary>
   </member>
   <member name="AppPolicyLifecycleManagement.AppPolicyLifecycleManagement_Managed">
-    <summary>
-      <para>Indicates that the process's  lifecycle is managed by Process Lifecycle Manager (PLM).</para>
-    </summary>
+    <summary>Indicates that the process's lifecycle is managed by Process Lifecycle Manager (PLM).</summary>
   </member>
 </doc>

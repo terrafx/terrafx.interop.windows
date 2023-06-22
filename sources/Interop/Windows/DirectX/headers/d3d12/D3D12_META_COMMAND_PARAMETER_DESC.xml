@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_META_COMMAND_PARAMETER_DESC">
-    <summary>
-      <para>Describes a parameter to a meta command.</para>
-    </summary>
+    <summary>Describes a parameter to a meta command.</summary>
   </member>
   <member name="D3D12_META_COMMAND_PARAMETER_DESC.Name">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
-      <para>The parameter name.</para>
-    </summary>
+    <summary>The parameter name.</summary>
   </member>
   <member name="D3D12_META_COMMAND_PARAMETER_DESC.Type">
-    <summary>
-      <para>Type: <b><see cref="D3D12_META_COMMAND_PARAMETER_TYPE" /></b></para>
-      <para>A <see cref="D3D12_META_COMMAND_PARAMETER_TYPE" /> specifying the parameter type.</para>
-    </summary>
+    <summary>A <see cref="D3D12_META_COMMAND_PARAMETER_TYPE" /> specifying the parameter type.</summary>
   </member>
   <member name="D3D12_META_COMMAND_PARAMETER_DESC.Flags">
-    <summary>
-      <para>Type: <b><see cref="D3D12_META_COMMAND_PARAMETER_FLAGS" /></b></para>
-      <para>A <see cref="D3D12_META_COMMAND_PARAMETER_FLAGS" /> specifying the parameter flags.</para>
-    </summary>
+    <summary>A <see cref="D3D12_META_COMMAND_PARAMETER_FLAGS" /> specifying the parameter flags.</summary>
   </member>
   <member name="D3D12_META_COMMAND_PARAMETER_DESC.RequiredResourceState">
-    <summary>
-      <para>Type: <b><see cref="D3D12_RESOURCE_STATES" /></b></para>
-      <para>A <see cref="D3D12_RESOURCE_STATES" /> specifying the expected state of a resource parameter.</para>
-    </summary>
+    <summary>A <see cref="D3D12_RESOURCE_STATES" /> specifying the expected state of a resource parameter.</summary>
   </member>
   <member name="D3D12_META_COMMAND_PARAMETER_DESC.StructureOffset">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The 4-byte aligned offset for this parameter, within the structure containing the parameter values, which you pass when creating/initializing/executing the meta command, as appropriate.</para>
-    </summary>
+    <summary>The 4-byte aligned offset for this parameter, within the structure containing the parameter values, which you pass when creating/initializing/executing the meta command, as appropriate.</summary>
   </member>
 </doc>

@@ -3,63 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NEWTEXTMETRICA">
-    <summary>
-      <para>The <b>NEWTEXTMETRIC</b> structure contains data that describes a physical font.</para>
-    </summary>
-    <remarks>
-      <para>The last four members of the <b>NEWTEXTMETRIC</b> structure are not included in the <see cref="TEXTMETRIC" /> structure; in all other respects, the structures are identical.</para>
-      <para>The sizes in the <b>NEWTEXTMETRIC</b> structure are typically specified in logical units; that is, they depend on the current mapping mode of the display context.</para>
-      <blockquote>
-        <para>[!NOTE]
-The wingdi.h header defines NEWTEXTMETRIC as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="EnumFontFamilies" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="GetTextExtentPoint32" />
-    <seealso cref="GetTextMetrics" />
-    <seealso cref="LOGFONT" />
+    <summary>The <b>NEWTEXTMETRIC</b> structure contains data that describes a physical font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmHeight">
-    <summary>
-      <para>The height (ascent + descent) of characters.</para>
-    </summary>
+    <summary>The height (ascent + descent) of characters.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmAscent">
-    <summary>
-      <para>The ascent (units above the base line) of characters.</para>
-    </summary>
+    <summary>The ascent (units above the base line) of characters.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmDescent">
-    <summary>
-      <para>The descent (units below the base line) of characters.</para>
-    </summary>
+    <summary>The descent (units below the base line) of characters.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmInternalLeading">
-    <summary>
-      <para>The amount of leading (space) inside the bounds set by the <b>tmHeight</b> member. Accent marks and other diacritical characters may occur in this area. The designer may set this member to zero.</para>
-    </summary>
+    <summary>The amount of leading (space) inside the bounds set by the <b>tmHeight</b> member. Accent marks and other diacritical characters may occur in this area. The designer may set this member to zero.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmExternalLeading">
-    <summary>
-      <para>The amount of extra leading (space) that the application adds between rows. Since this area is outside the font, it contains no marks and is not altered by text output calls in either OPAQUE or TRANSPARENT mode. The designer may set this member to zero.</para>
-    </summary>
+    <summary>The amount of extra leading (space) that the application adds between rows. Since this area is outside the font, it contains no marks and is not altered by text output calls in either OPAQUE or TRANSPARENT mode. The designer may set this member to zero.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmAveCharWidth">
-    <summary>
-      <para>The average width of characters in the font (generally defined as the width of the letter x). This value does not include overhang required for bold or italic characters.</para>
-    </summary>
+    <summary>The average width of characters in the font (generally defined as the width of the letter x). This value does not include overhang required for bold or italic characters.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmMaxCharWidth">
-    <summary>
-      <para>The width of the widest character in the font.</para>
-    </summary>
+    <summary>The width of the widest character in the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmWeight">
-    <summary>
-      <para>The weight of the font.</para>
-    </summary>
+    <summary>The weight of the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmOverhang">
     <summary>
@@ -68,49 +36,31 @@ The wingdi.h header defines NEWTEXTMETRIC as an alias which automatically select
     </summary>
   </member>
   <member name="NEWTEXTMETRICA.tmDigitizedAspectX">
-    <summary>
-      <para>The horizontal aspect of the device for which the font was designed.</para>
-    </summary>
+    <summary>The horizontal aspect of the device for which the font was designed.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmDigitizedAspectY">
-    <summary>
-      <para>The vertical aspect of the device for which the font was designed. The ratio of the <b>tmDigitizedAspectX</b> and <b>tmDigitizedAspectY</b> members is the aspect ratio of the device for which the font was designed.</para>
-    </summary>
+    <summary>The vertical aspect of the device for which the font was designed. The ratio of the <b>tmDigitizedAspectX</b> and <b>tmDigitizedAspectY</b> members is the aspect ratio of the device for which the font was designed.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmFirstChar">
-    <summary>
-      <para>The value of the first character defined in the font.</para>
-    </summary>
+    <summary>The value of the first character defined in the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmLastChar">
-    <summary>
-      <para>The value of the last character defined in the font.</para>
-    </summary>
+    <summary>The value of the last character defined in the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmDefaultChar">
-    <summary>
-      <para>The value of the character to be substituted for characters that are not in the font.</para>
-    </summary>
+    <summary>The value of the character to be substituted for characters that are not in the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmBreakChar">
-    <summary>
-      <para>The value of the character to be used to define word breaks for text justification.</para>
-    </summary>
+    <summary>The value of the character to be used to define word breaks for text justification.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmItalic">
-    <summary>
-      <para>An italic font if it is nonzero.</para>
-    </summary>
+    <summary>An italic font if it is nonzero.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmUnderlined">
-    <summary>
-      <para>An underlined font if it is nonzero.</para>
-    </summary>
+    <summary>An underlined font if it is nonzero.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmStruckOut">
-    <summary>
-      <para>A strikeout font if it is nonzero.</para>
-    </summary>
+    <summary>A strikeout font if it is nonzero.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmPitchAndFamily">
     <summary>
@@ -119,9 +69,7 @@ The wingdi.h header defines NEWTEXTMETRIC as an alias which automatically select
     </summary>
   </member>
   <member name="NEWTEXTMETRICA.tmCharSet">
-    <summary>
-      <para>The character set of the font.</para>
-    </summary>
+    <summary>The character set of the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.ntmFlags">
     <summary>
@@ -132,127 +80,89 @@ The wingdi.h header defines NEWTEXTMETRIC as an alias which automatically select
           <description>Name</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>0</description>
           <description>NTM_ITALIC</description>
           <description>italic</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>5</description>
           <description>NTM_BOLD</description>
           <description>bold</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>8</description>
           <description>NTM_REGULAR</description>
           <description>regular</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>16</description>
           <description>NTM_NONNEGATIVE_AC</description>
           <description> no glyph in a font at any size has a negative A or C space.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>17</description>
           <description>NTM_PS_OPENTYPE</description>
           <description> PostScript OpenType font</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>18</description>
           <description>NTM_TT_OPENTYPE</description>
           <description> TrueType OpenType font</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>19</description>
           <description>NTM_MULTIPLEMASTER</description>
           <description> multiple master font</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>20</description>
           <description>NTM_TYPE1</description>
           <description> Type 1 font</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>21</description>
           <description>NTM_DSIG</description>
           <description> font with a digital signature. This allows traceability and ensures that the font has been tested and is not corrupted</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="NEWTEXTMETRICA.ntmSizeEM">
-    <summary>
-      <para>The size of the em square for the font. This value is in notional units (that is, the units for which the font was designed).</para>
-    </summary>
+    <summary>The size of the em square for the font. This value is in notional units (that is, the units for which the font was designed).</summary>
   </member>
   <member name="NEWTEXTMETRICA.ntmCellHeight">
-    <summary>
-      <para>The height, in notional units, of the font. This value should be compared with the value of the <b>ntmSizeEM</b> member.</para>
-    </summary>
+    <summary>The height, in notional units, of the font. This value should be compared with the value of the <b>ntmSizeEM</b> member.</summary>
   </member>
   <member name="NEWTEXTMETRICA.ntmAvgWidth">
-    <summary>
-      <para>The average width of characters in the font, in notional units. This value should be compared with the value of the <b>ntmSizeEM</b> member.</para>
-    </summary>
+    <summary>The average width of characters in the font, in notional units. This value should be compared with the value of the <b>ntmSizeEM</b> member.</summary>
   </member>
   <member name="NEWTEXTMETRICA">
-    <summary>
-      <para>The <b>NEWTEXTMETRIC</b> structure contains data that describes a physical font.</para>
-    </summary>
-    <remarks>
-      <para>The last four members of the <b>NEWTEXTMETRIC</b> structure are not included in the <see cref="TEXTMETRIC" /> structure; in all other respects, the structures are identical.</para>
-      <para>The sizes in the <b>NEWTEXTMETRIC</b> structure are typically specified in logical units; that is, they depend on the current mapping mode of the display context.</para>
-      <blockquote>
-        <para>[!NOTE]
-The wingdi.h header defines NEWTEXTMETRIC as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="EnumFontFamilies" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="GetTextExtentPoint32" />
-    <seealso cref="GetTextMetrics" />
-    <seealso cref="LOGFONT" />
+    <summary>The <b>NEWTEXTMETRIC</b> structure contains data that describes a physical font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmHeight">
-    <summary>
-      <para>The height (ascent + descent) of characters.</para>
-    </summary>
+    <summary>The height (ascent + descent) of characters.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmAscent">
-    <summary>
-      <para>The ascent (units above the base line) of characters.</para>
-    </summary>
+    <summary>The ascent (units above the base line) of characters.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmDescent">
-    <summary>
-      <para>The descent (units below the base line) of characters.</para>
-    </summary>
+    <summary>The descent (units below the base line) of characters.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmInternalLeading">
-    <summary>
-      <para>The amount of leading (space) inside the bounds set by the <b>tmHeight</b> member. Accent marks and other diacritical characters may occur in this area. The designer may set this member to zero.</para>
-    </summary>
+    <summary>The amount of leading (space) inside the bounds set by the <b>tmHeight</b> member. Accent marks and other diacritical characters may occur in this area. The designer may set this member to zero.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmExternalLeading">
-    <summary>
-      <para>The amount of extra leading (space) that the application adds between rows. Since this area is outside the font, it contains no marks and is not altered by text output calls in either OPAQUE or TRANSPARENT mode. The designer may set this member to zero.</para>
-    </summary>
+    <summary>The amount of extra leading (space) that the application adds between rows. Since this area is outside the font, it contains no marks and is not altered by text output calls in either OPAQUE or TRANSPARENT mode. The designer may set this member to zero.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmAveCharWidth">
-    <summary>
-      <para>The average width of characters in the font (generally defined as the width of the letter x). This value does not include overhang required for bold or italic characters.</para>
-    </summary>
+    <summary>The average width of characters in the font (generally defined as the width of the letter x). This value does not include overhang required for bold or italic characters.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmMaxCharWidth">
-    <summary>
-      <para>The width of the widest character in the font.</para>
-    </summary>
+    <summary>The width of the widest character in the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmWeight">
-    <summary>
-      <para>The weight of the font.</para>
-    </summary>
+    <summary>The weight of the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmOverhang">
     <summary>
@@ -261,49 +171,31 @@ The wingdi.h header defines NEWTEXTMETRIC as an alias which automatically select
     </summary>
   </member>
   <member name="NEWTEXTMETRICA.tmDigitizedAspectX">
-    <summary>
-      <para>The horizontal aspect of the device for which the font was designed.</para>
-    </summary>
+    <summary>The horizontal aspect of the device for which the font was designed.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmDigitizedAspectY">
-    <summary>
-      <para>The vertical aspect of the device for which the font was designed. The ratio of the <b>tmDigitizedAspectX</b> and <b>tmDigitizedAspectY</b> members is the aspect ratio of the device for which the font was designed.</para>
-    </summary>
+    <summary>The vertical aspect of the device for which the font was designed. The ratio of the <b>tmDigitizedAspectX</b> and <b>tmDigitizedAspectY</b> members is the aspect ratio of the device for which the font was designed.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmFirstChar">
-    <summary>
-      <para>The value of the first character defined in the font.</para>
-    </summary>
+    <summary>The value of the first character defined in the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmLastChar">
-    <summary>
-      <para>The value of the last character defined in the font.</para>
-    </summary>
+    <summary>The value of the last character defined in the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmDefaultChar">
-    <summary>
-      <para>The value of the character to be substituted for characters that are not in the font.</para>
-    </summary>
+    <summary>The value of the character to be substituted for characters that are not in the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmBreakChar">
-    <summary>
-      <para>The value of the character to be used to define word breaks for text justification.</para>
-    </summary>
+    <summary>The value of the character to be used to define word breaks for text justification.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmItalic">
-    <summary>
-      <para>An italic font if it is nonzero.</para>
-    </summary>
+    <summary>An italic font if it is nonzero.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmUnderlined">
-    <summary>
-      <para>An underlined font if it is nonzero.</para>
-    </summary>
+    <summary>An underlined font if it is nonzero.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmStruckOut">
-    <summary>
-      <para>A strikeout font if it is nonzero.</para>
-    </summary>
+    <summary>A strikeout font if it is nonzero.</summary>
   </member>
   <member name="NEWTEXTMETRICA.tmPitchAndFamily">
     <summary>
@@ -312,9 +204,7 @@ The wingdi.h header defines NEWTEXTMETRIC as an alias which automatically select
     </summary>
   </member>
   <member name="NEWTEXTMETRICA.tmCharSet">
-    <summary>
-      <para>The character set of the font.</para>
-    </summary>
+    <summary>The character set of the font.</summary>
   </member>
   <member name="NEWTEXTMETRICA.ntmFlags">
     <summary>
@@ -325,67 +215,61 @@ The wingdi.h header defines NEWTEXTMETRIC as an alias which automatically select
           <description>Name</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>0</description>
           <description>NTM_ITALIC</description>
           <description>italic</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>5</description>
           <description>NTM_BOLD</description>
           <description>bold</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>8</description>
           <description>NTM_REGULAR</description>
           <description>regular</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>16</description>
           <description>NTM_NONNEGATIVE_AC</description>
           <description> no glyph in a font at any size has a negative A or C space.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>17</description>
           <description>NTM_PS_OPENTYPE</description>
           <description> PostScript OpenType font</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>18</description>
           <description>NTM_TT_OPENTYPE</description>
           <description> TrueType OpenType font</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>19</description>
           <description>NTM_MULTIPLEMASTER</description>
           <description> multiple master font</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>20</description>
           <description>NTM_TYPE1</description>
           <description> Type 1 font</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>21</description>
           <description>NTM_DSIG</description>
           <description> font with a digital signature. This allows traceability and ensures that the font has been tested and is not corrupted</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="NEWTEXTMETRICA.ntmSizeEM">
-    <summary>
-      <para>The size of the em square for the font. This value is in notional units (that is, the units for which the font was designed).</para>
-    </summary>
+    <summary>The size of the em square for the font. This value is in notional units (that is, the units for which the font was designed).</summary>
   </member>
   <member name="NEWTEXTMETRICA.ntmCellHeight">
-    <summary>
-      <para>The height, in notional units, of the font. This value should be compared with the value of the <b>ntmSizeEM</b> member.</para>
-    </summary>
+    <summary>The height, in notional units, of the font. This value should be compared with the value of the <b>ntmSizeEM</b> member.</summary>
   </member>
   <member name="NEWTEXTMETRICA.ntmAvgWidth">
-    <summary>
-      <para>The average width of characters in the font, in notional units. This value should be compared with the value of the <b>ntmSizeEM</b> member.</para>
-    </summary>
+    <summary>The average width of characters in the font, in notional units. This value should be compared with the value of the <b>ntmSizeEM</b> member.</summary>
   </member>
 </doc>

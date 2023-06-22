@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="interop.CreateDirect3DDevice">
+    <summary>Creates an instance of <a href="https://docs.microsoft.com//uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">IDirect3DDevice</a> from an <see cref="IDXGIDevice" />.</summary>
+    <param name="dxgiDevice">The <see cref="IDXGIDevice" /> to create the Direct3DDevice from.</param>
+    <returns>Returns the created <a href="https://docs.microsoft.com//uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">IDirect3DDevice</a> instance.</returns>
+  </member>
+  <member name="interop.CreateDirect3DSurface">
+    <summary>Creates an instance of <a href="https://docs.microsoft.com//uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface">IDirect3DSurface</a> from an <see cref="IDXGISurface" />.</summary>
+    <param name="dxgiSurface">The <see cref="IDXGISurface" /> to create the IDirect3D11Surface from.</param>
+    <returns>Returns the created <a href="https://docs.microsoft.com//uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface">IDirect3DSurface</a> instance.</returns>
+  </member>
+  <member name="interop.GetDXGIInterface">
+    <summary>Retrieves a DXGI interface from an <a href="https://docs.microsoft.com//uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">IDirect3DDevice</a> instance.</summary>
+    <param name="device">The <a href="https://docs.microsoft.com//uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">IDirect3DDevice</a> instance to retrieve the DXGI interface from.</param>
+    <param name="dxgi">On return, contains the retrieved DXGI interface.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</returns>
+  </member>
+  <member name="interop.GetDXGIInterfaceFromObject">
+    <summary>Retrieves a DXGI interface from an object.</summary>
+    <param name="object">The object to retrieve the DXGI interface from.</param>
+    <param name="iid">The ID of the interface to retrieve.</param>
+    <param name="p">On return, contains the retrieved DXGI interface.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</returns>
+  </member>
+  <member name="interop.GetDXGIInterface">
+    <summary>Retrieves a DXGI interface from an <a href="https://docs.microsoft.com//uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface">IDirect3DSurface</a> instance.</summary>
+    <param name="device">The <a href="https://docs.microsoft.com//uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface">IDirect3DSurface</a> instance to retrieve the DXGI interface from.</param>
+    <param name="dxgi">On return, contains the retrieved DXGI interface.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</returns>
+  </member>
+</doc>

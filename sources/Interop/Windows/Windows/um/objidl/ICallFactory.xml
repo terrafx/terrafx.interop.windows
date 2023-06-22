@@ -3,22 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICallFactory.CreateCall">
-    <summary>
-      <para>Creates an instance of the call object that corresponds to a specified asynchronous interface.</para>
-    </summary>
-    <param name="riid">
-      <para>A reference to the identifier for the asynchronous interface.</para>
-    </param>
-    <param name="pCtrlUnk">
-      <para>A pointer to the controlling <see cref="IUnknown" /> of the call object. If this parameter is not <b>NULL</b>, the call object is aggregated in the specified object, and the <i>riid2</i> parameter must be IID_IUnknown.
-If this parameter is <b>NULL</b>, the call object is not aggregated.</para>
-    </param>
-    <param name="riid2">
-      <para>The identifier of an interface on the call object. Typical values are IID_IUnknown and IID_ISynchronize.</para>
-    </param>
-    <param name="ppv">
-      <para>The address of a pointer to the interface specified by <i>riid2</i>. This parameter cannot be <b>NULL</b>.</para>
-    </param>
+    <summary>Creates an instance of the call object that corresponds to a specified asynchronous interface.</summary>
+    <param name="riid">A reference to the identifier for the asynchronous interface.</param>
+    <param name="pCtrlUnk">A pointer to the controlling <see cref="IUnknown" /> of the call object. If this parameter is not <b>NULL</b>, the call object is aggregated in the specified object, and the <i>riid2</i> parameter must be IID_IUnknown. If this parameter is <b>NULL</b>, the call object is not aggregated.</param>
+    <param name="riid2">The identifier of an interface on the call object. Typical values are IID_IUnknown and IID_ISynchronize.</param>
+    <param name="ppv">The address of a pointer to the interface specified by <i>riid2</i>. This parameter cannot be <b>NULL</b>.</param>
     <returns>
       <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and E_UNEXPECTED, as well as the following values.</para>
       <list type="table">
@@ -26,33 +15,34 @@ If this parameter is <b>NULL</b>, the call object is not aggregated.</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The call object was created successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The call object was created successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>riid</i> parameter does not reference the identifier for the asynchronous interface, such as IID_AsyncIEventSourceCallback.</para>
-          </description>
-        </item>
+          <description>The <i>riid</i> parameter does not reference the identifier for the asynchronous interface, such as IID_AsyncIEventSourceCallback.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ICallFactory" />
   </member>
   <member name="ICallFactory">
-    <summary>
-      <para>Creates a call object for processing calls to the methods of an asynchronous interface.</para>
-    </summary>
+    <summary>Creates a call object for processing calls to the methods of an asynchronous interface.</summary>
   </member>
 </doc>

@@ -9,26 +9,16 @@
     </summary>
   </member>
   <member name="DML_UPSAMPLE_2D_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the input data. The expected dimensions of the InputTensor are <code>{ InputBatchCount, InputChannelCount, InputHeight, InputWidth }</code> for 4D, and <code>{ InputBatchCount, InputChannelCount, InputDepth, InputHeight, InputWidth }</code> for 5D.</para>
-    </summary>
+    <summary>A tensor containing the input data. The expected dimensions of the InputTensor are <code>{ InputBatchCount, InputChannelCount, InputHeight, InputWidth }</code> for 4D, and <code>{ InputBatchCount, InputChannelCount, InputDepth, InputHeight, InputWidth }</code> for 5D.</summary>
   </member>
   <member name="DML_UPSAMPLE_2D_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the input data. The expected dimensions of the OutputTensor are <code>{ InputBatchCount, InputChannelCount, InputHeight * HeightScale, InputWidth * WidthScale }</code> for 4D, and <code>{ InputBatchCount, InputChannelCount, InputDepth, InputHeight * HeightScale, InputWidth * WidthScale }</code> for 5D.</para>
-    </summary>
+    <summary>A tensor containing the input data. The expected dimensions of the OutputTensor are <code>{ InputBatchCount, InputChannelCount, InputHeight * HeightScale, InputWidth * WidthScale }</code> for 4D, and <code>{ InputBatchCount, InputChannelCount, InputDepth, InputHeight * HeightScale, InputWidth * WidthScale }</code> for 5D.</summary>
   </member>
   <member name="DML_UPSAMPLE_2D_OPERATOR_DESC.ScaleSize">
-    <summary>
-      <para>Type: <see cref="DML_SIZE_2D" /></para>
-      <para>The width and height scales of type UINT to apply when upsampling the input. <code>0 &lt; ScaleSize.Height &lt;= UINT_MAX / InputHeight</code> and <code>0 &lt; ScaleSize.Width &lt;= UINT_MAX / InputWidth</code>.</para>
-    </summary>
+    <summary>The width and height scales of type UINT to apply when upsampling the input. <code>0 &lt; ScaleSize.Height &lt;= UINT_MAX / InputHeight</code> and <code>0 &lt; ScaleSize.Width &lt;= UINT_MAX / InputWidth</code>.</summary>
   </member>
   <member name="DML_UPSAMPLE_2D_OPERATOR_DESC.InterpolationMode">
     <summary>
-      <para>Type: <b><see cref="DML_INTERPOLATION_MODE" /></b></para>
       <para>This field determines the kind of interpolation used to choose output pixels.</para>
       <list type="bullet">
         <item>

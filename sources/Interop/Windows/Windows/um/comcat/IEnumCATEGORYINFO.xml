@@ -7,61 +7,29 @@
       <para>Creates a new enumerator that contains the same enumeration state as the current one.</para>
       <para>This method makes it possible to record a point in the enumeration sequence in order to return to that point at a later time. The caller must release this new enumerator separately from the first enumerator.</para>
     </summary>
-    <param name="ppenum">
-      <para>A pointer to the cloned enumerator object.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</para>
-    </returns>
-    <seealso cref="IEnumCATEGORYINFO" />
+    <param name="ppenum">A pointer to the cloned enumerator object.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</returns>
   </member>
   <member name="IEnumCATEGORYINFO.Next">
-    <summary>
-      <para>Retrieves the specified number of items in the enumeration sequence.</para>
-    </summary>
-    <param name="celt">
-      <para>The number of items to be retrieved. If there are fewer than the requested number of items left in the sequence, this method retrieves the remaining elements.</para>
-    </param>
+    <summary>Retrieves the specified number of items in the enumeration sequence.</summary>
+    <param name="celt">The number of items to be retrieved. If there are fewer than the requested number of items left in the sequence, this method retrieves the remaining elements.</param>
     <param name="rgelt">
       <para>An array of enumerated items.</para>
       <para>The enumerator is responsible for allocating any memory, and the caller is responsible for freeing it. If <i>celt</i> is greater than 1, the caller must also pass a non-NULL pointer passed to <i>pceltFetched</i> to know how many pointers to release.</para>
     </param>
-    <param name="pceltFetched">
-      <para>The number of items that were retrieved. This parameter is always less than or equal to the number of items requested.</para>
-    </param>
-    <returns>
-      <para>If the method retrieves the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
-    </returns>
-    <seealso cref="CATEGORYINFO" />
-    <seealso cref="IEnumCATEGORYINFO" />
+    <param name="pceltFetched">The number of items that were retrieved. This parameter is always less than or equal to the number of items requested.</param>
+    <returns>If the method retrieves the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</returns>
   </member>
   <member name="IEnumCATEGORYINFO.Reset">
-    <summary>
-      <para>Resets the enumeration sequence to the beginning.</para>
-    </summary>
-    <returns>
-      <para>The return value is S_OK.</para>
-    </returns>
-    <remarks>
-      <para>There is no guarantee that the same set of objects will be enumerated after the reset operation has completed. A static collection is reset to the beginning, but it can be too expensive for some collections, such as files in a directory, to guarantee this condition.</para>
-    </remarks>
-    <seealso cref="IEnumCATEGORYINFO" />
+    <summary>Resets the enumeration sequence to the beginning.</summary>
+    <returns>The return value is S_OK.</returns>
   </member>
   <member name="IEnumCATEGORYINFO.Skip">
-    <summary>
-      <para>Skips over the specified number of items in the enumeration sequence.</para>
-    </summary>
-    <param name="celt">
-      <para>The number of items to be skipped.</para>
-    </param>
-    <returns>
-      <para>If the method skips the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
-    </returns>
-    <seealso cref="IEnumCATEGORYINFO" />
+    <summary>Skips over the specified number of items in the enumeration sequence.</summary>
+    <param name="celt">The number of items to be skipped.</param>
+    <returns>If the method skips the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</returns>
   </member>
   <member name="IEnumCATEGORYINFO">
-    <summary>
-      <para>Enumerates component categories registered in the system.</para>
-    </summary>
+    <summary>Enumerates component categories registered in the system.</summary>
   </member>
 </doc>

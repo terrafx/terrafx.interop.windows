@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSPR_FILTER_CAPS">
+    <summary>Defines image filter capabilities for a Microsoft Direct3D 11 video processor.</summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSPR_FILTER_CAPS.D3D11_VIDEO_PROCESSOR_FILTER_CAPS_BRIGHTNESS">
+    <summary>The video processor can adjust the brightness level.</summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSPR_FILTER_CAPS.D3D11_VIDEO_PROCESSOR_FILTER_CAPS_CONTRAST">
+    <summary>The video processor can adjust the contrast level.</summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSPR_FILTER_CAPS.D3D11_VIDEO_PROCESSOR_FILTER_CAPS_HUE">
+    <summary>The video processor can adjust hue.</summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSPR_FILTER_CAPS.D3D11_VIDEO_PROCESSOR_FILTER_CAPS_SATURATION">
+    <summary>The video processor can adjust the saturation level.</summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSPR_FILTER_CAPS.D3D11_VIDEO_PROCESSOR_FILTER_CAPS_NOISE_REDUCTION">
+    <summary>The video processor can perform noise reduction.</summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSPR_FILTER_CAPS.D3D11_VIDEO_PROCESSOR_FILTER_CAPS_EDGE_ENHANCEMENT">
+    <summary>The video processor can perform edge enhancement.</summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSPR_FILTER_CAPS.D3D11_VIDEO_PROCESSOR_FILTER_CAPS_ANAMORPHIC_SCALING">
+    <summary>The video processor can perform anamorphic scaling. Anamorphic scaling can be used to stretch 4:3 content to a widescreen 16:9 aspect ratio.</summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSPR_FILTER_CAPS.D3D11_VIDEO_PROCESSOR_FILTER_CAPS_STEREO_ADJUSTMENT">
+    <summary>For stereo 3D video, the video processor can adjust the offset between the left and right views, allowing the user to reduce potential eye strain.</summary>
+  </member>
+</doc>

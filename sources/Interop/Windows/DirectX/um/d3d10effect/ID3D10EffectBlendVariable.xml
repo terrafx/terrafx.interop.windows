@@ -3,54 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10EffectBlendVariable.GetBackingStore">
-    <summary>
-      <para>Get a pointer to a blend-state variable.</para>
-    </summary>
-    <param name="Index">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Index into an array of blend-state descriptions. If there is only one blend-state variable in the effect, use 0.</para>
-    </param>
-    <param name="pBlendDesc">
-      <para>Type: <b><see cref="D3D10_BLEND_DESC" />*</b></para>
-      <para>A pointer to a blend-state description (see <see cref="D3D10_BLEND_DESC" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>Effect variables are saved in memory in the backing store; when a technique is applied, the values in the backing store are copied to the device. Backing store data can used to recreate the variable when necessary.</para>
-    </remarks>
-    <seealso cref="ID3D10EffectBlendVariable Interface" />
+    <summary>Get a pointer to a blend-state variable.</summary>
+    <param name="Index">Index into an array of blend-state descriptions. If there is only one blend-state variable in the effect, use 0.</param>
+    <param name="pBlendDesc">A pointer to a blend-state description (see <see cref="D3D10_BLEND_DESC" />).</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectBlendVariable.GetBlendState">
-    <summary>
-      <para>Get a pointer to a blend-state interface.</para>
-    </summary>
-    <param name="Index">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Index into an array of blend-state interfaces. If there is only one blend-state interface, use 0.</para>
-    </param>
-    <param name="ppBlendState">
-      <para>Type: <b><see cref="ID3D10BlendState" />**</b></para>
-      <para>The address of a pointer to a blend-state interface (see <see cref="ID3D10BlendState Interface" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10EffectBlendVariable Interface" />
+    <summary>Get a pointer to a blend-state interface.</summary>
+    <param name="Index">Index into an array of blend-state interfaces. If there is only one blend-state interface, use 0.</param>
+    <param name="ppBlendState">The address of a pointer to a blend-state interface (see <see cref="ID3D10BlendState Interface" />).</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectBlendVariable">
-    <summary>
-      <para>The blend-variable interface accesses blend state.</para>
-    </summary>
-    <remarks>
-      <para>An <b>ID3D10EffectBlendVariable Interface</b> is created when an effect is read into memory.</para>
-      <para>Effect variables are saved in memory in the backing store; when a technique is applied, the values in the backing store are copied to the device. You
-can use either of these methods to return state. For examples, see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-set-state">Two Ways to Get the State in an Effect Variable</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-interfaces">Effect Interfaces (Direct3D 10)</seealso>
-    <seealso cref="ID3D10EffectVariable" />
+    <summary>The blend-variable interface accesses blend state.</summary>
   </member>
 </doc>

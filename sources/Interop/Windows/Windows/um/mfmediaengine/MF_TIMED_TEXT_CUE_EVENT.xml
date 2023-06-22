@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TIMED_TEXT_CUE_EVENT">
-    <summary>
-      <para>Specifies the type of  a timed text cue event.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the type of a timed text cue event.</summary>
   </member>
   <member name="MF_TIMED_TEXT_CUE_EVENT.MF_TIMED_TEXT_CUE_EVENT_ACTIVE">
-    <summary>
-      <para>The cue has become active.</para>
-    </summary>
+    <summary>The cue has become active.</summary>
   </member>
   <member name="MF_TIMED_TEXT_CUE_EVENT.MF_TIMED_TEXT_CUE_EVENT_INACTIVE">
-    <summary>
-      <para>The cue has become inactive.</para>
-    </summary>
+    <summary>The cue has become inactive.</summary>
   </member>
   <member name="MF_TIMED_TEXT_CUE_EVENT.MF_TIMED_TEXT_CUE_EVENT_CLEAR">
-    <summary>
-      <para>All cues have been deactivated.</para>
-    </summary>
+    <summary>All cues have been deactivated.</summary>
   </member>
 </doc>

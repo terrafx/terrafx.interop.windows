@@ -3,114 +3,85 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IContextMenuCB.CallBack">
-    <summary>
-      <para>Enables the callback function for a context menu.</para>
-    </summary>
-    <param name="psf">
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>A pointer to the <see cref="IShellFolder" /> interface of the object that supports the <b>IContextMenuCB.CallBack</b> interface. The context menu interface is returned on a call to <see cref="GetUIObjectOf" />.</para>
-    </param>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the owner of the context menu. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="pdtobj">
-      <para>Type: <b><see cref="IDataObject" />*</b></para>
-      <para>A pointer to an <see cref="IDataObject" /> that contains information about a menu selection. Implement interface <b>IDataObject</b>, or call <see cref="SHCreateDataObject" /> for the default implementation.</para>
-    </param>
+    <summary>Enables the callback function for a context menu.</summary>
+    <param name="psf">A pointer to the <see cref="IShellFolder" /> interface of the object that supports the <b>IContextMenuCB.CallBack</b> interface. The context menu interface is returned on a call to <see cref="GetUIObjectOf" />.</param>
+    <param name="hwndOwner">A handle to the owner of the context menu. This value can be <b>NULL</b>.</param>
+    <param name="pdtobj">A pointer to an <see cref="IDataObject" /> that contains information about a menu selection. Implement interface <b>IDataObject</b>, or call <see cref="SHCreateDataObject" /> for the default implementation.</param>
     <param name="uMsg">
-      <para>Type: <b>UINT</b></para>
       <para>A notification from the Shell's default menu implementation. For example, the default menu implementation calls <a href="https://docs.microsoft.com//windows/desktop/shell/registering-control-panel-items">DFM_MERGECONTEXTMENU</a> to allow the implementer of <b>IContextMenuCB.CallBack</b> to remove, add, or disable context menu items in this callback. Use one of the following notifications.</para>
       <list type="table">
         <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/registering-control-panel-items">DFM_MERGECONTEXTMENU</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-mergecontextmenu">DFM_MERGECONTEXTMENU</a>
           </description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/preview-handler-guidelines">DFM_INVOKECOMMAND</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-invokecommand">DFM_INVOKECOMMAND</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/miscellaneous-topics-bumper">DFM_GETHELPTEXT</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-gethelptext">DFM_GETHELPTEXT</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/navigating-the-shell-namespace-bumper">DFM_GETHELPTEXTW</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-gethelptextw">DFM_GETHELPTEXTW</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/dfm-wm-measureitem">DFM_WM_MEASUREITEM</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-wm-measureitem">DFM_WM_MEASUREITEM</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/dfm-wm-drawitem">DFM_WM_DRAWITEM</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-wm-drawitem">DFM_WM_DRAWITEM</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/samples-automaticjumplist">DFM_WM_INITMENUPOPUP</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-wm-initmenupopup">DFM_WM_INITMENUPOPUP</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/samples-appusermodelidwindowproperty">DFM_VALIDATECMD</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-validatecmd">DFM_VALIDATECMD</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/prophand-content-view">DFM_INVOKECOMMANDEX</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-invokecommandex">DFM_INVOKECOMMANDEX</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/propsheet-handlers">DFM_MAPCOMMANDNAME</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-mapcommandname">DFM_MAPCOMMANDNAME</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/library-ovw">DFM_GETDEFSTATICID</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-getdefstaticid">DFM_GETDEFSTATICID</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/nse-junction">DFM_GETVERB</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-getverb">DFM_GETVERB</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/reg-middleware-apps">DFM_MERGECONTEXTMENU_BOTTOM</a>
+            <a href="https://docs.microsoft.com//windows/win32/shell/dfm-mergecontextmenu-bottom">DFM_MERGECONTEXTMENU_BOTTOM</a>
           </description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <param name="wParam">
-      <para>Type: <b>WPARAM</b></para>
-      <para>Data specific to the notification specified in <i>uMsg</i>. See the individual notification page for specific requirements.</para>
-    </param>
-    <param name="lParam">
-      <para>Type: <b>LPARAM</b></para>
-      <para>Data specific to the notification specified in <i>uMsg</i>. See the individual notification page for specific requirements.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/context-menu-handlers">Creating Context Menu Handlers</seealso>
-    <seealso cref="IContextMenuCB" />
+    <param name="wParam">Data specific to the notification specified in <i>uMsg</i>. See the individual notification page for specific requirements.</param>
+    <param name="lParam">Data specific to the notification specified in <i>uMsg</i>. See the individual notification page for specific requirements.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IContextMenuCB">
-    <summary>
-      <para>Exposes a method that enables the callback of a context menu. For example, to add a shield icon to a <b>menuItem</b> that requires elevation.</para>
-    </summary>
-    <remarks>
-      <para>This is the callback interface specified in the <see cref="DEFCONTEXTMENU" /> structure passed with the function <see cref="SHCreateDefaultContextMenu" />.</para>
-      <para>This interface enables <see cref="IShellFolder" /> implementations to manage context menu messages before, after, and during the context menu handling of these messages.</para>
-    </remarks>
+    <summary>Exposes a method that enables the callback of a context menu. For example, to add a shield icon to a <b>menuItem</b> that requires elevation.</summary>
   </member>
 </doc>

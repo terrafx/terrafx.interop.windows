@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PackageDependencyLifetimeKind">
-    <summary>
-      <para>Specifies values that indicate the type of artifact that is used to define the lifetime of a package dependency.</para>
-    </summary>
-    <seealso cref="TryCreatePackageDependency" />
+    <summary>Specifies values that indicate the type of artifact that is used to define the lifetime of a package dependency.</summary>
   </member>
   <member name="PackageDependencyLifetimeKind.PackageDependencyLifetimeKind_Process">
-    <summary>
-      <para>The current process is the lifetime artifact. The package dependency is implicitly deleted when the process terminates.</para>
-    </summary>
+    <summary>The current process is the lifetime artifact. The package dependency is implicitly deleted when the process terminates.</summary>
   </member>
   <member name="PackageDependencyLifetimeKind.PackageDependencyLifetimeKind_FilePath">
-    <summary>
-      <para>The lifetime artifact is an absolute filename or path. The package dependency is implicitly deleted when this is deleted.</para>
-    </summary>
+    <summary>The lifetime artifact is an absolute filename or path. The package dependency is implicitly deleted when this is deleted.</summary>
   </member>
   <member name="PackageDependencyLifetimeKind.PackageDependencyLifetimeKind_RegistryKey">
-    <summary>
-      <para>The lifetime artifact is a registry key in the format <i>root</i>\<i>subkey</i>, where <i>root</i> is one of the following: HKEY_LOCAL_MACHINE, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, or HKEY_USERS. The package dependency is implicitly deleted when this is deleted.</para>
-    </summary>
+    <summary>The lifetime artifact is a registry key in the format <i>root</i>\<i>subkey</i>, where <i>root</i> is one of the following: HKEY_LOCAL_MACHINE, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, or HKEY_USERS. The package dependency is implicitly deleted when this is deleted.</summary>
   </member>
 </doc>

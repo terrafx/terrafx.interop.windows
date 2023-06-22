@@ -3,40 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IRelatedItem.GetItem">
-    <summary>
-      <para>Gets the <see cref="IShellItem" /> that is related to this item.</para>
-    </summary>
-    <param name="ppsi">
-      <para>Type: <b><see cref="IShellItem" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the <see cref="IShellItem" /> interface for the item that is related to this item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the <see cref="IShellItem" /> that is related to this item.</summary>
+    <param name="ppsi">When this method returns, contains the address of a pointer to the <see cref="IShellItem" /> interface for the item that is related to this item.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IRelatedItem.GetItemIDList">
-    <summary>
-      <para>Gets the pointer to an item identifier list (PIDL) for the item that is related.</para>
-    </summary>
-    <param name="ppidl">
-      <para>Type: <b>PIDLIST_ABSOLUTE*</b></para>
-      <para>When this method returns, contains the PIDL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the pointer to an item identifier list (PIDL) for the item that is related.</summary>
+    <param name="ppidl">When this method returns, contains the PIDL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IRelatedItem">
-    <summary>
-      <para>Exposes methods that derive related items with specific relationships.</para>
-    </summary>
-    <remarks>
-      <para>Do not implement this interface directly. This is a base interface (other interfaces derive from it) for a set of interfaces that describes the relationship between two items, (For example <see cref="IDisplayItem" />).  Do not query for this interface directly, for example, using <see cref="QueryInterface" /> or <see cref="IShellFolder.BindToObject" />. Instead, use the derived interfaces.</para>
-      <para>An example derivation is the creation of an identity name handler. For more information, see <see cref="IIdentityName" />. Other interfaces that may derive from this interface include <see cref="ICurrentItem" />, and <see cref="ITransferMediumItem" />.</para>
-    </remarks>
-    <seealso cref="IShellFolder.BindToObject" />
-    <seealso cref="IShellItem.BindToHandler" />
+    <summary>Exposes methods that derive related items with specific relationships.</summary>
   </member>
 </doc>

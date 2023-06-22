@@ -3,42 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaKeySessionNotify.KeyAdded">
-    <summary>
-      <para>Notifies the application that the key has been added.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>KeyAdded</b> can also be called if the keys requested for the session have already been acquired.</para>
-    </remarks>
-    <seealso cref="IMFMediaKeySessionNotify" />
+    <summary>Notifies the application that the key has been added.</summary>
   </member>
   <member name="IMFMediaKeySessionNotify.KeyError">
-    <summary>
-      <para>Notifies the application that an error occurred while processing the key.</para>
-    </summary>
-    <param name="code"></param>
-    <param name="systemCode"></param>
-    <seealso cref="IMFMediaKeySessionNotify" />
+    <summary>Notifies the application that an error occurred while processing the key.</summary>
   </member>
   <member name="IMFMediaKeySessionNotify.KeyMessage">
-    <summary>
-      <para>Passes information to the application so it can initiate a key acquisition.</para>
-    </summary>
-    <param name="destinationURL">
-      <para>The URL to send the message to.</para>
-    </param>
-    <param name="message">
-      <para>The message to send to the application.</para>
-    </param>
-    <param name="cb">
-      <para>The length in bytes of <i>message</i>.</para>
-    </param>
-    <seealso cref="IMFMediaKeySessionNotify" />
+    <summary>Passes information to the application so it can initiate a key acquisition.</summary>
+    <param name="destinationURL">The URL to send the message to.</param>
+    <param name="message">The message to send to the application.</param>
+    <param name="cb">The length in bytes of <i>message</i>.</param>
   </member>
   <member name="IMFMediaKeySessionNotify">
-    <summary>
-      <para>Provides a mechanism for notifying the app about information regarding the media key session.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Provides a mechanism for notifying the app about information regarding the media key session.</summary>
   </member>
 </doc>

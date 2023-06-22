@@ -3,27 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NL_BANDWIDTH_INFORMATION">
-    <summary>
-      <para>The <b>NL_BANDWIDTH_INFORMATION</b> structure contains read-only information on the available bandwidth estimates and associated variance as determined by the TCP/IP stack.</para>
-    </summary>
-    <remarks>
-      <para>The  <b>NL_BANDWIDTH_INFORMATION</b> structure is defined in the <i>Nldef.h</i> header file which is automatically included by the <i>Iptypes.h</i> header file which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Nldef.h</i> and <i>Iptypes.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetIpNetworkConnectionBandwidthEstimates" />
-    <seealso cref="GetPerTcp6ConnectionEStats" />
-    <seealso cref="GetPerTcpConnectionEStats" />
-    <seealso cref="MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES" />
-    <seealso cref="TCP_ESTATS_BANDWIDTH_ROD_v0" />
+    <summary>The <b>NL_BANDWIDTH_INFORMATION</b> structure contains read-only information on the available bandwidth estimates and associated variance as determined by the TCP/IP stack.</summary>
   </member>
   <member name="NL_BANDWIDTH_INFORMATION.Bandwidth">
-    <summary>
-      <para>The estimated maximum available bandwidth, in bits per second.</para>
-    </summary>
+    <summary>The estimated maximum available bandwidth, in bits per second.</summary>
   </member>
   <member name="NL_BANDWIDTH_INFORMATION.Instability">
-    <summary>
-      <para>A measure of the variation based on recent bandwidth samples, in bits per second.</para>
-    </summary>
+    <summary>A measure of the variation based on recent bandwidth samples, in bits per second.</summary>
   </member>
   <member name="NL_BANDWIDTH_INFORMATION.BandwidthPeaked">
     <summary>

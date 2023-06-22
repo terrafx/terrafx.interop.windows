@@ -3,146 +3,106 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UPDATELAYEREDWINDOWINFO">
-    <summary>
-      <para>Used by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms633557(v=vs.85)">UpdateLayeredWindowIndirect</a> to provide position, size, shape, content, and translucency information for a layered window.</para>
-    </summary>
-    <seealso cref="UpdateLayeredWindow" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/window-features">Window Features</seealso>
+    <summary>Used by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms633557(v=vs.85)">UpdateLayeredWindowIndirect</a> to provide position, size, shape, content, and translucency information for a layered window.</summary>
   </member>
   <member name="UPDATELAYEREDWINDOWINFO.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="UPDATELAYEREDWINDOWINFO.hdcDst">
     <summary>
-      <para>Type: <b>HDC</b></para>
       <para>A handle to a DC for the screen. This handle is obtained by specifying <b>NULL</b> in this member when calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms633557(v=vs.85)">UpdateLayeredWindowIndirect</a>. The handle is used for palette color matching when the window contents are updated. If <b>hdcDst</b> is <b>NULL</b>, the default palette is used.</para>
       <para>If <b>hdcSrc</b> is <b>NULL</b>, <b>hdcDst</b> must be <b>NULL</b>.</para>
     </summary>
   </member>
   <member name="UPDATELAYEREDWINDOWINFO.pptDst">
-    <summary>
-      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>The new screen position of the layered window. If the new position is unchanged from the current position, <b>pptDst</b> can be <b>NULL</b>.</para>
-    </summary>
+    <summary>The new screen position of the layered window. If the new position is unchanged from the current position, <b>pptDst</b> can be <b>NULL</b>.</summary>
   </member>
   <member name="UPDATELAYEREDWINDOWINFO.psize">
-    <summary>
-      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a>*</b></para>
-      <para>The new size of the layered window. If the size of the window will not change, this parameter can be <b>NULL</b>. If <b>hdcSrc</b> is <b>NULL</b>, <b>psize</b> must be <b>NULL</b>.</para>
-    </summary>
+    <summary>The new size of the layered window. If the size of the window will not change, this parameter can be <b>NULL</b>. If <b>hdcSrc</b> is <b>NULL</b>, <b>psize</b> must be <b>NULL</b>.</summary>
   </member>
   <member name="UPDATELAYEREDWINDOWINFO.hdcSrc">
-    <summary>
-      <para>Type: <b>HDC</b></para>
-      <para>A handle to the DC for the surface that defines the layered window. This handle can be obtained by calling the <see cref="CreateCompatibleDC" /> function. If the shape and visual context of the window will not change, <b>hdcSrc</b> can be <b>NULL</b>.</para>
-    </summary>
+    <summary>A handle to the DC for the surface that defines the layered window. This handle can be obtained by calling the <see cref="CreateCompatibleDC" /> function. If the shape and visual context of the window will not change, <b>hdcSrc</b> can be <b>NULL</b>.</summary>
   </member>
   <member name="UPDATELAYEREDWINDOWINFO.pptSrc">
-    <summary>
-      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>The location of the layer in the device context. If <b>hdcSrc</b> is <b>NULL</b>, <b>pptSrc</b> should be <b>NULL</b>.</para>
-    </summary>
+    <summary>The location of the layer in the device context. If <b>hdcSrc</b> is <b>NULL</b>, <b>pptSrc</b> should be <b>NULL</b>.</summary>
   </member>
   <member name="UPDATELAYEREDWINDOWINFO.crKey">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
-      <para>The color key to be used when composing the layered window. To generate a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a>, use the <see cref="RGB" /> macro.</para>
-    </summary>
+    <summary>The color key to be used when composing the layered window. To generate a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a>, use the <see cref="RGB" /> macro.</summary>
   </member>
   <member name="UPDATELAYEREDWINDOWINFO.pblend">
-    <summary>
-      <para>Type: <b>const <see cref="BLENDFUNCTION" />*</b></para>
-      <para>The transparency value to be used when composing the layered window.</para>
-    </summary>
+    <summary>The transparency value to be used when composing the layered window.</summary>
   </member>
   <member name="UPDATELAYEREDWINDOWINFO.dwFlags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>This parameter can be one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ULW_ALPHA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use <i>pblend</i> as the blend function. If the display mode is 256 colors or less, the effect of this value is the same as the effect of ULW_OPAQUE.</para>
-          </description>
-        </item>
-        <item>
+          <description>Use <i>pblend</i> as the blend function. If the display mode is 256 colors or less, the effect of this value is the same as the effect of ULW_OPAQUE.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ULW_COLORKEY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use <i>crKey</i> as the transparency color.</para>
-          </description>
-        </item>
-        <item>
+          <description>Use <i>crKey</i> as the transparency color.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ULW_OPAQUE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Draw an opaque layered window.</para>
-          </description>
-        </item>
-        <item>
+          <description>Draw an opaque layered window.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ULW_EX_NORESIZE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Force the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms633557(v=vs.85)">UpdateLayeredWindowIndirect</a> function to fail if the current window size does not match the size specified in the <i>psize</i>.</para>
-          </description>
-        </item>
-      </list>
-      <para>If <b>hdcSrc</b> is <b>NULL</b>, <b>dwFlags</b> should be zero.</para>
-    </summary>
+          <description>Force the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms633557(v=vs.85)">UpdateLayeredWindowIndirect</a> function to fail if the current window size does not match the size specified in the <i>psize</i>.</description>
+        </listheader>
+      </list> <para>If <b>hdcSrc</b> is <b>NULL</b>, <b>dwFlags</b> should be zero.</para></summary>
   </member>
   <member name="UPDATELAYEREDWINDOWINFO.prcDirty">
-    <summary>
-      <para>Type: <b>const <see cref="RECT" />*</b></para>
-      <para>The area to be updated. This parameter can be <b>NULL</b>. If it is non-NULL, only the area in this rectangle is updated from the source DC.</para>
-    </summary>
+    <summary>The area to be updated. This parameter can be <b>NULL</b>. If it is non-NULL, only the area in this rectangle is updated from the source DC.</summary>
   </member>
 </doc>

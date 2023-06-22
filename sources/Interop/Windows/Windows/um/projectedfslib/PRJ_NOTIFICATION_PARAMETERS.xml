@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_NOTIFICATION_PARAMETERS">
-    <summary>
-      <para>Extra parameters for notifications.</para>
-    </summary>
+    <summary>Extra parameters for notifications.</summary>
   </member>
-  <member name="PRJ_NOTIFICATION_PARAMETERS.PostCreate">
-    <summary></summary>
-  </member>
+  <member name="PRJ_NOTIFICATION_PARAMETERS.PostCreate"></member>
   <member name="PRJ_NOTIFICATION_PARAMETERS.PostCreate.NotificationMask">
-    <summary>
-      <para>Upon return from the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_notification_cb">PRJ_NOTIFICATION_CB</a> callback, the provider may specify a new set of notifications that it wishes to receive for the file here. If the provider sets this value to 0, it is equivalent to specifying <b>PRJ_NOTIFICATION_USE_EXISTING_MASK</b>.</para>
-    </summary>
+    <summary>Upon return from the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_notification_cb">PRJ_NOTIFICATION_CB</a> callback, the provider may specify a new set of notifications that it wishes to receive for the file here. If the provider sets this value to 0, it is equivalent to specifying <b>PRJ_NOTIFICATION_USE_EXISTING_MASK</b>.</summary>
   </member>
-  <member name="PRJ_NOTIFICATION_PARAMETERS.FileRenamed">
-    <summary></summary>
-  </member>
+  <member name="PRJ_NOTIFICATION_PARAMETERS.FileRenamed"></member>
   <member name="PRJ_NOTIFICATION_PARAMETERS.FileRenamed.NotificationMask">
-    <summary>
-      <para>Upon return from the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_notification_cb">PRJ_NOTIFICATION_CB</a> callback, the provider may specify a new set of notifications that it wishes to receive for the file here. If the provider sets this value to 0, it is equivalent to specifying <b>PRJ_NOTIFICATION_USE_EXISTING_MASK</b>.</para>
-    </summary>
+    <summary>Upon return from the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_notification_cb">PRJ_NOTIFICATION_CB</a> callback, the provider may specify a new set of notifications that it wishes to receive for the file here. If the provider sets this value to 0, it is equivalent to specifying <b>PRJ_NOTIFICATION_USE_EXISTING_MASK</b>.</summary>
   </member>
-  <member name="PRJ_NOTIFICATION_PARAMETERS.FileDeletedOnHandleClose">
-    <summary></summary>
-  </member>
+  <member name="PRJ_NOTIFICATION_PARAMETERS.FileDeletedOnHandleClose"></member>
   <member name="PRJ_NOTIFICATION_PARAMETERS.FileDeletedOnHandleClose.IsFileModified">
-    <summary>
-      <para>If the provider registered for <b>PRJ_NOTIFICATION_FILE_HANDLE_CLOSED_FILE_MODIFIED</b> as well as <b>PRJ_NOTIFICATION_FILE_HANDLE_CLOSED_FILE_DELETED</b>, this field is set to TRUE if the file was modified before it was deleted.</para>
-    </summary>
+    <summary>If the provider registered for <b>PRJ_NOTIFICATION_FILE_HANDLE_CLOSED_FILE_MODIFIED</b> as well as <b>PRJ_NOTIFICATION_FILE_HANDLE_CLOSED_FILE_DELETED</b>, this field is set to TRUE if the file was modified before it was deleted.</summary>
   </member>
 </doc>

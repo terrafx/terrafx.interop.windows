@@ -3,87 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_DEPTH_STENCIL_VIEW_DESC">
-    <summary>
-      <para>Specifies the subresources of a texture that are accessible from a depth-stencil view.</para>
-    </summary>
-    <remarks>
-      <para>These are valid formats for a depth-stencil view:</para>
-      <list type="bullet">
-        <item>
-          <description>DXGI_FORMAT_D16_UNORM</description>
-        </item>
-        <item>
-          <description>DXGI_FORMAT_D24_UNORM_S8_UINT</description>
-        </item>
-        <item>
-          <description>DXGI_FORMAT_D32_FLOAT</description>
-        </item>
-        <item>
-          <description>DXGI_FORMAT_D32_FLOAT_S8X24_UINT</description>
-        </item>
-        <item>
-          <description>DXGI_FORMAT_UNKNOWN</description>
-        </item>
-      </list>
-      <para>A depth-stencil view cannot use a typeless format.  If the format chosen is DXGI_FORMAT_UNKNOWN, then the format of the parent resource is used.</para>
-      <para>A depth-stencil-view description is needed when calling <see cref="ID3D11Device.CreateDepthStencilView" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Specifies the subresources of a texture that are accessible from a depth-stencil view.</summary>
   </member>
   <member name="D3D11_DEPTH_STENCIL_VIEW_DESC.Format">
-    <summary>
-      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
-      <para>Resource data  format (see <see cref="DXGI_FORMAT" />). See remarks for allowable formats.</para>
-    </summary>
+    <summary>Resource data format (see <see cref="DXGI_FORMAT" />). See remarks for allowable formats.</summary>
   </member>
   <member name="D3D11_DEPTH_STENCIL_VIEW_DESC.ViewDimension">
-    <summary>
-      <para>Type: <b><see cref="D3D11_DSV_DIMENSION" /></b></para>
-      <para>Type of resource (see <see cref="D3D11_DSV_DIMENSION" />). Specifies how a depth-stencil resource will be accessed; the value is stored in the
-union in this structure.</para>
-    </summary>
+    <summary>Type of resource (see <see cref="D3D11_DSV_DIMENSION" />). Specifies how a depth-stencil resource will be accessed; the value is stored in the union in this structure.</summary>
   </member>
   <member name="D3D11_DEPTH_STENCIL_VIEW_DESC.Flags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A value that describes whether the texture is read only.  Pass 0 to specify that it is not read only; otherwise, pass one of the members of
-the <see cref="D3D11_DSV_FLAG" /> enumerated type.</para>
-    </summary>
+    <summary>A value that describes whether the texture is read only. Pass 0 to specify that it is not read only; otherwise, pass one of the members of the <see cref="D3D11_DSV_FLAG" /> enumerated type.</summary>
   </member>
   <member name="D3D11_DEPTH_STENCIL_VIEW_DESC.Texture1D">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX1D_DSV" /></b></para>
-      <para>Specifies a 1D texture subresource (see <see cref="D3D11_TEX1D_DSV" />).</para>
-    </summary>
+    <summary>Specifies a 1D texture subresource (see <see cref="D3D11_TEX1D_DSV" />).</summary>
   </member>
   <member name="D3D11_DEPTH_STENCIL_VIEW_DESC.Texture1DArray">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX1D_ARRAY_DSV" /></b></para>
-      <para>Specifies an array of 1D texture subresources (see <see cref="D3D11_TEX1D_ARRAY_DSV" />).</para>
-    </summary>
+    <summary>Specifies an array of 1D texture subresources (see <see cref="D3D11_TEX1D_ARRAY_DSV" />).</summary>
   </member>
   <member name="D3D11_DEPTH_STENCIL_VIEW_DESC.Texture2D">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX2D_DSV" /></b></para>
-      <para>Specifies a 2D texture subresource (see <see cref="D3D11_TEX2D_DSV" />).</para>
-    </summary>
+    <summary>Specifies a 2D texture subresource (see <see cref="D3D11_TEX2D_DSV" />).</summary>
   </member>
   <member name="D3D11_DEPTH_STENCIL_VIEW_DESC.Texture2DArray">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX2D_ARRAY_DSV" /></b></para>
-      <para>Specifies an array of 2D texture subresources (see <see cref="D3D11_TEX2D_ARRAY_DSV" />).</para>
-    </summary>
+    <summary>Specifies an array of 2D texture subresources (see <see cref="D3D11_TEX2D_ARRAY_DSV" />).</summary>
   </member>
   <member name="D3D11_DEPTH_STENCIL_VIEW_DESC.Texture2DMS">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX2DMS_DSV" /></b></para>
-      <para>Specifies a multisampled 2D texture (see <see cref="D3D11_TEX2DMS_DSV" />).</para>
-    </summary>
+    <summary>Specifies a multisampled 2D texture (see <see cref="D3D11_TEX2DMS_DSV" />).</summary>
   </member>
   <member name="D3D11_DEPTH_STENCIL_VIEW_DESC.Texture2DMSArray">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX2DMS_ARRAY_DSV" /></b></para>
-      <para>Specifies an array of multisampled 2D textures (see <see cref="D3D11_TEX2DMS_ARRAY_DSV" />).</para>
-    </summary>
+    <summary>Specifies an array of multisampled 2D textures (see <see cref="D3D11_TEX2DMS_ARRAY_DSV" />).</summary>
   </member>
 </doc>

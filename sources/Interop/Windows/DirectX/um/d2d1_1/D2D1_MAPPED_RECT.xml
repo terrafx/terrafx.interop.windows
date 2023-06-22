@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_MAPPED_RECT">
-    <summary>
-      <para>Describes mapped memory from the <see cref="ID2D1Bitmap1.Map" /> API.</para>
-    </summary>
-    <remarks>
-      <para>The mapped rectangle is used to map a rectangle into the caller's address space.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap1.Map" />
+    <summary>Describes mapped memory from the <see cref="ID2D1Bitmap1.Map" /> API.</summary>
   </member>
   <member name="D2D1_MAPPED_RECT.pitch">
-    <summary>
-      <para>The size in bytes of an individual scanline in the bitmap.</para>
-    </summary>
+    <summary>The size in bytes of an individual scanline in the bitmap.</summary>
   </member>
   <member name="D2D1_MAPPED_RECT.bits">
-    <summary>
-      <para>The data inside the bitmap.</para>
-    </summary>
+    <summary>The data inside the bitmap.</summary>
   </member>
 </doc>

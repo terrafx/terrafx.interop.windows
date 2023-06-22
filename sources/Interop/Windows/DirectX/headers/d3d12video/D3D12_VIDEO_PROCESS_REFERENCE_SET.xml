@@ -3,39 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_PROCESS_REFERENCE_SET">
-    <summary>
-      <para>Contains the reference frames needed to perform video processing.</para>
-    </summary>
-    <seealso cref="D3D12_FEATURE_VIDEO_PROCESS_REFERENCE_INFO" />
+    <summary>Contains the reference frames needed to perform video processing.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_REFERENCE_SET.NumPastFrames">
-    <summary>
-      <para>The number of past reference frames provided in <i>ppPastFrames</i>.</para>
-    </summary>
+    <summary>The number of past reference frames provided in <i>ppPastFrames</i>.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_REFERENCE_SET.ppPastFrames">
-    <summary>
-      <para>A pointer to an array of <see cref="ID3D12Resource" /> surfaces. The number of elements in the array is <i>NumPastFrames</i>.</para>
-    </summary>
+    <summary>A pointer to an array of <see cref="ID3D12Resource" /> surfaces. The number of elements in the array is <i>NumPastFrames</i>.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_REFERENCE_SET.pPastSubresources">
-    <summary>
-      <para>An array of subresource indices for the list of <i>ppPastFrames</i> textures.  NULL indicates subresource 0 for each resource.</para>
-    </summary>
+    <summary>An array of subresource indices for the list of <i>ppPastFrames</i> textures. NULL indicates subresource 0 for each resource.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_REFERENCE_SET.NumFutureFrames">
-    <summary>
-      <para>The number of future reference frames provided in <i>ppPastFrames</i>.</para>
-    </summary>
+    <summary>The number of future reference frames provided in <i>ppPastFrames</i>.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_REFERENCE_SET.ppFutureFrames">
-    <summary>
-      <para>A pointer to an array of <see cref="ID3D12Resource" /> surfaces. The number of elements in the array is <i>NumFutureFrames</i>.</para>
-    </summary>
+    <summary>A pointer to an array of <see cref="ID3D12Resource" /> surfaces. The number of elements in the array is <i>NumFutureFrames</i>.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_REFERENCE_SET.pFutureSubresources">
-    <summary>
-      <para>An array of subresource indices for the list of <i>ppFutureFrames</i> textures.  NULL indicates subresource 0 for each resource.</para>
-    </summary>
+    <summary>An array of subresource indices for the list of <i>ppFutureFrames</i> textures. NULL indicates subresource 0 for each resource.</summary>
   </member>
 </doc>

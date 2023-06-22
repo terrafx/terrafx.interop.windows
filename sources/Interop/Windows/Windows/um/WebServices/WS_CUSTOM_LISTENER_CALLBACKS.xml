@@ -3,78 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS">
-    <summary>
-      <para>A structure that is used to specify a set of callbacks
-that form the implementation of a custom
-listener.</para>
-    </summary>
-    <remarks>
-      <para>This structure is specified when a listener is created using
-<see cref="WsCreateListener" /></para>
-      <para>using <see cref="WS_LISTENER_PROPERTY_CUSTOM_LISTENER_CALLBACKS" />.</para>
-      <para>Except where noted, each callback is responsible for validating all parameters and
-that the operation requested is acceptable given the current
-<see cref="WS_LISTENER_STATE" />.</para>
-    </remarks>
+    <summary>A structure that is used to specify a set of callbacks that form the implementation of a custom listener.</summary>
   </member>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS.createListenerCallback">
-    <summary>
-      <para>The callback that implements <see cref="WsCreateListener" />.
-See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_create_listener_callback">WS_CREATE_LISTENER_CALLBACK</a> for more information.</para>
-    </summary>
+    <summary>The callback that implements <see cref="WsCreateListener" />. See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_create_listener_callback">WS_CREATE_LISTENER_CALLBACK</a> for more information.</summary>
   </member>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS.freeListenerCallback">
-    <summary>
-      <para>The callback that implements <see cref="WsFreeListener" />.
-See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_free_listener_callback">WS_FREE_LISTENER_CALLBACK</a> for more information.</para>
-    </summary>
+    <summary>The callback that implements <see cref="WsFreeListener" />. See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_free_listener_callback">WS_FREE_LISTENER_CALLBACK</a> for more information.</summary>
   </member>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS.resetListenerCallback">
-    <summary>
-      <para>The callback that implements <see cref="WsResetListener" />.
-See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_reset_listener_callback">WS_RESET_LISTENER_CALLBACK</a> for more information.</para>
-    </summary>
+    <summary>The callback that implements <see cref="WsResetListener" />. See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_reset_listener_callback">WS_RESET_LISTENER_CALLBACK</a> for more information.</summary>
   </member>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS.openListenerCallback">
-    <summary>
-      <para>The callback that implements <see cref="WsOpenListener" />.
-See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_open_listener_callback">WS_OPEN_LISTENER_CALLBACK</a> for more information.</para>
-    </summary>
+    <summary>The callback that implements <see cref="WsOpenListener" />. See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_open_listener_callback">WS_OPEN_LISTENER_CALLBACK</a> for more information.</summary>
   </member>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS.closeListenerCallback">
-    <summary>
-      <para>The callback that implements <see cref="WsCloseListener" />.
-See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_close_listener_callback">WS_CLOSE_LISTENER_CALLBACK</a> for more information.</para>
-    </summary>
+    <summary>The callback that implements <see cref="WsCloseListener" />. See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_close_listener_callback">WS_CLOSE_LISTENER_CALLBACK</a> for more information.</summary>
   </member>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS.abortListenerCallback">
-    <summary>
-      <para>The callback that implements <see cref="WsAbortListener" />.
-See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_abort_listener_callback">WS_ABORT_LISTENER_CALLBACK</a> for more information.</para>
-    </summary>
+    <summary>The callback that implements <see cref="WsAbortListener" />. See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_abort_listener_callback">WS_ABORT_LISTENER_CALLBACK</a> for more information.</summary>
   </member>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS.getListenerPropertyCallback">
-    <summary>
-      <para>The callback that implements <see cref="WsGetListenerProperty" />.
-See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_get_listener_property_callback">WS_GET_LISTENER_PROPERTY_CALLBACK</a> for more information.</para>
-    </summary>
+    <summary>The callback that implements <see cref="WsGetListenerProperty" />. See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_get_listener_property_callback">WS_GET_LISTENER_PROPERTY_CALLBACK</a> for more information.</summary>
   </member>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS.setListenerPropertyCallback">
-    <summary>
-      <para>The callback that implements <see cref="WsSetListenerProperty" />.
-See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_set_listener_property_callback">WS_SET_LISTENER_PROPERTY_CALLBACK</a> for more information.</para>
-    </summary>
+    <summary>The callback that implements <see cref="WsSetListenerProperty" />. See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_set_listener_property_callback">WS_SET_LISTENER_PROPERTY_CALLBACK</a> for more information.</summary>
   </member>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS.createChannelForListenerCallback">
-    <summary>
-      <para>The callback that implements <see cref="WsCreateChannelForListener" />.
-See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_create_channel_for_listener_callback">WS_CREATE_CHANNEL_FOR_LISTENER_CALLBACK</a> for more information.</para>
-    </summary>
+    <summary>The callback that implements <see cref="WsCreateChannelForListener" />. See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_create_channel_for_listener_callback">WS_CREATE_CHANNEL_FOR_LISTENER_CALLBACK</a> for more information.</summary>
   </member>
   <member name="WS_CUSTOM_LISTENER_CALLBACKS.acceptChannelCallback">
-    <summary>
-      <para>The callback that implements <see cref="WsAcceptChannel" />.
-See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_accept_channel_callback">WS_ACCEPT_CHANNEL_CALLBACK</a> for more information.</para>
-    </summary>
+    <summary>The callback that implements <see cref="WsAcceptChannel" />. See <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_accept_channel_callback">WS_ACCEPT_CHANNEL_CALLBACK</a> for more information.</summary>
   </member>
 </doc>

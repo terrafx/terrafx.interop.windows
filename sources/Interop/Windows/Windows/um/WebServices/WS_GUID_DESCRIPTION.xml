@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_GUID_DESCRIPTION">
-    <summary>
-      <para>An optional type description used with <see cref="WS_GUID_TYPE" /> to specify constraints on the set of values
-which can be deserialized.</para>
-    </summary>
+    <summary>An optional type description used with <see cref="WS_GUID_TYPE" /> to specify constraints on the set of values which can be deserialized.</summary>
   </member>
   <member name="WS_GUID_DESCRIPTION.value">
-    <summary>
-      <para>The required value.</para>
-    </summary>
+    <summary>The required value.</summary>
   </member>
 </doc>

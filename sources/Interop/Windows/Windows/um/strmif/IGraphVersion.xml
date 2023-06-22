@@ -4,11 +4,10 @@
 <doc>
   <member name="IGraphVersion.QueryVersion">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>QueryVersion</code> method retrieves the current graph version number.</para>
     </summary>
-    <param name="pVersion">
-      <para>Pointer to the current graph version.</para>
-    </param>
+    <param name="pVersion">Pointer to the current graph version.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value that depends on the implementation. <b>HRESULT</b> can be one of the following standard constants, or other values not listed.</para>
       <list type="table">
@@ -16,66 +15,73 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Failure.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Method isn't supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK or NOERROR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>Method isn't supported.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK or NOERROR</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The version number is incremented every time there is a change in the set of filters in the graph or in their connections. If the version number has changed since the last enumeration, the graph must be re-enumerated.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IGraphVersion Interface" />
   </member>
   <member name="IGraphVersion">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IGraphVersion</code> interface is implemented on the Filter Graph Manager to provide a way for plug-in distributors and applications to know when the graph has changed. If the graph has changed, and the application or plug-in distributor has an interface on a particular filter or pin, it should requery the graph to see if its pointers are still valid, or if there are new ones it should use.</para>
     </summary>
   </member>

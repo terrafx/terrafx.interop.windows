@@ -3,53 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_DURATION">
-    <summary>
-      <para>Represents a <a href="https://www.w3.org/tr/xmlschema-2/#duration">xsd:duration</a> data type.</para>
-    </summary>
+    <summary>Represents a <a href="https://www.w3.org/tr/xmlschema-2/#duration">xsd:duration</a> data type.</summary>
   </member>
   <member name="WS_DURATION.negative">
-    <summary>
-      <para>If <b>TRUE</b>, this represents a negative duration.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, this represents a negative duration.</summary>
   </member>
   <member name="WS_DURATION.years">
-    <summary>
-      <para>The number of years.</para>
-    </summary>
+    <summary>The number of years.</summary>
   </member>
   <member name="WS_DURATION.months">
-    <summary>
-      <para>The number of months.</para>
-    </summary>
+    <summary>The number of months.</summary>
   </member>
   <member name="WS_DURATION.days">
-    <summary>
-      <para>The number of days.</para>
-    </summary>
+    <summary>The number of days.</summary>
   </member>
   <member name="WS_DURATION.hours">
-    <summary>
-      <para>The number of hours.</para>
-    </summary>
+    <summary>The number of hours.</summary>
   </member>
   <member name="WS_DURATION.minutes">
-    <summary>
-      <para>The number of minutes.</para>
-    </summary>
+    <summary>The number of minutes.</summary>
   </member>
   <member name="WS_DURATION.seconds">
-    <summary>
-      <para>The number of seconds.</para>
-    </summary>
+    <summary>The number of seconds.</summary>
   </member>
   <member name="WS_DURATION.milliseconds">
-    <summary>
-      <para>The number of milliseconds.  This value must be less than 1000.</para>
-    </summary>
+    <summary>The number of milliseconds. This value must be less than 1000.</summary>
   </member>
   <member name="WS_DURATION.ticks">
-    <summary>
-      <para>Indicates the number of ticks.  This value must be less than 10000.</para>
-    </summary>
+    <summary>Indicates the number of ticks. This value must be less than 10000.</summary>
   </member>
 </doc>

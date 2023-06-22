@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSequencerSource.AppendTopology">
-    <summary>
-      <para>Adds a topology to the end of the queue.</para>
-    </summary>
-    <param name="pTopology">
-      <para>Pointer to the <see cref="IMFTopology" /> interface of the topology. This pointer cannot be <b>NULL</b>. If an application passes <b>NULL</b>, the call fails with an E_INVALIDARG error code.</para>
-    </param>
-    <param name="dwFlags">
-      <para>A combination of flags from the <see cref="MFSequencerTopologyFlags" /> enumeration.</para>
-    </param>
-    <param name="pdwId">
-      <para>Receives the sequencer element identifier for this topology.</para>
-    </param>
+    <summary>Adds a topology to the end of the queue.</summary>
+    <param name="pTopology">Pointer to the <see cref="IMFTopology" /> interface of the topology. This pointer cannot be <b>NULL</b>. If an application passes <b>NULL</b>, the call fails with an E_INVALIDARG error code.</param>
+    <param name="dwFlags">A combination of flags from the <see cref="MFSequencerTopologyFlags" /> enumeration.</param>
+    <param name="pdwId">Receives the sequencer element identifier for this topology.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -22,66 +14,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_ATTRIBUTENOTFOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The source topology node is missing one of the following attributes:</para>
             <list type="bullet">
-              <item>
-                <description>
-                  <para>
-                    <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-stream-descriptor-attribute">MF_TOPONODE_STREAM_DESCRIPTOR</a>
-                  </para>
-                </description>
-              </item>
-              <item>
-                <description>
-                  <para>
-                    <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-presentation-descriptor-attribute">MF_TOPONODE_PRESENTATION_DESCRIPTOR</a>
-                  </para>
-                </description>
-              </item>
-              <item>
-                <description>
-                  <para>
-                    <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-source-attribute">MF_TOPONODE_SOURCE</a>
-                  </para>
-                </description>
-              </item>
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
             </list>
           </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_ATTRIBUTENOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source topology node is missing one of the following attributes:<list type="bullet"><item><description><a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-stream-descriptor-attribute">MF_TOPONODE_STREAM_DESCRIPTOR</a></description></item><item><description><a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-presentation-descriptor-attribute">MF_TOPONODE_PRESENTATION_DESCRIPTOR</a></description></item><item><description><a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-source-attribute">MF_TOPONODE_SOURCE</a></description></item></list></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The sequencer plays topologies in the order they are queued. You can queue as many topologies as you want to preroll.</para>
-      <para>The application must indicate to the sequencer when it has queued the last topology on the Media Session. To specify the last topology, set the SequencerTopologyFlags_Last flag in the <i>dwFlags</i> parameter when you append the topology. The sequencer uses this information to end playback with the pipeline. Otherwise, the sequencer waits indefinitely for a new topology to be queued.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/about-the-sequencer-source">About the Sequencer Source</seealso>
-    <seealso cref="IMFSequencerSource" />
-    <seealso cref="MFCreateTopologyNode" />
   </member>
   <member name="IMFSequencerSource.DeleteTopology">
-    <summary>
-      <para>Deletes a topology from the queue.</para>
-    </summary>
-    <param name="dwId">
-      <para>The sequencer element identifier of the topology to delete.</para>
-    </param>
+    <summary>Deletes a topology from the queue.</summary>
+    <param name="dwId">The sequencer element identifier of the topology to delete.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -89,34 +51,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSequencerSource" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sequencer-source">Sequencer Source</seealso>
   </member>
   <member name="IMFSequencerSource.GetPresentationContext">
-    <summary>
-      <para>Maps a presentation descriptor to its associated sequencer element identifier and the topology it represents.</para>
-    </summary>
-    <param name="pPD">
-      <para>Pointer to the <see cref="IMFPresentationDescriptor" /> interface of the presentation descriptor.</para>
-    </param>
-    <param name="pId">
-      <para>Receives the sequencer element identifier. This value is assigned by the sequencer source when the application calls <see cref="IMFSequencerSource.AppendTopology" />. This parameter is optional and can be <b>NULL</b>.</para>
-    </param>
-    <param name="ppTopology">
-      <para>Receives a pointer to the <see cref="IMFTopology" /> interface of the original topology that the application added to the sequencer source. The caller must release the interface. This parameter can receive the value <b>NULL</b> if the sequencer source has switched to the next presentation. This parameter is optional and can be <b>NULL</b>.</para>
-    </param>
+    <summary>Maps a presentation descriptor to its associated sequencer element identifier and the topology it represents.</summary>
+    <param name="pPD">Pointer to the <see cref="IMFPresentationDescriptor" /> interface of the presentation descriptor.</param>
+    <param name="pId">Receives the sequencer element identifier. This value is assigned by the sequencer source when the application calls <see cref="IMFSequencerSource.AppendTopology" />. This parameter is optional and can be <b>NULL</b>.</param>
+    <param name="ppTopology">Receives a pointer to the <see cref="IMFTopology" /> interface of the original topology that the application added to the sequencer source. The caller must release the interface. This parameter can receive the value <b>NULL</b> if the sequencer source has switched to the next presentation. This parameter is optional and can be <b>NULL</b>.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -124,54 +78,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The presentation descriptor is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_S_SEQUENCER_CONTEXT_CANCELED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The presentation descriptor is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_S_SEQUENCER_CONTEXT_CANCELED</b>
-            </para>
-          </description>
-          <description>
-            <para>This segment was canceled.</para>
-          </description>
-        </item>
+          <description>This segment was canceled.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The topology returned in <i>ppTopology</i> is the original topology that the application specified in <see cref="AppendTopology" />. The source nodes in this topology contain pointers to the native sources. Do not queue this topology on the Media Session. Instead, call <see cref="IMFMediaSourceTopologyProvider.GetMediaSourceTopology" /> to get the sequencer source's modified topology. The source nodes in the modified topology contain pointers to the sequencer source, rather than the native sources.</para>
-    </remarks>
-    <seealso cref="IMFSequencerSource" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sequencer-source">Sequencer Source</seealso>
   </member>
   <member name="IMFSequencerSource.UpdateTopology">
-    <summary>
-      <para>Updates a topology in the queue.</para>
-    </summary>
-    <param name="dwId">
-      <para>Sequencer element identifier of the topology to update.</para>
-    </param>
-    <param name="pTopology">
-      <para>Pointer to the <see cref="IMFTopology" /> interface of the updated topology object.</para>
-    </param>
+    <summary>Updates a topology in the queue.</summary>
+    <param name="dwId">Sequencer element identifier of the topology to update.</param>
+    <param name="pTopology">Pointer to the <see cref="IMFTopology" /> interface of the updated topology object.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -179,44 +128,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SHUTDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SHUTDOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The sequencer source has been shut down.</para>
-          </description>
-        </item>
+          <description>The sequencer source has been shut down.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is asynchronous. When the operation is completed, the sequencer source sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mesequencersourcetopologyupdated">MESequencerSourceTopologyUpdated</a> event.</para>
-    </remarks>
-    <seealso cref="IMFSequencerSource" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sequencer-source">Sequencer Source</seealso>
   </member>
   <member name="IMFSequencerSource.UpdateTopologyFlags">
-    <summary>
-      <para>Updates the flags for a topology in the queue.</para>
-    </summary>
-    <param name="dwId">
-      <para>Sequencer element identifier of the topology to update.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Bitwise <b>OR</b> of flags from the <see cref="MFSequencerTopologyFlags" /> enumeration.</para>
-    </param>
+    <summary>Updates the flags for a topology in the queue.</summary>
+    <param name="dwId">Sequencer element identifier of the topology to update.</param>
+    <param name="dwFlags">Bitwise <b>OR</b> of flags from the <see cref="MFSequencerTopologyFlags" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -224,26 +166,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSequencerSource" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sequencer-source">Sequencer Source</seealso>
   </member>
   <member name="IMFSequencerSource">
-    <summary>
-      <para>Implemented by the <a href="https://docs.microsoft.com//windows/desktop/medfound/sequencer-source">Sequencer Source</a>. The sequencer source enables an application to create a sequence of topologies. To create the sequencer source, call <see cref="MFCreateSequencerSource" />. For step-by-step instructions about how to create a playlist, see <a href="https://docs.microsoft.com//windows/desktop/medfound/how-to-create-a-playlist">How to Create a Playlist</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sequencer-source">Sequencer Source</seealso>
+    <summary>Implemented by the <a href="https://docs.microsoft.com//windows/desktop/medfound/sequencer-source">Sequencer Source</a>. The sequencer source enables an application to create a sequence of topologies. To create the sequencer source, call <see cref="MFCreateSequencerSource" />. For step-by-step instructions about how to create a playlist, see <a href="https://docs.microsoft.com//windows/desktop/medfound/how-to-create-a-playlist">How to Create a Playlist</a>.</summary>
   </member>
 </doc>

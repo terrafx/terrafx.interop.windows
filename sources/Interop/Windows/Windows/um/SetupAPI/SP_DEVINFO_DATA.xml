@@ -3,26 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_DEVINFO_DATA">
-    <summary>
-      <para>An SP_DEVINFO_DATA structure defines a device instance that is a member of a device information set.</para>
-    </summary>
-    <remarks>
-      <para>An SP_DEVINFO_DATA structure identifies a device in a device information set. For example, when Windows sends a <a href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-installdevice">DIF_INSTALLDEVICE</a> request to a class installer and co-installers, it includes a handle to a device information set and a pointer to an SP_DEVINFO_DATA that specifies the particular device. In addition to DIF requests, this structure is also used in some <b>SetupDi</b><i>Xxx</i> functions.</para>
-      <para>
-        <b>SetupDi</b>
-        <i>Xxx</i> functions that take an SP_DEVINFO_DATA structure as a parameter verify that the <b>cbSize</b> member of the supplied structure is equal to the size, in bytes, of the structure. If the <b>cbSize</b> member is not set correctly for an input parameter, the function will fail and set an error code of ERROR_INVALID_PARAMETER. If the <b>cbSize</b> member is not set correctly for an output parameter, the function will fail and set an error code of ERROR_INVALID_USER_BUFFER.</para>
-    </remarks>
-    <seealso cref="SP_DEVINFO_LIST_DETAIL_DATA" />
+    <summary>An SP_DEVINFO_DATA structure defines a device instance that is a member of a device information set.</summary>
   </member>
   <member name="SP_DEVINFO_DATA.cbSize">
-    <summary>
-      <para>The size, in bytes, of the SP_DEVINFO_DATA structure. For more information, see the following Remarks section.</para>
-    </summary>
+    <summary>The size, in bytes, of the SP_DEVINFO_DATA structure. For more information, see the following Remarks section.</summary>
   </member>
   <member name="SP_DEVINFO_DATA.ClassGuid">
-    <summary>
-      <para>The GUID of the device's setup class.</para>
-    </summary>
+    <summary>The GUID of the device's setup class.</summary>
   </member>
   <member name="SP_DEVINFO_DATA.DevInst">
     <summary>
@@ -31,8 +18,6 @@
     </summary>
   </member>
   <member name="SP_DEVINFO_DATA.Reserved">
-    <summary>
-      <para>Reserved. For internal use only.</para>
-    </summary>
+    <summary>Reserved. For internal use only.</summary>
   </member>
 </doc>

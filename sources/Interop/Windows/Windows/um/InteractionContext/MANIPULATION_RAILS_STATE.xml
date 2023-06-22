@@ -3,31 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MANIPULATION_RAILS_STATE">
-    <summary>
-      <para>Specifies the rail states for an interaction.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_arguments_manipulation">INTERACTION_ARGUMENTS_MANIPULATION</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-registeroutputcallbackinteractioncontext">RegisterOutputCallbackInteractionContext</seealso>
+    <summary>Specifies the rail states for an interaction.</summary>
   </member>
   <member name="MANIPULATION_RAILS_STATE.MANIPULATION_RAILS_STATE_UNDECIDED">
-    <summary>
-      <para>Rail state not defined yet.</para>
-    </summary>
+    <summary>Rail state not defined yet.</summary>
   </member>
   <member name="MANIPULATION_RAILS_STATE.MANIPULATION_RAILS_STATE_FREE">
-    <summary>
-      <para>Interaction is not constrained to rail.</para>
-    </summary>
+    <summary>Interaction is not constrained to rail.</summary>
   </member>
   <member name="MANIPULATION_RAILS_STATE.MANIPULATION_RAILS_STATE_RAILED">
-    <summary>
-      <para>Interaction is constrained to rail.</para>
-    </summary>
+    <summary>Interaction is constrained to rail.</summary>
   </member>
   <member name="MANIPULATION_RAILS_STATE.MANIPULATION_RAILS_STATE_MAX">
-    <summary>
-      <para>Maximum number of interactions exceeded.</para>
-    </summary>
+    <summary>Maximum number of interactions exceeded.</summary>
   </member>
 </doc>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EVENT_FILTER_EVENT_ID">
+    <summary>The <b>EVENT_FILTER_EVENT_ID</b> structure defines event IDs used in an<see cref="EVENT_FILTER_DESCRIPTOR" />structure for an event ID or stack walk filter.</summary>
+  </member>
+  <member name="EVENT_FILTER_EVENT_ID.FilterIn">
+    <summary>
+      <para>A value that indicates whether filtering should be enabled or disabled for the event IDs passed in the <b>Events</b> member.</para>
+      <para>When this member is <b>TRUE</b>, filtering is enabled for the specified event IDs. When this member is <b>FALSE</b>, filtering is disabled for the event IDs.</para>
+    </summary>
+  </member>
+  <member name="EVENT_FILTER_EVENT_ID.Reserved">
+    <summary>A reserved value.</summary>
+  </member>
+  <member name="EVENT_FILTER_EVENT_ID.Count">
+    <summary>The number of event IDs in the <b>Events</b> member.</summary>
+  </member>
+  <member name="EVENT_FILTER_EVENT_ID.Events">
+    <summary>An array of event IDs.</summary>
+  </member>
+</doc>

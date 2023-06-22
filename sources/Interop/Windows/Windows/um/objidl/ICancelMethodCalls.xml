@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICancelMethodCalls.Cancel">
-    <summary>
-      <para>Requests that a method call be canceled.</para>
-    </summary>
-    <param name="ulSeconds">
-      <para>The number of seconds to wait for the server to complete the outbound call after the client requests cancellation.</para>
-    </param>
+    <summary>Requests that a method call be canceled.</summary>
+    <param name="ulSeconds">The number of seconds to wait for the server to complete the outbound call after the client requests cancellation.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,72 +12,62 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The cancellation request was made.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The cancellation request was made.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RPC_S_CALL_CANCELED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The call was already canceled.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>RPC_S_CALL_CANCELED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_CANCEL_DISABLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Call cancellation is not enabled on the thread that is processing the call.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The call was already canceled.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RPC_E_CALL_COMPLETE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CO_E_CANCEL_DISABLED</b>
-            </para>
-          </description>
-          <description>
-            <para>Call cancellation is not enabled on the thread that is processing the call.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>RPC_E_CALL_COMPLETE</b>
-            </para>
-          </description>
-          <description>
-            <para>The call was completed during the timeout interval.</para>
-          </description>
-        </item>
+          <description>The call was completed during the timeout interval.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <b>Cancel</b> method only issues a cancel request. A return value of S_OK does not mean that the call was canceled, only that an attempt was made to cancel the call. The behavior of the cancel object on receiving a cancel request is entirely at the discretion of the implementer.</para>
-      <para>If a method that returns an <b>HRESULT</b> is canceled, the return value will be RPC_S_CALL_CANCELED.</para>
-    </remarks>
-    <seealso cref="ICancelMethodCalls" />
   </member>
   <member name="ICancelMethodCalls.TestCancel">
-    <summary>
-      <para>Determines whether a call has been canceled.</para>
-    </summary>
-    <returns>
-      <para>If the call was canceled, the return value is RPC_E_CALL_CANCELED. Otherwise, it is RPC_S_CALLPENDING.</para>
-    </returns>
-    <remarks>
-      <para>The server object calls <b>TestCancel</b> to determine if the call has been canceled. If the call has been canceled, the server should clean up the necessary resources and return control to the client.</para>
-      <para>This method can be called from both the client and the server.</para>
-    </remarks>
-    <seealso cref="CoTestCancel" />
-    <seealso cref="ICancelMethodCalls" />
+    <summary>Determines whether a call has been canceled.</summary>
+    <returns>If the call was canceled, the return value is RPC_E_CALL_CANCELED. Otherwise, it is RPC_S_CALLPENDING.</returns>
   </member>
   <member name="ICancelMethodCalls">
-    <summary>
-      <para>Manages cancellation requests on an outbound method call and monitors the current state of that method call on the server thread.</para>
-    </summary>
-    <seealso cref="IMessageFilter" />
+    <summary>Manages cancellation requests on an outbound method call and monitors the current state of that method call on the server thread.</summary>
   </member>
 </doc>

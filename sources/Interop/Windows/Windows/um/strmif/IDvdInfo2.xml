@@ -4,11 +4,10 @@
 <doc>
   <member name="IDvdInfo2.GetAllGPRMs">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>GetAllGPRMs</b> method retrieves the current contents of all general parameter registers (GPRMs).</para>
     </summary>
-    <param name="pRegisterArray">
-      <para>Pointer to an array of type <a href="https://docs.microsoft.com//windows/desktop/DirectShow/gprmarray">GPRMARRAY</a> that receives all 16 current GPRM values.</para>
-    </param>
+    <param name="pRegisterArray">Pointer to an array of type <a href="https://docs.microsoft.com//windows/desktop/DirectShow/gprmarray">GPRMARRAY</a> that receives all 16 current GPRM values.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -16,44 +15,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
+          <description>Invalid argument.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>GPRMs are 16-bit registers that each disc can use in unique ways for temporary data storage.</para>
-      <para>
-        <b>Note</b>  A player application using the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> filter does not need to access these registers for any Annex J playback or navigation control. This method is provided for player applications implementing advanced functionality. Do not attempt to modify the GPRMs directly unless you have a thorough knowledge of the DVD specification, and the ways in which the GPRMs are used on the particular discs to be played.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetAllSPRMs">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>GetAllSPRMs</b> method retrieves the current contents of all system parameter registers (SPRMs).</para>
     </summary>
-    <param name="pRegisterArray">
-      <para>Pointer to an array of type <a href="https://docs.microsoft.com//windows/desktop/DirectShow/sprmarray">SPRMARRAY</a> that receives the address of an array of SPRMs.</para>
-    </param>
+    <param name="pRegisterArray">Pointer to an array of type <a href="https://docs.microsoft.com//windows/desktop/DirectShow/sprmarray">SPRMARRAY</a> that receives the address of an array of SPRMs.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -61,139 +55,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
+          <description>Invalid argument.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The 24 SPRMs are used to hold information on current language, subpicture, and other navigation data.</para>
-      <para>
-        <b>Note</b>  A player application does not need to access these read-only registers for any standard navigation functionality. To use these registers effectively, you will probably need a more detailed knowledge of the DVD navigation commands than is provided in this documentation. The following table lists the contents of each register. Bits within the word are referred to as b0 (low order bit) through b15 (high order bit).</para>
-      <list type="table">
-        <listheader>
-          <description>Register
-</description>
-          <description>Contents
-</description>
-        </listheader>
-        <item>
-          <description>0</description>
-          <description>ISO-639 language code (two lowercase ASCII letters). Default value is undefined.</description>
-        </item>
-        <item>
-          <description>1</description>
-          <description>Low 4 bits (b0-b3) contain audio stream number (0 to 7) or 15 (none). Default value is 15.</description>
-        </item>
-        <item>
-          <description>2</description>
-          <description>Low 6 bits (b0-b5) contain subpicture stream number (0 to 31) or 62 (none) or 63 (dummy stream for forced subpicture). 7th bit (b6) contains subpicture display flag (0 = don't display subpicture). Default value is 62.</description>
-        </item>
-        <item>
-          <description>3</description>
-          <description>Low 4 bits (b0-b3) contain angle number (1 to 9). Default value is 1.</description>
-        </item>
-        <item>
-          <description>4</description>
-          <description>Low 7 bits (b0-b6) contain title number (1 to 99). Default value is 1.</description>
-        </item>
-        <item>
-          <description>5</description>
-          <description>Low 7 bits (b0-b6) contain title number within current VTS (1 to 99). Default value is 1.</description>
-        </item>
-        <item>
-          <description>6</description>
-          <description>Low 15 bits (b0-b14) contain PGC number in current title (1 to 32767). Default value is undefined.</description>
-        </item>
-        <item>
-          <description>7</description>
-          <description>Low 10 bits (b0-b9) contain chapter number (1 to 99). Default value is 1. Value undefined unless title is one_sequential_PGC_title.</description>
-        </item>
-        <item>
-          <description>8</description>
-          <description>High 6 bits (b10-b15) contain button number (1 to 36). Default value is 1024 (button 1).</description>
-        </item>
-        <item>
-          <description>9</description>
-          <description>Timer count, in seconds (0 to 65535). Default value is 0.</description>
-        </item>
-        <item>
-          <description>10</description>
-          <description>Low 15 bits (b0-b14) contain PGC number in current title (1 to 32767). Default value is undefined.</description>
-        </item>
-        <item>
-          <description>11</description>
-          <description>Six flags (b2: mix ch2 to ch1, b3: mix ch3 to ch1, b4: mix ch4 to ch1, b10 mix ch2 to ch0, b11: mix ch3 to ch0, b12: mix ch4 to ch0). Flag value of 0 means don't mix. Default value for all flags is 0. Value undefined if not playing Karaoke stream.</description>
-        </item>
-        <item>
-          <description>12</description>
-          <description>ISO-3166 country/region code (two uppercase ASCII letters) or 65535 (not specified). Default value is undefined.</description>
-        </item>
-        <item>
-          <description>13</description>
-          <description>Low 4 bits (b0-b3) contain parental level (1 to 8) or 15 (none). Default value is undefined.</description>
-        </item>
-        <item>
-          <description>14</description>
-          <description>b8-b9 contain current video output mode (0 = normal [4:3 or 16:9], 1 = panscan, 2 = letterbox). b10-b11 contain preferred display mode (0 = 4:3, 3 = 16:9). Default value is undefined.</description>
-        </item>
-        <item>
-          <description>15</description>
-          <description>Nine flags (b2: SDDS karaoke, b3: DTS karaoke, b4: MPEG karaoke, b6: Dolby Digital karaoke, b7: PCM karaoke, b10: SDDS playback, b11: DTS playback, b12: MPEG playback, b14: Dolby Digital playback). Flag value of 0 means incapable, 1 means capable. Default value is undefined.</description>
-        </item>
-        <item>
-          <description>16</description>
-          <description>ISO-639 language code (two lowercase ASCII letters) or 65535 (not specified). Default value is 65535.</description>
-        </item>
-        <item>
-          <description>17</description>
-          <description>Language extension code (0 = not specified, 1 = normal audio, 2 = audio for visually impaired, 3 = director comments #1, 4 = director comments #2). Default value is 0.</description>
-        </item>
-        <item>
-          <description>18</description>
-          <description>ISO-639 language code (two lowercase ASCII letters) or 65535 (not specified). Default value is 65535.</description>
-        </item>
-        <item>
-          <description>19</description>
-          <description>Language extension code (0 = not specified, 1 = normal subtitles, 2 = large subtitles, 3 = subtitles for children, 5 = normal Closed Captions, 6 = large Closed Captions, 7 = Closed Captions for children, 9 = forced subtitles, 13 = director comments, 14 = large director comments, 15 = director comments for children). Default value is 0.</description>
-        </item>
-        <item>
-          <description>20</description>
-          <description>Low 8 bits (b0-b7) contain region code (1 to 8).</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetAudioAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetAudioAttributes</code> method retrieves the attributes of the specified audio stream in the current title or menu.</para>
     </summary>
-    <param name="ulStream">
-      <para>Variable of type ULONG specifying the audio stream whose attributes you wish to query. See Remarks.</para>
-    </param>
-    <param name="pATR">
-      <para>Pointer to a <see cref="DVD_AudioAttributes" /> structure that is filled with the attributes of the specified audio stream.</para>
-    </param>
+    <param name="ulStream">Variable of type ULONG specifying the audio stream whose attributes you wish to query. See Remarks.</param>
+    <param name="pATR">Pointer to a <see cref="DVD_AudioAttributes" /> structure that is filled with the attributes of the specified audio stream.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -201,91 +96,141 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_NO_ATTRIBUTES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream's audio attributes are not available.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_NO_ATTRIBUTES</b>
-            </para>
-          </description>
-          <description>
-            <para>The stream's audio attributes are not available.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
+          <description>Invalid argument.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <i>ulStream</i> can be any index number from 0 through 7 or one of the following values:</para>
+  </member>
+  <member name="IDvdInfo2.GetAudioLanguage">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>The <code>GetAudioLanguage</code> method retrieves the language of the specified audio stream within the current title.</para>
+    </summary>
+    <param name="ulStream">Audio stream number for the language being retrieved.</param>
+    <param name="pLanguage">Receives the language information.</param>
+    <returns>
+      <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Return code</description>
+          <description>Description</description>
         </listheader>
-        <item>
-          <description>DVD_DEFAULT_AUDIO_STREAM</description>
-          <description>To query for the attributes of the default audio stream.</description>
-        </item>
-        <item>
-          <description>DVD_STREAM_DATA_CURRENT</description>
-          <description>To query the current stream.</description>
-        </item>
-        <item>
-          <description>DVD_STREAM_DATA_VMGM</description>
-          <description>To query for the VMGM's audio attributes.</description>
-        </item>
-        <item>
-          <description>DVD_STREAM_DATA_VTSM</description>
-          <description>To query for the VTSM's audio attributes.</description>
-        </item>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>pLanguage</i> parameter is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>DVD Navigator is not in a valid domain.</description>
+        </listheader>
       </list>
-      <para>The use of this method is demonstrated in the DVDSample application in <b>CDvdCore.GetAudioAttributes</b> and <b>CAudioLangDlg.GetAudioLang</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
+    </returns>
   </member>
   <member name="IDvdInfo2.GetButtonAtPosition">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetButtonAtPosition</code> method retrieves the button located at the specified point within the display window.</para>
     </summary>
-    <param name="point">
-      <para>Current mouse pointer position as retrieved through the Win32 WM_MOUSEMOVE message.</para>
-    </param>
-    <param name="pulButtonIndex">
-      <para>Receives the index (from 1 through 36) of the button at the current mouse pointer position.</para>
-    </param>
+    <param name="point">Current mouse pointer position as retrieved through the Win32 WM_MOUSEMOVE message.</param>
+    <param name="pulButtonIndex">Receives the index (from 1 through 36) of the button at the current mouse pointer position.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -293,67 +238,66 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>puButtonIndex</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_NO_BUTTON</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>puButtonIndex</i> parameter is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_NO_BUTTON</b>
-            </para>
-          </description>
-          <description>
-            <para>No button at <i>point</i>.</para>
-          </description>
-        </item>
+          <description>No button at <i>point</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is typically called in response to a mouse pointer move within a DVD menu display window. Be sure to check for success in the <b>HRESULT</b> before trying to retrieve the button number; this method only sets the value of <i>puButtonIndex</i> if a button is found at the specified point. DVD buttons do not necessarily have highlighted rectangles, button rectangles can overlap, and button rectangles do not always correspond to the visual representation of the buttons.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetButtonRect">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetButtonRect</code> method retrieves the rectangle coordinates for the specified menu button.</para>
-      <para>
-        <b>Note</b>  This method is currently not implemented.</para>
+      <div>
+        <b>Note</b>  This method is currently not implemented.</div>
     </summary>
-    <param name="ulButton">
-      <para>Specifies the menu button.</para>
-    </param>
-    <param name="pRect">
-      <para>Pointer to a variable of type RECT that receives the coordinates of the button's rectangle.</para>
-    </param>
+    <param name="ulButton">Specifies the menu button.</param>
+    <param name="pRect">Pointer to a variable of type RECT that receives the coordinates of the button's rectangle.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -361,32 +305,28 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>This method is currently not implemented</para>
-          </description>
-        </item>
+          <description>This method is currently not implemented</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetCmdFromEvent">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCmdFromEvent</code> method retrieves an <see cref="IDvdCmd" /> object from an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-cmd-start">EC_DVD_CMD_START</a> or <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-cmd-end">EC_DVD_CMD_END</a> event.</para>
     </summary>
-    <param name="lParam1">
-      <para>Event notification's <i>lParam1</i> parameter.</para>
-    </param>
-    <param name="pCmdObj">
-      <para>Receives a pointer to the  <see cref="IDvdCmd" /> interface that is associated with the command that fired the event.</para>
-    </param>
+    <param name="lParam1">Event notification's <i>lParam1</i> parameter.</param>
+    <param name="pCmdObj">Receives a pointer to the <see cref="IDvdCmd" /> interface that is associated with the command that fired the event.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -394,56 +334,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The command no longer exists.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The command no longer exists.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
+          <description>Invalid argument.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method maps the <i>lParam1</i> parameter of an EC_DVD_CMD_START or EC_DVD_CMD_END event into an <see cref="IDvdCmd" /> object that is associated with the command that fired the event. You can then call <see cref="WaitForStart" /> or <see cref="WaitForEnd" /> to control the blocking behavior of the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> with respect to that command. The IDvdCmd object is created by the DVD Navigator and the returned pointer has already had its reference count incremented, so you must release it after <b>WaitForStart</b> or <b>WaitForEnd</b> returns.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/synchronizing-dvd-commands">Synchronizing DVD Commands</seealso>
   </member>
   <member name="IDvdInfo2.GetCurrentAngle">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentAngle</code> method retrieves the number of available angles in the current angle block and the currently selected angle number.</para>
     </summary>
-    <param name="pulAnglesAvailable">
-      <para>Receives the number of available angles. There are up to nine angles in an angle block, numbered 1 through 9. If the value equals 1, then the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not in an angle block.</para>
-    </param>
-    <param name="pulCurrentAngle">
-      <para>Receives the current angle number.</para>
-    </param>
+    <param name="pulAnglesAvailable">Receives the number of available angles. There are up to nine angles in an angle block, numbered 1 through 9. If the value equals 1, then the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not in an angle block.</param>
+    <param name="pulCurrentAngle">Receives the current angle number.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -451,58 +387,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>DVD Navigator is not initialized or not in a valid domain.</para>
-          </description>
-        </item>
+          <description>DVD Navigator is not initialized or not in a valid domain.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Note that angle and menu button indexes are 1-based, while audio and subpicture stream indexes are 0-based. When the DVD Navigator is about to enter an angle block, it sends the application an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-angles-available">EC_DVD_ANGLES_AVAILABLE</a> event notification with the <i>lParam</i> set to 1. Applications will typically call <code>GetCurrentAngle</code> and <see cref="IDvdControl2.SelectAngle" /> within their event handler for EC_DVD_ANGLES_AVAILABLE.</para>
-      <para>This method is demonstrated in the DVDSample application in <b>CAngleDlg.MakeAngleList</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-angles-available">EC_DVD_ANGLES_AVAILABLE</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-angle-change">EC_DVD_ANGLE_CHANGE</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetCurrentAudio">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentAudio</code> method retrieves the number of available audio streams and the number of the currently selected audio stream.</para>
     </summary>
-    <param name="pulStreamsAvailable">
-      <para>Receives the number of available audio streams.</para>
-    </param>
-    <param name="pulCurrentStream">
-      <para>Receives the currently selected audio stream number in the current title.</para>
-    </param>
+    <param name="pulStreamsAvailable">Receives the number of available audio streams.</param>
+    <param name="pulCurrentStream">Receives the currently selected audio stream number in the current title.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -510,56 +440,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Input arguments are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Input arguments are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized or not in a valid domain.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized or not in a valid domain.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To get the available audio languages on the disc, call <code>GetCurrentAudio</code> and then call <see cref="GetAudioLanguage" /> for each stream, starting from zero through (<i>pulStreamsAvailable</i> - 1) to get the language content.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-audio-stream-change">EC_DVD_AUDIO_STREAM_CHANGE</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetCurrentButton">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentButton</code> method retrieves the number of available buttons and the number of the currently selected button.</para>
     </summary>
-    <param name="pulButtonsAvailable">
-      <para>Receives the number of buttons available.</para>
-    </param>
-    <param name="pulCurrentButton">
-      <para>Receives the number (from 1 through 36) of the currently selected button.</para>
-    </param>
+    <param name="pulButtonsAvailable">Receives the number of buttons available.</param>
+    <param name="pulCurrentButton">Receives the number (from 1 through 36) of the currently selected button.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -567,43 +493,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>One of the pointer arguments is not valid.</para>
-          </description>
-        </item>
+          <description>One of the pointer arguments is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If buttons are not present, both <i>pulButtonsAvailable</i> and <i>pulCurrentButton</i> are set to zero.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-button-change">EC_DVD_BUTTON_CHANGE</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetCurrentDomain">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentDomain</code> method retrieves the domain in which the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is currently located.</para>
     </summary>
-    <param name="pDomain">
-      <para>Pointer to a variable of type <see cref="DVD_DOMAIN" /> that receives the current domain.</para>
-    </param>
+    <param name="pDomain">Pointer to a variable of type <see cref="DVD_DOMAIN" /> that receives the current domain.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -611,53 +533,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Unexpected error.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Unexpected error.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
+          <description>Invalid argument.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You can use this method to test whether the DVD Navigator is finished playing in a particular title domain. An application doesn't have to test for the current domain before calling an <see cref="IDvdControl2" /> method such as <see cref="PlayTitle" />, <see cref="PlayForwards" />, and so on. The DVD Navigator tests for the domain and simply does nothing, returning VFW_E_DVD_INVALIDDOMAIN, if the current command is invalid for the domain.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-domain-change">EC_DVD_DOMAIN_CHANGE</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetCurrentLocation">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentLocation</code> method retrieves the current playback location.</para>
     </summary>
-    <param name="pLocation">
-      <para>Pointer to a variable of type <see cref="DVD_PLAYBACK_LOCATION2" /> that receives the playback location information.</para>
-    </param>
+    <param name="pLocation">Pointer to a variable of type <see cref="DVD_PLAYBACK_LOCATION2" /> that receives the playback location information.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -665,68 +585,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>pLocation</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pLocation</i> parameter is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is in an invalid domain.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is in an invalid domain.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method retrieves information sufficient to restart playback of a video from the current playback location in titles that don't explicitly disable seeking to the current location. After the disc has been ejected, the information returned by this method will not necessarily be sufficient to restart playback. To save the current location and state information to disc so that the user can return to the same location at any later time, use <see cref="GetState" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetCurrentSubpicture">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentSubpicture</code> method retrieves the number of available subpicture streams in the current title, the currently selected subpicture stream number, and the state of the subpicture.</para>
     </summary>
-    <param name="pulStreamsAvailable">
-      <para>Receives the number of available subpicture streams.</para>
-    </param>
-    <param name="pulCurrentStream">
-      <para>Receives the number of the currently selected subpicture stream.</para>
-    </param>
-    <param name="pbIsDisabled">
-      <para>Receives a Boolean value that indicates whether the subpicture display is disabled; <b>TRUE</b> means it is disabled.</para>
-    </param>
+    <param name="pulStreamsAvailable">Receives the number of available subpicture streams.</param>
+    <param name="pulCurrentStream">Receives the number of the currently selected subpicture stream.</param>
+    <param name="pbIsDisabled">Receives a Boolean value that indicates whether the subpicture display is disabled; <b>TRUE</b> means it is disabled.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -734,53 +651,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized or not in the Title domain.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized or not in the Title domain.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>DVD content authors can specify that any particular subpicture stream on a disc is <i>forcedly activated</i>, meaning that the DVD authors require this stream to display whether the viewer wants to watch it or not. The DVD Navigator complies with all such commands from the disc, meaning that forcedly activated streams are displayed even if the application has disabled subpicture display with the <see cref="IDvdControl2.SetSubpictureState" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-subpicture-stream-change">EC_DVD_SUBPICTURE_STREAM_CHANGE</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetCurrentUOPS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentUOPS</code> method retrieves a set of flags indicating which navigation commands, if any, the content authors have explicitly disabled for the current disc location.</para>
     </summary>
-    <param name="pulUOPs">
-      <para>Receives a bitwise <see cref="VALID_UOP_FLAG" /> values. Each bit represents the state (valid or not valid) of a user operation (UOP). If the bit is set, then that user operation is prohibited. See Remarks.</para>
-    </param>
+    <param name="pulUOPs">Receives a bitwise <see cref="VALID_UOP_FLAG" /> values. Each bit represents the state (valid or not valid) of a user operation (UOP). If the bit is set, then that user operation is prohibited. See Remarks.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -788,43 +703,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <i>pulUOPs</i> is not a valid pointer.
-</description>
-        </item>
+            <i>pulUOPs</i> is not a valid pointer.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>DVD authors can insert UOP commands at almost any place on the disc to disallow a navigation command that would otherwise be permitted within the current DVD domain. In other words, UOP commands enable disc authors to override the usual navigation permissions.</para>
-      <para>A DVD player application should normally never have to use this method because the DVD Navigator automatically checks all UOP permissions before proceeding with any command, and will return VFW_E_DVD_OPERATION_INHIBITED from any method if the command is invalid under the current UOP. If your application needs to track the current UOP permissions itself, you can call <code>GetCurrentUOPS</code> whenever the current UOP permissions are required, or you can handle the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-valid-uops-change">EC_DVD_VALID_UOPS_CHANGE</a> event notification in your message loop and retrieve the UOP information from the <i>lParam1</i> parameter. The latter approach is generally more efficient.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetCurrentVideoAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentVideoAttributes</code> method retrieves the video attributes of the current title or menu.</para>
     </summary>
-    <param name="pATR">
-      <para>Pointer to a <see cref="DVD_VideoAttributes" /> structure that receives the attributes.</para>
-    </param>
+    <param name="pATR">Pointer to a <see cref="DVD_VideoAttributes" /> structure that receives the attributes.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -832,52 +744,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The use of this method is demonstrated in the DVDSample application in <b>CDvdCore.GetVideoAttributes()</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetDecoderCaps">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDecoderCaps</code> method retrieves the DVD decoder's maximum data rate for video, audio, and subpicture (in forward and reverse) as well as support for various types of audio (AC-3, MPEG-2, DTS, SDDS, LPCM).</para>
     </summary>
-    <param name="pCaps">
-      <para>Pointer to a variable of type <see cref="DVD_DECODER_CAPS" /> that receives the information about the decoder.</para>
-    </param>
+    <param name="pCaps">Pointer to a variable of type <see cref="DVD_DECODER_CAPS" /> that receives the information about the decoder.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -885,42 +796,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The filter graph has not been initialized.</para>
-          </description>
-        </item>
+          <description>The filter graph has not been initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetDefaultAudioLanguage">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDefaultAudioLanguage</code> method retrieves the default audio language.</para>
     </summary>
-    <param name="pLanguage">
-      <para>Receives the default language information.</para>
-    </param>
-    <param name="pAudioExtension">
-      <para>Pointer to a variable of type <see cref="DVD_AUDIO_LANG_EXT" /> that receives a value indicating the default DVD audio language extension.</para>
-    </param>
+    <param name="pLanguage">Receives the default language information.</param>
+    <param name="pAudioExtension">Pointer to a variable of type <see cref="DVD_AUDIO_LANG_EXT" /> that receives a value indicating the default DVD audio language extension.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -928,69 +837,75 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>pLanguage</i> parameter is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>pLanguage</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>DVD Navigator is not in a valid domain.</para>
-          </description>
-        </item>
+          <description>DVD Navigator is not in a valid domain.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetDefaultMenuLanguage">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDefaultMenuLanguage</code> method retrieves the default menu language.</para>
     </summary>
-    <param name="pLanguage">
-      <para>Receives the language information.</para>
-    </param>
+    <param name="pLanguage">Receives the language information.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -998,72 +913,76 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>pLanguage</i> parameter is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>pLanguage</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>DVD Navigator is not in a valid domain.</para>
-          </description>
-        </item>
+          <description>DVD Navigator is not in a valid domain.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetDefaultSubpictureLanguage">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDefaultSubpictureLanguage</code> method retrieves the default subpicture language.</para>
     </summary>
-    <param name="pLanguage">
-      <para>Receives the language information.</para>
-    </param>
-    <param name="pSubpictureExtension">
-      <para>Pointer to a variable of type <see cref="DVD_SUBPICTURE_LANG_EXT" /> that receives one of the allowable values indicating the default language extension.</para>
-    </param>
+    <param name="pLanguage">Receives the language information.</param>
+    <param name="pSubpictureExtension">Pointer to a variable of type <see cref="DVD_SUBPICTURE_LANG_EXT" /> that receives one of the allowable values indicating the default language extension.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1071,72 +990,76 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>pLanguage</i> parameter is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>pLanguage</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>DVD Navigator is not in a valid domain.</para>
-          </description>
-        </item>
+          <description>DVD Navigator is not in a valid domain.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetDiscID">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDiscID</code> method retrieves a system-generated 64-bit identification number for the specified DVD.</para>
     </summary>
-    <param name="pszwPath">
-      <para>Path of the volume to use for the disc ID. Specify <b>NULL</b> to use the current or default DVD volume.</para>
-    </param>
-    <param name="pullDiscID">
-      <para>Receives the 64-bit disc ID.</para>
-    </param>
+    <param name="pszwPath">Path of the volume to use for the disc ID. Specify <b>NULL</b> to use the current or default DVD volume.</param>
+    <param name="pullDiscID">Receives the 64-bit disc ID.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1144,68 +1067,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALID_DISC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALID_DISC</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified path is not a valid DVD disc.</para>
-          </description>
-        </item>
+          <description>The specified path is not a valid DVD disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The DVD Navigator calculates an identifier ID based on file sizes, dates, and other information, and not the BCA (burst cutting area) value. This number is guaranteed to be the same each time the disc is played. The ID applies to all replicated copies of a disc. In other words, all copies of a specific movie will have the same ID. The odds that two separate titles will have the same ID is sufficiently remote that this ID can be considered "unique" for all practical purposes.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetDVDDirectory">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDVDDirectory</code> method retrieves the root directory that is set in the DVD Navigator.</para>
     </summary>
-    <param name="pszwPath">
-      <para>Pointer to a buffer that receives the path string.</para>
-    </param>
-    <param name="ulMaxSize">
-      <para>Size of the buffer, in WCHARs.</para>
-    </param>
-    <param name="pulActualSize">
-      <para>Pointer to a variable that receives the size of actual data returned, in WCHARs.</para>
-    </param>
+    <param name="pszwPath">Pointer to a buffer that receives the path string.</param>
+    <param name="ulMaxSize">Size of the buffer, in WCHARs.</param>
+    <param name="pulActualSize">Pointer to a variable that receives the size of actual data returned, in WCHARs.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1213,61 +1133,54 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The buffer is not large enough to hold the string.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer is not large enough to hold the string.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not in a valid domain.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not in a valid domain.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is demonstrated in the DVDSample application in <b>CDvdCore.GetDriveLetter</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetDVDTextLanguageInfo">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDVDTextLanguageInfo</code> method retrieves information about the text strings for a specified language. The method retrieves the number of strings for that language, the locale identifier, and the character set.</para>
     </summary>
-    <param name="ulLangIndex">
-      <para>Zero-based index of the language to query. To find the number of text-string languages on the DVD, call <see cref="IDvdInfo2.GetDVDTextNumberOfLanguages" />.</para>
-    </param>
-    <param name="pulNumOfStrings">
-      <para>Receives the number of text strings for the specified language.</para>
-    </param>
-    <param name="pLangCode">
-      <para>Receives a <i>locale identifier</i> (LCID) that specifies the language in which the text is written. For example, the LCID for "en-us" is 0x0409.</para>
-    </param>
-    <param name="pbCharacterSet">
-      <para>Receives a member of the <see cref="DVD_TextCharSet" /> enumeration. The value specifies the character set of the text string.</para>
-    </param>
+    <param name="ulLangIndex">Zero-based index of the language to query. To find the number of text-string languages on the DVD, call <see cref="IDvdInfo2.GetDVDTextNumberOfLanguages" />.</param>
+    <param name="pulNumOfStrings">Receives the number of text strings for the specified language.</param>
+    <param name="pLangCode">Receives a <i>locale identifier</i> (LCID) that specifies the language in which the text is written. For example, the LCID for "en-us" is 0x0409.</param>
+    <param name="pbCharacterSet">Receives a member of the <see cref="DVD_TextCharSet" /> enumeration. The value specifies the character set of the text string.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1275,63 +1188,64 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>This DVD does not have any text strings, or the <i>ulLangIndex</i> parameter is out of bounds.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>This DVD does not have any text strings, or the <i>ulLangIndex</i> parameter is out of bounds.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected internal error occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected internal error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To get a particular text string, call <see cref="IDvdInfo2.GetDVDTextStringAsUnicode" /> or <see cref="IDvdInfo2.GetDVDTextStringAsNative" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-dvd-text-strings">Working with DVD Text Strings</seealso>
   </member>
   <member name="IDvdInfo2.GetDVDTextNumberOfLanguages">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDVDTextNumberOfLanguages</code> method retrieves the number of languages in which DVD text strings appear.</para>
     </summary>
-    <param name="pulNumOfLangs">
-      <para>Receives the number of text languages.</para>
-    </param>
+    <param name="pulNumOfLangs">Receives the number of text languages.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1339,69 +1253,56 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected internal error occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected internal error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Depending on how the disc is authored, the number of languages will be valid either for the entire disc, or only for the current side of the disc.</para>
-      <para>If the DVD does not contain any text strings, the method succeeds, but <i>pulNumOfLangs</i> receives the value zero.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-dvd-text-strings">Working with DVD Text Strings</seealso>
   </member>
   <member name="IDvdInfo2.GetDVDTextStringAsNative">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDVDTextStringAsNative</code> method retrieves a DVD text string for a specified language, and returns the text string as an array of bytes.</para>
     </summary>
-    <param name="ulLangIndex">
-      <para>Zero-based index of the language. To find the number of text-string languages on the DVD, call <see cref="IDvdInfo2.GetDVDTextNumberOfLanguages" />.</para>
-    </param>
-    <param name="ulStringIndex">
-      <para>Zero-based index of the string to retrieve. To find the number of strings for a given language, call <see cref="IDvdInfo2.GetDVDTextLanguageInfo" />.</para>
-    </param>
-    <param name="pbBuffer">
-      <para>Pointer to a buffer that receives the text string. If <i>pchBuffer</i> is <b>NULL</b>, this method returns the size of the string in <i>pulActualSize</i>.</para>
-    </param>
-    <param name="ulMaxBufferSize">
-      <para>Size of the <i>pchBuffer</i> in bytes</para>
-    </param>
-    <param name="pulActualSize">
-      <para>Receives the actual length of the string in bytes, including the terminating <b>NULL</b>.</para>
-    </param>
-    <param name="pType">
-      <para>Receives a member of the <see cref="DVD_TextStringType" /> enumeration. The value indicates the type of text string, such as movie title or song name. This parameter can also receive values that are not defined in the <b>DVD_TextStringType</b> enumeration.</para>
-    </param>
+    <param name="ulLangIndex">Zero-based index of the language. To find the number of text-string languages on the DVD, call <see cref="IDvdInfo2.GetDVDTextNumberOfLanguages" />.</param>
+    <param name="ulStringIndex">Zero-based index of the string to retrieve. To find the number of strings for a given language, call <see cref="IDvdInfo2.GetDVDTextLanguageInfo" />.</param>
+    <param name="pbBuffer">Pointer to a buffer that receives the text string. If <i>pchBuffer</i> is <b>NULL</b>, this method returns the size of the string in <i>pulActualSize</i>.</param>
+    <param name="ulMaxBufferSize">Size of the <i>pchBuffer</i> in bytes</param>
+    <param name="pulActualSize">Receives the actual length of the string in bytes, including the terminating <b>NULL</b>.</param>
+    <param name="pType">Receives a member of the <see cref="DVD_TextStringType" /> enumeration. The value indicates the type of text string, such as movie title or song name. This parameter can also receive values that are not defined in the <b>DVD_TextStringType</b> enumeration.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1409,70 +1310,56 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected internal error occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected internal error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns a DVD text string as a raw byte array, with no conversions. You can use this method to get text strings that are encoded using character sets other than Unicode or 7-bit ASCII (ISO/IEC 646), such as JIS Roman Kanji. To find the character set, call <see cref="IDvdInfo2.GetDVDTextLanguageInfo" />.</para>
-      <para>For Unicode and ASCII text strings, you can use the <see cref="IDvdInfo2.GetDVDTextStringAsUnicode" /> method, which returns a wide-character string.</para>
-      <para>The returned string always includes a single terminating <b>NULL</b> byte. If the buffer is smaller than the length of the DVD text string, the string is truncated. To find the required size of the buffer, call the method once with <i>pchBuffer</i> equal to <b>NULL</b> and <i>ulMaxBufferSize</i> equal to zero. The size is returned in <i>pulActualSize</i>. Then allocate a buffer and call the method again.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-dvd-text-strings">Working with DVD Text Strings</seealso>
   </member>
   <member name="IDvdInfo2.GetDVDTextStringAsUnicode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDVDTextStringAsUnicode</code> method retrieves a DVD text string for a specified language, and returns the text string as a Unicode string.</para>
     </summary>
-    <param name="ulLangIndex">
-      <para>Zero-based index of the language. To find the number of text-string languages on the DVD, call <see cref="IDvdInfo2.GetDVDTextNumberOfLanguages" />.</para>
-    </param>
-    <param name="ulStringIndex">
-      <para>Zero-based index of the string to retrieve. To find the number of strings for a given language, call <see cref="IDvdInfo2.GetDVDTextLanguageInfo" />.</para>
-    </param>
-    <param name="pchwBuffer">
-      <para>Pointer to a buffer that receives the text string. If <i>pchBuffer</i> is <b>NULL</b>, this method returns the size of the string in <i>pulActualSize</i>.</para>
-    </param>
-    <param name="ulMaxBufferSize">
-      <para>Size of the <i>pchBuffer</i> buffer, in <b>WCHARs</b>.</para>
-    </param>
-    <param name="pulActualSize">
-      <para>Receives the actual length of the string in characters, including the terminating <b>NULL</b>.</para>
-    </param>
-    <param name="pType">
-      <para>Receives a member of the <see cref="DVD_TextStringType" /> enumeration. The value indicates the type of text string, such as movie title or song name. This parameter can also receive values that are not defined in the <b>DVD_TextStringType</b> enumeration.</para>
-    </param>
+    <param name="ulLangIndex">Zero-based index of the language. To find the number of text-string languages on the DVD, call <see cref="IDvdInfo2.GetDVDTextNumberOfLanguages" />.</param>
+    <param name="ulStringIndex">Zero-based index of the string to retrieve. To find the number of strings for a given language, call <see cref="IDvdInfo2.GetDVDTextLanguageInfo" />.</param>
+    <param name="pchwBuffer">Pointer to a buffer that receives the text string. If <i>pchBuffer</i> is <b>NULL</b>, this method returns the size of the string in <i>pulActualSize</i>.</param>
+    <param name="ulMaxBufferSize">Size of the <i>pchBuffer</i> buffer, in <b>WCHARs</b>.</param>
+    <param name="pulActualSize">Receives the actual length of the string in characters, including the terminating <b>NULL</b>.</param>
+    <param name="pType">Receives a member of the <see cref="DVD_TextStringType" /> enumeration. The value indicates the type of text string, such as movie title or song name. This parameter can also receive values that are not defined in the <b>DVD_TextStringType</b> enumeration.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1480,73 +1367,66 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Unsupported te</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Unsupported te</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected internal error occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected internal error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method supports text strings that are encoded as Unicode or 7-bit ASCII (ISO/IEC 646). If the text string uses ASCII encoding, the method converts the string to a wide-character string. If the text string uses any other character set, the method returns E_FAIL. In that case, you can call <see cref="IDvdInfo2.GetDVDTextStringAsNative" /> to retrieve the string as a raw byte array. To find the character set, call <see cref="IDvdInfo2.GetDVDTextLanguageInfo" />.</para>
-      <para>The returned string always includes a terminating <b>NULL</b>. If the buffer is smaller than the length of the DVD text string, the string is truncated. To find the required size of the buffer, call the method once with <i>pchBuffer</i> equal to <b>NULL</b> and <i>ulMaxBufferSize</i> equal to zero. The size is returned in <i>pulActualSize</i>. Then allocate a buffer and call the method again.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-dvd-text-strings">Working with DVD Text Strings</seealso>
   </member>
   <member name="IDvdInfo2.GetDVDVolumeInfo">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDVDVolumeInfo</code> method retrieves the current DVD volume information.</para>
     </summary>
-    <param name="pulNumOfVolumes">
-      <para>Receives the number of volumes in the volume set.</para>
-    </param>
-    <param name="pulVolume">
-      <para>Receives the volume number for this root directory.</para>
-    </param>
-    <param name="pSide">
-      <para>Pointer to a variable of type <see cref="DVD_DISC_SIDE" /> that receives the current disc side.</para>
-    </param>
-    <param name="pulNumOfTitles">
-      <para>Pointer to a variable of type ULONG that receives the number of titles available in this volume.</para>
-    </param>
+    <param name="pulNumOfVolumes">Receives the number of volumes in the volume set.</param>
+    <param name="pulVolume">Receives the volume number for this root directory.</param>
+    <param name="pSide">Pointer to a variable of type <see cref="DVD_DISC_SIDE" /> that receives the current disc side.</param>
+    <param name="pulNumOfTitles">Pointer to a variable of type ULONG that receives the number of titles available in this volume.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1554,45 +1434,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
+          <description>Invalid argument.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Some discs can be distributed as part of multidisc set. "Volume" in this context can mean either "disc" or "disc side", depending on how the disc was authored.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetKaraokeAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetKaraokeAttributes</code> method retrieves the karaoke attributes of the specified audio stream in the current title or menu.</para>
     </summary>
-    <param name="ulStream">
-      <para>Specifies the index of the audio stream whose attributes you want to query. See Remarks.</para>
-    </param>
-    <param name="pAttributes">
-      <para>Pointer to a <see cref="DVD_KaraokeAttributes" /> structure that is filled with the karaoke attributes.</para>
-    </param>
+    <param name="ulStream">Specifies the index of the audio stream whose attributes you want to query. See Remarks.</param>
+    <param name="pAttributes">Pointer to a <see cref="DVD_KaraokeAttributes" /> structure that is filled with the karaoke attributes.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1600,105 +1475,89 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_NOT_IN_KARAOKE_MODE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified stream is not in karaoke format.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The DVD Navigator is not in the title domain.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_NO_ATTRIBUTES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_NOT_IN_KARAOKE_MODE</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified stream is not in karaoke format.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>The DVD Navigator is not in the title domain.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_NO_ATTRIBUTES</b>
-            </para>
-          </description>
-          <description>
-            <para>The karaoke attributes for the specified stream are not available.</para>
-          </description>
-        </item>
+          <description>The karaoke attributes for the specified stream are not available.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method does not explicitly return the number of channels in the stream. You can obtain that information through a call to <see cref="IDvdInfo2.GetAudioAttributes" />. This method is demonstrated in the DVDSample application in <b>CKaraokeDlg.DoModal</b>.</para>
-      <para>The <i>ulStream</i> parameter may be a value from 0 through 7, or one of the following:</para>
-      <list type="table">
-        <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>DVD_STREAM_DATA_CURRENT (0x800)</description>
-          <description>To query the currently selected audio stream.</description>
-        </item>
-        <item>
-          <description>DVD_DEFAULT_AUDIO_STREAM</description>
-          <description>To query the default audio stream.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetMenuLanguages">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetMenuLanguages</code> method retrieves all the languages available for all menus on the disc.</para>
     </summary>
-    <param name="pLanguages">
-      <para>Pointer to an <b>LCID</b> array that receives the languages returned. To retrieve only the number of languages available for menus, and not the actual languages themselves, specify <b>NULL</b> for <i>pLanguages</i>.</para>
-    </param>
-    <param name="ulMaxLanguages">
-      <para>Maximum number of languages to retrieve.</para>
-    </param>
-    <param name="pulActualLanguages">
-      <para>Receives the actual number of languages retrieved.</para>
-    </param>
+    <param name="pLanguages">Pointer to an <b>LCID</b> array that receives the languages returned. To retrieve only the number of languages available for menus, and not the actual languages themselves, specify <b>NULL</b> for <i>pLanguages</i>.</param>
+    <param name="ulMaxLanguages">Maximum number of languages to retrieve.</param>
+    <param name="pulActualLanguages">Receives the actual number of languages retrieved.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1706,52 +1565,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetNumberOfChapters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetNumberOfChapters</code> method retrieves the number of chapters in a given title.</para>
     </summary>
-    <param name="ulTitle">
-      <para>Specifies the title.</para>
-    </param>
-    <param name="pulNumOfChapters">
-      <para>Receives the number of chapters for the specified title.</para>
-    </param>
+    <param name="ulTitle">Specifies the title.</param>
+    <param name="pulNumOfChapters">Receives the number of chapters for the specified title.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1759,65 +1618,64 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A parameter is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>A parameter is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method to get the number of chapters before calling <see cref="IDvdControl2.PlayChapter" />, to ensure that you specify a valid chapter number.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetPlayerParentalLevel">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetPlayerParentalLevel</code> method retrieves the current parental level and ISO 3166 country/region code settings for the DVD Navigator.</para>
     </summary>
-    <param name="pulParentalLevel">
-      <para>Receives a value indicating the current parental level. Valid parental levels are 1 through 8 if parental management is enabled, 0xFFFFFFFF if parental management is disabled.</para>
-    </param>
-    <param name="pbCountryCode">
-      <para>Address of a two-byte array that receives the current country/region code (ISO 3166 Alpha-2 Code).</para>
-    </param>
+    <param name="pulParentalLevel">Receives a value indicating the current parental level. Valid parental levels are 1 through 8 if parental management is enabled, 0xFFFFFFFF if parental management is disabled.</param>
+    <param name="pbCountryCode">Address of a two-byte array that receives the current country/region code (ISO 3166 Alpha-2 Code).</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1825,44 +1683,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>A parameter is invalid.</para>
-          </description>
-        </item>
+          <description>A parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Parental management is disabled by default in the DVD Navigator. This method is demonstrated in the DVDSample application in <b>CDvdCore.GetParentalLevel</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-parental-level-change">EC_DVD_PARENTAL_LEVEL_CHANGE</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/enforcing-parental-management-levels">Enforcing Parental Management Levels</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetState">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetState</code> method retrieves a bookmark containing the disc location and DVD Navigator state information.</para>
     </summary>
-    <param name="pStateData">
-      <para>Receives a pointer to the <see cref="IDvdState" /> interface of a <b>DvdState</b> object allocated by the DVD Navigator.</para>
-    </param>
+    <param name="pStateData">Receives a pointer to the <see cref="IDvdState" /> interface of a <b>DvdState</b> object allocated by the DVD Navigator.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1870,57 +1723,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>DVD Navigator is not initialized.</para>
-          </description>
-        </item>
+          <description>DVD Navigator is not initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When this method is called, the DVD Navigator creates a new state object and saves the current location into it, as well as the current parental level and other state information. The <b>DVDState</b> object can be used to restore the DVD Navigator to the saved location at a later time through a call to <see cref="IDvdControl2.SetState" />. This enables viewers to stop viewing in the middle of a disc, save the location, and come back at some later time to begin viewing where they left off, with all the internal settings restored as they were before.</para>
-      <para>The DVD Navigator calls <b>AddRef</b> on the <b>DvdState</b> object before returning it to the application. The application must call <b>Release</b> on the object when it is finished with it.</para>
-      <para>This method is demonstrated in the DVDSample application in <b>CDvdCore.RestoreBookmark</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetSubpictureAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetSubpictureAttributes</code> method retrieves the attributes of the specified subpicture stream in the specified title or menu.</para>
     </summary>
-    <param name="ulStream">
-      <para>Index number, from 0 through 31, of the subpicture stream to query. See Remarks.</para>
-    </param>
-    <param name="pATR">
-      <para>Pointer to a <see cref="DVD_SubpictureAttributes" /> structure that receives the subpicture attributes.</para>
-    </param>
+    <param name="ulStream">Index number, from 0 through 31, of the subpicture stream to query. See Remarks.</param>
+    <param name="pATR">Pointer to a <see cref="DVD_SubpictureAttributes" /> structure that receives the subpicture attributes.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -1928,90 +1776,118 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>No subpicture streams were found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>No subpicture streams were found.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_NO_ATTRIBUTES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_NO_ATTRIBUTES</b>
-            </para>
-          </description>
-          <description>
-            <para>The subpicture has no defined attributes.</para>
-          </description>
-        </item>
+          <description>The subpicture has no defined attributes.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The index numbers 0-31 are valid only for titles. Menus have only one subpicture stream, which must be specified using one of the constants in the table below:</para>
+  </member>
+  <member name="IDvdInfo2.GetSubpictureLanguage">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>The <code>GetSubpictureLanguage</code> method retrieves the language of the specified subpicture stream within the current title.</para>
+    </summary>
+    <param name="ulStream">Number of the subpicture stream for which the language is being retrieved.</param>
+    <param name="pLanguage">Pointer to an LCID that receives the locale information. The language information can then be extracted from the LCID by using the Win32 <b>MAKELANGID</b> macro.</param>
+    <returns>
+      <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Return code</description>
+          <description>Description</description>
         </listheader>
-        <item>
-          <description>DVD_STREAM_DATA_CURRENT (0x800)</description>
-          <description>To query the currently selected subpicture stream.</description>
-        </item>
-        <item>
-          <description>DVD_STREAM_DATA_VMGM (0x400)</description>
-          <description>To query the subpicture attributes for the Video Manager or "Top" Menu.</description>
-        </item>
-        <item>
-          <description>DVD_STREAM_DATA_VTSM (0x401)</description>
-          <description>To query the subpicture attributes for the currently selected Video Title Set Menu.</description>
-        </item>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized or not in a valid domain.</description>
+        </listheader>
       </list>
-      <para>This method is demonstrated in the DVDSample application in <b>CDvdCore.GetSPAttributes()</b> and <b>CSPLangDlg.GetSPLang</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-dvd-menus">Working With DVD Menus</seealso>
+    </returns>
   </member>
   <member name="IDvdInfo2.GetTitleAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetTitleAttributes</code> method retrieves attributes of all video, audio, and subpicture streams for the specified title and its menus.</para>
     </summary>
-    <param name="ulTitle">
-      <para>Variable of type ULONG, from 1 through 99, specifying the requested title number. Specify 0xFFFFFFFF for the current title.</para>
-    </param>
-    <param name="pMenu">
-      <para>Pointer to a <see cref="DVD_MenuAttributes" /> structure that receives the attributes of the menu associated with the specified title.</para>
-    </param>
-    <param name="pTitle">
-      <para>Pointer to a <see cref="DVD_TitleAttributes" /> structure that receives the attributes of the specified title.</para>
-    </param>
+    <param name="ulTitle">Variable of type ULONG, from 1 through 99, specifying the requested title number. Specify 0xFFFFFFFF for the current title.</param>
+    <param name="pMenu">Pointer to a <see cref="DVD_MenuAttributes" /> structure that receives the attributes of the menu associated with the specified title.</param>
+    <param name="pTitle">Pointer to a <see cref="DVD_TitleAttributes" /> structure that receives the attributes of the specified title.</param>
     <returns>
       <para>Returns one of the following <code>HRESULT</code> values.</para>
       <list type="table">
@@ -2019,72 +1895,76 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>nTitle</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not in the title domain.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>nTitle</i> parameter is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>pMenu</i> or <i>pTitle</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDDOMAIN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not in the title domain.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pMenu</i> or <i>pTitle</i> parameter is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>DVD Navigator is not initialized or some other internal error occurred.</para>
-          </description>
-        </item>
+          <description>DVD Navigator is not initialized or some other internal error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetTitleParentalLevels">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetTitleParentalLevels</code> method retrieves the parental levels that are defined for a particular title.</para>
     </summary>
-    <param name="ulTitle">
-      <para>Title for which parental levels are requested. Specify 0xfffffff to return the parental levels for the current title.</para>
-    </param>
-    <param name="pulParentalLevels">
-      <para>Pointer to a variable of type ULONG that receives a bitwise OR combination of <see cref="DVD_PARENTAL_LEVEL" /> values defined for the title.</para>
-    </param>
+    <param name="ulTitle">Title for which parental levels are requested. Specify 0xfffffff to return the parental levels for the current title.</param>
+    <param name="pulParentalLevels">Pointer to a variable of type ULONG that receives a bitwise OR combination of <see cref="DVD_PARENTAL_LEVEL" /> values defined for the title.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -2092,56 +1972,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A title can contain different parental levels for different sections.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/enforcing-parental-management-levels">Enforcing Parental Management Levels</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetTotalTitleTime">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetTotalTitleTime</code> method retrieves the total playback time for the current title.</para>
     </summary>
-    <param name="pTotalTime">
-      <para>Pointer to a <see cref="DVD_HMSF_TIMECODE" /> structure that receives the total time in hours, minutes, seconds, and frames.</para>
-    </param>
-    <param name="ulTimeCodeFlags">
-      <para>Receives a <see cref="DVD_TIMECODE_FLAGS" /> value indicating the frame rate at which the disc was authored to play. Specify <b>NULL</b> if you don't want to receive the timecode information.</para>
-    </param>
+    <param name="pTotalTime">Pointer to a <see cref="DVD_HMSF_TIMECODE" /> structure that receives the total time in hours, minutes, seconds, and frames.</param>
+    <param name="ulTimeCodeFlags">Receives a <see cref="DVD_TIMECODE_FLAGS" /> value indicating the frame rate at which the disc was authored to play. Specify <b>NULL</b> if you don't want to receive the timecode information.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -2149,63 +2025,63 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not in the title domain.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_S_DVD_NON_ONE_SEQUENTIAL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not in the title domain.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_S_DVD_NON_ONE_SEQUENTIAL</b>
-            </para>
-          </description>
-          <description>
-            <para>The title is not a one sequential video title, so the timing information might not be continuous.</para>
-          </description>
-        </item>
+          <description>The title is not a one sequential video title, so the timing information might not be continuous.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The total title time is the time required to play the title sequentially, not counting any stills, pauses, and so on.</para>
-      <para>This method is for use only with <i>one sequential video titles</i>, which are titles such as movies in which each chapter automatically branches to the next chapter so that the entire title plays continuously without stopping. <i>Nonsequential video titles</i> are titles whose chapters do not automatically play one after another. Because of variations in how DVD authors encode time information on nonsequential video titles, do not use this method to determine the total time for such titles.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.GetVMGAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetVMGAttributes</code> method retrieves attributes of all video, audio, and subpicture streams for the Video Manager Menu.</para>
     </summary>
-    <param name="pATR">
-      <para>Pointer to a <see cref="DVD_MenuAttributes" /> structure that receives the attributes.</para>
-    </param>
+    <param name="pATR">Pointer to a <see cref="DVD_MenuAttributes" /> structure that receives the attributes.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -2213,55 +2089,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The Video Manager Menu is not associated with any particular title number.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.IsAudioStreamEnabled">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IsAudioStreamEnabled</code> method determines if the specified audio stream is enabled in the current title.</para>
     </summary>
-    <param name="ulStreamNum">
-      <para>Audio stream number to test.</para>
-    </param>
-    <param name="pbEnabled">
-      <para>Pointer to a variable of type BOOL that receives a value of <b>TRUE</b> if the audio stream is enabled, or <b>FALSE</b> otherwise.</para>
-    </param>
+    <param name="ulStreamNum">Audio stream number to test.</param>
+    <param name="pbEnabled">Pointer to a variable of type BOOL that receives a value of <b>TRUE</b> if the audio stream is enabled, or <b>FALSE</b> otherwise.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -2269,55 +2142,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A DVD can have up to eight separate audio streams, although typically not all the streams will be enabled for each title. Use <code>IsAudioStreamEnabled</code> to determine whether a particular stream is enabled for the current title, and then call <see cref="IDvdControl2.SelectAudioStream" /> to select one of the enabled streams.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2.IsSubpictureStreamEnabled">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IsSubpictureStreamEnabled</code> method determines if the specified subpicture stream is enabled in the current title.</para>
     </summary>
-    <param name="ulStreamNum">
-      <para>Subpicture stream number to test.</para>
-    </param>
-    <param name="pbEnabled">
-      <para>Pointer to a variable of type BOOL that receives a value of <b>TRUE</b> if the audio stream is enabled, or <b>FALSE</b> otherwise.</para>
-    </param>
+    <param name="ulStreamNum">Subpicture stream number to test.</param>
+    <param name="pbEnabled">Pointer to a variable of type BOOL that receives a value of <b>TRUE</b> if the audio stream is enabled, or <b>FALSE</b> otherwise.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -2325,51 +2195,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</para>
-          </description>
-        </item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> is not initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A DVD can have up to 32 separate subpicture streams, although typically not all the streams will be enabled for each title. Use <code>IsSubpictureStreamEnabled</code> to determine whether a particular stream is enabled for the current title, and then call <see cref="IDvdControl2.SelectSubpictureStream" /> to select one of the enabled streams.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo2 Interface" />
   </member>
   <member name="IDvdInfo2">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IDvdInfo2</code> interface reports attributes of a DVD disc or the current state of DVD playback and navigation. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> filter implements this interface. <code>IDvdInfo2</code> is the companion interface to <see cref="IDvdControl2" /> interface. <code>IDvdInfo2</code> groups the DVD Navigator's "get" methods and <b>IDvdControl2</b> groups the "set" methods. Together they provide DVD navigation and playback functionality beyond the DVD Annex J specification.</para>
-      <para>
-        <b>Note</b>  The information provided by some of these methods can also be obtained through event notifications sent from the DVD Navigator to the application's message loop. For example, to get the current DVD domain, you can call <see cref="IDvdInfo2.GetCurrentDomain" /> or you can handle the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-domain-change">EC_DVD_DOMAIN_CHANGE</a> event in your application's message loop and extract the new domain from the event's <i>lParam1</i> parameter.</para>
+      <div>
+        <b>Note</b>  The information provided by some of these methods can also be obtained through event notifications sent from the DVD Navigator to the application's message loop. For example, to get the current DVD domain, you can call <see cref="IDvdInfo2.GetCurrentDomain" /> or you can handle the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-domain-change">EC_DVD_DOMAIN_CHANGE</a> event in your application's message loop and extract the new domain from the event's <i>lParam1</i> parameter.</div>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
   </member>
 </doc>

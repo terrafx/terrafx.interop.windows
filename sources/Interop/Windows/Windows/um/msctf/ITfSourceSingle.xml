@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfSourceSingle.AdviseSingleSink">
-    <summary>
-      <para>Installs an advise sink.</para>
-    </summary>
-    <param name="tid">
-      <para>Contains a <b>TfClientId</b> value that identifies the client.</para>
-    </param>
+    <summary>Installs an advise sink.</summary>
+    <param name="tid">Contains a <b>TfClientId</b> value that identifies the client.</param>
     <param name="riid">
       <para>Identifies the type of advise sink to install.</para>
       <para>This parameter can be one of the following values when the <see cref="ITfSourceSingle" /> object is obtained from an <see cref="ITfThreadMgr" /> object.</para>
@@ -18,27 +14,33 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>IID_ITfCleanupContextDurationSink</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfCleanupContextDurationSink</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Installs a <see cref="ITfCleanupContextDurationSink" /> advise sink.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Installs a <see cref="ITfCleanupContextDurationSink" /> advise sink.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfFunctionProvider</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>IID_ITfFunctionProvider</b>
-          </description>
-          <description>
-            <para>Registers the client as a function provider. The <i>punk</i> parameter is an <see cref="ITfFunctionProvider" /> interface pointer.</para>
-          </description>
-        </item>
+          <description>Registers the client as a function provider. The <i>punk</i> parameter is an <see cref="ITfFunctionProvider" /> interface pointer.</description>
+        </listheader>
       </list>
     </param>
-    <param name="punk">
-      <para>Pointer to the advise sink <b>IUnknown</b> pointer.</para>
-    </param>
+    <param name="punk">Pointer to the advise sink <b>IUnknown</b> pointer.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -46,79 +48,84 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_CANNOTCONNECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The advise sink cannot be installed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more parameters are invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_ADVISELIMIT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The maximum number of advise sinks has been reached.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>CONNECT_E_CANNOTCONNECT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The advise sink cannot be installed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CONNECT_E_ADVISELIMIT</b>
-            </para>
-          </description>
-          <description>
-            <para>The maximum number of advise sinks has been reached.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCleanupContextSink " />
-    <seealso cref="ITfFunctionProvider " />
-    <seealso cref="ITfSourceSingle" />
   </member>
   <member name="ITfSourceSingle.UnadviseSingleSink">
-    <summary>
-      <para>Uninstalls an advise sink.</para>
-    </summary>
-    <param name="tid">
-      <para>Contains a <b>TfClientId</b> value that identifies the client.</para>
-    </param>
+    <summary>Uninstalls an advise sink.</summary>
+    <param name="tid">Contains a <b>TfClientId</b> value that identifies the client.</param>
     <param name="riid">
       <para>Identifies the type of advise sink to uninstall. This can be one of the following values.</para>
       <list type="table">
@@ -126,30 +133,42 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>IID_ITfCleanupContextDurationSink</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfCleanupContextDurationSink</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Uninstalls the <see cref="ITfCleanupContextDurationSink" /> advise sink. Applies to: Text service</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Uninstalls the <see cref="ITfCleanupContextDurationSink" /> advise sink. Applies to: Text service</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfCleanupContextSink</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Uninstalls the <see cref="ITfCleanupContextSink" /> advise sink. Applies to: Text service</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>IID_ITfCleanupContextSink</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfFunctionProvider</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Uninstalls the <see cref="ITfCleanupContextSink" /> advise sink. Applies to: Text service</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>IID_ITfFunctionProvider</b>
-          </description>
-          <description>
-            <para>Unregisters the client as a function provider. Applies to: Text Service and Application</para>
-          </description>
-        </item>
+          <description>Unregisters the client as a function provider. Applies to: Text Service and Application</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -159,95 +178,47 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The advise sink was successfully uninstalled.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The advise sink was successfully uninstalled.</para>
-          </description>
-        </item>
-        <item>
+            <i>tid</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_NOCONNECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>tid</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CONNECT_E_NOCONNECTION</b>
-            </para>
-          </description>
-          <description>
-            <para>The advise sink is not installed.</para>
-          </description>
-        </item>
+          <description>The advise sink is not installed.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfSourceSingle">
-    <summary>
-      <para>The <b>ITfSourceSingle</b> interface is implemented by the TSF manager. It is used by applications and text services to install and remove various advise sinks. This interface differs from <see cref="ITfSource" /> in that advise sinks installed with <b>ITfSourceSingle</b> only support one advise sink at a time whereas advise sinks installed with <b>ITfSource</b> support multiple simultaneous advise sinks.</para>
-    </summary>
-    <remarks>
-      <para>The TSF manager has different implementations of <b>ITfSourceSingle</b>, depending upon how the <b>ITfSourceSingle</b> interface is obtained. The difference in the implementations is the types of advise sinks that can be installed with the interface. The different implementations can be obtained from the following objects.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="ITfThreadMgr " />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ITfContext " />
-          </description>
-        </item>
-      </list>
-      <para>For more information about advise sinks that can be installed by each implementation, see <see cref="ITfSourceSingle.AdviseSingleSink" />.</para>
-      <h4>Examples</h4>
-      <para>
-        <b>ITfThreadMgr</b>
-      </para>
-      <code>
-HRESULT hr;
-ITfSourceSingle *pSourceSingle;
-
-hr = pThreadManager-&gt;QueryInterface(IID_ITfSourceSingle, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSourceSingle);
-if(SUCCEEDED(hr))
-{
-    //Use the ITfSourceSingle interface.
-
-    pSourceSingle-&gt;Release();
-}
-
-</code>
-      <para>
-        <b>ITfContext</b>
-      </para>
-      <code>
-HRESULT hr;
-ITfSourceSingle *pSourceSingle;
-
-hr = pContext-&gt;QueryInterface(IID_ITfSourceSingle, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSourceSingle);
-if(SUCCEEDED(hr))
-{
-    //Use the ITfSourceSingle interface.
-
-    pSourceSingle-&gt;Release();
-}
-
-</code>
-    </remarks>
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfSource " />
-    <seealso cref="ITfThreadMgr " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfSourceSingle</b> interface is implemented by the TSF manager. It is used by applications and text services to install and remove various advise sinks. This interface differs from <see cref="ITfSource" /> in that advise sinks installed with <b>ITfSourceSingle</b> only support one advise sink at a time whereas advise sinks installed with <b>ITfSource</b> support multiple simultaneous advise sinks.</summary>
   </member>
 </doc>

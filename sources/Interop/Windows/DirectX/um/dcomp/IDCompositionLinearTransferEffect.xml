@@ -3,309 +3,111 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionLinearTransferEffect.SetAlphaDisable">
-    <summary>
-      <para>Specifies whether to apply the transfer function to the alpha channel.</para>
-    </summary>
-    <param name="alphaDisable">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that specifies whether to apply the transfer function to the alpha channel.
-If you set this to TRUE the effect does not apply the transfer function to the Alpha channel. If you set this to FALSE it applies the AlphaLinearTransfer function to the Alpha channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Specifies whether to apply the transfer function to the alpha channel.</summary>
+    <param name="alphaDisable">A boolean value that specifies whether to apply the transfer function to the alpha channel. If you set this to TRUE the effect does not apply the transfer function to the Alpha channel. If you set this to FALSE it applies the AlphaLinearTransfer function to the Alpha channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetAlphaSlope">
-    <summary>
-      <para>Sets the slope of the linear function for the alpha channel.</para>
-    </summary>
-    <param name="alphaSlope">
-      <para>Type: <b>float</b></para>
-      <para>The slope of the linear function for the alpha channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the slope of the linear function for the alpha channel.</summary>
+    <param name="alphaSlope">The slope of the linear function for the alpha channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetAlphaSlope">
-    <summary>
-      <para>Sets the slope of the linear function for the alpha channel.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the slope of the linear function for the alpha channel changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the slope of the linear function for the alpha channel.</summary>
+    <param name="animation">An animation that represents how the slope of the linear function for the alpha channel changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetAlphaYIntercept">
-    <summary>
-      <para>Sets the Y-intercept of the linear function for the alpha channel.</para>
-    </summary>
-    <param name="alphaYIntercept">
-      <para>Type: <b>float</b></para>
-      <para>The Y-intercept of the linear function for the alpha channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the Y-intercept of the linear function for the alpha channel.</summary>
+    <param name="alphaYIntercept">The Y-intercept of the linear function for the alpha channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetAlphaYIntercept">
-    <summary>
-      <para>Sets the Y-intercept of the linear function for the Alpha channel.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the the Y-intercept of the linear function for the alpha channel. changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the Y-intercept of the linear function for the Alpha channel.</summary>
+    <param name="animation">An animation that represents how the the Y-intercept of the linear function for the alpha channel. changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetBlueDisable">
-    <summary>
-      <para>Specifies whether to apply the transfer function to the blue channel.</para>
-    </summary>
-    <param name="blueDisable">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that specifies whether to apply the transfer function to the blue channel.
-If you set this to TRUE the effect does not apply the transfer function to the blue channel. If you set this to FALSE it applies the BlueLinearTransfer function to the blue channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Specifies whether to apply the transfer function to the blue channel.</summary>
+    <param name="blueDisable">A boolean value that specifies whether to apply the transfer function to the blue channel. If you set this to TRUE the effect does not apply the transfer function to the blue channel. If you set this to FALSE it applies the BlueLinearTransfer function to the blue channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetBlueSlope">
-    <summary>
-      <para>Sets the slope of the linear function for the blue channel.</para>
-    </summary>
-    <param name="blueSlope">
-      <para>Type: <b>float</b></para>
-      <para>The slope of the linear function for the Blue channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the slope of the linear function for the blue channel.</summary>
+    <param name="blueSlope">The slope of the linear function for the Blue channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetBlueSlope">
-    <summary>
-      <para>Sets the slope of the linear function for the blue channel.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the slope of the linear function for the blue channel changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the slope of the linear function for the blue channel.</summary>
+    <param name="animation">An animation that represents how the slope of the linear function for the blue channel changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetBlueYIntercept">
-    <summary>
-      <para>Sets the Y-intercept of the linear function for the blue channel.</para>
-    </summary>
-    <param name="blueYIntercept">
-      <para>Type: <b>float</b></para>
-      <para>The Y-intercept of the linear function for the blue channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the Y-intercept of the linear function for the blue channel.</summary>
+    <param name="blueYIntercept">The Y-intercept of the linear function for the blue channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetBlueYIntercept">
-    <summary>
-      <para>Sets the Y-intercept of the linear function for the blue channel.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the Y-intercept of the linear function for the blue channel changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the Y-intercept of the linear function for the blue channel.</summary>
+    <param name="animation">An animation that represents how the Y-intercept of the linear function for the blue channel changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetClampOutput">
-    <summary>
-      <para>Specifies whether the effect clamps color values to between 0 and 1 before the effect passes the values to the next effect in the graph.</para>
-    </summary>
-    <param name="clampOutput">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that specifies whether the effect clamps color values to between 0 and 1 before the effect passes the values to the next effect in the graph.
-If you set this to TRUE the effect will clamp the values. If you set this to FALSE, the effect will not clamp the color values, but other effects and the output
-surface may clamp the values if they are not of high enough precision.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Specifies whether the effect clamps color values to between 0 and 1 before the effect passes the values to the next effect in the graph.</summary>
+    <param name="clampOutput">A boolean value that specifies whether the effect clamps color values to between 0 and 1 before the effect passes the values to the next effect in the graph. If you set this to TRUE the effect will clamp the values. If you set this to FALSE, the effect will not clamp the color values, but other effects and the output surface may clamp the values if they are not of high enough precision.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetGreenDisable">
-    <summary>
-      <para>Specifies whether to apply the transfer function to the green channel.</para>
-    </summary>
-    <param name="greenDisable">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that specifies whether to apply the transfer function to the green channel.
-If you set this to TRUE the effect does not apply the transfer function to the green channel. If you set this to FALSE it applies the GreenLinearTransfer function to the green channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Specifies whether to apply the transfer function to the green channel.</summary>
+    <param name="greenDisable">A boolean value that specifies whether to apply the transfer function to the green channel. If you set this to TRUE the effect does not apply the transfer function to the green channel. If you set this to FALSE it applies the GreenLinearTransfer function to the green channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetGreenSlope">
-    <summary>
-      <para>Sets the slope of the linear function for the green channel.</para>
-    </summary>
-    <param name="greenSlope">
-      <para>Type: <b>float</b></para>
-      <para>The slope of the linear function for the green channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the slope of the linear function for the green channel.</summary>
+    <param name="greenSlope">The slope of the linear function for the green channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetGreenSlope">
-    <summary>
-      <para>Sets the slope of the linear function for the green channel.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the slope of the linear function for the green channel changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the slope of the linear function for the green channel.</summary>
+    <param name="animation">An animation that represents how the slope of the linear function for the green channel changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetGreenYIntercept">
-    <summary>
-      <para>Sets the Y-intercept of the linear function for the green channel.</para>
-    </summary>
-    <param name="greenYIntercept">
-      <para>Type: <b>float</b></para>
-      <para>The Y-intercept of the linear function for the green channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the Y-intercept of the linear function for the green channel.</summary>
+    <param name="greenYIntercept">The Y-intercept of the linear function for the green channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetGreenYIntercept">
-    <summary>
-      <para>Sets the Y-intercept of the linear function for the green channel.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the Y-intercept of the linear function for the green channel changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the Y-intercept of the linear function for the green channel.</summary>
+    <param name="animation">An animation that represents how the Y-intercept of the linear function for the green channel changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetRedDisable">
-    <summary>
-      <para>Specifies whether to apply the transfer function to the red channel.</para>
-    </summary>
-    <param name="redDisable">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that specifies whether to apply the transfer function to the red channel.
-If you set this to TRUE the effect does not apply the transfer function to the red channel. If you set this to FALSE the effect applies the RedLinearTransfer function to the red channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Specifies whether to apply the transfer function to the red channel.</summary>
+    <param name="redDisable">A boolean value that specifies whether to apply the transfer function to the red channel. If you set this to TRUE the effect does not apply the transfer function to the red channel. If you set this to FALSE the effect applies the RedLinearTransfer function to the red channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetRedSlope">
-    <summary>
-      <para>Sets the slope of the linear function for the red channel.</para>
-    </summary>
-    <param name="redSlope">
-      <para>Type: <b>float</b></para>
-      <para>The slope of the linear function for the red channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the slope of the linear function for the red channel.</summary>
+    <param name="redSlope">The slope of the linear function for the red channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetRedSlope">
-    <summary>
-      <para>Sets the slope of the linear function for the red channel.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the slope of the linear function for the red channel changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the slope of the linear function for the red channel.</summary>
+    <param name="animation">An animation that represents how the slope of the linear function for the red channel changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetRedYIntercept">
-    <summary>
-      <para>Sets the Y-intercept of the linear function for the red channel.</para>
-    </summary>
-    <param name="redYIntercept">
-      <para>Type: <b>float</b></para>
-      <para>The Y-intercept of the linear function for the red channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the Y-intercept of the linear function for the red channel.</summary>
+    <param name="redYIntercept">The Y-intercept of the linear function for the red channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetRedYIntercept">
-    <summary>
-      <para>Sets the Y-intercept of the linear function for the red channel.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the Y-intercept of the linear function for the red channel changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionLinearTransferEffect" />
+    <summary>Sets the Y-intercept of the linear function for the red channel.</summary>
+    <param name="animation">An animation that represents how the Y-intercept of the linear function for the red channel changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect">
-    <summary>
-      <para>The linear transfer effect is used to map the color intensities of an image using a linear function created from a list of values you provide for each channel.</para>
-    </summary>
-    <seealso cref="IDCompositionFilterEffect" />
+    <summary>The linear transfer effect is used to map the color intensities of an image using a linear function created from a list of values you provide for each channel.</summary>
   </member>
 </doc>

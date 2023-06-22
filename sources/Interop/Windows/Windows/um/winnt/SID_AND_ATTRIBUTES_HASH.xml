@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SID_AND_ATTRIBUTES_HASH">
-    <summary>
-      <para>The <b>SID_AND_ATTRIBUTES_HASH</b> structure specifies a hash values for the specified array of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifiers</a> (SIDs).</para>
-    </summary>
-    <seealso cref="TOKEN_ACCESS_INFORMATION" />
-    <seealso cref="TOKEN_INFORMATION_CLASS" />
+    <summary>The <b>SID_AND_ATTRIBUTES_HASH</b> structure specifies a hash values for the specified array of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifiers</a> (SIDs).</summary>
   </member>
   <member name="SID_AND_ATTRIBUTES_HASH.SidCount">
-    <summary>
-      <para>The number of SIDs pointed to by the <i>SidAttr</i> parameter.</para>
-    </summary>
+    <summary>The number of SIDs pointed to by the <i>SidAttr</i> parameter.</summary>
   </member>
   <member name="SID_AND_ATTRIBUTES_HASH.SidAttr">
-    <summary>
-      <para>A pointer to an array of <see cref="SID_AND_ATTRIBUTES" /> structures that represent SIDs and their attributes.</para>
-    </summary>
+    <summary>A pointer to an array of <see cref="SID_AND_ATTRIBUTES" /> structures that represent SIDs and their attributes.</summary>
   </member>
   <member name="SID_AND_ATTRIBUTES_HASH.Hash">
     <summary>

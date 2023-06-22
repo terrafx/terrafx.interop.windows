@@ -3,34 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MOUSEMOVEPOINT">
-    <summary>
-      <para>Contains information about the mouse's location in screen coordinates.</para>
-    </summary>
-    <seealso cref="GetMouseMovePointsEx" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/mouse-input">Mouse Input</seealso>
+    <summary>Contains information about the mouse's location in screen coordinates.</summary>
   </member>
   <member name="MOUSEMOVEPOINT.x">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The x-coordinate of the mouse.</para>
-    </summary>
+    <summary>The x-coordinate of the mouse.</summary>
   </member>
   <member name="MOUSEMOVEPOINT.y">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The y-coordinate of the mouse.</para>
-    </summary>
+    <summary>The y-coordinate of the mouse.</summary>
   </member>
   <member name="MOUSEMOVEPOINT.time">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The time stamp of the mouse coordinate.</para>
-    </summary>
+    <summary>The time stamp of the mouse coordinate.</summary>
   </member>
   <member name="MOUSEMOVEPOINT.dwExtraInfo">
-    <summary>
-      <para>Type: <b>ULONG_PTR</b></para>
-      <para>Additional information associated with this coordinate.</para>
-    </summary>
+    <summary>Additional information associated with this coordinate.</summary>
   </member>
 </doc>

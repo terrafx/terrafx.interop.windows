@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROPERTYORIGIN">
-    <summary>
-      <para>Returned by <see cref="GetThemePropertyOrigin" /> to specify where a property was found.</para>
-    </summary>
-    <seealso cref="GetThemePropertyOrigin" />
+    <summary>Returned by <see cref="GetThemePropertyOrigin" /> to specify where a property was found.</summary>
   </member>
   <member name="PROPERTYORIGIN.PO_STATE">
-    <summary>
-      <para>Property was found in the state section.</para>
-    </summary>
+    <summary>Property was found in the state section.</summary>
   </member>
   <member name="PROPERTYORIGIN.PO_PART">
-    <summary>
-      <para>Property was found in the part section.</para>
-    </summary>
+    <summary>Property was found in the part section.</summary>
   </member>
   <member name="PROPERTYORIGIN.PO_CLASS">
-    <summary>
-      <para>Property was found in the class section.</para>
-    </summary>
+    <summary>Property was found in the class section.</summary>
   </member>
   <member name="PROPERTYORIGIN.PO_GLOBAL">
-    <summary>
-      <para>Property was found in the list of global variables.</para>
-    </summary>
+    <summary>Property was found in the list of global variables.</summary>
   </member>
   <member name="PROPERTYORIGIN.PO_NOTFOUND">
-    <summary>
-      <para>Property was not found.</para>
-    </summary>
+    <summary>Property was not found.</summary>
   </member>
 </doc>

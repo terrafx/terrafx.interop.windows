@@ -4,39 +4,23 @@
 <doc>
   <member name="IAMovieSetup.Register">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMovieSetup</b> interface is deprecated. Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver2">AMovieDllRegisterServer2</a> function instead.</para>
-      <para>Adds the filter to the registry.</para>
-    </summary>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>This method registers the filter, its pins, and the media type associated with the pins. It should be implemented to use <see cref="IFilterMapper" /> methods to accomplish this. See the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasefilter-register">CBaseFilter.Register</a> member function for a description of its implementation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMovieSetup Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMovieSetup</b> interface is deprecated. Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver2">AMovieDllRegisterServer2</a> function instead.</div>Adds the filter to the registry.</summary>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IAMovieSetup.Unregister">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMovieSetup</b> interface is deprecated. Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver2">AMovieDllRegisterServer2</a> function instead.</para>
-      <para>Removes the filter from the registry.</para>
-    </summary>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>This method should be implemented to use the <see cref="IFilterMapper.UnregisterFilter" /> method to remove the filter from the registry. This effectively removes the pins and media types as well.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMovieSetup Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMovieSetup</b> interface is deprecated. Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver2">AMovieDllRegisterServer2</a> function instead.</div>Removes the filter from the registry.</summary>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IAMovieSetup">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated. It is used by two obsolete functions, <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver">AMovieDllRegisterServer</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllunregisterserver">AMovieDllUnregisterServer</a>. These functions are now replaced by <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver2">AMovieDllRegisterServer2</a>, which does not require <b>IAMovieSetup</b>. However, <b>IAMovieSetup</b> will continue to be supported for backward compatibility with existing applications.</para>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated. It is used by two obsolete functions, <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver">AMovieDllRegisterServer</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllunregisterserver">AMovieDllUnregisterServer</a>. These functions are now replaced by <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver2">AMovieDllRegisterServer2</a>, which does not require <b>IAMovieSetup</b>. However, <b>IAMovieSetup</b> will continue to be supported for backward compatibility with existing applications.</div>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
   </member>
 </doc>

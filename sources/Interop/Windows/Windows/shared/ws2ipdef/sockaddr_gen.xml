@@ -3,29 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="sockaddr_gen">
-    <summary>
-      <para>The <b>sockaddr_gen</b> union provides generic socket address information, and is used with the <see cref="INTERFACE_INFO" /> structure.</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>sockaddr_gen</b> union is defined in the <i>Ws2ipdef.h</i> header file which is automatically included in the <i>Ws2tcpip.h</i> header file. The <i>Ws2ipdef.h</i>  header files should never be used directly.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr_in</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr_in6_old</seealso>
+    <summary>The <b>sockaddr_gen</b> union provides generic socket address information, and is used with the <see cref="INTERFACE_INFO" /> structure.</summary>
   </member>
   <member name="sockaddr_gen.Address">
-    <summary>
-      <para>IP address information expressed in a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</a> structure.</para>
-    </summary>
+    <summary>IP address information expressed in a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</a> structure.</summary>
   </member>
   <member name="sockaddr_gen.AddressIn">
-    <summary>
-      <para>IP address information expressed in a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr_in</a> structure.</para>
-    </summary>
+    <summary>IP address information expressed in a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr_in</a> structure.</summary>
   </member>
   <member name="sockaddr_gen.AddressIn6">
-    <summary>
-      <para>IP address information expressed in a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr_in6_old</a> structure.</para>
-    </summary>
+    <summary>IP address information expressed in a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr_in6_old</a> structure.</summary>
   </member>
 </doc>

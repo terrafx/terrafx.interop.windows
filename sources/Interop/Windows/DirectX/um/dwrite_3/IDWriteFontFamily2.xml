@@ -3,44 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontFamily2.GetFontSet">
-    <summary>
-      <para>Retrieves the underlying font set used by this family.</para>
-    </summary>
-    <param name="fontSet">
-      <para>Type: <b><see cref="IDWriteFontSet1" />**</b></para>
-      <para>The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to the font set used by the family.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
+    <summary>Retrieves the underlying font set used by this family.</summary>
+    <param name="fontSet">The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to the font set used by the family.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="IDWriteFontFamily2.GetMatchingFonts">
-    <summary>
-      <para>Retrieves a list of fonts in the font family, ranked in order of how well they match the specified axis values.</para>
-    </summary>
-    <param name="fontAxisValues">
-      <para>Type: <b><see cref="DWRITE_FONT_AXIS_VALUE" /> const *</b></para>
-      <para>A pointer to an array containing a list of font axis values. The array should be the size (the number of elements) indicated by the <i>fontAxisValueCount</i> argument.</para>
-    </param>
-    <param name="fontAxisValueCount">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
-      <para>The number of font axis values contained in the <i>fontAxisValues</i> array.</para>
-    </param>
-    <param name="matchingFonts">
-      <para>Type: <b><see cref="IDWriteFontList2" />**</b></para>
-      <para>The address of a pointer to an <see cref="IDWriteFontList2" /> interface. On successful completion, the function sets the pointer to a newly created font list object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
+    <summary>Retrieves a list of fonts in the font family, ranked in order of how well they match the specified axis values.</summary>
+    <param name="fontAxisValues">A pointer to an array containing a list of font axis values. The array should be the size (the number of elements) indicated by the <i>fontAxisValueCount</i> argument.</param>
+    <param name="fontAxisValueCount">The number of font axis values contained in the <i>fontAxisValues</i> array.</param>
+    <param name="matchingFonts">The address of a pointer to an <see cref="IDWriteFontList2" /> interface. On successful completion, the function sets the pointer to a newly created font list object.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="IDWriteFontFamily2">
     <summary>
       <para>Represents a family of related fonts. <b>IDWriteFontFamily2</b> adds new facilities, including retrieving fonts by font axis values.</para>
       <para>This interface extends <see cref="IDWriteFontFamily1" />.</para>
     </summary>
-    <seealso cref="IDWriteFontFamily1" />
   </member>
 </doc>

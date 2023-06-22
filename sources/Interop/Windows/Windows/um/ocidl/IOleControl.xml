@@ -3,29 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleControl.FreezeEvents">
-    <summary>
-      <para>Indicates whether the container is ignoring or accepting events from the control.</para>
-    </summary>
-    <param name="bFreeze">
-      <para>Indicates whether the container will ignore (<b>TRUE</b>) or now process (<b>FALSE</b>) events from the control.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK in all cases.</para>
-    </returns>
-    <remarks>
-      <para>The control is not required to stop sending events when <i>bFreeze</i> is <b>TRUE</b>. However, the container is not going to process them in this case. If a control depends on the container's processing -- as with request events that return information from the container -- the control must either discard the event or queue the event to send later when <i>bFreeze</i> is <b>FALSE</b>.</para>
-      <h3>Notes to Implementers</h3>
-      <para>As with <see cref="IOleControl.OnAmbientPropertyChange" />, S_OK is returned in all cases in order to prevent a container from making assumptions about a control's behavior based on return values.</para>
-    </remarks>
-    <seealso cref="IOleControl" />
+    <summary>Indicates whether the container is ignoring or accepting events from the control.</summary>
+    <param name="bFreeze">Indicates whether the container will ignore (<b>TRUE</b>) or now process (<b>FALSE</b>) events from the control.</param>
+    <returns>This method returns S_OK in all cases.</returns>
   </member>
   <member name="IOleControl.GetControlInfo">
-    <summary>
-      <para>Retrieves information about the control's keyboard mnemonics and behavior.</para>
-    </summary>
-    <param name="pCI">
-      <para>A pointer to a <see cref="CONTROLINFO" /> structure that receives the information.</para>
-    </param>
+    <summary>Retrieves information about the control's keyboard mnemonics and behavior.</summary>
+    <param name="pCI">A pointer to a <see cref="CONTROLINFO" /> structure that receives the information.</param>
     <returns>
       <para>This method can return the standard return value E_OUTOFMEMORY, as well as the following values.</para>
       <list type="table">
@@ -33,63 +17,53 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The control has no mnemonics.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The control has no mnemonics.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The address in <i>pCI</i> is not valid. For example, it may be <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The address in <i>pCI</i> is not valid. For example, it may be <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IOleControl" />
   </member>
   <member name="IOleControl.OnAmbientPropertyChange">
-    <summary>
-      <para>Informs a control that one or more of the container's ambient properties has changed.</para>
-    </summary>
-    <param name="dispID">
-      <para>The dispatch identifier of the ambient property that changed. If this parameter is DISPID_UNKNOWN, it indicates that multiple properties changed. In this case, the control should check all the ambient properties of interest to obtain their current values.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK in all cases.</para>
-    </returns>
-    <remarks>
-      <h3>Notes to Implementers</h3>
-      <para>S_OK is returned in all cases even when the control does not support ambient properties or some other failure has occurred. The caller sending the notification cannot attempt to use an error code (such as E_NOTIMPL) to determine whether to send the notification in the future. Such semantics are not part of this interface.</para>
-    </remarks>
-    <seealso cref="IOleControl" />
+    <summary>Informs a control that one or more of the container's ambient properties has changed.</summary>
+    <param name="dispID">The dispatch identifier of the ambient property that changed. If this parameter is DISPID_UNKNOWN, it indicates that multiple properties changed. In this case, the control should check all the ambient properties of interest to obtain their current values.</param>
+    <returns>This method returns S_OK in all cases.</returns>
   </member>
   <member name="IOleControl.OnMnemonic">
-    <summary>
-      <para>Informs a control that the user has pressed a keystroke that represents a keyboard mnemonic.</para>
-    </summary>
-    <param name="pMsg">
-      <para>A pointer to the <see cref="MSG" /> structure describing the keystroke to be processed.</para>
-    </param>
+    <summary>Informs a control that the user has pressed a keystroke that represents a keyboard mnemonic.</summary>
+    <param name="pMsg">A pointer to the <see cref="MSG" /> structure describing the keystroke to be processed.</param>
     <returns>
       <para>This method can return the standard return values E_INVALIDARG and E_UNEXPECTED, as well as the following values.</para>
       <list type="table">
@@ -97,43 +71,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The control does not handle mnemonics. This indicates an unexpected condition and a caller error. For example, the caller has mismatched which control has which mnemonic.</para>
-          </description>
-        </item>
+          <description>The control does not handle mnemonics. This indicates an unexpected condition and a caller error. For example, the caller has mismatched which control has which mnemonic.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The keystroke must match one of the <b>ACCEL</b> entries in the mnemonic table returned through <see cref="IOleControl.GetControlInfo" />. The control takes whatever action is appropriate for the keystroke.</para>
-      <h3>Notes to Callers</h3>
-      <para>A container of a control is allowed to cache the control's <see cref="CONTROLINFO" /> structure, provided that the container implements <see cref="IOleControlSite.OnControlInfoChanged" /> to know when it must update its cached information.</para>
-      <h3>Notes to Implementers</h3>
-      <para>If a control changes the contents of its <see cref="CONTROLINFO" /> structure, it must notify its container by calling <see cref="IOleControlSite.OnControlInfoChanged" />.</para>
-    </remarks>
-    <seealso cref="IOleControl" />
-    <seealso cref="IOleControlSite.OnControlInfoChanged" />
   </member>
   <member name="IOleControl">
-    <summary>
-      <para>Provides the features for supporting keyboard mnemonics, ambient properties, and events in control objects.</para>
-    </summary>
-    <seealso cref="IOleControlSite" />
-    <seealso cref="ISimpleFrameSite" />
+    <summary>Provides the features for supporting keyboard mnemonics, ambient properties, and events in control objects.</summary>
   </member>
 </doc>

@@ -3,38 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_FEATURE">
-    <summary>
-      <para>Direct3D 11 feature options.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used when querying a driver about support for these features by calling <see cref="ID3D11Device.CheckFeatureSupport" />. Each value in this enumeration has a corresponding data structure that is required to be passed to the <i>pFeatureSupportData</i> parameter of <b>ID3D11Device.CheckFeatureSupport</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core enumerations</seealso>
+    <summary>Direct3D 11 feature options.</summary>
   </member>
   <member name="D3D11_FEATURE.D3D11_FEATURE_THREADING">
-    <summary>
-      <para>The driver supports <a href="https://docs.microsoft.com//windows/win32/direct3d11/overviews-direct3d-11-render-multi-thread-intro">multithreading</a>. To see an example of testing a driver for multithread support, see <a href="https://docs.microsoft.com//windows/win32/direct3d11/overviews-direct3d-11-render-multi-thread-support">How To: Check for Driver Support</a>. Refer to <see cref="D3D11_FEATURE_DATA_THREADING" />.</para>
-    </summary>
+    <summary>The driver supports <a href="https://docs.microsoft.com//windows/win32/direct3d11/overviews-direct3d-11-render-multi-thread-intro">multithreading</a>. To see an example of testing a driver for multithread support, see <a href="https://docs.microsoft.com//windows/win32/direct3d11/overviews-direct3d-11-render-multi-thread-support">How To: Check for Driver Support</a>. Refer to <see cref="D3D11_FEATURE_DATA_THREADING" />.</summary>
   </member>
   <member name="D3D11_FEATURE.D3D11_FEATURE_DOUBLES">
-    <summary>
-      <para>Supports the use of the double-precision shaders in HLSL. Refer to <see cref="D3D11_FEATURE_DATA_DOUBLES" />.</para>
-    </summary>
+    <summary>Supports the use of the double-precision shaders in HLSL. Refer to <see cref="D3D11_FEATURE_DATA_DOUBLES" />.</summary>
   </member>
   <member name="D3D11_FEATURE.D3D11_FEATURE_FORMAT_SUPPORT">
-    <summary>
-      <para>Supports the formats in <see cref="D3D11_FORMAT_SUPPORT" />. Refer to <see cref="D3D11_FEATURE_DATA_FORMAT_SUPPORT" />.</para>
-    </summary>
+    <summary>Supports the formats in <see cref="D3D11_FORMAT_SUPPORT" />. Refer to <see cref="D3D11_FEATURE_DATA_FORMAT_SUPPORT" />.</summary>
   </member>
   <member name="D3D11_FEATURE.D3D11_FEATURE_FORMAT_SUPPORT2">
-    <summary>
-      <para>Supports the formats in <see cref="D3D11_FORMAT_SUPPORT2" />. Refer to <see cref="D3D11_FEATURE_DATA_FORMAT_SUPPORT2" />.</para>
-    </summary>
+    <summary>Supports the formats in <see cref="D3D11_FORMAT_SUPPORT2" />. Refer to <see cref="D3D11_FEATURE_DATA_FORMAT_SUPPORT2" />.</summary>
   </member>
   <member name="D3D11_FEATURE.D3D11_FEATURE_D3D10_X_HARDWARE_OPTIONS">
-    <summary>
-      <para>Supports compute shaders and raw and structured buffers. Refer to <see cref="D3D11_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS" />.</para>
-    </summary>
+    <summary>Supports compute shaders and raw and structured buffers. Refer to <see cref="D3D11_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS" />.</summary>
   </member>
   <member name="D3D11_FEATURE.D3D11_FEATURE_D3D11_OPTIONS">
     <summary>
@@ -114,9 +98,7 @@
     </summary>
   </member>
   <member name="D3D11_FEATURE.D3D11_FEATURE_GPU_VIRTUAL_ADDRESS_SUPPORT">
-    <summary>
-      <para>Supports GPU virtual addresses. Refer to <see cref="D3D11_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT" />.</para>
-    </summary>
+    <summary>Supports GPU virtual addresses. Refer to <see cref="D3D11_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT" />.</summary>
   </member>
   <member name="D3D11_FEATURE.D3D11_FEATURE_D3D11_OPTIONS4">
     <summary>
@@ -126,13 +108,12 @@
     </summary>
   </member>
   <member name="D3D11_FEATURE.D3D11_FEATURE_SHADER_CACHE">
-    <summary>
-      <para>Supports shader cache, described in <see cref="D3D11_FEATURE_DATA_SHADER_CACHE" />.</para>
-    </summary>
+    <summary>Supports shader cache, described in <see cref="D3D11_FEATURE_DATA_SHADER_CACHE" />.</summary>
   </member>
   <member name="D3D11_FEATURE.D3D11_FEATURE_D3D11_OPTIONS5">
-    <summary>
-      <para>Supports a <see cref="D3D11_SHARED_RESOURCE_TIER" /> to indicate a tier for shared resource support. Refer to <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS5" />.</para>
-    </summary>
+    <summary>Supports a <see cref="D3D11_SHARED_RESOURCE_TIER" /> to indicate the level of support for shared resources in the current graphics driver. Refer to <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS5" />.</summary>
+  </member>
+  <member name="D3D11_FEATURE.D3D11_FEATURE_DISPLAYABLE">
+    <summary>Supports displayable surfaces, described in <see cref="D3D11_FEATURE_DATA_DISPLAYABLE" />.</summary>
   </member>
 </doc>

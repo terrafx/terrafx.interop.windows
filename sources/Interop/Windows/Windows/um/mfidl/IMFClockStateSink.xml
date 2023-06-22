@@ -3,93 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFClockStateSink.OnClockPause">
-    <summary>
-      <para>Called when the presentation clock pauses.</para>
-    </summary>
-    <param name="hnsSystemTime">
-      <para>The system time when the clock was paused, in 100-nanosecond units.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When the presentation clock's <see cref="IMFPresentationClock.Pause" /> method is called, the clock notifies the presentation time source by calling the time source's <b>OnClockPause</b> method. This call occurs synchronously within the <b>Pause</b> method. If the time source returns an error from <b>OnClockPause</b>, the presentation clock's <b>Pause</b> method returns an error and the state change does not take place.</para>
-      <para>For any object that is not the presentation time source, the <b>OnClockPause</b> method is called asynchronously, after the state change is completed. In that case, the return value from this method is ignored.</para>
-    </remarks>
-    <seealso cref="IMFClockStateSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
+    <summary>Called when the presentation clock pauses.</summary>
+    <param name="hnsSystemTime">The system time when the clock was paused, in 100-nanosecond units.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFClockStateSink.OnClockRestart">
-    <summary>
-      <para>Called when the presentation clock restarts from the same position while paused.</para>
-    </summary>
-    <param name="hnsSystemTime">
-      <para>The system time when the clock restarted, in 100-nanosecond units.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called if the presentation clock is paused and the <see cref="IMFPresentationClock.Start" /> method is called with the value <b>PRESENTATION_CURRENT_POSITION</b>.</para>
-      <para>The clock notifies the presentation time source by calling the time source's <b>OnClockRestart</b> method. This call occurs synchronously within the <see cref="Start" /> method. If the time source returns an error from <b>OnClockRestart</b>, the presentation clock's <b>Start</b> method returns an error and the state change does not take place.</para>
-      <para>For any object that is not the presentation time source, the <b>OnClockRestart</b> method is called asynchronously, after the state change is completed. In that case, the return value from this method is ignored.</para>
-    </remarks>
-    <seealso cref="IMFClockStateSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
+    <summary>Called when the presentation clock restarts from the same position while paused.</summary>
+    <param name="hnsSystemTime">The system time when the clock restarted, in 100-nanosecond units.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFClockStateSink.OnClockSetRate">
-    <summary>
-      <para>Called when the rate changes on the presentation clock.</para>
-    </summary>
-    <param name="hnsSystemTime">
-      <para>The system time when the rate was set, in 100-nanosecond units.</para>
-    </param>
-    <param name="flRate">
-      <para>The new rate, as a multiplier of the normal playback rate.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When the presentation clock's <see cref="IMFRateControl.SetRate" /> method is called, the clock notifies the presentation time source by calling the time source's <b>OnClockSetRate</b> method. This call occurs synchronously within the <b>SetRate</b> method. If the time source returns an error from <b>OnClockSetRate</b>, the presentation clock's <b>SetRate</b> method returns an error and the state change does not take place.</para>
-      <para>For any object that is not the presentation time source, the <b>OnClockSetRate</b> method is called asynchronously, after the state change is completed. In that case, the return value from this method is ignored.</para>
-    </remarks>
-    <seealso cref="IMFClockStateSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
+    <summary>Called when the rate changes on the presentation clock.</summary>
+    <param name="hnsSystemTime">The system time when the rate was set, in 100-nanosecond units.</param>
+    <param name="flRate">The new rate, as a multiplier of the normal playback rate.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFClockStateSink.OnClockStart">
-    <summary>
-      <para>Called when the presentation clock starts.</para>
-    </summary>
-    <param name="hnsSystemTime">
-      <para>The system time when the clock started, in 100-nanosecond units.</para>
-    </param>
-    <param name="llClockStartOffset">
-      <para>The new starting time for the clock, in 100-nanosecond units. This parameter can also equal <b>PRESENTATION_CURRENT_POSITION</b>, indicating the clock has started or restarted from its current position.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called when the presentation clock's <see cref="IMFPresentationClock.Start" /> method is called, with the following exception: If the clock is paused and <b>Start</b> is called with the value <b>PRESENTATION_CURRENT_POSITION</b>, <see cref="IMFClockStateSink.OnClockRestart" /> is called instead of <b>OnClockStart</b>.</para>
-      <para>The clock notifies the presentation time source by calling the time source's <b>OnClockStart</b> method. This call occurs synchronously within the <see cref="Start" /> method. If the time source returns an error from <b>OnClockStart</b>, the presentation clock's <b>Start</b> method returns an error and the state change does not take place.</para>
-      <para>For any object that is not the presentation time source, the <b>OnClockStart</b> method is called asynchronously, after the state change is completed. In that case, the return value from this method is ignored.</para>
-      <para>The value given in <i>llClockStartOffset</i> is the presentation time when the clock starts, so it is relative to the start of the presentation. Media sinks should not render any data with a presentation time earlier than <i>llClockStartOffSet</i>. If a sample straddles the offset—that is, if the offset falls between the sample's start and stop times—the sink should either trim the sample so that only data after <i>llClockStartOffset</i> is rendered, or else simply drop the sample.</para>
-    </remarks>
-    <seealso cref="IMFClockStateSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
+    <summary>Called when the presentation clock starts.</summary>
+    <param name="hnsSystemTime">The system time when the clock started, in 100-nanosecond units.</param>
+    <param name="llClockStartOffset">The new starting time for the clock, in 100-nanosecond units. This parameter can also equal <b>PRESENTATION_CURRENT_POSITION</b>, indicating the clock has started or restarted from its current position.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFClockStateSink.OnClockStop">
-    <summary>
-      <para>Called when the presentation clock stops.</para>
-    </summary>
-    <param name="hnsSystemTime">
-      <para>The system time when the clock stopped, in 100-nanosecond units.</para>
-    </param>
+    <summary>Called when the presentation clock stops.</summary>
+    <param name="hnsSystemTime">The system time when the clock stopped, in 100-nanosecond units.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -97,62 +34,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SINK_ALREADYSTOPPED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SINK_ALREADYSTOPPED</b>
-            </para>
-          </description>
-          <description>
-            <para>Deprecated. Do not use this error code.</para>
-          </description>
-        </item>
+          <description>Deprecated. Do not use this error code.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When the presentation clock's <see cref="IMFPresentationClock.Stop" /> method is called, the clock notifies the presentation time source by calling the presentation time source's <b>OnClockStop</b> method. This call occurs synchronously within the <b>Stop</b> method. If the time source returns an error from <b>OnClockStop</b>, the presentation clock's <b>Stop</b> method returns an error and the state change does not take place.</para>
-      <para>For any object that is not the presentation time source, the <b>OnClockStop</b> method is called asynchronously, after the state change is completed.</para>
-      <para>If an object is already stopped, it should return <b>S_OK</b> from <b>OnClockStop</b>. It should not return an error code.</para>
-      <para>
-        <b>Note</b>  Although the header file mferror.h defines an error code named <b>MF_E_SINK_ALREADYSTOPPED</b>, it should not be returned in this situation.</para>
-    </remarks>
-    <seealso cref="IMFClockStateSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
   </member>
   <member name="IMFClockStateSink">
-    <summary>
-      <para>Receives state-change notifications from the presentation clock.</para>
-    </summary>
-    <remarks>
-      <para>To receive state-change notifications from the presentation clock, implement this interface and call <see cref="IMFPresentationClock.AddClockStateSink" /> on the presentation clock.</para>
-      <para>This interface must be implemented by:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>Presentation time sources. The presentation clock uses this interface to request change states from the time source.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Media sinks. Media sinks use this interface to get notifications when the presentation clock changes.</para>
-          </description>
-        </item>
-      </list>
-      <para>Other objects that need to be notified can implement this interface.</para>
-    </remarks>
-    <seealso cref="IMFPresentationTimeSource" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
+    <summary>Receives state-change notifications from the presentation clock.</summary>
   </member>
 </doc>

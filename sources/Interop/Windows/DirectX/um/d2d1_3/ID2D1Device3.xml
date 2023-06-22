@@ -3,29 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Device3.CreateDeviceContext">
-    <summary>
-      <para>Creates a new <see cref="ID2D1DeviceContext3" /> from this Direct2D device.</para>
-    </summary>
-    <param name="options">
-      <para>Type: <b><see cref="D2D1_DEVICE_CONTEXT_OPTIONS" /></b></para>
-      <para>The options to be applied to the created device context.</para>
-    </param>
-    <param name="deviceContext3">
-      <para>Type: <b><see cref="ID2D1DeviceContext3" />**</b></para>
-      <para>When this method returns, contains a pointer to the new device context.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Device3" />
+    <summary>Creates a new <see cref="ID2D1DeviceContext3" /> from this Direct2D device.</summary>
+    <param name="options">The options to be applied to the created device context.</param>
+    <param name="deviceContext3">When this method returns, contains a pointer to the new device context.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1Device3">
-    <summary>
-      <para>Represents a resource domain whose objects and device contexts can be used together.
-This interface performs all the same functions as the <see cref="ID2D1Device2" /> interface.
-It also enables the creation of <see cref="ID2D1DeviceContext3" /> objects.</para>
-    </summary>
-    <seealso cref="ID2D1Device2" />
+    <summary>Represents a resource domain whose objects and device contexts can be used together. This interface performs all the same functions as the <see cref="ID2D1Device2" /> interface. It also enables the creation of <see cref="ID2D1DeviceContext3" /> objects.</summary>
   </member>
 </doc>

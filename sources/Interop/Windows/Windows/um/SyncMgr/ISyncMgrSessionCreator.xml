@@ -3,57 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrSessionCreator.CreateSession">
-    <summary>
-      <para>Notifies Sync Center that synchronization of the specified items has begun.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="ppszItemIDs">
-      <para>Type: <b>LPCWSTR*</b></para>
-      <para>The address of a pointer to a buffer containing an array of item IDs, managed by the handler specified in <i>pszHandlerID</i>, to be synchronized. Each ID is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="cItems">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of item IDs contained in the buffer referenced in <i>ppszItemIDs</i>.</para>
-    </param>
-    <param name="ppCallback">
-      <para>Type: <b><see cref="ISyncMgrSyncCallback" />**</b></para>
-      <para>The address of a pointer to an instance of <see cref="ISyncMgrSyncCallback" /> used to report progress and events. This value can be <b>NULL</b> if no callback is needed.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Both <i>pszHandlerID</i> and <i>ppszItemIDs</i> must be specified.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the outline of an implementation of this method.</para>
-      <code>STDMETHODIMP CMyDeviceHandler.Synchronize(...)
-{
-    ...
-    ISyncMgrSyncCallback *pCallback = NULL;
-
-    hr = pCreator-&gt;CreateSession(_pszHandlerID, ppszItemIDs, cItems, &amp;amp;amp;amp;amp;amp;pCallback);
-    if (SUCCEEDED(hr))
-    {
-        // Perform synchronization.
-    }
-
-    return hr;
-}
-
-</code>
-    </remarks>
+    <summary>Notifies Sync Center that synchronization of the specified items has begun.</summary>
+    <param name="pszHandlerID">A pointer to a buffer containing the unique ID of the handler. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="ppszItemIDs">The address of a pointer to a buffer containing an array of item IDs, managed by the handler specified in <i>pszHandlerID</i>, to be synchronized. Each ID is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="cItems">The number of item IDs contained in the buffer referenced in <i>ppszItemIDs</i>.</param>
+    <param name="ppCallback">The address of a pointer to an instance of <see cref="ISyncMgrSyncCallback" /> used to report progress and events. This value can be <b>NULL</b> if no callback is needed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrSessionCreator">
-    <summary>
-      <para>Exposes a single method through which a handler or external application can notify Sync Center that synchronization has begun, as well as report progress and events.</para>
-    </summary>
-    <remarks>
-      <para>This interface is passed to the <see cref="ISyncMgrHandler.Synchronize" />. The handler can choose to create a session in its <b>Synchronize</b> implementation. This allows the handler to report progress and events itself or to signal a background process to report progress and events itself.</para>
-      <para>Alternatively, the handler can choose to signal an external process to create a CLSID_SyncMgrClient object. If a handler is implemented to perform automatic synchronizations in an external process such as a service, it must be able to provide progress reports to Sync Center so that Sync Center can update the UI for the user. The handler also must be able to add events to Sync Center's <b>Sync Results</b> folder. An external process creates the CLSID_SyncMgrClient object by passing the CLSCTX_SERVER flag and the <b>ISyncMgrSessionCreator</b> IID to <see cref="CoCreateInstance" />. This allows that process to report progress and events as well as to ask Sync Center whether the user canceled the synchronization. Note, however, that <b>ISyncMgrSessionCreator</b> cannot be marshaled to an external process.</para>
-    </remarks>
+    <summary>Exposes a single method through which a handler or external application can notify Sync Center that synchronization has begun, as well as report progress and events.</summary>
   </member>
 </doc>

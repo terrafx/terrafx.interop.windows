@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSS_WALK_INFORMATION_CLASS">
-    <summary>
-      <para>Specifies what information the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a> function returns.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+    <summary>Specifies what information the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a> function returns.</summary>
   </member>
   <member name="PSS_WALK_INFORMATION_CLASS.PSS_WALK_AUXILIARY_PAGES">
-    <summary>
-      <para>Returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_auxiliary_page_entry">PSS_AUXILIARY_PAGE_ENTRY</a> structure, which contains the address, page attributes and contents of an auxiliary copied page.</para>
-    </summary>
+    <summary>Returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_auxiliary_page_entry">PSS_AUXILIARY_PAGE_ENTRY</a> structure, which contains the address, page attributes and contents of an auxiliary copied page.</summary>
   </member>
   <member name="PSS_WALK_INFORMATION_CLASS.PSS_WALK_VA_SPACE">
-    <summary>
-      <para>Returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_va_space_entry">PSS_VA_SPACE_ENTRY</a> structure, which contains the <see cref="MEMORY_BASIC_INFORMATION" /> structure for every distinct VA region.</para>
-    </summary>
+    <summary>Returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_va_space_entry">PSS_VA_SPACE_ENTRY</a> structure, which contains the <see cref="MEMORY_BASIC_INFORMATION" /> structure for every distinct VA region.</summary>
   </member>
   <member name="PSS_WALK_INFORMATION_CLASS.PSS_WALK_HANDLES">
-    <summary>
-      <para>Returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_handle_entry">PSS_HANDLE_ENTRY</a> structure, with information specifying the handle value, its type name, object name (if captured), basic information (if captured), and type-specific information (if captured).</para>
-    </summary>
+    <summary>Returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_handle_entry">PSS_HANDLE_ENTRY</a> structure, with information specifying the handle value, its type name, object name (if captured), basic information (if captured), and type-specific information (if captured).</summary>
   </member>
   <member name="PSS_WALK_INFORMATION_CLASS.PSS_WALK_THREADS">
-    <summary>
-      <para>Returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_thread_entry">PSS_THREAD_ENTRY</a> structure, with basic information about the thread, as well as its termination state, suspend count and Win32 start address.</para>
-    </summary>
+    <summary>Returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_thread_entry">PSS_THREAD_ENTRY</a> structure, with basic information about the thread, as well as its termination state, suspend count and Win32 start address.</summary>
   </member>
 </doc>

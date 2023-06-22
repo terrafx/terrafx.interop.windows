@@ -4,35 +4,24 @@
 <doc>
   <member name="DVD_CMD_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Defines flags that control how the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator Filter</a> filter handles command synchronization.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/synchronizing-dvd-commands">Synchronizing DVD Commands</seealso>
   </member>
   <member name="DVD_CMD_FLAGS.DVD_CMD_FLAG_None">
-    <summary>
-      <para>The DVD Navigator will not flush its buffers when it issues the command, will not send any events, and will not to block the thread of execution on any method call.</para>
-    </summary>
+    <summary>The DVD Navigator will not flush its buffers when it issues the command, will not send any events, and will not to block the thread of execution on any method call.</summary>
   </member>
   <member name="DVD_CMD_FLAGS.DVD_CMD_FLAG_Flush">
-    <summary>
-      <para>The DVD Navigator will flush all of its buffered video data before issuing the command. This can cause the DVD Navigator to discard approximately two seconds of video, which will decrease the response time but cause a gap in the playback data.</para>
-    </summary>
+    <summary>The DVD Navigator will flush all of its buffered video data before issuing the command. This can cause the DVD Navigator to discard approximately two seconds of video, which will decrease the response time but cause a gap in the playback data.</summary>
   </member>
   <member name="DVD_CMD_FLAGS.DVD_CMD_FLAG_SendEvents">
-    <summary>
-      <para>The DVD Navigator will send an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-cmd-start">EC_DVD_CMD_START</a> event when the command begins, and an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-cmd-end">EC_DVD_CMD_END</a> event when the command ends. The event parameters contain the status code of the operation.</para>
-    </summary>
+    <summary>The DVD Navigator will send an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-cmd-start">EC_DVD_CMD_START</a> event when the command begins, and an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-dvd-cmd-end">EC_DVD_CMD_END</a> event when the command ends. The event parameters contain the status code of the operation.</summary>
   </member>
   <member name="DVD_CMD_FLAGS.DVD_CMD_FLAG_Block">
-    <summary>
-      <para>The DVD Navigator blocks until the command completes or is canceled.</para>
-    </summary>
+    <summary>The DVD Navigator blocks until the command completes or is canceled.</summary>
   </member>
   <member name="DVD_CMD_FLAGS.DVD_CMD_FLAG_StartWhenRendered">
-    <summary>
-      <para>Currently not used.</para>
-    </summary>
+    <summary>Currently not used.</summary>
   </member>
   <member name="DVD_CMD_FLAGS.DVD_CMD_FLAG_EndAfterRendered">
     <summary>
@@ -58,8 +47,6 @@
             <see cref="IDvdControl2.SetSubpictureState" />
           </description>
         </item>
-      </list>
-      <para>For example, when used with <see cref="PlayChaptersAutoStop" />, this flag causes the DVD Navigator to block until the specified chapters have all played. When used with <see cref="SelectSubpictureStream" />, the flag causes the DVD Navigator to block until the new subpicture is rendered.</para>
-    </summary>
+      </list>For example, when used with <see cref="PlayChaptersAutoStop" />, this flag causes the DVD Navigator to block until the specified chapters have all played. When used with <see cref="SelectSubpictureStream" />, the flag causes the DVD Navigator to block until the new subpicture is rendered.</summary>
   </member>
 </doc>

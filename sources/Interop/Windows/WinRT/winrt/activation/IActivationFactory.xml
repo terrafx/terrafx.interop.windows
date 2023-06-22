@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IActivationFactory.ActivateInstance">
+    <summary>Creates a new instance of the Windows Runtime class that is associated with the current activation factory.</summary>
+    <param name="instance">A pointer to a new instance of the class that is associated with the current activation factory.</param>
+    <returns>
+      <para>This function can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The new class instance was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>instance</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IInspectable" /> interface is not implemented by the class that is associated with the current activation factory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to create an instance of the class.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IActivationFactory">
+    <summary>Enables classes to be activated by the Windows Runtime.</summary>
+  </member>
+</doc>

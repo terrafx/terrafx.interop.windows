@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICMetadataHeader">
-    <summary>
-      <para>Represents metadata header.</para>
-    </summary>
+    <summary>Represents metadata header.</summary>
   </member>
   <member name="WICMetadataHeader.Position">
-    <summary>
-      <para>Type: <b>ULARGE_INTEGER</b></para>
-      <para>The position of the header.</para>
-    </summary>
+    <summary>The position of the header.</summary>
   </member>
   <member name="WICMetadataHeader.Length">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The length of the header.</para>
-    </summary>
+    <summary>The length of the header.</summary>
   </member>
   <member name="WICMetadataHeader.Header">
-    <summary>
-      <para>Type: <b>BYTE*</b></para>
-      <para>Pointer to the header.</para>
-    </summary>
+    <summary>Pointer to the header.</summary>
   </member>
   <member name="WICMetadataHeader.DataOffset">
-    <summary>
-      <para>Type: <b>ULARGE_INTEGER</b></para>
-      <para>The offset of the header.</para>
-    </summary>
+    <summary>The offset of the header.</summary>
   </member>
 </doc>

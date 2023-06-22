@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_TRANSLATED_SID">
+    <summary>The <b>LSA_TRANSLATED_SID</b> structure is used with the<see cref="LsaLookupNames" /> function to return information about the<see cref="SID" /> that identifies an account.</summary>
+  </member>
+  <member name="LSA_TRANSLATED_SID.Use">
+    <summary>
+      <para>A value from the<see cref="SID_NAME_USE" /> enumeration type that identifies the type of SID.</para>
+      <para>If <b>Use</b> has one of the following values, one or both of the <b>RelativeId</b> or <b>DomainIndex</b> members of <b>LSA_TRANSLATED_SID</b> is not valid. These members are valid if <b>Use</b> has any other value.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SidTypeDomain</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>DomainIndex</b> member is valid, but the <b>RelativeId</b> member is not valid and must be ignored.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SidTypeInvalid</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Both <b>DomainIndex</b> and <b>RelativeId</b> are not valid and must be ignored.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SidTypeUnknown</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Both <b>DomainIndex</b> and <b>RelativeId</b> members are not valid and must be ignored.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="LSA_TRANSLATED_SID.RelativeId">
+    <summary>Specifies the relative identifier (RID) of the account's SID. The RID identifies the account relative to the domain referenced by the <b>DomainIndex</b> member. The account's complete SID consists of the domain SID followed by the RID.</summary>
+  </member>
+  <member name="LSA_TRANSLATED_SID.DomainIndex">
+    <summary>
+      <para>Specifies the zero-based index of an entry in the<see cref="LSA_REFERENCED_DOMAIN_LIST" /> structure returned by the <see cref="LsaLookupNames" /> function. This entry contains the name and SID of the domain in which the account was found.</para>
+      <para>If there is no corresponding domain for an account, this member contains a negative value.</para>
+    </summary>
+  </member>
+</doc>

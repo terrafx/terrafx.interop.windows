@@ -3,26 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IP_ADAPTER_DNS_SUFFIX">
-    <summary>
-      <para>The
-<b>IP_ADAPTER_DNS_SUFFIX</b> structure stores a DNS suffix in a linked list of DNS suffixes  for a particular adapter.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="IP_ADAPTER_ADDRESSES" /> structure is retrieved by the <see cref="GetAdaptersAddresses" /> function. The <b>FirstDnsSuffix</b> member of the <b>IP_ADAPTER_ADDRESSES</b> structure is a pointer to a linked list of <b>IP_ADAPTER_DNS_SUFFIX</b> structures.</para>
-    </remarks>
-    <seealso cref="GetAdaptersAddresses" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
-    <seealso cref="IP_ADAPTER_ADDRESSES" />
+    <summary>The<b>IP_ADAPTER_DNS_SUFFIX</b> structure stores a DNS suffix in a linked list of DNS suffixes for a particular adapter.</summary>
   </member>
   <member name="IP_ADAPTER_DNS_SUFFIX.Next">
-    <summary>
-      <para>A pointer to the next DNS suffix in the linked list.</para>
-    </summary>
+    <summary>A pointer to the next DNS suffix in the linked list.</summary>
   </member>
   <member name="IP_ADAPTER_DNS_SUFFIX.String">
-    <summary>
-      <para>The DNS suffix for this DNS suffix entry.</para>
-    </summary>
+    <summary>The DNS suffix for this DNS suffix entry.</summary>
   </member>
 </doc>

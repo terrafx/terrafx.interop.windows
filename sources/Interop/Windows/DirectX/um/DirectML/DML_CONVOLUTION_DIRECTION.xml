@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_CONVOLUTION_DIRECTION">
-    <summary>
-      <para>Defines constants that specify a direction for the DirectML convolution operator (as described by the <see cref="DML_CONVOLUTION_OPERATOR_DESC" /> structure).</para>
-    </summary>
-    <seealso cref="DML_CONVOLUTION_OPERATOR_DESC" />
+    <summary>Defines constants that specify a direction for the DirectML convolution operator (as described by the <see cref="DML_CONVOLUTION_OPERATOR_DESC" /> structure).</summary>
   </member>
   <member name="DML_CONVOLUTION_DIRECTION.DML_CONVOLUTION_DIRECTION_FORWARD">
-    <summary>
-      <para>Indicates a forward convolution.</para>
-    </summary>
+    <summary>Indicates a forward convolution.</summary>
   </member>
   <member name="DML_CONVOLUTION_DIRECTION.DML_CONVOLUTION_DIRECTION_BACKWARD">
-    <summary>
-      <para>Indicates a backward convolution. Backward convolution is also known as <i>transposed</i> convolution.</para>
-    </summary>
+    <summary>Indicates a backward convolution. Backward convolution is also known as <i>transposed</i> convolution.</summary>
   </member>
 </doc>

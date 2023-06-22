@@ -4,24 +4,20 @@
 <doc>
   <member name="Windows.OpenPersonalTrustDBDialog">
     <summary>
-      <para>The <b>OpenPersonalTrustDBDialog</b> function displays the <b>Certificates</b> dialog box.
-<b>Note</b>  This function has no associated header file or import library. You must define the function yourself and use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Wintrust.dll.</para>
+      <para>The <b>OpenPersonalTrustDBDialog</b> function displays the <b>Certificates</b> dialog box.</para>
+      <div>
+        <b>Note</b>  This function has no associated header file or import library. You must define the function yourself and use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Wintrust.dll.</div>
     </summary>
-    <param name="hwndParent">
-      <para>The handle of the parent window for the dialog box. If this parameter is <b>NULL</b>, the dialog box has no parent.</para>
-    </param>
-    <returns>
-      <para>Returns nonzero if the dialog box was opened successfully or zero otherwise.</para>
-    </returns>
+    <param name="hwndParent">The handle of the parent window for the dialog box. If this parameter is <b>NULL</b>, the dialog box has no parent.</param>
+    <returns>Returns nonzero if the dialog box was opened successfully or zero otherwise.</returns>
   </member>
   <member name="Windows.OpenPersonalTrustDBDialogEx">
     <summary>
-      <para>The <b>OpenPersonalTrustDBDialogEx</b> function displays the <b>Certificates</b> dialog box.
-<b>Note</b>  This function has no associated header file or import library. You must define the function yourself and use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Wintrust.dll.</para>
+      <para>The <b>OpenPersonalTrustDBDialogEx</b> function displays the <b>Certificates</b> dialog box.</para>
+      <div>
+        <b>Note</b>  This function has no associated header file or import library. You must define the function yourself and use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Wintrust.dll.</div>
     </summary>
-    <param name="hwndParent">
-      <para>The handle of the parent window for the dialog box. If this parameter is <b>NULL</b>, the dialog box has no parent.</para>
-    </param>
+    <param name="hwndParent">The handle of the parent window for the dialog box. If this parameter is <b>NULL</b>, the dialog box has no parent.</param>
     <param name="dwFlags">
       <para>A set of flags that modify the behavior of this function. This can be zero or the following value.</para>
       <list type="table">
@@ -29,58 +25,34 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WT_TRUSTDBDIALOG_ONLY_PUB_TAB_FLAG</b>
-                </description>
-              </item>
-              <item>
-                <description>2 (0x2)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2 (0x2)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Only display the          <b>Trusted Publisher</b> tab. By default, all of the user interface tabs are displayed and the <b>Trusted Publisher</b> tab is initially selected.</para>
-          </description>
-        </item>
+          <description>Only display the <b>Trusted Publisher</b> tab. By default, all of the user interface tabs are displayed and the <b>Trusted Publisher</b> tab is initially selected.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pvReserved">
-      <para>Not used. Must be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Returns nonzero if the dialog box was opened successfully or zero otherwise.</para>
-    </returns>
-    <seealso cref="OpenPersonalTrustDBDialog" />
+    <param name="pvReserved">Not used. Must be <b>NULL</b>.</param>
+    <returns>Returns nonzero if the dialog box was opened successfully or zero otherwise.</returns>
   </member>
   <member name="Windows.WintrustAddDefaultForUsage">
-    <summary>
-      <para>The <b>WintrustAddDefaultForUsage</b> function specifies the default usage identifier and callback information for a provider.</para>
-    </summary>
-    <param name="pszUsageOID">
-      <para>Pointer to a string that contains the identifier.</para>
-    </param>
-    <param name="psDefUsage">
-      <para>Pointer to a <see cref="CRYPT_PROVIDER_REGDEFUSAGE" /> structure that contains callback information.</para>
-    </param>
-    <returns>
-      <para>The return value is <b>TRUE</b> if the function succeeds; <b>FALSE</b>  if the function fails.   If the function fails, call the <see cref="GetLastError" /> function  to determine the reason for failure.</para>
-    </returns>
-    <remarks>
-      <para>If the provider uses this function and requires any of the callback data, the provider must completely fill out the <see cref="CRYPT_PROVIDER_REGDEFUSAGE" /> structure.</para>
-      <para>The usage and callback information can be retrieved by calling the <see cref="WintrustGetDefaultForUsage" /> function.</para>
-    </remarks>
-    <seealso cref="CRYPT_PROVIDER_DEFUSAGE" />
-    <seealso cref="CRYPT_PROVIDER_REGDEFUSAGE" />
-    <seealso cref="WintrustGetDefaultForUsage" />
+    <summary>The <b>WintrustAddDefaultForUsage</b> function specifies the default usage identifier and callback information for a provider.</summary>
+    <param name="pszUsageOID">Pointer to a string that contains the identifier.</param>
+    <param name="psDefUsage">Pointer to a <see cref="CRYPT_PROVIDER_REGDEFUSAGE" /> structure that contains callback information.</param>
+    <returns>The return value is <b>TRUE</b> if the function succeeds; <b>FALSE</b> if the function fails. If the function fails, call the <see cref="GetLastError" /> function to determine the reason for failure.</returns>
   </member>
   <member name="Windows.WintrustGetDefaultForUsage">
-    <summary>
-      <para>The <b>WintrustGetDefaultForUsage</b> function retrieves the default usage identifier and callback information.</para>
-    </summary>
+    <summary>The <b>WintrustGetDefaultForUsage</b> function retrieves the default usage identifier and callback information.</summary>
     <param name="dwAction">
       <para>Action to perform. This can be one of the following values. For more information, see Remarks.</para>
       <list type="table">
@@ -88,45 +60,41 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>DWACTION_ALLOCANDFILL</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DWACTION_ALLOCANDFILL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Allocate memory and fill the <see cref="CRYPT_PROVIDER_DEFUSAGE" /> structure pointed to by the <i>psUsage</i> parameter.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Allocate memory and fill the <see cref="CRYPT_PROVIDER_DEFUSAGE" /> structure pointed to by the <i>psUsage</i> parameter.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DWACTION_FREE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>DWACTION_FREE</b>
-          </description>
-          <description>
-            <para>Free all memory allocated during  a previous call to this function by specifying <b>DWACTION_ALLOCANDFILL</b> for this parameter.</para>
-          </description>
-        </item>
+          <description>Free all memory allocated during a previous call to this function by specifying <b>DWACTION_ALLOCANDFILL</b> for this parameter.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pszUsageOID">
-      <para>Pointer to a string that contains the identifier.</para>
-    </param>
-    <param name="psUsage">
-      <para>Pointer to a <see cref="CRYPT_PROVIDER_DEFUSAGE" /> structure that contains callback information to be retrieved.</para>
-    </param>
-    <returns>
-      <para>The return value is <b>TRUE</b> if the function succeeds; <b>FALSE</b>  if the function fails.   If the function fails, call the <see cref="GetLastError" /> function  to determine the reason for failure.</para>
-    </returns>
-    <remarks>
-      <para>Call this function once with the <i>dwAction</i> parameter set to <b>DWACTION_ALLOCANDFILL</b> to allocate memory and fill a <see cref="CRYPT_PROVIDER_DEFUSAGE" /> structure with information. Call this function again with the <i>dwAction</i> parameter set to <b>DWACTION_FREE</b> to free the allocated memory.</para>
-      <para>The default usage and callback information for a provider is registered by calling the <see cref="WintrustAddDefaultForUsage" /> function.</para>
-    </remarks>
-    <seealso cref="CRYPT_PROVIDER_DEFUSAGE" />
-    <seealso cref="CRYPT_PROVIDER_REGDEFUSAGE" />
-    <seealso cref="WintrustAddDefaultForUsage" />
+    <param name="pszUsageOID">Pointer to a string that contains the identifier.</param>
+    <param name="psUsage">Pointer to a <see cref="CRYPT_PROVIDER_DEFUSAGE" /> structure that contains callback information to be retrieved.</param>
+    <returns>The return value is <b>TRUE</b> if the function succeeds; <b>FALSE</b> if the function fails. If the function fails, call the <see cref="GetLastError" /> function to determine the reason for failure.</returns>
   </member>
   <member name="Windows.WintrustGetRegPolicyFlags">
     <summary>
-      <para>The <b>WintrustGetRegPolicyFlags</b> function retrieves policy flags for a policy provider.
-<b>Note</b>  This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Wintrust.dll.</para>
+      <para>The <b>WintrustGetRegPolicyFlags</b> function retrieves policy flags for a policy provider.</para>
+      <div>
+        <b>Note</b>  This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Wintrust.dll.</div>
     </summary>
     <param name="pdwPolicyFlags">
       <para>This parameter can be a bitwise combination of one or more of the following values.</para>
@@ -135,97 +103,140 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>WTPF_TRUSTTEST</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_TRUSTTEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Trust any test certificate.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Trust any test certificate.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_TESTCANBEVALID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Check any test certificate for validity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_TESTCANBEVALID</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_IGNOREEXPIRATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Use expiration date.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Check any test certificate for validity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_IGNOREREVOKATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Do revocation check.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_IGNOREEXPIRATION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOK_IND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>If the source is offline, trust any individual certificates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Use expiration date.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOK_COM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>If the source is offline, trust any commercial certificates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_IGNOREREVOKATION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOKNBU_IND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>If the source is offline, trust any individual certificates. Do not use the user interface (UI).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Do revocation check.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOKNBU_COM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>If the source is offline, trust any commercial certificates. Do not use the checking UI.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_OFFLINEOK_IND</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_VERIFY_V1_OFF</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Turn off verification of version 1.0 certificates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>If the source is offline, trust any individual certificates.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_IGNOREREVOCATIONONTS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Ignore time stamp revocation checks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_OFFLINEOK_COM</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_ALLOWONLYPERTRUST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>If the source is offline, trust any commercial certificates.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_OFFLINEOKNBU_IND</b>
-          </description>
-          <description>
-            <para>If the source is offline, trust any individual certificates. Do not use the user interface (UI).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_OFFLINEOKNBU_COM</b>
-          </description>
-          <description>
-            <para>If the source is offline, trust any commercial certificates. Do not use the checking UI.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_VERIFY_V1_OFF</b>
-          </description>
-          <description>
-            <para>Turn off verification of version 1.0 certificates.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_IGNOREREVOCATIONONTS</b>
-          </description>
-          <description>
-            <para>Ignore time stamp revocation checks.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_ALLOWONLYPERTRUST</b>
-          </description>
-          <description>
-            <para>Allow only items in personal trust database.</para>
-          </description>
-        </item>
+          <description>Allow only items in personal trust database.</description>
+        </listheader>
       </list>
     </param>
-    <seealso cref="WintrustSetRegPolicyFlags" />
   </member>
   <member name="Windows.WintrustSetDefaultIncludePEPageHashes">
     <summary>
@@ -233,18 +244,13 @@
       <para>This setting is only used if neither the <b>SPC_EXC_PE_PAGE_HASHES_FLAG</b> or the <b>SPC_INC_PE_PAGE_HASHES_FLAG</b> flag is specified in the <i>dwFlags</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/signersignex">SignerSignEx</a> function.</para>
       <para>This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Wintrust.dll.</para>
     </summary>
-    <param name="fIncludePEPageHashes">
-      <para>Determines whether page hashes are included when creating SIP indirect data for PE files. If this parameter is nonzero, page hashes are included. If this parameter is zero, page hashes are not included. The value is zero by default.</para>
-    </param>
-    <remarks>
-      <para>This setting applies to each instance of Wintrust.dll.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SecCrypto/signersignex">SignerSignEx</seealso>
+    <param name="fIncludePEPageHashes">Determines whether page hashes are included when creating SIP indirect data for PE files. If this parameter is nonzero, page hashes are included. If this parameter is zero, page hashes are not included. The value is zero by default.</param>
   </member>
   <member name="Windows.WintrustSetRegPolicyFlags">
     <summary>
-      <para>The <b>WintrustSetRegPolicyFlags</b> function sets policy flags for a policy provider.
-<b>Note</b>  This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Wintrust.dll.</para>
+      <para>The <b>WintrustSetRegPolicyFlags</b> function sets policy flags for a policy provider.</para>
+      <div>
+        <b>Note</b>  This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Wintrust.dll.</div>
     </summary>
     <param name="dwPolicyFlags">
       <para>This parameter can be a bitwise combination of one or more of the following values.</para>
@@ -253,99 +259,140 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>WTPF_TRUSTTEST</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_TRUSTTEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Trust any test certificate.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Trust any test certificate.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_TESTCANBEVALID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Check any test certificate for validity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_TESTCANBEVALID</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_IGNOREEXPIRATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Do not check the expiration date.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Check any test certificate for validity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_IGNOREREVOKATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Do not check revocation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_IGNOREEXPIRATION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOK_IND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>If the source is offline, trust any individual certificates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Do not check the  expiration date.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOK_COM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>If the source is offline, trust any commercial certificates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_IGNOREREVOKATION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOKNBU_IND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>If the source is offline, trust any individual certificates. Do not use the user interface (UI).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Do not check revocation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOKNBU_COM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>If the source is offline, trust any commercial certificates. Do not use the checking UI.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_OFFLINEOK_IND</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_VERIFY_V1_OFF</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Turn off verification of version 1.0 certificates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>If the source is offline, trust any individual certificates.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_IGNOREREVOCATIONONTS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Ignore time stamp revocation checks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_OFFLINEOK_COM</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_ALLOWONLYPERTRUST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>If the source is offline, trust any commercial certificates.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_OFFLINEOKNBU_IND</b>
-          </description>
-          <description>
-            <para>If the source is offline, trust any individual certificates. Do not use the user interface (UI).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_OFFLINEOKNBU_COM</b>
-          </description>
-          <description>
-            <para>If the source is offline, trust any commercial certificates. Do not use the checking UI.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_VERIFY_V1_OFF</b>
-          </description>
-          <description>
-            <para>Turn off verification of version 1.0 certificates.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_IGNOREREVOCATIONONTS</b>
-          </description>
-          <description>
-            <para>Ignore time stamp revocation checks.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_ALLOWONLYPERTRUST</b>
-          </description>
-          <description>
-            <para>Allow only items in personal trust database.</para>
-          </description>
-        </item>
+          <description>Allow only items in personal trust database.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>Returns nonzero if the policy flags were set successfully or zero otherwise.</para>
-    </returns>
-    <seealso cref="WintrustGetRegPolicyFlags" />
+    <returns>Returns nonzero if the policy flags were set successfully or zero otherwise.</returns>
   </member>
 </doc>

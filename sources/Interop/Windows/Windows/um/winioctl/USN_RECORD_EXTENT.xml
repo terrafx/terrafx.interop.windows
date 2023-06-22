@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="USN_RECORD_EXTENT">
-    <summary>
-      <para>Contains the offset and length for an update sequence number (USN) record extent.</para>
-    </summary>
-    <seealso cref="USN_RECORD_V4" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+    <summary>Contains the offset and length for an update sequence number (USN) record extent.</summary>
   </member>
   <member name="USN_RECORD_EXTENT.Offset">
-    <summary>
-      <para>The offset of the extent, in bytes.</para>
-    </summary>
+    <summary>The offset of the extent, in bytes.</summary>
   </member>
   <member name="USN_RECORD_EXTENT.Length">
-    <summary>
-      <para>The length of the extent, in bytes.</para>
-    </summary>
+    <summary>The length of the extent, in bytes.</summary>
   </member>
 </doc>

@@ -3,51 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RSOP_TARGET">
-    <summary>
-      <para>The
-<b>RSOP_TARGET</b> structure contains computer and user information required by the
-<a href="https://docs.microsoft.com//windows/desktop/api/userenv/nc-userenv-pfngenerategrouppolicy">GenerateGroupPolicy</a> function.</para>
-    </summary>
-    <seealso cref="GROUP_POLICY_OBJECT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/userenv/nc-userenv-pfngenerategrouppolicy">GenerateGroupPolicy</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/about-group-policy">Group Policy Overview</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-structures">Group Policy Structures</seealso>
-    <seealso cref="RSoPAccessCheckByType" />
-    <seealso cref="RSoPFileAccessCheck" />
+    <summary>The<b>RSOP_TARGET</b> structure contains computer and user information required by the<a href="https://docs.microsoft.com//windows/desktop/api/userenv/nc-userenv-pfngenerategrouppolicy">GenerateGroupPolicy</a> function.</summary>
   </member>
   <member name="RSOP_TARGET.pwszAccountName">
-    <summary>
-      <para>Pointer to the account name of the computer or the user.</para>
-    </summary>
+    <summary>Pointer to the account name of the computer or the user.</summary>
   </member>
   <member name="RSOP_TARGET.pwszNewSOM">
-    <summary>
-      <para>Pointer to the new domain or organizational unit that is the location for the account identified by the <b>pwszAccountName</b> member. This member can be <b>NULL</b>.</para>
-    </summary>
+    <summary>Pointer to the new domain or organizational unit that is the location for the account identified by the <b>pwszAccountName</b> member. This member can be <b>NULL</b>.</summary>
   </member>
   <member name="RSOP_TARGET.psaSecurityGroups">
-    <summary>
-      <para>Pointer to a <b>SAFEARRAY</b> that contains a proposed list of new security groups. This member can be <b>NULL</b>. For more information about security groups, see
-<a href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/filtering-the-scope-of-a-gpo">Filtering the Scope of a GPO</a> and
-<a href="https://docs.microsoft.com//windows/desktop/AD/how-security-groups-are-used-in-access-control">How Security Groups are Used in Access Control</a>.</para>
-    </summary>
+    <summary>Pointer to a <b>SAFEARRAY</b> that contains a proposed list of new security groups. This member can be <b>NULL</b>. For more information about security groups, see<a href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/filtering-the-scope-of-a-gpo">Filtering the Scope of a GPO</a> and<a href="https://docs.microsoft.com//windows/desktop/AD/how-security-groups-are-used-in-access-control">How Security Groups are Used in Access Control</a>.</summary>
   </member>
   <member name="RSOP_TARGET.pRsopToken">
-    <summary>
-      <para>Pointer to an <b>RSOPTOKEN</b> to use with the
-<see cref="RSoPAccessCheckByType" /> and the
-<see cref="RSoPFileAccessCheck" /> functions.</para>
-    </summary>
+    <summary>Pointer to an <b>RSOPTOKEN</b> to use with the<see cref="RSoPAccessCheckByType" /> and the<see cref="RSoPFileAccessCheck" /> functions.</summary>
   </member>
   <member name="RSOP_TARGET.pGPOList">
-    <summary>
-      <para>Pointer to a
-<see cref="GROUP_POLICY_OBJECT" /> structure containing a linked list of GPOs.</para>
-    </summary>
+    <summary>Pointer to a<see cref="GROUP_POLICY_OBJECT" /> structure containing a linked list of GPOs.</summary>
   </member>
   <member name="RSOP_TARGET.pWbemServices">
-    <summary>
-      <para>Specifies the WMI services pointer to the namespace to which the planning mode policy data should be written.</para>
-    </summary>
+    <summary>Specifies the WMI services pointer to the namespace to which the planning mode policy data should be written.</summary>
   </member>
 </doc>

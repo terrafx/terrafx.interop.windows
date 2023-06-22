@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_CERTIFICATE_HASHINFO">
+    <summary>The <b>KERB_CERTIFICATE_HASHINFO</b> structure provides the payload information of the certificate hash.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_HASHINFO.StoreNameLength">
+    <summary>Length, in bytes, of the WCHAR string specifying the certificate store name. If <b>StoreNameLength</b> is zero, the "MY" certificate store is implied; otherwise the WCHAR string must immediately follow the <b>KERB_CERTIFICATE_HASHINFO</b> structure in contiguous memory and must include a terminating null character.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_HASHINFO.HashLength">
+    <summary>Length, in bytes, of the certificate hash. The certificate hash data must follow the <b>KERB_CERTIFICATE_HASHINFO</b> structure and certificate store name (if present) in contiguous memory.</summary>
+  </member>
+</doc>

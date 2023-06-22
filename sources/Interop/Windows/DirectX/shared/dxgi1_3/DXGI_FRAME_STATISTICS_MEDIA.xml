@@ -3,59 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_FRAME_STATISTICS_MEDIA">
-    <summary>
-      <para>Used to verify system approval for the app's custom present duration (custom refresh rate). Approval should be continuously verified on a frame-by-frame basis.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with the <see cref="GetFrameStatisticsMedia" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
-    <seealso cref="IDXGISwapChainMedia" />
+    <summary>Used to verify system approval for the app's custom present duration (custom refresh rate). Approval should be continuously verified on a frame-by-frame basis.</summary>
   </member>
   <member name="DXGI_FRAME_STATISTICS_MEDIA.PresentCount">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>A value that represents the running total count of times that an image was presented to the monitor since the computer booted.</para>
-      <para>
-        <b>Note</b>  The number of times that an image was presented to the monitor is not necessarily the same as the number of times
-that you called <see cref="IDXGISwapChain.Present" /> or <see cref="IDXGISwapChain1.Present1" />.</para>
+      <div>
+        <b>Note</b>  The number of times that an image was presented to the monitor is not necessarily the same as the number of times that you called <see cref="IDXGISwapChain.Present" /> or <see cref="IDXGISwapChain1.Present1" />.</div>
     </summary>
   </member>
   <member name="DXGI_FRAME_STATISTICS_MEDIA.PresentRefreshCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A value that represents  the running total count of v-blanks at which the last image was presented to the monitor and that have happened since the computer booted (for windowed mode, since the swap chain was created).</para>
-    </summary>
+    <summary>A value that represents the running total count of v-blanks at which the last image was presented to the monitor and that have happened since the computer booted (for windowed mode, since the swap chain was created).</summary>
   </member>
   <member name="DXGI_FRAME_STATISTICS_MEDIA.SyncRefreshCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A value that represents  the running total count of v-blanks when the scheduler last sampled the machine time by calling <see cref="QueryPerformanceCounter" /> and that have happened since the computer booted (for windowed mode, since the swap chain was created).</para>
-    </summary>
+    <summary>A value that represents the running total count of v-blanks when the scheduler last sampled the machine time by calling <see cref="QueryPerformanceCounter" /> and that have happened since the computer booted (for windowed mode, since the swap chain was created).</summary>
   </member>
   <member name="DXGI_FRAME_STATISTICS_MEDIA.SyncQPCTime">
-    <summary>
-      <para>Type: <b><see cref="LARGE_INTEGER" /></b></para>
-      <para>A value that represents the high-resolution performance counter timer.
-This value is the same as the value returned by the <see cref="QueryPerformanceCounter" /></para>
-      <para>function.</para>
-    </summary>
+    <summary>A value that represents the high-resolution performance counter timer. This value is the same as the value returned by the <see cref="QueryPerformanceCounter" />function.</summary>
   </member>
   <member name="DXGI_FRAME_STATISTICS_MEDIA.SyncGPUTime">
-    <summary>
-      <para>Type: <b><see cref="LARGE_INTEGER" /></b></para>
-      <para>Reserved. Always returns 0.</para>
-    </summary>
+    <summary>Reserved. Always returns 0.</summary>
   </member>
   <member name="DXGI_FRAME_STATISTICS_MEDIA.CompositionMode">
-    <summary>
-      <para>Type: <b><see cref="DXGI_FRAME_PRESENTATION_MODE" /></b></para>
-      <para>A value indicating the composition presentation mode. This value is used to determine whether the app should continue to use the decode swap chain. See <see cref="DXGI_FRAME_PRESENTATION_MODE" />.</para>
-    </summary>
+    <summary>A value indicating the composition presentation mode. This value is used to determine whether the app should continue to use the decode swap chain. See <see cref="DXGI_FRAME_PRESENTATION_MODE" />.</summary>
   </member>
   <member name="DXGI_FRAME_STATISTICS_MEDIA.ApprovedPresentDuration">
     <summary>
-      <para>Type: <b>UINT</b></para>
       <para>If the system approves an app's custom present duration request, this field is set to the approved custom present duration.</para>
       <para>If the app's custom present duration request is not approved, this field is set to zero.</para>
     </summary>

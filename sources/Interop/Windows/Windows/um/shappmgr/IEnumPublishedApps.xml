@@ -3,66 +3,35 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumPublishedApps.Next">
-    <summary>
-      <para>Gets the next <see cref="IPublishedApp" /> object in the enumeration.</para>
-    </summary>
-    <param name="pia">
-      <para>Type: <b><see cref="IPublishedApp" />**</b></para>
-      <para>A pointer to an <see cref="IPublishedApp" /> interface reference variable that returns the next application object. Note that the category of the application object returned must match that passed into <see cref="EnumApps" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if an item is returned, S_FALSE if there are no more items to enumerate, a COM-defined error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  <see cref="IEnumPublishedApps" /> is not a standard enumeration interface. It does not support a Skip method, nor does its Next method support retrieval of multiple items.</para>
-    </remarks>
-    <seealso cref="IAppPublisher" />
-    <seealso cref="IEnumPublishedApps" />
-    <seealso cref="IPublishedApp" />
+    <summary>Gets the next <see cref="IPublishedApp" /> object in the enumeration.</summary>
+    <param name="pia">A pointer to an <see cref="IPublishedApp" /> interface reference variable that returns the next application object. Note that the category of the application object returned must match that passed into <see cref="EnumApps" />.</param>
+    <returns>Returns S_OK if an item is returned, S_FALSE if there are no more items to enumerate, a COM-defined error value otherwise.</returns>
   </member>
   <member name="IEnumPublishedApps.Reset">
-    <summary>
-      <para>Resets the enumeration of <see cref="IPublishedApp" /> objects to the first item.</para>
-    </summary>
+    <summary>Resets the enumeration of <see cref="IPublishedApp" /> objects to the first item.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns the following value.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>This method only returns S_OK.</para>
-          </description>
-        </item>
+          <description>This method only returns S_OK.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  <see cref="IEnumPublishedApps" /> is not a standard enumeration interface.</para>
-      <para>It does not support a Skip method nor does its Next method support retrieval of multiple items.</para>
-    </remarks>
-    <seealso cref="IAppPublisher" />
-    <seealso cref="IEnumPublishedApps" />
-    <seealso cref="IPublishedApp" />
   </member>
   <member name="IEnumPublishedApps">
-    <summary>
-      <para>Exposes methods that enumerate published applications to Add/Remove Programs in the Control Panel. The object exposing this interface is requested through <see cref="IAppPublisher.EnumApps" />.</para>
-    </summary>
-    <remarks>
-      <para>To publish applications to Add/Remove Programs in the Control Panel, you must support <b>IEnumPublishedApps</b>, <see cref="IAppPublisher" /> and <see cref="IPublishedApp" />.</para>
-    </remarks>
-    <seealso cref="IAppPublisher" />
-    <seealso cref="IPublishedApp" />
+    <summary>Exposes methods that enumerate published applications to Add/Remove Programs in the Control Panel. The object exposing this interface is requested through <see cref="IAppPublisher.EnumApps" />.</summary>
   </member>
 </doc>

@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_ENCODE_PARA">
-    <summary>
-      <para>The <b>CRYPT_ENCODE_PARA</b> structure is used by the <see cref="CryptEncodeObjectEx" /> function to provide access to memory allocation and memory freeing callback functions.</para>
-    </summary>
+    <summary>The <b>CRYPT_ENCODE_PARA</b> structure is used by the <see cref="CryptEncodeObjectEx" /> function to provide access to memory allocation and memory freeing callback functions.</summary>
   </member>
   <member name="CRYPT_ENCODE_PARA.cbSize">
-    <summary>
-      <para>Indicates the size, in bytes, of the structure.</para>
-    </summary>
+    <summary>Indicates the size, in bytes, of the structure.</summary>
   </member>
   <member name="CRYPT_ENCODE_PARA.pfnAlloc">
-    <summary>
-      <para>This member is an optional pointer to a callback function used to allocate memory.</para>
-    </summary>
+    <summary>This member is an optional pointer to a callback function used to allocate memory.</summary>
   </member>
   <member name="CRYPT_ENCODE_PARA.pfnFree">
-    <summary>
-      <para>This member is an optional pointer to a callback function used to free memory allocated by the allocate callback function.</para>
-    </summary>
+    <summary>This member is an optional pointer to a callback function used to free memory allocated by the allocate callback function.</summary>
   </member>
 </doc>

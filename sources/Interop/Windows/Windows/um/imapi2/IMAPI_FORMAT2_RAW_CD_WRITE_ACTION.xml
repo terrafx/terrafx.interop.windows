@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAPI_FORMAT2_RAW_CD_WRITE_ACTION">
-    <summary>
-      <para>Defines values that indicate the current state of the write operation when using the <see cref="IDiscFormat2RawCDEventArgs" /> interface.</para>
-    </summary>
-    <seealso cref="DDiscFormat2RawCDEvents.Update" />
+    <summary>Defines values that indicate the current state of the write operation when using the <see cref="IDiscFormat2RawCDEventArgs" /> interface.</summary>
   </member>
   <member name="IMAPI_FORMAT2_RAW_CD_WRITE_ACTION.IMAPI_FORMAT2_RAW_CD_WRITE_ACTION_UNKNOWN">
-    <summary>
-      <para>Indicates an unknown state.</para>
-    </summary>
+    <summary>Indicates an unknown state.</summary>
   </member>
   <member name="IMAPI_FORMAT2_RAW_CD_WRITE_ACTION.IMAPI_FORMAT2_RAW_CD_WRITE_ACTION_PREPARING">
-    <summary>
-      <para>Preparing to write the session.</para>
-    </summary>
+    <summary>Preparing to write the session.</summary>
   </member>
   <member name="IMAPI_FORMAT2_RAW_CD_WRITE_ACTION.IMAPI_FORMAT2_RAW_CD_WRITE_ACTION_WRITING">
-    <summary>
-      <para>Writing session data.</para>
-    </summary>
+    <summary>Writing session data.</summary>
   </member>
   <member name="IMAPI_FORMAT2_RAW_CD_WRITE_ACTION.IMAPI_FORMAT2_RAW_CD_WRITE_ACTION_FINISHING">
-    <summary>
-      <para>Synchronizing the drive's cache with the end of the data written to disc.</para>
-    </summary>
+    <summary>Synchronizing the drive's cache with the end of the data written to disc.</summary>
   </member>
 </doc>

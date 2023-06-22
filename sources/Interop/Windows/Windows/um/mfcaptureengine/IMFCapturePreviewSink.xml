@@ -3,145 +3,56 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFCapturePreviewSink.GetMirrorState">
-    <summary>
-      <para>Gets the current mirroring state of the video preview stream.</para>
-    </summary>
-    <param name="pfMirrorState">
-      <para>Receives the value <b>TRUE</b> if mirroring is enabled, or <b>FALSE</b> if mirroring is disabled.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFCapturePreviewSink" />
+    <summary>Gets the current mirroring state of the video preview stream.</summary>
+    <param name="pfMirrorState">Receives the value <b>TRUE</b> if mirroring is enabled, or <b>FALSE</b> if mirroring is disabled.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCapturePreviewSink.GetRotation">
-    <summary>
-      <para>Gets the rotation of the video preview stream.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>The zero-based index of the stream. You must specify a video stream.</para>
-    </param>
-    <param name="pdwRotationValue">
-      <para>Receives the image rotation, in degrees.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFCapturePreviewSink" />
+    <summary>Gets the rotation of the video preview stream.</summary>
+    <param name="dwStreamIndex">The zero-based index of the stream. You must specify a video stream.</param>
+    <param name="pdwRotationValue">Receives the image rotation, in degrees.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCapturePreviewSink.SetCustomSink">
-    <summary>
-      <para>Sets a custom media sink for preview.</para>
-    </summary>
-    <param name="pMediaSink">
-      <para>A pointer to the <see cref="IMFMediaSink" /> interface of the media sink.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method overrides the default selection of the media sink for preview.</para>
-    </remarks>
-    <seealso cref="IMFCapturePreviewSink" />
+    <summary>Sets a custom media sink for preview.</summary>
+    <param name="pMediaSink">A pointer to the <see cref="IMFMediaSink" /> interface of the media sink.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCapturePreviewSink.SetMirrorState">
-    <summary>
-      <para>Enables or disables mirroring of the video preview stream.</para>
-    </summary>
-    <param name="fMirrorState">
-      <para>If   <b>TRUE</b>, mirroring is enabled. If <b>FALSE</b>, mirror is disabled.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFCapturePreviewSink" />
+    <summary>Enables or disables mirroring of the video preview stream.</summary>
+    <param name="fMirrorState">If <b>TRUE</b>, mirroring is enabled. If <b>FALSE</b>, mirror is disabled.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCapturePreviewSink.SetRenderHandle">
-    <summary>
-      <para>Specifies a window for preview.</para>
-    </summary>
-    <param name="handle">
-      <para>A handle to the window. The preview sink draws the video frames inside this window.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Calling this method overrides any previous call to <see cref="IMFCapturePreviewSink.SetSampleCallback" />.</para>
-    </remarks>
-    <seealso cref="IMFCapturePreviewSink" />
+    <summary>Specifies a window for preview.</summary>
+    <param name="handle">A handle to the window. The preview sink draws the video frames inside this window.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCapturePreviewSink.SetRenderSurface">
-    <summary>
-      <para>Specifies a Microsoft DirectComposition visual for preview.</para>
-    </summary>
-    <param name="pSurface">
-      <para>A pointer to a DirectComposition visual that implements the <see cref="IDCompositionVisual" /> interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFCapturePreviewSink" />
+    <summary>Specifies a Microsoft DirectComposition visual for preview.</summary>
+    <param name="pSurface">A pointer to a DirectComposition visual that implements the <see cref="IDCompositionVisual" /> interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCapturePreviewSink.SetRotation">
-    <summary>
-      <para>Rotates the video preview stream.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>The zero-based index of the stream to rotate. You must specify a video stream.</para>
-    </param>
-    <param name="dwRotationValue">
-      <para>The amount to rotate the video, in degrees. Valid values are 0, 90, 180, and 270. The value zero restores the video to its original orientation.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFCapturePreviewSink" />
+    <summary>Rotates the video preview stream.</summary>
+    <param name="dwStreamIndex">The zero-based index of the stream to rotate. You must specify a video stream.</param>
+    <param name="dwRotationValue">The amount to rotate the video, in degrees. Valid values are 0, 90, 180, and 270. The value zero restores the video to its original orientation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCapturePreviewSink.SetSampleCallback">
-    <summary>
-      <para>Sets a callback to receive the preview data for one stream.</para>
-    </summary>
-    <param name="dwStreamSinkIndex">
-      <para>The zero-based index of the stream. The index is returned in the <i>pdwSinkStreamIndex</i> parameter of the <see cref="IMFCaptureSink.AddStream" /> method.</para>
-    </param>
-    <param name="pCallback">
-      <para>A pointer to the <see cref="IMFCaptureEngineOnSampleCallback" /> interface. The caller must implement this interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Calling this method overrides any previous call to <see cref="IMFCapturePreviewSink.SetRenderHandle" />.</para>
-    </remarks>
-    <seealso cref="IMFCapturePreviewSink" />
+    <summary>Sets a callback to receive the preview data for one stream.</summary>
+    <param name="dwStreamSinkIndex">The zero-based index of the stream. The index is returned in the <i>pdwSinkStreamIndex</i> parameter of the <see cref="IMFCaptureSink.AddStream" /> method.</param>
+    <param name="pCallback">A pointer to the <see cref="IMFCaptureEngineOnSampleCallback" /> interface. The caller must implement this interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCapturePreviewSink.UpdateVideo">
-    <summary>
-      <para>Updates the video frame.  Call this method when the preview window receives a <a href="https://docs.microsoft.com//windows/desktop/gdi/wm-paint">WM_PAINT</a> or <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-size">WM_SIZE</a> message.</para>
-    </summary>
-    <param name="pSrc">
-      <para>A pointer to an <see cref="MFVideoNormalizedRect" /> structure that specifies the source rectangle. The source rectangle defines the area of the video frame that is displayed. If this parameter is <b>NULL</b>, the entire video frame is displayed.</para>
-    </param>
-    <param name="pDst">
-      <para>A pointer to a <see cref="RECT" /> structure that specifies the destination rectangle. The destination rectangle defines the area of the window or DirectComposition visual where the video is drawn.</para>
-    </param>
-    <param name="pBorderClr">
-      <para>The border color. Use the <see cref="RGB" /> macro to create this value.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFCapturePreviewSink" />
+    <summary>Updates the video frame. Call this method when the preview window receives a <a href="https://docs.microsoft.com//windows/desktop/gdi/wm-paint">WM_PAINT</a> or <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-size">WM_SIZE</a> message.</summary>
+    <param name="pSrc">A pointer to an <see cref="MFVideoNormalizedRect" /> structure that specifies the source rectangle. The source rectangle defines the area of the video frame that is displayed. If this parameter is <b>NULL</b>, the entire video frame is displayed.</param>
+    <param name="pDst">A pointer to a <see cref="RECT" /> structure that specifies the destination rectangle. The destination rectangle defines the area of the window or DirectComposition visual where the video is drawn.</param>
+    <param name="pBorderClr">The border color. Use the <see cref="RGB" /> macro to create this value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCapturePreviewSink">
-    <summary>
-      <para>Controls the preview sink. The preview sink enables the application to preview audio and video from the camera.</para>
-    </summary>
-    <remarks>
-      <para>To start preview, call <see cref="IMFCaptureEngine.StartPreview" />.</para>
-    </remarks>
-    <seealso cref="IMFCaptureSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Controls the preview sink. The preview sink enables the application to preview audio and video from the camera.</summary>
   </member>
 </doc>

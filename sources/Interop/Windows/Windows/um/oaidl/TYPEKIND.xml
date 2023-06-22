@@ -3,53 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TYPEKIND">
-    <summary>
-      <para>Specifies a type.</para>
-    </summary>
+    <summary>Specifies a type.</summary>
   </member>
   <member name="TYPEKIND.TKIND_ENUM">
-    <summary>
-      <para>A set of enumerators.</para>
-    </summary>
+    <summary>A set of enumerators.</summary>
   </member>
   <member name="TYPEKIND.TKIND_RECORD">
-    <summary>
-      <para>A structure with no methods.</para>
-    </summary>
+    <summary>A structure with no methods.</summary>
   </member>
   <member name="TYPEKIND.TKIND_MODULE">
-    <summary>
-      <para>A module that can only have static functions and data (for example, a DLL).</para>
-    </summary>
+    <summary>A module that can only have static functions and data (for example, a DLL).</summary>
   </member>
   <member name="TYPEKIND.TKIND_INTERFACE">
-    <summary>
-      <para>A type that has virtual and pure functions.</para>
-    </summary>
+    <summary>A type that has virtual and pure functions.</summary>
   </member>
   <member name="TYPEKIND.TKIND_DISPATCH">
-    <summary>
-      <para>A set of methods and properties that are accessible through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a>. By default, dual interfaces return TKIND_DISPATCH.</para>
-    </summary>
+    <summary>A set of methods and properties that are accessible through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a>. By default, dual interfaces return TKIND_DISPATCH.</summary>
   </member>
   <member name="TYPEKIND.TKIND_COCLASS">
-    <summary>
-      <para>A set of implemented component object interfaces.</para>
-    </summary>
+    <summary>A set of implemented component object interfaces.</summary>
   </member>
   <member name="TYPEKIND.TKIND_ALIAS">
-    <summary>
-      <para>A type that is an alias for another type.</para>
-    </summary>
+    <summary>A type that is an alias for another type.</summary>
   </member>
   <member name="TYPEKIND.TKIND_UNION">
-    <summary>
-      <para>A union, all of whose members have an offset of zero.</para>
-    </summary>
+    <summary>A union, all of whose members have an offset of zero.</summary>
   </member>
   <member name="TYPEKIND.TKIND_MAX">
-    <summary>
-      <para>End of enum marker.</para>
-    </summary>
+    <summary>End of enum marker.</summary>
   </member>
 </doc>

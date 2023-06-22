@@ -3,94 +3,78 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMITEMACTIVATE">
-    <summary>
-      <para>Contains information about an <a href="https://docs.microsoft.com//windows/desktop/Controls/lvn-itemactivate">LVN_ITEMACTIVATE</a> notification code.</para>
-    </summary>
+    <summary>Contains information about an <a href="https://docs.microsoft.com//windows/desktop/Controls/lvn-itemactivate">LVN_ITEMACTIVATE</a> notification code.</summary>
   </member>
   <member name="NMITEMACTIVATE.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about this notification code.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about this notification code.</summary>
   </member>
   <member name="NMITEMACTIVATE.iItem">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Index of the list-view item. If the item index is not used for the notification, this member will contain -1.</para>
-    </summary>
+    <summary>Index of the list-view item. If the item index is not used for the notification, this member will contain -1.</summary>
   </member>
   <member name="NMITEMACTIVATE.iSubItem">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>One-based index of the subitem. If the subitem index is not used for the notification or the notification does not apply to a subitem, this member will contain zero.</para>
-    </summary>
+    <summary>One-based index of the subitem. If the subitem index is not used for the notification or the notification does not apply to a subitem, this member will contain zero.</summary>
   </member>
   <member name="NMITEMACTIVATE.uNewState">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>New item state. This member is zero for notification codes that do not use it.</para>
-    </summary>
+    <summary>New item state. This member is zero for notification codes that do not use it.</summary>
   </member>
   <member name="NMITEMACTIVATE.uOldState">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Old item state. This member is zero for notification codes that do not use it.</para>
-    </summary>
+    <summary>Old item state. This member is zero for notification codes that do not use it.</summary>
   </member>
   <member name="NMITEMACTIVATE.uChanged">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Set of flags that indicate the item attributes that have changed. This member is zero for notifications that do not use it. Otherwise, it can have the same values as the
-<b>mask</b> member of the <see cref="LVITEM" /> structure.</para>
-    </summary>
+    <summary>Set of flags that indicate the item attributes that have changed. This member is zero for notifications that do not use it. Otherwise, it can have the same values as the<b>mask</b> member of the <see cref="LVITEM" /> structure.</summary>
   </member>
   <member name="NMITEMACTIVATE.ptAction">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that indicates the location at which the event occurred, in client coordinates. This member is undefined for notification codes that do not use it.</para>
-    </summary>
+      <see cref="POINT" /> structure that indicates the location at which the event occurred, in client coordinates. This member is undefined for notification codes that do not use it.</summary>
   </member>
   <member name="NMITEMACTIVATE.lParam">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
-      <para>Application-defined value of the item. This member is undefined for notification codes that do not use it.</para>
-    </summary>
+    <summary>Application-defined value of the item. This member is undefined for notification codes that do not use it.</summary>
   </member>
   <member name="NMITEMACTIVATE.uKeyFlags">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Modifier keys that were pressed at the time of the activation. This member contains zero or a combination of the following flags:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>LVKF_ALT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVKF_ALT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The key is pressed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The  key is pressed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVKF_CONTROL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The key is pressed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVKF_CONTROL</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVKF_SHIFT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The  key is pressed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVKF_SHIFT</b>
-          </description>
-          <description>
-            <para>The  key is pressed.</para>
-          </description>
-        </item>
+          <description>The key is pressed.</description>
+        </listheader>
       </list>
     </summary>
   </member>

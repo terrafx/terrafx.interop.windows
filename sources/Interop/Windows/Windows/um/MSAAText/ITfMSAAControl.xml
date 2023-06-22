@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfMSAAControl.SystemDisableMSAA">
-    <summary>
-      <para>Used by MSAA to halt TSF support of an MSAA client.</para>
-    </summary>
+    <summary>Used by MSAA to halt TSF support of an MSAA client.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -13,35 +11,35 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfMSAAControl" />
-    <seealso href="https://docs.microsoft.com//previous-versions/ms971350(v=msdn.10)">Microsoft Active Accessibility</seealso>
   </member>
   <member name="ITfMSAAControl.SystemEnableMSAA">
-    <summary>
-      <para>Used by MSAA to request TSF support of an MSAA client.</para>
-    </summary>
+    <summary>Used by MSAA to request TSF support of an MSAA client.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -49,37 +47,37 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfMSAAControl" />
-    <seealso href="https://docs.microsoft.com//previous-versions/ms971350(v=msdn.10)">Microsoft Active Accessibility</seealso>
   </member>
   <member name="ITfMSAAControl">
     <summary>
       <para>The <b>ITfMSAAControl</b> interface is used by <a href="https://docs.microsoft.com//previous-versions/ms971350(v=msdn.10)">Microsoft Active Accessibility</a> to add or remove a document from TSF control, to avoid unnecessary overhead in TSF. This interface is not recommended for use by other applications.</para>
       <para>The interface ID is IID_ITfMSAAControl.</para>
     </summary>
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//previous-versions/ms971350(v=msdn.10)">Microsoft Active Accessibility</seealso>
   </member>
 </doc>

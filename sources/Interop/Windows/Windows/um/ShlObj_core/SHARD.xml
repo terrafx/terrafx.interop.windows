@@ -3,71 +3,35 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHARD">
-    <summary>
-      <para>Indicates the interpretation of the data passed by <see cref="SHAddToRecentDocs" /> in its <i>pv</i> parameter to identify the item whose usage statistics are being tracked.</para>
-    </summary>
-    <remarks>
-      <para>Before Windows 7, SHARD_PIDL, SHARD_PATHA, and SHARD_PATHW were defined as individual constants, not as enumeration members.</para>
-      <para>When providing an <see cref="IShellLink" /> through either <b><b>SHARD_LINK</b></b> or <b><b>SHARD_APPIDINFOLINK</b></b>, the <b>IShellLink</b> instance must provide the following:</para>
-      <list type="bullet">
-        <item>
-          <description>Either a PIDL (<see cref="IShellLink.SetIDList" />) or the target path (<see cref="IShellLink.SetPath" /> or <see cref="IShellLink.SetRelativePath" />)</description>
-        </item>
-        <item>
-          <description>Command-line arguments (<see cref="IShellLink.SetArguments" />)</description>
-        </item>
-        <item>
-          <description>Icon location  (<see cref="IShellLink.SetIconLocation" />)</description>
-        </item>
-      </list>
-      <para>The display name must be set through the item's <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-title">System.Title (PKEY_Title)</a> property. The property can directly hold the display name or it can be an indirect string representation, such as "@shell32.dll,-1324", to use a stored string. An indirect string enables the item name to be displayed in the user's selected language.</para>
-      <para>Optionally, the description field (<see cref="IShellLink.SetDescription" />) can be set to provide a custom tooltip for the item in the Jump List.</para>
-    </remarks>
-    <seealso cref="SHAddToRecentDocs" />
+    <summary>Indicates the interpretation of the data passed by <see cref="SHAddToRecentDocs" /> in its <i>pv</i> parameter to identify the item whose usage statistics are being tracked.</summary>
   </member>
   <member name="SHARD.SHARD_PIDL">
-    <summary>
-      <para>The <i>pv</i> parameter points to a PIDL that identifies the document's file object. PIDLs that identify non-file objects are not accepted.</para>
-    </summary>
+    <summary>The <i>pv</i> parameter points to a PIDL that identifies the document's file object. PIDLs that identify non-file objects are not accepted.</summary>
   </member>
   <member name="SHARD.SHARD_PATHA">
-    <summary>
-      <para>The <i>pv</i> parameter points to a null-terminated ANSI string with the path and file name of the object.</para>
-    </summary>
+    <summary>The <i>pv</i> parameter points to a null-terminated ANSI string with the path and file name of the object.</summary>
   </member>
   <member name="SHARD.SHARD_PATHW">
-    <summary>
-      <para>The <i>pv</i> parameter points to a null-terminated Unicode string with the path and file name of the object.</para>
-    </summary>
+    <summary>The <i>pv</i> parameter points to a null-terminated Unicode string with the path and file name of the object.</summary>
   </member>
   <member name="SHARD.SHARD_APPIDINFO">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. The <i>pv</i> parameter points to a <see cref="SHARDAPPIDINFO" /> structure that pairs an <see cref="IShellItem" /> that identifies the item with an AppUserModelID that associates it with a particular process or application.</para>
-    </summary>
+      <b>Windows 7 and later</b>. The <i>pv</i> parameter points to a <see cref="SHARDAPPIDINFO" /> structure that pairs an <see cref="IShellItem" /> that identifies the item with an AppUserModelID that associates it with a particular process or application.</summary>
   </member>
   <member name="SHARD.SHARD_APPIDINFOIDLIST">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. The <i>pv</i> parameter points to a <see cref="SHARDAPPIDINFOIDLIST" /> structure that pairs an absolute PIDL that identifies the item with an AppUserModelID that associates it with a particular process or application.</para>
-    </summary>
+      <b>Windows 7 and later</b>. The <i>pv</i> parameter points to a <see cref="SHARDAPPIDINFOIDLIST" /> structure that pairs an absolute PIDL that identifies the item with an AppUserModelID that associates it with a particular process or application.</summary>
   </member>
   <member name="SHARD.SHARD_LINK">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. The <i>pv</i> parameter is an interface pointer to an <see cref="IShellLink" /> object.</para>
-    </summary>
+      <b>Windows 7 and later</b>. The <i>pv</i> parameter is an interface pointer to an <see cref="IShellLink" /> object.</summary>
   </member>
   <member name="SHARD.SHARD_APPIDINFOLINK">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. The <i>pv</i> parameter points to a <see cref="SHARDAPPIDINFOLINK" /> structure that pairs an <see cref="IShellLink" /> that identifies the item with an AppUserModelID that associates it with a particular process or application.</para>
-    </summary>
+      <b>Windows 7 and later</b>. The <i>pv</i> parameter points to a <see cref="SHARDAPPIDINFOLINK" /> structure that pairs an <see cref="IShellLink" /> that identifies the item with an AppUserModelID that associates it with a particular process or application.</summary>
   </member>
   <member name="SHARD.SHARD_SHELLITEM">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. The <i>pv</i> parameter is an interface pointer to an <see cref="IShellItem" /> object.</para>
-    </summary>
+      <b>Windows 7 and later</b>. The <i>pv</i> parameter is an interface pointer to an <see cref="IShellItem" /> object.</summary>
   </member>
 </doc>

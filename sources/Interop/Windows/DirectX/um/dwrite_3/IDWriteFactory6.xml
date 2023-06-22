@@ -3,178 +3,64 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFactory6.CreateFontCollectionFromFontSet">
-    <summary>
-      <para>From a font set, create a collection of fonts grouped into families.</para>
-    </summary>
-    <param name="fontSet">
-      <para>Type: <b><see cref="IDWriteFontSet" />*</b></para>
-      <para>A set of fonts to use to build the collection.</para>
-    </param>
-    <param name="fontFamilyModel">
-      <para>Type: <b><see cref="DWRITE_FONT_FAMILY_MODEL" /></b></para>
-      <para>How to group families in the collection.</para>
-    </param>
-    <param name="fontCollection">
-      <para>Type: <b><see cref="IDWriteFontCollection2" />**</b></para>
-      <para>The address of a pointer to an <see cref="IDWriteFontCollection2" /> interface. On successful completion, the function sets the pointer to a newly created font collection object, otherwise it sets the pointer to <code>nullptr</code>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
+    <summary>From a font set, create a collection of fonts grouped into families.</summary>
+    <param name="fontSet">A set of fonts to use to build the collection.</param>
+    <param name="fontFamilyModel">How to group families in the collection.</param>
+    <param name="fontCollection">The address of a pointer to an <see cref="IDWriteFontCollection2" /> interface. On successful completion, the function sets the pointer to a newly created font collection object, otherwise it sets the pointer to <code>nullptr</code>.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="IDWriteFactory6.CreateFontFaceReference">
-    <summary>
-      <para>Creates a reference to a specific font instance within a file.</para>
-    </summary>
-    <param name="fontFile">
-      <para>Type: <b><see cref="IDWriteFontFile" />*</b></para>
-      <para>A user-provided font file representing the font face.</para>
-    </param>
-    <param name="faceIndex">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
-      <para>The zero-based index of a font face in cases when the font file contains a collection of font faces. If the font file contains a single face, then set this value to zero.</para>
-    </param>
-    <param name="fontSimulations">
-      <para>Type: <b><see cref="DWRITE_FONT_SIMULATIONS" /></b></para>
-      <para>Font face simulation flags for algorithmic emboldening and italicization.</para>
-    </param>
-    <param name="fontAxisValues">
-      <para>Type: <b><see cref="DWRITE_FONT_AXIS_VALUE" /> const *</b></para>
-      <para>A pointer to an array containing a list of font axis values. The array should be the size (the number of elements) indicated by the <i>fontAxisValueCount</i> argument.</para>
-    </param>
-    <param name="fontAxisValueCount">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
-      <para>The number of font axis values contained in the <i>fontAxisValues</i> array.</para>
-    </param>
-    <param name="fontFaceReference">
-      <para>Type: <b><see cref="IDWriteFontFaceReference1" />**</b></para>
-      <para>The address of a pointer to an <see cref="IDWriteFontFaceReference1" /> interface. On successful completion, the function sets the pointer to a newly created font face reference object, otherwise it sets the pointer to <code>nullptr</code>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
+    <summary>Creates a reference to a specific font instance within a file.</summary>
+    <param name="fontFile">A user-provided font file representing the font face.</param>
+    <param name="faceIndex">The zero-based index of a font face in cases when the font file contains a collection of font faces. If the font file contains a single face, then set this value to zero.</param>
+    <param name="fontSimulations">Font face simulation flags for algorithmic emboldening and italicization.</param>
+    <param name="fontAxisValues">A pointer to an array containing a list of font axis values. The array should be the size (the number of elements) indicated by the <i>fontAxisValueCount</i> argument.</param>
+    <param name="fontAxisValueCount">The number of font axis values contained in the <i>fontAxisValues</i> array.</param>
+    <param name="fontFaceReference">The address of a pointer to an <see cref="IDWriteFontFaceReference1" /> interface. On successful completion, the function sets the pointer to a newly created font face reference object, otherwise it sets the pointer to <code>nullptr</code>.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="IDWriteFactory6.CreateFontResource">
-    <summary>
-      <para>Creates a font resource, given a font file and a face index.</para>
-    </summary>
-    <param name="fontFile">
-      <para>Type: <b><see cref="IDWriteFontFile" />*</b></para>
-      <para>A user-provided font file representing the font face.</para>
-    </param>
-    <param name="faceIndex">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
-      <para>The zero-based index of a font face in cases when the font file contains a collection of font faces. If the font file contains a single face, then set this value to zero.</para>
-    </param>
-    <param name="fontResource">
-      <para>Type: <b><see cref="IDWriteFontResource" />**</b></para>
-      <para>The address of a pointer to an <see cref="IDWriteFontResource" /> interface. On successful completion, the function sets the pointer to a newly created font resource object, otherwise it sets the pointer to <code>nullptr</code>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
+    <summary>Creates a font resource, given a font file and a face index.</summary>
+    <param name="fontFile">A user-provided font file representing the font face.</param>
+    <param name="faceIndex">The zero-based index of a font face in cases when the font file contains a collection of font faces. If the font file contains a single face, then set this value to zero.</param>
+    <param name="fontResource">The address of a pointer to an <see cref="IDWriteFontResource" /> interface. On successful completion, the function sets the pointer to a newly created font resource object, otherwise it sets the pointer to <code>nullptr</code>.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="IDWriteFactory6.CreateFontSetBuilder">
-    <summary>
-      <para>Creates an empty font set builder, ready to add font instances to, and create a custom font set.</para>
-    </summary>
-    <param name="fontSetBuilder">
-      <para>Type: <b><see cref="IDWriteFontSetBuilder2" />**</b></para>
-      <para>The address of a pointer to an <see cref="IDWriteFontSetBuilder2" /> interface. On successful completion, the function sets the pointer to a newly created font set builder object, otherwise it sets the pointer to <code>nullptr</code>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
+    <summary>Creates an empty font set builder, ready to add font instances to, and create a custom font set.</summary>
+    <param name="fontSetBuilder">The address of a pointer to an <see cref="IDWriteFontSetBuilder2" /> interface. On successful completion, the function sets the pointer to a newly created font set builder object, otherwise it sets the pointer to <code>nullptr</code>.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="IDWriteFactory6.CreateFontSetBuilder">
-    <summary>
-      <para>Creates a text format object used for text layout.</para>
-    </summary>
-    <param name="fontFamilyName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">WCHAR</a> const *</b></para>
-      <para>Name of the font family from the collection.</para>
-    </param>
-    <param name="fontCollection">
-      <para>Type: <b><see cref="IDWriteFontCollection" />*</b></para>
-      <para>Font collection. Use <code>nullptr</code> to indicate the system font collection.</para>
-    </param>
-    <param name="fontAxisValues">
-      <para>Type: <b><see cref="DWRITE_FONT_AXIS_VALUE" /> const *</b></para>
-      <para>A pointer to an array containing a list of font axis values. The array should be the size (the number of elements) indicated by the <i>fontAxisValueCount</i> argument.</para>
-    </param>
-    <param name="fontAxisValueCount">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
-      <para>The number of font axis values contained in the <i>fontAxisValues</i> array.</para>
-    </param>
-    <param name="fontSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">FLOAT</a></b></para>
-      <para>Logical size of the font in DIP units.</para>
-    </param>
-    <param name="localeName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">WCHAR</a> const *</b></para>
-      <para>Locale name (for example, "ja-JP", "en-US", "ar-EG").</para>
-    </param>
-    <param name="textFormat">
-      <para>Type: <b><see cref="IDWriteTextFormat3" />**</b></para>
-      <para>The address of a pointer to an <see cref="IDWriteTextFormat3" /> interface. On successful completion, the function sets the pointer to a newly created text format object, otherwise it sets the pointer to <code>nullptr</code>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
-    <remarks>
-      <para>If <i>fontCollection</i> is <code>nullptr</code>, then the system font collection is used, grouped by typographic family name (<see cref="DWRITE_FONT_FAMILY_MODEL_TYPOGRAPHIC" />) without downloadable fonts.</para>
-    </remarks>
+    <summary>Creates a text format object used for text layout.</summary>
+    <param name="fontFamilyName">Name of the font family from the collection.</param>
+    <param name="fontCollection">Font collection. Use <code>nullptr</code> to indicate the system font collection.</param>
+    <param name="fontAxisValues">A pointer to an array containing a list of font axis values. The array should be the size (the number of elements) indicated by the <i>fontAxisValueCount</i> argument.</param>
+    <param name="fontAxisValueCount">The number of font axis values contained in the <i>fontAxisValues</i> array.</param>
+    <param name="fontSize">Logical size of the font in DIP units.</param>
+    <param name="localeName">Locale name (for example, "ja-JP", "en-US", "ar-EG").</param>
+    <param name="textFormat">The address of a pointer to an <see cref="IDWriteTextFormat3" /> interface. On successful completion, the function sets the pointer to a newly created text format object, otherwise it sets the pointer to <code>nullptr</code>.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="IDWriteFactory6.GetSystemFontCollection">
-    <summary>
-      <para>Retrieves a collection of fonts, grouped into families.</para>
-    </summary>
+    <summary>Retrieves a collection of fonts, grouped into families.</summary>
     <param name="includeDownloadableFonts">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
-      <para>
-        <code>true</code> if you want to include downloadable fonts. <code>false</code> if you only want locally installed fonts.</para>
-    </param>
-    <param name="fontFamilyModel">
-      <para>Type: <b><see cref="DWRITE_FONT_FAMILY_MODEL" /></b></para>
-      <para>How to group families in the collection.</para>
-    </param>
-    <param name="fontCollection">
-      <para>Type: <b><see cref="IDWriteFontCollection2" />**</b></para>
-      <para>The address of a pointer to an <see cref="IDWriteFontCollection2" /> interface. On successful completion, the function sets the pointer to a newly created font collection object, otherwise it sets the pointer to <code>nullptr</code>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
+      <code>true</code> if you want to include downloadable fonts. <code>false</code> if you only want locally installed fonts.</param>
+    <param name="fontFamilyModel">How to group families in the collection.</param>
+    <param name="fontCollection">The address of a pointer to an <see cref="IDWriteFontCollection2" /> interface. On successful completion, the function sets the pointer to a newly created font collection object, otherwise it sets the pointer to <code>nullptr</code>.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="IDWriteFactory6.GetSystemFontSet">
-    <summary>
-      <para>Retrieves the set of system fonts.</para>
-    </summary>
+    <summary>Retrieves the set of system fonts.</summary>
     <param name="includeDownloadableFonts">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
-      <para>
-        <code>true</code> if you want to include downloadable fonts. <code>false</code> if you only want locally installed fonts.</para>
-    </param>
-    <param name="fontSet">
-      <para>Type: <b><see cref="IDWriteFontSet1" />**</b></para>
-      <para>The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to the font set object, otherwise it sets the pointer to <code>nullptr</code>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
+      <code>true</code> if you want to include downloadable fonts. <code>false</code> if you only want locally installed fonts.</param>
+    <param name="fontSet">The address of a pointer to an <see cref="IDWriteFontSet1" /> interface. On successful completion, the function sets the pointer to the font set object, otherwise it sets the pointer to <code>nullptr</code>.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="IDWriteFactory6">
     <summary>
       <para>This interface represents a factory object from which all DirectWrite objects are created. <b>IDWriteFactory6</b> adds new facilities for working with fonts and font resources.</para>
       <para>This interface extends <see cref="IDWriteFactory5" />.</para>
     </summary>
-    <seealso cref="IDWriteFactory5" />
   </member>
 </doc>

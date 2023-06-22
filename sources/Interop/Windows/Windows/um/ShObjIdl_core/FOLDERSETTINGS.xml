@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FOLDERSETTINGS">
-    <summary>
-      <para>Contains folder view information.</para>
-    </summary>
-    <remarks>
-      <para>These settings assume a particular user interface, which the Shell's folder view has. A Shell extension can use these settings if they apply to the view implemented by the extension.</para>
-    </remarks>
-    <seealso cref="IShellView.CreateViewWindow" />
-    <seealso cref="IShellView.GetCurrentInfo" />
+    <summary>Contains folder view information.</summary>
   </member>
   <member name="FOLDERSETTINGS.ViewMode">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>Folder view mode. One of the <see cref="FOLDERVIEWMODE" /> values.</para>
-    </summary>
+    <summary>Folder view mode. One of the <see cref="FOLDERVIEWMODE" /> values.</summary>
   </member>
   <member name="FOLDERSETTINGS.fFlags">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>A set of flags that indicate the options for the folder. This can be zero or a combination of the <see cref="FOLDERFLAGS" /> values.</para>
-    </summary>
+    <summary>A set of flags that indicate the options for the folder. This can be zero or a combination of the <see cref="FOLDERFLAGS" /> values.</summary>
   </member>
 </doc>

@@ -3,98 +3,67 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFVideoPrimaries">
-    <summary>
-      <para>Specifies the color primaries of a video source. The color primaries define how to convert colors from RGB color space to CIE XYZ color space.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-primaries-attribute">MF_MT_VIDEO_PRIMARIES</a> attribute.</para>
-      <para>For more information about these values, see the remarks for the <see cref="DXVA2_VideoPrimaries" /> enumeration, which is the DirectX Video Acceleration (DXVA) equivalent of this enumeration.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/extended-color-information">Extended Color Information</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/video-media-types">Video Media Types</seealso>
+    <summary>Specifies the color primaries of a video source. The color primaries define how to convert colors from RGB color space to CIE XYZ color space.</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_Unknown">
-    <summary>
-      <para>The color primaries are unknown.</para>
-    </summary>
+    <summary>The color primaries are unknown.</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_BT709">
-    <summary>
-      <para>ITU-R BT.709. Also used for sRGB and scRGB.</para>
-    </summary>
+    <summary>ITU-R BT.709. Also used for sRGB and scRGB.</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_BT470_2_SysM">
-    <summary>
-      <para>ITU-R BT.470-4 System M (NTSC).</para>
-    </summary>
+    <summary>ITU-R BT.470-4 System M (NTSC).</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_BT470_2_SysBG">
-    <summary>
-      <para>ITU-R BT.470-4 System B,G (NTSC).</para>
-    </summary>
+    <summary>ITU-R BT.470-4 System B,G (NTSC).</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_SMPTE170M">
-    <summary>
-      <para>SMPTE 170M.</para>
-    </summary>
+    <summary>SMPTE 170M.</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_SMPTE240M">
-    <summary>
-      <para>SMPTE 240M.</para>
-    </summary>
+    <summary>SMPTE 240M.</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_EBU3213">
-    <summary>
-      <para>EBU 3213.</para>
-    </summary>
+    <summary>EBU 3213.</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_SMPTE_C">
-    <summary>
-      <para>SMPTE C (SMPTE RP 145).</para>
-    </summary>
+    <summary>SMPTE C (SMPTE RP 145).</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_BT2020">
     <summary>
       <para>ITU-R BT.2020 color primaries.</para>
-      <para>
-        <b>Note</b>  Requires Windows 8 or later.</para>
+      <div>
+        <b>Note</b>  Requires Windows 8 or later.</div>
     </summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_XYZ">
     <summary>
-      <para>CIE 1931 XYZ (see: <a href="https://en.wikipedia.org/wiki/cie_1931_color_space">CIE 1931 color space</a>).  Note that this color space is only well-defined for floating point representations.</para>
-      <para>
-        <b>Note</b>  Requires Windows 8 or later.</para>
+      <para>CIE 1931 XYZ (see: <a href="https://en.wikipedia.org/wiki/cie_1931_color_space">CIE 1931 color space</a>). Note that this color space is only well-defined for floating point representations.</para>
+      <div>
+        <b>Note</b>  Requires Windows 8 or later.</div>
     </summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_DCI_P3">
     <summary>
       <para>DCI-P3</para>
-      <para>
-        <b>Note</b>  Requires Windows 10, version 1703 or later.</para>
+      <div>
+        <b>Note</b>  Requires Windows 10, version 1703 or later.</div>
     </summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_ACES">
     <summary>
       <para>Academy Color Encoding System</para>
-      <para>
-        <b>Note</b>  Requires Windows 10, version 1703 or later.</para>
+      <div>
+        <b>Note</b>  Requires Windows 10, version 1703 or later.</div>
     </summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_Last">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="MFVideoPrimaries.MFVideoPrimaries_ForceDWORD">
-    <summary>
-      <para>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</para>
-    </summary>
+    <summary>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</summary>
   </member>
 </doc>

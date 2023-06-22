@@ -3,41 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PERSIST_FOLDER_TARGET_INFO">
-    <summary>
-      <para>Specifies a folder shortcut's target folder and its attributes. This structure is used by <see cref="IPersistFolder3.GetFolderTargetInfo" /> and <see cref="IPersistFolder3.InitializeEx" />.</para>
-    </summary>
-    <remarks>
-      <para>Any or all of the <b>pidlTargetFolder</b>, <b>szTargetParsingName</b>, and <b>csidl</b> members can be used to specify the target folder's location.</para>
-    </remarks>
-    <seealso cref="IPersistFolder3" />
+    <summary>Specifies a folder shortcut's target folder and its attributes. This structure is used by <see cref="IPersistFolder3.GetFolderTargetInfo" /> and <see cref="IPersistFolder3.InitializeEx" />.</summary>
   </member>
   <member name="PERSIST_FOLDER_TARGET_INFO.pidlTargetFolder">
-    <summary>
-      <para>Type: <b>PIDLIST_ABSOLUTE</b></para>
-      <para>A fully qualified PIDL of the target folder. Set <b>pidlTargetFolder</b> to <b>NULL</b> if not specified.</para>
-    </summary>
+    <summary>A fully qualified PIDL of the target folder. Set <b>pidlTargetFolder</b> to <b>NULL</b> if not specified.</summary>
   </member>
   <member name="PERSIST_FOLDER_TARGET_INFO.szTargetParsingName">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
-      <para>A null-terminated Unicode string with the target folder's parsing name. Set <b>szTargetParsingName</b> to an empty string if not specified.</para>
-    </summary>
+    <summary>A null-terminated Unicode string with the target folder's parsing name. Set <b>szTargetParsingName</b> to an empty string if not specified.</summary>
   </member>
   <member name="PERSIST_FOLDER_TARGET_INFO.szNetworkProvider">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
-      <para>A null-terminated Unicode string that specifies the type of network provider that will be used when binding to the target folder. The format is the same as that used by the <a href="https://docs.microsoft.com//windows/desktop/WNet/windows-networking-wnet-">WNet API</a>. Set <b>szNetworkProvider</b> to an empty string if not specified.</para>
-    </summary>
+    <summary>A null-terminated Unicode string that specifies the type of network provider that will be used when binding to the target folder. The format is the same as that used by the <a href="https://docs.microsoft.com//windows/desktop/WNet/windows-networking-wnet-">WNet API</a>. Set <b>szNetworkProvider</b> to an empty string if not specified.</summary>
   </member>
   <member name="PERSIST_FOLDER_TARGET_INFO.dwAttributes">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A <b>DWORD</b> value that contains FILE_ATTRIBUTE_* flags as defined in Winnt.h. Set <b>dwAttributes</b> to -1 if not specified.</para>
-    </summary>
+    <summary>A <b>DWORD</b> value that contains FILE_ATTRIBUTE_* flags as defined in Winnt.h. Set <b>dwAttributes</b> to -1 if not specified.</summary>
   </member>
   <member name="PERSIST_FOLDER_TARGET_INFO.csidl">
     <summary>
-      <para>Type: <b>int</b></para>
       <para>The target folder's <a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</a> value, if it has one. Set <b>csidl</b> to -1 if the target folder does not have a CSIDL. In addition to the CSIDL value, you can also set the following two flags.</para>
       <h4>CSIDL_FLAG_PFTI_TRACKTARGET</h4>
       <para>Indicates that the target folder should change if the user changes the target folder's underlying CSIDL value.</para>

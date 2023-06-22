@@ -3,54 +3,35 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_PROVIDER_SIGSTATE">
-    <summary>
-      <para>The <b>CRYPT_PROVIDER_SIGSTATE</b> structure is used to communicate between policy providers and Wintrust.</para>
-    </summary>
-    <seealso cref="WINTRUST_SIGNATURE_SETTINGS" />
+    <summary>The <b>CRYPT_PROVIDER_SIGSTATE</b> structure is used to communicate between policy providers and Wintrust.</summary>
   </member>
   <member name="CRYPT_PROVIDER_SIGSTATE.cbStruct">
-    <summary>
-      <para>Size, in bytes, of this structure.</para>
-    </summary>
+    <summary>Size, in bytes, of this structure.</summary>
   </member>
   <member name="CRYPT_PROVIDER_SIGSTATE.rhSecondarySigs">
-    <summary>
-      <para>Pointer to an array of secondary signature handles.</para>
-    </summary>
+    <summary>Pointer to an array of secondary signature handles.</summary>
   </member>
   <member name="CRYPT_PROVIDER_SIGSTATE.hPrimarySig">
-    <summary>
-      <para>Handle of the primary signature.</para>
-    </summary>
+    <summary>Handle of the primary signature.</summary>
   </member>
   <member name="CRYPT_PROVIDER_SIGSTATE.fFirstAttemptMade">
-    <summary>
-      <para>Specifies whether the first attempt to verify a signature has been made.</para>
-    </summary>
+    <summary>Specifies whether the first attempt to verify a signature has been made.</summary>
   </member>
   <member name="CRYPT_PROVIDER_SIGSTATE.fNoMoreSigs">
-    <summary>
-      <para>Specifies whether there exist further signatures that await verification.</para>
-    </summary>
+    <summary>Specifies whether there exist further signatures that await verification.</summary>
   </member>
   <member name="CRYPT_PROVIDER_SIGSTATE.cSecondarySigs">
-    <summary>
-      <para>Number of secondary signatures.</para>
-    </summary>
+    <summary>Number of secondary signatures.</summary>
   </member>
   <member name="CRYPT_PROVIDER_SIGSTATE.dwCurrentIndex">
-    <summary>
-      <para>Index of the signature currently being verified.</para>
-    </summary>
+    <summary>Index of the signature currently being verified.</summary>
   </member>
   <member name="CRYPT_PROVIDER_SIGSTATE.fSupportMultiSig">
-    <summary>
-      <para>Specifies whether the policy provider supports multiple signatures.</para>
-    </summary>
+    <summary>Specifies whether the policy provider supports multiple signatures.</summary>
   </member>
   <member name="CRYPT_PROVIDER_SIGSTATE.dwCryptoPolicySupport">
     <summary>
-      <para>Identifies the portion of the policy provider that  supports cryptographic policy. This can be one of the following values:</para>
+      <para>Identifies the portion of the policy provider that supports cryptographic policy. This can be one of the following values:</para>
       <list type="bullet">
         <item>
           <description>WSS_OBJTRUST_SUPPORT</description>
@@ -64,13 +45,7 @@
       </list>
     </summary>
   </member>
-  <member name="CRYPT_PROVIDER_SIGSTATE.iAttemptCount">
-    <summary></summary>
-  </member>
-  <member name="CRYPT_PROVIDER_SIGSTATE.fCheckedSealing">
-    <summary></summary>
-  </member>
-  <member name="CRYPT_PROVIDER_SIGSTATE.pSealingSignature">
-    <summary></summary>
-  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.iAttemptCount"></member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.fCheckedSealing"></member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.pSealingSignature"></member>
 </doc>

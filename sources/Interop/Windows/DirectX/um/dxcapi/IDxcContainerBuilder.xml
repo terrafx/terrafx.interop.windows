@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcContainerBuilder.AddPart">
+    <summary>Adds a part to the container.</summary>
+  </member>
+  <member name="IDxcContainerBuilder.Load">
+    <summary>Loads a DxilContainer to the builder.</summary>
+  </member>
+  <member name="IDxcContainerBuilder.RemovePart">
+    <summary>Remove a part from the container.</summary>
+    <param name="fourCC">The identifier of the part to remove; for example, <b>DXC_PART_PDB</b>.</param>
+    <returns>
+      <b>S_OK</b> on success, or <b>DXC_E_MISSING_PART</b> if the part wasn't found, or other standard <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDxcContainerBuilder.SerializeContainer">
+    <summary>Build the container.</summary>
+    <param name="ppResult">A pointer to the variable in which to receive the result.</param>
+  </member>
+  <member name="IDxcContainerBuilder">
+    <summary>
+      <para>Interface representing the DXC container builder.</para>
+      <para>To obtain an instance of this interface, call <see cref="DxcCreateInstance" /> with <b>CLSID_DxcContainerBuilder</b>.</para>
+    </summary>
+  </member>
+</doc>

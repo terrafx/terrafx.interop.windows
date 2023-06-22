@@ -7,35 +7,20 @@
       <para>Describes the content of the packet for a particular tablet recognizer context.</para>
       <para>Do not use this structure to access the data contained in a packet. This structure describes the content of the packet.</para>
     </summary>
-    <remarks>
-      <para>The <b>PACKET_DESCRIPTION</b> structure defines the logical layout of the packet. Typically, you do not need to address the contents of a packet. You pass the packets to the Ink object. However, if you need to address the contents of a packet, each packet contains a series of LONG values (properties) followed by one or more DWORD values (button states).</para>
-    </remarks>
-    <seealso cref="AddStroke Function" />
-    <seealso cref="GetPreferredPacketDescription Function" />
   </member>
   <member name="PACKET_DESCRIPTION.cbPacketSize">
-    <summary>
-      <para>The size, in bytes, of the packet data.</para>
-    </summary>
+    <summary>The size, in bytes, of the packet data.</summary>
   </member>
   <member name="PACKET_DESCRIPTION.cPacketProperties">
-    <summary>
-      <para>The number of elements in the <i>pPacketProperties</i> array.</para>
-    </summary>
+    <summary>The number of elements in the <i>pPacketProperties</i> array.</summary>
   </member>
   <member name="PACKET_DESCRIPTION.pPacketProperties">
-    <summary>
-      <para>An array of <see cref="PACKET_PROPERTY" /> structures.</para>
-    </summary>
+    <summary>An array of <see cref="PACKET_PROPERTY" /> structures.</summary>
   </member>
   <member name="PACKET_DESCRIPTION.cButtons">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="PACKET_DESCRIPTION.pguidButtons">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
 </doc>

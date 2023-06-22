@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DDiscFormat2TrackAtOnceEvents.Update">
-    <summary>
-      <para>Implement this method to receive progress notification of the current track-writing operation.</para>
-    </summary>
+    <summary>Implement this method to receive progress notification of the current track-writing operation.</summary>
     <param name="object">
       <para>The <see cref="IDiscFormat2TrackAtOnce" /> interface that initiated the write operation.</para>
       <para>This parameter is a <b>MsftDiscFormat2TrackAtOnce</b> object in script.</para>
@@ -14,21 +12,9 @@
       <para>An <see cref="IDiscFormat2TrackAtOnceEventArgs" /> interface that you use to determine the progress of the write operation.</para>
       <para>This parameter is a <b>MsftDiscFormat2TrackAtOnce</b> object in script.</para>
     </param>
-    <returns>
-      <para>Return values are ignored.</para>
-    </returns>
-    <remarks>
-      <para>Notifications are sent in response to calling the <see cref="IDiscFormat2TrackAtOnce.AddAudioTrack" /> method.</para>
-      <para>To stop the write process, call the <see cref="IDiscFormat2TrackAtOnce.CancelAddTrack" /> method.</para>
-    </remarks>
-    <seealso cref="DDiscFormat2TrackAtOnceEvents" />
-    <seealso cref="IDiscFormat2TrackAtOnce" />
-    <seealso cref="IDiscFormat2TrackAtOnce.CancelAddTrack" />
+    <returns>Return values are ignored.</returns>
   </member>
   <member name="DDiscFormat2TrackAtOnceEvents">
-    <summary>
-      <para>Implement this interface to receive notifications of the current track-writing operation.</para>
-    </summary>
-    <seealso cref="IDiscFormat2TrackAtOnce" />
+    <summary>Implement this interface to receive notifications of the current track-writing operation.</summary>
   </member>
 </doc>

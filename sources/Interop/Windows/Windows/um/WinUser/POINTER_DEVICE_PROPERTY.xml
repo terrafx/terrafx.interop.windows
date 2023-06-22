@@ -3,52 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POINTER_DEVICE_PROPERTY">
-    <summary>
-      <para>Contains pointer-based device properties (Human Interface Device (HID) global items that correspond to HID usages).</para>
-    </summary>
-    <remarks>
-      <para>Developers can use this function to determine the properties that a device supports beyond the standard ones that are delivered through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/messages-and-notifications">Pointer Input Messages and Notifications</a>. The properties map directly to HID usages.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_pointerdevice/structures">Structures</seealso>
+    <summary>Contains pointer-based device properties (Human Interface Device (HID) global items that correspond to HID usages).</summary>
   </member>
   <member name="POINTER_DEVICE_PROPERTY.logicalMin">
-    <summary>
-      <para>The minimum value that the device can report for this property.</para>
-    </summary>
+    <summary>The minimum value that the device can report for this property.</summary>
   </member>
   <member name="POINTER_DEVICE_PROPERTY.logicalMax">
-    <summary>
-      <para>The maximum value that the device can report for this property.</para>
-    </summary>
+    <summary>The maximum value that the device can report for this property.</summary>
   </member>
   <member name="POINTER_DEVICE_PROPERTY.physicalMin">
-    <summary>
-      <para>The physical minimum  in Himetric.</para>
-    </summary>
+    <summary>The physical minimum in Himetric.</summary>
   </member>
   <member name="POINTER_DEVICE_PROPERTY.physicalMax">
-    <summary>
-      <para>The physical maximum in Himetric.</para>
-    </summary>
+    <summary>The physical maximum in Himetric.</summary>
   </member>
   <member name="POINTER_DEVICE_PROPERTY.unit">
-    <summary>
-      <para>The unit.</para>
-    </summary>
+    <summary>The unit.</summary>
   </member>
   <member name="POINTER_DEVICE_PROPERTY.unitExponent">
-    <summary>
-      <para>The exponent.</para>
-    </summary>
+    <summary>The exponent.</summary>
   </member>
   <member name="POINTER_DEVICE_PROPERTY.usagePageId">
-    <summary>
-      <para>The usage page for the property, as documented in the HID specification.</para>
-    </summary>
+    <summary>The usage page for the property, as documented in the HID specification.</summary>
   </member>
   <member name="POINTER_DEVICE_PROPERTY.usageId">
-    <summary>
-      <para>The usage  of  the property, as documented in the HID specification.</para>
-    </summary>
+    <summary>The usage of the property, as documented in the HID specification.</summary>
   </member>
 </doc>

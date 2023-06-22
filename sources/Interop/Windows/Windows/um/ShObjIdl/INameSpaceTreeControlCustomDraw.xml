@@ -3,105 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INameSpaceTreeControlCustomDraw.ItemPostPaint">
-    <summary>
-      <para>Called after an item in the namespace tree control is drawn.</para>
-    </summary>
-    <param name="hdc">
-      <para>Type: <b>HDC</b></para>
-      <para>A handle to the control's device context. Use this HDC to perform any GDI functions.</para>
-    </param>
-    <param name="prc">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>A pointer to the <see cref="RECT" /> structure that describes the bounding rectangle of the area being drawn.</para>
-    </param>
-    <param name="pnstccdItem">
-      <para>Type: <b><see cref="NSTCCUSTOMDRAW" />*</b></para>
-      <para>A pointer to the <see cref="NSTCCUSTOMDRAW" /> struct that determines the details of the drawing.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="INameSpaceTreeControlCustomDraw" />
+    <summary>Called after an item in the namespace tree control is drawn.</summary>
+    <param name="hdc">A handle to the control's device context. Use this HDC to perform any GDI functions.</param>
+    <param name="prc">A pointer to the <see cref="RECT" /> structure that describes the bounding rectangle of the area being drawn.</param>
+    <param name="pnstccdItem">A pointer to the <see cref="NSTCCUSTOMDRAW" /> struct that determines the details of the drawing.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControlCustomDraw.ItemPrePaint">
-    <summary>
-      <para>Called before an item in the namespace tree control is drawn.</para>
-    </summary>
-    <param name="hdc">
-      <para>Type: <b>HDC</b></para>
-      <para>A handle to the control's device context. Use this HDC to perform any GDI functions.</para>
-    </param>
-    <param name="prc">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>A pointer to the <see cref="RECT" /> structure that describes the bounding rectangle of the area being drawn.</para>
-    </param>
-    <param name="pnstccdItem">
-      <para>Type: <b><see cref="NSTCCUSTOMDRAW" />*</b></para>
-      <para>A pointer to the <see cref="NSTCCUSTOMDRAW" /> structure that determines the details of the drawing.</para>
-    </param>
-    <param name="pclrText">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a>*</b></para>
-      <para>On entry, a pointer to a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure that declares the default color of the text. When this method returns, contains a pointer to a <b>COLORREF</b> structure that declares the color that should be used in its place, if any. This allows the client to provide their own color if they do not want to use the default.</para>
-    </param>
-    <param name="pclrTextBk">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a>*</b></para>
-      <para>On entry, a pointer to a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure that declares the default color of the background. When this method returns, contains a pointer to a <b>COLORREF</b> structure that declares the color that should be used in its place, if any. This allows the client to provide their own color if they do not want to use the default.</para>
-    </param>
-    <param name="plres">
-      <para>Type: <b>LRESULT*</b></para>
-      <para>When this method returns, contains a pointer to an <b>LRESULT</b>, which points to one or more of the values from the <a href="https://docs.microsoft.com//windows/desktop/Controls/cdrf-constants">CDRF Constants</a> enumeration.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="INameSpaceTreeControlCustomDraw" />
+    <summary>Called before an item in the namespace tree control is drawn.</summary>
+    <param name="hdc">A handle to the control's device context. Use this HDC to perform any GDI functions.</param>
+    <param name="prc">A pointer to the <see cref="RECT" /> structure that describes the bounding rectangle of the area being drawn.</param>
+    <param name="pnstccdItem">A pointer to the <see cref="NSTCCUSTOMDRAW" /> structure that determines the details of the drawing.</param>
+    <param name="pclrText">On entry, a pointer to a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure that declares the default color of the text. When this method returns, contains a pointer to a <b>COLORREF</b> structure that declares the color that should be used in its place, if any. This allows the client to provide their own color if they do not want to use the default.</param>
+    <param name="pclrTextBk">On entry, a pointer to a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure that declares the default color of the background. When this method returns, contains a pointer to a <b>COLORREF</b> structure that declares the color that should be used in its place, if any. This allows the client to provide their own color if they do not want to use the default.</param>
+    <param name="plres">When this method returns, contains a pointer to an <b>LRESULT</b>, which points to one or more of the values from the <a href="https://docs.microsoft.com//windows/desktop/Controls/cdrf-constants">CDRF Constants</a> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControlCustomDraw.PostPaint">
-    <summary>
-      <para>Called after the namespace tree control is drawn.</para>
-    </summary>
-    <param name="hdc">
-      <para>Type: <b>HDC</b></para>
-      <para>A handle to the control's device context. Use this HDC to perform any GDI functions.</para>
-    </param>
-    <param name="prc">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>A pointer to the <see cref="RECT" /> structure that describes the bounding rectangle of the area being drawn.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="INameSpaceTreeControlCustomDraw" />
+    <summary>Called after the namespace tree control is drawn.</summary>
+    <param name="hdc">A handle to the control's device context. Use this HDC to perform any GDI functions.</param>
+    <param name="prc">A pointer to the <see cref="RECT" /> structure that describes the bounding rectangle of the area being drawn.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControlCustomDraw.PrePaint">
-    <summary>
-      <para>Called before the namespace tree control is drawn.</para>
-    </summary>
-    <param name="hdc">
-      <para>Type: <b>HDC</b></para>
-      <para>A handle to the control's device context. Use this HDC to perform any GDI functions.</para>
-    </param>
-    <param name="prc">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>A pointer to the <see cref="RECT" /> structure that describes the bounding rectangle of the area being drawn.</para>
-    </param>
-    <param name="plres">
-      <para>Type: <b>LRESULT*</b></para>
-      <para>When this method returns, contains a pointer to an <b>LRESULT</b>, which contains one or more of the values from the <a href="https://docs.microsoft.com//windows/desktop/Controls/cdrf-constants">CDRF Constants</a> enumeration.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="INameSpaceTreeControlCustomDraw" />
+    <summary>Called before the namespace tree control is drawn.</summary>
+    <param name="hdc">A handle to the control's device context. Use this HDC to perform any GDI functions.</param>
+    <param name="prc">A pointer to the <see cref="RECT" /> structure that describes the bounding rectangle of the area being drawn.</param>
+    <param name="plres">When this method returns, contains a pointer to an <b>LRESULT</b>, which contains one or more of the values from the <a href="https://docs.microsoft.com//windows/desktop/Controls/cdrf-constants">CDRF Constants</a> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControlCustomDraw">
-    <summary>
-      <para>Exposes methods that enable the user to draw a custom namespace tree control and its items.</para>
-    </summary>
-    <seealso cref="INameSpaceTreeControl" />
+    <summary>Exposes methods that enable the user to draw a custom namespace tree control and its items.</summary>
   </member>
 </doc>

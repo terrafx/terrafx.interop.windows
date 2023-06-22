@@ -3,39 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Multithread.Enter">
-    <summary>
-      <para>Enters the Direct2D API critical section, if it exists.</para>
-    </summary>
-    <seealso cref="ID2D1Multithread" />
+    <summary>Enters the Direct2D API critical section, if it exists.</summary>
   </member>
   <member name="ID2D1Multithread.GetMultithreadProtected">
-    <summary>
-      <para>Returns whether the Direct2D factory was created with the <see cref="D2D1_FACTORY_TYPE_MULTI_THREADED" /> flag.</para>
-    </summary>
-    <returns>
-      <para>Returns true if the Direct2D factory was created as multi-threaded, or false if it was created as single-threaded.</para>
-    </returns>
-    <seealso cref="ID2D1Multithread" />
+    <summary>Returns whether the Direct2D factory was created with the <see cref="D2D1_FACTORY_TYPE_MULTI_THREADED" /> flag.</summary>
+    <returns>Returns true if the Direct2D factory was created as multi-threaded, or false if it was created as single-threaded.</returns>
   </member>
   <member name="ID2D1Multithread.Leave">
-    <summary>
-      <para>Leaves the Direct2D API critical section, if it exists.</para>
-    </summary>
-    <seealso cref="ID2D1Multithread" />
+    <summary>Leaves the Direct2D API critical section, if it exists.</summary>
   </member>
   <member name="ID2D1Multithread">
-    <summary>
-      <para>A  locking mechanism from a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> factory that Direct2D
-uses to control exclusive resource access in an app that is uses multiple threads.</para>
-    </summary>
-    <remarks>
-      <para>You can get an <b>ID2D1Multithread</b> object by querying for it from an <see cref="ID2D1Factory" /></para>
-      <para>object.</para>
-      <para>You should use this lock while doing any operation on a Direct3D/DXGI surface. <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> will wait on any call until you
-leave the critical section.</para>
-      <para>
-        <b>Note</b>  Normal rendering is guarded automatically by an internal <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> lock.</para>
-    </remarks>
-    <seealso cref="ID2D1Factory" />
+    <summary>A locking mechanism from a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> factory that Direct2D uses to control exclusive resource access in an app that is uses multiple threads.</summary>
   </member>
 </doc>

@@ -1,0 +1,1225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.BindMoniker">
+    <summary>Locates an object by means of its moniker, activates the object if it is inactive, and retrieves a pointer to the specified interface on that object.</summary>
+    <param name="pmk">A pointer to the object's moniker. See <see cref="IMoniker" />.</param>
+    <param name="grfOpt">This parameter is reserved for future use and must be 0.</param>
+    <param name="iidResult">The interface identifier to be used to communicate with the object.</param>
+    <param name="ppvResult">The address of pointer variable that receives the interface pointer requested in <i>iidResult</i>. Upon successful return, *<i>ppvResult</i> contains the requested interface pointer. If an error occurs, *<i>ppvResult</i> is <b>NULL</b>. If the call is successful, the caller is responsible for releasing the pointer with a call to the object's <see cref="IUnknown.Release" /> method.</param>
+    <returns>
+      <para>This function can return the following error codes, or any of the error values returned by the <see cref="IMoniker.BindToObject" /> method.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The object was located and activated, if necessary, and a pointer to the requested interface was returned.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_NOOBJECT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The object that the moniker object identified could not be found.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CLSIDFromProgIDEx">
+    <summary>
+      <para>Triggers automatic installation if the COMClassStore policy is enabled.</para>
+      <para>This is analogous to the behavior of <see cref="CoCreateInstance" /> when neither CLSCTX_ENABLE_CODE_DOWNLOAD nor CLSCTX_NO_CODE_DOWNLOAD are specified.</para>
+    </summary>
+    <param name="lpszProgID">A pointer to the ProgID whose CLSID is requested.</param>
+    <param name="lpclsid">Receives a pointer to the retrieved CLSID on return.</param>
+    <returns>
+      <para>This function can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The CLSID was retrieved successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_CLASSSTRING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The registered CLSID for the ProgID is invalid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>REGDB_E_WRITEREGDB</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An error occurred writing the CLSID to the registry. See Remarks below.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CoAllowSetForegroundWindow">
+    <summary>This function passes the foreground privilege (the privilege to set the foreground window) from one process to another. The process that has the foreground privilege can call this function to pass that privilege on to a local COM server process. Note that calling <b>CoAllowSetForegroundWindow</b> only confers the privilege; it does not set the foreground window itself. Foreground and focus are only taken away from the client application when the target COM server calls either <see cref="SetForegroundWindow" /> or another API that does so indirectly.</summary>
+    <param name="pUnk">A pointer to the <see cref="IUnknown" /> interface on the proxy of the target COM server.</param>
+    <param name="lpvReserved">This parameter is reserved and must be <b>NULL</b>.</param>
+    <returns>
+      <para>This function can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>lpvReserved</i> parameter is not <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>pUnk</i> parameter does not support foreground window control.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling process does not currently possess the foreground privilege.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CoDosDateTimeToFileTime">
+    <summary>
+      <para>Converts the MS-DOS representation of the time and date to a <see cref="FILETIME" /> structure used by Windows.</para>
+      <div>
+        <b>Note</b>  This function is provided for compatibility with 16-bit Windows.</div>
+    </summary>
+    <param name="nDosDate">The MS-DOS date.</param>
+    <param name="nDosTime">The MS-DOS time.</param>
+    <param name="lpFileTime">A pointer to the <see cref="FILETIME" /> structure.</param>
+    <returns>If the function succeeds, the return value is <b>TRUE</b>; otherwise, it is <b>FALSE</b>, probably because of invalid arguments.</returns>
+  </member>
+  <member name="Windows.CoFileTimeNow">
+    <summary>
+      <para>Returns the current time as a <see cref="FILETIME" /> structure.</para>
+      <div>
+        <b>Note</b>  This function is provided for compatibility with 16-bit Windows.</div>
+    </summary>
+    <param name="lpFileTime">A pointer to the <see cref="FILETIME" /> structure that receives the current time.</param>
+    <returns>This function returns S_OK to indicate success.</returns>
+  </member>
+  <member name="Windows.CoFileTimeToDosDateTime">
+    <summary>
+      <para>Converts a <see cref="FILETIME" /> into MS-DOS date and time values.</para>
+      <div>
+        <b>Note</b>  This function is provided for compatibility with 16-bit Windows.</div>
+    </summary>
+    <param name="lpFileTime">A pointer to the <see cref="FILETIME" /> structure.</param>
+    <param name="lpDosDate">Receives the MS-DOS date.</param>
+    <param name="lpDosTime">Receives the MS-DOS time.</param>
+    <returns>If the function succeeds, the return value is <b>TRUE</b>; otherwise, it is <b>FALSE</b>.</returns>
+  </member>
+  <member name="Windows.CoFreeAllLibraries">
+    <summary>Frees all the DLLs that have been loaded with the <see cref="CoLoadLibrary" /> function (called internally by <see cref="CoGetClassObject" />), regardless of whether they are currently in use.</summary>
+  </member>
+  <member name="Windows.CoFreeLibrary">
+    <summary>
+      <para>Frees a library that, when loaded, was specified to be freed explicitly.</para>
+      <div>
+        <b>Note</b>  This function is provided for compatibility with 16-bit Windows.</div>
+    </summary>
+    <param name="hInst">A handle to the library module to be freed, as returned by the <see cref="CoLoadLibrary" /> function.</param>
+  </member>
+  <member name="Windows.CoGetInstanceFromFile">
+    <summary>Creates a new object and initializes it from a file using <see cref="IPersistFile.Load" />.</summary>
+    <param name="pServerInfo">A pointer to a <see cref="COSERVERINFO" /> structure that specifies the computer on which to instantiate the object and the authentication setting to be used. This parameter can be <b>NULL</b>, in which case the object is instantiated on the current computer, at the computer specified under the <a href="https://docs.microsoft.com//windows/desktop/com/remoteservername">RemoteServerName</a> registry value for the class, or at the computer where the <i>pwszName</i> file resides if the <a href="https://docs.microsoft.com//windows/desktop/com/activateatstorage">ActivateAtStorage</a> value is specified for the class or there is no local registry information.</param>
+    <param name="pClsid">A pointer to the class identifier of the object to be created. This parameter can be <b>NULL</b>, in which case there is a call to <see cref="GetClassFile" />, using <i>pwszName</i> as its parameter to get the class of the object to be instantiated.</param>
+    <param name="punkOuter">When non-<b>NULL</b>, indicates the instance is being created as part of an aggregate, and <i>punkOuter</i> is to be used as the pointer to the new instance's controlling <see cref="IUnknown" />. Aggregation is not supported cross-process or cross-computer. When instantiating an object out of process, CLASS_E_NOAGGREGATION will be returned if <i>punkOuter</i> is non-<b>NULL</b>.</param>
+    <param name="dwClsCtx">Values from the <see cref="CLSCTX" /> enumeration.</param>
+    <param name="grfMode">Specifies how the file is to be opened. See <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>.</param>
+    <param name="pwszName">The file used to initialize the object with <see cref="IPersistFile.Load" />. This parameter cannot be <b>NULL</b>.</param>
+    <param name="dwCount">The number of structures in <i>pResults</i>. This parameter must be greater than 0.</param>
+    <param name="pResults">An array of <see cref="MULTI_QI" /> structures. Each structure has three members: the identifier for a requested interface (<b>pIID</b>), the location to return the interface pointer (<b>pItf</b>) and the return value of the call to <see cref="QueryInterface" /> (<b>hr</b>).</param>
+    <returns>
+      <para>This function can return the standard return value E_INVALIDARG, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The function retrieved all of the interfaces successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_S_NOTALLINTERFACES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>At least one, but not all of the interfaces requested in the <i>pResults</i> array were successfully retrieved. The <b>hr</b> member of each of the <see cref="MULTI_QI" /> structures indicates with S_OK or E_NOINTERFACE whether the specific interface was returned.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>None of the interfaces requested in the <i>pResults</i> array were successfully retrieved.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CoGetInstanceFromIStorage">
+    <summary>Creates a new object and initializes it from a storage object through an internal call to <see cref="IPersistFile.Load" />.</summary>
+    <param name="pServerInfo">A pointer to a <see cref="COSERVERINFO" /> structure that specifies the computer on which to instantiate the object and the authentication setting to be used. This parameter can be <b>NULL</b>, in which case the object is instantiated on the current computer, at the computer specified under the <a href="https://docs.microsoft.com//windows/desktop/com/remoteservername">RemoteServerName</a> registry value for the class, or at the computer where the <i>pstg</i> storage object resides if the <a href="https://docs.microsoft.com//windows/desktop/com/activateatstorage">ActivateAtStorage</a> value is specified for the class or there is no local registry information.</param>
+    <param name="pClsid">A pointer to the class identifier of the object to be created. This parameter can be <b>NULL</b>, in which case there is a call to <see cref="IStorage.Stat" /> to find the class of the object.</param>
+    <param name="punkOuter">When non-<b>NULL</b>, indicates the instance is being created as part of an aggregate, and <i>punkOuter</i> is to be used as the pointer to the new instance's controlling <see cref="IUnknown" />. Aggregation is not supported cross-process or cross-computer. When instantiating an object out of process, CLASS_E_NOAGGREGATION will be returned if <i>punkOuter</i> is non-<b>NULL</b>.</param>
+    <param name="dwClsCtx">Values from the <see cref="CLSCTX" /> enumeration.</param>
+    <param name="pstg">A pointer to the storage object used to initialize the object with <see cref="IPersistFile.Load" />. This parameter cannot be <b>NULL</b>.</param>
+    <param name="dwCount">The number of structures in <i>pResults</i>. This parameter must be greater than 0.</param>
+    <param name="pResults">An array of <see cref="MULTI_QI" /> structures. Each structure has three members: the identifier for a requested interface (<b>pIID</b>), the location to return the interface pointer (<b>pItf</b>) and the return value of the call to <see cref="QueryInterface" /> (<b>hr</b>).</param>
+    <returns>
+      <para>This function can return the standard return value E_INVALIDARG, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The function retrieved all of the interfaces successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_S_NOTALLINTERFACES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>At least one, but not all of the interfaces requested in the <i>pResults</i> array were successfully retrieved. The <b>hr</b> member of each of the <see cref="MULTI_QI" /> structures indicates with S_OK or E_NOINTERFACE whether the specific interface was returned.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>None of the interfaces requested in the <i>pResults</i> array were successfully retrieved.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CoGetObject">
+    <summary>Converts a display name into a moniker that identifies the object named, and then binds to the object identified by the moniker.</summary>
+    <param name="pszName">The display name of the object to be created.</param>
+    <param name="pBindOptions">The binding options used to create a moniker that creates the actual object. For details, see <see cref="BIND_OPTS" />. This parameter can be <b>NULL</b>.</param>
+    <param name="riid">A reference to the identifier of an interface that is implemented on the object to be created.</param>
+    <param name="ppv">The address of a pointer to the interface specified by <i>riid</i> on the object that is created.</param>
+    <returns>
+      <para>This function can return the standard return values E_FAIL, E_OUTOFMEMORY, and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The object was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_SYNTAX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>pszName</i> parameter is not a properly formed display name.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_NOOBJECT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The object identified by this moniker, or some object identified by the composite moniker of which this moniker is a part, could not be found.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_EXCEEDEDDEADLINE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The binding operation could not be completed within the time limit specified by the <see cref="BIND_OPTS" /> structure passed in <i>pBindOptions</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_CONNECTMANUALLY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The binding operation requires assistance from the end user. The most common reasons for returning this value are that a password is needed or that a floppy needs to be mounted.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_INTERMEDIATEINTERFACENOTSUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An intermediate object was found but it did not support an interface required to complete the binding operation. For example, an item moniker returns this value if its container does not support the <see cref="IOleItemContainer" /> interface.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CoGetSystemSecurityPermissions">
+    <summary>Returns the default values of the Security Descriptors of the machine-wide launch and access permissions, as well as launch and access limits.</summary>
+    <param name="comSDType">A value from the <see cref="COMSD" /> enumeration. Specifies the type of the requested system security permissions, such as launch permissions, access permissions, launch restrictions, and access restrictions.</param>
+    <param name="ppSD">Pointer to a caller-supplied variable that this routine sets to the address of a buffer containing the <see cref="SECURITY_DESCRIPTOR" /> for the system security permissions. Memory will be allocated by <b>CoGetSystemSecurityPermissions</b> and should be freed by caller with <see cref="LocalFree" />.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid parameter <i>comSDType</i> or <i>ppSD</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>No connection to the resolver process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Not enough memory for the security descriptor's allocation.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CoInitialize">
+    <summary>
+      <para>Initializes the COM library on the current thread and identifies the concurrency model as single-thread apartment (STA).</para>
+      <para>New applications should call <see cref="CoInitializeEx" /> instead of CoInitialize.</para>
+      <para>If you want to use the Windows Runtime, you must call <see cref="RoInitialize" /> or <see cref="Windows.Foundation.Initialize" /> instead.</para>
+    </summary>
+    <param name="pvReserved">This parameter is reserved and must be <b>NULL</b>.</param>
+    <returns>
+      <para>This function can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The COM library was initialized successfully on this thread.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The COM library is already initialized on this thread.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RPC_E_CHANGED_MODE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A previous call to <see cref="CoInitializeEx" /> specified the concurrency model for this thread as multithread apartment (MTA). This could also indicate that a change from neutral-threaded apartment to single-threaded apartment has occurred.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CoIsOle1Class">
+    <summary>Determines whether the specified CLSID represents an OLE 1 object.</summary>
+    <param name="rclsid">The CLSID to be checked.</param>
+    <returns>If the CLSID refers to an OLE 1 object, the return value is <b>TRUE</b>; otherwise, it is <b>FALSE</b>.</returns>
+  </member>
+  <member name="Windows.CoLoadLibrary">
+    <summary>
+      <para>Loads a specific DLL into the caller's process.</para>
+      <para>
+        <b>CoLoadLibrary</b> is equivalent to <see cref="LoadLibraryEx" />. <b>CoLoadLibrary</b> does not affect the lifetime of the library.</para>
+    </summary>
+    <param name="lpszLibName">The name of the library to be loaded.</param>
+    <param name="bAutoFree">This parameter is maintained for compatibility with 16-bit applications, but is ignored.</param>
+    <returns>If the function succeeds, the return value is a handle to the loaded library; otherwise, it is <b>NULL</b>.</returns>
+  </member>
+  <member name="Windows.CoRegisterChannelHook">
+    <summary>Registers a channel hook.</summary>
+    <param name="ExtensionUuid">The extension to register.</param>
+    <param name="pChannelHook">The channel hook to register.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.CoRegisterInitializeSpy">
+    <summary>Registers an implementation of the <see cref="IInitializeSpy" /> interface. The <b>IInitializeSpy</b> interface is defied to allow developers to perform initialization and cleanup on COM apartments.</summary>
+    <param name="pSpy">A pointer to an instance of the <see cref="IInitializeSpy" /> implementation.</param>
+    <param name="puliCookie">The address at which to store a cookie that identifies this registration.</param>
+    <returns>
+      <para>This function can return the standard return value E_INVALIDARG, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The object was successfully registered.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The object does not support <see cref="IInitializeSpy" />.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CoRegisterMallocSpy">
+    <summary>Registers an implementation of the <see cref="IMallocSpy" /> interface, thereafter requiring OLE to call its wrapper methods around every call to the corresponding <see cref="IMalloc" /> method.</summary>
+    <param name="pMallocSpy">A pointer to an instance of the <see cref="IMallocSpy" /> implementation.</param>
+    <returns>
+      <para>This function can return the standard return value E_INVALIDARG, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The object was successfully registered.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_OBJISREG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The object is already registered.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CoRegisterMessageFilter">
+    <summary>Registers with OLE the instance of an <see cref="IMessageFilter" /> interface, which is to be used for handling concurrency issues on the current thread. Only one message filter can be registered for each thread. Threads in multithreaded apartments cannot have message filters.</summary>
+    <param name="lpMessageFilter">
+      <para>A pointer to the <see cref="IMessageFilter" /> interface on the message filter. This message filter should be registered on the current thread, replacing the previous message filter (if any). This parameter can be <b>NULL</b>, indicating that no message filter should be registered on the current thread.</para>
+      <para>Note that this function calls <see cref="AddRef" /> on the interface pointer to the message filter.</para>
+    </param>
+    <param name="lplpMessageFilter">Address of the <see cref="IMessageFilter" />* pointer variable that receives the interface pointer to the previously registered message filter. If there was no previously registered message filter for the current thread, the value of *<i>lplpMessageFilter</i> is <b>NULL</b>.</param>
+    <returns>If the instance was registered or revoked successfully, the return value is S_OK; otherwise, it is S_FALSE.</returns>
+  </member>
+  <member name="Windows.CoRevokeInitializeSpy">
+    <summary>Revokes a registered implementation of the <see cref="IInitializeSpy" /> interface.</summary>
+    <param name="uliCookie">A <see cref="ULARGE_INTEGER" /> cookie identifying the registration.</param>
+    <returns>This function can return the standard return value E_INVALIDARG, as well as S_OK to indicate success.</returns>
+  </member>
+  <member name="Windows.CoRevokeMallocSpy">
+    <summary>Revokes a registered <see cref="IMallocSpy" /> object.</summary>
+    <returns>
+      <para>This function can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The object was revoked successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_OBJNOTREG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>No spy is currently registered.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A spy is registered but there are outstanding allocations (not yet freed) made while this spy was active.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CoTreatAsClass">
+    <summary>Establishes or removes an emulation, in which objects of one class are treated as objects of a different class.</summary>
+    <param name="clsidOld">The CLSID of the object to be emulated.</param>
+    <param name="clsidNew">The CLSID of the object that should emulate the original object. This replaces any existing emulation for <i>clsidOld</i>. This parameter can be CLSID_NULL, in which case any existing emulation for <i>clsidOld</i> is removed.</param>
+    <returns>
+      <para>This function can return the standard return values E_INVALIDARG, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The emulation was successfully established or removed.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>REGDB_E_CLASSNOTREG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>clsidOld</i> parameter is not properly registered in the registration database.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>REGDB_E_READREGDB</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Error reading from registration database.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>REGDB_E_WRITEREGDB</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Error writing to registration database.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CreateAntiMoniker">
+    <summary>Creates and returns a new anti-moniker.</summary>
+    <param name="ppmk">The address of an <see cref="IMoniker" />* pointer variable that receives the interface pointer to the new anti-moniker. When successful, the function has called <see cref="AddRef" /> on the anti-moniker and the caller is responsible for calling <see cref="Release" />. When an error occurs, the anti-moniker pointer is <b>NULL</b>.</param>
+    <returns>This function can return the standard return values E_OUTOFMEMORY and S_OK.</returns>
+  </member>
+  <member name="Windows.CreateBindCtx">
+    <summary>Returns a pointer to an implementation of <see cref="IBindCtx" /> (a bind context object). This object stores information about a particular moniker-binding operation.</summary>
+    <param name="reserved">This parameter is reserved and must be 0.</param>
+    <param name="ppbc">Address of an <see cref="IBindCtx" />* pointer variable that receives the interface pointer to the new bind context object. When the function is successful, the caller is responsible for calling <see cref="Release" /> on the bind context. A <b>NULL</b> value for the bind context indicates that an error occurred.</param>
+    <returns>This function can return the standard return values E_OUTOFMEMORY and S_OK.</returns>
+  </member>
+  <member name="Windows.CreateClassMoniker">
+    <summary>Creates a class moniker that refers to the specified class.</summary>
+    <param name="rclsid">A reference to the CLSID of the object type to which this moniker binds.</param>
+    <param name="ppmk">The address of an <see cref="IMoniker" />* pointer variable that receives the interface pointer to the new class moniker. On successful return, the function has called <see cref="AddRef" /> on the moniker and the caller is responsible for calling <see cref="Release" />. When an error occurs, the value of the moniker pointer is <b>NULL</b>.</param>
+    <returns>
+      <para>This function can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The moniker has been created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more arguments are invalid.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CreateDataAdviseHolder">
+    <summary>Retrieves a pointer to the OLE implementation of <see cref="IDataAdviseHolder" /> on the data advise holder object.</summary>
+    <param name="ppDAHolder">Address of an <see cref="IDataAdviseHolder" /> pointer variable that receives the interface pointer to the new advise holder object.</param>
+    <returns>
+      <para>This function returns S_OK on success. Other possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory for the operation.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CreateDataCache">
+    <summary>Retrieves a pointer to a new instance of an OLE-provided implementation of a data cache.</summary>
+    <param name="pUnkOuter">If the cache is to be created as part of an aggregate, pointer to the controlling <see cref="IUnknown" /> of the aggregate. If not, the parameter should be <b>NULL</b>.</param>
+    <param name="rclsid">CLSID used to generate icon labels. This value is typically CLSID_NULL.</param>
+    <param name="iid">Reference to the identifier of the interface the caller wants to use to communicate with the cache. This value is typically IID_IOleCache (defined in the OLE headers to equal the interface identifier for <see cref="IOleCache" />).</param>
+    <param name="ppv">Address of pointer variable that receives the interface pointer requested in riid. Upon successful return, *<i>ppvObj</i> contains the requested interface pointer to the supplied cache object.</param>
+    <returns>
+      <para>This function returns S_OK on success. Other possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The interface represented by riid is not supported by the object. The parameter <i>ppvObj</i> is set to <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory for the operation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CreateFileMoniker">
+    <summary>Creates a file moniker based on the specified path.</summary>
+    <param name="lpszPathName">
+      <para>The path on which this moniker is to be based.</para>
+      <para>This parameter can specify a relative path, a UNC path, or a drive-letter-based path. If based on a relative path, the resulting moniker must be composed onto another file moniker before it can be bound.</para>
+    </param>
+    <param name="ppmk">The address of an <see cref="IMoniker" />* pointer variable that receives the interface pointer to the new file moniker. When successful, the function has called <see cref="AddRef" /> on the file moniker and the caller is responsible for calling <see cref="Release" />. When an error occurs, the value of the interface pointer is <b>NULL</b>.</param>
+    <returns>
+      <para>This function can return the standard return value E_OUTOFMEMORY, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The moniker was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_SYNTAX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>There was an error in the syntax of the path.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CreateGenericComposite">
+    <summary>Performs a generic composition of two monikers and supplies a pointer to the resulting composite moniker.</summary>
+    <param name="pmkFirst">A pointer to the moniker to be composed to the left of the moniker that pmkRest points to. Can point to any kind of moniker, including a generic composite.</param>
+    <param name="pmkRest">A pointer to the moniker to be composed to the right of the moniker to which <i>pmkFirst</i> points. Can point to any kind of moniker compatible with the type of the <i>pmkRest</i> moniker, including a generic composite.</param>
+    <param name="ppmkComposite">The address of an <see cref="IMoniker" />* pointer variable that receives the interface pointer to the composite moniker object that is the result of composing <i>pmkFirst</i> and <i>pmkRest</i>. This object supports the OLE composite moniker implementation of <b>IMoniker</b>. When successful, the function has called <see cref="AddRef" /> on the moniker and the caller is responsible for calling <see cref="Release" />. If either <i>pmkFirst</i> or <i>pmkRest</i> are <b>NULL</b>, the supplied pointer is the one that is non-<b>NULL</b>. If both <i>pmkFirst</i> and <i>pmkRest</i> are <b>NULL</b>, or if an error occurs, the returned pointer is <b>NULL</b>.</param>
+    <returns>
+      <para>This function can return the standard return value E_OUTOFMEMORY, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The input monikers were composed successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_SYNTAX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The two monikers could not be composed due to an error in the syntax of a path (for example, if both pmkFirst and pmkRest are file monikers based on absolute paths).</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.CreateItemMoniker">
+    <summary>Creates an item moniker that identifies an object within a containing object (typically a compound document).</summary>
+    <param name="lpszDelim">A pointer to a wide character string (two bytes per character) zero-terminated string containing the delimiter (typically "!") used to separate this item's display name from the display name of its containing object.</param>
+    <param name="lpszItem">A pointer to a zero-terminated string indicating the containing object's name for the object being identified. This name can later be used to retrieve a pointer to the object in a call to <see cref="IOleItemContainer.GetObject" />.</param>
+    <param name="ppmk">The address of an <see cref="IMoniker" />* pointer variable that receives the interface pointer to the item moniker. When successful, the function has called <see cref="AddRef" /> on the item moniker and the caller is responsible for calling <see cref="Release" />. If an error occurs, the supplied interface pointer has a <b>NULL</b> value.</param>
+    <returns>This function can return the standard return values E_OUTOFMEMORY and S_OK.</returns>
+  </member>
+  <member name="Windows.CreateObjrefMoniker">
+    <summary>Creates an OBJREF moniker based on a pointer to an object.</summary>
+    <param name="punk">A pointer to the <see cref="IUnknown" /> interface on the object that the moniker is to represent.</param>
+    <param name="ppmk">Address of a pointer to the <see cref="IMoniker" /> interface on the OBJREF moniker that was created.</param>
+    <returns>This function can return the standard return values E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</returns>
+  </member>
+  <member name="Windows.CreatePointerMoniker">
+    <summary>Creates a pointer moniker based on a pointer to an object.</summary>
+    <param name="punk">A pointer to an <see cref="IUnknown" /> interface on the object to be identified by the resulting moniker.</param>
+    <param name="ppmk">The address of an <see cref="IMoniker" />* pointer variable that receives the interface pointer to the new pointer moniker. When successful, the function has called <see cref="AddRef" /> on the moniker and the caller is responsible for calling <see cref="Release" />. When an error occurs, the returned interface pointer has a <b>NULL</b> value.</param>
+    <returns>This function can return the standard return values E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</returns>
+  </member>
+  <member name="Windows.GetClassFile">
+    <summary>Returns the CLSID associated with the specified file name.</summary>
+    <param name="szFilename">A pointer to the filename for which you are requesting the associated CLSID.</param>
+    <param name="pclsid">A pointer to the location where the associated CLSID is written on return.</param>
+    <returns>
+      <para>This function can return any of the file system errors, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The CLSID was retrieved successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_CANTOPENFILE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Unable to open the specified file name.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_INVALIDEXTENSION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified extension in the registry is invalid.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.GetRunningObjectTable">
+    <summary>Returns a pointer to the <see cref="IRunningObjectTable" /> interface on the local running object table (ROT).</summary>
+    <param name="reserved">This parameter is reserved and must be 0.</param>
+    <param name="pprot">The address of an <see cref="IRunningObjectTable" />* pointer variable that receives the interface pointer to the local ROT. When the function is successful, the caller is responsible for calling <see cref="Release" /> on the interface pointer. If an error occurs, *<i>pprot</i> is undefined.</param>
+    <returns>This function can return the standard return values E_UNEXPECTED and S_OK.</returns>
+  </member>
+  <member name="Windows.IsEqualGUID">
+    <summary>Determines whether two GUIDs are equal.</summary>
+    <param name="rguid1">The first GUID.</param>
+    <param name="rguid2">The second GUID.</param>
+  </member>
+  <member name="Windows.MkParseDisplayName">
+    <summary>
+      <para>Converts a string into a moniker that identifies the object named by the string.</para>
+      <para>This function is the inverse of the <see cref="IMoniker.GetDisplayName" /> operation, which retrieves the display name associated with a moniker.</para>
+    </summary>
+    <param name="pbc">A pointer to the <see cref="IBindCtx" /> interface on the bind context object to be used in this binding operation.</param>
+    <param name="szUserName">A pointer to the display name to be parsed.</param>
+    <param name="pchEaten">A pointer to the number of characters of <i>szUserName</i> that were consumed. If the function is successful, *<i>pchEaten</i> is the length of <i>szUserName</i>; otherwise, it is the number of characters successfully parsed.</param>
+    <param name="ppmk">The address of the <see cref="IMoniker" />* pointer variable that receives the interface pointer to the moniker that was built from <i>szUserName</i>. When successful, the function has called <see cref="AddRef" /> on the moniker and the caller is responsible for calling <see cref="Release" />. If an error occurs, the specified interface pointer will contain as much of the moniker that the method was able to create before the error occurred.</param>
+    <returns>
+      <para>This function can return the standard return value E_OUTOFMEMORY, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The parse operation was successful and the moniker was created.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_SYNTAX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Error in the syntax of a file name or an error in the syntax of the resulting composite moniker.</description>
+        </listheader>
+      </list> <para>This function can also return any of the error values returned by <see cref="IMoniker.BindToObject" />, <see cref="IOleItemContainer.GetObject" />, or <see cref="IParseDisplayName.ParseDisplayName" />.</para></returns>
+  </member>
+  <member name="Windows.MonikerCommonPrefixWith">
+    <summary>
+      <para>Creates a new moniker based on the common prefix that this moniker (the one comprising the data of this moniker object) shares with another moniker.</para>
+      <para>This function is intended to be called only in implementations of <see cref="IMoniker.CommonPrefixWith" />.</para>
+    </summary>
+    <param name="pmkThis">A pointer to the <see cref="IMoniker" /> interface on one of the monikers for which a common prefix is sought; usually the moniker in which this call is used to implement <see cref="IMoniker.CommonPrefixWith" />.</param>
+    <param name="pmkOther">A pointer to the <see cref="IMoniker" /> interface on the moniker to be compared with the first moniker.</param>
+    <param name="ppmkCommon">The address of an <see cref="IMoniker" />* pointer variable that receives the interface pointer to the moniker based on the common prefix of <i>pmkThis</i> and <i>pmkOther</i>. When successful, the function has called <see cref="AddRef" /> on the moniker and the caller is responsible for calling <see cref="Release" />. If an error occurs, the supplied interface pointer value is <b>NULL</b>.</param>
+    <returns>
+      <para>This function can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A common prefix exists that is neither <i>pmkThis</i> nor <i>pmkOther</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_S_HIM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The entire <i>pmkOther</i> moniker is a prefix of the <i>pmkThis</i> moniker.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_S_ME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The entire <i>pmkThis</i> moniker is a prefix of the <i>pmkOther</i> moniker.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_S_US</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>pmkThis</i> and <i>pmkOther</i> monikers are equal.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_NOPREFIX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The monikers have no common prefix.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_NOTBINDABLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>This function was called on a relative moniker. It is not meaningful to take the common prefix of relative monikers.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.MonikerRelativePathTo">
+    <summary>
+      <para>Provides a moniker that, when composed onto the end of the first specified moniker (or one with a similar structure), yields the second specified moniker.</para>
+      <para>This function is intended for use only by <see cref="IMoniker.RelativePathTo" /> implementations.</para>
+    </summary>
+    <param name="pmkSrc">A pointer to the <see cref="IMoniker" /> interface on the moniker that, when composed with the relative moniker to be created, produces <i>pmkDest</i>. This moniker identifies the "source" of the relative moniker to be created.</param>
+    <param name="pmkDest">A pointer to the <see cref="IMoniker" /> interface on the moniker to be expressed relative to <i>pmkSrc</i>. This moniker identifies the destination of the relative moniker to be created.</param>
+    <param name="ppmkRelPath">The address of an <see cref="IMoniker" />* pointer variable that receives the interface pointer to the new relative moniker. When successful, the function has called <see cref="AddRef" /> on the moniker and the caller is responsible for calling <see cref="Release" />. If an error occurs, the interface pointer value is <b>NULL</b>.</param>
+    <param name="dwReserved">This parameter is reserved and must be nonzero.</param>
+    <returns>
+      <para>This function can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A meaningful relative path has been returned.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_S_HIM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The only form of the relative path is the other moniker.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_NOTBINDABLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>pmkSrc</i> parameter is a relative moniker, such as an item moniker, and must be composed with the moniker of its container before a relative path can be determined.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.StgOpenLayoutDocfile">
+    <summary>
+      <para>Not supported.</para>
+      <para>The <b>StgOpenLayoutDocfile</b> function opens a compound file on an<see cref="ILockBytes" /> implementation that is capable of monitoring sector data. To call <b>StgOpenLayoutDocfile</b>, both DfLayout.dll and DfLayout.lib are required.</para>
+      <div>
+        <b>Note</b>  Do not use this function. Use the <see cref="IStorage.CopyTo" /> method instead. <b>CopyTo</b> can be used to layout a docfile, thus improving performance in most scenarios.</div>
+    </summary>
+    <param name="pwcsDfName">A pointer to the null-terminated Unicode string name of the compound file to be opened.</param>
+    <param name="grfMode">Access mode to use when opening the newly created storage object. Values are taken from the<a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>. Be aware that priority mode and exclusions are not supported. The most common access mode is likely to be STGM_DIRECT | STGM_READ | STGM_SHARE_EXCLUSIVE.</param>
+    <param name="reserved">Reserved for future use.</param>
+    <param name="ppstgOpen">A pointer to<see cref="IStorage" /> pointer variable that receives the interface pointer to the root object of the newly created root storage object.</param>
+    <returns>
+      <para>This function supports the standard return values E_OUTOFMEMORY, E_UNEXPECTED, E_INVALIDARG, and E_FAIL, in addition to the following:</para>
+      <para>The <b>StgOpenLayoutDocfile</b> function can also return any of the error values returned by the<see cref="StgOpenStorageOnILockBytes" /> function.</para>
+    </returns>
+  </member>
+</doc>

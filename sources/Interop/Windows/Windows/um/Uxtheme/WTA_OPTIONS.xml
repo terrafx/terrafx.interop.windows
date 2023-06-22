@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WTA_OPTIONS">
-    <summary>
-      <para>Defines options that are used to set window visual style attributes.</para>
-    </summary>
-    <seealso cref="SetWindowThemeAttribute" />
+    <summary>Defines options that are used to set window visual style attributes.</summary>
   </member>
   <member name="WTA_OPTIONS.dwFlags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>A combination of flags that modify window visual style attributes. Can be a combination of the <a href="https://docs.microsoft.com//windows/desktop/Controls/wtnca">WTNCA</a> constants.</para>
-    </summary>
+    <summary>A combination of flags that modify window visual style attributes. Can be a combination of the <a href="https://docs.microsoft.com//windows/desktop/Controls/wtnca">WTNCA</a> constants.</summary>
   </member>
   <member name="WTA_OPTIONS.dwMask">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>A bitmask that describes how the values specified in <b>dwFlags</b> should be applied. If the bit corresponding to a value in <b>dwFlags</b> is 0, that flag will be removed. If the bit is 1, the flag will be added.</para>
-    </summary>
+    <summary>A bitmask that describes how the values specified in <b>dwFlags</b> should be applied. If the bit corresponding to a value in <b>dwFlags</b> is 0, that flag will be removed. If the bit is 1, the flag will be added.</summary>
   </member>
 </doc>

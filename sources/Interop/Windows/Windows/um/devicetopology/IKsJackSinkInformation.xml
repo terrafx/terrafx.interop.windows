@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IKsJackSinkInformation.GetJackSinkInformation">
-    <summary>
-      <para>The <b>GetJackSinkInformation</b> method retrieves the sink information for the specified jack.</para>
-    </summary>
-    <param name="pJackSinkInformation">
-      <para>Pointer to a caller-allocated buffer that receives the sink information of the jack in a <see cref="KSJACK_SINK_INFORMATION" /> structure. The buffer size must be at least <code>sizeof(KSJACK_SINK_INFORMATION)</code>.</para>
-    </param>
+    <summary>The <b>GetJackSinkInformation</b> method retrieves the sink information for the specified jack.</summary>
+    <param name="pJackSinkInformation">Pointer to a caller-allocated buffer that receives the sink information of the jack in a <see cref="KSJACK_SINK_INFORMATION" /> structure. The buffer size must be at least <code>sizeof(KSJACK_SINK_INFORMATION)</code>.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -16,29 +12,32 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>nJack</i> is not a valid jack index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>nJack</i> is not a valid jack index.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Pointer <i>pDescription</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pDescription</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IKsJackSinkInformation" />
   </member>
   <member name="IKsJackSinkInformation">
     <summary>
@@ -46,8 +45,5 @@
       <para>The client obtains a reference to the <b>IKsJackSinkInformation</b> interface by activating it on the <see cref="IPart" /> interface of a bridge pin connector on a KS filter device topology object. To activate the object, call the <see cref="IPart.Activate" /> method with parameter refiid set to REFIID <b>IID_IKsJackSinkInformation</b>.</para>
       <para>Most Windows audio adapter drivers support the Windows Driver Model (WDM) and use kernel-streaming (KS) properties to represent the hardware description parameters in connectors (referred to as KS pins). The <b>IKsJackSinkInformation</b> interface provides convenient access to the <b>KSPROPERTY_JACK_SINK_INFO</b> property of a connector to an endpoint device. For more information about KS properties and KS pins, see the Windows DDK documentation.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IKsJackDescription" />
   </member>
 </doc>

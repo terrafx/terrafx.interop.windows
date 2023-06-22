@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_PROTECTED_SESSION_STATUS">
-    <summary>
-      <para>Defines constants that specify protected session status.</para>
-    </summary>
+    <summary>Defines constants that specify protected session status.</summary>
   </member>
   <member name="D3D12_PROTECTED_SESSION_STATUS.D3D12_PROTECTED_SESSION_STATUS_OK">
-    <summary>
-      <para>Indicates that the protected session is in a valid state.</para>
-    </summary>
+    <summary>Indicates that the protected session is in a valid state.</summary>
   </member>
   <member name="D3D12_PROTECTED_SESSION_STATUS.D3D12_PROTECTED_SESSION_STATUS_INVALID">
-    <summary>
-      <para>Indicates that the protected session is not in a valid state.</para>
-    </summary>
+    <summary>Indicates that the protected session is not in a valid state.</summary>
   </member>
 </doc>

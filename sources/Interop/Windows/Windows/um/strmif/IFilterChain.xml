@@ -4,79 +4,43 @@
 <doc>
   <member name="IFilterChain.PauseChain">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>PauseChain</code> method switches all the filters in a filter chain into a paused state.</para>
     </summary>
-    <param name="pStartFilter">
-      <para>A pointer to the <see cref="IBaseFilter" /> interface of the filter at the start of the chain.</para>
-    </param>
-    <param name="pEndFilter">
-      <para>A pointer to the <see cref="IBaseFilter" /> interface of the filter at the end of the chain. If this parameter is <b>NULL</b>, the method uses the longest possible filter chain that extends downstream from the start filter.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, the return value may be VFW_E_NOT_PAUSED or another <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>If this method cannot switch a given filter into a paused state, it stops all of the filters in chain. The filter graph must be paused when you call this method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterChain Interface" />
+    <param name="pStartFilter">A pointer to the <see cref="IBaseFilter" /> interface of the filter at the start of the chain.</param>
+    <param name="pEndFilter">A pointer to the <see cref="IBaseFilter" /> interface of the filter at the end of the chain. If this parameter is <b>NULL</b>, the method uses the longest possible filter chain that extends downstream from the start filter.</param>
+    <returns>Returns S_OK if successful. If the method fails, the return value may be VFW_E_NOT_PAUSED or another <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterChain.RemoveChain">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>RemoveChain</code> method removes every filter in a filter chain from the filter graph.</para>
     </summary>
-    <param name="pStartFilter">
-      <para>A pointer to the <see cref="IBaseFilter" /> interface of the filter at the start of the chain.</para>
-    </param>
-    <param name="pEndFilter">
-      <para>A pointer to the <see cref="IBaseFilter" /> interface of the filter at the end of the chain. If this parameter is <b>NULL</b>, the method uses the longest possible filter chain that extends downstream from the start filter.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the failure otherwise.</para>
-    </returns>
-    <remarks>
-      <para>You can call this method while the graph is running; the method stops the filters in the chain before removing them from the graph.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterChain Interface" />
+    <param name="pStartFilter">A pointer to the <see cref="IBaseFilter" /> interface of the filter at the start of the chain.</param>
+    <param name="pEndFilter">A pointer to the <see cref="IBaseFilter" /> interface of the filter at the end of the chain. If this parameter is <b>NULL</b>, the method uses the longest possible filter chain that extends downstream from the start filter.</param>
+    <returns>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the failure otherwise.</returns>
   </member>
   <member name="IFilterChain.StartChain">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>StartChain</code> method switches all the filters in a filter chain into a running state.</para>
     </summary>
-    <param name="pStartFilter">
-      <para>A pointer to the <see cref="IBaseFilter" /> interface of the filter at the start of the chain.</para>
-    </param>
-    <param name="pEndFilter">
-      <para>Pointer to the filter at the end of the chain. If this parameter is <b>NULL</b>, the method uses the longest possible filter chain that extends downstream from the start filter.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, the return value may be VFW_E_NOT_RUNNING or another <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>If this method cannot switch a given filter into a running state, it leaves all the filters in a stopped state. The filter graph must be running when you call this method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterChain Interface" />
+    <param name="pStartFilter">A pointer to the <see cref="IBaseFilter" /> interface of the filter at the start of the chain.</param>
+    <param name="pEndFilter">Pointer to the filter at the end of the chain. If this parameter is <b>NULL</b>, the method uses the longest possible filter chain that extends downstream from the start filter.</param>
+    <returns>Returns S_OK if successful. If the method fails, the return value may be VFW_E_NOT_RUNNING or another <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterChain.StopChain">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>StopChain</code> method switches all the filters in a filter chain into a stopped state.</para>
     </summary>
-    <param name="pStartFilter">
-      <para>A pointer to the <see cref="IBaseFilter" /> interface of the filter at the start of the chain.</para>
-    </param>
-    <param name="pEndFilter">
-      <para>Pointer to the filter at the end of the chain. If this parameter is <b>NULL</b>, the method uses the longest possible filter chain that extends downstream from the start filter.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the failure otherwise.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterChain Interface" />
+    <param name="pStartFilter">A pointer to the <see cref="IBaseFilter" /> interface of the filter at the start of the chain.</param>
+    <param name="pEndFilter">Pointer to the filter at the end of the chain. If this parameter is <b>NULL</b>, the method uses the longest possible filter chain that extends downstream from the start filter.</param>
+    <returns>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the failure otherwise.</returns>
   </member>
   <member name="IFilterChain">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IFilterChain</code> interface provides methods for starting, stopping, or removing chains of filters in a filter graph. The filter graph manager exposes this interface.</para>
       <para>A <i>filter chain</i> is a sequence of filters, each with at most one connected input pin and one connected output pin, that forms an unbroken line of filters. A filter chain is defined by the filter at the start of the chain and the filter at the end of the chain. (These can be the same filter, making a chain of one filter.) By definition, there is a single stream path going from the start of the chain downstream to the end of the chain.</para>
       <para>The methods on this interface are useful in situations where an entire stream of data can appear or disappear, such as a video conferencing application that receives multiple streams over a network. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-graph-building">Dynamic Graph Building</a>. To control individual streams on a capture filter, use the <see cref="IAMStreamControl" /> interface instead.</para>

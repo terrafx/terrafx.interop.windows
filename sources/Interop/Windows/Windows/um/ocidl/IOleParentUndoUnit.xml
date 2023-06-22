@@ -3,31 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleParentUndoUnit.Add">
-    <summary>
-      <para>Adds a simple undo unit to the collection.</para>
-    </summary>
-    <param name="pUU">
-      <para>An <see cref="IOleUndoUnit" /> pointer to the undo unit to be added.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK if the specified unit was successfully added or the parent unit was blocked.</para>
-    </returns>
-    <remarks>
-      <para>The parent undo unit or undo manager must accept any undo unit given to it, unless it is blocked. If it is blocked, it should do nothing but return S_OK.</para>
-    </remarks>
-    <seealso cref="IOleParentUndoUnit" />
-    <seealso cref="IOleUndoManager.Add" />
+    <summary>Adds a simple undo unit to the collection.</summary>
+    <param name="pUU">An <see cref="IOleUndoUnit" /> pointer to the undo unit to be added.</param>
+    <returns>This method returns S_OK if the specified unit was successfully added or the parent unit was blocked.</returns>
   </member>
   <member name="IOleParentUndoUnit.Close">
-    <summary>
-      <para>Closes the specified parent undo unit.</para>
-    </summary>
-    <param name="pPUU">
-      <para>An <see cref="IOleParentUndoUnit" /> pointer to the currently open parent unit to be closed.</para>
-    </param>
-    <param name="fCommit">
-      <para>Indicates whether to keep or discard the unit. If <b>TRUE</b>, the unit is kept in the collection. If <b>FALSE</b>, the unit is discarded. This parameter is used to allow the client to discard an undo unit under construction if an error or a cancellation occurs.</para>
-    </param>
+    <summary>Closes the specified parent undo unit.</summary>
+    <param name="pPUU">An <see cref="IOleParentUndoUnit" /> pointer to the currently open parent unit to be closed.</param>
+    <param name="fCommit">Indicates whether to keep or discard the unit. If <b>TRUE</b>, the unit is kept in the collection. If <b>FALSE</b>, the unit is discarded. This parameter is used to allow the client to discard an undo unit under construction if an error or a cancellation occurs.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -35,94 +18,47 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The parent undo unit did not have an open child and it was successfully closed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The parent undo unit did not have an open child and it was successfully closed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>If pPUU does not match the currently open parent undo unit, then implementations of this method should return E_INVALIDARG without changing any internal state unless the parent unit is blocked.</para>
-          </description>
-        </item>
+          <description>If pPUU does not match the currently open parent undo unit, then implementations of this method should return E_INVALIDARG without changing any internal state unless the parent unit is blocked.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A parent undo unit knows it is being closed when it returns S_FALSE from this method. At that time, it should terminate any communication with other objects which may be giving data to it through private interfaces.</para>
-      <h3>Notes to Callers</h3>
-      <para>An error return indicates a fatal error condition.</para>
-      <para>The parent unit or undo manager must accept the undo unit if <i>fCommit</i> is <b>TRUE</b>.</para>
-      <h3>Notes to Implementers</h3>
-      <para>To process a close request, a parent undo unit first checks to see if it has an open child unit. If it does not, it returns S_FALSE.</para>
-      <para>If it does have a child unit open, it calls the <b>IOleParentUndoUnit.Close</b> method on the child. If the child returns S_FALSE, then the parent undo unit verifies that <i>pPUU</i> points to the child unit, and closes that child undo unit. If the child returns S_OK then it handled the close internally and its parent should do nothing.</para>
-      <para>If the parent unit is blocked, it should check the <i>pPUU</i> parameter to determine the appropriate return code. If <i>pPUU</i> is pointing to itself, then it should return S_FALSE.</para>
-      <para>Otherwise, it should return S_OK; the <i>fCommit</i> parameter is ignored; and no action is taken.</para>
-      <para>If <i>pPUU</i> does not match the currently open parent undo unit, then implementations of this method should return E_INVALIDARG without changing any internal state. The only exception to this is if the unit is blocked.</para>
-    </remarks>
-    <seealso cref="IOleParentUndoUnit" />
-    <seealso cref="IOleParentUndoUnit.Close" />
   </member>
   <member name="IOleParentUndoUnit.FindUnit">
-    <summary>
-      <para>Indicates whether the specified unit is a child of this undo unit or one of its children, that is if the specified unit is part of the hierarchy in this parent unit.</para>
-    </summary>
-    <param name="pUU">
-      <para>An <see cref="IOleUndoUnit" /> pointer to the undo unit to be found.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK if the specified undo unit is in the hierarchy subordinate to this parent; otherwise, S_FALSE.</para>
-    </returns>
-    <remarks>
-      <para>This is typically called by the undo manager in its implementation of its <see cref="IOleUndoManager.DiscardFrom" /> method in the rare event that the unit being discarded is not a top-level unit. The parent unit should look in its own list first, then delegate to each child that is also a parent unit, as determined by doing a <see cref="IUnknown.QueryInterface" /> for <see cref="IOleParentUndoUnit" />.</para>
-    </remarks>
-    <seealso cref="IOleParentUndoUnit" />
-    <seealso cref="IOleUndoManager.DiscardFrom" />
+    <summary>Indicates whether the specified unit is a child of this undo unit or one of its children, that is if the specified unit is part of the hierarchy in this parent unit.</summary>
+    <param name="pUU">An <see cref="IOleUndoUnit" /> pointer to the undo unit to be found.</param>
+    <returns>This method returns S_OK if the specified undo unit is in the hierarchy subordinate to this parent; otherwise, S_FALSE.</returns>
   </member>
   <member name="IOleParentUndoUnit.GetParentState">
-    <summary>
-      <para>Retrieves state information about the innermost open parent undo unit.</para>
-    </summary>
-    <param name="pdwState">
-      <para>A pointer to the state information. This information is a value taken from the <see cref="UASFLAGS" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <h3>Notes to Implementers</h3>
-      <para>If the unit has an open child, it should delegate this method to that child. If not, it should fill in <i>pdwState</i> values appropriately and return. Note that a parent unit must never be blocked while it has an open child. If this happened it could prevent the child unit from being closed, which would cause serious problems.</para>
-      <h3>Notes to Callers</h3>
-      <para>When checking for a normal state, use the UAS_MASK value to mask unused bits in the <i>pdwState</i> parameter to this method for future compatibility.</para>
-    </remarks>
-    <seealso cref="IOleParentUndoUnit" />
+    <summary>Retrieves state information about the innermost open parent undo unit.</summary>
+    <param name="pdwState">A pointer to the state information. This information is a value taken from the <see cref="UASFLAGS" /> enumeration.</param>
+    <returns>This method returns S_OK on success.</returns>
   </member>
   <member name="IOleParentUndoUnit.Open">
-    <summary>
-      <para>Opens a new parent undo unit, which becomes part of the containing unit's undo stack.</para>
-    </summary>
-    <param name="pPUU">
-      <para>An <see cref="IOleParentUndoUnit" /> pointer to the parent undo unit to be opened.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK if the parent undo unit was successfully opened or it is currently blocked.</para>
-    </returns>
-    <remarks>
-      <para>The specified parent unit is created and remains open. The undo manager then calls the <see cref="IOleParentUndoUnit.Add" /> or <b>IOleParentUndoUnit.Open</b> methods on this parent unit to add new units to it. This parent unit receives any additional undo units until its <see cref="IOleParentUndoUnit.Close" /> method is called.</para>
-      <para>The parent unit specified by <i>pPUU</i> is not added to the undo stack until its <see cref="IOleParentUndoUnit.Close" /> method is called with the <i>fCommit</i> parameter set to <b>TRUE</b>.</para>
-      <para>The parent undo unit or undo manager must contain any undo unit given to it unless it is blocked. If it is blocked, it must return S_OK but should do nothing else.</para>
-    </remarks>
-    <seealso cref="IOleParentUndoUnit" />
-    <seealso cref="IOleParentUndoUnit.Open" />
+    <summary>Opens a new parent undo unit, which becomes part of the containing unit's undo stack.</summary>
+    <param name="pPUU">An <see cref="IOleParentUndoUnit" /> pointer to the parent undo unit to be opened.</param>
+    <returns>This method returns S_OK if the parent undo unit was successfully opened or it is currently blocked.</returns>
   </member>
   <member name="IOleParentUndoUnit">
     <summary>
@@ -143,9 +79,6 @@
         <item>
           <description>To create a disabling parent, the object calls <see cref="IOleUndoManager.GetOpenParentState" /> and checks for an open parent that is blocked or disabling. If either one exists it is unnecessary to create the new parent. Otherwise, the object creates the parent and opens it on the stack.</description>
         </item>
-      </list>In the event that both the UAS_NOPARENTENABLE and UAS_BLOCKED flags are set, the flag that is most relevant to the caller should be used with UAS_NOPARENTENABLE taking precedence. For example, if an object is creating a simple undo unit, it should pay attention to the UAS_NOPARENTENABLE flag and clear the undo stack. If it is creating an enabling parent unit, then it should pay attention to the UAS_BLOCKED flag and skip the creation.
-<para>When the parent undo unit is marked blocked, it discards any undo units it receives.</para></summary>
-    <seealso cref="IOleUndoManager" />
-    <seealso cref="IOleUndoUnit" />
+      </list>In the event that both the UAS_NOPARENTENABLE and UAS_BLOCKED flags are set, the flag that is most relevant to the caller should be used with UAS_NOPARENTENABLE taking precedence. For example, if an object is creating a simple undo unit, it should pay attention to the UAS_NOPARENTENABLE flag and clear the undo stack. If it is creating an enabling parent unit, then it should pay attention to the UAS_BLOCKED flag and skip the creation.<para>When the parent undo unit is marked blocked, it discards any undo units it receives.</para></summary>
   </member>
 </doc>

@@ -3,39 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontCollectionLoader.CreateEnumeratorFromKey">
-    <summary>
-      <para>Creates a font file enumerator object that encapsulates a collection of font files.
-The font system calls back to this interface to create a font collection.</para>
-    </summary>
-    <param name="factory">
-      <para>Type: <b><see cref="IDWriteFactory" />*</b></para>
-      <para>Pointer to the <see cref="IDWriteFactory" /> object that was used to create the current font collection.</para>
-    </param>
-    <param name="collectionKey">
-      <para>Type: <b>const void*</b></para>
-      <para>A font collection key that uniquely identifies the collection of font files within
-the scope of the font collection loader being used. The buffer allocated for this key must be at least  the size, in bytes, specified by <i>collectionKeySize</i>.</para>
-    </param>
-    <param name="collectionKeySize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size of the font collection key, in bytes.</para>
-    </param>
-    <param name="fontFileEnumerator">
-      <para>Type: <b><see cref="IDWriteFontFileEnumerator" />**</b></para>
-      <para>When this method returns, contains the address of  a pointer to the newly created font file enumerator.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteFontCollectionLoader" />
+    <summary>Creates a font file enumerator object that encapsulates a collection of font files. The font system calls back to this interface to create a font collection.</summary>
+    <param name="factory">Pointer to the <see cref="IDWriteFactory" /> object that was used to create the current font collection.</param>
+    <param name="collectionKey">A font collection key that uniquely identifies the collection of font files within the scope of the font collection loader being used. The buffer allocated for this key must be at least the size, in bytes, specified by <i>collectionKeySize</i>.</param>
+    <param name="collectionKeySize">The size of the font collection key, in bytes.</param>
+    <param name="fontFileEnumerator">When this method returns, contains the address of a pointer to the newly created font file enumerator.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontCollectionLoader">
-    <summary>
-      <para>Used to construct a collection of fonts given a particular type of key.</para>
-    </summary>
-    <remarks>
-      <para>The font collection loader interface is recommended to be implemented by a singleton object. Note that font collection loader implementations must not register themselves with DirectWrite factory inside their constructors and must not unregister themselves in their destructors, because registration and unregistration operations increment and decrement the object reference count respectively. Instead, registration and unregistration of font file loaders with DirectWrite factory should be performed outside of the font file loader implementation as a separate step.</para>
-    </remarks>
+    <summary>Used to construct a collection of fonts given a particular type of key.</summary>
   </member>
 </doc>

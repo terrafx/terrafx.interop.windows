@@ -3,22 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SOLE_AUTHENTICATION_INFO">
-    <summary>
-      <para>Identifies an authentication service, authorization service, and the authentication information for the specified authentication service.</para>
-    </summary>
-    <seealso cref="CoInitializeSecurity" />
-    <seealso cref="CoSetProxyBlanket" />
-    <seealso cref="SOLE_AUTHENTICATION_LIST" />
+    <summary>Identifies an authentication service, authorization service, and the authentication information for the specified authentication service.</summary>
   </member>
   <member name="SOLE_AUTHENTICATION_INFO.dwAuthnSvc">
-    <summary>
-      <para>The authentication service. This member can be a single value from the <a href="https://docs.microsoft.com//windows/desktop/com/com-authentication-service-constants">Authentication Service Constants</a>.</para>
-    </summary>
+    <summary>The authentication service. This member can be a single value from the <a href="https://docs.microsoft.com//windows/desktop/com/com-authentication-service-constants">Authentication Service Constants</a>.</summary>
   </member>
   <member name="SOLE_AUTHENTICATION_INFO.dwAuthzSvc">
-    <summary>
-      <para>The authorization service. This member can be a single value from the <a href="https://docs.microsoft.com//windows/desktop/com/com-authorization-constants">Authorization Constants</a>.</para>
-    </summary>
+    <summary>The authorization service. This member can be a single value from the <a href="https://docs.microsoft.com//windows/desktop/com/com-authorization-constants">Authorization Constants</a>.</summary>
   </member>
   <member name="SOLE_AUTHENTICATION_INFO.pAuthInfo">
     <summary>

@@ -3,45 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1GdiMetafile1.GetDpi">
-    <summary>
-      <para>Gets the DPI reported by the metafile.</para>
-    </summary>
-    <param name="dpiX">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>Receives the horizontal DPI reported by the metafile.</para>
-    </param>
-    <param name="dpiY">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>Receives the vertical DPI reported by the metafile.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID2D1GdiMetafile1" />
+    <summary>Gets the DPI reported by the metafile.</summary>
+    <param name="dpiX">Receives the horizontal DPI reported by the metafile.</param>
+    <param name="dpiY">Receives the vertical DPI reported by the metafile.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1GdiMetafile1.GetSourceBounds">
-    <summary>
-      <para>Gets the bounds of the metafile in source space in DIPs. This corresponds
-to the frame rect in an EMF/EMF+.</para>
-    </summary>
-    <param name="bounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The bounds, in DIPs, of the metafile.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <seealso cref="ID2D1GdiMetafile" />
-    <seealso cref="ID2D1GdiMetafile1" />
-    <seealso href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emfplus/5f92c789-64f2-46b5-9ed4-15a9bb0946c6">[MS-EMFPLUS]: Enhanced Metafile Format Plus Extensions</seealso>
-    <seealso href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emf/91c257d7-c39d-4a36-9b1f-63e3f73d30ca">[MS-EMF]: Enhanced Metafile Format</seealso>
+    <summary>Gets the bounds of the metafile in source space in DIPs. This corresponds<br />to the frame rect in an EMF/EMF+.</summary>
+    <param name="bounds">The bounds, in DIPs, of the metafile.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1GdiMetafile1">
-    <summary>
-      <para>This interface performs all the same functions as the existing ID2D1GdiMetafile interface. It also enables accessing the metafile DPI and bounds.</para>
-    </summary>
-    <seealso cref="ID2D1GdiMetafile" />
+    <summary>This interface performs all the same functions as the existing ID2D1GdiMetafile interface. It also enables accessing the metafile DPI and bounds.</summary>
   </member>
 </doc>

@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_USAGE_DATA">
-    <summary>
-      <para>The <b>WCM_USAGE_DATA</b> structure contains information related to connection  usage.</para>
-    </summary>
+    <summary>The <b>WCM_USAGE_DATA</b> structure contains information related to connection usage.</summary>
   </member>
   <member name="WCM_USAGE_DATA.UsageInMegabytes">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The connection usage, in megabytes.</para>
-    </summary>
+    <summary>The connection usage, in megabytes.</summary>
   </member>
   <member name="WCM_USAGE_DATA.LastSyncTime">
-    <summary>
-      <para>Type: <b>FILETIME</b></para>
-      <para>Specifies the last time that usage information was reconciled with the carrier's billing system.</para>
-    </summary>
+    <summary>Specifies the last time that usage information was reconciled with the carrier's billing system.</summary>
   </member>
 </doc>

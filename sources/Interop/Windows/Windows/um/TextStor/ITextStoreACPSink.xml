@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITextStoreACPSink.OnAttrsChange">
-    <summary>
-      <para>Called when the value of one or more text attribute changes.</para>
-    </summary>
-    <param name="acpStart">
-      <para>Specifies the starting point of the attribute change.</para>
-    </param>
-    <param name="acpEnd">
-      <para>Specifies the ending point of the attribute change.</para>
-    </param>
-    <param name="cAttrs">
-      <para>Specifies the number of attributes in the <i>paAttrs</i> array.</para>
-    </param>
-    <param name="paAttrs">
-      <para>Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID</a> values that identify the attributes changed.</para>
-    </param>
+    <summary>Called when the value of one or more text attribute changes.</summary>
+    <param name="acpStart">Specifies the starting point of the attribute change.</param>
+    <param name="acpEnd">Specifies the ending point of the attribute change.</param>
+    <param name="cAttrs">Specifies the number of attributes in the <i>paAttrs</i> array.</param>
+    <param name="paAttrs">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID</a> values that identify the attributes changed.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -25,43 +15,47 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITextStoreACPSink.OnEndEditTransaction">
-    <summary>
-      <para>Called when an edit transaction is terminated.</para>
-    </summary>
+    <summary>Called when an edit transaction is terminated.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -69,36 +63,25 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method causes the <see cref="ITfEditTransactionSink.OnEndEditTransaction" /> method to be called on all installed edit transaction sinks.</para>
-      <para>An edit transaction is a group of text changes that should be processed at one time. Calling <see cref="ITextStoreACPSink.OnStartEditTransaction" /> allows a text service to queue the upcoming changes until <b>ITextStoreACPSink.OnEndEditTransaction</b> is called. When <b>ITextStoreACPSink.OnEndEditTransaction</b> is called, the text service will process all of the queued changes. Use of edit transactions is optional.</para>
-    </remarks>
-    <seealso cref="ITextStoreACPSink" />
-    <seealso cref="ITextStoreACPSink.OnStartEditTransaction " />
-    <seealso cref="ITfEditTransactionSink.OnEndEditTransaction " />
   </member>
   <member name="ITextStoreACPSink.OnLayoutChange">
-    <summary>
-      <para>Called when the layout (on-screen representation) of the document changes.</para>
-    </summary>
-    <param name="lcode">
-      <para>Contains a <see cref="TsLayoutCode" /> value that defines the type of change.</para>
-    </param>
-    <param name="vcView">
-      <para>Contains an application-defined cookie that identifies the document. For more information, see <see cref="ITextStoreACP.GetActiveView" />.</para>
-    </param>
+    <summary>Called when the layout (on-screen representation) of the document changes.</summary>
+    <param name="lcode">Contains a <see cref="TsLayoutCode" /> value that defines the type of change.</param>
+    <param name="vcView">Contains an application-defined cookie that identifies the document. For more information, see <see cref="ITextStoreACP.GetActiveView" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -106,32 +89,23 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A layout change can be in response to a change to the text, font size, window movement, window resizing, or other change that affects the displayed text.</para>
-      <para>If a call to <see cref="ITextStoreACP.GetTextExt" /> or <see cref="ITextStoreACP.GetACPFromPoint" /> returns TS_E_NOLAYOUT because the application has not calculated the layout, the application must call <b>ITextStoreACPSink.OnLayoutChange</b> when the layout is available.</para>
-    </remarks>
-    <seealso cref="ITextStoreACP.GetACPFromPoint " />
-    <seealso cref="ITextStoreACP.GetActiveView " />
-    <seealso cref="ITextStoreACP.GetTextExt " />
-    <seealso cref="ITextStoreACPSink" />
-    <seealso cref="TsLayoutCode " />
   </member>
   <member name="ITextStoreACPSink.OnLockGranted">
-    <summary>
-      <para>Called to grant a document lock.</para>
-    </summary>
+    <summary>Called to grant a document lock.</summary>
     <param name="dwLockFlags">
       <para>Contains a set of flags that identify the type of lock requested and other lock request data. This can be one of the following values.</para>
       <list type="table">
@@ -139,22 +113,30 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TS_LF_READ</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_LF_READ</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The lock is read-only.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The lock is read-only.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_LF_READWRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TS_LF_READWRITE</b>
-          </description>
-          <description>
-            <para>The lock is read/write.</para>
-          </description>
-        </item>
+          <description>The lock is read/write.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -164,53 +146,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>dwLockFlags</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>dwLockFlags</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The wrong type of lock was granted.</para>
-          </description>
-        </item>
+          <description>The wrong type of lock was granted.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A document lock is requested by calling <b>ITextStoreACP.RequestLock</b> . The application grants the lock request by calling <b>ITextStoreACPSink.OnLockGranted</b> with the requested lock type. The lock is only valid during the <b>OnLockGranted</b> call. When <b>OnLockGranted</b> returns, the document is considered unlocked.</para>
-      <para>The lock type, specified in <i>dwLockFlags</i>, must match the requested lock type in the corresponding call to <b>ITextStoreACP.RequestLock</b>.</para>
-      <para>If a synchronous lock request is made from within <b>ITextStoreACP.RequestLock</b>, then the caller must also provide the return value from <b>ITextStoreACP.RequestLock</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/document-locks">Document Locks</seealso>
-    <seealso cref="ITextStoreACP.RequestLock " />
-    <seealso cref="ITextStoreACPSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-lf--constants">TS_LF_* Constants
-</seealso>
   </member>
   <member name="ITextStoreACPSink.OnSelectionChange">
-    <summary>
-      <para>Called when the selection within the document changes.</para>
-    </summary>
+    <summary>Called when the selection within the document changes.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -218,43 +195,35 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The manager holds a lock on the document.</para>
-          </description>
-        </item>
+          <description>The manager holds a lock on the document.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>ITextStoreACPSink.OnSelectionChange</b> is never called when the selection is modified by one of the <see cref="ITextStoreACP" /> interface methods, such as <see cref="ITextStoreACP.SetSelection" /> or <see cref="ITextStoreACP.InsertTextAtSelection" />.</para>
-      <para>When calling this method, the application must be able to grant a <a href="https://docs.microsoft.com//windows/desktop/TSF/document-locks">document lock</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/document-locks">Document Locks</seealso>
-    <seealso cref="ITextStoreACP " />
-    <seealso cref="ITextStoreACP.InsertTextAtSelection " />
-    <seealso cref="ITextStoreACP.SetSelection " />
-    <seealso cref="ITextStoreACPSink" />
   </member>
   <member name="ITextStoreACPSink.OnStartEditTransaction">
-    <summary>
-      <para>Called when an edit transaction is started.</para>
-    </summary>
+    <summary>Called when an edit transaction is started.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -262,33 +231,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method causes the <see cref="ITfEditTransactionSink.OnStartEditTransaction" /> method to be called on all installed edit transaction sinks.</para>
-      <para>An edit transaction is a group of text changes that should be processed at one time. Calling this method allows a text service to queue the upcoming changes until <see cref="ITextStoreACPSink.OnEndEditTransaction" /> is called. When <b>ITextStoreACPSink.OnEndEditTransaction</b> is called, the text service will process all queued changes. Use of edit transactions is optional.</para>
-    </remarks>
-    <seealso cref="ITextStoreACPSink" />
-    <seealso cref="ITextStoreACPSink.OnEndEditTransaction " />
-    <seealso cref="ITfEditTransactionSink.OnStartEditTransaction " />
   </member>
   <member name="ITextStoreACPSink.OnStatusChange">
-    <summary>
-      <para>Called when the status of the document changes.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Contains a value that specifies the new status. For more information about possible values, see the <b>dwDynamicFlags</b> member of the <see cref="TS_STATUS" /> structure.</para>
-    </param>
+    <summary>Called when the status of the document changes.</summary>
+    <param name="dwFlags">Contains a value that specifies the new status. For more information about possible values, see the <b>dwDynamicFlags</b> member of the <see cref="TS_STATUS" /> structure.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -296,25 +256,23 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITextStoreACPSink" />
-    <seealso cref="TS_STATUS " />
   </member>
   <member name="ITextStoreACPSink.OnTextChange">
-    <summary>
-      <para>Called when the text of a document changes.</para>
-    </summary>
+    <summary>Called when the text of a document changes.</summary>
     <param name="dwFlags">
       <para>Contains a set of flags that specify additional information about the text change. This can be one or more of the following values.</para>
       <list type="table">
@@ -322,27 +280,33 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>0</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The text has changed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The text has changed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_ST_CORRECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TS_ST_CORRECTION</b>
-          </description>
-          <description>
-            <para>The text is a transform (correction) of existing content, and any special text markup information (metadata) is retained, such as .wav file data or a language identifier. This flag is used for applications that need to preserve data associated with the original text.</para>
-          </description>
-        </item>
+          <description>The text is a transform (correction) of existing content, and any special text markup information (metadata) is retained, such as .wav file data or a language identifier. This flag is used for applications that need to preserve data associated with the original text.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pChange">
-      <para>Pointer to a <see cref="TS_TEXTCHANGE" /> structure that contains text change data.</para>
-    </param>
+    <param name="pChange">Pointer to a <see cref="TS_TEXTCHANGE" /> structure that contains text change data.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -350,71 +314,59 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pChange</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <i>pChange</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The TSF manager holds a lock on the document. This typically indicates that the method was called from within another <see cref="ITextStoreACP" /> method, such as <see cref="ITextStoreACP.SetText" />.</para>
-          </description>
-        </item>
+          <description>The TSF manager holds a lock on the document. This typically indicates that the method was called from within another <see cref="ITextStoreACP" /> method, such as <see cref="ITextStoreACP.SetText" />.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>ITextStoreACPSink.OnTextChange</b> is never called when the text is modified by one of the <b>ITextStoreACP</b> interface methods, such as <b>ITextStoreACP.SetText</b> or <see cref="ITextStoreACP.InsertTextAtSelection" />.</para>
-      <para>When calling this method, the application must be able to grant a <a href="https://docs.microsoft.com//windows/desktop/TSF/document-locks">document lock</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/document-locks">Document Locks</seealso>
-    <seealso cref="ITextStoreACP " />
-    <seealso cref="ITextStoreACP.InsertTextAtSelection " />
-    <seealso cref="ITextStoreACP.RequestLock " />
-    <seealso cref="ITextStoreACP.SetText " />
-    <seealso cref="ITextStoreACPSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/miscellaneous-text-store-constants">Miscellaneous Text Store Constants
-</seealso>
-    <seealso cref="TS_TEXTCHANGE " />
   </member>
   <member name="ITextStoreACPSink">
-    <summary>
-      <para>The <b>ITextStoreACPSink</b> interface is implemented by the TSF manager and is used by an ACP-based application to notify the manager when certain events occur. The manager installs this advise sink by calling <see cref="ITextStoreACP.AdviseSink" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/document-locks">Document Locks</seealso>
-    <seealso cref="ITextStoreACP " />
-    <seealso cref="ITextStoreACP.AdviseSink " />
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/text-stores">Text Stores</seealso>
+    <summary>The <b>ITextStoreACPSink</b> interface is implemented by the TSF manager and is used by an ACP-based application to notify the manager when certain events occur. The manager installs this advise sink by calling <see cref="ITextStoreACP.AdviseSink" />.</summary>
   </member>
 </doc>

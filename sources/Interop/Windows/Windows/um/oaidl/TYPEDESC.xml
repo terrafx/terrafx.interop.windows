@@ -3,34 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TYPEDESC">
-    <summary>
-      <para>Describes the type of a variable, the return type of a function, or the type of a function parameter.</para>
-    </summary>
-    <remarks>
-      <para>If the variable is VT_SAFEARRAY or VT_PTR, the union portion of the TYPEDESC contains a pointer to a TYPEDESC that specifies the element type.</para>
-    </remarks>
+    <summary>Describes the type of a variable, the return type of a function, or the type of a function parameter.</summary>
   </member>
-  <member name="TYPEDESC.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="TYPEDESC.DUMMYUNIONNAME"></member>
   <member name="TYPEDESC.DUMMYUNIONNAME.lptdesc">
-    <summary>
-      <para>With VT_PTR, the type pointed to.</para>
-    </summary>
+    <summary>With VT_PTR, the type pointed to.</summary>
   </member>
   <member name="TYPEDESC.DUMMYUNIONNAME.lpadesc">
-    <summary>
-      <para>With VT_CARRAY...</para>
-    </summary>
+    <summary>With VT_CARRAY...</summary>
   </member>
   <member name="TYPEDESC.DUMMYUNIONNAME.hreftype">
-    <summary>
-      <para>With VT_USER_DEFINED, this is used to get a TypeInfo for the UDT.</para>
-    </summary>
+    <summary>With VT_USER_DEFINED, this is used to get a TypeInfo for the UDT.</summary>
   </member>
   <member name="TYPEDESC.vt">
-    <summary>
-      <para>The variant type.</para>
-    </summary>
+    <summary>The variant type.</summary>
   </member>
 </doc>

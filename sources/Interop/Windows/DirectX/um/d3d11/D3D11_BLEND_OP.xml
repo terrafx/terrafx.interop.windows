@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_BLEND_OP">
-    <summary>
-      <para>RGB or alpha blending operation.</para>
-    </summary>
-    <remarks>
-      <para>The runtime implements RGB blending and alpha blending separately. Therefore, blend state requires separate blend operations for RGB data and alpha data. These blend operations are specified in a <see cref="blend description" />. The two sources —source 1 and source 2— are shown in the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">blending block diagram</a>.</para>
-      <para>Blend state is used by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a> to determine how to blend together two RGB pixel values and two alpha values. The two RGB pixel values and two alpha values are the RGB pixel value and alpha value that the pixel shader outputs and the RGB pixel value and alpha value already in the output render target. The <see cref="blend option" /> controls the data source that the blending stage uses to modulate values for the pixel shader, render target, or both. The <b>blend operation</b> controls how the blending stage mathematically combines these modulated values.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>RGB or alpha blending operation.</summary>
   </member>
   <member name="D3D11_BLEND_OP.D3D11_BLEND_OP_ADD">
-    <summary>
-      <para>Add source 1 and source 2.</para>
-    </summary>
+    <summary>Add source 1 and source 2.</summary>
   </member>
   <member name="D3D11_BLEND_OP.D3D11_BLEND_OP_SUBTRACT">
-    <summary>
-      <para>Subtract source 1 from source 2.</para>
-    </summary>
+    <summary>Subtract source 1 from source 2.</summary>
   </member>
   <member name="D3D11_BLEND_OP.D3D11_BLEND_OP_REV_SUBTRACT">
-    <summary>
-      <para>Subtract source 2 from source 1.</para>
-    </summary>
+    <summary>Subtract source 2 from source 1.</summary>
   </member>
   <member name="D3D11_BLEND_OP.D3D11_BLEND_OP_MIN">
-    <summary>
-      <para>Find the minimum of source 1 and source 2.</para>
-    </summary>
+    <summary>Find the minimum of source 1 and source 2.</summary>
   </member>
   <member name="D3D11_BLEND_OP.D3D11_BLEND_OP_MAX">
-    <summary>
-      <para>Find the maximum of source 1 and source 2.</para>
-    </summary>
+    <summary>Find the maximum of source 1 and source 2.</summary>
   </member>
 </doc>

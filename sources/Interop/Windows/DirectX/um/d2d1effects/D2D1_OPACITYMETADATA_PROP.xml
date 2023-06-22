@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_OPACITYMETADATA_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/opacity-metadata-effect">Opacity metadata effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/opacity-metadata-effect">Opacity metadata effect</a>.</summary>
   </member>
   <member name="D2D1_OPACITYMETADATA_PROP.D2D1_OPACITYMETADATA_PROP_INPUT_OPAQUE_RECT">
     <summary>
@@ -14,7 +12,5 @@
       <para>The default is {-FLT_MAX, -FLT_MAX, FLT_MAX, FLT_MAX}.</para>
     </summary>
   </member>
-  <member name="D2D1_OPACITYMETADATA_PROP.D2D1_OPACITYMETADATA_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_OPACITYMETADATA_PROP.D2D1_OPACITYMETADATA_PROP_FORCE_DWORD"></member>
 </doc>

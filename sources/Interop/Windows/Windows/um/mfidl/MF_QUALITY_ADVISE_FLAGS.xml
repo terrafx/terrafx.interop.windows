@@ -3,18 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_QUALITY_ADVISE_FLAGS">
-    <summary>
-      <para>Contains flags for the <see cref="IMFQualityAdvise2.NotifyQualityEvent" /> method.</para>
-    </summary>
-    <remarks>
-      <para>If the decoder sets the <b>MF_QUALITY_CANNOT_KEEP_UP</b> flag, the quality manager tries to reduce latency through the media source and the media sink. For example, it might request the <a href="https://docs.microsoft.com//windows/desktop/medfound/enhanced-video-renderer">Enhanced Video Renderer</a> (EVR) to drop frames. During this period, the quality manager stops calling the decoder's <see cref="IMFQualityAdvise2.NotifyQualityEvent" /> method, until samples are no longer arriving late at the sink. At that point, the quality manager resumes calling <b>NotifyQualityEvent</b> on the decoder.</para>
-    </remarks>
-    <seealso cref="IMFQualityAdvise2" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Contains flags for the <see cref="IMFQualityAdvise2.NotifyQualityEvent" /> method.</summary>
   </member>
   <member name="MF_QUALITY_ADVISE_FLAGS.MF_QUALITY_CANNOT_KEEP_UP">
-    <summary>
-      <para>The decoder has done everything that it can to reduce sample latency, and samples are still late.</para>
-    </summary>
+    <summary>The decoder has done everything that it can to reduce sample latency, and samples are still late.</summary>
   </member>
 </doc>

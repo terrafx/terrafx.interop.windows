@@ -3,51 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.isOOBEComplete">
-    <summary>
-      <para>Determines whether OOBE (Windows Welcome) has been completed.</para>
-    </summary>
-    <param name="isOOBEComplete">
-      <para>Pointer to a variable that will receive the completion of OOBE upon success.</para>
-    </param>
+    <summary>Determines whether OOBE (Windows Welcome) has been completed.</summary>
+    <param name="isOOBEComplete">Pointer to a variable that will receive the completion of OOBE upon success.</param>
     <returns>
-      <para>
-        <b>TRUE</b> if the OOBE completion state was successfully set. Otherwise,
-<b>FALSE</b> if OOBE completion state was not set. If <b>FALSE</b>,
-<see cref="GetLastError" /> will retrieve extended error
-information.</para>
-    </returns>
+      <b>TRUE</b> if the OOBE completion state was successfully set. Otherwise,<b>FALSE</b> if OOBE completion state was not set. If <b>FALSE</b>,<see cref="GetLastError" /> will retrieve extended error information.</returns>
   </member>
   <member name="Windows.RegisterWaitUntilOOBECompleted">
-    <summary>
-      <para>Registers a callback to be called once OOBE (Windows Welcome) has been completed.</para>
-    </summary>
-    <param name="OOBECompletedCallback">
-      <para>Pointer to an application-defined callback function that will be called upon completion of OOBE. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oobenotification/nc-oobenotification-oobe_completed_callback">OOBE_COMPLETED_CALLBACK</a>.</para>
-    </param>
-    <param name="CallbackContext">
-      <para>Pointer to the callback context. This value will be passed to the function specified by <i>OOBECompletedCallback</i>. This value can be <b>null</b>.</para>
-    </param>
-    <param name="WaitHandle">
-      <para>Pointer to a variable that will receive the handle to the wait callback registration.</para>
-    </param>
+    <summary>Registers a callback to be called once OOBE (Windows Welcome) has been completed.</summary>
+    <param name="OOBECompletedCallback">Pointer to an application-defined callback function that will be called upon completion of OOBE. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oobenotification/nc-oobenotification-oobe_completed_callback">OOBE_COMPLETED_CALLBACK</a>.</param>
+    <param name="CallbackContext">Pointer to the callback context. This value will be passed to the function specified by <i>OOBECompletedCallback</i>. This value can be <b>null</b>.</param>
+    <param name="WaitHandle">Pointer to a variable that will receive the handle to the wait callback registration.</param>
     <returns>
-      <para>
-        <b>TRUE</b> if the routine successfully registered the callback. Otherwise, <b>FALSE</b> is returned. If <b>FALSE</b>, <see cref="GetLastError" /> will retrieve extended error information.</para>
-    </returns>
-    <remarks>
-      <para>If <b>RegisterWaitUntilOOBECompleted</b> returns <b>FALSE</b>, and a subsequent call to <see cref="GetLastError" /> returns a value of <b>ERROR_INVALID_STATE</b>, this indicates that OOBE is already complete and there is no need to register for OOBE completion.</para>
-    </remarks>
+      <b>TRUE</b> if the routine successfully registered the callback. Otherwise, <b>FALSE</b> is returned. If <b>FALSE</b>, <see cref="GetLastError" /> will retrieve extended error information.</returns>
   </member>
   <member name="Windows.UnregisterWaitUntilOOBECompleted">
-    <summary>
-      <para>Unregisters the callback previously registered via <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oobenotification/nf-oobenotification-registerwaituntiloobecompleted">RegisterWaitUntilOOBECompleted</a>.</para>
-    </summary>
-    <param name="WaitHandle">
-      <para>Handle to be unregistered.</para>
-    </param>
+    <summary>Unregisters the callback previously registered via <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oobenotification/nf-oobenotification-registerwaituntiloobecompleted">RegisterWaitUntilOOBECompleted</a>.</summary>
+    <param name="WaitHandle">Handle to be unregistered.</param>
     <returns>
-      <para>
-        <b>TRUE</b> if the callback was successfully unregistered. Otherwise, <b>FALSE</b> is returned. If <b>FALSE</b>, <see cref="GetLastError" /> will retrieve extended error information.</para>
-    </returns>
+      <b>TRUE</b> if the callback was successfully unregistered. Otherwise, <b>FALSE</b> is returned. If <b>FALSE</b>, <see cref="GetLastError" /> will retrieve extended error information.</returns>
   </member>
 </doc>

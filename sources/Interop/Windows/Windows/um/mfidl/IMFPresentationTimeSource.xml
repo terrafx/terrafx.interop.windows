@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFPresentationTimeSource.GetUnderlyingClock">
-    <summary>
-      <para>Retrieves the underlying clock that the presentation time source uses to generate its clock times.</para>
-    </summary>
-    <param name="ppClock">
-      <para>Receives a pointer to the clock's <see cref="IMFClock" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Retrieves the underlying clock that the presentation time source uses to generate its clock times.</summary>
+    <param name="ppClock">Receives a pointer to the clock's <see cref="IMFClock" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,49 +12,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_CLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_CLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>This time source does not expose an underlying clock.</para>
-          </description>
-        </item>
+          <description>This time source does not expose an underlying clock.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A presentation time source must support stopping, starting, pausing, and rate changes. However, in many cases the time source derives its clock times from a hardware clock or other device. The underlying clock is always running, and might not support rate changes.</para>
-      <para>Optionally, a time source can expose the underlying clock by implementing this method. The underlying clock is always running, even when the presentation time source is paused or stopped. (Therefore, the underlying clock returns the MFCLOCK_CHARACTERISTICS_FLAG_ALWAYS_RUNNING flag in the <see cref="IMFClock.GetClockCharacteristics" /> method).</para>
-      <para>The underlying clock is useful if you want to make decisions based on the clock times while the presentation clock is stopped or paused.</para>
-      <para>If the time source does not expose an underlying clock, the method returns MF_E_NO_CLOCK.</para>
-    </remarks>
-    <seealso cref="IMFPresentationTimeSource" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
   </member>
   <member name="IMFPresentationTimeSource">
-    <summary>
-      <para>Provides the clock times for the presentation clock.</para>
-    </summary>
-    <remarks>
-      <para>This interface is implemented by presentation time sources. A presentation time source is an object that provides the clock time for the presentation clock. For example, the audio renderer is a presentation time source. The rate at which the audio renderer consumes audio samples determines the clock time. If the audio format is 44100 samples per second, the audio renderer will report that one second has passed for every 44100 audio samples it plays. In this case, the timing is provided by the sound card.</para>
-      <para>To set the presentation time source on the presentation clock, call <see cref="IMFPresentationClock.SetTimeSource" /> with a pointer to the time source's <b>IMFPresentationTimeSource</b> interface.</para>
-      <para>A presentation time source must also implement the <see cref="IMFClockStateSink" /> interface. The presentation clock uses this interface to notify the time source when the clock state changes.</para>
-      <para>Media Foundation provides a presentation time source that is based on the system clock. To create this object, call the <see cref="MFCreateSystemTimeSource" /> function.</para>
-    </remarks>
-    <seealso cref="IMFClock" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
+    <summary>Provides the clock times for the presentation clock.</summary>
   </member>
 </doc>

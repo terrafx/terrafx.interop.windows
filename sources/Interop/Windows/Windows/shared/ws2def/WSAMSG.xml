@@ -3,198 +3,43 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WSAMSG">
-    <summary>
-      <para>The
-<b>WSAMSG</b> structure is used with the
-<a href="https://docs.microsoft.com//windows/win32/api/mswsock/nc-mswsock-lpfn_wsarecvmsg">LPFN_WSARECVMSG (WSARecvMsg)</a> and <see cref="WSASendMsg" /> functions to store address and optional control information about connected and unconnected sockets as well as an array of buffers used  to store message data.</para>
-    </summary>
-    <remarks>
-      <para>In the Microsoft Windows Software Development Kit (SDK), the version of this structure for use on Windows Vista is defined with the data type for the <b>dwBufferCount</b> and <b>dwFlags</b> members as a <b>ULONG</b>.  When compiling an application if the target platform is Windows Vista and later (<b>NTDDI_VERSION &gt;= NTDDI_LONGHORN, _WIN32_WINNT &gt;= 0x0600</b>, or <b>WINVER &gt;= 0x0600</b>), the data type for the <b>dwBufferCount</b> and <b>dwFlags</b> members is a <b>ULONG</b>.</para>
-      <para>
-        <b>Windows Server 2003 and Windows XP:  </b> When compiling an application, the data type for the <b>dwBufferCount</b> and <b>dwFlags</b> members is a <b>DWORD</b>.</para>
-      <para>On the Windows SDK released for Windows Vista and later, the <b>WSAMSG</b> structure is defined in the Ws2def.h header file. Note that the Ws2def.h header file is automatically included in Winsock2.h, and should never be used directly</para>
-      <para>If the datagram or control data is truncated during the transmission, the function being used in association with the
-<b>WSAMSG</b> structure returns SOCKET_ERROR and a call to the
-<see cref="WSAGetLastError" /> function returns WSAEMSGSIZE. It is up to the application to determine what was truncated by checking for MSG_TRUNC and/or MSG_CTRUNC flags.</para>
-      <h3>Use of the control member</h3>
-      <para>The following table summarizes the various uses of control data available for use in the <i>Control</i> member for IPv4 and IPv6.</para>
-      <para>|Protocol|cmsg_level|cmsg_type|Description|
-|-|-|-|-|
-|IPv4|IPPROTO_IP|IP_ORIGINAL_ARRIVAL_IF|Receives the original IPv4 arrival interface where the packet was received for datagram sockets. This control data is used by firewalls when a Teredo, 6to4, or ISATAP tunnel is used for IPv4 NAT traversal. The cmsg_data[] member in the <b>WSAMSG</b> structure is a <b>ULONG</b> that contains the IF_INDEX defined in the Ifdef.h header file.<br /><br />For more information, see the <a href="https://docs.microsoft.com//windows/desktop/WinSock/ipproto-ip-socket-options">IPPROTO_IP Socket Options</a> for the IP_ORIGINAL_ARRIVAL_IF socket option.<br /><br /><b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP: </b>The IP_ORIGINAL_ARRIVAL_IF <b>cmsg_type</b> is not supported.|
-|IPv4|IPPROTO_IP|<a href="https://docs.microsoft.com//windows/desktop/WinSock/ip-pktinfo">IP_PKTINFO</a>|Specifies/receives packet information for an IPv4 socket. For more information, see the <a href="https://docs.microsoft.com//windows/desktop/WinSock/ip-pktinfo">IP_PKTINFO</a> socket option.|
-|IPv4|IPPROTO_IP|IP_ECN|Specifies/receives ECN codepoint in the Type of Service (TOS) IPv4 header field. For more info, see <see cref="WSASetRecvIPEcn" />.|
-|IPv6|IPPROTO_IPV6|IPV6_DSTOPTS|Specifies/receives destination options.|
-|IPv6|IPPROTO_IPV6|IPV6_HOPLIMIT|Specifies/receives hop limit. For more information, see the <a href="https://docs.microsoft.com//windows/desktop/WinSock/ipproto-ipv6-socket-options">IPPROTO_IPV6 Socket Options</a> for the IPV6_HOPLIMIT socket option.|
-|IPv6|IPPROTO_IPV6|IPV6_HOPOPTS|Specifies/receives hop-by-hop options.|
-|IPv6|IPPROTO_IPV6|IPV6_NEXTHOP|Specifies next-hop address.|
-|IPv6|IPPROTO_IPV6|<a href="https://docs.microsoft.com//windows/desktop/WinSock/ipv6-pktinfo">IPV6_PKTINFO</a>|Specifies/receives packet information for an IPv6 socket. For more information, see the <a href="https://docs.microsoft.com//windows/desktop/WinSock/ipv6-pktinfo">IPV6_PKTINFO</a> socket option.|
-|IPv6|IPPROTO_IPV6|IPV6_RTHDR|Specifies/receives routing header.|
-|IPv6|IPPROTO_IPV6|IPV6_ECN|Specifies/receives ECN codepoint in the Traffic Class IPv6 header field. For more information, see <see cref="WSASetRecvIPEcn" />.|</para>
-      <para>Control data is made up of one or more control data objects, each beginning with a <b>WSACMSGHDR</b> structure, defined as the following.</para>
-      <code>struct wsacmsghdr {
-  UINT        cmsg_len;
-  INT         cmsg_level;
-  INT         cmsg_type;
-  /* followed by UCHAR cmsg_data[] */
-} WSACMSGHDR;
-</code>
-      <para>
-        <b>Note</b>  The transport, not the application, fills out the header information in the <b>WSACMSGHDR</b> structure. The application simply sets the needed socket options and provides the adequate buffer size.</para>
-      <para>The members of the <b>WSACMSGHDR</b> structure are as follows:</para>
-      <list type="table">
-        <listheader>
-          <description>Term</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>cmsg_len
-</description>
-          <description>
-            <para>The number of bytes of data starting from the beginning of the <b>WSACMSGHDR</b> to the end of data (excluding padding bytes that may follow data).</para>
-          </description>
-        </item>
-        <item>
-          <description>cmsg_level
-</description>
-          <description>
-            <para>The protocol that originated the control information.</para>
-          </description>
-        </item>
-        <item>
-          <description>cmsg_type
-</description>
-          <description>
-            <para>The protocol-specific type of control information.</para>
-          </description>
-        </item>
-      </list>
-      <para>The following macros are used to navigate the data objects:</para>
-      <code>
-#define LPCMSGHDR *WSA_CMSG_FIRSTHDR(LPWSAMSG msg);
-
-</code>
-      <para>Returns a pointer to the first control data object. Returns a <b>NULL</b> pointer if there is no control data in the
-<b>WSAMSG</b> structure, such as when the <b>Control</b> member is a <b>NULL</b> pointer.</para>
-      <code>
-#define LPCMSGHDR *WSA_CMSG_NXTHDR(LPWSAMSG msg, LPWSACMSGHDR cmsg);
-
-</code>
-      <para>Returns a pointer to the next control data object, or <b>NULL</b> if there are no more data objects. If the  <i>pcmsg</i> parameter is <b>NULL</b>, a pointer to the first control data object is returned.</para>
-      <code>
-#define UCHAR *WSA_CMSG_DATA(LPWSACMSGHDR pcmsg);
-
-</code>
-      <para>Returns a pointer to the first byte of data (referred to as the <b>cmsg_data</b> member, though it is not defined in the structure).</para>
-      <code>
-#define UINT WSA_CMSG_SPACE(UINT length);
-
-</code>
-      <para>Returns the total size of a control data object, given the amount of data. Used to allocate the correct amount of buffer space. Includes alignment padding.</para>
-      <code>
-#define UINT WSA_CMSG_LEN(UINT length);
-
-</code>
-      <para>Returns the value in <b>cmsg_len</b> given the amount of data. Includes alignment padding.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/ipv6-pktinfo">IPV6_PKTINFO</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/ip-pktinfo">IP_PKTINFO</seealso>
-    <seealso cref="SOCKET_ADDRESS" />
-    <seealso cref="WSABUF" />
-    <seealso cref="WSARecv" />
-    <seealso cref="WSARecvFrom" />
-    <seealso href="https://docs.microsoft.com//windows/win32/api/mswsock/nc-mswsock-lpfn_wsarecvmsg">LPFN_WSARECVMSG (WSARecvMsg)</seealso>
-    <seealso cref="WSASendMsg" />
+    <summary>The<b>WSAMSG</b> structure is used with the<a href="https://docs.microsoft.com//windows/win32/api/mswsock/nc-mswsock-lpfn_wsarecvmsg">LPFN_WSARECVMSG (WSARecvMsg)</a> and <see cref="WSASendMsg" /> functions to store address and optional control information about connected and unconnected sockets as well as an array of buffers used to store message data.</summary>
   </member>
   <member name="WSAMSG.name">
-    <summary>
-      <para>Type: <b>LPSOCKADDR</b></para>
-      <para>A pointer to a
-<see cref="SOCKET_ADDRESS" /> structure that stores information about the remote address. Used only with unconnected sockets.</para>
-    </summary>
+    <summary>A pointer to a<see cref="SOCKET_ADDRESS" /> structure that stores information about the remote address. Used only with unconnected sockets.</summary>
   </member>
   <member name="WSAMSG.namelen">
-    <summary>
-      <para>Type: <b>INT</b></para>
-      <para>The length, in bytes, of the
-<see cref="SOCKET_ADDRESS" /> structure pointed to in the <b>pAddr</b> member. Used only with unconnected sockets.</para>
-    </summary>
+    <summary>The length, in bytes, of the<see cref="SOCKET_ADDRESS" /> structure pointed to in the <b>pAddr</b> member. Used only with unconnected sockets.</summary>
   </member>
   <member name="WSAMSG.lpBuffers">
-    <summary>
-      <para>Type: <b>LPWSABUF</b></para>
-      <para>An array of
-<see cref="WSABUF" /> structures used to receive the message data. The capability of the <b>lpBuffers</b> member to contain multiple buffers enables the use of scatter/gather I/O.</para>
-    </summary>
+    <summary>An array of<see cref="WSABUF" /> structures used to receive the message data. The capability of the <b>lpBuffers</b> member to contain multiple buffers enables the use of scatter/gather I/O.</summary>
   </member>
   <member name="WSAMSG.dwBufferCount">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of buffers pointed to in the <b>lpBuffers</b> member.</para>
-    </summary>
+    <summary>The number of buffers pointed to in the <b>lpBuffers</b> member.</summary>
   </member>
   <member name="WSAMSG.Control">
-    <summary>
-      <para>Type: <b>WSABUF</b></para>
-      <para>A structure of
-<see cref="WSABUF" /> type used to specify optional control data. See Remarks.</para>
-    </summary>
+    <summary>A structure of<see cref="WSABUF" /> type used to specify optional control data. See Remarks.</summary>
   </member>
   <member name="WSAMSG.dwFlags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>One or more control flags, specified as the logical <b>OR</b> of values. The possible values for <b>dwFlags</b> member on input are defined in the Winsock2.h header file. The possible values for <b>dwFlags</b> member on output are defined in the Ws2def.h header file which is automatically included by the Winsock2.h header file.</para>
       <list type="table">
         <listheader>
           <description>Flags on input</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <b>MSG_PEEK</b>
-          </description>
-          <description>
-            <para>Peek at the incoming data. The data is copied into the buffer, but is not removed from the input queue. This flag is valid only for non-overlapped sockets.</para>
-          </description>
-        </item>
-      </list>
-      <list type="table">
         <listheader>
-          <description>Flag returned</description>
-          <description>Meaning</description>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSG_PEEK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Peek at the incoming data. The data is copied into the buffer, but is not removed from the input queue. This flag is valid only for non-overlapped sockets.</description>
         </listheader>
-        <item>
-          <description>
-            <b>MSG_BCAST</b>
-          </description>
-          <description>
-            <para>The datagram was received as a link-layer broadcast or with a destination IP address that is a broadcast address.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MSG_MCAST</b>
-          </description>
-          <description>
-            <para>The datagram was received with a destination IP address that is a multicast address.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MSG_TRUNC</b>
-          </description>
-          <description>
-            <para>The datagram was truncated. More data was present than the process allocated room for.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MSG_CTRUNC</b>
-          </description>
-          <description>
-            <para>The control (ancillary) data was truncated. More control data was present than the process allocated room for.</para>
-          </description>
-        </item>
-      </list>
-    </summary>
+      </list> <list type="table"><listheader><description>Flag returned</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>MSG_BCAST</b></term></listheader></list></description><description>The datagram was received as a link-layer broadcast or with a destination IP address that is a broadcast address.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>MSG_MCAST</b></term></listheader></list></description><description>The datagram was received with a destination IP address that is a multicast address.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>MSG_TRUNC</b></term></listheader></list></description><description>The datagram was truncated. More data was present than the process allocated room for.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>MSG_CTRUNC</b></term></listheader></list></description><description>The control (ancillary) data was truncated. More control data was present than the process allocated room for.</description></listheader></list></summary>
   </member>
 </doc>

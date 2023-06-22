@@ -3,13 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DESKBANDINFO">
-    <summary>
-      <para>Receives information about a band object. This structure is used with the deprecated <see cref="IDeskBand.GetBandInfo" /> method.</para>
-    </summary>
+    <summary>Receives information about a band object. This structure is used with the deprecated <see cref="IDeskBand.GetBandInfo" /> method.</summary>
   </member>
   <member name="DESKBANDINFO.dwMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The set of flags that determine which members of this structure are being requested by the caller. One or more of the following values:</para>
       <h4>DBIM_MINSIZE</h4>
       <para>
@@ -35,39 +32,25 @@
     </summary>
   </member>
   <member name="DESKBANDINFO.ptMinSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that receives the minimum size of the band object. The minimum width is given in the <b>POINTL</b> structure's <b>x</b> member and the minimum height is given in the <b>y</b> member.</para>
-    </summary>
+    <summary>A <see cref="POINTL" /> structure that receives the minimum size of the band object. The minimum width is given in the <b>POINTL</b> structure's <b>x</b> member and the minimum height is given in the <b>y</b> member.</summary>
   </member>
   <member name="DESKBANDINFO.ptMaxSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that receives the maximum size of the band object. The maximum height is given in the <b>POINTL</b> structure's <b>y</b> member and the <b>x</b> member is ignored. If the band object has no limit for its maximum height, (LONG)-1 should be used.</para>
-    </summary>
+    <summary>A <see cref="POINTL" /> structure that receives the maximum size of the band object. The maximum height is given in the <b>POINTL</b> structure's <b>y</b> member and the <b>x</b> member is ignored. If the band object has no limit for its maximum height, (LONG)-1 should be used.</summary>
   </member>
   <member name="DESKBANDINFO.ptIntegral">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that receives the sizing step value (increment) in which the band object is resized. The vertical step value is given in the <b>POINTL</b> structure's <b>y</b> member and the <b>x</b> member is ignored.</para>
+      <para>A <see cref="POINTL" /> structure that receives the sizing step value (increment) in which the band object is resized. The vertical step value is given in the <b>POINTL</b> structure's <b>y</b> member and the <b>x</b> member is ignored.</para>
       <para>The <b>dwModeFlags</b> member must contain the DBIMF_VARIABLEHEIGHT flag; otherwise, <b>ptIntegral</b> is ignored.</para>
     </summary>
   </member>
   <member name="DESKBANDINFO.ptActual">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that receives the ideal size of the band object. The ideal width is given in the <b>POINTL</b> structure's <b>x</b> member and the ideal height is given in the <b>y</b> member. The band container attempts to use these values, but the band is not guaranteed to be this size.</para>
-    </summary>
+    <summary>A <see cref="POINTL" /> structure that receives the ideal size of the band object. The ideal width is given in the <b>POINTL</b> structure's <b>x</b> member and the ideal height is given in the <b>y</b> member. The band container attempts to use these values, but the band is not guaranteed to be this size.</summary>
   </member>
   <member name="DESKBANDINFO.wszTitle">
-    <summary>
-      <para>Type: <b>WCHAR[256]</b></para>
-      <para>A <b>WCHAR</b> buffer that receives the title of the band.</para>
-    </summary>
+    <summary>A <b>WCHAR</b> buffer that receives the title of the band.</summary>
   </member>
   <member name="DESKBANDINFO.dwModeFlags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>A value that receives a set of flags that specify the mode of operation for the band object. One or more of the following values:</para>
       <h4>DBIMF_NORMAL</h4>
       <para>The band uses default properties. The other mode flags modify this flag.</para>
@@ -110,9 +93,6 @@
     </summary>
   </member>
   <member name="DESKBANDINFO.crBkgnd">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure that receives the background color of the band. The <b>dwModeFlags</b> member must contain the <b>DBIMF_BKCOLOR</b> flag; otherwise, <b>crBkgnd</b> is ignored.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure that receives the background color of the band. The <b>dwModeFlags</b> member must contain the <b>DBIMF_BKCOLOR</b> flag; otherwise, <b>crBkgnd</b> is ignored.</summary>
   </member>
 </doc>

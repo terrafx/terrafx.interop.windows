@@ -3,42 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIAdapter1.GetDesc1">
-    <summary>
-      <para>Gets a DXGI 1.1 description of an adapter (or video card).</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="DXGI_ADAPTER_DESC1" />*</b></para>
-      <para>A pointer to a <see cref="DXGI_ADAPTER_DESC1" /> structure that describes the adapter.
-This parameter must not be <b>NULL</b>. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <b>GetDesc1</b> returns zeros for the PCI ID in the <b>VendorId</b>, <b>DeviceId</b>, <b>SubSysId</b>, and <b>Revision</b> members of <b>DXGI_ADAPTER_DESC1</b> and “Software Adapter” for the description string in the <b>Description</b> member.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns S_OK if successful; otherwise, returns E_INVALIDARG if the <i>pDesc</i> parameter is <b>NULL</b>.</para>
-    </returns>
-    <remarks>
-      <para>This method is not supported by DXGI 1.0, which shipped in Windows Vista and Windows Server 2008. DXGI 1.1 support is required, which is available on
-Windows 7, Windows Server 2008 R2, and as an update to Windows Vista with Service Pack 2 (SP2) (<a href="https://support.microsoft.com/kb/971644">KB 971644</a>) and Windows Server 2008 (<a href="https://support.microsoft.com/kb/971512/">KB 971512</a>).</para>
-      <para>Use the <b>GetDesc1</b> method to get a DXGI 1.1 description of an adapter.  To get a DXGI 1.0 description, use the <see cref="IDXGIAdapter" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIAdapter1" />
-    <seealso cref="IDXGIAdapter.GetDesc" />
+    <summary>Gets a DXGI 1.1 description of an adapter (or video card).</summary>
+    <param name="pDesc">A pointer to a <see cref="DXGI_ADAPTER_DESC1" /> structure that describes the adapter.<br />This parameter must not be <b>NULL</b>. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <b>GetDesc1</b> returns zeros for the PCI ID in the <b>VendorId</b>, <b>DeviceId</b>, <b>SubSysId</b>, and <b>Revision</b> members of <b>DXGI_ADAPTER_DESC1</b> and “Software Adapter” for the description string in the <b>Description</b> member.</param>
+    <returns>Returns S_OK if successful; otherwise, returns E_INVALIDARG if the <i>pDesc</i> parameter is <b>NULL</b>.</returns>
   </member>
   <member name="IDXGIAdapter1">
-    <summary>
-      <para>The <b>IDXGIAdapter1</b> interface represents a display sub-system (including one or more GPU's, DACs and video memory).</para>
-    </summary>
-    <remarks>
-      <para>This interface is not supported by DXGI 1.0, which shipped in Windows Vista and Windows Server 2008. DXGI 1.1 support is required, which is available on
-Windows 7, Windows Server 2008 R2, and as an update to Windows Vista with Service Pack 2 (SP2) (<a href="https://support.microsoft.com/kb/971644">KB 971644</a>) and Windows Server 2008 (<a href="https://support.microsoft.com/kb/971512/">KB 971512</a>).</para>
-      <para>A display sub-system is often referred to as a video card, however, on some machines the display sub-system is part of the mother board.</para>
-      <para>To enumerate the display sub-systems, use <see cref="IDXGIFactory1.EnumAdapters1" />. To get an interface to the adapter for a
-particular device, use <see cref="IDXGIDevice.GetAdapter" />. To create a software adapter, use <see cref="IDXGIFactory.CreateSoftwareAdapter" />.</para>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIAdapter" />
+    <summary>The <b>IDXGIAdapter1</b> interface represents a display sub-system (including one or more GPU's, DACs and video memory).</summary>
   </member>
 </doc>

@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRRESTOREDC">
-    <summary>
-      <para>The <b>EMRRESTOREDC</b> structure contains members for the <b>RestoreDC</b> enhanced metafile record.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="RestoreDC" />
+    <summary>The <b>EMRRESTOREDC</b> structure contains members for the <b>RestoreDC</b> enhanced metafile record.</summary>
   </member>
   <member name="EMRRESTOREDC.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRRESTOREDC.iRelative">
-    <summary>
-      <para>Relative instance to restore.</para>
-    </summary>
+    <summary>Relative instance to restore.</summary>
   </member>
 </doc>

@@ -3,29 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_OFFER_RESOURCE_PRIORITY">
-    <summary>
-      <para>Identifies the importance of a resource’s content when you call the  <see cref="IDXGIDevice2.OfferResources" /> method to offer the resource.</para>
-    </summary>
-    <remarks>
-      <para>Priority determines how likely the operating system is to discard an offered resource.  Resources offered with lower priority are discarded first.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
-    <seealso cref="IDXGIDevice2.OfferResources" />
-    <seealso cref="IDXGIDevice2.ReclaimResource" />
+    <summary>Identifies the importance of a resource’s content when you call the <see cref="IDXGIDevice2.OfferResources" /> method to offer the resource.</summary>
   </member>
   <member name="DXGI_OFFER_RESOURCE_PRIORITY.DXGI_OFFER_RESOURCE_PRIORITY_LOW">
-    <summary>
-      <para>The resource is low priority. The operating system discards a low priority resource before other offered resources with higher priority. It is a good programming practice to mark a resource as low priority if it has no useful content.</para>
-    </summary>
+    <summary>The resource is low priority. The operating system discards a low priority resource before other offered resources with higher priority. It is a good programming practice to mark a resource as low priority if it has no useful content.</summary>
   </member>
   <member name="DXGI_OFFER_RESOURCE_PRIORITY.DXGI_OFFER_RESOURCE_PRIORITY_NORMAL">
-    <summary>
-      <para>The resource is normal priority. You mark a resource as normal priority if it has  content that is easy to regenerate.</para>
-    </summary>
+    <summary>The resource is normal priority. You mark a resource as normal priority if it has content that is easy to regenerate.</summary>
   </member>
   <member name="DXGI_OFFER_RESOURCE_PRIORITY.DXGI_OFFER_RESOURCE_PRIORITY_HIGH">
-    <summary>
-      <para>The resource is high priority. The operating system discards other offered resources with lower priority before it discards a high priority resource.  You mark a resource as high priority if it has useful content that is difficult to regenerate.</para>
-    </summary>
+    <summary>The resource is high priority. The operating system discards other offered resources with lower priority before it discards a high priority resource. You mark a resource as high priority if it has useful content that is difficult to regenerate.</summary>
   </member>
 </doc>

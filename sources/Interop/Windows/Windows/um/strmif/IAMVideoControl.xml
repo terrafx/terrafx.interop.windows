@@ -4,136 +4,67 @@
 <doc>
   <member name="IAMVideoControl.GetCaps">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCaps</code> method retrieves the capabilities of the underlying hardware.</para>
     </summary>
-    <param name="pPin">
-      <para>Pointer to the pin to query capabilities from.</para>
-    </param>
-    <param name="pCapsFlags">
-      <para>Pointer to a value representing a combination of the flags from the <see cref="VideoControlFlags" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <remarks>
-      <para>Possible capabilities include one or more of the following: flipping the picture horizontally, flipping the picture vertically, enabling external triggers, and simulating external triggers.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMVideoControl Interface" />
+    <param name="pPin">Pointer to the pin to query capabilities from.</param>
+    <param name="pCapsFlags">Pointer to a value representing a combination of the flags from the <see cref="VideoControlFlags" /> enumeration.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IAMVideoControl.GetCurrentActualFrameRate">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentActualFrameRate</code> method retrieves the actual frame rate, expressed as a frame duration in 100-nanosecond units. USB (Universal Serial Bus) and IEEE 1394 cameras may provide lower frame rates than requested because of bandwidth availability. This is only available during video streaming.</para>
     </summary>
-    <param name="pPin">
-      <para>Pointer to the pin to retrieve the frame rate from.</para>
-    </param>
-    <param name="ActualFrameRate">
-      <para>Pointer to the frame rate in frame duration in 100-nanosecond units.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMVideoControl Interface" />
+    <param name="pPin">Pointer to the pin to retrieve the frame rate from.</param>
+    <param name="ActualFrameRate">Pointer to the frame rate in frame duration in 100-nanosecond units.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IAMVideoControl.GetFrameRateList">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetFrameRateList</code> method retrieves a list of available frame rates.</para>
     </summary>
-    <param name="pPin">
-      <para>Pointer to the pin to query for the list of frame rates.</para>
-    </param>
-    <param name="iIndex">
-      <para>Index of the format to query for frame rates. This index corresponds to the order in which formats are enumerated by <see cref="VIDEO_STREAM_CONFIG_CAPS" /> structures returned by <see cref="IAMStreamConfig.GetNumberOfCapabilities" />) minus one.</para>
-    </param>
-    <param name="Dimensions">
-      <para>Frame image size (width and height) in pixels.</para>
-    </param>
-    <param name="ListSize">
-      <para>Pointer to the number of elements in the list of frame rates.</para>
-    </param>
-    <param name="FrameRates">
-      <para>Address of a pointer to an array of frame rates in 100-nanosecond units. Can be <b>NULL</b> if you only need <i>ListSize</i>.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <remarks>
-      <para>The caller is responsible for freeing the memory through a call to <b>CoTaskMemFree</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMVideoControl Interface" />
-    <seealso cref="VIDEO_STREAM_CONFIG_CAPS Structure" />
+    <param name="pPin">Pointer to the pin to query for the list of frame rates.</param>
+    <param name="iIndex">Index of the format to query for frame rates. This index corresponds to the order in which formats are enumerated by <see cref="VIDEO_STREAM_CONFIG_CAPS" /> structures returned by <see cref="IAMStreamConfig.GetNumberOfCapabilities" />) minus one.</param>
+    <param name="Dimensions">Frame image size (width and height) in pixels.</param>
+    <param name="ListSize">Pointer to the number of elements in the list of frame rates.</param>
+    <param name="FrameRates">Address of a pointer to an array of frame rates in 100-nanosecond units. Can be <b>NULL</b> if you only need <i>ListSize</i>.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IAMVideoControl.GetMaxAvailableFrameRate">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetMaxAvailableFrameRate</code> method retrieves the maximum frame rate currently available, based on bus bandwidth usage for connections, such as USB and IEEE 1394, where the maximum frame rate may be limited by bandwidth availability.</para>
     </summary>
-    <param name="pPin">
-      <para>Pointer to the pin to retrieve the maximum frame rate from.</para>
-    </param>
-    <param name="iIndex">
-      <para>Index of the format to query for maximum frame rate. This index corresponds to the order in which formats are enumerated by <see cref="IAMStreamConfig.GetStreamCaps" />. The value must range between zero and the number of supported <b>VIDEO_STREAM_CONFIG_CAPS</b> structures returned by <see cref="IAMStreamConfig.GetNumberOfCapabilities" />) minus one.</para>
-    </param>
-    <param name="Dimensions">
-      <para>Frame image size (width and height) in pixels.</para>
-    </param>
-    <param name="MaxAvailableFrameRate">
-      <para>Pointer to the maximum available frame rate. The frame rate is expressed as frame duration in 100-nanosecond units.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMVideoControl Interface" />
-    <seealso cref="VIDEO_STREAM_CONFIG_CAPS Structure" />
+    <param name="pPin">Pointer to the pin to retrieve the maximum frame rate from.</param>
+    <param name="iIndex">Index of the format to query for maximum frame rate. This index corresponds to the order in which formats are enumerated by <see cref="IAMStreamConfig.GetStreamCaps" />. The value must range between zero and the number of supported <b>VIDEO_STREAM_CONFIG_CAPS</b> structures returned by <see cref="IAMStreamConfig.GetNumberOfCapabilities" />) minus one.</param>
+    <param name="Dimensions">Frame image size (width and height) in pixels.</param>
+    <param name="MaxAvailableFrameRate">Pointer to the maximum available frame rate. The frame rate is expressed as frame duration in 100-nanosecond units.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IAMVideoControl.GetMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetMode</code> method retrieves the video control mode of operation.</para>
     </summary>
-    <param name="pPin">
-      <para>Pointer to the pin to retrieve the video control mode from.</para>
-    </param>
-    <param name="Mode">
-      <para>Pointer to a value representing a combination of the flags from the <see cref="VideoControlFlags" /> enumeration, which specify the video control mode.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <remarks>
-      <para>Possible modes of operation include one or more of the following: flipping the picture horizontally, flipping the picture vertically, enabling external triggers, and simulating external triggers.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMVideoControl Interface" />
+    <param name="pPin">Pointer to the pin to retrieve the video control mode from.</param>
+    <param name="Mode">Pointer to a value representing a combination of the flags from the <see cref="VideoControlFlags" /> enumeration, which specify the video control mode.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IAMVideoControl.SetMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetMode</code> method sets the video control mode of operation.</para>
     </summary>
-    <param name="pPin">
-      <para>Pointer to the pin to set the video control mode on.</para>
-    </param>
-    <param name="Mode">
-      <para>Value specifying a combination of the flags from the <see cref="VideoControlFlags" /> enumeration to set the video control mode.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <remarks>
-      <para>Possible modes of operation include one or more of the following: flipping the picture horizontally, flipping the picture vertically, enabling external triggers, and simulating external triggers.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMVideoControl Interface" />
+    <param name="pPin">Pointer to the pin to set the video control mode on.</param>
+    <param name="Mode">Value specifying a combination of the flags from the <see cref="VideoControlFlags" /> enumeration to set the video control mode.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IAMVideoControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IAMVideoControl</b> interface controls certain video capture operations such as enumerating available frame rates and image orientation.</para>
     </summary>
-    <remarks>
-      <para>For Windows Driver Model (WDM) devices, the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wdm-video-capture-filter">WDM Video Capture Filter</a> automatically exposes this interface if the WDM driver supports the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/propsetid-vidcap-videocontrol">PROPSETID_VIDCAP_VIDEOCONTROL</a> property set. For more information, see the <a href="https://docs.microsoft.com//windows-hardware/drivers/gettingstarted/">Windows Driver Kit (WDK)</a> documentation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
   </member>
 </doc>

@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SPTEXT">
-    <summary>
-      <para>Specifies the type of descriptive text being provided to an <see cref="IActionProgress" /> interface.</para>
-    </summary>
-    <seealso cref="IActionProgress" />
+    <summary>Specifies the type of descriptive text being provided to an <see cref="IActionProgress" /> interface.</summary>
   </member>
   <member name="SPTEXT.SPTEXT_ACTIONDESCRIPTION">
-    <summary>
-      <para>The text is a high level, short description.</para>
-    </summary>
+    <summary>The text is a high level, short description.</summary>
   </member>
   <member name="SPTEXT.SPTEXT_ACTIONDETAIL">
-    <summary>
-      <para>The text is a detailed description.</para>
-    </summary>
+    <summary>The text is a detailed description.</summary>
   </member>
 </doc>

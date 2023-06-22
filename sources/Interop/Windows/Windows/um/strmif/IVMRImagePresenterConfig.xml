@@ -4,38 +4,28 @@
 <doc>
   <member name="IVMRImagePresenterConfig.GetRenderingPrefs">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetRenderingPrefs</code> method retrieves the current rendering preferences from the VMR-7 filter's allocator-presenter.</para>
       <para>The VMR-7 filter's <see cref="IVMRFilterConfig.GetRenderingPrefs" /> method calls through to this method.</para>
     </summary>
-    <param name="dwRenderFlags">
-      <para>Receives a bitwise OR of flags from the <see cref="VMRRenderPrefs" /> enumeration, indicating the current rendering settings on the allocator-presenter.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <seealso cref="IVMRImagePresenterConfig Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+    <param name="dwRenderFlags">Receives a bitwise OR of flags from the <see cref="VMRRenderPrefs" /> enumeration, indicating the current rendering settings on the allocator-presenter.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IVMRImagePresenterConfig.SetRenderingPrefs">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetRenderingPrefs</code> method sets the rendering preferences on the VMR-7 filter's allocator-presenter.</para>
       <para>The VMR-7 filter's <see cref="IVMRFilterConfig.SetRenderingPrefs" /> method calls through to this method.</para>
     </summary>
-    <param name="dwRenderFlags">
-      <para>A bitwise OR combination of <see cref="VMRRenderPrefs" /> flags that will be used to configure the allocator-presenter.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <seealso cref="IVMRImagePresenterConfig Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+    <param name="dwRenderFlags">A bitwise OR combination of <see cref="VMRRenderPrefs" /> flags that will be used to configure the allocator-presenter.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IVMRImagePresenterConfig">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IVMRImagePresenterConfig</code> interface provides methods for setting the rendering preferences on the allocator-presenter used by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7).</para>
       <para>Applications should not use this interface directly. The VMR-7 filter's <b>IVMRFilterConfig</b> interface calls methods on this interface. The default allocator-presenter implements this interface. Custom allocator-presenters can also expose this interface.</para>
       <para>For the VMR-9, use the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/vmr9/nn-vmr9-ivmrimagepresenterconfig9">IVMRImagePresenterConfig9</a> interface.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
 </doc>

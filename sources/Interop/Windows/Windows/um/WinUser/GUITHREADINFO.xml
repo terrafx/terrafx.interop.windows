@@ -3,158 +3,116 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GUITHREADINFO">
-    <summary>
-      <para>Contains information about a GUI thread.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with the <see cref="GetGUIThreadInfo" /> function to retrieve information about the active window or a specified GUI thread.</para>
-    </remarks>
-    <seealso cref="GetGUIThreadInfo" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/windows">Windows</seealso>
+    <summary>Contains information about a GUI thread.</summary>
   </member>
   <member name="GUITHREADINFO.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of this structure, in bytes. The caller must set this member to <code>sizeof(GUITHREADINFO)</code>.</para>
-    </summary>
+    <summary>The size of this structure, in bytes. The caller must set this member to <code>sizeof(GUITHREADINFO)</code>.</summary>
   </member>
   <member name="GUITHREADINFO.flags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The thread state. This member can be one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>GUI_CARETBLINKING</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The caret's blink state. This bit is set if the caret is visible.</para>
-          </description>
-        </item>
-        <item>
+          <description>The caret's blink state. This bit is set if the caret is visible.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>GUI_INMENUMODE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The thread's menu state. This bit is set if the thread is in menu mode.</para>
-          </description>
-        </item>
-        <item>
+          <description>The thread's menu state. This bit is set if the thread is in menu mode.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>GUI_INMOVESIZE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The thread's move state. This bit is set if the thread is in a move or size loop.</para>
-          </description>
-        </item>
-        <item>
+          <description>The thread's move state. This bit is set if the thread is in a move or size loop.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>GUI_POPUPMENUMODE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The thread's pop-up menu state. This bit is set if the thread has an active pop-up menu.</para>
-          </description>
-        </item>
-        <item>
+          <description>The thread's pop-up menu state. This bit is set if the thread has an active pop-up menu.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>GUI_SYSTEMMENUMODE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The thread's system menu state. This bit is set if the thread is in a system menu mode.</para>
-          </description>
-        </item>
+          <description>The thread's system menu state. This bit is set if the thread is in a system menu mode.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="GUITHREADINFO.hwndActive">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the active window within the thread.</para>
-    </summary>
+    <summary>A handle to the active window within the thread.</summary>
   </member>
   <member name="GUITHREADINFO.hwndFocus">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that has the keyboard focus.</para>
-    </summary>
+    <summary>A handle to the window that has the keyboard focus.</summary>
   </member>
   <member name="GUITHREADINFO.hwndCapture">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that has captured the mouse.</para>
-    </summary>
+    <summary>A handle to the window that has captured the mouse.</summary>
   </member>
   <member name="GUITHREADINFO.hwndMenuOwner">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that owns any active menus.</para>
-    </summary>
+    <summary>A handle to the window that owns any active menus.</summary>
   </member>
   <member name="GUITHREADINFO.hwndMoveSize">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window in a move or size loop.</para>
-    </summary>
+    <summary>A handle to the window in a move or size loop.</summary>
   </member>
   <member name="GUITHREADINFO.hwndCaret">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that is displaying the caret.</para>
-    </summary>
+    <summary>A handle to the window that is displaying the caret.</summary>
   </member>
   <member name="GUITHREADINFO.rcCaret">
-    <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>The caret's bounding rectangle, in client coordinates, relative to the window specified by the <b>hwndCaret</b> member.</para>
-    </summary>
+    <summary>The caret's bounding rectangle, in client coordinates, relative to the window specified by the <b>hwndCaret</b> member.</summary>
   </member>
 </doc>

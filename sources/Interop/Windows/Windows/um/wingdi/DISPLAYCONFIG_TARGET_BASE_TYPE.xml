@@ -3,15 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPLAYCONFIG_TARGET_BASE_TYPE">
-    <summary>
-      <para>Specifies base output technology info for a given target ID.</para>
-    </summary>
-    <remarks>
-      <para>For a Miracast display device, a call to the <see cref="DisplayConfigGetDeviceInfo" />  function always returns  a value of <see cref="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY" />.<b>DISPLAYCONFIG_OUTPUT_TECHNOLOGY_MIRACAST</b>, regardless of what the Miracast sink reports as the connector type.</para>
-    </remarks>
-    <seealso cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" />
-    <seealso cref="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY" />
-    <seealso cref="DisplayConfigGetDeviceInfo" />
+    <summary>Specifies base output technology info for a given target ID.</summary>
   </member>
   <member name="DISPLAYCONFIG_TARGET_BASE_TYPE.header">
     <summary>
@@ -20,8 +12,6 @@
     </summary>
   </member>
   <member name="DISPLAYCONFIG_TARGET_BASE_TYPE.baseOutputTechnology">
-    <summary>
-      <para>The base output technology, given as a constant value of the <see cref="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY" /> enumeration, of the adapter and the target specified by the <b>header</b> member. See Remarks.</para>
-    </summary>
+    <summary>The base output technology, given as a constant value of the <see cref="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY" /> enumeration, of the adapter and the target specified by the <b>header</b> member. See Remarks.</summary>
   </member>
 </doc>

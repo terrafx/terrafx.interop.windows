@@ -4,207 +4,88 @@
 <doc>
   <member name="ICaptureGraphBuilder.AllocCapFile">
     <summary>
-      <para>
-        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</para>
-      <para>Preallocates a capture file to a specified size.</para>
-    </summary>
-    <param name="lpstr">
-      <para>Pointer to a wide-character string containing the name of the file to create or resize.</para>
-    </param>
-    <param name="dwlSize">
-      <para>Size, in bytes, of the file to be allocated.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>The call will fail if the file is read-only. For best capture results, always capture to a defragmented, preallocated capture file that is larger than the size of the capture data.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="ICaptureGraphBuilder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</div>Preallocates a capture file to a specified size.</summary>
+    <param name="lpstr">Pointer to a wide-character string containing the name of the file to create or resize.</param>
+    <param name="dwlSize">Size, in bytes, of the file to be allocated.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="ICaptureGraphBuilder.ControlStream">
     <summary>
-      <para>
-        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</para>
-      <para>Sends stream control messages to the pin of the specified category on one or more capture filters in a graph.</para>
-    </summary>
-    <param name="pCategory">
-      <para>Pointer to a <b>GUID</b> specifying the output pin category. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a> for a list of all pin categories. This value cannot be <b>NULL</b>.</para>
-    </param>
-    <param name="pFilter">
-      <para>Pointer to an <see cref="IBaseFilter" /> interface on the filter to control. Specifying <b>NULL</b> controls all capture filters in the graph. You will get one notification for each capture filter.</para>
-    </param>
-    <param name="pstart">
-      <para>Pointer to the start time for capture. <b>NULL</b> means start now. <b>MAX_TIME</b> means cancel previous request, or take no action if there is no previous request.</para>
-    </param>
-    <param name="pstop">
-      <para>Pointer to the stop time for capture. <b>NULL</b> means stop now. <b>MAX_TIME</b> means cancel previous request, or take no action if there is no previous request.</para>
-    </param>
-    <param name="wStartCookie">
-      <para>Specifies a particular value to be sent when the start occurs.</para>
-    </param>
-    <param name="wStopCookie">
-      <para>Specifies a particular value to be sent when the stop occurs.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</div>Sends stream control messages to the pin of the specified category on one or more capture filters in a graph.</summary>
+    <param name="pCategory">Pointer to a <b>GUID</b> specifying the output pin category. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a> for a list of all pin categories. This value cannot be <b>NULL</b>.</param>
+    <param name="pFilter">Pointer to an <see cref="IBaseFilter" /> interface on the filter to control. Specifying <b>NULL</b> controls all capture filters in the graph. You will get one notification for each capture filter.</param>
+    <param name="pstart">Pointer to the start time for capture. <b>NULL</b> means start now. <b>MAX_TIME</b> means cancel previous request, or take no action if there is no previous request.</param>
+    <param name="pstop">Pointer to the stop time for capture. <b>NULL</b> means stop now. <b>MAX_TIME</b> means cancel previous request, or take no action if there is no previous request.</param>
+    <param name="wStartCookie">Specifies a particular value to be sent when the start occurs.</param>
+    <param name="wStopCookie">Specifies a particular value to be sent when the stop occurs.</param>
     <returns>
       <para>Returns S_FALSE if the stop notification is sent before the last sample sent by the capture filter is rendered, otherwise returns S_OK.</para>
       <para>If this method returns S_FALSE, the application might want to wait before stopping the filter graph to allow all samples to pass through the graph and be rendered. Otherwise, samples might be lost.</para>
       <para>If there are no pins matching the description you provide, or if stream control cannot be supported on all of the indicated pins, this function will return a failure code.</para>
     </returns>
-    <remarks>
-      <para>Use this method for frame-accurate capture, or for individual control of capture and preview. For example, you could turn off writing of the captured image to disk if you only want to preview the captured image.</para>
-      <para>This method uses the <see cref="IAMStreamControl" /> interface on the pins.</para>
-      <para>This method sends one notification for each filter found with a pin of the specified category.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="ICaptureGraphBuilder Interface" />
   </member>
   <member name="ICaptureGraphBuilder.CopyCaptureFile">
     <summary>
-      <para>
-        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</para>
-      <para>Copies the valid media data from the preallocated capture file.</para>
-    </summary>
-    <param name="lpwstrOld">
-      <para>Pointer to a Unicode™ string containing the source file name.</para>
-    </param>
-    <param name="lpwstrNew">
-      <para>Pointer to a Unicode string containing the destination file name. Valid data is copied to this file.</para>
-    </param>
-    <param name="fAllowEscAbort">
-      <para>Value indicating whether pressing the ESC key will cancel the copy operation. <b>TRUE</b> indicates that it will; <b>FALSE</b> indicates that this method will ignore that keystroke.</para>
-    </param>
-    <param name="pCallback">
-      <para>Optional pointer to an <see cref="IAMCopyCaptureFileProgress" /> show the progress (percentage complete) of the copy operation.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>The new file will contain only valid data and therefore can be much shorter than the source file. Typically, you will always capture to the same huge preallocated file and use this method to copy the data you want to save from each capture to a new file.</para>
-      <para>If you specify <i>pCallback</i>, the <see cref="Progress" /> method on the <see cref="IAMCopyCaptureFileProgress" /> interface will be called periodically with an integer between 0 and 100 representing the percentage complete.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="ICaptureGraphBuilder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</div>Copies the valid media data from the preallocated capture file.</summary>
+    <param name="lpwstrOld">Pointer to a Unicode™ string containing the source file name.</param>
+    <param name="lpwstrNew">Pointer to a Unicode string containing the destination file name. Valid data is copied to this file.</param>
+    <param name="fAllowEscAbort">Value indicating whether pressing the ESC key will cancel the copy operation. <b>TRUE</b> indicates that it will; <b>FALSE</b> indicates that this method will ignore that keystroke.</param>
+    <param name="pCallback">Optional pointer to an <see cref="IAMCopyCaptureFileProgress" /> show the progress (percentage complete) of the copy operation.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="ICaptureGraphBuilder.FindInterface">
     <summary>
-      <para>
-        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</para>
-      <para>Looks for the specified interface on the filter, upstream and downstream from the filter, and, optionally, only on the output pin of the given category.</para>
-    </summary>
-    <param name="pCategory">
-      <para>Pointer to a GUID specifying the output pin category. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a> for a list of all pin categories. <b>NULL</b> indicates search all the output pins regardless of category.</para>
-    </param>
-    <param name="pf">
-      <para>Pointer to the <see cref="IBaseFilter" /> interface of the filter.</para>
-    </param>
-    <param name="riid">
-      <para>Reference ID of the desired interface.</para>
-    </param>
-    <param name="ppint">
-      <para>Address of a void pointer. If the interface was found, this method initializes <i>ppint</i> so that it contains the address of a pointer to the found interface. Call the <b>Release</b> method to decrement the reference count when you're done with the interface.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>This method looks for the interface on the filter, and upstream and downstream of the filter, unless a category is given. If a category is given, it only looks downstream of the output pin of that category. It can be used to find interfaces on renderers, multiplexers, TV tuners, crossbars, and so forth.</para>
-      <para>If <i>pCategory</i> equals &amp;LOOK_UPSTREAM_ONLY, then the graph builder will look upstream of the filter given in parameter <i>pf</i>, but not on the filter itself, nor downstream of the filter.</para>
-      <para>If <i>pCategory</i> equals &amp;LOOK_DOWNSTREAM_ONLY, then the graph builder will look downstream of the filter given in parameter <i>pf</i>, but not on the filter itself, nor upstream of the filter.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="ICaptureGraphBuilder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</div>Looks for the specified interface on the filter, upstream and downstream from the filter, and, optionally, only on the output pin of the given category.</summary>
+    <param name="pCategory">Pointer to a GUID specifying the output pin category. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a> for a list of all pin categories. <b>NULL</b> indicates search all the output pins regardless of category.</param>
+    <param name="pf">Pointer to the <see cref="IBaseFilter" /> interface of the filter.</param>
+    <param name="riid">Reference ID of the desired interface.</param>
+    <param name="ppint">Address of a void pointer. If the interface was found, this method initializes <i>ppint</i> so that it contains the address of a pointer to the found interface. Call the <b>Release</b> method to decrement the reference count when you're done with the interface.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="ICaptureGraphBuilder.GetFiltergraph">
     <summary>
-      <para>
-        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</para>
-      <para>Retrieves the filter graph that the builder is using.</para>
-    </summary>
-    <param name="ppfg">
-      <para>Address of a pointer to an <see cref="IGraphBuilder" /> interface.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>This method increments the reference count on the <see cref="IGraphBuilder" /> interface; be sure to decrement the reference count on <b>IGraphBuilder</b> by calling the <b>Release</b> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="ICaptureGraphBuilder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</div>Retrieves the filter graph that the builder is using.</summary>
+    <param name="ppfg">Address of a pointer to an <see cref="IGraphBuilder" /> interface.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="ICaptureGraphBuilder.RenderStream">
     <summary>
-      <para>
-        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</para>
-      <para>Connects a source filter's pin, of an optionally specified category, to the rendering filter, and optionally through another filter.</para>
-    </summary>
-    <param name="pCategory">
-      <para>Pointer to a GUID specifying which output pin of the source filter to connect. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a> for a list of all pin categories. <b>NULL</b> indicates render the only output pin, regardless of category.</para>
-    </param>
-    <param name="pSource">
-      <para>Pointer to an <see cref="IBaseFilter" /> or an <see cref="IPin" /> interface representing either the source filter or an output pin. Source filters are typically a file source filter, such as an AVI file source filter or a capture filter.</para>
-    </param>
-    <param name="pfCompressor">
-      <para>Pointer to an <see cref="IBaseFilter" /> interface representing the optional compression filter.</para>
-    </param>
-    <param name="pfRenderer">
-      <para>Pointer to an <see cref="IBaseFilter" /> interface representing the renderer. You can use the <i>ppf</i> (multiplexer) parameter from <see cref="ICaptureGraphBuilder.SetOutputFileName" /> to supply this value.</para>
-    </param>
-    <returns>
-      <para>Returns VFW_S_NOPREVIEWPIN if the capture filter has a capture pin but no preview pin, and you call <code>RenderStream</code> with the &amp;PIN_CATEGORY_PREVIEW category on the capture pin. In this case, <code>RenderStream</code> will render the preview pin of the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/smart-tee-filter">Smart Tee</a> filter. For more information, see Remarks.</para>
-    </returns>
-    <remarks>
-      <para>If you specify a non-<b>NULL</b><a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a> GUID for <i>pCategory</i> and a capture filter for <i>pSource</i>, this method instantiates and connects additional required upstream filters, such as TV tuners and crossbars. It then renders the capture pin of <i>pSource</i>.</para>
-      <para>If <i>pSource</i> is a pin, then specify <b>NULL</b> for <i>pCategory</i> and this method renders the stream from that pin.</para>
-      <para>If the source filter has only one output pin, specify <b>NULL</b> for <i>pCategory</i>.</para>
-      <para>
-        <i>pSource</i>, <i>pfCompressor</i>, and <i>pfRenderer</i> filters given as parameters must be present in the graph before this method is called.</para>
-      <para>If you are building a capture graph that is using WDM capture filters, this method will build all necessary upstream filters as well as the downstream filters.</para>
-      <para>Some capture filters that work with new WDM VPE (Video Port Extension) video capture hardware have video port pins instead of preview pins meant for previewing. Video port pins do not connect directly to a video renderer, but instead to a special filter called the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/overlay-mixer-filter">Overlay Mixer</a>. Your application does not need to worry about this. All you have to do is call <code>RenderStream</code> with PIN_CATEGORY_PREVIEW and the capture graph builder will correctly render the VIDEO PORT pin through an overlay mixer if that is what is necessary.</para>
-      <para>When you render a capture or preview pin of a video capture filter (using <code>RenderStream</code> with the PIN_CATEGORY_CAPTURE or PIN_CATEGORY_PREVIEW category) and the capture filter has a capture pin but no preview pin, the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/smart-tee-filter">Smart Tee</a> filter will be used automatically to allow simultaneous capture and preview. For example, calling <code>RenderStream</code> with the PIN_CATEGORY_CAPTURE category will actually connect a Smart Tee filter to the capture pin of the filter, and then render the capture pin of the Smart Tee. If you then call <code>RenderStream</code> with the PIN_CATEGORY_PREVIEW category on the capture pin, it will actually render the preview pin of the Smart Tee. If calling <code>RenderStream</code> with PIN_CATEGORY_PREVIEW results in using the capture pin and a Smart Tee filter, <code>RenderStream</code> will return VFW_S_NOPREVIEWPIN to indicate this. Thus, if <see cref="FindInterface" /> fails to find a preview interface, you may need to call <b>FindInterface</b> with the PIN_CATEGORY_PREVIEW category and with the PIN_CATEGORY_CAPTURE category, because the preview interface can be found by looking downstream of the capture pin of the capture filter.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="ICaptureGraphBuilder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</div>Connects a source filter's pin, of an optionally specified category, to the rendering filter, and optionally through another filter.</summary>
+    <param name="pCategory">Pointer to a GUID specifying which output pin of the source filter to connect. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a> for a list of all pin categories. <b>NULL</b> indicates render the only output pin, regardless of category.</param>
+    <param name="pSource">Pointer to an <see cref="IBaseFilter" /> or an <see cref="IPin" /> interface representing either the source filter or an output pin. Source filters are typically a file source filter, such as an AVI file source filter or a capture filter.</param>
+    <param name="pfCompressor">Pointer to an <see cref="IBaseFilter" /> interface representing the optional compression filter.</param>
+    <param name="pfRenderer">Pointer to an <see cref="IBaseFilter" /> interface representing the renderer. You can use the <i>ppf</i> (multiplexer) parameter from <see cref="ICaptureGraphBuilder.SetOutputFileName" /> to supply this value.</param>
+    <returns>Returns VFW_S_NOPREVIEWPIN if the capture filter has a capture pin but no preview pin, and you call <code>RenderStream</code> with the &amp;PIN_CATEGORY_PREVIEW category on the capture pin. In this case, <code>RenderStream</code> will render the preview pin of the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/smart-tee-filter">Smart Tee</a> filter. For more information, see Remarks.</returns>
   </member>
   <member name="ICaptureGraphBuilder.SetFiltergraph">
     <summary>
-      <para>
-        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</para>
-      <para>Tells the graph builder object which filter graph to use.</para>
-    </summary>
-    <param name="pfg">
-      <para>Pointer to an <see cref="IGraphBuilder" /> interface that specifies the filter graph to use for subsequent calls to the <see cref="IFilterGraph.AddFilter" /> method.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>The graph builder will automatically create a filter graph if you don't call this method. If you call this method after the graph builder has created its own filter graph, the call will fail.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="ICaptureGraphBuilder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</div>Tells the graph builder object which filter graph to use.</summary>
+    <param name="pfg">Pointer to an <see cref="IGraphBuilder" /> interface that specifies the filter graph to use for subsequent calls to the <see cref="IFilterGraph.AddFilter" /> method.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="ICaptureGraphBuilder.SetOutputFileName">
     <summary>
-      <para>
-        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</para>
-      <para>Creates the rendering section of the filter graph, which will save bits to disk with the specified file name.</para>
-    </summary>
-    <param name="pType">
-      <para>Pointer to a <b>GUID</b> representing the media subtype. Must be <code>&amp;MEDIASUBTYPE_Avi</code>.</para>
-    </param>
-    <param name="lpstrFile">
-      <para>Pointer to a wide-character string containing the output file name.</para>
-    </param>
-    <param name="ppf">
-      <para>Address of a pointer to an <see cref="IBaseFilter" /> interface representing the multiplexer filter. This method increments the reference count on the <b>IBaseFilter</b> interface so you must decrement the reference count by using the <b>Release</b> method on this parameter when done using the filter.</para>
-    </param>
-    <param name="ppSink">
-      <para>Address of a pointer to an <see cref="IFileSinkFilter" /> interface representing the file writer. This method increments the reference count on the IFileSinkFilter interface so you must decrement the reference count using <b>Release</b> when done using the filter.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>ICaptureGraphBuilder</b> interface is deprecated. Use <see cref="ICaptureGraphBuilder2" /> instead.</div>Creates the rendering section of the filter graph, which will save bits to disk with the specified file name.</summary>
+    <param name="pType">Pointer to a <b>GUID</b> representing the media subtype. Must be <code>&amp;MEDIASUBTYPE_Avi</code>.</param>
+    <param name="lpstrFile">Pointer to a wide-character string containing the output file name.</param>
+    <param name="ppf">Address of a pointer to an <see cref="IBaseFilter" /> interface representing the multiplexer filter. This method increments the reference count on the <b>IBaseFilter</b> interface so you must decrement the reference count by using the <b>Release</b> method on this parameter when done using the filter.</param>
+    <param name="ppSink">Address of a pointer to an <see cref="IFileSinkFilter" /> interface representing the file writer. This method increments the reference count on the IFileSinkFilter interface so you must decrement the reference count using <b>Release</b> when done using the filter.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -212,92 +93,98 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid argument. Audio-Video Interleaved (AVI) is the only supported output format.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Out of memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Failure.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Unexpected error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument. Audio-Video Interleaved (AVI) is the only supported output format.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>NOERROR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>Unexpected error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>NOERROR</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Instance of the AVI multiplexer filter was successfully created.</para>
-          </description>
-        </item>
+          <description>Instance of the AVI multiplexer filter was successfully created.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method inserts the multiplexer and the file writer into the filter graph and calls <see cref="IFileSinkFilter.SetFileName" /> to set the output file name.</para>
-      <para>You can use the <i>ppf</i> parameter returned by this method as the <i>pfRenderer</i> parameter in calls to <see cref="RenderStream" />.</para>
-      <para>You can use the <i>pSink</i> parameter from this method in a call to <see cref="SetFileName" /> to change the file name set by <code>ICaptureGraphBuilder.SetOutputFileName</code>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="ICaptureGraphBuilder Interface" />
   </member>
   <member name="ICaptureGraphBuilder">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated. It will continue to be supported for backward compatibility with existing applications, but new applications should use the <see cref="ICaptureGraphBuilder2" /> interface.</para>
-      <para>The <code>ICaptureGraphBuilder</code> interface enables you to build capture graphs, preview graphs, file recompression graphs, or other custom graphs.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated. It will continue to be supported for backward compatibility with existing applications, but new applications should use the <see cref="ICaptureGraphBuilder2" /> interface.</div>The <code>ICaptureGraphBuilder</code> interface enables you to build capture graphs, preview graphs, file recompression graphs, or other custom graphs.</summary>
   </member>
 </doc>

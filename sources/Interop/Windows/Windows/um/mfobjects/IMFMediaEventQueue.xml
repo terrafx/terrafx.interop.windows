@@ -7,12 +7,8 @@
       <para>Begins an asynchronous request for the next event in the queue.</para>
       <para>Call this method inside your implementation of <see cref="IMFMediaEventGenerator.BeginGetEvent" />. Pass the parameters from that method directly to this method.</para>
     </summary>
-    <param name="pCallback">
-      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object.</para>
-    </param>
-    <param name="punkState">
-      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. The object is returned to the caller when the callback is invoked.</para>
-    </param>
+    <param name="pCallback">Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object.</param>
+    <param name="punkState">Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. The object is returned to the caller when the callback is invoked.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -20,52 +16,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SHUTDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SHUTDOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <see cref="Shutdown" /> method was called.</para>
-          </description>
-        </item>
+          <description>The <see cref="Shutdown" /> method was called.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaEventQueue" />
   </member>
   <member name="IMFMediaEventQueue.EndGetEvent">
     <summary>
       <para>Completes an asynchronous request for the next event in the queue.</para>
       <para>Call this method inside your implementation of <see cref="IMFMediaEventGenerator.EndGetEvent" />. Pass the parameters from that method directly to this method.</para>
     </summary>
-    <param name="pResult">
-      <para>Pointer to the <see cref="IMFAsyncResult" /> interface.</para>
-    </param>
-    <param name="ppEvent">
-      <para>Receives a pointer to the <see cref="IMFMediaEvent" /> interface of the event object. The caller must release the interface.</para>
-    </param>
+    <param name="pResult">Pointer to the <see cref="IMFAsyncResult" /> interface.</param>
+    <param name="ppEvent">Receives a pointer to the <see cref="IMFMediaEvent" /> interface of the event object. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -73,52 +57,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SHUTDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SHUTDOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <see cref="Shutdown" /> method was called.</para>
-          </description>
-        </item>
+          <description>The <see cref="Shutdown" /> method was called.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaEventQueue" />
   </member>
   <member name="IMFMediaEventQueue.GetEvent">
     <summary>
       <para>Retrieves the next event in the queue. This method is synchronous.</para>
       <para>Call this method inside your implementation of <see cref="IMFMediaEventGenerator.GetEvent" />. Pass the parameters from that method directly to this method.</para>
     </summary>
-    <param name="dwFlags">
-      <para>Specifies whether the method blocks until an event is queued. For a list of valid flags, see <see cref="IMFMediaEventGenerator.GetEvent" />.</para>
-    </param>
-    <param name="ppEvent">
-      <para>Receives a pointer to the <see cref="IMFMediaEvent" /> interface.</para>
-    </param>
+    <param name="dwFlags">Specifies whether the method blocks until an event is queued. For a list of valid flags, see <see cref="IMFMediaEventGenerator.GetEvent" />.</param>
+    <param name="ppEvent">Receives a pointer to the <see cref="IMFMediaEvent" /> interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -126,48 +98,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SHUTDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SHUTDOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <see cref="Shutdown" /> method was called.</para>
-          </description>
-        </item>
+          <description>The <see cref="Shutdown" /> method was called.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaEventQueue" />
   </member>
   <member name="IMFMediaEventQueue.QueueEvent">
-    <summary>
-      <para>Puts an event in the queue.</para>
-    </summary>
-    <param name="pEvent">
-      <para>Pointer to the <see cref="IMFMediaEvent" /> interface of the event to be put in the queue.</para>
-    </param>
+    <summary>Puts an event in the queue.</summary>
+    <param name="pEvent">Pointer to the <see cref="IMFMediaEvent" /> interface of the event to be put in the queue.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -175,59 +135,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SHUTDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SHUTDOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <see cref="Shutdown" /> method was called.</para>
-          </description>
-        </item>
+          <description>The <see cref="Shutdown" /> method was called.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method when your component needs to raise an event that contains attributes. To create the event object, call <see cref="MFCreateMediaEvent" />. Add attributes to the event by using methods from the <see cref="IMFAttributes" /> interface. (The <see cref="IMFMediaEvent" /> interface inherits <b>IMFAttributes</b>.)</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
-    <seealso cref="IMFMediaEventQueue" />
   </member>
   <member name="IMFMediaEventQueue.QueueEventParamUnk">
-    <summary>
-      <para>Creates an event, sets an <b>IUnknown</b> pointer as the event data, and puts the event in the queue.</para>
-    </summary>
-    <param name="met">
-      <para>Specifies the event type of the event to be added to the queue. The event type is returned by the event's <see cref="IMFMediaEvent.GetType" /> method. For a list of event types, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-events">Media Foundation Events</a>.</para>
-    </param>
-    <param name="guidExtendedType">
-      <para>The extended type of the event. If the event does not have an extended type, use the value GUID_NULL. The extended type is returned by the event's <see cref="IMFMediaEvent.GetExtendedType" /> method.</para>
-    </param>
-    <param name="hrStatus">
-      <para>A success or failure code indicating the status of the event. This value is returned by the event's <see cref="IMFMediaEvent.GetStatus" /> method.</para>
-    </param>
-    <param name="pUnk">
-      <para>Pointer to the <b>IUnknown</b> interface. The method sets this pointer as the event value. The pointer is returned by the event's <see cref="IMFMediaEvent.GetValue" /> method.</para>
-    </param>
+    <summary>Creates an event, sets an <b>IUnknown</b> pointer as the event data, and puts the event in the queue.</summary>
+    <param name="met">Specifies the event type of the event to be added to the queue. The event type is returned by the event's <see cref="IMFMediaEvent.GetType" /> method. For a list of event types, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-events">Media Foundation Events</a>.</param>
+    <param name="guidExtendedType">The extended type of the event. If the event does not have an extended type, use the value GUID_NULL. The extended type is returned by the event's <see cref="IMFMediaEvent.GetExtendedType" /> method.</param>
+    <param name="hrStatus">A success or failure code indicating the status of the event. This value is returned by the event's <see cref="IMFMediaEvent.GetStatus" /> method.</param>
+    <param name="pUnk">Pointer to the <b>IUnknown</b> interface. The method sets this pointer as the event value. The pointer is returned by the event's <see cref="IMFMediaEvent.GetValue" /> method.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -235,41 +175,32 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SHUTDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SHUTDOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <see cref="Shutdown" /> method was called.</para>
-          </description>
-        </item>
+          <description>The <see cref="Shutdown" /> method was called.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method when your component needs to raise an event that contains an <b>IUnknown</b> pointer value and no attributes. If the event contains attributes, use <see cref="IMFMediaEventQueue.QueueEvent" /> instead.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaEventQueue" />
   </member>
   <member name="IMFMediaEventQueue.QueueEventParamVar">
     <summary>
@@ -277,18 +208,10 @@
       <para>Call this method inside your implementation of <see cref="IMFMediaEventGenerator.QueueEvent" />. Pass the parameters from that method directly to this method.</para>
       <para>You can also call this method when your component needs to raise an event that does not contain attributes. If the event data is an <b>IUnknown</b> pointer, you can use <see cref="IMFMediaEventQueue.QueueEventParamUnk" />. If the event contains attributes, use <see cref="IMFMediaEventQueue.QueueEvent" /> instead.</para>
     </summary>
-    <param name="met">
-      <para>Specifies the type of the event to be added to the queue. The event type is returned by the event's <see cref="IMFMediaEvent.GetType" /> method. For a list of event types, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-events">Media Foundation Events</a>.</para>
-    </param>
-    <param name="guidExtendedType">
-      <para>The extended type of the event. If the event does not have an extended type, use the value GUID_NULL. The extended type is returned by the event's <see cref="IMFMediaEvent.GetExtendedType" /> method.</para>
-    </param>
-    <param name="hrStatus">
-      <para>A success or failure code indicating the status of the event. This value is returned by the event's <see cref="IMFMediaEvent.GetStatus" /> method.</para>
-    </param>
-    <param name="pvValue">
-      <para>Pointer to a <b>PROPVARIANT</b> that contains the event value. This parameter can be <b>NULL</b>. This value is returned by the event's <see cref="IMFMediaEvent.GetValue" /> method.</para>
-    </param>
+    <param name="met">Specifies the type of the event to be added to the queue. The event type is returned by the event's <see cref="IMFMediaEvent.GetType" /> method. For a list of event types, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-events">Media Foundation Events</a>.</param>
+    <param name="guidExtendedType">The extended type of the event. If the event does not have an extended type, use the value GUID_NULL. The extended type is returned by the event's <see cref="IMFMediaEvent.GetExtendedType" /> method.</param>
+    <param name="hrStatus">A success or failure code indicating the status of the event. This value is returned by the event's <see cref="IMFMediaEvent.GetStatus" /> method.</param>
+    <param name="pvValue">Pointer to a <b>PROPVARIANT</b> that contains the event value. This parameter can be <b>NULL</b>. This value is returned by the event's <see cref="IMFMediaEvent.GetValue" /> method.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -296,45 +219,35 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SHUTDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SHUTDOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <see cref="Shutdown" /> method was called.</para>
-          </description>
-        </item>
+          <description>The <see cref="Shutdown" /> method was called.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaEventQueue" />
   </member>
   <member name="IMFMediaEventQueue.Shutdown">
-    <summary>
-      <para>Shuts down the event queue.</para>
-    </summary>
+    <summary>Shuts down the event queue.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -342,50 +255,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method when your component shuts down. After this method is called, all <see cref="IMFMediaEventQueue" /> methods return <b>MF_E_SHUTDOWN</b>.</para>
-      <para>This method removes all of the events from the queue.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaEventQueue" />
   </member>
   <member name="IMFMediaEventQueue">
     <summary>
       <para>Provides an event queue for applications that need to implement the <see cref="IMFMediaEventGenerator" /> interface.</para>
       <para>This interface is exposed by a helper object that implements an event queue. If you are writing a component that implements the <see cref="IMFMediaEventGenerator" /> interface, you can use this object in your implementation. The event queue object is thread safe and provides methods to queue events and to pull them from the queue either synchronously or asynchronously. To create the event queue object, call <see cref="MFCreateEventQueue" />.</para>
     </summary>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

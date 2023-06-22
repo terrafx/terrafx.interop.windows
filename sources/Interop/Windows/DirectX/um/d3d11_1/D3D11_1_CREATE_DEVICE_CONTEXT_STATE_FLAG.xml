@@ -3,16 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_1_CREATE_DEVICE_CONTEXT_STATE_FLAG">
-    <summary>
-      <para>Describes flags that are used to create a device context state object (<see cref="ID3DDeviceContextState" />) with the <see cref="ID3D11Device1.CreateDeviceContextState" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
-    <seealso cref="ID3D11Device1.CreateDeviceContextState" />
+    <summary>Describes flags that are used to create a device context state object (<see cref="ID3DDeviceContextState" />) with the <see cref="ID3D11Device1.CreateDeviceContextState" /> method.</summary>
   </member>
   <member name="D3D11_1_CREATE_DEVICE_CONTEXT_STATE_FLAG.D3D11_1_CREATE_DEVICE_CONTEXT_STATE_SINGLETHREADED">
-    <summary>
-      <para>You use this flag if your application will only call methods of Direct3D 11 and Direct3D 10 interfaces from a single thread. By default, Direct3D 11 and Direct3D 10 are  <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-differences">thread-safe</a>.
-By using this flag, you can increase performance. However, if you use this flag and your application calls methods from multiple threads, undefined behavior might result.</para>
-    </summary>
+    <summary>You use this flag if your application will only call methods of Direct3D 11 and Direct3D 10 interfaces from a single thread. By default, Direct3D 11 and Direct3D 10 are <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-differences">thread-safe</a>. By using this flag, you can increase performance. However, if you use this flag and your application calls methods from multiple threads, undefined behavior might result.</summary>
   </member>
 </doc>

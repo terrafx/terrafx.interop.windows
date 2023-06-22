@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VisualMutationType">
+    <summary>Defines constants that specify whether the element was added to or removed from the live visual tree.</summary>
+  </member>
+  <member name="VisualMutationType.Add">
+    <summary>The child element was added to the visual tree of the parent element.</summary>
+  </member>
+  <member name="VisualMutationType.Remove">
+    <summary>The child element was removed from the visual tree of the parent element.</summary>
+  </member>
+</doc>

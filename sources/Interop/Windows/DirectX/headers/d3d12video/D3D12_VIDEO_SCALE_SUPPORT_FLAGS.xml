@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_SCALE_SUPPORT_FLAGS">
-    <summary>
-      <para>Specifies the scaling capabilities of the video scaler.</para>
-    </summary>
+    <summary>Specifies the scaling capabilities of the video scaler.</summary>
   </member>
   <member name="D3D12_VIDEO_SCALE_SUPPORT_FLAGS.D3D12_VIDEO_SCALE_SUPPORT_FLAG_NONE">
-    <summary>
-      <para>All possible output size width/height combinations that exist between the maximum size and minimum size for the extent, inclusive, are supported.</para>
-    </summary>
+    <summary>All possible output size width/height combinations that exist between the maximum size and minimum size for the extent, inclusive, are supported.</summary>
   </member>
   <member name="D3D12_VIDEO_SCALE_SUPPORT_FLAGS.D3D12_VIDEO_SCALE_SUPPORT_FLAG_POW2_ONLY">
-    <summary>
-      <para>The scaler only supports output sizes at a power of two scale factors within the range.  The x and y scale factors must be the same for both dimensions when this flag is set.</para>
-    </summary>
+    <summary>The scaler only supports output sizes at a power of two scale factors within the range. The x and y scale factors must be the same for both dimensions when this flag is set.</summary>
   </member>
   <member name="D3D12_VIDEO_SCALE_SUPPORT_FLAGS.D3D12_VIDEO_SCALE_SUPPORT_FLAG_EVEN_DIMENSIONS_ONLY">
-    <summary>
-      <para>The scaler only supports output sizes with even output dimensions.</para>
-    </summary>
+    <summary>The scaler only supports output sizes with even output dimensions.</summary>
   </member>
 </doc>

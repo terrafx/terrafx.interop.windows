@@ -3,30 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MULTICAST_MODE_TYPE">
-    <summary>
-      <para>The <b>MULTICAST_MODE_TYPE</b> enumeration specifies the filter mode for multicast group addresses.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is supported on Windows Vista and later.</para>
-      <para>The <b>MULTICAST_MODE_TYPE</b> enumeration is used in the <b>gf_fmode</b> member of the <see cref="GROUP_SOURCE_REQ" /> structure to determine if a list of IP addresses should included or excluded. The values from this enumeration can also be used in the <b>imsf_fmode</b> member of the <see cref="ip_msfilter" /> structure.</para>
-      <para>The <b>MULTICAST_MODE_TYPE</b> enumeration is defined in the <i>Ws2ipdef.h</i> header file which is automatically included in the <i>Ws2tcpip.h</i> header file. The <i>Ws2ipdef.h</i>  header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GROUP_REQ" />
-    <seealso cref="GROUP_SOURCE_REQ" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/multicast-programming">Multicast Programming</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/socket-options">Socket Options</seealso>
-    <seealso cref="ip_mreq" />
-    <seealso cref="ip_msfilter" />
-    <seealso cref="ipv6_mreq" />
+    <summary>The <b>MULTICAST_MODE_TYPE</b> enumeration specifies the filter mode for multicast group addresses.</summary>
   </member>
   <member name="MULTICAST_MODE_TYPE.MCAST_INCLUDE">
-    <summary>
-      <para>The filter contains a list of IP addresses to include.</para>
-    </summary>
+    <summary>The filter contains a list of IP addresses to include.</summary>
   </member>
   <member name="MULTICAST_MODE_TYPE.MCAST_EXCLUDE">
-    <summary>
-      <para>The filter contains a list of IP addresses to exclude.</para>
-    </summary>
+    <summary>The filter contains a list of IP addresses to exclude.</summary>
   </member>
 </doc>

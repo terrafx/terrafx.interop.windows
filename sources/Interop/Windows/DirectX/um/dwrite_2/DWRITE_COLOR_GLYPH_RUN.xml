@@ -3,39 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_COLOR_GLYPH_RUN">
-    <summary>
-      <para>Contains the information needed by renderers to draw glyph runs with glyph color information.
-All coordinates are in device independent pixels (DIPs).</para>
-    </summary>
+    <summary>Contains the information needed by renderers to draw glyph runs with glyph color information. All coordinates are in device independent pixels (DIPs).</summary>
   </member>
   <member name="DWRITE_COLOR_GLYPH_RUN.glyphRun">
-    <summary>
-      <para>Glyph run to draw for this layer.</para>
-    </summary>
+    <summary>Glyph run to draw for this layer.</summary>
   </member>
   <member name="DWRITE_COLOR_GLYPH_RUN.glyphRunDescription">
-    <summary>
-      <para>Pointer to the glyph run description for this layer. This may be <b>NULL</b>. For example, when the original glyph run is split into multiple layers, one layer might have a description and the others have none.</para>
-    </summary>
+    <summary>Pointer to the glyph run description for this layer. This may be <b>NULL</b>. For example, when the original glyph run is split into multiple layers, one layer might have a description and the others have none.</summary>
   </member>
   <member name="DWRITE_COLOR_GLYPH_RUN.baselineOriginX">
-    <summary>
-      <para>X coordinate of the baseline origin for the layer.</para>
-    </summary>
+    <summary>X coordinate of the baseline origin for the layer.</summary>
   </member>
   <member name="DWRITE_COLOR_GLYPH_RUN.baselineOriginY">
-    <summary>
-      <para>Y coordinate of the baseline origin for the layer.</para>
-    </summary>
+    <summary>Y coordinate of the baseline origin for the layer.</summary>
   </member>
   <member name="DWRITE_COLOR_GLYPH_RUN.runColor">
-    <summary>
-      <para>Color value of the run; if all members are zero, the run should be drawn using the current brush.</para>
-    </summary>
+    <summary>Color value of the run; if all members are zero, the run should be drawn using the current brush.</summary>
   </member>
   <member name="DWRITE_COLOR_GLYPH_RUN.paletteIndex">
-    <summary>
-      <para>Zero-based index into the font’s color palette; if this is <b>0xFFFF</b>, the run should be drawn using the current brush.</para>
-    </summary>
+    <summary>Zero-based index into the font’s color palette; if this is <b>0xFFFF</b>, the run should be drawn using the current brush.</summary>
   </member>
 </doc>

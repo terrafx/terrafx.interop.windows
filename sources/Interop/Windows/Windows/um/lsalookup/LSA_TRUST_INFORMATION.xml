@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_TRUST_INFORMATION">
+    <summary>The <b>LSA_TRUST_INFORMATION</b> structure identifies a domain.</summary>
+  </member>
+  <member name="LSA_TRUST_INFORMATION.Name">
+    <summary>An<see cref="LSA_UNICODE_STRING" /> structure that contains the name of the domain.</summary>
+  </member>
+  <member name="LSA_TRUST_INFORMATION.Sid">
+    <summary>Pointer to the SID of the domain.</summary>
+  </member>
+</doc>

@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_RECEIVE_OPTION">
-    <summary>
-      <para>Specifies whether a message is required when receiving from a channel.</para>
-    </summary>
+    <summary>Specifies whether a message is required when receiving from a channel.</summary>
   </member>
   <member name="WS_RECEIVE_OPTION.WS_RECEIVE_REQUIRED_MESSAGE">
-    <summary>
-      <para>A message is required to be received.  If the channel does not have
-any more messages, then the function will fail.</para>
-    </summary>
+    <summary>A message is required to be received. If the channel does not have any more messages, then the function will fail.</summary>
   </member>
   <member name="WS_RECEIVE_OPTION.WS_RECEIVE_OPTIONAL_MESSAGE">
-    <summary>
-      <para>The message is not required to be received.  If the channel does not have any more
-messages, the function will return <b>WS_S_END</b>.
-(See <a href="https://docs.microsoft.com//windows/desktop/wsw/windows-web-services-return-values">Windows Web Services Return Values</a>.)</para>
-    </summary>
+    <summary>The message is not required to be received. If the channel does not have any more messages, the function will return <b>WS_S_END</b>. (See <a href="https://docs.microsoft.com//windows/desktop/wsw/windows-web-services-return-values">Windows Web Services Return Values</a>.)</summary>
   </member>
 </doc>

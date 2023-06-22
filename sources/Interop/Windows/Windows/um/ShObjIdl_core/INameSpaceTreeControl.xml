@@ -3,126 +3,53 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INameSpaceTreeControl.AppendRoot">
-    <summary>
-      <para>Appends a Shell item to the list of roots in a tree.</para>
-    </summary>
-    <param name="psiRoot">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to the Shell item that is being appended.</para>
-    </param>
-    <param name="grfEnumFlags">
-      <para>Type: <b><see cref="SHCONTF" /></b></para>
-      <para>Enumerates the qualities of the root and all of its children. One or more of the values of type <see cref="SHCONTF" />. These flags can be combined using a bitwise OR.</para>
-    </param>
+    <summary>Appends a Shell item to the list of roots in a tree.</summary>
+    <param name="psiRoot">Pointer to the Shell item that is being appended.</param>
+    <param name="grfEnumFlags">Enumerates the qualities of the root and all of its children. One or more of the values of type <see cref="SHCONTF" />. These flags can be combined using a bitwise OR.</param>
     <param name="grfRootStyle">
-      <para>Type: <b>NSTCROOTSTYLE</b></para>
       <para>Specifies the style of the root that is being appended. One or more of the following values:</para>
       <h4>NSTCRS_VISIBLE (0x0000)</h4>
-      <para>The root is visible as well as the items.  Mutually exclusive with NSTCRS_HIDDEN.</para>
+      <para>The root is visible as well as the items. Mutually exclusive with NSTCRS_HIDDEN.</para>
       <h4>NSTCRS_HIDDEN (0x0001)</h4>
       <para>The root is hidden so that the children only are visible. Mutually exclusive with NSTCRS_VISIBLE.</para>
       <h4>NSTCRS_EXPANDED (0x0002)</h4>
       <para>The root is expanded upon initialization.</para>
     </param>
-    <param name="pif">
-      <para>Type: <b><see cref="IShellItemFilter" />*</b></para>
-      <para>Pointer to the <see cref="IShellItemFilter" /> that enables you to filter which items in the tree are displayed. If supplied, every item is customizable with a <see cref="SHCONTF" /> flag. This value can be <b>NULL</b> if no filter is required.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="pif">Pointer to the <see cref="IShellItemFilter" /> that enables you to filter which items in the tree are displayed. If supplied, every item is customizable with a <see cref="SHCONTF" /> flag. This value can be <b>NULL</b> if no filter is required.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.CollapseAll">
-    <summary>
-      <para>Collapses all of the items in the given tree.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Collapses all of the items in the given tree.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.EnsureItemVisible">
-    <summary>
-      <para>Ensures that the given item is visible.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the Shell item for which the visibility is being ensured.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Ensures that the given item is visible.</summary>
+    <param name="psi">A pointer to the Shell item for which the visibility is being ensured.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.GetItemCustomState">
-    <summary>
-      <para>Gets the state of the checkbox associated with a given Shell item.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the Shell item for which checkbox state is being retrieved.</para>
-    </param>
-    <param name="piStateNumber">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to the state of the checkbox for the Shell item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the state of the checkbox associated with a given Shell item.</summary>
+    <param name="psi">A pointer to the Shell item for which checkbox state is being retrieved.</param>
+    <param name="piStateNumber">A pointer to the state of the checkbox for the Shell item.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.GetItemRect">
-    <summary>
-      <para>Gets the <see cref="RECT" /> structure that describes the size and position of a given item.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the item for which the <see cref="RECT" /> structure is being retrieved.</para>
-    </param>
-    <param name="prect">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>A pointer to the <see cref="RECT" /> structure that describes the size and position of the item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the <see cref="RECT" /> structure that describes the size and position of a given item.</summary>
+    <param name="psi">A pointer to the item for which the <see cref="RECT" /> structure is being retrieved.</param>
+    <param name="prect">A pointer to the <see cref="RECT" /> structure that describes the size and position of the item.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.GetItemState">
-    <summary>
-      <para>Gets state information about a Shell item.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the Shell item from which to retrieve the state.</para>
-    </param>
-    <param name="nstcisMask">
-      <para>Type: <b><see cref="NSTCITEMSTATE" /></b></para>
-      <para>Specifies which information is being requested, in the form of a bitmap. One or more of the <see cref="NSTCITEMSTATE" /> constants.</para>
-    </param>
-    <param name="pnstcisFlags">
-      <para>Type: <b><see cref="NSTCITEMSTATE" />*</b></para>
-      <para>When this method returns, points to a bitmap that contains the values requested in <i>nstcisMask</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>nstcisMask</i> value specifies which bits in the value pointed to by <i>pnstcisFlags</i> are requested. As a simple example, if <i>nstcisMask</i>=NSTCIS_SELECTED, then only the first bit in the value pointed to by <i>pnstcisFlags</i> is valid when this method returns. If the first bit in the value pointed to by <i>pnstcisFlags</i> is 1, then the NSTCIS_SELECTED flag is set. If the first bit in the value pointed to by <i>pnstcisFlags</i> is 0, then the NSTCIS_SELECTED flag is not set.</para>
-    </remarks>
+    <summary>Gets state information about a Shell item.</summary>
+    <param name="psi">A pointer to the Shell item from which to retrieve the state.</param>
+    <param name="nstcisMask">Specifies which information is being requested, in the form of a bitmap. One or more of the <see cref="NSTCITEMSTATE" /> constants.</param>
+    <param name="pnstcisFlags">When this method returns, points to a bitmap that contains the values requested in <i>nstcisMask</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.GetNextItem">
-    <summary>
-      <para>Retrieves the next item in the tree according to which method is requested.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>The Shell item for which the next item is being retrieved. This value can be <b>NULL</b>.</para>
-    </param>
+    <summary>Retrieves the next item in the tree according to which method is requested.</summary>
+    <param name="psi">The Shell item for which the next item is being retrieved. This value can be <b>NULL</b>.</param>
     <param name="nstcgi">
-      <para>Type: <b>NSTCGNI</b></para>
       <para>The type of the next item. This value can be one of the following flags:</para>
       <h4>NSTCGNI_NEXT (0)</h4>
       <para>The next sibling of the given item.</para>
@@ -141,239 +68,88 @@
       <h4>NSTCGNI_LASTVISIBLE (7)</h4>
       <para>The absolute last visible item in the tree (not relative to the given item).</para>
     </param>
-    <param name="ppsiNext">
-      <para>Type: <b><see cref="IShellItem" />**</b></para>
-      <para>The address of a pointer to the <see cref="IShellItem" /> that fits the criteria for the next item that was requested.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If there is no next item for the type selected, this function returns E_FAIL with <b>NULL</b> for the returned item, <i>ppsiNext</i>.</para>
-    </remarks>
+    <param name="ppsiNext">The address of a pointer to the <see cref="IShellItem" /> that fits the criteria for the next item that was requested.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.GetRootItems">
-    <summary>
-      <para>Gets an array of the root items.</para>
-    </summary>
-    <param name="ppsiaRootItems">
-      <para>Type: <b><see cref="IShellItemArray" />**</b></para>
-      <para>A pointer to an array of root items.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets an array of the root items.</summary>
+    <param name="ppsiaRootItems">A pointer to an array of root items.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.GetSelectedItems">
-    <summary>
-      <para>Gets an array of selected Shell items.</para>
-    </summary>
-    <param name="psiaItems">
-      <para>Type: <b><see cref="IShellItemArray" />**</b></para>
-      <para>A pointer to an array of selected Shell items.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets an array of selected Shell items.</summary>
+    <param name="psiaItems">A pointer to an array of selected Shell items.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.HitTest">
-    <summary>
-      <para>Retrieves the item that a given point is in, if any.</para>
-    </summary>
-    <param name="ppt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>A pointer to the point to be tested.</para>
-    </param>
-    <param name="ppsiOut">
-      <para>Type: <b><see cref="IShellItem" />**</b></para>
-      <para>The address of a pointer to the item in which the point exists, or <b>NULL</b> if the point does not exist in an item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This function returns <b>S_FALSE</b> with a <b>NULL</b> item if the point does not exist in an item.</para>
-    </remarks>
+    <summary>Retrieves the item that a given point is in, if any.</summary>
+    <param name="ppt">A pointer to the point to be tested.</param>
+    <param name="ppsiOut">The address of a pointer to the item in which the point exists, or <b>NULL</b> if the point does not exist in an item.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.Initialize">
-    <summary>
-      <para>Initializes an <see cref="INameSpaceTreeControl" /> object.</para>
-    </summary>
-    <param name="hwndParent">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the parent window.</para>
-    </param>
-    <param name="prc">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>A pointer to a <see cref="RECT" /> structure that describes the size and position of the control in the client window.</para>
-    </param>
-    <param name="nsctsFlags">
-      <para>Type: <b><see cref="NSTCSTYLE" /></b></para>
-      <para>The characteristics of the given namespace tree control. One or more of the following values from the <see cref="NSTCSTYLE" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Initializes an <see cref="INameSpaceTreeControl" /> object.</summary>
+    <param name="hwndParent">The handle of the parent window.</param>
+    <param name="prc">A pointer to a <see cref="RECT" /> structure that describes the size and position of the control in the client window.</param>
+    <param name="nsctsFlags">The characteristics of the given namespace tree control. One or more of the following values from the <see cref="NSTCSTYLE" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.InsertRoot">
-    <summary>
-      <para>Inserts a Shell item on a root item in a tree.</para>
-    </summary>
-    <param name="iIndex">
-      <para>Type: <b>int</b></para>
-      <para>The index at which to insert the root.</para>
-    </param>
-    <param name="psiRoot">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the Shell item that is being inserted.</para>
-    </param>
-    <param name="grfEnumFlags">
-      <para>Type: <b><see cref="SHCONTF" /></b></para>
-      <para>Enumerates the qualities of the root and all of its children. One of the values of type <see cref="SHCONTF" />.</para>
-    </param>
+    <summary>Inserts a Shell item on a root item in a tree.</summary>
+    <param name="iIndex">The index at which to insert the root.</param>
+    <param name="psiRoot">A pointer to the Shell item that is being inserted.</param>
+    <param name="grfEnumFlags">Enumerates the qualities of the root and all of its children. One of the values of type <see cref="SHCONTF" />.</param>
     <param name="grfRootStyle">
-      <para>Type: <b>NSTCROOTSTYLE</b></para>
       <para>The style of the root that is being inserted. One or more of the following values (flags can be combined using a bitwise OR).</para>
       <h4>NSTCRS_VISIBLE (0x0000)</h4>
-      <para>The root is visible as well as the items.  Mutually exclusive with NSTCRS_HIDDEN.</para>
+      <para>The root is visible as well as the items. Mutually exclusive with NSTCRS_HIDDEN.</para>
       <h4>NSTCRS_HIDDEN (0x0001)</h4>
       <para>The root is hidden so that only the children are visible. Mutually exclusive with NSTCRS_VISIBLE.</para>
       <h4>NSTCRS_EXPANDED (0x0002)</h4>
       <para>The root is expanded upon initialization.</para>
     </param>
-    <param name="pif">
-      <para>Type: <b><see cref="IShellItemFilter" />*</b></para>
-      <para>A pointer to the <see cref="IShellItemFilter" /> that enables you to filter which items in the tree are displayed. If supplied, every item is customizable with a <see cref="SHCONTF" /> flag. This value can be <b>NULL</b> if no filter is required.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="pif">A pointer to the <see cref="IShellItemFilter" /> that enables you to filter which items in the tree are displayed. If supplied, every item is customizable with a <see cref="SHCONTF" /> flag. This value can be <b>NULL</b> if no filter is required.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.RemoveAllRoots">
-    <summary>
-      <para>Removes all roots and their children from a tree.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Removes all roots and their children from a tree.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.RemoveRoot">
-    <summary>
-      <para>Removes a root and its children from a tree.</para>
-    </summary>
-    <param name="psiRoot">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the root that is to be removed.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Removes a root and its children from a tree.</summary>
+    <param name="psiRoot">A pointer to the root that is to be removed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.SetItemCustomState">
-    <summary>
-      <para>Sets the state of the checkbox associated with the Shell item.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the Shell item for which checkbox state
-is being set.</para>
-    </param>
-    <param name="iStateNumber">
-      <para>Type: <b>int</b></para>
-      <para>The desired state of the checkbox for the Shell item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the state of the checkbox associated with the Shell item.</summary>
+    <param name="psi">A pointer to the Shell item for which checkbox state is being set.</param>
+    <param name="iStateNumber">The desired state of the checkbox for the Shell item.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.SetItemState">
-    <summary>
-      <para>Sets state information for a Shell item.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the Shell item for which to set the state.</para>
-    </param>
-    <param name="nstcisMask">
-      <para>Type: <b><see cref="NSTCITEMSTATE" /></b></para>
-      <para>Specifies which information is being set, in the form of a bitmap. One or more of the <see cref="NSTCITEMSTATE" /> constants.</para>
-    </param>
-    <param name="nstcisFlags">
-      <para>Type: <b><see cref="NSTCITEMSTATE" /></b></para>
-      <para>A bitmap that contains the values to set for the flags specified in <i>nstcisMask</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>nstcisMask</i> value specifies which bits in the value pointed to by <i>pnstcisFlags</i> are to be set. Other bits are ignored. As a simple example, if <i>nstcisMask</i>=NSTCIS_SELECTED, then the first bit in the <i>nstcisFlags</i> value determines whether that flag is set (1) or removed (0).</para>
-    </remarks>
+    <summary>Sets state information for a Shell item.</summary>
+    <param name="psi">A pointer to the Shell item for which to set the state.</param>
+    <param name="nstcisMask">Specifies which information is being set, in the form of a bitmap. One or more of the <see cref="NSTCITEMSTATE" /> constants.</param>
+    <param name="nstcisFlags">A bitmap that contains the values to set for the flags specified in <i>nstcisMask</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.SetTheme">
-    <summary>
-      <para>Sets the desktop theme for the current window only.</para>
-    </summary>
-    <param name="pszTheme">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The name of the desktop theme to which the current window is being set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the desktop theme for the current window only.</summary>
+    <param name="pszTheme">The name of the desktop theme to which the current window is being set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.TreeAdvise">
-    <summary>
-      <para>Enables a client to register with the control.</para>
-    </summary>
-    <param name="punk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the client IUnknown that registers with the control.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to the cookie that is passed back for registration.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The pointer to the cookie that is passed back is used to unregister the control later with <see cref="INameSpaceTreeControl.TreeUnadvise" />.</para>
-    </remarks>
+    <summary>Enables a client to register with the control.</summary>
+    <param name="punk">A pointer to the client IUnknown that registers with the control.</param>
+    <param name="pdwCookie">A pointer to the cookie that is passed back for registration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl.TreeUnadvise">
-    <summary>
-      <para>Enables a client to unregister with the control.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to the cookie that is to be unregistered.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The pointer to the cookie that is passed in is the one that was passed back in <see cref="INameSpaceTreeControl.TreeAdvise" />.</para>
-    </remarks>
+    <summary>Enables a client to unregister with the control.</summary>
+    <param name="dwCookie">A pointer to the cookie that is to be unregistered.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INameSpaceTreeControl">
-    <summary>
-      <para>Exposes methods used to view and manipulate nodes in a tree of Shell items.</para>
-    </summary>
-    <remarks>
-      <para>To implement this interface use class ID CLSID_NameSpaceTreeControl.</para>
-    </remarks>
+    <summary>Exposes methods used to view and manipulate nodes in a tree of Shell items.</summary>
   </member>
 </doc>

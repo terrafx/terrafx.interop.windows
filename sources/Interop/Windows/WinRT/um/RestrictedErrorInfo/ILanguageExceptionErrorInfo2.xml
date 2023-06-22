@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ILanguageExceptionErrorInfo2.CapturePropagationContext">
+    <summary>Captures the context of an exception across a language boundary and across threads.</summary>
+    <param name="languageException">An error object that's apartment-agile, in-proc, and marshal-by-value across processes.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ILanguageExceptionErrorInfo2.GetPreviousLanguageExceptionErrorInfo">
+    <summary>Retrieves the previous language exception error information object.</summary>
+    <param name="previousLanguageExceptionErrorInfo">Pointer to an <see cref="ILanguageExceptionErrorInfo2" /> object that contains the previous error information object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ILanguageExceptionErrorInfo2.GetPropagationContextHead">
+    <summary>Retrieves the propagation context head.</summary>
+    <param name="propagatedLanguageExceptionErrorInfoHead">On success, returns an <see cref="ILanguageExceptionErrorInfo2" /> object that represents the head of the propagation context.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ILanguageExceptionErrorInfo2">
+    <summary>Enables language projections to provide and retrieve error information as with <see cref="ILanguageExceptionErrorInfo" />, with the additional benefit of working across language boundaries.</summary>
+  </member>
+</doc>

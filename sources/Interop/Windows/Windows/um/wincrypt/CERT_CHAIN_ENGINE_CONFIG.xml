@@ -3,49 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_CHAIN_ENGINE_CONFIG">
-    <summary>
-      <para>The <b>CERT_CHAIN_ENGINE_CONFIG</b> structure sets parameters for building a non-default certificate chain engine. The engine used determines the ways that certificate chains are built.</para>
-    </summary>
-    <remarks>
-      <para>The chain-building engine uses four certificate stores in building chains. These are hRoot, hWorld, hTrust, and hOther. These stores' handles are established by using information in this structure when a chain engine is created.</para>
-      <para>hRoot is the store handle from <b>hRestrictedRoot</b> or, if <b>hRestrictedRoot</b> is <b>NULL</b>, the handle for System Store "Root."</para>
-      <para>hWorld is a collection certificate store including sibling stores hRoot, "CA," "My," "Trust," and any additional stores whose handles are in the array pointed to by <b>rghAdditionalStore</b>.</para>
-      <para>hTrust is the store handle from <b>hRestrictedTrust</b> or, if <b>hRestrictedTrust</b> is <b>NULL</b>, hWorld.</para>
-      <para>hOther is <b>hRestrictedOther</b> plus hRoot or, if <b>hRestrictedTrust</b> is non-<b>NULL</b>, the hWorld collection store plus the store handle from <b>hRestrictedTrust</b>.</para>
-      <para>Exclusive trust mode allows applications to specify trust anchors and peer-trusted certificates  for certificate chain validation. In the exclusive trust mode, the root store and the trusted people store on the system are ignored, and the anchors and certificates pointed to by the <b>hExclusiveRoot</b> and <b>hExclusiveTrustedPeople</b> members are used instead.</para>
-    </remarks>
-    <seealso cref="CERT_TRUST_STATUS" />
-    <seealso cref="CertCreateCertificateChainEngine" />
+    <summary>The <b>CERT_CHAIN_ENGINE_CONFIG</b> structure sets parameters for building a non-default certificate chain engine. The engine used determines the ways that certificate chains are built.</summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.cbSize">
-    <summary>
-      <para>Size of this structure in bytes.</para>
-    </summary>
+    <summary>Size of this structure in bytes.</summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.hRestrictedRoot">
-    <summary>
-      <para>This configuration parameter can be used to restrict the root store. If used, it can be the handle of any HCERTSTORE containing only a proper subset of the certificates in the root store.</para>
-    </summary>
+    <summary>This configuration parameter can be used to restrict the root store. If used, it can be the handle of any HCERTSTORE containing only a proper subset of the certificates in the root store.</summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.hRestrictedTrust">
-    <summary>
-      <para>Store handle. If used, restricts the stores searched to find CTLs.</para>
-    </summary>
+    <summary>Store handle. If used, restricts the stores searched to find CTLs.</summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.hRestrictedOther">
-    <summary>
-      <para>Store handle. If used, restricts the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">stores</a> searched for certificates and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">CRLs</a>.</para>
-    </summary>
+    <summary>Store handle. If used, restricts the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">stores</a> searched for certificates and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">CRLs</a>.</summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.cAdditionalStore">
-    <summary>
-      <para>Count of additional stores to be searched for certificates and CRLs needed to build chains.</para>
-    </summary>
+    <summary>Count of additional stores to be searched for certificates and CRLs needed to build chains.</summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.rghAdditionalStore">
-    <summary>
-      <para>A pointer to an array of store handles for any additional stores to be searched in building chains.</para>
-    </summary>
+    <summary>A pointer to an array of store handles for any additional stores to be searched in building chains.</summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.dwFlags">
     <summary>
@@ -55,120 +31,104 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_CACHE_END_CERT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Information in the end certificate is cached. By default, information in all certificates except the end certificate is cached as a chain is built. Setting this flag extends the caching to the end certificate.</para>
-          </description>
-        </item>
-        <item>
+          <description>Information in the end certificate is cached. By default, information in all certificates except the end certificate is cached as a chain is built. Setting this flag extends the caching to the end certificate.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_CACHE_ONLY_URL_RETRIEVAL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use only cached URLs in building a certificate chain. The Internet and intranet are not searched for URL-based objects.</para>
-          </description>
-        </item>
-        <item>
+          <description>Use only cached URLs in building a certificate chain. The Internet and intranet are not searched for URL-based objects.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_USE_LOCAL_MACHINE_STORE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Build the chain using the LocalMachine registry location as opposed to the CurrentUser location.</para>
-          </description>
-        </item>
-        <item>
+          <description>Build the chain using the LocalMachine registry location as opposed to the CurrentUser location.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_ENABLE_CACHE_AUTO_UPDATE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Enable automatic updating of the cache as a chain is being built.</para>
-          </description>
-        </item>
-        <item>
+          <description>Enable automatic updating of the cache as a chain is being built.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_ENABLE_SHARE_STORE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Allow certificate stores used to build the chain to be shared.</para>
-          </description>
-        </item>
-        <item>
+          <description>Allow certificate stores used to build the chain to be shared.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_DISABLE_AIA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Turn off  Authority Information Access (AIA) retrievals explicitly.</para>
-          </description>
-        </item>
+          <description>Turn off Authority Information Access (AIA) retrievals explicitly.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.dwUrlRetrievalTimeout">
-    <summary>
-      <para>Number of milliseconds before a time-out for network based–URL object retrievals. Can be set to zero to use the default limit.</para>
-    </summary>
+    <summary>Number of milliseconds before a time-out for network based–URL object retrievals. Can be set to zero to use the default limit.</summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.MaximumCachedCertificates">
-    <summary>
-      <para>Limit on the number of certificates that can be cached as a chain is built. Can be set to 0 to use the default limit.</para>
-    </summary>
+    <summary>Limit on the number of certificates that can be cached as a chain is built. Can be set to 0 to use the default limit.</summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.CycleDetectionModulus">
     <summary>
@@ -178,14 +138,14 @@
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.hExclusiveRoot">
     <summary>
-      <para>Handle to a  certificate store that contains exclusive trust anchors.  If either the <b>hExclusiveRoot</b> or <b>hExclusiveTrustedPeople</b> member points to a valid store, exclusive trust mode is used for the chain building.</para>
+      <para>Handle to a certificate store that contains exclusive trust anchors. If either the <b>hExclusiveRoot</b> or <b>hExclusiveTrustedPeople</b> member points to a valid store, exclusive trust mode is used for the chain building.</para>
       <para>
         <b>Windows 7 and Windows Server 2008 R2:  </b>Support for this member begins.</para>
     </summary>
   </member>
   <member name="CERT_CHAIN_ENGINE_CONFIG.hExclusiveTrustedPeople">
     <summary>
-      <para>Handle to a certificate store that contains  application-specific peer trusted certificates. If either the <b>hExclusiveRoot</b> or <b>hExclusiveTrustedPeople</b> member points to a valid store, exclusive trust mode is used for the chain building.</para>
+      <para>Handle to a certificate store that contains application-specific peer trusted certificates. If either the <b>hExclusiveRoot</b> or <b>hExclusiveTrustedPeople</b> member points to a valid store, exclusive trust mode is used for the chain building.</para>
       <para>
         <b>Windows 7 and Windows Server 2008 R2:  </b>Support for this member begins.</para>
     </summary>
@@ -200,25 +160,21 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_EXCLUSIVE_ENABLE_CA_FLAG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates that a non-self-signed intermediate CA certificate in the <b>hExclusiveRoot</b> store should be treated as a trust anchor during certificate validation. If a certificate chains up to this CA, chain building is terminated and the certificate is considered trusted. No signature verification or revocation checking is performed on the CA certificate.</para>
-            <para>By default, if this flag is not set, only self-signed certificates in the <b>hExclusiveRoot</b> store are treated as trust anchors.</para>
-            <para>See also the <b>CERT_TRUST_IS_CA_TRUSTED</b> value in the <see cref="CERT_TRUST_STATUS" /> structure.</para>
-          </description>
-        </item>
+          <description>Indicates that a non-self-signed intermediate CA certificate in the <b>hExclusiveRoot</b> store should be treated as a trust anchor during certificate validation. If a certificate chains up to this CA, chain building is terminated and the certificate is considered trusted. No signature verification or revocation checking is performed on the CA certificate.<para>By default, if this flag is not set, only self-signed certificates in the <b>hExclusiveRoot</b> store are treated as trust anchors.</para><para>See also the <b>CERT_TRUST_IS_CA_TRUSTED</b> value in the <see cref="CERT_TRUST_STATUS" /> structure.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>

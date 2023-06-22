@@ -3,29 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_WEB_SOCKET_ASYNC_RESULT">
-    <summary>
-      <para>The <b>WINHTTP_WEB_SOCKET_ASYNC_RESULT</b> includes the result status of a WebSocket operation.</para>
-    </summary>
-    <remarks>
-      <para>A <b>WINHTTP_WEB_SOCKET_ASYNC_RESULT</b> structure is passed to the completion callbacks of WebSocket functions such as <see cref="WinHttpWebSocketSend" />, <see cref="WinHttpWebSocketReceive" />, and <see cref="WinHttpWebSocketClose" /> when <i>dwInternetStatus</i> is <b>WINHTTP_CALLBACK_STATUS_REQUEST_ERROR</b>.</para>
-    </remarks>
-    <seealso cref="WINHTTP_ASYNC_RESULT" />
-    <seealso cref="WINHTTP_WEB_SOCKET_OPERATION" />
-    <seealso cref="WinHttpWebSocketClose" />
-    <seealso cref="WinHttpWebSocketReceive" />
-    <seealso cref="WinHttpWebSocketSend" />
-    <seealso cref="WinHttpWebSocketShutdown" />
+    <summary>The <b>WINHTTP_WEB_SOCKET_ASYNC_RESULT</b> includes the result status of a WebSocket operation.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_ASYNC_RESULT.AsyncResult">
-    <summary>
-      <para>Type: <b><see cref="WINHTTP_ASYNC_RESULT" /></b></para>
-      <para>The result of a WebSocket operation.</para>
-    </summary>
+    <summary>The result of a WebSocket operation.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_ASYNC_RESULT.Operation">
-    <summary>
-      <para>Type: <b><see cref="WINHTTP_WEB_SOCKET_OPERATION" /></b></para>
-      <para>The type of WebSocket operation.</para>
-    </summary>
+    <summary>The type of WebSocket operation.</summary>
   </member>
 </doc>

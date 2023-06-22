@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="HITRESULT">
-    <summary>
-      <para>Indicates whether a location is within the image of an object.</para>
-    </summary>
-    <seealso cref="IViewObjectEx.QueryHitPoint" />
-    <seealso cref="IViewObjectEx.QueryHitRect" />
+    <summary>Indicates whether a location is within the image of an object.</summary>
   </member>
   <member name="HITRESULT.HITRESULT_OUTSIDE">
-    <summary>
-      <para>The specified location is outside the object and not close to the object.</para>
-    </summary>
+    <summary>The specified location is outside the object and not close to the object.</summary>
   </member>
   <member name="HITRESULT.HITRESULT_TRANSPARENT">
-    <summary>
-      <para>The specified location is within the bounds of the object, but not close to the image. For example, a point in the middle of a transparent circle could be HITRESULT_TRANSPARENT.</para>
-    </summary>
+    <summary>The specified location is within the bounds of the object, but not close to the image. For example, a point in the middle of a transparent circle could be HITRESULT_TRANSPARENT.</summary>
   </member>
   <member name="HITRESULT.HITRESULT_CLOSE">
-    <summary>
-      <para>The specified location is inside the object or is outside the object but is close enough to the object to be considered inside. Small, thin or detailed objects may use this value. Even if a point is outside the bounding rectangle of an object it may still be close. This value is needed for hitting small objects.</para>
-    </summary>
+    <summary>The specified location is inside the object or is outside the object but is close enough to the object to be considered inside. Small, thin or detailed objects may use this value. Even if a point is outside the bounding rectangle of an object it may still be close. This value is needed for hitting small objects.</summary>
   </member>
   <member name="HITRESULT.HITRESULT_HIT">
-    <summary>
-      <para>The specified location is within the image of the object.</para>
-    </summary>
+    <summary>The specified location is within the image of the object.</summary>
   </member>
 </doc>

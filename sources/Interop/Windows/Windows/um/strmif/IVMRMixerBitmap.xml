@@ -4,11 +4,10 @@
 <doc>
   <member name="IVMRMixerBitmap.GetAlphaBitmapParameters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>GetAlphaBitmapParameters</b> method retrieves a copy of the current image and related blending parameters.</para>
     </summary>
-    <param name="pBmpParms">
-      <para>A pointer to a <see cref="VMRALPHABITMAP" /> structure that receives the bitmap, information about the blending values, and the location to blend it.</para>
-    </param>
+    <param name="pBmpParms">A pointer to a <see cref="VMRALPHABITMAP" /> structure that receives the bitmap, information about the blending values, and the location to blend it.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -16,62 +15,50 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>pBmpParms</i> is invalid.
-</description>
-        </item>
-        <item>
+            <i>pBmpParms</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The mixer has not been loaded.</para>
-          </description>
-        </item>
+          <description>The mixer has not been loaded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRMixerBitmap Interface" />
-    <seealso cref="IVMRMixerBitmap.SetAlphaBitmap" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</seealso>
   </member>
   <member name="IVMRMixerBitmap.UpdateAlphaBitmapParameters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>UpdateAlphaBitmapParameters</b> method changes the bitmap location, size and blending value.</para>
     </summary>
-    <param name="pBmpParms">
-      <para>A pointer to a <see cref="VMRALPHABITMAP" /> structure.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <remarks>
-      <para>The filter graph must be running for the changes to take effect. This method does not change the bitmap image. If you specify a <see cref="VMRALPHABITMAP" /> structure with no destination or color key set, the bitmap disappears. This behavior is by design for backward compatibility and cannot be changed.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRMixerBitmap Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</seealso>
+    <param name="pBmpParms">A pointer to a <see cref="VMRALPHABITMAP" /> structure.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IVMRMixerBitmap">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IVMRMixerBitmap</b> interface enables an application to blend a static image from a bitmap or DirectDraw surface onto the video stream, when using the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7).</para>
-      <para>
-        <b>Note</b>  For the VMR-9, use the <see cref="IVMRMixerBitmap9" /> interface.</para>
+      <div>
+        <b>Note</b>  For the VMR-9, use the <a href="https://docs.microsoft.com//previous-versions/ms787059(v=vs.85)">IVMRMixerBitmap9</a> interface.</div>
       <para>You can pass images to the VMR as frequently as you like, but changing the image several times per second may impact the performance and smoothness of the video being rendered. The new image will be blended with the next and all subsequent video frames rendered by the VMR.</para>
       <para>Internally, the VMR uses its mixer component to perform the blending operation. Therefore the VMR must be configured correctly prior to commencing video playback. Even if only a single video stream is present, applications should call <see cref="IVMRFilterConfig.SetNumberOfStreams" /> with a value of "1" to cause the VMR to load the mixer and compositor. The image can contain embedded per pixel alpha information; this allows the image to contain regions that are transparent. Transparent areas can also be identified by a color key value. Changes in the image are only shown on the screen while the filter graph is running.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/displaying-an-application-supplied-bitmap-on-the-composited-image">Displaying an Application-Supplied Bitmap on the Composited Image</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</seealso>
   </member>
 </doc>

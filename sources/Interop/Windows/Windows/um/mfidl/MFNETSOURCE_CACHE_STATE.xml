@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFNETSOURCE_CACHE_STATE">
-    <summary>
-      <para>Defines the status of the cache for a media file or entry.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines the status of the cache for a media file or entry.</summary>
   </member>
   <member name="MFNETSOURCE_CACHE_STATE.MFNETSOURCE_CACHE_UNAVAILABLE">
-    <summary>
-      <para>The cache for a file or entry does not exist.</para>
-    </summary>
+    <summary>The cache for a file or entry does not exist.</summary>
   </member>
   <member name="MFNETSOURCE_CACHE_STATE.MFNETSOURCE_CACHE_ACTIVE_WRITING">
-    <summary>
-      <para>The cache for a file or entry is growing.</para>
-    </summary>
+    <summary>The cache for a file or entry is growing.</summary>
   </member>
   <member name="MFNETSOURCE_CACHE_STATE.MFNETSOURCE_CACHE_ACTIVE_COMPLETE">
-    <summary>
-      <para>The cache for a file or entry is completed.</para>
-    </summary>
+    <summary>The cache for a file or entry is completed.</summary>
   </member>
 </doc>

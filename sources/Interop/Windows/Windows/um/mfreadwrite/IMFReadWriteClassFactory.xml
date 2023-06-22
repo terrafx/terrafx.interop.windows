@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFReadWriteClassFactory.CreateInstanceFromObject">
-    <summary>
-      <para>Creates an instance of the sink writer or source reader, given an <b>IUnknown</b> pointer.</para>
-    </summary>
+    <summary>Creates an instance of the sink writer or source reader, given an <b>IUnknown</b> pointer.</summary>
     <param name="clsid">
       <para>The CLSID of the object to create.</para>
       <list type="table">
@@ -13,26 +11,34 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>
-              <b>CLSID_MFSinkWriter</b>
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>CLSID_MFSinkWriter</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Create the sink writer. The <i>ppvObject</i> parameter receives an <see cref="IMFSinkWriter" /> interface pointer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Create the sink writer. The <i>ppvObject</i> parameter receives an <see cref="IMFSinkWriter" /> interface pointer.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>CLSID_MFSourceReader</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>
-              <b>CLSID_MFSourceReader</b>
-            </b>
-          </description>
-          <description>
-            <para>Create the source reader. The <i>ppvObject</i> parameter receives an <see cref="IMFSourceReader" /> interface pointer.</para>
-          </description>
-        </item>
+          <description>Create the source reader. The <i>ppvObject</i> parameter receives an <see cref="IMFSourceReader" /> interface pointer.</description>
+        </listheader>
       </list>
     </param>
     <param name="punkObject">
@@ -42,38 +48,48 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>
-              <see cref="IMFByteStream" />
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <see cref="IMFByteStream" />
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer to a byte stream. <para>If <i>clsid</i> is <b>CLSID_MFSinkWriter</b>, the sink writer writes data to this byte stream.</para><para>If <i>clsid</i> is <b>CLSID_MFSourceReader</b>, this byte stream provides the source data for the source reader.</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer to a byte stream.</para>
-            <para>If <i>clsid</i> is <b>CLSID_MFSinkWriter</b>, the sink writer writes data to this byte stream.</para>
-            <para>If <i>clsid</i> is <b>CLSID_MFSourceReader</b>, this byte stream provides the source data for the source reader.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <see cref="IMFMediaSink" />
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Pointer to a media sink. Applies only when <i>clsid</i> is <b>CLSID_MFSinkWriter</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>
-              <see cref="IMFMediaSink" />
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <see cref="IMFMediaSource" />
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer to a media sink. Applies only when <i>clsid</i> is <b>CLSID_MFSinkWriter</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>
-              <see cref="IMFMediaSource" />
-            </b>
-          </description>
-          <description>
-            <para>Pointer to a media source. Applies only when <i>clsid</i> is <b>CLSID_MFSourceReader</b>.</para>
-          </description>
-        </item>
+          <description>Pointer to a media source. Applies only when <i>clsid</i> is <b>CLSID_MFSourceReader</b>.</description>
+        </listheader>
       </list>
     </param>
     <param name="pAttributes">
@@ -89,27 +105,13 @@
             <a href="https://docs.microsoft.com//windows/desktop/medfound/source-reader-attributes">Source Reader Attributes</a>
           </description>
         </item>
-      </list>
-      <para>This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="riid">
-      <para>The IID of the requested interface.</para>
-    </param>
-    <param name="ppvObject">
-      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFReadWriteClassFactory" />
+      </list>This parameter can be <b>NULL</b>.</param>
+    <param name="riid">The IID of the requested interface.</param>
+    <param name="ppvObject">Receives a pointer to the requested interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFReadWriteClassFactory.CreateInstanceFromURL">
-    <summary>
-      <para>Creates an instance of the sink writer or source reader, given a URL.</para>
-    </summary>
+    <summary>Creates an instance of the sink writer or source reader, given a URL.</summary>
     <param name="clsid">
       <para>The CLSID of the object to create.</para>
       <list type="table">
@@ -117,31 +119,37 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>
-              <b>CLSID_MFSinkWriter</b>
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>CLSID_MFSinkWriter</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Create the sink writer. The <i>ppvObject</i> parameter receives an <see cref="IMFSinkWriter" /> interface pointer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Create the sink writer. The <i>ppvObject</i> parameter receives an <see cref="IMFSinkWriter" /> interface pointer.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>CLSID_MFSourceReader</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>
-              <b>CLSID_MFSourceReader</b>
-            </b>
-          </description>
-          <description>
-            <para>Create the source reader. The <i>ppvObject</i> parameter receives an <see cref="IMFSourceReader" /> interface pointer.</para>
-          </description>
-        </item>
+          <description>Create the source reader. The <i>ppvObject</i> parameter receives an <see cref="IMFSourceReader" /> interface pointer.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pwszURL">
-      <para>A null-terminated string that contains a URL. If <i>clsid</i> is CLSID_<b>MFSinkWriter</b>, the URL specifies the name of the output file. The sink writer creates a new file with this name. If <i>clsid</i> is <b>CLSID_MFSourceReader</b>, the URL specifies the input file for the source reader.</para>
-    </param>
+    <param name="pwszURL">A null-terminated string that contains a URL. If <i>clsid</i> is CLSID_<b>MFSinkWriter</b>, the URL specifies the name of the output file. The sink writer creates a new file with this name. If <i>clsid</i> is <b>CLSID_MFSourceReader</b>, the URL specifies the input file for the source reader.</param>
     <param name="pAttributes">
       <para>A pointer to the <see cref="IMFAttributes" /> interface. You can use this parameter to configure the sink writer or source reader. For more information, see the following topics:</para>
       <list type="bullet">
@@ -155,62 +163,12 @@
             <a href="https://docs.microsoft.com//windows/desktop/medfound/source-reader-attributes">Source Reader Attributes</a>
           </description>
         </item>
-      </list>
-      <para>This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="riid">
-      <para>The IID of the requested interface.</para>
-    </param>
-    <param name="ppvObject">
-      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFReadWriteClassFactory" />
+      </list>This parameter can be <b>NULL</b>.</param>
+    <param name="riid">The IID of the requested interface.</param>
+    <param name="ppvObject">Receives a pointer to the requested interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFReadWriteClassFactory">
-    <summary>
-      <para>Creates an instance of either the sink writer or the source reader.</para>
-    </summary>
-    <remarks>
-      <para>To get a pointer to this interface, call the <b>CoCreateInstance</b> function. The CLSID is <b>CLSID_MFReadWriteClassFactory</b>. Call the <see cref="MFStartup" /> function before using  the interface.</para>
-      <para>As an alternative to using this interface, you can call any of the following functions:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="MFCreateSinkWriterFromMediaSink" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="MFCreateSinkWriterFromURL" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="MFCreateSourceReaderFromByteStream" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="MFCreateSourceReaderFromMediaSource" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="MFCreateSourceReaderFromURL" />
-          </description>
-        </item>
-      </list>
-      <para>Internally, these functions use the <b>IMFReadWriteClassFactory</b> interface.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSinkWriter" />
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Creates an instance of either the sink writer or the source reader.</summary>
   </member>
 </doc>

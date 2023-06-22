@@ -3,815 +3,512 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1EffectContext.CheckFeatureSupport">
-    <summary>
-      <para>This indicates whether an optional capability is supported by the D3D device.</para>
-    </summary>
-    <param name="feature">
-      <para>Type: <b><see cref="D2D1_FEATURE" /></b></para>
-      <para>The feature to query support for.</para>
-    </param>
-    <param name="featureSupportData">
-      <para>Type: <b>void*</b></para>
-      <para>A structure indicating information about how or if the feature is supported.</para>
-    </param>
-    <param name="featureSupportDataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size of the <i>featureSupportData</i> parameter.</para>
-    </param>
+    <summary>This indicates whether an optional capability is supported by the D3D device.</summary>
+    <param name="feature">The feature to query support for.</param>
+    <param name="featureSupportData">A structure indicating information about how or if the feature is supported.</param>
+    <param name="featureSupportDataSize">The size of the <i>featureSupportData</i> parameter.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateBlendTransform">
-    <summary>
-      <para>This creates a blend transform that can be inserted into a transform graph.</para>
-    </summary>
-    <param name="numInputs">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of inputs to the blend transform.</para>
-    </param>
-    <param name="blendDescription">
-      <para>Type: <b>const <see cref="D2D1_BLEND_DESCRIPTION" />*</b></para>
-      <para>Describes the blend transform that is to be created.</para>
-    </param>
-    <param name="transform">
-      <para>Type: <b><see cref="ID2D1BlendTransform" />**</b></para>
-      <para>The returned blend transform.</para>
-    </param>
+    <summary>This creates a blend transform that can be inserted into a transform graph.</summary>
+    <param name="numInputs">The number of inputs to the blend transform.</param>
+    <param name="blendDescription">Describes the blend transform that is to be created.</param>
+    <param name="transform">The returned blend transform.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateBorderTransform">
-    <summary>
-      <para>Creates a transform that extends its input infinitely in every direction based on the passed in extend mode.</para>
-    </summary>
-    <param name="extendModeX">
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>The extend mode in the X-axis direction.</para>
-    </param>
-    <param name="extendModeY">
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>The extend mode in the Y-axis direction.</para>
-    </param>
-    <param name="transform">
-      <para>Type: <b><see cref="ID2D1BorderTransform" />**</b></para>
-      <para>The returned transform.</para>
-    </param>
+    <summary>Creates a transform that extends its input infinitely in every direction based on the passed in extend mode.</summary>
+    <param name="extendModeX">The extend mode in the X-axis direction.</param>
+    <param name="extendModeY">The extend mode in the Y-axis direction.</param>
+    <param name="transform">The returned transform.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateBoundsAdjustmentTransform">
-    <summary>
-      <para>Creates and returns a bounds adjustment  transform.</para>
-    </summary>
-    <param name="outputRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
-      <para>The initial output rectangle for the bounds adjustment transform.</para>
-    </param>
-    <param name="transform">
-      <para>Type: <b><see cref="ID2D1BoundsAdjustmentTransform" />**</b></para>
-      <para>The returned bounds adjustment transform.</para>
-    </param>
+    <summary>Creates and returns a bounds adjustment transform.</summary>
+    <param name="outputRectangle">The initial output rectangle for the bounds adjustment transform.</param>
+    <param name="transform">The returned bounds adjustment transform.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A support transform can be used for two different reasons.</para>
-      <list type="bullet">
-        <item>
-          <description>To indicate that a region of its input image is already transparent black. This can increase efficiency for rendering bitmaps. <b>Note</b>  If the indicated region does NOT contain only transparent black pixels, then rendering results are undefined.
-</description>
-        </item>
-        <item>
-          <description>To increase the size of the input image. The expanded area will be treated as transparent black
-</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateColorContext">
     <summary>
       <para>Creates a color context from a color space.</para>
       <para>If the color space is Custom, the context is initialized from the <i>profile</i> and <i>profileSize</i> parameters.</para>
-      <para>If the color space is not Custom, the context is       initialized with the profile bytes associated with the color space. The <i>profile</i> and <i>profileSize</i> parameters are ignored.</para>
+      <para>If the color space is not Custom, the context is initialized with the profile bytes associated with the color space. The <i>profile</i> and <i>profileSize</i> parameters are ignored.</para>
     </summary>
-    <param name="space">
-      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
-      <para>The space  of color context to create.</para>
-    </param>
-    <param name="profile">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>A buffer containing the ICC profile bytes used to initialize the color context when <i>space</i> is <see cref="D2D1_COLOR_SPACE_CUSTOM" />.  For other types, the parameter is ignored and should be set to <b>NULL</b>.</para>
-    </param>
-    <param name="profileSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size in bytes of <i>Profile</i>.</para>
-    </param>
-    <param name="colorContext">
-      <para>Type: <b><see cref="ID2D1ColorContext" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new color context object.</para>
-    </param>
+    <param name="space">The space of color context to create.</param>
+    <param name="profile">A buffer containing the ICC profile bytes used to initialize the color context when <i>space</i> is <see cref="D2D1_COLOR_SPACE_CUSTOM" />. For other types, the parameter is ignored and should be set to <b>NULL</b>.</param>
+    <param name="profileSize">The size in bytes of <i>Profile</i>.</param>
+    <param name="colorContext">When this method returns, contains the address of a pointer to a new color context object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateColorContextFromFilename">
-    <summary>
-      <para>Creates a color context by loading it from the specified filename.  The profile bytes are the contents of the file specified by <i>filename</i>.</para>
-    </summary>
-    <param name="filename">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The path to the file containing the profile bytes to initialize the color context with.</para>
-    </param>
-    <param name="colorContext">
-      <para>Type: <b><see cref="ID2D1ColorContext" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new color context.</para>
-    </param>
+    <summary>Creates a color context by loading it from the specified filename. The profile bytes are the contents of the file specified by <i>filename</i>.</summary>
+    <param name="filename">The path to the file containing the profile bytes to initialize the color context with.</param>
+    <param name="colorContext">When this method returns, contains the address of a pointer to a new color context.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateColorContextFromWicColorContext">
-    <summary>
-      <para>Creates a color context from an <see cref="IWICColorContext" />.  The <see cref="D2D1ColorContext" /> space of the resulting context varies, see Remarks for more info.</para>
-    </summary>
-    <param name="wicColorContext">
-      <para>Type: <b><see cref="IWICColorContext" />*</b></para>
-      <para>The <see cref="IWICColorContext" /> used to initialize the color context.</para>
-    </param>
-    <param name="colorContext">
-      <para>Type: <b><see cref="ID2D1ColorContext" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new color context.</para>
-    </param>
+    <summary>Creates a color context from an <see cref="IWICColorContext" />. The <see cref="D2D1ColorContext" /> space of the resulting context varies, see Remarks for more info.</summary>
+    <param name="wicColorContext">The <see cref="IWICColorContext" /> used to initialize the color context.</param>
+    <param name="colorContext">When this method returns, contains the address of a pointer to a new color context.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The new color context can be used in <see cref="D2D1_BITMAP_PROPERTIES1" /> to initialize the color context of a created bitmap.  The model field of the profile header is inspected to determine whether this profile is sRGB or scRGB and the color space is updated respectively.  Otherwise the space is  custom.</para>
-    </remarks>
-    <seealso cref="D2D1_BITMAP_PROPERTIES1" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateEffect">
-    <summary>
-      <para>Creates a Direct2D effect for the specified  class ID.
-This is the same as <see cref="ID2D1DeviceContext.CreateEffect" /> so custom effects can create other effects and wrap them in a transform.</para>
-    </summary>
-    <param name="effectId">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The built-in or registered effect ID to create the effect. See <a href="https://docs.microsoft.com//windows/desktop/Direct2D/built-in-effects">Built-in Effects</a> for a list of effect IDs.</para>
-    </param>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the effect.</para>
-    </param>
+    <summary>Creates a Direct2D effect for the specified class ID. This is the same as <see cref="ID2D1DeviceContext.CreateEffect" /> so custom effects can create other effects and wrap them in a transform.</summary>
+    <param name="effectId">The built-in or registered effect ID to create the effect. See <a href="https://docs.microsoft.com//windows/desktop/Direct2D/built-in-effects">Built-in Effects</a> for a list of effect IDs.</param>
+    <param name="effect">When this method returns, contains the address of a pointer to the effect.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
-          <description>Direct2D could not allocate sufficient memory to complete the call.
-</description>
-        </item>
-        <item>
+          <description>Direct2D could not allocate sufficient memory to complete the call.</description>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUTOFVIDEOMEMORY</description>
-          <description>Direct3D does not have enough display memory to perform the operation.
-</description>
-        </item>
-        <item>
+          <description>Direct3D does not have enough display memory to perform the operation.</description>
+        </listheader>
+        <listheader>
           <description>D2DERR_EFFECT_IS_NOT_REGISTERED</description>
           <description>The specified effect is not registered by the system.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The created effect does not reference count the DLL from which the effect was created. If the caller unregisters an effect while this effect is loaded, the resulting behavior is unpredictable.</para>
-    </remarks>
-    <seealso cref="D2D1_BLEND_DESCRIPTION" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/effects-overview">Effects</seealso>
-    <seealso cref="ID2D1BlendTransform" />
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateOffsetTransform">
-    <summary>
-      <para>Creates and returns an offset transform.</para>
-    </summary>
-    <param name="offset">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847948(v=vs.85)">D2D1_POINT_2L</a></b></para>
-      <para>The offset amount.</para>
-    </param>
-    <param name="transform">
-      <para>Type: <b><see cref="ID2D1OffsetTransform" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to an offset transform object.</para>
-    </param>
+    <summary>Creates and returns an offset transform.</summary>
+    <param name="offset">The offset amount.</param>
+    <param name="transform">When this method returns, contains the address of a pointer to an offset transform object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An offset transform is used to offset an input bitmap without having to insert a rendering pass. An offset transform is automatically inserted by an Affine transform if the transform evaluates to a pixel-aligned transform.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateResourceTexture">
-    <summary>
-      <para>Creates or finds the given resource texture, depending on whether a resource id is specified. It also optionally initializes the texture with the specified data.</para>
-    </summary>
-    <param name="resourceId">
-      <para>Type: <b>const GUID*</b></para>
-      <para>An optional pointer to the unique id that identifies the lookup table.</para>
-    </param>
-    <param name="resourceTextureProperties">
-      <para>Type: <b>const <see cref="D2D1_RESOURCE_TEXTURE_PROPERTIES" />*</b></para>
-      <para>The properties used to create the resource texture.</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>The optional data to be loaded into the resource texture.</para>
-    </param>
-    <param name="strides">
-      <para>Type: <b>const UINT32*</b></para>
-      <para>An optional pointer to the stride to advance through the resource texture, according to dimension.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size, in bytes, of the data.</para>
-    </param>
-    <param name="resourceTexture">
-      <para>Type: <b><see cref="ID2D1ResourceTexture" />**</b></para>
-      <para>The returned texture that can be used as a resource in a Direct2D effect.</para>
-    </param>
+    <summary>Creates or finds the given resource texture, depending on whether a resource id is specified. It also optionally initializes the texture with the specified data.</summary>
+    <param name="resourceId">An optional pointer to the unique id that identifies the lookup table.</param>
+    <param name="resourceTextureProperties">The properties used to create the resource texture.</param>
+    <param name="data">The optional data to be loaded into the resource texture.</param>
+    <param name="strides">An optional pointer to the stride to advance through the resource texture, according to dimension.</param>
+    <param name="dataSize">The size, in bytes, of the data.</param>
+    <param name="resourceTexture">The returned texture that can be used as a resource in a Direct2D effect.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateTransformNodeFromEffect">
-    <summary>
-      <para>Wraps an effect graph into a single transform node and then inserted into a transform graph. This allows an effect to aggregate other effects. This will typically be done in order to allow the effect properties to be re-expressed with a different contract, or to allow different components to integrate each-other’s effects.</para>
-    </summary>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />*</b></para>
-      <para>The effect to be wrapped in a transform node.</para>
-    </param>
-    <param name="transformNode">
-      <para>Type: <b><see cref="ID2D1TransformNode" />**</b></para>
-      <para>The returned transform node that encapsulates the effect graph.</para>
-    </param>
+    <summary>Wraps an effect graph into a single transform node and then inserted into a transform graph. This allows an effect to aggregate other effects. This will typically be done in order to allow the effect properties to be re-expressed with a different contract, or to allow different components to integrate each-other’s effects.</summary>
+    <param name="effect">The effect to be wrapped in a transform node.</param>
+    <param name="transformNode">The returned transform node that encapsulates the effect graph.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.CreateVertexBuffer">
-    <summary>
-      <para>Creates a vertex buffer or finds a standard vertex buffer and optionally initializes it with vertices. The returned buffer can be specified in the render info to specify both a vertex shader and or to pass custom vertices to the standard vertex shader used by <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a>.</para>
-    </summary>
-    <param name="vertexBufferProperties">
-      <para>Type: <b>const <see cref="D2D1_VERTEX_BUFFER_PROPERTIES" />*</b></para>
-      <para>The properties used to describe the vertex buffer and vertex shader.</para>
-    </param>
-    <param name="resourceId">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The unique id that identifies the vertex buffer.</para>
-    </param>
-    <param name="customVertexBufferProperties">
-      <para>Type: <b>const <see cref="D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES" />*</b></para>
-      <para>The properties used to define a custom vertex buffer. If you use a built-in vertex shader, you don't have to specify this property.</para>
-    </param>
-    <param name="buffer">
-      <para>Type: <b><see cref="ID2D1VertexBuffer" />**</b></para>
-      <para>The returned vertex buffer.</para>
-    </param>
+    <summary>Creates a vertex buffer or finds a standard vertex buffer and optionally initializes it with vertices. The returned buffer can be specified in the render info to specify both a vertex shader and or to pass custom vertices to the standard vertex shader used by <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a>.</summary>
+    <param name="vertexBufferProperties">The properties used to describe the vertex buffer and vertex shader.</param>
+    <param name="resourceId">The unique id that identifies the vertex buffer.</param>
+    <param name="customVertexBufferProperties">The properties used to define a custom vertex buffer. If you use a built-in vertex shader, you don't have to specify this property.</param>
+    <param name="buffer">The returned vertex buffer.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.FindResourceTexture">
-    <summary>
-      <para>Finds the given resource texture if it has already been created with <see cref="ID2D1EffectContext.CreateResourceTexture" /> with the same GUID.</para>
-    </summary>
-    <param name="resourceId">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The unique id that identifies the resource texture.</para>
-    </param>
-    <param name="resourceTexture">
-      <para>Type: <b><see cref="ID2D1ResourceTexture" />**</b></para>
-      <para>The returned texture that can be used as a resource in a Direct2D effect.</para>
-    </param>
+    <summary>Finds the given resource texture if it has already been created with <see cref="ID2D1EffectContext.CreateResourceTexture" /> with the same GUID.</summary>
+    <param name="resourceId">The unique id that identifies the resource texture.</param>
+    <param name="resourceTexture">The returned texture that can be used as a resource in a Direct2D effect.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_NOTFOUND</description>
           <description>The requested resource texture was not found.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.FindVertexBuffer">
-    <summary>
-      <para>This finds the given vertex buffer if it has already been created with <see cref="ID2D1EffectContext.CreateVertexBuffer" /> with the same GUID.</para>
-    </summary>
-    <param name="resourceId">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The unique id that identifies the vertex buffer.</para>
-    </param>
-    <param name="buffer">
-      <para>Type: <b><see cref="ID2D1VertexBuffer" />**</b></para>
-      <para>The returned vertex buffer that can be used as a resource in a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> effect.</para>
-    </param>
+    <summary>This finds the given vertex buffer if it has already been created with <see cref="ID2D1EffectContext.CreateVertexBuffer" /> with the same GUID.</summary>
+    <param name="resourceId">The unique id that identifies the vertex buffer.</param>
+    <param name="buffer">The returned vertex buffer that can be used as a resource in a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> effect.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_NOTFOUND</description>
           <description>The requested vertex buffer was not found.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.GetDpi">
-    <summary>
-      <para>Gets the unit mapping that an effect will use for properties that could be in either dots per inch (dpi) or pixels.</para>
-    </summary>
-    <param name="dpiX">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>The dpi on the x-axis.</para>
-    </param>
-    <param name="dpiY">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>The dpi on the y-axis.</para>
-    </param>
-    <remarks>
-      <para>If the <see cref="D2D1_UNIT_MODE" /> is <b>D2D1_UNIT_MODE_PIXELS</b>, both <i>dpiX</i> and <i>dpiY</i> will be set to 96.</para>
-    </remarks>
-    <seealso cref="ID2D1EffectContext" />
-    <seealso cref="ID2D1EffectImpl.PrepareForRender" />
+    <summary>Gets the unit mapping that an effect will use for properties that could be in either dots per inch (dpi) or pixels.</summary>
+    <param name="dpiX">The dpi on the x-axis.</param>
+    <param name="dpiY">The dpi on the y-axis.</param>
   </member>
   <member name="ID2D1EffectContext.GetMaximumSupportedFeatureLevel">
-    <summary>
-      <para>This indicates the maximum feature level from the provided list which is supported by the device. If none of the provided levels are supported, then this API fails with D2DERR_INSUFFICIENT_DEVICE_CAPABILITIES.</para>
-    </summary>
-    <param name="featureLevels">
-      <para>Type: <b>const <see cref="D3D_FEATURE_LEVEL" />*</b></para>
-      <para>The feature levels provided by the application.</para>
-    </param>
-    <param name="featureLevelsCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The count of feature levels provided by the application</para>
-    </param>
-    <param name="maximumSupportedFeatureLevel">
-      <para>Type: <b><see cref="D3D_FEATURE_LEVEL" />*</b></para>
-      <para>The maximum feature level from the <i>featureLevels</i> list which is supported by the D2D device.</para>
-    </param>
+    <summary>This indicates the maximum feature level from the provided list which is supported by the device. If none of the provided levels are supported, then this API fails with D2DERR_INSUFFICIENT_DEVICE_CAPABILITIES.</summary>
+    <param name="featureLevels">The feature levels provided by the application.</param>
+    <param name="featureLevelsCount">The count of feature levels provided by the application</param>
+    <param name="maximumSupportedFeatureLevel">The maximum feature level from the <i>featureLevels</i> list which is supported by the D2D device.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_INSUFFICIENT_DEVICE_CAPABILITIES</description>
           <description>None of the provided levels are supported.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.IsBufferPrecisionSupported">
-    <summary>
-      <para>Indicates whether the buffer precision is supported by the underlying Direct2D <see cref="device." /></para>
-    </summary>
-    <param name="bufferPrecision">
-      <para>Type: <b><see cref="D2D1_BUFFER_PRECISION" /></b></para>
-      <para>The buffer precision to check.</para>
-    </param>
-    <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>Returns TRUE if the buffer precision is supported.  Returns FALSE if the buffer precision is not supported.</para>
-    </returns>
-    <seealso cref="ID2D1EffectContext" />
+    <summary>Indicates whether the buffer precision is supported by the underlying Direct2D <see cref="device." /></summary>
+    <param name="bufferPrecision">The buffer precision to check.</param>
+    <returns>Returns TRUE if the buffer precision is supported. Returns FALSE if the buffer precision is not supported.</returns>
   </member>
   <member name="ID2D1EffectContext.IsShaderLoaded">
-    <summary>
-      <para>This tests to see if the given shader is loaded.</para>
-    </summary>
-    <param name="shaderId">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The unique id that identifies the shader.</para>
-    </param>
-    <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>Whether the shader is loaded.</para>
-    </returns>
-    <seealso cref="ID2D1EffectContext" />
+    <summary>This tests to see if the given shader is loaded.</summary>
+    <param name="shaderId">The unique id that identifies the shader.</param>
+    <returns>Whether the shader is loaded.</returns>
   </member>
   <member name="ID2D1EffectContext.LoadComputeShader">
-    <summary>
-      <para>Loads the given shader by its unique ID. Loading the shader multiple times is ignored. When the shader is loaded it is also handed to the driver to JIT, if it hasn’t been already.</para>
-    </summary>
-    <param name="resourceId">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The unique id that identifies the shader.</para>
-    </param>
-    <param name="shaderBuffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The buffer that contains the shader to register.</para>
-    </param>
-    <param name="shaderBufferCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size of the shader buffer in bytes.</para>
-    </param>
+    <summary>Loads the given shader by its unique ID. Loading the shader multiple times is ignored. When the shader is loaded it is also handed to the driver to JIT, if it hasn’t been already.</summary>
+    <param name="resourceId">The unique id that identifies the shader.</param>
+    <param name="shaderBuffer">The buffer that contains the shader to register.</param>
+    <param name="shaderBufferCount">The size of the shader buffer in bytes.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The shader you specify must be compiled,  not  in raw HLSL code.</para>
-    </remarks>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.LoadPixelShader">
-    <summary>
-      <para>Loads the given shader by its unique ID. Loading the shader multiple times is ignored. When the shader is loaded it is also handed to the driver to JIT, if it hasn’t been already.</para>
-    </summary>
-    <param name="shaderId">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The unique id that identifies the shader.</para>
-    </param>
-    <param name="shaderBuffer">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>The buffer that contains the shader to register.</para>
-    </param>
-    <param name="shaderBufferCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size of the shader buffer in bytes.</para>
-    </param>
+    <summary>Loads the given shader by its unique ID. Loading the shader multiple times is ignored. When the shader is loaded it is also handed to the driver to JIT, if it hasn’t been already.</summary>
+    <param name="shaderId">The unique id that identifies the shader.</param>
+    <param name="shaderBuffer">The buffer that contains the shader to register.</param>
+    <param name="shaderBufferCount">The size of the shader buffer in bytes.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The shader you specify must be compiled,  not  in raw HLSL code.</para>
-    </remarks>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext.LoadVertexShader">
-    <summary>
-      <para>Loads the given shader by its unique ID. Loading the shader multiple times is ignored. When the shader is loaded it is also handed to the driver to JIT, if it hasn’t been already.</para>
-    </summary>
-    <param name="resourceId">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The unique id that identifies the shader.</para>
-    </param>
-    <param name="shaderBuffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The buffer that contains the shader to register.</para>
-    </param>
-    <param name="shaderBufferCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size of the shader buffer in bytes.</para>
-    </param>
+    <summary>Loads the given shader by its unique ID. Loading the shader multiple times is ignored. When the shader is loaded it is also handed to the driver to JIT, if it hasn’t been already.</summary>
+    <param name="resourceId">The unique id that identifies the shader.</param>
+    <param name="shaderBuffer">The buffer that contains the shader to register.</param>
+    <param name="shaderBufferCount">The size of the shader buffer in bytes.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The shader you specify must be compiled,  not  in raw HLSL code.</para>
-    </remarks>
-    <seealso cref="ID2D1EffectContext" />
   </member>
   <member name="ID2D1EffectContext">
-    <summary>
-      <para>Provides factory methods and other state management for effect and transform authors.</para>
-    </summary>
-    <remarks>
-      <para>This interface  is passed to an effect implementation through the <see cref="ID2D1EffectImpl.Initialize" /> method. In order to prevent applications casually gaining access to this interface, and to separate reference counts between the public and private interfaces, it is not possible to call <see cref="QueryInterface" /> between the <see cref="ID2D1DeviceContext" /> and the <b>ID2D1EffectContext</b>.</para>
-      <para>Each call to <see cref="ID2D1Effect.Initialize" /> will be provided a different <b>ID2D1EffectContext</b> interface. This interface tracks resource allocations for the effect. When the effect is released, the corresponding allocations will also be released.</para>
-    </remarks>
-    <seealso cref="ID2D1EffectImpl" />
-    <seealso cref="ID2D1Factory.RegisterEffect" />
-    <seealso cref="IUnknown" />
+    <summary>Provides factory methods and other state management for effect and transform authors.</summary>
   </member>
 </doc>

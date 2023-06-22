@@ -3,125 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IXblIdpAuthManager.GetEnvironment">
-    <summary>
-      <para>Reserved for Microsoft use.</para>
-    </summary>
-    <param name="environment">
-      <para>Type: <b>__RPC__deref_out_opt_string*</b></para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xblidpauthmanager/nn-xblidpauthmanager-ixblidpauthmanager">IXblIdpAuthManager</seealso>
+    <summary>Reserved for Microsoft use.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IXblIdpAuthManager.GetGamerAccount">
-    <summary>
-      <para>Reserved for Microsoft use.</para>
-    </summary>
-    <param name="msaAccountId">
-      <para>Type: <b>__RPC__deref_out_opt_string*</b></para>
-    </param>
-    <param name="xuid">
-      <para>Type: <b>__RPC__deref_out_opt_string*</b></para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xblidpauthmanager/nn-xblidpauthmanager-ixblidpauthmanager">IXblIdpAuthManager</seealso>
+    <summary>Reserved for Microsoft use.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IXblIdpAuthManager.GetSandbox">
-    <summary>
-      <para>Reserved for Microsoft use.</para>
-    </summary>
-    <param name="sandbox">
-      <para>Type: <b>__RPC__deref_out_opt_string*</b></para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xblidpauthmanager/nn-xblidpauthmanager-ixblidpauthmanager">IXblIdpAuthManager</seealso>
+    <summary>Reserved for Microsoft use.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IXblIdpAuthManager.GetTokenAndSignatureWithTokenResult">
-    <summary>
-      <para>Reserved for Microsoft use.</para>
-    </summary>
-    <param name="msaAccountId">
-      <para>Type: <b>__RPC__in_opt_string</b></para>
-    </param>
-    <param name="appSid">
-      <para>Type: <b>__RPC__in_string</b></para>
-    </param>
-    <param name="msaTarget">
-      <para>Type: <b>__RPC__in_string</b></para>
-    </param>
-    <param name="msaPolicy">
-      <para>Type: <b>__RPC__in_string</b></para>
-    </param>
-    <param name="httpMethod">
-      <para>Type: <b>__RPC__in_string</b></para>
-    </param>
-    <param name="uri">
-      <para>Type: <b>__RPC__in_string</b></para>
-    </param>
-    <param name="headers">
-      <para>Type: <b>__RPC__in_opt_string</b></para>
-    </param>
-    <param name="body">
-      <para>Type: <b>BYTE*</b></para>
-    </param>
-    <param name="bodySize">
-      <para>Type: <b>__RPC__in_ecount_full_opt</b></para>
-    </param>
-    <param name="forceRefresh">
-      <para>Type: <b>BOOL</b></para>
-    </param>
-    <param name="result">
-      <para>Type: <b>IXblIdpAuthTokenResult**</b></para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xblidpauthmanager/nn-xblidpauthmanager-ixblidpauthmanager">IXblIdpAuthManager</seealso>
+    <summary>Reserved for Microsoft use.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IXblIdpAuthManager.SetAppViewInitialized">
-    <summary>
-      <para>Reserved for Microsoft use.</para>
-    </summary>
-    <param name="appSid">
-      <para>Type: <b>__RPC__in_string</b></para>
-    </param>
-    <param name="msaAccountId">
-      <para>Type: <b>__RPC__in_string</b></para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xblidpauthmanager/nn-xblidpauthmanager-ixblidpauthmanager">IXblIdpAuthManager</seealso>
+    <summary>Reserved for Microsoft use.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IXblIdpAuthManager.SetGamerAccount">
-    <summary>
-      <para>Reserved for Microsoft use.</para>
-    </summary>
-    <param name="msaAccountId">
-      <para>Type: <b>__RPC__in_opt_string</b></para>
-    </param>
-    <param name="xuid">
-      <para>Type: <b>__RPC__in_opt_string</b></para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xblidpauthmanager/nn-xblidpauthmanager-ixblidpauthmanager">IXblIdpAuthManager</seealso>
+    <summary>Reserved for Microsoft use.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IXblIdpAuthManager">
-    <summary>
-      <para>Reserved for Microsoft use.</para>
-    </summary>
+    <summary>Reserved for Microsoft use.</summary>
   </member>
 </doc>

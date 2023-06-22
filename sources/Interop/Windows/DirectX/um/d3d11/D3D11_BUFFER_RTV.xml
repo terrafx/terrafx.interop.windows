@@ -3,36 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_BUFFER_RTV">
-    <summary>
-      <para>Specifies the elements in a buffer resource to use in a render-target view.</para>
-    </summary>
-    <remarks>
-      <para>A render-target view is a member of a render-target-view description (see <see cref="D3D11_RENDER_TARGET_VIEW_DESC" />). Create a render-target view by calling <see cref="ID3D11Device.CreateRenderTargetView" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Specifies the elements in a buffer resource to use in a render-target view.</summary>
   </member>
   <member name="D3D11_BUFFER_RTV.FirstElement">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of bytes between the beginning of the buffer and the first element to access.</para>
-    </summary>
+    <summary>Number of bytes between the beginning of the buffer and the first element to access.</summary>
   </member>
   <member name="D3D11_BUFFER_RTV.ElementOffset">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The offset of the first element in the view to access, relative to element 0.</para>
-    </summary>
+    <summary>The offset of the first element in the view to access, relative to element 0.</summary>
   </member>
   <member name="D3D11_BUFFER_RTV.NumElements">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The total number of elements in the view.</para>
-    </summary>
+    <summary>The total number of elements in the view.</summary>
   </member>
   <member name="D3D11_BUFFER_RTV.ElementWidth">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The width of each element (in bytes). This can be determined from the format stored in the render-target-view description.</para>
-    </summary>
+    <summary>The width of each element (in bytes). This can be determined from the format stored in the render-target-view description.</summary>
   </member>
 </doc>

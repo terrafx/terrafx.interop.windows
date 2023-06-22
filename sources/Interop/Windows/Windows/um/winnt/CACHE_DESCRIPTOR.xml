@@ -3,12 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CACHE_DESCRIPTOR">
-    <summary>
-      <para>Describes the cache attributes.</para>
-    </summary>
-    <seealso cref="GetLogicalProcessorInformation" />
-    <seealso cref="PROCESSOR_CACHE_TYPE" />
-    <seealso cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION" />
+    <summary>Describes the cache attributes.</summary>
   </member>
   <member name="CACHE_DESCRIPTOR.Level">
     <summary>
@@ -18,51 +13,49 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>1</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
+          <description>L1</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>L1</para>
+            <list type="bullet">
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>L2</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>2</para>
+            <list type="bullet">
+              <listheader>
+                <term>3</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>L2</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>3</para>
-          </description>
-          <description>
-            <para>L3</para>
-          </description>
-        </item>
+          <description>L3</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CACHE_DESCRIPTOR.Associativity">
-    <summary>
-      <para>The cache associativity. If this member is CACHE_FULLY_ASSOCIATIVE (0xFF), the cache is fully associative.</para>
-    </summary>
+    <summary>The cache associativity. If this member is CACHE_FULLY_ASSOCIATIVE (0xFF), the cache is fully associative.</summary>
   </member>
   <member name="CACHE_DESCRIPTOR.LineSize">
-    <summary>
-      <para>The cache line size, in bytes.</para>
-    </summary>
+    <summary>The cache line size, in bytes.</summary>
   </member>
   <member name="CACHE_DESCRIPTOR.Size">
-    <summary>
-      <para>The cache size, in bytes.</para>
-    </summary>
+    <summary>The cache size, in bytes.</summary>
   </member>
   <member name="CACHE_DESCRIPTOR.Type">
-    <summary>
-      <para>The cache type. This member is a <see cref="PROCESSOR_CACHE_TYPE" /> value.</para>
-    </summary>
+    <summary>The cache type. This member is a <see cref="PROCESSOR_CACHE_TYPE" /> value.</summary>
   </member>
 </doc>

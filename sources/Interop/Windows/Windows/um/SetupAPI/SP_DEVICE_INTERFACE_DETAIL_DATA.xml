@@ -3,55 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_DEVICE_INTERFACE_DETAIL_DATA">
-    <summary>
-      <para>An SP_DEVICE_INTERFACE_DETAIL_DATA structure contains the path for a device interface.</para>
-    </summary>
-    <remarks>
-      <para>An SP_DEVICE_INTERFACE_DETAIL_DATA structure identifies the path for a device interface in a device information set.</para>
-      <para>
-        <b>SetupDi</b>
-        <i>Xxx</i> functions that take an SP_DEVICE_INTERFACE_DETAIL_DATA structure as a parameter verify that the <b>cbSize</b> member of the supplied structure is equal to the size, in bytes, of the structure. If the <b>cbSize</b> member is not set correctly for an input parameter, the function will fail and set an error code of ERROR_INVALID_PARAMETER. If the <b>cbSize</b> member is not set correctly for an output parameter, the function will fail and set an error code of ERROR_INVALID_USER_BUFFER.</para>
-      <blockquote>
-        <para>[!NOTE]
-The setupapi.h header defines SP_DEVICE_INTERFACE_DETAIL_DATA as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="SetupDiGetDeviceInterfaceDetail" />
+    <summary>An SP_DEVICE_INTERFACE_DETAIL_DATA structure contains the path for a device interface.</summary>
   </member>
   <member name="SP_DEVICE_INTERFACE_DETAIL_DATA.cbSize">
-    <summary>
-      <para>The size, in bytes, of the SP_DEVICE_INTERFACE_DETAIL_DATA structure. For more information, see the following Remarks section.</para>
-    </summary>
+    <summary>The size, in bytes, of the SP_DEVICE_INTERFACE_DETAIL_DATA structure. For more information, see the following Remarks section.</summary>
   </member>
   <member name="SP_DEVICE_INTERFACE_DETAIL_DATA.DevicePath">
-    <summary>
-      <para>A NULL-terminated string that contains the device interface path. This path can be passed to Win32 functions such as <see cref="CreateFile" />.</para>
-    </summary>
+    <summary>A NULL-terminated string that contains the device interface path. This path can be passed to Win32 functions such as <see cref="CreateFile" />.</summary>
   </member>
   <member name="SP_DEVICE_INTERFACE_DETAIL_DATA">
-    <summary>
-      <para>An SP_DEVICE_INTERFACE_DETAIL_DATA structure contains the path for a device interface.</para>
-    </summary>
-    <remarks>
-      <para>An SP_DEVICE_INTERFACE_DETAIL_DATA structure identifies the path for a device interface in a device information set.</para>
-      <para>
-        <b>SetupDi</b>
-        <i>Xxx</i> functions that take an SP_DEVICE_INTERFACE_DETAIL_DATA structure as a parameter verify that the <b>cbSize</b> member of the supplied structure is equal to the size, in bytes, of the structure. If the <b>cbSize</b> member is not set correctly for an input parameter, the function will fail and set an error code of ERROR_INVALID_PARAMETER. If the <b>cbSize</b> member is not set correctly for an output parameter, the function will fail and set an error code of ERROR_INVALID_USER_BUFFER.</para>
-      <blockquote>
-        <para>[!NOTE]
-The setupapi.h header defines SP_DEVICE_INTERFACE_DETAIL_DATA as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="SetupDiGetDeviceInterfaceDetail" />
+    <summary>An SP_DEVICE_INTERFACE_DETAIL_DATA structure contains the path for a device interface.</summary>
   </member>
   <member name="SP_DEVICE_INTERFACE_DETAIL_DATA.cbSize">
-    <summary>
-      <para>The size, in bytes, of the SP_DEVICE_INTERFACE_DETAIL_DATA structure. For more information, see the following Remarks section.</para>
-    </summary>
+    <summary>The size, in bytes, of the SP_DEVICE_INTERFACE_DETAIL_DATA structure. For more information, see the following Remarks section.</summary>
   </member>
   <member name="SP_DEVICE_INTERFACE_DETAIL_DATA.DevicePath">
-    <summary>
-      <para>A NULL-terminated string that contains the device interface path. This path can be passed to Win32 functions such as <see cref="CreateFile" />.</para>
-    </summary>
+    <summary>A NULL-terminated string that contains the device interface path. This path can be passed to Win32 functions such as <see cref="CreateFile" />.</summary>
   </member>
 </doc>

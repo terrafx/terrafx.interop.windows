@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcBlobUtf16.GetStringLength">
+    <summary>Retrieves the length of the string stored in this blob, in characters, excluding the null-terminator.</summary>
+  </member>
+  <member name="IDxcBlobUtf16.GetStringPointer">
+    <summary>Retrieves a pointer to the string stored in this blob.</summary>
+  </member>
+  <member name="IDxcBlobUtf16">
+    <summary>A blob containing a null-terminated wide string, and using the native UTF-16 wide character encoding of Windows. <b>IDxcBlobUtf16</b> is a legacy alias for <b>IDxcBlobWide</b>. This interface is used to return output name strings in DXC. Other string output blobs (such as errors/warnings, preprocessed HLSL, or other text) are returned using encodings based on the <code>-encoding</code> option passed to the compiler. The methods of <b>IDxcBlobUtf16</b> guarantee null-terminated text, and native wide character encoding.</summary>
+  </member>
+</doc>

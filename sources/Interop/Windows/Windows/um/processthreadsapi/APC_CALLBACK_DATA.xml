@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APC_CALLBACK_DATA">
+    <summary>Specifies the data for a user-mode asynchronous procedure call (APC) object.</summary>
+  </member>
+  <member name="APC_CALLBACK_DATA.Parameter">
+    <summary>The data passed to the function using the dwData parameter of the <see cref="QueueUserAPC" /> function.</summary>
+  </member>
+  <member name="APC_CALLBACK_DATA.ContextRecord">
+    <summary>The processor context that was interrupted when the thread was directed to call the APC function.</summary>
+  </member>
+  <member name="APC_CALLBACK_DATA.Reserved0">
+    <summary>Reserved for future use; must be zero.</summary>
+  </member>
+  <member name="APC_CALLBACK_DATA.Reserved1">
+    <summary>Reserved for future use; must be zero.</summary>
+  </member>
+</doc>

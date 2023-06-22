@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGEHLP_CBA_READ_MEMORY">
-    <summary>
-      <para>Contains information about a memory read operation.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psymbol_registered_callback">SymRegisterCallbackProc64</seealso>
+    <summary>Contains information about a memory read operation.</summary>
   </member>
   <member name="IMAGEHLP_CBA_READ_MEMORY.addr">
-    <summary>
-      <para>The address to be read.</para>
-    </summary>
+    <summary>The address to be read.</summary>
   </member>
   <member name="IMAGEHLP_CBA_READ_MEMORY.buf">
-    <summary>
-      <para>A pointer to a buffer that receives the memory read.</para>
-    </summary>
+    <summary>A pointer to a buffer that receives the memory read.</summary>
   </member>
   <member name="IMAGEHLP_CBA_READ_MEMORY.bytes">
-    <summary>
-      <para>The number of bytes to read.</para>
-    </summary>
+    <summary>The number of bytes to read.</summary>
   </member>
   <member name="IMAGEHLP_CBA_READ_MEMORY.bytesread">
-    <summary>
-      <para>A pointer to a variable that receives the number of bytes read.</para>
-    </summary>
+    <summary>A pointer to a variable that receives the number of bytes read.</summary>
   </member>
 </doc>

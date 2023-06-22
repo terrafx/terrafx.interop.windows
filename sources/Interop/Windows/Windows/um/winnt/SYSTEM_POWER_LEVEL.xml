@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSTEM_POWER_LEVEL">
-    <summary>
-      <para>Contains information about system battery drain policy settings. This structure is part of the
-<see cref="GLOBAL_USER_POWER_POLICY" /> structure.</para>
-    </summary>
-    <seealso cref="GLOBAL_USER_POWER_POLICY" />
-    <seealso cref="POWER_ACTION_POLICY" />
+    <summary>Contains information about system battery drain policy settings. This structure is part of the<see cref="GLOBAL_USER_POWER_POLICY" /> structure.</summary>
   </member>
   <member name="SYSTEM_POWER_LEVEL.Enable">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the alarm should be activated when the battery discharges below the value set in <b>BatteryLevel</b>.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the alarm should be activated when the battery discharges below the value set in <b>BatteryLevel</b>.</summary>
   </member>
   <member name="SYSTEM_POWER_LEVEL.Spare">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="SYSTEM_POWER_LEVEL.BatteryLevel">
-    <summary>
-      <para>The battery capacity for this battery discharge policy, expressed as a percentage.</para>
-    </summary>
+    <summary>The battery capacity for this battery discharge policy, expressed as a percentage.</summary>
   </member>
   <member name="SYSTEM_POWER_LEVEL.PowerPolicy">
-    <summary>
-      <para>A
-<see cref="POWER_ACTION_POLICY" /> structure that defines the action to take for this battery discharge policy.</para>
-    </summary>
+    <summary>A<see cref="POWER_ACTION_POLICY" /> structure that defines the action to take for this battery discharge policy.</summary>
   </member>
   <member name="SYSTEM_POWER_LEVEL.MinSystemState">
-    <summary>
-      <para>The minimum system sleep state to enter when the battery discharges below the value set in <b>BatteryLevel</b>. This member must be one of the
-<see cref="SYSTEM_POWER_STATE" /> enumeration type values.</para>
-    </summary>
+    <summary>The minimum system sleep state to enter when the battery discharges below the value set in <b>BatteryLevel</b>. This member must be one of the<see cref="SYSTEM_POWER_STATE" /> enumeration type values.</summary>
   </member>
 </doc>

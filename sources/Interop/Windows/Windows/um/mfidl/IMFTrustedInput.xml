@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFTrustedInput.GetInputTrustAuthority">
-    <summary>
-      <para>Retrieves the input trust authority (ITA) for a specified stream.</para>
-    </summary>
-    <param name="dwStreamID">
-      <para>The stream identifier for which the ITA is being requested.</para>
-    </param>
-    <param name="riid">
-      <para>The interface identifier (IID) of the interface being requested. Currently the only supported value is IID_IMFInputTrustAuthority.</para>
-    </param>
-    <param name="ppunkObject">
-      <para>Receives a pointer to the ITA's <b>IUnknown</b> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Retrieves the input trust authority (ITA) for a specified stream. If the specified stream is not protected, this method must return MF_E_NOT_PROTECTED.</summary>
+    <param name="dwStreamID">The stream identifier for which the ITA is being requested.</param>
+    <param name="riid">The interface identifier (IID) of the interface being requested. Currently the only supported value is IID_IMFInputTrustAuthority.</param>
+    <param name="ppunkObject">Receives a pointer to the ITA's <b>IUnknown</b> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -22,35 +14,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The ITA does not expose the requested interface.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_PROTECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The ITA does not expose the requested interface.</para>
-          </description>
-        </item>
+          <description>The specified stream is not protected.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFInputTrustAuthority" />
-    <seealso cref="IMFTrustedInput" />
   </member>
   <member name="IMFTrustedInput">
-    <summary>
-      <para>Implemented by components that provide input trust authorities (ITAs). This interface is used to get the ITA for each of the component's streams.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Implemented by components that provide input trust authorities (ITAs). This interface is used to get the ITA for each of the component's streams.</summary>
   </member>
 </doc>

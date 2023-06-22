@@ -5,19 +5,13 @@
   <member name="DWRITE_OPTICAL_ALIGNMENT">
     <summary>
       <para>The optical margin alignment mode.</para>
-      <para>By default, glyphs are aligned to the margin by the default origin and side-bearings of the glyph.
-If you specify <b>DWRITE_OPTICAL_ALIGNMENT_NO_SIDE_BEARINGS</b>, then the alignment uses the side bearings to offset the glyph
-from the aligned edge to ensure the ink of the glyphs are aligned.</para>
+      <para>By default, glyphs are aligned to the margin by the default origin and side-bearings of the glyph. If you specify <b>DWRITE_OPTICAL_ALIGNMENT_NO_SIDE_BEARINGS</b>, then the alignment uses the side bearings to offset the glyph from the aligned edge to ensure the ink of the glyphs are aligned.</para>
     </summary>
   </member>
   <member name="DWRITE_OPTICAL_ALIGNMENT.DWRITE_OPTICAL_ALIGNMENT_NONE">
-    <summary>
-      <para>Align to the default origin and side-bearings of the glyph.</para>
-    </summary>
+    <summary>Align to the default origin and side-bearings of the glyph.</summary>
   </member>
   <member name="DWRITE_OPTICAL_ALIGNMENT.DWRITE_OPTICAL_ALIGNMENT_NO_SIDE_BEARINGS">
-    <summary>
-      <para>Align to the ink of the glyphs, such that the black box abuts the margins.</para>
-    </summary>
+    <summary>Align to the ink of the glyphs, such that the black box abuts the margins.</summary>
   </member>
 </doc>

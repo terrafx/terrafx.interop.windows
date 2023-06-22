@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Status">
+    <summary>The <b>Status</b> enumeration indicates the result of a Windows GDI+ method call.</summary>
+  </member>
+  <member name="Status.Ok">
+    <summary>Indicates that the method call was successful.</summary>
+  </member>
+  <member name="Status.GenericError">
+    <summary>Indicates that there was an error on the method call, which is identified as something other than those defined by the other elements of this enumeration.</summary>
+  </member>
+  <member name="Status.InvalidParameter">
+    <summary>Indicates that one of the arguments passed to the method was not valid.</summary>
+  </member>
+  <member name="Status.OutOfMemory">
+    <summary>Indicates that the operating system is out of memory and could not allocate memory to process the method call. For an explanation of how constructors use the <see cref="OutOfMemory" /> status, see the Remarks section at the end of this topic.</summary>
+  </member>
+  <member name="Status.ObjectBusy">
+    <summary>Indicates that one of the arguments specified in the API call is already in use in another thread.</summary>
+  </member>
+  <member name="Status.InsufficientBuffer">
+    <summary>Indicates that a buffer specified as an argument in the API call is not large enough to hold the data to be received.</summary>
+  </member>
+  <member name="Status.NotImplemented">
+    <summary>Indicates that the method is not implemented.</summary>
+  </member>
+  <member name="Status.Win32Error">
+    <summary>Indicates that the method generated a Win32 error.</summary>
+  </member>
+  <member name="Status.WrongState">
+    <summary>Indicates that the object is in an invalid state to satisfy the API call. For example, calling<see cref="Pen.GetColor" /> from a pen that is not a single, solid color results in a <see cref="WrongState" /> status.</summary>
+  </member>
+  <member name="Status.Aborted">
+    <summary>Indicates that the method was aborted.</summary>
+  </member>
+  <member name="Status.FileNotFound">
+    <summary>Indicates that the specified image file or metafile cannot be found.</summary>
+  </member>
+  <member name="Status.ValueOverflow">
+    <summary>Indicates that the method performed an arithmetic operation that produced a numeric overflow.</summary>
+  </member>
+  <member name="Status.AccessDenied">
+    <summary>Indicates that a write operation is not allowed on the specified file.</summary>
+  </member>
+  <member name="Status.UnknownImageFormat">
+    <summary>Indicates that the specified image file format is not known.</summary>
+  </member>
+  <member name="Status.FontFamilyNotFound">
+    <summary>Indicates that the specified font family cannot be found. Either the font family name is incorrect or the font family is not installed.</summary>
+  </member>
+  <member name="Status.FontStyleNotFound">
+    <summary>Indicates that the specified style is not available for the specified font family.</summary>
+  </member>
+  <member name="Status.NotTrueTypeFont">
+    <summary>Indicates that the font retrieved from an<b>HDC</b> or<b>LOGFONT</b> is not a TrueType font and cannot be used with GDI+.</summary>
+  </member>
+  <member name="Status.UnsupportedGdiplusVersion">
+    <summary>Indicates that the version of GDI+ that is installed on the system is incompatible with the version with which the application was compiled.</summary>
+  </member>
+  <member name="Status.GdiplusNotInitialized">
+    <summary>Indicates that the GDI+API is not in an initialized state. To function, all GDI+ objects require that GDI+ be in an initialized state. Initialize GDI+ by calling<see cref="GdiplusStartup" />.</summary>
+  </member>
+  <member name="Status.PropertyNotFound">
+    <summary>Indicates that the specified property does not exist in the image.</summary>
+  </member>
+  <member name="Status.PropertyNotSupported">
+    <summary>Indicates that the specified property is not supported by the format of the image and, therefore, cannot be set.</summary>
+  </member>
+  <member name="Status.ProfileNotFound">
+    <summary>Indicates that the color profile required to save an image in CMYK format was not found.</summary>
+  </member>
+</doc>

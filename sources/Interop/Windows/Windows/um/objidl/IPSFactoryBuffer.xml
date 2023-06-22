@@ -3,57 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPSFactoryBuffer.CreateProxy">
-    <summary>
-      <para>Creates a proxy for the specified remote interface.</para>
-    </summary>
-    <param name="pUnkOuter">
-      <para>A controlling <see cref="IUnknown" /> interface; used for aggregation.</para>
-    </param>
-    <param name="riid">
-      <para>The identifier of the interface to proxy.</para>
-    </param>
-    <param name="ppProxy">
-      <para>A pointer to an <see cref="IRpcProxyBuffer" /> interface to control marshaling.</para>
-    </param>
-    <param name="ppv">
-      <para>A pointer to the interface specified by <i>riid</i>.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <remarks>
-      <para>The <see cref="IUnknown" /> implementation of the <see cref="IRpcProxyBuffer" /> interface must not delegate to the outer controlling <b>IUnknown</b>.</para>
-    </remarks>
-    <seealso cref="IPSFactoryBuffer" />
-    <seealso cref="IRpcProxyBuffer" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/com/proxy">Proxy</seealso>
+    <summary>Creates a proxy for the specified remote interface.</summary>
+    <param name="pUnkOuter">A controlling <see cref="IUnknown" /> interface; used for aggregation.</param>
+    <param name="riid">The identifier of the interface to proxy.</param>
+    <param name="ppProxy">A pointer to an <see cref="IRpcProxyBuffer" /> interface to control marshaling.</param>
+    <param name="ppv">A pointer to the interface specified by <i>riid</i>.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IPSFactoryBuffer.CreateStub">
-    <summary>
-      <para>Creates a stub for the remote use of the specified interface.</para>
-    </summary>
-    <param name="riid">
-      <para>The identifier of the interface for which a stub is to be created.</para>
-    </param>
-    <param name="pUnkServer">
-      <para>A controlling <see cref="IUnknown" /> interface; used for aggregation.</para>
-    </param>
-    <param name="ppStub">
-      <para>A pointer to an <see cref="IRpcStubBuffer" /> interface pointer to control marshaling.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IPSFactoryBuffer" />
-    <seealso cref="IRpcStubBuffer" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/com/stub">Stub</seealso>
+    <summary>Creates a stub for the remote use of the specified interface.</summary>
+    <param name="riid">The identifier of the interface for which a stub is to be created.</param>
+    <param name="pUnkServer">A controlling <see cref="IUnknown" /> interface; used for aggregation.</param>
+    <param name="ppStub">A pointer to an <see cref="IRpcStubBuffer" /> interface pointer to control marshaling.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IPSFactoryBuffer">
-    <summary>
-      <para>Provides custom methods for the creation of COM object proxies and stubs. This interface is not marshalable.</para>
-    </summary>
-    <seealso cref="IMarshal" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/com/proxy">Proxy</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/com/stub">Stub</seealso>
+    <summary>Provides custom methods for the creation of COM object proxies and stubs. This interface is not marshalable.</summary>
   </member>
 </doc>

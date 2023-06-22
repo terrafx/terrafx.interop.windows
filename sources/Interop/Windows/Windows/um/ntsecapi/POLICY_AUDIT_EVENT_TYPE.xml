@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICY_AUDIT_EVENT_TYPE">
+    <summary>The <b>POLICY_AUDIT_EVENT_TYPE</b> enumeration defines values that indicate the types of events the system can audit. The<see cref="LsaQueryInformationPolicy" /> and<see cref="LsaSetInformationPolicy" /> functions use this enumeration when their <i>InformationClass</i> parameters are set to PolicyAuditEventsInformation.</summary>
+  </member>
+  <member name="POLICY_AUDIT_EVENT_TYPE.AuditCategorySystem">
+    <summary>
+      <para>Determines whether the operating system must audit any of the following attempts:</para>
+      <list type="bullet">
+        <item>
+          <description>Attempted system time change.</description>
+        </item>
+        <item>
+          <description>Attempted security system startup, restart, or shutdown.</description>
+        </item>
+        <item>
+          <description>Attempt to load extensible authentication features.</description>
+        </item>
+        <item>
+          <description>Loss of audited events due to auditing system failure.</description>
+        </item>
+        <item>
+          <description>Security log size that exceeds a configurable warning threshold level.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="POLICY_AUDIT_EVENT_TYPE.AuditCategoryLogon">
+    <summary>Determines whether the operating system must audit each time this computer validates the credentials of an account. Account logon events are generated whenever a computer validates the credentials of one of its local accounts. The credential validation can be in support of a local logon or, in the case of an Active Directory domain account on a domain controller, can be in support of a logon to another computer. Audited events for local accounts must be logged on the local security log of the computer. Account logoff does not generate an event that can be audited.</summary>
+  </member>
+  <member name="POLICY_AUDIT_EVENT_TYPE.AuditCategoryObjectAccess">
+    <summary>Determines whether the operating system must audit each instance of user attempts to access a non-Active Directory object, such as a file, that has its own system access control list (SACL) specified. The type of access request, such as Write, Read, or Modify, and the account that is making the request must match the settings in the SACL.</summary>
+  </member>
+  <member name="POLICY_AUDIT_EVENT_TYPE.AuditCategoryPrivilegeUse">
+    <summary>Determines whether the operating system must audit each instance of user attempts to use <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">privileges</a>.</summary>
+  </member>
+  <member name="POLICY_AUDIT_EVENT_TYPE.AuditCategoryDetailedTracking">
+    <summary>Determines whether the operating system must audit specific events, such as program activation, some forms of handle duplication, indirect access to an object, and process exit.</summary>
+  </member>
+  <member name="POLICY_AUDIT_EVENT_TYPE.AuditCategoryPolicyChange">
+    <summary>Determines whether the operating system must audit attempts to change <a href="https://docs.microsoft.com//windows/desktop/SecMgmt/the-policy-object-type">Policy</a> object rules, such as user rights assignment policy, audit policy, account policy, or trust policy.</summary>
+  </member>
+  <member name="POLICY_AUDIT_EVENT_TYPE.AuditCategoryAccountManagement">
+    <summary>Determines whether the operating system must audit attempts to create, delete, or change user or group accounts. Also, audit password changes.</summary>
+  </member>
+  <member name="POLICY_AUDIT_EVENT_TYPE.AuditCategoryDirectoryServiceAccess">
+    <summary>Determines whether the operating system must audit attempts to access the directory service. The Active Directory object has its own SACL specified. The type of access request, such as Write, Read, or Modify, and the account that is making the request must match the settings in the SACL.</summary>
+  </member>
+  <member name="POLICY_AUDIT_EVENT_TYPE.AuditCategoryAccountLogon">
+    <summary>Determines whether the operating system must audit each instance of a user attempt to log on or log off this computer. Also audits logon attempts by privileged accounts that log on to the domain controller. These audit events are generated when the Kerberos <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Key Distribution Center</a> (KDC) logs on to the domain controller. Logoff attempts are generated whenever the logon session of a logged-on user account is terminated.</summary>
+  </member>
+</doc>

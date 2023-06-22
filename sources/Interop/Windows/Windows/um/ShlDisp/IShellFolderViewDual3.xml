@@ -3,130 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellFolderViewDual3.FilterView">
-    <summary>
-      <para>Sets the filter on the contents of the current view.</para>
-    </summary>
-    <param name="bstrFilterText">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a></b></para>
-      <para>The BSTR that names the filter view for the current folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the filter on the contents of the current view.</summary>
+    <param name="bstrFilterText">The BSTR that names the filter view for the current folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual3.get_FolderFlags">
-    <summary>
-      <para>Gets the settings for the current folder.</para>
-    </summary>
-    <param name="pdwFlags">
-      <para>Type: <b>DWORD*</b></para>
-      <para>When this method returns, contains a pointer to the current setting flags.  For a list of possible values, see <see cref="FOLDERFLAGS" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the settings for the current folder.</summary>
+    <param name="pdwFlags">When this method returns, contains a pointer to the current setting flags. For a list of possible values, see <see cref="FOLDERFLAGS" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual3.get_GroupBy">
-    <summary>
-      <para>Gets the column used for grouping the folder view.</para>
-    </summary>
-    <param name="pbstrGroupBy">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a>*</b></para>
-      <para>When this method returns, contains a pointer to the column name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the column used for grouping the folder view.</summary>
+    <param name="pbstrGroupBy">When this method returns, contains a pointer to the column name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual3.get_IconSize">
-    <summary>
-      <para>Gets the icon size setting for the current folder.</para>
-    </summary>
-    <param name="piIconSize">
-      <para>Type: <b>int*</b></para>
-      <para>When this method returns, contains a pointer to the icon size value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the icon size setting for the current folder.</summary>
+    <param name="piIconSize">When this method returns, contains a pointer to the icon size value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual3.get_SortColumns">
-    <summary>
-      <para>Gets the names of the columns used to sort the current folder.</para>
-    </summary>
-    <param name="pbstrSortColumns">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a>*</b></para>
-      <para>A <b>BSTR</b> that contains the column names.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the names of the columns used to sort the current folder.</summary>
+    <param name="pbstrSortColumns">A <b>BSTR</b> that contains the column names.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual3.put_FolderFlags">
-    <summary>
-      <para>Sets the current folders settings.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>Flags that determine the folder settings. For a list of possible values, see <see cref="FOLDERFLAGS" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the current folders settings.</summary>
+    <param name="dwFlags">Flags that determine the folder settings. For a list of possible values, see <see cref="FOLDERFLAGS" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual3.put_GroupBy">
-    <summary>
-      <para>Sets the column used in grouping the folder view.</para>
-    </summary>
-    <param name="bstrGroupBy">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a></b></para>
-      <para>A <b>BSTR</b> that contains the column name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the column used in grouping the folder view.</summary>
+    <param name="bstrGroupBy">A <b>BSTR</b> that contains the column name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual3.put_IconSize">
-    <summary>
-      <para>Sets the icon size setting for the current folder.</para>
-    </summary>
-    <param name="iIconSize">
-      <para>Type: <b>int</b></para>
-      <para>The icon size value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the icon size setting for the current folder.</summary>
+    <param name="iIconSize">The icon size value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual3.put_SortColumns">
-    <summary>
-      <para>Sets the names of the columns to be sorted.</para>
-    </summary>
-    <param name="bstrSortColumns">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a></b></para>
-      <para>The <b>BSTR</b> that contains the names of the columns to be sorted for the current folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the names of the columns to be sorted.</summary>
+    <param name="bstrSortColumns">The <b>BSTR</b> that contains the names of the columns to be sorted for the current folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual3">
-    <summary>
-      <para>Exposes methods that modify the current folder view.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IShellFolderViewDual" /> and <see cref="IShellFolderViewDual2" /> interfaces, from which it inherits.</para>
-    </remarks>
-    <seealso cref="IShellFolderViewDual" />
-    <seealso cref="IShellFolderViewDual2" />
+    <summary>Exposes methods that modify the current folder view.</summary>
   </member>
 </doc>

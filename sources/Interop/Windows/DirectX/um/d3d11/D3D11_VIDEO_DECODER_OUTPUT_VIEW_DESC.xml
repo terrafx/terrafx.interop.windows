@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC">
-    <summary>
-      <para>Describes a video decoder output view.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
-    <seealso cref="ID3D11VideoDevice.CreateVideoDecoderOutputView" />
+    <summary>Describes a video decoder output view.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC.DecodeProfile">
-    <summary>
-      <para>The decoding profile. To get the list of profiles supported by the device, call the <see cref="ID3D11VideoDevice.GetVideoDecoderProfile" /> method.</para>
-    </summary>
+    <summary>The decoding profile. To get the list of profiles supported by the device, call the <see cref="ID3D11VideoDevice.GetVideoDecoderProfile" /> method.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC.ViewDimension">
-    <summary>
-      <para>The resource type of the view, specified as a member of the <see cref="D3D11_VDOV_DIMENSION" /> enumeration.</para>
-    </summary>
+    <summary>The resource type of the view, specified as a member of the <see cref="D3D11_VDOV_DIMENSION" /> enumeration.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC.Texture2D">
-    <summary>
-      <para>A <see cref="D3D11_TEX2D_VDOV" /> structure that identifies the texture resource for the output view.</para>
-    </summary>
+    <summary>A <see cref="D3D11_TEX2D_VDOV" /> structure that identifies the texture resource for the output view.</summary>
   </member>
 </doc>

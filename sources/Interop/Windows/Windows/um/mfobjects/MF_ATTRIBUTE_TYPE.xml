@@ -3,47 +3,29 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_ATTRIBUTE_TYPE">
-    <summary>
-      <para>Defines the data type for a key/value pair.</para>
-    </summary>
-    <seealso cref="IMFAttributes" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines the data type for a key/value pair.</summary>
   </member>
   <member name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_UINT32">
-    <summary>
-      <para>Unsigned 32-bit integer.</para>
-    </summary>
+    <summary>Unsigned 32-bit integer.</summary>
   </member>
   <member name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_UINT64">
-    <summary>
-      <para>Unsigned 64-bit integer.</para>
-    </summary>
+    <summary>Unsigned 64-bit integer.</summary>
   </member>
   <member name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_DOUBLE">
-    <summary>
-      <para>Floating-point number.</para>
-    </summary>
+    <summary>Floating-point number.</summary>
   </member>
   <member name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_GUID">
     <summary>
-      <para>
-        <b>GUID</b> value.</para>
-    </summary>
+      <b>GUID</b> value.</summary>
   </member>
   <member name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_STRING">
-    <summary>
-      <para>NULL-terminated wide-character string.</para>
-    </summary>
+    <summary>NULL-terminated wide-character string.</summary>
   </member>
   <member name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_BLOB">
-    <summary>
-      <para>Byte array.</para>
-    </summary>
+    <summary>Byte array.</summary>
   </member>
   <member name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_IUNKNOWN">
     <summary>
-      <para>
-        <b>IUnknown</b> pointer.</para>
-    </summary>
+      <b>IUnknown</b> pointer.</summary>
   </member>
 </doc>

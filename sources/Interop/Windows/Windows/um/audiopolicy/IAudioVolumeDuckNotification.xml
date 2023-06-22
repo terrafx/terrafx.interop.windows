@@ -3,123 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioVolumeDuckNotification.OnVolumeDuckNotification">
-    <summary>
-      <para>The <b>OnVolumeDuckNotification</b> method sends a notification about a pending system ducking event. For more information, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/handling-audio-ducking-events-from-communication-devices">Implementation considerations for ducking notifications</a>.</para>
-    </summary>
-    <param name="sessionID">
-      <para>A string containing the session instance identifier of the communications session that raises the  the auto-ducking event. To get the session instance identifier, call <see cref="IAudioSessionControl2.GetSessionInstanceIdentifier" />.</para>
-    </param>
-    <param name="countCommunicationSessions">
-      <para>The number of active communications sessions. If there are n sessions, the sessions are numbered from 0 to –1.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>After the application registers its implementation  of the <see cref="IAudioVolumeDuckNotification" /> interface by calling <see cref="IAudioSessionManager2.RegisterDuckNotification" />, the session manager calls <b>OnVolumeDuckNotification</b> when it wants to send a notification about when ducking begins. The application receives the event notifications in the form of callbacks.</para>
-    </remarks>
-    <seealso cref="IAudioVolumeDuckNotification" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-communication-device">Using a Communication Device</seealso>
+    <summary>The <b>OnVolumeDuckNotification</b> method sends a notification about a pending system ducking event. For more information, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/handling-audio-ducking-events-from-communication-devices">Implementation considerations for ducking notifications</a>.</summary>
+    <param name="sessionID">A string containing the session instance identifier of the communications session that raises the the auto-ducking event. To get the session instance identifier, call <see cref="IAudioSessionControl2.GetSessionInstanceIdentifier" />.</param>
+    <param name="countCommunicationSessions">The number of active communications sessions. If there are n sessions, the sessions are numbered from 0 to –1.</param>
+    <returns>If the method succeeds, it returns S_OK.</returns>
   </member>
   <member name="IAudioVolumeDuckNotification.OnVolumeUnduckNotification">
-    <summary>
-      <para>The <b>OnVolumeUnduckNotification</b> method sends a notification about a pending system unducking event. For more information, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/handling-audio-ducking-events-from-communication-devices">Implementation Considerations for Ducking Notifications</a>.</para>
-    </summary>
-    <param name="sessionID">
-      <para>A string containing the session instance identifier of the terminating communications session that initiated the ducking. To get the session instance identifier, call <see cref="IAudioSessionControl2.GetSessionInstanceIdentifier" />.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>After the application registers its implementation  of the <see cref="IAudioVolumeDuckNotification" /> interface by calling <see cref="IAudioSessionManager2.RegisterDuckNotification" />, the session manager calls <b>OnVolumeUnduckNotification</b> when it wants to send a notification about when ducking ends. The application receives the event notifications in the form of callbacks.</para>
-    </remarks>
-    <seealso cref="IAudioVolumeDuckNotification" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-communication-device">Using a Communication Device</seealso>
+    <summary>The <b>OnVolumeUnduckNotification</b> method sends a notification about a pending system unducking event. For more information, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/handling-audio-ducking-events-from-communication-devices">Implementation Considerations for Ducking Notifications</a>.</summary>
+    <param name="sessionID">A string containing the session instance identifier of the terminating communications session that initiated the ducking. To get the session instance identifier, call <see cref="IAudioSessionControl2.GetSessionInstanceIdentifier" />.</param>
+    <returns>If the method succeeds, it returns S_OK.</returns>
   </member>
   <member name="IAudioVolumeDuckNotification">
-    <summary>
-      <para>The <b>IAudioVolumeDuckNotification</b> interface is used to by the system to send notifications about stream attenuation changes.Stream Attenuation, or ducking, is a feature introduced in Windows 7, where the system adjusts the volume of a non-communication stream when a new communication stream is opened. For more information about this feature, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/stream-attenuation">Default Ducking Experience</a>.</para>
-    </summary>
-    <remarks>
-      <para>If an application needs to opt out of the system attenuation experience provided by the system, it must call <see cref="IAudioSessionControl2.SetDuckingPreference" /> and specify that preference.</para>
-      <para>Unlike the other WASAPI interfaces, which are implemented by the WASAPI system component, the <b>IAudioVolumeDuckNotification</b> interface is implemented by the application to provide custom stream attenuation behavior. To receive event notifications, the application passes to the <see cref="IAudioSessionManager2.RegisterDuckNotification" /> method a pointer to the application's implementation of <b>IAudioVolumeDuckNotification</b>.</para>
-      <para>After the application has registered its <b>IAudioVolumeDuckNotification</b> interface, the session manager calls the <b>IAudioVolumeDuckNotification</b> implementation when it needs to send ducking notifications. The application receives event notifications in the form of callbacks through the methods of the interface.</para>
-      <para>When the application no longer needs to receive notifications, it calls the <see cref="IAudioSessionManager2.UnregisterDuckNotification" /> method. The <b>UnregisterDuckNotification</b> method removes the registration of an <b>IAudioVolumeDuckNotification</b> interface that the application previously registered.</para>
-      <para>The application must not register or unregister notification callbacks during an event callback.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/handling-audio-ducking-events-from-communication-devices">Implementation Considerations for Ducking Notifications</a>.</para>
-      <h4>Examples</h4>
-      <para>The following example code shows a sample implementation of the <b>IAudioVolumeDuckNotification</b> interface.</para>
-      <code>
-
-class CDuckNotification : public IAudioVolumeDuckNotification
-{
-    LONG            _Cref;
-    HWND            m_hwndMain;
-
-    CDuckNotification (HWND hWnd) :
-        _Cref(1),
-        m_hwndMain (hWnd)
-                             {}
-
-
-    HRESULT OnVolumeDuckNotification (LPCWSTR SessionID, UINT32 CommunicationSessionCount)
-    {
-         PostMessage(m_hwndMain, WM_VOLUME_DUCK, 0, 0);
-         return S_OK;
-    }
-    HRESULT OnVolumeUnduckNotification (LPCWSTR SessionID)
-    {
-         PostMessage(m_hwndMain, WM_VOLUME_UNDUCK, 0, 0);
-         return S_OK;
-    }
-
-protected:
-    ~CDuckNotification() {}
-
-public:
-    HRESULT QueryInterface (REFIID Iid, void** ReturnValue)
-    {
-        if (ReturnValue == NULL)
-        {
-            return E_POINTER;
-        }
-        *ReturnValue = NULL;
-        if (iid == IID_IUnknown)
-        {
-            *ReturnValue = static_cast&lt;IUnknown *&gt;(static_cast&lt;IAudioVolumeDuckNotification *&gt;(this));
-            AddRef();
-        }
-        else if (iid == __uuidof(IAudioVolumeDuckNotification))
-        {
-            *ReturnValue = static_cast&lt;IAudioVolumeDuckNotification *&gt;(this);
-            AddRef();
-        }
-        else
-        {
-            return E_NOINTERFACE;
-        }
-        return S_OK;
-    }
-    ULONG AddRef()
-    {
-        return InterlockedIncrement(&amp;amp;amp;amp;amp;amp;_Cref);
-    }
-
-    ULONG Release()
-    {
-        LONG ref = InterlockedDecrement(&amp;amp;amp;amp;amp;amp;_Cref);
-        if (ref == 0)
-        {
-            delete this;
-        }
-        return 0;
-    }
-};
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-communication-device">Using a Communication Device</seealso>
+    <summary>The <b>IAudioVolumeDuckNotification</b> interface is used to by the system to send notifications about stream attenuation changes.Stream Attenuation, or ducking, is a feature introduced in Windows 7, where the system adjusts the volume of a non-communication stream when a new communication stream is opened. For more information about this feature, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/stream-attenuation">Default Ducking Experience</a>.</summary>
   </member>
 </doc>

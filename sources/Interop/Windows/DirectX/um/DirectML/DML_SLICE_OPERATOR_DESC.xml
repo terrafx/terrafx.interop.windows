@@ -18,47 +18,25 @@
         </item>
       </list>
       <para>The provided <i>Offsets</i>, <i>Sizes</i>, and <i>Strides</i> must only copy elements that are within the bounds of the input tensor (out-of-bounds reads are not permitted). The <i>Sizes</i> of the slice must exactly match the output tensor sizes. In general, the elements copied are calculated as follows.</para>
-      <code>OutputTensor[OutputCoordinates] = InputTensor[Offsets + Strides * OutputCoordinates]
-</code>
+      <code>OutputTensor[OutputCoordinates] = InputTensor[Offsets + Strides * OutputCoordinates]</code>
     </summary>
-    <remarks>
-      <para>A newer version of this operator, <see cref="DML_SLICE1_OPERATOR_DESC" />, was introduced in <code>DML_FEATURE_LEVEL_2_1</code>.</para>
-    </remarks>
   </member>
   <member name="DML_SLICE_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to extract slices from.</para>
-    </summary>
+    <summary>The tensor to extract slices from.</summary>
   </member>
   <member name="DML_SLICE_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to write the sliced data results to.</para>
-    </summary>
+    <summary>The tensor to write the sliced data results to.</summary>
   </member>
   <member name="DML_SLICE_OPERATOR_DESC.DimensionCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of dimensions. This field determines the size of the <i>Offsets</i>, <i>Sizes</i>, and <i>Strides</i> arrays. This value must match the <i>DimensionCount</i> of the input and output tensors. This value must be between 1 and 8, inclusively, starting from <code>DML_FEATURE_LEVEL_3_0</code>; earlier feature levels require a value of either 4 or 5.</para>
-    </summary>
+    <summary>The number of dimensions. This field determines the size of the <i>Offsets</i>, <i>Sizes</i>, and <i>Strides</i> arrays. This value must match the <i>DimensionCount</i> of the input and output tensors. This value must be between 1 and 8, inclusively, starting from <code>DML_FEATURE_LEVEL_3_0</code>; earlier feature levels require a value of either 4 or 5.</summary>
   </member>
   <member name="DML_SLICE_OPERATOR_DESC.Offsets">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>An array containing the slice's start along each dimension of the input tensor, in elements.</para>
-    </summary>
+    <summary>An array containing the slice's start along each dimension of the input tensor, in elements.</summary>
   </member>
   <member name="DML_SLICE_OPERATOR_DESC.Sizes">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>An array containing the slice's size along each dimension, in elements. The values in this array must match the sizes specified in the output tensor.</para>
-    </summary>
+    <summary>An array containing the slice's size along each dimension, in elements. The values in this array must match the sizes specified in the output tensor.</summary>
   </member>
   <member name="DML_SLICE_OPERATOR_DESC.Strides">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>An array containing the slice's stride along each dimension of the input tensor, in elements. A stride larger than 1 indicates that elements of the input tensor may be skipped (for example, a stride of 2 will select every second element along the dimension).</para>
-    </summary>
+    <summary>An array containing the slice's stride along each dimension of the input tensor, in elements. A stride larger than 1 indicates that elements of the input tensor may be skipped (for example, a stride of 2 will select every second element along the dimension).</summary>
   </member>
 </doc>

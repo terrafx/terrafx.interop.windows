@@ -3,27 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_STORAGE_TIER">
-    <summary>
-      <para>Represents an identifier for the storage tier relative to the volume.</para>
-    </summary>
-    <remarks>
-      <para>The storage tier ID for a particular volume has no relationship to the storage tier ID with the same value on a different volume.</para>
-    </remarks>
+    <summary>Represents an identifier for the storage tier relative to the volume.</summary>
   </member>
   <member name="FILE_STORAGE_TIER.Id">
-    <summary>
-      <para>Tier ID.</para>
-    </summary>
+    <summary>Tier ID.</summary>
   </member>
   <member name="FILE_STORAGE_TIER.Name">
-    <summary>
-      <para>Name for the tier.</para>
-    </summary>
+    <summary>Name for the tier.</summary>
   </member>
   <member name="FILE_STORAGE_TIER.Description">
-    <summary>
-      <para>Note for the tier.</para>
-    </summary>
+    <summary>Note for the tier.</summary>
   </member>
   <member name="FILE_STORAGE_TIER.Flags">
     <summary>
@@ -33,37 +22,29 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FILE_STORAGE_TIER_FLAG_NO_SEEK_PENALTY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00020000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00020000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Tier does not suffer a seek penalty on IO operations, which indicates that is an SSD (solid state drive).</para>
-          </description>
-        </item>
+          <description>Tier does not suffer a seek penalty on IO operations, which indicates that is an SSD (solid state drive).</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="FILE_STORAGE_TIER.ProvisionedCapacity">
-    <summary>
-      <para>Provisioned capacity of the tier.</para>
-    </summary>
+    <summary>Provisioned capacity of the tier.</summary>
   </member>
   <member name="FILE_STORAGE_TIER.MediaType">
-    <summary>
-      <para>Media type of the tier.</para>
-    </summary>
+    <summary>Media type of the tier.</summary>
   </member>
-  <member name="FILE_STORAGE_TIER.Class">
-    <summary></summary>
-  </member>
+  <member name="FILE_STORAGE_TIER.Class"></member>
 </doc>

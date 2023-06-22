@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS">
-    <summary>
-      <para>Describes the clear value to which resource(s) should be cleared at the beginning of a render pass.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/rendering">Rendering</seealso>
+    <summary>Describes the clear value to which resource(s) should be cleared at the beginning of a render pass.</summary>
   </member>
   <member name="D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS.ClearValue">
-    <summary>
-      <para>A  <see cref="D3D12_CLEAR_VALUE" />. The clear value to which the resource(s) should be cleared.</para>
-    </summary>
+    <summary>A <see cref="D3D12_CLEAR_VALUE" />. The clear value to which the resource(s) should be cleared.</summary>
   </member>
 </doc>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_BARRIER_GROUP">
+    <summary>Describes a group of barriers of a given type.</summary>
+  </member>
+  <member name="D3D12_BARRIER_GROUP.Type">
+    <summary>The type of barriers in the group.</summary>
+  </member>
+  <member name="D3D12_BARRIER_GROUP.NumBarriers">
+    <summary>The number of barriers in the group.</summary>
+  </member>
+  <member name="D3D12_BARRIER_GROUP.pGlobalBarriers">
+    <summary>A pointer to an array of <see cref="D3D12_GLOBAL_BARRIER" /> structures, if <i>Type</i> is <b>D3D12_BARRIER_TYPE.D3D12_BARRIER_TYPE_GLOBAL</b>.</summary>
+  </member>
+  <member name="D3D12_BARRIER_GROUP.pTextureBarriers">
+    <summary>A pointer to an array of <see cref="D3D12_TEXTURE_BARRIER" /> structures, if <i>Type</i> is <b>D3D12_BARRIER_TYPE.D3D12_BARRIER_TYPE_TEXTURE</b>.</summary>
+  </member>
+  <member name="D3D12_BARRIER_GROUP.pBufferBarriers">
+    <summary>A pointer to an array of <see cref="D3D12_BUFFER_BARRIER" /> structures, if <i>Type</i> is <b>D3D12_BARRIER_TYPE.D3D12_BARRIER_TYPE_BUFFER</b>.</summary>
+  </member>
+</doc>

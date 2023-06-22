@@ -1,0 +1,991 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.HSTRING_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="pFlags">
+      <para>[in]</para>
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="ppidl">
+      <para>[in]</para>
+      <para>The string.</para>
+    </param>
+  </member>
+  <member name="WinRT.HSTRING_UserMarshal">
+    <summary>Marshals an <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> object into the RPC buffer.</summary>
+    <param name="pFlags">
+      <para>[in]</para>
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="pBuffer">
+      <para>[in, out]</para>
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+    </param>
+    <param name="ppidl">
+      <para>[in]</para>
+      <para>The string.</para>
+    </param>
+    <returns>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</returns>
+  </member>
+  <member name="WinRT.HSTRING_UserSize">
+    <summary>Calculates the wire size of the <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> object, and gets its handle and data.</summary>
+    <param name="pFlags">
+      <para>[in]</para>
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="StartingSize">
+      <para>[in]</para>
+      <para>The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> object to be properly aligned when it will be marshaled to the buffer.</para>
+    </param>
+    <param name="ppidl">
+      <para>[in]</para>
+      <para>The string.</para>
+    </param>
+    <returns>The value obtained from the returned <b>HRESULT</b> value is <b>S_OK</b>.</returns>
+  </member>
+  <member name="WinRT.HSTRING_UserUnmarshal">
+    <summary>Unmarshals an <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> object from the RPC buffer.</summary>
+    <param name="pFlags">
+      <para>[in]</para>
+      <para>The data used by RPC.</para>
+    </param>
+    <param name="pBuffer">
+      <para>[in]</para>
+      <para>The current buffer. This pointer may or may not be aligned on entry.</para>
+    </param>
+    <param name="ppidl">
+      <para>[out]</para>
+      <para>The string.</para>
+    </param>
+    <returns>
+      <para>The value obtained from the returned <b>HRESULT</b> value is one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory for this function to perform.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsCompareStringOrdinal">
+    <summary>Compares two specified <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> objects and returns an integer that indicates their relative position in a sort order.</summary>
+    <param name="string1">The first string to compare.</param>
+    <param name="string2">The second string to compare.</param>
+    <param name="result">A value that indicates the lexical relationship between <i>string1</i> and <i>string2</i>.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The comparison was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>result</i> is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsConcatString">
+    <summary>Concatenates two specified strings.</summary>
+    <param name="string1">The first string to be concatenated.</param>
+    <param name="string2">The second string to be concatenated.</param>
+    <param name="newString">The concatenation of <i>string1</i> and <i>string2</i>. If <i>string1</i> and <i>string2</i> are <b>NULL</b>, <i>newString</i> is <b>NULL</b>. If either <i>string1</i> or <i>string2</i> is <b>NULL</b>, <i>newString</i> is a copy of the non-null string.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The concatenated string was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>newString</i> is <b>NULL</b>, or the length of <i>string1</i> plus the length of <i>string2</i> is greater than <b>MAXUINT32</b>, which is 4,294,967,295; that is, hexadecimal 0xFFFFFFFF.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate the concatenated string.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsCreateString">
+    <summary>Creates a new <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> based on the specified source string.</summary>
+    <param name="sourceString">A null-terminated string to use as the source for the new <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>. To create a new, empty, or <b>NULL</b> string, pass <b>NULL</b> for <i>sourceString</i> and 0 for <i>length</i>.</param>
+    <param name="length">The length of <i>sourceString</i>, in Unicode characters. Must be 0 if <i>sourceString</i> is <b>NULL</b>.</param>
+    <param name="string">A pointer to the newly created <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>, or <b>NULL</b> if an error occurs. Any existing content in <i>string</i> is overwritten. The <b>HSTRING</b> is a standard handle type.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The [**HSTRING**](/windows/win32/winrt/hstring) was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>string</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate the new [**HSTRING**](/windows/win32/winrt/hstring).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>sourceString</i> is <b>NULL</b> and <i>length</i> is non-zero.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsCreateStringReference">
+    <summary>Creates a new string reference based on the specified string.</summary>
+    <param name="sourceString">
+      <para>A null-terminated string to use as the source for the new <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>.</para>
+      <para>A value of <b>NULL</b> represents the empty string, if the value of <i>length</i> is 0. Should be allocated on the stack frame.</para>
+    </param>
+    <param name="length">The length of <i>sourceString</i>, in Unicode characters. Must be 0 if <i>sourceString</i> is <b>NULL</b>. If greater than 0, <i>sourceString</i> must have a terminating null character.</param>
+    <param name="hstringHeader">A pointer to a structure that the Windows Runtime uses to identify <i>string</i> as a string reference, or fast-pass string.</param>
+    <param name="string">A pointer to the newly created string, or <b>NULL</b> if an error occurs. Any existing content in <i>string</i> is overwritten. The <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> is a standard handle type.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The [**HSTRING**](/windows/win32/winrt/hstring) was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Either <i>string</i> or <i>hstringHeader</i> is <b>NULL</b>, or <i>string</i> is not null-terminated.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate the new [**HSTRING**](/windows/win32/winrt/hstring).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>sourceString</i> is <b>NULL</b> and <i>length</i> is non-zero.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsDeleteString">
+    <summary>Decrements the reference count of a string buffer.</summary>
+    <param name="string">The string to be deleted. If <i>string</i> is a fast-pass string created by <see cref="WindowsCreateStringReference" />, or if <i>string</i> is <b>NULL</b> or empty, no action is taken and <b>S_OK</b> is returned.</param>
+    <returns>This function always returns <b>S_OK</b>.</returns>
+  </member>
+  <member name="WinRT.WindowsDeleteStringBuffer">
+    <summary>Discards a preallocated string buffer if it was not promoted to an <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>.</summary>
+    <param name="bufferHandle">The buffer to discard. The <b>WindowsDeleteStringBuffer</b> function raises an exception if <i>bufferHandle</i> was not allocated by a call to the <see cref="WindowsPreallocateStringBuffer" /> function.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The buffer was discarded successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>bufferHandle</i> is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsDuplicateString">
+    <summary>Creates a copy of the specified string.</summary>
+    <param name="string">The string to be copied.</param>
+    <param name="newString">A copy of <i>string</i>.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The [**HSTRING**](/windows/win32/winrt/hstring) was copied successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>newString</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b> E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate the new [**HSTRING**](/windows/win32/winrt/hstring).</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsGetStringLen">
+    <summary>Gets the length, in Unicode characters, of the specified string.</summary>
+    <param name="string">The string whose length is to be found.</param>
+    <returns>The number of Unicode characters in <i>string</i>, including embedded null characters, but excluding the terminating null; or 0 if <i>string</i> is <b>NULL</b>.</returns>
+  </member>
+  <member name="WinRT.WindowsGetStringRawBuffer">
+    <summary>Retrieves the backing buffer for the specified string.</summary>
+    <param name="string">An optional string for which the backing buffer is to be retrieved. Can be <b>NULL</b>.</param>
+    <param name="length">An optional pointer to a <b>UINT32</b>. If <b>NULL</b> is passed for <i>length</i>, then it is ignored. If <i>length</i> is a valid pointer to a <b>UINT32</b>, and <i>string</i> is a valid <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>, then on successful completion the function sets the value pointed to by <i>length</i> to the number of Unicode characters in the backing buffer for <i>string</i> (including embedded null characters, but excluding the terminating null). If <i>length</i> is a valid pointer to a <b>UINT32</b>, and <i>string</i> is <b>NULL</b>, then the value pointed to by <i>length</i> is set to 0.</param>
+    <returns>A pointer to the buffer that provides the backing store for <i>string</i>, or the empty string if <i>string</i> is <b>NULL</b> or the empty string.</returns>
+  </member>
+  <member name="WinRT.WindowsInspectString">
+    <summary>Provides a way to for debuggers to display the value of a Windows Runtime <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> in another address space, remotely, or from a dump.</summary>
+    <param name="targetHString">
+      <para>[in]</para>
+      <para>The <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> to inspect.</para>
+    </param>
+    <param name="machine">The format of the target address space. Valid values are <b>IMAGE_FILE_MACHINE_AMD64</b> for Win64, <b>IMAGE_FILE_MACHINE_I386</b> for Win32, or <b>IMAGE_FILE_MACHINE_ARM</b> for 32-bit ARM.</param>
+    <param name="callback">
+      <para>[in]</para>
+      <para>A callback function to read the string buffer from the target address space. This function is called before the <i>length</i> and <i>targetStringAddress</i> parameters are computed by the <b>WindowsInspectString</b> function.</para>
+    </param>
+    <param name="context">
+      <para>[in, optional]</para>
+      <para>Custom context data passed to the callback.</para>
+    </param>
+    <param name="length">
+      <para>[out]</para>
+      <para>The length of the string in the target address space, if the call to <i>callback</i> is successful; otherwise, 0.</para>
+    </param>
+    <param name="targetStringAddress">
+      <para>[out]</para>
+      <para>The target address of the raw <b>PCWSTR</b>, if the call to <i>callback</i> is successful; otherwise, <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_MACHINE_AMD64</b> was specified for <i>machine</i>, but the current platform is not Win64, or</description>
+              </item>
+              <item>
+                <description>
+                  <i>machine</i> is not <b>IMAGE_FILE_MACHINE_AMD64</b>, <b>IMAGE_FILE_MACHINE_I386</b>, or <b>IMAGE_FILE_MACHINE_ARM</b>, or</description>
+              </item>
+              <item>
+                <description>
+                  <i>targetHString</i> is not a correctly formed [**HSTRING**](/windows/win32/winrt/hstring).</description>
+              </item>
+            </list>
+          </description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsInspectString2">
+    <summary>Provides a way to for debuggers to display the value of a Windows Runtime <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> in another address space, remotely, or from a dump.</summary>
+    <param name="targetHString">
+      <para>[in]</para>
+      <para>The <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> to inspect.</para>
+    </param>
+    <param name="machine">The format of the target address space. Valid values are <b>IMAGE_FILE_MACHINE_AMD64</b> for Win64, <b>IMAGE_FILE_MACHINE_I386</b> for Win32, or <b>IMAGE_FILE_MACHINE_ARM</b> for 32-bit ARM.</param>
+    <param name="callback">
+      <para>[in]</para>
+      <para>A callback function to read the string buffer from the target address space. This function is called before the <i>length</i> and <i>targetStringAddress</i> parameters are computed by the <b>WindowsInspectString2</b> function.</para>
+    </param>
+    <param name="context">
+      <para>[in, optional]</para>
+      <para>Custom context data passed to the callback.</para>
+    </param>
+    <param name="length">
+      <para>[out]</para>
+      <para>The length of the string in the target address space, if the call to <i>callback</i> is successful; otherwise, 0.</para>
+    </param>
+    <param name="targetStringAddress">
+      <para>[out]</para>
+      <para>The target address of the raw <b>PCWSTR</b>, if the call to <i>callback</i> is successful; otherwise, <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>The <i>machine</i> value is not <b>IMAGE_FILE_MACHINE_AMD64</b>, <b>IMAGE_FILE_MACHINE_I386</b>, or <b>IMAGE_FILE_MACHINE_ARM</b> or</description>
+              </item>
+              <item>
+                <description>
+                  <i>targetHString</i> is not a correctly formed [**HSTRING**](/windows/win32/winrt/hstring).</description>
+              </item>
+            </list>
+          </description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsIsStringEmpty">
+    <summary>Indicates whether the specified string is the empty string.</summary>
+    <param name="string">The string to be tested for content.</param>
+    <returns>
+      <b>TRUE</b> if <i>string</i> is <b>NULL</b> or the empty string; otherwise, <b>FALSE</b>.</returns>
+  </member>
+  <member name="WinRT.WindowsPreallocateStringBuffer">
+    <summary>Allocates a mutable character buffer for use in <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> creation.</summary>
+    <param name="length">The size of the buffer to allocate. A value of zero corresponds to the empty string.</param>
+    <param name="charBuffer">The mutable buffer that holds the characters. Note that the buffer already contains a terminating <b>NULL</b> character.</param>
+    <param name="bufferHandle">The preallocated string buffer, or <b>NULL</b> if <i>length</i> is 0.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The [**HSTRING**](/windows/win32/winrt/hstring) was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>mutableBuffer</i> or <i>bufferHandle</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MEM_E_INVALID_SIZE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The requested [**HSTRING**](/windows/win32/winrt/hstring) allocation size is too large.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate the [**HSTRING**](/windows/win32/winrt/hstring) buffer.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsPromoteStringBuffer">
+    <summary>Creates an <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> from the specified <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring-buffer">HSTRING_BUFFER</a>.</summary>
+    <param name="bufferHandle">The buffer to use for the new <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>. You must use the <see cref="WindowsPreallocateStringBuffer" /> function to create the <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring-buffer">HSTRING_BUFFER</a>.</param>
+    <param name="string">The newly created <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> that contains the contents of <i>bufferHandle</i>.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The [**HSTRING**](/windows/win32/winrt/hstring) was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>string</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>bufferHandle</i> was not created by calling the <see cref="WindowsPreallocateStringBuffer" /> function, or the caller has overwritten the terminating NUL character in <i>bufferHandle</i>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsReplaceString">
+    <summary>Replaces all occurrences of a set of characters in the specified string with another set of characters to create a new string.</summary>
+    <param name="string">The original string.</param>
+    <param name="stringReplaced">The string to be replaced.</param>
+    <param name="stringReplaceWith">The string to replace all occurrences of <i>stringReplaced</i>. If this parameter is <b>NULL</b>, all instances of <i>stringReplaced</i> are removed.</param>
+    <param name="newString">A string that is equivalent to the original, except that all instances of <i>stringReplaced</i> are replaced with <i>stringReplaceWith</i>.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The string replacement was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>newString</i> is <b>NULL</b>, <i>stringReplaced</i> is empty, or the length of <i>string1</i> plus the length of <i>string2</i> is greater than <b>MAXUINT32</b>, which is 4,294,967,295; that is, hexadecimal 0xFFFFFFFF.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate the new string.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsStringHasEmbeddedNull">
+    <summary>Indicates whether the specified string has embedded null characters.</summary>
+    <param name="string">The string to test for embedded null characters.</param>
+    <param name="hasEmbedNull">
+      <b>TRUE</b> if <i>string</i> has one or more embedded null characters; otherwise, <b>FALSE</b>. <b>FALSE</b> if <i>string</i> is <b>NULL</b> or the empty string.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The test completed successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>hasEmbedNull</i> is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsSubstring">
+    <summary>Retrieves a substring from the specified string. The substring starts at the specified character position.</summary>
+    <param name="string">The original string.</param>
+    <param name="startIndex">The zero-based starting character position of a substring in this instance.</param>
+    <param name="newString">A string that is equivalent to the substring that begins at <i>startIndex</i> in <i>string</i>, or <b>NULL</b> if <i>startIndex</i> is equal to the length of <i>string</i>.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The substring was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>newString</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_BOUNDS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>startIndex</i> is greater than the length of <i>string</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate the new substring.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsSubstringWithSpecifiedLength">
+    <summary>Retrieves a substring from the specified string. The substring starts at a specified character position and has a specified length.</summary>
+    <param name="string">The original string.</param>
+    <param name="startIndex">The zero-based starting character position of a substring in this instance.</param>
+    <param name="length">The number of characters in the substring.</param>
+    <param name="newString">A string that is equivalent to the substring that begins at <i>startIndex</i> in <i>string</i>, or <b>NULL</b> if <i>startIndex</i> is equal to the length of <i>string</i>.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The substring was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>newString</i> is <b>NULL</b>, or <i>startIndex</i> plus <i>length</i> is greater than <b>MAXUINT32</b>, which is 4,294,967,295; that is, hexadecimal 0xFFFFFFFF.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_BOUNDS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>startIndex</i> is greater than the length of <i>string</i>, or <i>startIndex</i> plus <i>length</i> indicates a position not within <i>string</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate the new substring.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsTrimStringEnd">
+    <summary>Removes all trailing occurrences of a specified set of characters from the source string.</summary>
+    <param name="string">The string to be trimmed.</param>
+    <param name="trimString">The characters to remove from <i>string</i>.</param>
+    <param name="newString">The string that remains after all occurrences of characters in the <i>trimString</i> parameter are removed from the end of <i>string</i>, or <b>NULL</b> if <i>trimString</i> contains all of the characters in <i>string</i>.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The trimmed string was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>newString</i> is <b>NULL</b>, or <i>trimString</i> is empty.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate the trimmed string.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WindowsTrimStringStart">
+    <summary>Removes all leading occurrences of a specified set of characters from the source string.</summary>
+    <param name="string">The string to be trimmed.</param>
+    <param name="trimString">The characters to remove from <i>string</i>.</param>
+    <param name="newString">The string that remains after all occurrences of characters in the <i>trimString</i> parameter are removed from the start of <i>string</i>, or <b>NULL</b> if <i>trimString</i> contains all of the characters in <i>string</i>.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The trimmed string was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>newString</i> is <b>NULL</b>, or <i>trimString</i> is empty.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate the trimmed string.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+</doc>

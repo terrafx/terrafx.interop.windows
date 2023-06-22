@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_Plugin_Type">
-    <summary>
-      <para>Specifies the object type for the <see cref="IMFPluginControl" /> interface.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the object type for the <see cref="IMFPluginControl" /> interface.</summary>
   </member>
   <member name="MF_Plugin_Type.MF_Plugin_Type_MFT">
-    <summary>
-      <para>Media Foundation transform (MFT).</para>
-    </summary>
+    <summary>Media Foundation transform (MFT).</summary>
   </member>
   <member name="MF_Plugin_Type.MF_Plugin_Type_MediaSource">
-    <summary>
-      <para>Media source.</para>
-    </summary>
+    <summary>Media source.</summary>
   </member>
   <member name="MF_Plugin_Type.MF_Plugin_Type_MFT_MatchOutputType">
-    <summary>
-      <para>Match output type.</para>
-    </summary>
+    <summary>Match output type.</summary>
   </member>
   <member name="MF_Plugin_Type.MF_Plugin_Type_Other">
-    <summary>
-      <para>Other.</para>
-    </summary>
+    <summary>Other.</summary>
   </member>
 </doc>

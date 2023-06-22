@@ -7,21 +7,12 @@
       <para>Outputs the indices of the maximum-valued elements within one or more dimensions of the input tensor.</para>
       <para>Each output element is the result of applying an <i>argmax</i> reduction on a subset of the input tensor. The <i>argmax</i> function outputs the index of the maximum-valued element within a set of input elements. The input elements involved in each reduction are determined by the provided input axes. Similarly, each output index is with respect to the provided input axes. If all input axes are specified, then the operator applies a single <i>argmax</i> reduction, and produces a single output element.</para>
     </summary>
-    <remarks>
-      <para>The output tensor sizes must be the same as the input tensor sizes, except for the reduced axes, which must be 1.</para>
-      <para>When <i>AxisDirection</i> is <see cref="DML_AXIS_DIRECTION_INCREASING" />, this API is equivalent to <see cref="DML_REDUCE_OPERATOR_DESC" /> with <see cref="DML_REDUCE_FUNCTION_ARGMAX" />.</para>
-      <para>A subset of this functionality is exposed through the <see cref="DML_REDUCE_OPERATOR_DESC" /> operator, and is supported on earlier DirectML feature levels.</para>
-    </remarks>
   </member>
   <member name="DML_ARGMAX_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to read from.</para>
-    </summary>
+    <summary>The tensor to read from.</summary>
   </member>
   <member name="DML_ARGMAX_OPERATOR_DESC.OutputTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>The tensor to write the results to. Each output element is the result of an <i>argmax</i> reduction on a subset of elements from the <i>InputTensor</i>.</para>
       <list type="bullet">
         <item>
@@ -36,20 +27,13 @@
     </summary>
   </member>
   <member name="DML_ARGMAX_OPERATOR_DESC.AxisCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of axes to reduce. This field determines the size of the <i>Axes</i> array.</para>
-    </summary>
+    <summary>The number of axes to reduce. This field determines the size of the <i>Axes</i> array.</summary>
   </member>
   <member name="DML_ARGMAX_OPERATOR_DESC.Axes">
-    <summary>
-      <para>Type: _Field_size_(AxisCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>The axes along which to reduce. Values must be in the range <code>[0, InputTensor.DimensionCount - 1]</code>.</para>
-    </summary>
+    <summary>The axes along which to reduce. Values must be in the range <code>[0, InputTensor.DimensionCount - 1]</code>.</summary>
   </member>
   <member name="DML_ARGMAX_OPERATOR_DESC.AxisDirection">
     <summary>
-      <para>Type: <b><see cref="DML_AXIS_DIRECTION" /></b></para>
       <para>Determines which index to select when multiple input elements have the same value.</para>
       <list type="bullet">
         <item>

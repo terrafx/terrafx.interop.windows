@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRadialControllerConfigurationInterop.GetForWindow">
+    <summary>Retrieves a <a href="https://docs.microsoft.com//uwp/api/windows.ui.input.radialcontrollerconfiguration">RadialControllerConfiguration</a> object bound to the active application.</summary>
+    <param name="hwnd">Handle to the window of the active application.</param>
+    <param name="riid">The GUID of the <a href="https://docs.microsoft.com//uwp/api/windows.ui.input.radialcontrollerconfiguration">RadialControllerConfiguration</a> object.</param>
+    <param name="ppv">Address of a pointer to a <a href="https://docs.microsoft.com//uwp/api/windows.ui.input.radialcontrollerconfiguration">RadialControllerConfiguration</a> object.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IRadialControllerConfigurationInterop">
+    <summary>Enables interoperability with a WinRT <a href="https://docs.microsoft.com//uwp/api/windows.ui.input.radialcontrollerconfiguration">RadialControllerConfiguration</a> object and provides access to <b>RadialControllerConfiguration</b> members for customizing a <a href="https://docs.microsoft.com//uwp/api/windows.ui.input.radialcontroller">RadialController</a> menu.</summary>
+  </member>
+</doc>

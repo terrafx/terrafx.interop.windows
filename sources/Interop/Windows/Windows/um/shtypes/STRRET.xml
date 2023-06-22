@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STRRET">
-    <summary>
-      <para>Contains strings returned from the <see cref="IShellFolder" /> interface methods.</para>
-    </summary>
-    <seealso cref="IShellFolder.GetDisplayNameOf" />
+    <summary>Contains strings returned from the <see cref="IShellFolder" /> interface methods.</summary>
   </member>
   <member name="STRRET.uType">
     <summary>
-      <para>Type: <b>UINT</b></para>
       <para>A value that specifies the desired format of the string. This can be one of the following values.</para>
       <h4>STRRET_CSTR</h4>
       <para>The string is returned in the <b>cStr</b> member.</para>
@@ -20,25 +16,14 @@
       <para>The string is at the address specified by <b>pOleStr</b> member.</para>
     </summary>
   </member>
-  <member name="STRRET.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="STRRET.DUMMYUNIONNAME"></member>
   <member name="STRRET.DUMMYUNIONNAME.pOleStr">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to the string. This memory must be allocated with <see cref="CoTaskMemAlloc" />. It is the calling application's responsibility to free this memory with <see cref="CoTaskMemFree" /> when it is no longer needed.</para>
-    </summary>
+    <summary>A pointer to the string. This memory must be allocated with <see cref="CoTaskMemAlloc" />. It is the calling application's responsibility to free this memory with <see cref="CoTaskMemFree" /> when it is no longer needed.</summary>
   </member>
   <member name="STRRET.DUMMYUNIONNAME.uOffset">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The offset into the item identifier list.</para>
-    </summary>
+    <summary>The offset into the item identifier list.</summary>
   </member>
   <member name="STRRET.DUMMYUNIONNAME.cStr">
-    <summary>
-      <para>Type: <b>CHAR[MAX_PATH]</b></para>
-      <para>The buffer to receive the display name.</para>
-    </summary>
+    <summary>The buffer to receive the display name.</summary>
   </member>
 </doc>

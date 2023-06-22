@@ -4,51 +4,28 @@
 <doc>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING">
     <summary>
-      <para>The security binding subtype for specifying the use of an application
-supplied username / password pair as a direct (i.e., one-shot)
-security token.  This security binding may be used only with message
-security.  It provides client authentication, but not traffic signing
-or encryption.  So, it is used in conjunction with another transport
-security or message security binding that provides message protection.</para>
-      <para>Only one instance of this binding may be present in a <see cref="security description" />.
-This security binding is not supported with the <see cref="WS_NAMEDPIPE_CHANNEL_BINDING" />.</para>
+      <para>The security binding subtype for specifying the use of an application supplied username / password pair as a direct (i.e., one-shot) security token. This security binding may be used only with message security. It provides client authentication, but not traffic signing or encryption. So, it is used in conjunction with another transport security or message security binding that provides message protection.</para>
+      <para>Only one instance of this binding may be present in a <see cref="security description" />. This security binding is not supported with the <see cref="WS_NAMEDPIPE_CHANNEL_BINDING" />.</para>
       <para>With this security binding, no security binding properties may be specified.</para>
     </summary>
   </member>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING.binding">
-    <summary>
-      <para>The base type from which this security binding subtype and all other security binding subtypes derive.</para>
-    </summary>
+    <summary>The base type from which this security binding subtype and all other security binding subtypes derive.</summary>
   </member>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING.bindingUsage">
     <summary>
       <para>How the security token corresponding to this security binding should be bound to a message.</para>
-      <para>Only <see cref="WS_SUPPORTING_MESSAGE_SECURITY_USAGE" /> is
-supported.  With this usage, this security binding provides client
-authentication, but not message protection (such as signing, encryption,
-replay detection).  Thus, this binding must be used together with
-another security binding such as the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /></para>
-      <para>that provides a protected channel.</para>
+      <para>Only <see cref="WS_SUPPORTING_MESSAGE_SECURITY_USAGE" /> is supported. With this usage, this security binding provides client authentication, but not message protection (such as signing, encryption, replay detection). Thus, this binding must be used together with another security binding such as the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" />that provides a protected channel.</para>
       <para>To use this binding on HTTP without SSL, the security description property <b>WS_SECURITY_PROPERTY_TRANSPORT_PROTECTION_LEVEL</b> must be explicitly set to <b>WS_PROTECTION_LEVEL_NONE</b>. This is not supported on the client or on TCP.</para>
     </summary>
   </member>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING.clientCredential">
-    <summary>
-      <para>The username credential to be used with this security binding.  This
-must be specified when this security binding is used on the
-client.</para>
-    </summary>
+    <summary>The username credential to be used with this security binding. This must be specified when this security binding is used on the client.</summary>
   </member>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING.passwordValidator">
-    <summary>
-      <para>The validator to be used to check received username/password pairs.
-This must be specified when this security binding is used on the
-service.</para>
-    </summary>
+    <summary>The validator to be used to check received username/password pairs. This must be specified when this security binding is used on the service.</summary>
   </member>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING.passwordValidatorCallbackState">
-    <summary>
-      <para>The optional state to be passed in as an argument when the username validator is invoked.</para>
-    </summary>
+    <summary>The optional state to be passed in as an argument when the username validator is invoked.</summary>
   </member>
 </doc>

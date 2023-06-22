@@ -3,30 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_FENCE_FLAG">
-    <summary>
-      <para>Specifies fence options.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the <see cref="ID3D11Device.CreateFence" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>Specifies fence options.</summary>
   </member>
   <member name="D3D11_FENCE_FLAG.D3D11_FENCE_FLAG_NONE">
-    <summary>
-      <para>No options are specified.</para>
-    </summary>
+    <summary>No options are specified.</summary>
   </member>
   <member name="D3D11_FENCE_FLAG.D3D11_FENCE_FLAG_SHARED">
-    <summary>
-      <para>The fence is shared.</para>
-    </summary>
+    <summary>The fence is shared.</summary>
   </member>
   <member name="D3D11_FENCE_FLAG.D3D11_FENCE_FLAG_SHARED_CROSS_ADAPTER">
-    <summary>
-      <para>The fence is shared with another GPU adapter.</para>
-    </summary>
+    <summary>The fence is shared with another GPU adapter.</summary>
   </member>
-  <member name="D3D11_FENCE_FLAG.D3D11_FENCE_FLAG_NON_MONITORED">
-    <summary></summary>
-  </member>
+  <member name="D3D11_FENCE_FLAG.D3D11_FENCE_FLAG_NON_MONITORED"></member>
 </doc>

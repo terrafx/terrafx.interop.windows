@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMSD">
+    <summary>Determines the type of COM security descriptor to get when calling <see cref="CoGetSystemSecurityPermissions" />.</summary>
+  </member>
+  <member name="COMSD.SD_LAUNCHPERMISSIONS">
+    <summary>Machine-wide launch permissions.</summary>
+  </member>
+  <member name="COMSD.SD_ACCESSPERMISSIONS">
+    <summary>Machine-wide access permissions.</summary>
+  </member>
+  <member name="COMSD.SD_LAUNCHRESTRICTIONS">
+    <summary>Machine-wide launch limits.</summary>
+  </member>
+  <member name="COMSD.SD_ACCESSRESTRICTIONS">
+    <summary>Machine-wide access limits.</summary>
+  </member>
+</doc>

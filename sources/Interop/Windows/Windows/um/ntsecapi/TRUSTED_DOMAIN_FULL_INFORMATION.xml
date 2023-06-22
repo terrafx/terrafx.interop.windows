@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRUSTED_DOMAIN_FULL_INFORMATION">
+    <summary>The <b>TRUSTED_DOMAIN_FULL_INFORMATION</b> structure is used to retrieve complete information about a trusted domain. The<see cref="LsaQueryTrustedDomainInfo" /> function uses this structure when its <i>InformationClass</i> parameter is set to <b>TrustedDomainFullInformation</b>.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_FULL_INFORMATION.Information">
+    <summary>A<see cref="TRUSTED_DOMAIN_INFORMATION_EX" /> structure containing extended information for a trusted domain.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_FULL_INFORMATION.PosixOffset">
+    <summary>A<see cref="TRUSTED_POSIX_OFFSET_INFO" /> structure containing the value used to generate Posix user and group identifiers for a trusted domain.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_FULL_INFORMATION.AuthInformation">
+    <summary>A<see cref="TRUSTED_DOMAIN_AUTH_INFORMATION" /> structure containing authentication information for a trusted domain.</summary>
+  </member>
+</doc>

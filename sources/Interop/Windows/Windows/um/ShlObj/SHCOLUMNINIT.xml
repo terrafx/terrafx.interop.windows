@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHCOLUMNINIT">
-    <summary>
-      <para>Passes initialization information to <see cref="IColumnProvider.Initialize" />.</para>
-    </summary>
+    <summary>Passes initialization information to <see cref="IColumnProvider.Initialize" />.</summary>
   </member>
   <member name="SHCOLUMNINIT.dwFlags">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Initialization flags. Reserved. Set to <b>NULL</b></para>
-    </summary>
+    <summary>Initialization flags. Reserved. Set to <b>NULL</b></summary>
   </member>
   <member name="SHCOLUMNINIT.dwReserved">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Reserved. Set to <b>NULL</b>.</para>
-    </summary>
+    <summary>Reserved. Set to <b>NULL</b>.</summary>
   </member>
   <member name="SHCOLUMNINIT.wszFolder">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
-      <para>A pointer to a null-terminated Unicode string with a fully qualified folder path. The string will be empty if multiple folders are specified.</para>
-    </summary>
+    <summary>A pointer to a null-terminated Unicode string with a fully qualified folder path. The string will be empty if multiple folders are specified.</summary>
   </member>
 </doc>

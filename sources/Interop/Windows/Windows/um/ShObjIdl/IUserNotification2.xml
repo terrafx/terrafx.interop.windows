@@ -3,40 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IUserNotification2.PlaySound">
-    <summary>
-      <para>Plays a sound in conjunction with the notification.</para>
-    </summary>
-    <param name="pszSoundName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated Unicode string that specifies the alias of the sound file to play.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The string pointed to by <i>pszSoundName</i> contains an alias for a system event found in the registry or the Win.ini file; for instance, "SystemExit".</para>
-      <para>The specified sound is played asynchronously and the method returns immediately after beginning the sound. To stop an asynchronous waveform sound, call <b>IUserNotification2.PlaySound</b> with <i>pszSoundName</i> set to <b>NULL</b>.</para>
-      <para>The specified sound event will yield to another sound event that is already playing. If a sound cannot be played because the resource needed to play that sound is busy, the method immediately returns S_FALSE without playing the requested sound.</para>
-      <para>If the specified sound cannot be found, <b>IUserNotification2.PlaySound</b> uses the system default sound.</para>
-    </remarks>
-    <seealso cref="IUserNotification2" />
-    <seealso cref="PlaySound" />
+    <summary>Plays a sound in conjunction with the notification.</summary>
+    <param name="pszSoundName">A pointer to a null-terminated Unicode string that specifies the alias of the sound file to play.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IUserNotification2.SetBalloonInfo">
-    <summary>
-      <para>Sets the information to be displayed in a balloon notification.</para>
-    </summary>
-    <param name="pszTitle">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a Unicode string that specifies the title of the notification.</para>
-    </param>
-    <param name="pszText">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a Unicode string that specifies the text to be displayed in the body of the balloon.</para>
-    </param>
+    <summary>Sets the information to be displayed in a balloon notification.</summary>
+    <param name="pszTitle">A pointer to a Unicode string that specifies the title of the notification.</param>
+    <param name="pszText">A pointer to a Unicode string that specifies the text to be displayed in the body of the balloon.</param>
     <param name="dwInfoFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>One or more of the following values that indicate an icon to display in the notification balloon.</para>
       <h4>NIIF_NONE (0x00000000)</h4>
       <para>0x00000000. Do not display an icon.</para>
@@ -70,88 +45,33 @@
       <h4>NIIF_ICON_MASK (0x0000000F)</h4>
       <para>0x0000000F. <b>Windows XP</b> (<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Shell32.dll version 6.0</a><b>) and later</b>. Reserved.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IUserNotification2" />
-    <seealso cref="SetBalloonInfo" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IUserNotification2.SetBalloonRetry">
-    <summary>
-      <para>Specifies the conditions for trying to display user information when the first attempt fails.</para>
-    </summary>
-    <param name="dwShowTime">
-      <para>Type: <b>DWORD</b></para>
-      <para>The amount of time, in milliseconds, to display the user information.</para>
-    </param>
-    <param name="dwInterval">
-      <para>Type: <b>DWORD</b></para>
-      <para>The interval of time, in milliseconds, between attempts to display the user information.</para>
-    </param>
-    <param name="cRetryCount">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of times the system should try to display the user information.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IUserNotification2" />
-    <seealso cref="SetBalloonRetry" />
+    <summary>Specifies the conditions for trying to display user information when the first attempt fails.</summary>
+    <param name="dwShowTime">The amount of time, in milliseconds, to display the user information.</param>
+    <param name="dwInterval">The interval of time, in milliseconds, between attempts to display the user information.</param>
+    <param name="cRetryCount">The number of times the system should try to display the user information.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IUserNotification2.SetIconInfo">
-    <summary>
-      <para>Sets the notification area icon associated with specific user information.</para>
-    </summary>
-    <param name="hIcon">
-      <para>Type: <b>HICON</b></para>
-      <para>A handle to the icon.</para>
-    </param>
-    <param name="pszToolTip">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string that contains the tooltip text to display for the specified icon. This value can be <b>NULL</b>, although it is not recommended.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IUserNotification2" />
-    <seealso cref="SetIconInfo" />
+    <summary>Sets the notification area icon associated with specific user information.</summary>
+    <param name="hIcon">A handle to the icon.</param>
+    <param name="pszToolTip">A pointer to a string that contains the tooltip text to display for the specified icon. This value can be <b>NULL</b>, although it is not recommended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IUserNotification2.Show">
-    <summary>
-      <para>Displays the user information in a balloon-style tooltip.</para>
-    </summary>
-    <param name="pqc">
-      <para>Type: <b><see cref="IQueryContinue" />*</b></para>
-      <para>An <see cref="IQueryContinue" /> interface pointer, used to determine whether the notification display can continue or should stop (for example, if the user closes the notification). This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="dwContinuePollInterval">
-      <para>Type: <b>DWORD</b></para>
-      <para>The length of time, in milliseconds, to display user information.</para>
-    </param>
-    <param name="pSink">
-      <para>Type: <b><see cref="IUserNotificationCallback" />*</b></para>
-      <para>A pointer to an <see cref="IUserNotificationCallback" /> interface, used to handle mouse click and hover actions on the notification area icon and within the notification itself. This value can be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IUserNotification2" />
-    <seealso cref="Show" />
+    <summary>Displays the user information in a balloon-style tooltip.</summary>
+    <param name="pqc">An <see cref="IQueryContinue" /> interface pointer, used to determine whether the notification display can continue or should stop (for example, if the user closes the notification). This value can be <b>NULL</b>.</param>
+    <param name="dwContinuePollInterval">The length of time, in milliseconds, to display user information.</param>
+    <param name="pSink">A pointer to an <see cref="IUserNotificationCallback" /> interface, used to handle mouse click and hover actions on the notification area icon and within the notification itself. This value can be <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IUserNotification2">
     <summary>
       <para>Exposes methods that set notification information and then display that notification to the user in a balloon that appears in conjunction with the notification area of the taskbar.</para>
-      <para>
-        <b>Note</b>  <b>IUserNotification2</b> does not inherit from <see cref="IUserNotification" />. <b>IUserNotification2</b> differs from <b>IUserNotification</b> only in its <see cref="Show" /> method, which adds an additional parameter for a callback interface to communicate with the notification. Otherwise the two interfaces are identical in form and function. CLSID_UserNotification implements both versions of <b>Show</b> as an overload.</para>
+      <div>
+        <b>Note</b>  <b>IUserNotification2</b> does not inherit from <see cref="IUserNotification" />. <b>IUserNotification2</b> differs from <b>IUserNotification</b> only in its <see cref="Show" /> method, which adds an additional parameter for a callback interface to communicate with the notification. Otherwise the two interfaces are identical in form and function. CLSID_UserNotification implements both versions of <b>Show</b> as an overload.</div>
     </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>An implementation of this interface is provided in Windows as CLSID_UserNotification.</para>
-    </remarks>
-    <seealso cref="IUserNotification" />
   </member>
 </doc>

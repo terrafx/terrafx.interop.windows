@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_WEB_SOCKET_OPERATION">
-    <summary>
-      <para>The <b>WINHTTP_WEB_SOCKET_OPERATION</b> enumeration includes the WebSocket operation type.</para>
-    </summary>
-    <seealso cref="WINHTTP_WEB_SOCKET_ASYNC_RESULT" />
-    <seealso cref="WinHttpWebSocketClose" />
-    <seealso cref="WinHttpWebSocketReceive" />
-    <seealso cref="WinHttpWebSocketSend" />
-    <seealso cref="WinHttpWebSocketShutdown" />
+    <summary>The <b>WINHTTP_WEB_SOCKET_OPERATION</b> enumeration includes the WebSocket operation type.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_OPERATION.WINHTTP_WEB_SOCKET_SEND_OPERATION">
-    <summary>
-      <para>A <see cref="WinHttpWebSocketSend" /> operation.</para>
-    </summary>
+    <summary>A <see cref="WinHttpWebSocketSend" /> operation.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_OPERATION.WINHTTP_WEB_SOCKET_RECEIVE_OPERATION">
-    <summary>
-      <para>A <see cref="WinHttpWebSocketReceive" /> operation.</para>
-    </summary>
+    <summary>A <see cref="WinHttpWebSocketReceive" /> operation.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_OPERATION.WINHTTP_WEB_SOCKET_CLOSE_OPERATION">
-    <summary>
-      <para>A <see cref="WinHttpWebSocketClose" /> operation.</para>
-    </summary>
+    <summary>A <see cref="WinHttpWebSocketClose" /> operation.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_OPERATION.WINHTTP_WEB_SOCKET_SHUTDOWN_OPERATION">
-    <summary>
-      <para>A <see cref="WinHttpWebSocketShutdown" /> operation.</para>
-    </summary>
+    <summary>A <see cref="WinHttpWebSocketShutdown" /> operation.</summary>
   </member>
 </doc>

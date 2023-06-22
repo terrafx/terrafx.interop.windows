@@ -3,46 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICFormatConverterInfo.CreateInstance">
-    <summary>
-      <para>Creates a new <see cref="IWICFormatConverter" /> instance.</para>
-    </summary>
-    <param name="ppIConverter">
-      <para>Type: <b><see cref="IWICFormatConverter" />**</b></para>
-      <para>A pointer that receives a new <see cref="IWICFormatConverter" /> instance.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new <see cref="IWICFormatConverter" /> instance.</summary>
+    <param name="ppIConverter">A pointer that receives a new <see cref="IWICFormatConverter" /> instance.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICFormatConverterInfo.GetPixelFormats">
-    <summary>
-      <para>Retrieves a list of GUIDs that signify which pixel formats the converter supports.</para>
-    </summary>
-    <param name="cFormats">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the <i>pPixelFormatGUIDs</i> array.</para>
-    </param>
-    <param name="pPixelFormatGUIDs">
-      <para>Type: <b>WICPixelFormatGUID*</b></para>
-      <para>Pointer to a GUID array that receives the pixel formats the converter supports.</para>
-    </param>
-    <param name="pcActual">
-      <para>Type: <b>UINT*</b></para>
-      <para>The actual array size needed to retrieve all pixel formats supported by the converter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The format converter does not necessarily guarantee symmetricality with respect to conversion; that is, a converter may be able to convert FROM a particular format without actually being able to convert TO a particular format. In order to test symmetricality, use <see cref="CanConvert" />.</para>
-      <para>To determine the number of pixel formats a converter can handle, set <i>cFormats</i> to <code>0</code> and <i>pPixelFormatGUIDs</i> to <code>NULL</code>. The converter will fill <i>pcActual</i> with the number of formats supported by that converter.</para>
-    </remarks>
+    <summary>Retrieves a list of GUIDs that signify which pixel formats the converter supports.</summary>
+    <param name="cFormats">The size of the <i>pPixelFormatGUIDs</i> array.</param>
+    <param name="pPixelFormatGUIDs">Pointer to a GUID array that receives the pixel formats the converter supports.</param>
+    <param name="pcActual">The actual array size needed to retrieve all pixel formats supported by the converter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICFormatConverterInfo">
-    <summary>
-      <para>Exposes methods that provide information about a pixel format converter.</para>
-    </summary>
+    <summary>Exposes methods that provide information about a pixel format converter.</summary>
   </member>
 </doc>

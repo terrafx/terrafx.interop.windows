@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_DISPLACEMENTMAP_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/displacement-map">Displacement map effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/displacement-map">Displacement map effect</a>.</summary>
   </member>
   <member name="D2D1_DISPLACEMENTMAP_PROP.D2D1_DISPLACEMENTMAP_PROP_SCALE">
     <summary>
@@ -28,7 +26,5 @@
       <para>The default value is D2D1_CHANNEL_SELECTOR_A</para>
     </summary>
   </member>
-  <member name="D2D1_DISPLACEMENTMAP_PROP.D2D1_DISPLACEMENTMAP_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_DISPLACEMENTMAP_PROP.D2D1_DISPLACEMENTMAP_PROP_FORCE_DWORD"></member>
 </doc>

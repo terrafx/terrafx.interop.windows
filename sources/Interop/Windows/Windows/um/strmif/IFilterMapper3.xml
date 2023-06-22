@@ -4,24 +4,20 @@
 <doc>
   <member name="IFilterMapper3.GetICreateDevEnum">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetICreateDevEnum</code> method returns a pointer to the <b>ICreateDevEnum</b> interface. You can use the <see cref="ICreateDevEnum" /> interface to create an enumerator for a category of filters, such as video capture devices or audio capture devices.</para>
-      <para>
-        <b>Note</b>  This method is deprecated. Instead, applications should call <b>CoCreateInstance</b> with CLSID_SystemDeviceEnum to create the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/system-device-enumerator">System Device Enumerator</a>.</para>
+      <div>
+        <b>Note</b>  This method is deprecated. Instead, applications should call <b>CoCreateInstance</b> with CLSID_SystemDeviceEnum to create the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/system-device-enumerator">System Device Enumerator</a>.</div>
     </summary>
-    <param name="ppEnum">
-      <para>Receives a pointer to the <b>ICreateDevEnum</b> interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper3 Interface" />
+    <param name="ppEnum">Receives a pointer to the <b>ICreateDevEnum</b> interface. The caller must release the interface.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterMapper3">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IFilterMapper3</code> interface extends the <see cref="IFilterMapper2" /> interface. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-mapper">Filter Mapper</a> object implements this interface.</para>
-      <para>
-        <b>Note</b>  This interface is deprecated.</para>
+      <div>
+        <b>Note</b>  This interface is deprecated.</div>
     </summary>
   </member>
 </doc>

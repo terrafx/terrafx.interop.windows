@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHRINK_VOLUME_INFORMATION">
-    <summary>
-      <para>Specifies the volume shrink operation to perform.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_shrink_volume">FSCTL_SHRINK_VOLUME</seealso>
+    <summary>Specifies the volume shrink operation to perform.</summary>
   </member>
   <member name="SHRINK_VOLUME_INFORMATION.ShrinkRequestType">
     <summary>
@@ -16,41 +13,49 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ShrinkPrepare</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ShrinkPrepare</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Volume should perform any steps necessary to prepare for a shrink operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Volume should perform any steps necessary to prepare for a shrink operation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ShrinkCommit</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Volume should commit the shrink operation changes.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ShrinkCommit</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ShrinkAbort</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Volume should commit the shrink operation changes.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ShrinkAbort</b>
-          </description>
-          <description>
-            <para>Volume should terminate the shrink operation.</para>
-          </description>
-        </item>
+          <description>Volume should terminate the shrink operation.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SHRINK_VOLUME_INFORMATION.Flags">
-    <summary>
-      <para>This member must be zero.</para>
-    </summary>
+    <summary>This member must be zero.</summary>
   </member>
   <member name="SHRINK_VOLUME_INFORMATION.NewNumberOfSectors">
-    <summary>
-      <para>The number of sectors that should be in the shrunken volume. Used only when the <b>ShrinkRequestType</b> member is <b>ShrinkPrepare</b>, otherwise this member should be initialized to zero.</para>
-    </summary>
+    <summary>The number of sectors that should be in the shrunken volume. Used only when the <b>ShrinkRequestType</b> member is <b>ShrinkPrepare</b>, otherwise this member should be initialized to zero.</summary>
   </member>
 </doc>

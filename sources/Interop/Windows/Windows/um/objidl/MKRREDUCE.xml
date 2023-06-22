@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MKRREDUCE">
-    <summary>
-      <para>Specifies how far a moniker should be reduced.</para>
-    </summary>
-    <seealso cref="IMoniker.Reduce" />
+    <summary>Specifies how far a moniker should be reduced.</summary>
   </member>
   <member name="MKRREDUCE.MKRREDUCE_ONE">
-    <summary>
-      <para>Performs only one step of reducing the moniker. In general, the caller must have specific knowledge about the particular kind of moniker to take advantage of this option.</para>
-    </summary>
+    <summary>Performs only one step of reducing the moniker. In general, the caller must have specific knowledge about the particular kind of moniker to take advantage of this option.</summary>
   </member>
   <member name="MKRREDUCE.MKRREDUCE_TOUSER">
-    <summary>
-      <para>Reduces the moniker to a form that the user identifies as a persistent object. If no such point exists, then this option should be treated as MKRREDUCE_ALL.</para>
-    </summary>
+    <summary>Reduces the moniker to a form that the user identifies as a persistent object. If no such point exists, then this option should be treated as MKRREDUCE_ALL.</summary>
   </member>
   <member name="MKRREDUCE.MKRREDUCE_THROUGHUSER">
-    <summary>
-      <para>Reduces the moniker to where any further reduction would reduce it to a form that the user does not identify as a persistent object. Often, this is the same stage as MKRREDUCE_TOUSER.</para>
-    </summary>
+    <summary>Reduces the moniker to where any further reduction would reduce it to a form that the user does not identify as a persistent object. Often, this is the same stage as MKRREDUCE_TOUSER.</summary>
   </member>
   <member name="MKRREDUCE.MKRREDUCE_ALL">
-    <summary>
-      <para>Reduces the moniker until it is in its simplest form, that is, reduce it to itself.</para>
-    </summary>
+    <summary>Reduces the moniker until it is in its simplest form, that is, reduce it to itself.</summary>
   </member>
 </doc>

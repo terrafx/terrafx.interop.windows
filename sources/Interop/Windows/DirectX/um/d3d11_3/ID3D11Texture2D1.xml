@@ -3,24 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11Texture2D1.GetDesc1">
-    <summary>
-      <para>Gets the properties of the texture resource.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D11_TEXTURE2D_DESC1" />*</b></para>
-      <para>A pointer to a <see cref="D3D11_TEXTURE2D_DESC1" /> structure that receives the description of the 2D texture.</para>
-    </param>
-    <seealso cref="ID3D11Texture2D1" />
+    <summary>Gets the properties of the texture resource.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D11_TEXTURE2D_DESC1" /> structure that receives the description of the 2D texture.</param>
   </member>
   <member name="ID3D11Texture2D1">
-    <summary>
-      <para>A 2D texture interface represents texel data, which is structured memory.</para>
-    </summary>
-    <remarks>
-      <para>To create an empty Texture2D resource, call <see cref="ID3D11Device3.CreateTexture2D1" />. For info about how to create a 2D texture, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-create">How to: Create a Texture</a>.</para>
-      <para>Textures can't be bound directly to the pipeline; instead, a view must be created and bound. Using a view, texture data can be interpreted at run time within certain restrictions. To use the texture as a render-target or depth-stencil resource, call <see cref="ID3D11Device3.CreateRenderTargetView1" />, and <see cref="ID3D11Device.CreateDepthStencilView" />, respectively. To use the texture as an input to a shader, call <see cref="ID3D11Device3.CreateShaderResourceView1" />.</para>
-    </remarks>
-    <seealso cref="ID3D11Texture2D" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+    <summary>A 2D texture interface represents texel data, which is structured memory.</summary>
   </member>
 </doc>

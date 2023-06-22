@@ -3,39 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMF2DBuffer2.Copy2DTo">
-    <summary>
-      <para>Copies the buffer to another 2D buffer object.</para>
-    </summary>
-    <param name="pDestBuffer">
-      <para>A pointer to the <see cref="IMF2DBuffer2" /> interface of the destination buffer.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The destination buffer must be at least as large as the source buffer.</para>
-    </remarks>
-    <seealso cref="IMF2DBuffer2" />
+    <summary>Copies the buffer to another 2D buffer object.</summary>
+    <param name="pDestBuffer">A pointer to the <see cref="IMF2DBuffer2" /> interface of the destination buffer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMF2DBuffer2.Lock2DSize">
-    <summary>
-      <para>Gives the caller access to the memory in the buffer.</para>
-    </summary>
-    <param name="lockFlags">
-      <para>A member of the <see cref="MF2DBuffer_LockFlags" /> enumeration that specifies whether to lock the buffer for reading, writing, or both.</para>
-    </param>
-    <param name="ppbScanline0">
-      <para>Receives a pointer to the first byte of the top row of pixels in the image. The top row is defined as the top row when the image is presented to the viewer, and might not be the first row in memory.</para>
-    </param>
-    <param name="plPitch">
-      <para>Receives the surface stride, in bytes. The stride might be negative, indicating that the image is oriented from the bottom up in memory.</para>
-    </param>
-    <param name="ppbBufferStart">
-      <para>Receives a pointer to the start of the accessible buffer in memory.</para>
-    </param>
-    <param name="pcbBufferLength">
-      <para>Receives the length of the buffer, in bytes.</para>
-    </param>
+    <summary>Gives the caller access to the memory in the buffer.</summary>
+    <param name="lockFlags">A member of the <see cref="MF2DBuffer_LockFlags" /> enumeration that specifies whether to lock the buffer for reading, writing, or both.</param>
+    <param name="ppbScanline0">Receives a pointer to the first byte of the top row of pixels in the image. The top row is defined as the top row when the image is presented to the viewer, and might not be the first row in memory.</param>
+    <param name="plPitch">Receives the surface stride, in bytes. The stride might be negative, indicating that the image is oriented from the bottom up in memory.</param>
+    <param name="ppbBufferStart">Receives a pointer to the start of the accessible buffer in memory.</param>
+    <param name="pcbBufferLength">Receives the length of the buffer, in bytes.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -43,85 +21,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid request. The buffer might already be locked with an incompatible locking flag. See Remarks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b> E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid request. The buffer might already be locked with an incompatible locking flag. See Remarks.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b> E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>There is insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>There is insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When you are done accessing the memory, call <see cref="IMF2DBuffer.Unlock2D" /> to unlock the buffer. You must call <b>Unlock2D</b> once for each call to <b>Lock2DSize</b>.</para>
-      <para>This method is equivalent to the <see cref="IMF2DBuffer.Lock2D" /> method. However, <b>Lock2DSize</b> is preferred because it enables the caller to validate memory pointers, and because it supports read-only locks. A buffer is not guaranteed to support the <see cref="IMF2DBuffer2" /> interface. To access a buffer, you should try the following methods in the order listed:</para>
-      <list type="number">
-        <item>
-          <description>
-            <b>IMF2DBuffer2.Lock2DSize</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IMF2DBuffer.Lock2D" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IMFMediaBuffer.Lock" />
-          </description>
-        </item>
-      </list>
-      <para>The <i>ppbBufferStart</i> and <i>pcbBufferLength</i> parameters receive the bounds of the buffer memory. Use these values to guard against buffer overruns. Use the values of <i>ppbScanline0</i> and <i>plPitch</i> to access the image data. If the image is bottom-up in memory, <i>ppbScanline0</i> will point to the last scan line in memory and <i>plPitch</i> will be negative. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/image-stride">Image Stride</a>.</para>
-      <para>The <i>lockFlags</i> parameter specifies whether the buffer is locked for read-only access, write-only access,  or read/write access.</para>
-      <list type="bullet">
-        <item>
-          <description>If the buffer is already locked for read-only access, it cannot be locked for write access.</description>
-        </item>
-        <item>
-          <description>If the buffer is already locked for write-only access, it cannot be locked for read access.</description>
-        </item>
-        <item>
-          <description>If the buffer is already locked for read/write access, it can be locked for read or write access.</description>
-        </item>
-      </list>
-      <para>When possible, use a read-only or write-only lock, and avoid locking the buffer for read/write access. If the buffer represents a DirectX Graphics Infrastructure (DXGI) surface, a read/write lock can cause an extra copy between CPU memory and GPU memory.</para>
-    </remarks>
-    <seealso cref="IMF2DBuffer2" />
   </member>
   <member name="IMF2DBuffer2">
-    <summary>
-      <para>Represents a buffer that contains a two-dimensional surface, such as a video frame.</para>
-    </summary>
-    <remarks>
-      <para>This interface extends the <see cref="IMF2DBuffer" /> interface and adds a safer version of the <see cref="IMF2DBuffer.Lock2D" /> method.</para>
-    </remarks>
-    <seealso cref="IMF2DBuffer" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/uncompressed-video-buffers">Uncompressed Video Buffers</seealso>
+    <summary>Represents a buffer that contains a two-dimensional surface, such as a video frame.</summary>
   </member>
 </doc>

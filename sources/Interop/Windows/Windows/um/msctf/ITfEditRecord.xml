@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfEditRecord.GetSelectionStatus">
-    <summary>
-      <para>Determines if the selection has changed during the edit session.</para>
-    </summary>
-    <param name="pfChanged">
-      <para>Pointer to a <b>BOOL</b> value that receives a value that indicates if the selection changed due to an edit session. Receives a nonzero value if the selection changed or zero otherwise.</para>
-    </param>
+    <summary>Determines if the selection has changed during the edit session.</summary>
+    <param name="pfChanged">Pointer to a <b>BOOL</b> value that receives a value that indicates if the selection changed due to an edit session. Receives a nonzero value if the selection changed or zero otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,33 +12,36 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pfChanged</i> is invalid.
-</description>
-        </item>
+            <i>pfChanged</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfEditRecord.GetTextAndPropertyUpdates">
-    <summary>
-      <para>Obtains an enumerator that contains a collection of range objects that cover the specified properties and/or text that changed during the edit session.</para>
-    </summary>
+    <summary>Obtains an enumerator that contains a collection of range objects that cover the specified properties and/or text that changed during the edit session.</summary>
     <param name="dwFlags">
       <para>Contains a combination of the following values that specify the behavior of this method.</para>
       <list type="table">
@@ -50,22 +49,30 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>0</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Specifies that the method will obtain a collection of range objects that cover the specified properties changed during the edit session. <i>prgProperties</i> cannot be <b>NULL</b> and <i>cProperties</i> must be greater than zero.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Specifies that the method will obtain a collection of range objects that cover the specified properties changed during the edit session. <i>prgProperties</i> cannot be <b>NULL</b> and <i>cProperties</i> must be greater than zero.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_GTP_INCL_TEXT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_GTP_INCL_TEXT</b>
-          </description>
-          <description>
-            <para>Specifies that the method will obtain the collection of range objects that cover the text changed during the edit session.</para>
-          </description>
-        </item>
+          <description>Specifies that the method will obtain the collection of range objects that cover the text changed during the edit session.</description>
+        </listheader>
       </list>
     </param>
     <param name="prgProperties">
@@ -77,9 +84,7 @@
       <para>Specifies the number of elements in the <i>prgProperties</i> array.</para>
       <para>This parameter can be zero if <i>dwFlags</i> contains TF_GTP_INCL_TEXT. This indicates that no property changes are obtained.</para>
     </param>
-    <param name="ppEnum">
-      <para>Pointer to an <see cref="IEnumTfRanges" /> interface pointer that receives the enumerator object.</para>
-    </param>
+    <param name="ppEnum">Pointer to an <see cref="IEnumTfRanges" /> interface pointer that receives the enumerator object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -87,46 +92,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumTfRanges " />
-    <seealso cref="ITfEditRecord" />
   </member>
   <member name="ITfEditRecord">
-    <summary>
-      <para>The <b>ITfEditRecord</b> interface is implemented by the TSF manager and is used by a text edit sink to determine what was changed during an edit session. An instance of this interface is passed to the text edit sink when the <see cref="ITfTextEditSink.OnEndEdit" /> method is called.</para>
-    </summary>
-    <seealso cref="ITfTextEditSink.OnEndEdit " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfEditRecord</b> interface is implemented by the TSF manager and is used by a text edit sink to determine what was changed during an edit session. An instance of this interface is passed to the text edit sink when the <see cref="ITfTextEditSink.OnEndEdit" /> method is called.</summary>
   </member>
 </doc>

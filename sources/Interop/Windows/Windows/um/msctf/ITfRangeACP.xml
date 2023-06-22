@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfRangeACP.GetExtent">
-    <summary>
-      <para>Obtains the application character position and length of the range object.</para>
-    </summary>
-    <param name="pacpAnchor">
-      <para>Pointer to a <b>LONG</b> value that receives the application character position of the range start anchor.</para>
-    </param>
-    <param name="pcch">
-      <para>Pointer to a <b>LONG</b> value that receives the number of characters in the range.</para>
-    </param>
+    <summary>Obtains the application character position and length of the range object.</summary>
+    <param name="pacpAnchor">Pointer to a <b>LONG</b> value that receives the application character position of the range start anchor.</param>
+    <param name="pcch">Pointer to a <b>LONG</b> value that receives the number of characters in the range.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,54 +13,49 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method should only be called by the owner of the ACP-based context because the character position and range length will only have meaning to a caller that recognizes the text store implementation.</para>
-    </remarks>
-    <seealso cref="ITfRangeACP" />
-    <seealso cref="ITfRangeACP.SetExtent " />
   </member>
   <member name="ITfRangeACP.SetExtent">
-    <summary>
-      <para>Sets the application character position and length of the range object.</para>
-    </summary>
-    <param name="acpAnchor">
-      <para>Contains the application character position of the range start anchor.</para>
-    </param>
-    <param name="cch">
-      <para>Contains the number of characters in the range.</para>
-    </param>
+    <summary>Sets the application character position and length of the range object.</summary>
+    <param name="acpAnchor">Contains the application character position of the range start anchor.</param>
+    <param name="cch">Contains the number of characters in the range.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -74,49 +63,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method should only be called by the owner of the ACP-based context because the character position and range length will only have meaning to a caller that recognizes the text store implementation.</para>
-    </remarks>
-    <seealso cref="ITfRangeACP" />
-    <seealso cref="ITfRangeACP.GetExtent " />
   </member>
   <member name="ITfRangeACP">
-    <summary>
-      <para>The <b>ITfRangeACP</b> interface is implemented by the TSF manager and is used by an application character position (ACP)-based application to access and manipulate range objects. This interface is derived from the <see cref="ITfRange" /> interface. Obtain an instance of this interface by querying an <b>ITfRange</b> object for IID_ITfRangeACP.</para>
-    </summary>
-    <seealso cref="ITfRange " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfRangeACP</b> interface is implemented by the TSF manager and is used by an application character position (ACP)-based application to access and manipulate range objects. This interface is derived from the <see cref="ITfRange" /> interface. Obtain an instance of this interface by querying an <b>ITfRange</b> object for IID_ITfRangeACP.</summary>
   </member>
 </doc>

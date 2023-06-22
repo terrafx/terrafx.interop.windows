@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AddPackageDependencyOptions">
-    <summary>
-      <para>Defines options that can be applied when adding a run-time reference to a framework package by using the <see cref="AddPackageDependency" /> function.</para>
-    </summary>
-    <seealso cref="AddPackageDependency" />
+    <summary>Defines options that can be applied when adding a run-time reference to a framework package by using the <see cref="AddPackageDependency" /> function.</summary>
   </member>
   <member name="AddPackageDependencyOptions.AddPackageDependencyOptions_None">
-    <summary>
-      <para>No options are applied.</para>
-    </summary>
+    <summary>No options are applied.</summary>
   </member>
   <member name="AddPackageDependencyOptions.AddPackageDependencyOptions_PrependIfRankCollision">
-    <summary>
-      <para>If multiple packages are present in the package graph with the same rank as the call to <b>AddPackageDependency</b>, the resolved package is added before others of the same rank. For more information, see <see cref="AddPackageDependency" />.</para>
-    </summary>
+    <summary>If multiple packages are present in the package graph with the same rank as the call to <b>AddPackageDependency</b>, the resolved package is added before others of the same rank. For more information, see <see cref="AddPackageDependency" />.</summary>
   </member>
 </doc>

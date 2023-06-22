@@ -3,32 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEVICE_DATA_SET_REPAIR_PARAMETERS">
-    <summary>
-      <para>Specifies parameters for the repair operation. A repair operation is
-initiated by specifying <b>DeviceDsmAction_Repair</b> in the
-<b>Action</b> member of the
-<see cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES" /></para>
-      <para>structure passed in a
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a></para>
-      <para>control code.</para>
-    </summary>
-    <seealso cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DevIO/device-management-structures">Device Management Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</seealso>
+    <summary>Specifies parameters for the repair operation. A repair operation is initiated by specifying <b>DeviceDsmAction_Repair</b> in the<b>Action</b> member of the<see cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES" />structure passed in a<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a>control code.</summary>
   </member>
   <member name="DEVICE_DATA_SET_REPAIR_PARAMETERS.NumberOfRepairCopies">
-    <summary>
-      <para>The number of copies that will be repaired.</para>
-    </summary>
+    <summary>The number of copies that will be repaired.</summary>
   </member>
   <member name="DEVICE_DATA_SET_REPAIR_PARAMETERS.SourceCopy">
-    <summary>
-      <para>The copy number of the source copy.</para>
-    </summary>
+    <summary>The copy number of the source copy.</summary>
   </member>
   <member name="DEVICE_DATA_SET_REPAIR_PARAMETERS.RepairCopies">
-    <summary>
-      <para>The copy numbers of all the copies that will be repaired.</para>
-    </summary>
+    <summary>The copy numbers of all the copies that will be repaired.</summary>
   </member>
 </doc>

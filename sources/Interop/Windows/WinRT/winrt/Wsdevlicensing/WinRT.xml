@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.AcquireDeveloperLicense">
+    <summary>Acquires a developer license.</summary>
+    <param name="hwndParent">The handler to the parent window.</param>
+    <param name="pExpiration">Indicates when the developer license expires.</param>
+    <returns>Returns an <a href="https://docs.microsoft.com//uwp/api/windows.foundation.hresult">HResult structure</a> with any error codes that occurred.</returns>
+  </member>
+  <member name="WinRT.CheckDeveloperLicense">
+    <summary>Checks to see if a developer license exists.</summary>
+    <param name="pExpiration">Indicates when the developer license expires.</param>
+    <returns>Returns an <a href="https://docs.microsoft.com//uwp/api/windows.foundation.hresult">HResult structure</a> with any error codes that occurred.</returns>
+  </member>
+  <member name="WinRT.RemoveDeveloperLicense">
+    <summary>Removes a developer license.</summary>
+    <param name="hwndParent">The handler to the parent window.</param>
+    <returns>Returns an <a href="https://docs.microsoft.com//uwp/api/windows.foundation.hresult">HResult structure</a> with any error codes that occurred.</returns>
+  </member>
+</doc>

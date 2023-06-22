@@ -3,20 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellRunDll.Run">
-    <summary>
-      <para>Not supported.</para>
-    </summary>
-    <param name="pszArgs">
-      <para>Type: <b>LPCWSTR</b></para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Not supported.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellRunDll">
-    <summary>
-      <para>Not supported.</para>
-    </summary>
+    <summary>Not supported.</summary>
   </member>
 </doc>

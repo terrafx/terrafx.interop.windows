@@ -3,211 +3,126 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWM_TIMING_INFO">
-    <summary>
-      <para>Specifies Desktop Window Manager (DWM) composition timing information. Used by the <see cref="DwmGetCompositionTimingInfo" /> function.</para>
-    </summary>
-    <remarks>
-      <para>Both DWM_FRAME_COUNT and QPC_TIME are defined in Dwmapi.h as <b>ULONGLONG</b>.</para>
-    </remarks>
+    <summary>Specifies Desktop Window Manager (DWM) composition timing information. Used by the <see cref="DwmGetCompositionTimingInfo" /> function.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cbSize">
-    <summary>
-      <para>The size of this <b>DWM_TIMING_INFO</b> structure.</para>
-    </summary>
+    <summary>The size of this <b>DWM_TIMING_INFO</b> structure.</summary>
   </member>
   <member name="DWM_TIMING_INFO.rateRefresh">
-    <summary>
-      <para>The monitor refresh rate.</para>
-    </summary>
+    <summary>The monitor refresh rate.</summary>
   </member>
   <member name="DWM_TIMING_INFO.qpcRefreshPeriod">
-    <summary>
-      <para>The monitor refresh period.</para>
-    </summary>
+    <summary>The monitor refresh period.</summary>
   </member>
   <member name="DWM_TIMING_INFO.rateCompose">
-    <summary>
-      <para>The composition rate.</para>
-    </summary>
+    <summary>The composition rate.</summary>
   </member>
   <member name="DWM_TIMING_INFO.qpcVBlank">
-    <summary>
-      <para>The query performance counter value before the vertical blank.</para>
-    </summary>
+    <summary>The query performance counter value before the vertical blank.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cRefresh">
-    <summary>
-      <para>The DWM refresh counter.</para>
-    </summary>
+    <summary>The DWM refresh counter.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cDXRefresh">
-    <summary>
-      <para>The DirectX refresh counter.</para>
-    </summary>
+    <summary>The DirectX refresh counter.</summary>
   </member>
   <member name="DWM_TIMING_INFO.qpcCompose">
-    <summary>
-      <para>The query performance counter value for a frame composition.</para>
-    </summary>
+    <summary>The query performance counter value for a frame composition.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFrame">
-    <summary>
-      <para>The frame number that was composed at <b>qpcCompose</b>.</para>
-    </summary>
+    <summary>The frame number that was composed at <b>qpcCompose</b>.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cDXPresent">
-    <summary>
-      <para>The DirectX present number used to identify rendering frames.</para>
-    </summary>
+    <summary>The DirectX present number used to identify rendering frames.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cRefreshFrame">
-    <summary>
-      <para>The refresh count of the frame that was composed at <b>qpcCompose</b>.</para>
-    </summary>
+    <summary>The refresh count of the frame that was composed at <b>qpcCompose</b>.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFrameSubmitted">
-    <summary>
-      <para>The DWM frame number that was last submitted.</para>
-    </summary>
+    <summary>The DWM frame number that was last submitted.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cDXPresentSubmitted">
-    <summary>
-      <para>The DirectX present number that was last submitted.</para>
-    </summary>
+    <summary>The DirectX present number that was last submitted.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFrameConfirmed">
-    <summary>
-      <para>The DWM frame number that was last confirmed as presented.</para>
-    </summary>
+    <summary>The DWM frame number that was last confirmed as presented.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cDXPresentConfirmed">
-    <summary>
-      <para>The DirectX present number that was last confirmed as presented.</para>
-    </summary>
+    <summary>The DirectX present number that was last confirmed as presented.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cRefreshConfirmed">
-    <summary>
-      <para>The target refresh count of the last frame confirmed as completed by the GPU.</para>
-    </summary>
+    <summary>The target refresh count of the last frame confirmed as completed by the GPU.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cDXRefreshConfirmed">
-    <summary>
-      <para>The DirectX refresh count when the frame was confirmed as presented.</para>
-    </summary>
+    <summary>The DirectX refresh count when the frame was confirmed as presented.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFramesLate">
-    <summary>
-      <para>The number of frames the DWM presented late.</para>
-    </summary>
+    <summary>The number of frames the DWM presented late.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFramesOutstanding">
-    <summary>
-      <para>The number of composition frames that have been issued but have not been confirmed as completed.</para>
-    </summary>
+    <summary>The number of composition frames that have been issued but have not been confirmed as completed.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFrameDisplayed">
-    <summary>
-      <para>The last frame displayed.</para>
-    </summary>
+    <summary>The last frame displayed.</summary>
   </member>
   <member name="DWM_TIMING_INFO.qpcFrameDisplayed">
-    <summary>
-      <para>The QPC time of the composition pass when the frame was displayed.</para>
-    </summary>
+    <summary>The QPC time of the composition pass when the frame was displayed.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cRefreshFrameDisplayed">
-    <summary>
-      <para>The vertical refresh count when the frame should have become visible.</para>
-    </summary>
+    <summary>The vertical refresh count when the frame should have become visible.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFrameComplete">
-    <summary>
-      <para>The ID of the last frame marked as completed.</para>
-    </summary>
+    <summary>The ID of the last frame marked as completed.</summary>
   </member>
   <member name="DWM_TIMING_INFO.qpcFrameComplete">
-    <summary>
-      <para>The QPC time when the last frame was marked as completed.</para>
-    </summary>
+    <summary>The QPC time when the last frame was marked as completed.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFramePending">
-    <summary>
-      <para>The ID of the last frame marked as pending.</para>
-    </summary>
+    <summary>The ID of the last frame marked as pending.</summary>
   </member>
   <member name="DWM_TIMING_INFO.qpcFramePending">
-    <summary>
-      <para>The QPC time when the last frame was marked as pending.</para>
-    </summary>
+    <summary>The QPC time when the last frame was marked as pending.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFramesDisplayed">
-    <summary>
-      <para>The number of unique frames displayed. This value is valid only after a second call to the <see cref="DwmGetCompositionTimingInfo" /> function.</para>
-    </summary>
+    <summary>The number of unique frames displayed. This value is valid only after a second call to the <see cref="DwmGetCompositionTimingInfo" /> function.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFramesComplete">
-    <summary>
-      <para>The number of new completed frames that have been received.</para>
-    </summary>
+    <summary>The number of new completed frames that have been received.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFramesPending">
-    <summary>
-      <para>The number of new frames submitted to DirectX but not yet completed.</para>
-    </summary>
+    <summary>The number of new frames submitted to DirectX but not yet completed.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFramesAvailable">
-    <summary>
-      <para>The number of frames available but not displayed, used, or dropped. This value is valid only after a second call to <see cref="DwmGetCompositionTimingInfo" />.</para>
-    </summary>
+    <summary>The number of frames available but not displayed, used, or dropped. This value is valid only after a second call to <see cref="DwmGetCompositionTimingInfo" />.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFramesDropped">
-    <summary>
-      <para>The number of rendered frames that were never displayed because composition occurred too late. This value is valid only after a second call to <see cref="DwmGetCompositionTimingInfo" />.</para>
-    </summary>
+    <summary>The number of rendered frames that were never displayed because composition occurred too late. This value is valid only after a second call to <see cref="DwmGetCompositionTimingInfo" />.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cFramesMissed">
-    <summary>
-      <para>The number of times an old frame was composed when a new frame should have been used but was not available.</para>
-    </summary>
+    <summary>The number of times an old frame was composed when a new frame should have been used but was not available.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cRefreshNextDisplayed">
-    <summary>
-      <para>The frame count at which the next frame is scheduled to be displayed.</para>
-    </summary>
+    <summary>The frame count at which the next frame is scheduled to be displayed.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cRefreshNextPresented">
-    <summary>
-      <para>The frame count at which the next DirectX present is scheduled to be displayed.</para>
-    </summary>
+    <summary>The frame count at which the next DirectX present is scheduled to be displayed.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cRefreshesDisplayed">
-    <summary>
-      <para>The total number of refreshes that have been displayed for the application since the <see cref="DwmSetPresentParameters" /> function was last called.</para>
-    </summary>
+    <summary>The total number of refreshes that have been displayed for the application since the <see cref="DwmSetPresentParameters" /> function was last called.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cRefreshesPresented">
-    <summary>
-      <para>The total number of refreshes that have been presented by the application since <see cref="DwmSetPresentParameters" /> was last called.</para>
-    </summary>
+    <summary>The total number of refreshes that have been presented by the application since <see cref="DwmSetPresentParameters" /> was last called.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cRefreshStarted">
-    <summary>
-      <para>The refresh number when content for this window started to be displayed.</para>
-    </summary>
+    <summary>The refresh number when content for this window started to be displayed.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cPixelsReceived">
-    <summary>
-      <para>The total number of pixels DirectX redirected to the DWM.</para>
-    </summary>
+    <summary>The total number of pixels DirectX redirected to the DWM.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cPixelsDrawn">
-    <summary>
-      <para>The number of pixels drawn.</para>
-    </summary>
+    <summary>The number of pixels drawn.</summary>
   </member>
   <member name="DWM_TIMING_INFO.cBuffersEmpty">
-    <summary>
-      <para>The number of empty buffers in the flip chain.</para>
-    </summary>
+    <summary>The number of empty buffers in the flip chain.</summary>
   </member>
 </doc>

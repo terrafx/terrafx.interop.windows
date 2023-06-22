@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SECURITY_LOGON_TYPE">
+    <summary>The <b>SECURITY_LOGON_TYPE</b> enumeration indicates the type of logon requested by a logon process.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.UndefinedLogonType"></member>
+  <member name="SECURITY_LOGON_TYPE.Interactive">
+    <summary>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security principal</a> is logging on interactively.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.Network">
+    <summary>The security principal is logging using a network.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.Batch">
+    <summary>The logon is for a batch process.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.Service">
+    <summary>The logon is for a service account.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.Proxy">
+    <summary>Not supported.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.Unlock">
+    <summary>The logon is an attempt to unlock a workstation.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.NetworkCleartext">
+    <summary>The logon is a network logon with plaintext credentials.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.NewCredentials">
+    <summary>Allows the caller to clone its current token and specify new credentials for outbound connections. The new logon session has the same local identity but uses different credentials for other network connections.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.RemoteInteractive">
+    <summary>A terminal server session that is both remote and interactive.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.CachedInteractive">
+    <summary>Attempt to use the cached credentials without going out across the network.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.CachedRemoteInteractive">
+    <summary>Same as <b>RemoteInteractive</b>, except used internally for auditing purposes.</summary>
+  </member>
+  <member name="SECURITY_LOGON_TYPE.CachedUnlock">
+    <summary>The logon is an attempt to unlock a workstation.</summary>
+  </member>
+</doc>

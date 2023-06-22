@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IInspectable.GetIids">
+    <summary>Gets the interfaces that are implemented by the current Windows Runtime class.</summary>
+    <param name="iidCount">The number of interfaces that are implemented by the current Windows Runtime object, excluding the <see cref="IUnknown" /> and <see cref="IInspectable" /> implementations.</param>
+    <param name="iids">A pointer to an array that contains an IID for each interface implemented by the current Windows Runtime object. The <see cref="IUnknown" /> and <see cref="IInspectable" /> interfaces are excluded.</param>
+    <returns>
+      <para>This function can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The IID array was allocated and saved in <i>iids</i> successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate <i>iids</i>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IInspectable.GetRuntimeClassName">
+    <summary>Gets the fully qualified name of the current Windows Runtime object.</summary>
+    <param name="className">The fully qualified name of the current Windows Runtime object.</param>
+    <returns>
+      <para>This function can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>className</i> string was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to allocate <i>className</i> string.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ILLEGAL_METHOD_CALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>className</i> refers to a class factory or a static interface.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IInspectable.GetTrustLevel">
+    <summary>Gets the trust level of the current Windows Runtime object.</summary>
+    <param name="trustLevel">The trust level of the current Windows Runtime object. The default is <b>BaseLevel</b>.</param>
+    <returns>This method always returns <b>S_OK</b>.</returns>
+  </member>
+  <member name="IInspectable">
+    <summary>Provides functionality required for all Windows Runtime classes.</summary>
+  </member>
+</doc>

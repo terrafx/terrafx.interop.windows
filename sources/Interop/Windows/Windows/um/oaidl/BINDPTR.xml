@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BINDPTR">
-    <summary>
-      <para>Describes a pointer.</para>
-    </summary>
+    <summary>Describes a pointer.</summary>
   </member>
   <member name="BINDPTR.lpfuncdesc">
-    <summary>
-      <para>Pointer to a function.</para>
-    </summary>
+    <summary>Pointer to a function.</summary>
   </member>
   <member name="BINDPTR.lpvardesc">
-    <summary>
-      <para>Pointer to a variable, constant, or data member.</para>
-    </summary>
+    <summary>Pointer to a variable, constant, or data member.</summary>
   </member>
   <member name="BINDPTR.lptcomp">
-    <summary>
-      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypecomp">ITypeComp</a> that binds the pointer.</para>
-    </summary>
+    <summary>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypecomp">ITypeComp</a> that binds the pointer.</summary>
   </member>
 </doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LinearGradientMode">
+    <summary>The <b>LinearGradientMode</b> enumeration specifies the direction in which the change of color occurs for a linear gradient brush.</summary>
+  </member>
+  <member name="LinearGradientMode.LinearGradientModeHorizontal">
+    <summary>Specifies the color to change in a horizontal direction from the left of the display to the right of the display.</summary>
+  </member>
+  <member name="LinearGradientMode.LinearGradientModeVertical">
+    <summary>Specifies the color to change in a vertical direction from the top of the display to the bottom of the display.</summary>
+  </member>
+  <member name="LinearGradientMode.LinearGradientModeForwardDiagonal">
+    <summary>Specifies the color to change in a forward diagonal direction from the upper-left corner to the lower-right corner of the display.</summary>
+  </member>
+  <member name="LinearGradientMode.LinearGradientModeBackwardDiagonal">
+    <summary>Specifies the color to change in a backward diagonal direction from the upper-right corner to the lower-left corner of the display.</summary>
+  </member>
+</doc>

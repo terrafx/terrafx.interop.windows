@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVirtualSurfaceImageSourceNative.GetUpdateRectCount">
+    <summary>Gets the total number of regions of the surface that must be updated.</summary>
+    <param name="count">Receives the number of regions to update.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVirtualSurfaceImageSourceNative.GetUpdateRects">
+    <summary>Gets the set of regions that must be updated on the shared surface.</summary>
+    <param name="updates">The number of regions that must be updated. You obtain this by calling <see cref="GetUpdateRectCount" />.</param>
+    <param name="count">Receives a list of regions that must be updated.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVirtualSurfaceImageSourceNative.GetVisibleBounds">
+    <summary>Gets the boundaries of the visible region of the shared surface.</summary>
+    <param name="bounds">Receives a rectangle that specifies the visible region of the shared surface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVirtualSurfaceImageSourceNative.Invalidate">
+    <summary>Invalidates a specific region of the shared surface for drawing.</summary>
+    <param name="updateRect">The region of the surface to invalidate.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVirtualSurfaceImageSourceNative.RegisterForUpdatesNeeded">
+    <summary>Registers for the callback that will perform the drawing when an update to the shared surface is requested.</summary>
+    <param name="callback">Pointer to an implementation of <see cref="IVirtualSurfaceUpdatesCallbackNative" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVirtualSurfaceImageSourceNative.Resize">
+    <summary>Resizes the surface.</summary>
+    <param name="newWidth">The updated width of the surface.</param>
+    <param name="newHeight">The updated height of the surface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVirtualSurfaceImageSourceNative">
+    <summary>Provides the implementation of a large (greater than the screen size) shared surface for DirectX drawing.</summary>
+  </member>
+</doc>

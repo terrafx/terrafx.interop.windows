@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPLAYCONFIG_2DREGION">
-    <summary>
-      <para>The DISPLAYCONFIG_2DREGION structure represents a point or an offset in a two-dimensional space.</para>
-    </summary>
+    <summary>The DISPLAYCONFIG_2DREGION structure represents a point or an offset in a two-dimensional space.</summary>
   </member>
   <member name="DISPLAYCONFIG_2DREGION.cx">
-    <summary>
-      <para>The horizontal component of the point or offset.</para>
-    </summary>
+    <summary>The horizontal component of the point or offset.</summary>
   </member>
   <member name="DISPLAYCONFIG_2DREGION.cy">
-    <summary>
-      <para>The vertical component of the point or offset.</para>
-    </summary>
+    <summary>The vertical component of the point or offset.</summary>
   </member>
 </doc>

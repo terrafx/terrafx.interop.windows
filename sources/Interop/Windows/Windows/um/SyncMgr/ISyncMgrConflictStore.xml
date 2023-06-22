@@ -3,103 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrConflictStore.BindToConflict">
-    <summary>
-      <para>Binds to a particular conflict specified by IID.</para>
-    </summary>
-    <param name="pConflictIdInfo">
-      <para>Type: <b>const <see cref="SYNCMGR_CONFLICT_ID_INFO" />*</b></para>
-      <para>A pointer to a <see cref="SYNCMGR_CONFLICT_ID_INFO" /> structure.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to a desired conflict IID.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the interface pointer requested in <i>riid</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is used when the conflict folder binds to a conflict, given its pointer to an item identifier list (PIDL) or parsing name. The ID is obtained from a conflict that was previously extracted from the store. See <see cref="ISyncMgrConflict" />.</para>
-    </remarks>
+    <summary>Binds to a particular conflict specified by IID.</summary>
+    <param name="pConflictIdInfo">A pointer to a <see cref="SYNCMGR_CONFLICT_ID_INFO" /> structure.</param>
+    <param name="riid">A reference to a desired conflict IID.</param>
+    <param name="ppv">When this method returns, contains the interface pointer requested in <i>riid</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictStore.EnumConflicts">
-    <summary>
-      <para>Enumerates conflicts scoped to the provided sync handler and sync item.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to the sync handler ID as a Unicode string.</para>
-    </param>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to the sync item ID as a Unicode string.</para>
-    </param>
-    <param name="ppEnum">
-      <para>Type: <b><see cref="IEnumSyncMgrConflict" />**</b></para>
-      <para>The address of an <see cref="IEnumSyncMgrConflict" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the sync handler, sync item, or partner name is <b>NULL</b>, the conflict store ignores that parameter.</para>
-    </remarks>
+    <summary>Enumerates conflicts scoped to the provided sync handler and sync item.</summary>
+    <param name="pszHandlerID">A pointer to the sync handler ID as a Unicode string.</param>
+    <param name="pszItemID">A pointer to the sync item ID as a Unicode string.</param>
+    <param name="ppEnum">The address of an <see cref="IEnumSyncMgrConflict" /> interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictStore.GetCount">
-    <summary>
-      <para>Gets the number of conflicts in the store.</para>
-    </summary>
-    <param name="pszHandlerID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a sync handler ID as a Unicode string.</para>
-    </param>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a sync item ID as a Unicode string.</para>
-    </param>
-    <param name="pnConflicts">
-      <para>Type: <b>DWORD*</b></para>
-      <para>When this method returns, contains the conflict count.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the number of conflicts in the store.</summary>
+    <param name="pszHandlerID">A pointer to a sync handler ID as a Unicode string.</param>
+    <param name="pszItemID">A pointer to a sync item ID as a Unicode string.</param>
+    <param name="pnConflicts">When this method returns, contains the conflict count.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictStore.RemoveConflicts">
-    <summary>
-      <para>Deletes a set of conflicts, specified by conflict ID, from the store.</para>
-    </summary>
-    <param name="rgConflictIdInfo">
-      <para>Type: <b>const <see cref="SYNCMGR_CONFLICT_ID_INFO" />*</b></para>
-      <para>A pointer to a <see cref="SYNCMGR_CONFLICT_ID_INFO" /> structure.</para>
-    </param>
-    <param name="cConflicts">
-      <para>Type: <b>DWORD</b></para>
-      <para>The conflict set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The conflicts are removed when the user selects the conflicts in the conflicts folder and chooses to delete them.</para>
-    </remarks>
+    <summary>Deletes a set of conflicts, specified by conflict ID, from the store.</summary>
+    <param name="rgConflictIdInfo">A pointer to a <see cref="SYNCMGR_CONFLICT_ID_INFO" /> structure.</param>
+    <param name="cConflicts">The conflict set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictStore">
-    <summary>
-      <para>Exposes methods that allow a handler to provide conflicts that appear in the Conflicts folder.</para>
-    </summary>
-    <remarks>
-      <para>Conflict is provided to enable the user to select a version of a <see cref="IShellItem" /> as needed, instead of being forced to pick to complete a sync selection set. The fact that we current display them in the conflict folder is purely secondary.</para>
-      <para>The conflict store must notify sync center when its contents change. Nothing is assumed to happen to conflicts when methods are called that affect the conflict. This includes when they are resolved.</para>
-      <para>Sync Center requests a conflict store from a handler by calling <see cref="ISyncMgrHandler.GetObject" /> with SYNCMGR_OBJECTID_ConflictStore if the mask returned from <see cref="ISyncMgrHandler.GetCapabilities" /> includes SYNCMGR_HCM_CONFLICT_STORE. The handler can also provide an event store filtered by item by setting the SYNCMGR_ICM_CONFLICT_STORE flag in the mask returned from <see cref="ISyncMgrSyncItem.GetCapabilities" />.</para>
-      <para>If conflicts are added to the conflict store, the handler (or a related component) should call <see cref="ISyncMgrControl.UpdateConflicts" /> so that both the Conflicts folder and conflict counts can be updated.</para>
-    </remarks>
+    <summary>Exposes methods that allow a handler to provide conflicts that appear in the Conflicts folder.</summary>
   </member>
 </doc>

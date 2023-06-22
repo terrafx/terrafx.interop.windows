@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OBJECTS_AND_SID">
+    <summary>The <b>OBJECTS_AND_SID</b> structure contains a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) that identifies a trustee and GUIDs that identify the object types of an object-specific <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE).</summary>
+  </member>
+  <member name="OBJECTS_AND_SID.ObjectsPresent">
+    <summary>
+      <para>Indicates whether the <b>ObjectTypeGuid</b> and <b>InheritedObjectTypeGuid</b> members contain GUIDs. This parameter can be a combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACE_OBJECT_TYPE_PRESENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>ObjectTypeGuid</b> member contains a GUID.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACE_INHERITED_OBJECT_TYPE_PRESENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>InheritedObjectTypeGuid</b> member contains a GUID.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="OBJECTS_AND_SID.ObjectTypeGuid">
+    <summary>
+      <para>A<see cref="GUID" /> structure that identifies the type of object, property set, or property protected by the ACE. If this ACE is inherited, the GUID identifies the type of object, property set, or property protected by the inherited ACE. This GUID must be a valid schema identifier in the Active Directory schema.</para>
+      <para>If the ACE_OBJECT_TYPE_PRESENT bit is not set in the <b>ObjectsPresent</b> member, the <b>ObjectTypeGuid</b> member is ignored, and the ACE protects the object to which the ACL is assigned.</para>
+    </summary>
+  </member>
+  <member name="OBJECTS_AND_SID.InheritedObjectTypeGuid">
+    <summary>
+      <para>A <see cref="GUID" /> structure that identifies the type of object that can inherit the ACE. This GUID must be a valid schema identifier in the Active Directory schema.</para>
+      <para>If the ACE_INHERITED_OBJECT_TYPE_PRESENT bit is not set in the <b>ObjectsPresent</b> member, the <b>InheritedObjectTypeGuid</b> member is ignored, and all types of child objects can inherit the ACE. Otherwise, only the specified object type can inherit the ACE. In either case, inheritance is also controlled by the inheritance flags in the <see cref="ACE_HEADER" /> structure as well as by any protection against inheritance placed on the child objects.</para>
+    </summary>
+  </member>
+  <member name="OBJECTS_AND_SID.pSid">
+    <summary>A pointer to the SID of the trustee to whom the ACE applies.</summary>
+  </member>
+</doc>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12VideoDecodeCommandList3.Barrier">
+    <summary>
+      <para>Adds a collection of barriers into a video decode command list recording.</para>
+      <para>Requires the DirectX 12 Agility SDK 1.7 or later.</para>
+    </summary>
+    <param name="NumBarrierGroups">Number of barrier groups pointed to by <i>pBarrierGroups</i>.</param>
+    <param name="pBarrierGroups">Pointer to an array of <see cref="D3D12_BARRIER_GROUP" /> objects.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList3">
+    <summary>
+      <para>Encapsulates a list of graphics commands for video decoding. This interface derives from <see cref="ID3D12VideoDecodeCommandList2" />, and adds support for barriers.</para>
+      <para>Requires the DirectX 12 Agility SDK 1.7 or later.</para>
+    </summary>
+  </member>
+</doc>

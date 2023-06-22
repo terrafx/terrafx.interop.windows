@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM">
-    <summary>
-      <para>Represents a compressed bitstream from which video is decoded.</para>
-    </summary>
+    <summary>Represents a compressed bitstream from which video is decoded.</summary>
   </member>
   <member name="D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM.pBuffer">
-    <summary>
-      <para>A pointer to an <see cref="ID3D12Resource" /> representing the source buffer containing the compressed bitstream to decode.</para>
-    </summary>
+    <summary>A pointer to an <see cref="ID3D12Resource" /> representing the source buffer containing the compressed bitstream to decode.</summary>
   </member>
   <member name="D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM.Offset">
-    <summary>
-      <para>The offset to the beginning of the first slice.  This offset has alignment requirements based on the tier value of the video decoder. For more information on decoding tiers, see <see cref="D3D12_VIDEO_DECODE_TIER" />.</para>
-    </summary>
+    <summary>The offset to the beginning of the first slice. This offset has alignment requirements based on the tier value of the video decoder. For more information on decoding tiers, see <see cref="D3D12_VIDEO_DECODE_TIER" />.</summary>
   </member>
   <member name="D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM.Size">
-    <summary>
-      <para>The size of the subregion of <i>pBuffer</i> that contains the bitstream.</para>
-    </summary>
+    <summary>The size of the subregion of <i>pBuffer</i> that contains the bitstream.</summary>
   </member>
 </doc>

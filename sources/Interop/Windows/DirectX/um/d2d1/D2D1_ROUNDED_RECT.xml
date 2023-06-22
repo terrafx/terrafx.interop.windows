@@ -3,31 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_ROUNDED_RECT">
-    <summary>
-      <para>Contains the dimensions and corner radii of a rounded rectangle.</para>
-    </summary>
-    <remarks>
-      <para>Each corner of the rectangle specified by the <i>rect</i> is replaced with a quarter ellipse, with a radius in each direction specified by <i>radiusX</i> and <i>radiusY</i>.</para>
-      <para>If the <i>radiusX</i> is greater than or equal to half the width of the rectangle, and the <i>radiusY</i> is greater than or equal to one-half the height, the rounded rectangle is an ellipse with the same width and height of the <i>rect</i>.</para>
-      <para>Even when both <i>radiuX</i> and <i>radiusY</i> are zero, the rounded rectangle is different from a rectangle., When stroked, the corners of the rounded rectangle are roundly joined, not mitered (square).</para>
-    </remarks>
+    <summary>Contains the dimensions and corner radii of a rounded rectangle.</summary>
   </member>
   <member name="D2D1_ROUNDED_RECT.rect">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The coordinates of the rectangle.</para>
-    </summary>
+    <summary>The coordinates of the rectangle.</summary>
   </member>
   <member name="D2D1_ROUNDED_RECT.radiusX">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x-radius for the quarter ellipse that is drawn to replace every corner of the rectangle.</para>
-    </summary>
+    <summary>The x-radius for the quarter ellipse that is drawn to replace every corner of the rectangle.</summary>
   </member>
   <member name="D2D1_ROUNDED_RECT.radiusY">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y-radius for the quarter ellipse that is drawn to replace every corner of the rectangle.</para>
-    </summary>
+    <summary>The y-radius for the quarter ellipse that is drawn to replace every corner of the rectangle.</summary>
   </member>
 </doc>

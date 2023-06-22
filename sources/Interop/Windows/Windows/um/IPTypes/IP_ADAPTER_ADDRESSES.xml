@@ -3,2121 +3,1190 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IP_ADAPTER_ADDRESSES">
-    <summary>
-      <para>The <b>IP_ADAPTER_ADDRESSES</b> structure is the
-<i>header node</i> for a linked list of addresses for a particular adapter. This structure can simultaneously
-be used as part of a linked list of
-<b>IP_ADAPTER_ADDRESSES</b> structures.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="GetAdaptersAddresses" /> function retrieves
-information for IPv4 and IPv6 addresses and returns this information as a linked list of
-<b>IP_ADAPTER_ADDRESSES</b> structures</para>
-      <para>The adapter index values specified in the <b>IfIndex</b> and <b>Ipv6IfIndex</b> members may change when an adapter is
-disabled and then enabled, or under other circumstances, and should not be considered persistent.</para>
-      <para>The values for the <b>IfType</b> member are defined in the
-<i>Ipifcons.h</i> header file. Only the possible values listed in the description of the
-<b>IfType</b> member are currently supported.</para>
-      <para>The size of the <b>IP_ADAPTER_ADDRESSES</b> structure
-changed on Windows XP with SP1 and later. The size of the
-<b>IP_ADAPTER_ADDRESSES</b> structure also changed on
-Windows Vista and later. The size of the
-<b>IP_ADAPTER_ADDRESSES</b> structure also changed on
-Windows Vista with SP1and later and onWindows Server 2008 and later. The <b>Length</b> member should be used to determine
-which version of the <b>IP_ADAPTER_ADDRESSES</b></para>
-      <para>structure is being used.</para>
-      <para>The version of the <b>IP_ADAPTER_ADDRESSES</b></para>
-      <para>structure on Windows XP with SP1 and later has the following new members added:
-<b>Ipv6IfIndex</b>, <b>ZoneIndices</b>, and
-<b>FirstPrefix</b>.</para>
-      <para>The version of the <b>IP_ADAPTER_ADDRESSES</b></para>
-      <para>structure on Windows Vista and later has the following new members added:
-<b>TransmitLinkSpeed</b>, <b>ReceiveLinkSpeed</b>,
-<b>FirstWinsServerAddress</b>, <b>FirstGatewayAddress</b>,
-<b>Ipv4Metric</b>, <b>Ipv6Metric</b>, <b>Luid</b>,
-<b>Dhcpv4Server</b>, <b>CompartmentId</b>,
-<b>NetworkGuid</b>, <b>ConnectionType</b>,
-<b>TunnelType</b>, <b>Dhcpv6Server</b>,
-<b>Dhcpv6ClientDuid</b>, <b>Dhcpv6ClientDuidLength</b>, and
-<b>Dhcpv6Iaid</b>.</para>
-      <para>The version of the <b>IP_ADAPTER_ADDRESSES</b></para>
-      <para>structure on Windows Vista with SP1and later and on Windows Server 2008 and later has the following new member added:
-<b>FirstDnsSuffix</b>.</para>
-      <para>The <b>Ipv4Metric</b> and <b>Ipv6Metric</b> members are used to
-prioritize route metrics for routes connected to multiple interfaces on the local computer.</para>
-      <para>The order of  linked <see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structures pointed to by the <b>FirstUnicastAddress</b></para>
-      <para>member that are returned by the <see cref="GetAdaptersAddresses" /> function does not reflect the order that IP addresses were added to an adapter and may vary between versions of Windows. Similarly, the order of linked <b>IP_ADAPTER_ANYCAST_ADDRESS</b> structures pointed to by the <b>FirstAnycastAddress</b></para>
-      <para>member and the order of linked <b>IP_ADAPTER_MULTICAST_ADDRESS</b> structures pointed to by the <b>FirstMulticastAddress
-</b></para>
-      <para>member do not reflect the order that IP addresses were added to an adapter and may vary between versions of Windows.</para>
-      <para>In addition, the linked <see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structures pointed to by the <b>FirstUnicastAddress</b></para>
-      <para>member and the linked <see cref="IP_ADAPTER_PREFIX" /> structures pointed to by the <b>FirstPrefix</b></para>
-      <para>member are maintained as separate internal linked lists by the operating system. As a result, the order of linked <b>IP_ADAPTER_UNICAST_ADDRESS</b> structures pointed to by the <b>FirstUnicastAddress</b></para>
-      <para>member does not have any relationship with the order of linked <b>IP_ADAPTER_PREFIX</b> structures pointed to by the <b>FirstPrefix</b></para>
-      <para>member.</para>
-      <para>On Windows Vista and later, the linked <see cref="IP_ADAPTER_PREFIX" /> structures pointed to by the <b>FirstPrefix</b></para>
-      <para>member include three IP adapter prefixes for each IP address assigned to the adapter. These include the host IP address prefix, the subnet IP address prefix, and the subnet broadcast IP address prefix. In addition, for each adapter there is a multicast address prefix and a broadcast address prefix.</para>
-      <para>On Windows XP with SP1 and later prior to Windows Vista, the linked <see cref="IP_ADAPTER_PREFIX" /> structures pointed to by the <b>FirstPrefix</b></para>
-      <para>member include only a single IP adapter prefix for each IP address assigned to the adapter.</para>
-      <para>In the Windows SDK, the version of the structure for use on Windows Vista and later is  defined as
-<b>IP_ADAPTER_ADDRESSES_LH</b>. In the
-Microsoft Windows Software Development Kit (SDK), the version of this structure to be used on earlier systems including
-Windows XP with SP1 and later is defined as
-<b>IP_ADAPTER_ADDRESSES_XP</b>. When compiling an
-application if the target platform is Windows Vista and later
-(<code>NTDDI_VERSION &gt;= NTDDI_LONGHORN</code>,
-<code>_WIN32_WINNT &gt;= 0x0600</code>, or
-<code>WINVER &gt;= 0x0600</code>), the
-<b>IP_ADAPTER_ADDRESSES_LH</b> structure is typedefed to
-the <b>IP_ADAPTER_ADDRESSES</b> structure. When compiling an application if the target
-platform is not Windows Vista and later, the
-<b>IP_ADAPTER_ADDRESSES_XP</b> structure is typedefed to
-the <b>IP_ADAPTER_ADDRESSES</b> structure.</para>
-      <para>The <see cref="SOCKET_ADDRESS" /> structure is used in the
-<b>IP_ADAPTER_ADDRESSES</b> structure. On the
-Windows SDK released for Windows Vista and later, the organization of header files has
-changed and the <b>SOCKET_ADDRESS</b> structure is defined
-in the <i>Ws2def.h</i> header file which is automatically included by the
-<i>Winsock2.h</i> header file. On the Platform Software Development Kit (SDK) released for
-Windows Server 2003 and Windows XP, the
-<b>SOCKET_ADDRESS</b> structure is declared in the
-<i>Winsock2.h</i> header file. In order to use the
-<b>IP_ADAPTER_ADDRESSES</b> structure, the
-<i>Winsock2.h</i> header file must be included before the
-<i>Iphlpapi.h</i> header file.</para>
-      <h4>Examples</h4>
-      <para>This example retrieves the <b>IP_ADAPTER_ADDRESSES</b> structure for the adapters associated with the system and prints some members  for each adapter interface.</para>
-      <code>#include &lt;winsock2.h&gt;
-#include &lt;iphlpapi.h&gt;
-#include &lt;stdio.h&gt;
-#pragma comment(lib, "IPHLPAPI.lib")
-
-#define MALLOC(x) HeapAlloc(GetProcessHeap(), 0, (x))
-#define FREE(x) HeapFree(GetProcessHeap(), 0, (x))
-
-/* Note: could also use malloc() and free() */
-
-int __cdecl main(int argc, char **argv)
-{
-
-    /* Declare and initialize variables */
-
-    DWORD dwSize = 0;
-    DWORD dwRetVal = 0;
-
-    unsigned int i = 0;
-
-    // Set the flags to pass to GetAdaptersAddresses
-    ULONG flags = GAA_FLAG_INCLUDE_PREFIX;
-
-    // default to unspecified address family (both)
-    ULONG family = AF_UNSPEC;
-
-    LPVOID lpMsgBuf = NULL;
-
-    PIP_ADAPTER_ADDRESSES pAddresses = NULL;
-    ULONG outBufLen = 0;
-
-    PIP_ADAPTER_ADDRESSES pCurrAddresses = NULL;
-    PIP_ADAPTER_UNICAST_ADDRESS pUnicast = NULL;
-    PIP_ADAPTER_ANYCAST_ADDRESS pAnycast = NULL;
-    PIP_ADAPTER_MULTICAST_ADDRESS pMulticast = NULL;
-    IP_ADAPTER_DNS_SERVER_ADDRESS *pDnServer = NULL;
-    IP_ADAPTER_PREFIX *pPrefix = NULL;
-
-    if (argc != 2) {
-        printf(" Usage: getadapteraddresses family\n");
-        printf("        getadapteraddresses 4 (for IPv4)\n");
-        printf("        getadapteraddresses 6 (for IPv6)\n");
-        printf("        getadapteraddresses A (for both IPv4 and IPv6)\n");
-        exit(1);
-    }
-
-    if (atoi(argv[1]) == 4)
-        family = AF_INET;
-    else if (atoi(argv[1]) == 6)
-        family = AF_INET6;
-
-    outBufLen = sizeof (IP_ADAPTER_ADDRESSES);
-    pAddresses = (IP_ADAPTER_ADDRESSES *) MALLOC(outBufLen);
-
-    // Make an initial call to GetAdaptersAddresses to get the
-    // size needed into the outBufLen variable
-    if (GetAdaptersAddresses(family, flags, NULL, pAddresses, &amp;amp;amp;amp;amp;amp;outBufLen)
-        == ERROR_BUFFER_OVERFLOW) {
-        FREE(pAddresses);
-        pAddresses = (IP_ADAPTER_ADDRESSES *) MALLOC(outBufLen);
-    }
-
-    if (pAddresses == NULL) {
-        printf("Memory allocation failed for IP_ADAPTER_ADDRESSES struct\n");
-        exit(1);
-    }
-    // Make a second call to GetAdaptersAddresses to get the
-    // actual data we want
-    printf("Memory allocated for GetAdapterAddresses = %d bytes\n", outBufLen);
-    printf("Calling GetAdaptersAddresses function with family = ");
-    if (family == AF_INET)
-        printf("AF_INET\n");
-    if (family == AF_INET6)
-        printf("AF_INET6\n");
-    if (family == AF_UNSPEC)
-        printf("AF_UNSPEC\n\n");
-
-    dwRetVal =
-        GetAdaptersAddresses(family, flags, NULL, pAddresses, &amp;amp;amp;amp;amp;amp;outBufLen);
-
-    if (dwRetVal == NO_ERROR) {
-        // If successful, output some information from the data we received
-        pCurrAddresses = pAddresses;
-        while (pCurrAddresses) {
-            printf("\tLength of the IP_ADAPTER_ADDRESS struct: %ld\n",
-                   pCurrAddresses-&gt;Length);
-            printf("\tIfIndex (IPv4 interface): %u\n", pCurrAddresses-&gt;IfIndex);
-            printf("\tAdapter name: %s\n", pCurrAddresses-&gt;AdapterName);
-
-            pUnicast = pCurrAddresses-&gt;FirstUnicastAddress;
-            if (pUnicast != NULL) {
-                for (i = 0; pUnicast != NULL; i++)
-                    pUnicast = pUnicast-&gt;Next;
-                printf("\tNumber of Unicast Addresses: %d\n", i);
-            } else
-                printf("\tNo Unicast Addresses\n");
-
-            pAnycast = pCurrAddresses-&gt;FirstAnycastAddress;
-            if (pAnycast) {
-                for (i = 0; pAnycast != NULL; i++)
-                    pAnycast = pAnycast-&gt;Next;
-                printf("\tNumber of Anycast Addresses: %d\n", i);
-            } else
-                printf("\tNo Anycast Addresses\n");
-
-            pMulticast = pCurrAddresses-&gt;FirstMulticastAddress;
-            if (pMulticast) {
-                for (i = 0; pMulticast != NULL; i++)
-                    pMulticast = pMulticast-&gt;Next;
-                printf("\tNumber of Multicast Addresses: %d\n", i);
-            } else
-                printf("\tNo Multicast Addresses\n");
-
-            pDnServer = pCurrAddresses-&gt;FirstDnsServerAddress;
-            if (pDnServer) {
-                for (i = 0; pDnServer != NULL; i++)
-                    pDnServer = pDnServer-&gt;Next;
-                printf("\tNumber of DNS Server Addresses: %d\n", i);
-            } else
-                printf("\tNo DNS Server Addresses\n");
-
-            printf("\tDNS Suffix: %wS\n", pCurrAddresses-&gt;DnsSuffix);
-            printf("\tDescription: %wS\n", pCurrAddresses-&gt;Description);
-            printf("\tFriendly name: %wS\n", pCurrAddresses-&gt;FriendlyName);
-
-            if (pCurrAddresses-&gt;PhysicalAddressLength != 0) {
-                printf("\tPhysical address: ");
-                for (i = 0; i &lt; pCurrAddresses-&gt;PhysicalAddressLength;
-                     i++) {
-                    if (i == (pCurrAddresses-&gt;PhysicalAddressLength - 1))
-                        printf("%.2X\n",
-                               (int) pCurrAddresses-&gt;PhysicalAddress[i]);
-                    else
-                        printf("%.2X-",
-                               (int) pCurrAddresses-&gt;PhysicalAddress[i]);
-                }
-            }
-            printf("\tFlags: %ld\n", pCurrAddresses-&gt;Flags);
-            printf("\tMtu: %lu\n", pCurrAddresses-&gt;Mtu);
-            printf("\tIfType: %ld\n", pCurrAddresses-&gt;IfType);
-            printf("\tOperStatus: %ld\n", pCurrAddresses-&gt;OperStatus);
-            printf("\tIpv6IfIndex (IPv6 interface): %u\n",
-                   pCurrAddresses-&gt;Ipv6IfIndex);
-            printf("\tZoneIndices (hex): ");
-            for (i = 0; i &lt; 16; i++)
-                printf("%lx ", pCurrAddresses-&gt;ZoneIndices[i]);
-            printf("\n");
-
-            pPrefix = pCurrAddresses-&gt;FirstPrefix;
-            if (pPrefix) {
-                for (i = 0; pPrefix != NULL; i++)
-                    pPrefix = pPrefix-&gt;Next;
-                printf("\tNumber of IP Adapter Prefix entries: %d\n", i);
-            } else
-                printf("\tNo IP Adapter Prefix entries\n");
-
-            printf("\n");
-
-            pCurrAddresses = pCurrAddresses-&gt;Next;
-        }
-    } else {
-        printf("Call to GetAdaptersAddresses failed with error: %d\n",
-               dwRetVal);
-        if (dwRetVal == ERROR_NO_DATA)
-            printf("\tNo addresses were found for the requested parameters\n");
-        else {
-
-            if (FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, NULL, dwRetVal, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),   // Default language
-                              (LPTSTR) &amp;amp;amp;amp;amp;amp; lpMsgBuf, 0, NULL)) {
-                printf("\tError: %s", lpMsgBuf);
-                LocalFree(lpMsgBuf);
-                FREE(pAddresses);
-                exit(1);
-            }
-        }
-    }
-    FREE(pAddresses);
-    return 0;
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetAdaptersAddresses" />
-    <seealso cref="IF_OPER_STATUS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
-    <seealso cref="IP_ADAPTER_ANYCAST_ADDRESS" />
-    <seealso cref="IP_ADAPTER_DNS_SERVER_ADDRESS" />
-    <seealso cref="IP_ADAPTER_DNS_SUFFIX" />
-    <seealso cref="IP_ADAPTER_GATEWAY_ADDRESS" />
-    <seealso cref="IP_ADAPTER_MULTICAST_ADDRESS" />
-    <seealso cref="IP_ADAPTER_PREFIX" />
-    <seealso cref="IP_ADAPTER_UNICAST_ADDRESS" />
-    <seealso cref="IP_ADAPTER_WINS_SERVER_ADDRESS" />
-    <seealso cref="SCOPE_LEVEL" />
-    <seealso cref="SOCKET_ADDRESS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</seealso>
+    <summary>The <b>IP_ADAPTER_ADDRESSES</b> structure is the<i>header node</i> for a linked list of addresses for a particular adapter. This structure can simultaneously be used as part of a linked list of<b>IP_ADAPTER_ADDRESSES</b> structures.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Alignment">
-    <summary>
-      <para>Type: <b>ULONGLONG</b></para>
-      <para>Reserved. Used by the compiler to align the structure.</para>
-    </summary>
+    <summary>Reserved. Used by the compiler to align the structure.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Length">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The length, in bytes, of this structure. Note that the length of the
-<b>IP_ADAPTER_ADDRESSES</b> structure changed on
-Windows XP with SP1 and later and also on Windows Vista and later.</para>
-    </summary>
+    <summary>The length, in bytes, of this structure. Note that the length of the<b>IP_ADAPTER_ADDRESSES</b> structure changed on Windows XP with SP1 and later and also on Windows Vista and later.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.IfIndex">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The index of the IPv4 interface with which these addresses are associated. On Windows Server 2003 and Windows XP, this member is zero if IPv4 is
-not available on the interface.</para>
-    </summary>
+    <summary>The index of the IPv4 interface with which these addresses are associated. On Windows Server 2003 and Windows XP, this member is zero if IPv4 is not available on the interface.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Next">
-    <summary>
-      <para>Type: <b>struct _IP_ADAPTER_ADDRESSES*</b></para>
-      <para>A pointer to the next adapter addresses structure in the list.</para>
-    </summary>
+    <summary>A pointer to the next adapter addresses structure in the list.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.AdapterName">
-    <summary>
-      <para>Type: <b>PCHAR</b></para>
-      <para>An array of characters that contains the name of the adapter with which these addresses are associated.
-Unlike an adapter's friendly name, the adapter name specified in <b>AdapterName</b> is
-permanent and cannot be modified by the user.</para>
-    </summary>
+    <summary>An array of characters that contains the name of the adapter with which these addresses are associated. Unlike an adapter's friendly name, the adapter name specified in <b>AdapterName</b> is permanent and cannot be modified by the user.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstUnicastAddress">
-    <summary>
-      <para>Type: <b>PIP_ADAPTER_UNICAST_ADDRESS</b></para>
-      <para>A pointer to the first
-<see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structure in a
-linked list of IP unicast addresses for the adapter.</para>
-    </summary>
+    <summary>A pointer to the first<see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structure in a linked list of IP unicast addresses for the adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstAnycastAddress">
-    <summary>
-      <para>Type: <b>PIP_ADAPTER_ANYCAST_ADDRESS</b></para>
-      <para>A pointer to the first
-<see cref="IP_ADAPTER_ANYCAST_ADDRESS" /> structure in a
-linked list of IP anycast addresses for the adapter.</para>
-    </summary>
+    <summary>A pointer to the first<see cref="IP_ADAPTER_ANYCAST_ADDRESS" /> structure in a linked list of IP anycast addresses for the adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstMulticastAddress">
-    <summary>
-      <para>Type: <b>PIP_ADAPTER_MULTICAST_ADDRESS</b></para>
-      <para>A pointer to the first
-<see cref="IP_ADAPTER_MULTICAST_ADDRESS" /> structure
-in a list of IP multicast addresses for the adapter.</para>
-    </summary>
+    <summary>A pointer to the first<see cref="IP_ADAPTER_MULTICAST_ADDRESS" /> structure in a list of IP multicast addresses for the adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstDnsServerAddress">
-    <summary>
-      <para>Type: <b>PIP_ADAPTER_DNS_SERVER_ADDRESS</b></para>
-      <para>A pointer to the first
-<see cref="IP_ADAPTER_DNS_SERVER_ADDRESS" /> structure
-in a linked list of DNS server addresses for the adapter.</para>
-    </summary>
+    <summary>A pointer to the first<see cref="IP_ADAPTER_DNS_SERVER_ADDRESS" /> structure in a linked list of DNS server addresses for the adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.DnsSuffix">
-    <summary>
-      <para>Type: <b>PWCHAR</b></para>
-      <para>The Domain Name System (DNS) suffix associated with this adapter.</para>
-    </summary>
+    <summary>The Domain Name System (DNS) suffix associated with this adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Description">
-    <summary>
-      <para>Type: <b>PWCHAR</b></para>
-      <para>A description for the adapter. This member is read-only.</para>
-    </summary>
+    <summary>A description for the adapter. This member is read-only.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FriendlyName">
     <summary>
-      <para>Type: <b>PWCHAR</b></para>
-      <para>A user-friendly name for the adapter. For example: "Local Area Connection 1." This name appears in contexts
-such as the <b>ipconfig</b> command line program and the Connection folder. This member is read
-only and can't be modified using any IP Helper functions.</para>
-      <para>This member is the ifAlias field used by NDIS as described in
-<a href="https://www.ietf.org/rfc/rfc2863.txt">RFC 2863</a>. The ifAlias field can be set by an
-NDIS interface provider when the NDIS driver is installed. For NDIS miniport drivers, this field is set by
-NDIS.</para>
+      <para>A user-friendly name for the adapter. For example: "Local Area Connection 1." This name appears in contexts such as the <b>ipconfig</b> command line program and the Connection folder. This member is read only and can't be modified using any IP Helper functions.</para>
+      <para>This member is the ifAlias field used by NDIS as described in<a href="https://www.ietf.org/rfc/rfc2863.txt">RFC 2863</a>. The ifAlias field can be set by an NDIS interface provider when the NDIS driver is installed. For NDIS miniport drivers, this field is set by NDIS.</para>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.PhysicalAddress">
-    <summary>
-      <para>Type: <b>BYTE[MAX_ADAPTER_ADDRESS_LENGTH]</b></para>
-      <para>The Media Access Control (MAC) address for the adapter. For example, on an Ethernet network this member
-would specify the Ethernet hardware address.</para>
-    </summary>
+    <summary>The Media Access Control (MAC) address for the adapter. For example, on an Ethernet network this member would specify the Ethernet hardware address.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.PhysicalAddressLength">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The length, in bytes, of the address specified in the <b>PhysicalAddress</b> member.
-For interfaces that do not have a data-link layer, this value is zero.</para>
-    </summary>
+    <summary>The length, in bytes, of the address specified in the <b>PhysicalAddress</b> member. For interfaces that do not have a data-link layer, this value is zero.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Flags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A set of flags specifying various settings for the adapter. These values are defined in the
-<i>Iptypes.h</i> header file. Combinations of these flag bits are possible.</para>
+      <para>A set of flags specifying various settings for the adapter. These values are defined in the<i>Iptypes.h</i> header file. Combinations of these flag bits are possible.</para>
       <list type="table">
         <listheader>
           <description>Flag</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_DDNS_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Dynamic DNS is enabled on this adapter.</para>
-          </description>
-        </item>
-        <item>
+          <description>Dynamic DNS is enabled on this adapter.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_REGISTER_ADAPTER_SUFFIX</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Register the DNS suffix for this adapter.</para>
-          </description>
-        </item>
-        <item>
+          <description>Register the DNS suffix for this adapter.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_DHCP_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Dynamic Host Configuration Protocol (DHCP) is enabled on this adapter.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Dynamic Host Configuration Protocol (DHCP) is enabled on this adapter.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_RECEIVE_ONLY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is a receive-only adapter.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter is a receive-only adapter.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_NO_MULTICAST</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is not a multicast recipient.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter is not a multicast recipient.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_IPV6_OTHER_STATEFUL_CONFIG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter contains other IPv6-specific stateful configuration information.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter contains other IPv6-specific stateful configuration information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_NETBIOS_OVER_TCPIP_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is enabled for NetBIOS over TCP/IP.</para>
-            <para>
-              <b>Note</b>  This flag is only supported on Windows Vista and later when the application has been
-compiled for a target platform with an NTDDI version equal or greater than
-<b>NTDDI_LONGHORN</b>. This flag is defined in the
-<b>IP_ADAPTER_ADDRESSES_LH</b> structure as the
-<b>NetbiosOverTcpipEnabled</b> bitfield.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter is enabled for NetBIOS over TCP/IP. <div><b>Note</b>  This flag is only supported on Windows Vista and later when the application has been compiled for a target platform with an NTDDI version equal or greater than <b>NTDDI_LONGHORN</b>. This flag is defined in the <b>IP_ADAPTER_ADDRESSES_LH</b> structure as the <b>NetbiosOverTcpipEnabled</b> bitfield.</div></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_IPV4_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is enabled for IPv4.</para>
-            <para>
-              <b>Note</b>  This flag is only supported on Windows Vista and later when the application has been
-compiled for a target platform with an NTDDI version equal or greater than
-<b>NTDDI_LONGHORN</b>. This flag is defined in the
-<b>IP_ADAPTER_ADDRESSES_LH</b> structure as the <b>Ipv4Enabled</b></para>
-            <para>bitfield.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter is enabled for IPv4. <div><b>Note</b>  This flag is only supported on Windows Vista and later when the application has been compiled for a target platform with an NTDDI version equal or greater than <b>NTDDI_LONGHORN</b>. This flag is defined in the <b>IP_ADAPTER_ADDRESSES_LH</b> structure as the <b>Ipv4Enabled</b> bitfield.</div></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_IPV6_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is enabled for IPv6.</para>
-            <para>
-              <b>Note</b>  This flag is only supported on Windows Vista and later when the application has been
-compiled for a target platform with an NTDDI version equal or greater than
-<b>NTDDI_LONGHORN</b>. This flag is defined in the
-<b>IP_ADAPTER_ADDRESSES_LH</b> structure as the
-<b>Ipv6Enabled</b> bitfield.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter is enabled for IPv6. <div><b>Note</b>  This flag is only supported on Windows Vista and later when the application has been compiled for a target platform with an NTDDI version equal or greater than <b>NTDDI_LONGHORN</b>. This flag is defined in the <b>IP_ADAPTER_ADDRESSES_LH</b> structure as the <b>Ipv6Enabled</b> bitfield.</div></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_IPV6_MANAGE_ADDRESS_CONFIG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is enabled for IPv6 managed address configuration.</para>
-            <para>
-              <b>Note</b>  This flag is only supported on Windows Vista and later when the application has been
-compiled for a target platform with an NTDDI version equal or greater than
-<b>NTDDI_LONGHORN</b>. This flag is defined in the
-<b>IP_ADAPTER_ADDRESSES_LH</b> structure as the
-<b>Ipv6ManagedAddressConfigurationSupported</b> bitfield.</para>
-          </description>
-        </item>
+          <description>The adapter is enabled for IPv6 managed address configuration. <div><b>Note</b>  This flag is only supported on Windows Vista and later when the application has been compiled for a target platform with an NTDDI version equal or greater than <b>NTDDI_LONGHORN</b>. This flag is defined in the <b>IP_ADAPTER_ADDRESSES_LH</b> structure as the <b>Ipv6ManagedAddressConfigurationSupported</b> bitfield.</div></description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="IP_ADAPTER_ADDRESSES.DdnsEnabled">
-    <summary></summary>
-  </member>
-  <member name="IP_ADAPTER_ADDRESSES.RegisterAdapterSuffix">
-    <summary></summary>
-  </member>
-  <member name="IP_ADAPTER_ADDRESSES.Dhcpv4Enabled">
-    <summary></summary>
-  </member>
-  <member name="IP_ADAPTER_ADDRESSES.ReceiveOnly">
-    <summary></summary>
-  </member>
-  <member name="IP_ADAPTER_ADDRESSES.NoMulticast">
-    <summary></summary>
-  </member>
-  <member name="IP_ADAPTER_ADDRESSES.Ipv6OtherStatefulConfig">
-    <summary></summary>
-  </member>
-  <member name="IP_ADAPTER_ADDRESSES.NetbiosOverTcpipEnabled">
-    <summary></summary>
-  </member>
-  <member name="IP_ADAPTER_ADDRESSES.Ipv4Enabled">
-    <summary></summary>
-  </member>
-  <member name="IP_ADAPTER_ADDRESSES.Ipv6Enabled">
-    <summary></summary>
-  </member>
-  <member name="IP_ADAPTER_ADDRESSES.Ipv6ManagedAddressConfigurationSupported">
-    <summary></summary>
-  </member>
+  <member name="IP_ADAPTER_ADDRESSES.DdnsEnabled"></member>
+  <member name="IP_ADAPTER_ADDRESSES.RegisterAdapterSuffix"></member>
+  <member name="IP_ADAPTER_ADDRESSES.Dhcpv4Enabled"></member>
+  <member name="IP_ADAPTER_ADDRESSES.ReceiveOnly"></member>
+  <member name="IP_ADAPTER_ADDRESSES.NoMulticast"></member>
+  <member name="IP_ADAPTER_ADDRESSES.Ipv6OtherStatefulConfig"></member>
+  <member name="IP_ADAPTER_ADDRESSES.NetbiosOverTcpipEnabled"></member>
+  <member name="IP_ADAPTER_ADDRESSES.Ipv4Enabled"></member>
+  <member name="IP_ADAPTER_ADDRESSES.Ipv6Enabled"></member>
+  <member name="IP_ADAPTER_ADDRESSES.Ipv6ManagedAddressConfigurationSupported"></member>
   <member name="IP_ADAPTER_ADDRESSES.Mtu">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The maximum transmission unit (MTU) size, in bytes.</para>
-    </summary>
+    <summary>The maximum transmission unit (MTU) size, in bytes.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.IfType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The interface type as defined by the Internet Assigned Names Authority (IANA). Possible values for the
-interface type are listed in the <i>Ipifcons.h</i> header file.</para>
+      <para>The interface type as defined by the Internet Assigned Names Authority (IANA). Possible values for the interface type are listed in the <i>Ipifcons.h</i> header file.</para>
       <para>The table below lists common values for the interface type although many other values are possible.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_OTHER</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Some other type of network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>Some other type of network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_ETHERNET_CSMACD</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An Ethernet network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>An Ethernet network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_ISO88025_TOKENRING</b>
-                </description>
-              </item>
-              <item>
-                <description>9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A token ring network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A token ring network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_PPP</b>
-                </description>
-              </item>
-              <item>
-                <description>23</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>23</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A PPP network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A PPP network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_SOFTWARE_LOOPBACK</b>
-                </description>
-              </item>
-              <item>
-                <description>24</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>24</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A software loopback network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A software loopback network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_ATM</b>
-                </description>
-              </item>
-              <item>
-                <description>37</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>37</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An ATM network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>An ATM network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_IEEE80211</b>
-                </description>
-              </item>
-              <item>
-                <description>71</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>71</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An IEEE 802.11 wireless network interface.</para>
-            <para>On Windows Vista and later, wireless network
-cards are reported as <b>IF_TYPE_IEEE80211</b>. On earlier versions of  Windows, wireless
-network cards are reported as <b>IF_TYPE_ETHERNET_CSMACD</b>.</para>
-            <para>On Windows XP with SP3 and on Windows XP with SP2 x86 with the Wireless LAN API for Windows XP with SP2 installed, the <see cref="WlanEnumInterfaces" /> function can be used to enumerate wireless interfaces on the local computer.</para>
-          </description>
-        </item>
-        <item>
+          <description>An IEEE 802.11 wireless network interface. <para>On Windows Vista and later, wireless network cards are reported as <b>IF_TYPE_IEEE80211</b>. On earlier versions of Windows, wireless network cards are reported as <b>IF_TYPE_ETHERNET_CSMACD</b>.</para><para>On Windows XP with SP3 and on Windows XP with SP2 x86 with the Wireless LAN API for Windows XP with SP2 installed, the <see cref="WlanEnumInterfaces" /> function can be used to enumerate wireless interfaces on the local computer.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_TUNNEL</b>
-                </description>
-              </item>
-              <item>
-                <description>131</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>131</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A tunnel type encapsulation network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A tunnel type encapsulation network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_IEEE1394</b>
-                </description>
-              </item>
-              <item>
-                <description>144</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>144</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An IEEE 1394 (Firewire) high performance serial bus network interface.</para>
-          </description>
-        </item>
+          <description>An IEEE 1394 (Firewire) high performance serial bus network interface.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.OperStatus">
     <summary>
-      <para>Type: <b>IF_OPER_STATUS</b></para>
-      <para>The operational status for the interface as defined in RFC 2863.  For more information, see
-<a href="https://www.ietf.org/rfc/rfc2863.txt">http://www.ietf.org/rfc/rfc2863.txt</a>. This
-member can be one of the values from the <b>IF_OPER_STATUS</b> enumeration type defined in
-the <i>Iftypes.h</i> header file. On Windows Vista and later, the header files
-were reorganized and this enumeration is defined in the <i>Ifdef.h</i> header file.</para>
+      <para>The operational status for the interface as defined in RFC 2863. For more information, see<a href="https://www.ietf.org/rfc/rfc2863.txt">http://www.ietf.org/rfc/rfc2863.txt</a>. This member can be one of the values from the <b>IF_OPER_STATUS</b> enumeration type defined in the <i>Iftypes.h</i> header file. On Windows Vista and later, the header files were reorganized and this enumeration is defined in the <i>Ifdef.h</i> header file.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusUp</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The interface is up and able to pass packets.</para>
-          </description>
-        </item>
-        <item>
+          <description>The interface is up and able to pass packets.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusDown</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The interface is down and not in a condition to pass packets. The
-<b>IfOperStatusDown</b> state has two meanings, depending on the value of
-<b>AdminStatus</b> member. If <b>AdminStatus</b> is not set to
-<b>NET_IF_ADMIN_STATUS_DOWN</b> and <b>ifOperStatus</b> is set to
-<b>IfOperStatusDown</b> then a fault condition is presumed to exist on the interface. If
-<b>AdminStatus</b> is set to <b>IfOperStatusDown</b>, then
-<b>ifOperStatus</b> will normally also be set to
-<b>IfOperStatusDown</b> or <b>IfOperStatusNotPresent</b> and there
-is not necessarily a fault condition on the interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>The interface is down and not in a condition to pass packets. The <b>IfOperStatusDown</b> state has two meanings, depending on the value of <b>AdminStatus</b> member. If <b>AdminStatus</b> is not set to <b>NET_IF_ADMIN_STATUS_DOWN</b> and <b>ifOperStatus</b> is set to <b>IfOperStatusDown</b> then a fault condition is presumed to exist on the interface. If <b>AdminStatus</b> is set to <b>IfOperStatusDown</b>, then <b>ifOperStatus</b> will normally also be set to <b>IfOperStatusDown</b> or <b>IfOperStatusNotPresent</b> and there is not necessarily a fault condition on the interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusTesting</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The interface is in testing mode.</para>
-          </description>
-        </item>
-        <item>
+          <description>The interface is in testing mode.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusUnknown</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The operational status of the interface is unknown.</para>
-          </description>
-        </item>
-        <item>
+          <description>The operational status of the interface is unknown.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusDormant</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The interface is not actually in a condition to pass packets (it is not up), but is in a pending state,
-waiting for some external event. For on-demand interfaces, this new state identifies the situation where the
-interface is waiting for events to place it in the <b>IfOperStatusUp</b> state.</para>
-          </description>
-        </item>
-        <item>
+          <description>The interface is not actually in a condition to pass packets (it is not up), but is in a pending state, waiting for some external event. For on-demand interfaces, this new state identifies the situation where the interface is waiting for events to place it in the <b>IfOperStatusUp</b> state.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusNotPresent</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A refinement on the <b>IfOperStatusDown</b> state which indicates that the relevant
-interface is down specifically because some component (typically, a hardware component) is not present in the
-managed system.</para>
-          </description>
-        </item>
-        <item>
+          <description>A refinement on the <b>IfOperStatusDown</b> state which indicates that the relevant interface is down specifically because some component (typically, a hardware component) is not present in the managed system.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusLowerLayerDown</b>
-                </description>
-              </item>
-              <item>
-                <description>7</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>7</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A refinement on the <b>IfOperStatusDown</b> state. This new state indicates that
-this interface runs on top of one or more other interfaces and that this interface is down specifically
-because one or more of these lower-layer interfaces are down.</para>
-          </description>
-        </item>
+          <description>A refinement on the <b>IfOperStatusDown</b> state. This new state indicates that this interface runs on top of one or more other interfaces and that this interface is down specifically because one or more of these lower-layer interfaces are down.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Ipv6IfIndex">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The interface index for the IPv6 IP address. This member is zero if IPv6 is not available on the interface.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.ZoneIndices">
     <summary>
-      <para>Type: <b>DWORD[16]</b></para>
-      <para>An array of scope IDs for each scope level used for composing
-<a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</a> structures. The
-<see cref="SCOPE_LEVEL" /> enumeration is used to index the array. On
-IPv6, a single interface may be assigned multiple IPv6 multicast addresses based on a scope ID.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</para>
+      <para>An array of scope IDs for each scope level used for composing<a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</a> structures. The<see cref="SCOPE_LEVEL" /> enumeration is used to index the array. On IPv6, a single interface may be assigned multiple IPv6 multicast addresses based on a scope ID.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstPrefix">
     <summary>
-      <para>Type: <b>PIP_ADAPTER_PREFIX</b></para>
-      <para>A pointer to the first <see cref="IP_ADAPTER_PREFIX" /></para>
-      <para>structure in a linked list of IP adapter prefixes  for the adapter.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</para>
+      <para>A pointer to the first <see cref="IP_ADAPTER_PREFIX" />structure in a linked list of IP adapter prefixes for the adapter.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.TransmitLinkSpeed">
     <summary>
-      <para>Type: <b>ULONG64</b></para>
       <para>The current speed in bits per second of the transmit link for the adapter.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.ReceiveLinkSpeed">
     <summary>
-      <para>Type: <b>ULONG64</b></para>
       <para>The current speed in bits per second of the receive link for the adapter.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstWinsServerAddress">
     <summary>
-      <para>Type: <b>PIP_ADAPTER_WINS_SERVER_ADDRESS_LH</b></para>
-      <para>A pointer to the first
-<see cref="IP_ADAPTER_WINS_SERVER_ADDRESS" /> structure in a linked  list of Windows Internet Name Service  (WINS) server
-addresses for the adapter.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <para>A pointer to the first<see cref="IP_ADAPTER_WINS_SERVER_ADDRESS" /> structure in a linked list of Windows Internet Name Service (WINS) server addresses for the adapter.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstGatewayAddress">
     <summary>
-      <para>Type: <b>PIP_ADAPTER_GATEWAY_ADDRESS_LH</b></para>
-      <para>A pointer to the first <see cref="IP_ADAPTER_GATEWAY_ADDRESS" /> structure in a linked
-list of gateways for the adapter.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <para>A pointer to the first <see cref="IP_ADAPTER_GATEWAY_ADDRESS" /> structure in a linked list of gateways for the adapter.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Ipv4Metric">
     <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The IPv4 interface metric for the adapter address. This member is only applicable to an IPv4 adapter
-address.</para>
-      <para>The actual route metric used to compute the route preferences for IPv4 is the summation of the route metric
-offset specified in the <b>Metric</b> member of the
-<see cref="MIB_IPFORWARD_ROW2" /> structure and the interface
-metric specified in this member for IPv4.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <para>The IPv4 interface metric for the adapter address. This member is only applicable to an IPv4 adapter address.</para>
+      <para>The actual route metric used to compute the route preferences for IPv4 is the summation of the route metric offset specified in the <b>Metric</b> member of the<see cref="MIB_IPFORWARD_ROW2" /> structure and the interface metric specified in this member for IPv4.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Ipv6Metric">
     <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The IPv6 interface metric for the adapter address. This member is only applicable to an IPv6 adapter
-address.</para>
-      <para>The actual route metric used to compute the route preferences for IPv6 is the summation of the route metric
-offset specified in the <b>Metric</b> member of the
-<see cref="MIB_IPFORWARD_ROW2" /> structure and the interface
-metric specified in this member for IPv4.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <para>The IPv6 interface metric for the adapter address. This member is only applicable to an IPv6 adapter address.</para>
+      <para>The actual route metric used to compute the route preferences for IPv6 is the summation of the route metric offset specified in the <b>Metric</b> member of the<see cref="MIB_IPFORWARD_ROW2" /> structure and the interface metric specified in this member for IPv4.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Luid">
     <summary>
-      <para>Type: <b>IF_LUID</b></para>
       <para>The interface LUID for the adapter address.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Dhcpv4Server">
     <summary>
-      <para>Type: <b><see cref="SOCKET_ADDRESS" /></b></para>
-      <para>The IPv4 address of the DHCP server for the adapter address. This member is only applicable to an IPv4
-adapter address configured using DHCP.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <para>The IPv4 address of the DHCP server for the adapter address. This member is only applicable to an IPv4 adapter address configured using DHCP.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.CompartmentId">
     <summary>
-      <para>Type: <b>NET_IF_COMPARTMENT_ID</b></para>
       <para>The routing compartment ID for the adapter address.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later. This member is not
-currently supported and is reserved for future use.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later. This member is not currently supported and is reserved for future use.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.NetworkGuid">
     <summary>
-      <para>Type: <b>NET_IF_NETWORK_GUID</b></para>
       <para>The <b>GUID</b> that is associated with the network that the interface belongs to.</para>
-      <para>If
-the interface provider cannot provide the network GUID, this member can be a zero <b>GUID</b>.
-In this case, the interface was registered by NDIS in the default network.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <para>If the interface provider cannot provide the network GUID, this member can be a zero <b>GUID</b>. In this case, the interface was registered by NDIS in the default network.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.ConnectionType">
     <summary>
-      <para>Type: <b>NET_IF_CONNECTION_TYPE</b></para>
       <para>The interface connection type for the adapter address.</para>
-      <para>This member can be one of the values from the <b>NET_IF_CONNECTION_TYPE</b> enumeration
-type defined in the <i>Ifdef.h</i> header file.</para>
+      <para>This member can be one of the values from the <b>NET_IF_CONNECTION_TYPE</b> enumeration type defined in the <i>Ifdef.h</i> header file.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>NET_IF_CONNECTION_DEDICATED</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The connection type is dedicated. The connection comes up automatically when media sense is <b>TRUE</b>. For
-example, an Ethernet connection is dedicated.</para>
-          </description>
-        </item>
-        <item>
+          <description>The connection type is dedicated. The connection comes up automatically when media sense is <b>TRUE</b>. For example, an Ethernet connection is dedicated.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>NET_IF_CONNECTION_PASSIVE</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The connection type is passive. The remote end must bring up the connection to the local station. For
-example, a RAS interface is passive.</para>
-          </description>
-        </item>
-        <item>
+          <description>The connection type is passive. The remote end must bring up the connection to the local station. For example, a RAS interface is passive.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>NET_IF_CONNECTION_DEMAND</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The connection type is demand-dial. A connection of this type comes up in response to a local action
-(sending a packet, for example).</para>
-          </description>
-        </item>
-        <item>
+          <description>The connection type is demand-dial. A connection of this type comes up in response to a local action (sending a packet, for example).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>NET_IF_CONNECTION_MAXIMUM</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The maximum possible value for the <b>NET_IF_CONNECTION_TYPE</b> enumeration type.
-This is not a legal value for <b>ConnectionType</b> member.</para>
-          </description>
-        </item>
-      </list>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
-    </summary>
+          <description>The maximum possible value for the <b>NET_IF_CONNECTION_TYPE</b> enumeration type. This is not a legal value for <b>ConnectionType</b> member.</description>
+        </listheader>
+      </list> <div><b>Note</b>  This structure member is only available on Windows Vista and later.</div></summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.TunnelType">
     <summary>
-      <para>Type: <b>TUNNEL_TYPE</b></para>
       <para>The encapsulation method used by a tunnel if the adapter address is a tunnel.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
-      <para>The tunnel type is defined by the Internet Assigned Names Authority (IANA). For more information, see
-<a href="https://www.iana.org/assignments/ianaiftype-mib">http://www.iana.org/assignments/ianaiftype-mib</a>.
-This member can be one of the values from the <b>TUNNEL_TYPE</b> enumeration type defined
-in the <i>Ifdef.h</i> header file.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
-        </listheader>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>TUNNEL_TYPE_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Not a tunnel.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>TUNNEL_TYPE_OTHER</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>None of the following tunnel types.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>TUNNEL_TYPE_DIRECT</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>A packet is encapsulated directly within a normal IP header, with no intermediate header, and unicast to
-the remote tunnel endpoint.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>TUNNEL_TYPE_6TO4</b>
-                </description>
-              </item>
-              <item>
-                <description>11</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>An IPv6 packet is encapsulated directly within an IPv4 header, with no intermediate header, and unicast
-to the destination determined by the 6to4 protocol.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>TUNNEL_TYPE_ISATAP</b>
-                </description>
-              </item>
-              <item>
-                <description>13</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>An IPv6 packet is encapsulated directly within an IPv4 header, with no intermediate header, and unicast
-to the destination determined by the ISATAP protocol.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>TUNNEL_TYPE_TEREDO</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Teredo encapsulation for IPv6 packets.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>TUNNEL_TYPE_IPHTTPS</b>
-                </description>
-              </item>
-              <item>
-                <description>15</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>IP over HTTPS encapsulation for IPv6 packets.</para>
-            <para>
-              <b>Note</b>  This enumeration value is only available on Windows 7,  Windows Server 2008 R2, and later.</para>
-          </description>
-        </item>
-      </list>
-    </summary>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>The tunnel type is defined by the Internet Assigned Names Authority (IANA). For more information, see <a href="https://www.iana.org/assignments/ianaiftype-mib">http://www.iana.org/assignments/ianaiftype-mib</a>. This member can be one of the values from the <b>TUNNEL_TYPE</b> enumeration type defined in the <i>Ifdef.h</i> header file.<list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>TUNNEL_TYPE_NONE</b></term></listheader><listheader><term>0</term></listheader></list></description><description>Not a tunnel.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>TUNNEL_TYPE_OTHER</b></term></listheader><listheader><term>1</term></listheader></list></description><description>None of the following tunnel types.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>TUNNEL_TYPE_DIRECT</b></term></listheader><listheader><term>2</term></listheader></list></description><description>A packet is encapsulated directly within a normal IP header, with no intermediate header, and unicast to the remote tunnel endpoint.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>TUNNEL_TYPE_6TO4</b></term></listheader><listheader><term>11</term></listheader></list></description><description>An IPv6 packet is encapsulated directly within an IPv4 header, with no intermediate header, and unicast to the destination determined by the 6to4 protocol.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>TUNNEL_TYPE_ISATAP</b></term></listheader><listheader><term>13</term></listheader></list></description><description>An IPv6 packet is encapsulated directly within an IPv4 header, with no intermediate header, and unicast to the destination determined by the ISATAP protocol.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>TUNNEL_TYPE_TEREDO</b></term></listheader><listheader><term>14</term></listheader></list></description><description>Teredo encapsulation for IPv6 packets.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>TUNNEL_TYPE_IPHTTPS</b></term></listheader><listheader><term>15</term></listheader></list></description><description>IP over HTTPS encapsulation for IPv6 packets.<div><b>Note</b>  This enumeration value is only available on Windows 7, Windows Server 2008 R2, and later.</div></description></listheader></list></summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Dhcpv6Server">
     <summary>
-      <para>Type: <b><see cref="SOCKET_ADDRESS" /></b></para>
-      <para>The IPv6 address of the DHCPv6 server for the adapter address. This member is only applicable to an IPv6
-adapter address configured using DHCPv6. This structure member is not currently supported and is reserved for future use.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <para>The IPv6 address of the DHCPv6 server for the adapter address. This member is only applicable to an IPv6 adapter address configured using DHCPv6. This structure member is not currently supported and is reserved for future use.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Dhcpv6ClientDuid">
     <summary>
-      <para>Type: <b>BYTE[MAX_DHCPV6_DUID_LENGTH]</b></para>
-      <para>The DHCP unique identifier (DUID) for the DHCPv6 client. This member is only applicable to an IPv6 adapter
-address configured using DHCPv6.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <para>The DHCP unique identifier (DUID) for the DHCPv6 client. This member is only applicable to an IPv6 adapter address configured using DHCPv6.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Dhcpv6ClientDuidLength">
     <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The length, in bytes, of the DHCP unique identifier (DUID) for the DHCPv6 client. This member is only
-applicable to an IPv6 adapter address configured using DHCPv6.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <para>The length, in bytes, of the DHCP unique identifier (DUID) for the DHCPv6 client. This member is only applicable to an IPv6 adapter address configured using DHCPv6.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Dhcpv6Iaid">
     <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The identifier for an identity association chosen by the DHCPv6 client. This member is only applicable to
-an IPv6 adapter address configured using DHCPv6.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista and later.</para>
+      <para>The identifier for an identity association chosen by the DHCPv6 client. This member is only applicable to an IPv6 adapter address configured using DHCPv6.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstDnsSuffix">
     <summary>
-      <para>Type: <b>PIP_ADAPTER_DNS_SUFFIX</b></para>
-      <para>A pointer to the first <see cref="IP_ADAPTER_DNS_SUFFIX" /> structure in a linked list of
-DNS suffixes for the adapter.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows Vista with SP1and later and on Windows Server 2008  and later.</para>
+      <para>A pointer to the first <see cref="IP_ADAPTER_DNS_SUFFIX" /> structure in a linked list of DNS suffixes for the adapter.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows Vista with SP1and later and on Windows Server 2008 and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES">
-    <summary>
-      <para>The <b>IP_ADAPTER_ADDRESSES</b> structure is the
-<i>header node</i> for a linked list of addresses for a particular adapter. This structure can simultaneously
-be used as part of a linked list of
-<b>IP_ADAPTER_ADDRESSES</b> structures.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="GetAdaptersAddresses" /> function retrieves
-information for IPv4 and IPv6 addresses and returns this information as a linked list of
-<b>IP_ADAPTER_ADDRESSES</b> structures</para>
-      <para>The adapter index values specified in the <b>IfIndex</b> and <b>Ipv6IfIndex</b> members may change when an adapter is
-disabled and then enabled, or under other circumstances, and should not be considered persistent.</para>
-      <para>The values for the <b>IfType</b> member are defined in the
-<i>Ipifcons.h</i> header file. Only the possible values listed in the description of the
-<b>IfType</b> member are currently supported.</para>
-      <para>The size of the <b>IP_ADAPTER_ADDRESSES</b> structure
-changed on Windows XP with SP1 and later. The size of the
-<b>IP_ADAPTER_ADDRESSES</b> structure also changed on
-Windows Vista and later. The size of the
-<b>IP_ADAPTER_ADDRESSES</b> structure also changed on
-Windows Vista with SP1and later and onWindows Server 2008 and later. The <b>Length</b> member should be used to determine
-which version of the <b>IP_ADAPTER_ADDRESSES</b></para>
-      <para>structure is being used.</para>
-      <para>The version of the <b>IP_ADAPTER_ADDRESSES</b></para>
-      <para>structure on Windows XP with SP1 and later has the following new members added:
-<b>Ipv6IfIndex</b>, <b>ZoneIndices</b>, and
-<b>FirstPrefix</b>.</para>
-      <para>The version of the <b>IP_ADAPTER_ADDRESSES</b></para>
-      <para>structure on Windows Vista and later has the following new members added:
-<b>TransmitLinkSpeed</b>, <b>ReceiveLinkSpeed</b>,
-<b>FirstWinsServerAddress</b>, <b>FirstGatewayAddress</b>,
-<b>Ipv4Metric</b>, <b>Ipv6Metric</b>, <b>Luid</b>,
-<b>Dhcpv4Server</b>, <b>CompartmentId</b>,
-<b>NetworkGuid</b>, <b>ConnectionType</b>,
-<b>TunnelType</b>, <b>Dhcpv6Server</b>,
-<b>Dhcpv6ClientDuid</b>, <b>Dhcpv6ClientDuidLength</b>, and
-<b>Dhcpv6Iaid</b>.</para>
-      <para>The version of the <b>IP_ADAPTER_ADDRESSES</b></para>
-      <para>structure on Windows Vista with SP1and later and on Windows Server 2008 and later has the following new member added:
-<b>FirstDnsSuffix</b>.</para>
-      <para>The <b>Ipv4Metric</b> and <b>Ipv6Metric</b> members are used to
-prioritize route metrics for routes connected to multiple interfaces on the local computer.</para>
-      <para>The order of  linked <see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structures pointed to by the <b>FirstUnicastAddress</b></para>
-      <para>member that are returned by the <see cref="GetAdaptersAddresses" /> function does not reflect the order that IP addresses were added to an adapter and may vary between versions of Windows. Similarly, the order of linked <b>IP_ADAPTER_ANYCAST_ADDRESS</b> structures pointed to by the <b>FirstAnycastAddress</b></para>
-      <para>member and the order of linked <b>IP_ADAPTER_MULTICAST_ADDRESS</b> structures pointed to by the <b>FirstMulticastAddress
-</b></para>
-      <para>member do not reflect the order that IP addresses were added to an adapter and may vary between versions of Windows.</para>
-      <para>In addition, the linked <see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structures pointed to by the <b>FirstUnicastAddress</b></para>
-      <para>member and the linked <see cref="IP_ADAPTER_PREFIX" /> structures pointed to by the <b>FirstPrefix</b></para>
-      <para>member are maintained as separate internal linked lists by the operating system. As a result, the order of linked <b>IP_ADAPTER_UNICAST_ADDRESS</b> structures pointed to by the <b>FirstUnicastAddress</b></para>
-      <para>member does not have any relationship with the order of linked <b>IP_ADAPTER_PREFIX</b> structures pointed to by the <b>FirstPrefix</b></para>
-      <para>member.</para>
-      <para>On Windows Vista and later, the linked <see cref="IP_ADAPTER_PREFIX" /> structures pointed to by the <b>FirstPrefix</b></para>
-      <para>member include three IP adapter prefixes for each IP address assigned to the adapter. These include the host IP address prefix, the subnet IP address prefix, and the subnet broadcast IP address prefix. In addition, for each adapter there is a multicast address prefix and a broadcast address prefix.</para>
-      <para>On Windows XP with SP1 and later prior to Windows Vista, the linked <see cref="IP_ADAPTER_PREFIX" /> structures pointed to by the <b>FirstPrefix</b></para>
-      <para>member include only a single IP adapter prefix for each IP address assigned to the adapter.</para>
-      <para>In the Windows SDK, the version of the structure for use on Windows Vista and later is  defined as
-<b>IP_ADAPTER_ADDRESSES_LH</b>. In the
-Microsoft Windows Software Development Kit (SDK), the version of this structure to be used on earlier systems including
-Windows XP with SP1 and later is defined as
-<b>IP_ADAPTER_ADDRESSES_XP</b>. When compiling an
-application if the target platform is Windows Vista and later
-(<code>NTDDI_VERSION &gt;= NTDDI_LONGHORN</code>,
-<code>_WIN32_WINNT &gt;= 0x0600</code>, or
-<code>WINVER &gt;= 0x0600</code>), the
-<b>IP_ADAPTER_ADDRESSES_LH</b> structure is typedefed to
-the <b>IP_ADAPTER_ADDRESSES</b> structure. When compiling an application if the target
-platform is not Windows Vista and later, the
-<b>IP_ADAPTER_ADDRESSES_XP</b> structure is typedefed to
-the <b>IP_ADAPTER_ADDRESSES</b> structure.</para>
-      <para>The <see cref="SOCKET_ADDRESS" /> structure is used in the
-<b>IP_ADAPTER_ADDRESSES</b> structure. On the
-Windows SDK released for Windows Vista and later, the organization of header files has
-changed and the <b>SOCKET_ADDRESS</b> structure is defined
-in the <i>Ws2def.h</i> header file which is automatically included by the
-<i>Winsock2.h</i> header file. On the Platform Software Development Kit (SDK) released for
-Windows Server 2003 and Windows XP, the
-<b>SOCKET_ADDRESS</b> structure is declared in the
-<i>Winsock2.h</i> header file. In order to use the
-<b>IP_ADAPTER_ADDRESSES</b> structure, the
-<i>Winsock2.h</i> header file must be included before the
-<i>Iphlpapi.h</i> header file.</para>
-    </remarks>
-    <seealso cref="GetAdaptersAddresses" />
-    <seealso cref="IF_OPER_STATUS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
-    <seealso cref="IP_ADAPTER_ANYCAST_ADDRESS" />
-    <seealso cref="IP_ADAPTER_DNS_SERVER_ADDRESS" />
-    <seealso cref="IP_ADAPTER_DNS_SUFFIX" />
-    <seealso cref="IP_ADAPTER_GATEWAY_ADDRESS" />
-    <seealso cref="IP_ADAPTER_MULTICAST_ADDRESS" />
-    <seealso cref="IP_ADAPTER_PREFIX" />
-    <seealso cref="IP_ADAPTER_UNICAST_ADDRESS" />
-    <seealso cref="IP_ADAPTER_WINS_SERVER_ADDRESS" />
-    <seealso cref="SCOPE_LEVEL" />
-    <seealso cref="SOCKET_ADDRESS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</seealso>
+    <summary>The <b>IP_ADAPTER_ADDRESSES</b> structure is the<i>header node</i> for a linked list of addresses for a particular adapter. This structure can simultaneously be used as part of a linked list of<b>IP_ADAPTER_ADDRESSES</b> structures.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Alignment">
-    <summary>
-      <para>Type: <b>ULONGLONG</b></para>
-      <para>Reserved. Used by the compiler to align the structure.</para>
-    </summary>
+    <summary>Reserved. Used by the compiler to align the structure.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Length">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The length, in bytes, of this structure. Note that the length of the
-<b>IP_ADAPTER_ADDRESSES</b> structure changed on
-Windows XP with SP1 and later and also on Windows Vista and later.</para>
-    </summary>
+    <summary>The length, in bytes, of this structure. Note that the length of the<b>IP_ADAPTER_ADDRESSES</b> structure changed on Windows XP with SP1 and later and also on Windows Vista and later.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.IfIndex">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The index of the IPv4 interface with which these addresses are associated. On Windows Server 2003 and Windows XP, this member is zero if IPv4 is
-not available on the interface.</para>
-    </summary>
+    <summary>The index of the IPv4 interface with which these addresses are associated. On Windows Server 2003 and Windows XP, this member is zero if IPv4 is not available on the interface.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Next">
-    <summary>
-      <para>Type: <b>struct _IP_ADAPTER_ADDRESSES*</b></para>
-      <para>A pointer to the next adapter addresses structure in the list.</para>
-    </summary>
+    <summary>A pointer to the next adapter addresses structure in the list.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.AdapterName">
-    <summary>
-      <para>Type: <b>PCHAR</b></para>
-      <para>An array of characters that contains the name of the adapter with which these addresses are associated.
-Unlike an adapter's friendly name, the adapter name specified in <b>AdapterName</b> is
-permanent and cannot be modified by the user.</para>
-    </summary>
+    <summary>An array of characters that contains the name of the adapter with which these addresses are associated. Unlike an adapter's friendly name, the adapter name specified in <b>AdapterName</b> is permanent and cannot be modified by the user.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstUnicastAddress">
-    <summary>
-      <para>Type: <b>PIP_ADAPTER_UNICAST_ADDRESS</b></para>
-      <para>A pointer to the first
-<see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structure in a
-linked list of IP unicast addresses for the adapter.</para>
-    </summary>
+    <summary>A pointer to the first<see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structure in a linked list of IP unicast addresses for the adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstAnycastAddress">
-    <summary>
-      <para>Type: <b>PIP_ADAPTER_ANYCAST_ADDRESS</b></para>
-      <para>A pointer to the first
-<see cref="IP_ADAPTER_ANYCAST_ADDRESS" /> structure in a
-linked list of IP anycast addresses for the adapter.</para>
-    </summary>
+    <summary>A pointer to the first<see cref="IP_ADAPTER_ANYCAST_ADDRESS" /> structure in a linked list of IP anycast addresses for the adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstMulticastAddress">
-    <summary>
-      <para>Type: <b>PIP_ADAPTER_MULTICAST_ADDRESS</b></para>
-      <para>A pointer to the first
-<see cref="IP_ADAPTER_MULTICAST_ADDRESS" /> structure
-in a list of IP multicast addresses for the adapter.</para>
-    </summary>
+    <summary>A pointer to the first<see cref="IP_ADAPTER_MULTICAST_ADDRESS" /> structure in a list of IP multicast addresses for the adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstDnsServerAddress">
-    <summary>
-      <para>Type: <b>PIP_ADAPTER_DNS_SERVER_ADDRESS</b></para>
-      <para>A pointer to the first
-<see cref="IP_ADAPTER_DNS_SERVER_ADDRESS" /> structure
-in a linked list of DNS server addresses for the adapter.</para>
-    </summary>
+    <summary>A pointer to the first<see cref="IP_ADAPTER_DNS_SERVER_ADDRESS" /> structure in a linked list of DNS server addresses for the adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.DnsSuffix">
-    <summary>
-      <para>Type: <b>PWCHAR</b></para>
-      <para>The Domain Name System (DNS) suffix associated with this adapter.</para>
-    </summary>
+    <summary>The Domain Name System (DNS) suffix associated with this adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Description">
-    <summary>
-      <para>Type: <b>PWCHAR</b></para>
-      <para>A description for the adapter. This member is read-only.</para>
-    </summary>
+    <summary>A description for the adapter. This member is read-only.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FriendlyName">
     <summary>
-      <para>Type: <b>PWCHAR</b></para>
-      <para>A user-friendly name for the adapter. For example: "Local Area Connection 1." This name appears in contexts
-such as the <b>ipconfig</b> command line program and the Connection folder. This member is read
-only and can't be modified using any IP Helper functions.</para>
-      <para>This member is the ifAlias field used by NDIS as described in
-<a href="https://www.ietf.org/rfc/rfc2863.txt">RFC 2863</a>. The ifAlias field can be set by an
-NDIS interface provider when the NDIS driver is installed. For NDIS miniport drivers, this field is set by
-NDIS.</para>
+      <para>A user-friendly name for the adapter. For example: "Local Area Connection 1." This name appears in contexts such as the <b>ipconfig</b> command line program and the Connection folder. This member is read only and can't be modified using any IP Helper functions.</para>
+      <para>This member is the ifAlias field used by NDIS as described in<a href="https://www.ietf.org/rfc/rfc2863.txt">RFC 2863</a>. The ifAlias field can be set by an NDIS interface provider when the NDIS driver is installed. For NDIS miniport drivers, this field is set by NDIS.</para>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.PhysicalAddress">
-    <summary>
-      <para>Type: <b>BYTE[MAX_ADAPTER_ADDRESS_LENGTH]</b></para>
-      <para>The Media Access Control (MAC) address for the adapter. For example, on an Ethernet network this member
-would specify the Ethernet hardware address.</para>
-    </summary>
+    <summary>The Media Access Control (MAC) address for the adapter. For example, on an Ethernet network this member would specify the Ethernet hardware address.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.PhysicalAddressLength">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The length, in bytes, of the address specified in the <b>PhysicalAddress</b> member.
-For interfaces that do not have a data-link layer, this value is zero.</para>
-    </summary>
+    <summary>The length, in bytes, of the address specified in the <b>PhysicalAddress</b> member. For interfaces that do not have a data-link layer, this value is zero.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Flags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A set of flags specifying various settings for the adapter. These values are defined in the
-<i>Iptypes.h</i> header file. Combinations of these flag bits are possible.</para>
+      <para>A set of flags specifying various settings for the adapter. These values are defined in the<i>Iptypes.h</i> header file. Combinations of these flag bits are possible.</para>
       <list type="table">
         <listheader>
           <description>Flag</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_DDNS_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Dynamic DNS is enabled on this adapter.</para>
-          </description>
-        </item>
-        <item>
+          <description>Dynamic DNS is enabled on this adapter.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_REGISTER_ADAPTER_SUFFIX</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Register the DNS suffix for this adapter.</para>
-          </description>
-        </item>
-        <item>
+          <description>Register the DNS suffix for this adapter.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_DHCP_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Dynamic Host Configuration Protocol (DHCP) is enabled on this adapter.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Dynamic Host Configuration Protocol (DHCP) is enabled on this adapter.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_RECEIVE_ONLY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is a receive-only adapter.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter is a receive-only adapter.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_NO_MULTICAST</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is not a multicast recipient.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter is not a multicast recipient.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_IPV6_OTHER_STATEFUL_CONFIG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter contains other IPv6-specific stateful configuration information.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter contains other IPv6-specific stateful configuration information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_NETBIOS_OVER_TCPIP_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is enabled for NetBIOS over TCP/IP.</para>
-            <para>
-              <b>Note</b>  This flag is only supported on Windows Vista and later when the application has been
-compiled for a target platform with an NTDDI version equal or greater than
-<b>NTDDI_LONGHORN</b>. This flag is defined in the
-<b>IP_ADAPTER_ADDRESSES_LH</b> structure as the
-<b>NetbiosOverTcpipEnabled</b> bitfield.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter is enabled for NetBIOS over TCP/IP. <div><b>Note</b>  This flag is only supported on Windows Vista and later when the application has been compiled for a target platform with an NTDDI version equal or greater than <b>NTDDI_LONGHORN</b>. This flag is defined in the <b>IP_ADAPTER_ADDRESSES_LH</b> structure as the <b>NetbiosOverTcpipEnabled</b> bitfield.</div></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_IPV4_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is enabled for IPv4.</para>
-            <para>
-              <b>Note</b>  This flag is only supported on Windows Vista and later when the application has been
-compiled for a target platform with an NTDDI version equal or greater than
-<b>NTDDI_LONGHORN</b>. This flag is defined in the
-<b>IP_ADAPTER_ADDRESSES_LH</b> structure as the <b>Ipv4Enabled</b></para>
-            <para>bitfield.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter is enabled for IPv4. <div><b>Note</b>  This flag is only supported on Windows Vista and later when the application has been compiled for a target platform with an NTDDI version equal or greater than <b>NTDDI_LONGHORN</b>. This flag is defined in the <b>IP_ADAPTER_ADDRESSES_LH</b> structure as the <b>Ipv4Enabled</b> bitfield.</div></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_IPV6_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is enabled for IPv6.</para>
-            <para>
-              <b>Note</b>  This flag is only supported on Windows Vista and later when the application has been
-compiled for a target platform with an NTDDI version equal or greater than
-<b>NTDDI_LONGHORN</b>. This flag is defined in the
-<b>IP_ADAPTER_ADDRESSES_LH</b> structure as the
-<b>Ipv6Enabled</b> bitfield.</para>
-          </description>
-        </item>
-        <item>
+          <description>The adapter is enabled for IPv6. <div><b>Note</b>  This flag is only supported on Windows Vista and later when the application has been compiled for a target platform with an NTDDI version equal or greater than <b>NTDDI_LONGHORN</b>. This flag is defined in the <b>IP_ADAPTER_ADDRESSES_LH</b> structure as the <b>Ipv6Enabled</b> bitfield.</div></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_ADAPTER_IPV6_MANAGE_ADDRESS_CONFIG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The adapter is enabled for IPv6 managed address configuration.</para>
-            <para>
-              <b>Note</b>  This flag is only supported on Windows Vista and later when the application has been
-compiled for a target platform with an NTDDI version equal or greater than
-<b>NTDDI_LONGHORN</b>. This flag is defined in the
-<b>IP_ADAPTER_ADDRESSES_LH</b> structure as the
-<b>Ipv6ManagedAddressConfigurationSupported</b> bitfield.</para>
-          </description>
-        </item>
+          <description>The adapter is enabled for IPv6 managed address configuration. <div><b>Note</b>  This flag is only supported on Windows Vista and later when the application has been compiled for a target platform with an NTDDI version equal or greater than <b>NTDDI_LONGHORN</b>. This flag is defined in the <b>IP_ADAPTER_ADDRESSES_LH</b> structure as the <b>Ipv6ManagedAddressConfigurationSupported</b> bitfield.</div></description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Mtu">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The maximum transmission unit (MTU) size, in bytes.</para>
-    </summary>
+    <summary>The maximum transmission unit (MTU) size, in bytes.</summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.IfType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The interface type as defined by the Internet Assigned Names Authority (IANA). Possible values for the
-interface type are listed in the <i>Ipifcons.h</i> header file.</para>
+      <para>The interface type as defined by the Internet Assigned Names Authority (IANA). Possible values for the interface type are listed in the <i>Ipifcons.h</i> header file.</para>
       <para>The table below lists common values for the interface type although many other values are possible.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_OTHER</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Some other type of network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>Some other type of network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_ETHERNET_CSMACD</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An Ethernet network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>An Ethernet network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_ISO88025_TOKENRING</b>
-                </description>
-              </item>
-              <item>
-                <description>9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A token ring network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A token ring network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_PPP</b>
-                </description>
-              </item>
-              <item>
-                <description>23</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>23</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A PPP network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A PPP network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_SOFTWARE_LOOPBACK</b>
-                </description>
-              </item>
-              <item>
-                <description>24</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>24</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A software loopback network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A software loopback network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_ATM</b>
-                </description>
-              </item>
-              <item>
-                <description>37</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>37</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An ATM network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>An ATM network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_IEEE80211</b>
-                </description>
-              </item>
-              <item>
-                <description>71</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>71</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An IEEE 802.11 wireless network interface.</para>
-            <para>On Windows Vista and later, wireless network
-cards are reported as <b>IF_TYPE_IEEE80211</b>. On earlier versions of  Windows, wireless
-network cards are reported as <b>IF_TYPE_ETHERNET_CSMACD</b>.</para>
-            <para>On Windows XP with SP3 and on Windows XP with SP2 x86 with the Wireless LAN API for Windows XP with SP2 installed, the <see cref="WlanEnumInterfaces" /> function can be used to enumerate wireless interfaces on the local computer.</para>
-          </description>
-        </item>
-        <item>
+          <description>An IEEE 802.11 wireless network interface. <para>On Windows Vista and later, wireless network cards are reported as <b>IF_TYPE_IEEE80211</b>. On earlier versions of Windows, wireless network cards are reported as <b>IF_TYPE_ETHERNET_CSMACD</b>.</para><para>On Windows XP with SP3 and on Windows XP with SP2 x86 with the Wireless LAN API for Windows XP with SP2 installed, the <see cref="WlanEnumInterfaces" /> function can be used to enumerate wireless interfaces on the local computer.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_TUNNEL</b>
-                </description>
-              </item>
-              <item>
-                <description>131</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>131</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A tunnel type encapsulation network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A tunnel type encapsulation network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_IEEE1394</b>
-                </description>
-              </item>
-              <item>
-                <description>144</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>144</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An IEEE 1394 (Firewire) high performance serial bus network interface.</para>
-          </description>
-        </item>
+          <description>An IEEE 1394 (Firewire) high performance serial bus network interface.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.OperStatus">
     <summary>
-      <para>Type: <b>IF_OPER_STATUS</b></para>
-      <para>The operational status for the interface as defined in RFC 2863.  For more information, see
-<a href="https://www.ietf.org/rfc/rfc2863.txt">http://www.ietf.org/rfc/rfc2863.txt</a>. This
-member can be one of the values from the <b>IF_OPER_STATUS</b> enumeration type defined in
-the <i>Iftypes.h</i> header file. On Windows Vista and later, the header files
-were reorganized and this enumeration is defined in the <i>Ifdef.h</i> header file.</para>
+      <para>The operational status for the interface as defined in RFC 2863. For more information, see<a href="https://www.ietf.org/rfc/rfc2863.txt">http://www.ietf.org/rfc/rfc2863.txt</a>. This member can be one of the values from the <b>IF_OPER_STATUS</b> enumeration type defined in the <i>Iftypes.h</i> header file. On Windows Vista and later, the header files were reorganized and this enumeration is defined in the <i>Ifdef.h</i> header file.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusUp</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The interface is up and able to pass packets.</para>
-          </description>
-        </item>
-        <item>
+          <description>The interface is up and able to pass packets.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusDown</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The interface is down and not in a condition to pass packets. The
-<b>IfOperStatusDown</b> state has two meanings, depending on the value of
-<b>AdminStatus</b> member. If <b>AdminStatus</b> is not set to
-<b>NET_IF_ADMIN_STATUS_DOWN</b> and <b>ifOperStatus</b> is set to
-<b>IfOperStatusDown</b> then a fault condition is presumed to exist on the interface. If
-<b>AdminStatus</b> is set to <b>IfOperStatusDown</b>, then
-<b>ifOperStatus</b> will normally also be set to
-<b>IfOperStatusDown</b> or <b>IfOperStatusNotPresent</b> and there
-is not necessarily a fault condition on the interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>The interface is down and not in a condition to pass packets. The <b>IfOperStatusDown</b> state has two meanings, depending on the value of <b>AdminStatus</b> member. If <b>AdminStatus</b> is not set to <b>NET_IF_ADMIN_STATUS_DOWN</b> and <b>ifOperStatus</b> is set to <b>IfOperStatusDown</b> then a fault condition is presumed to exist on the interface. If <b>AdminStatus</b> is set to <b>IfOperStatusDown</b>, then <b>ifOperStatus</b> will normally also be set to <b>IfOperStatusDown</b> or <b>IfOperStatusNotPresent</b> and there is not necessarily a fault condition on the interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusTesting</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The interface is in testing mode.</para>
-          </description>
-        </item>
-        <item>
+          <description>The interface is in testing mode.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusUnknown</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The operational status of the interface is unknown.</para>
-          </description>
-        </item>
-        <item>
+          <description>The operational status of the interface is unknown.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusDormant</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The interface is not actually in a condition to pass packets (it is not up), but is in a pending state,
-waiting for some external event. For on-demand interfaces, this new state identifies the situation where the
-interface is waiting for events to place it in the <b>IfOperStatusUp</b> state.</para>
-          </description>
-        </item>
-        <item>
+          <description>The interface is not actually in a condition to pass packets (it is not up), but is in a pending state, waiting for some external event. For on-demand interfaces, this new state identifies the situation where the interface is waiting for events to place it in the <b>IfOperStatusUp</b> state.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusNotPresent</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A refinement on the <b>IfOperStatusDown</b> state which indicates that the relevant
-interface is down specifically because some component (typically, a hardware component) is not present in the
-managed system.</para>
-          </description>
-        </item>
-        <item>
+          <description>A refinement on the <b>IfOperStatusDown</b> state which indicates that the relevant interface is down specifically because some component (typically, a hardware component) is not present in the managed system.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IfOperStatusLowerLayerDown</b>
-                </description>
-              </item>
-              <item>
-                <description>7</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>7</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A refinement on the <b>IfOperStatusDown</b> state. This new state indicates that
-this interface runs on top of one or more other interfaces and that this interface is down specifically
-because one or more of these lower-layer interfaces are down.</para>
-          </description>
-        </item>
+          <description>A refinement on the <b>IfOperStatusDown</b> state. This new state indicates that this interface runs on top of one or more other interfaces and that this interface is down specifically because one or more of these lower-layer interfaces are down.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.Ipv6IfIndex">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The interface index for the IPv6 IP address. This member is zero if IPv6 is not available on the interface.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.ZoneIndices">
     <summary>
-      <para>Type: <b>DWORD[16]</b></para>
-      <para>An array of scope IDs for each scope level used for composing
-<a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</a> structures. The
-<see cref="SCOPE_LEVEL" /> enumeration is used to index the array. On
-IPv6, a single interface may be assigned multiple IPv6 multicast addresses based on a scope ID.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</para>
+      <para>An array of scope IDs for each scope level used for composing<a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</a> structures. The<see cref="SCOPE_LEVEL" /> enumeration is used to index the array. On IPv6, a single interface may be assigned multiple IPv6 multicast addresses based on a scope ID.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</div>
     </summary>
   </member>
   <member name="IP_ADAPTER_ADDRESSES.FirstPrefix">
     <summary>
-      <para>Type: <b>PIP_ADAPTER_PREFIX</b></para>
-      <para>A pointer to the first <see cref="IP_ADAPTER_PREFIX" /></para>
-      <para>structure in a linked list of IP adapter prefixes  for the adapter.</para>
-      <para>
-        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</para>
+      <para>A pointer to the first <see cref="IP_ADAPTER_PREFIX" />structure in a linked list of IP adapter prefixes for the adapter.</para>
+      <div>
+        <b>Note</b>  This structure member is only available on Windows XP with SP1 and later.</div>
     </summary>
   </member>
 </doc>

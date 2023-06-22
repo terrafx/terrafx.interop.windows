@@ -5,68 +5,34 @@
   <member name="DML_GATHER_ND1_OPERATOR_DESC">
     <summary>
       <para>Gathers elements from the input tensor, using the indices tensor to remap indices to entire subblocks of the input. This operator performs the following pseudocode, where "..." represents a series of coordinates, with the exact behavior dependent on the batch, input, and indices dimension count.</para>
-      <code>output[batch, ...] = input[batch, indices[batch, ...], ...]
-</code>
+      <code>output[batch, ...] = input[batch, indices[batch, ...], ...]</code>
     </summary>
-    <remarks>
-      <para>
-        <b>DML_GATHER_ND1_OPERATOR_DESC</b> adds <i>BatchDimensionCount</i>, and is equivalent to <see cref="DML_GATHER_ND_OPERATOR_DESC" /> when <i>BatchDimensionCount</i> = 0.</para>
-    </remarks>
   </member>
   <member name="DML_GATHER_ND1_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to read from.</para>
-    </summary>
+    <summary>The tensor to read from.</summary>
   </member>
   <member name="DML_GATHER_ND1_OPERATOR_DESC.IndicesTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>The tensor containing the indices. The <i>DimensionCount</i> of this tensor must match <i>InputTensor.DimensionCount</i>. The last dimension of the <i>IndicesTensor</i> is actually the number of coordinates per index tuple, and it cannot exceed <i>InputTensor.DimensionCount</i>. For example, an indices tensor of <i>Sizes</i><code>{1,4,5,2}</code> with <i>IndicesDimensionCount</i> = 3 means a 4x5 array of 2-coordinate tuples that index into <i>InputTensor</i>.</para>
       <para>Starting with <code>DML_FEATURE_LEVEL_3_0</code>, this operator supports negative index values when using a signed integral type with this tensor. Negative indices are interpreted as being relative to the end of the respective dimension. For example, an index of -1 refers to the last element along that dimension.</para>
     </summary>
   </member>
   <member name="DML_GATHER_ND1_OPERATOR_DESC.OutputTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>The tensor to write the results to. The <i>DimensionCount</i> and <i>DataType</i> of this tensor must match <i>InputTensor.DimensionCount</i>. The expected <i>OutputTensor.Sizes</i> are the concatenation of the <i>IndicesTensor.Sizes</i> leading segments and <i>InputTensor.Sizes</i> trailing segment, which yields the following.</para>
-      <code>indexTupleSize = IndicesTensor.Sizes[IndicesTensor.DimensionCount - 1]
-OutputTensor.Sizes = {
-    1...,
-    IndicesTensor.Sizes[(IndicesTensor.DimensionCount - IndicesDimensionCount) .. (IndicesTensor.DimensionCount - 1)],
-    InputTensor.Sizes[(InputTensor.DimensionCount - indexTupleSize) .. InputTensor.DimensionCount]
-}
-</code>
+      <code>indexTupleSize = IndicesTensor.Sizes[IndicesTensor.DimensionCount - 1] OutputTensor.Sizes = { 1..., IndicesTensor.Sizes[(IndicesTensor.DimensionCount - IndicesDimensionCount) .. (IndicesTensor.DimensionCount - 1)], InputTensor.Sizes[(InputTensor.DimensionCount - indexTupleSize) .. InputTensor.DimensionCount] }</code>
       <para>The dimensions are right-aligned, with leading 1 values prepended if needed to satisfy <i>OutputTensor.DimensionCount</i>.</para>
       <para>Here's an example.</para>
-      <code>InputTensor.Sizes = {3,4,5,6,7}
-InputDimensionCount = 5
-IndicesTensor.Sizes = {1,1, 1,2,3}
-IndicesDimensionCount = 3 // can be thought of as a {1,2} array of 3-coordinate tuples
-
-// The {1,2} comes from the indices tensor (ignoring last dimension which is the tuple size),
-// and the {6,7} comes from input tensor, ignoring the first 3 dimensions
-// since the index tuples are 3 elements (from the indices tensor last dimension).
-OutputTensor.Sizes = {1, 1,2,6,7}
-</code>
+      <code>InputTensor.Sizes = {3,4,5,6,7} InputDimensionCount = 5 IndicesTensor.Sizes = {1,1, 1,2,3} IndicesDimensionCount = 3 // can be thought of as a {1,2} array of 3-coordinate tuples // The {1,2} comes from the indices tensor (ignoring last dimension which is the tuple size), // and the {6,7} comes from input tensor, ignoring the first 3 dimensions // since the index tuples are 3 elements (from the indices tensor last dimension). OutputTensor.Sizes = {1, 1,2,6,7}</code>
     </summary>
   </member>
   <member name="DML_GATHER_ND1_OPERATOR_DESC.InputDimensionCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of actual input dimensions within the <i>InputTensor</i> after ignoring any irrelevant leading ones, ranging <code>[1, *InputTensor.DimensionCount*]</code>. For example, given <i>InputTensor.Sizes</i> = <code>{1,1,4,6}</code> and <code>InputDimensionCount</code> = 3, the actual meaningful indices are <code>{1,4,6}</code>.</para>
-    </summary>
+    <summary>The number of actual input dimensions within the <i>InputTensor</i> after ignoring any irrelevant leading ones, ranging <code>[1, *InputTensor.DimensionCount*]</code>. For example, given <i>InputTensor.Sizes</i> = <code>{1,1,4,6}</code> and <code>InputDimensionCount</code> = 3, the actual meaningful indices are <code>{1,4,6}</code>.</summary>
   </member>
   <member name="DML_GATHER_ND1_OPERATOR_DESC.IndicesDimensionCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of actual index dimensions within the <i>IndicesTensor</i> after ignoring any irrelevant leading ones, ranging [1, <i>IndicesTensor.DimensionCount</i>]. For example, given <i>IndicesTensor.Sizes</i> = <code>{1,1,4,6}</code>, and <i>IndicesDimensionCount</i> = 3, the actual meaningful indices are <code>{1,4,6}</code>.</para>
-    </summary>
+    <summary>The number of actual index dimensions within the <i>IndicesTensor</i> after ignoring any irrelevant leading ones, ranging [1, <i>IndicesTensor.DimensionCount</i>]. For example, given <i>IndicesTensor.Sizes</i> = <code>{1,1,4,6}</code>, and <i>IndicesDimensionCount</i> = 3, the actual meaningful indices are <code>{1,4,6}</code>.</summary>
   </member>
   <member name="DML_GATHER_ND1_OPERATOR_DESC.BatchDimensionCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of dimensions within each tensor (<i>InputTensor</i>, <i>IndicesTensor</i>, <i>OutputTensor</i>) that are considered independent batches, ranging within both [0, <i>InputTensor.DimensionCount</i>) and [0, <i>IndicesTensor.DimensionCount</i>). The batch count can be 0, implying a single batch. For example, given <i>IndicesTensor.Sizes</i> = <code>{1,3,4,5,6,7}</code>, and <i>IndicesDimensionCount</i> = 5 and <code>BatchDimensionCount</code> = 2, there are batches <code>{3,4}</code> and meaningful indices <code>{5,6,7}</code>.</para>
-    </summary>
+    <summary>The number of dimensions within each tensor (<i>InputTensor</i>, <i>IndicesTensor</i>, <i>OutputTensor</i>) that are considered independent batches, ranging within both [0, <i>InputTensor.DimensionCount</i>) and [0, <i>IndicesTensor.DimensionCount</i>). The batch count can be 0, implying a single batch. For example, given <i>IndicesTensor.Sizes</i> = <code>{1,3,4,5,6,7}</code>, and <i>IndicesDimensionCount</i> = 5 and <code>BatchDimensionCount</code> = 2, there are batches <code>{3,4}</code> and meaningful indices <code>{5,6,7}</code>.</summary>
   </member>
 </doc>

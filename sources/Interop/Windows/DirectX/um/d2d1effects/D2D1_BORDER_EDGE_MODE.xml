@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_BORDER_EDGE_MODE">
-    <summary>
-      <para>The edge mode for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/border">Border effect</a>.</para>
-    </summary>
+    <summary>The edge mode for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/border">Border effect</a>.</summary>
   </member>
   <member name="D2D1_BORDER_EDGE_MODE.D2D1_BORDER_EDGE_MODE_CLAMP">
-    <summary>
-      <para>Repeats the pixels from the edges of the image.</para>
-    </summary>
+    <summary>Repeats the pixels from the edges of the image.</summary>
   </member>
   <member name="D2D1_BORDER_EDGE_MODE.D2D1_BORDER_EDGE_MODE_WRAP">
-    <summary>
-      <para>Uses pixels from the opposite end edge of the image.</para>
-    </summary>
+    <summary>Uses pixels from the opposite end edge of the image.</summary>
   </member>
   <member name="D2D1_BORDER_EDGE_MODE.D2D1_BORDER_EDGE_MODE_MIRROR">
-    <summary>
-      <para>Reflects pixels about the edge of the image.</para>
-    </summary>
+    <summary>Reflects pixels about the edge of the image.</summary>
   </member>
-  <member name="D2D1_BORDER_EDGE_MODE.D2D1_BORDER_EDGE_MODE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_BORDER_EDGE_MODE.D2D1_BORDER_EDGE_MODE_FORCE_DWORD"></member>
 </doc>

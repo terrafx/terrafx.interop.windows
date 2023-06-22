@@ -3,73 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfKeyTraceEventSink.OnKeyTraceDown">
-    <summary>
-      <para>Called when a key down event occurs.</para>
-    </summary>
-    <param name="wParam">
-      <para>The WPARAM of the key event. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>The LPARAM of the key event. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ITfKeyTraceEventSink " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</seealso>
+    <summary>Called when a key down event occurs.</summary>
+    <param name="wParam">The WPARAM of the key event. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="lParam">The LPARAM of the key event. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfKeyTraceEventSink.OnKeyTraceUp">
-    <summary>
-      <para>Called when a key up event occurs.</para>
-    </summary>
-    <param name="wParam">
-      <para>The WPARAM of the key event. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>The LPARAM of the key event. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ITfKeyTraceEventSink " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</seealso>
+    <summary>Called when a key up event occurs.</summary>
+    <param name="wParam">The WPARAM of the key event. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</param>
+    <param name="lParam">The LPARAM of the key event. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfKeyTraceEventSink">
-    <summary>
-      <para>The <b>ITfKeyTraceEventSink</b> interface is implemented by an application or text service to receive key stroke event notifications before the event is processed by the target. This advise sink is installed by calling the thread manager <see cref="ITfSource.AdviseSink" /> method with IID_ITfKeyTraceEventSink.</para>
-    </summary>
-    <remarks>
-      <para>The difference between <b>ITfKeyTraceEventSink</b> and <see cref="ITfKeyEventSink" /> events is that <b>ITfKeyTraceEventSink</b> events occur before any filtering or processing of the key event occurs. The <b>ITfKeyTraceEventSink</b> events also occur before the target application can process the key event.</para>
-      <h4>Examples</h4>
-      <code>
-HRESULT hr;
-ITfSource *pSource;
-
-hr = pThreadMgr-&gt;QueryInterface(IID_ITfSource, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSource);
-if(SUCCEEDED(hr))
-{
-    hr = pSource-&gt;AdviseSink(IID_ITfKeyTraceEventSink, pKeyTraceEventSink, &amp;amp;amp;amp;amp;amp;m_dwKeyTraveEventSinkCookie);
-
-    pSource-&gt;Release();
-}
-
-</code>
-      <code>
-HRESULT hr;
-ITfSource *pSource;
-
-hr = pThreadMgr-&gt;QueryInterface(IID_ITfSource, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSource);
-if(SUCCEEDED(hr))
-{
-    hr = pSource-&gt;UnadviseSink(m_dwKeyTraveEventSinkCookie);
-
-    pSource-&gt;Release();
-}
-
-</code>
-    </remarks>
-    <seealso cref="ITfKeyEventSink " />
-    <seealso cref="ITfSource.AdviseSink " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfKeyTraceEventSink</b> interface is implemented by an application or text service to receive key stroke event notifications before the event is processed by the target. This advise sink is installed by calling the thread manager <see cref="ITfSource.AdviseSink" /> method with IID_ITfKeyTraceEventSink.</summary>
   </member>
 </doc>

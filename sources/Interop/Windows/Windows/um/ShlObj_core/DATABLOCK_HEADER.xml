@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DATABLOCK_HEADER">
-    <summary>
-      <para>Serves as the header for some of the extra data structures used by <see cref="IShellLinkDataList" />.</para>
-    </summary>
-    <seealso cref="EXP_DARWIN_LINK" />
-    <seealso cref="NT_CONSOLE_PROPS" />
-    <seealso cref="NT_FE_CONSOLE_PROPS" />
+    <summary>Serves as the header for some of the extra data structures used by <see cref="IShellLinkDataList" />.</summary>
   </member>
   <member name="DATABLOCK_HEADER.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the extra data block.</para>
-    </summary>
+    <summary>The size of the extra data block.</summary>
   </member>
   <member name="DATABLOCK_HEADER.dwSignature">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A signature that identifies the type of data block that follows the header.</para>
-    </summary>
+    <summary>A signature that identifies the type of data block that follows the header.</summary>
   </member>
 </doc>

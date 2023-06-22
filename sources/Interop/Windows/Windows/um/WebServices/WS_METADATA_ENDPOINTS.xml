@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_METADATA_ENDPOINTS">
-    <summary>
-      <para>Information about all endpoints that were
-read from metadata documents.</para>
-    </summary>
+    <summary>Information about all endpoints that were read from metadata documents.</summary>
   </member>
   <member name="WS_METADATA_ENDPOINTS.endpoints">
-    <summary>
-      <para>An array of endpoints.</para>
-    </summary>
+    <summary>An array of endpoints.</summary>
   </member>
   <member name="WS_METADATA_ENDPOINTS.endpointCount">
-    <summary>
-      <para>The number of elements in the endpoints array.</para>
-    </summary>
+    <summary>The number of elements in the endpoints array.</summary>
   </member>
 </doc>

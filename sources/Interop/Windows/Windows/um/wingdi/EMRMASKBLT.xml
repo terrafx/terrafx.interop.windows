@@ -3,129 +3,75 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRMASKBLT">
-    <summary>
-      <para>The <b>EMRMASKBLT</b> structure contains members for the <see cref="MaskBlt" /> enhanced metafile record. Note that graphics device interface (GDI) converts the device-dependent bitmap into a device-independent bitmap (DIB) before storing it in the metafile record.</para>
-    </summary>
-    <seealso cref="BITMAPINFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
-    <seealso cref="MaskBlt" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="RGB" />
+    <summary>The <b>EMRMASKBLT</b> structure contains members for the <see cref="MaskBlt" /> enhanced metafile record. Note that graphics device interface (GDI) converts the device-dependent bitmap into a device-independent bitmap (DIB) before storing it in the metafile record.</summary>
   </member>
   <member name="EMRMASKBLT.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRMASKBLT.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
   <member name="EMRMASKBLT.xDest">
-    <summary>
-      <para>Logical x-coordinate of the upper-left corner of the destination rectangle.</para>
-    </summary>
+    <summary>Logical x-coordinate of the upper-left corner of the destination rectangle.</summary>
   </member>
   <member name="EMRMASKBLT.yDest">
-    <summary>
-      <para>Logical y-coordinate of the upper-left corner of the destination rectangle.</para>
-    </summary>
+    <summary>Logical y-coordinate of the upper-left corner of the destination rectangle.</summary>
   </member>
   <member name="EMRMASKBLT.cxDest">
-    <summary>
-      <para>Logical width of the destination rectangle.</para>
-    </summary>
+    <summary>Logical width of the destination rectangle.</summary>
   </member>
   <member name="EMRMASKBLT.cyDest">
-    <summary>
-      <para>Logical height of the destination rectangle.</para>
-    </summary>
+    <summary>Logical height of the destination rectangle.</summary>
   </member>
   <member name="EMRMASKBLT.dwRop">
-    <summary>
-      <para>Raster-operation code. These codes define how the color data of the source rectangle is to be combined with the color data of the destination rectangle to achieve the final color.</para>
-    </summary>
+    <summary>Raster-operation code. These codes define how the color data of the source rectangle is to be combined with the color data of the destination rectangle to achieve the final color.</summary>
   </member>
   <member name="EMRMASKBLT.xSrc">
-    <summary>
-      <para>Logical x-coordinate of the upper-left corner of the source rectangle.</para>
-    </summary>
+    <summary>Logical x-coordinate of the upper-left corner of the source rectangle.</summary>
   </member>
   <member name="EMRMASKBLT.ySrc">
-    <summary>
-      <para>Logical y-coordinate of the upper-left corner of the source rectangle.</para>
-    </summary>
+    <summary>Logical y-coordinate of the upper-left corner of the source rectangle.</summary>
   </member>
   <member name="EMRMASKBLT.xformSrc">
-    <summary>
-      <para>World-space to page-space transformation of the source device context.</para>
-    </summary>
+    <summary>World-space to page-space transformation of the source device context.</summary>
   </member>
   <member name="EMRMASKBLT.crBkColorSrc">
-    <summary>
-      <para>Background color (the RGB value) of the source device context. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</para>
-    </summary>
+    <summary>Background color (the RGB value) of the source device context. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</summary>
   </member>
   <member name="EMRMASKBLT.iUsageSrc">
-    <summary>
-      <para>Value of the <b>bmiColors</b> member of the source <see cref="BITMAPINFO" /> structure. The <b>iUsageSrc</b> member can be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</para>
-    </summary>
+    <summary>Value of the <b>bmiColors</b> member of the source <see cref="BITMAPINFO" /> structure. The <b>iUsageSrc</b> member can be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</summary>
   </member>
   <member name="EMRMASKBLT.offBmiSrc">
-    <summary>
-      <para>Offset to source <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Offset to source <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRMASKBLT.cbBmiSrc">
-    <summary>
-      <para>Size of source <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Size of source <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRMASKBLT.offBitsSrc">
-    <summary>
-      <para>Offset to source bitmap bits.</para>
-    </summary>
+    <summary>Offset to source bitmap bits.</summary>
   </member>
   <member name="EMRMASKBLT.cbBitsSrc">
-    <summary>
-      <para>Size of source bitmap bits.</para>
-    </summary>
+    <summary>Size of source bitmap bits.</summary>
   </member>
   <member name="EMRMASKBLT.xMask">
-    <summary>
-      <para>Horizontal pixel offset into mask bitmap.</para>
-    </summary>
+    <summary>Horizontal pixel offset into mask bitmap.</summary>
   </member>
   <member name="EMRMASKBLT.yMask">
-    <summary>
-      <para>Vertical pixel offset into mask bitmap.</para>
-    </summary>
+    <summary>Vertical pixel offset into mask bitmap.</summary>
   </member>
   <member name="EMRMASKBLT.iUsageMask">
-    <summary>
-      <para>Value of the <b>bmiColors</b> member of the mask <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Value of the <b>bmiColors</b> member of the mask <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRMASKBLT.offBmiMask">
-    <summary>
-      <para>Offset to mask <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Offset to mask <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRMASKBLT.cbBmiMask">
-    <summary>
-      <para>Size of mask <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Size of mask <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRMASKBLT.offBitsMask">
-    <summary>
-      <para>Offset to mask bitmap bits.</para>
-    </summary>
+    <summary>Offset to mask bitmap bits.</summary>
   </member>
   <member name="EMRMASKBLT.cbBitsMask">
-    <summary>
-      <para>Size of mask bitmap bits.</para>
-    </summary>
+    <summary>Size of mask bitmap bits.</summary>
   </member>
 </doc>

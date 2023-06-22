@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Metafile.ConvertToEmfPlus">
+    <summary>The <see cref="Metafile.ConvertToEmfPlus" /> method converts this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-metafile">Metafile</a> object to the EMF+ format.</summary>
+    <param name="refGraphics">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object whose state (settings for antialiasing, interpolation, and the like) is applied to the records stored in the converted metafile.</param>
+    <param name="filename">Pointer to a null-terminated wide-character string that specifies the name of a file to which the converted metafile is saved.</param>
+    <param name="conversionFailureFlag">TBD</param>
+    <param name="emfType">Optional. Element of the <see cref="EmfType" /> enumeration that specifies whether the converted file has the <b>EmfTypeEmfPlusOnly</b> format or the <b>EmfTypeEmfPlusDual</b> format. Do not pass <b>EmfTypeEmfOnly</b>. The default value is <b>EmfTypeEmfPlusOnly</b>.</param>
+    <param name="description">Optional. Pointer to a null-terminated wide-character string that is stored in the header of the converted metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Metafile.ConvertToEmfPlus">
+    <summary>The <see cref="Metafile.ConvertToEmfPlus" /> method converts this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-metafile">Metafile</a> object to the EMF+ format.</summary>
+    <param name="refGraphics">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object whose state (settings for antialiasing, interpolation, and the like) is applied to the records stored in the converted metafile.</param>
+    <param name="stream">Pointer to an <see cref="IStream" /> interface that specifies the stream to which the converted metafile is written.</param>
+    <param name="conversionFailureFlag">TBD</param>
+    <param name="emfType">Optional. Element of the <see cref="EmfType" /> enumeration that specifies whether the converted file has the <b>EmfTypeEmfPlusOnly</b> format or the <b>EmfTypeEmfPlusDual</b> format. Do not pass <b>EmfTypeEmfOnly</b>. The default value is <b>EmfTypeEmfPlusOnly</b>.</param>
+    <param name="description">Optional. Pointer to a null-terminated wide-character string that is stored in the header of the converted metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Metafile.ConvertToEmfPlus">
+    <summary>The <b>Metafile.ConvertToEmfPlus</b> method converts this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-metafile">Metafile</a> object to the EMF+ format.</summary>
+    <param name="refGraphics">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object whose state (settings for antialiasing, interpolation, and the like) is applied to the records stored in the converted metafile.</param>
+    <param name="conversionFailureFlag">Optional. Pointer to a <b>BOOL</b> that receives <b>TRUE</b> if all the metafile records were converted successfully; <b>FALSE</b> otherwise. Pass <b>NULL</b> if you do not want to receive this information. The default value is <b>NULL</b>.</param>
+    <param name="emfType">Optional. Element of the <see cref="EmfType" /> enumeration that specifies whether the converted file has the <b>EmfTypeEmfPlusOnly</b> format or the <b>EmfTypeEmfPlusDual</b> format. Do not pass <b>EmfTypeEmfOnly</b>. The default value is <b>EmfTypeEmfPlusOnly</b>.</param>
+    <param name="description">Optional. Pointer to a null-terminated wide-character string that is stored in the header of the converted metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Metafile.EmfToWmfBits">
+    <summary>Converts an enhanced-format metafile to a Windows Metafile Format (WMF) metafile and stores the converted records in a specified buffer.</summary>
+    <param name="hemf">Handle to the enhanced-format metafile that is to be converted.</param>
+    <param name="cbData16">Unsigned integer that specifies the number of bytes in the buffer pointed to by the <i>pData16</i> parameter.</param>
+    <param name="pData16">Pointer to a buffer that receives the converted records. If <i>pData16</i> is <b>NULL</b>, <b>Metafile.EmfToWmfBits</b> returns the number of bytes required to store the converted metafile records.</param>
+    <param name="iMapMode">Optional. Specifies the mapping mode to use in the converted metafile. For a list of possible mapping modes, see <see cref="SetMapMode" />. The default value is MM_ANISOTROPIC.</param>
+    <param name="eFlags">Optional. Element of the <see cref="EmfToWmfBitsFlags" /> enumeration that specifies options for the conversion. The default value is <see cref="EmfToWmfBitsFlagsDefault" />.</param>
+    <returns>If the method succeeds and the buffer pointer is <b>NULL</b>, the return value is the number of bytes required to store the converted records. If the method succeeds and the buffer pointer is a valid pointer, the return value is the size of the metafile data in bytes. If the method fails, the return value is zero.</returns>
+  </member>
+  <member name="Metafile.GetDownLevelRasterizationLimit">
+    <summary>Gets the rasterization limit currently set for this metafile. The rasterization limit is the resolution used for certain brush bitmaps that are stored in the metafile. For a detailed explanation of the rasterization limit, see <see cref="Metafile.SetDownLevelRasterizationLimit" />.</summary>
+    <returns>This method returns the rasterization limit in dpi.</returns>
+  </member>
+  <member name="Metafile.GetHENHMETAFILE">
+    <summary>The <b>Metafile.GetHENHMETAFILE</b> method gets a Windows handle to an Enhanced Metafile (EMF) file.</summary>
+    <returns>This method returns a <b>HENHMETAFILE</b>.</returns>
+  </member>
+  <member name="Metafile.GetMetafileHeader">
+    <summary>The <b>Metafile.GetMetafileHeader</b> method gets the header.</summary>
+    <param name="filename">Pointer to a wide-character string that specifies the name of an existing <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-metafile">Metafile</a> object that contains the header.</param>
+    <param name="header">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmetaheader/nl-gdiplusmetaheader-metafileheader">MetafileHeader</a> object that receives the header, which contains the attributes of the metafile.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Metafile.GetMetafileHeader">
+    <summary>The <b>Metafile.GetMetafileHeader</b> method gets the header.</summary>
+    <param name="hEmf">Window handle to a metafile.</param>
+    <param name="header">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmetaheader/nl-gdiplusmetaheader-metafileheader">MetafileHeader</a> object that receives the header, which contains the attributes of the metafile.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Metafile.GetMetafileHeader">
+    <summary>The <b>Metafile.GetMetafileHeader</b> method gets the metafile header of this metafile.</summary>
+    <param name="hWmf">Window handle to a metafile.</param>
+    <param name="wmfPlaceableFileHeader">Pointer to a placeable metafile header.</param>
+    <param name="header">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmetaheader/nl-gdiplusmetaheader-metafileheader">MetafileHeader</a> object that receives the copy of the metafile header.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Metafile.GetMetafileHeader">
+    <summary>The <b>Metafile.GetMetafileHeader</b> method gets the header.</summary>
+    <param name="stream">Pointer to a COM <see cref="IStream" /> interface that points to a stream of data in a file.</param>
+    <param name="header">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmetaheader/nl-gdiplusmetaheader-metafileheader">MetafileHeader</a> object that receives the header, which contains the attributes of the metafile.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Metafile.GetMetafileHeader">
+    <summary>The <b>Metafile.GetMetafileHeader</b> method gets the header.</summary>
+    <param name="header">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmetaheader/nl-gdiplusmetaheader-metafileheader">MetafileHeader</a> object that receives the header, which contains the attributes of the metafile.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object for playback.</summary>
+    <param name="filename">Pointer to a wide-character string that specifies the name of an existing disk file used to create the <b>Metafile.Metafile</b> object for playback.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object for recording.</summary>
+    <param name="fileName">Pointer to a wide-character string that specifies the name of the file in which the metafile will be saved.</param>
+    <param name="referenceHdc">Windows handle to a device context that contains attributes of a display device.</param>
+    <param name="frameRect">Reference to a rectangle that bounds the metafile display.</param>
+    <param name="frameUnit">Optional. Element of the <see cref="MetafileFrameUnit" /> enumeration that specifies the unit of measure for <i>frameRect</i>. The default value is <see cref="MetafileFrameUnitGdi" />.</param>
+    <param name="type">Optional. Element of the <see cref="EmfType" /> enumeration that specifies the type of metafile that will be recorded. The default value is <see cref="EmfTypeEmfPlusDual" />.</param>
+    <param name="description">Optional. Pointer to a wide-character string that specifies the descriptive name of the metafile. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object for recording.</summary>
+    <param name="fileName">Pointer to a wide-character string that specifies the name of the file in which the metafile will be saved.</param>
+    <param name="referenceHdc">Handle to a device context that contains attributes of a display device.</param>
+    <param name="frameRect">Reference to a rectangle that bounds the metafile display.</param>
+    <param name="frameUnit">Optional. Element of the <see cref="MetafileFrameUnit" /> enumeration that specifies the unit of measure for <i>frameRect</i>. The default value is <see cref="MetafileFrameUnitGdi" />.</param>
+    <param name="type">Optional. Element of the <see cref="EmfType" /> enumeration that specifies the type of metafile that will be recorded. The default value is <see cref="EmfTypeEmfPlusDual" />.</param>
+    <param name="description">Optional. Pointer to a wide-character string that specifies the descriptive name of the metafile. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object for recording.</summary>
+    <param name="fileName">Pointer to a wide-character string that specifies the name of the file in which the metafile will be saved.</param>
+    <param name="referenceHdc">Windows handle to a device context that contains attributes of a display device.</param>
+    <param name="type">Optional. Element of the <see cref="EmfType" /> enumeration that specifies the type of metafile that will be recorded. The default value is <see cref="EmfTypeEmfPlusDual" />.</param>
+    <param name="description">Optional. Pointer to a wide-character string that specifies the descriptive name of the metafile. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object for recording.</summary>
+    <param name="referenceHdc">Windows handle to a device context that contains attributes of the display device that is used to record the metafile.</param>
+    <param name="frameRect">Reference to a rectangle that bounds the metafile display.</param>
+    <param name="frameUnit">Optional. Element of the <see cref="MetafileFrameUnit" /> enumeration that specifies the unit of measure for <i>frameRect</i>. The default value is <see cref="MetafileFrameUnitGdi" />.</param>
+    <param name="type">Optional. Element of the <see cref="EmfType" /> enumeration that specifies the type of metafile that will be recorded. The default value is <see cref="EmfTypeEmfPlusDual" />.</param>
+    <param name="description">Optional. Pointer to a wide-character string that specifies the descriptive name of the metafile. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object for recording.</summary>
+    <param name="referenceHdc">Windows handle to a device context that contains attributes of the display device that is used to record the metafile.</param>
+    <param name="frameRect">Reference to a rectangle that bounds the metafile display.</param>
+    <param name="frameUnit">Optional. Element of the <see cref="MetafileFrameUnit" /> enumeration that specifies the unit of measure for <i>frameRect</i>. The default value is <see cref="MetafileFrameUnitGdi" />.</param>
+    <param name="type">Optional. Element of the <see cref="EmfType" /> enumeration that specifies the type of metafile that will be recorded. The default value is <see cref="EmfTypeEmfPlusDual" />.</param>
+    <param name="description">Optional. Pointer to a wide-character string that specifies the descriptive name of the metafile. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object for recording.</summary>
+    <param name="referenceHdc">Windows handle to a device context that contains attributes of the display device that is used to record the metafile.</param>
+    <param name="type">Optional. Element of the <see cref="EmfType" /> enumeration that specifies the type of metafile that will be recorded. The default value is <see cref="EmfTypeEmfPlusDual" />.</param>
+    <param name="description">Optional. Pointer to a wide-character string that specifies the descriptive name of the metafile. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a Windows GDI+ <b>Metafile.Metafile</b> object for playback based on a Windows Graphics Device Interface (GDI) Enhanced Metafile (EMF) file.</summary>
+    <param name="hEmf">Windows handle to a metafile.</param>
+    <param name="deleteEmf">Optional. Boolean value that specifies whether the Windows handle to a metafile is deleted when the <b>Metafile.Metafile</b> object is deleted. <b>TRUE</b> specifies that the <i>hEmf</i> Windows handle is deleted, and <b>FALSE</b> specifies that the <i>hEmf</i> Windows handle is not deleted. The default value is <b>FALSE</b>.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a Windows GDI+<b>Metafile.Metafile</b> object for recording. The format will be placeable metafile.</summary>
+    <param name="hWmf">Windows handle to a metafile.</param>
+    <param name="wmfPlaceableFileHeader">Pointer to a <see cref="WmfPlaceableFileHeader" /> structure that specifies a preheader preceding the metafile header.</param>
+    <param name="deleteWmf">Optional. <b>BOOL</b> value that specifies whether the Windows handle to a metafile is deleted when the metafile is deleted. <b>TRUE</b> specifies that the <i>hWmf</i> Windows handle is deleted, and <b>FALSE</b> specifies that the <i>hWmf</i> Windows handle is not deleted. The default value is <b>FALSE</b>.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object from an <see cref="IStream" /> interface for playback.</summary>
+    <param name="stream">Pointer to a COM <see cref="IStream" /> interface that points to a data stream in a file.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object for recording to an <see cref="IStream" /> interface.</summary>
+    <param name="stream">Pointer to a COM <see cref="IStream" /> interface that points to a stream of data in a file. When the commands are recorded, they will be saved to this stream.</param>
+    <param name="referenceHdc">Windows handle to a device context that contains attributes of the display device that is used to record the metafile.</param>
+    <param name="frameRect">Reference to a rectangle that bounds the metafile display.</param>
+    <param name="frameUnit">Optional. Element of the <see cref="MetafileFrameUnit" /> enumeration that specifies the unit of measure for<i>frameRect</i>. The default value is <see cref="MetafileFrameUnitGdi" />.</param>
+    <param name="type">Optional. Element of the <see cref="EmfType" /> enumeration that specifies the type of metafile that will be recorded. The default value is <see cref="EmfTypeEmfPlusDual" />.</param>
+    <param name="description">Optional. Pointer to a wide-character string that specifies the descriptive name of the metafile. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object for recording to an <see cref="IStream" /> interface.</summary>
+    <param name="stream">Pointer to a COM <see cref="IStream" /> interface that points to a stream of data in a file. When the commands are recorded, they will be saved to this stream.</param>
+    <param name="referenceHdc">Windows handle to a device context that contains attributes of the display device that is used to record the metafile.</param>
+    <param name="frameRect">Reference to a rectangle that bounds the metafile display.</param>
+    <param name="frameUnit">Optional. Element of the <see cref="MetafileFrameUnit" /> enumeration that specifies the unit of measure for <i>frameRect</i>. The default value is <see cref="MetafileFrameUnitGdi" />.</param>
+    <param name="type">Optional. Element of the <see cref="EmfType" /> enumeration that specifies the type of metafile that will be recorded. The default value is <see cref="EmfTypeEmfPlusDual" />.</param>
+    <param name="description">Optional. Pointer to a wide-character string that specifies the descriptive name of the metafile. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="Metafile.Metafile">
+    <summary>Creates a <b>Metafile.Metafile</b> object for recording to an <see cref="IStream" /> interface.</summary>
+    <param name="stream">Pointer to a COM <see cref="IStream" /> interface that points to a stream of data in a file. When the commands are recorded, they will be saved to this stream.</param>
+    <param name="referenceHdc">Windows handle to a device context that contains attributes of the display device that is used to record the metafile.</param>
+    <param name="type">Optional. Element of the <see cref="EmfType" /> enumeration that specifies the type of metafile that will be recorded. The default value is <see cref="EmfTypeEmfPlusDual" />.</param>
+    <param name="description">Optional. Pointer to a wide-character string that specifies the descriptive name of the metafile. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="Metafile.PlayRecord">
+    <summary>The <b>Metafile.PlayRecord</b> method plays a metafile record.</summary>
+    <param name="recordType">Element of the <see cref="EmfPlusRecordType" /> enumeration that specifies the type of metafile record to be played.</param>
+    <param name="flags">Set of flags that specify attributes of the record to be played.</param>
+    <param name="dataSize">Integer that specifies the number of bytes contained in the record data.</param>
+    <param name="data">Pointer to an array of bytes that contains the record data.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Metafile.SetDownLevelRasterizationLimit">
+    <summary>Sets the resolution for certain brush bitmaps that are stored in this metafile.</summary>
+    <param name="metafileRasterizationLimitDpi">Non-negative integer that specifies the resolution in dpi. If you set this parameter equal to 0, the resolution is set to match the resolution of the device context handle that was passed to the <see cref="Metafile" /> constructor. If you set this parameter to a value greater than 0 but less than 10, the resolution is left unchanged.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

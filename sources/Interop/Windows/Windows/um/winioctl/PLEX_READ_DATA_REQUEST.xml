@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PLEX_READ_DATA_REQUEST">
-    <summary>
-      <para>Indicates the range of the read operation to perform and the plex from which to read.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_from_plex">FSCTL_READ_FROM_PLEX</seealso>
+    <summary>Indicates the range of the read operation to perform and the plex from which to read.</summary>
   </member>
   <member name="PLEX_READ_DATA_REQUEST.ByteOffset">
-    <summary>
-      <para>The offset of the range to be read. The offset can be the virtual offset to a file or volume. File offsets should be cluster aligned and volume offsets should be sector aligned.</para>
-    </summary>
+    <summary>The offset of the range to be read. The offset can be the virtual offset to a file or volume. File offsets should be cluster aligned and volume offsets should be sector aligned.</summary>
   </member>
   <member name="PLEX_READ_DATA_REQUEST.ByteLength">
-    <summary>
-      <para>The length of the range to be read. The maximum value is 64 KB.</para>
-    </summary>
+    <summary>The length of the range to be read. The maximum value is 64 KB.</summary>
   </member>
   <member name="PLEX_READ_DATA_REQUEST.PlexNumber">
-    <summary>
-      <para>The plex from which to read. A value of zero indicates the primary copy, a value of one indicates the secondary copy, and so on.</para>
-    </summary>
+    <summary>The plex from which to read. A value of zero indicates the primary copy, a value of one indicates the secondary copy, and so on.</summary>
   </member>
 </doc>

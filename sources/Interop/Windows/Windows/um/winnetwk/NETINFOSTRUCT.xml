@@ -3,70 +3,63 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NETINFOSTRUCT">
-    <summary>
-      <para>The
-<b>NETINFOSTRUCT</b> structure contains information describing the network provider returned by the
-<see cref="WNetGetNetworkInformation" /> function.</para>
-    </summary>
-    <remarks>
-      <para>The <b>NETINFOSTRUCT</b> structure contains information describing the network, such as the version of the network provider software and the network's current status.</para>
-    </remarks>
-    <seealso cref="WNetGetNetworkInformation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WNet/windows-networking-wnet-">Windows Networking (WNet) Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WNet/windows-networking-structures">Windows Networking Structures</seealso>
+    <summary>The<b>NETINFOSTRUCT</b> structure contains information describing the network provider returned by the<see cref="WNetGetNetworkInformation" /> function.</summary>
   </member>
   <member name="NETINFOSTRUCT.cbStructure">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size, in bytes, of the
-<b>NETINFOSTRUCT</b> structure. The caller must supply this value to indicate the size of the structure passed in. Upon return, it has the size of the structure filled in.</para>
-    </summary>
+    <summary>The size, in bytes, of the<b>NETINFOSTRUCT</b> structure. The caller must supply this value to indicate the size of the structure passed in. Upon return, it has the size of the structure filled in.</summary>
   </member>
   <member name="NETINFOSTRUCT.dwProviderVersion">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The version number of the network provider software.</para>
-    </summary>
+    <summary>The version number of the network provider software.</summary>
   </member>
   <member name="NETINFOSTRUCT.dwStatus">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The current status of the network provider software. This member can be one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>NO_ERROR</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>NO_ERROR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The network is running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The network is running.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NO_NETWORK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The network is unavailable.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ERROR_NO_NETWORK</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_BUSY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The network is unavailable.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ERROR_BUSY</b>
-          </description>
-          <description>
-            <para>The network is not currently able to service requests, but it should become available shortly. (This value typically indicates that the network is starting up.)</para>
-          </description>
-        </item>
+          <description>The network is not currently able to service requests, but it should become available shortly. (This value typically indicates that the network is starting up.)</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="NETINFOSTRUCT.dwCharacteristics">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Characteristics of the network provider software.</para>
       <para>This value is zero.</para>
       <para>
@@ -76,48 +69,53 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>NETINFO_DLL16</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>NETINFO_DLL16</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The network provider is running as a 16-bit Windows network driver.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The network provider is running as a 16-bit Windows network driver.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>NETINFO_DISKRED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The network provider requires a redirected local disk drive device to access server file systems.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>NETINFO_DISKRED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>NETINFO_PRINTERRED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The network provider requires a redirected local disk drive device to access server file systems.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>NETINFO_PRINTERRED</b>
-          </description>
-          <description>
-            <para>The network provider requires a redirected local printer port to access server file systems.</para>
-          </description>
-        </item>
+          <description>The network provider requires a redirected local printer port to access server file systems.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="NETINFOSTRUCT.dwHandle">
-    <summary>
-      <para>Type: <b>ULONG_PTR</b></para>
-      <para>An instance handle for the network provider or for the 16-bit Windows network driver.</para>
-    </summary>
+    <summary>An instance handle for the network provider or for the 16-bit Windows network driver.</summary>
   </member>
   <member name="NETINFOSTRUCT.wNetType">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>The network type unique to the running network. This value associates resources with a specific network when the resources are persistent or stored in links. You can find a complete list of network types in the header file Winnetwk.h.</para>
-    </summary>
+    <summary>The network type unique to the running network. This value associates resources with a specific network when the resources are persistent or stored in links. You can find a complete list of network types in the header file Winnetwk.h.</summary>
   </member>
   <member name="NETINFOSTRUCT.dwPrinters">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>A set of bit flags indicating the valid print numbers for redirecting local printer devices, with the low-order bit corresponding to LPT1.</para>
       <para>
         <b>Windows Me/98/95:  </b>This value is always set to –1.</para>
@@ -125,7 +123,6 @@
   </member>
   <member name="NETINFOSTRUCT.dwDrives">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>A set of bit flags indicating the valid local disk devices for redirecting disk drives, with the low-order bit corresponding to A:.</para>
       <para>
         <b>Windows Me/98/95:  </b>This value is always set to –1.</para>

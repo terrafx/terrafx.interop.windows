@@ -3,27 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INTERACTION_ID">
-    <summary>
-      <para>Specifies the interaction states used for configuring an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object. Interactions can be static (single contact with no manipulation, such as tap, double tap, right tap, press and hold) or dynamic (one or more contacts with manipulation, such as translation, rotation, or scaling).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_context_configuration">INTERACTION_CONTEXT_CONFIGURATION</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setinteractionconfigurationinteractioncontext">SetInteractionConfigurationInteractionContext</seealso>
+    <summary>Specifies the interaction states used for configuring an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object. Interactions can be static (single contact with no manipulation, such as tap, double tap, right tap, press and hold) or dynamic (one or more contacts with manipulation, such as translation, rotation, or scaling).</summary>
   </member>
   <member name="INTERACTION_ID.INTERACTION_ID_NONE">
-    <summary>
-      <para>Not used.</para>
-    </summary>
+    <summary>Not used.</summary>
   </member>
   <member name="INTERACTION_ID.INTERACTION_ID_MANIPULATION">
-    <summary>
-      <para>A compound gesture that supports translation, rotation, and scaling (dynamic).</para>
-    </summary>
+    <summary>A compound gesture that supports translation, rotation, and scaling (dynamic).</summary>
   </member>
   <member name="INTERACTION_ID.INTERACTION_ID_TAP">
-    <summary>
-      <para>A tap gesture (static).</para>
-    </summary>
+    <summary>A tap gesture (static).</summary>
   </member>
   <member name="INTERACTION_ID.INTERACTION_ID_SECONDARY_TAP">
     <summary>
@@ -42,23 +31,15 @@
     </summary>
   </member>
   <member name="INTERACTION_ID.INTERACTION_ID_HOLD">
-    <summary>
-      <para>Press and hold gesture (static).</para>
-    </summary>
+    <summary>Press and hold gesture (static).</summary>
   </member>
   <member name="INTERACTION_ID.INTERACTION_ID_DRAG">
-    <summary>
-      <para>Move with mouse or pen (dynamic).</para>
-    </summary>
+    <summary>Move with mouse or pen (dynamic).</summary>
   </member>
   <member name="INTERACTION_ID.INTERACTION_ID_CROSS_SLIDE">
-    <summary>
-      <para>Select or move through slide or swipe gestures (dynamic).</para>
-    </summary>
+    <summary>Select or move through slide or swipe gestures (dynamic).</summary>
   </member>
   <member name="INTERACTION_ID.INTERACTION_ID_MAX">
-    <summary>
-      <para>Maximum number of interactions exceeded.</para>
-    </summary>
+    <summary>Maximum number of interactions exceeded.</summary>
   </member>
 </doc>

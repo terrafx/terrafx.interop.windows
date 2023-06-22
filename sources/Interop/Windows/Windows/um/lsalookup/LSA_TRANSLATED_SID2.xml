@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_TRANSLATED_SID2">
+    <summary>The <b>LSA_TRANSLATED_SID2</b> structure contains<see cref="SIDs" /> that are retrieved based on account names. This structure is used by the<see cref="LsaLookupNames2" /> function.</summary>
+  </member>
+  <member name="LSA_TRANSLATED_SID2.Use">
+    <summary>An<see cref="SID_NAME_USE" /> enumeration value that identifies the use of the SID. If this value is SidTypeUnknown or SidTypeInvalid, the rest of the information in the structure is not valid and should be ignored.</summary>
+  </member>
+  <member name="LSA_TRANSLATED_SID2.Sid">
+    <summary>The complete SID of the account.</summary>
+  </member>
+  <member name="LSA_TRANSLATED_SID2.DomainIndex">
+    <summary>The index of an entry in a related<see cref="LSA_REFERENCED_DOMAIN_LIST" /> data structure which describes the domain that owns the account. If there is no corresponding reference domain for an entry, then <b>DomainIndex</b> will contain a negative value.</summary>
+  </member>
+  <member name="LSA_TRANSLATED_SID2.Flags">
+    <summary>Not used.</summary>
+  </member>
+</doc>

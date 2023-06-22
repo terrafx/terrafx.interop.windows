@@ -3,111 +3,66 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BROWSERFRAMEOPTIONS">
-    <summary>
-      <para>Used with method <see cref="IBrowserFrameOptions.GetFrameOptions" />.</para>
-    </summary>
-    <remarks>
-      <para>These constants are defined in the Shobjidl.h file beginning in Windows Vista.</para>
-    </remarks>
+    <summary>Used with method <see cref="IBrowserFrameOptions.GetFrameOptions" />.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_NONE">
-    <summary>
-      <para>Do nothing.</para>
-    </summary>
+    <summary>Do nothing.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_BROWSER_PERSIST_SETTINGS">
-    <summary>
-      <para>Use the browser stream for this item. (Same window position as IE browser windows.)</para>
-    </summary>
+    <summary>Use the browser stream for this item. (Same window position as IE browser windows.)</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_RENAME_FOLDER_OPTIONS_TOINTERNET">
-    <summary>
-      <para>Rename <b>Folder Options</b> to <b>Internet Options</b> in the Tools or View menu.</para>
-    </summary>
+    <summary>Rename <b>Folder Options</b> to <b>Internet Options</b> in the Tools or View menu.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_BOTH_OPTIONS">
-    <summary>
-      <para>Keep both <b>Folder Options</b> and <b>Internet Options</b> in the Tools or View menu.</para>
-    </summary>
+    <summary>Keep both <b>Folder Options</b> and <b>Internet Options</b> in the Tools or View menu.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BIF_PREFER_INTERNET_SHORTCUT">
-    <summary>
-      <para>This namespace extension prefers a .url shortcut over a .lnk shortcut.</para>
-    </summary>
+    <summary>This namespace extension prefers a .url shortcut over a .lnk shortcut.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_BROWSE_NO_IN_NEW_PROCESS">
-    <summary>
-      <para>Do not use "Browse in New Process" by invoking a shortcut.</para>
-    </summary>
+    <summary>Do not use "Browse in New Process" by invoking a shortcut.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_ENABLE_HYPERLINK_TRACKING">
-    <summary>
-      <para>Track display name to determine when hyperlinks should be tagged as previously used.</para>
-    </summary>
+    <summary>Track display name to determine when hyperlinks should be tagged as previously used.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_USE_IE_OFFLINE_SUPPORT">
-    <summary>
-      <para>Use Internet Explorer's offline support.</para>
-    </summary>
+    <summary>Use Internet Explorer's offline support.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_SUBSTITUE_INTERNET_START_PAGE">
-    <summary>
-      <para>Use Start Page support for this namespace extension.</para>
-    </summary>
+    <summary>Use Start Page support for this namespace extension.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_USE_IE_LOGOBANDING">
-    <summary>
-      <para>Use the Brand block in the Toolbar.</para>
-    </summary>
+    <summary>Use the Brand block in the Toolbar.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_ADD_IE_TOCAPTIONBAR">
-    <summary>
-      <para>Append <code>" - Internet Explorer"</code> to display name in the caption bar.</para>
-    </summary>
+    <summary>Append <code>" - Internet Explorer"</code> to display name in the caption bar.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_USE_DIALUP_REF">
-    <summary>
-      <para>Reference the DialUp reference count while the browser is navigated to this location. This will also enable the ICW and Software update.</para>
-    </summary>
+    <summary>Reference the DialUp reference count while the browser is navigated to this location. This will also enable the ICW and Software update.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_USE_IE_TOOLBAR">
-    <summary>
-      <para>Use the Internet Explorer toolbar.</para>
-    </summary>
+    <summary>Use the Internet Explorer toolbar.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_NO_PARENT_FOLDER_SUPPORT">
-    <summary>
-      <para>Disable navigation to parent folders. Used for the button that navigates to parent folder or the View.GoTo.ParentFolder feature.</para>
-    </summary>
+    <summary>Disable navigation to parent folders. Used for the button that navigates to parent folder or the View.GoTo.ParentFolder feature.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_NO_REOPEN_NEXT_RESTART">
-    <summary>
-      <para>Browser windows are not reopened after a reboot of the system, regardless of whether they were open before the reboot. Use the same behavior for the namespace extension.</para>
-    </summary>
+    <summary>Browser windows are not reopened after a reboot of the system, regardless of whether they were open before the reboot. Use the same behavior for the namespace extension.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_GO_HOME_PAGE">
-    <summary>
-      <para>Add <b>Home Page</b> to menu (Go).</para>
-    </summary>
+    <summary>Add <b>Home Page</b> to menu (Go).</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_PREFER_IEPROCESS">
-    <summary>
-      <para>Prefer use of Iexplore.exe over Explorer.exe.</para>
-    </summary>
+    <summary>Prefer use of Iexplore.exe over Explorer.exe.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_SHOW_NAVIGATION_CANCELLED">
-    <summary>
-      <para>If navigation is terminated, show the <b>Action Canceled</b> HTML page.</para>
-    </summary>
+    <summary>If navigation is terminated, show the <b>Action Canceled</b> HTML page.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_USE_IE_STATUSBAR">
-    <summary>
-      <para>Use the persisted Internet Explorer status bar settings.</para>
-    </summary>
+    <summary>Use the persisted Internet Explorer status bar settings.</summary>
   </member>
   <member name="BROWSERFRAMEOPTIONS.BFO_QUERY_ALL">
-    <summary>
-      <para>Return all values.</para>
-    </summary>
+    <summary>Return all values.</summary>
   </member>
 </doc>

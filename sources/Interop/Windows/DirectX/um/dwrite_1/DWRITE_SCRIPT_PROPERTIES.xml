@@ -3,28 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_SCRIPT_PROPERTIES">
-    <summary>
-      <para>The <b>DWRITE_SCRIPT_PROPERTIES</b> structure specifies script properties for caret navigation and justification.</para>
-    </summary>
-    <seealso cref="IDWriteTextAnalyzer1.GetScriptProperties" />
+    <summary>The <b>DWRITE_SCRIPT_PROPERTIES</b> structure specifies script properties for caret navigation and justification.</summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.isoScriptCode">
     <summary>
       <para>The standardized four character code for the given script.</para>
-      <para>
-        <b>Note</b>  These only include the general Unicode scripts, not any additional <a href="http://unicode.org/iso15924/iso15924-codes.html">ISO 15924</a> scripts for bibliographic distinction.</para>
+      <div>
+        <b>Note</b>  These only include the general Unicode scripts, not any additional <a href="http://unicode.org/iso15924/iso15924-codes.html">ISO 15924</a> scripts for bibliographic distinction.</div>
     </summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.isoScriptNumber">
-    <summary>
-      <para>The standardized numeric code, ranging 0-999.</para>
-    </summary>
+    <summary>The standardized numeric code, ranging 0-999.</summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.clusterLookahead">
     <summary>
       <para>Number of characters to estimate look-ahead for complex scripts. Latin and all Kana are generally 1. Indic scripts are up to 15, and most others are 8.</para>
-      <para>
-        <b>Note</b>  Combining marks and variation selectors can produce clusters that are longer than these look-aheads, so this estimate is considered typical language use. Diacritics must be tested explicitly separately.</para>
+      <div>
+        <b>Note</b>  Combining marks and variation selectors can produce clusters that are longer than these look-aheads, so this estimate is considered typical language use. Diacritics must be tested explicitly separately.</div>
     </summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.justificationCharacter">
@@ -32,58 +27,42 @@
       <para>Appropriate character to elongate the given script for justification. For example:</para>
       <list type="bullet">
         <item>
-          <description>Arabic    - U+0640 Tatweel</description>
+          <description>Arabic - U+0640 Tatweel</description>
         </item>
         <item>
-          <description>Ogham     - U+1680 Ogham Space Mark</description>
+          <description>Ogham - U+1680 Ogham Space Mark</description>
         </item>
       </list>
     </summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.restrictCaretToClusters">
-    <summary>
-      <para>Restrict the caret to whole clusters, like Thai and Devanagari. Scripts such as Arabic by default allow navigation between clusters. Others like Thai always navigate across whole clusters.</para>
-    </summary>
+    <summary>Restrict the caret to whole clusters, like Thai and Devanagari. Scripts such as Arabic by default allow navigation between clusters. Others like Thai always navigate across whole clusters.</summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.usesWordDividers">
-    <summary>
-      <para>The language uses dividers between words, such as spaces between Latin or the Ethiopic wordspace. Examples include Latin, Greek, Devanagari, and Ethiopic. Chinese, Korean, and Thai are excluded.</para>
-    </summary>
+    <summary>The language uses dividers between words, such as spaces between Latin or the Ethiopic wordspace. Examples include Latin, Greek, Devanagari, and Ethiopic. Chinese, Korean, and Thai are excluded.</summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.isDiscreteWriting">
-    <summary>
-      <para>The characters are discrete units from each other. This includes both block scripts and clustered scripts. Examples include Latin, Greek, Cyrillic, Hebrew, Chinese, and Thai.</para>
-    </summary>
+    <summary>The characters are discrete units from each other. This includes both block scripts and clustered scripts. Examples include Latin, Greek, Cyrillic, Hebrew, Chinese, and Thai.</summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.isBlockWriting">
-    <summary>
-      <para>The language is a block script, expanding between characters. Examples include Chinese, Japanese, Korean, and Bopomofo.</para>
-    </summary>
+    <summary>The language is a block script, expanding between characters. Examples include Chinese, Japanese, Korean, and Bopomofo.</summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.isDistributedWithinCluster">
-    <summary>
-      <para>The language is justified within glyph clusters, not just between glyph clusters, such as the character sequence of Thai Lu and Sara Am (U+E026, U+E033), which form a single cluster but still expand between them. Examples include Thai, Lao, and Khmer.</para>
-    </summary>
+    <summary>The language is justified within glyph clusters, not just between glyph clusters, such as the character sequence of Thai Lu and Sara Am (U+E026, U+E033), which form a single cluster but still expand between them. Examples include Thai, Lao, and Khmer.</summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.isConnectedWriting">
     <summary>
       <para>The script's clusters are connected to each other (such as the baseline-linked Devanagari), and no separation is added between characters.</para>
-      <para>
-        <b>Note</b>  Cursively linked scripts like Arabic are also connected (but not all connected scripts are cursive).</para>
-      <para>Examples include Devanagari, Arabic, Syriac, Bengala, Gurmukhi, and Ogham. Latin, Chinese, and Thaana are excluded.</para>
-    </summary>
+      <div>
+        <b>Note</b>  Cursively linked scripts like Arabic are also connected (but not all connected scripts are cursive).</div>Examples include Devanagari, Arabic, Syriac, Bengala, Gurmukhi, and Ogham. Latin, Chinese, and Thaana are excluded.</summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.isCursiveWriting">
     <summary>
       <para>The script is naturally cursive (Arabic and Syriac), meaning it uses other justification methods like kashida extension rather than inter-character spacing.</para>
-      <para>
-        <b>Note</b>   Although other scripts like Latin and Japanese might actually support handwritten cursive forms, they are not considered cursive scripts.</para>
-      <para>Examples include Arabic, Syriac, and Mongolian. Thaana, Devanagari, Latin, and Chinese are excluded.</para>
-    </summary>
+      <div>
+        <b>Note</b>   Although other scripts like Latin and Japanese might actually support handwritten cursive forms, they are not considered cursive scripts.</div>Examples include Arabic, Syriac, and Mongolian. Thaana, Devanagari, Latin, and Chinese are excluded.</summary>
   </member>
   <member name="DWRITE_SCRIPT_PROPERTIES.reserved">
-    <summary>
-      <para>Reserved</para>
-    </summary>
+    <summary>Reserved</summary>
   </member>
 </doc>

@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_SHADER_MIN_PRECISION_SUPPORT">
-    <summary>
-      <para>Describes minimum precision support options for shaders in the current graphics driver.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS" /> structure.</para>
-      <para>The returned info just indicates that the graphics hardware can perform HLSL operations at a lower precision than the standard 32-bit float precision, but doesn’t guarantee that the graphics hardware will actually run at a lower precision.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
+    <summary>Describes minimum precision support options for shaders in the current graphics driver.</summary>
   </member>
   <member name="D3D12_SHADER_MIN_PRECISION_SUPPORT.D3D12_SHADER_MIN_PRECISION_SUPPORT_NONE">
-    <summary>
-      <para>The driver supports only full 32-bit precision for all shader stages.</para>
-    </summary>
+    <summary>The driver supports only full 32-bit precision for all shader stages.</summary>
   </member>
   <member name="D3D12_SHADER_MIN_PRECISION_SUPPORT.D3D12_SHADER_MIN_PRECISION_SUPPORT_10_BIT">
-    <summary>
-      <para>The driver supports 10-bit precision.</para>
-    </summary>
+    <summary>The driver supports 10-bit precision.</summary>
   </member>
   <member name="D3D12_SHADER_MIN_PRECISION_SUPPORT.D3D12_SHADER_MIN_PRECISION_SUPPORT_16_BIT">
-    <summary>
-      <para>The driver supports 16-bit precision.</para>
-    </summary>
+    <summary>The driver supports 16-bit precision.</summary>
   </member>
 </doc>

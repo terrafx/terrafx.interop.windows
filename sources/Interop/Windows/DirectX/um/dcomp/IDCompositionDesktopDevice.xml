@@ -3,86 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionDesktopDevice.CreateSurfaceFromHandle">
-    <summary>
-      <para>Creates a new composition surface object that wraps an existing composition surface.</para>
-    </summary>
-    <param name="handle">
-      <para>The handle of an existing composition surface that was created by a call to the <see cref="DCompositionCreateSurfaceHandle" /> function.</para>
-    </param>
-    <param name="surface">
-      <para>The new composition surface object. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <seealso cref="IDCompositionDesktopDevice" />
-    <seealso cref="IDCompositionVisual.SetContent" />
+    <summary>Creates a new composition surface object that wraps an existing composition surface.</summary>
+    <param name="handle">The handle of an existing composition surface that was created by a call to the <see cref="DCompositionCreateSurfaceHandle" /> function.</param>
+    <param name="surface">The new composition surface object. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionDesktopDevice.CreateSurfaceFromHwnd">
-    <summary>
-      <para>Creates a wrapper object that represents the rasterization of a layered window, and that can be associated with a visual for composition.</para>
-    </summary>
-    <param name="hwnd">
-      <para>The handle of the layered window for which to create a wrapper. A layered window is created by specifying WS_EX_LAYERED when creating the window with the <see cref="CreateWindowEx" /> function or by setting WS_EX_LAYERED via <see cref="SetWindowLong" /> after the window has been created.</para>
-    </param>
-    <param name="surface">
-      <para>The new composition surface object. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>You can use the surface pointer in calls to the IDCompositionVisual.SetContent method to set the content of one or more visuals. After setting the content, the visuals compose the contents of the specified layered window as long as the window is layered. If the window is unlayered, the window content disappears from the output of the composition tree. If the window is later re-layered, the window content reappears as long as it is still associated with a visual. If the window is resized, the affected visuals are re-composed.</para>
-      <para>The contents of the window are not cached beyond the life of the window. That is, if the window is destroyed, the affected visuals stop composing the window.</para>
-      <para>If the window is moved off-screen or resized to zero, the system stops composing the content of those visuals. You should use the <see cref="DwmSetWindowAttribute" /> function with the DWMWA_CLOAK flag to "cloak" the layered child window when you need to hide the original window while allowing the system to continue to compose the content of the visuals.</para>
-    </remarks>
-    <seealso cref="IDCompositionDesktopDevice" />
-    <seealso cref="IDCompositionVisual.SetContent" />
+    <summary>Creates a wrapper object that represents the rasterization of a layered window, and that can be associated with a visual for composition.</summary>
+    <param name="hwnd">The handle of the layered window for which to create a wrapper. A layered window is created by specifying WS_EX_LAYERED when creating the window with the <see cref="CreateWindowEx" /> function or by setting WS_EX_LAYERED via <see cref="SetWindowLong" /> after the window has been created.</param>
+    <param name="surface">The new composition surface object. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionDesktopDevice.CreateTargetForHwnd">
-    <summary>
-      <para>Creates a composition target object that is bound to the window that is represented by the specified window handle.</para>
-    </summary>
-    <param name="hwnd">
-      <para>The window to which the composition target object should be bound. This parameter must not be NULL.</para>
-    </param>
-    <param name="topmost">
-      <para>TRUE if the visual tree should be displayed on top of the children of the window specified by the hwnd parameter; otherwise, the visual tree is displayed behind the children.</para>
-    </param>
-    <param name="target">
-      <para>The new composition target object. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>A DirectComposition visual tree must be bound to a window before anything can be displayed on screen. The window can be a top-level window or a child window. In either case, the window can be a layered window, but in all cases the window must belong to the calling process. If the window belongs to a different process, this method returns <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DCOMPOSITION_ERROR_ACCESS_DENIED</a>.</para>
-      <para>When DirectComposition content is composed to the window, the content is always composed on top of whatever is drawn directly to that window through the device context returned by the <see cref="GetDC" /> function, or by calls to DirectX Present methods. However, because window clipping rules apply to DirectComposition content, if the window has child windows, those child windows may clip the visual tree. The topmost parameter determines whether child windows clip the visual tree.</para>
-      <para>Conceptually, each window consists of four layers:</para>
-      <list type="number">
-        <item>
-          <description>The contents drawn directly to the window handle (this is the bottommost layer).</description>
-        </item>
-        <item>
-          <description>An optional DirectComposition visual tree.</description>
-        </item>
-        <item>
-          <description>The contents of all child windows, if any.</description>
-        </item>
-        <item>
-          <description>Another optional DirectComposition visual tree (this is the topmost layer).</description>
-        </item>
-      </list>
-      <para>All four layers are clipped to the window’s visible region.</para>
-      <para>At most, only two composition targets can be created for each window in the system, one topmost and one not topmost. If a composition target is already bound to the specified window at the specified layer, this method fails. When a composition target object is destroyed, the layer it composed is available for use by a new composition target object.</para>
-    </remarks>
-    <seealso cref="IDCompositionDesktopDevice" />
-    <seealso cref="IDCompositionVisual2" />
+    <summary>Creates a composition target object that is bound to the window that is represented by the specified window handle.</summary>
+    <param name="hwnd">The window to which the composition target object should be bound. This parameter must not be NULL.</param>
+    <param name="topmost">TRUE if the visual tree should be displayed on top of the children of the window specified by the hwnd parameter; otherwise, the visual tree is displayed behind the children.</param>
+    <param name="target">The new composition target object. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionDesktopDevice">
-    <summary>
-      <para>An application must use the IDCompositionDesktopDevice interface in order to use DirectComposition in a Win32 desktop application. This interface allows the application to connect a visual tree to a window and to host layered child windows for composition</para>
-    </summary>
-    <seealso cref="IDCompositionDevice2" />
+    <summary>An application must use the IDCompositionDesktopDevice interface in order to use DirectComposition in a Win32 desktop application. This interface allows the application to connect a visual tree to a window and to host layered child windows for composition</summary>
   </member>
 </doc>

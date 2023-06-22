@@ -4,67 +4,24 @@
 <doc>
   <member name="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING">
     <summary>
-      <para>The security binding subtype for specifying the use of a security
-token that is already available to the application in XML form.  The
-security token that is supplied by the application in this binding is
-presented to a service in a WS-Security header according to the
-bindingUsage specified.  This security binding may be included in a
-<see cref="security description" /> only on the
-client side.</para>
+      <para>The security binding subtype for specifying the use of a security token that is already available to the application in XML form. The security token that is supplied by the application in this binding is presented to a service in a WS-Security header according to the bindingUsage specified. This security binding may be included in a<see cref="security description" /> only on the client side.</para>
       <para>This security binding is not supported with the <see cref="WS_NAMEDPIPE_CHANNEL_BINDING" />.</para>
-      <para>Although this binding can be used with any token available in XML
-form, this is commonly used in <a href="https://docs.microsoft.com//windows/desktop/wsw/federation">federation
-scenarios</a>.  For example, a client side token provider such as
-CardSpace may be used to get a token from a security token service,
-and that token may then be presented to a Web Service using this
-security binding.</para>
-      <para>Security note: As with other security tokens and credentials, the
-application is in charge of the risk assessment decision to disclose a
-given XML token (supplied by the application in a
-<see cref="security description" />) to a given
-server (supplied by the application when
-<see cref="opening the channel" />).  In particular, the
-application should consider the threat that the server might use the
-XML token it receives from the client, in turn, to pretend to be the
-client to a 3rd party.  For this threat, the following mitigations
-exist: (A) the server authentication process makes sure that the
-message (and hence the token) is sent only to a server that can speak
-for the address specified by the client application; (B) keyless
-(bearer) tokens are typically usable only at one server (e.g.,
-contoso.com gains little from passing on a contoso.com
-username/password token to another site -- the application security
-design should make sure this property holds); (C) symmetric keyed
-tokens are unusable at any server that doesn't share the same
-symmetric key; (D) asymmetric keyed tokens will sign the timestamp and
-the 'To' header, limiting their applicability to the intended 'To' for
-a narrow time duration.</para>
+      <para>Although this binding can be used with any token available in XML form, this is commonly used in <a href="https://docs.microsoft.com//windows/desktop/wsw/federation">federation
+scenarios</a>. For example, a client side token provider such as CardSpace may be used to get a token from a security token service, and that token may then be presented to a Web Service using this security binding.</para>
+      <para>Security note: As with other security tokens and credentials, the application is in charge of the risk assessment decision to disclose a given XML token (supplied by the application in a<see cref="security description" />) to a given server (supplied by the application when<see cref="opening the channel" />). In particular, the application should consider the threat that the server might use the XML token it receives from the client, in turn, to pretend to be the client to a 3rd party. For this threat, the following mitigations exist: (A) the server authentication process makes sure that the message (and hence the token) is sent only to a server that can speak for the address specified by the client application; (B) keyless (bearer) tokens are typically usable only at one server (e.g., contoso.com gains little from passing on a contoso.com username/password token to another site -- the application security design should make sure this property holds); (C) symmetric keyed tokens are unusable at any server that doesn't share the same symmetric key; (D) asymmetric keyed tokens will sign the timestamp and the 'To' header, limiting their applicability to the intended 'To' for a narrow time duration.</para>
       <para>With this security binding, no security binding properties may be specified:</para>
     </summary>
   </member>
   <member name="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.binding">
-    <summary>
-      <para>The base type from which this security binding subtype and all other security binding subtypes derive.</para>
-    </summary>
+    <summary>The base type from which this security binding subtype and all other security binding subtypes derive.</summary>
   </member>
   <member name="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.bindingUsage">
     <summary>
       <para>How the security token corresponding to this security binding should be bound to a message.</para>
-      <para>Only <see cref="WS_SUPPORTING_MESSAGE_SECURITY_USAGE" /> is
-supported.  With this usage, this security binding provides client
-authentication, but not message protection (such as signing,
-encryption, replay detection).  Thus, this binding must be used
-together with another security binding such as the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> that provides a protected
-channel.</para>
+      <para>Only <see cref="WS_SUPPORTING_MESSAGE_SECURITY_USAGE" /> is supported. With this usage, this security binding provides client authentication, but not message protection (such as signing, encryption, replay detection). Thus, this binding must be used together with another security binding such as the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> that provides a protected channel.</para>
     </summary>
   </member>
   <member name="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.xmlToken">
-    <summary>
-      <para>The XML security token to be used.  This token may be created using <see cref="WsCreateXmlSecurityToken" /> or obtained from a security token
-service using <see cref="WsRequestSecurityToken" />.  When this binding is
-used for creating a channel, a copy of the supplied token is made and
-kept for internal use -- the application continues to own the supplied
-token and is responsible for deleting it with <see cref="WsFreeSecurityToken" /> any time after the channel creation call
-returns.</para>
-    </summary>
+    <summary>The XML security token to be used. This token may be created using <see cref="WsCreateXmlSecurityToken" /> or obtained from a security token service using <see cref="WsRequestSecurityToken" />. When this binding is used for creating a channel, a copy of the supplied token is made and kept for internal use -- the application continues to own the supplied token and is responsible for deleting it with <see cref="WsFreeSecurityToken" /> any time after the channel creation call returns.</summary>
   </member>
 </doc>

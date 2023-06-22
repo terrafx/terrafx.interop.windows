@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFNetProxyLocator.Clone">
-    <summary>
-      <para>Creates a new instance of the default proxy locator.</para>
-    </summary>
-    <param name="ppProxyLocator">
-      <para>Receives a pointer to the new proxy locator object's <see cref="IMFNetProxyLocator" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Creates a new instance of the default proxy locator.</summary>
+    <param name="ppProxyLocator">Receives a pointer to the new proxy locator object's <see cref="IMFNetProxyLocator" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,33 +12,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFNetProxyLocator" />
   </member>
   <member name="IMFNetProxyLocator.FindFirstProxy">
-    <summary>
-      <para>Initializes the proxy locator object.</para>
-    </summary>
-    <param name="pszHost">
-      <para>Null-terminated wide-character string containing the hostname of the destination server.</para>
-    </param>
-    <param name="pszUrl">
-      <para>Null-terminated wide-character string containing the destination URL.</para>
-    </param>
-    <param name="fReserved">
-      <para>Reserved. Set to <b>FALSE</b>.</para>
-    </param>
+    <summary>Initializes the proxy locator object.</summary>
+    <param name="pszHost">Null-terminated wide-character string containing the hostname of the destination server.</param>
+    <param name="pszUrl">Null-terminated wide-character string containing the destination URL.</param>
+    <param name="fReserved">Reserved. Set to <b>FALSE</b>.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -50,24 +39,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFNetProxyLocator" />
   </member>
   <member name="IMFNetProxyLocator.FindNextProxy">
-    <summary>
-      <para>Determines the next proxy to use.</para>
-    </summary>
+    <summary>Determines the next proxy to use.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -75,40 +63,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>There are no more proxy objects.</para>
-          </description>
-        </item>
+          <description>There are no more proxy objects.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFNetProxyLocator" />
   </member>
   <member name="IMFNetProxyLocator.GetCurrentProxy">
-    <summary>
-      <para>Retrieves the current proxy information including hostname and port.</para>
-    </summary>
-    <param name="pszStr">
-      <para>Pointer to a buffer that receives a null-terminated string containing the proxy hostname and port. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="pcchStr">
-      <para>On input, specifies the number of elements in the <i>pszStr</i> array. On output, receives the required size of the buffer.</para>
-    </param>
+    <summary>Retrieves the current proxy information including hostname and port.</summary>
+    <param name="pszStr">Pointer to a buffer that receives a null-terminated string containing the proxy hostname and port. This parameter can be <b>NULL</b>.</param>
+    <param name="pcchStr">On input, specifies the number of elements in the <i>pszStr</i> array. On output, receives the required size of the buffer.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -116,38 +101,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOT_SUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOT_SUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer specified in <i>pszStr</i> is too small.</para>
-          </description>
-        </item>
+          <description>The buffer specified in <i>pszStr</i> is too small.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFNetProxyLocator" />
   </member>
   <member name="IMFNetProxyLocator.RegisterProxyResult">
-    <summary>
-      <para>Keeps a record of the success or failure of using the current proxy.</para>
-    </summary>
+    <summary>Keeps a record of the success or failure of using the current proxy.</summary>
     <param name="hrOp">
-      <para>
-        <b>HRESULT</b> specifying the result of using the current proxy for connection.</para>
-    </param>
+      <b>HRESULT</b> specifying the result of using the current proxy for connection.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -155,19 +139,20 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFNetProxyLocator" />
   </member>
   <member name="IMFNetProxyLocator">
     <summary>
@@ -175,7 +160,5 @@
       <para>Applications can create the proxy locator configured by the application by implementing the <see cref="IMFNetProxyLocatorFactory" /> interface and setting the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfnetsource-proxylocatorfactory-property">MFNETSOURCE_PROXYLOCATORFACTORY</a> property on the source resolver. Otherwise, the network source uses the default Media Foundation implementation.</para>
       <para>To create the default proxy locator, call <see cref="MFCreateProxyLocator" />.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/proxy-support-for-network-sources">Proxy Support for Network Sources</seealso>
   </member>
 </doc>

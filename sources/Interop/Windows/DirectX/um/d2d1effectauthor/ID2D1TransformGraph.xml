@@ -3,203 +3,124 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1TransformGraph.AddNode">
-    <summary>
-      <para>Adds the provided node to the transform graph.</para>
-    </summary>
-    <param name="node">
-      <para>Type: <b><see cref="ID2D1TransformNode" />*</b></para>
-      <para>The node that will be added to the transform graph.</para>
-    </param>
+    <summary>Adds the provided node to the transform graph.</summary>
+    <param name="node">The node that will be added to the transform graph.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This adds a transform node to the transform graph. A node must be added to the transform graph before it can be interconnected in any way.</para>
-      <para>A transform graph cannot be directly added to another transform graph.
-Only interfaces derived from <see cref="ID2D1TransformNode" /> can be added to the transform graph.</para>
-    </remarks>
-    <seealso cref="ID2D1TransformGraph" />
   </member>
   <member name="ID2D1TransformGraph.Clear">
-    <summary>
-      <para>Clears the transform nodes and all connections from the transform graph.</para>
-    </summary>
-    <remarks>
-      <para>Used when enough changes to transfoms would make  editing of the transform graph inefficient.</para>
-    </remarks>
-    <seealso cref="ID2D1TransformGraph" />
+    <summary>Clears the transform nodes and all connections from the transform graph.</summary>
   </member>
   <member name="ID2D1TransformGraph.ConnectNode">
-    <summary>
-      <para>Connects two nodes inside the transform graph.</para>
-    </summary>
-    <param name="fromNode">
-      <para>Type: <b><see cref="ID2D1TransformNode" />*</b></para>
-      <para>The node from which the connection will be made.</para>
-    </param>
-    <param name="toNode">
-      <para>Type: <b><see cref="ID2D1TransformNode" />*</b></para>
-      <para>The node to which the connection will be made.</para>
-    </param>
-    <param name="toNodeInputIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The node input that will be connected.</para>
-    </param>
+    <summary>Connects two nodes inside the transform graph.</summary>
+    <param name="fromNode">The node from which the connection will be made.</param>
+    <param name="toNode">The node to which the connection will be made.</param>
+    <param name="toNodeInputIndex">The node input that will be connected.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_NOT_FOUND = (HRESULT_FROM_WIN32(ERROR_NOT_FOUND))</description>
           <description>Direct2D could not locate the specified node.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Both nodes must already exist in the graph; otherwise, the call fails with <b>D2DERR_NOT_FOUND</b>.</para>
-    </remarks>
-    <seealso cref="ID2D1TransformGraph" />
   </member>
   <member name="ID2D1TransformGraph.ConnectToEffectInput">
-    <summary>
-      <para>Connects a transform node inside the graph to the corresponding effect input of the encapsulating effect.</para>
-    </summary>
-    <param name="toEffectInputIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The effect input to which the transform node will be bound.</para>
-    </param>
-    <param name="node">
-      <para>Type: <b><see cref="ID2D1TransformNode" />*</b></para>
-      <para>The node to which the connection will be made.</para>
-    </param>
-    <param name="toNodeInputIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The node input that will be connected.</para>
-    </param>
+    <summary>Connects a transform node inside the graph to the corresponding effect input of the encapsulating effect.</summary>
+    <param name="toEffectInputIndex">The effect input to which the transform node will be bound.</param>
+    <param name="node">The node to which the connection will be made.</param>
+    <param name="toNodeInputIndex">The node input that will be connected.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_NOT_FOUND = (HRESULT_FROM_WIN32(ERROR_NOT_FOUND))</description>
           <description>Direct2D could not locate the specified node.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1TransformGraph" />
   </member>
   <member name="ID2D1TransformGraph.GetInputCount">
-    <summary>
-      <para>Returns the number of inputs to the transform graph.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of inputs to this transform graph.</para>
-    </returns>
-    <seealso cref="ID2D1TransformGraph" />
+    <summary>Returns the number of inputs to the transform graph.</summary>
+    <returns>The number of inputs to this transform graph.</returns>
   </member>
   <member name="ID2D1TransformGraph.RemoveNode">
-    <summary>
-      <para>Removes the provided node from the transform graph.</para>
-    </summary>
-    <param name="node">
-      <para>Type: <b><see cref="ID2D1TransformNode" />*</b></para>
-      <para>The node that will be removed from the transform graph.</para>
-    </param>
+    <summary>Removes the provided node from the transform graph.</summary>
+    <param name="node">The node that will be removed from the transform graph.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_NOT_FOUND = (HRESULT_FROM_WIN32(ERROR_NOT_FOUND))</description>
           <description>Direct2D could not locate the specified node.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The node must already exist in the graph; otherwise, the call fails with <b>D2DERR_NOT_FOUND</b>.</para>
-      <para>Any connections to this node will be removed when the node is removed.</para>
-      <para>After the node is removed, it cannot be used by the interface until it has been added to the graph by <see cref="AddNode" />.</para>
-    </remarks>
-    <seealso cref="ID2D1TransformGraph" />
   </member>
   <member name="ID2D1TransformGraph.SetOutputNode">
-    <summary>
-      <para>Sets the output node for the transform graph.</para>
-    </summary>
-    <param name="node">
-      <para>Type: <b><see cref="ID2D1TransformNode" />*</b></para>
-      <para>The node that will be considered the output of the transform node.</para>
-    </param>
+    <summary>Sets the output node for the transform graph.</summary>
+    <param name="node">The node that will be considered the output of the transform node.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_NOT_FOUND = (HRESULT_FROM_WIN32(ERROR_NOT_FOUND))</description>
           <description>Direct2D could not locate the specified node.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The node must already exist in the graph; otherwise, the call fails with <b>D2DERR_NOT_FOUND</b>.</para>
-    </remarks>
-    <seealso cref="ID2D1TransformGraph" />
   </member>
   <member name="ID2D1TransformGraph.SetPassthroughGraph">
-    <summary>
-      <para>Uses the specified input as the effect output.</para>
-    </summary>
-    <param name="effectInputIndex">
-      <para>The index of the input to the effect.</para>
-    </param>
+    <summary>Uses the specified input as the effect output.</summary>
+    <param name="effectInputIndex">The index of the input to the effect.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -207,152 +128,39 @@ Only interfaces derived from <see cref="ID2D1TransformNode" /> can be added to t
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_NOT_FOUND = (HRESULT_FROM_WIN32(ERROR_NOT_FOUND))</description>
           <description>Direct2D could not locate the specified node.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1TransformGraph" />
   </member>
   <member name="ID2D1TransformGraph.SetSingleTransformNode">
-    <summary>
-      <para>Sets a single transform node as being equivalent to the whole graph.</para>
-    </summary>
-    <param name="node">
-      <para>Type: <b><see cref="ID2D1TransformNode" />*</b></para>
-      <para>The node to be set.</para>
-    </param>
+    <summary>Sets a single transform node as being equivalent to the whole graph.</summary>
+    <param name="node">The node to be set.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This equivalent to calling <see cref="ID2D1TransformGraph.Clear" />, adding a single node, connecting all of the node inputs to the effect inputs in order, and setting the transform not as the graph output.</para>
-      <h4>Examples</h4>
-      <code>class CMySimpleEffect : public ID2D1EffectImpl
-{
-public:
-
-    IFACEMETHODIMP SetGraph(
-        __in ID2D1TransformGraph   *pGraph
-        )
-    {
-        HRESULT hr = S_OK;
-
-        CMyTransform *pTransform = new CMyTransform();
-
-        hr = pTransform ? S_OK : E_OUTOFMEMORY;
-
-        if (SUCCEEDED(hr))
-        {
-            hr = graph-&gt;SetSingleTransformNode(pTransform);
-
-            pTransform-&gt;Release();
-        }
-
-        return hr;
-    }
-
-private:
-
-    class CMyTransform : public ID2D1DrawTransform
-    {
-        // &lt;Snip&gt; Implementation of transform &lt;/Snip&gt;
-    };
-
-
-};
-
-</code>
-    </remarks>
-    <seealso cref="ID2D1TransformGraph" />
   </member>
   <member name="ID2D1TransformGraph">
-    <summary>
-      <para>Represents a graph of transform nodes.</para>
-    </summary>
-    <remarks>
-      <para>This interface allows a graph of transform nodes to be specified. This interface is passed to <see cref="ID2D1EffectImpl.Initialize" /> to allow an effect implementation to specify a graph of transforms or a single transform.</para>
-      <h4>Examples</h4>
-      <para>This example shows how many of the methods on the <b>ID2D1TransformGraph</b> can be used.</para>
-      <code>
-class CMyEffect : public ID2D1EffectImpl
-{
-public:
-
-    IFACEMETHODIMP SetGraph(
-       __in ID2D1TransformGraph *pGraph
-       )
-    {
-        HRESULT hr = S_OK;
-
-        hr = pGraph-&gt;Clear();
-
-        if (SUCEEDED(hr))
-        {
-            hr = pGraph-&gt;AddNode(_pTransform1);
-        }
-
-        if (SUCCEEDED(hr))
-        {
-            hr = pGraph-&gt;AddNode(_pTransform2);
-        }
-
-        if (SUCCEEDED(hr))
-        {
-            hr = pGraph-&gt;SetOutputNode(_pTransform2);
-        }
-
-        if (SUCCEEDED(hr))
-        {
-            hr = pGraph-&gt;ConnectNode(_pTransform1, _pTransform2, 0);
-        }
-
-        if (SUCCEEDED(hr))
-        {
-            hr = pGraph-&gt;ConnectToEffectInput(0, _pTransform1, 0);
-        }
-
-        return hr;
-    }
-
-private:
-
-    class CMyTransform1 : public ID2D1DrawTransform
-    {
-        // &lt;Snip&gt; The transform implementation, one node input&lt;/Snip&gt;
-    };
-
-    class CMyTransform2 : public ID2D1DrawTransform
-    {
-        // &lt;Snip&gt; A second transform implementation one node input&lt;/Snip&gt;
-    };
-
-    CMyTransform1 *_pTransform1;
-    CMyTransform2 *_pTransform2;
-};
-
-</code>
-    </remarks>
-    <seealso cref="ID2D1EffectImpl" />
+    <summary>Represents a graph of transform nodes.</summary>
   </member>
 </doc>

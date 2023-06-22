@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TsLayoutCode">
-    <summary>
-      <para>Elements of the <b>TsLayoutCode</b> enumeration are used to specify the type of layout change in an <see cref="ITextStoreACPSink.OnLayoutChange" /> or <see cref="ITextStoreAnchorSink.OnLayoutChange" /> notification.</para>
-    </summary>
-    <seealso cref="ITextStoreACPSink.OnLayoutChange " />
-    <seealso cref="ITextStoreAnchorSink.OnLayoutChange " />
+    <summary>Elements of the <b>TsLayoutCode</b> enumeration are used to specify the type of layout change in an <see cref="ITextStoreACPSink.OnLayoutChange" /> or <see cref="ITextStoreAnchorSink.OnLayoutChange" /> notification.</summary>
   </member>
   <member name="TsLayoutCode.TS_LC_CREATE">
-    <summary>
-      <para>The view has just been created.</para>
-    </summary>
+    <summary>The view has just been created.</summary>
   </member>
   <member name="TsLayoutCode.TS_LC_CHANGE">
-    <summary>
-      <para>The view layout has changed.</para>
-    </summary>
+    <summary>The view layout has changed.</summary>
   </member>
   <member name="TsLayoutCode.TS_LC_DESTROY">
-    <summary>
-      <para>The view is about to be destroyed.</para>
-    </summary>
+    <summary>The view is about to be destroyed.</summary>
   </member>
 </doc>

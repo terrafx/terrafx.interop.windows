@@ -3,59 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICDdsParameters">
-    <summary>
-      <para>Specifies the DDS image dimension, <see cref="DXGI_FORMAT" /> and alpha mode of contained data.</para>
-    </summary>
-    <seealso cref="DXGI_FORMAT" />
-    <seealso cref="WICDdsAlphaMode" />
-    <seealso cref="WICDdsDimension" />
+    <summary>Specifies the DDS image dimension, <see cref="DXGI_FORMAT" /> and alpha mode of contained data.</summary>
   </member>
   <member name="WICDdsParameters.Width">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The width, in pixels, of the texture at the largest mip size (mip level 0).</para>
-    </summary>
+    <summary>The width, in pixels, of the texture at the largest mip size (mip level 0).</summary>
   </member>
   <member name="WICDdsParameters.Height">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The height, in pixels, of the texture at the largest mip size (mip level 0). When the DDS image contains a 1-dimensional texture, this value is equal to 1.</para>
-    </summary>
+    <summary>The height, in pixels, of the texture at the largest mip size (mip level 0). When the DDS image contains a 1-dimensional texture, this value is equal to 1.</summary>
   </member>
   <member name="WICDdsParameters.Depth">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The number of slices in the 3D texture. This is equivalent to the depth, in pixels, of the 3D texture at the largest mip size (mip level 0). When the DDS image contains a 1- or 2-dimensional texture, this value is equal to 1.</para>
-    </summary>
+    <summary>The number of slices in the 3D texture. This is equivalent to the depth, in pixels, of the 3D texture at the largest mip size (mip level 0). When the DDS image contains a 1- or 2-dimensional texture, this value is equal to 1.</summary>
   </member>
   <member name="WICDdsParameters.MipLevels">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The number of mip levels contained in the DDS image.</para>
-    </summary>
+    <summary>The number of mip levels contained in the DDS image.</summary>
   </member>
   <member name="WICDdsParameters.ArraySize">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The number of textures in the array in the DDS image.</para>
-    </summary>
+    <summary>The number of textures in the array in the DDS image.</summary>
   </member>
   <member name="WICDdsParameters.DxgiFormat">
-    <summary>
-      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
-      <para>The <see cref="DXGI_FORMAT" /> of the DDS pixel data.</para>
-    </summary>
+    <summary>The <see cref="DXGI_FORMAT" /> of the DDS pixel data.</summary>
   </member>
   <member name="WICDdsParameters.Dimension">
-    <summary>
-      <para>Type: <b><see cref="WICDdsDimension" /></b></para>
-      <para>Specifies the dimension type of the data contained in DDS image (1D, 2D, 3D or cube texture).</para>
-    </summary>
+    <summary>Specifies the dimension type of the data contained in DDS image (1D, 2D, 3D or cube texture).</summary>
   </member>
   <member name="WICDdsParameters.AlphaMode">
-    <summary>
-      <para>Type: <b><see cref="WICDdsAlphaMode" /></b></para>
-      <para>Specifies the alpha behavior of the DDS image.</para>
-    </summary>
+    <summary>Specifies the alpha behavior of the DDS image.</summary>
   </member>
 </doc>

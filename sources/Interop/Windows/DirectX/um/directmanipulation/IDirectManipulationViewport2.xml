@@ -3,59 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDirectManipulationViewport2.AddBehavior">
-    <summary>
-      <para>Adds a behavior to the viewport and returns a cookie to the caller.</para>
-    </summary>
-    <param name="behavior">
-      <para>A behavior created using the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationmanager2-createbehavior">CreateBehavior</a> method.</para>
-    </param>
-    <param name="cookie">
-      <para>A cookie is returned so the caller can remove this behavior later. This allows the caller to release any reference on the behavior and let <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> maintain an appropriate lifetime, similar to event handlers.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code. Attaching a behavior that is already attached to this viewport or another viewport results in a failure.</para>
-    </returns>
-    <remarks>
-      <para>A behavior takes effect immediately after <b>AddBehavior</b> is called. This must be considered when adding a behavior during an active manipulation or inertia phase.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport2">IDirectManipulationViewport2</seealso>
+    <summary>Adds a behavior to the viewport and returns a cookie to the caller.</summary>
+    <param name="behavior">A behavior created using the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationmanager2-createbehavior">CreateBehavior</a> method.</param>
+    <param name="cookie">A cookie is returned so the caller can remove this behavior later. This allows the caller to release any reference on the behavior and let <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> maintain an appropriate lifetime, similar to event handlers.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code. Attaching a behavior that is already attached to this viewport or another viewport results in a failure.</returns>
   </member>
   <member name="IDirectManipulationViewport2.RemoveAllBehaviors">
-    <summary>
-      <para>Removes all behaviors added to the viewport.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>RemoveAllBehaviors</b> only returns an error if the removal of a behavior from the viewport was unsuccessful. In the event that a specific behavior is not removed successfully, <b>RemoveAllBehaviors</b> removes all remaining behaviors.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport2">IDirectManipulationViewport2</seealso>
+    <summary>Removes all behaviors added to the viewport.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport2.RemoveBehavior">
-    <summary>
-      <para>Removes a behavior from the viewport that matches the given cookie.</para>
-    </summary>
-    <param name="cookie">
-      <para>A valid cookie returned from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport2-addbehavior">AddBehavior</a> call on the same viewport.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code. If the behavior has already been removed or if the behavior is not attached to this viewport a failure is returned.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport2">IDirectManipulationViewport2</seealso>
+    <summary>Removes a behavior from the viewport that matches the given cookie.</summary>
+    <param name="cookie">A valid cookie returned from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport2-addbehavior">AddBehavior</a> call on the same viewport.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code. If the behavior has already been removed or if the behavior is not attached to this viewport a failure is returned.</returns>
   </member>
   <member name="IDirectManipulationViewport2">
-    <summary>
-      <para>Provides management of behaviors on a viewport. A behavior affects the functionality of a particular part of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> workflow.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IDirectManipulationViewport2</b> can be used in place of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</a>.</para>
-      <para>Behaviors are created using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager2">IDirectManipulationManager2</a> and an appropriate class ID.</para>
-      <para>A behavior can be attached or removed at any time and takes effect immediately (even during an active manipulation or inertia animation).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Provides management of behaviors on a viewport. A behavior affects the functionality of a particular part of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> workflow.</summary>
   </member>
 </doc>

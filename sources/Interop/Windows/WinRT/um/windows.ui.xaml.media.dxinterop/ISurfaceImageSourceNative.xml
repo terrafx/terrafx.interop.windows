@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISurfaceImageSourceNative.BeginDraw">
+    <summary>Opens the supplied DXGI surface for drawing.</summary>
+    <param name="updateRect">The region of the surface that will be drawn into.</param>
+    <param name="surface">Receives a pointer to the surface for drawing.</param>
+    <param name="offset">Receives the point (x,y) offset of the surface that will be drawn into.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ISurfaceImageSourceNative.EndDraw">
+    <summary>Closes the surface draw operation.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ISurfaceImageSourceNative.SetDevice">
+    <summary>Sets the DXGI device, created with D3D11_CREATE_DEVICE_BGRA_SUPPORT, that will draw the surface. This method must be called from the UI thread.</summary>
+    <param name="device">Pointer to the DXGI device interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ISurfaceImageSourceNative">
+    <summary>
+      <para>Provides the implementation of a shared fixed-size surface for Direct2D drawing.</para>
+      <div>
+        <b>Note</b>  If the surface is larger than the screen size, use <see cref="IVirtualSurfaceImageSourceNative" /> instead.</div>
+    </summary>
+  </member>
+</doc>

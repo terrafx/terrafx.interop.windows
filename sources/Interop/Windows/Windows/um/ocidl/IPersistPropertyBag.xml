@@ -3,53 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPersistPropertyBag.InitNew">
-    <summary>
-      <para>Informs the object that it is being initialized as a newly created object.</para>
-    </summary>
-    <remarks>
-      <para>E_NOTIMPL should not be returned. Return S_OK, even if the object does not perform any function in this method.</para>
-    </remarks>
+    <summary>Informs the object that it is being initialized as a newly created object.</summary>
   </member>
   <member name="IPersistPropertyBag.Load">
-    <summary>
-      <para>Instructs the object to initialize itself using the properties available in the property bag, and to notify the provided error log object when errors occur.</para>
-    </summary>
-    <param name="pPropBag">
-      <para>The address of the caller's property bag, through which the object can read properties. This cannot be NULL.</para>
-    </param>
-    <param name="pErrorLog">
-      <para>The address of the caller's error log, in which the object stores any errors that occur during initialization. This can be NULL; in which case, the caller does not receive errors.</para>
-    </param>
-    <remarks>
-      <para>All property loading must take place in the <b>IPersistPropertyBag.Load</b> function call, because the object cannot hold the IPropertyBag pointer.</para>
-      <para>E_NOTIMPL is not a valid return code, because any object that implements this interface must support the entire functionality of the interface.</para>
-    </remarks>
+    <summary>Instructs the object to initialize itself using the properties available in the property bag, and to notify the provided error log object when errors occur.</summary>
+    <param name="pPropBag">The address of the caller's property bag, through which the object can read properties. This cannot be NULL.</param>
+    <param name="pErrorLog">The address of the caller's error log, in which the object stores any errors that occur during initialization. This can be NULL; in which case, the caller does not receive errors.</param>
   </member>
   <member name="IPersistPropertyBag.Save">
-    <summary>
-      <para>Instructs the object to save its properties to the given property bag, and optionally, to clear the object's dirty flag.</para>
-    </summary>
-    <param name="pPropBag">
-      <para>The address of the caller's property bag, through which the object can write properties. This cannot be NULL.</para>
-    </param>
-    <param name="fClearDirty">
-      <para>A flag indicating whether the object should clear its dirty flag when the "Save" operation is complete. TRUE means clear the flag, and FALSE means leave the flag unaffected. FALSE is used when the caller performs a "Save Copy As" operation.</para>
-    </param>
-    <param name="fSaveAllProperties">
-      <para>A flag indicating whether the object should save all its properties (TRUE), or save only those properties that have changed from the default value (FALSE).</para>
-    </param>
-    <remarks>
-      <para>The caller can request that the object save all properties, or save only those properties that have changed.</para>
-      <para>E_NOTIMPL is not a valid return code, because any object that implements this interface must support the entire functionality of the interface.</para>
-    </remarks>
+    <summary>Instructs the object to save its properties to the given property bag, and optionally, to clear the object's dirty flag.</summary>
+    <param name="pPropBag">The address of the caller's property bag, through which the object can write properties. This cannot be NULL.</param>
+    <param name="fClearDirty">A flag indicating whether the object should clear its dirty flag when the "Save" operation is complete. TRUE means clear the flag, and FALSE means leave the flag unaffected. FALSE is used when the caller performs a "Save Copy As" operation.</param>
+    <param name="fSaveAllProperties">A flag indicating whether the object should save all its properties (TRUE), or save only those properties that have changed from the default value (FALSE).</param>
   </member>
   <member name="IPersistPropertyBag">
-    <summary>
-      <para>Works with <see cref="IPropertyBag" /> and <see cref="IErrorlog" /> to define an individual property-based persistence mechanism.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IPersistPropertyBag</b> provides an object with an IPropertyBag interface through which it can save and load individual properties. The object that implements <b>IPropertyBag</b> can then save those properties in various ways, such as name/value pairs in a text file. Errors encountered in the process (on either side) are recorded in an error log through IErrorlog. This error reporting mechanism works on a per-property basis instead of on all properties at once.</para>
-    </remarks>
+    <summary>Works with <see cref="IPropertyBag" /> and <see cref="IErrorlog" /> to define an individual property-based persistence mechanism.</summary>
   </member>
 </doc>

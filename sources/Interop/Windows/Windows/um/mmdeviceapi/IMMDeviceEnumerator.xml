@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMMDeviceEnumerator.EnumAudioEndpoints">
-    <summary>
-      <para>The <b>EnumAudioEndpoints</b> method generates a collection of audio endpoint devices that meet the specified criteria.</para>
-    </summary>
+    <summary>The <b>EnumAudioEndpoints</b> method generates a collection of audio endpoint devices that meet the specified criteria.</summary>
     <param name="dataFlow">
       <para>The data-flow direction for the endpoint devices in the collection. The caller should set this parameter to one of the following <see cref="EDataFlow" /> enumeration values:</para>
       <para>eRender</para>
@@ -21,9 +19,7 @@
       <para>DEVICE_STATE_UNPLUGGED</para>
       <para>For example, if the caller sets the <i>dwStateMask</i> parameter to DEVICE_STATE_ACTIVE | DEVICE_STATE_UNPLUGGED, the method includes endpoints that are either active or unplugged from their jacks, but excludes endpoints that are on audio adapters that have been disabled or are not present. To include all endpoints, regardless of state, set <i>dwStateMask</i> = DEVICE_STATEMASK_ALL.</para>
     </param>
-    <param name="ppDevices">
-      <para>Pointer to a pointer variable into which the method writes the address of the <see cref="IMMDeviceCollection" /> interface of the device-collection object. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>EnumAudioEndpoints</b> call fails,  <i>*ppDevices</i> is <b>NULL</b>.</para>
-    </param>
+    <param name="ppDevices">Pointer to a pointer variable into which the method writes the address of the <see cref="IMMDeviceCollection" /> interface of the device-collection object. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>EnumAudioEndpoints</b> call fails, <i>*ppDevices</i> is <b>NULL</b>.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -31,57 +27,47 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>ppDevices</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>ppDevices</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Parameter <i>dataFlow</i> or <i>dwStateMask</i> is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Parameter <i>dataFlow</i> or <i>dwStateMask</i> is out of range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For example, the following call enumerates all audio-rendering endpoint devices that are currently active (present and not disabled):</para>
-      <code>
-  hr = pDevEnum-&gt;EnumAudioEndpoints(
-                   eRender, DEVICE_STATE_ACTIVE,
-                   &amp;amp;amp;amp;amp;amp;pEndpoints);
-
-</code>
-      <para>In the preceding code fragment, variable <i>hr</i> is of type <b>HRESULT</b>, <i>pDevEnum</i> is a pointer to an <b>IMMDeviceEnumerator</b> interface, and <i>pEndpoints</i> is a pointer to an <b>IMMDeviceCollection</b> interface.</para>
-      <h4>Examples</h4>
-      <para>For a code example that calls the <b>EnumAudioEndpoints</b> method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-properties">Device Properties</a>.</para>
-    </remarks>
-    <seealso cref="IMMDeviceCollection Interface" />
-    <seealso cref="IMMDeviceEnumerator Interface" />
   </member>
   <member name="IMMDeviceEnumerator.GetDefaultAudioEndpoint">
-    <summary>
-      <para>The <b>GetDefaultAudioEndpoint</b> method retrieves the default audio endpoint for the specified data-flow direction and role.</para>
-    </summary>
+    <summary>The <b>GetDefaultAudioEndpoint</b> method retrieves the default audio endpoint for the specified data-flow direction and role.</summary>
     <param name="dataFlow">
       <para>The data-flow direction for the endpoint device. The caller should set this parameter to one of the following two <see cref="EDataFlow" /> enumeration values:</para>
       <para>eRender</para>
@@ -95,9 +81,7 @@
       <para>eCommunications</para>
       <para>For more information, see Remarks.</para>
     </param>
-    <param name="ppEndpoint">
-      <para>Pointer to a pointer variable into which the method writes the address of the <see cref="IMMDevice" /> interface of the endpoint object for the default audio endpoint device. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>GetDefaultAudioEndpoint</b> call fails,  <i>*ppDevice</i> is <b>NULL</b>.</para>
-    </param>
+    <param name="ppEndpoint">Pointer to a pointer variable into which the method writes the address of the <see cref="IMMDevice" /> interface of the endpoint object for the default audio endpoint device. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>GetDefaultAudioEndpoint</b> call fails, <i>*ppDevice</i> is <b>NULL</b>.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -105,89 +89,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>ppDevice</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>ppDevice</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Parameter <i>dataFlow</i> or <i>role</i> is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>No device is available.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>dataFlow</i> or <i>role</i> is out of range.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTFOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>No device is available.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>
-      </para>
-      <para>In Windows Vista, the MMDevice API supports <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles">device roles</a> but the system-supplied user interface programs do not. The user interface in Windows Vista enables the user to select a default audio device for rendering and a default audio device for capture. When the user changes the default rendering or capture device, the system assigns all three device roles (eConsole, eMultimedia, and eCommunications) to that device. Thus, <b>GetDefaultAudioEndpoint</b> always selects the default rendering or capture device, regardless of which role is indicated by the <i>role</i> parameter. In a future version of Windows, the user interface might enable the user to assign individual roles to different devices. In that case, the selection of a rendering or capture device by <b>GetDefaultAudioEndpoint</b> might depend on the <i>role</i> parameter. Thus, the behavior of an audio application developed to run in Windows Vista might change when run in a future version of Windows. For more information, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles-in-windows-vista">Device Roles in Windows Vista</a>.</para>
-      <para>This method retrieves the default endpoint device for the specified data-flow direction (rendering or capture) and role. For example, a client can get the default console playback device by making the following call:</para>
-      <code>
-  hr = pDevEnum-&gt;GetDefaultAudioEndpoint(
-                   eRender, eConsole, &amp;amp;amp;amp;amp;amp;pDeviceOut);
-
-</code>
-      <para>In the preceding code fragment, variable <i>hr</i> is of type <b>HRESULT</b>, <i>pDevEnum</i> is a pointer to an <b>IMMDeviceEnumerator</b> interface, and <i>pDeviceOut</i> is a pointer to an <b>IMMDevice</b> interface.</para>
-      <para>A Windows system might contain some combination of audio endpoint devices such as desktop speakers, high-fidelity headphones, desktop microphones, headsets with speaker and microphones, and high-fidelity multichannel speakers. The user can assign appropriate roles to the devices. For example, an application that manages voice communications streams can call <b>GetDefaultAudioEndpoint</b> to identify the designated rendering and capture devices for that role.</para>
-      <para>If only a single rendering or capture device is available, the system always assigns all three rendering or capture roles to that device. If the method fails to find a rendering or capture device for the specified role, this means that no rendering or capture device is available at all. If no device is available, the method sets  <i>*ppEndpoint</i> = <b>NULL</b> and returns ERROR_NOT_FOUND.</para>
-      <para>For code examples that call the <b>GetDefaultAudioEndpoint</b> method, see the following topics:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/rendering-a-stream">Rendering a Stream</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-events-for-legacy-audio-applications">Audio Events for Legacy Audio Applications</a>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMMDevice Interface" />
-    <seealso cref="IMMDeviceEnumerator Interface" />
   </member>
   <member name="IMMDeviceEnumerator.GetDevice">
-    <summary>
-      <para>The <b>GetDevice</b> method retrieves an audio endpoint device that is identified by an <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a>.</para>
-    </summary>
-    <param name="pwstrId">
-      <para>Pointer to a string containing the endpoint ID. The caller typically obtains this string from the <see cref="IMMDevice.GetId" /> method or from one of the methods in the <see cref="IMMNotificationClient" /> interface.</para>
-    </param>
-    <param name="ppDevice">
-      <para>Pointer to a pointer variable into which the method writes the address of the <see cref="IMMDevice" /> interface for the specified device. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>GetDevice</b> call fails,  <i>*ppDevice</i> is <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>GetDevice</b> method retrieves an audio endpoint device that is identified by an <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a>.</summary>
+    <param name="pwstrId">Pointer to a string containing the endpoint ID. The caller typically obtains this string from the <see cref="IMMDevice.GetId" /> method or from one of the methods in the <see cref="IMMNotificationClient" /> interface.</param>
+    <param name="ppDevice">Pointer to a pointer variable into which the method writes the address of the <see cref="IMMDevice" /> interface for the specified device. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>GetDevice</b> call fails, <i>*ppDevice</i> is <b>NULL</b>.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -195,95 +151,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>pwstrId</i> or <i>ppDevice</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>pwstrId</i> or <i>ppDevice</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The device ID does not identify an audio device that is in this system.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTFOUND</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The device ID does not identify an audio device that is in this system.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If two programs are running in two different processes and both need to access the same audio endpoint device, one program cannot simply pass the device's <b>IMMDevice</b> interface to the other program. However, the programs can access the same device by following these steps:</para>
-      <list type="number">
-        <item>
-          <description>The first program calls the <b>IMMDevice.GetId</b> method in the first process to obtain the endpoint ID string that identifies the device.</description>
-        </item>
-        <item>
-          <description>The first program passes the endpoint ID string across the process boundary to the second program.</description>
-        </item>
-        <item>
-          <description>To obtain a reference to the device's <b>IMMDevice</b> interface in the second process, the second program calls <b>GetDevice</b> with the endpoint ID string.</description>
-        </item>
-      </list>
-      <para>For more information about the <b>GetDevice</b> method, see the following topics:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">Endpoint ID Strings</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-events-for-legacy-audio-applications">Audio Events for Legacy Audio Applications</a>
-          </description>
-        </item>
-      </list>
-      <para>For code examples that use the <b>GetDevice</b> method, see the following topics:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-properties">Device Properties</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-events">Device Events</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-ikscontrol-interface-to-access-audio-properties">Using the IKsControl Interface to Access Audio Properties</a>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMMDevice Interface" />
-    <seealso cref="IMMDevice.GetId" />
-    <seealso cref="IMMDeviceEnumerator Interface" />
-    <seealso cref="IMMNotificationClient Interface" />
   </member>
   <member name="IMMDeviceEnumerator.RegisterEndpointNotificationCallback">
-    <summary>
-      <para>The <b>RegisterEndpointNotificationCallback</b> method registers a client's notification callback interface.</para>
-    </summary>
-    <param name="pClient">
-      <para>Pointer to the <see cref="IMMNotificationClient" /> interface that the client is registering for notification callbacks.</para>
-    </param>
+    <summary>The <b>RegisterEndpointNotificationCallback</b> method registers a client's notification callback interface.</summary>
+    <param name="pClient">Pointer to the <see cref="IMMNotificationClient" /> interface that the client is registering for notification callbacks.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -291,45 +200,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>pNotify</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>pNotify</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method registers an IMMNotificationClient interface to be called by the system when the roles, state, existence, or properties of an endpoint device change. The caller implements the IMMNotificationClient interface.</para>
-      <para>When notifications are no longer needed, the client can call the <see cref="IMMDeviceEnumerator.UnregisterEndpointNotificationCallback" /> method to terminate the notifications.</para>
-      <para>The client must ensure that the <see cref="IMMNotificationClient" /> object is not released after the <b>RegisterEndpointNotificationCallback</b> call and before calling <see cref="UnregisterEndpointNotificationCallback" />. These methods do not call the client's <b>IMMNotificationClient.AddRef</b> and <b>IMMNotificationClient.Release</b> implementations. The client is responsible for maintaining the reference count of the <b>IMMNotificationClient</b> object. The client must increment the count if the <b>RegisterEndpointNotificationCallback</b> call succeeds and release the final reference only after calling <b>UnregisterEndpointNotificationCallback</b> or implement some other mechanism to ensure that the object is not deleted before <b>UnregisterEndpointNotificationCallback</b> is called. Otherwise, the application leaks the resources held by the <b>IMMNotificationClient</b> and any other object that is implemented in the same container.</para>
-      <para>For more information about the <b>AddRef</b> and <b>Release</b> methods, see the discussion of the <b>IUnknown</b> interface in the Windows SDK documentation.</para>
-    </remarks>
-    <seealso cref="IMMDeviceEnumerator Interface" />
-    <seealso cref="IMMDeviceEnumerator.UnregisterEndpointNotificationCallback" />
-    <seealso cref="IMMNotificationClient Interface" />
   </member>
   <member name="IMMDeviceEnumerator.UnregisterEndpointNotificationCallback">
-    <summary>
-      <para>The <b>UnregisterEndpointNotificationCallback</b> method deletes the registration of a notification interface that the client registered in a previous call to the <see cref="IMMDeviceEnumerator.RegisterEndpointNotificationCallback" /> method.</para>
-    </summary>
-    <param name="pClient">
-      <para>Pointer to the client's <see cref="IMMNotificationClient" /> interface. The client passed this same interface pointer to the device enumerator in a previous call to the <see cref="IMMDeviceEnumerator.RegisterEndpointNotificationCallback" /> method. For more information, see Remarks.</para>
-    </param>
+    <summary>The <b>UnregisterEndpointNotificationCallback</b> method deletes the registration of a notification interface that the client registered in a previous call to the <see cref="IMMDeviceEnumerator.RegisterEndpointNotificationCallback" /> method.</summary>
+    <param name="pClient">Pointer to the client's <see cref="IMMNotificationClient" /> interface. The client passed this same interface pointer to the device enumerator in a previous call to the <see cref="IMMDeviceEnumerator.RegisterEndpointNotificationCallback" /> method. For more information, see Remarks.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -337,35 +237,32 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>pNotify</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>pNotify</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTFOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified notification interface was not found.</para>
-          </description>
-        </item>
+          <description>The specified notification interface was not found.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The client must ensure that the <see cref="IMMNotificationClient" /> object is not released after the <see cref="RegisterEndpointNotificationCallback" /> call and before calling <b>UnregisterEndpointNotificationCallback</b>. These methods do not call the client's <b>IMMNotificationClient.AddRef</b> and <b>IMMNotificationClient.Release</b> implementations. The client is responsible for maintaining the reference count of the <b>IMMNotificationClient</b> object. The client must increment the count if the <b>RegisterEndpointNotificationCallback</b> call succeeds and release the final reference only after calling <b>UnregisterEndpointNotificationCallback</b> or implement some other mechanism to ensure that the object is not deleted before <b>UnregisterEndpointNotificationCallback</b> is called. Otherwise, the application leaks the resources held by the <b>IMMNotificationClient</b> and any other object that is implemented in the same container.</para>
-      <para>For more information about the <b>AddRef</b> and <b>Release</b> methods, see the discussion of the <b>IUnknown</b> interface in the Windows SDK documentation.</para>
-    </remarks>
-    <seealso cref="IMMDeviceEnumerator Interface" />
-    <seealso cref="IMMDeviceEnumerator.RegisterEndpointNotificationCallback" />
-    <seealso cref="IMMNotificationClient Interface" />
   </member>
   <member name="IMMDeviceEnumerator">
     <summary>
@@ -386,11 +283,5 @@
         </item>
       </list>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso cref="IMMDevice Interface" />
-    <seealso cref="IMMDeviceCollection Interface" />
-    <seealso cref="IMMDeviceCollection.Item" />
-    <seealso cref="IMMDeviceEnumerator.EnumAudioEndpoints" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/mmdevice-api">MMDevice API</seealso>
   </member>
 </doc>

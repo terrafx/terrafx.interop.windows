@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_HEAP_FLAGS">
-    <summary>
-      <para>Specifies heap options for video encoding.</para>
-    </summary>
+    <summary>Specifies heap options for video encoding.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_HEAP_FLAGS.D3D12_VIDEO_ENCODER_HEAP_FLAG_NONE">
-    <summary>
-      <para>No flags.</para>
-    </summary>
+    <summary>No flags.</summary>
   </member>
 </doc>

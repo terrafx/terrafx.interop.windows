@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICY_AUDIT_SID_ARRAY">
+    <summary>The <b>POLICY_AUDIT_SID_ARRAY</b> structure specifies an array of <see cref="SID" /> structures that represent Windows users or groups.</summary>
+  </member>
+  <member name="POLICY_AUDIT_SID_ARRAY.UsersCount">
+    <summary>The number of <see cref="SID" /> structures in the <b>UserSidArray</b> array.</summary>
+  </member>
+  <member name="POLICY_AUDIT_SID_ARRAY.UserSidArray.size_is"></member>
+  <member name="POLICY_AUDIT_SID_ARRAY.UserSidArray.size_is.UsersCount"></member>
+  <member name="POLICY_AUDIT_SID_ARRAY.UserSidArray">
+    <summary>A pointer to an array of pointers to <see cref="SID" /> structures that specify Windows users or groups.</summary>
+  </member>
+</doc>

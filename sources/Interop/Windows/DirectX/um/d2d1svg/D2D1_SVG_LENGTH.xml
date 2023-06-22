@@ -3,14 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_LENGTH">
-    <summary>
-      <para>Represents an SVG length.</para>
-    </summary>
+    <summary>Represents an SVG length.</summary>
   </member>
-  <member name="D2D1_SVG_LENGTH.value">
-    <summary></summary>
-  </member>
-  <member name="D2D1_SVG_LENGTH.units">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SVG_LENGTH.value"></member>
+  <member name="D2D1_SVG_LENGTH.units"></member>
 </doc>

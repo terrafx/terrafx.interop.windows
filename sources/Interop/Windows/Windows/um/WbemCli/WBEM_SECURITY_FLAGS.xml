@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEM_SECURITY_FLAGS">
-    <summary>
-      <para>Contains flags used for setting security access levels.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/event-security-constants">Event Security Constants</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/namespace-access-rights-constants">Namespace Access Rights Constants</seealso>
+    <summary>Contains flags used for setting security access levels.</summary>
   </member>
   <member name="WBEM_SECURITY_FLAGS.WBEM_ENABLE">
-    <summary>
-      <para>Enables the account and grants the user read permissions. This is a default access right for all users and corresponds to the Enable Account permission on the Security tab of the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/gloss-w">WMI Control</a>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/setting-namespace-security-with-the-wmi-control">Setting Namespace Security with the WMI Control</a>.</para>
-    </summary>
+    <summary>Enables the account and grants the user read permissions. This is a default access right for all users and corresponds to the Enable Account permission on the Security tab of the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/gloss-w">WMI Control</a>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/setting-namespace-security-with-the-wmi-control">Setting Namespace Security with the WMI Control</a>.</summary>
   </member>
   <member name="WBEM_SECURITY_FLAGS.WBEM_METHOD_EXECUTE">
     <summary>
@@ -21,33 +15,21 @@
     </summary>
   </member>
   <member name="WBEM_SECURITY_FLAGS.WBEM_FULL_WRITE_REP">
-    <summary>
-      <para>Allows a user account to write to classes in the WMI repository as well as instances. A user cannot write to system classes. Only members of the Administrators group have this permission. <b>WBEM_FULL_WRITE_REP</b> corresponds to the Full Write permission on the Security tab of the WMI Control.</para>
-    </summary>
+    <summary>Allows a user account to write to classes in the WMI repository as well as instances. A user cannot write to system classes. Only members of the Administrators group have this permission. <b>WBEM_FULL_WRITE_REP</b> corresponds to the Full Write permission on the Security tab of the WMI Control.</summary>
   </member>
   <member name="WBEM_SECURITY_FLAGS.WBEM_PARTIAL_WRITE_REP">
-    <summary>
-      <para>Allows you to write data to instances only, not classes. A user cannot write classes to the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/gloss-w">WMI repository</a>. Only members of the Administrators group have this right. <b>WBEM_PARTIAL_WRITE_REP</b> corresponds to the Partial Write permission on the Security tab of the WMI Control.</para>
-    </summary>
+    <summary>Allows you to write data to instances only, not classes. A user cannot write classes to the <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/gloss-w">WMI repository</a>. Only members of the Administrators group have this right. <b>WBEM_PARTIAL_WRITE_REP</b> corresponds to the Partial Write permission on the Security tab of the WMI Control.</summary>
   </member>
   <member name="WBEM_SECURITY_FLAGS.WBEM_WRITE_PROVIDER">
-    <summary>
-      <para>Allows writing classes and instances to providers. Note that providers can do additional access checks when impersonating a user. This is a default access right for all users and corresponds to the Provider Write permission on the Security tab of the WMI Control.</para>
-    </summary>
+    <summary>Allows writing classes and instances to providers. Note that providers can do additional access checks when impersonating a user. This is a default access right for all users and corresponds to the Provider Write permission on the Security tab of the WMI Control.</summary>
   </member>
   <member name="WBEM_SECURITY_FLAGS.WBEM_REMOTE_ACCESS">
-    <summary>
-      <para>Allows a user account to remotely perform any operations allowed by the permissions described above. Only members of the Administrators group have this right. <b>WBEM_REMOTE_ACCESS</b> corresponds to the Remote Enable permission on the Security tab of the WMI Control.</para>
-    </summary>
+    <summary>Allows a user account to remotely perform any operations allowed by the permissions described above. Only members of the Administrators group have this right. <b>WBEM_REMOTE_ACCESS</b> corresponds to the Remote Enable permission on the Security tab of the WMI Control.</summary>
   </member>
   <member name="WBEM_SECURITY_FLAGS.WBEM_RIGHT_SUBSCRIBE">
-    <summary>
-      <para>Specifies that a consumer can subscribe to the events delivered to a sink. Used in <see cref="IWbemEventSink.SetSinkSecurity" />.</para>
-    </summary>
+    <summary>Specifies that a consumer can subscribe to the events delivered to a sink. Used in <see cref="IWbemEventSink.SetSinkSecurity" />.</summary>
   </member>
   <member name="WBEM_SECURITY_FLAGS.WBEM_RIGHT_PUBLISH">
-    <summary>
-      <para>Specifies that the account can  publish events to the instance of <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--eventfilter">__EventFilter</a> that defines the event filter for a permanent consumer. Available in wbemcli.h.</para>
-    </summary>
+    <summary>Specifies that the account can publish events to the instance of <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/--eventfilter">__EventFilter</a> that defines the event filter for a permanent consumer. Available in wbemcli.h.</summary>
   </member>
 </doc>

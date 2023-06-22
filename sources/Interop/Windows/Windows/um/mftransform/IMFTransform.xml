@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFTransform.AddInputStreams">
-    <summary>
-      <para>Adds one or more new input streams to this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="cStreams">
-      <para>Number of streams to add.</para>
-    </param>
-    <param name="adwStreamIDs">
-      <para>Array of stream identifiers. The new stream identifiers must not match any existing input streams.</para>
-    </param>
+    <summary>Adds one or more new input streams to this Media Foundation transform (MFT).</summary>
+    <param name="cStreams">Number of streams to add.</param>
+    <param name="adwStreamIDs">Array of stream identifiers. The new stream identifiers must not match any existing input streams.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -19,53 +13,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The MFT has a fixed number of input streams.</para>
-          </description>
-        </item>
+          <description>The MFT has a fixed number of input streams.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the new streams exceed the maximum number of input streams for this transform, the method returns <b>E_INVALIDARG.</b> To find the maximum number of input streams, call <see cref="IMFTransform.GetStreamLimits" />.</para>
-      <para>If any of the new stream identifiers conflicts with an existing input stream, the method returns <b>E_INVALIDARG</b>.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTAddInputStreams</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.DeleteInputStream">
-    <summary>
-      <para>Removes an input stream from this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwStreamID">
-      <para>Identifier of the input stream to remove.</para>
-    </param>
+    <summary>Removes an input stream from this Media Foundation transform (MFT).</summary>
+    <param name="dwStreamID">Identifier of the input stream to remove.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -73,74 +62,72 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The transform has a fixed number of input streams.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream is not removable, or the transform currently has the minimum number of input streams it can support.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The transform has a fixed number of input streams.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid stream identifier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_INPUT_REMAINING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The stream is not removable, or the transform currently has the minimum number of input streams it can support.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid stream identifier.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_INPUT_REMAINING</b>
-            </para>
-          </description>
-          <description>
-            <para>The transform has unprocessed input buffers for the specified stream.</para>
-          </description>
-        </item>
+          <description>The transform has unprocessed input buffers for the specified stream.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the transform has a fixed number of input streams, the method returns <b>E_NOTIMPL</b>.</para>
-      <para>An MFT might support this method but not allow certain input streams to be removed. If an input stream can be removed, the <see cref="IMFTransform.GetInputStreamInfo" /> method returns the <b>MFT_INPUT_STREAM_REMOVABLE</b> flag for that stream. Otherwise, the stream cannot be removed, and the method returns <b>MF_E_INVALIDREQUEST</b>. The method also fails if the MFT currently has the minimum number of input streams that it requires. To find the minimum number of streams, call <see cref="IMFTransform.GetStreamLimits" />.</para>
-      <para>If the transform still has unprocessed input for that stream, the method might succeed or it might return <b>MF_E_TRANSFORM_INPUT_REMAINING</b>. If the method succeeds, the MFT will continue to process the remaining input after the stream is removed. If the method returns <b>MF_E_TRANSFORM_INPUT_REMAINING</b>, you must clear the input buffers before removing the stream. To clear the input buffers, either call <see cref="IMFTransform.ProcessOutput" /> or else call <see cref="IMFTransform.ProcessMessage" /> with the <b>MFT_MESSAGE_COMMAND_FLUSH</b> to flush the MFT. Then call the <b>DeleteInputStream</b> again. An MFT should never discard input buffers when <b>DeleteInputStream</b> is called.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTDeleteInputStream</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.GetAttributes">
-    <summary>
-      <para>Gets the global attribute store for this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="pAttributes">
-      <para>Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets the global attribute store for this Media Foundation transform (MFT).</summary>
+    <param name="pAttributes">Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -148,49 +135,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The MFT does not support attributes.</para>
-          </description>
-        </item>
+          <description>The MFT does not support attributes.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Use the <see cref="IMFAttributes" /> pointer retrieved by this method to get or set attributes that apply to the entire MFT. To get the attribute store for an input stream, call <see cref="IMFTransform.GetInputStreamAttributes" />. To get the attribute store for an output stream, call <see cref="IMFTransform.GetOutputStreamAttributes" />.</para>
-      <para>Implementation of this method is optional unless the MFT needs to support a particular set of attributes. Exception: Hardware-based MFTs must implement this method. See <a href="https://docs.microsoft.com//windows/desktop/medfound/hardware-mfts">Hardware MFTs</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/transform-attributes">Transform Attributes</seealso>
   </member>
   <member name="IMFTransform.GetInputAvailableType">
-    <summary>
-      <para>Gets an available media type for an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="dwTypeIndex">
-      <para>Index of the media type to retrieve. Media types are indexed from zero and returned in approximate order of preference.</para>
-    </param>
-    <param name="ppType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface.</para>
-    </param>
+    <summary>Gets an available media type for an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="dwTypeIndex">Index of the media type to retrieve. Media types are indexed from zero and returned in approximate order of preference.</param>
+    <param name="ppType">Receives a pointer to the <see cref="IMFMediaType" /> interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -198,82 +174,73 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The MFT does not have a list of available input types.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream identifier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The MFT does not have a list of available input types.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_MORE_TYPES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>dwTypeIndex</i> parameter is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid stream identifier.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_MORE_TYPES</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwTypeIndex</i> parameter is out of range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>You must set the output types before setting the input types.</para>
-          </description>
-        </item>
+          <description>You must set the output types before setting the input types.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The MFT defines a list of available media types for each input stream and orders them by preference. This method enumerates the available media types for an input stream. To enumerate the available types, increment <i>dwTypeIndex</i> until the method returns <b>MF_E_NO_MORE_TYPES</b>.</para>
-      <para>Setting the media type on one stream might change the available types for another stream, or change the preference order. However, an MFT is not required to update the list of available types dynamically. The only guaranteed way to test whether you can set a particular input type is to call <see cref="IMFTransform.SetInputType" />.</para>
-      <para>In some cases, an MFT cannot return a list of input types until one or more output types are set. If so, the method returns <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>.</para>
-      <para>An MFT is not required to implement this method. However, most MFTs should implement this method, unless the supported types are simple and can be discovered through the <see cref="MFTGetInfo" /> function.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetInputAvailableType</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-      <para>For encoders, after the output type is set, <b>GetInputAvailableType</b> must return a list of input types that are compatible with the current output type. This means that all types returned by <b>GetInputAvailableType</b> after the output type is set must be valid types for <see cref="SetInputType" />.</para>
-      <para>Encoders should reject input types if the attributes of the input media type and output media type do not match, such as resolution setting with <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-size-attribute">MF_MT_FRAME_SIZE</a>, nominal range setting with <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-nominal-range-attribute">MF_MT_VIDEO_NOMINAL_RANGE</a>, or frame rate setting with MF_MT_FRAME_SIZE</para>
-      <h3>Implementation Notes</h3>
-      <para>If the MFT stores a media type internally, the MFT should return a clone of the media  type, not a pointer to the original type. Otherwise, the caller might modify the type and alter the internal state of the MFT.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.GetInputCurrentType">
-    <summary>
-      <para>Gets the current media type for an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="ppType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets the current media type for an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="ppType">Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -281,57 +248,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid stream identifier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid stream identifier.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>The input media type has not been set.</para>
-          </description>
-        </item>
+          <description>The input media type has not been set.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the specified input stream does not yet have a media type, the method returns <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>. Most MFTs do not set any default media types when first created. Instead, the client must set the media type by calling <see cref="IMFTransform.SetInputType" />.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetInputCurrentType</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-      <h3>Implementation Notes</h3>
-      <para>The MFT should return a clone of the media  type, not a pointer to the original type. Otherwise, the caller might modify the type and alter the internal state of the MFT.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.GetInputStatus">
-    <summary>
-      <para>Queries whether an input stream on this Media Foundation transform (MFT) can accept more data.</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pdwFlags">
-      <para>Receives a member of the <see cref="_MFT_INPUT_STATUS_FLAGS" /> enumeration, or zero. If the value is <b>MFT_INPUT_STATUS_ACCEPT_DATA</b>, the stream specified in <i>dwInputStreamID</i> can accept more input data.</para>
-    </param>
+    <summary>Queries whether an input stream on this Media Foundation transform (MFT) can accept more data.</summary>
+    <param name="dwInputStreamID">Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="pdwFlags">Receives a member of the <see cref="_MFT_INPUT_STATUS_FLAGS" /> enumeration, or zero. If the value is <b>MFT_INPUT_STATUS_ACCEPT_DATA</b>, the stream specified in <i>dwInputStreamID</i> can accept more input data.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -339,57 +298,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid stream identifier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid stream identifier.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>The media type is not set on one or more streams.</para>
-          </description>
-        </item>
+          <description>The media type is not set on one or more streams.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the method returns the <b>MFT_INPUT_STATUS_ACCEPT_DATA</b> flag, you can deliver an input sample to the specified stream by calling <see cref="IMFTransform.ProcessInput" />. If the method succeeds but does not return any flags in the <i>pdwFlags</i> parameter, it means the input stream already has as much data as it can accept.</para>
-      <para>Use this method to test whether the input stream is ready to accept more data, without incurring the overhead of allocating a new sample and calling <see cref="ProcessInput" />.</para>
-      <para>After the client has set valid media types on all of the streams, the MFT should always be in one of two states: Able to accept more input, or able to produce more output (or both).</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetInputStatus</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.GetInputStreamAttributes">
-    <summary>
-      <para>Gets the attribute store for an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pAttributes">
-      <para>Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets the attribute store for an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="pAttributes">Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -397,56 +348,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The MFT does not support input stream attributes.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The MFT does not support input stream attributes.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid stream identifier.</para>
-          </description>
-        </item>
+          <description>Invalid stream identifier.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Implementation of this method is optional unless the MFT needs to support a particular set of attributes.</para>
-      <para>To get the attribute store for the entire MFT, call <see cref="IMFTransform.GetAttributes" />.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/transform-attributes">Transform Attributes</seealso>
   </member>
   <member name="IMFTransform.GetInputStreamInfo">
-    <summary>
-      <para>Gets the buffer requirements and other information for an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pStreamInfo">
-      <para>Pointer to an <see cref="MFT_INPUT_STREAM_INFO" /> structure. The method fills the structure with information about the input stream.</para>
-    </param>
+    <summary>Gets the buffer requirements and other information for an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="pStreamInfo">Pointer to an <see cref="MFT_INPUT_STREAM_INFO" /> structure. The method fills the structure with information about the input stream.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -454,48 +398,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid stream identifier.</para>
-          </description>
-        </item>
+          <description>Invalid stream identifier.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>It is valid to call this method before setting the media types. Note that the results of this call can change dynamically after the media type changes and after <see cref="ProcessInput" /> is called, so you may need to call this method again after either of these occur.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetInputStreamInfo</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.GetOutputAvailableType">
-    <summary>
-      <para>Gets an available media type for an output stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwOutputStreamID">
-      <para>Output stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="dwTypeIndex">
-      <para>Index of the media type to retrieve. Media types are indexed from zero and returned in approximate order of preference.</para>
-    </param>
-    <param name="ppType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets an available media type for an output stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwOutputStreamID">Output stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="dwTypeIndex">Index of the media type to retrieve. Media types are indexed from zero and returned in approximate order of preference.</param>
+    <param name="ppType">Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -503,109 +437,73 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The MFT does not have a list of available output types.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream identifier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The MFT does not have a list of available output types.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_MORE_TYPES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>dwTypeIndex</i> parameter is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid stream identifier.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_MORE_TYPES</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwTypeIndex</i> parameter is out of range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>You must set the input types before setting the output types.</para>
-          </description>
-        </item>
+          <description>You must set the input types before setting the output types.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The MFT defines a list of available media types for each output stream and orders them by preference. This method enumerates the available media types for an output stream. To enumerate the available types, increment <i>dwTypeIndex</i> until the method returns MF_<b>E_NO_MORE_TYPES</b>.</para>
-      <para>Setting the media type on one stream can change the available types for another stream (or change the preference order). However, an MFT is not required to update the list of available types dynamically. The only guaranteed way to test whether you can set a particular input type is to call <see cref="IMFTransform.SetOutputType" />.</para>
-      <para>In some cases, an MFT cannot return a list of output types until one or more input types are set. If so, the method returns <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>.</para>
-      <para>An MFT is not required to implement this method. However, most MFTs should implement this method, unless the supported types are simple and can be discovered through the <see cref="MFTGetInfo" /> function.</para>
-      <para>This method can return a <i>partial</i> media type. A partial media type contains an incomplete description of a format, and is used to provide a hint to the caller. For example, a partial type might include just the major type and subtype GUIDs. However, after the client sets the input types on the MFT, the MFT should generally return at least one complete output type, which can be used without further modification.
-For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/complete-and-partial-media-types">Complete and Partial Media Types</a>.</para>
-      <para>Some MFTs cannot provide an accurate list of output types until the MFT receives the first input sample. For example, the MFT might need to read the first packet header to deduce the format. An MFT should handle this situation as follows:</para>
-      <list type="number">
-        <item>
-          <description>Before the MFT receives any input, it offers a list of one or more output types that it could possibly produce. For example, an MPEG-2 decoder might return a media type that describes the MPEG-2 main profile/main level.
-</description>
-        </item>
-        <item>
-          <description>The client selects one of these types (generally the first) and sets it on the output stream.
-</description>
-        </item>
-        <item>
-          <description>The client delivers the first input sample by calling <see cref="IMFTransform.ProcessInput" />.
-</description>
-        </item>
-        <item>
-          <description>If the output type does not conform to the input data, the transform signals a format change in the <see cref="ProcessOutput" /> method. For more information about format changes, see <see cref="IMFTransform.ProcessOutput" />.
-</description>
-        </item>
-        <item>
-          <description>The calls <b>GetOutputAvailableType</b> again. At this point, the method should return an updated list of types that reflects the input data.
-</description>
-        </item>
-        <item>
-          <description>The client selects a new output type from this list and calls <see cref="SetOutputType" />.
-</description>
-        </item>
-      </list>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetOutputAvailableType</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-      <h3>Implementation Notes</h3>
-      <para>If the MFT stores a media type internally, the MFT should return a clone of the media  type, not a pointer to the original type. Otherwise, the caller might modify the type and alter the internal state of the MFT.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.GetOutputCurrentType">
-    <summary>
-      <para>Gets the current media type for an output stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwOutputStreamID">
-      <para>Output stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="ppType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets the current media type for an output stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwOutputStreamID">Output stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="ppType">Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -613,54 +511,48 @@ For more information, see <a href="https://docs.microsoft.com//windows/desktop/m
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid stream identifier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid stream identifier.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>The output media type has not been set.</para>
-          </description>
-        </item>
+          <description>The output media type has not been set.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the specified output stream does not yet have a media type, the method returns <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>. Most MFTs do not set any default media types when first created. Instead, the client must set the media type by calling <see cref="IMFTransform.SetOutputType" />.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetOutputCurrentType</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-      <h3>Implementation Notes</h3>
-      <para>The MFT should return a clone of the media  type, not a pointer to the original type. Otherwise, the caller might modify the type and alter the internal state of the MFT.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.GetOutputStatus">
-    <summary>
-      <para>Queries whether the Media Foundation transform (MFT) is ready to produce output data.</para>
-    </summary>
-    <param name="pdwFlags">
-      <para>Receives a member of the <see cref="_MFT_OUTPUT_STATUS_FLAGS" /> enumeration, or zero. If the value is <b>MFT_OUTPUT_STATUS_SAMPLE_READY</b>, the MFT can produce an output sample.</para>
-    </param>
+    <summary>Queries whether the Media Foundation transform (MFT) is ready to produce output data.</summary>
+    <param name="pdwFlags">Receives a member of the <see cref="_MFT_OUTPUT_STATUS_FLAGS" /> enumeration, or zero. If the value is <b>MFT_OUTPUT_STATUS_SAMPLE_READY</b>, the MFT can produce an output sample.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -668,58 +560,49 @@ For more information, see <a href="https://docs.microsoft.com//windows/desktop/m
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Not implemented.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Not implemented.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>The media type is not set on one or more streams.</para>
-          </description>
-        </item>
+          <description>The media type is not set on one or more streams.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the method returns the <b>MFT_OUTPUT_STATUS_SAMPLE_READY</b> flag, it means you can generate one or more output samples by calling <see cref="IMFTransform.ProcessOutput" />.</para>
-      <para>MFTs are not required to implement this method. If the method returns <b>E_NOTIMPL</b>, you must call <see cref="ProcessOutput" /> to determine whether the transform has output data.</para>
-      <para>If the MFT has more than one output stream, but it does not produce samples at the same time for each stream, it can set the <b>MFT_OUTPUT_STATUS_SAMPLE_READY</b> flag when just one stream is ready. However, if the MFT normally produces samples at the same time for each output stream, it should not set this flag until all streams are ready.</para>
-      <para>After the client has set valid media types on all of the streams, the MFT should always be in one of two states: Able to accept more input, or able to produce more output.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetOutputStatus</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.GetOutputStreamAttributes">
-    <summary>
-      <para>Gets the attribute store for an output stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwOutputStreamID">
-      <para>Output stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pAttributes">
-      <para>Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets the attribute store for an output stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwOutputStreamID">Output stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="pAttributes">Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -727,56 +610,49 @@ For more information, see <a href="https://docs.microsoft.com//windows/desktop/m
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The MFT does not support output stream attributes.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The MFT does not support output stream attributes.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid stream identifier.</para>
-          </description>
-        </item>
+          <description>Invalid stream identifier.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Implementation of this method is optional unless the MFT needs to support a particular set of attributes.</para>
-      <para>To get the attribute store for the entire MFT, call <see cref="IMFTransform.GetAttributes" />.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/transform-attributes">Transform Attributes</seealso>
   </member>
   <member name="IMFTransform.GetOutputStreamInfo">
-    <summary>
-      <para>Gets the buffer requirements and other information for an output stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwOutputStreamID">
-      <para>Output stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pStreamInfo">
-      <para>Pointer to an <see cref="MFT_OUTPUT_STREAM_INFO" /> structure. The method fills the structure with information about the output stream.</para>
-    </param>
+    <summary>Gets the buffer requirements and other information for an output stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwOutputStreamID">Output stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="pStreamInfo">Pointer to an <see cref="MFT_OUTPUT_STREAM_INFO" /> structure. The method fills the structure with information about the output stream.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -784,70 +660,47 @@ For more information, see <a href="https://docs.microsoft.com//windows/desktop/m
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid stream number.</para>
-          </description>
-        </item>
+          <description>Invalid stream number.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>It is valid to call this method before setting the media types. Note that the results of this call can change dynamically after the media type changes and after <see cref="ProcessOutput" /> is called, so you may need to call this method again after either of these occur.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetOutputStreamInfo</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.GetStreamCount">
-    <summary>
-      <para>Gets the current number of input and output streams on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="pcInputStreams">
-      <para>Receives the number of input streams.</para>
-    </param>
-    <param name="pcOutputStreams">
-      <para>Receives the number of output streams.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The number of streams includes unselected streams—that is, streams with no media type or a <b>NULL</b> media type.</para>
-      <para>This method should not be called with <b>NULL</b> parameters, although in practice some implementations may allow <b>NULL</b> parameters.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetStreamCount</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+    <summary>Gets the current number of input and output streams on this Media Foundation transform (MFT).</summary>
+    <param name="pcInputStreams">Receives the number of input streams.</param>
+    <param name="pcOutputStreams">Receives the number of output streams.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTransform.GetStreamIDs">
-    <summary>
-      <para>Gets the stream identifiers for the input and output streams on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputIDArraySize">
-      <para>Number of elements in the <i>pdwInputIDs</i> array.</para>
-    </param>
+    <summary>Gets the stream identifiers for the input and output streams on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputIDArraySize">Number of elements in the <i>pdwInputIDs</i> array.</param>
     <param name="pdwInputIDs">
       <para>Pointer to an array allocated by the caller. The method fills the array with the input stream identifiers. The array size must be at least equal to the number of input streams. To get the number of input streams, call <see cref="IMFTransform.GetStreamCount" />.</para>
       <para>If the caller passes an array that is larger than the number of input streams, the MFT must not write values into the extra array entries.</para>
     </param>
-    <param name="dwOutputIDArraySize">
-      <para>Number of elements in the <i>pdwOutputIDs</i> array.</para>
-    </param>
+    <param name="dwOutputIDArraySize">Number of elements in the <i>pdwOutputIDs</i> array.</param>
     <param name="pdwOutputIDs">
       <para>Pointer to an array allocated by the caller. The method fills the array with the output stream identifiers. The array size must be at least equal to the number of output streams. To get the number of output streams, call <see cref="GetStreamCount" />.</para>
       <para>If the caller passes an array that is larger than the number of output streams, the MFT must not write values into the extra array entries.</para>
@@ -859,113 +712,57 @@ For more information, see <a href="https://docs.microsoft.com//windows/desktop/m
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Not implemented. See Remarks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Not implemented. See Remarks.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_BUFFERTOOSMALL</b>
-            </para>
-          </description>
-          <description>
-            <para>One or both of the arrays is too small.</para>
-          </description>
-        </item>
+          <description>One or both of the arrays is too small.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Stream identifiers are necessary because some MFTs can add or remove streams, so the index of a stream may not be unique. Therefore, <see cref="IMFTransform" /> methods that operate on streams take stream identifiers.</para>
-      <para>This method can return <b>E_NOTIMPL</b> if both of the following conditions are true:</para>
-      <list type="bullet">
-        <item>
-          <description>The transform has a fixed number of streams.
-</description>
-        </item>
-        <item>
-          <description>The streams are numbered consecutively from 0 to n – 1, where n is the number of input streams or output streams. In other words, the first input stream is 0, the second is 1, and so on; and the first output stream is 0, the second is 1, and so on.
-</description>
-        </item>
-      </list>
-      <para>This method must be implemented if any of the following conditions is true:</para>
-      <list type="bullet">
-        <item>
-          <description>The MFT can add or remove output streams.
-</description>
-        </item>
-        <item>
-          <description>The MFT allows the client to add or remove input streams.
-</description>
-        </item>
-        <item>
-          <description>The stream identifiers are not consecutive.
-</description>
-        </item>
-      </list>
-      <para>All input stream identifiers must be unique within an MFT, and all output stream identifiers must be unique. However, an input stream and an output stream can share the same identifier.</para>
-      <para>If the client adds an input stream, the client assigns the identifier, so the MFT must allow arbitrary identifiers, as long as they are unique. If the MFT creates an output stream, the MFT assigns the identifier.</para>
-      <para>By convention, if an MFT has exactly one fixed input stream and one fixed output stream, it should assign the identifier 0 to both streams.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetStreamIDs</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.GetStreamLimits">
-    <summary>
-      <para>Gets the minimum and maximum number of input and output streams for this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="pdwInputMinimum">
-      <para>Receives the minimum number of input streams.</para>
-    </param>
-    <param name="pdwInputMaximum">
-      <para>Receives the maximum number of input streams. If there is no maximum, receives the value <b>MFT_STREAMS_UNLIMITED</b>.</para>
-    </param>
-    <param name="pdwOutputMinimum">
-      <para>Receives the minimum number of output streams.</para>
-    </param>
-    <param name="pdwOutputMaximum">
-      <para>Receives the maximum number of output streams. If there is no maximum, receives the value <b>MFT_STREAMS_UNLIMITED</b>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the MFT has a fixed number of streams, the minimum and maximum values are the same.</para>
-      <para>It is not recommended to create an MFT that supports zero inputs or zero outputs. An MFT with no inputs or no outputs may not be compatible with the rest of the Media Foundation pipeline. You should create a Media Foundation sink or source for this purpose instead.</para>
-      <para>When an MFT is first created, it is not guaranteed to have the minimum number of streams. To find the actual number of streams, call <see cref="IMFTransform.GetStreamCount" />.</para>
-      <para>This method should not be called with <b>NULL</b> parameters, although in practice some implementations may allow <b>NULL</b> parameters.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTGetStreamLimits</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+    <summary>Gets the minimum and maximum number of input and output streams for this Media Foundation transform (MFT).</summary>
+    <param name="pdwInputMinimum">Receives the minimum number of input streams.</param>
+    <param name="pdwInputMaximum">Receives the maximum number of input streams. If there is no maximum, receives the value <b>MFT_STREAMS_UNLIMITED</b>.</param>
+    <param name="pdwOutputMinimum">Receives the minimum number of output streams.</param>
+    <param name="pdwOutputMaximum">Receives the maximum number of output streams. If there is no maximum, receives the value <b>MFT_STREAMS_UNLIMITED</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTransform.ProcessEvent">
-    <summary>
-      <para>Sends an event to an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pEvent">
-      <para>Pointer to the <see cref="IMFMediaEvent" /> interface of an event object.</para>
-    </param>
+    <summary>Sends an event to an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="pEvent">Pointer to the <see cref="IMFMediaEvent" /> interface of an event object.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -973,98 +770,74 @@ For more information, see <a href="https://docs.microsoft.com//windows/desktop/m
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Not implemented.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream number.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Not implemented.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The media type is not set on one or more streams.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_S_TRANSFORM_DO_NOT_PROPAGATE_EVENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid stream number.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>The media type is not set on one or more streams.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_S_TRANSFORM_DO_NOT_PROPAGATE_EVENT</b>
-            </para>
-          </description>
-          <description>
-            <para>The pipeline should not propagate the event.</para>
-          </description>
-        </item>
+          <description>The pipeline should not propagate the event.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An MFT can handle sending the event downstream, or it can let the pipeline do this, as indicated by the return value:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>E_NOTIMPL</b>: The MFT ignores all events, and the pipeline should send all events downstream. After the pipeline receives this return value, it might not call <b>ProcessEvent</b> again.
-</description>
-        </item>
-        <item>
-          <description>
-            <b>S_OK</b>: The MFT has examined this event, but the pipeline should send the event downstream. Internally, the MFT might respond to the event in some way, or it might ignore the event.
-</description>
-        </item>
-        <item>
-          <description>
-            <b>MF_S_TRANSFORM_DO_NOT_PROPAGATE_EVENT</b>: The pipeline should not propagate this event downstream. Either the MFT will send the event downstream, or else the MFT will consume the event and not send it downstream. The MFT should only consume the event if the event should stop at this MFT and not travel any further downstream. But in most cases, the event should travel downstream.
-</description>
-        </item>
-      </list>
-      <para>To send the event downstream, the MFT adds the event to the collection object that is provided by the client in the <b>pEvents</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure, when the client calls <see cref="IMFTransform.ProcessOutput" />.</para>
-      <para>Events must be serialized with the samples that come before and after them. Attach the event to the output sample that follows the event. (The pipeline will process the event first, and then the sample.) If an MFT holds back one or more samples between calls to <see cref="IMFTransform.ProcessInput" /> and <see cref="ProcessOutput" />, the MFT should handle sending all events downstream, because in this situation the pipeline cannot correlate input samples with output samples.</para>
-      <para>If an MFT does not hold back samples and does not need to examine any events, it can return <b>E_NOTIMPL</b>.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTProcessEvent</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.ProcessInput">
-    <summary>
-      <para>Delivers data to an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pSample">
-      <para>Pointer to the <see cref="IMFSample" /> interface of the input sample. The sample must contain at least one media buffer that contains valid input data.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Reserved. Must be zero.</para>
-    </param>
+    <summary>Delivers data to an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="pSample">Pointer to the <see cref="IMFSample" /> interface of the input sample. The sample must contain at least one media buffer that contains valid input data.</param>
+    <param name="dwFlags">Reserved. Must be zero.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -1072,126 +845,108 @@ For more information, see <a href="https://docs.microsoft.com//windows/desktop/m
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream identifier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_SAMPLE_DURATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The input sample requires a valid sample duration. To set the duration, call <see cref="IMFSample.SetSampleDuration" />. <para>Some MFTs require that input samples have valid durations. Some MFTs do not require sample durations.</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_SAMPLE_TIMESTAMP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The input sample requires a time stamp. To set the time stamp, call <see cref="IMFSample.SetSampleTime" />. <para>Some MFTs require that input samples have valid time stamps. Some MFTs do not require time stamps.</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream identifier.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOTACCEPTING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The transform cannot process more input at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_NO_SAMPLE_DURATION</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The media type is not set on one or more streams.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The input sample requires a valid sample duration. To set the duration, call <see cref="IMFSample.SetSampleDuration" />.</para>
-            <para>Some MFTs require that input samples have valid durations. Some MFTs do not require sample durations.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_UNSUPPORTED_D3D_TYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_SAMPLE_TIMESTAMP</b>
-            </para>
-          </description>
-          <description>
-            <para>The input sample requires a time stamp. To set the time stamp, call <see cref="IMFSample.SetSampleTime" />.</para>
-            <para>Some MFTs require that input samples have valid time stamps. Some MFTs do not require time stamps.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOTACCEPTING</b>
-            </para>
-          </description>
-          <description>
-            <para>The transform cannot process more input at this time.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>The media type is not set on one or more streams.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_UNSUPPORTED_D3D_TYPE</b>
-            </para>
-          </description>
-          <description>
-            <para>The media type is not supported for DirectX Video Acceleration (DXVA). A DXVA-enabled decoder might return this error code.</para>
-          </description>
-        </item>
-      </list>
-      <para>
-        <b>Note</b>  If you are converting a DirectX Media Object (DMO) to an MFT, be aware that <b>S_FALSE</b> is not a valid return code for <b>IMFTransform.ProcessInput</b>, unlike the <b>IMediaObject.ProcessInput</b> method.</para>
-    </returns>
-    <remarks>
-      <para>In most cases, if the method succeeds, the MFT stores the sample and holds a reference count on the <see cref="IMFSample" /> pointer. Do not re-use the sample until the MFT releases the sample. Instead of storing the sample, however, an MFT might copy the sample data into a new buffer. In that case, the MFT should set the <b>MFT_INPUT_STREAM_DOES_NOT_ADDREF</b> flag in the <see cref="IMFTransform.GetInputStreamInfo" /> method.</para>
-      <para>If the MFT already has enough input data to produce an output sample, it does not accept new input data, and <b>ProcessInput</b> returns <b>MF_E_NOTACCEPTING</b>. At that point, the client should clear the pending input data by doing one of the following:</para>
-      <list type="bullet">
-        <item>
-          <description>Generate new output by calling <see cref="IMFTransform.ProcessOutput" />.
-</description>
-        </item>
-        <item>
-          <description>Flush the input data by calling <see cref="IMFTransform.ProcessMessage" /> with the MFT_<b>MESSAGE_COMMAND_FLUSH</b> message.
-</description>
-        </item>
-      </list>
-      <para>An exception to this rule is the <b>MFT_OUTPUT_STREAM_LAZY_READ</b> flag. When this flag is present, the transform will discard stored samples if you give it more input. For more information, see <see cref="IMFTransform.GetOutputStreamInfo" />. A transform should never queue any more input data than is required to produce the correct output.</para>
-      <para>An MFT can process the input data in the <b>ProcessInput</b> method. However, most MFTs wait until the client calls <see cref="ProcessOutput" />.</para>
-      <para>After the client has set valid media types on all of the streams, the MFT should always be in one of two states: Able to accept more input, or able to produce more output. It should never be in both states or neither state. An MFT should only accept as much input as it needs to generate at least one output sample, at which point <b>ProcessInput</b> returns <b>MF_E_NOTACCEPTING</b>. When <b>ProcessInput</b> returns <b>MF_E_NOTACCEPTING</b>, the client can assume that the MFT is ready to produce output.</para>
-      <para>If an MFT encounters a non-fatal error in the input data, it can simply drop the data and attempt to recover when it gets the more input data. To request more input data, the MFT returns <b>MF_E_TRANSFORM_NEED_MORE_INPUT</b> from the <see cref="IMFTransform.ProcessOutput" /> method. If the MFT drops any data, it should set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfsampleextension-discontinuity-attribute">MFSampleExtension_Discontinuity</a> attribute attribute on the next output sample, to notify the caller that there is a gap in the data stream.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTProcessInput</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-      <h3>Asynchronous Processing</h3>
-      <para>The previous remarks describe the <i>synchronous</i> processing model. To support asynchronous processing, see <a href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-mfts">Asynchronous MFTs</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+          <description>The media type is not supported for DirectX Video Acceleration (DXVA). A DXVA-enabled decoder might return this error code.</description>
+        </listheader>
+      </list> <div><b>Note</b>  If you are converting a DirectX Media Object (DMO) to an MFT, be aware that <b>S_FALSE</b> is not a valid return code for <b>IMFTransform.ProcessInput</b>, unlike the <b>IMediaObject.ProcessInput</b> method.</div></returns>
   </member>
   <member name="IMFTransform.ProcessMessage">
-    <summary>
-      <para>Sends a message to the Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="eMessage">
-      <para>The message to send, specified as a member of the <see cref="MFT_MESSAGE_TYPE" /> enumeration.</para>
-    </param>
-    <param name="ulParam">
-      <para>Message parameter. The meaning of this parameter depends on the message type.</para>
-    </param>
+    <summary>Sends a message to the Media Foundation transform (MFT).</summary>
+    <param name="eMessage">The message to send, specified as a member of the <see cref="MFT_MESSAGE_TYPE" /> enumeration.</param>
+    <param name="ulParam">Message parameter. The meaning of this parameter depends on the message type.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -1199,62 +954,51 @@ For more information, see <a href="https://docs.microsoft.com//windows/desktop/m
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid stream number. Applies to the <b>MFT_MESSAGE_NOTIFY_END_OF_STREAM</b> message.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid stream number. Applies to the <b>MFT_MESSAGE_NOTIFY_END_OF_STREAM</b> message.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>The media type is not set on one or more streams.</para>
-          </description>
-        </item>
+          <description>The media type is not set on one or more streams.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before calling this method, set the media types on all input and output streams.</para>
-      <para>The MFT might ignore certain message types. If so, the method returns <b>S_OK</b>. An error code indicates that the transform handles this message type but was unable to process the message in this instance.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTProcessMessage</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.ProcessOutput">
-    <summary>
-      <para>Generates output from the current input data.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Bitwise <b>OR</b> of zero or more flags from the <see cref="_MFT_PROCESS_OUTPUT_FLAGS" /> enumeration.</para>
-    </param>
-    <param name="cOutputBufferCount">
-      <para>Number of elements in the <i>pOutputSamples</i> array. The value must be at least 1.</para>
-    </param>
-    <param name="pOutputSamples">
-      <para>Pointer to an array of <see cref="MFT_OUTPUT_DATA_BUFFER" /> structures, allocated by the caller. The MFT uses this array to return output data to the caller.</para>
-    </param>
-    <param name="pdwStatus">
-      <para>Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="_MFT_PROCESS_OUTPUT_STATUS" /> enumeration.</para>
-    </param>
+    <summary>Generates output from the current input data.</summary>
+    <param name="dwFlags">Bitwise <b>OR</b> of zero or more flags from the <see cref="_MFT_PROCESS_OUTPUT_FLAGS" /> enumeration.</param>
+    <param name="cOutputBufferCount">Number of elements in the <i>pOutputSamples</i> array. The value must be at least 1.</param>
+    <param name="pOutputSamples">Pointer to an array of <see cref="MFT_OUTPUT_DATA_BUFFER" /> structures, allocated by the caller. The MFT uses this array to return output data to the caller.</param>
+    <param name="pdwStatus">Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="_MFT_PROCESS_OUTPUT_STATUS" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -1262,192 +1006,85 @@ For more information, see <a href="https://docs.microsoft.com//windows/desktop/m
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <see cref="ProcessOutput" /> method was called on an asynchronous MFT that was not expecting this method call.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream identifier in the <b>dwStreamID</b> member of one or more <see cref="MFT_OUTPUT_DATA_BUFFER" /> structures.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="ProcessOutput" /> method was called on an asynchronous MFT that was not expecting this method call.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_NEED_MORE_INPUT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The transform cannot produce output data until it receives more input data.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_STREAM_CHANGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The format has changed on an output stream, or there is a new preferred format, or there is a new output stream.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream identifier in the <b>dwStreamID</b> member of one or more <see cref="MFT_OUTPUT_DATA_BUFFER" /> structures.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_NEED_MORE_INPUT</b>
-            </para>
-          </description>
-          <description>
-            <para>The transform cannot produce output data until it receives more input data.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_STREAM_CHANGE</b>
-            </para>
-          </description>
-          <description>
-            <para>The format has changed on an output stream, or there is a new preferred format, or there is a new output stream.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>You must set the media type on one or more streams of the MFT.</para>
-          </description>
-        </item>
-      </list>
-      <para>
-        <b>Note</b>  If you are converting a DirectX Media Object (DMO) to an MFT, be aware that <b>S_FALSE</b> is not a valid return code for <b>IMFTransform.ProcessOutput</b>, unlike the <b>IMediaObject.ProcessOutput</b> method.</para>
-    </returns>
-    <remarks>
-      <para>The size of the <i>pOutputSamples</i> array must be equal to or greater than the number of <i>selected</i> output streams. The number of selected output streams equals the total number of output streams minus the number of <i>deselected</i> streams. A stream is deselected if it has the <b>MFT_OUTPUT_STREAM_OPTIONAL</b> flag and the caller does not set a media type (or sets the media type to <b>NULL</b>). For more information, see <see cref="_MFT_OUTPUT_STREAM_INFO_FLAGS" /> enumeration.</para>
-      <para>This method generates output samples and can also generate events. If the method succeeds, at least one of the following conditions is true:</para>
-      <list type="bullet">
-        <item>
-          <description>One or more samples in the <i>pOutputSamples</i> array contains output data.
-</description>
-        </item>
-        <item>
-          <description>One or more members of the <i>pOutputSamples</i> array contains a non-empty collection of events.
-</description>
-        </item>
-      </list>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including Mftransform.h, this method is renamed <b>MFTProcessOutput</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-      <h3>Output Buffers</h3>
-      <para>The MFT returns output data for a stream through the <b>pSample</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure. This structure member is a pointer to the <see cref="IMFSample" /> interface of a media sample. (See <a href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</a>.) The media sample is allocated either by the caller or by the MFT, depending on the MFT's allocation model. To find the allocation model, call <see cref="IMFTransform.GetOutputStreamInfo" /> and examine the <b>dwFlags</b> member of the <see cref="MFT_OUTPUT_STREAM_INFO" /> structure:</para>
-      <list type="bullet">
-        <item>
-          <description>If the <b>MFT_OUTPUT_STREAM_PROVIDES_SAMPLES</b> flag is present, the MFT allocates the media sample.
-</description>
-        </item>
-        <item>
-          <description>If the <b>MFT_OUTPUT_STREAM_CAN_PROVIDE_SAMPLES</b> flag is present, the caller can optionally provide a media sample. If <b>pSample</b> is <b>NULL</b>, the MFT will allocate the media sample.
-</description>
-        </item>
-        <item>
-          <description>If neither of these two flags is present, the caller must allocate the media sample.
-</description>
-        </item>
-      </list>
-      <para>These flags remain constant unless the media type for the output stream changes.</para>
-      <para>If the caller allocates the media sample, the media sample must contain a buffer that is large enough to hold the output data. To find the buffer requirements, call <see cref="GetOutputStreamInfo" />. The MFT writes the output data to the start of the buffer, overwriting any data that already exists in the buffer.</para>
-      <para>If the MFT allocates the sample, the MFT also allocates the buffers for the sample.</para>
-      <para>If the MFT has multiple output streams, the streams might produce output at different rates, so some streams might have output while other streams do not. If a stream did not any produce output, the MFT sets the <b>MFT_OUTPUT_DATA_BUFFER_NO_SAMPLE</b> flag in the <b>dwStatus</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure for that stream. In that case, if the caller allocated <b>pSample</b>, the buffers in the sample do not contain any valid data. If the caller did not allocate <b>pSample</b>, the <b>MFT_OUTPUT_DATA_BUFFER_NO_SAMPLE</b> flag indicates that <b>pSample</b> still equals <b>NULL</b> after the method returns.</para>
-      <para>If no output streams have data, and the MFT has no events to return, then <b>ProcessOutput</b> returns <b>MF_E_TRANSFORM_NEED_MORE_INPUT</b>.</para>
-      <para>The MFT cannot return more than one sample per stream in a single call to <b>ProcessOutput</b>. If there is more output data available for a stream after <b>ProcessOutput</b> returns, the MFT sets the <b>MFT_OUTPUT_DATA_BUFFER_INCOMPLETE</b> flag in the <b>dwStatus</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure for that stream.</para>
-      <para>If the MFT has enough data to produce output, it should refuse to accept any more input until <b>ProcessOutput</b> has been called enough times to pull all of the available output. (An exception is when the <see cref="IMFTransform.GetOutputStreamInfo" /> method returns the <b>MFT_OUTPUT_STREAM_LAZY_READ</b> flag.) Generally, an MFT with multiple output streams should produce output for a stream as soon as possible, and not wait for all of the streams to have output.</para>
-      <h3>In-Band Events</h3>
-      <para>The MFT can return a collection of event objects in the <b>pEvents</b> member of each <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure. The MFT allocates both the collection object and the events.</para>
-      <para>To send an event to the caller, the MFT performs the following steps inside <b>ProcessOutput</b>:</para>
-      <list type="number">
-        <item>
-          <description>Create a new collection object by calling <see cref="MFCreateCollection" />.
-</description>
-        </item>
-        <item>
-          <description>Add one or more events to the collection by calling <see cref="IMFCollection.AddElement" />.
-</description>
-        </item>
-        <item>
-          <description>Set the <b>pEvents</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure equal to the <see cref="IMFCollection" /> pointer. The MFT leaves a reference count on this interface; the caller must release the pointer.
-</description>
-        </item>
-      </list>
-      <para>Events do not have time stamps. The caller should process the events before processing the output samples. In other words, events occur at the point in the stream immediately after the previous call to <b>ProcessOutput</b>, and prior to any output samples returned from the current <b>ProcessOutput</b> call.</para>
-      <para>It is valid for the <b>ProcessOutput</b> method to return one or more events and zero output samples.</para>
-      <para>The caller is responsible for releasing any events that the MFT allocates. When the method returns, check the <b>pEvents</b> member of each <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure. If the value is not <b>NULL</b>, the caller must release the <see cref="IMFCollection" /> interface pointer:</para>
-      <code>// Release the events that an MFT might allocate in IMFTransform.ProcessOutput().
-void ReleaseEventCollection(DWORD cOutputBuffers, MFT_OUTPUT_DATA_BUFFER* pBuffers)
-{
-    for (DWORD i = 0; i &lt; cOutputBuffers; i++)
-    {
-        if (pBuffers[i].pEvents)
-        {
-            pBuffers[i].pEvents-&gt;Release();
-            pBuffers[i].pEvents = NULL;
-        }
-    }
-}
-
-</code>
-      <para>An MFT should not use the <see cref="IMFMediaEventGenerator" /> interface to send in-band events.</para>
-      <h3>Stream Changes</h3>
-      <para>The <b>ProcessOutput</b> method can cause any of the following changes in an output stream:</para>
-      <list type="bullet">
-        <item>
-          <description>The deletion of an output stream. To signal a stream deletion, the MFT sets the <b>MFT_OUTPUT_DATA_BUFFER_STREAM_END</b> flag in the <b>dwStatus</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure for that stream.
-</description>
-        </item>
-        <item>
-          <description>The creation of a new output stream. To signal a new output stream, the MFT sets the <b>MFT_PROCESS_OUTPUT_STATUS_NEW_STREAMS</b> flag in the <i>pdwStatus</i> parameter. A new stream can have the same stream identifier as a deleted stream.
-</description>
-        </item>
-        <item>
-          <description>A format change on an output stream. To signal a format change, the MFT sets the <b>MFT_OUTPUT_DATA_BUFFER_FORMAT_CHANGE</b> flag in the <b>dwStatus</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure for that stream.
-</description>
-        </item>
-      </list>
-      <para>It is possible that all three of these actions will result from a single call to <b>ProcessOutput</b>. The caller must respond to them in the order listed here—first deletions, then additions, then format changes.</para>
-      <para>The <b>MFT_OUTPUT_DATA_BUFFER_FORMAT_CHANGE</b> flag signals a format change on an output stream. This might mean the current media type has become invalid, or the preference order has changed and a more efficient format is available. In the latter case, it is possible that the client will re-set the original media type. To guard against endless loops, the MFT should not set the <b>MFT_OUTPUT_DATA_BUFFER_FORMAT_CHANGE</b> flag again until there is another change. Also, avoid setting this flag if the preference order changes but the current media type is still the most preferred type.</para>
-      <h3>Sample Attributes</h3>
-      <para>An input sample might have attributes, which are accessed through the <see cref="IMFAttributes" /> interface. Unless a specific attribute no longer applies, all attributes should be copied into the corresponding output sample. The responsibility for copying attributes is determined as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>If the value of the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfpkey-exattribute-supported-property">MFPKEY_EXATTRIBUTE_SUPPORTED</a> property on the MFT is <b>VARIANT_TRUE</b>, the MFT copies the attributes.
-</description>
-        </item>
-        <item>
-          <description>If the value of <a href="https://docs.microsoft.com//windows/desktop/medfound/mfpkey-exattribute-supported-property">MFPKEY_EXATTRIBUTE_SUPPORTED</a> is <b>VARIANT_FALSE</b>, or the property is not set, the client must copy the sample attributes. Do not overwrite any attributes that the MFT sets on the output sample.
-</description>
-        </item>
-      </list>
-      <para>For a list of sample attributes, see <a href="https://docs.microsoft.com//windows/desktop/medfound/sample-attributes">Sample Attributes</a>.</para>
-      <h3>Asynchronous Processing</h3>
-      <para>The previous remarks describe the <i>synchronous</i> processing model. To support asynchronous processing, see <a href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-mfts">Asynchronous MFTs</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+          <description>You must set the media type on one or more streams of the MFT.</description>
+        </listheader>
+      </list> <div><b>Note</b>  If you are converting a DirectX Media Object (DMO) to an MFT, be aware that <b>S_FALSE</b> is not a valid return code for <b>IMFTransform.ProcessOutput</b>, unlike the <b>IMediaObject.ProcessOutput</b> method.</div></returns>
   </member>
   <member name="IMFTransform.SetInputType">
-    <summary>
-      <para>Sets, tests, or clears the media type for an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pType">
-      <para>Pointer to the <see cref="IMFMediaType" /> interface, or <b>NULL</b>.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Zero or more flags from the <see cref="_MFT_SET_TYPE_FLAGS" /> enumeration.</para>
-    </param>
+    <summary>Sets, tests, or clears the media type for an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Input stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="pType">Pointer to the <see cref="IMFMediaType" /> interface, or <b>NULL</b>.</param>
+    <param name="dwFlags">Zero or more flags from the <see cref="_MFT_SET_TYPE_FLAGS" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -1455,112 +1092,97 @@ void ReleaseEventCollection(DWORD cOutputBuffers, MFT_OUTPUT_DATA_BUFFER* pBuffe
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDMEDIATYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The MFT cannot use the proposed media type.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDMEDIATYPE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream identifier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The MFT cannot use the proposed media type.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDTYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The proposed type is not valid. This error code indicates that the media type itself is not configured correctly; for example, it might contain mutually contradictory attributes.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_CANNOT_CHANGE_MEDIATYPE_WHILE_PROCESSING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The MFT cannot switch types while processing data. Try draining or flushing the MFT.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream identifier.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>You must set the output types before setting the input types.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDTYPE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_UNSUPPORTED_D3D_TYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The proposed type is not valid. This error code indicates that the media type itself is not configured correctly; for example, it might contain mutually contradictory attributes.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_CANNOT_CHANGE_MEDIATYPE_WHILE_PROCESSING</b>
-            </para>
-          </description>
-          <description>
-            <para>The MFT cannot switch types while processing data. Try draining or flushing the MFT.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>You must set the output types before setting the input types.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_UNSUPPORTED_D3D_TYPE</b>
-            </para>
-          </description>
-          <description>
-            <para>The MFT could not find a suitable DirectX Video Acceleration (DXVA) configuration.</para>
-          </description>
-        </item>
+          <description>The MFT could not find a suitable DirectX Video Acceleration (DXVA) configuration.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method can be used to set, test without setting, or clear the media type:</para>
-      <list type="bullet">
-        <item>
-          <description>To set the media type, set <i>dwFlags</i> to zero and set <i>pType</i> to a non-<b>NULL</b> pointer that specifies the media type.
-</description>
-        </item>
-        <item>
-          <description>To test the media type without setting it, set <i>dwFlags</i> to <b>MFT_SET_TYPE_TEST_ONLY</b> and set <i>pType</i> to a non-<b>NULL</b> pointer that specifies the media type. If the media type is acceptable, the method return <b>S_OK</b>. Otherwise, it returns <b>MF_E_INVALIDMEDIATYPE</b>. Regardless of the return value, the current media type does not change.
-</description>
-        </item>
-        <item>
-          <description>To clear the media type, set <i>pType</i> to <b>NULL</b>.
-</description>
-        </item>
-      </list>
-      <para>Setting the media type on one stream may change the acceptable types on another stream.</para>
-      <para>An MFT may require the caller to set one or more output types before setting the input type. If so, the method returns <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>.</para>
-      <para>If the MFT supports DirectX Video Acceleration (DXVA) but is unable to find a suitable DXVA configuration (for example, if the graphics driver does not have the right capabilities), the method should return <b>MF_E_UNSUPPORTED_D3D_TYPE</b>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/supporting-dxva-2-0-in-media-foundation">Supporting DXVA 2.0 in Media Foundation</a>.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTSetInputType</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.SetOutputBounds">
-    <summary>
-      <para>Sets the range of time stamps the client needs for output.</para>
-    </summary>
-    <param name="hnsLowerBound">
-      <para>Specifies the earliest time stamp. The Media Foundation transform (MFT) will accept input until it can produce an output sample that begins at this time; or until it can produce a sample that ends at this time or later. If there is no lower bound, use the value <b>MFT_OUTPUT_BOUND_LOWER_UNBOUNDED</b>.</para>
-    </param>
-    <param name="hnsUpperBound">
-      <para>Specifies the latest time stamp. The MFT will not produce an output sample with time stamps later than this time. If there is no upper bound, use the value <b>MFT_OUTPUT_BOUND_UPPER_UNBOUNDED</b>.</para>
-    </param>
+    <summary>Sets the range of time stamps the client needs for output.</summary>
+    <param name="hnsLowerBound">Specifies the earliest time stamp. The Media Foundation transform (MFT) will accept input until it can produce an output sample that begins at this time; or until it can produce a sample that ends at this time or later. If there is no lower bound, use the value <b>MFT_OUTPUT_BOUND_LOWER_UNBOUNDED</b>.</param>
+    <param name="hnsUpperBound">Specifies the latest time stamp. The MFT will not produce an output sample with time stamps later than this time. If there is no upper bound, use the value <b>MFT_OUTPUT_BOUND_UPPER_UNBOUNDED</b>.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -1568,60 +1190,50 @@ void ReleaseEventCollection(DWORD cOutputBuffers, MFT_OUTPUT_DATA_BUFFER* pBuffe
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Not implemented.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Not implemented.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>The media type is not set on one or more streams.</para>
-          </description>
-        </item>
+          <description>The media type is not set on one or more streams.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method can be used to optimize preroll, especially in formats that have gaps between time stamps, or formats where the data must start on a sync point, such as MPEG-2. Calling this method is optional, and implementation of this method by an MFT is optional. If the MFT does not implement the method, the return value is <b>E_NOTIMPL</b>.</para>
-      <para>If an MFT implements this method, it must limit its output data to the range of times specified by <i>hnsLowerBound</i> and <i>hnsUpperBound</i>. The MFT discards any input data that is not needed to produce output within this range. If the sample boundaries do not exactly match the range, the MFT should split the output samples, if possible. Otherwise, the output samples can overlap the range.</para>
-      <para>For example, suppose the output range is 100 to 150 milliseconds (ms), and the output format is video with each frame lasting 33 ms. A sample with a time stamp of 67 ms overlaps the range (67 + 33 = 100) and is produced as output. A sample with a time stamp of  66 ms is discarded (66 + 33 = 99). Similarly, a sample with a time stamp of 150 ms is produced as output, but a sample with a time stamp of 151 is discarded.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTSetOutputBounds</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform.SetOutputType">
-    <summary>
-      <para>Sets, tests, or clears the media type for an output stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwOutputStreamID">
-      <para>Output stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pType">
-      <para>Pointer to the <see cref="IMFMediaType" /> interface, or <b>NULL</b>.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Zero or more flags from the <see cref="_MFT_SET_TYPE_FLAGS" /> enumeration.</para>
-    </param>
+    <summary>Sets, tests, or clears the media type for an output stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwOutputStreamID">Output stream identifier. To get the list of stream identifiers, call <see cref="IMFTransform.GetStreamIDs" />.</param>
+    <param name="pType">Pointer to the <see cref="IMFMediaType" /> interface, or <b>NULL</b>.</param>
+    <param name="dwFlags">Zero or more flags from the <see cref="_MFT_SET_TYPE_FLAGS" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -1629,107 +1241,94 @@ void ReleaseEventCollection(DWORD cOutputBuffers, MFT_OUTPUT_DATA_BUFFER* pBuffe
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDMEDIATYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The transform cannot use the proposed media type.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDMEDIATYPE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream identifier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The transform cannot use the proposed media type.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDTYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The proposed type is not valid. This error code indicates that the media type itself is not configured correctly; for example, it might contain mutually contradictory flags.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_CANNOT_CHANGE_MEDIATYPE_WHILE_PROCESSING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The MFT cannot switch types while processing data. Try draining or flushing the MFT.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream identifier.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>You must set the input types before setting the output types.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDTYPE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_UNSUPPORTED_D3D_TYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The proposed type is not valid. This error code indicates that the media type itself is not configured correctly; for example, it might contain mutually contradictory flags.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_CANNOT_CHANGE_MEDIATYPE_WHILE_PROCESSING</b>
-            </para>
-          </description>
-          <description>
-            <para>The MFT cannot switch types while processing data. Try draining or flushing the MFT.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>You must set the input types before setting the output types.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_UNSUPPORTED_D3D_TYPE</b>
-            </para>
-          </description>
-          <description>
-            <para>The MFT could not find a suitable DirectX Video Acceleration (DXVA) configuration.</para>
-          </description>
-        </item>
+          <description>The MFT could not find a suitable DirectX Video Acceleration (DXVA) configuration.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method can be used to set, test without setting, or clear the media type:</para>
-      <list type="bullet">
-        <item>
-          <description>To set the media type, set <i>dwFlags</i> to zero and set <i>pType</i> to a non-<b>NULL</b> pointer that specifies the media type.
-</description>
-        </item>
-        <item>
-          <description>To test the media type without setting it, set <i>dwFlags</i> to <b>MFT_SET_TYPE_TEST_ONLY</b> and set <i>pType</i> to a non-<b>NULL</b> pointer that specifies the media type. If the media type is acceptable, the method return <b>S_OK</b>. Otherwise, it returns <b>MF_E_INVALIDMEDIATYPE</b>. Regardless of the return value, the current media type does not change.
-</description>
-        </item>
-        <item>
-          <description>To clear the media type, set <i>pType</i> to <b>NULL</b>.
-</description>
-        </item>
-      </list>
-      <para>Setting the media type on one stream may change the acceptable types on another stream.</para>
-      <para>An MFT may require the caller to set one or more input types before setting the output type. If so, the method returns <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>.</para>
-      <para>If the MFT supports DirectX Video Acceleration (DXVA) but is unable to find a suitable DXVA configuration (for example, if the graphics driver does not have the right capabilities), the method should return <b>MF_E_UNSUPPORTED_D3D_TYPE</b>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/supporting-dxva-2-0-in-media-foundation">Supporting DXVA 2.0 in Media Foundation</a>.</para>
-      <para>If <b>MFT_UNIQUE_METHOD_NAMES</b> is defined before including mftransform.h, this method is renamed <b>MFTSetOutputType</b>. See <a href="https://docs.microsoft.com//windows/desktop/medfound/comparison-of-mfts-and-dmos">Creating Hybrid DMO/MFT Objects</a>.</para>
-    </remarks>
-    <seealso cref="IMFTransform" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
   </member>
   <member name="IMFTransform">
-    <summary>
-      <para>Implemented by all <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</a> (MFTs).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+    <summary>Implemented by all <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</a> (MFTs).</summary>
   </member>
 </doc>

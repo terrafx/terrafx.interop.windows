@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_FRAME_FORMAT">
-    <summary>
-      <para>Describes how a video stream is interlaced.</para>
-    </summary>
-    <seealso cref="D3D11_VIDEO_PROCESSOR_CONTENT_DESC" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+    <summary>Describes how a video stream is interlaced.</summary>
   </member>
   <member name="D3D11_VIDEO_FRAME_FORMAT.D3D11_VIDEO_FRAME_FORMAT_PROGRESSIVE">
-    <summary>
-      <para>Frames are progressive.</para>
-    </summary>
+    <summary>Frames are progressive.</summary>
   </member>
   <member name="D3D11_VIDEO_FRAME_FORMAT.D3D11_VIDEO_FRAME_FORMAT_INTERLACED_TOP_FIELD_FIRST">
-    <summary>
-      <para>Frames are interlaced. The top field of each frame is displayed first.</para>
-    </summary>
+    <summary>Frames are interlaced. The top field of each frame is displayed first.</summary>
   </member>
   <member name="D3D11_VIDEO_FRAME_FORMAT.D3D11_VIDEO_FRAME_FORMAT_INTERLACED_BOTTOM_FIELD_FIRST">
-    <summary>
-      <para>Frame are interlaced. The bottom field of each frame is displayed first.</para>
-    </summary>
+    <summary>Frame are interlaced. The bottom field of each frame is displayed first.</summary>
   </member>
 </doc>

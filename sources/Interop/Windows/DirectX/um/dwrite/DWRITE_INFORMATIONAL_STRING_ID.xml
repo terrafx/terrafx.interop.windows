@@ -3,81 +3,49 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_INFORMATIONAL_STRING_ID">
-    <summary>
-      <para>The informational string enumeration which identifies a string embedded in a font file.</para>
-    </summary>
+    <summary>The informational string enumeration which identifies a string embedded in a font file.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_NONE">
-    <summary>
-      <para>Indicates the string containing the unspecified name ID.</para>
-    </summary>
+    <summary>Indicates the string containing the unspecified name ID.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_COPYRIGHT_NOTICE">
-    <summary>
-      <para>Indicates the string containing the copyright notice provided by the font.</para>
-    </summary>
+    <summary>Indicates the string containing the copyright notice provided by the font.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_VERSION_STRINGS">
-    <summary>
-      <para>Indicates the string containing a version number.</para>
-    </summary>
+    <summary>Indicates the string containing a version number.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_TRADEMARK">
-    <summary>
-      <para>Indicates the string containing the trademark information provided by the font.</para>
-    </summary>
+    <summary>Indicates the string containing the trademark information provided by the font.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_MANUFACTURER">
-    <summary>
-      <para>Indicates the string containing the name of the font manufacturer.</para>
-    </summary>
+    <summary>Indicates the string containing the name of the font manufacturer.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_DESIGNER">
-    <summary>
-      <para>Indicates the string containing the name of the font designer.</para>
-    </summary>
+    <summary>Indicates the string containing the name of the font designer.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_DESIGNER_URL">
-    <summary>
-      <para>Indicates the string containing the URL of the font designer (with protocol, e.g., http://, ftp://).</para>
-    </summary>
+    <summary>Indicates the string containing the URL of the font designer (with protocol, e.g., http://, ftp://).</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_DESCRIPTION">
-    <summary>
-      <para>Indicates the string containing the description of the font. This may also contain revision information, usage recommendations, history, features, and so on.</para>
-    </summary>
+    <summary>Indicates the string containing the description of the font. This may also contain revision information, usage recommendations, history, features, and so on.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_FONT_VENDOR_URL">
-    <summary>
-      <para>Indicates the string containing the URL of the font vendor (with protocol, e.g., http://, ftp://). If a unique serial number is embedded in the URL, it can be used to register the font.</para>
-    </summary>
+    <summary>Indicates the string containing the URL of the font vendor (with protocol, e.g., http://, ftp://). If a unique serial number is embedded in the URL, it can be used to register the font.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_LICENSE_DESCRIPTION">
-    <summary>
-      <para>Indicates the string containing the description of how the font may be legally used, or different example scenarios for licensed use.</para>
-    </summary>
+    <summary>Indicates the string containing the description of how the font may be legally used, or different example scenarios for licensed use.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_LICENSE_INFO_URL">
-    <summary>
-      <para>Indicates the string containing the URL where additional licensing information can be found.</para>
-    </summary>
+    <summary>Indicates the string containing the URL where additional licensing information can be found.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_WIN32_FAMILY_NAMES">
-    <summary>
-      <para>Indicates the string containing the GDI-compatible family name. Since GDI allows a maximum of four fonts per family, fonts in the same family may have different GDI-compatible family names (e.g., "Arial", "Arial Narrow", "Arial Black").</para>
-    </summary>
+    <summary>Indicates the string containing the GDI-compatible family name. Since GDI allows a maximum of four fonts per family, fonts in the same family may have different GDI-compatible family names (e.g., "Arial", "Arial Narrow", "Arial Black").</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_WIN32_SUBFAMILY_NAMES">
-    <summary>
-      <para>Indicates the string containing a GDI-compatible subfamily name.</para>
-    </summary>
+    <summary>Indicates the string containing a GDI-compatible subfamily name.</summary>
   </member>
-  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_TYPOGRAPHIC_FAMILY_NAMES">
-    <summary></summary>
-  </member>
-  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_TYPOGRAPHIC_SUBFAMILY_NAMES">
-    <summary></summary>
-  </member>
+  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_TYPOGRAPHIC_FAMILY_NAMES"></member>
+  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_TYPOGRAPHIC_SUBFAMILY_NAMES"></member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_SAMPLE_TEXT">
     <summary>
       <para>Contains sample text for display in font lists. This can be the font name or any other text that the designer thinks is the best</para>
@@ -85,40 +53,22 @@
     </summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_FULL_NAME">
-    <summary>
-      <para>The full name of the font, like Arial Bold, from <i>name id 4</i> in the name table</para>
-    </summary>
+    <summary>The full name of the font, like Arial Bold, from <i>name id 4</i> in the name table</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_POSTSCRIPT_NAME">
-    <summary>
-      <para>The postscript name of the font, like GillSans-Bold, from <i>name id 6</i> in the name table.</para>
-    </summary>
+    <summary>The postscript name of the font, like GillSans-Bold, from <i>name id 6</i> in the name table.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_POSTSCRIPT_CID_NAME">
-    <summary>
-      <para>The postscript CID findfont name, from <i>name id 20</i> in the name table</para>
-    </summary>
+    <summary>The postscript CID findfont name, from <i>name id 20</i> in the name table</summary>
   </member>
-  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_WEIGHT_STRETCH_STYLE_FAMILY_NAME">
-    <summary></summary>
-  </member>
-  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_DESIGN_SCRIPT_LANGUAGE_TAG">
-    <summary></summary>
-  </member>
-  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_SUPPORTED_SCRIPT_LANGUAGE_TAG">
-    <summary></summary>
-  </member>
+  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_WEIGHT_STRETCH_STYLE_FAMILY_NAME"></member>
+  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_DESIGN_SCRIPT_LANGUAGE_TAG"></member>
+  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_SUPPORTED_SCRIPT_LANGUAGE_TAG"></member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_PREFERRED_FAMILY_NAMES">
-    <summary>
-      <para>Indicates the string containing the family name preferred by the designer. This enables font designers to group more than four fonts in a single family without losing compatibility with GDI. This name is typically only present if it differs from the GDI-compatible family name.</para>
-    </summary>
+    <summary>Indicates the string containing the family name preferred by the designer. This enables font designers to group more than four fonts in a single family without losing compatibility with GDI. This name is typically only present if it differs from the GDI-compatible family name.</summary>
   </member>
   <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_PREFERRED_SUBFAMILY_NAMES">
-    <summary>
-      <para>Indicates the string containing the subfamily name preferred by the designer. This name is typically only present if it differs from the GDI-compatible subfamily name.</para>
-    </summary>
+    <summary>Indicates the string containing the subfamily name preferred by the designer. This name is typically only present if it differs from the GDI-compatible subfamily name.</summary>
   </member>
-  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_WWS_FAMILY_NAME">
-    <summary></summary>
-  </member>
+  <member name="DWRITE_INFORMATIONAL_STRING_ID.DWRITE_INFORMATIONAL_STRING_WWS_FAMILY_NAME"></member>
 </doc>

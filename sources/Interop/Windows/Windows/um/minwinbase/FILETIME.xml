@@ -3,39 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILETIME">
-    <summary>
-      <para>Contains a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 (UTC).</para>
-    </summary>
-    <remarks>
-      <para>To convert a
-<b>FILETIME</b> structure into a time that is easy to display to a user, use the
-<see cref="FileTimeToSystemTime" /> function.</para>
-      <para>It is not recommended that you add and subtract values from the
-<b>FILETIME</b> structure to obtain relative times. Instead, you should copy the low- and high-order parts of the file time to a <see cref="ULARGE_INTEGER" /> structure, perform 64-bit arithmetic on the <b>QuadPart</b> member, and copy the <b>LowPart</b> and <b>HighPart</b> members into the <b>FILETIME</b> structure.</para>
-      <para>Do not cast a pointer to a <b>FILETIME</b> structure to either a <b>ULARGE_INTEGER*</b> or <b>__int64*</b> value because it can cause alignment faults on 64-bit Windows.</para>
-      <para>Not all file systems can record creation and last access time and not all file systems record them in the same manner. For example, on NT FAT, create time has a resolution of 10 milliseconds, write time has a resolution of 2 seconds, and access time has a resolution of 1 day (really, the access date). On NTFS, access time has a resolution of 1 hour. Therefore, the
-<see cref="GetFileTime" /> function may not return the same file time information set using the
-<see cref="SetFileTime" /> function. Furthermore, FAT records times on disk in local time. However, NTFS records times on disk in UTC. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/SysInfo/file-times">File Times</a>.</para>
-      <para>A function using the <b>FILETIME</b> structure can allow for values outside of  zero or positive values typically specified by the <b>dwLowDateTime</b> and <b>dwHighDateTime</b> members.  For example, the <see cref="SetFileTime" /> function uses 0xFFFFFFFF to specify that a file's previous access time should be preserved. For more information, see the topic for the function you are calling.</para>
-      <h4>Examples</h4>
-      <para>For an example, see
-<a href="https://docs.microsoft.com//windows/desktop/SysInfo/changing-a-file-time-to-the-current-time">Changing a File Time to the Current Time</a> or <a href="https://docs.microsoft.com//windows/desktop/SysInfo/retrieving-the-last-write-time">Retrieving the Last-Write Time</a>.</para>
-    </remarks>
-    <seealso cref="CompareFileTime" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/file-times">File Times</seealso>
-    <seealso cref="FileTimeToSystemTime" />
-    <seealso cref="GetFileTime" />
-    <seealso cref="ULARGE_INTEGER" />
+    <summary>Contains a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 (UTC).</summary>
   </member>
   <member name="FILETIME.dwLowDateTime">
-    <summary>
-      <para>The low-order part of the file time.</para>
-    </summary>
+    <summary>The low-order part of the file time.</summary>
   </member>
   <member name="FILETIME.dwHighDateTime">
-    <summary>
-      <para>The high-order part of the file time.</para>
-    </summary>
+    <summary>The high-order part of the file time.</summary>
   </member>
 </doc>

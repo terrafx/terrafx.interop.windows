@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_WINDOWS_INTEGRATED_AUTH_PACKAGE">
-    <summary>
-      <para>Defines the specific SSP package to be used for Windows Integrated
-Authentication.</para>
-    </summary>
+    <summary>Defines the specific SSP package to be used for Windows Integrated Authentication.</summary>
   </member>
   <member name="WS_WINDOWS_INTEGRATED_AUTH_PACKAGE.WS_WINDOWS_INTEGRATED_AUTH_PACKAGE_KERBEROS">
-    <summary>
-      <para>The Kerberos package.</para>
-    </summary>
+    <summary>The Kerberos package.</summary>
   </member>
   <member name="WS_WINDOWS_INTEGRATED_AUTH_PACKAGE.WS_WINDOWS_INTEGRATED_AUTH_PACKAGE_NTLM">
-    <summary>
-      <para>The NTLM package.</para>
-    </summary>
+    <summary>The NTLM package.</summary>
   </member>
   <member name="WS_WINDOWS_INTEGRATED_AUTH_PACKAGE.WS_WINDOWS_INTEGRATED_AUTH_PACKAGE_SPNEGO">
-    <summary>
-      <para>The SPNEGO package.</para>
-    </summary>
+    <summary>The SPNEGO package.</summary>
   </member>
 </doc>

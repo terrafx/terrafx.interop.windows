@@ -4,21 +4,13 @@
 <doc>
   <member name="_MFP_CREATION_OPTIONS">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Specifies options for the <see cref="MFPCreateMediaPlayer" /> function.</para>
     </summary>
-    <remarks>
-      <para>The following <b>typedef</b> is defined for combining flags from this enumeration.</para>
-      <code>typedef UINT32 MFP_CREATION_OPTIONS;
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
   </member>
   <member name="_MFP_CREATION_OPTIONS.MFP_OPTION_NONE">
-    <summary>
-      <para>Use the default creation options.</para>
-    </summary>
+    <summary>Use the default creation options.</summary>
   </member>
   <member name="_MFP_CREATION_OPTIONS.MFP_OPTION_FREE_THREADED_CALLBACK">
     <summary>
@@ -27,13 +19,9 @@
     </summary>
   </member>
   <member name="_MFP_CREATION_OPTIONS.MFP_OPTION_NO_MMCSS">
-    <summary>
-      <para>Do not register the playback topology with the Multimedia Class Scheduler Service (MMCSS). By default, the MFPlay object registers the playback topology with MMCSS, which typically results in a better playback experience. For more information, see <see cref="IMFWorkQueueServices" />.</para>
-    </summary>
+    <summary>Do not register the playback topology with the Multimedia Class Scheduler Service (MMCSS). By default, the MFPlay object registers the playback topology with MMCSS, which typically results in a better playback experience. For more information, see <see cref="IMFWorkQueueServices" />.</summary>
   </member>
   <member name="_MFP_CREATION_OPTIONS.MFP_OPTION_NO_REMOTE_DESKTOP_OPTIMIZATION">
-    <summary>
-      <para>Disables optimizations that are otherwise performed when the application runs in a Remote Desktop Services (RDS, formerly Terminal Services) environment.</para>
-    </summary>
+    <summary>Disables optimizations that are otherwise performed when the application runs in a Remote Desktop Services (RDS, formerly Terminal Services) environment.</summary>
   </member>
 </doc>

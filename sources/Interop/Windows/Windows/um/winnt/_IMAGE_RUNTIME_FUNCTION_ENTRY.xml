@@ -3,30 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY">
-    <summary>
-      <para>Represents an entry in the function table on 64-bit Windows.</para>
-    </summary>
-    <seealso cref="SymFunctionTableAccess64" />
+    <summary>Represents an entry in the function table on 64-bit Windows.</summary>
   </member>
   <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.BeginAddress">
-    <summary>
-      <para>The address of the start of the function.</para>
-    </summary>
+    <summary>The address of the start of the function.</summary>
   </member>
   <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.EndAddress">
-    <summary>
-      <para>The address of the end of the function.</para>
-    </summary>
+    <summary>The address of the end of the function.</summary>
   </member>
-  <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.DUMMYUNIONNAME"></member>
   <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.DUMMYUNIONNAME.UnwindInfoAddress">
-    <summary>
-      <para>The address of the unwind information for the function.</para>
-    </summary>
+    <summary>The address of the unwind information for the function.</summary>
   </member>
-  <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.DUMMYUNIONNAME.UnwindData">
-    <summary></summary>
-  </member>
+  <member name="_IMAGE_RUNTIME_FUNCTION_ENTRY.DUMMYUNIONNAME.UnwindData"></member>
 </doc>

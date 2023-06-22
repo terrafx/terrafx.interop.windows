@@ -4,51 +4,32 @@
 <doc>
   <member name="AM_COLCON">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Indicates the color contrast description from the DVD highlight (HLI) structure.</para>
     </summary>
-    <remarks>
-      <para>This structure is contained within the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-am_property_sphli">AM_PROPERTY_SPHLI</a> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-subpicture-property-set">DVD Subpicture Property Set</seealso>
   </member>
   <member name="AM_COLCON.emph1col">
-    <summary>
-      <para>Emphasis color 1.</para>
-    </summary>
+    <summary>Emphasis color 1.</summary>
   </member>
   <member name="AM_COLCON.emph2col">
-    <summary>
-      <para>Emphasis color 2.</para>
-    </summary>
+    <summary>Emphasis color 2.</summary>
   </member>
   <member name="AM_COLCON.backcol">
-    <summary>
-      <para>Background color.</para>
-    </summary>
+    <summary>Background color.</summary>
   </member>
   <member name="AM_COLCON.patcol">
-    <summary>
-      <para>Pattern color.</para>
-    </summary>
+    <summary>Pattern color.</summary>
   </member>
   <member name="AM_COLCON.emph1con">
-    <summary>
-      <para>Emphasis contrast 1.</para>
-    </summary>
+    <summary>Emphasis contrast 1.</summary>
   </member>
   <member name="AM_COLCON.emph2con">
-    <summary>
-      <para>Emphasis contrast 2.</para>
-    </summary>
+    <summary>Emphasis contrast 2.</summary>
   </member>
   <member name="AM_COLCON.backcon">
-    <summary>
-      <para>Background contrast.</para>
-    </summary>
+    <summary>Background contrast.</summary>
   </member>
   <member name="AM_COLCON.patcon">
-    <summary>
-      <para>Pattern contrast.</para>
-    </summary>
+    <summary>Pattern contrast.</summary>
   </member>
 </doc>

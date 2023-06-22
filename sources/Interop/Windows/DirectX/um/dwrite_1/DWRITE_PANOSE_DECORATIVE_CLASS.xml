@@ -3,74 +3,45 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_DECORATIVE_CLASS</b> enumeration contains values that specify the general look of the character face.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_DECORATIVE_CLASS</b> enumeration contains values that specify the general look of the character face.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_ANY">
-    <summary>
-      <para>Any class of decorative typeface.</para>
-    </summary>
+    <summary>Any class of decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_NO_FIT">
-    <summary>
-      <para>No fit for decorative typeface.</para>
-    </summary>
+    <summary>No fit for decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_DERIVATIVE">
-    <summary>
-      <para>Derivative decorative typeface.</para>
-    </summary>
+    <summary>Derivative decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_NONSTANDARD_TOPOLOGY">
-    <summary>
-      <para>Nonstandard topology decorative typeface.</para>
-    </summary>
+    <summary>Nonstandard topology decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_NONSTANDARD_ELEMENTS">
-    <summary>
-      <para>Nonstandard elements decorative typeface.</para>
-    </summary>
+    <summary>Nonstandard elements decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_NONSTANDARD_ASPECT">
-    <summary>
-      <para>Nonstandard aspect decorative typeface.</para>
-    </summary>
+    <summary>Nonstandard aspect decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_INITIALS">
-    <summary>
-      <para>Initials decorative typeface.</para>
-    </summary>
+    <summary>Initials decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_CARTOON">
-    <summary>
-      <para>Cartoon decorative typeface.</para>
-    </summary>
+    <summary>Cartoon decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_PICTURE_STEMS">
-    <summary>
-      <para>Picture stems decorative typeface.</para>
-    </summary>
+    <summary>Picture stems decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_ORNAMENTED">
-    <summary>
-      <para>Ornamented decorative typeface.</para>
-    </summary>
+    <summary>Ornamented decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_TEXT_AND_BACKGROUND">
-    <summary>
-      <para>Text and background decorative typeface.</para>
-    </summary>
+    <summary>Text and background decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_COLLAGE">
-    <summary>
-      <para>Collage decorative typeface.</para>
-    </summary>
+    <summary>Collage decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_DECORATIVE_CLASS.DWRITE_PANOSE_DECORATIVE_CLASS_MONTAGE">
-    <summary>
-      <para>Montage decorative typeface.</para>
-    </summary>
+    <summary>Montage decorative typeface.</summary>
   </member>
 </doc>

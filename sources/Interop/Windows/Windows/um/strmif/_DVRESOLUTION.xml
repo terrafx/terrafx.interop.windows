@@ -4,67 +4,20 @@
 <doc>
   <member name="_DVRESOLUTION">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Indicates the digital video (DV) decoding resolution.</para>
     </summary>
-    <remarks>
-      <para>The decoding resolution depends on whether the current format is NTSC or PAL:</para>
-      <list type="table">
-        <listheader>
-          <description>Enumeration</description>
-          <description>NTSC</description>
-          <description>PAL</description>
-        </listheader>
-        <item>
-          <description>DVRESOLUTION_FULL</description>
-          <description>720 x 480</description>
-          <description>720 x 576</description>
-        </item>
-        <item>
-          <description>DVRESOLUTION_HALF</description>
-          <description>360 x 240</description>
-          <description>360 x 288</description>
-        </item>
-        <item>
-          <description>DVRESOLUTION_QUARTER</description>
-          <description>180 x 120</description>
-          <description>180 x 144</description>
-        </item>
-        <item>
-          <description>DVRESOLUTION_DC</description>
-          <description>88 x 60</description>
-          <description>88 x 72</description>
-        </item>
-      </list>
-      <para>The following enumeration defined in strmif.h is equivalent to the <b>_DVRESOLUTION</b> enumeration. It is included for compatibility with existing applications.</para>
-      <code>enum _DVDECODERRESOLUTION {
-    DVDECODERRESOLUTION_720x480     =   1000,
-    DVDECODERRESOLUTION_360x240     =   1001,
-    DVDECODERRESOLUTION_180x120     =   1002,
-    DVDECODERRESOLUTION_88x60       =   1003
-};
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IIPDVDec Interface" />
   </member>
   <member name="_DVRESOLUTION.DVRESOLUTION_FULL">
-    <summary>
-      <para>Decode at full size.</para>
-    </summary>
+    <summary>Decode at full size.</summary>
   </member>
   <member name="_DVRESOLUTION.DVRESOLUTION_HALF">
-    <summary>
-      <para>Decode at half size.</para>
-    </summary>
+    <summary>Decode at half size.</summary>
   </member>
   <member name="_DVRESOLUTION.DVRESOLUTION_QUARTER">
-    <summary>
-      <para>Decode at quarter size.</para>
-    </summary>
+    <summary>Decode at quarter size.</summary>
   </member>
   <member name="_DVRESOLUTION.DVRESOLUTION_DC">
-    <summary>
-      <para>Decode at one-eighth size.</para>
-    </summary>
+    <summary>Decode at one-eighth size.</summary>
   </member>
 </doc>

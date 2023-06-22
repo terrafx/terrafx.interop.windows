@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_FEATURE">
-    <summary>
-      <para>Defines a set of optional features and capabilities that can be queried from the DirectML device. See <see cref="IDMLDevice.CheckFeatureSupport" />.</para>
-    </summary>
-    <seealso cref="IDMLDevice.CheckFeatureSupport method" />
-    <seealso cref="DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT" />
-    <seealso cref="DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT" />
-    <seealso cref="DML_FEATURE_QUERY_FEATURE_LEVELS" />
-    <seealso cref="DML_FEATURE_DATA_FEATURE_LEVELS" />
+    <summary>Defines a set of optional features and capabilities that can be queried from the DirectML device. See <see cref="IDMLDevice.CheckFeatureSupport" />.</summary>
   </member>
   <member name="DML_FEATURE.DML_FEATURE_TENSOR_DATA_TYPE_SUPPORT">
-    <summary>
-      <para>Allows querying for tensor data type support. The query type is <see cref="DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT" />, and the support data type is <see cref="DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT" />.</para>
-    </summary>
+    <summary>Allows querying for tensor data type support. The query type is <see cref="DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT" />, and the support data type is <see cref="DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT" />.</summary>
   </member>
   <member name="DML_FEATURE.DML_FEATURE_FEATURE_LEVELS">
-    <summary>
-      <para>Allows querying for the feature levels supported by the device. The query type is <see cref="DML_FEATURE_QUERY_FEATURE_LEVELS" />, and the support data type is <see cref="DML_FEATURE_DATA_FEATURE_LEVELS" />.</para>
-    </summary>
+    <summary>Allows querying for the feature levels supported by the device. The query type is <see cref="DML_FEATURE_QUERY_FEATURE_LEVELS" />, and the support data type is <see cref="DML_FEATURE_DATA_FEATURE_LEVELS" />.</summary>
   </member>
 </doc>

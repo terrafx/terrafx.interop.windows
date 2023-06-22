@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_DIRECT_MODES">
-    <summary>
-      <para>Specifies direct modes for H.264 video encoding.</para>
-    </summary>
+    <summary>Specifies direct modes for H.264 video encoding.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_DIRECT_MODES.D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_DIRECT_MODES_DISABLED">
-    <summary>
-      <para>Direct modes disabled.</para>
-    </summary>
+    <summary>Direct modes disabled.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_DIRECT_MODES.D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_DIRECT_MODES_TEMPORAL">
-    <summary>
-      <para>Enables Direct temporal mode. Please check for support in <see cref="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_FLAGS_H264_DIRECT_TEMPORAL_ENCODING_SUPPORT" />.</para>
-    </summary>
+    <summary>Enables Direct temporal mode. Please check for support in <see cref="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_FLAGS_H264_DIRECT_TEMPORAL_ENCODING_SUPPORT" />.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_DIRECT_MODES.D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_DIRECT_MODES_SPATIAL">
-    <summary>
-      <para>Enables Direct spatial mode. Please check for support in <see cref="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_FLAGS_H264_DIRECT_SPATIAL_ENCODING_SUPPORT" />.</para>
-    </summary>
+    <summary>Enables Direct spatial mode. Please check for support in <see cref="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_FLAGS_H264_DIRECT_SPATIAL_ENCODING_SUPPORT" />.</summary>
   </member>
 </doc>

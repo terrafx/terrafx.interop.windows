@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.CoHandlePriorityEventsFromMessagePump">
+    <summary>Called by message dispatchers on an ASTA thread after dispatching a windows message to provide an opportunity for short-running infrastructural COM calls and other high-priority or short-running COM work to be dispatched between messages. This helps to provide similar responsiveness to these infrastructural calls in an ASTA as in a classic STA, even when there is a long stream of window messages to be handled.</summary>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.CoSetMessageDispatcher">
+    <summary>Registers or unregisters the per-thread message dispatcher that is to be invoked when there are window messages available to dispatch within COM wait APIs on an ASTA thread. This function is usually called by CoreWindow, but in certain circumstances other components that need to specialize how messages are dispatched on an ASTA thread can also call this function.</summary>
+    <param name="pMessageDispatcher">If non-null, message dispatcher object to register. This object must also implement <see cref="IWeakReferenceSource" />. If null, unregisters the current message dispatcher.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+</doc>

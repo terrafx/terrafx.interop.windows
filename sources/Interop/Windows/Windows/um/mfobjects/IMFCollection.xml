@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFCollection.AddElement">
-    <summary>
-      <para>Adds an object to the collection.</para>
-    </summary>
-    <param name="pUnkElement">
-      <para>Pointer to the object's <b>IUnknown</b> interface.</para>
-    </param>
+    <summary>Adds an object to the collection.</summary>
+    <param name="pUnkElement">Pointer to the object's <b>IUnknown</b> interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,70 +12,30 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>pUnkElement</i> is <b>NULL</b>, a <b>NULL</b> pointer is added to the collection.</para>
-    </remarks>
-    <seealso cref="IMFCollection" />
   </member>
   <member name="IMFCollection.GetElement">
-    <summary>
-      <para>Retrieves an object in the collection.</para>
-    </summary>
-    <param name="dwElementIndex">
-      <para>Zero-based index of the object to retrieve. Objects are indexed in the order in which they were added to the collection.</para>
-    </param>
-    <param name="ppUnkElement">
-      <para>Receives a pointer to the object's <b>IUnknown</b> interface. The caller must release the interface. The retrieved pointer value might be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method does not remove the object from the collection. To remove an object, call <see cref="IMFCollection.RemoveElement" />.</para>
-      <h4>Examples</h4>
-      <code>//  Gets an interface pointer from a collection (IMFCollection).
-//
-//  Q: Interface type
-
-template &lt;class Q&gt;
-HRESULT GetCollectionObject(IMFCollection *pCollection,
-    DWORD dwIndex, Q **ppObject)
-{
-    *ppObject = NULL;   // zero output
-
-    IUnknown *pUnk = NULL;
-    HRESULT hr = pCollection-&gt;GetElement(dwIndex, &amp;amp;amp;amp;amp;amp;pUnk);
-    if (SUCCEEDED(hr))
-    {
-        hr = pUnk-&gt;QueryInterface(IID_PPV_ARGS(ppObject));
-        pUnk-&gt;Release();
-    }
-    return hr;
-}
-
-</code>
-    </remarks>
-    <seealso cref="IMFCollection" />
+    <summary>Retrieves an object in the collection.</summary>
+    <param name="dwElementIndex">Zero-based index of the object to retrieve. Objects are indexed in the order in which they were added to the collection.</param>
+    <param name="ppUnkElement">Receives a pointer to the object's <b>IUnknown</b> interface. The caller must release the interface. The retrieved pointer value might be <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCollection.GetElementCount">
-    <summary>
-      <para>Retrieves the number of objects in the collection.</para>
-    </summary>
-    <param name="pcElements">
-      <para>Receives the number of objects in the collection.</para>
-    </param>
+    <summary>Retrieves the number of objects in the collection.</summary>
+    <param name="pcElements">Receives the number of objects in the collection.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -87,30 +43,25 @@ HRESULT GetCollectionObject(IMFCollection *pCollection,
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFCollection" />
   </member>
   <member name="IMFCollection.InsertElementAt">
-    <summary>
-      <para>Adds an object at the specified index in the collection.</para>
-    </summary>
-    <param name="dwIndex">
-      <para>The zero-based index where the object will be added to the collection.</para>
-    </param>
-    <param name="pUnknown">
-      <para>The object to insert.</para>
-    </param>
+    <summary>Adds an object at the specified index in the collection.</summary>
+    <param name="dwIndex">The zero-based index where the object will be added to the collection.</param>
+    <param name="pUnknown">The object to insert.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -118,24 +69,23 @@ HRESULT GetCollectionObject(IMFCollection *pCollection,
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFCollection" />
   </member>
   <member name="IMFCollection.RemoveAllElements">
-    <summary>
-      <para>Removes all items from the collection.</para>
-    </summary>
+    <summary>Removes all items from the collection.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -143,30 +93,25 @@ HRESULT GetCollectionObject(IMFCollection *pCollection,
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFCollection" />
   </member>
   <member name="IMFCollection.RemoveElement">
-    <summary>
-      <para>Removes an object from the collection.</para>
-    </summary>
-    <param name="dwElementIndex">
-      <para>Zero-based index of the object to remove. Objects are indexed in the order in which they were added to the collection.</para>
-    </param>
-    <param name="ppUnkElement">
-      <para>Receives a pointer to the <b>IUnknown</b> interface of the object. The caller must release the interface. This parameter cannot be <b>NULL</b>, but the retrieved pointer value might be <b>NULL</b>.</para>
-    </param>
+    <summary>Removes an object from the collection.</summary>
+    <param name="dwElementIndex">Zero-based index of the object to remove. Objects are indexed in the order in which they were added to the collection.</param>
+    <param name="ppUnkElement">Receives a pointer to the <b>IUnknown</b> interface of the object. The caller must release the interface. This parameter cannot be <b>NULL</b>, but the retrieved pointer value might be <b>NULL</b>.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -174,27 +119,22 @@ HRESULT GetCollectionObject(IMFCollection *pCollection,
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFCollection" />
   </member>
   <member name="IMFCollection">
-    <summary>
-      <para>Represents a generic collection of <b>IUnknown</b> pointers.</para>
-    </summary>
-    <remarks>
-      <para>To create an empty collection object, call <see cref="MFCreateCollection" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Represents a generic collection of <b>IUnknown</b> pointers.</summary>
   </member>
 </doc>

@@ -3,58 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_STROKE_STYLE_PROPERTIES1">
-    <summary>
-      <para>Describes the stroke that outlines a shape.</para>
-    </summary>
-    <seealso cref="ID2D1Factory1.CreateStrokeStyle" />
-    <seealso cref="ID2D1StrokeStyle1" />
+    <summary>Describes the stroke that outlines a shape.</summary>
   </member>
   <member name="D2D1_STROKE_STYLE_PROPERTIES1.startCap">
-    <summary>
-      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
-      <para>The cap to use at the start of each open figure.</para>
-    </summary>
+    <summary>The cap to use at the start of each open figure.</summary>
   </member>
   <member name="D2D1_STROKE_STYLE_PROPERTIES1.endCap">
-    <summary>
-      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
-      <para>The cap to use at the end of each open figure.</para>
-    </summary>
+    <summary>The cap to use at the end of each open figure.</summary>
   </member>
   <member name="D2D1_STROKE_STYLE_PROPERTIES1.dashCap">
-    <summary>
-      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
-      <para>The cap to use at the start and end of each dash.</para>
-    </summary>
+    <summary>The cap to use at the start and end of each dash.</summary>
   </member>
   <member name="D2D1_STROKE_STYLE_PROPERTIES1.lineJoin">
-    <summary>
-      <para>Type: <b><see cref="D2D1_LINE_JOIN" /></b></para>
-      <para>The line join to use.</para>
-    </summary>
+    <summary>The line join to use.</summary>
   </member>
   <member name="D2D1_STROKE_STYLE_PROPERTIES1.miterLimit">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The limit beyond which miters are either clamped or converted to bevels.</para>
-    </summary>
+    <summary>The limit beyond which miters are either clamped or converted to bevels.</summary>
   </member>
   <member name="D2D1_STROKE_STYLE_PROPERTIES1.dashStyle">
-    <summary>
-      <para>Type: <b><see cref="D2D1_DASH_STYLE" /></b></para>
-      <para>The type of dash to use.</para>
-    </summary>
+    <summary>The type of dash to use.</summary>
   </member>
   <member name="D2D1_STROKE_STYLE_PROPERTIES1.dashOffset">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The location of the first dash, relative to the start of the figure.</para>
-    </summary>
+    <summary>The location of the first dash, relative to the start of the figure.</summary>
   </member>
   <member name="D2D1_STROKE_STYLE_PROPERTIES1.transformType">
-    <summary>
-      <para>Type: <b><see cref="D2D1_STROKE_TRANSFORM_TYPE" /></b></para>
-      <para>The rule that determines what render target properties affect the nib of the stroke.</para>
-    </summary>
+    <summary>The rule that determines what render target properties affect the nib of the stroke.</summary>
   </member>
 </doc>

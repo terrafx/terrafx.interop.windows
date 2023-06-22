@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGR_CONTROL_FLAGS">
-    <summary>
-      <para>Specifies how an operation requested on certain methods of <see cref="ISyncMgrControl" /> should be performed.</para>
-    </summary>
+    <summary>Specifies how an operation requested on certain methods of <see cref="ISyncMgrControl" /> should be performed.</summary>
   </member>
   <member name="SYNCMGR_CONTROL_FLAGS.SYNCMGR_CF_NONE">
-    <summary>
-      <para>Perform the operation not using any of the other flags in this enumeration.</para>
-    </summary>
+    <summary>Perform the operation not using any of the other flags in this enumeration.</summary>
   </member>
   <member name="SYNCMGR_CONTROL_FLAGS.SYNCMGR_CF_NOWAIT">
-    <summary>
-      <para>Perform the operation asynchronously.</para>
-    </summary>
+    <summary>Perform the operation asynchronously.</summary>
   </member>
   <member name="SYNCMGR_CONTROL_FLAGS.SYNCMGR_CF_WAIT">
-    <summary>
-      <para>Perform the operation synchronously.</para>
-    </summary>
+    <summary>Perform the operation synchronously.</summary>
   </member>
   <member name="SYNCMGR_CONTROL_FLAGS.SYNCMGR_CF_NOUI">
-    <summary>
-      <para>Perform the operation without asking the sync handler to display the UI during the operation.</para>
-    </summary>
+    <summary>Perform the operation without asking the sync handler to display the UI during the operation.</summary>
   </member>
   <member name="SYNCMGR_CONTROL_FLAGS.SYNCMGR_CF_VALID">
-    <summary>
-      <para>A mask used to determine valid <see cref="SYNCMGR_CONTROL_FLAGS" /> flags.</para>
-    </summary>
+    <summary>A mask used to determine valid <see cref="SYNCMGR_CONTROL_FLAGS" /> flags.</summary>
   </member>
 </doc>

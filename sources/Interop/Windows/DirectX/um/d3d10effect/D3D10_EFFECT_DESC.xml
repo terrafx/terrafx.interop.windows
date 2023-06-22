@@ -3,49 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_EFFECT_DESC">
-    <summary>
-      <para>Describes an effect.</para>
-    </summary>
-    <remarks>
-      <para>To get an effect description, call <see cref="ID3D10Effect.GetDesc" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-structures">Effect Structures (Direct3D 10)</seealso>
+    <summary>Describes an effect.</summary>
   </member>
   <member name="D3D10_EFFECT_DESC.IsChildEffect">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> if the effect is a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-performance">child effect</a>; otherwise <b>FALSE</b>.</para>
-    </summary>
+      <b>TRUE</b> if the effect is a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-performance">child effect</a>; otherwise <b>FALSE</b>.</summary>
   </member>
   <member name="D3D10_EFFECT_DESC.ConstantBuffers">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of constant buffers.</para>
-    </summary>
+    <summary>The number of constant buffers.</summary>
   </member>
   <member name="D3D10_EFFECT_DESC.SharedConstantBuffers">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of constant buffers shared in an effect pool.</para>
-    </summary>
+    <summary>The number of constant buffers shared in an effect pool.</summary>
   </member>
   <member name="D3D10_EFFECT_DESC.GlobalVariables">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of global variables.</para>
-    </summary>
+    <summary>The number of global variables.</summary>
   </member>
   <member name="D3D10_EFFECT_DESC.SharedGlobalVariables">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of global variables shared in an effect pool.</para>
-    </summary>
+    <summary>The number of global variables shared in an effect pool.</summary>
   </member>
   <member name="D3D10_EFFECT_DESC.Techniques">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of techniques.</para>
-    </summary>
+    <summary>The number of techniques.</summary>
   </member>
 </doc>

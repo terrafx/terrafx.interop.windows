@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcCompiler3.Compile">
+    <summary>
+      <para>Compile a shader. Depending on the arguments, you can use this method to:</para>
+      <list type="bullet">
+        <item>
+          <description>Compile a single entry point to the target shader model</description>
+        </item>
+        <item>
+          <description>Compile a library to a library target (<code>-T lib_*</code>)</description>
+        </item>
+        <item>
+          <description>Compile a root signature (<code>-T rootsig_*</code>),</description>
+        </item>
+        <item>
+          <description>Preprocess HLSL source (<code>-P</code>)</description>
+        </item>
+      </list>
+      <para>You can use to assist in building the <i>pArguments</i> and <i>argCount</i> arguments.</para>
+    </summary>
+    <param name="pSource">The source text to compile.</param>
+    <param name="pArguments">An array of pointers to arguments.</param>
+    <param name="argCount">The number of arguments.</param>
+    <param name="pIncludeHandler">An optional user-provided interface to handle <code>#include</code> directives.</param>
+    <param name="riid">The interface ID for the result.</param>
+    <param name="ppResult">An <see cref="IDxcResult" /> representing the compiler output status, buffer, and errors.</param>
+  </member>
+  <member name="IDxcCompiler3.Disassemble">
+    <summary>Disassemble a program.</summary>
+    <param name="pObject">The program to disassemble: dxil container or bitcode.</param>
+    <param name="riid">The interface ID for the result.</param>
+    <param name="ppResult">An <see cref="IDxcResult" /> representing the compiler output status, buffer, and errors.</param>
+  </member>
+  <member name="IDxcCompiler3">
+    <summary>
+      <para>Interface that represents the DirectX Shader Compiler.</para>
+      <para>To obtain an instance of this interface, call <see cref="DxcCreateInstance" /> with <b>CLSID_DxcCompiler</b>.</para>
+    </summary>
+  </member>
+</doc>

@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_BITMAP_PROPERTIES">
-    <summary>
-      <para>Describes the pixel format and dpi
-of a bitmap.</para>
-    </summary>
+    <summary>Describes the pixel format and dpi of a bitmap.</summary>
   </member>
   <member name="D2D1_BITMAP_PROPERTIES.pixelFormat">
-    <summary>
-      <para>Type: <b><see cref="D2D1_PIXEL_FORMAT" /></b></para>
-      <para>The bitmap's pixel format and alpha mode.</para>
-    </summary>
+    <summary>The bitmap's pixel format and alpha mode.</summary>
   </member>
   <member name="D2D1_BITMAP_PROPERTIES.dpiX">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The horizontal dpi of the bitmap.</para>
-    </summary>
+    <summary>The horizontal dpi of the bitmap.</summary>
   </member>
   <member name="D2D1_BITMAP_PROPERTIES.dpiY">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The vertical dpi of the bitmap.</para>
-    </summary>
+    <summary>The vertical dpi of the bitmap.</summary>
   </member>
 </doc>

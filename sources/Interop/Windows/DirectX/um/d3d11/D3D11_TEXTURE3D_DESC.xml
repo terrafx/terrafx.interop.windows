@@ -3,69 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TEXTURE3D_DESC">
-    <summary>
-      <para>Describes a 3D texture.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used in a call to <see cref="ID3D11Device.CreateTexture3D" />.</para>
-      <para>In addition to this structure, you can also use the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151706(v=vs.85)">CD3D11_TEXTURE3D_DESC</a> derived structure, which is defined  in D3D11.h and behaves like an inherited class, to help create a texture description.</para>
-      <para>The device restricts the size of subsampled, block compressed, and bit format resources to be multiples of sizes specific to each format.</para>
-      <para>The texture size range is determined by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the device and not the Microsoft Direct3D interface version. For example, if you use Microsoft Direct3D 10 hardware at feature level 10 (<see cref="D3D_FEATURE_LEVEL_10_0" />) and call <see cref="D3D11CreateDevice" /> to create an <see cref="ID3D11Device" />, you must constrain the maximum texture size to D3D10_REQ_TEXTURE3D_U_V_OR_W_DIMENSION (2048) when you create your 3D texture.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Describes a 3D texture.</summary>
   </member>
   <member name="D3D11_TEXTURE3D_DESC.Width">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Texture width (in texels). The  range is from 1 to D3D11_REQ_TEXTURE3D_U_V_OR_W_DIMENSION (2048). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
-    </summary>
+    <summary>Texture width (in texels). The range is from 1 to D3D11_REQ_TEXTURE3D_U_V_OR_W_DIMENSION (2048). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</summary>
   </member>
   <member name="D3D11_TEXTURE3D_DESC.Height">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Texture height (in texels). The  range is from 1 to D3D11_REQ_TEXTURE3D_U_V_OR_W_DIMENSION (2048). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
-    </summary>
+    <summary>Texture height (in texels). The range is from 1 to D3D11_REQ_TEXTURE3D_U_V_OR_W_DIMENSION (2048). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</summary>
   </member>
   <member name="D3D11_TEXTURE3D_DESC.Depth">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Texture depth (in texels). The  range is from 1 to D3D11_REQ_TEXTURE3D_U_V_OR_W_DIMENSION (2048). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</para>
-    </summary>
+    <summary>Texture depth (in texels). The range is from 1 to D3D11_REQ_TEXTURE3D_U_V_OR_W_DIMENSION (2048). However, the range is actually constrained by the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> at which you create the rendering device. For more information about restrictions, see Remarks.</summary>
   </member>
   <member name="D3D11_TEXTURE3D_DESC.MipLevels">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The maximum number of mipmap levels in the texture. See the remarks in <see cref="D3D11_TEX1D_SRV" />. Use 1 for a multisampled texture; or 0 to generate a full set of subtextures.</para>
-    </summary>
+    <summary>The maximum number of mipmap levels in the texture. See the remarks in <see cref="D3D11_TEX1D_SRV" />. Use 1 for a multisampled texture; or 0 to generate a full set of subtextures.</summary>
   </member>
   <member name="D3D11_TEXTURE3D_DESC.Format">
-    <summary>
-      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
-      <para>Texture format (see <see cref="DXGI_FORMAT" />).</para>
-    </summary>
+    <summary>Texture format (see <see cref="DXGI_FORMAT" />).</summary>
   </member>
   <member name="D3D11_TEXTURE3D_DESC.Usage">
-    <summary>
-      <para>Type: <b><see cref="D3D11_USAGE" /></b></para>
-      <para>Value that identifies how the texture is to be read from and written to. The most common value is D3D11_USAGE_DEFAULT; see <see cref="D3D11_USAGE" /> for all possible values.</para>
-    </summary>
+    <summary>Value that identifies how the texture is to be read from and written to. The most common value is D3D11_USAGE_DEFAULT; see <see cref="D3D11_USAGE" /> for all possible values.</summary>
   </member>
   <member name="D3D11_TEXTURE3D_DESC.BindFlags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Flags (see <see cref="D3D11_BIND_FLAG" />) for binding to pipeline stages. The flags can be combined by a bitwise OR.</para>
-    </summary>
+    <summary>Flags (see <see cref="D3D11_BIND_FLAG" />) for binding to pipeline stages. The flags can be combined by a bitwise OR.</summary>
   </member>
   <member name="D3D11_TEXTURE3D_DESC.CPUAccessFlags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Flags (see <see cref="D3D11_CPU_ACCESS_FLAG" />) to specify the types of CPU access allowed. Use 0 if CPU access is not required. These flags can be combined with a bitwise OR.</para>
-    </summary>
+    <summary>Flags (see <see cref="D3D11_CPU_ACCESS_FLAG" />) to specify the types of CPU access allowed. Use 0 if CPU access is not required. These flags can be combined with a bitwise OR.</summary>
   </member>
   <member name="D3D11_TEXTURE3D_DESC.MiscFlags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Flags (see <see cref="D3D11_RESOURCE_MISC_FLAG" />) that identify other, less common resource options. Use 0 if none of these flags apply. These flags can be combined with a bitwise OR.</para>
-    </summary>
+    <summary>Flags (see <see cref="D3D11_RESOURCE_MISC_FLAG" />) that identify other, less common resource options. Use 0 if none of these flags apply. These flags can be combined with a bitwise OR.</summary>
   </member>
 </doc>

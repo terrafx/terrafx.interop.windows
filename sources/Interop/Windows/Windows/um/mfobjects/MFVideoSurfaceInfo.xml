@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFVideoSurfaceInfo">
-    <summary>
-      <para>Contains information about an uncompressed video format. This structure is used in the <see cref="MFVIDEOFORMAT" /> structure.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</seealso>
+    <summary>Contains information about an uncompressed video format. This structure is used in the <see cref="MFVIDEOFORMAT" /> structure.</summary>
   </member>
   <member name="MFVideoSurfaceInfo.Format">
-    <summary>
-      <para>For compressed formats, this value must be zero. For uncompressed formats, the value is a FOURCC or <b>D3DFORMAT</b> value that identifies the format. Use the <b>Data1</b> field from the subtype GUID. See <a href="https://docs.microsoft.com//windows/desktop/medfound/video-subtype-guids">Video Subtype GUIDs</a>.</para>
-    </summary>
+    <summary>For compressed formats, this value must be zero. For uncompressed formats, the value is a FOURCC or <b>D3DFORMAT</b> value that identifies the format. Use the <b>Data1</b> field from the subtype GUID. See <a href="https://docs.microsoft.com//windows/desktop/medfound/video-subtype-guids">Video Subtype GUIDs</a>.</summary>
   </member>
   <member name="MFVideoSurfaceInfo.PaletteEntries">
-    <summary>
-      <para>Number of palette entries. The value must be between 0 and 256.</para>
-    </summary>
+    <summary>Number of palette entries. The value must be between 0 and 256.</summary>
   </member>
   <member name="MFVideoSurfaceInfo.Palette">
-    <summary>
-      <para>Array of <see cref="MFPaletteEntry Union" />s that contains the color table for a palettized format. The size of the array is given in the <b>PaletteEntries</b> member. If the format is not palettized, set <b>PaletteEntries</b> to zero.</para>
-    </summary>
+    <summary>Array of <see cref="MFPaletteEntry Union" />s that contains the color table for a palettized format. The size of the array is given in the <b>PaletteEntries</b> member. If the format is not palettized, set <b>PaletteEntries</b> to zero.</summary>
   </member>
 </doc>

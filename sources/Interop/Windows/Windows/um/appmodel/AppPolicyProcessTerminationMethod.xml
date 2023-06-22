@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AppPolicyProcessTerminationMethod">
-    <summary>
-      <para>The AppPolicyProcessTerminationMethod enumeration indicates the method used to end a process.</para>
-    </summary>
+    <summary>The AppPolicyProcessTerminationMethod enumeration indicates the method used to end a process.</summary>
   </member>
   <member name="AppPolicyProcessTerminationMethod.AppPolicyProcessTerminationMethod_ExitProcess">
-    <summary>
-      <para>Allows DLLs to execute code at shutdown. This value is expected for a desktop application, or for a Desktop Bridge application.</para>
-    </summary>
+    <summary>Allows DLLs to execute code at shutdown. This value is expected for a desktop application, or for a Desktop Bridge application.</summary>
   </member>
   <member name="AppPolicyProcessTerminationMethod.AppPolicyProcessTerminationMethod_TerminateProcess">
-    <summary>
-      <para>Immediately ends the process. This value is expected for a UWP app.</para>
-    </summary>
+    <summary>Immediately ends the process. This value is expected for a UWP app.</summary>
   </member>
 </doc>

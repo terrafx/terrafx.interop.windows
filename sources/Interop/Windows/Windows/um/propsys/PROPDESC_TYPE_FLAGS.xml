@@ -3,91 +3,54 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROPDESC_TYPE_FLAGS">
-    <summary>
-      <para>Describes attributes of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </summary>
-    <remarks>
-      <para>These values are defined in propsys.h and propsys.idl.</para>
-    </remarks>
+    <summary>Describes attributes of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_DEFAULT">
-    <summary>
-      <para>The property uses the default values for all attributes.</para>
-    </summary>
+    <summary>The property uses the default values for all attributes.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_MULTIPLEVALUES">
-    <summary>
-      <para>The property can have multiple values. These values are stored as a VT_VECTOR in the <see cref="PROPVARIANT" /> structure. This value is set by the <i>multipleValues</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </summary>
+    <summary>The property can have multiple values. These values are stored as a VT_VECTOR in the <see cref="PROPVARIANT" /> structure. This value is set by the <i>multipleValues</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_ISINNATE">
-    <summary>
-      <para>This flag indicates that a property is read-only, and cannot be written to. This value is set by the <i>isInnate</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </summary>
+    <summary>This flag indicates that a property is read-only, and cannot be written to. This value is set by the <i>isInnate</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_ISGROUP">
-    <summary>
-      <para>The property is a group heading. This value is set by the <i>isGroup</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </summary>
+    <summary>The property is a group heading. This value is set by the <i>isGroup</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_CANGROUPBY">
-    <summary>
-      <para>The user can group by this property. This value is set by the <i>canGroupBy</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </summary>
+    <summary>The user can group by this property. This value is set by the <i>canGroupBy</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_CANSTACKBY">
-    <summary>
-      <para>The user can stack by this property. This value is set by the <i>canStackBy</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </summary>
+    <summary>The user can stack by this property. This value is set by the <i>canStackBy</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_ISTREEPROPERTY">
-    <summary>
-      <para>This property contains a hierarchy. This value is set by the <i>isTreeProperty</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </summary>
+    <summary>This property contains a hierarchy. This value is set by the <i>isTreeProperty</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_INCLUDEINFULLTEXTQUERY">
     <summary>
-      <para>
-        <b>Deprecated in Windows 7 and later</b>. Include this property in any full text query that is performed. This value is set by the <i>includeInFullTextQuery</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </summary>
+      <b>Deprecated in Windows 7 and later</b>. Include this property in any full text query that is performed. This value is set by the <i>includeInFullTextQuery</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_ISVIEWABLE">
-    <summary>
-      <para>This property is meant to be viewed by the user. This influences whether the property shows up in the "Choose Columns" dialog box, for example. This value is set by the <i>isViewable</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </summary>
+    <summary>This property is meant to be viewed by the user. This influences whether the property shows up in the "Choose Columns" dialog box, for example. This value is set by the <i>isViewable</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_ISQUERYABLE">
     <summary>
-      <para>
-        <b>Deprecated in Windows 7 and later</b>. This property is included in the list of properties that can be queried. A queryable property must also be viewable. This influences whether the property shows up in the query builder UI. This value is set by the <i>isQueryable</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </summary>
+      <b>Deprecated in Windows 7 and later</b>. This property is included in the list of properties that can be queried. A queryable property must also be viewable. This influences whether the property shows up in the query builder UI. This value is set by the <i>isQueryable</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_CANBEPURGED">
     <summary>
-      <para>
-        <b>Windows Vista with Service Pack 1 (SP1) and later</b>. Used with an innate property (that is, a value calculated from other property values) to indicate that it can be deleted. This value is used by the <b>Remove Properties</b> UI to determine whether to display a check box next to a property that enables that property to be selected for removal. Note that a property that is not innate can always be purged regardless of the presence or absence of this flag.</para>
-    </summary>
+      <b>Windows Vista with Service Pack 1 (SP1) and later</b>. Used with an innate property (that is, a value calculated from other property values) to indicate that it can be deleted. This value is used by the <b>Remove Properties</b> UI to determine whether to display a check box next to a property that enables that property to be selected for removal. Note that a property that is not innate can always be purged regardless of the presence or absence of this flag.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_SEARCHRAWVALUE">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. The unformatted (raw) property value should be used for searching.</para>
-    </summary>
+      <b>Windows 7 and later</b>. The unformatted (raw) property value should be used for searching.</summary>
   </member>
-  <member name="PROPDESC_TYPE_FLAGS.PDTF_DONTCOERCEEMPTYSTRINGS">
-    <summary></summary>
-  </member>
-  <member name="PROPDESC_TYPE_FLAGS.PDTF_ALWAYSINSUPPLEMENTALSTORE">
-    <summary></summary>
-  </member>
+  <member name="PROPDESC_TYPE_FLAGS.PDTF_DONTCOERCEEMPTYSTRINGS"></member>
+  <member name="PROPDESC_TYPE_FLAGS.PDTF_ALWAYSINSUPPLEMENTALSTORE"></member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_ISSYSTEMPROPERTY">
-    <summary>
-      <para>This property is owned by the system.</para>
-    </summary>
+    <summary>This property is owned by the system.</summary>
   </member>
   <member name="PROPDESC_TYPE_FLAGS.PDTF_MASK_ALL">
-    <summary>
-      <para>A mask used to retrieve all flags.</para>
-    </summary>
+    <summary>A mask used to retrieve all flags.</summary>
   </member>
 </doc>

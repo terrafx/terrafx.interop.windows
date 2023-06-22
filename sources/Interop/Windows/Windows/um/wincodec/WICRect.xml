@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICRect">
-    <summary>
-      <para>Represents a rectangle for Windows Imaging Component (WIC) API.</para>
-    </summary>
+    <summary>Represents a rectangle for Windows Imaging Component (WIC) API.</summary>
   </member>
   <member name="WICRect.X">
-    <summary>
-      <para>Type: <b>INT</b></para>
-      <para>The horizontal coordinate of the rectangle.</para>
-    </summary>
+    <summary>The horizontal coordinate of the rectangle.</summary>
   </member>
   <member name="WICRect.Y">
-    <summary>
-      <para>Type: <b>INT</b></para>
-      <para>The vertical coordinate of the rectangle.</para>
-    </summary>
+    <summary>The vertical coordinate of the rectangle.</summary>
   </member>
   <member name="WICRect.Width">
-    <summary>
-      <para>Type: <b>INT</b></para>
-      <para>The width of the rectangle.</para>
-    </summary>
+    <summary>The width of the rectangle.</summary>
   </member>
   <member name="WICRect.Height">
-    <summary>
-      <para>Type: <b>INT</b></para>
-      <para>The height of the rectangle.</para>
-    </summary>
+    <summary>The height of the rectangle.</summary>
   </member>
 </doc>

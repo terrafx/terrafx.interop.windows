@@ -3,55 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWbemBackupRestoreEx.Pause">
-    <summary>
-      <para>The <b>IWbemBackupRestoreEx.Pause</b> method locks out write operations from the Windows Management Instrumentation (WMI) repository, and may cause read operations to be blocked.</para>
-    </summary>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> that indicates the status of a method call. The following list lists the values contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>When implementing the <b>Pause</b> method, the <see cref="Resume" /> method should be called as soon as possible. If <b>Resume</b> is not called within fifteen (15) minutes, it is called automatically for you. Calling <b>Pause</b> two times on the same object without calling <b>Resume</b> first will fail. Calling <b>Pause</b> on two objects at the same time may cause the second object to lock up until <b>Resume</b> is called on the first object.</para>
-      <para>
-        <b>Note</b>  To implement the <b>Pause</b> method, the client user must have <b>SE_BACKUP_NAME</b> prior to calling the method.</para>
-      <h4>Examples</h4>
-      <para>The following C++ example shows how to correctly call the <b>IWbemBackupRestoreEx.Pause</b> method.</para>
-      <code>// The pInt variable is of type IWbemBackupRestoreEx*
-pInt-&gt;Pause();
-</code>
-    </remarks>
-    <seealso cref="IWbemBackupRestoreEx" />
+    <summary>The <b>IWbemBackupRestoreEx.Pause</b> method locks out write operations from the Windows Management Instrumentation (WMI) repository, and may cause read operations to be blocked.</summary>
+    <returns>This method returns an <b>HRESULT</b> that indicates the status of a method call. The following list lists the values contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemBackupRestoreEx.Resume">
-    <summary>
-      <para>The <b>IWbemBackUpRestoreEx.Resume</b> method releases a lock on the Windows Management Instrumentation (WMI) repository so  operations can continue.</para>
-    </summary>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> that indicates the status of a method call. The following list lists the values contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>The <b>Resume</b> method should always be called when the <see cref="Pause" /> method is called. <b>Resume</b> must be called on the same instance of <see cref="IWbemBackUpRestoreEx" /> that the <b>Pause</b> method is implemented. Releasing the object without calling <b>Resume</b> automatically causes the <b>Resume</b> method to be implemented.</para>
-      <para>
-        <b>Note</b>  To implement the <b>Resume</b> method, the client user must have <b>SE_BACKUP_NAME</b> prior to calling the method.</para>
-      <h4>Examples</h4>
-      <para>The following C++ example shows how to call the <b>IWbemBackUpRestoreEx.Resume</b> method.</para>
-      <code>// The pInt variable is of type IWbemBackupRestoreEx*
-pInt-&gt;Resume();
-</code>
-    </remarks>
-    <seealso cref="IWbemBackupRestoreEx" />
+    <summary>The <b>IWbemBackUpRestoreEx.Resume</b> method releases a lock on the Windows Management Instrumentation (WMI) repository so operations can continue.</summary>
+    <returns>This method returns an <b>HRESULT</b> that indicates the status of a method call. The following list lists the values contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemBackupRestoreEx">
-    <summary>
-      <para>The
-<b>IWbemBackupRestoreEx</b> interface backs up and restores the contents of the repository. The affected content of the repository is static data, such as the class definitions that get compiled into the repository when a Managed Object Format (MOF) file is loaded. The dynamic data supplied through providers is not included. This interface adds the <see cref="Pause" /> and <see cref="Resume" /> methods to the functionality of <see cref="IWbemBackupRestore" />.</para>
-    </summary>
-    <remarks>
-      <para>The default mode is the same as setting the force mode flag, which breaks all active connections. This results in remote procedure call (RPC) errors from any active COM connections to WMI until new connections are established.</para>
-      <para>There can be no active connections to the repository during a restore operation. For this reason, the restore operation fails if default parameters are used and there are active connections. A flag can be specified to break all active connections.</para>
-      <para>The client making the call must have the correct privilege enabled. Backup requires the <b>SE_RESTORE_NAME</b> privilege, and restoration requires <b>SE_RESTORE_NAME</b>. To enable a privilege, a client application must be running under a user account that has that privilege, and the privilege must be enabled using the Windows <see cref="AdjustTokenPrivileges" /> function.</para>
-      <para>Any local user can make these calls, but remote users must have the <b>WBEM_FULL_WRITE_REP</b> access right to the root namespace.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/com-api-for-wmi">COM API for
-WMI</seealso>
+    <summary>The<b>IWbemBackupRestoreEx</b> interface backs up and restores the contents of the repository. The affected content of the repository is static data, such as the class definitions that get compiled into the repository when a Managed Object Format (MOF) file is loaded. The dynamic data supplied through providers is not included. This interface adds the <see cref="Pause" /> and <see cref="Resume" /> methods to the functionality of <see cref="IWbemBackupRestore" />.</summary>
   </member>
 </doc>

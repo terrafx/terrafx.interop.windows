@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBufferByteAccess.Buffer">
+    <summary>Gets the array of bytes in the buffer.</summary>
+    <param name="value">The byte array.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IBufferByteAccess">
+    <summary>Represents a buffer as an array of bytes.</summary>
+  </member>
+  <member name="IBufferByteAccess.IUnknown"></member>
+</doc>

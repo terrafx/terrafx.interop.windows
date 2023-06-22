@@ -3,124 +3,50 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.WslConfigureDistribution">
-    <summary>
-      <para>Modifies the behavior of a distribution registered with the Windows Subsystem for Linux (WSL).</para>
-    </summary>
-    <param name="distributionName">
-      <para>Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</para>
-    </param>
-    <param name="defaultUID">
-      <para>The Linux user ID to use when launching new WSL sessions for this distribution.</para>
-    </param>
-    <param name="wslDistributionFlags">
-      <para>Flags specifying what behavior to use for this distribution.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success, or a failing HRESULT otherwise.</para>
-    </returns>
+    <summary>Modifies the behavior of a distribution registered with the Windows Subsystem for Linux (WSL).</summary>
+    <param name="distributionName">Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</param>
+    <param name="defaultUID">The Linux user ID to use when launching new WSL sessions for this distribution.</param>
+    <param name="wslDistributionFlags">Flags specifying what behavior to use for this distribution.</param>
+    <returns>Returns S_OK on success, or a failing HRESULT otherwise.</returns>
   </member>
   <member name="Windows.WslGetDistributionConfiguration">
-    <summary>
-      <para>Retrieves the current configuration of a distribution registered with the Windows Subsystem for Linux (WSL).</para>
-    </summary>
-    <param name="distributionName">
-      <para>Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</para>
-    </param>
-    <param name="distributionVersion">
-      <para>The version of WSL for which this distribution is configured.</para>
-    </param>
-    <param name="defaultUID">
-      <para>The default user ID used when launching new WSL sessions for this distribution.</para>
-    </param>
-    <param name="wslDistributionFlags">
-      <para>The flags governing the behavior of this distribution.</para>
-    </param>
-    <param name="defaultEnvironmentVariables">
-      <para>The address of a pointer to an array of default environment variable strings used when launching new WSL sessions for this distribution.</para>
-    </param>
-    <param name="defaultEnvironmentVariableCount">
-      <para>The number of elements in <i>pDefaultEnvironmentVariablesArray</i>.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success, or a failing HRESULT otherwise.</para>
-    </returns>
-    <remarks>
-      <para>The caller is responsible for freeing each string in <i>pDefaultEnvironmentVariablesArray</i> (and the array itself) via <b>CoTaskMemFree</b>.</para>
-    </remarks>
+    <summary>Retrieves the current configuration of a distribution registered with the Windows Subsystem for Linux (WSL).</summary>
+    <param name="distributionName">Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</param>
+    <param name="distributionVersion">The version of WSL for which this distribution is configured.</param>
+    <param name="defaultUID">The default user ID used when launching new WSL sessions for this distribution.</param>
+    <param name="wslDistributionFlags">The flags governing the behavior of this distribution.</param>
+    <param name="defaultEnvironmentVariables">The address of a pointer to an array of default environment variable strings used when launching new WSL sessions for this distribution.</param>
+    <param name="defaultEnvironmentVariableCount">The number of elements in <i>pDefaultEnvironmentVariablesArray</i>.</param>
+    <returns>Returns S_OK on success, or a failing HRESULT otherwise.</returns>
   </member>
   <member name="Windows.WslIsDistributionRegistered">
-    <summary>
-      <para>Determines if a distribution is registered with the Windows Subsystem for Linux (WSL).</para>
-    </summary>
-    <param name="distributionName">
-      <para>Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</para>
-    </param>
-    <returns>
-      <para>Returns TRUE if the supplied distribution is currently registered, or FALSE otherwise.</para>
-    </returns>
+    <summary>Determines if a distribution is registered with the Windows Subsystem for Linux (WSL).</summary>
+    <param name="distributionName">Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</param>
+    <returns>Returns TRUE if the supplied distribution is currently registered, or FALSE otherwise.</returns>
   </member>
   <member name="Windows.WslLaunch">
-    <summary>
-      <para>Launches a Windows Subsystem for Linux (WSL) process in the context of a particular distribution.</para>
-    </summary>
-    <param name="distributionName">
-      <para>Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</para>
-    </param>
-    <param name="command">
-      <para>Command to execute. If no command is supplied, launches the default shell.</para>
-    </param>
-    <param name="useCurrentWorkingDirectory">
-      <para>Governs whether or not the launched process should inherit the calling process's working directory. If FALSE, the process is started in the WSL default user's home directory ("~").</para>
-    </param>
-    <param name="stdIn">
-      <para>Handle to use for <b>STDIN</b>.</para>
-    </param>
-    <param name="stdOut">
-      <para>Handle to use for <b>STDOUT</b>.</para>
-    </param>
-    <param name="stdErr">
-      <para>Handle to use for <b>STDERR</b>.</para>
-    </param>
-    <param name="process">
-      <para>Pointer to address to receive the process HANDLE associated with the newly-launched WSL process.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success, or a failing HRESULT otherwise.</para>
-    </returns>
-    <remarks>
-      <para>Caller is responsible for calling <b>CloseHandle</b> on the value returned in <i>phProcess</i> on success.</para>
-    </remarks>
+    <summary>Launches a Windows Subsystem for Linux (WSL) process in the context of a particular distribution.</summary>
+    <param name="distributionName">Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</param>
+    <param name="command">Command to execute. If no command is supplied, launches the default shell.</param>
+    <param name="useCurrentWorkingDirectory">Governs whether or not the launched process should inherit the calling process's working directory. If FALSE, the process is started in the WSL default user's home directory ("~").</param>
+    <param name="stdIn">Handle to use for <b>STDIN</b>.</param>
+    <param name="stdOut">Handle to use for <b>STDOUT</b>.</param>
+    <param name="stdErr">Handle to use for <b>STDERR</b>.</param>
+    <param name="process">Pointer to address to receive the process HANDLE associated with the newly-launched WSL process.</param>
+    <returns>Returns S_OK on success, or a failing HRESULT otherwise.</returns>
   </member>
   <member name="Windows.WslLaunchInteractive">
-    <summary>
-      <para>Launches an interactive Windows Subsystem for Linux (WSL) process in the context of a particular distribution.This differs from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wslapi/nf-wslapi-wsllaunch">WslLaunch</a> in that the end user will be able to interact with the newly-created process.</para>
-    </summary>
-    <param name="distributionName">
-      <para>Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</para>
-    </param>
-    <param name="command">
-      <para>Command to execute. If no command is supplied, launches the default shell.</para>
-    </param>
-    <param name="useCurrentWorkingDirectory">
-      <para>Governs whether or not the launched process should inherit the calling process's working directory. If FALSE, the process is started in the WSL default user's home directory ("~").</para>
-    </param>
-    <param name="exitCode">
-      <para>Receives the exit code of the process after it exits.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success, or a failing HRESULT otherwise.</para>
-    </returns>
+    <summary>Launches an interactive Windows Subsystem for Linux (WSL) process in the context of a particular distribution.This differs from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wslapi/nf-wslapi-wsllaunch">WslLaunch</a> in that the end user will be able to interact with the newly-created process.</summary>
+    <param name="distributionName">Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</param>
+    <param name="command">Command to execute. If no command is supplied, launches the default shell.</param>
+    <param name="useCurrentWorkingDirectory">Governs whether or not the launched process should inherit the calling process's working directory. If FALSE, the process is started in the WSL default user's home directory ("~").</param>
+    <param name="exitCode">Receives the exit code of the process after it exits.</param>
+    <returns>Returns S_OK on success, or a failing HRESULT otherwise.</returns>
   </member>
   <member name="Windows.WslRegisterDistribution">
-    <summary>
-      <para>Registers a new distribution with the Windows Subsystem for Linux (WSL).</para>
-    </summary>
-    <param name="distributionName">
-      <para>Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</para>
-    </param>
-    <param name="tarGzFilename">
-      <para>Full path to a .tar.gz file containing the file system of the distribution to register.</para>
-    </param>
+    <summary>Registers a new distribution with the Windows Subsystem for Linux (WSL).</summary>
+    <param name="distributionName">Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</param>
+    <param name="tarGzFilename">Full path to a .tar.gz file containing the file system of the distribution to register.</param>
     <returns>
       <para>This function can return one of the following values. Use the SUCCEEDED and FAILED macros to test the return value of this function.</para>
       <list type="table">
@@ -132,26 +58,20 @@
             <b>Description</b>
           </description>
         </listheader>
-        <item>
-          <description>S_OK                                     </description>
+        <listheader>
+          <description>S_OK</description>
           <description>Distribution successfully registered with the Windows Subsystem for Linux.</description>
-        </item>
-        <item>
-          <description>HRESULT_FROM_WIN32(ERROR_ALREADY_EXISTS) </description>
+        </listheader>
+        <listheader>
+          <description>HRESULT_FROM_WIN32(ERROR_ALREADY_EXISTS)</description>
           <description>Failed because a distribution with this name has already been registered.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="Windows.WslUnregisterDistribution">
-    <summary>
-      <para>Unregisters a distribution from the Windows Subsystem for Linux (WSL).</para>
-    </summary>
-    <param name="distributionName">
-      <para>Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success, or a failing HRESULT otherwise.</para>
-    </returns>
+    <summary>Unregisters a distribution from the Windows Subsystem for Linux (WSL).</summary>
+    <param name="distributionName">Unique name representing a distribution (for example, "Fabrikam.Distro.10.01").</param>
+    <returns>Returns S_OK on success, or a failing HRESULT otherwise.</returns>
   </member>
 </doc>

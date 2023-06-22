@@ -4,210 +4,95 @@
 <doc>
   <member name="IFilterMapper.EnumMatchingFilters">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</para>
-      <para>Provides an enumerator that enumerates registered filters that meet specified requirements.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Address of a pointer to the enumerator returned.</para>
-    </param>
-    <param name="dwMerit">
-      <para>Minimum merit value of filters to enumerate.</para>
-    </param>
-    <param name="bInputNeeded">
-      <para>Value indicating whether there must be at least one input pin; <b>TRUE</b> indicates at least one input pin is required.</para>
-    </param>
-    <param name="clsInMaj">
-      <para>Input major type required. Set to GUID_NULL if you do not care.</para>
-    </param>
-    <param name="clsInSub">
-      <para>Input subtype required. Set to GUID_NULL if you do not care.</para>
-    </param>
-    <param name="bRender">
-      <para>Flag that specifies whether the filter must render the input; <b>TRUE</b> means that it must.</para>
-    </param>
-    <param name="bOututNeeded">
-      <para>Value indicating whether there must be at least one output pin; <b>TRUE</b> indicates at least one output pin is required.</para>
-    </param>
-    <param name="clsOutMaj">
-      <para>Output major type required. Set to GUID_NULL if you do not care.</para>
-    </param>
-    <param name="clsOutSub">
-      <para>Output subtype required. Set to GUID_NULL if you do not care.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>Set the <i>ppEnum</i> parameter to be an enumerator for filters matching the requirements. For a description of merit values for the <i>dwMerit</i> parameter, see the <see cref="IFilterMapper.RegisterFilter" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</div>Provides an enumerator that enumerates registered filters that meet specified requirements.</summary>
+    <param name="ppEnum">Address of a pointer to the enumerator returned.</param>
+    <param name="dwMerit">Minimum merit value of filters to enumerate.</param>
+    <param name="bInputNeeded">Value indicating whether there must be at least one input pin; <b>TRUE</b> indicates at least one input pin is required.</param>
+    <param name="clsInMaj">Input major type required. Set to GUID_NULL if you do not care.</param>
+    <param name="clsInSub">Input subtype required. Set to GUID_NULL if you do not care.</param>
+    <param name="bRender">Flag that specifies whether the filter must render the input; <b>TRUE</b> means that it must.</param>
+    <param name="bOututNeeded">Value indicating whether there must be at least one output pin; <b>TRUE</b> indicates at least one output pin is required.</param>
+    <param name="clsOutMaj">Output major type required. Set to GUID_NULL if you do not care.</param>
+    <param name="clsOutSub">Output subtype required. Set to GUID_NULL if you do not care.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterMapper.RegisterFilter">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</para>
-      <para>Adds a filter to the registry; the filter can then be enumerated.</para>
-    </summary>
-    <param name="clsid">
-      <para>Globally unique identifier (<b>GUID</b>) of the filter.</para>
-    </param>
-    <param name="Name">
-      <para>Descriptive name for the filter.</para>
-    </param>
-    <param name="dwMerit">
-      <para>Position in the order of enumeration. Filters with higher merit are enumerated first.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>The merit (as defined by the <i>dwMerit</i> parameter) controls the order in which the filter graph manager tries filters when performing an operation as a result of a call to <see cref="IGraphBuilder.Connect" />, <see cref="IGraphBuilder.Render" />, or <see cref="IGraphBuilder.RenderFile" />. The filter graph manager finds all filters registered with the correct media type and then tries the one with the highest merit, using other criteria in the registration to choose between filters with equal merit.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</div>Adds a filter to the registry; the filter can then be enumerated.</summary>
+    <param name="clsid">Globally unique identifier (<b>GUID</b>) of the filter.</param>
+    <param name="Name">Descriptive name for the filter.</param>
+    <param name="dwMerit">Position in the order of enumeration. Filters with higher merit are enumerated first.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterMapper.RegisterFilterInstance">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</para>
-      <para>Registers an identifiable instance of a filter.</para>
-    </summary>
-    <param name="clsid">
-      <para>GUID of the filter.</para>
-    </param>
-    <param name="Name">
-      <para>Descriptive name of the instance.</para>
-    </param>
-    <param name="MRId">
-      <para>Pointer to the returned media resource ID. This parameter is a locally unique identifier for this instance of this filter.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>This method handles cases such as when two similar sound cards that are driven by the same driver are available, and it is necessary to choose which card will emit the sound. This is not needed if there is only one instance of the filter (such as when there is only one sound card in the computer), or if all instances of the filter are equivalent.</para>
-      <para>The filter itself must have already been registered.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</div>Registers an identifiable instance of a filter.</summary>
+    <param name="clsid">GUID of the filter.</param>
+    <param name="Name">Descriptive name of the instance.</param>
+    <param name="MRId">Pointer to the returned media resource ID. This parameter is a locally unique identifier for this instance of this filter.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterMapper.RegisterPin">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</para>
-      <para>Records the details of the pin in the registry.</para>
-    </summary>
-    <param name="Filter">
-      <para>GUID of the filter.</para>
-    </param>
-    <param name="Name">
-      <para>Name of the pin. This should be unique within the filter. It has no significance other than to indicate type information. You should not use pin names longer than 99 characters, because this causes filter enumeration problems.</para>
-    </param>
-    <param name="bRendered">
-      <para>Value specifying whether the filter renders this input. Set to <b>TRUE</b> if it does; otherwise, set to <b>FALSE</b>.</para>
-    </param>
-    <param name="bOutput">
-      <para>Value specifying whether this is an output pin. Set to <b>TRUE</b> if it is; otherwise, set to <b>FALSE</b>.</para>
-    </param>
-    <param name="bZero">
-      <para>Value specifying whether the filter can have zero instances of this pin. If it can, set to <b>TRUE</b>; otherwise, set to <b>FALSE</b>. For example, a decompression filter doesn't need to create a sound output pin for a movie without a sound track.</para>
-    </param>
-    <param name="bMany">
-      <para>Value specifying whether the filter can have many instances of this pin. If it can, set to <b>TRUE</b>; otherwise, set to <b>FALSE</b>. For example, a mixer might have multiple instances of its input pin.</para>
-    </param>
-    <param name="ConnectsToFilter">
-      <para>Reserved. Must be <b>NULL</b>. (This is intended for filters such as system-wide mixers that have connections outside the filter graph. It is not yet implemented.)</para>
-    </param>
-    <param name="ConnectsToPin">
-      <para>Reserved. Must be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</div>Records the details of the pin in the registry.</summary>
+    <param name="Filter">GUID of the filter.</param>
+    <param name="Name">Name of the pin. This should be unique within the filter. It has no significance other than to indicate type information. You should not use pin names longer than 99 characters, because this causes filter enumeration problems.</param>
+    <param name="bRendered">Value specifying whether the filter renders this input. Set to <b>TRUE</b> if it does; otherwise, set to <b>FALSE</b>.</param>
+    <param name="bOutput">Value specifying whether this is an output pin. Set to <b>TRUE</b> if it is; otherwise, set to <b>FALSE</b>.</param>
+    <param name="bZero">Value specifying whether the filter can have zero instances of this pin. If it can, set to <b>TRUE</b>; otherwise, set to <b>FALSE</b>. For example, a decompression filter doesn't need to create a sound output pin for a movie without a sound track.</param>
+    <param name="bMany">Value specifying whether the filter can have many instances of this pin. If it can, set to <b>TRUE</b>; otherwise, set to <b>FALSE</b>. For example, a mixer might have multiple instances of its input pin.</param>
+    <param name="ConnectsToFilter">Reserved. Must be <b>NULL</b>. (This is intended for filters such as system-wide mixers that have connections outside the filter graph. It is not yet implemented.)</param>
+    <param name="ConnectsToPin">Reserved. Must be <b>NULL</b>.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterMapper.RegisterPinType">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</para>
-      <para>Registers this pin type.</para>
-    </summary>
-    <param name="clsFilter">
-      <para>Class identifier (CLSID) of the filter to which the pin belongs.</para>
-    </param>
-    <param name="strName">
-      <para>Name by which it is known.</para>
-    </param>
-    <param name="clsMajorType">
-      <para>Major type of the media sample supported by this pin class.</para>
-    </param>
-    <param name="clsSubType">
-      <para>Subtype of the media sample supported by this pin class.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>The <i>clsMajorType</i> and <i>clsSubType</i> parameters specify the media type of the pin and correspond to the <see cref="AM_MEDIA_TYPE" /> structure's <b>majortype</b> and <b>subtype</b> members, respectively.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</div>Registers this pin type.</summary>
+    <param name="clsFilter">Class identifier (CLSID) of the filter to which the pin belongs.</param>
+    <param name="strName">Name by which it is known.</param>
+    <param name="clsMajorType">Major type of the media sample supported by this pin class.</param>
+    <param name="clsSubType">Subtype of the media sample supported by this pin class.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterMapper.UnregisterFilter">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</para>
-      <para>Removes the registration of this filter from the registry.</para>
-    </summary>
-    <param name="Filter">
-      <para>GUID of the filter.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</div>Removes the registration of this filter from the registry.</summary>
+    <param name="Filter">GUID of the filter.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterMapper.UnregisterFilterInstance">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</para>
-      <para>Removes the registration of this filter instance from the registry.</para>
-    </summary>
-    <param name="MRId">
-      <para>Media resource identifier of this instance.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</div>Removes the registration of this filter instance from the registry.</summary>
+    <param name="MRId">Media resource identifier of this instance.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterMapper.UnregisterPin">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</para>
-      <para>Removes the registration of this pin from the registry.</para>
-    </summary>
-    <param name="Filter">
-      <para>GUID of the filter that this pin is part of.</para>
-    </param>
-    <param name="Name">
-      <para>Name of the pin.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IFilterMapper</b> interface is deprecated. Use <see cref="IFilterMapper2" /> instead.</div>Removes the registration of this pin from the registry.</summary>
+    <param name="Filter">GUID of the filter that this pin is part of.</param>
+    <param name="Name">Name of the pin.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IFilterMapper">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated. It will continue to be supported for backward compatibility with existing applications, but new applications should use the <see cref="IFilterMapper2" /> interface.</para>
-      <para>This interface provides methods for registering and unregistering filters, and for looking up filters based on their characteristics.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated. It will continue to be supported for backward compatibility with existing applications, but new applications should use the <see cref="IFilterMapper2" /> interface.</div>This interface provides methods for registering and unregistering filters, and for looking up filters based on their characteristics.</summary>
   </member>
 </doc>

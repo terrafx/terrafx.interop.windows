@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IStreamInterleave.Initialize">
-    <summary>
-      <para>Initialize this interleaved stream from an array of input streams and interleave sizes.</para>
-    </summary>
-    <param name="streams">
-      <para>Array of  <b>IStream</b> interfaces of the streams to add to this stream.</para>
-    </param>
-    <param name="interleaveSizes">
-      <para>Array of interleave sizes, in bytes, with one entry per stream. The interleave size array is the number of contiguous bytes of a given stream to write on the disc before writing starts for the next stream.</para>
-    </param>
-    <param name="streamCount">
-      <para>Number of streams in <i>streams</i>.</para>
-    </param>
+    <summary>Initialize this interleaved stream from an array of input streams and interleave sizes.</summary>
+    <param name="streams">Array of <b>IStream</b> interfaces of the streams to add to this stream.</param>
+    <param name="interleaveSizes">Array of interleave sizes, in bytes, with one entry per stream. The interleave size array is the number of contiguous bytes of a given stream to write on the disc before writing starts for the next stream.</param>
+    <param name="streamCount">Number of streams in <i>streams</i>.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -22,52 +14,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more arguments are not valid.</para>
-            <para>Value: 0x80070057</para>
-          </description>
-        </item>
+          <description>One or more arguments are not valid.<para>Value: 0x80070057</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IStreamInterleave" />
   </member>
   <member name="IStreamInterleave">
     <summary>
       <para>Use this interface to combine several data streams into a single stream by alternately interspersing portions of each. You create interleaved streams when data streams need to run parallel to each other instead of sequentially. For example, some CD formats require user data interleaved with the subcode information. Any fixed-size interleave is supported.</para>
       <para>To create an instance of this interface, call the <b>CoCreateInstance</b> function. Use__uuidof(MsftStreamInterleave) for the class identifier and __uuidof(IStreamInterleave) for the interface identifier.</para>
     </summary>
-    <remarks>
-      <para>To create the <b>MsftStreamInterleave</b> object in a script, use IMAPI2.MsftStreamInterleave as the program identifier when calling <b>CreateObject</b>.</para>
-    </remarks>
-    <seealso cref="IStreamConcatenate" />
-    <seealso cref="IStreamPseudoRandomBased" />
   </member>
 </doc>

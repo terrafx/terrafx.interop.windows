@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HistogramFormat">
+    <summary>The <b>HistogramFormat</b> enumeration specifies the number and type of histograms that represent the color channels of a bitmap. This enumeration is used with the <see cref="Bitmap.GetHistogram" /> method.</summary>
+  </member>
+  <member name="HistogramFormat.HistogramFormatARGB">
+    <summary>Specifies that the <see cref="Bitmap.GetHistogram" /> method returns four histograms: one each for the alpha, red, green, and blue channels. The alpha-channel histogram is written to the buffer pointed to by the <i>channel0</i> parameter of the <b>Bitmap.GetHistogram</b> method. The red-channel histogram is written to the buffer pointed to by the <i>channel1</i> parameter. The green-channel histogram is written to the buffer pointed to by the <i>channel2</i> parameter. The blue-channel histogram is written to the buffer pointed to by the <i>channel3</i> parameter.</summary>
+  </member>
+  <member name="HistogramFormat.HistogramFormatPARGB">
+    <summary>Specifies that the <see cref="Bitmap.GetHistogram" /> method returns four histograms: one each for the alpha, red, green, and blue channels. The red, green, and blue channels are each multiplied by the alpha channel before the histograms are created. The bitmap is not permanently altered when the color channels are multiplied by the alpha channel; that multiplication is only for the purpose of creating the histograms. The alpha-channel histogram is written to the buffer pointed to by the <i>channel0</i> parameter of the <b>Bitmap.GetHistogram</b> method. The red-channel histogram is written to the buffer pointed to by the <i>channel1</i> parameter. The green-channel histogram is written to the buffer pointed to by the <i>channel2</i> parameter. The blue-channel histogram is written to the buffer pointed to by the <i>channel3</i> parameter.</summary>
+  </member>
+  <member name="HistogramFormat.HistogramFormatRGB">
+    <summary>Specifies that the <see cref="Bitmap.GetHistogram" /> method returns three histograms: one each for the red, green, and blue channels. The red-channel histogram is written to the buffer pointed to by the <i>channel0</i> parameter of the <b>Bitmap.GetHistogram</b> method. The green-channel histogram is written to the buffer pointed to by the <i>channel1</i> parameter. The blue-channel histogram is written to the buffer pointed to by the <i>channel2</i> parameter. The <i>channel3</i> parameter must be set to <b>NULL</b>.</summary>
+  </member>
+  <member name="HistogramFormat.HistogramFormatGray">
+    <summary>Specifies that each pixel is converted to a grayscale value in the range 0 through 255, and then one histogram, based on those grayscale value, is returned. The bitmap is not permanently altered by the conversion to grayscale values; those values are calculated only for the purpose of creating the histogram. The grayscale histogram is written to the buffer pointed to by the <i>channel0</i> parameter of the <see cref="Bitmap.GetHistogram" /> method. The <i>channel1</i>, <i>channel2</i>, and <i>channel3</i> parameters must be set to <b>NULL</b>.</summary>
+  </member>
+  <member name="HistogramFormat.HistogramFormatB">
+    <summary>Specifies that the <see cref="Bitmap.GetHistogram" /> method returns a histogram for the blue channel. The blue-channel histogram is written to the buffer pointed to by the <i>channel0</i> parameter of the <b>Bitmap.GetHistogram</b> method. The <i>channel1</i>, <i>channel2</i>, and <i>channel3</i> parameters must be set to <b>NULL</b>.</summary>
+  </member>
+  <member name="HistogramFormat.HistogramFormatG">
+    <summary>Specifies that the <see cref="Bitmap.GetHistogram" /> method returns a histogram for the green channel. The green-channel histogram is written to the buffer pointed to by the <i>channel0</i> parameter of the <b>Bitmap.GetHistogram</b> method. The <i>channel1</i>, <i>channel2</i>, and <i>channel3</i> parameters must be set to <b>NULL</b>.</summary>
+  </member>
+  <member name="HistogramFormat.HistogramFormatR">
+    <summary>Specifies that the <see cref="Bitmap.GetHistogram" /> method returns a histogram for the red channel. The red-channel histogram is written to the buffer pointed to by the <i>channel0</i> parameter of the <b>Bitmap.GetHistogram</b> method. The <i>channel1</i>, <i>channel2</i>, and <i>channel3</i> parameters must be set to <b>NULL</b>.</summary>
+  </member>
+  <member name="HistogramFormat.HistogramFormatA">
+    <summary>Specifies that the <see cref="Bitmap.GetHistogram" /> method returns a histogram for the alpha channel. The alpha-channel histogram is written to the buffer pointed to by the <i>channel0</i> parameter of the <b>Bitmap.GetHistogram</b> method. The <i>channel1</i>, <i>channel2</i>, and <i>channel3</i> parameters must be set to <b>NULL</b>.</summary>
+  </member>
+</doc>

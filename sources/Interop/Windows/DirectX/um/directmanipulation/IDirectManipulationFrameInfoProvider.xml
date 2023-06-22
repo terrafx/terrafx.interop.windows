@@ -3,31 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDirectManipulationFrameInfoProvider.GetNextFrameInfo">
-    <summary>
-      <para>Retrieves the composition timing information from the compositor.</para>
-    </summary>
-    <param name="time">
-      <para>The current time, in milliseconds.</para>
-    </param>
-    <param name="processTime">
-      <para>The time, in milliseconds, when the compositor begins constructing the next frame.</para>
-    </param>
-    <param name="compositionTime">
-      <para>The time, in milliseconds, when the compositor finishes composing and drawing the next frame on the screen.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The system implementation of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationframeinfoprovider">IDirectManipulationFrameInfoProvider</a> uses <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-portal">DirectComposition</a>. <see cref="GetFrameStatistics" /> is used to calculate the parameter values for <b>GetNextFrameInfo</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcompositor">IDirectManipulationCompositor</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationframeinfoprovider">IDirectManipulationFrameInfoProvider</seealso>
+    <summary>Retrieves the composition timing information from the compositor.</summary>
+    <param name="time">The current time, in milliseconds.</param>
+    <param name="processTime">The time, in milliseconds, when the compositor begins constructing the next frame.</param>
+    <param name="compositionTime">The time, in milliseconds, when the compositor finishes composing and drawing the next frame on the screen.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationFrameInfoProvider">
-    <summary>
-      <para>Represents a time-keeping object that measures the latency of the composition infrastructure used by the application and provides this data to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
+    <summary>Represents a time-keeping object that measures the latency of the composition infrastructure used by the application and provides this data to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</summary>
   </member>
 </doc>

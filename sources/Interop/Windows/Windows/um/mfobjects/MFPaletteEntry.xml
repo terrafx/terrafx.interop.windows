@@ -3,23 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFPaletteEntry">
-    <summary>
-      <para>Contains one palette entry in a color table.</para>
-    </summary>
-    <remarks>
-      <para>This union can be used to represent both RGB palettes and Y'Cb'Cr' palettes. The video format that defines the palette determines which union member should be used.</para>
-    </remarks>
+    <summary>Contains one palette entry in a color table.</summary>
   </member>
   <member name="MFPaletteEntry.ARGB">
     <summary>
-      <para>
-        <see cref="MFARGB" /> structure that contains an RGB color.</para>
-    </summary>
+      <see cref="MFARGB" /> structure that contains an RGB color.</summary>
   </member>
   <member name="MFPaletteEntry.AYCbCr">
     <summary>
-      <para>
-        <see cref="MFAYUVSample" /> structure that contains a Y'Cb'Cr' color.</para>
-    </summary>
+      <see cref="MFAYUVSample" /> structure that contains a Y'Cb'Cr' color.</summary>
   </member>
 </doc>

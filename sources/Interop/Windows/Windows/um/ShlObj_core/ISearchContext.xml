@@ -3,47 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISearchContext.GetSearchStyle">
-    <summary>
-      <para>Overrides the registry settings that determine how an autosearch is performed.</para>
-    </summary>
-    <param name="pdwSearchStyle">
-      <para>Type: <b>DWORD</b></para>
-      <para>A pointer to a <b>DWORD</b> value that indicates how the search is performed.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Overrides the registry settings that determine how an autosearch is performed.</summary>
+    <param name="pdwSearchStyle">A pointer to a <b>DWORD</b> value that indicates how the search is performed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISearchContext.GetSearchText">
-    <summary>
-      <para>Retrieves the text that is in the browser's Address bar.</para>
-    </summary>
-    <param name="pbstrSearchText">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a></b></para>
-      <para>The <b>BSTR</b> that receives the text in the Address bar.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves the text that is in the browser's Address bar.</summary>
+    <param name="pbstrSearchText">The <b>BSTR</b> that receives the text in the Address bar.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISearchContext.GetSearchURL">
-    <summary>
-      <para>Retrieves the URL that is being searched for.</para>
-    </summary>
-    <param name="pbstrSearchUrl">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a></b></para>
-      <para>The <b>BSTR</b> that receives the URL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves the URL that is being searched for.</summary>
+    <param name="pbstrSearchUrl">The <b>BSTR</b> that receives the URL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISearchContext">
-    <summary>
-      <para>Exposes methods that channel customization information to the search hooks.</para>
-    </summary>
+    <summary>Exposes methods that channel customization information to the search hooks.</summary>
   </member>
 </doc>

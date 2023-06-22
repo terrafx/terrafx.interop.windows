@@ -4,21 +4,15 @@
 <doc>
   <member name="CERT_STORE_PROV_INFO">
     <summary>
-      <para>The <b>CERT_STORE_PROV_INFO</b> structure contains information returned by the installed
-<a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_dll_open_store_prov_func">CertDllOpenStoreProv</a>  function when a store is opened by using the
-<see cref="CertOpenStore" /> function.</para>
-      <para>When opening a store, the  <see cref="CertOpenStore" />  function sets all fields in the <b>CERT_STORE_PROV_INFO</b> structure to zero except <b>cbSize</b>, which is set to the size of <b>CERT_STORE_PROV_INFO</b>. The structure is updated by the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_dll_open_store_prov_func">CertDllOpenStoreProv</a> installable function. If there are no additional callback functions to be called, then <b>cStoreProvFunc</b> remains zero upon return.</para>
+      <para>The <b>CERT_STORE_PROV_INFO</b> structure contains information returned by the installed<a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_dll_open_store_prov_func">CertDllOpenStoreProv</a> function when a store is opened by using the<br /><see cref="CertOpenStore" /> function.</para>
+      <para>When opening a store, the <see cref="CertOpenStore" /> function sets all fields in the <b>CERT_STORE_PROV_INFO</b> structure to zero except <b>cbSize</b>, which is set to the size of <b>CERT_STORE_PROV_INFO</b>. The structure is updated by the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_dll_open_store_prov_func">CertDllOpenStoreProv</a> installable function. If there are no additional callback functions to be called, then <b>cStoreProvFunc</b> remains zero upon return.</para>
     </summary>
   </member>
   <member name="CERT_STORE_PROV_INFO.cbSize">
-    <summary>
-      <para>Contains the size, in bytes, of this structure.</para>
-    </summary>
+    <summary>Contains the size, in bytes, of this structure.</summary>
   </member>
   <member name="CERT_STORE_PROV_INFO.cStoreProvFunc">
-    <summary>
-      <para>Contains the number of elements in the <b>rgpvStoreProvFunc</b> array. This count must include any <b>NULL</b> values that are used in indexes prior to the last callback function implemented. For example, if only one callback function is implemented, but it is at index 2 (<b>CERT_STORE_PROV_WRITE_CERT_FUNC</b>), with <b>NULL</b> for indexes 0 and 1, then the number 3 should be passed for this parameter.</para>
-    </summary>
+    <summary>Contains the number of elements in the <b>rgpvStoreProvFunc</b> array. This count must include any <b>NULL</b> values that are used in indexes prior to the last callback function implemented. For example, if only one callback function is implemented, but it is at index 2 (<b>CERT_STORE_PROV_WRITE_CERT_FUNC</b>), with <b>NULL</b> for indexes 0 and 1, then the number 3 should be passed for this parameter.</summary>
   </member>
   <member name="CERT_STORE_PROV_INFO.rgpvStoreProvFunc">
     <summary>
@@ -28,450 +22,402 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_CLOSE_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>0 (0x0)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0 (0x0)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_close">CertStoreProvCloseCallback</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_close">CertStoreProvCloseCallback</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_READ_CERT_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>1 (0x1)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1 (0x1)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_read_cert">CertStoreProvReadCertCallback</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_read_cert">CertStoreProvReadCertCallback</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_WRITE_CERT_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>2 (0x2)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2 (0x2)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_write_cert">CertStoreProvWriteCertCallback</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_write_cert">CertStoreProvWriteCertCallback</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_DELETE_CERT_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>3 (0x3)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3 (0x3)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_delete_cert">CertStoreProvDeleteCertCallback</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_delete_cert">CertStoreProvDeleteCertCallback</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_SET_CERT_PROPERTY_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>4 (0x4)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4 (0x4)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_set_cert_property">CertStoreProvSetCertPropertyCallback</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_set_cert_property">CertStoreProvSetCertPropertyCallback</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_READ_CRL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>5 (0x5)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5 (0x5)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_read_crl">CertStoreProvReadCRLCallback</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_read_crl">CertStoreProvReadCRLCallback</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_WRITE_CRL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>6 (0x6)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6 (0x6)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_write_crl">CertStoreProvWriteCRLCallback</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_write_crl">CertStoreProvWriteCRLCallback</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_DELETE_CRL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>7 (0x7)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>7 (0x7)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_delete_crl">CertStoreProvDeleteCRLCallback</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_delete_crl">CertStoreProvDeleteCRLCallback</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_SET_CRL_PROPERTY_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>8 (0x8)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>8 (0x8)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_set_crl_property">CertStoreProvSetCRLPropertyCallback</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_set_crl_property">CertStoreProvSetCRLPropertyCallback</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_READ_CTL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>9 (0x9)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9 (0x9)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_read_ctl">CertStoreProvReadCTL</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_read_ctl">CertStoreProvReadCTL</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_WRITE_CTL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>10 (0xA)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10 (0xA)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_write_ctl">CertStoreProvWriteCTL</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_write_ctl">CertStoreProvWriteCTL</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_DELETE_CTL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>11 (0xB)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11 (0xB)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovdeletectl">CertStoreProvDeleteCTL</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovdeletectl">CertStoreProvDeleteCTL</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_SET_CTL_PROPERTY_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>12 (0xC)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>12 (0xC)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_set_ctl_property">CertStoreProvSetCTLProperty</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_set_ctl_property">CertStoreProvSetCTLProperty</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_CONTROL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>13 (0xD)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>13 (0xD)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_control">CertStoreProvControl</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_control">CertStoreProvControl</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_FIND_CERT_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>14 (0xE)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14 (0xE)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfindcert">CertStoreProvFindCert</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfindcert">CertStoreProvFindCert</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_FREE_FIND_CERT_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>15 (0xF)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>15 (0xF)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfreefindcert">CertStoreProvFreeFindCert</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfreefindcert">CertStoreProvFreeFindCert</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_GET_CERT_PROPERTY_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>16 (0x10)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>16 (0x10)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovgetcertproperty">CertStoreProvGetCertProperty</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovgetcertproperty">CertStoreProvGetCertProperty</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_FIND_CRL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>17 (0x11)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>17 (0x11)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfindcrl">CertStoreProvFindCRL</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfindcrl">CertStoreProvFindCRL</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_FREE_FIND_CRL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>18 (0x12)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>18 (0x12)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfreefindcrl">CertStoreProvFreeFindCRL</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfreefindcrl">CertStoreProvFreeFindCRL</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_GET_CRL_PROPERTY_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>19 (0x13)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>19 (0x13)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovgetcrlproperty">CertStoreProvGetCRLProperty</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovgetcrlproperty">CertStoreProvGetCRLProperty</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_FIND_CTL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>20 (0x14)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>20 (0x14)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfindctl">CertStoreProvFindCTL</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfindctl">CertStoreProvFindCTL</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_FREE_FIND_CTL_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>21 (0x15)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>21 (0x15)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfreefindctl">CertStoreProvFreeFindCTL</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovfreefindctl">CertStoreProvFreeFindCTL</a>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_GET_CTL_PROPERTY_FUNC</b>
-                </description>
-              </item>
-              <item>
-                <description>22 (0x16)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>22 (0x16)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovgetctlproperty">CertStoreProvGetCTLProperty</a>
-            </para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/certstoreprovgetctlproperty">CertStoreProvGetCTLProperty</a>
           </description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CERT_STORE_PROV_INFO.hStoreProv">
-    <summary>
-      <para>A 32-bit, application-defined value that is the first parameter passed to all callbacks. An application can specify the contents of this member as desired. Typically, this is a pointer to data that is specific to the application, such as provider state information for each store opened.</para>
-    </summary>
+    <summary>A 32-bit, application-defined value that is the first parameter passed to all callbacks. An application can specify the contents of this member as desired. Typically, this is a pointer to data that is specific to the application, such as provider state information for each store opened.</summary>
   </member>
   <member name="CERT_STORE_PROV_INFO.dwStoreProvFlags">
     <summary>
@@ -481,100 +427,85 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_EXTERNAL_FLAG</b>
-                </description>
-              </item>
-              <item>
-                <description>1 (0x1)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1 (0x1)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The provider stores <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificates</a>, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation lists</a>, and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust lists</a> that are external to the store's cache.</para>
-          </description>
-        </item>
-        <item>
+          <description>The provider stores <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificates</a>, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation lists</a>, and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust lists</a> that are external to the store's cache.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_DELETED_FLAG</b>
-                </description>
-              </item>
-              <item>
-                <description>2 (0x2)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2 (0x2)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The store was successfully deleted. The <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_close">CertStoreProvCloseCallback</a> callback is not called.</para>
-          </description>
-        </item>
-        <item>
+          <description>The store was successfully deleted. The <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_store_prov_close">CertStoreProvCloseCallback</a> callback is not called.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_NO_PERSIST_FLAG</b>
-                </description>
-              </item>
-              <item>
-                <description>4 (0x4)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4 (0x4)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>By default, the provider will persist changes that are made to the store. If this flag is set, the provider does not persist the changes made to the store.</para>
-          </description>
-        </item>
-        <item>
+          <description>By default, the provider will persist changes that are made to the store. If this flag is set, the provider does not persist the changes made to the store.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_SYSTEM_STORE_FLAG</b>
-                </description>
-              </item>
-              <item>
-                <description>8 (0x8)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>8 (0x8)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The provider persists contexts to a system store.</para>
-          </description>
-        </item>
-        <item>
+          <description>The provider persists contexts to a system store.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_STORE_PROV_LM_SYSTEM_STORE_FLAG</b>
-                </description>
-              </item>
-              <item>
-                <description>16 (0x10)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>16 (0x10)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The provider persists contexts to a LocalMachine system store.</para>
-          </description>
-        </item>
+          <description>The provider persists contexts to a LocalMachine system store.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CERT_STORE_PROV_INFO.hStoreProvFuncAddr2">
-    <summary>
-      <para>Contains the handle returned by
-<see cref="CryptGetOIDFunctionAddress" />.
-<see cref="CertCloseStore" /> calls
-<see cref="CryptFreeOIDFunctionAddress" /> to free a non-null <b>hStoreProvFuncAddr2</b>. This allows the callback to call one other installable function that will be freed when the store is closed.</para>
-    </summary>
+    <summary>Contains the handle returned by<see cref="CryptGetOIDFunctionAddress" />.<see cref="CertCloseStore" /> calls<see cref="CryptFreeOIDFunctionAddress" /> to free a non-null <b>hStoreProvFuncAddr2</b>. This allows the callback to call one other installable function that will be freed when the store is closed.</summary>
   </member>
 </doc>

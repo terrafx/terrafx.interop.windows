@@ -3,45 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGRPROGRESSITEM">
-    <summary>
-      <para>Provides status information while a synchronization is in progress. This structure is used with the <see cref="ISyncMgrSynchronizeCallback.Progress" /> method and corresponds to a single synchronization item.</para>
-    </summary>
-    <seealso cref="ISyncMgrSynchronizeCallback.Progress" />
+    <summary>Provides status information while a synchronization is in progress. This structure is used with the <see cref="ISyncMgrSynchronizeCallback.Progress" /> method and corresponds to a single synchronization item.</summary>
   </member>
   <member name="SYNCMGRPROGRESSITEM.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="SYNCMGRPROGRESSITEM.mask">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>Flags from the <see cref="SYNCMGRSTATUS" /> enumeration that specify which members of this structure are used.</para>
-    </summary>
+    <summary>Flags from the <see cref="SYNCMGRSTATUS" /> enumeration that specify which members of this structure are used.</summary>
   </member>
   <member name="SYNCMGRPROGRESSITEM.lpcStatusText">
-    <summary>
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Status text.</para>
-    </summary>
+    <summary>Status text.</summary>
   </member>
   <member name="SYNCMGRPROGRESSITEM.dwStatusType">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>One of the values from the <see cref="SYNCMGRSTATUS" /> enumeration.</para>
-    </summary>
+    <summary>One of the values from the <see cref="SYNCMGRSTATUS" /> enumeration.</summary>
   </member>
   <member name="SYNCMGRPROGRESSITEM.iProgValue">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>An integer that indicates the progress value.</para>
-    </summary>
+    <summary>An integer that indicates the progress value.</summary>
   </member>
   <member name="SYNCMGRPROGRESSITEM.iMaxValue">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>An integer that indicates the maximum progress value.</para>
-    </summary>
+    <summary>An integer that indicates the maximum progress value.</summary>
   </member>
 </doc>

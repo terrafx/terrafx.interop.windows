@@ -3,274 +3,223 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MENUINFO">
-    <summary>
-      <para>Contains information about a menu.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/menus">Menus Overview</seealso>
+    <summary>Contains information about a menu.</summary>
   </member>
   <member name="MENUINFO.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the structure, in bytes. The caller must set this member to <code>sizeof(MENUINFO)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. The caller must set this member to <code>sizeof(MENUINFO)</code>.</summary>
   </member>
   <member name="MENUINFO.fMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Indicates the members to be retrieved or set (except for <b>MIM_APPLYTOSUBMENUS</b>). This member can be one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIM_APPLYTOSUBMENUS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x80000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x80000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Settings apply to the menu and all of its submenus. <see cref="SetMenuInfo" /> uses this flag and <see cref="GetMenuInfo" /> ignores this flag</para>
-          </description>
-        </item>
-        <item>
+          <description>Settings apply to the menu and all of its submenus. <see cref="SetMenuInfo" /> uses this flag and <see cref="GetMenuInfo" /> ignores this flag</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIM_BACKGROUND</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Retrieves or sets the
-<b>hbrBack</b> member.</para>
-          </description>
-        </item>
-        <item>
+          <description>Retrieves or sets the 						<b>hbrBack</b> member.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIM_HELPID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Retrieves or sets the
-<b>dwContextHelpID</b> member.</para>
-          </description>
-        </item>
-        <item>
+          <description>Retrieves or sets the 						<b>dwContextHelpID</b> member.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIM_MAXHEIGHT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Retrieves or sets the
-<b>cyMax</b> member.</para>
-          </description>
-        </item>
-        <item>
+          <description>Retrieves or sets the 						<b>cyMax</b> member.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIM_MENUDATA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Retrieves or sets the
-<b>dwMenuData</b> member.</para>
-          </description>
-        </item>
-        <item>
+          <description>Retrieves or sets the 						<b>dwMenuData</b> member.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIM_STYLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Retrieves or sets the
-<b>dwStyle</b> member.</para>
-          </description>
-        </item>
+          <description>Retrieves or sets the 						<b>dwStyle</b> member.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MENUINFO.dwStyle">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The menu style. This member can be one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MNS_AUTODISMISS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Menu automatically ends when mouse is outside the menu for approximately 10 seconds.</para>
-          </description>
-        </item>
-        <item>
+          <description>Menu automatically ends when mouse is outside the menu for approximately 10 seconds.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MNS_CHECKORBMP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x04000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x04000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The same space is reserved for the check mark and the bitmap. If the check mark is drawn, the bitmap is not. All checkmarks and bitmaps are aligned. Used for menus where some items use checkmarks and some use bitmaps.</para>
-          </description>
-        </item>
-        <item>
+          <description>The same space is reserved for the check mark and the bitmap. If the check mark is drawn, the bitmap is not. All checkmarks and bitmaps are aligned. Used for menus where some items use checkmarks and some use bitmaps.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MNS_DRAGDROP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Menu items are OLE drop targets or drag sources. Menu owner receives <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-menudrag">WM_MENUDRAG</a> and <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-menugetobject">WM_MENUGETOBJECT</a> messages.</para>
-          </description>
-        </item>
-        <item>
+          <description>Menu items are OLE drop targets or drag sources. Menu owner receives <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-menudrag">WM_MENUDRAG</a> and <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-menugetobject">WM_MENUGETOBJECT</a> messages.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MNS_MODELESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x40000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x40000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Menu is modeless; that is, there is no menu modal message loop while the menu is active.</para>
-          </description>
-        </item>
-        <item>
+          <description>Menu is modeless; that is, there is no menu modal message loop while the menu is active.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MNS_NOCHECK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x80000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x80000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No space is reserved to the left of an item for a check mark. The item can still be selected, but the check mark will not appear next to the item.</para>
-          </description>
-        </item>
-        <item>
+          <description>No space is reserved to the left of an item for a check mark. The item can still be selected, but the check mark will not appear next to the item.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MNS_NOTIFYBYPOS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x08000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x08000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Menu owner receives a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-menucommand">WM_MENUCOMMAND</a> message instead of a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> message when the user makes a selection. <b>MNS_NOTIFYBYPOS</b> is a menu header style and has no effect when applied to individual sub menus.</para>
-          </description>
-        </item>
+          <description>Menu owner receives a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-menucommand">WM_MENUCOMMAND</a> message instead of a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> message when the user makes a selection. <b>MNS_NOTIFYBYPOS</b> is a menu header style and has no effect when applied to individual sub menus.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MENUINFO.cyMax">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The maximum height of the menu in pixels. When the menu items exceed the space available, scroll bars are automatically used. The default (0) is the screen height.</para>
-    </summary>
+    <summary>The maximum height of the menu in pixels. When the menu items exceed the space available, scroll bars are automatically used. The default (0) is the screen height.</summary>
   </member>
   <member name="MENUINFO.hbrBack">
-    <summary>
-      <para>Type: <b>HBRUSH</b></para>
-      <para>A handle to the brush to be used for the menu's background.</para>
-    </summary>
+    <summary>A handle to the brush to be used for the menu's background.</summary>
   </member>
   <member name="MENUINFO.dwContextHelpID">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The context help identifier. This is the same value used in
-the <see cref="GetMenuContextHelpId" /> and
-<see cref="SetMenuContextHelpId" /> functions.</para>
-    </summary>
+    <summary>The context help identifier. This is the same value used in the <see cref="GetMenuContextHelpId" /> and<see cref="SetMenuContextHelpId" /> functions.</summary>
   </member>
   <member name="MENUINFO.dwMenuData">
-    <summary>
-      <para>Type: <b>ULONG_PTR</b></para>
-      <para>An application-defined value.</para>
-    </summary>
+    <summary>An application-defined value.</summary>
   </member>
 </doc>

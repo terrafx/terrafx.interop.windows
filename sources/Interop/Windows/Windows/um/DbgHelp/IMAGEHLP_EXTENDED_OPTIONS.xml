@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGEHLP_EXTENDED_OPTIONS">
-    <summary>
-      <para>Lists the extended symbol options that you can get and set by using the <see cref="SymGetExtendedOption" /> and <see cref="SymSetExtendedOption" /> functions.</para>
-    </summary>
-    <seealso cref="SymGetExtendedOption" />
-    <seealso cref="SymSetExtendedOption" />
+    <summary>Lists the extended symbol options that you can get and set by using the <see cref="SymGetExtendedOption" /> and <see cref="SymSetExtendedOption" /> functions.</summary>
   </member>
   <member name="IMAGEHLP_EXTENDED_OPTIONS.SYMOPT_EX_DISABLEACCESSTIMEUPDATE">
-    <summary>
-      <para>Turns off explicit updates to the last access time of a symbol that is loaded. By default, DbgHelp updates the last access time of a symbol file that is consumed so that a symbol cache can be maintained by using a least recently used mechanism.</para>
-    </summary>
+    <summary>Turns off explicit updates to the last access time of a symbol that is loaded. By default, DbgHelp updates the last access time of a symbol file that is consumed so that a symbol cache can be maintained by using a least recently used mechanism.</summary>
   </member>
   <member name="IMAGEHLP_EXTENDED_OPTIONS.SYMOPT_EX_MAX">
-    <summary>
-      <para>Unused.</para>
-    </summary>
+    <summary>Unused.</summary>
   </member>
 </doc>

@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OCSP_REQUEST_ENTRY">
-    <summary>
-      <para>The <b>OCSP_REQUEST_ENTRY</b> structure contains information about a single certificate in an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) request. This structure populates the <see cref="OCSP_REQUEST_INFO" /><b>rgRequestEntry</b> member.</para>
-    </summary>
-    <seealso cref="CERT_EXTENSION" />
-    <seealso cref="OCSP_CERT_ID" />
-    <seealso cref="OCSP_REQUEST_INFO" />
-    <seealso href="https://www.ietf.org/rfc/rfc2560.txt">RFC 2560  Online Certificate Status Protocol</seealso>
+    <summary>The <b>OCSP_REQUEST_ENTRY</b> structure contains information about a single certificate in an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) request. This structure populates the <see cref="OCSP_REQUEST_INFO" /><b>rgRequestEntry</b> member.</summary>
   </member>
   <member name="OCSP_REQUEST_ENTRY.CertId">
-    <summary>
-      <para>An <see cref="OCSP_CERT_ID" /> structure that specifies the target certificate.</para>
-    </summary>
+    <summary>An <see cref="OCSP_CERT_ID" /> structure that specifies the target certificate.</summary>
   </member>
   <member name="OCSP_REQUEST_ENTRY.cExtension">
-    <summary>
-      <para>The number of elements in the <b>rgExtension</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgExtension</b> array.</summary>
   </member>
   <member name="OCSP_REQUEST_ENTRY.rgExtension">
-    <summary>
-      <para>An array of pointers to <see cref="CERT_EXTENSION" /> structures, each of which contains information about the <b>CertId</b> certificate.</para>
-    </summary>
+    <summary>An array of pointers to <see cref="CERT_EXTENSION" /> structures, each of which contains information about the <b>CertId</b> certificate.</summary>
   </member>
 </doc>

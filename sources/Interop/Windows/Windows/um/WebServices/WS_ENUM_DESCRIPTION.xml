@@ -3,92 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_ENUM_DESCRIPTION">
-    <summary>
-      <para>A type description that is used with <see cref="WS_ENUM_TYPE" /> and is required.
-It provides information used in serializing and deserializing
-values of an enumeration.</para>
-    </summary>
-    <remarks>
-      <para>The following examples illustrates initializing an enum description.  This
-example illustrates the use of the nameIndices field, but this field could
-be <b>NULL</b> instead.</para>
-      <code>
-enum
-{
-    Red = 10,
-    Green = 20,
-    Blue = 30,
-};
-
-WS_XML_STRING redString = WS_XML_STRING_VALUE("red");
-WS_XML_STRING greenString = WS_XML_STRING_VALUE("green");
-WS_XML_STRING blueString = WS_XML_STRING_VALUE("blue");
-
-// sorted by ascending numeric value
-WS_ENUM_VALUE valueArray[3] =
-{
-    { Red, &amp;amp;amp;amp;amp;amp;amp;redString },
-    { Green, &amp;amp;amp;amp;amp;amp;amp;greenString },
-    { Blue, &amp;amp;amp;amp;amp;amp;amp;blueString },
-};
-
-// sorted by ascending name
-ULONG nameIndices[3] =
-{
-    2, // "blue"
-    1, // "green"
-    0, // "red"
-};
-
-WS_ENUM_DESCRIPTION enumDescription;
-enumDescription.maxByteCount = 5; // "green"
-enumDescription.values = valueArray;
-enumDescription.valueCount = 3;
-enumDescription.nameIndices = nameIndices;
-
-</code>
-    </remarks>
+    <summary>A type description that is used with <see cref="WS_ENUM_TYPE" /> and is required. It provides information used in serializing and deserializing values of an enumeration.</summary>
   </member>
   <member name="WS_ENUM_DESCRIPTION.values">
     <summary>
-      <para>Points to an array of enumeration values and their
-corresponding names.</para>
-      <para>There must not be duplicate values or names in
-the array.</para>
+      <para>Points to an array of enumeration values and their corresponding names.</para>
+      <para>There must not be duplicate values or names in the array.</para>
     </summary>
   </member>
   <member name="WS_ENUM_DESCRIPTION.valueCount">
-    <summary>
-      <para>The number of items in the values array.</para>
-    </summary>
+    <summary>The number of items in the values array.</summary>
   </member>
   <member name="WS_ENUM_DESCRIPTION.maxByteCount">
-    <summary>
-      <para>The length, in UTF8 bytes, of the longest name
-in the values array.</para>
-    </summary>
+    <summary>The length, in UTF8 bytes, of the longest name in the values array.</summary>
   </member>
   <member name="WS_ENUM_DESCRIPTION.nameIndices">
     <summary>
-      <para>An optional array that provides information which can improve
-the performance of mapping enumeration values to names and back.
-This array may <b>NULL</b>, in which case an O(n) lookup is used,
-which may be sufficient for small numbers of enumerated values.</para>
+      <para>An optional array that provides information which can improve the performance of mapping enumeration values to names and back. This array may <b>NULL</b>, in which case an O(n) lookup is used, which may be sufficient for small numbers of enumerated values.</para>
       <para>If non-<b>NULL</b>, the following must be true:</para>
       <list type="bullet">
         <item>
-          <description>The values array is required to be sorted by value, in ascending order.
-</description>
+          <description>The values array is required to be sorted by value, in ascending order.</description>
         </item>
         <item>
-          <description>The nameIndices array points to an array that has valueCount items.
-</description>
+          <description>The nameIndices array points to an array that has valueCount items.</description>
         </item>
         <item>
-          <description>The nameIndices array provides the indices of the items in
-the values array as if they were sorted by name in ascending order.
-The names should by sorted by performing a byte-wise comparison of the utf-8 string.
-</description>
+          <description>The nameIndices array provides the indices of the items in the values array as if they were sorted by name in ascending order. The names should by sorted by performing a byte-wise comparison of the utf-8 string.</description>
         </item>
       </list>
     </summary>

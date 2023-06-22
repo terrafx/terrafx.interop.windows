@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.HPALETTE_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HPALETTE_UserFree64">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HPALETTE_UserMarshal">
+    <summary>Marshals an HPALETTE object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+    <returns>A pointer to an unsigned character array.</returns>
+  </member>
+  <member name="Windows.HPALETTE_UserMarshal64">
+    <summary>Marshals an HBITMAP object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+    <returns>A pointer to an unsigned character array.</returns>
+  </member>
+  <member name="Windows.HPALETTE_UserSize">
+    <summary>Calculates the wire size of the HPALETTE object and gets its handle and data. (HPALETTE_UserSize)</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HPALETTE object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+    <returns>A LONG value expressing the size of the object.</returns>
+  </member>
+  <member name="Windows.HPALETTE_UserSize64">
+    <summary>Calculates the wire size of the HPALETTE object and gets its handle and data. (HPALETTE_UserSize)</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HPALETTE object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+    <returns>A LONG value expressing the size of the object.</returns>
+  </member>
+  <member name="Windows.HPALETTE_UserUnmarshal">
+    <summary>Unmarshals an HPALETTE object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+    <returns>A pointer to an unsigned character array.</returns>
+  </member>
+  <member name="Windows.HPALETTE_UserUnmarshal64">
+    <summary>Unmarshals an HPALETTE object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+    <returns>A pointer to an unsigned character array.</returns>
+  </member>
+</doc>

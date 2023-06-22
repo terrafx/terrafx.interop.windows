@@ -3,16 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEM_COMPILE_STATUS_INFO">
-    <summary>
-      <para>Describes an error for the <see cref="IMofCompiler" /> interface.</para>
-    </summary>
-    <remarks>
-      <para>The   <i>ObjectNum</i>, <i>FirstLine</i>, and <i>LastLine</i> parameters only contain values for errors that relate to a particular class or instance in the file.</para>
-    </remarks>
-    <seealso cref="CompileBuffer" />
-    <seealso cref="CompileFile" />
-    <seealso cref="CreateBMOF" />
-    <seealso cref="IMofCompiler" />
+    <summary>Describes an error for the <see cref="IMofCompiler" /> interface.</summary>
   </member>
   <member name="WBEM_COMPILE_STATUS_INFO.lPhaseError">
     <summary>
@@ -28,28 +19,18 @@
     </summary>
   </member>
   <member name="WBEM_COMPILE_STATUS_INFO.hRes">
-    <summary>
-      <para>The actual error code.</para>
-    </summary>
+    <summary>The actual error code.</summary>
   </member>
   <member name="WBEM_COMPILE_STATUS_INFO.ObjectNum">
-    <summary>
-      <para>Object that is at fault.</para>
-    </summary>
+    <summary>Object that is at fault.</summary>
   </member>
   <member name="WBEM_COMPILE_STATUS_INFO.FirstLine">
-    <summary>
-      <para>First line number of the object.</para>
-    </summary>
+    <summary>First line number of the object.</summary>
   </member>
   <member name="WBEM_COMPILE_STATUS_INFO.LastLine">
-    <summary>
-      <para>Last line number of the object.</para>
-    </summary>
+    <summary>Last line number of the object.</summary>
   </member>
   <member name="WBEM_COMPILE_STATUS_INFO.dwOutFlags">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

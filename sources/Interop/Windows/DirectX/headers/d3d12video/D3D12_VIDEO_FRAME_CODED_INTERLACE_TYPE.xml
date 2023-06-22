@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE">
-    <summary>
-      <para>Specifies the interlace type of coded video frames.</para>
-    </summary>
+    <summary>Specifies the interlace type of coded video frames.</summary>
   </member>
   <member name="D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE.D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE_NONE">
-    <summary>
-      <para>The coded frames are not interlaced, often referred to as "progressive".</para>
-    </summary>
+    <summary>The coded frames are not interlaced, often referred to as "progressive".</summary>
   </member>
   <member name="D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE.D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE_FIELD_BASED">
-    <summary>
-      <para>The coded frames may be interlaced.</para>
-    </summary>
+    <summary>The coded frames may be interlaced.</summary>
   </member>
 </doc>

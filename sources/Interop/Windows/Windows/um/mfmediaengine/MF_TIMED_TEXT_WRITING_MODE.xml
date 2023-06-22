@@ -3,44 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TIMED_TEXT_WRITING_MODE">
-    <summary>
-      <para>Specifies the sequence in which text is written on its parent element.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the sequence in which text is written on its parent element.</summary>
   </member>
   <member name="MF_TIMED_TEXT_WRITING_MODE.MF_TIMED_TEXT_WRITING_MODE_LRTB">
-    <summary>
-      <para>Text is written from left to right and top to bottom.</para>
-    </summary>
+    <summary>Text is written from left to right and top to bottom.</summary>
   </member>
   <member name="MF_TIMED_TEXT_WRITING_MODE.MF_TIMED_TEXT_WRITING_MODE_RLTB">
-    <summary>
-      <para>Text is written from right to left and top to bottom.</para>
-    </summary>
+    <summary>Text is written from right to left and top to bottom.</summary>
   </member>
   <member name="MF_TIMED_TEXT_WRITING_MODE.MF_TIMED_TEXT_WRITING_MODE_TBRL">
-    <summary>
-      <para>Text is written from top to bottom and right to left.</para>
-    </summary>
+    <summary>Text is written from top to bottom and right to left.</summary>
   </member>
   <member name="MF_TIMED_TEXT_WRITING_MODE.MF_TIMED_TEXT_WRITING_MODE_TBLR">
-    <summary>
-      <para>Text is written from top to bottom and left to right.</para>
-    </summary>
+    <summary>Text is written from top to bottom and left to right.</summary>
   </member>
   <member name="MF_TIMED_TEXT_WRITING_MODE.MF_TIMED_TEXT_WRITING_MODE_LR">
-    <summary>
-      <para>Text is written from left to right.</para>
-    </summary>
+    <summary>Text is written from left to right.</summary>
   </member>
   <member name="MF_TIMED_TEXT_WRITING_MODE.MF_TIMED_TEXT_WRITING_MODE_RL">
-    <summary>
-      <para>Text is written from right to left.</para>
-    </summary>
+    <summary>Text is written from right to left.</summary>
   </member>
   <member name="MF_TIMED_TEXT_WRITING_MODE.MF_TIMED_TEXT_WRITING_MODE_TB">
-    <summary>
-      <para>Text is written from top to bottom.</para>
-    </summary>
+    <summary>Text is written from top to bottom.</summary>
   </member>
 </doc>

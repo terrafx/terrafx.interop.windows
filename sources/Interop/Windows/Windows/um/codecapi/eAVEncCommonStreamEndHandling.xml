@@ -4,19 +4,14 @@
 <doc>
   <member name="eAVEncCommonStreamEndHandling">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies whether the encoder discards partial groups of pictures (GOPs) at the end of the stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avenccommonstreamendhandling-property">AVEncCommonStreamEndHandling</a> codec property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncCommonStreamEndHandling.eAVEncCommonStreamEndHandling_DiscardPartial">
-    <summary>
-      <para>If there is a partial GOP at the end of the stream, the encoder will discard it.</para>
-    </summary>
+    <summary>If there is a partial GOP at the end of the stream, the encoder will discard it.</summary>
   </member>
   <member name="eAVEncCommonStreamEndHandling.eAVEncCommonStreamEndHandling_EnsureComplete">
-    <summary>
-      <para>If there is a partial GOP at the end of the stream, the encoder will adjust the GOP and encode all of the stream data.</para>
-    </summary>
+    <summary>If there is a partial GOP at the end of the stream, the encoder will adjust the GOP and encode all of the stream data.</summary>
   </member>
 </doc>

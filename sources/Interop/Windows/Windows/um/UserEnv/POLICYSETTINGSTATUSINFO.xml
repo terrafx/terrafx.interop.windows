@@ -3,39 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POLICYSETTINGSTATUSINFO">
-    <summary>
-      <para>The
-<b>POLICYSETTINGSTATUSINFO</b> structure provides information about a policy-setting event.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/about-group-policy">Group Policy Overview</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-structures">Group Policy Structures</seealso>
-    <seealso cref="RSoPSetPolicySettingStatus" />
+    <summary>The<b>POLICYSETTINGSTATUSINFO</b> structure provides information about a policy-setting event.</summary>
   </member>
   <member name="POLICYSETTINGSTATUSINFO.szKey">
-    <summary>
-      <para>This member is optional. If it is <b>NULL</b>, the system generates a value.</para>
-    </summary>
+    <summary>This member is optional. If it is <b>NULL</b>, the system generates a value.</summary>
   </member>
   <member name="POLICYSETTINGSTATUSINFO.szEventSource">
-    <summary>
-      <para>Pointer to a string specifying the name of the source (application, service, driver, subsystem) that generated the log entry.</para>
-    </summary>
+    <summary>Pointer to a string specifying the name of the source (application, service, driver, subsystem) that generated the log entry.</summary>
   </member>
   <member name="POLICYSETTINGSTATUSINFO.szEventLogName">
-    <summary>
-      <para>Pointer to a string specifying the name of the event log.</para>
-    </summary>
+    <summary>Pointer to a string specifying the name of the event log.</summary>
   </member>
   <member name="POLICYSETTINGSTATUSINFO.dwEventID">
-    <summary>
-      <para>Specifies the event log message ID.</para>
-    </summary>
+    <summary>Specifies the event log message ID.</summary>
   </member>
   <member name="POLICYSETTINGSTATUSINFO.dwErrorCode">
-    <summary>
-      <para>A
-<a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> that indicates an error that occurred during the application of the policy setting.</para>
-    </summary>
+    <summary>A<a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> that indicates an error that occurred during the application of the policy setting.</summary>
   </member>
   <member name="POLICYSETTINGSTATUSINFO.status">
     <summary>
@@ -53,9 +36,6 @@
     </summary>
   </member>
   <member name="POLICYSETTINGSTATUSINFO.timeLogged">
-    <summary>
-      <para>Specifies a
-<see cref="SYSTEMTIME" /> structure that indicates the time at which the source generated the event.</para>
-    </summary>
+    <summary>Specifies a<see cref="SYSTEMTIME" /> structure that indicates the time at which the source generated the event.</summary>
   </member>
 </doc>

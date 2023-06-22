@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BaseValueSource">
+    <summary>Defines constants that specify where the effective value of a property was set.</summary>
+  </member>
+  <member name="BaseValueSource.BaseValueSourceUnknown">
+    <summary>The source of the property value is not known.</summary>
+  </member>
+  <member name="BaseValueSource.BaseValueSourceDefault">
+    <summary>The value has not been set locally or by any styles, so it has the default value defined in generic.xaml.</summary>
+  </member>
+  <member name="BaseValueSource.BaseValueSourceBuiltInStyle">
+    <summary>The value was set by a built-in style.</summary>
+  </member>
+  <member name="BaseValueSource.BaseValueSourceStyle">
+    <summary>The value was set by a style.</summary>
+  </member>
+  <member name="BaseValueSource.BaseValueSourceLocal">
+    <summary>The value was set locally.</summary>
+  </member>
+  <member name="BaseValueSource.Inherited">
+    <summary>The value was inherited from a parent element.</summary>
+  </member>
+  <member name="BaseValueSource.DefaultStyleTrigger">
+    <summary>The value was set by a default style trigger.</summary>
+  </member>
+  <member name="BaseValueSource.TemplateTrigger">
+    <summary>The value was set by a template style.</summary>
+  </member>
+  <member name="BaseValueSource.StyleTrigger">
+    <summary>The value was set by a style trigger.</summary>
+  </member>
+  <member name="BaseValueSource.ImplicitStyleReference">
+    <summary>The value was set by an implicit style reference.</summary>
+  </member>
+  <member name="BaseValueSource.ParentTemplate">
+    <summary>The value was set by a parent template.</summary>
+  </member>
+  <member name="BaseValueSource.ParentTemplateTrigger">
+    <summary>The value was set by a parent template trigger.</summary>
+  </member>
+  <member name="BaseValueSource.Animation">
+    <summary>The value was set by an animation.</summary>
+  </member>
+  <member name="BaseValueSource.Coercion">
+    <summary>The value was coerced in code.</summary>
+  </member>
+  <member name="BaseValueSource.BaseValueSourceVisualState">
+    <summary>The value was set by a visual state. (Introduced in Windows 10, version 1607.)</summary>
+  </member>
+</doc>

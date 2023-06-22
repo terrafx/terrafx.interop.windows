@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFDeviceTransform.FlushInputStream">
-    <summary>
-      <para>The <b>FlushInputStream</b> method flushes a Device MFT’s input stream.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>Stream ID of the input stream which needs to be flushed.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Contains the <b>HRESULT</b> of flushing the corresponding devproxy output stream.</para>
-    </param>
+    <summary>The <b>FlushInputStream</b> method flushes a Device MFT’s input stream.</summary>
+    <param name="dwStreamIndex">Stream ID of the input stream which needs to be flushed.</param>
+    <param name="dwFlags">Contains the <b>HRESULT</b> of flushing the corresponding devproxy output stream.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -19,66 +13,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Transitioning the stream state succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Transitioning the stream state succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVAILIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_STREAM_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVAILIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>An invalid stream ID was passed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALID_STREAM_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested stream transition is not possible.</para>
-          </description>
-        </item>
+          <description>The requested stream transition is not possible.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface method helps to flush a Device MFT’s input stream.</para>
-      <para>Device MFT should drop all samples in its queues and reset all its internal data structures related to that input stream. This is equivalent to resetting the input stream. The media type and stream state must not change.</para>
-      <h3>When called</h3>
-      <para>When the input stream needs to be reset, device transform manager (DTM) would call this method.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.FlushOutputStream">
-    <summary>
-      <para>The <b>FlushOutputStream</b> method flushes a Device MFT’s output stream.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>Stream ID of the output stream which needs to be flushed.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Must be zero.</para>
-    </param>
+    <summary>The <b>FlushOutputStream</b> method flushes a Device MFT’s output stream.</summary>
+    <param name="dwStreamIndex">Stream ID of the output stream which needs to be flushed.</param>
+    <param name="dwFlags">Must be zero.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -86,69 +75,62 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Transitioning the stream state succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Transitioning the stream state succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVAILIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_STREAM_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVAILIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>An invalid stream ID was passed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALID_STREAM_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested stream transition is not possible.</para>
-          </description>
-        </item>
+          <description>The requested stream transition is not possible.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface function helps to flush a Device MFT’s output stream.</para>
-      <para>Device MFT should drop all samples in its queues and reset all its internal data structures related to that output stream. This is equivalent to resetting the output stream. The media type and stream state must not change.</para>
-      <h3>When called</h3>
-      <para>When the output stream needs to be reset, device transform manager (DTM) would call this method.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetInputAvailableType">
-    <summary>
-      <para>The <b>GetInputAvailableType</b> method gets an available media type for an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier. To get the list of stream identifiers, call <see cref="IMFDeviceTransform.GetStreamID" />.</para>
-    </param>
-    <param name="dwTypeIndex">
-      <para>Index of the media type to retrieve. Media types are indexed from zero and returned in approximate order of preference.</para>
-    </param>
-    <param name="pMediaType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface.</para>
-    </param>
+    <summary>The <b>GetInputAvailableType</b> method gets an available media type for an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Input stream identifier. To get the list of stream identifiers, call <see cref="IMFDeviceTransform.GetStreamID" />.</param>
+    <param name="dwTypeIndex">Index of the media type to retrieve. Media types are indexed from zero and returned in approximate order of preference.</param>
+    <param name="pMediaType">Receives a pointer to the <see cref="IMFMediaType" /> interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -156,65 +138,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Initialization succeeded</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Initialization succeeded</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream ID is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_MORE_TYPES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>The stream ID is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_MORE_TYPES</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no media type available with the specified index.</para>
-          </description>
-        </item>
+          <description>There is no media type available with the specified index.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The MFT defines a list of available media types for each input stream and orders them by preference. This method enumerates the available media types for an input stream. To enumerate the available types, increment <i>dwTypeIndex</i> until the method returns <b>MF_E_NO_MORE_TYPES</b>.</para>
-      <h3>Implementation notes</h3>
-      <para>If the MFT stores a media type internally, the MFT should return a clone of the media type, not a pointer to the original type. Otherwise, the caller might modify the type and alter the internal state of the MFT.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetInputCurrentType">
-    <summary>
-      <para>The <b>GetInputCurrentType</b> method gets the current media type for an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier. To get the list of stream identifiers, call <see cref="IMFDeviceTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pMediaType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface that represents the current type used by that stream.</para>
-    </param>
+    <summary>The <b>GetInputCurrentType</b> method gets the current media type for an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Input stream identifier. To get the list of stream identifiers, call <see cref="IMFDeviceTransform.GetStreamIDs" />.</param>
+    <param name="pMediaType">Receives a pointer to the <see cref="IMFMediaType" /> interface that represents the current type used by that stream.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -222,75 +200,73 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Initialization succeeded</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Initialization succeeded</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream ID is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_MORE_TYPES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>There is no media type available with the specified index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The stream ID is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_MORE_TYPES</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no media type available with the specified index.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>No media type has been set yet.</para>
-          </description>
-        </item>
+          <description>No media type has been set yet.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the specified input stream does not yet have a media type, the method returns <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>.</para>
-      <h3>Implementation notes</h3>
-      <para>The MFT should return a clone of the media type, not a pointer to the original type. Otherwise, the caller might modify the type and alter the internal state of the MFT.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetInputStreamAttributes">
-    <summary>
-      <para>The <b>GetInputStreamAttributes</b> method gets the attribute store for an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Stream ID of the input stream whose state needs to be retrieved.</para>
-    </param>
-    <param name="ppAttributes">
-      <para>Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>The <b>GetInputStreamAttributes</b> method gets the attribute store for an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Stream ID of the input stream whose state needs to be retrieved.</param>
+    <param name="ppAttributes">Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -298,56 +274,50 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Transitioning the stream state succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Transitioning the stream state succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Device MFT could not  support the request at this time.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>The stream ID is not valid.</para>
-          </description>
-        </item>
+          <description>The stream ID is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method  is used by DTM to get a specific input stream’s attribute store.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetInputStreamPreferredState">
-    <summary>
-      <para>The <b>GetInputStreamPreferredState</b> method gets a Device MFT input stream’s preferred state and media type.</para>
-    </summary>
-    <param name="dwStreamID">
-      <para>Stream ID of the input stream whose state needs to be retrieved.</para>
-    </param>
-    <param name="value">
-      <para>Specifies the current <b>DeviceStreamState</b> of the specified input Device MFT stream.</para>
-    </param>
-    <param name="ppMediaType">
-      <para>Preferred media type for the input stream is passed in through this parameter.</para>
-    </param>
+    <summary>The <b>GetInputStreamPreferredState</b> method gets a Device MFT input stream’s preferred state and media type.</summary>
+    <param name="dwStreamID">Stream ID of the input stream whose state needs to be retrieved.</param>
+    <param name="value">Specifies the current <b>DeviceStreamState</b> of the specified input Device MFT stream.</param>
+    <param name="ppMediaType">Preferred media type for the input stream is passed in through this parameter.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -355,65 +325,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Transitioning the stream state succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Transitioning the stream state succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVAILIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_STREAM_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVAILIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>An invalid stream ID was passed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALID_STREAM_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested stream transition is not possible.</para>
-          </description>
-        </item>
+          <description>The requested stream transition is not possible.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface function helps to query the Device MFT input stream’s preferred state and mediatype to which it needs to be transitioned.</para>
-      <para>When a change in the output stream’s media type needs corresponding change in the input, then Device MFT would post <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/metransforminputstreamstatechanged">METransformInputStreamStateChanged</a> to DTM to change the relevant input stream. DTM would call <b>GetInputStreamPreferredState</b> to retrieve Device MFT input stream’s preferred mediatype and state.</para>
-      <para>As an  example, consider a Device MFT that has two input streams and three output streams. Let  Output 1 and Output 2 source from Input 1 and  stream at 720p. Now, let us say Output 2’s media type changes to 1080p. To satisfy this request, Device MFT must  change the Input 1 media type to 1080p, by posting <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/metransforminputstreamstatechanged">METransformInputStreamStateChanged</a> event to the DTM. DTM would call <b>GetInputStreamPreferredState</b> and retrieve the preferred state and mediatype. DTM would call  <see cref="SetInputStreamState" /> to change the input stream’ mediatype and state.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetInputStreamState">
-    <summary>
-      <para>The  <b>GetInputStreamState</b> method gets the Device MFT’s input stream state.</para>
-    </summary>
-    <param name="dwStreamID">
-      <para>Stream ID of the input stream whose state needs to be retrieved.</para>
-    </param>
-    <param name="value">
-      <para>Specifies the current <b>DeviceStreamState</b> of the specified input Device MFT stream.</para>
-    </param>
+    <summary>The <b>GetInputStreamState</b> method gets the Device MFT’s input stream state.</summary>
+    <param name="dwStreamID">Stream ID of the input stream whose state needs to be retrieved.</param>
+    <param name="value">Specifies the current <b>DeviceStreamState</b> of the specified input Device MFT stream.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -421,56 +387,50 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Transitioning the stream state succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Transitioning the stream state succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVAILIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Device MFT could not  support the request at this time.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVAILIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>An invalid stream ID was passed.</para>
-          </description>
-        </item>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is used by device transform  manager (DTM) to get a specific input stream’s state.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetOutputAvailableType">
-    <summary>
-      <para>The <b>GetOutputAvailableType</b> method gets an available media type for an output stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwOutputStreamID">
-      <para>Output stream identifier. To get the list of stream identifiers, call <see cref="IMFDeviceTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="dwTypeIndex">
-      <para>Index of the media type to retrieve. Media types are indexed from zero and returned in approximate order of preference.</para>
-    </param>
-    <param name="pMediaType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface.</para>
-    </param>
+    <summary>The <b>GetOutputAvailableType</b> method gets an available media type for an output stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwOutputStreamID">Output stream identifier. To get the list of stream identifiers, call <see cref="IMFDeviceTransform.GetStreamIDs" />.</param>
+    <param name="dwTypeIndex">Index of the media type to retrieve. Media types are indexed from zero and returned in approximate order of preference.</param>
+    <param name="pMediaType">Receives a pointer to the <see cref="IMFMediaType" /> interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -478,66 +438,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Initialization succeeded</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Initialization succeeded</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream ID is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_MORE_TYPES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>The stream ID is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_MORE_TYPES</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no media type available with the specified index.</para>
-          </description>
-        </item>
+          <description>There is no media type available with the specified index.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The MFT defines a list of available media types for each output stream and orders them by preference.</para>
-      <para>This method enumerates the available media types for an output stream. To enumerate the available types, increment <i>dwTypeIndex</i> until the method returns <b>MF_E_NO_MORE_TYPES</b>.</para>
-      <h3>Implementation notes</h3>
-      <para>If the MFT stores a media type internally, the MFT should return a clone of the media type, not a pointer to the original type. Otherwise, the caller might modify the type and alter the internal state of the MFT.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetOutputCurrentType">
-    <summary>
-      <para>The <b>GetOutputCurrentType</b> method gets the current media type for an output stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwOutputStreamID">
-      <para>Output stream identifier. To get the list of stream identifiers, call <see cref="IMFDeviceTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pMediaType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface that represents the current type used by that stream.</para>
-    </param>
+    <summary>The <b>GetOutputCurrentType</b> method gets the current media type for an output stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwOutputStreamID">Output stream identifier. To get the list of stream identifiers, call <see cref="IMFDeviceTransform.GetStreamIDs" />.</param>
+    <param name="pMediaType">Receives a pointer to the <see cref="IMFMediaType" /> interface that represents the current type used by that stream.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -545,75 +500,73 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Initialization succeeded</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Initialization succeeded</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream ID is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_MORE_TYPES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>There is no media type available with the specified index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The stream ID is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_MORE_TYPES</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no media type available with the specified index.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>No media type has been set yet.</para>
-          </description>
-        </item>
+          <description>No media type has been set yet.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the specified output stream does not yet have a media type, the method returns <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>.</para>
-      <h3>Implementation notes</h3>
-      <para>The MFT should return a clone of the media type, not a pointer to the original type. Otherwise, the caller might modify the type and alter the internal state of the MFT.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetOutputStreamAttributes">
-    <summary>
-      <para>The <b>GetOutputStreamAttributes</b> method gets the attribute store for an output stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwOutputStreamID">
-      <para>The Stream ID of the output stream whose state needs to be retrieved.</para>
-    </param>
-    <param name="ppAttributes">
-      <para>Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>The <b>GetOutputStreamAttributes</b> method gets the attribute store for an output stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwOutputStreamID">The Stream ID of the output stream whose state needs to be retrieved.</param>
+    <param name="ppAttributes">Receives a pointer to the <see cref="IMFAttributes" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -621,53 +574,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Initialization succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Initialization succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Device MFT could not  support the request at this time.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>Returned when an invalid stream ID is passed.</para>
-          </description>
-        </item>
+          <description>Returned when an invalid stream ID is passed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This function is used by the DTM to get a specific output stream’s attribute store.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetOutputStreamState">
-    <summary>
-      <para>The  <b>GetOutputStreamState</b> method gets the Device MFT’s output stream state.</para>
-    </summary>
-    <param name="dwStreamID">
-      <para>Stream ID of the output stream whose state needs to be retrieved.</para>
-    </param>
-    <param name="value">
-      <para>Specifies the current <b>DeviceStreamState</b> of the specified output Device MFT stream.</para>
-    </param>
+    <summary>The <b>GetOutputStreamState</b> method gets the Device MFT’s output stream state.</summary>
+    <param name="dwStreamID">Stream ID of the output stream whose state needs to be retrieved.</param>
+    <param name="value">Specifies the current <b>DeviceStreamState</b> of the specified output Device MFT stream.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -675,105 +624,92 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Transitioning the stream state succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Transitioning the stream state succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVAILIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Device MFT could not  support the request at this time.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVAILIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>An invalid stream ID was passed.</para>
-          </description>
-        </item>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is used by device transform manager (DTM) to get a specific output stream’s state.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetStreamCount">
-    <summary>
-      <para>The <b>GetStreamCount</b> method gets the current number of input and output streams on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="pcInputStreams">
-      <para>Receives the number of input streams.</para>
-    </param>
-    <param name="pcOutputStreams">
-      <para>Receives the number of output streams.</para>
-    </param>
+    <summary>The <b>GetStreamCount</b> method gets the current number of input and output streams on this Media Foundation transform (MFT).</summary>
+    <param name="pcInputStreams">Receives the number of input streams.</param>
+    <param name="pcOutputStreams">Receives the number of output streams.</param>
     <returns>
-      <para>The method returns an <b>HRESULT</b>. Possible values include,  but are  not limited to the values given in the following table.</para>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to the values given in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Transitioning the stream state succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Transitioning the stream state succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid pointer passed.</para>
-          </description>
-        </item>
+          <description>Invalid pointer passed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This function is used by DTM to get the number of streams supported by the Device MFT. The number of streams include unselected streams., fore example, streams with no media type or a NULL media type.</para>
-      <para>This method would not be called with NULL parameters.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.GetStreamIDs">
-    <summary>
-      <para>The  <b>GetStreamIDs</b> method gets the stream identifiers for the input and output streams on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputIDArraySize">
-      <para>The number of elements in <i>pdwInputStreamIDs</i></para>
-    </param>
+    <summary>The <b>GetStreamIDs</b> method gets the stream identifiers for the input and output streams on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputIDArraySize">The number of elements in <i>pdwInputStreamIDs</i></param>
     <param name="pdwInputStreamIds">
       <para>A pointer to an array allocated by the caller. The method fills the array with the input stream identifiers. The array size must be at least equal to the number of input streams. To get the number of input streams, call <see cref="IMFDeviceTransform.GetStreamCount" />.</para>
       <para>If the caller passes an array that is larger than the number of input streams, the MFT must not write values into the extra array entries.</para>
     </param>
-    <param name="dwOutputIDArraySize">
-      <para>The number of elements in <i>pdwOutputStreamIDs</i>.</para>
-    </param>
-    <param name="pdwOutputStreamIds">
-      <para>A pointer to an array allocated by the caller. The method fills the array with the output stream identifiers. The array size must be at least equal to the number of output streams. To get the number of output streams, call <see cref="IMFDeviceTransform.GetStreamCount" />.</para>
-    </param>
+    <param name="dwOutputIDArraySize">The number of elements in <i>pdwOutputStreamIDs</i>.</param>
+    <param name="pdwOutputStreamIds">A pointer to an array allocated by the caller. The method fills the array with the output stream identifiers. The array size must be at least equal to the number of output streams. To get the number of output streams, call <see cref="IMFDeviceTransform.GetStreamCount" />.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -781,54 +717,92 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Transitioning the stream state succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Transitioning the stream state succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid pointer passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid pointer passed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_BUFFERTOOSMALL</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer coming in does not  have enough space to fill in the stream IDs.</para>
-          </description>
-        </item>
+          <description>The buffer coming in does not have enough space to fill in the stream IDs.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Stream identifiers are necessary because some MFTs can add or remove streams, so the index of a stream may not be unique. Therefore, <see cref="IMFDeviceTransform" /> methods that operate on streams take stream identifiers.</para>
-      <para>All input stream identifiers must be unique within an MFT, and all output stream identifiers must be unique. However, an input stream and an output stream can share the same identifier.
-I</para>
-      <para>If the client adds an input stream, the client assigns the identifier, so the MFT must allow arbitrary identifiers, as long as they are unique. If the MFT creates an output stream, the MFT assigns the identifier.</para>
-      <para>By convention, if an MFT has exactly one fixed input stream and one fixed output stream, it should assign the identifier 0 to both streams.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.InitializeTransform">
     <summary>
-      <para>
-        <b>InitializeTransform</b> is called to initialize the Device MFT.</para>
-    </summary>
+      <b>InitializeTransform</b> is called to initialize the Device MFT.</summary>
     <param name="pAttributes">
-      <para>Optionally contains a pointer to an attribute, passed in by the capture pipeline that contains initialization parameters. Currently none defined.</para>
+      <para>Contains a pointer to an attribute, passed in by the capture pipeline that contains initialization parameters. The following attributes values are passed to the function</para>
+      <list type="table">
+        <listheader>
+          <description>Attribute Key</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_DEVICEMFT_CONNECTED_FILTER_KSCONTROL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The IKsControl interface of the preceding DeviceTransform object. It also implements IMFDeviceTransform, used to get necessary information needed to create a valid pipeline.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_SYMBOLIC_LINK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Denotes the symbolic link for a video capture driver</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_DEVSOURCE_ATTRIBUTE_FRIENDLY_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Specifies the display name for a device. The display name is a human-readable string, suitable for display in a user interface.</description>
+        </listheader>
+      </list>
     </param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
@@ -837,43 +811,37 @@ I</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Initialization succeeded</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Initialization succeeded</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>Device MFT could not  support the request at this time.</para>
-          </description>
-        </item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Device MFTs can take advantage of this function to initialize various internal objects and states. Pipeline can also use the input <i>IMFAttributes</i> parameter to communicate certain configuration information to the Device MFT.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.ProcessEvent">
-    <summary>
-      <para>The <b>ProcessEvent</b> method sends an event to an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Stream identifier. To get the list of stream identifiers, call <see cref="IMFDeviceTransform.GetStreamIDs" />.</para>
-    </param>
-    <param name="pEvent">
-      <para>Pointer to the <see cref="IMFMediaEvent" /> interface of an event object.</para>
-    </param>
+    <summary>The <b>ProcessEvent</b> method sends an event to an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Stream identifier. To get the list of stream identifiers, call <see cref="IMFDeviceTransform.GetStreamIDs" />.</param>
+    <param name="pEvent">Pointer to the <see cref="IMFMediaEvent" /> interface of an event object.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -881,83 +849,62 @@ I</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The event processed successfully. The event will be propagated down stream.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The event processed successfully. The event will be propagated down stream.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDSTREAMNUMBER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_S_TRANSFORM_DO_NO_PROPOGATE_EVENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Indicates that the Device MFT does not want the event to be propagated further.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An invalid stream ID was passed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_S_TRANSFORM_DO_NO_PROPOGATE_EVENT</b>
-            </para>
-          </description>
-          <description>
-            <para>Indicates that the Device MFT does not want the event to be propagated further.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The function is not implemented.</para>
-          </description>
-        </item>
+          <description>The function is not implemented.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An MFT can handle sending the event downstream, or it can let the DTM do this, as indicated by the return value:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>E_NOTIMPL:</b> The MFT ignores all events, and the DTM should send all events downstream. After the pipeline receives this return value</description>
-        </item>
-        <item>
-          <description>
-            <b>S_OK: </b>The MFT has examined this event, but the DTM should send the event downstream. Internally, the MFT might respond to the event in some way, or it might ignore the event. </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_S_TRANSFORM_DO_NOT_PROPAGATE_EVENT:</b> The DTM should not propagate this event downstream. Either the MFT will send the event downstream, or else the MFT will consume the event and not send it downstream. The MFT should only consume the event if the event should stop at this MFT and not travel any further downstream. But in most cases, the event should travel downstream. </description>
-        </item>
-      </list>
-      <para>To send the event downstream, the MFT adds the event to the collection object that is provided by the client in the pEvents member of the <b>MFT_OUTPUT_DATA_BUFFER</b> structure, when the client calls <see cref="IMFTransform.ProcessOutput" />.</para>
-      <para>Events must be serialized with the samples that come before and after them. Attach the event to the output sample that follows the event. (The pipeline will process the event first, and then the sample.) If an MFT holds back one or more samples between calls to <see cref="IMFTransform.ProcessInput" /> and <see cref="IMFTransform.ProcessOutput" />, the MFT should handle sending all events downstream, because in this situation the pipeline cannot correlate input samples with output samples.</para>
-      <para>If an MFT does not hold back samples and does not need to examine any events, it can return <b>E_NOTIMPL</b>.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.ProcessInput">
-    <summary>
-      <para>The <b>ProcessInput</b> method delivers data to an input stream on this Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="dwInputStreamID">
-      <para>Input stream identifier.</para>
-    </param>
-    <param name="pSample">
-      <para>Pointer to the <see cref="IMFSample" /> interface of the input sample. The sample must contain at least one media buffer that contains valid input data.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Must be zero.</para>
-    </param>
+    <summary>The <b>ProcessInput</b> method delivers data to an input stream on this Media Foundation transform (MFT).</summary>
+    <param name="dwInputStreamID">Input stream identifier.</param>
+    <param name="pSample">Pointer to the <see cref="IMFSample" /> interface of the input sample. The sample must contain at least one media buffer that contains valid input data.</param>
+    <param name="dwFlags">Must be zero.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -965,85 +912,85 @@ I</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument passed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVAILIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_STREAM_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The requested stream transition is not possible.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVAILIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>An invalid stream ID was passed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALID_STREAM_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested stream transition is not possible.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>Input media type has not been set.</para>
-          </description>
-        </item>
+          <description>Input media type has not been set.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>In most cases, if the method succeeds, the MFT stores the sample and holds a reference count on the <see cref="IMFSample" /> pointer. When the MFT is done using the sample it must release it to avoid a memory leak.</para>
-      <para>After the DTM has set valid media types on all of the streams, the MFT should always be able to accept more input and be able to produce more output.</para>
-      <para>If an MFT encounters a non-fatal error in the input data, it can simply drop the data and attempt to recover when it gets the more input data. If the MFT drops any data, it should set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfsampleextension-discontinuity-attribute">MFSampleExtension_Discontinuity</a> attribute on the next output sample, to notify the caller that there is a gap in the data stream.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.ProcessMessage">
-    <summary>
-      <para>The    <b>ProcessMessage</b> method sends a message to the Device Media Foundation transform (MFT).</para>
-    </summary>
-    <param name="eMessage">
-      <para>The message to send, specified as a member of the <see cref="MFT_MESSAGE_TYPE" /> enumeration.</para>
-    </param>
-    <param name="ulParam">
-      <para>Message parameter. The meaning of this parameter depends on the message type.</para>
-    </param>
+    <summary>The <b>ProcessMessage</b> method sends a message to the Device Media Foundation transform (MFT).</summary>
+    <param name="eMessage">The message to send, specified as a member of the <see cref="MFT_MESSAGE_TYPE" /> enumeration.</param>
+    <param name="ulParam">Message parameter. The meaning of this parameter depends on the message type.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -1051,91 +998,87 @@ I</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument passed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVAILIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_STREAM_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The requested stream transition is not possible.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVAILIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>An invalid stream ID was passed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALID_STREAM_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested stream transition is not possible.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>Input media type has not been set.</para>
-          </description>
-        </item>
+          <description>Input media type has not been set.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before calling this method, set the media types on all input and output streams.</para>
-      <para>The MFT might ignore certain message types. If so, the method returns <b>S_OK</b>. An error code indicates that the transform handles this message type but was unable to process the message in this instance.</para>
-      <para>For more information, see <see cref="MFT_MESSAGE_TYPE" />.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.ProcessOutput">
-    <summary>
-      <para>The <b>ProcessOutput</b> method gets the processed output from the Device MFT output streams.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Bitwise OR of zero or more flags from the <see cref="_MFT_PROCESS_OUTPUT_FLAGS" /> enumeration.</para>
-    </param>
-    <param name="cOutputBufferCount">
-      <para>Number of elements in the <i>pOutputSamples</i> array. The value must be at least 1.</para>
-    </param>
-    <param name="pOutputSample">
-      <para>Pointer to an array of <see cref="MFT_OUTPUT_DATA_BUFFER" /> structures, allocated by the caller. The MFT uses this array to return output data to the caller.</para>
-    </param>
-    <param name="pdwStatus">
-      <para>Receives a bitwise OR of zero or more flags from the <see cref="_MFT_PROCESS_OUTPUT_STATUS" /> enumeration.</para>
-    </param>
+    <summary>The <b>ProcessOutput</b> method gets the processed output from the Device MFT output streams.</summary>
+    <param name="dwFlags">Bitwise OR of zero or more flags from the <see cref="_MFT_PROCESS_OUTPUT_FLAGS" /> enumeration.</param>
+    <param name="cOutputBufferCount">Number of elements in the <i>pOutputSamples</i> array. The value must be at least 1.</param>
+    <param name="pOutputSample">Pointer to an array of <see cref="MFT_OUTPUT_DATA_BUFFER" /> structures, allocated by the caller. The MFT uses this array to return output data to the caller.</param>
+    <param name="pdwStatus">Receives a bitwise OR of zero or more flags from the <see cref="_MFT_PROCESS_OUTPUT_STATUS" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -1143,91 +1086,87 @@ I</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument passed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVAILIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_STREAM_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The requested stream transition is not possible.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVAILIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>An invalid stream ID was passed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALID_STREAM_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested stream transition is not possible.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TRANSFORM_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>Input media type has not been set.</para>
-          </description>
-        </item>
+          <description>Input media type has not been set.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>In most cases, if the method succeeds, the Media Foundation transform (MFT) stores the sample and holds a reference count on the <see cref="IMFSample" /> pointer. When the MFT is done using the sample, it must release it to avoid memory leaks.</para>
-      <para>After the device transform manager (DTM) has set valid media types on all of the streams, the MFT should always be able to accept more input and be able to produce more output.</para>
-      <para>If an MFT encounters a non-fatal error in the input data, it can simply drop the data and attempt to recover when it gets the more input data. If the MFT drops any data, it should set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfsampleextension-discontinuity-attribute">MFSampleExtension_Discontinuity</a> attribute on the next output sample, to notify the caller that there is a gap in the data stream.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.SetInputStreamState">
-    <summary>
-      <para>The <b>SetInputStreamState</b> method sets the Device MFT input stream state and media type.</para>
-    </summary>
-    <param name="dwStreamID">
-      <para>Stream ID of the input stream where the state and media type needs to be changed.</para>
-    </param>
-    <param name="pMediaType">
-      <para>Preferred media type for the input stream is passed in through this parameter. Device MFT should change the media type only if the incoming media type is different from the current media type.</para>
-    </param>
-    <param name="value">
-      <para>Specifies the  <b>DeviceStreamState</b> which the input stream should transition to.</para>
-    </param>
-    <param name="dwFlags">
-      <para>When  <b>S_OK</b> is returned, perform the state change operation. Otherwise, this contains an error that occurred while setting the media type on the devproxy  output pin. In this case, propagate the error appropriately.</para>
-    </param>
+    <summary>The <b>SetInputStreamState</b> method sets the Device MFT input stream state and media type.</summary>
+    <param name="dwStreamID">Stream ID of the input stream where the state and media type needs to be changed.</param>
+    <param name="pMediaType">Preferred media type for the input stream is passed in through this parameter. Device MFT should change the media type only if the incoming media type is different from the current media type.</param>
+    <param name="value">Specifies the <b>DeviceStreamState</b> which the input stream should transition to.</param>
+    <param name="dwFlags">When <b>S_OK</b> is returned, perform the state change operation. Otherwise, this contains an error that occurred while setting the media type on the devproxy output pin. In this case, propagate the error appropriately.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -1235,70 +1174,63 @@ I</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Initialization succeeded</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Initialization succeeded</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVAILIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_STREAM_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVAILIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>An invalid stream ID was passed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALID_STREAM_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested stream transition is not possible.</para>
-          </description>
-        </item>
+          <description>The requested stream transition is not possible.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface function helps to transition the input stream to a specified state with a specified media type set on the input stream. This will be used by device transform  manager (DTM) when the Device MFT requests a specific input stream’s state and media type to be changed. Device MFT would need to request such a change when one of the Device MFT's output changes.</para>
-      <para>As an  example, consider a Device MFT that has two input streams and three output streams. Let  Output 1 and Output 2 source from Input 1 and  stream at 720p. Now, if   Output 2’s media type changes to 1080p, Device MFT has to change Input 1's media type to 1080p. To achieve this, Device MFT should request DTM to call this method using the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/metransforminputstreamstatechanged">METransformInputStreamStateChanged</a> message.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform.SetOutputStreamState">
-    <summary>
-      <para>The <b>SetOutputStreamState</b> method sets the Device MFT output stream state and media type.</para>
-    </summary>
-    <param name="dwStreamID">
-      <para>Stream ID of the input stream where the state and media type needs to be changed.</para>
-    </param>
-    <param name="pMediaType">
-      <para>Preferred media type for the input stream is passed in through this parameter. Device MFT should change the media type only if the incoming media type is different from the current media type.</para>
-    </param>
-    <param name="value">
-      <para>Specifies the  <b>DeviceStreamState</b> which the input stream should transition to.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Must be zero.</para>
-    </param>
+    <summary>The <b>SetOutputStreamState</b> method sets the Device MFT output stream state and media type.</summary>
+    <param name="dwStreamID">Stream ID of the input stream where the state and media type needs to be changed.</param>
+    <param name="pMediaType">Preferred media type for the input stream is passed in through this parameter. Device MFT should change the media type only if the incoming media type is different from the current media type.</param>
+    <param name="value">Specifies the <b>DeviceStreamState</b> which the input stream should transition to.</param>
+    <param name="dwFlags">Must be zero.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include but not limited to values given in the following table.</para>
       <list type="table">
@@ -1306,60 +1238,58 @@ I</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Transitioning the stream state succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Transitioning the stream state succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Device MFT could not support the request at this time.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVAILIDSTREAMNUMBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An invalid stream ID was passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device MFT could not  support the request at this time.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_STREAM_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVAILIDSTREAMNUMBER</b>
-            </para>
-          </description>
-          <description>
-            <para>An invalid stream ID was passed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALID_STREAM_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested stream transition is not possible.</para>
-          </description>
-        </item>
+          <description>The requested stream transition is not possible.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface method helps to transition the output stream to a specified state with specified media type set on the output stream. This will be used by the DTM when the Device Source requests a specific output stream’s state and media type to be changed. Device MFT should change the specified output stream’s media type and state to the requested media type.</para>
-      <para>If the incoming media type and stream state are same as the current media type and stream state the method return <b>S_OK</b>.</para>
-      <para>If the incoming media type and current media type of the stream are the same, Device MFT must change the stream’s state to the requested value and return the appropriate <b>HRESULT</b>.</para>
-      <para>When a change in the output stream’s media type requires a corresponding change in the input then Device MFT must post the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/metransforminputstreamstatechanged">METransformInputStreamStateChanged</a> event  to DTM to change the relevant input stream. The call must return only after changing the input stream’s media type and the appropriate <b>HRESULT</b>.</para>
-      <para>As an  example, consider a Device MFT that has two input streams and three output streams. Let  Output 1 and Output 2 source from Input 1 and  stream at 720p. Now, let us say Output 2’s media type changes to 1080p. To satisfy this request, Device MFT must  change the Input 1 media type to 1080p, by posting <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/metransforminputstreamstatechanged">METransformInputStreamStateChanged</a> event to the DTM. DTM would call <see cref="SetInputStreamState" /> to change the input stream’ media type and state. After this call, the <b>SetOutputStreamState</b> must return.</para>
-    </remarks>
-    <seealso cref="IMFDeviceTransform" />
   </member>
   <member name="IMFDeviceTransform">
-    <summary>
-      <para>This section contains reference information for the <b>IMFDeviceTransform</b> interface.</para>
-    </summary>
+    <summary>This section contains reference information for the <b>IMFDeviceTransform</b> interface.</summary>
   </member>
 </doc>

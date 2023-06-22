@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.Version">
-    <summary>
-      <para>Contains the version of the data reported.</para>
-    </summary>
+    <summary>Contains the version of the data reported.</summary>
   </member>
   <member name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.Size">
-    <summary>
-      <para>Indicates the quantity of data reported, in bytes. This is the <code>sizeof(STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR)</code>.</para>
-    </summary>
+    <summary>Indicates the quantity of data reported, in bytes. This is the <code>sizeof(STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR)</code>.</summary>
   </member>
   <member name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.Attributes">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
 </doc>

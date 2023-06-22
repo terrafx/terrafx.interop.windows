@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.getmessagea">
-    <summary>
-      <para>Obtains a message from the message queue and does not return until a message is obtained. This is the ANSI version of this method.</para>
-    </summary>
-    <param name="pMsg">
-      <para>Pointer to a <see cref="MSG" /> structure that receives message data.</para>
-    </param>
-    <param name="hwnd">
-      <para>Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window that belongs to the calling thread.</para>
-    </param>
-    <param name="wMsgFilterMin">
-      <para>Specifies the lowest message value obtained.</para>
-    </param>
-    <param name="wMsgFilterMax">
-      <para>Specifies the highest message value obtained.</para>
-    </param>
-    <param name="pfResult">
-      <para>Pointer to a BOOL value that receives the return value from the <b>GetMessage</b> function.</para>
-    </param>
+    <summary>Obtains a message from the message queue and does not return until a message is obtained. This is the ANSI version of this method.</summary>
+    <param name="pMsg">Pointer to a <see cref="MSG" /> structure that receives message data.</param>
+    <param name="hwnd">Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window that belongs to the calling thread.</param>
+    <param name="wMsgFilterMin">Specifies the lowest message value obtained.</param>
+    <param name="wMsgFilterMax">Specifies the highest message value obtained.</param>
+    <param name="pfResult">Pointer to a BOOL value that receives the return value from the <b>GetMessage</b> function.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -28,54 +16,40 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>wMsgFilterMin</i> and <i>wMsgFilterMax</i> are both zero, this method returns all available messages; that is, no range filtering is performed.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</seealso>
-    <seealso cref="ITfMessagePump" />
-    <seealso cref="MSG" />
   </member>
   <member name="Windows.getmessagew">
-    <summary>
-      <para>Obtains a message from the message queue and does not return until a message is obtained. This is the Unicode version of this method.</para>
-    </summary>
-    <param name="pMsg">
-      <para>Pointer to a <see cref="MSG" /> structure that receives message data.</para>
-    </param>
-    <param name="hwnd">
-      <para>Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window owned by the calling thread.</para>
-    </param>
-    <param name="wMsgFilterMin">
-      <para>Specifies the lowest message value to obtain.</para>
-    </param>
-    <param name="wMsgFilterMax">
-      <para>Specifies the highest message value to obtain.</para>
-    </param>
-    <param name="pfResult">
-      <para>Pointer to a BOOL that receives the return value from the <b>GetMessage</b> function.</para>
-    </param>
+    <summary>Obtains a message from the message queue and does not return until a message is obtained. This is the Unicode version of this method.</summary>
+    <param name="pMsg">Pointer to a <see cref="MSG" /> structure that receives message data.</param>
+    <param name="hwnd">Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window owned by the calling thread.</param>
+    <param name="wMsgFilterMin">Specifies the lowest message value to obtain.</param>
+    <param name="wMsgFilterMax">Specifies the highest message value to obtain.</param>
+    <param name="pfResult">Pointer to a BOOL that receives the return value from the <b>GetMessage</b> function.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -83,57 +57,41 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>wMsgFilterMin</i> and <i>wMsgFilterMax</i> are both zero, this method returns all available messages; that is, no range filtering is performed.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</seealso>
-    <seealso cref="ITfMessagePump" />
-    <seealso cref="MSG" />
   </member>
   <member name="Windows.peekmessagea">
-    <summary>
-      <para>Obtains a message from the message queue and returns if no message is obtained. This is the ANSI version of this method.</para>
-    </summary>
-    <param name="pMsg">
-      <para>Pointer to a <see cref="MSG" /> structure that receives message data.</para>
-    </param>
-    <param name="hwnd">
-      <para>Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window owned by the calling thread.</para>
-    </param>
-    <param name="wMsgFilterMin">
-      <para>Specifies the lowest message value to obtain.</para>
-    </param>
-    <param name="wMsgFilterMax">
-      <para>Specifies the highest message value to obtain.</para>
-    </param>
-    <param name="wRemoveMsg">
-      <para>Specifies how messages are handled. For more information, see the <b>PeekMessage</b> function.</para>
-    </param>
-    <param name="pfResult">
-      <para>Pointer to a BOOL that receives the return value from the <b>PeekMessage</b> function.</para>
-    </param>
+    <summary>Obtains a message from the message queue and returns if no message is obtained. This is the ANSI version of this method.</summary>
+    <param name="pMsg">Pointer to a <see cref="MSG" /> structure that receives message data.</param>
+    <param name="hwnd">Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window owned by the calling thread.</param>
+    <param name="wMsgFilterMin">Specifies the lowest message value to obtain.</param>
+    <param name="wMsgFilterMax">Specifies the highest message value to obtain.</param>
+    <param name="wRemoveMsg">Specifies how messages are handled. For more information, see the <b>PeekMessage</b> function.</param>
+    <param name="pfResult">Pointer to a BOOL that receives the return value from the <b>PeekMessage</b> function.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -141,57 +99,41 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>wMsgFilterMin</i> and <i>wMsgFilterMax</i> are both zero, this method returns all available messages; that is, no range filtering is performed.</para>
-    </remarks>
-    <seealso cref="ITfMessagePump" />
-    <seealso cref="MSG" />
-    <seealso cref="PeekMessage" />
   </member>
   <member name="Windows.peekmessagew">
-    <summary>
-      <para>Obtains a message from the message queue and returns if no message is obtained. This is the Unicode version of this method.</para>
-    </summary>
-    <param name="pMsg">
-      <para>Pointer to a <see cref="MSG" /> structure that receives message data.</para>
-    </param>
-    <param name="hwnd">
-      <para>Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window that belongs to the calling thread.</para>
-    </param>
-    <param name="wMsgFilterMin">
-      <para>Specifies the lowest message value to obtain.</para>
-    </param>
-    <param name="wMsgFilterMax">
-      <para>Specifies the highest message value to obtain.</para>
-    </param>
-    <param name="wRemoveMsg">
-      <para>Specifies how messages are handled. For more information, see the <b>PeekMessage</b> function.</para>
-    </param>
-    <param name="pfResult">
-      <para>Pointer to a BOOL that receives the return value from the <b>PeekMessage</b> function.</para>
-    </param>
+    <summary>Obtains a message from the message queue and returns if no message is obtained. This is the Unicode version of this method.</summary>
+    <param name="pMsg">Pointer to a <see cref="MSG" /> structure that receives message data.</param>
+    <param name="hwnd">Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window that belongs to the calling thread.</param>
+    <param name="wMsgFilterMin">Specifies the lowest message value to obtain.</param>
+    <param name="wMsgFilterMax">Specifies the highest message value to obtain.</param>
+    <param name="wRemoveMsg">Specifies how messages are handled. For more information, see the <b>PeekMessage</b> function.</param>
+    <param name="pfResult">Pointer to a BOOL that receives the return value from the <b>PeekMessage</b> function.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -199,56 +141,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>wMsgFilterMin</i> and <i>wMsgFilterMax</i> are both zero, this method returns all available messages; that is, no range filtering is performed.</para>
-    </remarks>
-    <seealso cref="ITfMessagePump" />
-    <seealso cref="MSG" />
-    <seealso cref="PeekMessage" />
   </member>
   <member name="Windows.TF_CreateCategoryMgr">
-    <summary>
-      <para>The <b>TF_CreateCategoryMgr</b> function creates a category manager object without having to initialize COM. Usage must be done carefully because the calling thread must maintain the reference count on an object that is owned by MSCTF.DLL.</para>
-    </summary>
-    <param name="ppcat">
-      <para>Pointer to ITFCategoryMgr interface pointer that receives the category manager object.</para>
-    </param>
+    <summary>The <b>TF_CreateCategoryMgr</b> function creates a category manager object without having to initialize COM. Usage must be done carefully because the calling thread must maintain the reference count on an object that is owned by MSCTF.DLL.</summary>
+    <param name="ppcat">Pointer to ITFCategoryMgr interface pointer that receives the category manager object.</param>
     <returns>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The function was successful.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>An unspecified error occurred.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
   </member>
@@ -257,166 +193,139 @@
       <para>The <b>TF_CreateDisplayAttributeMgr</b> function is used to create a display attribute manager object without having to initialize COM. Usage of this method is not recommended, because the calling process must maintain a proper reference count on an object that is owned by Msctf.dll.</para>
       <para>It is instead recommended that display attribute manager objects be created using <see cref="CoCreateInstance" /> , as demonstrated in <see cref="ITfDisplayAttributeMgr" />.</para>
     </summary>
-    <param name="ppdam">
-      <para>Pointer to an <b>ITfDisplayAttributeMgr</b> interface pointer that receives the display attribute manager object.</para>
-    </param>
+    <param name="ppdam">Pointer to an <b>ITfDisplayAttributeMgr</b> interface pointer that receives the display attribute manager object.</param>
     <returns>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The function was successful.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>An unspecified error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>
             <i>ppdam</i> is invalid.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="CoCreateInstance" />
-    <seealso cref="GetProcAddress" />
-    <seealso cref="ITfDisplayAttributeMgr " />
-    <seealso cref="LoadLibrary" />
   </member>
   <member name="Windows.TF_CreateInputProcessorProfiles">
     <summary>
       <para>The <b>TF_CreateInputProcessorProfiles</b> function is used to create a input processor profile object without having to initialize COM. Usage of this method is not recommended, because the calling process must maintain a proper reference count on an object that is owned by Msctf.dll.</para>
       <para>It is instead recommended that input processor profile objects be created using <see cref="CoCreateInstance" /> , as demonstrated in <see cref="ITfInputProcessorProfiles" />.</para>
     </summary>
-    <param name="ppipr">
-      <para>Pointer to an <b>ITfInputProcessorProfiles</b> interface pointer that receives the input processor profile object.</para>
-    </param>
+    <param name="ppipr">Pointer to an <b>ITfInputProcessorProfiles</b> interface pointer that receives the input processor profile object.</param>
     <returns>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The function was successful.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>An unspecified error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>
             <i>ppipr</i> is invalid.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfInputProcessorProfiles " />
   </member>
   <member name="Windows.TF_CreateLangBarItemMgr">
     <summary>
       <para>The <b>TF_CreateLangBarItemMgr</b> function is used to create a language bar item manager object without having to initialize COM. Usage of this method is not recommended, because the calling process must maintain a proper reference count on an object that is owned by Msctf.dll.</para>
       <para>It is instead recommended that language bar item manager objects be created using <see cref="CoCreateInstance" /> , as demonstrated in <see cref="ITfLangBarItemMgr" />.</para>
     </summary>
-    <param name="pplbim">
-      <para>Pointer to an <b>ITfLangBarItemMgr</b> interface pointer that receives the language bar item manager object.</para>
-    </param>
+    <param name="pplbim">Pointer to an <b>ITfLangBarItemMgr</b> interface pointer that receives the language bar item manager object.</param>
     <returns>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The function was successful.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>An unspecified error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>
             <i>pplbim</i> is invalid.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="CoCreateInstance" />
-    <seealso cref="GetProcAddress" />
-    <seealso cref="ITfLangBarItemMgr " />
-    <seealso cref="LoadLibrary" />
   </member>
   <member name="Windows.TF_CreateLangBarMgr">
     <summary>
       <para>The <b>TF_CreateLangBarMgr</b> function creates a language bar manager object without having to initialize COM. Usage of this method is not recommended, because the calling process must maintain a proper reference count on an object that is owned by Msctf.dll.</para>
       <para>It is instead recommended that language bar manager objects be created using <see cref="CoCreateInstance" /> , as demonstrated in <see cref="ITfLangBarMgr" />.</para>
     </summary>
-    <param name="pppbm">
-      <para>Pointer to an <b>ITfLangBarMgr</b> interface pointer that receives the language bar manager object.</para>
-    </param>
+    <param name="pppbm">Pointer to an <b>ITfLangBarMgr</b> interface pointer that receives the language bar manager object.</param>
     <returns>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The function was successful.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>An unspecified error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>
             <i>pppbm</i> is invalid.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="CoCreateInstance" />
-    <seealso cref="GetProcAddress" />
-    <seealso cref="ITfLangBarMgr " />
-    <seealso cref="LoadLibrary" />
   </member>
   <member name="Windows.TF_CreateThreadMgr">
     <summary>
       <para>The <b>TF_CreateThreadMgr</b> function creates a thread manager object without having to initialize COM. Usage of this method is not recommended, because the calling process must maintain a proper reference count on an object that is owned by Msctf.dll.</para>
       <para>It is instead recommended that thread manager objects be created using <see cref="CoCreateInstance" /> , as demonstrated in <see cref="ITfThreadMgr" />.</para>
     </summary>
-    <param name="pptim">
-      <para>Pointer to an <b>ITfThreadMgr</b> interface pointer that receives the thread manager object.</para>
-    </param>
+    <param name="pptim">Pointer to an <b>ITfThreadMgr</b> interface pointer that receives the thread manager object.</param>
     <returns>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The function was successful.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>An unspecified error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>
             <i>pptim</i> is invalid.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="CoCreateInstance" />
-    <seealso cref="GetProcAddress" />
-    <seealso cref="ITfThreadMgr " />
-    <seealso cref="LoadLibrary" />
   </member>
 </doc>

@@ -4,29 +4,20 @@
 <doc>
   <member name="eAVEncMPVLevel">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the MPEG-2 profile. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpvlevel-property">AVEncMPVLevel</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncMPVLevel.eAVEncMPVLevel_Low">
-    <summary>
-      <para>Low Level.</para>
-    </summary>
+    <summary>Low Level.</summary>
   </member>
   <member name="eAVEncMPVLevel.eAVEncMPVLevel_Main">
-    <summary>
-      <para>Main Level.</para>
-    </summary>
+    <summary>Main Level.</summary>
   </member>
   <member name="eAVEncMPVLevel.eAVEncMPVLevel_High1440">
-    <summary>
-      <para>High 1440 Level.</para>
-    </summary>
+    <summary>High 1440 Level.</summary>
   </member>
   <member name="eAVEncMPVLevel.eAVEncMPVLevel_High">
-    <summary>
-      <para>High Level.</para>
-    </summary>
+    <summary>High Level.</summary>
   </member>
 </doc>

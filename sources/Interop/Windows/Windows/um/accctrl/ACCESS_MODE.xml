@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACCESS_MODE">
+    <summary>The <b>ACCESS_MODE</b> enumeration contains values that indicate how the access rights in an<see cref="EXPLICIT_ACCESS" /> structure apply to the trustee. Functions such as<see cref="SetEntriesInAcl" /> and<see cref="GetExplicitEntriesFromAcl" /> use these values to set or retrieve information in an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE).</summary>
+  </member>
+  <member name="ACCESS_MODE.NOT_USED_ACCESS">
+    <summary>Value not used.</summary>
+  </member>
+  <member name="ACCESS_MODE.GRANT_ACCESS">
+    <summary>Indicates an<see cref="ACCESS_ALLOWED_ACE" /> structure. The new ACE combines the specified rights with any existing allowed or denied rights of the trustee.</summary>
+  </member>
+  <member name="ACCESS_MODE.SET_ACCESS">
+    <summary>
+      <para>Indicates an <see cref="ACCESS_ALLOWED_ACE" /> structure that allows the specified rights.</para>
+      <para>On input, this value discards any existing access control information for the trustee.</para>
+    </summary>
+  </member>
+  <member name="ACCESS_MODE.DENY_ACCESS">
+    <summary>
+      <para>Indicates an<see cref="ACCESS_DENIED_ACE" /> structure that denies the specified rights.</para>
+      <para>On input, this value denies the specified rights in addition to any currently denied rights of the trustee.</para>
+    </summary>
+  </member>
+  <member name="ACCESS_MODE.REVOKE_ACCESS">
+    <summary>Indicates that all existing <see cref="ACCESS_ALLOWED_ACE" /> or<see cref="SYSTEM_AUDIT_ACE" /> structures for the specified trustee are removed.</summary>
+  </member>
+  <member name="ACCESS_MODE.SET_AUDIT_SUCCESS">
+    <summary>
+      <para>Indicates a <see cref="SYSTEM_AUDIT_ACE" /> structure that generates audit messages for successful attempts to use the specified access rights.</para>
+      <para>On input, this value combines the specified rights with any existing audited access rights for the trustee.</para>
+    </summary>
+  </member>
+  <member name="ACCESS_MODE.SET_AUDIT_FAILURE">
+    <summary>
+      <para>Indicates a<see cref="SYSTEM_AUDIT_ACE" /> structure that generates audit messages for failed attempts to use the specified access rights.</para>
+      <para>On input, this value combines the specified rights with any existing audited access rights for the trustee.</para>
+    </summary>
+  </member>
+</doc>

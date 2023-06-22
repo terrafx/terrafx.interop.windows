@@ -3,16 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_FEATURE_DATA_ROOT_SIGNATURE">
-    <summary>
-      <para>Indicates root signature version support.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-structures">Core Structures</seealso>
-    <seealso cref="D3D12_FEATURE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/root-signature-version-1-1">Root Signature Version 1.1</seealso>
+    <summary>Indicates root signature version support.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_ROOT_SIGNATURE.HighestVersion">
-    <summary>
-      <para>On input, specifies the highest version <see cref="D3D_ROOT_SIGNATURE_VERSION" /> to check for. On output specifies the highest version, up to the input version specified, actually available.</para>
-    </summary>
+    <summary>On input, specifies the highest version <see cref="D3D_ROOT_SIGNATURE_VERSION" /> to check for. On output specifies the highest version, up to the input version specified, actually available.</summary>
   </member>
 </doc>

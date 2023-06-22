@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_STARTVIRTUALIZING_OPTIONS">
-    <summary>
-      <para>Options to provide when starting a virtualization instance.</para>
-    </summary>
+    <summary>Options to provide when starting a virtualization instance.</summary>
   </member>
   <member name="PRJ_STARTVIRTUALIZING_OPTIONS.Flags">
-    <summary>
-      <para>A flag for starting virtualization.</para>
-    </summary>
+    <summary>A flag for starting virtualization.</summary>
   </member>
   <member name="PRJ_STARTVIRTUALIZING_OPTIONS.PoolThreadCount">
-    <summary>
-      <para>The number of threads the provider wants to create to service callbacks.</para>
-    </summary>
+    <summary>The number of threads the provider wants to create to service callbacks.</summary>
   </member>
   <member name="PRJ_STARTVIRTUALIZING_OPTIONS.ConcurrentThreadCount">
-    <summary>
-      <para>The maximum number of threads the provider wants to run concurrently to process callbacks.</para>
-    </summary>
+    <summary>The maximum number of threads the provider wants to run concurrently to process callbacks.</summary>
   </member>
   <member name="PRJ_STARTVIRTUALIZING_OPTIONS.NotificationMappings">
-    <summary>
-      <para>An array of zero or more notification mappings. See the Remarks section of PRJ_NOTIFICATION MAPPING for more details.</para>
-    </summary>
+    <summary>An array of zero or more notification mappings. See the Remarks section of PRJ_NOTIFICATION MAPPING for more details.</summary>
   </member>
   <member name="PRJ_STARTVIRTUALIZING_OPTIONS.NotificationMappingsCount">
-    <summary>
-      <para>The number of notification mappings provided in NotificationMappings.</para>
-    </summary>
+    <summary>The number of notification mappings provided in NotificationMappings.</summary>
   </member>
 </doc>

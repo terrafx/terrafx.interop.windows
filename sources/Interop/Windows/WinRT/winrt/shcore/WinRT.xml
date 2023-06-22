@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.CreateRandomAccessStreamOnFile">
+    <summary>Creates a Windows Runtime random access stream for a file.</summary>
+    <param name="filePath">The fully qualified path of the file to encapsulate.</param>
+    <param name="accessMode">An <a href="https://docs.microsoft.com//uwp/api/Windows.Storage.FileAccessMode">AccessMode</a> value that specifies the behavior of the <a href="https://docs.microsoft.com//uwp/api/windows.storage.streams.randomaccessstream">RandomAccessStream</a> that encapsulates the file.</param>
+    <param name="riid">A reference to the IID of the interface to retrieve through <i>ppv</i>, typically IID_RandomAccessStream.</param>
+    <param name="ppv">When this method returns successfully, contains the interface pointer requested in <i>riid</i>, typically the <a href="https://docs.microsoft.com//previous-versions/hh438400(v=vs.85)">IRandomAccessStream</a> that encapsulates the file.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.CreateRandomAccessStreamOverStream">
+    <summary>Creates a Windows Runtime random access stream around an <see cref="IStream" /> base implementation.</summary>
+    <param name="stream">The COM stream to encapsulate.</param>
+    <param name="options">One of the <see cref="BSOS_OPTIONS" /> options that specify the behavior of the <a href="https://docs.microsoft.com//uwp/api/windows.storage.streams.randomaccessstream">RandomAccessStream</a> that encapsulates <i>stream</i>.</param>
+    <param name="riid">A reference to the IID of the interface to retrieve through <i>ppv</i>, typically IID_RandomAccessStream.</param>
+    <param name="ppv">When this method returns successfully, contains the interface pointer to the <a href="https://docs.microsoft.com//uwp/api/windows.storage.streams.randomaccessstream">RandomAccessStream</a> that encapsulates <i>stream</i> requested in <i>riid</i>.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.CreateStreamOverRandomAccessStream">
+    <summary>Creates an <see cref="IStream" /> around a Windows Runtime <a href="https://docs.microsoft.com//previous-versions/hh438400(v=vs.85)">IRandomAccessStream</a> object.</summary>
+    <param name="randomAccessStream">The source <a href="https://docs.microsoft.com//previous-versions/hh438400(v=vs.85)">IRandomAccessStream</a>.</param>
+    <param name="riid">A reference to the IID of the interface to retrieve through <i>ppv</i>, typically IID_IStream. This object encapsulates <i>randomAccessStream</i>.</param>
+    <param name="ppv">When this method returns successfully, contains the interface pointer requested in <i>riid</i>, typically <see cref="IStream" />.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+</doc>

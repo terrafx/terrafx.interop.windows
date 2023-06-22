@@ -3,35 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IStdMarshalInfo.GetClassForHandler">
-    <summary>
-      <para>Retrieves the CLSID of the object handler to be used in the destination process during standard marshaling.</para>
-    </summary>
-    <param name="dwDestContext">
-      <para>The destination context, that is, the process in which the unmarshaling will be done. Possible values are taken from the enumeration <see cref="MSHCTX" />.</para>
-    </param>
-    <param name="pvDestContext">
-      <para>This parameter must be <b>NULL</b>.</para>
-    </param>
-    <param name="pClsid">
-      <para>A pointer to the handler's CLSID.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</para>
-    </returns>
-    <remarks>
-      <h3>Notes to Implementers</h3>
-      <para>Your implementation of <b>IStdMarshalInfo.GetClassForHandler</b> must return your own CLSID. This enables an object to be created by a different server.</para>
-    </remarks>
-    <seealso cref="IStdMarshalInfo" />
+    <summary>Retrieves the CLSID of the object handler to be used in the destination process during standard marshaling.</summary>
+    <param name="dwDestContext">The destination context, that is, the process in which the unmarshaling will be done. Possible values are taken from the enumeration <see cref="MSHCTX" />.</param>
+    <param name="pvDestContext">This parameter must be <b>NULL</b>.</param>
+    <param name="pClsid">A pointer to the handler's CLSID.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</returns>
   </member>
   <member name="IStdMarshalInfo">
-    <summary>
-      <para>Retrieves the CLSID identifying the handler to be used in the destination process during standard marshaling.</para>
-    </summary>
-    <remarks>
-      <para>An object that uses OLE's default implementation of <see cref="IMarshal" /> does not provide its own proxy but, by implementing <b>IStdMarshalInfo</b>, can nevertheless specify a handler to be loaded in the client process. Such a handler would typically handle certain requests in-process and use OLE's default marshaling to delegate others back to the original object.</para>
-      <para>To create an instance of an object in some client process, COM must first determine whether the object uses default marshaling or its own implementation. If the object uses default marshaling, COM then queries the object to determine whether it uses a special handler or, simply, OLE's default proxy. To get the CLSID of the handler to be loaded, COM queries the object for <b>IStdMarshalInfo</b> and then the <see cref="IPersist" /> interface. If neither interface is supported, a standard handler is used.</para>
-    </remarks>
-    <seealso cref="IMarshal" />
+    <summary>Retrieves the CLSID identifying the handler to be used in the destination process during standard marshaling.</summary>
   </member>
 </doc>

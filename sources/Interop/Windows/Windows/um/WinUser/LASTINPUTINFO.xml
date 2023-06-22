@@ -3,26 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LASTINPUTINFO">
-    <summary>
-      <para>Contains the time of the last input.</para>
-    </summary>
-    <remarks>
-      <para>This function is useful for input idle detection. For more information on tick counts, see <see cref="GetTickCount" />.</para>
-    </remarks>
-    <seealso cref="GetLastInputInfo" />
-    <seealso cref="GetTickCount" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/keyboard-input">Keyboard Input</seealso>
+    <summary>Contains the time of the last input.</summary>
   </member>
   <member name="LASTINPUTINFO.cbSize">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the structure, in bytes. This member must be set to <code>sizeof(LASTINPUTINFO)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. This member must be set to <code>sizeof(LASTINPUTINFO)</code>.</summary>
   </member>
   <member name="LASTINPUTINFO.dwTime">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The tick count when the last input event was received.</para>
-    </summary>
+    <summary>The tick count when the last input event was received.</summary>
   </member>
 </doc>

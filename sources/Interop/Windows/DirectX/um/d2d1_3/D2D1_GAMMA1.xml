@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_GAMMA1">
-    <summary>
-      <para>Determines what gamma is used for interpolation and blending.</para>
-    </summary>
+    <summary>Determines what gamma is used for interpolation and blending.</summary>
   </member>
   <member name="D2D1_GAMMA1.D2D1_GAMMA1_G22">
-    <summary>
-      <para>Colors are manipulated in 2.2 gamma color space.</para>
-    </summary>
+    <summary>Colors are manipulated in 2.2 gamma color space.</summary>
   </member>
   <member name="D2D1_GAMMA1.D2D1_GAMMA1_G10">
-    <summary>
-      <para>Colors are manipulated in 1.0 gamma color space.</para>
-    </summary>
+    <summary>Colors are manipulated in 1.0 gamma color space.</summary>
   </member>
   <member name="D2D1_GAMMA1.D2D1_GAMMA1_G2084">
-    <summary>
-      <para>Colors are manipulated in ST.2084 PQ gamma color space.</para>
-    </summary>
+    <summary>Colors are manipulated in ST.2084 PQ gamma color space.</summary>
   </member>
-  <member name="D2D1_GAMMA1.D2D1_GAMMA1_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_GAMMA1.D2D1_GAMMA1_FORCE_DWORD"></member>
 </doc>

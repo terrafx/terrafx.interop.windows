@@ -3,209 +3,124 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ShellSpecialFolderConstants">
-    <summary>
-      <para>Specifies unique, system-independent values that identify special folders. These folders are frequently used by applications but which may not have the same name or location on any given system. For example, the system folder can be "C:\Windows" on one system and "C:\Winnt" on another.</para>
-    </summary>
-    <remarks>
-      <para>The values in this enumeration are equivalent to their corresponding <a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</a> or <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values, used in C++ applications. They supersede the use of environment variables for this purpose. Note that not all <b>CSIDL</b> or <b>KNOWNFOLDERID</b> values have an equivalent value in <b>ShellSpecialFolderConstants</b>.</para>
-      <blockquote>
-        <para>[!NOTE]
-Where a constant identifies a file system folder, a commonly used path is given as an example. However, there is no guarantee that this path will be used on any particular system.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</seealso>
+    <summary>Specifies unique, system-independent values that identify special folders. These folders are frequently used by applications but which may not have the same name or location on any given system. For example, the system folder can be "C:\Windows" on one system and "C:\Winnt" on another.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfDESKTOP">
-    <summary>
-      <para>0x00 (0). Windows desktop—the virtual folder that is the root of the namespace.</para>
-    </summary>
+    <summary>0x00 (0). Windows desktop—the virtual folder that is the root of the namespace.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfPROGRAMS">
-    <summary>
-      <para>0x02 (2). File system directory that contains the user's program groups (which are also file system directories). A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs.</para>
-    </summary>
+    <summary>0x02 (2). File system directory that contains the user's program groups (which are also file system directories). A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfCONTROLS">
-    <summary>
-      <para>0x03 (3). Virtual folder that contains icons for the Control Panel applications.</para>
-    </summary>
+    <summary>0x03 (3). Virtual folder that contains icons for the Control Panel applications.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfPRINTERS">
-    <summary>
-      <para>0x04 (4). Virtual folder that contains installed printers.</para>
-    </summary>
+    <summary>0x04 (4). Virtual folder that contains installed printers.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfPERSONAL">
-    <summary>
-      <para>0x05 (5). File system directory that serves as a common repository for a user's documents. A typical path is C:\Users\<i>username</i>\Documents.</para>
-    </summary>
+    <summary>0x05 (5). File system directory that serves as a common repository for a user's documents. A typical path is C:\Users\<i>username</i>\Documents.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfFAVORITES">
-    <summary>
-      <para>0x06 (6). File system directory that serves as a common repository for the user's favorite URLs. A typical path is C:\Documents and Settings\<i>username</i>\Favorites.</para>
-    </summary>
+    <summary>0x06 (6). File system directory that serves as a common repository for the user's favorite URLs. A typical path is C:\Documents and Settings\<i>username</i>\Favorites.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfSTARTUP">
-    <summary>
-      <para>0x07 (7). File system directory that corresponds to the user's Startup program group. The system starts these programs whenever any user first logs into their profile after a reboot. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\StartUp.</para>
-    </summary>
+    <summary>0x07 (7). File system directory that corresponds to the user's Startup program group. The system starts these programs whenever any user first logs into their profile after a reboot. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\StartUp.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfRECENT">
-    <summary>
-      <para>0x08 (8). File system directory that contains the user's most recently used documents. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Recent.</para>
-    </summary>
+    <summary>0x08 (8). File system directory that contains the user's most recently used documents. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Recent.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfSENDTO">
-    <summary>
-      <para>0x09 (9). File system directory that contains <b>Send To</b> menu items. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\SendTo.</para>
-    </summary>
+    <summary>0x09 (9). File system directory that contains <b>Send To</b> menu items. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\SendTo.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfBITBUCKET">
-    <summary>
-      <para>0x0a (10). Virtual folder that contains the objects in the user's Recycle Bin.</para>
-    </summary>
+    <summary>0x0a (10). Virtual folder that contains the objects in the user's Recycle Bin.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfSTARTMENU">
-    <summary>
-      <para>0x0b (11). File system directory that contains <b>Start</b> menu items. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Start Menu.</para>
-    </summary>
+    <summary>0x0b (11). File system directory that contains <b>Start</b> menu items. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Start Menu.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfDESKTOPDIRECTORY">
-    <summary>
-      <para>0x10 (16). File system directory used to physically store the file objects that are displayed on the desktop. It is not to be confused with the desktop folder itself, which is a virtual folder. A typical path is C:\Documents and Settings\<i>username</i>\Desktop.</para>
-    </summary>
+    <summary>0x10 (16). File system directory used to physically store the file objects that are displayed on the desktop. It is not to be confused with the desktop folder itself, which is a virtual folder. A typical path is C:\Documents and Settings\<i>username</i>\Desktop.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfDRIVES">
-    <summary>
-      <para>0x11 (17). My Computer—the virtual folder that contains everything on the local computer: storage devices, printers, and Control Panel. This folder can also contain mapped network drives.</para>
-    </summary>
+    <summary>0x11 (17). My Computer—the virtual folder that contains everything on the local computer: storage devices, printers, and Control Panel. This folder can also contain mapped network drives.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfNETWORK">
-    <summary>
-      <para>0x12 (18). Network Neighborhood—the virtual folder that represents the root of the network namespace hierarchy.</para>
-    </summary>
+    <summary>0x12 (18). Network Neighborhood—the virtual folder that represents the root of the network namespace hierarchy.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfNETHOOD">
-    <summary>
-      <para>0x13 (19). A file system folder that contains any link objects in the <b>My Network Places</b> virtual folder. It is not the same as ssfNETWORK, which represents the network namespace root. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Network Shortcuts.</para>
-    </summary>
+    <summary>0x13 (19). A file system folder that contains any link objects in the <b>My Network Places</b> virtual folder. It is not the same as ssfNETWORK, which represents the network namespace root. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Network Shortcuts.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfFONTS">
-    <summary>
-      <para>0x14 (20). Virtual folder that contains installed fonts. A typical path is C:\Windows\Fonts.</para>
-    </summary>
+    <summary>0x14 (20). Virtual folder that contains installed fonts. A typical path is C:\Windows\Fonts.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfTEMPLATES">
-    <summary>
-      <para>0x15 (21). File system directory that serves as a common repository for document templates.</para>
-    </summary>
+    <summary>0x15 (21). File system directory that serves as a common repository for document templates.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfCOMMONSTARTMENU">
-    <summary>
-      <para>0x16 (22). File system directory that contains the programs and folders that appear on the <b>Start</b> menu for all users. A typical path is C:\Documents and Settings\All Users\Start Menu. Valid only for Windows NT systems.</para>
-    </summary>
+    <summary>0x16 (22). File system directory that contains the programs and folders that appear on the <b>Start</b> menu for all users. A typical path is C:\Documents and Settings\All Users\Start Menu. Valid only for Windows NT systems.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfCOMMONPROGRAMS">
-    <summary>
-      <para>0x17 (23). File system directory that contains the directories for the common program groups that appear on the <b>Start</b> menu for all users. A typical path is C:\Documents and Settings\All Users\Start Menu\Programs. Valid only for Windows NT systems.</para>
-    </summary>
+    <summary>0x17 (23). File system directory that contains the directories for the common program groups that appear on the <b>Start</b> menu for all users. A typical path is C:\Documents and Settings\All Users\Start Menu\Programs. Valid only for Windows NT systems.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfCOMMONSTARTUP">
-    <summary>
-      <para>0x18 (24). File system directory that contains the programs that appear in the Startup folder for all users. A typical path is C:\Documents and Settings\All Users\Microsoft\Windows\Start Menu\Programs\StartUp. Valid only for Windows NT systems.</para>
-    </summary>
+    <summary>0x18 (24). File system directory that contains the programs that appear in the Startup folder for all users. A typical path is C:\Documents and Settings\All Users\Microsoft\Windows\Start Menu\Programs\StartUp. Valid only for Windows NT systems.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfCOMMONDESKTOPDIR">
-    <summary>
-      <para>0x19 (25). File system directory that contains files and folders that appear on the desktop for all users. A typical path is C:\Documents and Settings\All Users\Desktop. Valid only for Windows NT systems.</para>
-    </summary>
+    <summary>0x19 (25). File system directory that contains files and folders that appear on the desktop for all users. A typical path is C:\Documents and Settings\All Users\Desktop. Valid only for Windows NT systems.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfAPPDATA">
-    <summary>
-      <para>0x1a (26). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 4.71</a>. File system directory that serves as a common repository for application-specific data. A typical path is C:\Documents and Settings\<i>username</i>\Application Data.</para>
-    </summary>
+    <summary>0x1a (26). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 4.71</a>. File system directory that serves as a common repository for application-specific data. A typical path is C:\Documents and Settings\<i>username</i>\Application Data.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfPRINTHOOD">
-    <summary>
-      <para>0x1b (27). File system directory that contains any link objects in the Printers virtual folder. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Printer Shortcuts.</para>
-    </summary>
+    <summary>0x1b (27). File system directory that contains any link objects in the Printers virtual folder. A typical path is C:\Users\<i>username</i>\AppData\Roaming\Microsoft\Windows\Printer Shortcuts.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfLOCALAPPDATA">
-    <summary>
-      <para>0x1c (28). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. File system directory that serves as a data repository for local (non-roaming) applications. A typical path is C:\Users\<i>username</i>\AppData\Local.</para>
-    </summary>
+    <summary>0x1c (28). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. File system directory that serves as a data repository for local (non-roaming) applications. A typical path is C:\Users\<i>username</i>\AppData\Local.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfALTSTARTUP">
-    <summary>
-      <para>0x1d (29). File system directory that corresponds to the user's non-localized Startup program group.</para>
-    </summary>
+    <summary>0x1d (29). File system directory that corresponds to the user's non-localized Startup program group.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfCOMMONALTSTARTUP">
-    <summary>
-      <para>0x1e (30). File system directory that corresponds to the non-localized Startup program group for all users. Valid only for Windows NT systems.</para>
-    </summary>
+    <summary>0x1e (30). File system directory that corresponds to the non-localized Startup program group for all users. Valid only for Windows NT systems.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfCOMMONFAVORITES">
-    <summary>
-      <para>0x1f (31). File system directory that serves as a common repository for the favorite URLs shared by all users. Valid only for Windows NT systems.</para>
-    </summary>
+    <summary>0x1f (31). File system directory that serves as a common repository for the favorite URLs shared by all users. Valid only for Windows NT systems.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfINTERNETCACHE">
-    <summary>
-      <para>0x20 (32). File system directory that serves as a common repository for temporary Internet files. A typical path is C:\Users\<i>username</i>\AppData\Local\Microsoft\Windows\Temporary Internet Files.</para>
-    </summary>
+    <summary>0x20 (32). File system directory that serves as a common repository for temporary Internet files. A typical path is C:\Users\<i>username</i>\AppData\Local\Microsoft\Windows\Temporary Internet Files.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfCOOKIES">
-    <summary>
-      <para>0x21 (33). File system directory that serves as a common repository for Internet cookies. A typical path is C:\Documents and Settings\<i>username</i>\Application Data\Microsoft\Windows\Cookies.</para>
-    </summary>
+    <summary>0x21 (33). File system directory that serves as a common repository for Internet cookies. A typical path is C:\Documents and Settings\<i>username</i>\Application Data\Microsoft\Windows\Cookies.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfHISTORY">
-    <summary>
-      <para>0x22 (34). File system directory that serves as a common repository for Internet history items.</para>
-    </summary>
+    <summary>0x22 (34). File system directory that serves as a common repository for Internet history items.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfCOMMONAPPDATA">
-    <summary>
-      <para>0x23 (35). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. Application data for all users. A typical path is C:\Documents and Settings\All Users\Application Data.</para>
-    </summary>
+    <summary>0x23 (35). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. Application data for all users. A typical path is C:\Documents and Settings\All Users\Application Data.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfWINDOWS">
-    <summary>
-      <para>0x24 (36). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. Windows directory. This corresponds to the %windir% or %SystemRoot% environment variables. A typical path is C:\Windows.</para>
-    </summary>
+    <summary>0x24 (36). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. Windows directory. This corresponds to the %windir% or %SystemRoot% environment variables. A typical path is C:\Windows.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfSYSTEM">
-    <summary>
-      <para>0x25 (37). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. The System folder. A typical path is C:\Windows\System32.</para>
-    </summary>
+    <summary>0x25 (37). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. The System folder. A typical path is C:\Windows\System32.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfPROGRAMFILES">
-    <summary>
-      <para>0x26 (38). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. Program Files folder. A typical path is C:\Program Files.</para>
-    </summary>
+    <summary>0x26 (38). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. Program Files folder. A typical path is C:\Program Files.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfMYPICTURES">
-    <summary>
-      <para>0x27 (39). My Pictures folder. A typical path is C:\Users\<i>username</i>\Pictures.</para>
-    </summary>
+    <summary>0x27 (39). My Pictures folder. A typical path is C:\Users\<i>username</i>\Pictures.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfPROFILE">
-    <summary>
-      <para>0x28 (40). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. User's profile folder.</para>
-    </summary>
+    <summary>0x28 (40). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. User's profile folder.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfSYSTEMx86">
-    <summary>
-      <para>0x29 (41). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. System folder. A typical path is C:\Windows\System32, or C:\Windows\Syswow32 on a 64-bit computer.</para>
-    </summary>
+    <summary>0x29 (41). <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. System folder. A typical path is C:\Windows\System32, or C:\Windows\Syswow32 on a 64-bit computer.</summary>
   </member>
   <member name="ShellSpecialFolderConstants.ssfPROGRAMFILESx86">
     <summary>
       <para>Do not use this field. Use the value 0x2a (42) in your code instead to specify the Program Files (x86) folder. A typical path is C:\Program Files, or C:\Program Files (x86) on a 64-bit computer.</para>
       <para>
-        <b>Note:</b>  In the shldisp.h header, the <b>ssfPROGRAMFILESx86</b> field is erroneously assigned to the value 0x30 (48). This value specifies the folder for the Administrative Tools folder instead of the Program Files folder.</para>
+        <b>Note:</b> In the shldisp.h header, the <b>ssfPROGRAMFILESx86</b> field is erroneously assigned to the value 0x30 (48). This value specifies the folder for the Administrative Tools folder instead of the Program Files folder.</para>
     </summary>
   </member>
 </doc>

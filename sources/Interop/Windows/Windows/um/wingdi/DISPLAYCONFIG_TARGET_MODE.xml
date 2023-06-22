@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPLAYCONFIG_TARGET_MODE">
-    <summary>
-      <para>The DISPLAYCONFIG_TARGET_MODE structure describes a display path target mode.</para>
-    </summary>
-    <seealso cref="DISPLAYCONFIG_VIDEO_SIGNAL_INFO" />
+    <summary>The DISPLAYCONFIG_TARGET_MODE structure describes a display path target mode.</summary>
   </member>
   <member name="DISPLAYCONFIG_TARGET_MODE.targetVideoSignalInfo">
-    <summary>
-      <para>A <see cref="DISPLAYCONFIG_VIDEO_SIGNAL_INFO" /> structure that contains a detailed description of the current target mode.</para>
-    </summary>
+    <summary>A <see cref="DISPLAYCONFIG_VIDEO_SIGNAL_INFO" /> structure that contains a detailed description of the current target mode.</summary>
   </member>
 </doc>

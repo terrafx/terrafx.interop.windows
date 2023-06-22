@@ -3,140 +3,49 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICreateProcessInputs.AddCreateFlags">
-    <summary>
-      <para>Set additional flags that will be included in the call to <see cref="CreateProcess" />.</para>
-    </summary>
-    <param name="dwCreationFlags">
-      <para>The flags that will be included in the <i>dwCreationFlags</i> parameter passed to <see cref="CreateProcess" />.</para>
-    </param>
+    <summary>Set additional flags that will be included in the call to <see cref="CreateProcess" />.</summary>
+    <param name="dwCreationFlags">The flags that will be included in the <i>dwCreationFlags</i> parameter passed to <see cref="CreateProcess" />.</param>
     <returns>
-      <para>
-        <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Any creation flags that were previously set will remain set. This method does not clear any creation flags.</para>
-    </remarks>
-    <seealso cref="CreateProcess" />
-    <seealso cref="ICreateProcessInputs" />
-    <seealso cref="ICreatingProcess.OnCreating" />
-    <seealso cref="STARTUPINFO" />
-    <seealso cref="SetCreateFlags" />
+      <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICreateProcessInputs.AddStartupFlags">
-    <summary>
-      <para>Additional flags that will be included in the <see cref="STARTUPINFO" /> structure passed to <see cref="CreateProcess" />.</para>
-    </summary>
-    <param name="dwStartupInfoFlags">
-      <para>The flags that will be included in the <i>dwFlags</i> member of the <see cref="STARTUPINFO" /> structure passed to <see cref="CreateProcess" />.</para>
-    </param>
+    <summary>Additional flags that will be included in the <see cref="STARTUPINFO" /> structure passed to <see cref="CreateProcess" />.</summary>
+    <param name="dwStartupInfoFlags">The flags that will be included in the <i>dwFlags</i> member of the <see cref="STARTUPINFO" /> structure passed to <see cref="CreateProcess" />.</param>
     <returns>
-      <para>
-        <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Any creation flags that were previously set will remain set. This method does not clear any creation flags.</para>
-    </remarks>
-    <seealso cref="CreateProcess" />
-    <seealso cref="ICreateProcessInputs" />
-    <seealso cref="ICreatingProcess.OnCreating" />
-    <seealso cref="STARTUPINFO" />
+      <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICreateProcessInputs.GetCreateFlags">
-    <summary>
-      <para>Gets the additional flags that will be passed to <see cref="CreateProcess" />.</para>
-    </summary>
-    <param name="pdwCreationFlags">
-      <para>A pointer to a <b>DWORD</b> which receives the flags that will be passed as the <i>dwCreationFlags</i> parameter to <see cref="CreateProcess" />.</para>
-    </param>
+    <summary>Gets the additional flags that will be passed to <see cref="CreateProcess" />.</summary>
+    <param name="pdwCreationFlags">A pointer to a <b>DWORD</b> which receives the flags that will be passed as the <i>dwCreationFlags</i> parameter to <see cref="CreateProcess" />.</param>
     <returns>
-      <para>
-        <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="CreateProcess" />
-    <seealso cref="ICreateProcessInputs" />
-    <seealso cref="ICreatingProcess.OnCreating" />
+      <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICreateProcessInputs.SetCreateFlags">
-    <summary>
-      <para>Set the flags that will be included in the call to <see cref="CreateProcess" />.</para>
-    </summary>
-    <param name="dwCreationFlags">
-      <para>The flags that will be passed to the <i>dwCreationFlags</i> parameter to <see cref="CreateProcess" />.</para>
-    </param>
+    <summary>Set the flags that will be included in the call to <see cref="CreateProcess" />.</summary>
+    <param name="dwCreationFlags">The flags that will be passed to the <i>dwCreationFlags</i> parameter to <see cref="CreateProcess" />.</param>
     <returns>
-      <para>
-        <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Any flags set by a previous call to <see cref="AddCreateFlags" /> or <b>SetCreateFlags </b> will be replaced by the values specified by <i>dwCreationFlags</i>. Use <b>AddCreateFlags</b> to set flags without clearing  flags that are already set.</para>
-    </remarks>
-    <seealso cref="AddCreateFlags" />
-    <seealso cref="CreateProcess" />
-    <seealso cref="ICreateProcessInputs" />
-    <seealso cref="ICreatingProcess.OnCreating" />
-    <seealso cref="STARTUPINFO" />
+      <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICreateProcessInputs.SetEnvironmentVariable">
-    <summary>
-      <para>Sets a variable in the environment of the created process.</para>
-    </summary>
-    <param name="pszName">
-      <para>A null-terminated string specifying the name of a variable to be set in the environment of the process to be created. This parameter may not be <b>NULL</b>.</para>
-    </param>
-    <param name="pszValue">
-      <para>A null-terminated string specifying the value of the variable to be set in the environment of the process to be created. his parameter may not be <b>NULL</b>.</para>
-    </param>
+    <summary>Sets a variable in the environment of the created process.</summary>
+    <param name="pszName">A null-terminated string specifying the name of a variable to be set in the environment of the process to be created. This parameter may not be <b>NULL</b>.</param>
+    <param name="pszValue">A null-terminated string specifying the value of the variable to be set in the environment of the process to be created. his parameter may not be <b>NULL</b>.</param>
     <returns>
-      <para>
-        <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If a variable with the same name already exists in the environment of the created process, it is replaced.</para>
-    </remarks>
-    <seealso cref="ICreateProcessInputs" />
-    <seealso cref="ICreatingProcess.OnCreating" />
+      <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICreateProcessInputs.SetHotKey">
-    <summary>
-      <para>Sets the hot key for the application.</para>
-    </summary>
-    <param name="wHotKey">
-      <para>The hotkey to assign to the application. See the documentation of the <b>hStdIn</b> member of the <see cref="STARTUPINFO" /> structure for more information.</para>
-    </param>
+    <summary>Sets the hot key for the application.</summary>
+    <param name="wHotKey">The hotkey to assign to the application. See the documentation of the <b>hStdIn</b> member of the <see cref="STARTUPINFO" /> structure for more information.</param>
     <returns>
-      <para>
-        <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method also sets the <b>STARTF_USEHOTKEY</b> flag in the <b>dwFlags</b> member of the <see cref="STARTUPINFO" /> structure passed to <see cref="CreateProcess" />.</para>
-    </remarks>
-    <seealso cref="CreateProcess" />
-    <seealso cref="ICreateProcessInputs" />
-    <seealso cref="ICreatingProcess.OnCreating" />
-    <seealso cref="STARTUPINFO" />
+      <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICreateProcessInputs.SetTitle">
-    <summary>
-      <para>Sets the title that will be passed <see cref="CreateProcess" />.</para>
-    </summary>
-    <param name="pszTitle">
-      <para>A null-terminated string specifying the title that will be passed in the <b>lpTitle</b> member of the <see cref="STARTUPINFO" /> structure passed to <see cref="CreateProcess" />. This parameter may not be <b>NULL</b>.</para>
-    </param>
+    <summary>Sets the title that will be passed <see cref="CreateProcess" />.</summary>
+    <param name="pszTitle">A null-terminated string specifying the title that will be passed in the <b>lpTitle</b> member of the <see cref="STARTUPINFO" /> structure passed to <see cref="CreateProcess" />. This parameter may not be <b>NULL</b>.</param>
     <returns>
-      <para>
-        <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="CreateProcess" />
-    <seealso cref="ICreateProcessInputs" />
-    <seealso cref="ICreatingProcess.OnCreating" />
+      <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICreateProcessInputs">
-    <summary>
-      <para>Used by the <see cref="ICreatingProcess" /> interface to alter some parameters of the process that is being created.</para>
-    </summary>
-    <remarks>
-      <para>Applications do not implement this interface.</para>
-      <para>A pointer to this interface is passed to <see cref="ICreatingProcess.OnCreating" />.</para>
-    </remarks>
+    <summary>Used by the <see cref="ICreatingProcess" /> interface to alter some parameters of the process that is being created.</summary>
   </member>
 </doc>

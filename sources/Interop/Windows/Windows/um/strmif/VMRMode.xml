@@ -4,31 +4,20 @@
 <doc>
   <member name="VMRMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>VMRMode</b> enumeration type is used in calls to the <see cref="IVMRFilterConfig.GetRenderingMode" /> and <see cref="IVMRFilterConfig.SetRenderingMode" /> methods to retrieve or specify the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7) rendering mode.</para>
     </summary>
-    <remarks>
-      <para>These modes are mutually exclusive. The <b>VMRMode_Renderless</b> flag means that the application is providing its own allocator-presenter, which is responsible for all drawing to the screen. The <b>VMRMode_Windowed</b> flag is the default mode of the VMR-7. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/vmr-modes-of-operation">VMR Modes of Operation</a> for more information on the rendering modes.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="VMRMode.VMRMode_Windowed">
-    <summary>
-      <para>Windowed mode.</para>
-    </summary>
+    <summary>Windowed mode.</summary>
   </member>
   <member name="VMRMode.VMRMode_Windowless">
-    <summary>
-      <para>Windowless mode.</para>
-    </summary>
+    <summary>Windowless mode.</summary>
   </member>
   <member name="VMRMode.VMRMode_Renderless">
-    <summary>
-      <para>Renderless mode.</para>
-    </summary>
+    <summary>Renderless mode.</summary>
   </member>
   <member name="VMRMode.VMRMode_Mask">
-    <summary>
-      <para>Bitwise <b>OR</b> of all above flags; this is not a valid value to pass to <see cref="SetRenderingMode" />.</para>
-    </summary>
+    <summary>Bitwise <b>OR</b> of all above flags; this is not a valid value to pass to <see cref="SetRenderingMode" />.</summary>
   </member>
 </doc>

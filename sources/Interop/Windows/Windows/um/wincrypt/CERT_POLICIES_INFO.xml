@@ -4,28 +4,16 @@
 <doc>
   <member name="CERT_POLICIES_INFO">
     <summary>
-      <para>The <b>CERT_POLICIES_INFO</b> structure contains an array of
-<see cref="CERT_POLICY_INFO" />.</para>
+      <para>The <b>CERT_POLICIES_INFO</b> structure contains an array of<see cref="CERT_POLICY_INFO" />.</para>
       <para>
-        <see cref="CryptDecodeObject" /> creates an instance of this structure when performed on a
-<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with the structure's <b>pszObjId</b> member set to szOID_CERT_POLICIES.</para>
-      <para>An instance of this structure can be used as input to
-<see cref="CryptEncodeObject" /> to create an appropriate <see cref="CERT_EXTENSION" />.</para>
+        <see cref="CryptDecodeObject" /> creates an instance of this structure when performed on a<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with the structure's <b>pszObjId</b> member set to szOID_CERT_POLICIES.</para>
+      <para>An instance of this structure can be used as input to<see cref="CryptEncodeObject" /> to create an appropriate <see cref="CERT_EXTENSION" />.</para>
     </summary>
-    <seealso cref="CERT_EXTENSION" />
-    <seealso cref="CERT_POLICY_INFO" />
-    <seealso cref="CryptDecodeObject" />
-    <seealso cref="CryptEncodeObject" />
   </member>
   <member name="CERT_POLICIES_INFO.cPolicyInfo">
-    <summary>
-      <para>Number of elements in the <b>rgPolicyInfo</b> array.</para>
-    </summary>
+    <summary>Number of elements in the <b>rgPolicyInfo</b> array.</summary>
   </member>
   <member name="CERT_POLICIES_INFO.rgPolicyInfo">
-    <summary>
-      <para>Array of
-<see cref="CERT_POLICY_INFO" /> structures.</para>
-    </summary>
+    <summary>Array of<see cref="CERT_POLICY_INFO" /> structures.</summary>
   </member>
 </doc>

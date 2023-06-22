@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_UTF16_TEXT">
-    <summary>
-      <para>Represents text encoded as UTF-16 bytes.</para>
-    </summary>
+    <summary>Represents text encoded as UTF-16 bytes.</summary>
   </member>
   <member name="WS_XML_UTF16_TEXT.text">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</summary>
   </member>
   <member name="WS_XML_UTF16_TEXT.bytes">
-    <summary>
-      <para>The bytes that point to UTF-16 encoded data.</para>
-    </summary>
+    <summary>The bytes that point to UTF-16 encoded data.</summary>
   </member>
   <member name="WS_XML_UTF16_TEXT.byteCount">
-    <summary>
-      <para>The length in bytes of the UTF-16 encoded data.</para>
-    </summary>
+    <summary>The length in bytes of the UTF-16 encoded data.</summary>
   </member>
 </doc>

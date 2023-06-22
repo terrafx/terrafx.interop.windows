@@ -3,24 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY">
-    <summary>
-      <para>Contains process mitigation policy settings for legacy extension point DLLs. The <see cref="GetProcessMitigationPolicy" /> and <see cref="SetProcessMitigationPolicy" /> functions use this structure.</para>
-    </summary>
+    <summary>Contains process mitigation policy settings for legacy extension point DLLs. The <see cref="GetProcessMitigationPolicy" /> and <see cref="SetProcessMitigationPolicy" /> functions use this structure.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY.DUMMYUNIONNAME"></member>
   <member name="PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY.DUMMYUNIONNAME.Flags">
-    <summary>
-      <para>This member is reserved for system use.</para>
-    </summary>
+    <summary>This member is reserved for system use.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
-  <member name="PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisableExtensionPoints">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
+  <member name="PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisableExtensionPoints"></member>
   <member name="PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
     <summary>
       <h4>- DisableExtensionPoints : 1</h4>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GdiplusStartupOutput">
+    <summary>
+      <para>The <see cref="GdiplusStartup" /> function uses the <b>GdiplusStartupOutput</b> structure to return (in its <i>output</i> parameter) a pointer to a hook function and a pointer to an unhook function. If you set the <b>SuppressBackgroundThread</b> member of the <i>input</i> parameter to <b>TRUE</b>, then you are responsible for calling those functions to replace the Windows GDI+ background thread.</para>
+      <para>Call the hook and unhook functions before and after the application's main message loop; that is, a message loop that is active for the lifetime of GDI+. Call the hook function before the loop starts, and call the unhook function after the loop ends. The token parameter of the hook function receives an identifier that you should later pass to the unhook function. If you do not pass the proper identifier (the one returned by the hook function) to the unhook function, there will be resource leaks that won't be cleaned up until the process exits.</para>
+      <para>If you do not want to be responsible for calling the hook and unhook functions, set the <b>SuppressBackgroundThread</b> member of the <i>input</i> parameter (passed to <see cref="GdiplusStartup" />) to <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="GdiplusStartupOutput.NotificationHook">
+    <summary>Receives a pointer to a hook function.</summary>
+  </member>
+  <member name="GdiplusStartupOutput.NotificationUnhook">
+    <summary>Receives a pointer to an unhook function.</summary>
+  </member>
+</doc>

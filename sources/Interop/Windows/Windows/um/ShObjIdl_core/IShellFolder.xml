@@ -3,74 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellFolder.BindToObject">
-    <summary>
-      <para>Retrieves a handler, typically the Shell folder object that implements <see cref="IShellFolder" /> for a particular item. Optional parameters that control the construction of the handler are passed in the bind context.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCUIDLIST_RELATIVE</b></para>
-      <para>The address of an <see cref="ITEMIDLIST" /> structure (PIDL) that identifies the subfolder. This value can refer to an item at any level below the parent folder in the namespace hierarchy. The structure contains one or more <see cref="SHITEMID" /> structures, followed by a terminating <b>NULL</b>.</para>
-    </param>
+    <summary>Retrieves a handler, typically the Shell folder object that implements <see cref="IShellFolder" /> for a particular item. Optional parameters that control the construction of the handler are passed in the bind context.</summary>
+    <param name="pidl">The address of an <see cref="ITEMIDLIST" /> structure (PIDL) that identifies the subfolder. This value can refer to an item at any level below the parent folder in the namespace hierarchy. The structure contains one or more <see cref="SHITEMID" /> structures, followed by a terminating <b>NULL</b>.</param>
     <param name="pbc">
-      <para>Type: <b><see cref="IBindCtx" />*</b></para>
       <para>A pointer to an <see cref="IBindCtx" /> interface on a bind context object that can be used to pass parameters to the construction of the handler. If this parameter is not used, set it to <b>NULL</b>. Because support for this parameter is optional for folder object implementations, some folders may not support the use of bind contexts.</para>
       <para>Information that can be provided in the bind context includes a <see cref="BIND_OPTS" /> structure that includes a <b>grfMode</b> member that indicates the access mode when binding to a stream handler. Other parameters can be set and discovered using <see cref="IBindCtx.RegisterObjectParam" /> and <see cref="IBindCtx.GetObjectParam" />.</para>
     </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The identifier of the interface to return. This may be <b>IID_IShellFolder</b>, <b>IID_IStream</b>, or any other interface that identifies a particular handler.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address of a pointer to the requested interface. If an error occurs, a <b>NULL</b> pointer is returned at this address.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Applications use <b>IShellFolder.BindToObject</b><b>(..., IID_IShellFolder, ...)</b> to obtain the Shell folder object for a subitem. Clients should pass the canonical interface IID that is used to identify a specific handler. For example, <b>IID_IShellFolder</b> identifies the folder handler and <b>IID_IStream</b> identifies the stream handler. Implementations can support binding to handlers using derived interfaces as well, such as <b>IID_IShellFolder2</b>. A Shell namespace extension can implement this function by creating the Shell folder object for the specified subitem and then calling <see cref="QueryInterface" /> to communicate with the object through its interface pointer.</para>
-      <para>Implementations of <b>BindToObject</b> can optimize any call to it by quickly failing for IID values that it does not support. For example, if the Shell folder object of the subitem does not support <see cref="IRemoteComputer" />, the implementation should return <b>E_NOINTERFACE</b> immediately instead of needlessly creating the Shell folder object for the subitem and then finding that <b>IRemoteComputer</b> was not supported after all.</para>
-    </remarks>
-    <seealso cref="IPersistFolder" />
-    <seealso cref="IPersistFolder2" />
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolder2" />
-    <seealso cref="SHGetDesktopFolder" />
+    <param name="riid">The identifier of the interface to return. This may be <b>IID_IShellFolder</b>, <b>IID_IStream</b>, or any other interface that identifies a particular handler.</param>
+    <param name="ppv">When this method returns, contains the address of a pointer to the requested interface. If an error occurs, a <b>NULL</b> pointer is returned at this address.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolder.BindToStorage">
-    <summary>
-      <para>Requests a pointer to an object's storage interface.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCUIDLIST_RELATIVE</b></para>
-      <para>The address of an <see cref="ITEMIDLIST" /> structure that identifies the subfolder relative to its parent folder. The structure must contain exactly one <see cref="SHITEMID" /> structure followed by a terminating zero.</para>
-    </param>
-    <param name="pbc">
-      <para>Type: <b><see cref="IBindCtx" />*</b></para>
-      <para>The optional address of an <see cref="IBindCtx" /> interface on a bind context object to be used during this operation. If this parameter is not used, set it to <b>NULL</b>. Because support for <i>pbc</i> is optional for folder object implementations, some folders may not support the use of bind contexts.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The IID of the requested storage interface. To retrieve an <see cref="IStream" />, <see cref="IStorage" />, or <see cref="IPropertySetStorage" /> interface pointer, set <i>riid</i> to <b>IID_IStream</b>, <b>IID_IStorage</b>, or <b>IID_IPropertySetStorage</b>, respectively.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>The address that receives the interface pointer specified by <i>riid</i>. If an error occurs, a <b>NULL</b> pointer is returned in this address.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Namespace extensions have the option of allowing applications to bind to an object that represents an item's storage. If this option is supported, <b>IShellFolder.BindToStorage</b> returns a specified interface pointer that can then be used to access the contents of object. See the <see cref="IMoniker.BindToStorage" /> reference for further discussion.</para>
-    </remarks>
+    <summary>Requests a pointer to an object's storage interface.</summary>
+    <param name="pidl">The address of an <see cref="ITEMIDLIST" /> structure that identifies the subfolder relative to its parent folder. The structure must contain exactly one <see cref="SHITEMID" /> structure followed by a terminating zero.</param>
+    <param name="pbc">The optional address of an <see cref="IBindCtx" /> interface on a bind context object to be used during this operation. If this parameter is not used, set it to <b>NULL</b>. Because support for <i>pbc</i> is optional for folder object implementations, some folders may not support the use of bind contexts.</param>
+    <param name="riid">The IID of the requested storage interface. To retrieve an <see cref="IStream" />, <see cref="IStorage" />, or <see cref="IPropertySetStorage" /> interface pointer, set <i>riid</i> to <b>IID_IStream</b>, <b>IID_IStorage</b>, or <b>IID_IPropertySetStorage</b>, respectively.</param>
+    <param name="ppv">The address that receives the interface pointer specified by <i>riid</i>. If an error occurs, a <b>NULL</b> pointer is returned in this address.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolder.CompareIDs">
-    <summary>
-      <para>Determines the relative order of two file objects or folders, given their item identifier lists.</para>
-    </summary>
+    <summary>Determines the relative order of two file objects or folders, given their item identifier lists.</summary>
     <param name="lParam">
-      <para>Type: <b>LPARAM</b></para>
       <para>A value that specifies how the comparison should be performed.</para>
       <para>The lower sixteen bits of <i>lParam</i> define the sorting rule. Most applications set the sorting rule to the default value of zero, indicating that the two items should be compared by name. The system does not define any other sorting rules. Some folder objects might allow calling applications to use the lower sixteen bits of <i>lParam</i> to specify folder-specific sorting rules. The rules and their associated <i>lParam</i> values are defined by the folder.</para>
       <para>When the system folder view object calls <b>IShellFolder.CompareIDs</b>, the lower sixteen bits of <i>lParam</i> are used to specify the column to be used for the comparison.</para>
@@ -82,447 +35,121 @@
       <para>
         <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. When comparing by name, compare the system names but not the display names. When this flag is passed, the two items are compared by whatever criteria the Shell folder determines are most efficient, as long as it implements a consistent sort function. This flag is useful when comparing for equality or when the results of the sort are not displayed to the user. This flag cannot be combined with other flags.</para>
     </param>
-    <param name="pidl1">
-      <para>Type: <b>PCUIDLIST_RELATIVE</b></para>
-      <para>A pointer to the first item's <see cref="ITEMIDLIST" /> structure. It will be relative to the folder. This <b>ITEMIDLIST</b> structure can contain more than one element; therefore, the entire structure must be compared, not just the first element.</para>
-    </param>
-    <param name="pidl2">
-      <para>Type: <b>PCUIDLIST_RELATIVE</b></para>
-      <para>A pointer to the second item's <see cref="ITEMIDLIST" /> structure. It will be relative to the folder. This <b>ITEMIDLIST</b> structure can contain more than one element; therefore, the entire structure must be compared, not just the first element.</para>
-    </param>
+    <param name="pidl1">A pointer to the first item's <see cref="ITEMIDLIST" /> structure. It will be relative to the folder. This <b>ITEMIDLIST</b> structure can contain more than one element; therefore, the entire structure must be compared, not just the first element.</param>
+    <param name="pidl2">A pointer to the second item's <see cref="ITEMIDLIST" /> structure. It will be relative to the folder. This <b>ITEMIDLIST</b> structure can contain more than one element; therefore, the entire structure must be compared, not just the first element.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If this method is successful, the CODE field of the <b>HRESULT</b> contains one of the following values. For information regarding the extraction of the CODE field from the returned <b>HRESULT</b>, see Remarks. If this method is unsuccessful, it returns a COM error code.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>Negative</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Negative</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A negative return value indicates that the first item should precede the second (pidl1 &lt; pidl2).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A negative return value indicates that the first item should precede the second (pidl1 &lt; pidl2).</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Positive</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A positive return value indicates that the first item should follow the second (pidl1 &gt; pidl2).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>Positive</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Zero</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A positive return value indicates that the first item should follow the second (pidl1 &gt; pidl2).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>Zero</b>
-            </para>
-          </description>
-          <description>
-            <para>A return value of zero indicates that the two items are the same (pidl1 = pidl2).</para>
-          </description>
-        </item>
+          <description>A return value of zero indicates that the two items are the same (pidl1 = pidl2).</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Note to Calling Applications</h3>
-      <para>Do not set the <b>SHCIDS_ALLFIELDS</b> flag in <i>lParam</i> if the folder object does not support <see cref="IShellFolder2" />. Doing so might have unpredictable results. If you use the <b>SHCIDS_ALLFIELDS</b> flag, the lower sixteen bits of <i>lParam</i> must be set to zero.</para>
-      <para>Use the <see cref="HRESULT_CODE" /> macro to extract the CODE field from the <b>HRESULT</b>, then cast the result as a <b>short</b>.</para>
-      <code>HRESULT hres = psf-&gt;CompareIDs(lParam, pidl1, pidl2);
-if ((short)HRESULT_CODE(hres) &lt; 0)
-   { /* pidl1 comes first */ }
-else if ((short)HRESULT_CODE(hres) &gt; 0)
-   { /* pidl2 comes first */ }
-else
-   { /* the two pidls are equal */ }
-
-</code>
-      <h3>Note to Implementers</h3>
-      <para>To extract the sorting rule, use a bitwise AND operator (&amp;) to combine <i>lParam</i> with SHCIDS_COLUMNMASK (0X0000FFFF). This operation masks off the upper sixteen bits of <i>lParam</i>, including the <b>SHCIDS_ALLFIELDS</b> value.</para>
-      <para>The <see cref="MAKE_HRESULT" /> macro is useful for constructing the return value for
-an implementation of the CompareIDs method.  For example:</para>
-      <code>HRESULT CompareIDs(LPARAM lParam, PCUIDLIST_RELATIVE pidl1, PCUIDLIST_RELATIVE pidl2)
-{
-    short sResult;
-    unsigned uSeverity = 0x000000000;
-
-    // Code that determines the relative order of pidl1 and pidl2 according to
-    // any sorting rules specified by lParam goes here.
-    //
-    // Set sResult = -1 if pidl1 precedes pidl2 (pidl1 &lt; pidl2).
-    // Set sResult =  1 if pidl1 follows pidl2. (pidl1 &gt; pidl2).
-    // Set sResult =  0 if pidl1 and pidl2 are equivalent in terms of ordering. (pidl1 = pidl2).
-    //
-    // Leave uSeverity = 0 if the order is successfully determined.
-    // Set uSeverity = 0x00000001 if there is an error.
-
-    return MAKE_HRESULT(uSeverity, 0, (unsigned short)sResult);
-}
-
-</code>
-    </remarks>
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolder2" />
   </member>
   <member name="IShellFolder.CreateViewObject">
-    <summary>
-      <para>Requests an object that can be used to obtain information from or interact with a folder object.</para>
-    </summary>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the owner window. If you have implemented a custom folder view object, your folder view window should be created as a child of <i>hwndOwner</i>.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the interface to retrieve through <i>ppv</i>, typically IID_IShellView.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns successfully, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IShellView" />. See the Remarks section for more details.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To support this request, create an object that exposes the interface indicated by <i>riid</i> and return a pointer to that interface.</para>
-      <para>The primary purpose of this method is to provide Windows Explorer with the folder object's folder view object. Windows Explorer requests a folder view object by setting <i>riid</i> to IID_IShellView. The folder view object displays the contents of the folder in the Windows Explorer folder view. The folder view object must be independent of the Shell folder object, because Windows Explorer may call this method more than once to create multiple folder view objects. A new view object must be created each time this method is called. Your folder object can respond in one of two ways to this request. It can:</para>
-      <list type="bullet">
-        <item>
-          <description>Create a custom folder view object and return a pointer to its <see cref="IShellView" /> interface.</description>
-        </item>
-        <item>
-          <description>Create a system folder view object and return a pointer to its <see cref="IShellView" /> interface.</description>
-        </item>
-      </list>
-      <para>This method is also used to request objects that expose one of several optional interfaces, including <see cref="IContextMenu" /> or <see cref="IExtractIcon" />. In this context, <b>CreateViewObject</b> is similar in usage to <see cref="IShellFolder.GetUIObjectOf" />. However, you call <b>IShellFolder.GetUIObjectOf</b> to request an object for one of the items contained by a folder. Call <b>IShellFolder.CreateViewObject</b> to request an object for the folder itself. The most commonly requested interfaces are:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IQueryInfo" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IShellDetails" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDropTarget" />
-          </description>
-        </item>
-      </list>
-      <para>We recommend that you use the <b>IID_PPV_ARGS</b> macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error in <i>riid</i> that could lead to unexpected results.</para>
-    </remarks>
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolder2" />
+    <summary>Requests an object that can be used to obtain information from or interact with a folder object.</summary>
+    <param name="hwndOwner">A handle to the owner window. If you have implemented a custom folder view object, your folder view window should be created as a child of <i>hwndOwner</i>.</param>
+    <param name="riid">A reference to the IID of the interface to retrieve through <i>ppv</i>, typically IID_IShellView.</param>
+    <param name="ppv">When this method returns successfully, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IShellView" />. See the Remarks section for more details.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolder.EnumObjects">
-    <summary>
-      <para>Enables a client to determine the contents of a folder by creating an item identifier enumeration object and returning its <see cref="IEnumIDList" /> interface. The methods supported by that interface can then be used to enumerate the folder's contents.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>If user input is required to perform the enumeration, this window handle should be used by the enumeration object as the parent window to take user input. An example would be a dialog box to ask for a password or prompt the user to insert a CD or floppy disk. If <i>hwndOwner</i> is set to <b>NULL</b>, the enumerator should not post any messages, and if user input is required, it should silently fail.</para>
-    </param>
-    <param name="grfFlags">
-      <para>Type: <b><see cref="SHCONTF" /></b></para>
-      <para>Flags indicating which items to include in the enumeration. For a list of possible values, see the <see cref="SHCONTF" /> enumerated type.</para>
-    </param>
-    <param name="ppenumIDList">
-      <para>Type: <b><see cref="IEnumIDList" />**</b></para>
-      <para>The address that receives a pointer to the <see cref="IEnumIDList" /> interface of the enumeration object created by this method. If an error occurs or no suitable subobjects are found, <i>ppenumIDList</i> is set to <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns <code>S_OK</code> if successful, or an error value otherwise. Some implementations may also return <code>S_FALSE</code>, indicating that there are no children matching the <i>grfFlags</i> that were passed in. If <code>S_FALSE</code> is returned, <i>ppenumIDList</i> is set to <code>NULL</code>.</para>
-    </returns>
-    <remarks>
-      <para>If the method returns S_OK, then <i>ppenumIDList</i> receives a pointer to an enumerator. In this case, the calling application must free the returned <see cref="IEnumIDList" /> object by calling its <b>Release</b> method.</para>
-      <para>If the method returns S_FALSE, then the folder contains no suitable subobjects and the pointer specified in <i>ppenumIDList</i> is set to <b>NULL</b>.</para>
-      <para>If the method fails, an error value is returned and the pointer specified in <i>ppenumIDList</i> is set to <b>NULL</b>.</para>
-      <para>If the folder contains no suitable subobjects, then the <b>IShellFolder.EnumObjects</b> method is permitted either to set *<i>ppenumIDList</i> to <b>NULL</b> and return S_FALSE, or to set *<i>ppenumIDList</i> to an enumerator that produces no objects and return S_OK. Calling applications must be prepared for both success cases.</para>
-    </remarks>
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolder2" />
-    <seealso cref="SHGetDesktopFolder" />
+    <summary>Enables a client to determine the contents of a folder by creating an item identifier enumeration object and returning its <see cref="IEnumIDList" /> interface. The methods supported by that interface can then be used to enumerate the folder's contents.</summary>
+    <param name="hwnd">If user input is required to perform the enumeration, this window handle should be used by the enumeration object as the parent window to take user input. An example would be a dialog box to ask for a password or prompt the user to insert a CD or floppy disk. If <i>hwndOwner</i> is set to <b>NULL</b>, the enumerator should not post any messages, and if user input is required, it should silently fail.</param>
+    <param name="grfFlags">Flags indicating which items to include in the enumeration. For a list of possible values, see the <see cref="SHCONTF" /> enumerated type.</param>
+    <param name="ppenumIDList">The address that receives a pointer to the <see cref="IEnumIDList" /> interface of the enumeration object created by this method. If an error occurs or no suitable subobjects are found, <i>ppenumIDList</i> is set to <b>NULL</b>.</param>
+    <returns>Returns <code>S_OK</code> if successful, or an error value otherwise. Some implementations may also return <code>S_FALSE</code>, indicating that there are no children matching the <i>grfFlags</i> that were passed in. If <code>S_FALSE</code> is returned, <i>ppenumIDList</i> is set to <code>NULL</code>.</returns>
   </member>
   <member name="IShellFolder.GetAttributesOf">
-    <summary>
-      <para>Gets the attributes of one or more file or folder objects contained in the object represented by <see cref="IShellFolder" />.</para>
-    </summary>
-    <param name="cidl">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of items from which to retrieve attributes.</para>
-    </param>
-    <param name="apidl">
-      <para>Type: <b>PCUITEMID_CHILD_ARRAY*</b></para>
-      <para>The address of an array of pointers to <see cref="ITEMIDLIST" /> structures, each of which uniquely identifies an item relative to the parent folder. Each <b>ITEMIDLIST</b> structure must contain exactly one <see cref="SHITEMID" /> structure followed by a terminating zero.</para>
-    </param>
-    <param name="rgfInOut">
-      <para>Type: <b>SFGAOF*</b></para>
-      <para>Pointer to a single <b>ULONG</b> value that, on entry, contains the bitwise <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO</a> attributes that the calling application is requesting. On exit, this value contains the requested attributes that are common to all of the specified items.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To optimize this operation, do not return unspecified flags.</para>
-      <para>For a folder object, the <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO_BROWSABLE</a> attribute implies that the client can bind to this object as shown in a general form here.</para>
-      <code>IShellFolder.BindToObject(..., pidl, IID_IShellFolder, &amp;amp;amp;amp;amp;amp;psfItem);
-
-</code>
-      <para>The client can then create an <see cref="IShellView" /> on that item through this statement.</para>
-      <code>psfItem-&gt;CreateViewObject(..., IID_IShellView,...);
-
-</code>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO_DROPTARGET</a> attribute implies that the client can bind to an instance of <see cref="IDropTarget" /> for this folder by calling <see cref="IShellFolder.GetUIObjectOf" /> as shown here.</para>
-      <code>IShellFolder.GetUIObjectOf(hwnd, 1, &amp;amp;amp;amp;amp;amp;pidl, IID_IDropTarget, NULL, &amp;amp;amp;amp;amp;amp;pv)
-
-</code>
-      <para>The SFGAO_NONENUMERATED attribute indicates an item that is not returned by the enumerator created by the <see cref="IShellFolder.EnumObjects" /> method.</para>
-    </remarks>
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolder2" />
+    <summary>Gets the attributes of one or more file or folder objects contained in the object represented by <see cref="IShellFolder" />.</summary>
+    <param name="cidl">The number of items from which to retrieve attributes.</param>
+    <param name="apidl">The address of an array of pointers to <see cref="ITEMIDLIST" /> structures, each of which uniquely identifies an item relative to the parent folder. Each <b>ITEMIDLIST</b> structure must contain exactly one <see cref="SHITEMID" /> structure followed by a terminating zero.</param>
+    <param name="rgfInOut">Pointer to a single <b>ULONG</b> value that, on entry, contains the bitwise <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO</a> attributes that the calling application is requesting. On exit, this value contains the requested attributes that are common to all of the specified items.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolder.GetDisplayNameOf">
-    <summary>
-      <para>Retrieves the display name for the specified file object or subfolder.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCUITEMID_CHILD</b></para>
-      <para>PIDL that uniquely identifies the file object or subfolder relative to the parent folder.</para>
-    </param>
-    <param name="uFlags">
-      <para>Type: <b><see cref="SHGDNF" /></b></para>
-      <para>Flags used to request the type of display name to return. For a list of possible values, see the <see cref="SHGDNF" /> enumerated type.</para>
-    </param>
-    <param name="pName">
-      <para>Type: <b><see cref="STRRET" />*</b></para>
-      <para>When this method returns, contains a pointer to a <see cref="STRRET" /> structure in which to return the display name. The type of name returned in this structure can be the requested type, but the Shell folder might return a different type.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>It is the caller's responsibility to free resources allocated by this function.</para>
-      <para>Normally, <i>pidl</i> can refer only to items contained by the parent folder. The PIDL must be single-level and contain exactly one <see cref="SHITEMID" /> structure followed by a terminating zero. If you want to retrieve the display name of an item that is deeper than one level away from the parent folder, use <see cref="SHBindToParent" /> to bind with the item's immediate parent folder and then pass the item's single-level PIDL to <b>IShellFolder.GetDisplayNameOf</b>.</para>
-      <para>Also, if the <see cref="SHGDN_FORPARSING" /> flag is set in <i>uFlags</i> and the <see cref="SHGDN_INFOLDER" /> flag is not set, <i>pidl</i> can refer to an object at any level below the parent folder in the namespace hierarchy. At one time, <i>pidl</i> could be a multilevel PIDL, relative to the parent folder, and could contain multiple <see cref="SHITEMID" /> structures. However, this is no longer supported and <i>pidl</i> should now refer only to a single child item.</para>
-      <para>The simplest way to retrieve the display name from the structure pointed to by <i>pName</i> is to pass it to either <see cref="StrRetToBuf" /> or <see cref="StrRetToStr" />. These functions take a <see cref="STRRET" /> structure and return the name. You can also examine the structure's <b>uType</b> member, and retrieve the name from the appropriate member.</para>
-      <para>The flags specified in <i>uFlags</i> are hints about the intended use of the name. They do not guarantee that <see cref="IShellFolder" /> will return the requested form of the name. If that form is not available, a different one might be returned. In particular, there is no guarantee that the name returned by the <see cref="SHGDN_FORPARSING" /> flag will be successfully parsed by <see cref="IShellFolder.ParseDisplayName" />. There are also some combinations of flags that might cause the <b>GetDisplayNameOf</b>/<b>ParseDisplayName</b> round trip to not return the original identifier list. This occurrence is exceptional, but you should check to be sure.</para>
-      <para>
-        <b>Note</b>  The parsing name that is returned when <i>uFlags</i> has the <see cref="SHGDN_FORPARSING" /> flag set is not necessarily a normal text string. Virtual folders such as My Computer might return a string containing the folder object's GUID in the form ".{GUID}". Developers who implement <b>IShellFolder.GetDisplayNameOf</b> are encouraged to return parse names that are as close to the display names as possible, because the end user often needs to type or edit these names.</para>
-    </remarks>
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolder2" />
+    <summary>Retrieves the display name for the specified file object or subfolder.</summary>
+    <param name="pidl">PIDL that uniquely identifies the file object or subfolder relative to the parent folder.</param>
+    <param name="uFlags">Flags used to request the type of display name to return. For a list of possible values, see the <see cref="SHGDNF" /> enumerated type.</param>
+    <param name="pName">When this method returns, contains a pointer to a <see cref="STRRET" /> structure in which to return the display name. The type of name returned in this structure can be the requested type, but the Shell folder might return a different type.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolder.GetUIObjectOf">
-    <summary>
-      <para>Gets an object that can be used to carry out actions on the specified file objects or folders.</para>
-    </summary>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the owner window that the client should specify if it displays a dialog box or message box.</para>
-    </param>
-    <param name="cidl">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of file objects or subfolders specified in the <i>apidl</i> parameter.</para>
-    </param>
-    <param name="apidl">
-      <para>Type: <b>PCUITEMID_CHILD_ARRAY</b></para>
-      <para>The address of an array of pointers to <see cref="ITEMIDLIST" /> structures, each of which uniquely identifies a file object or subfolder relative to the parent folder. Each item identifier list must contain exactly one <see cref="SHITEMID" /> structure followed by a terminating zero.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the interface to retrieve through <i>ppv</i>. This can be any valid interface identifier that can be created for an item. The most common identifiers used by the Shell are listed in the comments at the end of this reference.</para>
-    </param>
-    <param name="rgfReserved">
-      <para>Type: <b>UINT*</b></para>
-      <para>Reserved.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns successfully, contains the interface pointer requested in <i>riid</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <i>cidl</i> is greater than one, the <b>IShellFolder.GetUIObjectOf</b> implementation should only succeed if it can create one object for all items specified in <i>apidl</i>. If the implementation cannot create one object for all items, this method will fail.</para>
-      <para>The following are the most common interface identifiers the Shell uses when requesting an interface from this method. The list also indicates if <i>cidl</i> can be greater than one for the requested interface.</para>
-      <list type="table">
-        <listheader>
-          <description>Interface Identifier</description>
-          <description>Allowed <i>cidl</i> Value</description>
-        </listheader>
-        <item>
-          <description>
-            <see cref="IContextMenu" />
-          </description>
-          <description>The <i>cidl</i> parameter can be greater than or equal to one.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IContextMenu2" />
-          </description>
-          <description>The <i>cidl</i> parameter can be greater than or equal to one.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDataObject" />
-          </description>
-          <description>The <i>cidl</i> parameter can be greater than or equal to one.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDropTarget" />
-          </description>
-          <description>The <i>cidl</i> parameter can only be one.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IExtractIcon" />
-          </description>
-          <description>The <i>cidl</i> parameter can only be one.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IQueryInfo" />
-          </description>
-          <description>The <i>cidl</i> parameter can only be one.</description>
-        </item>
-      </list>
-      <para>We recommend that you use the <b>IID_PPV_ARGS</b> macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error in <i>riid</i> that could lead to unexpected results.</para>
-    </remarks>
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolder2" />
+    <summary>Gets an object that can be used to carry out actions on the specified file objects or folders.</summary>
+    <param name="hwndOwner">A handle to the owner window that the client should specify if it displays a dialog box or message box.</param>
+    <param name="cidl">The number of file objects or subfolders specified in the <i>apidl</i> parameter.</param>
+    <param name="apidl">The address of an array of pointers to <see cref="ITEMIDLIST" /> structures, each of which uniquely identifies a file object or subfolder relative to the parent folder. Each item identifier list must contain exactly one <see cref="SHITEMID" /> structure followed by a terminating zero.</param>
+    <param name="riid">A reference to the IID of the interface to retrieve through <i>ppv</i>. This can be any valid interface identifier that can be created for an item. The most common identifiers used by the Shell are listed in the comments at the end of this reference.</param>
+    <param name="rgfReserved">Reserved.</param>
+    <param name="ppv">When this method returns successfully, contains the interface pointer requested in <i>riid</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolder.ParseDisplayName">
-    <summary>
-      <para>Translates the display name of a file object or a folder into an item identifier list.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>A window handle. The client should provide a window handle if it displays a dialog or message box. Otherwise set <i>hwnd</i> to <b>NULL</b>.</para>
-    </param>
+    <summary>Translates the display name of a file object or a folder into an item identifier list.</summary>
+    <param name="hwnd">A window handle. The client should provide a window handle if it displays a dialog or message box. Otherwise set <i>hwnd</i> to <b>NULL</b>.</param>
     <param name="pbc">
-      <para>Type: <b><see cref="IBindCtx" />*</b></para>
       <para>Optional. A pointer to a bind context used to pass parameters as inputs and outputs to the parsing function. These passed parameters are often specific to the data source and are documented by the data source owners. For example, the file system data source accepts the name being parsed (as a <see cref="WIN32_FIND_DATA" /> structure), using the <a href="https://docs.microsoft.com//windows/desktop/shell/str-constants">STR_FILE_SYS_BIND_DATA</a> bind context parameter. <a href="https://docs.microsoft.com//windows/desktop/shell/str-constants">STR_PARSE_PREFER_FOLDER_BROWSING</a> can be passed to indicate that URLs are parsed using the file system data source when possible. Construct a bind context object using <see cref="CreateBindCtx" /> and populate the values using <see cref="IBindCtx.RegisterObjectParam" />. See <b>Bind Context String Keys</b> for a complete list of these.</para>
       <para>If no data is being passed to or received from the parsing function, this value can be <b>NULL</b>.</para>
     </param>
     <param name="pszDisplayName">
-      <para>Type: <b>LPWSTR</b></para>
       <para>A null-terminated Unicode string with the display name. Because each Shell folder defines its own parsing syntax, the form this string can take may vary. The desktop folder, for instance, accepts paths such as "C:\My Docs\My File.txt". It also will accept references to items in the namespace that have a GUID associated with them using the ".{GUID}" syntax. For example, to retrieve a fully qualified identifier list for the control panel from the desktop folder, you can use the following:</para>
-      <code>.{CLSID for Control Panel}\.{CLSID for printers folder}
-
-</code>
+      <code>.{CLSID for Control Panel}\.{CLSID for printers folder}</code>
     </param>
-    <param name="pchEaten">
-      <para>Type: <b>ULONG*</b></para>
-      <para>A pointer to a <b>ULONG</b> value that receives the number of characters of the display name that was parsed. If your application does not need this information, set <i>pchEaten</i> to <b>NULL</b>, and no value will be returned.</para>
-    </param>
+    <param name="pchEaten">A pointer to a <b>ULONG</b> value that receives the number of characters of the display name that was parsed. If your application does not need this information, set <i>pchEaten</i> to <b>NULL</b>, and no value will be returned.</param>
     <param name="ppidl">
-      <para>Type: <b>PIDLIST_RELATIVE*</b></para>
       <para>When this method returns, contains a pointer to the PIDL for the object. The returned item identifier list specifies the item relative to the parsing folder. If the object associated with <i>pszDisplayName</i> is within the parsing folder, the returned item identifier list will contain only one <see cref="SHITEMID" /> structure. If the object is in a subfolder of the parsing folder, the returned item identifier list will contain multiple <b>SHITEMID</b> structures. If an error occurs, <b>NULL</b> is returned in this address.</para>
       <para>When it is no longer needed, it is the responsibility of the caller to free this resource by calling <see cref="CoTaskMemFree" />.</para>
     </param>
-    <param name="pdwAttributes">
-      <para>Type: <b>ULONG*</b></para>
-      <para>The value used to query for file attributes. If not used, it should be set to <b>NULL</b>. To query for one or more attributes, initialize this parameter with the <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO</a> flags that represent the attributes of interest. On return, those attributes that are true <i>and</i> were requested will be set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Some Shell folders may not implement <b>IShellFolder.ParseDisplayName</b>. Each folder that does will define its own parsing syntax.</para>
-      <para>
-        <b>ParseDisplayName</b> is not expected to handle the relative path or parent folder indicators ("." or ".."). It is up to the caller to remove these appropriately.</para>
-      <para>Do not use the SFGAO_VALIDATE flag in <i>pdwAttributes</i> to verify the existence of the item whose name is being parsed. <b>IShellFolder.ParseDisplayName</b> implicitly validates the existence of the item unless that behavior is overridden by a special bind context parameter.</para>
-      <para>Querying for some attributes may be relatively slow and use significant amounts of memory. For example, to determine if a file is shared, the Shell will load network components. This procedure may require the loading of several DLLs. The purpose of <i>pdwAttributes</i> is to allow you to restrict the query to only that information that is needed. The following code fragment illustrates how to find out if a file is compressed.</para>
-      <code>LPITEMIDLIST pidl;
-ULONG cbEaten;
-DWORD dwAttribs = SFGAO_COMPRESSED;
-
-hres = psf-&gt;ParseDisplayName(NULL,
-                             NULL,
-                             lpwszDisplayName,
-                             &amp;amp;amp;amp;amp;amp;cbEaten,  // This can be NULL
-                             &amp;amp;amp;amp;amp;amp;pidl,
-                             &amp;amp;amp;amp;amp;amp;dwAttribs);
-
-if(dwAttribs &amp;amp;amp;amp;amp;amp; SFGAO_COMPRESSED)
-{
-    // Do something with the compressed file
-}
-
-</code>
-      <para>Since <i>pdwAttributes</i> is an in/out parameter, it should always be initialized. If you pass in an uninitialized value, some of the bits may be inadvertently set. <b>IShellFolder.ParseDisplayName</b> will then query for the corresponding attributes, which may lead to undesirable delays or memory demands. If you do not wish to query for attributes, set <i>pdwAttributes</i> to <b>NULL</b> to avoid unpredictable behavior.</para>
-      <para>This method is similar to the <see cref="IParseDisplayName.ParseDisplayName" /> method.</para>
-    </remarks>
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolder2" />
-    <seealso cref="IShellFolder.GetAttributesOf" />
-    <seealso cref="IShellLink" />
+    <param name="pdwAttributes">The value used to query for file attributes. If not used, it should be set to <b>NULL</b>. To query for one or more attributes, initialize this parameter with the <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO</a> flags that represent the attributes of interest. On return, those attributes that are true <i>and</i> were requested will be set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolder.SetNameOf">
-    <summary>
-      <para>Sets the display name of a file object or subfolder, changing the item identifier in the process.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the owner window of any dialog or message box that the client displays.</para>
-    </param>
-    <param name="pidl">
-      <para>Type: <b>PCUITEMID_CHILD</b></para>
-      <para>A pointer to an <see cref="ITEMIDLIST" /> structure that uniquely identifies the file object or subfolder relative to the parent folder. The structure must contain exactly one <see cref="SHITEMID" /> structure followed by a terminating zero.</para>
-    </param>
-    <param name="pszName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated string that specifies the new display name.</para>
-    </param>
-    <param name="uFlags">
-      <para>Type: <b><see cref="SHGDNF" /></b></para>
-      <para>Flags that indicate the type of name specified by the <i>pszName</i> parameter. For a list of possible values and combinations of values, see <see cref="SHGDNF" />.</para>
-    </param>
-    <param name="ppidlOut">
-      <para>Type: <b>PITEMID_CHILD*</b></para>
-      <para>Optional. If specified, the address of a pointer to an <see cref="ITEMIDLIST" /> structure that receives the <b>ITEMIDLIST</b> of the renamed item. The caller requests this value by passing a non-null <i>ppidlOut</i>. Implementations of <b>IShellFolder.SetNameOf</b> must return a pointer to the new <b>ITEMIDLIST</b> in the <i>ppidlOut</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Changing the display name of a file system object, or a folder within it, renames the file or directory.</para>
-      <para>Before calling this method, applications should call <see cref="IShellFolder.GetAttributesOf" /> and check that the SFGAO_CANRENAME flag is set. Note that this flag is essentially a hint to namespace clients. It does not necessarily imply that <b>IShellFolder.SetNameOf</b> will succeed or fail.</para>
-      <para>Implementers of <b>IShellFolder.SetNameOf</b> must call <see cref="SHChangeNotify" /> with both the old and new absolute PIDLs once the renaming of an object is complete. This following example shows the call to <b>SHChangeNotify</b> following the renaming of a folder object.</para>
-      <code>SHChangeNotify(SHCNE_RENAMEFOLDER, SHCNF_IDLIST, pidlFullOld, pidlFullNew);
-</code>
-      <para>This call prevents both the old and new names being displayed in the view.</para>
-    </remarks>
+    <summary>Sets the display name of a file object or subfolder, changing the item identifier in the process.</summary>
+    <param name="hwnd">A handle to the owner window of any dialog or message box that the client displays.</param>
+    <param name="pidl">A pointer to an <see cref="ITEMIDLIST" /> structure that uniquely identifies the file object or subfolder relative to the parent folder. The structure must contain exactly one <see cref="SHITEMID" /> structure followed by a terminating zero.</param>
+    <param name="pszName">A pointer to a null-terminated string that specifies the new display name.</param>
+    <param name="uFlags">Flags that indicate the type of name specified by the <i>pszName</i> parameter. For a list of possible values and combinations of values, see <see cref="SHGDNF" />.</param>
+    <param name="ppidlOut">Optional. If specified, the address of a pointer to an <see cref="ITEMIDLIST" /> structure that receives the <b>ITEMIDLIST</b> of the renamed item. The caller requests this value by passing a non-null <i>ppidlOut</i>. Implementations of <b>IShellFolder.SetNameOf</b> must return a pointer to the new <b>ITEMIDLIST</b> in the <i>ppidlOut</i> parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolder">
-    <summary>
-      <para>Exposed by all Shell namespace folder objects, its methods are used to manage folders.</para>
-    </summary>
-    <remarks>
-      <para>Implement this interface for objects that extend the Shell's namespace. For example, implement this interface to create a separate namespace that requires a rooted Windows Explorer or to install a new namespace directly within the hierarchy of the system namespace. You are most familiar with the contents of your namespace, so you are responsible for implementing everything needed to access your data.</para>
-      <para>Use this interface when you need to display or perform an operation on the contents of the Shell's namespace. Objects that support <b>IShellFolder</b> are usually created by other Shell folder objects. To retrieve a folder's <b>IShellFolder</b> interface, you typically start by calling <see cref="SHGetDesktopFolder" />. This function returns a pointer to the desktop's <b>IShellFolder</b> interface. You can then use its methods to retrieve an <b>IShellFolder</b> interface for a particular namespace folder.</para>
-      <para>
-        <b>Note</b>  <b>IShellFolder</b> methods only accept PIDLs that are relative to the folder. Some <b>IShellFolder</b> methods, such as <see cref="IShellFolder.GetAttributesOf" />, only accept single-level PIDLs. In other words, the PIDL must contain only a single <see cref="SHITEMID" /> structure, plus the terminating <b>NULL</b>. When you enumerate the contents of a folder with <see cref="IEnumIDList" />, you will receive PIDLs of this form. Other methods, such as <see cref="IShellFolder.CompareIDs" />, accept multi-level PIDLs. These PIDLs can have multiple <b>SHITEMID</b> structures and identify objects one or more levels below the parent folder. Check the reference to be sure what type of PIDL can be accepted by a particular method.</para>
-      <h3>Examples</h3>
-      <para>An example implementation of <b>IShellFolder</b> can be seen in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940360(v=vs.85)">Explorer Data Provider Sample</a> sample. The use of various <b>IShellFolder</b> methods can be found in several samples, including <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940361(v=vs.85)">File Operations Sample</a>.</para>
-    </remarks>
+    <summary>Exposed by all Shell namespace folder objects, its methods are used to manage folders.</summary>
   </member>
 </doc>

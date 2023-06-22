@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OLEUPDATE">
-    <summary>
-      <para>Indicates whether the linked object updates the cached data for the linked object automatically or only when the container calls either the <see cref="IOleObject.Update" /> or <see cref="IOleLink.Update" /> methods. The constants are used in the <see cref="IOleLink" /> interface.</para>
-    </summary>
-    <seealso cref="IOleLink.GetUpdateOptions" />
-    <seealso cref="IOleLink.SetUpdateOptions" />
+    <summary>Indicates whether the linked object updates the cached data for the linked object automatically or only when the container calls either the <see cref="IOleObject.Update" /> or <see cref="IOleLink.Update" /> methods. The constants are used in the <see cref="IOleLink" /> interface.</summary>
   </member>
   <member name="OLEUPDATE.OLEUPDATE_ALWAYS">
-    <summary>
-      <para>Update the link object whenever possible, this option corresponds to the <b>Automatic update</b> option in the <b>Links</b> dialog box.</para>
-    </summary>
+    <summary>Update the link object whenever possible, this option corresponds to the <b>Automatic update</b> option in the <b>Links</b> dialog box.</summary>
   </member>
   <member name="OLEUPDATE.OLEUPDATE_ONCALL">
-    <summary>
-      <para>Update the link object only when <see cref="IOleObject.Update" /> or <see cref="IOleLink.Update" /> is called, this option corresponds to the <b>Manual update</b> option in the <b>Links</b> dialog box.</para>
-    </summary>
+    <summary>Update the link object only when <see cref="IOleObject.Update" /> or <see cref="IOleLink.Update" /> is called, this option corresponds to the <b>Manual update</b> option in the <b>Links</b> dialog box.</summary>
   </member>
 </doc>

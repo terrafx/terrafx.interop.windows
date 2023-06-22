@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_SPACING">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_SPACING</b> enumeration contains values that specify character spacing (monospace versus proportional).</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_SPACING</b> enumeration contains values that specify character spacing (monospace versus proportional).</summary>
   </member>
   <member name="DWRITE_PANOSE_SPACING.DWRITE_PANOSE_SPACING_ANY">
-    <summary>
-      <para>Any spacing.</para>
-    </summary>
+    <summary>Any spacing.</summary>
   </member>
   <member name="DWRITE_PANOSE_SPACING.DWRITE_PANOSE_SPACING_NO_FIT">
-    <summary>
-      <para>No fit for spacing.</para>
-    </summary>
+    <summary>No fit for spacing.</summary>
   </member>
   <member name="DWRITE_PANOSE_SPACING.DWRITE_PANOSE_SPACING_PROPORTIONAL_SPACED">
-    <summary>
-      <para>Spacing is proportional.</para>
-    </summary>
+    <summary>Spacing is proportional.</summary>
   </member>
   <member name="DWRITE_PANOSE_SPACING.DWRITE_PANOSE_SPACING_MONOSPACED">
-    <summary>
-      <para>Spacing is monospace.</para>
-    </summary>
+    <summary>Spacing is monospace.</summary>
   </member>
 </doc>

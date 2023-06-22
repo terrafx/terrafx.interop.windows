@@ -4,90 +4,78 @@
 <doc>
   <member name="IAMDecoderCaps.GetDecoderCaps">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDecoderCaps</code> method queries the decoder for its capabilities.</para>
     </summary>
     <param name="dwCapIndex">
       <para>Specifies the capability being queried for.</para>
       <list type="table">
         <listheader>
-          <description>Constant
-</description>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Constant</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>AM_QUERY_DECODER_VMR_SUPPORT</description>
           <description>0x00000001</description>
           <description>Video Mixing Renderer Filter 7 (VMR-7) support</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AM_QUERY_DECODER_DXVA_1_SUPPORT</description>
           <description>0x00000002</description>
           <description>DirectX Video Acceleration support</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AM_QUERY_DECODER_DVD_SUPPORT</description>
           <description>0x00000003</description>
           <description>DVD Video support</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AM_QUERY_DECODER_ATSC_SD_SUPPORT</description>
           <description>0x00000004</description>
           <description>Standard-definition (SD) ATSC video support</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AM_QUERY_DECODER_ATSC_HD_SUPPORT</description>
           <description>0x00000005</description>
           <description>High-definition (HD) ATSC video support</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AM_GETDECODERCAP_QUERY_VMR9_SUPPORT</description>
           <description>0x00000006</description>
           <description>Video Mixing Renderer Filter 9 (VMR-9) support</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AM_GETDECODERCAP_QUERY_EVR_SUPPORT</description>
           <description>0x00000007</description>
           <description>Enhanced Video Renderer (EVR) support.</description>
-        </item>
+        </listheader>
       </list>
     </param>
     <param name="lpdwCap">
       <para>Receives one of the following values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>DECODER_CAP_NOTSUPPORTED</description>
           <description>The decoder does not support this capability.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DECODER_CAP_SUPPORTED</description>
           <description>The decoder supports this capability.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The DVD Graph Builder uses this method when it builds a DVD graph. If the decoder does not support the Video Mixing Renderer filter, then the DVD Graph Builder uses the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/overlay-mixer-filter">Overlay Mixer</a> filter instead.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/building-the-dvd-filter-graph">Building the DVD Filter Graph</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMDecoderCaps Interface" />
+    <returns>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMDecoderCaps">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IAMDecoderCaps</code> interface returns capabilities information from an MPEG decoder filter. The capabilities reported through this interface include whether the decoder supports the Video Mixing Renderer filter and whether it supports DirectX Video Acceleration.</para>
       <para>Some DirectShow components, such as the DVD Graph Builder, use this interface to determine the correct filter graph to build. Applications might use this interface to query the decoder's capabilities.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
 </doc>

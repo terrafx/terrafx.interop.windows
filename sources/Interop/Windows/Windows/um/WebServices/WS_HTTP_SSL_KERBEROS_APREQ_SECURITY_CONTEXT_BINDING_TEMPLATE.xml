@@ -3,37 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE">
-    <summary>
-      <para>Security template information to be filled in by application.
-Associated with <see cref="WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE_TYPE" />.</para>
-    </summary>
+    <summary>Security template information to be filled in by application. Associated with <see cref="WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE_TYPE" />.</summary>
   </member>
   <member name="WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE.channelProperties">
-    <summary>
-      <para>Application provided additional channel properties for both bootstrap channel and service channel
-that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided additional channel properties for both bootstrap channel and service channel that cannot be represented in policy.</summary>
   </member>
   <member name="WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE.securityProperties">
-    <summary>
-      <para>Application provided additional security properties for the bootstrap channel that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided additional security properties for the bootstrap channel that cannot be represented in policy.</summary>
   </member>
   <member name="WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE.sslTransportSecurityBinding">
-    <summary>
-      <para>Application provided SSL transport security binding information for both bootstrap channel and
-service channel that cannot be represented
-in policy.</para>
-    </summary>
+    <summary>Application provided SSL transport security binding information for both bootstrap channel and service channel that cannot be represented in policy.</summary>
   </member>
   <member name="WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE.kerberosApreqMessageSecurityBinding">
-    <summary>
-      <para>Application provided username binding information for the bootstrap channel that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided username binding information for the bootstrap channel that cannot be represented in policy.</summary>
   </member>
   <member name="WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE.securityContextSecurityBinding">
-    <summary>
-      <para>Application provided security context message binding information for the service channel that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided security context message binding information for the service channel that cannot be represented in policy.</summary>
   </member>
 </doc>

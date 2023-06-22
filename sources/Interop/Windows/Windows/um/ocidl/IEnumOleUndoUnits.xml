@@ -7,9 +7,7 @@
       <para>Creates a new enumerator that contains the same enumeration state as the current one.</para>
       <para>This method makes it possible to record a particular point in the enumeration sequence and then return to that point at a later time. The caller must release this new enumerator separately from the first enumerator.</para>
     </summary>
-    <param name="ppEnum">
-      <para>A pointer to the <see cref="IEnumOleUndoUnits" /> interface pointer on the newly created enumerator. The caller must release this enumerator separately from the one from which it was cloned.</para>
-    </param>
+    <param name="ppEnum">A pointer to the <see cref="IEnumOleUndoUnits" /> interface pointer on the newly created enumerator. The caller must release this enumerator separately from the one from which it was cloned.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible values include the following.</para>
       <list type="table">
@@ -17,93 +15,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unexpected error has occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified enumerator is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The specified enumerator is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory available for this operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory available for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumOleUndoUnits" />
   </member>
   <member name="IEnumOleUndoUnits.Next">
-    <summary>
-      <para>Retrieves the specified number of items in the enumeration sequence.</para>
-    </summary>
-    <param name="cElt">
-      <para>The number of items to be retrieved. If there are fewer than the requested number of items left in the sequence, this method retrieves the remaining elements.</para>
-    </param>
+    <summary>Retrieves the specified number of items in the enumeration sequence.</summary>
+    <param name="cElt">The number of items to be retrieved. If there are fewer than the requested number of items left in the sequence, this method retrieves the remaining elements.</param>
     <param name="rgElt">
       <para>An array of enumerated items.</para>
       <para>The enumerator is responsible for calling <see cref="AddRef" />, and the caller is responsible for calling <see cref="Release" /> through each pointer enumerated. If <i>cElt</i> is greater than 1, the caller must also pass a non-NULL pointer passed to <i>pcEltFetched</i> to know how many pointers to release.</para>
     </param>
-    <param name="pcEltFetched">
-      <para>The number of items that were retrieved. This parameter is always less than or equal to the number of items requested.</para>
-    </param>
-    <returns>
-      <para>If the method retrieves the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
-    </returns>
-    <remarks>
-      <para>The caller is responsible for calling the Release method for each element in the array once this method returns successfully. If cUndoUnits is greater than one, the caller must also pass a non-NULL pointer to pcFetched to get the number of pointers it has to release.</para>
-      <para>E_NOTIMPL is not allowed as a return value. If an error value is returned, no entries in the rgpcd array are valid on exit and require no release.</para>
-    </remarks>
-    <seealso cref="IEnumOleUndoUnits" />
-    <seealso cref="IOleUndoUnit" />
+    <param name="pcEltFetched">The number of items that were retrieved. This parameter is always less than or equal to the number of items requested.</param>
+    <returns>If the method retrieves the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</returns>
   </member>
   <member name="IEnumOleUndoUnits.Reset">
-    <summary>
-      <para>Resets the enumeration sequence to the beginning.</para>
-    </summary>
-    <returns>
-      <para>This method returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>There is no guarantee that the same set of objects will be enumerated after the reset operation has completed. A static collection is reset to the beginning, but it can be too expensive for some collections, such as files in a directory, to guarantee this condition.</para>
-    </remarks>
-    <seealso cref="IEnumOleUndoUnits" />
+    <summary>Resets the enumeration sequence to the beginning.</summary>
+    <returns>This method returns S_OK on success.</returns>
   </member>
   <member name="IEnumOleUndoUnits.Skip">
-    <summary>
-      <para>Skips over the specified number of items in the enumeration sequence.</para>
-    </summary>
-    <param name="cElt">
-      <para>The number of items to be skipped.</para>
-    </param>
-    <returns>
-      <para>If the method skips the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
-    </returns>
-    <seealso cref="IEnumOleUndoUnits" />
+    <summary>Skips over the specified number of items in the enumeration sequence.</summary>
+    <param name="cElt">The number of items to be skipped.</param>
+    <returns>If the method skips the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</returns>
   </member>
   <member name="IEnumOleUndoUnits">
-    <summary>
-      <para>Enumerates the undo units on the undo or redo stack.</para>
-    </summary>
-    <seealso cref="IOleUndoManager" />
-    <seealso cref="IOleUndoUnit" />
+    <summary>Enumerates the undo units on the undo or redo stack.</summary>
   </member>
 </doc>

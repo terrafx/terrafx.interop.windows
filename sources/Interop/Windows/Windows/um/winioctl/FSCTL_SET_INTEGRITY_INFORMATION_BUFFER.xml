@@ -3,19 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER">
-    <summary>
-      <para>Input buffer passed with the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_integrity_information">FSCTL_SET_INTEGRITY_INFORMATION</a> control
-code.</para>
-    </summary>
-    <remarks>
-      <para>If <b>FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF</b> is specified and the file is opened
-with sharing permissions such that subsequent opens can succeed, it's possible for corrupt data to be read by an
-application that did not specify <b>FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF</b>.</para>
-    </remarks>
-    <seealso cref="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_integrity_information">FSCTL_SET_INTEGRITY_INFORMATION</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+    <summary>Input buffer passed with the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_integrity_information">FSCTL_SET_INTEGRITY_INFORMATION</a> control code.</summary>
   </member>
   <member name="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER.ChecksumAlgorithm">
     <summary>
@@ -25,72 +13,66 @@ application that did not specify <b>FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OF
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CHECKSUM_TYPE_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is not configured to use integrity.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is not configured to use integrity.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CHECKSUM_TYPE_CRC64</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory uses a CRC64 checksum to provide integrity.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>3–0xfffe</para>
-          </description>
-          <description>
-            <para>Reserved for future use. Must not be used.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory uses a CRC64 checksum to provide integrity.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>CHECKSUM_TYPE_UNCHANGED</b>
-                </description>
-              </item>
-              <item>
-                <description>0xffff</description>
-              </item>
+              <listheader>
+                <term>3–0xfffe</term>
+              </listheader>
             </list>
           </description>
+          <description>Reserved for future use. Must not be used.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The checksum algorithm is to remain the same.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CHECKSUM_TYPE_UNCHANGED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xffff</term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>The checksum algorithm is to remain the same.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER.Reserved">
-    <summary>
-      <para>Must be 0</para>
-    </summary>
+    <summary>Must be 0</summary>
   </member>
   <member name="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER.Flags">
     <summary>
@@ -100,26 +82,21 @@ application that did not specify <b>FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OF
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set, the checksum enforcement is disabled and reads will succeed even if the checksums do not match.
-This flag is valid only if the file has an integrity algorithm  set. If there is no algorithm set or the
-<b>CheckSum</b> member is set to <b>CHECKSUM_TYPE_NONE</b>, then the
-operation fails with <b>ERROR_INVALID_PARAMETER</b>.</para>
-          </description>
-        </item>
+          <description>If set, the checksum enforcement is disabled and reads will succeed even if the checksums do not match. This flag is valid only if the file has an integrity algorithm set. If there is no algorithm set or the <b>CheckSum</b> member is set to <b>CHECKSUM_TYPE_NONE</b>, then the operation fails with <b>ERROR_INVALID_PARAMETER</b>.</description>
+        </listheader>
       </list>
     </summary>
   </member>

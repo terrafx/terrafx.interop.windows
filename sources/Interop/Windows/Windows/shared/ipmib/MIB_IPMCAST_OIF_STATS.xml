@@ -3,108 +3,57 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_IPMCAST_OIF_STATS">
-    <summary>
-      <para>The
-<b>MIB_IPMCAST_OIF_STATS</b> structure stores the statistics that are associated with an outgoing multicast interface.</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Server 2008and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="MIB_IPMCAST_OIF" />
+    <summary>The<b>MIB_IPMCAST_OIF_STATS</b> structure stores the statistics that are associated with an outgoing multicast interface.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.dwOutIfIndex">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies the outgoing interface to which these statistics are related.</para>
-    </summary>
+    <summary>Specifies the outgoing interface to which these statistics are related.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.dwNextHopAddr">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Specifies the address of the next hop that corresponds to <b>dwOutIfIndex</b>. The <b>dwOutIfIndex</b> and <b>dwIfNextHopIPAddr</b> members uniquely identify a next hop on point-to-multipoint interfaces, where one interface connects to multiple networks. Examples of point-to-multipoint interfaces include non-broadcast multiple-access (NBMA) interfaces, and the internal interface on which all dial-up clients connect.</para>
       <para>For Ethernet and other broadcast interfaces, specify zero. Also specify zero for point-to-point interfaces, which are identified by only <b>dwOutIfIndex</b>.</para>
     </summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.dwDialContext">
-    <summary>
-      <para>TBD</para>
-    </summary>
+    <summary>TBD</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.ulTtlTooLow">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Specifies the number of packets on this outgoing interface that were discarded because the packet's time-to-live (TTL) value was too low.</para>
-    </summary>
+    <summary>Specifies the number of packets on this outgoing interface that were discarded because the packet's time-to-live (TTL) value was too low.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.ulFragNeeded">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Specifies the number of packets that required fragmentation when they were forwarded on this interface.</para>
-    </summary>
+    <summary>Specifies the number of packets that required fragmentation when they were forwarded on this interface.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.ulOutPackets">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Specifies the number of packets that were forwarded out this interface.</para>
-    </summary>
+    <summary>Specifies the number of packets that were forwarded out this interface.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.ulOutDiscards">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Specifies the number of packets that were discarded on this interface.</para>
-    </summary>
+    <summary>Specifies the number of packets that were discarded on this interface.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS">
-    <summary>
-      <para>The
-<b>MIB_IPMCAST_OIF_STATS</b> structure stores the statistics that are associated with an outgoing multicast interface.</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Server 2008and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="MIB_IPMCAST_OIF" />
+    <summary>The<b>MIB_IPMCAST_OIF_STATS</b> structure stores the statistics that are associated with an outgoing multicast interface.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.dwOutIfIndex">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies the outgoing interface to which these statistics are related.</para>
-    </summary>
+    <summary>Specifies the outgoing interface to which these statistics are related.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.dwNextHopAddr">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Specifies the address of the next hop that corresponds to <b>dwOutIfIndex</b>. The <b>dwOutIfIndex</b> and <b>dwIfNextHopIPAddr</b> members uniquely identify a next hop on point-to-multipoint interfaces, where one interface connects to multiple networks. Examples of point-to-multipoint interfaces include non-broadcast multiple-access (NBMA) interfaces, and the internal interface on which all dial-up clients connect.</para>
       <para>For Ethernet and other broadcast interfaces, specify zero. Also specify zero for point-to-point interfaces, which are identified by only <b>dwOutIfIndex</b>.</para>
     </summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.pvDialContext">
-    <summary>
-      <para>Type: <b>PVOID</b></para>
-      <para>Reserved. This member should be <b>NULL</b>.</para>
-    </summary>
+    <summary>Reserved. This member should be <b>NULL</b>.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.ulTtlTooLow">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Specifies the number of packets on this outgoing interface that were discarded because the packet's time-to-live (TTL) value was too low.</para>
-    </summary>
+    <summary>Specifies the number of packets on this outgoing interface that were discarded because the packet's time-to-live (TTL) value was too low.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.ulFragNeeded">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Specifies the number of packets that required fragmentation when they were forwarded on this interface.</para>
-    </summary>
+    <summary>Specifies the number of packets that required fragmentation when they were forwarded on this interface.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.ulOutPackets">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Specifies the number of packets that were forwarded out this interface.</para>
-    </summary>
+    <summary>Specifies the number of packets that were forwarded out this interface.</summary>
   </member>
   <member name="MIB_IPMCAST_OIF_STATS.ulOutDiscards">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Specifies the number of packets that were discarded on this interface.</para>
-    </summary>
+    <summary>Specifies the number of packets that were discarded on this interface.</summary>
   </member>
 </doc>

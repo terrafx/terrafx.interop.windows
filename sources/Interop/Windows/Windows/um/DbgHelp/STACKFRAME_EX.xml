@@ -3,14 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STACKFRAME_EX">
-    <summary>
-      <para>Represents an extended stack frame.</para>
-    </summary>
+    <summary>Represents an extended stack frame.</summary>
   </member>
   <member name="STACKFRAME_EX.AddrPC">
     <summary>
-      <para>An <see cref="ADDRESS64" /> structure that specifies the program
-counter.</para>
+      <para>An <see cref="ADDRESS64" /> structure that specifies the program counter.</para>
       <para>
         <b>x86:  </b>The program counter is EIP.</para>
       <para>
@@ -20,15 +17,11 @@ counter.</para>
     </summary>
   </member>
   <member name="STACKFRAME_EX.AddrReturn">
-    <summary>
-      <para>An <see cref="ADDRESS64" /> structure that specifies
-the return address.</para>
-    </summary>
+    <summary>An <see cref="ADDRESS64" /> structure that specifies the return address.</summary>
   </member>
   <member name="STACKFRAME_EX.AddrFrame">
     <summary>
-      <para>An <see cref="ADDRESS64" /> structure that specifies
-the frame pointer.</para>
+      <para>An <see cref="ADDRESS64" /> structure that specifies the frame pointer.</para>
       <para>
         <b>x86:  </b>The frame pointer is EBP.</para>
       <para>
@@ -39,8 +32,7 @@ the frame pointer.</para>
   </member>
   <member name="STACKFRAME_EX.AddrStack">
     <summary>
-      <para>An <see cref="ADDRESS64" /> structure that specifies
-the stack pointer.</para>
+      <para>An <see cref="ADDRESS64" /> structure that specifies the stack pointer.</para>
       <para>
         <b>x86:  </b>The stack pointer is ESP.</para>
       <para>
@@ -51,48 +43,28 @@ the stack pointer.</para>
   </member>
   <member name="STACKFRAME_EX.AddrBStore">
     <summary>
-      <para>
-        <b>Intel Itanium:  </b>An <see cref="ADDRESS64" /> structure that specifies
-the backing store (RsBSP).</para>
-    </summary>
+      <b>Intel Itanium:  </b>An <see cref="ADDRESS64" /> structure that specifies the backing store (RsBSP).</summary>
   </member>
   <member name="STACKFRAME_EX.FuncTableEntry">
-    <summary>
-      <para>On x86 computers, this member is an <see cref="FPO_DATA" /></para>
-      <para>structure. If there is no function table entry, this member is <b>NULL</b>.</para>
-    </summary>
+    <summary>On x86 computers, this member is an <see cref="FPO_DATA" />structure. If there is no function table entry, this member is <b>NULL</b>.</summary>
   </member>
   <member name="STACKFRAME_EX.Params">
-    <summary>
-      <para>The possible arguments to the function.</para>
-    </summary>
+    <summary>The possible arguments to the function.</summary>
   </member>
   <member name="STACKFRAME_EX.Far">
-    <summary>
-      <para>This member is <b>TRUE</b> if this is a WOW far call.</para>
-    </summary>
+    <summary>This member is <b>TRUE</b> if this is a WOW far call.</summary>
   </member>
   <member name="STACKFRAME_EX.Virtual">
-    <summary>
-      <para>This member is <b>TRUE</b> if this is a virtual frame.</para>
-    </summary>
+    <summary>This member is <b>TRUE</b> if this is a virtual frame.</summary>
   </member>
   <member name="STACKFRAME_EX.Reserved">
-    <summary>
-      <para>This member is used internally by the <see cref="StackWalkEx" /></para>
-      <para>function.</para>
-    </summary>
+    <summary>This member is used internally by the <see cref="StackWalkEx" />function.</summary>
   </member>
   <member name="STACKFRAME_EX.KdHelp">
-    <summary>
-      <para>A <see cref="KDHELP64" /> structure that specifies helper data for
-walking kernel callback frames.</para>
-    </summary>
+    <summary>A <see cref="KDHELP64" /> structure that specifies helper data for walking kernel callback frames.</summary>
   </member>
   <member name="STACKFRAME_EX.StackFrameSize">
-    <summary>
-      <para>Set to <code>sizeof(STACKFRAME_EX)</code>.</para>
-    </summary>
+    <summary>Set to <code>sizeof(STACKFRAME_EX)</code>.</summary>
   </member>
   <member name="STACKFRAME_EX.InlineFrameContext">
     <summary>

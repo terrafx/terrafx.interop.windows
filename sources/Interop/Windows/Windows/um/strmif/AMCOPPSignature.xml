@@ -4,14 +4,11 @@
 <doc>
   <member name="AMCOPPSignature">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>AMCOPPSignature</b> structure contains the signature needed for the <see cref="IAMCertifiedOutputProtection.SessionSequenceStart" /> method.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-certified-output-protection-protocol--copp">Using Certified Output Protection Protocol (COPP)</seealso>
   </member>
   <member name="AMCOPPSignature.Signature">
-    <summary>
-      <para>Buffer that contains the signature. For more information, see the Remarks section for the <b>SessionSequenceStart</b> method.</para>
-    </summary>
+    <summary>Buffer that contains the signature. For more information, see the Remarks section for the <b>SessionSequenceStart</b> method.</summary>
   </member>
 </doc>

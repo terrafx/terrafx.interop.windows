@@ -3,31 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY">
-    <summary>
-      <para>Used to impose new behavior on handle references that are not valid.</para>
-    </summary>
-    <remarks>
-      <para>As a general rule, strict handle checking cannot be turned off once it is turned on. Therefore, when calling the <see cref="SetProcessMitigationPolicy" /> function with this policy, the values of the <b>RaiseExceptionOnInvalidHandleReference</b> and <b>HandleExceptionsPermanentlyEnabled</b> substructure members must be the same. It is not possible to enable invalid handle exceptions only temporarily.</para>
-      <para>The exception to the general rule about strict handle checking always being a permanent state is that debugging tools such as Application Verifier can cause the operating system to enable invalid handle exceptions temporarily. Under those cases, it is possible for the <see cref="GetProcessMitigationPolicy" /> function to return with <b>RaiseExceptionOnInvalidHandleReference</b> set to 1, but <b>HandleExceptionsPermanentlyEnabled</b> set to 0.</para>
-    </remarks>
+    <summary>Used to impose new behavior on handle references that are not valid.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY.DUMMYUNIONNAME"></member>
   <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY.DUMMYUNIONNAME.Flags">
-    <summary>
-      <para>This member is reserved for system use.</para>
-    </summary>
+    <summary>This member is reserved for system use.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
-  <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.RaiseExceptionOnInvalidHandleReference">
-    <summary></summary>
-  </member>
-  <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.HandleExceptionsPermanentlyEnabled">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
+  <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.RaiseExceptionOnInvalidHandleReference"></member>
+  <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.HandleExceptionsPermanentlyEnabled"></member>
   <member name="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
     <summary>
       <h4>- HandleExceptionsPermanentlyEnabled : 1</h4>

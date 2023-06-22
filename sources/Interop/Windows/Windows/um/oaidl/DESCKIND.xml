@@ -3,38 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DESCKIND">
-    <summary>
-      <para>Identifies the type description being bound to.</para>
-    </summary>
+    <summary>Identifies the type description being bound to.</summary>
   </member>
   <member name="DESCKIND.DESCKIND_NONE">
-    <summary>
-      <para>No match was found.</para>
-    </summary>
+    <summary>No match was found.</summary>
   </member>
   <member name="DESCKIND.DESCKIND_FUNCDESC">
-    <summary>
-      <para>A <see cref="FUNCDESC" /> was returned.</para>
-    </summary>
+    <summary>A <see cref="FUNCDESC" /> was returned.</summary>
   </member>
   <member name="DESCKIND.DESCKIND_VARDESC">
-    <summary>
-      <para>A <see cref="VARDESC" /> was returned.</para>
-    </summary>
+    <summary>A <see cref="VARDESC" /> was returned.</summary>
   </member>
   <member name="DESCKIND.DESCKIND_TYPECOMP">
-    <summary>
-      <para>A TYPECOMP was returned.</para>
-    </summary>
+    <summary>A TYPECOMP was returned.</summary>
   </member>
   <member name="DESCKIND.DESCKIND_IMPLICITAPPOBJ">
-    <summary>
-      <para>An IMPLICITAPPOBJ was returned.</para>
-    </summary>
+    <summary>An IMPLICITAPPOBJ was returned.</summary>
   </member>
   <member name="DESCKIND.DESCKIND_MAX">
-    <summary>
-      <para>The end of the enum.</para>
-    </summary>
+    <summary>The end of the enum.</summary>
   </member>
 </doc>

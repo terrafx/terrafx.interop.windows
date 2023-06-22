@@ -3,24 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_HUETORGB_INPUT_COLOR_SPACE">
-    <summary>
-      <para>Values for the <see cref="D2D1_HUETORGB_PROP_INPUT_COLOR_SPACE" /> property of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/hue-to-rgb-effect">Hue to RGB effect</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/built-in-effects">Built-in Effects</seealso>
-    <seealso cref="CreateEffect" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/hue-to-rgb-effect">Hue to RGB effect</seealso>
+    <summary>Values for the <see cref="D2D1_HUETORGB_PROP_INPUT_COLOR_SPACE" /> property of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/hue-to-rgb-effect">Hue to RGB effect</a>.</summary>
   </member>
   <member name="D2D1_HUETORGB_INPUT_COLOR_SPACE.D2D1_HUETORGB_INPUT_COLOR_SPACE_HUE_SATURATION_VALUE">
-    <summary>
-      <para>The effect converts from Hue Saturation Value (HSV) to RGB.</para>
-    </summary>
+    <summary>The effect converts from Hue Saturation Value (HSV) to RGB.</summary>
   </member>
   <member name="D2D1_HUETORGB_INPUT_COLOR_SPACE.D2D1_HUETORGB_INPUT_COLOR_SPACE_HUE_SATURATION_LIGHTNESS">
-    <summary>
-      <para>The effect converts from Hue Saturation Lightness (HSL) to RGB.</para>
-    </summary>
+    <summary>The effect converts from Hue Saturation Lightness (HSL) to RGB.</summary>
   </member>
-  <member name="D2D1_HUETORGB_INPUT_COLOR_SPACE.D2D1_HUETORGB_INPUT_COLOR_SPACE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_HUETORGB_INPUT_COLOR_SPACE.D2D1_HUETORGB_INPUT_COLOR_SPACE_FORCE_DWORD"></member>
 </doc>

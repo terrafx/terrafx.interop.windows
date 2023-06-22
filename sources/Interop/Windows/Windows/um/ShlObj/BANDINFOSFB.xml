@@ -3,14 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BANDINFOSFB">
-    <summary>
-      <para>Contains information about a folder band. This structure is used with the <see cref="IShellFolderBand.GetBandInfoSFB" /> and <see cref="IShellFolderBand.SetBandInfoSFB" /> methods.</para>
-    </summary>
+    <summary>Contains information about a folder band. This structure is used with the <see cref="IShellFolderBand.GetBandInfoSFB" /> and <see cref="IShellFolderBand.SetBandInfoSFB" /> methods.</summary>
   </member>
   <member name="BANDINFOSFB.dwMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A mask that indicates which members of this <b>BANDINFOSFB</b> structure are valid.  One or more of the following values.</para>
+      <para>A mask that indicates which members of this <b>BANDINFOSFB</b> structure are valid. One or more of the following values.</para>
       <h4>ISFB_MASK_STATE (0x00000001)</h4>
       <para>The <b>dwStateMask</b> member is valid.</para>
       <h4>ISFB_MASK_BKCOLOR (0x00000002)</h4>
@@ -27,7 +24,6 @@
   </member>
   <member name="BANDINFOSFB.dwStateMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>A mask that indicates which of the <b>dwState</b> bits are valid to be set or queried. One or more of the following values.</para>
       <h4>ISFB_STATE_DEFAULT (0x00000000)</h4>
       <para>None of the <b>dwState</b> bits.</para>
@@ -50,34 +46,21 @@
     </summary>
   </member>
   <member name="BANDINFOSFB.dwState">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>State bits. One of the values listed for <b>dwStateMask</b>.</para>
-    </summary>
+    <summary>State bits. One of the values listed for <b>dwStateMask</b>.</summary>
   </member>
   <member name="BANDINFOSFB.crBkgnd">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> that contains the background color of the band.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> that contains the background color of the band.</summary>
   </member>
   <member name="BANDINFOSFB.crBtnLt">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> that contains the light button color.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> that contains the light button color.</summary>
   </member>
   <member name="BANDINFOSFB.crBtnDk">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> that contains the dark button color.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> that contains the dark button color.</summary>
   </member>
   <member name="BANDINFOSFB.wViewMode">
     <summary>
-      <para>Type: <b>WORD</b></para>
       <para>View mode of the band. One of the following values.</para>
       <h4>ISFBVIEWMODE_SMALLICONS (0x00000001)</h4>
       <para>Use small icons on the folder band.</para>
@@ -89,21 +72,11 @@
       </para>
     </summary>
   </member>
-  <member name="BANDINFOSFB.wAlign">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-    </summary>
-  </member>
+  <member name="BANDINFOSFB.wAlign"></member>
   <member name="BANDINFOSFB.psf">
-    <summary>
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>A pointer to an <see cref="IShellFolder" /> object.</para>
-    </summary>
+    <summary>A pointer to an <see cref="IShellFolder" /> object.</summary>
   </member>
   <member name="BANDINFOSFB.pidl">
-    <summary>
-      <para>Type: <b>PIDLIST_ABSOLUTE</b></para>
-      <para>A PIDL.</para>
-    </summary>
+    <summary>A PIDL.</summary>
   </member>
 </doc>

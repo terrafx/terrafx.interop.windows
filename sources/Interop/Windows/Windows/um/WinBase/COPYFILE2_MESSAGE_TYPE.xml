@@ -3,56 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COPYFILE2_MESSAGE_TYPE">
-    <summary>
-      <para>Indicates the type of message passed in the
-<see cref="COPYFILE2_MESSAGE" /> structure to the
-<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> callback
-function.</para>
-    </summary>
-    <remarks>
-      <para>To compile an application that uses this enumeration, define the <b>_WIN32_WINNT</b></para>
-      <para>macro as 0x0601 or later. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-enumerations">File Management Enumerations</seealso>
+    <summary>Indicates the type of message passed in the<see cref="COPYFILE2_MESSAGE" /> structure to the<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> callback function.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE_TYPE.COPYFILE2_CALLBACK_NONE">
-    <summary>
-      <para>Not a valid value.</para>
-    </summary>
+    <summary>Not a valid value.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE_TYPE.COPYFILE2_CALLBACK_CHUNK_STARTED">
-    <summary>
-      <para>Indicates a single chunk of a stream has started to be copied.</para>
-    </summary>
+    <summary>Indicates a single chunk of a stream has started to be copied.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE_TYPE.COPYFILE2_CALLBACK_CHUNK_FINISHED">
-    <summary>
-      <para>Indicates the copy of a single chunk of a stream has completed.</para>
-    </summary>
+    <summary>Indicates the copy of a single chunk of a stream has completed.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE_TYPE.COPYFILE2_CALLBACK_STREAM_STARTED">
-    <summary>
-      <para>Indicates both source and destination handles for a stream have been opened and the  copy of the stream is
-about to be started.</para>
-    </summary>
+    <summary>Indicates both source and destination handles for a stream have been opened and the copy of the stream is about to be started.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE_TYPE.COPYFILE2_CALLBACK_STREAM_FINISHED">
-    <summary>
-      <para>Indicates the copy operation for a stream have started to be completed.</para>
-    </summary>
+    <summary>Indicates the copy operation for a stream have started to be completed.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE_TYPE.COPYFILE2_CALLBACK_POLL_CONTINUE">
-    <summary>
-      <para>May be sent periodically.</para>
-    </summary>
+    <summary>May be sent periodically.</summary>
   </member>
-  <member name="COPYFILE2_MESSAGE_TYPE.COPYFILE2_CALLBACK_ERROR">
-    <summary></summary>
-  </member>
+  <member name="COPYFILE2_MESSAGE_TYPE.COPYFILE2_CALLBACK_ERROR"></member>
   <member name="COPYFILE2_MESSAGE_TYPE.COPYFILE2_CALLBACK_MAX">
-    <summary>
-      <para>An error was encountered during the copy operation.</para>
-    </summary>
+    <summary>An error was encountered during the copy operation.</summary>
   </member>
 </doc>

@@ -3,25 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FIND_BY_SID_OUTPUT">
-    <summary>
-      <para>Represents a file name.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_find_files_by_sid">FSCTL_FIND_FILES_BY_SID</seealso>
+    <summary>The FIND_BY_SID_OUTPUT structure represents the fully qualified path name of a file.</summary>
   </member>
   <member name="FIND_BY_SID_OUTPUT.NextEntryOffset">
-    <summary></summary>
+    <summary>Number of bytes that must be skipped to get to the next record. A value of zero indicates that this is the last record.</summary>
   </member>
   <member name="FIND_BY_SID_OUTPUT.FileIndex">
-    <summary></summary>
+    <summary>Index of the file.</summary>
   </member>
   <member name="FIND_BY_SID_OUTPUT.FileNameLength">
-    <summary>
-      <para>The size of the file name, in bytes. This size does not include the NULL character.</para>
-    </summary>
+    <summary>The size of the file name, in bytes. This size does not include the NULL character.</summary>
   </member>
   <member name="FIND_BY_SID_OUTPUT.FileName">
-    <summary>
-      <para>A pointer to a null-terminated string that specifies the file name.</para>
-    </summary>
+    <summary>A null-terminated string that specifies the file name.</summary>
   </member>
 </doc>

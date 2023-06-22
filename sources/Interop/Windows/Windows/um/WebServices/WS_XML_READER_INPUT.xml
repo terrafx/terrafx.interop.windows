@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_READER_INPUT">
-    <summary>
-      <para>Specifies where the reader should obtain the bytes that comprise the xml document.</para>
-    </summary>
+    <summary>Specifies where the reader should obtain the bytes that comprise the xml document.</summary>
   </member>
   <member name="WS_XML_READER_INPUT.inputType">
-    <summary>
-      <para>A <see cref="WS_XML_READER_INPUT_TYPE" /> enumeration that
-indicates the type of input to which this structure refers.</para>
-    </summary>
+    <summary>A <see cref="WS_XML_READER_INPUT_TYPE" /> enumeration that indicates the type of input to which this structure refers.</summary>
   </member>
 </doc>

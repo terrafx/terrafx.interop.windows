@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWM_SYSTEMBACKDROP_TYPE">
+    <summary>Flags for specifying the system-drawn backdrop material of a window, including behind the non-client area.</summary>
+  </member>
+  <member name="DWM_SYSTEMBACKDROP_TYPE.DWMSBT_AUTO">
+    <summary>The default. Let the Desktop Window Manager (DWM) automatically decide the system-drawn backdrop material for this window.</summary>
+  </member>
+  <member name="DWM_SYSTEMBACKDROP_TYPE.DWMSBT_NONE">
+    <summary>Don't draw any system backdrop.</summary>
+  </member>
+  <member name="DWM_SYSTEMBACKDROP_TYPE.DWMSBT_MAINWINDOW">
+    <summary>Draw the backdrop material effect corresponding to a long-lived window.</summary>
+  </member>
+  <member name="DWM_SYSTEMBACKDROP_TYPE.DWMSBT_TRANSIENTWINDOW">
+    <summary>Draw the backdrop material effect corresponding to a transient window.</summary>
+  </member>
+  <member name="DWM_SYSTEMBACKDROP_TYPE.DWMSBT_TABBEDWINDOW">
+    <summary>Draw the backdrop material effect corresponding to a window with a tabbed title bar.</summary>
+  </member>
+</doc>

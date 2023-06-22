@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMMOUSE">
-    <summary>
-      <para>Contains information used with mouse notification messages.</para>
-    </summary>
+    <summary>Contains information used with mouse notification messages.</summary>
   </member>
   <member name="NMMOUSE.hdr">
-    <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>An <see cref="NMHDR" /> structure that contains additional information about this notification.</para>
-    </summary>
+    <summary>An <see cref="NMHDR" /> structure that contains additional information about this notification.</summary>
   </member>
   <member name="NMMOUSE.dwItemSpec">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD_PTR</a></b></para>
-      <para>A control-specific item identifier.</para>
-    </summary>
+    <summary>A control-specific item identifier.</summary>
   </member>
   <member name="NMMOUSE.dwItemData">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD_PTR</a></b></para>
-      <para>A control-specific item data.</para>
-    </summary>
+    <summary>A control-specific item data.</summary>
   </member>
   <member name="NMMOUSE.pt">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that contains the client coordinates of the mouse when the click occurred.</para>
-    </summary>
+    <summary>A <see cref="POINT" /> structure that contains the client coordinates of the mouse when the click occurred.</summary>
   </member>
   <member name="NMMOUSE.dwHitInfo">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
-      <para>Carries information about where on the item or control the cursor is pointing.</para>
-    </summary>
+    <summary>Carries information about where on the item or control the cursor is pointing.</summary>
   </member>
 </doc>

@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE">
-    <summary>
-      <para>Specifies motion estimation precision modes for video encoding.</para>
-    </summary>
+    <summary>Specifies motion estimation precision modes for video encoding.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE.D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE_MAXIMUM">
-    <summary>
-      <para>No limit in the precision for motion estimation vectors. This mode allows the maximum precision supported by the driver.</para>
-    </summary>
+    <summary>No limit in the precision for motion estimation vectors. This mode allows the maximum precision supported by the driver.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE.D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE_FULL_PIXEL">
-    <summary>
-      <para>The precision for motion estimation vectors has to be at most full pixel.</para>
-    </summary>
+    <summary>The precision for motion estimation vectors has to be at most full pixel.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE.D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE_HALF_PIXEL">
-    <summary>
-      <para>The precision for motion estimation vectors has to be at most half pixel.</para>
-    </summary>
+    <summary>The precision for motion estimation vectors has to be at most half pixel.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE.D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE_QUARTER_PIXEL">
-    <summary>
-      <para>The precision for motion estimation vectors has to be at most quarter pixel.</para>
-    </summary>
+    <summary>The precision for motion estimation vectors has to be at most quarter pixel.</summary>
   </member>
 </doc>

@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFAsyncCallback.GetParameters">
-    <summary>
-      <para>Provides configuration information to the dispatching thread for a callback.</para>
-    </summary>
+    <summary>Provides configuration information to the dispatching thread for a callback.</summary>
     <param name="pdwFlags">
       <para>Receives a flag indicating the behavior of the callback object's <see cref="IMFAsyncCallback.Invoke" /> method. The following values are defined. The default value is zero.</para>
       <list type="table">
@@ -13,80 +11,74 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>Zero</b>
-          </description>
-          <description>
-            <para>The callback does not take a long time to complete, but has no specific restrictions on what system calls it makes. The callback generally takes less than 30 milliseconds to complete.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>
-              <b>MFASYNC_FAST_IO_PROCESSING_CALLBACK</b>
-            </b>
-          </description>
-          <description>
-            <para>The callback does very minimal processing. It takes less than 1 millisecond to complete.</para>
-            <para>The callback must be invoked from one of the following work queues:</para>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>MFASYNC_CALLBACK_QUEUE_IO</b>
-                </description>
-              </item>
-              <item>
-                <description>
-                  <b>MFASYNC_CALLBACK_QUEUE_TIMER</b>
-                </description>
-              </item>
+              <listheader>
+                <term>
+                  <b>Zero</b>
+                </term>
+              </listheader>
             </list>
           </description>
-        </item>
-        <item>
+          <description>The callback does not take a long time to complete, but has no specific restrictions on what system calls it makes. The callback generally takes less than 30 milliseconds to complete.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>
-              <b>MFASYNC_SIGNAL_CALLBACK</b>
-            </b>
-          </description>
-          <description>
-            <para>Implies <b>MFASYNC_FAST_IO_PROCESSING_CALLBACK</b>, with the additional restriction that the callback does no processing (less than 50 microseconds), and the only system call it makes is <b>SetEvent</b>.</para>
-            <para>The callback must be invoked from one of the following work queues:</para>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>MFASYNC_CALLBACK_QUEUE_IO</b>
-                </description>
-              </item>
-              <item>
-                <description>
-                  <b>MFASYNC_CALLBACK_QUEUE_TIMER</b>
-                </description>
-              </item>
+              <listheader>
+                <term>
+                  <b>
+                    <b>MFASYNC_FAST_IO_PROCESSING_CALLBACK</b>
+                  </b>
+                </term>
+              </listheader>
             </list>
           </description>
-        </item>
-        <item>
+          <description>The callback does very minimal processing. It takes less than 1 millisecond to complete.<para>The callback must be invoked from one of the following work queues:</para><list type="bullet"><item><description><b>MFASYNC_CALLBACK_QUEUE_IO</b></description></item><item><description><b>MFASYNC_CALLBACK_QUEUE_TIMER</b></description></item></list></description>
+        </listheader>
+        <listheader>
           <description>
-            <b>
-              <b>MFASYNC_BLOCKING_CALLBACK</b>
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MFASYNC_SIGNAL_CALLBACK</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Implies <b>MFASYNC_FAST_IO_PROCESSING_CALLBACK</b>, with the additional restriction that the callback does no processing (less than 50 microseconds), and the only system call it makes is <b>SetEvent</b>.<para>The callback must be invoked from one of the following work queues:</para><list type="bullet"><item><description><b>MFASYNC_CALLBACK_QUEUE_IO</b></description></item><item><description><b>MFASYNC_CALLBACK_QUEUE_TIMER</b></description></item></list></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Blocking callback.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MFASYNC_BLOCKING_CALLBACK</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Blocking callback.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>
-              <b>MFASYNC_REPLY_CALLBACK</b>
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MFASYNC_REPLY_CALLBACK</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Reply callback.</para>
-          </description>
-        </item>
+          <description>Reply callback.</description>
+        </listheader>
       </list>
     </param>
     <param name="pdwQueue">
@@ -101,57 +93,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>S_OK</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>S_OK</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>E_NOTIMPL</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>E_NOTIMPL</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>Not implemented. Assume the default behavior.</para>
-          </description>
-        </item>
+          <description>Not implemented. Assume the default behavior.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <b>GetParameters</b> method returns information about the callback so that the dispatching thread can optimize the process that it uses to invoke the callback.</para>
-      <para>If the method returns a value other than zero in the <i>pdwFlags</i> parameter, your <see cref="Invoke" /> method must meet the requirements described here. Otherwise, the callback might delay the pipeline.</para>
-      <para>If you want default values for both parameters, return <b>E_NOTIMPL</b>. The default values are given in the parameter descriptions on this page.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-callback-methods">Asynchronous Callback Methods</seealso>
-    <seealso cref="IMFAsyncCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/work-queues">Work Queues</seealso>
   </member>
   <member name="IMFAsyncCallback.Invoke">
-    <summary>
-      <para>Called when an asynchronous operation is completed.</para>
-    </summary>
-    <param name="pAsyncResult">
-      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass this pointer to the asynchronous <b>End...</b> method to complete the asynchronous call.</para>
-    </param>
+    <summary>Called when an asynchronous operation is completed.</summary>
+    <param name="pAsyncResult">Pointer to the <see cref="IMFAsyncResult" /> interface. Pass this pointer to the asynchronous <b>End...</b> method to complete the asynchronous call.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -159,54 +134,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Within your implementation of <b>Invoke</b>, call the corresponding <b>End...</b> method.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-callback-methods">Asynchronous Callback Methods</seealso>
-    <seealso cref="IMFAsyncCallback" />
-    <seealso cref="MFInvokeCallback" />
   </member>
   <member name="IMFAsyncCallback">
-    <summary>
-      <para>Callback interface to notify the application when an asynchronous method completes.</para>
-    </summary>
-    <remarks>
-      <para>For more information about asynchronous methods in Microsoft Media Foundation, see <a href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-callback-methods">Asynchronous Callback Methods</a>.</para>
-      <para>This interface is also used to perform  a work item in a Media Foundation work-queue. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/work-queues">Work Queues</a>.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-callback-methods">Asynchronous Callback Methods</seealso>
-    <seealso cref="MFInvokeCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/work-queues">Work Queues</seealso>
+    <summary>Callback interface to notify the application when an asynchronous method completes.</summary>
   </member>
 </doc>

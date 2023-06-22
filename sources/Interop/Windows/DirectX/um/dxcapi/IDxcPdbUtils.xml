@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcPdbUtils.CompileForFullPDB"></member>
+  <member name="IDxcPdbUtils.GetArg"></member>
+  <member name="IDxcPdbUtils.GetArgCount"></member>
+  <member name="IDxcPdbUtils.GetArgPair"></member>
+  <member name="IDxcPdbUtils.GetArgPairCount"></member>
+  <member name="IDxcPdbUtils.GetDefine"></member>
+  <member name="IDxcPdbUtils.GetDefineCount"></member>
+  <member name="IDxcPdbUtils.GetEntryPoint"></member>
+  <member name="IDxcPdbUtils.GetFlag"></member>
+  <member name="IDxcPdbUtils.GetFlagCount"></member>
+  <member name="IDxcPdbUtils.GetFullPDB"></member>
+  <member name="IDxcPdbUtils.GetHash"></member>
+  <member name="IDxcPdbUtils.GetMainFileName"></member>
+  <member name="IDxcPdbUtils.GetName"></member>
+  <member name="IDxcPdbUtils.GetSource"></member>
+  <member name="IDxcPdbUtils.GetSourceCount"></member>
+  <member name="IDxcPdbUtils.GetSourceName"></member>
+  <member name="IDxcPdbUtils.GetTargetProfile"></member>
+  <member name="IDxcPdbUtils.GetVersionInfo"></member>
+  <member name="IDxcPdbUtils.IsFullPDB"></member>
+  <member name="IDxcPdbUtils.Load"></member>
+  <member name="IDxcPdbUtils.OverrideArgs"></member>
+  <member name="IDxcPdbUtils.OverrideRootSignature"></member>
+  <member name="IDxcPdbUtils.SetCompiler"></member>
+  <member name="IDxcPdbUtils">
+    <summary>
+      <para>Represents PDB version information.</para>
+      <para>To obtain an instance of this interface, call <see cref="DxcCreateInstance" /> with <b>CLSID_DxcPdbUtils</b>.</para>
+    </summary>
+  </member>
+</doc>

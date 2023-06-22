@@ -3,149 +3,59 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Effect.GetInput">
-    <summary>
-      <para>Gets the given input image by index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the image to retrieve.</para>
-    </param>
-    <param name="input">
-      <para>Type: <b><see cref="ID2D1Image" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the image that is identified by <i>Index</i>.</para>
-    </param>
-    <remarks>
-      <para>If the input index is out of range, the returned image will be <b>NULL</b>.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1DeviceContext.DrawImage" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Effect.GetOutput" />
-    <seealso cref="ID2D1Image" />
+    <summary>Gets the given input image by index.</summary>
+    <param name="index">The index of the image to retrieve.</param>
+    <param name="input">When this method returns, contains the address of a pointer to the image that is identified by <i>Index</i>.</param>
   </member>
   <member name="ID2D1Effect.GetInputCount">
-    <summary>
-      <para>Gets the number of inputs to the effect.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>This method returns the number of inputs to the effect.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Effect" />
+    <summary>Gets the number of inputs to the effect.</summary>
+    <returns>This method returns the number of inputs to the effect.</returns>
   </member>
   <member name="ID2D1Effect.GetOutput">
-    <summary>
-      <para>Gets the output image from the effect.</para>
-    </summary>
-    <param name="outputImage">
-      <para>Type: <b><see cref="ID2D1Image" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the output image for the effect.</para>
-    </param>
-    <remarks>
-      <para>The output image  can be set as an input to another effect, or can be directly passed into the <see cref="ID2D1DeviceContext" /> in order to render the effect.</para>
-      <para>It is  also possible to use <see cref="QueryInterface" /> to retrieve the same output image.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1DeviceContext.DrawImage" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Effect.GetOutput" />
-    <seealso cref="ID2D1Image" />
+    <summary>Gets the output image from the effect.</summary>
+    <param name="outputImage">When this method returns, contains the address of a pointer to the output image for the effect.</param>
   </member>
   <member name="ID2D1Effect.SetInput">
-    <summary>
-      <para>Sets the given input image by index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the image to set.</para>
-    </param>
-    <param name="input">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The input image to set.</para>
-    </param>
-    <param name="invalidate">
-      <para>Type: <b>BOOL</b></para>
-      <para>Whether to invalidate the graph at the location of the effect input</para>
-    </param>
-    <remarks>
-      <para>If the input index is out of range, the input image is ignored.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Effect.GetOutput" />
-    <seealso cref="ID2D1Image" />
+    <summary>Sets the given input image by index.</summary>
+    <param name="index">The index of the image to set.</param>
+    <param name="input">The input image to set.</param>
+    <param name="invalidate">Whether to invalidate the graph at the location of the effect input</param>
   </member>
   <member name="ID2D1Effect.SetInputCount">
-    <summary>
-      <para>Allows the application to change the number of inputs to an effect.</para>
-    </summary>
-    <param name="inputCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of inputs to the effect.</para>
-    </param>
+    <summary>Allows the application to change the number of inputs to an effect.</summary>
+    <param name="inputCount">The number of inputs to the effect.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One or more arguments are invalid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Failed to allocate necessary memory.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Most effects do not support a variable number of inputs. Use <see cref="ID2D1Properties.GetValue" /> with the <b>D2D1_PROPERTY_MIN_INPUTS</b> and <b>D2D1_PROPERTY_MAX_INPUTS</b> values to determine the number of inputs supported by an effect.</para>
-      <para>If the input count is less than the minimum or more than the maximum supported inputs, the call will fail.</para>
-      <para>If the input count is unchanged, the call will succeed with <b>S_OK</b>.</para>
-      <para>Any inputs currently selected on the effect will be unaltered by this call unless the number of inputs is made smaller. If the number of inputs is made smaller, inputs beyond the selected range will be released.</para>
-      <para>If the method fails, the existing input and input count will remain unchanged.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1DeviceContext.DrawImage" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Effect.GetOutput" />
-    <seealso cref="ID2D1Image" />
   </member>
   <member name="ID2D1Effect.SetInputEffect">
     <summary>
       <para>Sets the given input effect by index.</para>
       <para>This method gets the output of the given effect and then passes the output image to the <see cref="SetInput" /> method.</para>
     </summary>
-    <param name="index">
-      <para>The index of the input to set.</para>
-    </param>
-    <param name="inputEffect">
-      <para>The input effect to set.</para>
-    </param>
-    <param name="invalidate">
-      <para>Whether to invalidate the graph at the location of the effect input</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Effect.GetOutput" />
-    <seealso cref="ID2D1Image" />
+    <param name="index">The index of the input to set.</param>
+    <param name="inputEffect">The input effect to set.</param>
+    <param name="invalidate">Whether to invalidate the graph at the location of the effect input</param>
   </member>
   <member name="ID2D1Effect">
-    <summary>
-      <para>Represents a basic image-processing construct in Direct2D.</para>
-    </summary>
-    <remarks>
-      <para>An effect takes zero or more input images, and has an output image. The images that are input into and output from an effect are lazily evaluated. This definition is sufficient to allow an arbitrary graph of effects to be created from the application by feeding output images into the input image of the next effect in the chain.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1Properties" />
+    <summary>Represents a basic image-processing construct in Direct2D.</summary>
   </member>
 </doc>

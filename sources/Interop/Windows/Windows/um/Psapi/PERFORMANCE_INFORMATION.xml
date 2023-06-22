@@ -3,80 +3,48 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PERFORMANCE_INFORMATION">
-    <summary>
-      <para>Contains performance information.</para>
-    </summary>
-    <seealso cref="GetPerformanceInfo" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa965225(v=vs.85)">Memory Performance Information</seealso>
+    <summary>Contains performance information.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.cb">
-    <summary>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.CommitTotal">
-    <summary>
-      <para>The number of pages currently committed by the system. Note that committing pages (using <see cref="VirtualAlloc" /> with MEM_COMMIT) changes this value immediately; however, the physical memory is not charged until the pages are accessed.</para>
-    </summary>
+    <summary>The number of pages currently committed by the system. Note that committing pages (using <see cref="VirtualAlloc" /> with MEM_COMMIT) changes this value immediately; however, the physical memory is not charged until the pages are accessed.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.CommitLimit">
-    <summary>
-      <para>The current maximum number of pages that can be committed by the system without extending the paging file(s). This number can change if memory is added or deleted, or if pagefiles have grown, shrunk, or been added. If the paging file can be extended, this is a soft limit.</para>
-    </summary>
+    <summary>The current maximum number of pages that can be committed by the system without extending the paging file(s). This number can change if memory is added or deleted, or if pagefiles have grown, shrunk, or been added. If the paging file can be extended, this is a soft limit.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.CommitPeak">
-    <summary>
-      <para>The maximum number of pages that were simultaneously in the committed state since the last system reboot.</para>
-    </summary>
+    <summary>The maximum number of pages that were simultaneously in the committed state since the last system reboot.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.PhysicalTotal">
-    <summary>
-      <para>The amount of actual physical memory, in pages.</para>
-    </summary>
+    <summary>The amount of actual physical memory, in pages.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.PhysicalAvailable">
-    <summary>
-      <para>The amount of physical memory currently available, in pages.  This is the amount of physical memory that can be immediately reused without having to write its contents to disk first. It is the sum of the size of the standby, free, and zero lists.</para>
-    </summary>
+    <summary>The amount of physical memory currently available, in pages. This is the amount of physical memory that can be immediately reused without having to write its contents to disk first. It is the sum of the size of the standby, free, and zero lists.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.SystemCache">
-    <summary>
-      <para>The amount of system cache memory, in pages. This is the size of the standby list plus the system working set.</para>
-    </summary>
+    <summary>The amount of system cache memory, in pages. This is the size of the standby list plus the system working set.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.KernelTotal">
-    <summary>
-      <para>The sum of the memory currently in the paged and nonpaged kernel pools, in pages.</para>
-    </summary>
+    <summary>The sum of the memory currently in the paged and nonpaged kernel pools, in pages.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.KernelPaged">
-    <summary>
-      <para>The memory currently in the paged kernel pool, in pages.</para>
-    </summary>
+    <summary>The memory currently in the paged kernel pool, in pages.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.KernelNonpaged">
-    <summary>
-      <para>The memory currently in the nonpaged kernel pool, in pages.</para>
-    </summary>
+    <summary>The memory currently in the nonpaged kernel pool, in pages.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.PageSize">
-    <summary>
-      <para>The size of a page, in bytes.</para>
-    </summary>
+    <summary>The size of a page, in bytes.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.HandleCount">
-    <summary>
-      <para>The current number of open handles.</para>
-    </summary>
+    <summary>The current number of open handles.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.ProcessCount">
-    <summary>
-      <para>The current number of processes.</para>
-    </summary>
+    <summary>The current number of processes.</summary>
   </member>
   <member name="PERFORMANCE_INFORMATION.ThreadCount">
-    <summary>
-      <para>The current number of threads.</para>
-    </summary>
+    <summary>The current number of threads.</summary>
   </member>
 </doc>

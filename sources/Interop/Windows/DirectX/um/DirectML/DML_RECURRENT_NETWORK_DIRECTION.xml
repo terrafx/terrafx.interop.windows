@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_RECURRENT_NETWORK_DIRECTION">
-    <summary>
-      <para>Defines constants that specify a direction for a recurrent DirectML operator.</para>
-    </summary>
+    <summary>Defines constants that specify a direction for a recurrent DirectML operator.</summary>
   </member>
   <member name="DML_RECURRENT_NETWORK_DIRECTION.DML_RECURRENT_NETWORK_DIRECTION_FORWARD">
-    <summary>
-      <para>Indicates the forward pass.</para>
-    </summary>
+    <summary>Indicates the forward pass.</summary>
   </member>
   <member name="DML_RECURRENT_NETWORK_DIRECTION.DML_RECURRENT_NETWORK_DIRECTION_BACKWARD">
-    <summary>
-      <para>Indicates the backward pass.</para>
-    </summary>
+    <summary>Indicates the backward pass.</summary>
   </member>
   <member name="DML_RECURRENT_NETWORK_DIRECTION.DML_RECURRENT_NETWORK_DIRECTION_BIDIRECTIONAL">
-    <summary>
-      <para>Indicates both passes.</para>
-    </summary>
+    <summary>Indicates both passes.</summary>
   </member>
 </doc>

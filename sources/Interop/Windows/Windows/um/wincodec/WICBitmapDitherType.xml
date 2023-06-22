@@ -3,62 +3,37 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICBitmapDitherType">
-    <summary>
-      <para>Specifies the type of dither algorithm to apply when converting between image formats.</para>
-    </summary>
-    <seealso cref="Initialize" />
+    <summary>Specifies the type of dither algorithm to apply when converting between image formats.</summary>
   </member>
   <member name="WICBitmapDitherType.WICBitmapDitherTypeNone">
-    <summary>
-      <para>A solid color algorithm without dither.</para>
-    </summary>
+    <summary>A solid color algorithm without dither.</summary>
   </member>
   <member name="WICBitmapDitherType.WICBitmapDitherTypeSolid">
-    <summary>
-      <para>A solid color algorithm without dither.</para>
-    </summary>
+    <summary>A solid color algorithm without dither.</summary>
   </member>
   <member name="WICBitmapDitherType.WICBitmapDitherTypeOrdered4x4">
-    <summary>
-      <para>A 4x4 ordered dither algorithm.</para>
-    </summary>
+    <summary>A 4x4 ordered dither algorithm.</summary>
   </member>
   <member name="WICBitmapDitherType.WICBitmapDitherTypeOrdered8x8">
-    <summary>
-      <para>An 8x8 ordered dither algorithm.</para>
-    </summary>
+    <summary>An 8x8 ordered dither algorithm.</summary>
   </member>
   <member name="WICBitmapDitherType.WICBitmapDitherTypeOrdered16x16">
-    <summary>
-      <para>A 16x16 ordered dither algorithm.</para>
-    </summary>
+    <summary>A 16x16 ordered dither algorithm.</summary>
   </member>
   <member name="WICBitmapDitherType.WICBitmapDitherTypeSpiral4x4">
-    <summary>
-      <para>A 4x4 spiral dither algorithm.</para>
-    </summary>
+    <summary>A 4x4 spiral dither algorithm.</summary>
   </member>
   <member name="WICBitmapDitherType.WICBitmapDitherTypeSpiral8x8">
-    <summary>
-      <para>An 8x8 spiral dither algorithm.</para>
-    </summary>
+    <summary>An 8x8 spiral dither algorithm.</summary>
   </member>
   <member name="WICBitmapDitherType.WICBitmapDitherTypeDualSpiral4x4">
-    <summary>
-      <para>A 4x4 dual spiral dither algorithm.</para>
-    </summary>
+    <summary>A 4x4 dual spiral dither algorithm.</summary>
   </member>
   <member name="WICBitmapDitherType.WICBitmapDitherTypeDualSpiral8x8">
-    <summary>
-      <para>An 8x8 dual spiral dither algorithm.</para>
-    </summary>
+    <summary>An 8x8 dual spiral dither algorithm.</summary>
   </member>
   <member name="WICBitmapDitherType.WICBitmapDitherTypeErrorDiffusion">
-    <summary>
-      <para>An error diffusion algorithm.</para>
-    </summary>
+    <summary>An error diffusion algorithm.</summary>
   </member>
-  <member name="WICBitmapDitherType.WICBITMAPDITHERTYPE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICBitmapDitherType.WICBITMAPDITHERTYPE_FORCE_DWORD"></member>
 </doc>

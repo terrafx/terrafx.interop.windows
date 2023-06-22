@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRUSTEE_TYPE">
+    <summary>The <b>TRUSTEE_TYPE</b> enumeration contains values that indicate the type of trustee identified by a<see cref="TRUSTEE" /> structure.</summary>
+  </member>
+  <member name="TRUSTEE_TYPE.TRUSTEE_IS_UNKNOWN">
+    <summary>The trustee type is unknown, but it may be valid.</summary>
+  </member>
+  <member name="TRUSTEE_TYPE.TRUSTEE_IS_USER">
+    <summary>Indicates a user.</summary>
+  </member>
+  <member name="TRUSTEE_TYPE.TRUSTEE_IS_GROUP">
+    <summary>Indicates a group.</summary>
+  </member>
+  <member name="TRUSTEE_TYPE.TRUSTEE_IS_DOMAIN">
+    <summary>Indicates a domain.</summary>
+  </member>
+  <member name="TRUSTEE_TYPE.TRUSTEE_IS_ALIAS">
+    <summary>Indicates an alias.</summary>
+  </member>
+  <member name="TRUSTEE_TYPE.TRUSTEE_IS_WELL_KNOWN_GROUP">
+    <summary>Indicates a<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/well-known-sids">well-known group</a>.</summary>
+  </member>
+  <member name="TRUSTEE_TYPE.TRUSTEE_IS_DELETED">
+    <summary>Indicates a deleted account.</summary>
+  </member>
+  <member name="TRUSTEE_TYPE.TRUSTEE_IS_INVALID">
+    <summary>Indicates a trustee type that is not valid.</summary>
+  </member>
+  <member name="TRUSTEE_TYPE.TRUSTEE_IS_COMPUTER">
+    <summary>Indicates a computer.</summary>
+  </member>
+</doc>

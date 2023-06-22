@@ -4,27 +4,17 @@
 <doc>
   <member name="RemSNB">
     <summary>
-      <para>The
-<b>RemSNB</b> structure is used for marshaling the
-<a href="https://docs.microsoft.com//windows/desktop/Stg/snb">SNB</a> data type.</para>
-      <para>Defined in the
-<see cref="IStorage" /> interface (Storag.idl).</para>
+      <para>The<b>RemSNB</b> structure is used for marshaling the<a href="https://docs.microsoft.com//windows/desktop/Stg/snb">SNB</a> data type.</para>
+      <para>Defined in the<see cref="IStorage" /> interface (Storag.idl).</para>
     </summary>
-    <seealso cref="IStorage" />
   </member>
   <member name="RemSNB.ulCntStr">
-    <summary>
-      <para>Number of strings in the <b>rgString</b> buffer.</para>
-    </summary>
+    <summary>Number of strings in the <b>rgString</b> buffer.</summary>
   </member>
   <member name="RemSNB.ulCntChar">
-    <summary>
-      <para>Size in bytes of the <b>rgString</b> buffer.</para>
-    </summary>
+    <summary>Size in bytes of the <b>rgString</b> buffer.</summary>
   </member>
   <member name="RemSNB.rgString">
-    <summary>
-      <para>Pointer to an array of bytes containing the stream name strings from the <b>SNB</b> structure.</para>
-    </summary>
+    <summary>Pointer to an array of bytes containing the stream name strings from the <b>SNB</b> structure.</summary>
   </member>
 </doc>

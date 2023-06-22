@@ -3,127 +3,140 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMPGSCROLL">
-    <summary>
-      <para>Contains and receives information that the pager control uses when scrolling the contained window. It is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/pgn-scroll">PGN_SCROLL</a> notification.</para>
-    </summary>
+    <summary>Contains and receives information that the pager control uses when scrolling the contained window. It is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/pgn-scroll">PGN_SCROLL</a> notification.</summary>
   </member>
   <member name="NMPGSCROLL.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about the notification.</summary>
   </member>
   <member name="NMPGSCROLL.fwKeys">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
       <para>Modifier keys that are down when the scroll occurs. This can be one or more of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>0</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>None of the modifier keys are down.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>None of the modifier keys are down.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PGK_SHIFT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The SHIFT key is down.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>PGK_SHIFT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PGK_CONTROL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The CONTROL key is down.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The SHIFT key is down.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PGK_MENU</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>PGK_CONTROL</b>
-          </description>
-          <description>
-            <para>The CONTROL key is down.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>PGK_MENU</b>
-          </description>
-          <description>
-            <para>The ALT key is down.</para>
-          </description>
-        </item>
+          <description>The ALT key is down.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="NMPGSCROLL.rcParent">
-    <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>Contains the client rectangle of the pager control.</para>
-    </summary>
+    <summary>Contains the client rectangle of the pager control.</summary>
   </member>
   <member name="NMPGSCROLL.iDir">
     <summary>
-      <para>Type: <b>int</b></para>
       <para>Value that indicates in which direction the scroll is occurring. This will be one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>PGF_SCROLLDOWN</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PGF_SCROLLDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The contained window is being scrolled down.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The contained window is being scrolled down.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PGF_SCROLLLEFT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The contained window is being scrolled to the left.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>PGF_SCROLLLEFT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PGF_SCROLLRIGHT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The contained window is being scrolled to the right.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The contained window is being scrolled to the left.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PGF_SCROLLUP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>PGF_SCROLLRIGHT</b>
-          </description>
-          <description>
-            <para>The contained window is being scrolled to the right.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>PGF_SCROLLUP</b>
-          </description>
-          <description>
-            <para>The contained window is being scrolled up.</para>
-          </description>
-        </item>
+          <description>The contained window is being scrolled up.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="NMPGSCROLL.iXpos">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Contains the horizontal scroll position of the contained window, in pixels, before the scroll action.</para>
-    </summary>
+    <summary>Contains the horizontal scroll position of the contained window, in pixels, before the scroll action.</summary>
   </member>
   <member name="NMPGSCROLL.iYpos">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Contains the vertical scroll position of the contained window, in pixels, before the scroll action.</para>
-    </summary>
+    <summary>Contains the vertical scroll position of the contained window, in pixels, before the scroll action.</summary>
   </member>
   <member name="NMPGSCROLL.iScroll">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>On entry, contains the default scroll delta in pixels. This member can be modified to contain a different scroll delta amount if desired. This value is always positive, regardless of the scroll direction.</para>
-    </summary>
+    <summary>On entry, contains the default scroll delta in pixels. This member can be modified to contain a different scroll delta amount if desired. This value is always positive, regardless of the scroll direction.</summary>
   </member>
 </doc>

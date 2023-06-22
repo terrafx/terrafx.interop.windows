@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_PROPCHANGE_PARAMS">
-    <summary>
-      <para>An SP_PROPCHANGE_PARAMS structure corresponds to a <a href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-propertychange">DIF_PROPERTYCHANGE</a> installation request.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-propertychange">DIF_PROPERTYCHANGE</seealso>
-    <seealso cref="SP_CLASSINSTALL_HEADER" />
-    <seealso cref="SetupDiCallClassInstaller" />
-    <seealso cref="SetupDiChangeState" />
+    <summary>An SP_PROPCHANGE_PARAMS structure corresponds to a <a href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-propertychange">DIF_PROPERTYCHANGE</a> installation request.</summary>
   </member>
   <member name="SP_PROPCHANGE_PARAMS.ClassInstallHeader">
-    <summary>
-      <para>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</para>
-    </summary>
+    <summary>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</summary>
   </member>
   <member name="SP_PROPCHANGE_PARAMS.StateChange">
     <summary>
@@ -55,8 +47,6 @@
     </summary>
   </member>
   <member name="SP_PROPCHANGE_PARAMS.HwProfile">
-    <summary>
-      <para>Supplies the hardware profile ID for profile-specific changes. Zero specifies the current hardware profile.</para>
-    </summary>
+    <summary>Supplies the hardware profile ID for profile-specific changes. Zero specifies the current hardware profile.</summary>
   </member>
 </doc>

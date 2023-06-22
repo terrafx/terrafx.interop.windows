@@ -3,58 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNC_TRANSFER_STATUS">
-    <summary>
-      <para>Specifies possible status values used in the System.SyncTransferStatus property.</para>
-    </summary>
+    <summary>Specifies possible status values used in the System.SyncTransferStatus property.</summary>
   </member>
   <member name="SYNC_TRANSFER_STATUS.STS_NONE">
-    <summary>
-      <para>There is no current sync activity.</para>
-    </summary>
+    <summary>There is no current sync activity.</summary>
   </member>
   <member name="SYNC_TRANSFER_STATUS.STS_NEEDSUPLOAD">
-    <summary>
-      <para>The file is pending upload.</para>
-    </summary>
+    <summary>The file is pending upload.</summary>
   </member>
   <member name="SYNC_TRANSFER_STATUS.STS_NEEDSDOWNLOAD">
-    <summary>
-      <para>The file is pending download.</para>
-    </summary>
+    <summary>The file is pending download.</summary>
   </member>
   <member name="SYNC_TRANSFER_STATUS.STS_TRANSFERRING">
-    <summary>
-      <para>The file is currently being uploaded or downloaded.</para>
-    </summary>
+    <summary>The file is currently being uploaded or downloaded.</summary>
   </member>
   <member name="SYNC_TRANSFER_STATUS.STS_PAUSED">
-    <summary>
-      <para>The current transfer is paused.</para>
-    </summary>
+    <summary>The current transfer is paused.</summary>
   </member>
   <member name="SYNC_TRANSFER_STATUS.STS_HASERROR">
-    <summary>
-      <para>An error was encountered during the last sync operation.</para>
-    </summary>
+    <summary>An error was encountered during the last sync operation.</summary>
   </member>
   <member name="SYNC_TRANSFER_STATUS.STS_FETCHING_METADATA">
-    <summary>
-      <para>The sync engine is retrieving metadata from the cloud.</para>
-    </summary>
+    <summary>The sync engine is retrieving metadata from the cloud.</summary>
   </member>
-  <member name="SYNC_TRANSFER_STATUS.STS_USER_REQUESTED_REFRESH">
-    <summary></summary>
-  </member>
-  <member name="SYNC_TRANSFER_STATUS.STS_HASWARNING">
-    <summary></summary>
-  </member>
-  <member name="SYNC_TRANSFER_STATUS.STS_EXCLUDED">
-    <summary></summary>
-  </member>
-  <member name="SYNC_TRANSFER_STATUS.STS_INCOMPLETE">
-    <summary></summary>
-  </member>
-  <member name="SYNC_TRANSFER_STATUS.STS_PLACEHOLDER_IFEMPTY">
-    <summary></summary>
-  </member>
+  <member name="SYNC_TRANSFER_STATUS.STS_USER_REQUESTED_REFRESH"></member>
+  <member name="SYNC_TRANSFER_STATUS.STS_HASWARNING"></member>
+  <member name="SYNC_TRANSFER_STATUS.STS_EXCLUDED"></member>
+  <member name="SYNC_TRANSFER_STATUS.STS_INCOMPLETE"></member>
+  <member name="SYNC_TRANSFER_STATUS.STS_PLACEHOLDER_IFEMPTY"></member>
 </doc>

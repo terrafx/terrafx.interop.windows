@@ -3,24 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ILaunchTargetViewSizePreference.GetTargetViewSizePreference">
-    <summary>
-      <para>Retrieves the preferred view size of the application being launched.</para>
-    </summary>
-    <param name="targetSizeOnLaunch">
-      <para>Type: <b><see cref="APPLICATION_VIEW_SIZE_PREFERENCE" />*</b></para>
-      <para>Contains the address of a pointer to an <see cref="APPLICATION_VIEW_SIZE_PREFERENCE" />  for the target application.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ILaunchTargetViewSizePreference" />
+    <summary>Retrieves the preferred view size of the application being launched.</summary>
+    <param name="targetSizeOnLaunch">Contains the address of a pointer to an <see cref="APPLICATION_VIEW_SIZE_PREFERENCE" /> for the target application.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ILaunchTargetViewSizePreference">
-    <summary>
-      <para>Provides a method for retrieving the preferred view size for a new application window.</para>
-    </summary>
-    <seealso cref="ILaunchSourceViewSizePreference" />
-    <seealso cref="IUnknown" />
+    <summary>Provides a method for retrieving the preferred view size for a new application window.</summary>
   </member>
 </doc>

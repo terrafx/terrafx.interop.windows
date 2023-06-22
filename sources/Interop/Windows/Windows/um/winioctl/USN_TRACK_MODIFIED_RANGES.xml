@@ -3,13 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="USN_TRACK_MODIFIED_RANGES">
-    <summary>
-      <para>Contains information on range tracking parameters for an update sequence number (USN) change journal using the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_usn_track_modified_ranges">FSCTL_USN_TRACK_MODIFIED_RANGES</a> control code.</para>
-    </summary>
-    <remarks>
-      <para>Once range tracking is enabled for a given volume it cannot be disabled except by deleting the USN Journal and recreating it.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_usn_track_modified_ranges">FSCTL_USN_TRACK_MODIFIED_RANGES</seealso>
+    <summary>Contains information on range tracking parameters for an update sequence number (USN) change journal using the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_usn_track_modified_ranges">FSCTL_USN_TRACK_MODIFIED_RANGES</a> control code.</summary>
   </member>
   <member name="USN_TRACK_MODIFIED_RANGES.Flags">
     <summary>
@@ -19,28 +13,20 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
-          <description>FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE
-0x00000001
-</description>
+        <listheader>
+          <description>FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE 0x00000001</description>
           <description>This flag is mandatory with <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_usn_track_modified_ranges">FSCTL_USN_TRACK_MODIFIED_RANGES</a> and is used to enable range tracking on the volume.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="USN_TRACK_MODIFIED_RANGES.Unused">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="USN_TRACK_MODIFIED_RANGES.ChunkSize">
-    <summary>
-      <para>Chunk size for tracking ranges. A single byte modification will be reflected as the whole chunk being modified.</para>
-    </summary>
+    <summary>Chunk size for tracking ranges. A single byte modification will be reflected as the whole chunk being modified.</summary>
   </member>
   <member name="USN_TRACK_MODIFIED_RANGES.FileSizeThreshold">
-    <summary>
-      <para>File size threshold to start outputting <see cref="USN_RECORD_V4" /> record(s) for modified file, i.e. if the modified file size is less than this threshold, then no <b>USN_RECORD_V4</b> record will be output.</para>
-    </summary>
+    <summary>File size threshold to start outputting <see cref="USN_RECORD_V4 structure" /> record(s) for modified file, i.e. if the modified file size is less than this threshold, then no <b>USN_RECORD_V4</b> record will be output.</summary>
   </member>
 </doc>

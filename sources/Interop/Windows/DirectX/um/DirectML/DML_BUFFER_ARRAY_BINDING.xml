@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_BUFFER_ARRAY_BINDING">
-    <summary>
-      <para>Specifies a resource binding that is an array of individual buffer bindings.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <summary>Specifies a resource binding that is an array of individual buffer bindings.</summary>
   </member>
   <member name="DML_BUFFER_ARRAY_BINDING.BindingCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of individual buffer ranges to bind to this slot. This field determines the size of the <i>Bindings</i> array.</para>
-    </summary>
+    <summary>The number of individual buffer ranges to bind to this slot. This field determines the size of the <i>Bindings</i> array.</summary>
   </member>
   <member name="DML_BUFFER_ARRAY_BINDING.Bindings">
-    <summary>
-      <para>Type: <b>const <see cref="DML_BUFFER_BINDING" />*</b></para>
-      <para>The individual buffer ranges to bind.</para>
-    </summary>
+    <summary>The individual buffer ranges to bind.</summary>
   </member>
 </doc>

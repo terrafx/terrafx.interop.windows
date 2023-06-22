@@ -3,43 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP">
-    <summary>
-      <para>The <b>TF_PERSISTENT_PROPERTY_HEADER_ACP</b> structure is used to provide property header data.</para>
-    </summary>
-    <seealso cref="ITextStoreACPServices.Serialize " />
-    <seealso cref="ITextStoreACPServices.Unserialize " />
-    <seealso cref="ITfContextOwnerServices.Serialize " />
-    <seealso cref="ITfContextOwnerServices.Unserialize " />
-    <seealso cref="ITfPersistentPropertyLoaderACP.LoadProperty " />
+    <summary>The <b>TF_PERSISTENT_PROPERTY_HEADER_ACP</b> structure is used to provide property header data.</summary>
   </member>
   <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.guidType">
-    <summary>
-      <para>Contains a GUID that identifies the property.</para>
-    </summary>
+    <summary>Contains a GUID that identifies the property.</summary>
   </member>
   <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.ichStart">
-    <summary>
-      <para>Contains the starting character position of the property.</para>
-    </summary>
+    <summary>Contains the starting character position of the property.</summary>
   </member>
   <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.cch">
-    <summary>
-      <para>Contains the number of characters that the property spans.</para>
-    </summary>
+    <summary>Contains the number of characters that the property spans.</summary>
   </member>
   <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.cb">
-    <summary>
-      <para>Contains the size, in bytes, of the property value.</para>
-    </summary>
+    <summary>Contains the size, in bytes, of the property value.</summary>
   </member>
   <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.dwPrivate">
-    <summary>
-      <para>Contains a <b>DWORD</b> value defined by the property owner.</para>
-    </summary>
+    <summary>Contains a <b>DWORD</b> value defined by the property owner.</summary>
   </member>
   <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.clsidTIP">
-    <summary>
-      <para>Contains the CLSID of the property owner.</para>
-    </summary>
+    <summary>Contains the CLSID of the property owner.</summary>
   </member>
 </doc>

@@ -3,23 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIResource1.CreateSharedHandle">
-    <summary>
-      <para>Creates a handle to a shared resource. You can then use the returned handle with multiple Direct3D devices.</para>
-    </summary>
+    <summary>Creates a handle to a shared resource. You can then use the returned handle with multiple Direct3D devices.</summary>
     <param name="pAttributes">
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a></para>
-      <para>structure that contains two separate but related data members: an optional security descriptor, and a Boolean
-value that determines whether child processes can inherit the returned handle.</para>
-      <para>Set this parameter to <b>NULL</b> if you want child processes that the
-application might create to not  inherit  the handle returned by
-<b>CreateSharedHandle</b>, and if you want the resource that is associated with the returned handle to get a default security
-descriptor.</para>
-      <para>The <b>lpSecurityDescriptor</b> member of the structure specifies a
-<see cref="SECURITY_DESCRIPTOR" /> for the resource. Set
-this member to <b>NULL</b> if you want the runtime to assign a default security descriptor to the resource that is associated with the returned handle. The ACLs in the default security descriptor for the resource come from the primary or impersonation token of the creator. For more info, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-object-security-and-access-rights">Synchronization Object Security and Access Rights</a>.</para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a>structure that contains two separate but related data members: an optional security descriptor, and a Boolean value that determines whether child processes can inherit the returned handle.</para>
+      <para>Set this parameter to <b>NULL</b> if you want child processes that the application might create to not inherit the handle returned by<b>CreateSharedHandle</b>, and if you want the resource that is associated with the returned handle to get a default security descriptor.</para>
+      <para>The <b>lpSecurityDescriptor</b> member of the structure specifies a<see cref="SECURITY_DESCRIPTOR" /> for the resource. Set this member to <b>NULL</b> if you want the runtime to assign a default security descriptor to the resource that is associated with the returned handle. The ACLs in the default security descriptor for the resource come from the primary or impersonation token of the creator. For more info, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-object-security-and-access-rights">Synchronization Object Security and Access Rights</a>.</para>
     </param>
     <param name="dwAccess">
-      <para>The requested access rights to the resource.  In addition to the <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/generic-access-rights">generic access rights</a>, DXGI defines the following values:</para>
+      <para>The requested access rights to the resource. In addition to the <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/generic-access-rights">generic access rights</a>, DXGI defines the following values:</para>
       <list type="bullet">
         <item>
           <description>
@@ -27,22 +18,17 @@ this member to <b>NULL</b> if you want the runtime to assign a default security 
         </item>
         <item>
           <description>
-            <b>DXGI_SHARED_RESOURCE_WRITE</b>    ( 1 ) - specifies  write access to the resource.</description>
+            <b>DXGI_SHARED_RESOURCE_WRITE</b>	( 1 ) - specifies write access to the resource.</description>
         </item>
-      </list>
-      <para>You can combine these values by using a bitwise OR operation.</para>
-    </param>
+      </list>You can combine these values by using a bitwise OR operation.</param>
     <param name="lpName">
       <para>The name of the resource to share. The name is limited to MAX_PATH characters. Name comparison is case sensitive.</para>
       <para>You will need the resource name if you call the <see cref="ID3D11Device1.OpenSharedResourceByName" /> method to access the shared resource by name. If you instead call the <see cref="ID3D11Device1.OpenSharedResource1" /> method to access the shared resource by handle, set this parameter to <b>NULL</b>.</para>
       <para>If <i>lpName</i> matches the name of an existing resource, <b>CreateSharedHandle</b> fails with <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_NAME_ALREADY_EXISTS</a>. This occurs because these objects share the same namespace.</para>
-      <para>The name can have a "Global" or "Local" prefix to explicitly create the object in the global or session namespace. The remainder of the name can contain any character except the backslash character (\). For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/TermServ/kernel-object-namespaces">Kernel Object Namespaces</a>. Fast user switching is implemented using Terminal Services sessions. Kernel object names must follow the guidelines outlined for Terminal Services so that applications can support multiple users.</para>
+      <para>The name can have a "Global" or "Local" prefix to explicitly create the object in the global or session namespace. The remainder of the name can contain any character except the backslash character (\). For more information, see<a href="https://docs.microsoft.com//windows/desktop/TermServ/kernel-object-namespaces">Kernel Object Namespaces</a>. Fast user switching is implemented using Terminal Services sessions. Kernel object names must follow the guidelines outlined for Terminal Services so that applications can support multiple users.</para>
       <para>The object can be created in a private namespace. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Sync/object-namespaces">Object Namespaces</a>.</para>
     </param>
-    <param name="pHandle">
-      <para>A pointer to a variable that receives the NT HANDLE value to the resource to share.  You can  use this handle in calls to access the resource.</para>
-    </param>
+    <param name="pHandle">A pointer to a variable that receives the NT HANDLE value to the resource to share. You can use this handle in calls to access the resource.</param>
     <returns>
       <para>Returns S_OK if successful; otherwise, returns one of the following values:</para>
       <list type="bullet">
@@ -61,48 +47,15 @@ this member to <b>NULL</b> if you want the runtime to assign a default security 
           <description>E_OUTOFMEMORY if sufficient memory is not available to create the handle.</description>
         </item>
         <item>
-          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic. </description>
+          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</description>
         </item>
       </list>
-      <b>Platform Update for Windows 7:  </b>On Windows 7 or Windows Server 2008 R2 with the <a href="https://support.microsoft.com/help/2670838">Platform Update for Windows 7</a> installed, <b>CreateSharedHandle</b> fails with E_NOTIMPL. For more info about the Platform Update for Windows 7, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/platform-update-for-windows-7">Platform Update for Windows 7</a>.
-</returns>
-    <remarks>
-      <para>
-        <b>CreateSharedHandle</b> only returns the NT handle when you  created the resource as shared and specified that it uses NT handles (that is, you set the <see cref="D3D11_RESOURCE_MISC_SHARED_NTHANDLE" /> and <see cref="D3D11_RESOURCE_MISC_SHARED_KEYEDMUTEX" /> flags). If you  created the resource as shared and specified that it uses NT handles, you must use <b>CreateSharedHandle</b> to get a handle for sharing.  In this situation, you can't use the <see cref="IDXGIResource.GetSharedHandle" /> method because it will fail.</para>
-      <para>You can pass the handle that  <b>CreateSharedHandle</b> returns in a call to the <see cref="ID3D11Device1.OpenSharedResource1" /> method to give a device access to a shared resource that you created on a different device.</para>
-      <para>Because the handle that  <b>CreateSharedHandle</b> returns is an NT handle, you can use the handle with <see cref="CloseHandle" />, <see cref="DuplicateHandle" />, and so on. You can call <b>CreateSharedHandle</b> only once for a shared resource; later calls fail.  If you need more handles to the same shared resource, call <b>DuplicateHandle</b>. When you no longer need the shared resource handle, call <b>CloseHandle</b> to close the handle, in order to avoid memory leaks.</para>
-      <para>If you pass a name for the resource to <i>lpName</i> when you call <b>CreateSharedHandle</b> to share the resource, you can subsequently pass this name in a call to the <see cref="ID3D11Device1.OpenSharedResourceByName" /> method to give another device access to the shared resource. If you use a named resource, a malicious user can use this named resource before you do and prevent your app from starting. To prevent this situation, create a randomly named resource and store the name so that it can only be obtained by an authorized user. Alternatively, you can use a file for this purpose. To limit your app to one instance per user, create a locked file in the user's profile directory.</para>
-      <para>If you  created the resource as shared and did not specify that it uses NT handles, you cannot use <b>CreateSharedHandle</b> to get a handle for sharing because <b>CreateSharedHandle</b> will fail.</para>
-      <h4>Examples</h4>
-      <code>ID3D11Texture2D* pTexture2D;
-ID3D11Device* pDevice;
-
-pDevice-&gt;CreateTexture2D(…, &amp;amp;amp;amp;amp;amp;amp;pTexture2D); // Create the texture as shared with NT HANDLEs.
-
-HANDLE handle;
-IDXGIResource1* pResource;
-pTexture2D-&gt;QueryInterface(__uuidof(IDXGIResource1), (void**) &amp;amp;amp;amp;amp;amp;amp;pResource);
-pResource-&gt;CreateSharedHandle(NULL,
-         DXGI_SHARED_RESOURCE_READ | DXGI_SHARED_RESOURCE_WRITE,
-         NULL,
-         &amp;amp;amp;amp;amp;amp;amp;handle);
-
-// Pass the handle to another process to share the resource.
-
-</code>
-    </remarks>
-    <seealso cref="IDXGIResource1" />
+      <b>Platform Update for Windows 7:  </b>On Windows 7 or Windows Server 2008 R2 with the <a href="https://support.microsoft.com/help/2670838">Platform Update for Windows 7</a> installed, <b>CreateSharedHandle</b> fails with E_NOTIMPL. For more info about the Platform Update for Windows 7, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/platform-update-for-windows-7">Platform Update for Windows 7</a>.</returns>
   </member>
   <member name="IDXGIResource1.CreateSubresourceSurface">
-    <summary>
-      <para>Creates a subresource surface object.</para>
-    </summary>
-    <param name="index">
-      <para>The index of the subresource surface object to enumerate.</para>
-    </param>
-    <param name="ppSurface">
-      <para>The address of a pointer to a <see cref="IDXGISurface2" /> interface that represents the created subresource surface object at the position specified by the <i>index</i> parameter.</para>
-    </param>
+    <summary>Creates a subresource surface object.</summary>
+    <param name="index">The index of the subresource surface object to enumerate.</param>
+    <param name="ppSurface">The address of a pointer to a <see cref="IDXGISurface2" /> interface that represents the created subresource surface object at the position specified by the <i>index</i> parameter.</param>
     <returns>
       <para>Returns S_OK if successful; otherwise, returns one of the following values:</para>
       <list type="bullet">
@@ -113,34 +66,9 @@ pResource-&gt;CreateSharedHandle(NULL,
         <item>
           <description>E_OUTOFMEMORY if insufficient memory is available to create the subresource surface object.</description>
         </item>
-      </list>
-      <para>A subresource is a valid surface if the original resource would have been a valid surface had its array size been equal to 1.</para>
-    </returns>
-    <remarks>
-      <para>Subresource surface objects implement the <see cref="IDXGISurface2" /> interface, which inherits from  <see cref="IDXGISurface1" /> and indirectly <see cref="IDXGISurface" />.  Therefore, the GDI-interoperable methods of <b>IDXGISurface1</b> work if the original resource interface object was created with the GDI-interoperable flag (<see cref="D3D11_RESOURCE_MISC_GDI_COMPATIBLE" />).</para>
-      <para>
-        <b>CreateSubresourceSurface</b> creates a subresource surface that is based on the resource interface on which <b>CreateSubresourceSurface</b> is called. For example, if the original resource interface object is a 2D texture, the created subresource surface is also a 2D texture.</para>
-      <para>You can use <b>CreateSubresourceSurface</b> to create parts of  a stereo resource so you can use Direct2D on either the left or right part of the stereo resource.</para>
-    </remarks>
-    <seealso cref="IDXGIResource1" />
+      </list>A subresource is a valid surface if the original resource would have been a valid surface had its array size been equal to 1.</returns>
   </member>
   <member name="IDXGIResource1">
-    <summary>
-      <para>An <b>IDXGIResource1</b> interface extends the <see cref="IDXGIResource" /> interface by adding support for creating a subresource surface object and for creating a handle to a shared resource.</para>
-    </summary>
-    <remarks>
-      <para>To determine the type of memory a resource is currently located in, use <see cref="IDXGIDevice.QueryResourceResidency" />.
-To share resources between processes, use <see cref="ID3D11Device1.OpenSharedResource1" />.
-For information about how to share resources between multiple Windows graphics APIs, including Direct3D 11, Direct2D, Direct3D 10, and Direct3D 9Ex, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/surface-sharing-between-windows-graphics-apis">Surface Sharing Between Windows Graphics APIs</a>.</para>
-      <para>You can retrieve the <b>IDXGIResource1</b> interface from any video memory resource that you create from a Direct3D 10 and later function. Any Direct3D object that supports <see cref="ID3D10Resource" /> or <see cref="ID3D11Resource" /> also supports <b>IDXGIResource1</b>. For example, the Direct3D 2D texture object that you create from <see cref="ID3D11Device.CreateTexture2D" /> supports <b>IDXGIResource1</b>. You can call <see cref="QueryInterface" /> on the 2D texture object (<see cref="ID3D11Texture2D" />) to retrieve the <b>IDXGIResource1</b> interface. For example, to retrieve the <b>IDXGIResource1</b>  interface from  the 2D texture object, use the following code.</para>
-      <code>IDXGIResource1 * pDXGIResource;
-hr = g_pd3dTexture2D-&gt;QueryInterface(__uuidof(IDXGIResource1), (void **)&amp;amp;amp;amp;amp;amp;pDXGIResource);
-</code>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIResource" />
+    <summary>An <b>IDXGIResource1</b> interface extends the <see cref="IDXGIResource" /> interface by adding support for creating a subresource surface object and for creating a handle to a shared resource.</summary>
   </member>
 </doc>

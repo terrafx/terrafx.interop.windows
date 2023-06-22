@@ -3,25 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSTEM_INFO">
-    <summary>
-      <para>Contains information about the current computer system. This includes the architecture and type of the processor, the number of processors in the system, the page size, and other such information.</para>
-    </summary>
-    <seealso cref="GetNativeSystemInfo" />
-    <seealso cref="GetSystemInfo" />
-    <seealso cref="MapViewOfFile" />
-    <seealso cref="MapViewOfFileEx" />
+    <summary>Contains information about the current computer system. This includes the architecture and type of the processor, the number of processors in the system, the page size, and other such information.</summary>
   </member>
-  <member name="SYSTEM_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="SYSTEM_INFO.DUMMYUNIONNAME"></member>
   <member name="SYSTEM_INFO.DUMMYUNIONNAME.dwOemId">
-    <summary>
-      <para>An obsolete member that is retained for compatibility. Applications should use the <b>wProcessorArchitecture</b> branch of the union.</para>
-    </summary>
+    <summary>An obsolete member that is retained for compatibility. Applications should use the <b>wProcessorArchitecture</b> branch of the union.</summary>
   </member>
-  <member name="SYSTEM_INFO.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="SYSTEM_INFO.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
   <member name="SYSTEM_INFO.DUMMYUNIONNAME.DUMMYSTRUCTNAME.wProcessorArchitecture">
     <summary>
       <para>The processor architecture of the installed operating system. This member can be one of the following values.</para>
@@ -30,142 +18,119 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PROCESSOR_ARCHITECTURE_AMD64</b>
-                </description>
-              </item>
-              <item>
-                <description>9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>x64 (AMD or Intel)</para>
-          </description>
-        </item>
-        <item>
+          <description>x64 (AMD or Intel)</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PROCESSOR_ARCHITECTURE_ARM</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>ARM</para>
-          </description>
-        </item>
-        <item>
+          <description>ARM</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PROCESSOR_ARCHITECTURE_ARM64</b>
-                </description>
-              </item>
-              <item>
-                <description>12</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>12</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>ARM64</para>
-          </description>
-        </item>
-        <item>
+          <description>ARM64</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PROCESSOR_ARCHITECTURE_IA64</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Intel Itanium-based</para>
-          </description>
-        </item>
-        <item>
+          <description>Intel Itanium-based</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PROCESSOR_ARCHITECTURE_INTEL</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>x86</para>
-          </description>
-        </item>
-        <item>
+          <description>x86</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PROCESSOR_ARCHITECTURE_UNKNOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0xffff</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xffff</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Unknown architecture.</para>
-          </description>
-        </item>
+          <description>Unknown architecture.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SYSTEM_INFO.DUMMYUNIONNAME.DUMMYSTRUCTNAME.wReserved">
-    <summary>
-      <para>This member is reserved for future use.</para>
-    </summary>
+    <summary>This member is reserved for future use.</summary>
   </member>
   <member name="SYSTEM_INFO.dwPageSize">
-    <summary>
-      <para>The page size and the granularity of page protection and commitment. This is the page size used by the
-<see cref="VirtualAlloc" /> function.</para>
-    </summary>
+    <summary>The page size and the granularity of page protection and commitment. This is the page size used by the<see cref="VirtualAlloc" /> function.</summary>
   </member>
   <member name="SYSTEM_INFO.lpMinimumApplicationAddress">
-    <summary>
-      <para>A pointer to the lowest memory address accessible to applications and dynamic-link libraries (DLLs).</para>
-    </summary>
+    <summary>A pointer to the lowest memory address accessible to applications and dynamic-link libraries (DLLs).</summary>
   </member>
   <member name="SYSTEM_INFO.lpMaximumApplicationAddress">
-    <summary>
-      <para>A pointer to the highest memory address accessible to applications and DLLs.</para>
-    </summary>
+    <summary>A pointer to the highest memory address accessible to applications and DLLs.</summary>
   </member>
   <member name="SYSTEM_INFO.dwActiveProcessorMask">
-    <summary>
-      <para>A mask representing the set of processors configured into the system. Bit 0 is processor 0; bit 31 is processor 31.</para>
-    </summary>
+    <summary>A mask representing the set of processors configured into the system. Bit 0 is processor 0; bit 31 is processor 31.</summary>
   </member>
   <member name="SYSTEM_INFO.dwNumberOfProcessors">
     <summary>
-      <para>The number of logical processors in the current group. To retrieve this value, use the <see cref="GetLogicalProcessorInformation" /> function.</para>
-      <para>
-        <b>Note</b>  For information about the  physical processors shared by logical processors, call <see cref="GetLogicalProcessorInformationEx" /> with the <i>RelationshipType</i> parameter set to RelationProcessorPackage (3).</para>
+      <para>The number of logical processors in the current group. To retrieve the current processor group, use the <see cref="GetLogicalProcessorInformation" /> function.</para>
+      <div>
+        <b>Note</b>  For information about the physical processors shared by logical processors, call <see cref="GetLogicalProcessorInformationEx" /> with the <i>RelationshipType</i> parameter set to RelationProcessorPackage (3).</div>
     </summary>
   </member>
   <member name="SYSTEM_INFO.dwProcessorType">
@@ -180,14 +145,11 @@
     </summary>
   </member>
   <member name="SYSTEM_INFO.dwAllocationGranularity">
-    <summary>
-      <para>The granularity for the starting address at which virtual memory can be allocated. For more information, see <see cref="VirtualAlloc" />.</para>
-    </summary>
+    <summary>The granularity for the starting address at which virtual memory can be allocated. For more information, see <see cref="VirtualAlloc" />.</summary>
   </member>
   <member name="SYSTEM_INFO.wProcessorLevel">
     <summary>
-      <para>The architecture-dependent processor level. It should be used only for display purposes. To determine the feature set of a processor, use the
-<see cref="IsProcessorFeaturePresent" /> function.</para>
+      <para>The architecture-dependent processor level. It should be used only for display purposes. To determine the feature set of a processor, use the<see cref="IsProcessorFeaturePresent" /> function.</para>
       <para>If <b>wProcessorArchitecture</b> is PROCESSOR_ARCHITECTURE_INTEL, <b>wProcessorLevel</b> is defined by the CPU vendor.</para>
       <para>If <b>wProcessorArchitecture</b> is PROCESSOR_ARCHITECTURE_IA64, <b>wProcessorLevel</b> is set to 1.</para>
     </summary>
@@ -200,20 +162,18 @@
           <description>Processor</description>
           <description>Value</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Intel Pentium, Cyrix, or NextGen 586</description>
-          <description>The high byte is the model and the low byte is the stepping. For example, if the value is <i>xxyy</i>, the model number and stepping can be displayed as follows:
-<para>Model <i>xx</i>, Stepping <i>yy</i></para></description>
-        </item>
-        <item>
+          <description>The high byte is the model and the low byte is the stepping. For example, if the value is <i>xxyy</i>, the model number and stepping can be displayed as follows: <para>Model <i>xx</i>, Stepping <i>yy</i></para></description>
+        </listheader>
+        <listheader>
           <description>Intel 80386 or 80486</description>
-          <description>A value of the form <i>xxyz</i>.
-<para>If <i>xx</i> is equal to 0xFF, <i>y</i> - 0xA is the model number, and <i>z</i> is the stepping identifier.</para><para>If <i>xx</i> is not equal to 0xFF, <i>xx</i> + 'A' is the stepping letter and <i>yz</i> is the minor stepping.</para></description>
-        </item>
-        <item>
+          <description>A value of the form <i>xxyz</i>. <para>If <i>xx</i> is equal to 0xFF, <i>y</i> - 0xA is the model number, and <i>z</i> is the stepping identifier.</para><para>If <i>xx</i> is not equal to 0xFF, <i>xx</i> + 'A' is the stepping letter and <i>yz</i> is the minor stepping.</para></description>
+        </listheader>
+        <listheader>
           <description>ARM</description>
           <description>Reserved.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>

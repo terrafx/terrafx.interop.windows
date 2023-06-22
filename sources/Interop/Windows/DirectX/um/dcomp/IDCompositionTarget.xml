@@ -3,31 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionTarget.SetRoot">
-    <summary>
-      <para>Sets a visual object as the new root object of a visual tree.</para>
-    </summary>
-    <param name="visual">
-      <para>Type: <b><see cref="IDCompositionVisual" />*</b></para>
-      <para>The visual object that is the new root of this visual tree. This parameter can be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>A visual can be either the root of a single visual tree, or a child of another visual, but it cannot be both at the same time. This method fails if the <i>visual</i> parameter is already the root of another visual tree, or is a child of another visual.</para>
-      <para>If <i>visual</i> is NULL, the visual tree is empty. If there was a previous non-NULL root visual, that visual becomes available for use as the root of another visual tree, or as a child of another visual.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/directcomp/how-to--build-a-visual-tree">How to Build a Simple Visual Tree</a>.</para>
-    </remarks>
-    <seealso cref="IDCompositionDevice.CreateVisual" />
-    <seealso cref="IDCompositionTarget" />
+    <summary>Sets a visual object as the new root object of a visual tree.</summary>
+    <param name="visual">The visual object that is the new root of this visual tree. This parameter can be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionTarget">
-    <summary>
-      <para>Represents a binding between a Microsoft DirectComposition visual tree and a destination on top of which the visual tree should be composed.</para>
-    </summary>
-    <seealso cref="IDCompositionDevice.CreateTargetForHwnd" />
-    <seealso cref="IDCompositionVisual" />
+    <summary>Represents a binding between a Microsoft DirectComposition visual tree and a destination on top of which the visual tree should be composed.</summary>
   </member>
 </doc>

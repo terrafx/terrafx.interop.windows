@@ -3,16 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFVideoMediaType">
-    <summary>
-      <para>Represents a description of a video format.</para>
-    </summary>
-    <remarks>
-      <para>If the major type of a media type is MFMediaType_Video, you can query the media type object for the <b>IMFVideoMediaType</b> interface.</para>
-      <para>Applications should avoid using this interface except when a method or function requires an <b>IMFVideoMediaType</b> pointer as a parameter. You can get all of the format information from a video media type through the <see cref="IMFAttributes" /> interface, which <see cref="IMFMediaType" /> inherits.</para>
-    </remarks>
-    <seealso cref="IMFMediaType" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-type-attributes">Media Type Attributes</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</seealso>
+    <summary>Represents a description of a video format.</summary>
   </member>
 </doc>

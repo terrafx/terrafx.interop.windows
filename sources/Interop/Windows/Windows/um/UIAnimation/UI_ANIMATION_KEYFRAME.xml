@@ -3,18 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UI_ANIMATION_KEYFRAME">
-    <summary>
-      <para>Defines a keyframe, which represents a time offset within a storyboard.</para>
-    </summary>
-    <remarks>
-      <para>This structure should be treated as a handle. It is returned as an output parameter by some methods and should be used only as a  parameter passed back to other methods as an input parameter.</para>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd756780(v=vs.85)">UI_ANIMATION_KEYFRAME_STORYBOARD_START</a> represents the implicit keyframe at the start of every storyboard.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard.AddKeyframeAfterTransition" />
-    <seealso cref="IUIAnimationStoryboard.AddKeyframeAtOffset" />
-    <seealso cref="IUIAnimationStoryboard.AddTransitionAtKeyframe" />
-    <seealso cref="IUIAnimationStoryboard.AddTransitionBetweenKeyframes" />
-    <seealso cref="IUIAnimationStoryboard.RepeatBetweenKeyframes" />
+    <summary>Defines a keyframe, which represents a time offset within a storyboard.</summary>
   </member>
 </doc>

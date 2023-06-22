@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IObjectWithSite.GetSite">
-    <summary>
-      <para>Retrieves the latest site passed using <see cref="SetSite" />.</para>
-    </summary>
-    <param name="riid">
-      <para>The IID of the interface pointer that should be returned in <i>ppvSite</i>.</para>
-    </param>
-    <param name="ppvSite">
-      <para>Address of pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, *<i>ppvSite</i> contains the requested interface pointer to the site last seen in <see cref="SetSite" />. The specific interface returned depends on the <i>riid</i> argument. In essence, the two arguments act identically to those in <see cref="QueryInterface" />. If the appropriate interface pointer is available, the object must call <see cref="AddRef" /> on that pointer before returning successfully. If no site is available, or the requested interface is not supported, this method must *<i>ppvSite</i> to <b>NULL</b> and return a failure code.</para>
-    </param>
+    <summary>Retrieves the latest site passed using <see cref="SetSite" />.</summary>
+    <param name="riid">The IID of the interface pointer that should be returned in <i>ppvSite</i>.</param>
+    <param name="ppvSite">Address of pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, *<i>ppvSite</i> contains the requested interface pointer to the site last seen in <see cref="SetSite" />. The specific interface returned depends on the <i>riid</i> argument. In essence, the two arguments act identically to those in <see cref="QueryInterface" />. If the appropriate interface pointer is available, the object must call <see cref="AddRef" /> on that pointer before returning successfully. If no site is available, or the requested interface is not supported, this method must *<i>ppvSite</i> to <b>NULL</b> and return a failure code.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -19,48 +13,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>There is no site, in which case *<i>ppvSite</i> contains <b>NULL</b> on return.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>There is no site, in which case *<i>ppvSite</i> contains <b>NULL</b> on return.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>There is a site, but it does not support the interface requested by <i>riid</i>.</para>
-          </description>
-        </item>
+          <description>There is a site, but it does not support the interface requested by <i>riid</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>E_NOTIMPL is not allowed. Any object implementing this interface must be able to return the last site seen in <see cref="IObjectWithSite.SetSite" />.</para>
-    </remarks>
-    <seealso cref="IObjectWithSite" />
   </member>
   <member name="IObjectWithSite.SetSite">
-    <summary>
-      <para>Enables a container to pass an object a pointer to the interface for its site.</para>
-    </summary>
-    <param name="pUnkSite">
-      <para>A pointer to the <see cref="IUnknown" /> interface pointer of the site managing this object. If <b>NULL</b>, the object should call <see cref="Release" /> on any existing site at which point the object no longer knows its site.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>The object should hold onto this pointer, calling <see cref="IUnknown.AddRef" /> in doing so. If the object already has a site, it should call that existing site's <see cref="IUnknown.Release" />, save the new site pointer, and call the new site's <b>IUnknown.AddRef</b>.</para>
-      <para>E_NOTIMPL is not allowed. Without implementation of the <b>SetSite</b> method, the <see cref="IObjectWithSite" /> interface is unnecessary.</para>
-    </remarks>
-    <seealso cref="IObjectWithSite" />
+    <summary>Enables a container to pass an object a pointer to the interface for its site.</summary>
+    <param name="pUnkSite">A pointer to the <see cref="IUnknown" /> interface pointer of the site managing this object. If <b>NULL</b>, the object should call <see cref="Release" /> on any existing site at which point the object no longer knows its site.</param>
+    <returns>This method returns S_OK on success.</returns>
   </member>
   <member name="IObjectWithSite">
     <summary>

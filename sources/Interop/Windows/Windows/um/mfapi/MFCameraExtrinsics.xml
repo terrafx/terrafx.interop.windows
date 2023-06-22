@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFCameraExtrinsics">
-    <summary>
-      <para>Describes the location of a camera relative to other cameras or an established external reference.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Describes the location of a camera relative to other cameras or an established external reference.</summary>
   </member>
   <member name="MFCameraExtrinsics.TransformCount">
-    <summary>
-      <para>The number of transforms in the <i>CalibratedTransforms</i> array.</para>
-    </summary>
+    <summary>The number of transforms in the <i>CalibratedTransforms</i> array.</summary>
   </member>
   <member name="MFCameraExtrinsics.CalibratedTransforms">
-    <summary>
-      <para>The array of transforms in the extrinsic data.</para>
-    </summary>
+    <summary>The array of transforms in the extrinsic data.</summary>
   </member>
 </doc>

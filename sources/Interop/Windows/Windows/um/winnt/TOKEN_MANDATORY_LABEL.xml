@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TOKEN_MANDATORY_LABEL">
-    <summary>
-      <para>The <b>TOKEN_MANDATORY_LABEL</b> structure  specifies the mandatory integrity level for  a token.</para>
-    </summary>
-    <seealso cref="TOKEN_INFORMATION_CLASS" />
+    <summary>The <b>TOKEN_MANDATORY_LABEL</b> structure specifies the mandatory integrity level for a token.</summary>
   </member>
   <member name="TOKEN_MANDATORY_LABEL.Label">
-    <summary>
-      <para>A <see cref="SID_AND_ATTRIBUTES" /> structure that specifies the mandatory integrity level of the token.</para>
-    </summary>
+    <summary>A <see cref="SID_AND_ATTRIBUTES" /> structure that specifies the mandatory integrity level of the token.</summary>
   </member>
 </doc>

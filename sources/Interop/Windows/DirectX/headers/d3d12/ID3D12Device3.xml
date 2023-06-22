@@ -2,33 +2,37 @@
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
-  <member name="Id3d12device3.OpenExistingHeapFromAddress">
+  <member name="ID3D12Device3.EnqueueMakeResident">
+    <summary>Asynchronously makes objects resident for the device.</summary>
+    <param name="Flags">Controls whether the objects should be made resident if the application is over its memory budget.</param>
+    <param name="NumObjects">The number of objects in the <i>ppObjects</i> array to make resident for the device.</param>
+    <param name="ppObjects">
+      <para>A pointer to a memory block; contains an array of <see cref="ID3D12Pageable" /> interface pointers for the objects.</para>
+      <para>Even though most D3D12 objects inherit from <see cref="ID3D12Pageable" />, residency changes are only supported on the following:</para>
+      <list type="bullet">
+        <item>
+          <description>descriptor heaps</description>
+        </item>
+        <item>
+          <description>heaps</description>
+        </item>
+        <item>
+          <description>committed resources</description>
+        </item>
+        <item>
+          <description>query heaps</description>
+        </item>
+      </list>
+    </param>
+    <param name="pFenceToSignal">A pointer to the fence used to signal when the work is done.</param>
+    <param name="FenceValueToSignal">An unsigned 64-bit value signaled to the fence when the work is done.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Device3">
     <summary>
-      <para>Creates a special-purpose diagnostic heap in system memory from an address. The created heap can persist even in the event of a GPU-fault or device-removed scenario.</para>
+      <para>Represents a virtual adapter. This interface extends <see cref="ID3D12Device2" /> to support the creation of special-purpose diagnostic heaps in system memory that persist even in the event of a GPU-fault or device-removed scenario.</para>
+      <div>
+        <b>Note</b>  This interface, introduced in the Windows 10 Fall Creators Update, is the latest version of the <see cref="ID3D12Device" /> interface. Applications targeting the Windows 10 Fall Creators Update and later should use this interface instead of earlier versions.</div>
     </summary>
-    <param name="pAddress">
-      <para>Type: <b>const void*</b></para>
-      <para>The address used to create the heap.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The globally unique identifier (<b>GUID</b>) for the heap interface (<see cref="ID3D12Heap" />).</para>
-      <para>The <b>REFIID</b>, or <b>GUID</b>, of the interface to the heap can be obtained by using the <b>__uuidof()</b> macro. For example, <b>__uuidof(ID3D12Heap)</b> will retrieve the <b>GUID</b> of the interface to a heap.</para>
-    </param>
-    <param name="ppvHeap">
-      <para>Type: <b>void**</b></para>
-      <para>
-        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values?view=vs-2015">SAL</a>: <code><i>COM_Outptr</i></code></para>
-      <para>A pointer to a memory block. On success, the D3D12 runtime will write a pointer to the newly-opened heap into the memory block. The type of the pointer depends on the provided <b>riid</b> parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns <b>E_OUTOFMEMORY</b> if there is insufficient memory to open the existing heap. See <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> for other possible return values.</para>
-    </returns>
-    <remarks>
-      <para>The heap is created in system memory and permits CPU access. It wraps the entire VirtualAlloc region.</para>
-      <para>Heaps can be used for placed and reserved resources, as orthogonally as other heaps. Restrictions may still exist based on the flags that cannot be app-chosen.</para>
-    </remarks>
-    <seealso cref="ID3D12Device3 interface" />
   </member>
 </doc>

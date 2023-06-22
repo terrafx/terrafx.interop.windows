@@ -4,48 +4,32 @@
 <doc>
   <member name="VMRALLOCATIONINFO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>VMRALLOCATIONINFO</code> structure is used in the VMR-7 filter's <see cref="IVMRSurfaceAllocator.AllocateSurface" /> method.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="VMRALLOCATIONINFO.dwFlags">
-    <summary>
-      <para>A bitwise <b>OR</b> of flags from the <see cref="VMRSurfaceAllocationFlags" /> enumeration.</para>
-    </summary>
+    <summary>A bitwise <b>OR</b> of flags from the <see cref="VMRSurfaceAllocationFlags" /> enumeration.</summary>
   </member>
   <member name="VMRALLOCATIONINFO.lpHdr">
-    <summary>
-      <para>Pointer to the <b>BITMAPINFOHEADER</b> structure associated with the surface.</para>
-    </summary>
+    <summary>Pointer to the <b>BITMAPINFOHEADER</b> structure associated with the surface.</summary>
   </member>
   <member name="VMRALLOCATIONINFO.lpPixFmt">
-    <summary>
-      <para>Pointer to the <b>DDPIXELFORMAT</b> structure associated with the surface.</para>
-    </summary>
+    <summary>Pointer to the <b>DDPIXELFORMAT</b> structure associated with the surface.</summary>
   </member>
   <member name="VMRALLOCATIONINFO.szAspectRatio">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure that specifies the aspect ratio of the new surface.</para>
-    </summary>
+    <summary>A <see cref="SIZE" /> structure that specifies the aspect ratio of the new surface.</summary>
   </member>
   <member name="VMRALLOCATIONINFO.dwMinBuffers">
-    <summary>
-      <para>The minimum number of buffers to create for this surface.</para>
-    </summary>
+    <summary>The minimum number of buffers to create for this surface.</summary>
   </member>
   <member name="VMRALLOCATIONINFO.dwMaxBuffers">
-    <summary>
-      <para>The maximum number of buffers to create for this surface.</para>
-    </summary>
+    <summary>The maximum number of buffers to create for this surface.</summary>
   </member>
   <member name="VMRALLOCATIONINFO.dwInterlaceFlags">
-    <summary>
-      <para>A bitwise <b>OR</b> of  flags that indicate the interlacing. For a list of flags, see the <b>dwInterlaceFlags</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a> structure.</para>
-    </summary>
+    <summary>A bitwise <b>OR</b> of flags that indicate the interlacing. For a list of flags, see the <b>dwInterlaceFlags</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a> structure.</summary>
   </member>
   <member name="VMRALLOCATIONINFO.szNativeSize">
-    <summary>
-      <para>The size of the native video rectangle.</para>
-    </summary>
+    <summary>The size of the native video rectangle.</summary>
   </member>
 </doc>

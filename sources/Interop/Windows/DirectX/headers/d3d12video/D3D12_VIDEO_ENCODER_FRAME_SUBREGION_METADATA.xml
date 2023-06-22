@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_FRAME_SUBREGION_METADATA">
-    <summary>
-      <para>Represents video encoder frame subregion metadata.</para>
-    </summary>
+    <summary>Represents video encoder frame subregion metadata.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_FRAME_SUBREGION_METADATA.bSize">
-    <summary>
-      <para>Output field that receives the sizes in bytes of each subregion. Subregions sizes must include both the subregion initial padding, the subregion header and the subregion payload.</para>
-    </summary>
+    <summary>Output field that receives the sizes in bytes of each subregion. Subregions sizes must include both the subregion initial padding, the subregion header and the subregion payload.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_FRAME_SUBREGION_METADATA.bStartOffset">
     <summary>
@@ -19,9 +15,6 @@
     </summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_FRAME_SUBREGION_METADATA.bHeaderSize">
-    <summary>
-      <para>Output parameter that receives the sizes in bits of each subregion header.
-With this information, in addition to extracting the full subregion from the bitstream as explained above, the user can extract the subregions payload/headers directly without needing to parse the full subregion bitstream.</para>
-    </summary>
+    <summary>Output parameter that receives the sizes in bits of each subregion header. With this information, in addition to extracting the full subregion from the bitstream as explained above, the user can extract the subregions payload/headers directly without needing to parse the full subregion bitstream.</summary>
   </member>
 </doc>

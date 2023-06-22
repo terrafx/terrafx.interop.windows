@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_IPMCAST_BOUNDARY_TABLE">
-    <summary>
-      <para>The <b>MIB_IPMCAST_BOUNDARY_TABLE</b> structure contains a list of  a router's scoped IPv4 multicast address boundaries.</para>
-    </summary>
-    <remarks>
-      <para>This structure does not have a fixed size. Use the <b>SIZEOF_BOUNDARY_TABLE(X)</b> macro to determine the size of this structure. This macro is defined in the <i>Iprtrmib.h</i> header file.</para>
-      <para>Note that the <i>Iprtrmib.h</i> header file is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Iprtrmib.h</i> header file should never be used directly.</para>
-    </remarks>
-    <seealso cref="MIB_IPMCAST_BOUNDARY" />
+    <summary>The <b>MIB_IPMCAST_BOUNDARY_TABLE</b> structure contains a list of a router's scoped IPv4 multicast address boundaries.</summary>
   </member>
   <member name="MIB_IPMCAST_BOUNDARY_TABLE.dwNumEntries">
-    <summary>
-      <para>The number of <see cref="MIB_IPMCAST_BOUNDARY" /> structures listed in <b>table[]</b>.</para>
-    </summary>
+    <summary>The number of <see cref="MIB_IPMCAST_BOUNDARY" /> structures listed in <b>table[]</b>.</summary>
   </member>
   <member name="MIB_IPMCAST_BOUNDARY_TABLE.table">
-    <summary>
-      <para>An array of <see cref="MIB_IPMCAST_BOUNDARY" /> structures which collectively define the set of scoped IPv4 multicast address boundaries on a router.</para>
-    </summary>
+    <summary>An array of <see cref="MIB_IPMCAST_BOUNDARY" /> structures which collectively define the set of scoped IPv4 multicast address boundaries on a router.</summary>
   </member>
 </doc>

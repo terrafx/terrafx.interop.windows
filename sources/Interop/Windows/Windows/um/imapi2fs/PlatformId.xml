@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PlatformId">
-    <summary>
-      <para>Defines values for the operating system architecture that the boot image supports</para>
-    </summary>
-    <remarks>
-      <para>Other values not defined here may exist. Consumers of this enumeration should not presume this list to be the only set of valid values.</para>
-    </remarks>
-    <seealso cref="IBootOptions.get_PlatformId" />
-    <seealso cref="IBootOptions.put_PlatformId" />
+    <summary>Defines values for the operating system architecture that the boot image supports</summary>
   </member>
   <member name="PlatformId.PlatformX86">
-    <summary>
-      <para>Intel Pentium™ series of chip sets. This entry implies a Windows  operating system.</para>
-    </summary>
+    <summary>Intel Pentium™ series of chip sets. This entry implies a Windows operating system.</summary>
   </member>
   <member name="PlatformId.PlatformPowerPC">
-    <summary>
-      <para>Apple PowerPC family.</para>
-    </summary>
+    <summary>Apple PowerPC family.</summary>
   </member>
   <member name="PlatformId.PlatformMac">
-    <summary>
-      <para>Apple Macintosh  family.</para>
-    </summary>
+    <summary>Apple Macintosh family.</summary>
   </member>
   <member name="PlatformId.PlatformEFI">
-    <summary>
-      <para>EFI Family.</para>
-    </summary>
+    <summary>EFI Family.</summary>
   </member>
 </doc>

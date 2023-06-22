@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGRINVOKEFLAGS">
-    <summary>
-      <para>The
-<b>SYNCMGRINVOKEFLAGS</b> enumeration value specifies how the Sync Manager is to be invoked in the
-<see cref="ISyncMgrSynchronizeInvoke.UpdateItems" /> method.</para>
-    </summary>
-    <seealso cref="ISyncMgrSynchronizeInvoke.UpdateItems" />
+    <summary>The<b>SYNCMGRINVOKEFLAGS</b> enumeration value specifies how the Sync Manager is to be invoked in the<see cref="ISyncMgrSynchronizeInvoke.UpdateItems" /> method.</summary>
   </member>
   <member name="SYNCMGRINVOKEFLAGS.SYNCMGRINVOKE_STARTSYNC">
-    <summary>
-      <para>Immediately start the synchronization without displaying the <b>Choice</b> dialog box.</para>
-    </summary>
+    <summary>Immediately start the synchronization without displaying the <b>Choice</b> dialog box.</summary>
   </member>
   <member name="SYNCMGRINVOKEFLAGS.SYNCMGRINVOKE_MINIMIZED">
-    <summary>
-      <para>Indicates that the <b>Choice</b> dialog should be minimized by default.</para>
-    </summary>
+    <summary>Indicates that the <b>Choice</b> dialog should be minimized by default.</summary>
   </member>
 </doc>

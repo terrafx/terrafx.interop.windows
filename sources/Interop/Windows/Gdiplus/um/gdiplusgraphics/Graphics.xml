@@ -1,0 +1,1887 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Graphics.AddMetafileComment">
+    <summary>The <b>Graphics.AddMetafileComment</b> method adds a text comment to an existing metafile.</summary>
+    <param name="data">Pointer to a buffer that contains the comment.</param>
+    <param name="sizeData">Integer that specifies the number of bytes in the value of the<i>data</i> parameter.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.BeginContainer">
+    <summary>The <b>Graphics.BeginContainer</b> method begins a new graphics container.</summary>
+    <param name="dstrect">Reference to a rectangle that, together with <i>srcrect</i>, specifies a transformation for the container.</param>
+    <param name="srcrect">Reference to a rectangle that, together with <i>dstrect</i>, specifies a transformation for the container.</param>
+    <param name="unit">Unit of measure for the container.</param>
+    <returns>This method returns a value that identifies the container.</returns>
+  </member>
+  <member name="Graphics.BeginContainer">
+    <summary>The <b>Graphics.BeginContainer</b> method begins a new graphics container.</summary>
+    <param name="dstrect">Reference to a rectangle that, together with <i>srcrect</i>, specifies a transformation for the container.</param>
+    <param name="srcrect">Reference to a rectangle that, together with <i>dstrect</i>, specifies a transformation for the container.</param>
+    <param name="unit">Unit of measure for the container.</param>
+    <returns>This method returns a value that identifies the container.</returns>
+  </member>
+  <member name="Graphics.BeginContainer">
+    <summary>The <b>Graphics.BeginContainer</b> method begins a new graphics container.</summary>
+    <returns>This method returns a value that identifies the container.</returns>
+  </member>
+  <member name="Graphics.Clear">
+    <summary>The <b>Graphics.Clear</b> method clears a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to a specified color.</summary>
+    <param name="color">Reference to the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color to paint the background.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawArc">
+    <summary>The <b>Graphics.DrawArc</b> method draws an arc. The arc is part of an ellipse.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the arc.</param>
+    <param name="rect">Reference to the rectangle that bounds the ellipse that contains the arc.</param>
+    <param name="startAngle">Real number that specifies the angle between the x-axis and the starting point of the arc.</param>
+    <param name="sweepAngle">Real number that specifies the angle between the starting and ending points of the arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawArc">
+    <summary>The <b>Graphics.DrawArc</b> method draws an arc. The arc is part of an ellipse.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the arc.</param>
+    <param name="rect">Reference to the rectangle that bounds the ellipse that contains the arc.</param>
+    <param name="startAngle">Real number that specifies the angle between the x-axis and the starting point of the arc.</param>
+    <param name="sweepAngle">Real number that specifies the angle between the starting and ending points of the arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawArc">
+    <summary>The <b>Graphics.DrawArc</b> method draws an arc. The arc is part of an ellipse.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the arc.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="width">Integer that specifies the width of the ellipse that contains the arc.</param>
+    <param name="height">Integer that specifies the height of the ellipse that contains the arc.</param>
+    <param name="startAngle">Real number that specifies the angle between the x-axis and the starting point of the arc.</param>
+    <param name="sweepAngle">Real number that specifies the angle between the starting and ending points of the arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawArc">
+    <summary>The <b>Graphics.DrawArc</b> method draws an arc. The arc is part of an ellipse.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the arc.</param>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="width">Real number that specifies the width of the ellipse that contains the arc.</param>
+    <param name="height">Real number that specifies the height of the ellipse that contains the arc.</param>
+    <param name="startAngle">Real number that specifies the angle between the x-axis and the starting point of the arc.</param>
+    <param name="sweepAngle">Real number that specifies the angle between the starting and ending points of the arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawBezier">
+    <summary>The <b>Graphics.DrawBezier</b> method draws a Bézier spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the Bézier spline.</param>
+    <param name="pt1">Reference to the starting point of the Bézier spline.</param>
+    <param name="pt2">Reference to the first control point of the Bézier spline.</param>
+    <param name="pt3">Reference to the second control point of the Bézier spline.</param>
+    <param name="pt4">Reference to the ending point of the Bézier spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawBezier">
+    <summary>The <b>Graphics.DrawBezier</b> method draws a Bézier spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the Bézier spline.</param>
+    <param name="pt1">Reference to the starting point of the Bézier spline.</param>
+    <param name="pt2">Reference to the first control point of the Bézier spline.</param>
+    <param name="pt3">Reference to the second control point of the Bézier spline.</param>
+    <param name="pt4">Reference to the ending point of the Bézier spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawBezier">
+    <summary>The <b>Graphics.DrawBezier</b> method draws a Bézier spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the Bézier spline.</param>
+    <param name="x1">Integer that specifies the x-coordinate of the starting point of the Bézier spline.</param>
+    <param name="y1">Integer that specifies the y-coordinate of the starting point of the Bézier spline.</param>
+    <param name="x2">Integer that specifies the x-coordinate of the first control point of the Bézier spline.</param>
+    <param name="y2">Integer that specifies the y-coordinate of the first control point of the Bézier spline</param>
+    <param name="x3">Integer that specifies the x-coordinate of the second control point of the Bézier spline.</param>
+    <param name="y3">Integer that specifies the y-coordinate of the second control point of the Bézier spline.</param>
+    <param name="x4">Integer that specifies the x-coordinate of the ending point of the Bézier spline.</param>
+    <param name="y4">Integer that specifies the y-coordinate of the ending point of the Bézier spline</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawBezier">
+    <summary>The <b>Graphics.DrawBezier</b> method draws a Bézier spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the Bézier spline.</param>
+    <param name="x1">Real number that specifies the x-coordinate of the starting point of the Bézier spline.</param>
+    <param name="y1">Real number that specifies the y-coordinate of the starting point of the Bézier spline.</param>
+    <param name="x2">Real number that specifies the x-coordinate of the first control point of the Bézier spline.</param>
+    <param name="y2">Real number that specifies the y-coordinate of the first control point of the Bézier spline.</param>
+    <param name="x3">Real number that specifies the x-coordinate of the second control point of the Bézier spline.</param>
+    <param name="y3">Real number that specifies the y-coordinate of the second control point of the Bézier spline.</param>
+    <param name="x4">Real number that specifies the x-coordinate of the ending point of the Bézier spline.</param>
+    <param name="y4">Real number that specifies the y-coordinate of the ending point of the Bézier spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawBeziers">
+    <summary>The <b>Graphics.DrawBeziers</b> method draws a sequence of connected Bézier splines.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the Bézier splines.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that specify the starting, ending, and control points of the Bézier splines.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawBeziers">
+    <summary>The <b>Graphics.DrawBeziers</b> method draws a sequence of connected Bézier splines.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the Bézier splines.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that specify the starting, ending, and control points of the Bézier splines. The ending coordinate of one Bézier spline is the starting coordinate of the next Bézier spline.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawCachedBitmap">
+    <summary>The <b>Graphics.DrawCachedBitmap</b> method draws the image stored in a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-cachedbitmap">CachedBitmap</a> object.</summary>
+    <param name="cb">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-cachedbitmap">CachedBitmap</a> object that contains the image to be drawn.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the image.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the image.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawClosedCurve">
+    <summary>The <b>Graphics.DrawClosedCurve</b> method draws a closed cardinal spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the closed cardinal spline.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that specify the coordinates of the closed cardinal spline. The array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects must contain a minimum of three elements.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawClosedCurve">
+    <summary>The <b>Graphics.DrawClosedCurve</b> method draws a closed cardinal spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the closed cardinal spline.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that specify the coordinates of the closed cardinal spline. The array of <b>PointF</b> objects must contain a minimum of three elements.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <param name="tension">Real number that specifies how tightly the curve bends through the coordinates of the closed cardinal spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawClosedCurve">
+    <summary>The <b>Graphics.DrawClosedCurve</b> method draws a closed cardinal spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the closed cardinal spline.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that specify the coordinates of the closed cardinal spline. The array of <b>Point</b> objects must contain a minimum of three elements.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawClosedCurve">
+    <summary>The <b>Graphics.DrawClosedCurve</b> method draws a closed cardinal spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the closed cardinal spline.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that specify the coordinates of the closed cardinal spline. The array of <b>Point</b> objects must contain a minimum of three elements.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <param name="tension">Real number that specifies how tightly the curve bends through the coordinates of the closed cardinal spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawCurve">
+    <summary>The <b>Graphics.DrawCurve</b> method draws a cardinal spline.</summary>
+    <param name="pen">Pointer to a pen used to draw the cardinal spline.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that specify the coordinates that the cardinal spline passes through.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawCurve">
+    <summary>The <b>Graphics.DrawCurve</b> method draws a cardinal spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the cardinal spline.</param>
+    <param name="points">Pointer to an array of<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that specify the coordinates that the cardinal spline passes through.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <param name="offset">Integer that specifies the element in the<i>points</i> array that specifies the point at which the cardinal spline begins.</param>
+    <param name="numberOfSegments">Integer that specifies the number of segments in the cardinal spline.</param>
+    <param name="tension">Real number that specifies how tightly the curve bends through the coordinates of the cardinal spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawCurve">
+    <summary>The <b>Graphics.DrawCurve</b> method draws a cardinal spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the cardinal spline.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that specify the coordinates that the cardinal spline passes through.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <param name="tension">Real number that specifies how tightly the curve bends through the coordinates of the cardinal spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawCurve">
+    <summary>The <b>Graphics.DrawCurve</b> method draws a cardinal spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the cardinal spline.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that specify the coordinates that the cardinal spline passes through.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawCurve">
+    <summary>The <b>Graphics.DrawCurve</b> method draws a cardinal spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the cardinal spline.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that specify the coordinates that the cardinal spline passes through.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <param name="offset">Integer that specifies the element in the<i>points</i> array that specifies the point at which the cardinal spline begins.</param>
+    <param name="numberOfSegments">Integer that specifies the number of segments in the cardinal spline.</param>
+    <param name="tension">Real number that specifies how tightly the curve bends through the coordinates of the cardinal spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawCurve">
+    <summary>The <b>Graphics.DrawCurve</b> method draws a cardinal spline.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the cardinal spline.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that specify the coordinates that the cardinal spline passes through.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <param name="tension">Real number that specifies how tightly the curve bends through the coordinates of the cardinal spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawDriverString">
+    <summary>The <b>Graphics.DrawDriverString</b> method draws characters at the specified positions. The method gives the client complete control over the appearance of text. The method assumes that the client has already set up the format and layout to be applied.</summary>
+    <param name="text">Pointer to an array of 16-bit values. If the <b>DriverStringOptionsCmapLookup</b> flag is set, each value specifies a Unicode character to be displayed. Otherwise, each value specifies an index to a font glyph that defines a character to be displayed.</param>
+    <param name="length">Integer that specifies the number of values in the<i>text</i> array. The<i>length</i> parameter can be set to –1 if the string is null terminated.</param>
+    <param name="font">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object that specifies the family name, size, and style of the font that is to be applied to the string.</param>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to fill the string.</param>
+    <param name="positions">If the DriverStringOptionsRealizedAdvance flag is set, <i>positions</i> is a pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object that specifies the position of the first glyph. Otherwise, <i>positions</i> is an array of <b>PointF</b> objects, each of which specifies the origin of an individual glyph.</param>
+    <param name="flags">Integer that specifies the options for the appearance of the string. This value must be an element of the <see cref="DriverStringOptions" /> enumeration or the result of a bitwise<b>OR</b> applied to two or more of these elements.</param>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies the transformation matrix to apply to each value in the<i>text</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawEllipse">
+    <summary>The <b>Graphics.DrawEllipse</b> method draws an ellipse.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the ellipse.</param>
+    <param name="rect">Reference to a rectangle that bounds the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawEllipse">
+    <summary>The <b>Graphics.DrawEllipse</b> method draws an ellipse.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the ellipse.</param>
+    <param name="rect">Reference to a rectangle that bounds the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawEllipse">
+    <summary>The <b>Graphics.DrawEllipse</b> method draws an ellipse.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the ellipse.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rectangle that bounds the ellipse.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rectangle that bounds the ellipse.</param>
+    <param name="width">Integer that specifies the width of the rectangle that bounds the ellipse.</param>
+    <param name="height">Integer that specifies the height of the rectangle that bounds the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawEllipse">
+    <summary>The <b>Graphics.DrawEllipse</b> method draws an ellipse.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the ellipse.</param>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rectangle that bounds the ellipse.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rectangle that bounds the ellipse.</param>
+    <param name="width">Real number that specifies the width of the rectangle that bounds the ellipse.</param>
+    <param name="height">Real number that specifies the height of the rectangle that bounds the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="point">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object that specifies the coordinates of the upper-left corner of the destination position at which to draw the image.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="destPoints">Pointer to an array of<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that specify the area, in a parallelogram, in which to draw the image.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>destPoints</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="destPoints">Pointer to an array of<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that specify the area, in a parallelogram, in which to draw the image.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>destPoints</i> array.</param>
+    <param name="srcx">Real number that specifies the x-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcy">Real number that specifies the y-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcwidth">Real number that specifies the width of the portion of the source image to be drawn.</param>
+    <param name="srcheight">Real number that specifies the height of the portion of the source image to be drawn.</param>
+    <param name="srcUnit">Element of the <see cref="Unit" /> enumeration that specifies the unit of measure for the image. The default value is <b>UnitPixel</b>.</param>
+    <param name="imageAttributes">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies the color and size attributes of the image to be drawn. The default value is <b>NULL</b>.</param>
+    <param name="callback">Callback method used to cancel the drawing in progress. The default value is <b>NULL</b>.</param>
+    <param name="callbackData">Pointer to additional data used by the method specified by the<i>callback</i> parameter. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="point">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> object that specifies the coordinates of the upper-left corner of the destination position at which to draw the image.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="destPoints">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that specify the area, in a parallelogram, in which to draw the image.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>destPoints</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns <b>InvalidParameter</b>.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="destPoints">Pointer to an array of<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that specify the area, in a parallelogram, in which to draw the image.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>destPoints</i> array.</param>
+    <param name="srcx">Real number that specifies the x-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcy">Real number that specifies the y-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcwidth">Real number that specifies the width of the portion of the source image to be drawn.</param>
+    <param name="srcheight">Real number that specifies the height of the portion of the source image to be drawn.</param>
+    <param name="srcUnit">Element of the <see cref="Unit" /> enumeration that specifies the unit of measure for the image. The default value is <b>UnitPixel</b>.</param>
+    <param name="imageAttributes">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies the color and size attributes of the image to be drawn. The default value is <b>NULL</b>.</param>
+    <param name="callback">Callback method used to cancel the drawing in progress. The default value is <b>NULL</b>.</param>
+    <param name="callbackData">Pointer to additional data used by the method specified by the<i>callback</i> parameter. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="rect">Reference to a rectangle that bounds the drawing area for the image.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws a specified portion of an image at a specified location.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the image to be drawn.</param>
+    <param name="destRect">Rectangle, measured in pixels, that specifies the bounds of the rendered image. The portion of the image specified by <i>sourceRect</i> is scaled to fill the rectangle specified by <i>destRect</i>.</param>
+    <param name="sourceRect">Rectangle that specifies the portion of the image to be drawn.</param>
+    <param name="srcUnit">Element of the <see cref="Unit" /> enumeration that specifies the unit of measure for the source rectangle.</param>
+    <param name="imageAttributes">Optional. Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments to be applied when the image is rendered. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="destRect">Reference to a rectangle that bounds the drawing area for the image.</param>
+    <param name="srcx">Real number that specifies the x-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcy">Real number that specifies the y-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcwidth">Real number that specifies the width of the portion of the source image to be drawn.</param>
+    <param name="srcheight">Real number that specifies the height of the portion of the source image to be drawn.</param>
+    <param name="srcUnit">Element of the <see cref="Unit" /> enumeration that specifies the unit of measure for the image. The default value is <b>UnitPixel</b>.</param>
+    <param name="imageAttributes">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies the color and size attributes of the image to be drawn. The default value is <b>NULL</b>.</param>
+    <param name="callback">Callback method used to cancel the drawing in progress. The default value is <b>NULL</b>.</param>
+    <param name="callbackData">Pointer to additional data used by the method specified by the<i>callback</i> parameter. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="rect">Reference to a rectangle that bounds the drawing area for the image.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="destRect">Reference to a rectangle that bounds the drawing area for the image.</param>
+    <param name="srcx">Integer that specifies the x-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcy">Integer that specifies the y-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcwidth">Integer that specifies the width of the portion of the source image to be drawn.</param>
+    <param name="srcheight">Integer that specifies the height of the portion of the source image to be drawn.</param>
+    <param name="srcUnit">Element of the <see cref="Unit" /> enumeration that specifies the unit of measure for the image. The default value is <b>UnitPixel</b>.</param>
+    <param name="imageAttributes">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies the color and size attributes of the image to be drawn. The default value is <b>NULL</b>.</param>
+    <param name="callback">Callback method used to cancel the drawing in progress. The default value is <b>NULL</b>.</param>
+    <param name="callbackData">Pointer to additional data used by the method specified by the<i>callback</i> parameter. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image at a specified location.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the image to be drawn.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rendered image.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rendered image.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the destination rectangle at which to draw the image.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the destination rectangle at which to draw the image.</param>
+    <param name="width">Integer that specifies the width of the destination rectangle at which to draw the image.</param>
+    <param name="height">Integer that specifies the height of the destination rectangle at which to draw the image.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the destination position at which to draw the image.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the destination position at which to draw the image.</param>
+    <param name="srcx">Integer that specifies the x-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcy">Integer that specifies the y-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcwidth">Integer that specifies the width of the portion of the source image to be drawn.</param>
+    <param name="srcheight">Integer that specifies the height of the portion of the source image to be drawn.</param>
+    <param name="srcUnit">Element of the<see cref="Unit" /> enumeration that specifies the unit of measure for the image. The default value is UnitPixel.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image at a specified location.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the image to be drawn.</param>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rendered image.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rendered image.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the destination rectangle at which to draw the image.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the destination rectangle at which to draw the image.</param>
+    <param name="width">Real number that specifies the width of the destination rectangle at which to draw the image.</param>
+    <param name="height">Real number that specifies the height of the destination rectangle at which to draw the image.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The <b>Graphics.DrawImage</b> method draws an image.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the source image.</param>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the destination position at which to draw the image.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the destination position at which to draw the image.</param>
+    <param name="srcx">Real number that specifies the x-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcy">Real number that specifies the y-coordinate of the upper-left corner of the portion of the source image to be drawn.</param>
+    <param name="srcwidth">Real number that specifies the width of the portion of the source image to be drawn.</param>
+    <param name="srcheight">Real number that specifies the height of the portion of the source image to be drawn.</param>
+    <param name="srcUnit">Element of the<see cref="Unit" /> enumeration that specifies the unit of measure for the image. The default value is UnitPixel.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawImage">
+    <summary>The method draws a portion of an image after applying a specified effect.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that specifies the image to be drawn.</param>
+    <param name="sourceRect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that specifies the portion of the image to be drawn.</param>
+    <param name="xForm">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies the parallelogram in which the image portion is rendered. The destination parallelogram is calculated by applying the affine transformation stored in the matrix to the source rectangle.</param>
+    <param name="effect">Pointer to a instance of a descendant of the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-effect">Effect</a> class. The descendant specifies an effect or adjustment (for example, a change in contrast) that is applied to the image before rendering. The image is not permanently altered by the effect.</param>
+    <param name="imageAttributes">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments to be applied when the image is rendered. Can be <b>NULL</b>.</param>
+    <param name="srcUnit">Element of the <see cref="Unit" /> enumeration that specifies the unit of measure for the source rectangle.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawLine">
+    <summary>The <b>Graphics.DrawLine</b> method draws a line that connects two points.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the line.</param>
+    <param name="pt1">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object that specifies the start of the line.</param>
+    <param name="pt2">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object that specifies the end of the line.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawLine">
+    <summary>The <b>Graphics.DrawLine</b> method draws a line that connects two points.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the line.</param>
+    <param name="pt1">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> object that specifies the start of the line.</param>
+    <param name="pt2">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> object that specifies the end of the line.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawLine">
+    <summary>The <b>Graphics.DrawLine</b> method draws a line that connects two points.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the line.</param>
+    <param name="x1">Integer that specifies the x-coordinate of the starting point of the line.</param>
+    <param name="y1">Integer that specifies the y-coordinate of the starting point of the line.</param>
+    <param name="x2">Integer that specifies the x-coordinate of the ending point of the line.</param>
+    <param name="y2">Integer that specifies the y-coordinate of the ending point of the line.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawLine">
+    <summary>The <b>Graphics.DrawLine</b> method draws a line that connects two points.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the line.</param>
+    <param name="x1">Real number that specifies the x-coordinate of the starting point of the line.</param>
+    <param name="y1">Real number that specifies the y-coordinate of the starting point of the line.</param>
+    <param name="x2">Real number that specifies the x-coordinate of the ending point of the line.</param>
+    <param name="y2">Real number that specifies the y-coordinate of the ending point of the line.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawLines">
+    <summary>The <b>Graphics.DrawLines</b> method draws a sequence of connected lines.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the lines.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that specify the starting and ending points of the lines.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawLines">
+    <summary>The <b>Graphics.DrawLines</b> method draws a sequence of connected lines.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the lines.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that specify the starting and ending points of the lines.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawPath">
+    <summary>The <b>Graphics.DrawPath</b> method draws a sequence of lines and curves defined by a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the path.</param>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that specifies the sequence of lines and curves that make up the path.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawPie">
+    <summary>The <b>Graphics.DrawPie</b> method draws a pie.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the pie.</param>
+    <param name="rect">Rectangle that bounds the ellipse in which to draw the pie.</param>
+    <param name="startAngle">Real number that specifies the angle, in degrees, between the x-axis and the starting point of the arc that defines the pie. A positive value specifies clockwise rotation.</param>
+    <param name="sweepAngle">Real number that specifies the angle, in degrees, between the starting and ending points of the arc that defines the pie. A positive value specifies clockwise rotation.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawPie">
+    <summary>The <b>Graphics.DrawPie</b> method draws a pie.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the pie.</param>
+    <param name="rect">Reference to a rectangle that bounds the ellipse in which to draw the pie.</param>
+    <param name="startAngle">Real number that specifies the angle, in degrees, between the x-axis and the starting point of the arc that defines the pie. A positive value specifies clockwise rotation.</param>
+    <param name="sweepAngle">Real number that specifies the angle, in degrees, between the starting and ending points of the arc that defines the pie. A positive value specifies clockwise rotation.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawPie">
+    <summary>The <b>Graphics.DrawPie</b> method draws a pie.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the pie.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rectangle that bounds the ellipse in which to draw the pie.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rectangle that bounds the ellipse in which to draw the pie.</param>
+    <param name="width">Integer that specifies the width of the rectangle that bounds the ellipse in which to draw the pie.</param>
+    <param name="height">Integer that specifies the height of the rectangle that bounds the ellipse in which to draw the pie.</param>
+    <param name="startAngle">Real number that specifies the angle, in degrees, between the x-axis and the starting point of the arc that defines the pie. A positive value specifies clockwise rotation.</param>
+    <param name="sweepAngle">Real number that specifies the angle, in degrees, between the starting and ending points of the arc that defines the pie. A positive value specifies clockwise rotation.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawPie">
+    <summary>The <b>Graphics.DrawPie</b> method draws a pie.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the pie.</param>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rectangle that bounds the ellipse in which to draw the pie.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rectangle that bounds the ellipse in which to draw the pie.</param>
+    <param name="width">Real number that specifies the width of the rectangle that bounds the ellipse in which to draw the pie.</param>
+    <param name="height">Real number that specifies the height of the rectangle that bounds the ellipse in which to draw the pie.</param>
+    <param name="startAngle">Real number that specifies the angle, in degrees, between the x-axis and the starting point of the arc that defines the pie. A positive value specifies clockwise rotation.</param>
+    <param name="sweepAngle">Real number that specifies the angle, in degrees, between the starting and ending points of the arc that defines the pie. A positive value specifies clockwise rotation.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawPolygon">
+    <summary>The <b>Graphics.DrawPolygon</b> method draws a polygon.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the polygon.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that specify the vertices of the polygon.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawPolygon">
+    <summary>The <b>Graphics.DrawPolygon</b> method draws a polygon.</summary>
+    <param name="pen">Pointer to a pen that is used to draw the polygon.</param>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that specify the vertices of the polygon.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawRectangle">
+    <summary>The <b>Graphics.DrawRectangle</b> method draws a rectangle.</summary>
+    <param name="pen">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> that is used to draw the rectangle.</param>
+    <param name="rect">Reference to the rectangle to be drawn.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawRectangle">
+    <summary>The <b>Graphics.DrawRectangle</b> method draws a rectangle.</summary>
+    <param name="pen">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> that is used to draw a rectangle.</param>
+    <param name="rect">Reference to the rectangle to be drawn.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawRectangle">
+    <summary>The <b>Graphics.DrawRectangle</b> method draws a rectangle.</summary>
+    <param name="pen">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> that is used to draw the rectangle.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="width">Integer that specifies the width of the rectangle.</param>
+    <param name="height">Integer that specifies the height of the rectangle.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawRectangle">
+    <summary>The <b>Graphics.DrawRectangle</b> method draws a rectangle.</summary>
+    <param name="pen">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> that is used to draw the rectangle.</param>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="width">Real number that specifies the width of the rectangle.</param>
+    <param name="height">Real number that specifies the height of the rectangle.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawRectangles">
+    <summary>The <b>Graphics.DrawRectangles</b> method draws a sequence of rectangles.</summary>
+    <param name="pen">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> that is used to draw the rectangles.</param>
+    <param name="rects">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> objects that specify the coordinates of the rectangles to be drawn.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>rects</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawRectangles">
+    <summary>The <b>Graphics.DrawRectangles</b> method draws a sequence of rectangles.</summary>
+    <param name="pen">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> that is used to draw the rectangles.</param>
+    <param name="rects">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> objects that specify the coordinates of the rectangles to be drawn.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>rects</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawString">
+    <summary>The <b>Graphics.DrawString</b> method draws a string based on a font and an origin for the string.</summary>
+    <param name="string">Pointer to a wide-character string to be drawn.</param>
+    <param name="length">Integer that specifies the number of characters in the<i>string</i> array. The<i>length</i> parameter can be set to –1 if the string is null terminated.</param>
+    <param name="font">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object that specifies the font attributes (the family name, the size, and the style of the font) to use.</param>
+    <param name="origin">Reference to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object that specifies the starting point for the string.</param>
+    <param name="brush">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to fill the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawString">
+    <summary>The <b>Graphics.DrawString</b> method draws a string based on a font, a string origin, and a format.</summary>
+    <param name="string">Pointer to a wide-character string to be drawn.</param>
+    <param name="length">Integer that specifies the number of characters in the<i>string</i> array. The<i>length</i> parameter can be set to –1 if the string is null terminated.</param>
+    <param name="font">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object that specifies the font attributes (the family name, the size, and the style of the font) to use.</param>
+    <param name="origin">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object that specifies the starting point for the string.</param>
+    <param name="stringFormat">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object that specifies text layout information and display manipulations to be applied to the string.</param>
+    <param name="brush">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to fill the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.DrawString">
+    <summary>The <b>Graphics.DrawString</b> method draws a string based on a font, a layout rectangle, and a format.</summary>
+    <param name="string">Pointer to a wide-character string to be drawn.</param>
+    <param name="length">Integer that specifies the number of characters in the <i>string</i> array. The <i>length</i> parameter can be set to -1 if the string is null terminated.</param>
+    <param name="font">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object that specifies the font attributes (the family name, the size, and the style of the font) to use.</param>
+    <param name="layoutRect">Reference to a rectangle that bounds the string.</param>
+    <param name="stringFormat">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object that specifies text layout information and display manipulations to be applied to the string.</param>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to fill the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EndContainer">
+    <summary>The <b>Graphics.EndContainer</b> method closes a graphics container that was previously opened by the <see cref="Graphics.BeginContainer" /> method.</summary>
+    <param name="state">Value (previously returned by <see cref="Graphics.BeginContainer" />) that identifies the container to be closed.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destPoints">Pointer to an array of destination points. This is an array of three points that defines the destination parallelogram for the displayed metafile.</param>
+    <param name="count">Integer that specifies the number of points in the<i>destPoints</i> array.</param>
+    <param name="srcRect">Reference to the rectangle that specifies the portion of the metafile that is displayed.</param>
+    <param name="srcUnit">Element of the<see cref="Unit" /> enumeration that specifies the unit of measure for the source rectangle.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destPoints">Pointer to an array of destination points. This is an array of three points that defines the destination parallelogram for the displayed metafile.</param>
+    <param name="count">Integer that specifies the number of points in the<i>destPoints</i> array.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destPoint">Reference to a point that specifies the upper-left corner of the displayed metafile.</param>
+    <param name="srcRect">Reference to a rectangle that specifies the portion of the metafile that is displayed.</param>
+    <param name="srcUnit">Element of the<see cref="Unit" /> enumeration that specifies the unit of measure for the source rectangle.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling <see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destPoint">Reference to a point that specifies the upper-left corner of the displayed metafile.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destPoints">Pointer to an array of destination points. This is an array of three points that defines the destination parallelogram for the displayed metafile.</param>
+    <param name="count">Integer that specifies the number of points in the<i>destPoints</i> array.</param>
+    <param name="srcRect">Reference to a rectangle that specifies the portion of the metafile that is displayed.</param>
+    <param name="srcUnit">Element of the<see cref="Unit" /> enumeration that specifies the unit of measure for the source rectangle.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destPoints">Pointer to an array of destination points. This is an array of three points that define the destination parallelogram for the displayed metafile.</param>
+    <param name="count">Integer that specifies the number of points in the<i>destPoints</i> array.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destPoint">Reference to a point that specifies the upper-left corner of the displayed metafile.</param>
+    <param name="srcRect">Reference to a rectangle that specifies the portion of the metafile that is displayed.</param>
+    <param name="srcUnit">Element of the<see cref="Unit" /> enumeration that specifies the unit of measure for the source rectangle.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destPoint">Reference to a point that specifies the upper-left corner of the displayed metafile.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destRect">Reference to a 	<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that specifies the rectangle in which the metafile is displayed.</param>
+    <param name="srcRect">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that specifies the portion of the metafile that is displayed.</param>
+    <param name="srcUnit">Element of the 	<see cref="Unit" /> enumeration that specifies the unit of measure for the source rectangle.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an 	<b>ImageAttributes</b> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destRect">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that specifies the rectangle in which the metafile is displayed.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destRect">Reference to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that specifies the rectangle in which the metafile is displayed.</param>
+    <param name="srcRect">Reference to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that specifies the portion of the metafile that is displayed.</param>
+    <param name="srcUnit">Element of the<see cref="Unit" /> enumeration that specifies the unit of measure for the source rectangle.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.EnumerateMetafile">
+    <summary>The <b>Graphics.EnumerateMetafile</b> method calls an application-defined callback function for each record in a specified metafile. You can use this method to display a metafile by calling<see cref="PlayRecord" /> in the callback function.</summary>
+    <param name="metafile">Pointer to a metafile to be enumerated.</param>
+    <param name="destRect">Reference to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that specifies the rectangle in which the metafile is displayed.</param>
+    <param name="callback">Pointer to an application-defined callback function. The prototype for the callback function is given in Gdiplustypes.h.</param>
+    <param name="callbackData">Optional. Pointer to a block of data that is passed to the callback function. The default value is <b>NULL</b>.</param>
+    <param name="imageAttributes">Optional. Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that specifies color adjustments for the displayed metafile. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.ExcludeClip">
+    <summary>The <b>Graphics.ExcludeClip</b> method updates the clipping region to the portion of itself that does not intersect the specified rectangle.</summary>
+    <param name="rect">Reference to a rectangle to use to update the clipping region.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.ExcludeClip">
+    <summary>The <b>Graphics.ExcludeClip</b> method updates the clipping region to the portion of itself that does not intersect the specified rectangle.</summary>
+    <param name="rect">Reference to a rectangle to use to update the clipping region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.ExcludeClip">
+    <summary>The <b>Graphics.ExcludeClip</b> method updates the clipping region with the portion of itself that does not overlap the specified region.</summary>
+    <param name="region">Pointer to the region to use to update the clipping region.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillClosedCurve">
+    <summary>The <b>Graphics.FillClosedCurve</b> method creates a closed cardinal spline from an array of points and uses a brush to fill the interior of the spline.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the spline.</param>
+    <param name="points">Pointer to an array of points that this method uses to create a closed cardinal spline. Each point in the array is a point on the spline.</param>
+    <param name="count">Integer that specifies the number of points in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillClosedCurve">
+    <summary>The <b>Graphics.FillClosedCurve</b> method creates a closed cardinal spline from an array of points and uses a brush to fill, according to a specified mode, the interior of the spline.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the spline.</param>
+    <param name="points">Pointer to an array of points that this method uses to create a closed cardinal spline. Each point in the array is a point on the spline.</param>
+    <param name="count">Integer that specifies the number of points in the<i>points</i> array.</param>
+    <param name="fillMode">Element of the <see cref="FillMode" /> enumeration that specifies how to fill a closed area that is created when the curve passes over itself.</param>
+    <param name="tension">Optional. Nonnegative real number that specifies how tightly the spline bends as it passes through the points. A value of 0 specifies that the spline is a sequence of straight lines. As the value increases, the curve becomes fuller. The default value is 0.5f.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillClosedCurve">
+    <summary>The <b>Graphics.FillClosedCurve</b> method creates a closed cardinal spline from an array of points and uses a brush to fill the interior of the spline.</summary>
+    <param name="brush">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the spline.</param>
+    <param name="points">Pointer to an array of points that this method uses to create a closed cardinal spline. Each point in the array is a point on the spline.</param>
+    <param name="count">Integer that specifies the number of points in the<i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillClosedCurve">
+    <summary>The <b>Graphics.FillClosedCurve</b> method creates a closed cardinal spline from an array of points and uses a brush to fill, according to a specified mode, the interior of the spline.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the spline.</param>
+    <param name="points">Pointer to an array of points that this method uses to create a closed cardinal spline. Each point in the array is a point on the spline.</param>
+    <param name="count">Integer that specifies the number of points in the<i>points</i> array.</param>
+    <param name="fillMode">Element of the <see cref="FillMode" /> enumeration that specifies how to fill a closed area that is created when the curve passes over itself.</param>
+    <param name="tension">Optional. Nonnegative real number that specifies how tightly the spline bends as it passes through the points. A value of 0 specifies that the spline is a sequence of straight lines. As the value increases, the curve becomes fuller. The default value is 0.5f.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillEllipse">
+    <summary>The <b>Graphics.FillEllipse</b> method uses a brush to fill the interior of an ellipse that is specified by a rectangle.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the ellipse.</param>
+    <param name="rect">Reference to a rectangle that specifies the boundaries of the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillEllipse">
+    <summary>The <b>Graphics.FillEllipse</b> method uses a brush to fill the interior of an ellipse that is specified by a rectangle.</summary>
+    <param name="brush">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the ellipse.</param>
+    <param name="rect">Reference to a rectangle that specifies the boundaries of the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillEllipse">
+    <summary>The <b>Graphics.FillEllipse</b> method uses a brush to fill the interior of an ellipse that is specified by coordinates and dimensions.</summary>
+    <param name="brush">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the ellipse.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rectangle that specifies the boundaries of the ellipse.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rectangle that specifies the boundaries of the ellipse.</param>
+    <param name="width">Integer that specifies the width of the rectangle that specifies the boundaries of the ellipse.</param>
+    <param name="height">Integer that specifies the height of the rectangle that specifies the boundaries of the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillEllipse">
+    <summary>The <b>Graphics.FillEllipse</b> method uses a brush to fill the interior of an ellipse that is specified by coordinates and dimensions.</summary>
+    <param name="brush">Pointer to a brush that is used to paint the interior of the ellipse.</param>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rectangle that specifies the boundaries of the ellipse.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rectangle that specifies the boundaries of the ellipse.</param>
+    <param name="width">Real number that specifies the width of the rectangle that specifies the boundaries of the ellipse.</param>
+    <param name="height">Real number that specifies the height of the rectangle that specifies the boundaries of the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillPath">
+    <summary>The <b>Graphics.FillPath</b> method uses a brush to fill the interior of a path. If a figure in the path is not closed, this method treats the nonclosed figure as if it were closed by a straight line that connects the figure's starting and ending points.</summary>
+    <param name="brush">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the path.</param>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that specifies the path.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillPie">
+    <summary>The <b>Graphics.FillPie</b> method uses a brush to fill the interior of a pie.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the pie.</param>
+    <param name="rect">Reference to a rectangle that bounds the ellipse. A curved portion of the ellipse is the arc of the pie.</param>
+    <param name="startAngle">Real number that specifies the angle, in degrees, between the x-axis and the starting point of the pie's arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillPie">
+    <summary>The <b>Graphics.FillPie</b> method uses a brush to fill the interior of a pie.</summary>
+    <param name="brush">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the pie.</param>
+    <param name="rect">Reference to a rectangle that bounds the ellipse. A curved portion of the ellipse is the arc of the pie.</param>
+    <param name="startAngle">Real number that specifies the angle, in degrees, between the x-axis and the starting point of the pie's arc.</param>
+    <param name="sweepAngle">Real number that specifies the angle, in degrees, between the starting and ending points of the pie's arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillPie">
+    <summary>The <b>Graphics.FillPie</b> method uses a brush to fill the interior of a pie.</summary>
+    <param name="brush">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the pie.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rectangle that bounds the ellipse. A curved portion of the ellipse is the arc of the pie.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rectangle that bounds the ellipse.</param>
+    <param name="width">Integer that specifies the width of the rectangle that bounds the ellipse.</param>
+    <param name="height">Integer that specifies the height of the rectangle that bounds the ellipse.</param>
+    <param name="startAngle">Real number that specifies the angle, in degrees, between the x-axis and the starting point of the pie's arc.</param>
+    <param name="sweepAngle">Real number that specifies the angle, in degrees, between the starting and ending points of the pie's arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillPie">
+    <summary>The <b>Graphics.FillPie</b> method uses a brush to fill the interior of a pie.</summary>
+    <param name="brush">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the pie.</param>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rectangle that bounds the ellipse. A curved portion of the ellipse is the arc of the pie.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rectangle that bounds the ellipse.</param>
+    <param name="width">Real number that specifies the width of the rectangle that bounds the ellipse.</param>
+    <param name="height">Real number that specifies the height of the rectangle that bounds the ellipse.</param>
+    <param name="startAngle">Real number that specifies the angle, in degrees, between the x-axis and the starting point of the pie's arc.</param>
+    <param name="sweepAngle">Real number that specifies the angle, in degrees, between the starting and ending points of the pie's arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillPolygon">
+    <summary>The <b>Graphics.FillPolygon</b> method uses a brush to fill the interior of a polygon.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the polygon.</param>
+    <param name="points">Pointer to an array of points that make up the vertices of the polygon. The first two points in the array specify the first side of the polygon. Each additional point specifies a new side, the vertices of which include the point and the previous point. If the last point and the first point do not coincide, they specify the last side of the polygon.</param>
+    <param name="count">Integer that specifies the number of points in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillPolygon">
+    <summary>The <b>Graphics.FillPolygon</b> method uses a brush to fill the interior of a polygon.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the polygon.</param>
+    <param name="points">Pointer to an array of points that make up the vertices of the polygon. The first two points in the array specify the first side of the polygon. Each additional point specifies a new side, the vertices of which include the point and the previous point. If the last point and the first point do not coincide, they specify the last side of the polygon.</param>
+    <param name="count">Integer that specifies the number of points in the <i>points</i> array.</param>
+    <param name="fillMode">Element of the <see cref="FillMode" /> enumeration that specifies how to fill a closed area that is within another closed area and that is created when the curve or path passes over itself.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillPolygon">
+    <summary>The <b>Graphics.FillPolygon</b> method uses a brush to fill the interior of a polygon.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the polygon.</param>
+    <param name="points">Pointer to an array of points that make up the vertices of the polygon. The first two points in the array specify the first side of the polygon. Each additional point specifies a new side, the vertices of which include the point and the previous point. If the last point and the first point do not coincide, they specify the last side of the polygon.</param>
+    <param name="count">Integer that specifies the number of points in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillPolygon">
+    <summary>The <b>Graphics.FillPolygon</b> method uses a brush to fill the interior of a polygon.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is used to paint the interior of the polygon.</param>
+    <param name="points">Pointer to an array of points that make up the vertices of the polygon. The first two points in the array specify the first side of the polygon. Each additional point specifies a new side, the vertices of which include the point and the previous point. If the last point and the first point do not coincide, they specify the last side of the polygon.</param>
+    <param name="count">Integer that specifies the number of points in the <i>points</i> array.</param>
+    <param name="fillMode">Element of the <see cref="FillMode" /> enumeration that specifies how to fill a closed area that is within another closed area and that is created when the curve or path passes over itself.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillRectangle">
+    <summary>The <b>Graphics.FillRectangle</b> method uses a brush to fill the interior of a rectangle.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> that is used to paint the interior of the rectangle.</param>
+    <param name="rect">Reference to the rectangle to be filled.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillRectangle">
+    <summary>The <b>Graphics.FillRectangle</b> method uses a brush to fill the interior of a rectangle.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> that is used to paint the interior of the rectangle.</param>
+    <param name="rect">Reference to the rectangle to be filled.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillRectangle">
+    <summary>The <b>Graphics.FillRectangle</b> method uses a brush to fill the interior of a rectangle.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> that is used to paint the interior of the rectangle.</param>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rectangle to be filled.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rectangle to be filled.</param>
+    <param name="width">Integer that specifies the width of the rectangle to be filled.</param>
+    <param name="height">Integer that specifies the height of the rectangle to be filled.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillRectangle">
+    <summary>The <b>Graphics.FillRectangle</b> method uses a brush to fill the interior of a rectangle.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> that is used to paint the interior of the rectangle.</param>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rectangle to be filled.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rectangle to be filled.</param>
+    <param name="width">Real number that specifies the width of the rectangle to be filled.</param>
+    <param name="height">Real number that specifies the height of the rectangle to be filled.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillRectangles">
+    <summary>The <b>Graphics.FillRectangles</b> method uses a brush to fill the interior of a sequence of rectangles.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> that is used to fill the interior of each rectangle.</param>
+    <param name="rects">Pointer to an array of rectangles to be filled.</param>
+    <param name="count">Integer that specifies the number of rectangles in the <i>rects</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillRectangles">
+    <summary>The <b>Graphics.FillRectangles</b> method uses a brush to fill the interior of a sequence of rectangles.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> that is used to fill the interior of each rectangle.</param>
+    <param name="rects">Pointer to an array of rectangles to be filled.</param>
+    <param name="count">Integer that specifies the number of rectangles in the <i>rects</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.FillRegion">
+    <summary>The <b>Graphics.FillRegion</b> method uses a brush to fill a specified region.</summary>
+    <param name="brush">Pointer to a brush that is used to paint the region.</param>
+    <param name="region">Pointer to a region to be filled.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.Flush">
+    <summary>The <b>Graphics.Flush</b> method flushes all pending graphics operations.</summary>
+    <param name="intention">Element of the <see cref="FlushIntention" /> enumeration that specifies whether pending operations are flushed immediately (not executed) or executed as soon as possible.</param>
+  </member>
+  <member name="Graphics.FromHDC">
+    <summary>The <b>Graphics.FromHDC</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that is associated with a specified device context.</summary>
+    <param name="hdc">Handle to the device context that will be associated with the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.FromHDC">
+    <summary>The <b>Graphics.FromHDC</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that is associated with a specified device context and a specified device.</summary>
+    <param name="hdc">Handle to the device context that is associated with the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <param name="hdevice">Handle to a device that is associated with the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.FromHWND">
+    <summary>The <b>Graphics.FromHWND</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that is associated with a specified window.</summary>
+    <param name="hwnd">Handle to the window that will be associated with the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <param name="icm">Optional. Boolean value that specifies whether the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object applies color adjustment according to the ICC profile associated with the display device. <b>TRUE</b> specifies that color adjustment is applied, and <b>FALSE</b> specifies that color adjustment is not applied. The default value is <b>FALSE</b>.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.FromImage">
+    <summary>The <b>Graphics.FromImage</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that is associated with a specified<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="image">Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that will be associated with the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.GetClip">
+    <summary>The <b>Graphics.GetClip</b> method gets the clipping region of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="region">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object that receives the clipping region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.GetClipBounds">
+    <summary>The <b>Graphics.GetClipBounds</b> method gets a rectangle that encloses the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="rect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that receives the rectangle that encloses the clipping region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.GetClipBounds">
+    <summary>The <b>Graphics.GetClipBounds</b> method gets a rectangle that encloses the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="rect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that receives the rectangle that encloses the clipping region.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.GetCompositingMode">
+    <summary>The <b>Graphics.GetCompositingMode</b> method gets the compositing mode currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <returns>This method returns an element of the<see cref="CompositingMode" /> enumeration that indicates the compositing mode currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.GetCompositingQuality">
+    <summary>The <b>Graphics.GetCompositingQuality</b> method gets the compositing quality currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <returns>This method returns an element of the<see cref="CompositingQuality" /> enumeration that indicates the compositing quality currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.GetDpiX">
+    <summary>The <b>Graphics.GetDpiX</b> method gets the horizontal resolution, in dots per inch, of the display device associated with this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <returns>This method returns the horizontal resolution, in dots per inch, of the display device associated with this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.GetDpiY">
+    <summary>The <b>Graphics.GetDpiY</b> method gets the vertical resolution, in dots per inch, of the display device associated with this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <returns>This method returns the vertical resolution, in dots per inch, of the display device associated with this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.GetHalftonePalette">
+    <summary>The <b>Graphics.GetHalftonePalette</b> method gets a Windows halftone palette.</summary>
+    <returns>This method returns a handle to a Windows halftone palette.</returns>
+  </member>
+  <member name="Graphics.GetHDC">
+    <summary>The <b>Graphics.GetHDC</b> method gets a handle to the device context associated with this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <returns>This method returns a handle to the device context associated with this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.GetInterpolationMode">
+    <summary>The <b>Graphics.GetInterpolationMode</b> method gets the interpolation mode currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The interpolation mode determines the algorithm that is used when images are scaled or rotated.</summary>
+    <returns>This method returns an element of the <see cref="InterpolationMode" /> enumeration that indicates the interpolation mode currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.GetLastStatus">
+    <summary>The <b>Graphics.GetLastStatus</b> method returns a value that indicates the nature of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>Graphics.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object have failed since the previous call to <b>GetLastStatus</b>, then <b>Graphics.GetLastStatus</b> returns Ok.</para>
+      <para>If at least one method invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object has failed since the previous call to <b>GetLastStatus</b>, then <b>Graphics.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="Graphics.GetNearestColor">
+    <summary>The <b>Graphics.GetNearestColor</b> method gets the nearest color to the color that is passed in. This method works on 8-bits per pixel or lower display devices for which there is an 8-bit color palette.</summary>
+    <param name="color">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that, on input, specifies the color to be tested and, on output, receives the nearest color found in the color palette.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.GetPageScale">
+    <summary>The <b>Graphics.GetPageScale</b> method gets the scaling factor currently set for the page transformation of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The page transformation converts page coordinates to device coordinates.</summary>
+    <returns>This method returns the scaling factor currently set for the page transformation of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.GetPageUnit">
+    <summary>The <b>Graphics.GetPageUnit</b> method gets the unit of measure currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <returns>This method returns an element of the <see cref="Unit" /> enumeration that indicates the unit of measure currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.GetPixelOffsetMode">
+    <summary>The <b>Graphics.GetPixelOffsetMode</b> method gets the pixel offset mode currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <returns>This method returns an element of the <see cref="PixelOffsetMode" /> enumeration that indicates the pixel offset mode currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</returns>
+  </member>
+  <member name="Graphics.GetRenderingOrigin">
+    <summary>The <b>Graphics.GetRenderingOrigin</b> method gets the rendering origin currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The rendering origin is used to set the dither origin for 8-bits per pixel and 16-bits per pixel dithering and is also used to set the origin for hatch brushes.</summary>
+    <param name="x">Pointer to an<b>INT</b> that receives the x-coordinate of the rendering origin.</param>
+    <param name="y">Pointer to an<b>INT</b> that receives the y-coordinate of the rendering origin.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.GetSmoothingMode">
+    <summary>The <b>Graphics.GetSmoothingMode</b> method determines whether smoothing (antialiasing) is applied to the<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <returns>If smoothing (antialiasing) is applied to this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object, this method returns SmoothingModeAntiAlias. If smoothing (antialiasing) is not applied to this<b>Graphics</b> object, this method returns SmoothingModeNone. SmoothingModeAntiAlias and SmoothingModeNone are elements of the<see cref="SmoothingMode" /> enumeration.</returns>
+  </member>
+  <member name="Graphics.GetTextContrast">
+    <summary>The <b>Graphics.GetTextContrast</b> method gets the contrast value currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The contrast value is used for antialiasing text.</summary>
+    <returns>This method returns the contrast value.</returns>
+  </member>
+  <member name="Graphics.GetTextRenderingHint">
+    <summary>The <b>Graphics.GetTextRenderingHint</b> method returns the text rendering mode currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <returns>This method returns an element of the <see cref="TextRenderingHint" /> enumeration that indicates the process currently used by this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to render text.</returns>
+  </member>
+  <member name="Graphics.GetTransform">
+    <summary>The <b>Graphics.GetTransform</b> method gets the world transformation matrix of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that receives the transformation matrix.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.GetVisibleClipBounds">
+    <summary>The <b>Graphics.GetVisibleClipBounds</b> method gets a rectangle that encloses the visible clipping region of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The visible clipping region is the intersection of the clipping region of this<b>Graphics</b> object and the clipping region of the window.</summary>
+    <param name="rect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that receives the rectangle that encloses the visible clipping region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.GetVisibleClipBounds">
+    <summary>The <b>Graphics.GetVisibleClipBounds</b> method gets a rectangle that encloses the visible clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The visible clipping region is the intersection of the clipping region of this <b>Graphics</b> object and the clipping region of the window.</summary>
+    <param name="rect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that receives the rectangle that encloses the visible clipping region.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.Graphics">
+    <summary>Creates a <b>Graphics.Graphics</b> object that is associated with a specified device context.</summary>
+    <param name="hdc">Handle to a device context that will be associated with the new <b>Graphics.Graphics</b> object.</param>
+  </member>
+  <member name="Graphics.Graphics">
+    <summary>Creates a <b>Graphics.Graphics</b> object that is associated with a specified device context and a specified device.</summary>
+    <param name="hdc">Handle to a device context that will be associated with the new <b>Graphics.Graphics</b> object.</param>
+    <param name="hdevice">Handle to a device that will be associated with the new <b>Graphics.Graphics</b> object.</param>
+  </member>
+  <member name="Graphics.Graphics">
+    <summary>Creates a <b>Graphics.Graphics</b> object that is associated with a specified window.</summary>
+    <param name="hwnd">Handle to a window that will be associated with the new <b>Graphics.Graphics</b> object.</param>
+    <param name="icm">Optional. Boolean value that specifies whether the new <b>Graphics.Graphics</b> object applies color adjustment according to the ICC profile associated with the display device. <b>TRUE</b> specifies that color adjustment is applied, and <b>FALSE</b> specifies that color adjustment is not applied. The default value is <b>FALSE</b>.</param>
+  </member>
+  <member name="Graphics.Graphics">
+    <summary>Creates a <b>Graphics.Graphics</b> object that is associated with an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that will be associated with the new <b>Graphics.Graphics</b> object.</param>
+  </member>
+  <member name="Graphics.IntersectClip">
+    <summary>The <b>Graphics.IntersectClip</b> method updates the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to the portion of the specified rectangle that intersects with the current clipping region of this <b>Graphics</b> object.</summary>
+    <param name="rect">Reference to a rectangle that is used to update the clipping region.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.IntersectClip">
+    <summary>The <b>Graphics.IntersectClip</b> method updates the clipping region of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to the portion of the specified rectangle that intersects with the current clipping region of this<b>Graphics</b> object.</summary>
+    <param name="rect">Reference to a rectangle that is used to update the clipping region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.IntersectClip">
+    <summary>The <b>Graphics.IntersectClip</b> method updates the clipping region of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to the portion of the specified region that intersects with the current clipping region of this<b>Graphics</b> object.</summary>
+    <param name="region">Pointer to a region that is used to update the clipping region of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.IsClipEmpty">
+    <summary>The <b>Graphics.IsClipEmpty</b> method determines whether the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object is empty.</summary>
+    <returns>If the clipping region of a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object is empty, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Graphics.IsVisible">
+    <summary>The <b>Graphics.IsVisible</b> method determines whether the specified point is inside the visible clipping region of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The visible clipping region is the intersection of the clipping region of this<b>Graphics</b> object and the clipping region of the window.</summary>
+    <param name="point">Reference to a point to be tested to see whether it is inside the visible clipping region.</param>
+    <returns>If the specified point is inside the visible clipping region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Graphics.IsVisible">
+    <summary>The <b>Graphics.IsVisible</b> method determines whether the specified point is inside the visible clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The visible clipping region is the intersection of the clipping region of this <b>Graphics</b> object and the clipping region of the window.</summary>
+    <param name="point">Reference to a point to be tested to see whether it is inside the visible clipping region.</param>
+    <returns>If the specified point is inside the visible clipping region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Graphics.IsVisible">
+    <summary>The <b>Graphics.IsVisible</b> method determines whether the specified rectangle intersects the visible clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The visible clipping region is the intersection of the clipping region of this <b>Graphics</b> object and the clipping region of the window.</summary>
+    <param name="rect">Reference to a rectangle to be tested to see whether it intersects the visible clipping region.</param>
+    <returns>If the specified rectangle intersects the visible clipping region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Graphics.IsVisible">
+    <summary>The <b>Graphics.IsVisible</b> method determines whether the specified rectangle intersects the visible clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The visible clipping region is the intersection of the clipping region of this <b>Graphics</b> object and the clipping region of the window.</summary>
+    <param name="rect">Reference to a rectangle to be tested to determine whether it intersects the visible clipping region.</param>
+    <returns>If the specified rectangle intersects the visible clipping region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Graphics.IsVisible">
+    <summary>The <b>Graphics.IsVisible</b> method determines whether the specified point is inside the visible clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The visible clipping region is the intersection of the clipping region of this <b>Graphics</b> object and the clipping region of the window.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the point to test.</param>
+    <param name="y">Integer that specifies the y-coordinate of the point to test.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.IsVisible">
+    <summary>The <b>Graphics.IsVisible</b> method determines whether the specified rectangle intersects the visible clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The visible clipping region is the intersection of the clipping region of this <b>Graphics</b> object and the clipping region of the window.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rectangle to test.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rectangle to test.</param>
+    <param name="width">Integer that specifies the width of the rectangle to test.</param>
+    <param name="height">Integer that specifies the height of the rectangle to test.</param>
+    <returns>If the specified rectangle intersects the visible clipping region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Graphics.IsVisible">
+    <summary>The <b>Graphics.IsVisible</b> method determines whether the specified point is inside the visible clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The visible clipping region is the intersection of the clipping region of this <b>Graphics</b> object and the clipping region of the window.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the point to test.</param>
+    <param name="y">Real number that specifies the y-coordinate of the point to test.</param>
+    <returns>If the specified coordinates are inside the visible clipping region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Graphics.IsVisible">
+    <summary>The <b>Graphics.IsVisible</b> method determines whether the specified rectangle intersects the visible clipping region of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The visible clipping region is the intersection of the clipping region of this<b>Graphics</b> object and the clipping region of the window.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rectangle to test.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rectangle to test.</param>
+    <param name="width">Real number that specifies the width of the rectangle to test.</param>
+    <param name="height">Real number that specifies the height of the rectangle to test.</param>
+    <returns>If the specified rectangle intersects the visible clipping region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Graphics.IsVisibleClipEmpty">
+    <summary>The <b>Graphics.IsVisibleClipEmpty</b> method determines whether the visible clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object is empty. The visible clipping region is the intersection of the clipping region of this <b>Graphics</b> object and the clipping region of the window.</summary>
+    <returns>If the visible clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object is empty, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Graphics.MeasureCharacterRanges">
+    <summary>The <b>Graphics.MeasureCharacterRanges</b> method gets a set of regions each of which bounds a range of character positions within a string.</summary>
+    <param name="string">
+      <para>Pointer to a wide-character string.</para>
+      <div>
+        <b>Important</b>  For bidirectional languages, such as Arabic, the string length must not exceed 2046 characters.</div>
+    </param>
+    <param name="length">Integer that specifies the number of characters in the <i>string</i> array. If the <i>string</i> parameter points to a <b>NULL</b>-terminated string, this parameter can be set to –1.</param>
+    <param name="font">Pointer to a <i>Font</i> object that specifies the font characteristics (the family name, size, and style of the font) to be applied to the string.</param>
+    <param name="layoutRect">Reference to a rectangle that bounds the string.</param>
+    <param name="stringFormat">Pointer to a <i>StringFormat</i> object that specifies the character ranges and layout information, such as alignment, trimming, tab stops, and so forth.</param>
+    <param name="regionCount">Integer that specifies the number of regions that are expected to be received into the <i>regions</i> array. This number should be equal to the number of character ranges currently in the <i>StringFormat</i> object.</param>
+    <param name="regions">Pointer to an array of <i>Region</i> objects that receives the regions, each of which bounds a range of text.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.MeasureDriverString">
+    <summary>The <b>Graphics.MeasureDriverString</b> method measures the bounding box for the specified characters and their corresponding positions.</summary>
+    <param name="text">Pointer to an array of 16-bit values. If the DriverStringOptionsCmapLookup flag is set, each value specifies a Unicode character to be displayed. Otherwise, each value specifies an index to a font glyph that defines a character to be displayed.</param>
+    <param name="length">Integer that specifies the number of values in the <i>text</i> array. The <i>length</i> parameter can be set to –1 if the string is null terminated.</param>
+    <param name="font">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object that specifies the family name, size, and style of the font to be applied to the string.</param>
+    <param name="positions">If the DriverStringOptionsRealizedAdvance flag is set, <i>positions</i> is a pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object that specifies the position of the first glyph. Otherwise, <i>positions</i> is an array of <b>PointF</b> objects, each of which specifies the origin of an individual glyph.</param>
+    <param name="flags">Integer that specifies the options for the appearance of the string. This value must be an element of the <see cref="DriverStringOptions" /> enumeration or the result of a bitwise <b>OR</b> applied to two or more of these elements.</param>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies the transformation matrix to apply to each value in the <i>text</i> array.</param>
+    <param name="boundingBox">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that receives the rectangle that bounds the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.MeasureString">
+    <summary>The <b>Graphics.MeasureString</b> method measures the extent of the string in the specified font, format, and layout rectangle.</summary>
+    <param name="string">
+      <para>Pointer to a wide-character string to be measured.</para>
+      <div>
+        <b>Important</b>  For bidirectional languages, such as Arabic, the string length must not exceed 2046 characters.</div>
+    </param>
+    <param name="length">Integer that specifies the number of characters in the <i>string</i> array. The <i>length</i> parameter can be set to –1 if the string is null terminated.</param>
+    <param name="font">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object that specifies the family name, size, and style of the font that is applied to the string.</param>
+    <param name="origin">Reference to the point at which the string starts.</param>
+    <param name="stringFormat">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object that specifies the layout information, such as alignment, trimming, tab stops, and so forth.</param>
+    <param name="boundingBox">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that receives the rectangle that bounds the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.MeasureString">
+    <summary>The <b>Graphics.MeasureString</b> method measures the extent of the string in the specified font and layout rectangle.</summary>
+    <param name="string">
+      <para>Pointer to a wide-character string to be measured.</para>
+      <div>
+        <b>Important</b>  For bidirectional languages, such as Arabic, the string length must not exceed 2046 characters.</div>
+    </param>
+    <param name="length">Integer that specifies the number of characters in the <i>string</i> array. The <i>length</i> parameter can be set to –1 if the string is null terminated.</param>
+    <param name="font">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object that specifies the family name, size, and style of the font that is applied to the string.</param>
+    <param name="origin">Reference to the point at which the string starts.</param>
+    <param name="boundingBox">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that receives the rectangle that bounds the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.MeasureString">
+    <summary>The <b>Graphics.MeasureString</b> method measures the extent of the string in the specified font, format, and layout rectangle.</summary>
+    <param name="string">
+      <para>Pointer to a wide-character string to be measured.</para>
+      <para>
+        <b>Important</b> For bidirectional languages, such as Arabic, the string length must not exceed 2046 characters.</para>
+    </param>
+    <param name="length">Integer that specifies the number of characters in the <i>string</i> array. The <i>length</i> parameter can be set to -1 if the string is null terminated.</param>
+    <param name="font">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object that specifies the family name, size, and style of the font to be applied to the string.</param>
+    <param name="layoutRect">Reference to the rectangle that bounds the string.</param>
+    <param name="stringFormat">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object that specifies the layout information, such as alignment, trimming, tab stops, and so forth.</param>
+    <param name="boundingBox">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that receives the rectangle that bounds the string.</param>
+    <param name="codepointsFitted">Optional. Pointer to an <b>INT</b> that receives the number of characters that actually fit into the layout rectangle. The default value is a <b>NULL</b> pointer.</param>
+    <param name="linesFilled">Optional. Pointer to an <b>INT</b> that receives the number of lines that fit into the layout rectangle. The default value is a <b>NULL</b> pointer.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.MeasureString">
+    <summary>The <b>Graphics.MeasureString</b> method measures the extent of the string in the specified font and layout rectangle.</summary>
+    <param name="string">
+      <para>Pointer to a wide-character string to be measured.</para>
+      <div>
+        <b>Important</b>  For bidirectional languages, such as Arabic, the string length must not exceed 2046 characters.</div>
+    </param>
+    <param name="length">Integer that specifies the number of characters in the <i>string</i> array. The <i>length</i> parameter can be set to –1 if the string is null terminated.</param>
+    <param name="font">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object that specifies the family name, size, and style of the font that is applied to the string.</param>
+    <param name="layoutRect">Reference to a rectangle that bounds the string.</param>
+    <param name="boundingBox">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that receives the rectangle that bounds the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.MeasureString">
+    <summary>The <b>Graphics.MeasureString</b> method measures the extent of the string in the specified font, format, and layout rectangle.</summary>
+    <param name="string">
+      <para>Pointer to a wide-character string to be measured.</para>
+      <div>
+        <b>Important</b>  For bidirectional languages, such as Arabic, the string length must not exceed 2046 characters.</div>
+    </param>
+    <param name="length">Integer that specifies the number of characters in the <i>string</i> array. The <i>length</i> parameter can be set to –1 if the string is null terminated.</param>
+    <param name="font">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object that specifies the family name, size, and style of the font that is applied to the string.</param>
+    <param name="layoutRectSize">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object that specifies the width and height of a rectangle that bounds the string.</param>
+    <param name="stringFormat">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object that specifies the layout information, such as alignment, trimming, tab stops, and so forth.</param>
+    <param name="size">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object that receives the width and height of the rectangle that bounds the string.</param>
+    <param name="codepointsFitted">Optional. Pointer to an <b>INT</b> that receives the number of characters that actually fit into the layout rectangle. The default value is a <b>NULL</b> pointer.</param>
+    <param name="linesFilled">Optional. Pointer to an <b>INT</b> that receives the number of lines that actually fit into the layout rectangle. The default value is a <b>NULL</b> pointer.</param>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.MultiplyTransform">
+    <summary>The <b>Graphics.MultiplyTransform</b> method updates this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object's world transformation matrix with the product of itself and another matrix.</summary>
+    <param name="matrix">Pointer to a matrix that will be multiplied by the world transformation matrix of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of multiplication. MatrixOrderPrepend specifies that the passed matrix is on the left, and MatrixOrderAppend specifies that the passed matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.ReleaseHDC">
+    <summary>The <b>Graphics.ReleaseHDC</b> method releases a device context handle obtained by a previous call to the <see cref="Graphics.GetHDC" /> method of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="hdc">Handle to a device context obtained by a previous call to the <see cref="Graphics.GetHDC" /> method of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+  </member>
+  <member name="Graphics.ResetClip">
+    <summary>The <b>Graphics.ResetClip</b> method sets the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to an infinite region.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.ResetTransform">
+    <summary>The <b>Graphics.ResetTransform</b> method sets the world transformation matrix of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to the identity matrix.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.Restore">
+    <summary>The <b>Graphics.Restore</b> method sets the state of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to the state stored by a previous call to the <see cref="Graphics.Save" /> method of this <b>Graphics</b> object.</summary>
+    <param name="gstate">32-bit value (returned by a previous call to the <see cref="Graphics.Save" /> method of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object) that identifies a block of saved state.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.RotateTransform">
+    <summary>The <b>Graphics.RotateTransform</b> method updates the world transformation matrix of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object with the product of itself and a rotation matrix.</summary>
+    <param name="angle">Real number that specifies the angle, in degrees, of rotation.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of multiplication. MatrixOrderPrepend specifies that the rotation matrix is on the left, and MatrixOrderAppend specifies that the rotation matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.Save">
+    <summary>The <b>Graphics.Save</b> method saves the current state (transformations, clipping region, and quality settings) of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. You can restore the state later by calling the <see cref="Graphics.Restore" /> method.</summary>
+    <returns>This method returns a value that identifies the saved state. Pass this value to the <see cref="Graphics.Restore" /> method when you want to restore the state. The <b>GraphicsState</b> data type is defined in Gdiplusenums.h.</returns>
+  </member>
+  <member name="Graphics.ScaleTransform">
+    <summary>The <b>Graphics.ScaleTransform</b> method updates this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object's world transformation matrix with the product of itself and a scaling matrix.</summary>
+    <param name="sx">Real number that specifies the horizontal scaling factor in the scaling matrix.</param>
+    <param name="sy">Real number that specifies the vertical scaling factor in the scaling matrix.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of multiplication. MatrixOrderPrepend specifies that the scaling matrix is on the left, and MatrixOrderAppend specifies that the scaling matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetAbort">
+    <summary>Not used in Windows GDI+ versions 1.0 and 1.1.</summary>
+    <param name="pIAbort">A <b>GdiplusAbort</b> structure that provides a mechanism that allows Windows GDI+ to call an application-defined <b>Abort</b> method periodically during time-consuming rendering operations.</param>
+    <returns>This method does not return a value.</returns>
+  </member>
+  <member name="Graphics.SetClip">
+    <summary>The <b>Graphics.SetClip</b> method updates the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to a region that is the combination of itself and the region specified by a graphics path. If a figure in the path is not closed, this method treats the nonclosed figure as if it were closed by a straight line that connects the figure's starting and ending points.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that specifies the region to be combined with the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <param name="combineMode">Optional. Element of the <see cref="CombineMode" /> enumeration that specifies how the specified region is combined with the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The default value is CombineModeReplace.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetClip">
+    <summary>The <b>Graphics.SetClip</b> method updates the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to a region that is the combination of itself and the clipping region of another <b>Graphics</b> object.</summary>
+    <param name="g">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the clipping region to be combined with the clipping region of this <b>Graphics</b> object.</param>
+    <param name="combineMode">Element of the <see cref="CombineMode" /> enumeration that specifies how the specified region is combined with the clipping region of this <b>Graphics</b> object. The default value is CombineModeReplace.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetClip">
+    <summary>The <b>Graphics.SetClip</b> method updates the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to a region that is the combination of itself and a rectangle.</summary>
+    <param name="rect">Reference to a rectangle to be combined with the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <param name="combineMode">Element of the <see cref="CombineMode" /> enumeration that specifies how the specified rectangle is combined with the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The default value is CombineModeReplace.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetClip">
+    <summary>The <b>Graphics.SetClip</b> method updates the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to a region that is the combination of itself and a rectangle.</summary>
+    <param name="rect">Reference to a rectangle to be combined with the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <param name="combineMode">Element of the <see cref="CombineMode" /> enumeration that specifies how the specified rectangle is combined with the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The default value is CombineModeReplace.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetClip">
+    <summary>The <b>Graphics.SetClip</b> method updates the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to a region that is the combination of itself and the region specified by a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</summary>
+    <param name="region">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object that specifies the region to be combined with the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <param name="combineMode">Optional. Element of the <see cref="CombineMode" /> enumeration that specifies how the specified region is combined with the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The default value is CombineModeReplace.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetClip">
+    <summary>The <b>Graphics.SetClip</b> method updates the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to a region that is the combination of itself and a Windows Graphics Device Interface (GDI) region.</summary>
+    <param name="hRgn">Handle to a GDI region to be combined with the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. This is provided for legacy code. New applications should pass a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object as the first parameter.</param>
+    <param name="combineMode">Optional. Element of the <see cref="CombineMode" /> enumeration that specifies how the GDI region is combined with the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The default value is CombineModeReplace.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetCompositingMode">
+    <summary>The <b>Graphics.SetCompositingMode</b> method sets the compositing mode of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="compositingMode">Element of the <see cref="CompositingMode" /> enumeration that specifies the compositing mode.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetCompositingQuality">
+    <summary>The <b>Graphics.SetCompositingQuality</b> method sets the compositing quality of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="compositingQuality">Element of the <see cref="CompositingQuality" /> enumeration that specifies the compositing quality.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetInterpolationMode">
+    <summary>The <b>Graphics.SetInterpolationMode</b> method sets the interpolation mode of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The interpolation mode determines the algorithm that is used when images are scaled or rotated.</summary>
+    <param name="interpolationMode">Element of the <see cref="InterpolationMode" /> enumeration that specifies the interpolation mode.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetPageScale">
+    <summary>The <b>Graphics.SetPageScale</b> method sets the scaling factor for the page transformation of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The page transformation converts page coordinates to device coordinates.</summary>
+    <param name="scale">Real number that specifies the scaling factor.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetPageUnit">
+    <summary>The <b>Graphics.SetPageUnit</b> method sets the unit of measure for this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The page unit belongs to the page transformation, which converts page coordinates to device coordinates.</summary>
+    <param name="unit">Element of the <see cref="Unit" /> enumeration that specifies the unit of measure for this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetPixelOffsetMode">
+    <summary>The <b>Graphics.SetPixelOffsetMode</b> method sets the pixel offset mode of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="pixelOffsetMode">Element of the <see cref="PixelOffsetMode" /> enumeration that specifies the pixel offset mode.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetRenderingOrigin">
+    <summary>The <b>Graphics.SetRenderingOrigin</b> method sets the rendering origin of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The rendering origin is used to set the dither origin for 8-bits-per-pixel and 16-bits-per-pixel dithering and is also used to set the origin for hatch brushes.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the rendering origin.</param>
+    <param name="y">Integer that specifies the y-coordinate of the rendering origin.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetSmoothingMode">
+    <summary>The <b>Graphics.SetSmoothingMode</b> method sets the rendering quality of the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="smoothingMode">Element of the <see cref="SmoothingMode" /> enumeration that specifies whether smoothing (antialiasing) is applied to lines and curves.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetTextContrast">
+    <summary>The <b>Graphics.SetTextContrast</b> method sets the contrast value of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The contrast value is used for antialiasing text.</summary>
+    <param name="contrast">
+      <b>UINT</b> that specifies the contrast value for antialiasing text.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetTextRenderingHint">
+    <summary>The <b>Graphics.SetTextRenderingHint</b> method sets the text rendering mode of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="newMode">Element of the <see cref="TextRenderingHint" /> enumeration that specifies the process currently used by this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object to render text.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.SetTransform">
+    <summary>The <b>Graphics.SetTransform</b> method sets the world transformation of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies the world transformation.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.TransformPoints">
+    <summary>The <b>Graphics.TransformPoints</b> method converts an array of points from one coordinate space to another. The conversion is based on the current world and page transformations of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="destSpace">Element of the <see cref="CoordinateSpace" /> enumeration that specifies the destination coordinate space.</param>
+    <param name="srcSpace">Element of the <see cref="CoordinateSpace" /> enumeration that specifies the source coordinate space.</param>
+    <param name="pts">Pointer to an array that, on input, holds the points to be converted and, on output, holds the converted points.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>pts</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.TransformPoints">
+    <summary>The <b>Graphics.TransformPoints</b> method converts an array of points from one coordinate space to another. The conversion is based on the current world and page transformations of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="destSpace">Element of the <see cref="CoordinateSpace" /> enumeration that specifies the destination coordinate space.</param>
+    <param name="srcSpace">Element of the <see cref="CoordinateSpace" /> enumeration that specifies the source coordinate space.</param>
+    <param name="pts">Pointer to an array that, on input, holds the points to be converted and, on output, holds the converted points.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>pts</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.TranslateClip">
+    <summary>The <b>Graphics.TranslateClip</b> method translates the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="dx">Integer that specifies the horizontal component of the translation.</param>
+    <param name="dy">Integer that specifies the vertical component of the translation.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.TranslateClip">
+    <summary>The <b>Graphics.TranslateClip</b> method translates the clipping region of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="dx">Real number that specifies the horizontal component of the translation.</param>
+    <param name="dy">Real number that specifies the vertical component of the translation.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Graphics.TranslateTransform">
+    <summary>The <b>Graphics.TranslateTransform</b> method updates this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object's world transformation matrix with the product of itself and a translation matrix.</summary>
+    <param name="dx">Real number that specifies the horizontal component of the translation.</param>
+    <param name="dy">Real number that specifies the vertical component of the translation.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of multiplication. <see cref="MatrixOrderPrepend" /> specifies that the translation matrix is on the left, and <see cref="MatrixOrderAppend" /> specifies that the translation matrix is on the right. The default value is <see cref="MatrixOrderPrepend" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

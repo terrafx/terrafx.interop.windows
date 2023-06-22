@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_LBBALLOONINFO">
-    <summary>
-      <para>The <b>TF_LBBALLOONINFO</b> structure contains information about a language bar balloon item.</para>
-    </summary>
-    <seealso cref="ITfLangBarItemBalloon.GetBalloonInfo " />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</seealso>
-    <seealso cref="TfLBBalloonStyle " />
+    <summary>The <b>TF_LBBALLOONINFO</b> structure contains information about a language bar balloon item.</summary>
   </member>
   <member name="TF_LBBALLOONINFO.style">
-    <summary>
-      <para>Contains one of the <see cref="TfLBBalloonStyle" /> values that specify the type of balloon to display.</para>
-    </summary>
+    <summary>Contains one of the <see cref="TfLBBalloonStyle" /> values that specify the type of balloon to display.</summary>
   </member>
   <member name="TF_LBBALLOONINFO.bstrText">
-    <summary>
-      <para>Contains a <b>BSTR</b> that contains the string for the balloon. This string must be allocated using the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</a> function. The caller free this buffer when it is no longer required by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a>.</para>
-    </summary>
+    <summary>Contains a <b>BSTR</b> that contains the string for the balloon. This string must be allocated using the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</a> function. The caller free this buffer when it is no longer required by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a>.</summary>
   </member>
 </doc>

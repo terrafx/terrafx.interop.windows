@@ -3,35 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CHANGER_PRODUCT_DATA">
-    <summary>
-      <para>Represents product data for a changer device. It is used by the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_get_product_data">IOCTL_CHANGER_GET_PRODUCT_DATA</a> control code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_get_product_data">IOCTL_CHANGER_GET_PRODUCT_DATA</seealso>
+    <summary>Represents product data for a changer device. It is used by the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_get_product_data">IOCTL_CHANGER_GET_PRODUCT_DATA</a> control code.</summary>
   </member>
   <member name="CHANGER_PRODUCT_DATA.VendorId">
-    <summary>
-      <para>The device manufacturer's name. This is acquired directly from the device inquiry data.</para>
-    </summary>
+    <summary>The device manufacturer's name. This is acquired directly from the device inquiry data.</summary>
   </member>
   <member name="CHANGER_PRODUCT_DATA.ProductId">
-    <summary>
-      <para>The product identification, as defined by the vendor. This is acquired directly from the device inquiry data.</para>
-    </summary>
+    <summary>The product identification, as defined by the vendor. This is acquired directly from the device inquiry data.</summary>
   </member>
   <member name="CHANGER_PRODUCT_DATA.Revision">
-    <summary>
-      <para>The product revision, as defined by the vendor.</para>
-    </summary>
+    <summary>The product revision, as defined by the vendor.</summary>
   </member>
   <member name="CHANGER_PRODUCT_DATA.SerialNumber">
-    <summary>
-      <para>A unique value used to globally identify this device, as defined by the vendor.</para>
-    </summary>
+    <summary>A unique value used to globally identify this device, as defined by the vendor.</summary>
   </member>
   <member name="CHANGER_PRODUCT_DATA.DeviceType">
-    <summary>
-      <para>The device type of data transports, as defined by SCSI-2. This member must be <b>FILE_DEVICE_CHANGER</b>.</para>
-    </summary>
+    <summary>The device type of data transports, as defined by SCSI-2. This member must be <b>FILE_DEVICE_CHANGER</b>.</summary>
   </member>
 </doc>

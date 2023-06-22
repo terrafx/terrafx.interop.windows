@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFSensorDeviceMode">
-    <summary>
-      <para>Specifies the sharing mode of an <see cref="IMFSensorDevice" />.</para>
-    </summary>
+    <summary>Specifies the sharing mode of an <see cref="IMFSensorDevice" />.</summary>
   </member>
   <member name="MFSensorDeviceMode.MFSensorDeviceMode_Controller">
-    <summary>
-      <para>The device is in controller mode, which means its settings can be modified.</para>
-    </summary>
+    <summary>The device is in controller mode, which means its settings can be modified.</summary>
   </member>
   <member name="MFSensorDeviceMode.MFSensorDeviceMode_Shared">
-    <summary>
-      <para>The device is in shared mode, which means its settings can't be modified.</para>
-    </summary>
+    <summary>The device is in shared mode, which means its settings can't be modified.</summary>
   </member>
 </doc>

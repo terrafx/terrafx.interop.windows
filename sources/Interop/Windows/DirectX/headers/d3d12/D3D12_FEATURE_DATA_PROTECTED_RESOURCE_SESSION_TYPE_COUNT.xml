@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPE_COUNT">
-    <summary>
-      <para>Indicates a count of protected resource session types.</para>
-    </summary>
+    <summary>Indicates a count of protected resource session types.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPE_COUNT.NodeIndex">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></b></para>
-      <para>An input parameter which, in multi-adapter operation, indicates which physical adapter of the device this operation applies to.</para>
-    </summary>
+    <summary>An input parameter which, in multi-adapter operation, indicates which physical adapter of the device this operation applies to.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPE_COUNT.Count">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></b></para>
-      <para>An output parameter containing the number of protected resource session types supported by the driver.</para>
-    </summary>
+    <summary>An output parameter containing the number of protected resource session types supported by the driver.</summary>
   </member>
 </doc>

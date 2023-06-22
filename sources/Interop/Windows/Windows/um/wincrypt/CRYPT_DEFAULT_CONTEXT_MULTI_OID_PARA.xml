@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA">
-    <summary>
-      <para>The <b>CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA</b> structure is used with the <see cref="CryptInstallDefaultContext" /> function to contain an array of object identifier strings.</para>
-    </summary>
-    <seealso cref="CryptInstallDefaultContext" />
+    <summary>The <b>CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA</b> structure is used with the <see cref="CryptInstallDefaultContext" /> function to contain an array of object identifier strings.</summary>
   </member>
   <member name="CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA.cOID">
-    <summary>
-      <para>The number of elements in the <b>rgpszOID</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgpszOID</b> array.</summary>
   </member>
   <member name="CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA.rgpszOID">
-    <summary>
-      <para>An array of pointers to null-terminated ANSI strings that contain the object identifier strings of the certificate signature algorithm to install the default provider for, for example, <b>szOID_OIWSEC_md5RSA</b>. The <b>cOID</b> member of this structure contains the number of elements in this array.</para>
-    </summary>
+    <summary>An array of pointers to null-terminated ANSI strings that contain the object identifier strings of the certificate signature algorithm to install the default provider for, for example, <b>szOID_OIWSEC_md5RSA</b>. The <b>cOID</b> member of this structure contains the number of elements in this array.</summary>
   </member>
 </doc>

@@ -3,21 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellImageDataAbort.QueryAbort">
-    <summary>
-      <para>Aborts an <see cref="IShellImageData" /> process such as <see cref="Decode" />, <see cref="Draw" />, or <see cref="Scale" />. This is a callback method.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the <see cref="IShellImageData" /> process should continue, or S_FALSE if it should be aborted.</para>
-    </returns>
+    <summary>Aborts an <see cref="IShellImageData" /> process such as <see cref="Decode" />, <see cref="Draw" />, or <see cref="Scale" />. This is a callback method.</summary>
+    <returns>Returns S_OK if the <see cref="IShellImageData" /> process should continue, or S_FALSE if it should be aborted.</returns>
   </member>
   <member name="IShellImageDataAbort">
-    <summary>
-      <para>Exposes a single method used to abort <see cref="IShellImageData" /> processes.</para>
-    </summary>
-    <remarks>
-      <para>This interface is not expected to be available in later versions of Windows. It is recommended that Windows GDI+ APIs be used in place of <see cref="IShellImageData" /> methods.</para>
-      <para>This interface was not included in a public header file prior to Windows Vista.</para>
-    </remarks>
+    <summary>Exposes a single method used to abort <see cref="IShellImageData" /> processes.</summary>
   </member>
 </doc>

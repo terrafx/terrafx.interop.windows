@@ -3,49 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAPI_FORMAT2_DATA_WRITE_ACTION">
-    <summary>
-      <para>Defines values that indicate the current state of the write operation when using the <see cref="IDiscFormat2DataEventArgs" /> interface.</para>
-    </summary>
-    <seealso cref="IDiscFormat2DataEventArgs.get_CurrentAction" />
+    <summary>Defines values that indicate the current state of the write operation when using the <see cref="IDiscFormat2DataEventArgs" /> interface.</summary>
   </member>
   <member name="IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_VALIDATING_MEDIA">
-    <summary>
-      <para>Validating that the current media is supported.</para>
-    </summary>
+    <summary>Validating that the current media is supported.</summary>
   </member>
   <member name="IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_FORMATTING_MEDIA">
-    <summary>
-      <para>Formatting media, when required.</para>
-    </summary>
+    <summary>Formatting media, when required.</summary>
   </member>
   <member name="IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_INITIALIZING_HARDWARE">
-    <summary>
-      <para>Initializing the hardware, for example, setting drive write speeds.</para>
-    </summary>
+    <summary>Initializing the hardware, for example, setting drive write speeds.</summary>
   </member>
   <member name="IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_CALIBRATING_POWER">
-    <summary>
-      <para>Optimizing laser intensity for writing to the media.</para>
-    </summary>
+    <summary>Optimizing laser intensity for writing to the media.</summary>
   </member>
   <member name="IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_WRITING_DATA">
-    <summary>
-      <para>Writing data to the media.</para>
-    </summary>
+    <summary>Writing data to the media.</summary>
   </member>
   <member name="IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_FINALIZATION">
-    <summary>
-      <para>Finalizing the write.  This state is media dependent and can include items such as closing the track or session, or finishing background formatting.</para>
-    </summary>
+    <summary>Finalizing the write. This state is media dependent and can include items such as closing the track or session, or finishing background formatting.</summary>
   </member>
   <member name="IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_COMPLETED">
-    <summary>
-      <para>Successfully finished the write process.</para>
-    </summary>
+    <summary>Successfully finished the write process.</summary>
   </member>
   <member name="IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_VERIFYING">
-    <summary>
-      <para>Verifying the integrity of the burned media.</para>
-    </summary>
+    <summary>Verifying the integrity of the burned media.</summary>
   </member>
 </doc>

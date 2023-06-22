@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="StringDigitSubstitute">
+    <summary>The <b>StringDigitSubstitute</b> enumeration specifies how to substitute digits in a string according to a user's locale or language.</summary>
+  </member>
+  <member name="StringDigitSubstitute.StringDigitSubstituteUser">
+    <summary>Specifies a user-defined substitution scheme.</summary>
+  </member>
+  <member name="StringDigitSubstitute.StringDigitSubstituteNone">
+    <summary>Specifies to disable substitutions.</summary>
+  </member>
+  <member name="StringDigitSubstitute.StringDigitSubstituteNational">
+    <summary>Specifies substitution digits that correspond with the official national language of the user's locale.</summary>
+  </member>
+  <member name="StringDigitSubstitute.StringDigitSubstituteTraditional">
+    <summary>Specifies substitution digits that correspond with the user's native script or language, which may be different from the official national language of the user's locale.</summary>
+  </member>
+</doc>

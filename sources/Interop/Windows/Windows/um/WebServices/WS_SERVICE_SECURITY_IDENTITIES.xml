@@ -9,13 +9,9 @@
     </summary>
   </member>
   <member name="WS_SERVICE_SECURITY_IDENTITIES.serviceIdentities">
-    <summary>
-      <para>A array of strings representing the SPNs accepted by the server. Wildcards are not allowed.</para>
-    </summary>
+    <summary>A array of strings representing the SPNs accepted by the server. Wildcards are not allowed.</summary>
   </member>
   <member name="WS_SERVICE_SECURITY_IDENTITIES.serviceIdentityCount">
-    <summary>
-      <para>The number of strings in serviceIdentities.</para>
-    </summary>
+    <summary>The number of strings in serviceIdentities.</summary>
   </member>
 </doc>

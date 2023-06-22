@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.RoFreeParameterizedTypeExtra">
+    <summary>Frees the handle allocated by <see cref="RoGetParameterizedTypeInstanceIID" />.</summary>
+    <param name="extra">A handle to the IID.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.RoGetParameterizedTypeInstanceIID">
+    <summary>Computes the interface identifier (IID) of the interface or delegate type that results when a parameterized interface or delegate is instantiated with the specified type arguments.</summary>
+    <param name="nameElementCount">Number of elements in <i>nameElements.</i></param>
+    <param name="nameElements">A parsed Windows Runtime type name, as returned by the <see cref="RoParseTypeName" /> function. For example, "Windows.Foundation.Collections.IVector`1", and "N1.N2.IFoo".</param>
+    <param name="metaDataLocator">
+      <para>A callback to use for resolving metadata.</para>
+      <para>An implementation should use the <see cref="RoGetMetaDataFile" /> function to discover the necessary metadata (.winmd) file and examine the metadata to determine the necessary type information. Because the <b>RoGetMetaDataFile</b> function does not cache results, locators should cache the results as appropriate for the programming model being implemented.</para>
+    </param>
+    <param name="iid">The IID of the interface or delegate that corresponds with <i>nameElements</i>.</param>
+    <param name="pExtra">Handle to the IID that corresponds with <i>nameElements</i>.</param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The call was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory available to complete the task.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The wrong number of type arguments are provided for a parameterized type.</description>
+        </listheader>
+      </list> <para>A failure may also occur if a type is inappropriate for the context in which it appears.</para></returns>
+  </member>
+  <member name="WinRT.RoParameterizedTypeExtraGetTypeSignature">
+    <summary>Gets the type signature used to compute the IID from the last call to <see cref="RoGetParameterizedTypeInstanceIID" /> with the specified handle.</summary>
+    <param name="extra">A handle to the IID.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+</doc>

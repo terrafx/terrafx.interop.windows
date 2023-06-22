@@ -3,50 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWizardSite.GetCancelledPage">
-    <summary>
-      <para>Called when the user cancels navigation through the wizard extension. Gets the handle of the <see cref="PROPSHEETPAGE" /> that represents the wizard page to display when the user cancels navigation while in the wizard extension.</para>
-    </summary>
-    <param name="phpage">
-      <para>Type: <b>HPROPSHEETPAGE*</b></para>
-      <para>A pointer to a handle variable of type <see cref="PROPSHEETPAGE" /> that receives the wizard page to display when the user cancels navigation while in the wizard extension.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when the user cancels navigation through the wizard extension. Gets the handle of the <see cref="PROPSHEETPAGE" /> that represents the wizard page to display when the user cancels navigation while in the wizard extension.</summary>
+    <param name="phpage">A pointer to a handle variable of type <see cref="PROPSHEETPAGE" /> that receives the wizard page to display when the user cancels navigation while in the wizard extension.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWizardSite.GetNextPage">
-    <summary>
-      <para>Called when the user navigates forward past the wizard extension pages. Gets the handle of the <see cref="PROPSHEETPAGE" /> that represents the wizard page immediately following the wizard extension page.</para>
-    </summary>
-    <param name="phpage">
-      <para>Type: <b>HPROPSHEETPAGE*</b></para>
-      <para>A pointer to a handle variable of type <see cref="PROPSHEETPAGE" /> for the wizard page following the extension page.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when the user navigates forward past the wizard extension pages. Gets the handle of the <see cref="PROPSHEETPAGE" /> that represents the wizard page immediately following the wizard extension page.</summary>
+    <param name="phpage">A pointer to a handle variable of type <see cref="PROPSHEETPAGE" /> for the wizard page following the extension page.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWizardSite.GetPreviousPage">
-    <summary>
-      <para>Called when the user navigates backward out of the wizard extension. Gets the handle of the <see cref="PROPSHEETPAGE" /> that represents the wizard page that is before the wizard extension page.</para>
-    </summary>
-    <param name="phpage">
-      <para>Type: <b>HPROPSHEETPAGE*</b></para>
-      <para>A pointer to a variable handle of type <see cref="PROPSHEETPAGE" /> that represents the wizard page that comes immediately before the wizard extension page.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when the user navigates backward out of the wizard extension. Gets the handle of the <see cref="PROPSHEETPAGE" /> that represents the wizard page that is before the wizard extension page.</summary>
+    <param name="phpage">A pointer to a variable handle of type <see cref="PROPSHEETPAGE" /> that represents the wizard page that comes immediately before the wizard extension page.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWizardSite">
-    <summary>
-      <para>Exposes methods used by a wizard extension to navigate the borders between itself and the rest of the wizard.</para>
-    </summary>
-    <remarks>
-      <para>When the user backs out or cancels the extension, or when the extension finishes displaying its pages, the extension then communicates to the wizard that it must navigate in and out of the stack of pages.</para>
-    </remarks>
+    <summary>Exposes methods used by a wizard extension to navigate the borders between itself and the rest of the wizard.</summary>
   </member>
 </doc>

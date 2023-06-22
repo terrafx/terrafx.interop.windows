@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDesktopWindowXamlSourceNative.AttachToWindow">
+    <summary>Attaches the current <see cref="IDesktopWindowXamlSourceNative" /> instance to a parent UI element in your desktop app that is associated with a window handle.</summary>
+    <param name="parentWnd">The window handle of the parent UI element in which you want to host a WinRT XAML control.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDesktopWindowXamlSourceNative.get_WindowHandle">
+    <summary>Gets the window handle of the parent UI element that is associated with the current <see cref="IDesktopWindowXamlSourceNative" /> instance.</summary>
+    <param name="hWnd">On output, this parameter contains the window handle of the parent UI element that is associated with the current <see cref="IDesktopWindowXamlSourceNative" /> instance.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDesktopWindowXamlSourceNative">
+    <summary>Provides members you can use to attach a <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> object that hosts a WinRT XAML control to a parent UI element in your desktop app.</summary>
+  </member>
+</doc>

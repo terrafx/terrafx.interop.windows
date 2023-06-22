@@ -4,29 +4,20 @@
 <doc>
   <member name="DVD_RELATIVE_BUTTON">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Identifies the four directional buttons used for DVD menu navigation and other operations.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IDvdControl2" />
   </member>
   <member name="DVD_RELATIVE_BUTTON.DVD_Relative_Upper">
-    <summary>
-      <para>Upper button.</para>
-    </summary>
+    <summary>Upper button.</summary>
   </member>
   <member name="DVD_RELATIVE_BUTTON.DVD_Relative_Lower">
-    <summary>
-      <para>Lower button.</para>
-    </summary>
+    <summary>Lower button.</summary>
   </member>
   <member name="DVD_RELATIVE_BUTTON.DVD_Relative_Left">
-    <summary>
-      <para>Left button.</para>
-    </summary>
+    <summary>Left button.</summary>
   </member>
   <member name="DVD_RELATIVE_BUTTON.DVD_Relative_Right">
-    <summary>
-      <para>Right button.</para>
-    </summary>
+    <summary>Right button.</summary>
   </member>
 </doc>

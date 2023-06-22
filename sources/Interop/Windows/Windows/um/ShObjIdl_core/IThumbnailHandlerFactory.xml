@@ -3,36 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IThumbnailHandlerFactory.GetThumbnailHandler">
-    <summary>
-      <para>Gets the requested thumbnail handler for the thumbnail of a given item.</para>
-    </summary>
-    <param name="pidlChild">
-      <para>Type: <b>PCUITEMID_CHILD</b></para>
-      <para>The item within the namespace for which the thumbnail handler is being retrieved.</para>
-    </param>
-    <param name="pbc">
-      <para>Type: <b><see cref="IBindCtx" />*</b></para>
-      <para>A pointer to an <see cref="IBindCtx" /> to be used during the moniker binding operation of this process.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the interface requested. This is usually <see cref="IThumbnailProvider" /> or <see cref="IExtractImage" />.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address of a pointer to the requested thumbnail handler. If this method fails, this value is <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Windows Vista calls the <b>IThumbnailHandlerFactory.GetThumbnailHandler</b> method before falling back on <see cref="GetUIObjectOf" />.</para>
-    </remarks>
+    <summary>Gets the requested thumbnail handler for the thumbnail of a given item.</summary>
+    <param name="pidlChild">The item within the namespace for which the thumbnail handler is being retrieved.</param>
+    <param name="pbc">A pointer to an <see cref="IBindCtx" /> to be used during the moniker binding operation of this process.</param>
+    <param name="riid">A reference to the IID of the interface requested. This is usually <see cref="IThumbnailProvider" /> or <see cref="IExtractImage" />.</param>
+    <param name="ppv">When this method returns, contains the address of a pointer to the requested thumbnail handler. If this method fails, this value is <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IThumbnailHandlerFactory">
-    <summary>
-      <para>Exposes a method for retrieving the thumbnail handler of an item. Implement this interface if you want to specify what extractor is used for a child IDList.</para>
-    </summary>
+    <summary>Exposes a method for retrieving the thumbnail handler of an item. Implement this interface if you want to specify what extractor is used for a child IDList.</summary>
   </member>
 </doc>

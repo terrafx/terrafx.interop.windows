@@ -4,15 +4,12 @@
 <doc>
   <member name="IDeskBand.GetBandInfo">
     <summary>
-      <para>Gets state information for a band object.
-<b>Important</b>  You should use <a href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">thumbnail toolbars</a> in new development in place of desk bands, which are not supported as of Windows 7.</para>
+      <para>Gets state information for a band object.</para>
+      <div>
+        <b>Important</b>  You should use <a href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">thumbnail toolbars</a> in new development in place of desk bands, which are not supported as of Windows 7.</div>
     </summary>
-    <param name="dwBandID">
-      <para>Type: <b>DWORD</b></para>
-      <para>The identifier of the band, assigned by the container. The band object can retain this value if it is required.</para>
-    </param>
+    <param name="dwBandID">The identifier of the band, assigned by the container. The band object can retain this value if it is required.</param>
     <param name="dwViewMode">
-      <para>Type: <b>DWORD</b></para>
       <para>The view mode of the band object. One of the following values:</para>
       <h4>DBIF_VIEWMODE_NORMAL</h4>
       <para>The band object is being displayed in a horizontal band.</para>
@@ -23,28 +20,14 @@
       <h4>DBIF_VIEWMODE_TRANSPARENT</h4>
       <para>The band object is being displayed in a transparent band.</para>
     </param>
-    <param name="pdbi">
-      <para>Type: <b><see cref="DESKBANDINFO" />*</b></para>
-      <para>Pointer to a <see cref="DESKBANDINFO" /> structure that receives the band information for the object. The <b>dwMask</b> member of this structure indicates the specific information that is being requested.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="pdbi">Pointer to a <see cref="DESKBANDINFO" /> structure that receives the band information for the object. The <b>dwMask</b> member of this structure indicates the specific information that is being requested.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDeskBand">
     <summary>
-      <para>Used to obtain information about a band object.
-<b>Important</b>  You should use <a href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">thumbnail toolbars</a> in new development in place of desk bands, which are not supported as of Windows 7.</para>
+      <para>Used to obtain information about a band object.</para>
+      <div>
+        <b>Important</b>  You should use <a href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">thumbnail toolbars</a> in new development in place of desk bands, which are not supported as of Windows 7.</div>
     </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IOleWindow" /> and <see cref="IDockingWindow" /> interfaces, from which it inherits.</para>
-      <h3>When to Implement</h3>
-      <para>Implement <b>IDeskBand</b> if you are implementing a band object.</para>
-      <h3>When to Use</h3>
-      <para>You do not call this interface directly. <b>IDeskBand</b> is used by the Shell or the browser to obtain display information for a band object.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/cc144099(v=vs.85)">Creating Custom Explorer Bars, Tool Bands, and Desk Bands</seealso>
-    <seealso cref="IDockingWindow" />
   </member>
 </doc>

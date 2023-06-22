@@ -3,32 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITypeChangeEvents.AfterTypeChange">
-    <summary>
-      <para>Raised after a type has been changed.</para>
-    </summary>
+    <summary>Raised after a type has been changed.</summary>
     <param name="changeKind">
       <para>The type of change.</para>
-      <para></para>
       <h4>CHANGEKIND_ADDMEMBER</h4>
-      <para></para>
       <h4>CHANGEKIND_DELETEMEMBER</h4>
-      <para></para>
       <h4>CHANGEKIND_SETNAMES</h4>
-      <para></para>
       <h4>CHANGEKIND_SETDOCUMENTATION</h4>
-      <para></para>
       <h4>CHANGEKIND_GENERAL</h4>
-      <para></para>
       <h4>CHANGEKIND_INVALIDATE</h4>
-      <para></para>
       <h4>CHANGEKIND_CHANGEFAILED</h4>
     </param>
-    <param name="pTInfoAfter">
-      <para>An object that implements the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo">ICreateTypeInfo</a>, or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</a> interface and that contains the type information before the change was made. The client subscribes to this object to receive notifications about any changes.</para>
-    </param>
-    <param name="pStrName">
-      <para>The name of the change. This value may be null.</para>
-    </param>
+    <param name="pTInfoAfter">An object that implements the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo">ICreateTypeInfo</a>, or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</a> interface and that contains the type information before the change was made. The client subscribes to this object to receive notifications about any changes.</param>
+    <param name="pStrName">The name of the change. This value may be null.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -36,70 +23,60 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more of the arguments is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypechangeevents">ITypeChangeEvents</seealso>
   </member>
   <member name="ITypeChangeEvents.RequestTypeChange">
-    <summary>
-      <para>Raised when a request has been made to change a type. The change can be disallowed.</para>
-    </summary>
+    <summary>Raised when a request has been made to change a type. The change can be disallowed.</summary>
     <param name="changeKind">
       <para>The type of change.</para>
-      <para></para>
       <h4>CHANGEKIND_ADDMEMBER</h4>
-      <para></para>
       <h4>CHANGEKIND_DELETEMEMBER</h4>
-      <para></para>
       <h4>CHANGEKIND_SETNAMES</h4>
-      <para></para>
       <h4>CHANGEKIND_SETDOCUMENTATION</h4>
-      <para></para>
       <h4>CHANGEKIND_GENERAL</h4>
-      <para></para>
       <h4>CHANGEKIND_INVALIDATE</h4>
-      <para></para>
       <h4>CHANGEKIND_CHANGEFAILED</h4>
     </param>
-    <param name="pTInfoBefore">
-      <para>An object that implements the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo">ICreateTypeInfo</a>, or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</a> interface and that contains the type information before the change was made. The client subscribes to this object to receive notifications about any changes.</para>
-    </param>
-    <param name="pStrName">
-      <para>The name of the change. This value may be null.</para>
-    </param>
-    <param name="pfCancel">
-      <para>False to disallow the change; otherwise, true.</para>
-    </param>
+    <param name="pTInfoBefore">An object that implements the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo">ICreateTypeInfo</a>, or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</a> interface and that contains the type information before the change was made. The client subscribes to this object to receive notifications about any changes.</param>
+    <param name="pStrName">The name of the change. This value may be null.</param>
+    <param name="pfCancel">False to disallow the change; otherwise, true.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -107,44 +84,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more of the arguments is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypechangeevents">ITypeChangeEvents</seealso>
   </member>
   <member name="ITypeChangeEvents">
-    <summary>
-      <para>Enables clients to subscribe to type change notifications on objects that implement the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo">ICreateTypeInfo</a>, and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</a> interfaces. When ITypeChangeEvents is implemented on an object, it acts as an incoming interface that enables the object to receive calls from external clients and engage in bidirectional communication with those clients. For more information, see <a href="https://docs.microsoft.com//windows/desktop/com/events-in-com-and-connectable-objects">Events in COM and Connectable Objects</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/using-type-building-interfaces-and-functions">Type Building Interfaces and Functions </seealso>
+    <summary>Enables clients to subscribe to type change notifications on objects that implement the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo">ICreateTypeInfo</a>, and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</a> interfaces. When ITypeChangeEvents is implemented on an object, it acts as an incoming interface that enables the object to receive calls from external clients and engage in bidirectional communication with those clients. For more information, see <a href="https://docs.microsoft.com//windows/desktop/com/events-in-com-and-connectable-objects">Events in COM and Connectable Objects</a>.</summary>
   </member>
 </doc>

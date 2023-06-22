@@ -4,19 +4,14 @@
 <doc>
   <member name="eAVDecHEAACDynamicRangeControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies whether an AAC decoder performs dynamic range control. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecheaacdynamicrangecontrol-property">AVDecHEAACDynamicRangeControl</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVDecHEAACDynamicRangeControl.eAVDecHEAACDynamicRangeControl_OFF">
-    <summary>
-      <para>The decoder does not apply dynamic range control.</para>
-    </summary>
+    <summary>The decoder does not apply dynamic range control.</summary>
   </member>
   <member name="eAVDecHEAACDynamicRangeControl.eAVDecHEAACDynamicRangeControl_ON">
-    <summary>
-      <para>The decoder applies dynamic range control to any AAC stream that contains an extension payload of type EXT_DYNAMIC_RANGE, as defined in ISO/IEC 14496-3 (Table 4.105, "Values of the extension_type field").</para>
-    </summary>
+    <summary>The decoder applies dynamic range control to any AAC stream that contains an extension payload of type EXT_DYNAMIC_RANGE, as defined in ISO/IEC 14496-3 (Table 4.105, "Values of the extension_type field").</summary>
   </member>
 </doc>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ImageFlags">
+    <summary>The <b>ImageFlags</b> enumeration specifies the attributes of the pixel data contained in an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object. The<see cref="Image.GetFlags" /> method returns an element of this enumeration.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsNone">
+    <summary>Specifies no format information.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsScalable">
+    <summary>Specifies that the image can be scaled.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsHasAlpha">
+    <summary>Specifies that the pixel data contains alpha values.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsHasTranslucent">
+    <summary>Specifies that the pixel data has alpha values other than 0 (transparent) and 255 (opaque).</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsPartiallyScalable">
+    <summary>Specifies that the pixel data is partially scalable with some limitations.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsColorSpaceRGB">
+    <summary>Specifies that the image is stored using an RGB color space.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsColorSpaceCMYK">
+    <summary>Specifies that the image is stored using a CMYK color space.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsColorSpaceGRAY">
+    <summary>Specifies that the image is a grayscale image.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsColorSpaceYCBCR">
+    <summary>Specifies that the image is stored using a YCBCR color space.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsColorSpaceYCCK">
+    <summary>Specifies that the image is stored using a YCCK color space.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsHasRealDPI">
+    <summary>Specifies that dots per inch information is stored in the image.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsHasRealPixelSize">
+    <summary>Specifies that the pixel size is stored in the image.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsReadOnly">
+    <summary>Specifies that the pixel data is read-only.</summary>
+  </member>
+  <member name="ImageFlags.ImageFlagsCaching">
+    <summary>Specifies that the pixel data can be cached for faster access.</summary>
+  </member>
+</doc>

@@ -3,238 +3,81 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1SvgDocument.CreatePaint">
-    <summary>
-      <para>Creates a paint object which can be used to set the 'fill' or 'stroke' properties.</para>
-    </summary>
-    <param name="paintType">
-      <para>Type: <b><see cref="D2D1_SVG_PAINT_TYPE" /></b></para>
-      <para>Specifies the type of paint object to create.</para>
-    </param>
-    <param name="color">
-      <para>Type: <b>const D2D1_COLOR_F*</b></para>
-      <para>The color used if the paintType is D2D1_SVG_PAINT_TYPE_COLOR.</para>
-    </param>
-    <param name="id">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</para>
-    </param>
-    <param name="paint">
-      <para>Type: <b>ID2D1SvgPaint**</b></para>
-      <para>When the method completes, this will contain a pointer to the created paint object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Creates a paint object which can be used to set the 'fill' or 'stroke' properties.</summary>
+    <param name="paintType">Specifies the type of paint object to create.</param>
+    <param name="color">The color used if the paintType is D2D1_SVG_PAINT_TYPE_COLOR.</param>
+    <param name="id">The element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</param>
+    <param name="paint">When the method completes, this will contain a pointer to the created paint object.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgDocument.CreatePaint">
-    <summary>
-      <para>Creates a paint object which can be used to set the 'fill' or 'stroke' properties.</para>
-    </summary>
-    <param name="paintType">
-      <para>Type: <b><see cref="D2D1_SVG_PAINT_TYPE" /></b></para>
-      <para>Specifies the type of paint object to create.</para>
-    </param>
-    <param name="color">
-      <para>Type: <b>const D2D1_COLOR_F</b></para>
-      <para>The color used if the paintType is D2D1_SVG_PAINT_TYPE_COLOR.</para>
-    </param>
-    <param name="id">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</para>
-    </param>
-    <param name="paint">
-      <para>Type: <b>ID2D1SvgPaint**</b></para>
-      <para>When the method completes, this will contain a pointer to the created paint object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Creates a paint object which can be used to set the 'fill' or 'stroke' properties.</summary>
+    <param name="paintType">Specifies the type of paint object to create.</param>
+    <param name="color">The color used if the paintType is D2D1_SVG_PAINT_TYPE_COLOR.</param>
+    <param name="id">The element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</param>
+    <param name="paint">When the method completes, this will contain a pointer to the created paint object.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgDocument.CreatePathData">
-    <summary>
-      <para>Creates a path data object which can be used to set a 'd' attribute on a 'path' element.</para>
-    </summary>
-    <param name="segmentData">
-      <para>Type: <b>const FLOAT*</b></para>
-      <para>An array of segment data.</para>
-    </param>
-    <param name="segmentDataCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>Number of items in segmentData.</para>
-    </param>
-    <param name="commands">
-      <para>Type: <b>const <see cref="D2D1_SVG_PATH_COMMAND" />*</b></para>
-      <para>An array of path commands.</para>
-    </param>
-    <param name="commandsCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of items in commands.</para>
-    </param>
-    <param name="pathData">
-      <para>Type: <b>ID2D1SvgPathData**</b></para>
-      <para>When this method completes, this points to the created path data.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Creates a path data object which can be used to set a 'd' attribute on a 'path' element.</summary>
+    <param name="segmentData">An array of segment data.</param>
+    <param name="segmentDataCount">Number of items in segmentData.</param>
+    <param name="commands">An array of path commands.</param>
+    <param name="commandsCount">The number of items in commands.</param>
+    <param name="pathData">When this method completes, this points to the created path data.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgDocument.CreatePointCollection">
-    <summary>
-      <para>Creates a points object which can be used to set a points attribute on a polygon or polyline element.</para>
-    </summary>
-    <param name="points">
-      <para>Type: <b>const D2D1_POINT_2F*</b></para>
-      <para>The points in the point collection.</para>
-    </param>
-    <param name="pointsCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of points in the points argument.</para>
-    </param>
-    <param name="pointCollection">
-      <para>Type: <b>ID2D1SvgPointCollection**</b></para>
-      <para>The created <see cref="ID2D1SvgPointCollection" /> object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Creates a points object which can be used to set a points attribute on a polygon or polyline element.</summary>
+    <param name="points">The points in the point collection.</param>
+    <param name="pointsCount">The number of points in the points argument.</param>
+    <param name="pointCollection">The created <see cref="ID2D1SvgPointCollection" /> object.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgDocument.CreateStrokeDashArray">
-    <summary>
-      <para>Creates a dash array object which can be used to set the stroke-dasharray property.</para>
-    </summary>
-    <param name="dashes">
-      <para>Type: <b>const <see cref="D2D1_SVG_LENGTH" />*</b></para>
-      <para>An array of dashes.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>Size of the array in th dashes argument.</para>
-    </param>
-    <param name="strokeDashArray">
-      <para>Type: <b>ID2D1SvgStrokeDashArray**</b></para>
-      <para>The created <see cref="ID2D1SvgStrokeDashArray" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Creates a dash array object which can be used to set the stroke-dasharray property.</summary>
+    <param name="dashes">An array of dashes.</param>
+    <param name="dashesCount">Size of the array in th dashes argument.</param>
+    <param name="strokeDashArray">The created <see cref="ID2D1SvgStrokeDashArray" />.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgDocument.Deserialize">
-    <summary>
-      <para>Deserializes a subtree from the stream. The stream must have only one root element, but that root element need not be an 'svg' element.
-The output element is not inserted into this document tree.</para>
-    </summary>
-    <param name="inputXmlStream">
-      <para>Type: <b>IStream*</b></para>
-      <para>An input stream containing the SVG XML subtree.</para>
-    </param>
-    <param name="subtree">
-      <para>Type: <b>ID2D1SvgElement**</b></para>
-      <para>The root of the subtree.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Deserializes a subtree from the stream. The stream must have only one root element, but that root element need not be an 'svg' element. The output element is not inserted into this document tree.</summary>
+    <param name="inputXmlStream">An input stream containing the SVG XML subtree.</param>
+    <param name="subtree">The root of the subtree.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgDocument.FindElementById">
-    <summary>
-      <para>Gets the SVG element with the specified ID.</para>
-    </summary>
-    <param name="id">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>ID of the element to retrieve.</para>
-    </param>
-    <param name="svgElement">
-      <para>Type: <b>ID2D1SvgElement**</b></para>
-      <para>The element matching the specified ID. If the element cannot be found, the returned element will be null.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Gets the SVG element with the specified ID.</summary>
+    <param name="id">ID of the element to retrieve.</param>
+    <param name="svgElement">The element matching the specified ID. If the element cannot be found, the returned element will be null.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgDocument.GetRoot">
-    <summary>
-      <para>Gets the root element of the document.</para>
-    </summary>
-    <param name="root">
-      <para>Type: <b>ID2D1SvgElement**</b></para>
-      <para>Outputs the root element of the document.</para>
-    </param>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Gets the root element of the document.</summary>
+    <param name="root">Outputs the root element of the document.</param>
   </member>
   <member name="ID2D1SvgDocument.GetViewportSize">
-    <summary>
-      <para>Returns the size of the initial viewport.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>D2D1_SIZE_F</b></para>
-      <para>Returns the size of the initial viewport</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Returns the size of the initial viewport.</summary>
+    <returns>Returns the size of the initial viewport</returns>
   </member>
   <member name="ID2D1SvgDocument.Serialize">
-    <summary>
-      <para>Serializes an element and its subtree to XML. The output XML is encoded as UTF-8.</para>
-    </summary>
-    <param name="outputXmlStream">
-      <para>Type: <b>IStream*</b></para>
-      <para>An output stream to contain the SVG XML subtree.</para>
-    </param>
-    <param name="subtree">
-      <para>Type: <b>ID2D1SvgElement*</b></para>
-      <para>The root of the subtree. If null, the entire document is serialized.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Serializes an element and its subtree to XML. The output XML is encoded as UTF-8.</summary>
+    <param name="outputXmlStream">An output stream to contain the SVG XML subtree.</param>
+    <param name="subtree">The root of the subtree. If null, the entire document is serialized.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgDocument.SetRoot">
-    <summary>
-      <para>Sets the root element of the document.The root element must be an svg element.
-If the element already exists within an svg tree, it is first removed.</para>
-    </summary>
-    <param name="root">
-      <para>Type: <b>ID2D1SvgElement*</b></para>
-      <para>The new root element of the document.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Sets the root element of the document.The root element must be an svg element. If the element already exists within an svg tree, it is first removed.</summary>
+    <param name="root">The new root element of the document.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgDocument.SetViewportSize">
-    <summary>
-      <para>Sets the size of the initial viewport.</para>
-    </summary>
-    <param name="viewportSize">
-      <para>Type: <b>D2D1_SIZE_F</b></para>
-      <para>The size of the viewport.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgDocument" />
+    <summary>Sets the size of the initial viewport.</summary>
+    <param name="viewportSize">The size of the viewport.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgDocument">
-    <summary>
-      <para>Represents an SVG document.</para>
-    </summary>
+    <summary>Represents an SVG document.</summary>
   </member>
 </doc>

@@ -3,113 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DLGITEMTEMPLATE">
-    <summary>
-      <para>Defines the dimensions and style of a control in a dialog box. One or more of these structures are combined with a <see cref="DLGTEMPLATE" /> structure to form a standard template for a dialog box.</para>
-    </summary>
-    <remarks>
-      <para>In a standard template for a dialog box, the <b>DLGITEMTEMPLATE</b> structure is always immediately followed by three variable-length arrays specifying the class, title, and creation data for the control. Each array consists of one or more 16-bit elements.</para>
-      <para>Each <b>DLGITEMTEMPLATE</b> structure in the template must be aligned on a
-<b>DWORD</b> boundary. The class and title arrays must be aligned on
-<b>WORD</b> boundaries. The creation data array must be aligned on a
-<b>WORD</b> boundary.</para>
-      <para>Immediately following each <b>DLGITEMTEMPLATE</b> structure is a class array that specifies the window class of the control. If the first element of this array is any value other than 0xFFFF, the system treats the array as a null-terminated Unicode string that specifies the name of a registered window class. If the first element is 0xFFFF, the array has one additional element that specifies the ordinal value of a predefined system class. The ordinal can be one of the following atom values.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
-        </listheader>
-        <item>
-          <description>0x0080</description>
-          <description>Button</description>
-        </item>
-        <item>
-          <description>0x0081</description>
-          <description>Edit</description>
-        </item>
-        <item>
-          <description>0x0082</description>
-          <description>Static</description>
-        </item>
-        <item>
-          <description>0x0083</description>
-          <description>List box</description>
-        </item>
-        <item>
-          <description>0x0084</description>
-          <description>Scroll bar</description>
-        </item>
-        <item>
-          <description>0x0085</description>
-          <description>Combo box</description>
-        </item>
-      </list>
-      <para>Following the class array is a title array that contains the initial text or resource identifier of the control. If the first element of this array is 0xFFFF, the array has one additional element that specifies an ordinal value of a resource, such as an icon, in an executable file. You can use a resource identifier for controls, such as static icon controls, that load and display an icon or other resource rather than text. If the first element is any value other than 0xFFFF, the system treats the array as a null-terminated Unicode string that specifies the initial text.</para>
-      <para>The creation data array begins at the next
-<b>WORD</b> boundary after the title array. This creation data can be of any size and format. If the first word of the creation data array is nonzero, it indicates the size, in bytes, of the creation data (including the size word). The control's window procedure must be able to interpret the data. When the system creates the control, it passes a pointer to this data in the
-<i>lParam</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-create">WM_CREATE</a> message that it sends to the control.</para>
-      <para>If you specify character strings in the class and title arrays, you must use Unicode strings. Use the
-<see cref="MultiByteToWideChar" /> function to generate Unicode strings from ANSI strings.</para>
-      <para>The
-<b>x</b>,
-<b>y</b>,
-<b>cx</b>, and
-<b>cy</b> members specify values in dialog box units. You can convert these values to screen units (pixels) by using the <see cref="MapDialogRect" /> function.</para>
-    </remarks>
-    <seealso cref="CreateDialogIndirect" />
-    <seealso cref="CreateDialogIndirectParam" />
-    <seealso cref="CreateWindowEx" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/dlgbox/dlgitemtemplateex">DLGITEMTEMPLATEEX</seealso>
-    <seealso cref="DLGTEMPLATE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/dlgbox/dlgtemplateex">DLGTEMPLATEEX</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/dlgbox/dialog-boxes">Dialog Boxes</seealso>
-    <seealso cref="DialogBoxIndirect" />
-    <seealso cref="DialogBoxIndirectParam" />
-    <seealso cref="MapDialogRect" />
-    <seealso cref="MultiByteToWideChar" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/wm-create">WM_CREATE</seealso>
+    <summary>Defines the dimensions and style of a control in a dialog box. One or more of these structures are combined with a <see cref="DLGTEMPLATE" /> structure to form a standard template for a dialog box.</summary>
   </member>
   <member name="DLGITEMTEMPLATE.style">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The style of the control. This member can be a combination of <a href="https://docs.microsoft.com//windows/desktop/winmsg/window-styles">window style values</a> (such as <b>WS_BORDER</b>) and one or more of the <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-styles">control style values</a> (such as <b>BS_PUSHBUTTON</b> and <b>ES_LEFT</b>).</para>
-    </summary>
+    <summary>The style of the control. This member can be a combination of <a href="https://docs.microsoft.com//windows/desktop/winmsg/window-styles">window style values</a> (such as <b>WS_BORDER</b>) and one or more of the <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-styles">control style values</a> (such as <b>BS_PUSHBUTTON</b> and <b>ES_LEFT</b>).</summary>
   </member>
   <member name="DLGITEMTEMPLATE.dwExtendedStyle">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The extended styles for a window. This member is not used to create controls in dialog boxes, but applications that use dialog box templates can use it to create other types of windows. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/winmsg/extended-window-styles">Extended Window Styles</a>.</para>
-    </summary>
+    <summary>The extended styles for a window. This member is not used to create controls in dialog boxes, but applications that use dialog box templates can use it to create other types of windows. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/winmsg/extended-window-styles">Extended Window Styles</a>.</summary>
   </member>
   <member name="DLGITEMTEMPLATE.x">
-    <summary>
-      <para>Type: <b>short</b></para>
-      <para>The
-<i>x</i>-coordinate, in dialog box units, of the upper-left corner of the control. This coordinate is always relative to the upper-left corner of the dialog box's client area.</para>
-    </summary>
+    <summary>The<i>x</i>-coordinate, in dialog box units, of the upper-left corner of the control. This coordinate is always relative to the upper-left corner of the dialog box's client area.</summary>
   </member>
   <member name="DLGITEMTEMPLATE.y">
-    <summary>
-      <para>Type: <b>short</b></para>
-      <para>The
-<i>y</i>-coordinate, in dialog box units, of the upper-left corner of the control. This coordinate is always relative to the upper-left corner of the dialog box's client area.</para>
-    </summary>
+    <summary>The<i>y</i>-coordinate, in dialog box units, of the upper-left corner of the control. This coordinate is always relative to the upper-left corner of the dialog box's client area.</summary>
   </member>
   <member name="DLGITEMTEMPLATE.cx">
-    <summary>
-      <para>Type: <b>short</b></para>
-      <para>The width, in dialog box units, of the control.</para>
-    </summary>
+    <summary>The width, in dialog box units, of the control.</summary>
   </member>
   <member name="DLGITEMTEMPLATE.cy">
-    <summary>
-      <para>Type: <b>short</b></para>
-      <para>The height, in dialog box units, of the control.</para>
-    </summary>
+    <summary>The height, in dialog box units, of the control.</summary>
   </member>
   <member name="DLGITEMTEMPLATE.id">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>The control identifier.</para>
-    </summary>
+    <summary>The control identifier.</summary>
   </member>
 </doc>

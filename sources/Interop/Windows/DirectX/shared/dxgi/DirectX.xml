@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.CreateDXGIFactory">
+    <summary>Creates a DXGI 1.0 factory that you can use to generate other DXGI objects.</summary>
+    <param name="riid">The globally unique identifier (GUID) of the <see cref="IDXGIFactory" /> object referenced by the <i>ppFactory</i> parameter.</param>
+    <param name="ppFactory">Address of a pointer to an <see cref="IDXGIFactory" /> object.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise, returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
+  </member>
+  <member name="DirectX.CreateDXGIFactory1">
+    <summary>Creates a DXGI 1.1 factory that you can use to generate other DXGI objects.</summary>
+    <param name="riid">The globally unique identifier (GUID) of the <see cref="IDXGIFactory1" /> object referenced by the <i>ppFactory</i> parameter.</param>
+    <param name="ppFactory">Address of a pointer to an <see cref="IDXGIFactory1" /> object.</param>
+    <returns>Returns S_OK if successful; an error code otherwise. For a list of error codes, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
+  </member>
+</doc>

@@ -3,31 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PackagePathType">
-    <summary>
-      <para>Indicates the type of folder path to retrieve in a query for the path or other info about a package.</para>
-    </summary>
-    <remarks>
-      <para>An application has a mutable install folder if it uses the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension">windows.mutablePackageDirectories extension</a> in its package manifest. This extension specifies a folder under the %ProgramFiles%\ModifiableWindowsApps path where the contents of the application's install folder are projected so that users can modify the installation files. This feature is currently available only for certain types of desktop PC games that are published by Microsoft and our partners, and it enables these types of games to support mods.</para>
-    </remarks>
-    <seealso cref="GetCurrentPackageInfo2" />
-    <seealso cref="GetCurrentPackagePath2" />
-    <seealso cref="GetPackagePathByFullName2" />
-    <seealso cref="GetPackageInfo2" />
-    <seealso cref="GetStagedPackagePathByFullName2" />
+    <summary>Indicates the type of folder path to retrieve in a query for the path or other info about a package.</summary>
   </member>
   <member name="PackagePathType.PackagePathType_Install">
-    <summary>
-      <para>Retrieve the package path in the original install folder for the application.</para>
-    </summary>
+    <summary>Retrieve the package path in the original install folder for the application.</summary>
   </member>
   <member name="PackagePathType.PackagePathType_Mutable">
-    <summary>
-      <para>Retrieve the package path in the mutable install folder for the application, if the application is declared as mutable in the package manifest.</para>
-    </summary>
+    <summary>Retrieve the package path in the mutable install folder for the application, if the application is declared as mutable in the package manifest.</summary>
   </member>
   <member name="PackagePathType.PackagePathType_Effective">
-    <summary>
-      <para>Retrieve the package path in the mutable folder if the application is declared as mutable in the package manifest, or in the original install folder if the application is not mutable.</para>
-    </summary>
+    <summary>Retrieve the package path in the mutable folder if the application is declared as mutable in the package manifest, or in the original install folder if the application is not mutable.</summary>
   </member>
 </doc>

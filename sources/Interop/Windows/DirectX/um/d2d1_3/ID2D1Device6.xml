@@ -3,28 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Device6.CreateDeviceContext">
-    <summary>
-      <para>Creates a new device context with no initially assigned target.</para>
-    </summary>
-    <param name="options">
-      <para>Type: <b>D2D1_DEVICE_CONTEXT_OPTIONS</b></para>
-      <para>Options for creating the device context.</para>
-    </param>
-    <param name="deviceContext6">
-      <para>Type: <b>ID2D1DeviceContext6**</b></para>
-      <para>The created device context.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1Device6" />
+    <summary>Creates a new device context with no initially assigned target.</summary>
+    <param name="options">Options for creating the device context.</param>
+    <param name="deviceContext6">The created device context.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1Device6">
-    <summary>
-      <para>Represents a resource domain whose objects and device contexts can be used together.
-This interface performs all the same functions as the <see cref="ID2D1Device5" /> interface,
-plus it enables the creation of <see cref="ID2D1DeviceContext6" /> objects.</para>
-    </summary>
+    <summary>Represents a resource domain whose objects and device contexts can be used together. This interface performs all the same functions as the <see cref="ID2D1Device5" /> interface, plus it enables the creation of <see cref="ID2D1DeviceContext6" /> objects.</summary>
   </member>
 </doc>

@@ -4,89 +4,23 @@
 <doc>
   <member name="AMCOPPStatusInput">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The AMCOPPStatusInput structure contains a Certified Output Protection Protocol (COPP) status request.</para>
     </summary>
-    <remarks>
-      <para>The following COPP status requests are defined.</para>
-      <list type="table">
-        <listheader>
-          <description>
-            <b>GUID</b>
-          </description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>
-            <b>DXVA_COPPQueryConnectorType</b>
-          </description>
-          <description>Returns the type of physical connector to the output device.</description>
-        </item>
-        <item>
-          <description>
-            <b>DXVA_COPPQueryProtectionType</b>
-          </description>
-          <description>Returns the available protection mechanisms for the physical connector.</description>
-        </item>
-        <item>
-          <description>
-            <b>DXVA_COPPQueryLocalProtectionLevel</b>
-          </description>
-          <description>Returns the protection level that is currently set through the COPP mechanism in the context of this session.</description>
-        </item>
-        <item>
-          <description>
-            <b>DXVA_COPPQueryGlobalProtectionLevel</b>
-          </description>
-          <description>Returns the actual protection level that is currently set for the physical connector.</description>
-        </item>
-        <item>
-          <description>
-            <b>DXVA_COPPQueryDisplayData</b>
-          </description>
-          <description>Returns information describing the signal that is being transmitted over the connector associated with the COPP device.</description>
-        </item>
-        <item>
-          <description>
-            <b>DXVA_COPPQueryHDCPKeyData</b>
-          </description>
-          <description>Returns the High-bandwidth Digital Content Protection (HDCP) characteristics of the output device.</description>
-        </item>
-        <item>
-          <description>
-            <b>DXVA_COPPQueryBusData</b>
-          </description>
-          <description>Returns information about the type of bus used by the graphics hardware associated with this COPP device.</description>
-        </item>
-      </list>
-      <para>For more information, see the Windows DDK documentation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-certified-output-protection-protocol--copp">Using Certified Output Protection Protocol (COPP)</seealso>
   </member>
   <member name="AMCOPPStatusInput.rApp">
-    <summary>
-      <para>128-bit random number.</para>
-    </summary>
+    <summary>128-bit random number.</summary>
   </member>
   <member name="AMCOPPStatusInput.guidStatusRequestID">
-    <summary>
-      <para>GUID that defines the status request.</para>
-    </summary>
+    <summary>GUID that defines the status request.</summary>
   </member>
   <member name="AMCOPPStatusInput.dwSequence">
-    <summary>
-      <para>Sequence number. The application must keep a running count of the COPP status requests issued. For each request, increment the sequence number by one.</para>
-    </summary>
+    <summary>Sequence number. The application must keep a running count of the COPP status requests issued. For each request, increment the sequence number by one.</summary>
   </member>
   <member name="AMCOPPStatusInput.cbSizeData">
-    <summary>
-      <para>Number of bytes of valid data in the <b>StatusData</b> member.</para>
-    </summary>
+    <summary>Number of bytes of valid data in the <b>StatusData</b> member.</summary>
   </member>
   <member name="AMCOPPStatusInput.StatusData">
-    <summary>
-      <para>Data for the status request. The meaning of the data depends on the request.</para>
-    </summary>
+    <summary>Data for the status request. The meaning of the data depends on the request.</summary>
   </member>
 </doc>

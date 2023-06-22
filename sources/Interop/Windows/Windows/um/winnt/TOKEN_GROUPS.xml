@@ -3,202 +3,157 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TOKEN_GROUPS">
-    <summary>
-      <para>The <b>TOKEN_GROUPS</b> structure contains information about the group <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifiers</a> (SIDs) in an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access token</a>.</para>
-    </summary>
-    <seealso cref="AdjustTokenGroups" />
-    <seealso cref="CreateRestrictedToken" />
-    <seealso cref="SID_AND_ATTRIBUTES" />
-    <seealso cref="TOKEN_CONTROL" />
-    <seealso cref="TOKEN_DEFAULT_DACL" />
-    <seealso cref="TOKEN_INFORMATION_CLASS" />
-    <seealso cref="TOKEN_OWNER" />
-    <seealso cref="TOKEN_PRIMARY_GROUP" />
-    <seealso cref="TOKEN_PRIVILEGES" />
-    <seealso cref="TOKEN_SOURCE" />
-    <seealso cref="TOKEN_STATISTICS" />
-    <seealso cref="TOKEN_TYPE" />
-    <seealso cref="TOKEN_USER" />
+    <summary>The <b>TOKEN_GROUPS</b> structure contains information about the group <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifiers</a> (SIDs) in an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access token</a>.</summary>
   </member>
   <member name="TOKEN_GROUPS.GroupCount">
-    <summary>
-      <para>Specifies the number of groups in the access token.</para>
-    </summary>
+    <summary>Specifies the number of groups in the access token.</summary>
   </member>
-  <member name="TOKEN_GROUPS.Groups.size_is">
-    <summary></summary>
-  </member>
-  <member name="TOKEN_GROUPS.Groups.size_is.GroupCount">
-    <summary></summary>
-  </member>
+  <member name="TOKEN_GROUPS.Groups.size_is"></member>
+  <member name="TOKEN_GROUPS.Groups.size_is.GroupCount"></member>
   <member name="TOKEN_GROUPS.Groups">
     <summary>
-      <para>Specifies an array of
-<see cref="SID_AND_ATTRIBUTES" /> structures that contain a set of SIDs and corresponding attributes.</para>
+      <para>Specifies an array of<see cref="SID_AND_ATTRIBUTES" /> structures that contain a set of SIDs and corresponding attributes.</para>
       <para>The <b>Attributes</b> members of the <see cref="SID_AND_ATTRIBUTES" /> structures can have the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SE_GROUP_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SID is enabled for access checks. When the system performs an access check, it checks for access-allowed and access-denied <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entries</a> (ACEs) that apply to the SID.</para>
-            <para>A SID without this attribute is ignored during an access check unless the SE_GROUP_USE_FOR_DENY_ONLY attribute is set.</para>
-          </description>
-        </item>
-        <item>
+          <description>The SID is enabled for access checks. When the system performs an access check, it checks for access-allowed and access-denied <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entries</a> (ACEs) that apply to the SID. <para>A SID without this attribute is ignored during an access check unless the SE_GROUP_USE_FOR_DENY_ONLY attribute is set.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SE_GROUP_ENABLED_BY_DEFAULT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SID is enabled by default.</para>
-          </description>
-        </item>
-        <item>
+          <description>The SID is enabled by default.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SE_GROUP_INTEGRITY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SID is a mandatory integrity SID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The SID is a mandatory integrity SID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SE_GROUP_INTEGRITY_ENABLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000040L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SID is enabled for mandatory integrity checks.</para>
-          </description>
-        </item>
-        <item>
+          <description>The SID is enabled for mandatory integrity checks.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SE_GROUP_LOGON_ID</b>
-                </description>
-              </item>
-              <item>
-                <description>0xC0000000L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xC0000000L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SID is a logon SID that identifies the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a> associated with an access token.</para>
-          </description>
-        </item>
-        <item>
+          <description>The SID is a logon SID that identifies the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a> associated with an access token.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SE_GROUP_MANDATORY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SID cannot have the SE_GROUP_ENABLED attribute cleared by a call to the
-<see cref="AdjustTokenGroups" /> function. However, you can use the
-<see cref="CreateRestrictedToken" /> function to convert a mandatory SID to a deny-only SID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The SID cannot have the SE_GROUP_ENABLED attribute cleared by a call to the <see cref="AdjustTokenGroups" /> function. However, you can use the <see cref="CreateRestrictedToken" /> function to convert a mandatory SID to a deny-only SID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SE_GROUP_OWNER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SID identifies a group account for which the user of the token is the owner of the group, or the SID can be assigned as the owner of the token or objects.</para>
-          </description>
-        </item>
-        <item>
+          <description>The SID identifies a group account for which the user of the token is the owner of the group, or the SID can be assigned as the owner of the token or objects.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SE_GROUP_RESOURCE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20000000L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20000000L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SID identifies a domain-local group.</para>
-          </description>
-        </item>
-        <item>
+          <description>The SID identifies a domain-local group.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SE_GROUP_USE_FOR_DENY_ONLY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SID is a deny-only SID in a
-<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/restricted-tokens">restricted token</a>. When the system performs an access check, it checks for access-denied ACEs that apply to the SID; it ignores access-allowed ACEs for the SID.</para>
-            <para>If this attribute is set, SE_GROUP_ENABLED is not set, and the SID cannot be reenabled.</para>
-          </description>
-        </item>
+          <description>The SID is a deny-only SID in a <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/restricted-tokens">restricted token</a>. When the system performs an access check, it checks for access-denied ACEs that apply to the SID; it ignores access-allowed ACEs for the SID. <para>If this attribute is set, SE_GROUP_ENABLED is not set, and the SID cannot be reenabled.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>

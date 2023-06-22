@@ -3,41 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMREXTTEXTOUTA">
-    <summary>
-      <para>The <b>EMREXTTEXTOUTA</b> and <b>EMREXTTEXTOUTW</b> structures contain members for the <see cref="ExtTextOut" />, <see cref="TextOut" />, or <see cref="DrawText" /> enhanced metafile records.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMREXTTEXTOUTA</b> and <b>EMREXTTEXTOUTW</b> structures contain members for the <see cref="ExtTextOut" />, <see cref="TextOut" />, or <see cref="DrawText" /> enhanced metafile records.</summary>
   </member>
   <member name="EMREXTTEXTOUTA.emr">
-    <summary>
-      <para>Base structure for all record types.</para>
-    </summary>
+    <summary>Base structure for all record types.</summary>
   </member>
   <member name="EMREXTTEXTOUTA.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
   <member name="EMREXTTEXTOUTA.iGraphicsMode">
-    <summary>
-      <para>Current graphics mode. This member can be either the GM_COMPATIBLE or GM_ADVANCED value.</para>
-    </summary>
+    <summary>Current graphics mode. This member can be either the GM_COMPATIBLE or GM_ADVANCED value.</summary>
   </member>
   <member name="EMREXTTEXTOUTA.exScale">
-    <summary>
-      <para>X-scaling factor from page units to .01mm units if the graphics mode is the GM_COMPATIBLE value.</para>
-    </summary>
+    <summary>X-scaling factor from page units to .01mm units if the graphics mode is the GM_COMPATIBLE value.</summary>
   </member>
   <member name="EMREXTTEXTOUTA.eyScale">
-    <summary>
-      <para>Y-scaling factor from page units to .01mm units if the graphics mode is the GM_COMPATIBLE value.</para>
-    </summary>
+    <summary>Y-scaling factor from page units to .01mm units if the graphics mode is the GM_COMPATIBLE value.</summary>
   </member>
   <member name="EMREXTTEXTOUTA.emrtext">
     <summary>
-      <para>
-        <b>EMRTEXT</b> structure, which is followed by the string and the intercharacter spacing array.</para>
-    </summary>
+      <b>EMRTEXT</b> structure, which is followed by the string and the intercharacter spacing array.</summary>
   </member>
 </doc>

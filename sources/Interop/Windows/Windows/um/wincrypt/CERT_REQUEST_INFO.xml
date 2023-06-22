@@ -3,13 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_REQUEST_INFO">
-    <summary>
-      <para>The <b>CERT_REQUEST_INFO</b> structure contains information for a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate request</a>. The subject, subject <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a>, and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">attribute BLOBs</a> are encoded.</para>
-    </summary>
-    <seealso cref="CERT_PUBLIC_KEY_INFO" />
-    <seealso cref="CRYPT_ATTRIBUTE" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
-    <seealso cref="CryptSignAndEncodeCertificate" />
+    <summary>The <b>CERT_REQUEST_INFO</b> structure contains information for a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate request</a>. The subject, subject <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a>, and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">attribute BLOBs</a> are encoded.</summary>
   </member>
   <member name="CERT_REQUEST_INFO.dwVersion">
     <summary>
@@ -19,36 +13,32 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CERT_V1</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_V1</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>version 1</para>
-          </description>
-        </item>
+          <description>version 1</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CERT_REQUEST_INFO.Subject">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structure that contains the certificate subject's encoded name.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structure that contains the certificate subject's encoded name.</summary>
   </member>
   <member name="CERT_REQUEST_INFO.SubjectPublicKeyInfo">
     <summary>
-      <para>
-        <see cref="CERT_PUBLIC_KEY_INFO" /> structure containing the encoded public key and its algorithm.</para>
-    </summary>
+      <see cref="CERT_PUBLIC_KEY_INFO" /> structure containing the encoded public key and its algorithm.</summary>
   </member>
   <member name="CERT_REQUEST_INFO.cAttribute">
-    <summary>
-      <para>Number of elements in the <b>rgAttribute</b> array.</para>
-    </summary>
+    <summary>Number of elements in the <b>rgAttribute</b> array.</summary>
   </member>
   <member name="CERT_REQUEST_INFO.rgAttribute">
-    <summary>
-      <para>A pointer to an array of <see cref="CRYPT_ATTRIBUTE" /> structures, each holding attribute information about the certificate.</para>
-    </summary>
+    <summary>A pointer to an array of <see cref="CRYPT_ATTRIBUTE" /> structures, each holding attribute information about the certificate.</summary>
   </member>
 </doc>

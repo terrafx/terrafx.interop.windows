@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_UNICODE_STRING">
+    <summary>The <b>LSA_UNICODE_STRING</b> structure is used by various <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Local Security Authority</a> (LSA) functions to specify a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/u-gly">Unicode</a> string.</summary>
+  </member>
+  <member name="LSA_UNICODE_STRING.Length">
+    <summary>Specifies the length, in bytes, of the string pointed to by the <b>Buffer</b> member, not including the terminating null character, if any.</summary>
+  </member>
+  <member name="LSA_UNICODE_STRING.MaximumLength">
+    <summary>Specifies the total size, in bytes, of the memory allocated for <b>Buffer</b>. Up to <b>MaximumLength</b> bytes can be written into the buffer without trampling memory.</summary>
+  </member>
+  <member name="LSA_UNICODE_STRING.Buffer">
+    <summary>Pointer to a wide character string. Note that the strings returned by the various LSA functions might not be null-terminated.</summary>
+  </member>
+  <member name="LSA_UNICODE_STRING.Buffer.size_is"></member>
+  <member name="LSA_UNICODE_STRING.Buffer.size_is.MaximumLength/2"></member>
+  <member name="LSA_UNICODE_STRING.Buffer.length_is"></member>
+  <member name="LSA_UNICODE_STRING.Buffer.length_is.Length/2"></member>
+</doc>

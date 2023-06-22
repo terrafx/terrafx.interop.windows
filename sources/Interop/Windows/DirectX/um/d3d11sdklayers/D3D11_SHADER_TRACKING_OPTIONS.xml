@@ -3,110 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_SHADER_TRACKING_OPTIONS">
-    <summary>
-      <para>Options that specify how to perform shader debug tracking.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used by the following methods:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="ID3D11RefDefaultTrackingOptions.SetTrackingOptions" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11RefTrackingOptions.SetTrackingOptions" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11TracingDevice.SetShaderTrackingOptions" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11TracingDevice.SetShaderTrackingOptionsByType" />
-          </description>
-        </item>
-      </list>
-      <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.
-</remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-layer-enums">Layer Enumerations</seealso>
+    <summary>Options that specify how to perform shader debug tracking.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_IGNORE">
-    <summary>
-      <para>No debug tracking is performed.</para>
-    </summary>
+    <summary>No debug tracking is performed.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_TRACK_UNINITIALIZED">
-    <summary>
-      <para>Track the reading of uninitialized data.</para>
-    </summary>
+    <summary>Track the reading of uninitialized data.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_TRACK_RAW">
-    <summary>
-      <para>Track read-after-write hazards.</para>
-    </summary>
+    <summary>Track read-after-write hazards.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_TRACK_WAR">
-    <summary>
-      <para>Track write-after-read hazards.</para>
-    </summary>
+    <summary>Track write-after-read hazards.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_TRACK_WAW">
-    <summary>
-      <para>Track write-after-write hazards.</para>
-    </summary>
+    <summary>Track write-after-write hazards.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_ALLOW_SAME">
-    <summary>
-      <para>Track that hazards are allowed in which data is written but the value does not change.</para>
-    </summary>
+    <summary>Track that hazards are allowed in which data is written but the value does not change.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_TRACK_ATOMIC_CONSISTENCY">
-    <summary>
-      <para>Track that only one type of atomic operation is used on an address.</para>
-    </summary>
+    <summary>Track that only one type of atomic operation is used on an address.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_TRACK_RAW_ACROSS_THREADGROUPS">
-    <summary>
-      <para>Track read-after-write hazards across thread groups.</para>
-    </summary>
+    <summary>Track read-after-write hazards across thread groups.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_TRACK_WAR_ACROSS_THREADGROUPS">
-    <summary>
-      <para>Track write-after-read hazards across thread groups.</para>
-    </summary>
+    <summary>Track write-after-read hazards across thread groups.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_TRACK_WAW_ACROSS_THREADGROUPS">
-    <summary>
-      <para>Track write-after-write hazards across thread groups.</para>
-    </summary>
+    <summary>Track write-after-write hazards across thread groups.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_TRACK_ATOMIC_CONSISTENCY_ACROSS_THREADGROUPS">
-    <summary>
-      <para>Track that only one type of atomic operation is used on an address across thread groups.</para>
-    </summary>
+    <summary>Track that only one type of atomic operation is used on an address across thread groups.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_UAV_SPECIFIC_FLAGS">
-    <summary>
-      <para>Track hazards that are specific to unordered access views (UAVs).</para>
-    </summary>
+    <summary>Track hazards that are specific to unordered access views (UAVs).</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_ALL_HAZARDS">
-    <summary>
-      <para>Track all hazards.</para>
-    </summary>
+    <summary>Track all hazards.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_ALL_HAZARDS_ALLOWING_SAME">
-    <summary>
-      <para>Track all hazards and track that hazards are allowed in which data is written but the value does not change.</para>
-    </summary>
+    <summary>Track all hazards and track that hazards are allowed in which data is written but the value does not change.</summary>
   </member>
   <member name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_ALL_OPTIONS">
-    <summary>
-      <para>All of the preceding tracking options are set except <b>D3D11_SHADER_TRACKING_OPTION_IGNORE</b>.</para>
-    </summary>
+    <summary>All of the preceding tracking options are set except <b>D3D11_SHADER_TRACKING_OPTION_IGNORE</b>.</summary>
   </member>
 </doc>

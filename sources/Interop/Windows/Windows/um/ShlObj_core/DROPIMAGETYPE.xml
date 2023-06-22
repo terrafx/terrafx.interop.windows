@@ -3,49 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DROPIMAGETYPE">
-    <summary>
-      <para>Values used with the <see cref="DROPDESCRIPTION" /> structure to specify the drop image.</para>
-    </summary>
+    <summary>Values used with the <see cref="DROPDESCRIPTION" /> structure to specify the drop image.</summary>
   </member>
   <member name="DROPIMAGETYPE.DROPIMAGE_INVALID">
-    <summary>
-      <para>No drop image preference; use the default image.</para>
-    </summary>
+    <summary>No drop image preference; use the default image.</summary>
   </member>
   <member name="DROPIMAGETYPE.DROPIMAGE_NONE">
-    <summary>
-      <para>A red bisected circle such as that found on a "no smoking" sign.</para>
-    </summary>
+    <summary>A red bisected circle such as that found on a "no smoking" sign.</summary>
   </member>
   <member name="DROPIMAGETYPE.DROPIMAGE_COPY">
-    <summary>
-      <para>A plus sign (+) that indicates a copy operation.</para>
-    </summary>
+    <summary>A plus sign (+) that indicates a copy operation.</summary>
   </member>
   <member name="DROPIMAGETYPE.DROPIMAGE_MOVE">
-    <summary>
-      <para>An arrow that indicates a move operation.</para>
-    </summary>
+    <summary>An arrow that indicates a move operation.</summary>
   </member>
   <member name="DROPIMAGETYPE.DROPIMAGE_LINK">
-    <summary>
-      <para>An arrow that indicates a link.</para>
-    </summary>
+    <summary>An arrow that indicates a link.</summary>
   </member>
   <member name="DROPIMAGETYPE.DROPIMAGE_LABEL">
-    <summary>
-      <para>A tag icon that indicates that the metadata will be changed.</para>
-    </summary>
+    <summary>A tag icon that indicates that the metadata will be changed.</summary>
   </member>
   <member name="DROPIMAGETYPE.DROPIMAGE_WARNING">
-    <summary>
-      <para>A yellow exclamation mark that indicates that a problem has been encountered in the operation.</para>
-    </summary>
+    <summary>A yellow exclamation mark that indicates that a problem has been encountered in the operation.</summary>
   </member>
   <member name="DROPIMAGETYPE.DROPIMAGE_NOIMAGE">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. Use no drop image.</para>
-    </summary>
+      <b>Windows 7 and later</b>. Use no drop image.</summary>
   </member>
 </doc>

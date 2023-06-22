@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FONT_LINE_GAP_USAGE">
-    <summary>
-      <para>Specify whether <see cref="DWRITE_FONT_METRICS" />.lineGap value should be part of the line metrics</para>
-    </summary>
+    <summary>Specify whether <see cref="DWRITE_FONT_METRICS" />.lineGap value should be part of the line metrics</summary>
   </member>
   <member name="DWRITE_FONT_LINE_GAP_USAGE.DWRITE_FONT_LINE_GAP_USAGE_DEFAULT">
-    <summary>
-      <para>The usage of the font line gap depends on the method used for text layout.</para>
-    </summary>
+    <summary>The usage of the font line gap depends on the method used for text layout.</summary>
   </member>
   <member name="DWRITE_FONT_LINE_GAP_USAGE.DWRITE_FONT_LINE_GAP_USAGE_DISABLED">
-    <summary>
-      <para>The font line gap is excluded from line spacing.</para>
-    </summary>
+    <summary>The font line gap is excluded from line spacing.</summary>
   </member>
   <member name="DWRITE_FONT_LINE_GAP_USAGE.DWRITE_FONT_LINE_GAP_USAGE_ENABLED">
-    <summary>
-      <para>The font line gap is included in line spacing.</para>
-    </summary>
+    <summary>The font line gap is included in line spacing.</summary>
   </member>
 </doc>

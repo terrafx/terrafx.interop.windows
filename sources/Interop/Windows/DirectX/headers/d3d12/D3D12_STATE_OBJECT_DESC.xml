@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_STATE_OBJECT_DESC">
-    <summary>
-      <para>Description of a state object. Pass a value of this structure type to <see cref="ID3D12Device5.CreateStateObject" />.</para>
-    </summary>
+    <summary>Description of a state object. Pass a value of this structure type to <see cref="ID3D12Device5.CreateStateObject" />.</summary>
   </member>
   <member name="D3D12_STATE_OBJECT_DESC.Type">
-    <summary>
-      <para>The type of the state object.</para>
-    </summary>
+    <summary>The type of the state object.</summary>
   </member>
   <member name="D3D12_STATE_OBJECT_DESC.NumSubobjects">
-    <summary>
-      <para>Size of the <i>pSubobjects</i> array.</para>
-    </summary>
+    <summary>Size of the <i>pSubobjects</i> array.</summary>
   </member>
   <member name="D3D12_STATE_OBJECT_DESC.pSubobjects">
-    <summary>
-      <para>An array of subobject definitions.</para>
-    </summary>
+    <summary>An array of subobject definitions.</summary>
   </member>
 </doc>

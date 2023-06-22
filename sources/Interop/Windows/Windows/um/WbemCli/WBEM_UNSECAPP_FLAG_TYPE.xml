@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEM_UNSECAPP_FLAG_TYPE">
-    <summary>
-      <para>Used to control access checks on callbacks when using the <see cref="IWbemUnsecuredApartment.CreateSinkStub" /> method.</para>
-    </summary>
+    <summary>Used to control access checks on callbacks when using the <see cref="IWbemUnsecuredApartment.CreateSinkStub" /> method.</summary>
   </member>
   <member name="WBEM_UNSECAPP_FLAG_TYPE.WBEM_FLAG_UNSECAPP_DEFAULT_CHECK_ACCESS">
-    <summary>
-      <para>Unsecapp.exe reads the registry key UnsecAppAccessControlDefault to determine if it should authenticate callbacks.</para>
-    </summary>
+    <summary>Unsecapp.exe reads the registry key UnsecAppAccessControlDefault to determine if it should authenticate callbacks.</summary>
   </member>
   <member name="WBEM_UNSECAPP_FLAG_TYPE.WBEM_FLAG_UNSECAPP_CHECK_ACCESS">
-    <summary>
-      <para>Unsecapp.exe authenticates callbacks regardless of the setting of the registry key UnsecAppAccessControlDefault.</para>
-    </summary>
+    <summary>Unsecapp.exe authenticates callbacks regardless of the setting of the registry key UnsecAppAccessControlDefault.</summary>
   </member>
   <member name="WBEM_UNSECAPP_FLAG_TYPE.WBEM_FLAG_UNSECAPP_DONT_CHECK_ACCESS">
-    <summary>
-      <para>Unsecapp.exe does not authenticate callbacks regardless of the setting of the registry key UnsecAppAccessControlDefault.</para>
-    </summary>
+    <summary>Unsecapp.exe does not authenticate callbacks regardless of the setting of the registry key UnsecAppAccessControlDefault.</summary>
   </member>
 </doc>

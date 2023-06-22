@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFVideoSampleAllocator.AllocateSample">
-    <summary>
-      <para>Gets a video sample from the allocator.</para>
-    </summary>
-    <param name="ppSample">
-      <para>Receives a pointer to the <see cref="IMFSample" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets a video sample from the allocator.</summary>
+    <param name="ppSample">Receives a pointer to the <see cref="IMFSample" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,50 +12,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The allocator was not initialized. Call <see cref="IMFVideoSampleAllocator.InitializeSampleAllocator" /> or <see cref="InitializeSampleAllocatorEx.InitializeSampleAllocatorEx" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SAMPLEALLOCATOR_EMPTY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The allocator was not initialized. Call <see cref="IMFVideoSampleAllocator.InitializeSampleAllocator" /> or <see cref="InitializeSampleAllocatorEx.InitializeSampleAllocatorEx" />.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SAMPLEALLOCATOR_EMPTY</b>
-            </para>
-          </description>
-          <description>
-            <para>No samples are available.</para>
-          </description>
-        </item>
+          <description>No samples are available.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFVideoSampleAllocator" />
   </member>
   <member name="IMFVideoSampleAllocator.InitializeSampleAllocator">
-    <summary>
-      <para>Specifies the number of samples to allocate and the media type for the samples.</para>
-    </summary>
-    <param name="cRequestedFrames">
-      <para>Number of samples to allocate.</para>
-    </param>
-    <param name="pMediaType">
-      <para>Pointer to the <see cref="IMFMediaType" /> interface of a media type that describes the video format.</para>
-    </param>
+    <summary>Specifies the number of samples to allocate and the media type for the samples.</summary>
+    <param name="cRequestedFrames">Number of samples to allocate.</param>
+    <param name="pMediaType">Pointer to the <see cref="IMFMediaType" /> interface of a media type that describes the video format.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -67,37 +62,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDMEDIATYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDMEDIATYPE</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid media type.</para>
-          </description>
-        </item>
+          <description>Invalid media type.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFVideoSampleAllocator" />
   </member>
   <member name="IMFVideoSampleAllocator.SetDirectXManager">
-    <summary>
-      <para>Specifies the Direct3D device manager for the video media sink to use.</para>
-    </summary>
-    <param name="pManager">
-      <para>Pointer to the <b>IUnknown</b> interface of the Direct3D device manager. The media sink queries this pointer for the <see cref="IDirect3DDeviceManager9" /> interface.</para>
-    </param>
+    <summary>Specifies the Direct3D device manager for the video media sink to use.</summary>
+    <param name="pManager">Pointer to the <b>IUnknown</b> interface of the Direct3D device manager. The media sink queries this pointer for the <see cref="IDirect3DDeviceManager9" /> interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -105,27 +99,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The media sink uses the Direct3D device manager to obtain a pointer to the Direct3D device, which it uses to allocate Direct3D surfaces. The device manager enables multiple objects in the pipeline (such as a video renderer and a video decoder) to share the same Direct3D device.</para>
-    </remarks>
-    <seealso cref="IMFVideoSampleAllocator" />
   </member>
   <member name="IMFVideoSampleAllocator.UninitializeSampleAllocator">
-    <summary>
-      <para>Releases all of the video samples that have been allocated.</para>
-    </summary>
+    <summary>Releases all of the video samples that have been allocated.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -133,25 +123,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFVideoSampleAllocator" />
   </member>
   <member name="IMFVideoSampleAllocator">
     <summary>
       <para>Allocates video samples for a video media sink.</para>
       <para>The stream sinks on the enhanced video renderer (EVR) expose this interface as a service. To obtain a pointer to the interface, call <see cref="IMFGetService.GetService" /> using the service identifier MR_VIDEO_ACCELERATION_SERVICE. Custom media sinks can also implement this interface. The Media Session uses this interface to allocate samples for the EVR, unless the upstream decoder supports DirectX Video Acceleration (DXVA).</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

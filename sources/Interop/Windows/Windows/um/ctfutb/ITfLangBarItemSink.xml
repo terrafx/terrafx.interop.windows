@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfLangBarItemSink.OnUpdate">
-    <summary>
-      <para>Notifies the language bar of a change in a language bar item.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Contains a set of flags that indicate changes in the language bar item. This can be a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi--constants">TF_LBI_*</a> values.</para>
-    </param>
+    <summary>Notifies the language bar of a change in a language bar item.</summary>
+    <param name="dwFlags">Contains a set of flags that indicate changes in the language bar item. This can be a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi--constants">TF_LBI_*</a> values.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,40 +12,37 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A language bar item should call this method when the internal state of the item changes. TSF will update the language bar user interface appropriately.</para>
-    </remarks>
-    <seealso cref="ITfLangBarItemSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi--constants">TF_LBI_* Constants</seealso>
   </member>
   <member name="ITfLangBarItemSink">
     <summary>
       <para>The <b>ITfLangBarItemSink</b> interface is implemented by the language bar and used by a language bar item provider to notify the language bar of changes to a language bar item.</para>
       <para>The language bar item provider obtains an instance of this interface when the language bar calls the provider's <see cref="ITfSource.AdviseSink" /> with identifier IID_ITfLangBarItemSink.</para>
     </summary>
-    <seealso cref="ITfSource.AdviseSink " />
-    <seealso cref="IUnknown" />
   </member>
 </doc>

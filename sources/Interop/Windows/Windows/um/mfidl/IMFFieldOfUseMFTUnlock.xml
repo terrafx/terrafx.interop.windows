@@ -3,30 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFFieldOfUseMFTUnlock.Unlock">
-    <summary>
-      <para>Unlocks a Media Foundation transform (MFT) so that the application can use it.</para>
-    </summary>
-    <param name="pUnkMFT">
-      <para>A pointer to the <b>IUnknown</b> interface of the MFT.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method authenticates the caller, using a private communication channel between the MFT and the object that implements the <see cref="IMFFieldOfUseMFTUnlock" /> interface. The details of the communication depend entirely on the implementation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/field-of-use-restrictions">Field of Use Restrictions</seealso>
-    <seealso cref="IMFFieldOfUseMFTUnlock" />
+    <summary>Unlocks a Media Foundation transform (MFT) so that the application can use it.</summary>
+    <param name="pUnkMFT">A pointer to the <b>IUnknown</b> interface of the MFT.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFFieldOfUseMFTUnlock">
-    <summary>
-      <para>Enables an application to use a Media Foundation transform (MFT) that has restrictions on its use.</para>
-    </summary>
-    <remarks>
-      <para>If you register an MFT that requires unlocking, include the <b>MFT_ENUM_FLAG_FIELDOFUSE</b> flag when you call the <see cref="MFTRegister" /> function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/field-of-use-restrictions">Field of Use Restrictions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mft-fieldofuse-unlock-attribute">MFT_FIELDOFUSE_UNLOCK_Attribute</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Enables an application to use a Media Foundation transform (MFT) that has restrictions on its use.</summary>
   </member>
 </doc>

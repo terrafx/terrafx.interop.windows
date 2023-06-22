@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVisualTreeService3.AddDictionaryItem">
+    <summary>
+      <code>Adds an item to a &lt;a href="/dotnet/api/system.windows.resourcedictionary?view=netframework-4.8&amp;preserve-view=true"&gt;ResourceDictionary&lt;/a&gt;, and re-resolves all elements in the tree that reference a resource with the specified key.</code>
+    </summary>
+    <param name="dictionaryHandle">The dictionary to add the resource to.</param>
+    <param name="resourceKey">The key of the resource to add.</param>
+    <param name="resourceHandle">The resource to add.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService3.RemoveDictionaryItem">
+    <summary>
+      <code>Removes an item from a &lt;a href="/dotnet/api/system.windows.resourcedictionary?view=netframework-4.8&amp;preserve-view=true"&gt;ResourceDictionary&lt;/a&gt;, and re-resolves all elements in the tree that reference a resource with the specified key.</code>
+    </summary>
+    <param name="dictionaryHandle">The dictionary to remove the resource from.</param>
+    <param name="resourceKey">The key of the resource to remove.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService3.ResolveResource">
+    <summary>Resolves a resource for an element in the tree and applies the resource to the property provided by the specified property index.</summary>
+    <param name="resourceContext">The context of the resource.</param>
+    <param name="resourceName">The name of the resource.</param>
+    <param name="resourceType">The type of the resource.</param>
+    <param name="propertyIndex">The index of the property to apply the resource to.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService3">
+    <summary>Represents additional capabilities of an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/nn-xamlom-ivisualtreeservice">IVisualTreeService2</a> object.</summary>
+  </member>
+</doc>

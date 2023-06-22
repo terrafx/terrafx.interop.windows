@@ -3,26 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11BlendState1.GetDesc1">
-    <summary>
-      <para>Gets the description for blending state that you used to create the blend-state object.</para>
-    </summary>
-    <param name="pDesc">
-      <para>A pointer to a <see cref="D3D11_BLEND_DESC1" /> structure that receives a description of the blend state. This blend state can specify logical operations as well as blending operations.</para>
-    </param>
-    <remarks>
-      <para>You use the description for blending state in a call to the <see cref="ID3D11Device1.CreateBlendState1" /> method to create the blend-state object.</para>
-    </remarks>
-    <seealso cref="ID3D11BlendState1" />
+    <summary>Gets the description for blending state that you used to create the blend-state object.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D11_BLEND_DESC1" /> structure that receives a description of the blend state. This blend state can specify logical operations as well as blending operations.</param>
   </member>
   <member name="ID3D11BlendState1">
-    <summary>
-      <para>The blend-state interface holds a description for blending state that you can bind to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>. This blend-state interface supports logical operations as well as blending operations.</para>
-    </summary>
-    <remarks>
-      <para>Blending applies a simple function to combine output values from a pixel shader with data in a render target. You have control over how the pixels are blended by using a predefined set of blending operations and preblending operations.</para>
-      <para>To create a blend-state object, call <see cref="ID3D11Device1.CreateBlendState1" />. To bind the blend-state object to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>, call <see cref="ID3D11DeviceContext.OMSetBlendState" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D11BlendState" />
+    <summary>The blend-state interface holds a description for blending state that you can bind to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>. This blend-state interface supports logical operations as well as blending operations.</summary>
   </member>
 </doc>

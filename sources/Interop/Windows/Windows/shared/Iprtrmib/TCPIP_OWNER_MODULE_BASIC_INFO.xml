@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TCPIP_OWNER_MODULE_BASIC_INFO">
-    <summary>
-      <para>The <b>TCPIP_OWNER_MODULE_BASIC_INFO</b> structure contains pointers to the module name and module path values associated with a TCP connection. The <b>TCPIP_OWNER_MODULE_BASIC_INFO</b> structure is returned by the <see cref="GetOwnerModuleFromTcpEntry" /> and <see cref="GetOwnerModuleFromTcp6Entry" /> functions.</para>
-    </summary>
-    <remarks>
-      <para>If the module owner is the system kernel, the <b>lpModuleName</b> and <b>lpModulePath</b> members point to a wide character string that contains "System".</para>
-      <para>On Windows Vista and later as well as on the Microsoft Windows Software Development Kit (SDK), the organization of header files has changed and the <b>TCPIP_OWNER_MODULE_BASIC_INFO</b> structure is defined in the <i>Iprtrmib.h</i> header file.</para>
-    </remarks>
+    <summary>The <b>TCPIP_OWNER_MODULE_BASIC_INFO</b> structure contains pointers to the module name and module path values associated with a TCP connection. The <b>TCPIP_OWNER_MODULE_BASIC_INFO</b> structure is returned by the <see cref="GetOwnerModuleFromTcpEntry" /> and <see cref="GetOwnerModuleFromTcp6Entry" /> functions.</summary>
   </member>
   <member name="TCPIP_OWNER_MODULE_BASIC_INFO.pModuleName">
-    <summary>
-      <para>A pointer to the name of the module. This field should be a <b>NULL</b> pointer when passed to <see cref="GetOwnerModuleFromTcpEntry" /> or <see cref="GetOwnerModuleFromTcp6Entry" /> function.</para>
-    </summary>
+    <summary>A pointer to the name of the module. This field should be a <b>NULL</b> pointer when passed to <see cref="GetOwnerModuleFromTcpEntry" /> or <see cref="GetOwnerModuleFromTcp6Entry" /> function.</summary>
   </member>
   <member name="TCPIP_OWNER_MODULE_BASIC_INFO.pModulePath">
-    <summary>
-      <para>A pointer to the full path of the module, including the module name. This field should be a <b>NULL</b> pointer when passed to <see cref="GetOwnerModuleFromTcpEntry" /> or <see cref="GetOwnerModuleFromTcp6Entry" /> function.</para>
-    </summary>
+    <summary>A pointer to the full path of the module, including the module name. This field should be a <b>NULL</b> pointer when passed to <see cref="GetOwnerModuleFromTcpEntry" /> or <see cref="GetOwnerModuleFromTcp6Entry" /> function.</summary>
   </member>
 </doc>

@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LICINFO">
-    <summary>
-      <para>Contains parameters that describe the licensing behavior of a class factory that supports licensing. The structure is filled by calling the <see cref="IClassFactory2.GetLicInfo" /> method.</para>
-    </summary>
-    <seealso cref="IClassFactory2.GetLicInfo" />
+    <summary>Contains parameters that describe the licensing behavior of a class factory that supports licensing. The structure is filled by calling the <see cref="IClassFactory2.GetLicInfo" /> method.</summary>
   </member>
   <member name="LICINFO.cbLicInfo">
-    <summary>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="LICINFO.fRuntimeKeyAvail">
-    <summary>
-      <para>Indicates whether this class factory allows the creation of its objects on an unlicensed machine through the use of a license key. If <b>TRUE</b>, <see cref="IClassFactory2.RequestLicKey" /> can be called to obtain the key. If <b>FALSE</b>, objects can be created only on a fully licensed machine.</para>
-    </summary>
+    <summary>Indicates whether this class factory allows the creation of its objects on an unlicensed machine through the use of a license key. If <b>TRUE</b>, <see cref="IClassFactory2.RequestLicKey" /> can be called to obtain the key. If <b>FALSE</b>, objects can be created only on a fully licensed machine.</summary>
   </member>
   <member name="LICINFO.fLicVerified">
-    <summary>
-      <para>Indicates whether a full machine license exists such that calls to <see cref="IClassFactory.CreateInstance" /> and <see cref="IClassFactory2.RequestLicKey" /> will succeed. If <b>TRUE</b>, the full machine license exists. Thus, objects can be created freely. and a license key is available if <b>fRuntimeKeyAvail</b> is also <b>TRUE</b>. If <b>FALSE</b>, this class factory cannot create any instances of objects on this machine unless the proper license key is passed to <see cref="IClassFactory2.CreateInstanceLic" />.</para>
-    </summary>
+    <summary>Indicates whether a full machine license exists such that calls to <see cref="IClassFactory.CreateInstance" /> and <see cref="IClassFactory2.RequestLicKey" /> will succeed. If <b>TRUE</b>, the full machine license exists. Thus, objects can be created freely. and a license key is available if <b>fRuntimeKeyAvail</b> is also <b>TRUE</b>. If <b>FALSE</b>, this class factory cannot create any instances of objects on this machine unless the proper license key is passed to <see cref="IClassFactory2.CreateInstanceLic" />.</summary>
   </member>
 </doc>

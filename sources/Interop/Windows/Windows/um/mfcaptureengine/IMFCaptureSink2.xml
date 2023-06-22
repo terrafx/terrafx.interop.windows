@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFCaptureSink2.SetOutputMediaType">
-    <summary>
-      <para>Dynamically sets the output media type of the record sink or preview sink.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>The stream index to change the output media type on.</para>
-    </param>
-    <param name="pMediaType">
-      <para>The new output media type.</para>
-    </param>
-    <param name="pEncodingAttributes">
-      <para>The new encoder attributes. This can be  <b>null</b>.</para>
-    </param>
+    <summary>Dynamically sets the output media type of the record sink or preview sink.</summary>
+    <param name="dwStreamIndex">The stream index to change the output media type on.</param>
+    <param name="pMediaType">The new output media type.</param>
+    <param name="pEncodingAttributes">The new encoder attributes. This can be <b>null</b>.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -22,38 +14,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_MEDIATYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALID_MEDIATYPE</b>
-            </para>
-          </description>
-          <description>
-            <para>The sink does not support the media type.</para>
-          </description>
-        </item>
+          <description>The sink does not support the media type.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This is an asynchronous call.  Listen to the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-output-media-type-set">MF_CAPTURE_ENGINE_OUTPUT_MEDIA_TYPE_SET</a> event
-to be notified when the output media type has been set.</para>
-    </remarks>
-    <seealso cref="IMFCaptureSink2" />
   </member>
   <member name="IMFCaptureSink2">
-    <summary>
-      <para>Extends the <see cref="IMFCaptureSink" /> interface to provide  functionality for dynamically setting the output media type of the record sink or preview sink.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Extends the <see cref="IMFCaptureSink" /> interface to provide functionality for dynamically setting the output media type of the record sink or preview sink.</summary>
   </member>
 </doc>

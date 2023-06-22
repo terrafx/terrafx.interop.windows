@@ -3,21 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyUI.FormatForDisplay">
-    <summary>
-      <para>Developers should use <see cref="IPropertyDescription" /> instead. Gets a formatted, Unicode string representation of a property value.</para>
-    </summary>
-    <param name="fmtid">
-      <para>Type: <b>REFFMTID</b></para>
-    </param>
-    <param name="pid">
-      <para>Type: <b>PROPID</b></para>
-    </param>
-    <param name="ppropvar">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>A <see cref="PROPVARIANT" /> structure that contains the type and value of the property.</para>
-    </param>
+    <summary>Developers should use <see cref="IPropertyDescription" /> instead. Gets a formatted, Unicode string representation of a property value.</summary>
+    <param name="ppropvar">A <see cref="PROPVARIANT" /> structure that contains the type and value of the property.</param>
     <param name="puiff">
-      <para>Type: <b>PROPERTYUI_FORMAT_FLAGS</b></para>
       <para>The format for the returned property value.</para>
       <h4>PUIFFDF_DEFAULT (0x00000000)</h4>
       <para>0x00000000.</para>
@@ -30,174 +18,63 @@
       <h4>PUIFFDF_FRIENDLYDATE (0x00000008)</h4>
       <para>0x00000008. Use the friendly name for date: "Today", "Yesterday", and so on.</para>
     </param>
-    <param name="pwszText">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>The property value, formatted for display.</para>
-    </param>
-    <param name="cchText">
-      <para>Type: <b>DWORD</b></para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="pwszText">The property value, formatted for display.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyUI.GetDefaultWidth">
-    <summary>
-      <para>Developers should use <see cref="IPropertyDescription" /> instead. Gets the width of the property description.</para>
-    </summary>
-    <param name="fmtid">
-      <para>Type: <b>REFFMTID</b></para>
-      <para>The FMTID of the property.</para>
-    </param>
-    <param name="pid">
-      <para>Type: <b>PROPID</b></para>
-      <para>The PROPID of the property.</para>
-    </param>
-    <param name="pcxChars">
-      <para>Type: <b>ULONG*</b></para>
-      <para>The width of the property description.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Developers should use <see cref="IPropertyDescription" /> instead. Gets the width of the property description.</summary>
+    <param name="fmtid">The FMTID of the property.</param>
+    <param name="pid">The PROPID of the property.</param>
+    <param name="pcxChars">The width of the property description.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyUI.GetDisplayName">
-    <summary>
-      <para>Developers should use <see cref="IPropertyDescription" /> instead. Gets a string specifying the name of the property suitable for display to users.</para>
-    </summary>
-    <param name="fmtid">
-      <para>Type: <b>REFFMTID</b></para>
-      <para>The FMTID of the property.</para>
-    </param>
-    <param name="pid">
-      <para>Type: <b>PROPID</b></para>
-      <para>The PROPID of the property.</para>
-    </param>
+    <summary>Developers should use <see cref="IPropertyDescription" /> instead. Gets a string specifying the name of the property suitable for display to users.</summary>
+    <param name="fmtid">The FMTID of the property.</param>
+    <param name="pid">The PROPID of the property.</param>
     <param name="flags">
-      <para>Type: <b>PROPERTYUI_NAME_FLAGS</b></para>
       <para>One of the following PROPERTYUI_NAME_FLAGS values:</para>
       <h4>PUIFNF_DEFAULT (0x00000000)</h4>
       <para>0x00000000.</para>
       <h4>PUIFNF_MNEMONIC (0x00000001)</h4>
       <para>0x00000001. Include mnemonic in display name.</para>
     </param>
-    <param name="pwszText">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A string specifying the property.</para>
-    </param>
-    <param name="cchText">
-      <para>Type: <b>DWORD</b></para>
-      <para>The length of the property display name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="pwszText">A string specifying the property.</param>
+    <param name="cchText">The length of the property display name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyUI.GetFlags">
-    <summary>
-      <para>Developers should use <see cref="IPropertyDescription" /> instead. Gets property feature flags for a specified property.</para>
-    </summary>
-    <param name="fmtid">
-      <para>Type: <b>REFFMTID</b></para>
-      <para>The FMTID of the property.</para>
-    </param>
-    <param name="pid">
-      <para>Type: <b>PROPID</b></para>
-      <para>The PROPID of the property.</para>
-    </param>
-    <param name="pflags">
-      <para>Type: <b><see cref="PROPERTYUI_FLAGS" />*</b></para>
-      <para>The <see cref="PROPERTYUI_FLAGS" /> for the property.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Developers should use <see cref="IPropertyDescription" /> instead. Gets property feature flags for a specified property.</summary>
+    <param name="fmtid">The FMTID of the property.</param>
+    <param name="pid">The PROPID of the property.</param>
+    <param name="pflags">The <see cref="PROPERTYUI_FLAGS" /> for the property.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyUI.GetHelpInfo">
-    <summary>
-      <para>Developers should use <see cref="IPropertyDescription" /> instead. Gets</para>
-    </summary>
-    <param name="fmtid">
-      <para>Type: <b>REFFMTID</b></para>
-      <para>The FMTID of the property.</para>
-    </param>
-    <param name="pid">
-      <para>Type: <b>PROPID</b></para>
-      <para>The PROPID of the property.</para>
-    </param>
-    <param name="pwszHelpFile">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>The fully qualified path of the Help file.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>DWORD</b></para>
-    </param>
-    <param name="puHelpID">
-      <para>Type: <b>UINT*</b></para>
-      <para>The Help context ID for the property.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Developers should use <see cref="IPropertyDescription" /> instead. Gets</summary>
+    <param name="fmtid">The FMTID of the property.</param>
+    <param name="pid">The PROPID of the property.</param>
+    <param name="pwszHelpFile">The fully qualified path of the Help file.</param>
+    <param name="puHelpID">The Help context ID for the property.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyUI.GetPropertyDescription">
-    <summary>
-      <para>Developers should use <see cref="IPropertyDescription" /> instead. Gets the property description of a specified property.</para>
-    </summary>
-    <param name="fmtid">
-      <para>Type: <b>REFFMTID</b></para>
-      <para>The FMTID of the property.</para>
-    </param>
-    <param name="pid">
-      <para>Type: <b>PROPID</b></para>
-      <para>The PROPID of the property.</para>
-    </param>
-    <param name="pwszText">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>The description of the property.</para>
-    </param>
-    <param name="cchText">
-      <para>Type: <b>DWORD</b></para>
-      <para>The length of the property description.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Developers should use <see cref="IPropertyDescription" /> instead. Gets the property description of a specified property.</summary>
+    <param name="fmtid">The FMTID of the property.</param>
+    <param name="pid">The PROPID of the property.</param>
+    <param name="pwszText">The description of the property.</param>
+    <param name="cchText">The length of the property description.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyUI.ParsePropertyName">
-    <summary>
-      <para>Developers should use <see cref="IPropertyDescription" /> instead. Reads the characters of the specified property name and identifies the FMTID and PROPID of the property.</para>
-    </summary>
-    <param name="pszName">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A string specifying the property name to parse.</para>
-    </param>
-    <param name="pfmtid">
-      <para>Type: <b>FMTID*</b></para>
-      <para>The FMTID of the parsed property.</para>
-    </param>
-    <param name="ppid">
-      <para>Type: <b>PROPID*</b></para>
-      <para>The PROPID of the parsed property name.</para>
-    </param>
-    <param name="pchEaten">
-      <para>Type: <b>ULONG*</b></para>
-      <para>The number of characters that were consumed in parsing <i>pszName</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Developers should use <see cref="IPropertyDescription" /> instead. Reads the characters of the specified property name and identifies the FMTID and PROPID of the property.</summary>
+    <param name="pszName">A string specifying the property name to parse.</param>
+    <param name="pfmtid">The FMTID of the parsed property.</param>
+    <param name="ppid">The PROPID of the parsed property name.</param>
+    <param name="pchEaten">The number of characters that were consumed in parsing <i>pszName</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyUI">
-    <summary>
-      <para>Developers should use <see cref="IPropertyDescription" /> instead.</para>
-    </summary>
+    <summary>Developers should use <see cref="IPropertyDescription" /> instead.</summary>
   </member>
 </doc>

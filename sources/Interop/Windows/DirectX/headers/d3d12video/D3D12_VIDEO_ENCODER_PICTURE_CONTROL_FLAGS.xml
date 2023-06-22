@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAGS">
-    <summary>
-      <para>Specifies video encoder picture control flags.</para>
-    </summary>
-    <remarks>
-      <para>Values from this enumeration are used by <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC" />.</para>
-      <para>If this flag is not set, the <see cref="D3D12_VIDEO_ENCODER_RECONSTRUCTED_PICTURE.pReconstructedPicture" /> can be nullptr in the associated call to <see cref="ID3D12VideoEncodeCommandList2.EncodeFrame" />.</para>
-    </remarks>
+    <summary>Specifies video encoder picture control flags.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAGS.D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_NONE">
-    <summary>
-      <para>None.</para>
-    </summary>
+    <summary>None.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAGS.D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_USED_AS_REFERENCE_PICTURE">
     <summary>

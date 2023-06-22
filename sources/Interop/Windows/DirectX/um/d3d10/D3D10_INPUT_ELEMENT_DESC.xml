@@ -3,54 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_INPUT_ELEMENT_DESC">
-    <summary>
-      <para>A description of a single element for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage">input-assembler stage</a>.</para>
-    </summary>
-    <remarks>
-      <para>An input-layout object contains an array of structures, each structure defines one element being read from an input slot. Create an input-layout object by calling <see cref="ID3D10Device.CreateInputLayout" />. For an example, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">Create an input-layout object</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-structures">Core Structures</seealso>
+    <summary>A description of a single element for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage">input-assembler stage</a>.</summary>
   </member>
   <member name="D3D10_INPUT_ELEMENT_DESC.SemanticName">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">HLSL semantic</a> associated with this element in a <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-signatures">shader input-signature</a>.</para>
-    </summary>
+    <summary>The <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">HLSL semantic</a> associated with this element in a <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-signatures">shader input-signature</a>.</summary>
   </member>
   <member name="D3D10_INPUT_ELEMENT_DESC.SemanticIndex">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The semantic index for the element. A semantic index modifies a semantic, with an integer index number. A semantic index is only needed in a case where there is more than one element with the same semantic. For example, a 4x4 matrix would have four components each with the semantic name <b>matrix</b>, however each of the four component would have different semantic indices (0, 1, 2, and 3).</para>
-    </summary>
+    <summary>The semantic index for the element. A semantic index modifies a semantic, with an integer index number. A semantic index is only needed in a case where there is more than one element with the same semantic. For example, a 4x4 matrix would have four components each with the semantic name <b>matrix</b>, however each of the four component would have different semantic indices (0, 1, 2, and 3).</summary>
   </member>
   <member name="D3D10_INPUT_ELEMENT_DESC.Format">
-    <summary>
-      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
-      <para>The data type of the element data. See <see cref="DXGI_FORMAT" />.</para>
-    </summary>
+    <summary>The data type of the element data. See <see cref="DXGI_FORMAT" />.</summary>
   </member>
   <member name="D3D10_INPUT_ELEMENT_DESC.InputSlot">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>An integer value that identifies the input-assembler (see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">input slot</a>). Valid values are between 0 and 15, defined in D3D10.h.</para>
-    </summary>
+    <summary>An integer value that identifies the input-assembler (see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">input slot</a>). Valid values are between 0 and 15, defined in D3D10.h.</summary>
   </member>
   <member name="D3D10_INPUT_ELEMENT_DESC.AlignedByteOffset">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Optional. Offset (in bytes) between each element. Use D3D10_APPEND_ALIGNED_ELEMENT for convenience to define the current element directly after the previous one, including any packing if necessary.</para>
-    </summary>
+    <summary>Optional. Offset (in bytes) between each element. Use D3D10_APPEND_ALIGNED_ELEMENT for convenience to define the current element directly after the previous one, including any packing if necessary.</summary>
   </member>
   <member name="D3D10_INPUT_ELEMENT_DESC.InputSlotClass">
-    <summary>
-      <para>Type: <b><see cref="D3D10_INPUT_CLASSIFICATION" /></b></para>
-      <para>Identifies the input data class for a single input slot (see <see cref="D3D10_INPUT_CLASSIFICATION" />).</para>
-    </summary>
+    <summary>Identifies the input data class for a single input slot (see <see cref="D3D10_INPUT_CLASSIFICATION" />).</summary>
   </member>
   <member name="D3D10_INPUT_ELEMENT_DESC.InstanceDataStepRate">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of instances to draw before stepping one unit forward in a vertex buffer filled with instance data. Can be any unsigned integer value (0 means do not step) when the slot class is D3D10_INPUT_PER_INSTANCE_DATA; must be 0 when the slot class is D3D10_INPUT_PER_VERTEX_DATA.</para>
-    </summary>
+    <summary>The number of instances to draw before stepping one unit forward in a vertex buffer filled with instance data. Can be any unsigned integer value (0 means do not step) when the slot class is D3D10_INPUT_PER_INSTANCE_DATA; must be 0 when the slot class is D3D10_INPUT_PER_VERTEX_DATA.</summary>
   </member>
 </doc>

@@ -4,82 +4,50 @@
 <doc>
   <member name="DVD_KARAOKE_DOWNMIX">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Defines flags used by the <see cref="IDvdControl2.SelectKaraokeAudioPresentationMode" /> method to control which speakers, if any, each auxiliary channel is downmixed to.</para>
     </summary>
-    <remarks>
-      <para>Audio channels are zero-based, so channels 2 through 4 are the three auxiliary karaoke channels. Use bitwise <b>OR</b> operations to set the appropriate bit to send a channel to the left speaker (0), right speaker (1), both speakers, or to no speakers by turning both bits off. These bits are all off by default whenever the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator Filter</a> filter enters karaoke mode.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IDvdControl2.SelectKaraokeAudioPresentationMode" />
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_0to0">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_1to0">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_2to0">
-    <summary>
-      <para>Downmix channel 2 to the left speaker.</para>
-    </summary>
+    <summary>Downmix channel 2 to the left speaker.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_3to0">
-    <summary>
-      <para>Downmix channel 3 to the left speaker.</para>
-    </summary>
+    <summary>Downmix channel 3 to the left speaker.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_4to0">
-    <summary>
-      <para>Downmix channel 4 to the left speaker.</para>
-    </summary>
+    <summary>Downmix channel 4 to the left speaker.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_Lto0">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_Rto0">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_0to1">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_1to1">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_2to1">
-    <summary>
-      <para>Downmix channel 2 to the right speaker.</para>
-    </summary>
+    <summary>Downmix channel 2 to the right speaker.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_3to1">
-    <summary>
-      <para>Downmix channel 3 to the right speaker.</para>
-    </summary>
+    <summary>Downmix channel 3 to the right speaker.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_4to1">
-    <summary>
-      <para>Downmix channel 4 to the right speaker.</para>
-    </summary>
+    <summary>Downmix channel 4 to the right speaker.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_Lto1">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="DVD_KARAOKE_DOWNMIX.DVD_Mix_Rto1">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

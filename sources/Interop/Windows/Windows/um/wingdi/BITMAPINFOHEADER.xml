@@ -4,65 +4,17 @@
 <doc>
   <member name="BITMAPINFOHEADER">
     <summary>
-      <para>The <b>BITMAPINFOHEADER</b> structure contains information about the dimensions and color format of a device-independent bitmap (DIB).
-<b>Note</b>  This structure is also described in the GDI documentation. However, the semantics for video data are slightly different than the semantics used for GDI. If you are using this structure to describe video data, use the information given here.</para>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>The <b>BITMAPINFOHEADER</b> structure contains information about the dimensions and color format of a device-independent bitmap (DIB).</para>
+      <div>
+        <b>Note</b>  This structure is also described in the GDI documentation. However, the semantics for video data are slightly different than the semantics used for GDI. If you are using this structure to describe video data, use the information given here.</div>
     </summary>
-    <remarks>
-      <h3>Color Tables</h3>
-      <para>The <b>BITMAPINFOHEADER</b> structure may be followed by an array of palette entries or color masks. The rules depend on the value of <b>biCompression</b>.</para>
-      <list type="bullet">
-        <item>
-          <description>If <b>biCompression</b> equals <b>BI_RGB</b> and the bitmap uses 8 bpp or less, the bitmap has a color table immediately following the <b>BITMAPINFOHEADER</b> structure. The color table consists of an array of <b>RGBQUAD</b> values. The size of the array is given by the <b>biClrUsed</b> member. If <b>biClrUsed</b> is zero, the array contains the maximum number of colors for the given bitdepth; that is, 2^<b>biBitCount</b> colors.</description>
-        </item>
-        <item>
-          <description>If <b>biCompression</b> equals <b>BI_BITFIELDS</b>, the bitmap uses three <b>DWORD</b> color masks (red, green, and blue, respectively), which specify the byte layout of the pixels. The 1 bits in each mask indicate the bits for that color within the pixel.</description>
-        </item>
-        <item>
-          <description>If <b>biCompression</b> is a video FOURCC, the presence of a color table is implied by the video format. You should not assume that a color table exists when the bit depth is 8 bpp or less. However, some legacy components might assume that a color table is present. Therefore, if you are allocating a <b>BITMAPINFOHEADER</b> structure, it is recommended to allocate space for a color table when the bit depth is 8 bpp or less, even if the color table is not used.</description>
-        </item>
-      </list>
-      <para>When the <b>BITMAPINFOHEADER</b> is followed by a color table or a set of color masks, you can use the <see cref="BITMAPINFO" /> structure to reference the color table of the color masks. The <b>BITMAPINFO</b> structure is defined as follows:</para>
-      <code>typedef struct tagBITMAPINFO {
-    BITMAPINFOHEADER bmiHeader;
-    RGBQUAD          bmiColors[1];
-} BITMAPINFO;
-
-</code>
-      <para>If you cast the <b>BITMAPINFOHEADER</b> to a <see cref="BITMAPINFO" />, the <b>bmiHeader</b> member refers to the <b>BITMAPINFOHEADER</b> and the <b>bmiColors</b> member refers to the first entry in the color table, or the first color mask.</para>
-      <para>Be aware that if the bitmap uses a color table or color masks, then the size of the entire format structure (the <b>BITMAPINFOHEADER</b> plus the color information) is not equal to <code>sizeof(BITMAPINFOHEADER)</code> or <code>sizeof(BITMAPINFO)</code>. You must calculate the actual size for each instance.</para>
-      <h3>Calculating Surface Stride</h3>
-      <para>In an uncompressed bitmap, the stride is the number of bytes needed to go from the start of one row of pixels to the start of the next row. The image format defines a minimum stride for an image. In addition, the graphics hardware might require a larger stride for the surface that contains the image.</para>
-      <para>For uncompressed RGB formats, the minimum stride is always the image width in bytes, rounded up to the nearest <b>DWORD</b>. You can use the following formula to calculate the stride:</para>
-      <para>
-        <code>stride = ((((biWidth * biBitCount) + 31) &amp; ~31) &gt;&gt; 3)</code>
-      </para>
-      <para>For YUV formats, there is no general rule for calculating the minimum stride. You must understand the rules for the particular YUV format. For a description of the most common YUV formats, see <a href="https://docs.microsoft.com//windows/desktop/medfound/recommended-8-bit-yuv-formats-for-video-rendering">Recommended 8-Bit YUV Formats for Video Rendering</a>.</para>
-      <para>Decoders and video sources should propose formats where biWidth is the width of the image in pixels. If the video renderer requires a surface stride that is larger than the default image stride, it modifies the proposed media type by setting the following values:</para>
-      <list type="bullet">
-        <item>
-          <description>It sets <b>biWidth</b> equal to the surface stride in pixels.</description>
-        </item>
-        <item>
-          <description>It sets the <b>rcTarget</b> member of the <see cref="VIDEOINFOHEADER" /> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a> structure equal to the image width, in pixels.</description>
-        </item>
-      </list>
-      <para>Then the video renderer proposes the modified format by calling <see cref="IPin.QueryAccept" /> on the upstream pin. For more information about this mechanism, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-format-changes">Dynamic Format Changes</a>.</para>
-      <para>If there is padding in the image buffer, never dereference a pointer into the memory that has been reserved for the padding. If the image buffer has been allocated in video memory, the padding might not be readable memory.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso cref="VIDEOINFOHEADER Structure" />
-    <seealso cref="VIDEOINFOHEADER2 Structure" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/working-with-video-frames">Working with Video Frames</seealso>
   </member>
   <member name="BITMAPINFOHEADER.biSize">
-    <summary>
-      <para>Specifies the number of bytes required by the structure. This value does not include the size of the color table or the size of the color masks, if they are appended to the end of structure. See Remarks.</para>
-    </summary>
+    <summary>Specifies the number of bytes required by the structure. This value does not include the size of the color table or the size of the color masks, if they are appended to the end of structure. See Remarks.</summary>
   </member>
   <member name="BITMAPINFOHEADER.biWidth">
-    <summary>
-      <para>Specifies the width of the bitmap, in pixels. For information about calculating the stride of the bitmap, see Remarks.</para>
-    </summary>
+    <summary>Specifies the width of the bitmap, in pixels. For information about calculating the stride of the bitmap, see Remarks.</summary>
   </member>
   <member name="BITMAPINFOHEADER.biHeight">
     <summary>
@@ -81,14 +33,10 @@
     </summary>
   </member>
   <member name="BITMAPINFOHEADER.biPlanes">
-    <summary>
-      <para>Specifies the number of planes for the target device. This value must be set to 1.</para>
-    </summary>
+    <summary>Specifies the number of planes for the target device. This value must be set to 1.</summary>
   </member>
   <member name="BITMAPINFOHEADER.biBitCount">
-    <summary>
-      <para>Specifies the number of bits per pixel (bpp). For uncompressed formats, this value is the average number of bits per pixel. For compressed formats, this value is the implied bit depth of the uncompressed image, after the image has been decoded.</para>
-    </summary>
+    <summary>Specifies the number of bits per pixel (bpp). For uncompressed formats, this value is the average number of bits per pixel. For compressed formats, this value is the implied bit depth of the uncompressed image, after the image has been decoded.</summary>
   </member>
   <member name="BITMAPINFOHEADER.biCompression">
     <summary>
@@ -99,50 +47,45 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>BI_RGB</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>BI_RGB</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Uncompressed RGB.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Uncompressed RGB.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>BI_BITFIELDS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>BI_BITFIELDS</b>
-          </description>
-          <description>
-            <para>Uncompressed RGB with color masks. Valid for 16-bpp and 32-bpp bitmaps.</para>
-          </description>
-        </item>
-      </list>
-      <para>See Remarks for more information. Note that <b>BI_JPG</b> and <b>BI_PNG</b> are not valid video formats.</para>
-      <para>For 16-bpp bitmaps, if <b>biCompression</b> equals <b>BI_RGB</b>, the format is always RGB 555. If <b>biCompression</b> equals <b>BI_BITFIELDS</b>, the format is either RGB 555 or RGB 565. Use the subtype GUID in the <see cref="AM_MEDIA_TYPE" /> structure to determine the specific RGB type.</para>
-    </summary>
+          <description>Uncompressed RGB with color masks. Valid for 16-bpp and 32-bpp bitmaps.</description>
+        </listheader>
+      </list> <para>See Remarks for more information. Note that <b>BI_JPG</b> and <b>BI_PNG</b> are not valid video formats.</para><para>For 16-bpp bitmaps, if <b>biCompression</b> equals <b>BI_RGB</b>, the format is always RGB 555. If <b>biCompression</b> equals <b>BI_BITFIELDS</b>, the format is either RGB 555 or RGB 565. Use the subtype GUID in the <see cref="AM_MEDIA_TYPE" /> structure to determine the specific RGB type.</para></summary>
   </member>
   <member name="BITMAPINFOHEADER.biSizeImage">
-    <summary>
-      <para>Specifies the size, in bytes, of the image. This can be set to 0 for uncompressed RGB bitmaps.</para>
-    </summary>
+    <summary>Specifies the size, in bytes, of the image. This can be set to 0 for uncompressed RGB bitmaps.</summary>
   </member>
   <member name="BITMAPINFOHEADER.biXPelsPerMeter">
-    <summary>
-      <para>Specifies the horizontal resolution, in pixels per meter, of the target device for the bitmap.</para>
-    </summary>
+    <summary>Specifies the horizontal resolution, in pixels per meter, of the target device for the bitmap.</summary>
   </member>
   <member name="BITMAPINFOHEADER.biYPelsPerMeter">
-    <summary>
-      <para>Specifies the vertical resolution, in pixels per meter, of the target device for the bitmap.</para>
-    </summary>
+    <summary>Specifies the vertical resolution, in pixels per meter, of the target device for the bitmap.</summary>
   </member>
   <member name="BITMAPINFOHEADER.biClrUsed">
-    <summary>
-      <para>Specifies the number of color indices in the color table that are actually used by the bitmap. See Remarks for more information.</para>
-    </summary>
+    <summary>Specifies the number of color indices in the color table that are actually used by the bitmap. See Remarks for more information.</summary>
   </member>
   <member name="BITMAPINFOHEADER.biClrImportant">
-    <summary>
-      <para>Specifies the number of color indices that are considered important for displaying the bitmap. If this value is zero, all colors are important.</para>
-    </summary>
+    <summary>Specifies the number of color indices that are considered important for displaying the bitmap. If this value is zero, all colors are important.</summary>
   </member>
 </doc>

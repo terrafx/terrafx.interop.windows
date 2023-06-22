@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_PURGE_BINDING_CACHE_REQUEST">
+    <summary>Deletes the request for the binding cache. You must have the <b>SeTcbPrivilege</b> privilege set.</summary>
+  </member>
+  <member name="KERB_PURGE_BINDING_CACHE_REQUEST.MessageType">
+    <summary>A value of the <see cref="KERB_PROTOCOL_MESSAGE_TYPE" /> enumeration that lists the types of messages that can be sent to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> authentication package by calling the <see cref="LsaCallAuthenticationPackage" /> function. This member must be set to <b>KerbPurgeBindingCacheMessage</b>.</summary>
+  </member>
+</doc>

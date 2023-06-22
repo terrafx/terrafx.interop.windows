@@ -4,44 +4,29 @@
 <doc>
   <member name="eAVEncInputVideoSystem">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the nominal range for a video source. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencinputvideosystem-property">AVEncInputVideoSystem</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_Unspecified">
-    <summary>
-      <para>The video system is not specified.</para>
-    </summary>
+    <summary>The video system is not specified.</summary>
   </member>
   <member name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_PAL">
-    <summary>
-      <para>PAL television.</para>
-    </summary>
+    <summary>PAL television.</summary>
   </member>
   <member name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_NTSC">
-    <summary>
-      <para>NTSC television.</para>
-    </summary>
+    <summary>NTSC television.</summary>
   </member>
   <member name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_SECAM">
-    <summary>
-      <para>SECAM television.</para>
-    </summary>
+    <summary>SECAM television.</summary>
   </member>
   <member name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_MAC">
-    <summary>
-      <para>Not documented for this release.</para>
-    </summary>
+    <summary>Not documented for this release.</summary>
   </member>
   <member name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_HDV">
-    <summary>
-      <para>High-definition (HD) video.</para>
-    </summary>
+    <summary>High-definition (HD) video.</summary>
   </member>
   <member name="eAVEncInputVideoSystem.eAVEncInputVideoSystem_Component">
-    <summary>
-      <para>Component video.</para>
-    </summary>
+    <summary>Component video.</summary>
   </member>
 </doc>

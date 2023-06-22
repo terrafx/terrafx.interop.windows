@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="REGKIND">
+    <summary>Controls how a type library is registered.</summary>
+  </member>
+  <member name="REGKIND.REGKIND_DEFAULT">
+    <summary>Use default register behavior.</summary>
+  </member>
+  <member name="REGKIND.REGKIND_REGISTER">
+    <summary>Register this type library.</summary>
+  </member>
+  <member name="REGKIND.REGKIND_NONE">
+    <summary>Do not register this type library.</summary>
+  </member>
+</doc>

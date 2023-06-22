@@ -4,34 +4,23 @@
 <doc>
   <member name="eAVEncVideoChromaSubsampling">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies chroma siting. Chroma siting defines the positions of the chroma samples relative to the luma samples. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoinputchromasubsampling-property">AVEncVideoInputChromaSubsampling</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideooutputchromasubsampling-property">AVEncVideoOutputChromaSubsampling</a> properties.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncVideoChromaSubsampling.eAVEncVideoChromaSubsamplingFormat_SameAsSource">
-    <summary>
-      <para>Use the same chroma siting as the input video. This flag applies to the <b>AVEncVideoOutputChromaResolution</b> property only. This flag may not be combined with other flags.</para>
-    </summary>
+    <summary>Use the same chroma siting as the input video. This flag applies to the <b>AVEncVideoOutputChromaResolution</b> property only. This flag may not be combined with other flags.</summary>
   </member>
   <member name="eAVEncVideoChromaSubsampling.eAVEncVideoChromaSubsamplingFormat_ProgressiveChroma">
-    <summary>
-      <para>Chroma should be reconstructed as if the underlying video was progressive content, rather than skipping fields or applying chroma filtering to minimize artifacts from reconstructing 4:2:0 interlaced chroma.</para>
-    </summary>
+    <summary>Chroma should be reconstructed as if the underlying video was progressive content, rather than skipping fields or applying chroma filtering to minimize artifacts from reconstructing 4:2:0 interlaced chroma.</summary>
   </member>
   <member name="eAVEncVideoChromaSubsampling.eAVEncVideoChromaSubsamplingFormat_Horizontally_Cosited">
-    <summary>
-      <para>Chroma samples are aligned horizontally with multiples of the luma samples.</para>
-    </summary>
+    <summary>Chroma samples are aligned horizontally with multiples of the luma samples.</summary>
   </member>
   <member name="eAVEncVideoChromaSubsampling.eAVEncVideoChromaSubsamplingFormat_Vertically_Cosited">
-    <summary>
-      <para>Chroma samples are aligned vertically with multiples of the luma samples.</para>
-    </summary>
+    <summary>Chroma samples are aligned vertically with multiples of the luma samples.</summary>
   </member>
   <member name="eAVEncVideoChromaSubsampling.eAVEncVideoChromaSubsamplingFormat_Vertically_AlignedChromaPlanes">
-    <summary>
-      <para>The chroma planes have the same phase alignment. It is not valid to omit this flag unless the data is vertically cosited. If the data is not vertically cosited, this flag is required. If this flag is absent, the Cb and Cr samples are sited on alternate lines. For example, interlaced PAL DV video uses non-aligned chroma planes.</para>
-    </summary>
+    <summary>The chroma planes have the same phase alignment. It is not valid to omit this flag unless the data is vertically cosited. If the data is not vertically cosited, this flag is required. If this flag is absent, the Cb and Cr samples are sited on alternate lines. For example, interlaced PAL DV video uses non-aligned chroma planes.</summary>
   </member>
 </doc>

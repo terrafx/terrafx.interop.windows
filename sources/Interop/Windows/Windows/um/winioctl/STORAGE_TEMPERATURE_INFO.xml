@@ -3,57 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_TEMPERATURE_INFO">
-    <summary>
-      <para>Describes  device temperature data. Returned as part of <see cref="STORAGE_TEMPERATURE_DATA_DESCRIPTOR" /> when querying for temperature data with an <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_set_temperature_threshold">IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD</seealso>
-    <seealso cref="STORAGE_PROPERTY_ID" />
-    <seealso cref="STORAGE_PROPERTY_QUERY" />
+    <summary>Describes device temperature data. Returned as part of <see cref="STORAGE_TEMPERATURE_DATA_DESCRIPTOR" /> when querying for temperature data with an <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_INFO.Index">
-    <summary>
-      <para>Identifies the instance of temperature information. Starts from 0. Index 0 may indicate a composite value.</para>
-    </summary>
+    <summary>Identifies the instance of temperature information. Starts from 0. Index 0 may indicate a composite value.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_INFO.Temperature">
-    <summary>
-      <para>A signed value that indicates the current temperature, in degrees Celsius.</para>
-    </summary>
+    <summary>A signed value that indicates the current temperature, in degrees Celsius.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_INFO.OverThreshold">
-    <summary>
-      <para>A signed value that specifies the maximum temperature within the desired threshold, in degrees Celsius.</para>
-    </summary>
+    <summary>A signed value that specifies the maximum temperature within the desired threshold, in degrees Celsius.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_INFO.UnderThreshold">
-    <summary>
-      <para>A signed value that specifies the minimum temperature within the desired threshold, in degrees Celsius.</para>
-    </summary>
+    <summary>A signed value that specifies the minimum temperature within the desired threshold, in degrees Celsius.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_INFO.OverThresholdChangable">
-    <summary>
-      <para>Indicates if <i>OverThreshold</i> can be changed by using <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_set_temperature_threshold">IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD</a>.</para>
-    </summary>
+    <summary>Indicates if <i>OverThreshold</i> can be changed by using <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_set_temperature_threshold">IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD</a>.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_INFO.UnderThresholdChangable">
-    <summary>
-      <para>Indicates if <i>UnderThreshold</i> can be changed by using <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_set_temperature_threshold">IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD</a>.</para>
-    </summary>
+    <summary>Indicates if <i>UnderThreshold</i> can be changed by using <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_set_temperature_threshold">IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD</a>.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_INFO.EventGenerated">
-    <summary>
-      <para>Indicates if a notification will be generated when the current temperature crosses a threshold.</para>
-    </summary>
+    <summary>Indicates if a notification will be generated when the current temperature crosses a threshold.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_INFO.Reserved0">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_INFO.Reserved1">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
 </doc>

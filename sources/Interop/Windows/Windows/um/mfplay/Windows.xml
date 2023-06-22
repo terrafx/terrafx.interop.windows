@@ -4,224 +4,130 @@
 <doc>
   <member name="Windows.MFPCreateMediaPlayer">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Creates a new instance of the MFPlay player object.</para>
     </summary>
     <param name="pwszURL">
-      <para>Null-terminated string that contains the URL  of a media file to open. This parameter can be <b>NULL</b>. If the parameter is <b>NULL</b>, <i>fStartPlayback</i> must be <b>FALSE</b>.</para>
+      <para>Null-terminated string that contains the URL of a media file to open. This parameter can be <b>NULL</b>. If the parameter is <b>NULL</b>, <i>fStartPlayback</i> must be <b>FALSE</b>.</para>
       <para>If this parameter is <b>NULL</b>, you can open a URL later by calling <see cref="IMFPMediaPlayer.CreateMediaItemFromURL" />.</para>
     </param>
     <param name="fStartPlayback">
       <para>If <b>TRUE</b>, playback starts automatically. If <b>FALSE</b>, playback does not start until the application calls <see cref="IMFMediaPlayer.Play" />.</para>
       <para>If <i>pwszURL</i> is <b>NULL</b>, this parameter is ignored.</para>
     </param>
-    <param name="creationOptions">
-      <para>Bitwise <b>OR</b> of zero of more flags from the <see cref="_MFP_CREATION_OPTIONS" /> enumeration.</para>
-    </param>
-    <param name="pCallback">
-      <para>Pointer to the <see cref="IMFPMediaPlayerCallback" /> interface of a callback object, implemented by the application. Use this interface to get event notifications from the MFPlay player object. This parameter can be <b>NULL</b>. If  the parameter is <b>NULL</b>, the application will not receive  event notifications from the player object.</para>
-    </param>
+    <param name="creationOptions">Bitwise <b>OR</b> of zero of more flags from the <see cref="_MFP_CREATION_OPTIONS" /> enumeration.</param>
+    <param name="pCallback">Pointer to the <see cref="IMFPMediaPlayerCallback" /> interface of a callback object, implemented by the application. Use this interface to get event notifications from the MFPlay player object. This parameter can be <b>NULL</b>. If the parameter is <b>NULL</b>, the application will not receive event notifications from the player object.</param>
     <param name="hWnd">
       <para>A handle to a window where the video will appear. For audio-only playback, this parameter can be <b>NULL</b>.</para>
       <para>The window specified by <i>hWnd</i> is used for the first selected video stream in the source. If the source has multiple video streams, you must call <see cref="IMFPMediaItem.SetStreamSink" /> to render any of the video streams after the first.</para>
       <para>If <i>hWnd</i> is <b>NULL</b>, MFPlay will not display any video unless the application calls <see cref="IMFPMediaItem.SetStreamSink" /> to specify a media sink for the video stream.</para>
     </param>
-    <param name="ppMediaPlayer">
-      <para>Receives a pointer to the <see cref="IMFPMediaPlayer" /> interface. The caller must release the interface. This parameter can be <b>NULL</b>. If this parameter is <b>NULL</b>, <i>fStartPlayback</i> must be <b>TRUE</b> and <i>pwszURL</i> cannot be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Before calling this function, call <b>CoIntialize(Ex)</b> from the same thread to initialize the COM library.</para>
-      <para>Internally, <b>MFPCreateMediaPlayer</b> calls <see cref="MFStartup" /> to initialize the Microsoft Media Foundation platform. When the player object is destroyed, it calls  <see cref="MFShutdown" /> to shut down the platform. It is not necessary for an application to call <b>MFStartup</b> or <b>MFShutdown</b> when using MFPlay.</para>
-      <para>
-        <b>Note</b>  If you use other Media Foundation APIs outside the life time of the player object, then your application should call <see cref="MFStartup" /> and <see cref="MFShutdown" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-functions">Media Foundation Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="ppMediaPlayer">Receives a pointer to the <see cref="IMFPMediaPlayer" /> interface. The caller must release the interface. This parameter can be <b>NULL</b>. If this parameter is <b>NULL</b>, <i>fStartPlayback</i> must be <b>TRUE</b> and <i>pwszURL</i> cannot be <b>NULL</b>.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.MFP_GET_ACQUIRE_USER_CREDENTIAL_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_ACQUIRE_USER_CREDENTIAL_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_ACQUIRE_USER_CREDENTIAL</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_ERROR_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_ERROR_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_ERROR</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_FRAME_STEP_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_FRAME_STEP_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_FRAME_STEP</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_MEDIAITEM_CLEARED_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MEDIAITEM_CLEARED_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_MEDIAITEM_CLEARED</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_MEDIAITEM_CREATED_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_MEDIAITEM_CREATED_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_MEDIAITEM_CREATED</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_MEDIAITEM_SET_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_MEDIAITEM_SET_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_MEDIAITEM_SET</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_MF_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_MF_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_MF</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_PAUSE_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_PAUSE_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_PAUSE</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_PLAYBACK_ENDED_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_PLAYBACK_ENDED_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_PLAYBACK_ENDED</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_PLAY_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_PLAY_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_PLAY</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_POSITION_SET_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_POSITION_SET_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_POSITION_SET</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_RATE_SET_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_RATE_SET_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_RATE_SET</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
   <member name="Windows.MFP_GET_STOP_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Casts an <see cref="MFP_EVENT_HEADER" /> pointer to an <see cref="MFP_STOP_EVENT" /> pointer.</para>
     </summary>
-    <param name="pHdr">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</para>
-    </param>
-    <remarks>
-      <para>The <b>eEventType</b> member of the input structure must be <b>MFP_EVENT_TYPE_STOP</b>. Otherwise, the macro returns <b>NULL</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-macros">Media Foundation Macros</seealso>
+    <param name="pHdr">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure.</param>
   </member>
 </doc>

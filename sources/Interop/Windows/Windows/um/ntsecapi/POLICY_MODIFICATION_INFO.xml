@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICY_MODIFICATION_INFO">
+    <summary>The <b>POLICY_MODIFICATION_INFO</b> structure is used to query information about the creation time and last modification of the LSA database. The<see cref="LsaQueryInformationPolicy" /> function uses this structure when its <i>InformationClass</i> parameter is set to PolicyModificationInformation.</summary>
+  </member>
+  <member name="POLICY_MODIFICATION_INFO.ModifiedId">
+    <summary>A<see cref="LARGE_INTEGER" /> structure containing a 64-bit unsigned integer that is incremented each time anything in the LSA database is modified. This value is modified only on primary domain controllers.</summary>
+  </member>
+  <member name="POLICY_MODIFICATION_INFO.DatabaseCreationTime">
+    <summary>A <see cref="LARGE_INTEGER" /> structure that indicates the date and time the LSA database was created. This is a UTC-based time that uses the <see cref="FILETIME" /> format. On backup domain controllers, this value is replicated from the primary domain controller. For more information about UTC-based time, see<a href="https://docs.microsoft.com//windows/desktop/SysInfo/system-time">System Time</a>.</summary>
+  </member>
+</doc>

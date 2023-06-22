@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEngineNeedKeyNotify.NeedKey">
-    <summary>
-      <para>Notifies the application that a key or keys are needed along with any initialization data.</para>
-    </summary>
-    <param name="initData">
-      <para>The initialization data.</para>
-    </param>
-    <param name="cb">
-      <para>The count in bytes of <i>initData</i>.</para>
-    </param>
-    <seealso cref="IMFMediaEngineNeedKeyNotify" />
+    <summary>Notifies the application that a key or keys are needed along with any initialization data.</summary>
+    <param name="initData">The initialization data.</param>
+    <param name="cb">The count in bytes of <i>initData</i>.</param>
   </member>
   <member name="IMFMediaEngineNeedKeyNotify">
-    <summary>
-      <para>Represents a callback to the media engine to notify key request data.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Represents a callback to the media engine to notify key request data.</summary>
   </member>
 </doc>

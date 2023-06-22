@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_PSOURCE_ALGORITHM">
-    <summary>
-      <para>The <b>CRYPT_PSOURCE_ALGORITHM</b> structure identifies the algorithm and (optionally) the value of the label for an RSAES-OAEP key encryption.</para>
-    </summary>
-    <seealso cref="CRYPT_RSAES_OAEP_PARAMETERS" />
+    <summary>The <b>CRYPT_PSOURCE_ALGORITHM</b> structure identifies the algorithm and (optionally) the value of the label for an RSAES-OAEP key encryption.</summary>
   </member>
   <member name="CRYPT_PSOURCE_ALGORITHM.pszObjId">
     <summary>
@@ -16,29 +13,25 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>szOID_RSA_PSPECIFIED</b>
-                </description>
-              </item>
-              <item>
-                <description>"1.2.840.113549.1.1.9"</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>"1.2.840.113549.1.1.9"</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The RSAES-OAEP label function.</para>
-          </description>
-        </item>
+          <description>The RSAES-OAEP label function.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CRYPT_PSOURCE_ALGORITHM.EncodingParameters">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> that contains the label. This member is optional and may contain an empty BLOB.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> that contains the label. This member is optional and may contain an empty BLOB.</summary>
   </member>
 </doc>

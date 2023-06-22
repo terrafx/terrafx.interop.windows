@@ -3,35 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_MESSAGE_SEVERITY">
-    <summary>
-      <para>Debug message severity levels for an information queue.</para>
-    </summary>
-    <remarks>
-      <para>Use these values to allow or deny message categories to pass through the storage and retrieval filters for an information queue (see <see cref="D3D10_INFO_QUEUE_FILTER" />). This API is used by <see cref="ID3D10InfoQueue.AddApplicationMessage" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+    <summary>Debug message severity levels for an information queue.</summary>
   </member>
   <member name="D3D10_MESSAGE_SEVERITY.D3D10_MESSAGE_SEVERITY_CORRUPTION">
-    <summary>
-      <para>Defines some type of corruption which has occurred.</para>
-    </summary>
+    <summary>Defines some type of corruption which has occurred.</summary>
   </member>
   <member name="D3D10_MESSAGE_SEVERITY.D3D10_MESSAGE_SEVERITY_ERROR">
-    <summary>
-      <para>Defines an error message.</para>
-    </summary>
+    <summary>Defines an error message.</summary>
   </member>
   <member name="D3D10_MESSAGE_SEVERITY.D3D10_MESSAGE_SEVERITY_WARNING">
-    <summary>
-      <para>Defines a warning message.</para>
-    </summary>
+    <summary>Defines a warning message.</summary>
   </member>
   <member name="D3D10_MESSAGE_SEVERITY.D3D10_MESSAGE_SEVERITY_INFO">
-    <summary>
-      <para>Defines an information message.</para>
-    </summary>
+    <summary>Defines an information message.</summary>
   </member>
-  <member name="D3D10_MESSAGE_SEVERITY.D3D10_MESSAGE_SEVERITY_MESSAGE">
-    <summary></summary>
-  </member>
+  <member name="D3D10_MESSAGE_SEVERITY.D3D10_MESSAGE_SEVERITY_MESSAGE"></member>
 </doc>

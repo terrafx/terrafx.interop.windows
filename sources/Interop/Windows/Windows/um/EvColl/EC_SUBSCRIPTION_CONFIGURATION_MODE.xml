@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EC_SUBSCRIPTION_CONFIGURATION_MODE">
+    <summary>The <b>EC_SUBSCRIPTION_CONFIGURATION_MODE</b> enumeration specifies different configuration modes that change the default settings for a subscription. Each configuration mode is used to define default settings for a different scenario, and sets the subscription delivery mode and default property values.</summary>
+  </member>
+  <member name="EC_SUBSCRIPTION_CONFIGURATION_MODE.EcConfigurationModeNormal">
+    <summary>This mode is used when an administrator needs the events to be delivered reliably and for the subscription to work with minimal configuration, and when network usage is not a concern. This mode sets the default subscription delivery mode to pull subscriptions.</summary>
+  </member>
+  <member name="EC_SUBSCRIPTION_CONFIGURATION_MODE.EcConfigurationModeCustom">
+    <summary>This subscription mode allows custom values for the DeliveryMode property, the DeliveryMaxItems property, the DeliveryMaxLatencyTime, and the HeartBeatInterval property.</summary>
+  </member>
+  <member name="EC_SUBSCRIPTION_CONFIGURATION_MODE.EcConfigurationModeMinLatency">
+    <summary>This mode is used for alerts and critical events because it configures the subscription to send events as soon as they occur with minimal delay. This mode sets the default subscription delivery mode to push subscriptions.</summary>
+  </member>
+  <member name="EC_SUBSCRIPTION_CONFIGURATION_MODE.EcConfigurationModeMinBandwidth">
+    <summary>This mode is used when network activity is controllable, and when network usage is expensive. This mode sets the default subscription delivery mode to push subscriptions.</summary>
+  </member>
+</doc>

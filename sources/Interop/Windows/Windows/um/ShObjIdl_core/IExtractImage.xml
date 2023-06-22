@@ -3,38 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IExtractImage.Extract">
-    <summary>
-      <para>Requests an image from an object, such as an item in a Shell folder.</para>
-    </summary>
-    <param name="phBmpThumbnail">
-      <para>Type: <b>HBITMAP*</b></para>
-      <para>The buffer to hold the bitmapped image.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
-    <remarks>
-      <para>You must call <see cref="IExtractImage.GetLocation" /> prior to calling <b>Extract</b>.</para>
-    </remarks>
+    <summary>Requests an image from an object, such as an item in a Shell folder.</summary>
+    <param name="phBmpThumbnail">The buffer to hold the bitmapped image.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IExtractImage.GetLocation">
-    <summary>
-      <para>Gets a path to the image that is to be extracted.</para>
-    </summary>
-    <param name="pszPathBuffer">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>The buffer used to return the path description. This value identifies the image so you can avoid loading the same one more than once.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of <i>pszPathBuffer</i> in characters.</para>
-    </param>
+    <summary>Gets a path to the image that is to be extracted.</summary>
+    <param name="pszPathBuffer">The buffer used to return the path description. This value identifies the image so you can avoid loading the same one more than once.</param>
+    <param name="cch">The size of <i>pszPathBuffer</i> in characters.</param>
     <param name="pdwPriority">
-      <para>Type: <b>DWORD*</b></para>
       <para>Not used.</para>
       <para>
-        <b>Microsoft Windows XP and earlier:</b> The pointer used to return the priority of the item when the <b>IEIFLAG_ASYNC</b> flag is set in <i>pdwFlags</i>. This parameter must not be <b>NULL</b>.  The function fails if this parameter is <b>NULL</b>, whether  <b>IEIFLAG_ASYNC</b> flag is set or not.</para>
+        <b>Microsoft Windows XP and earlier:</b> The pointer used to return the priority of the item when the <b>IEIFLAG_ASYNC</b> flag is set in <i>pdwFlags</i>. This parameter must not be <b>NULL</b>. The function fails if this parameter is <b>NULL</b>, whether <b>IEIFLAG_ASYNC</b> flag is set or not.</para>
       <para>This parameter is typically used to indicate the amount of time needed to extract the image. If you want more control over the order in which thumbnails are extracted, you can define multiple priority levels, up to 32 bits. As long as the integer values assigned to the different priority levels increase from low to high priority, the actual numbers you use aren't important. They are only used to determine the order in which the images will be extracted. There are three standard priority levels:</para>
       <h4>IEI_PRIORITY_MAX</h4>
       <para>Maximum priority.</para>
@@ -45,23 +25,16 @@
       <para>
         <b>Microsoft Windows XP.</b> Not used.</para>
     </param>
-    <param name="prgSize">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a>*</b></para>
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure with the desired width and height of the image. Must not be <b>NULL</b>.</para>
-    </param>
-    <param name="dwRecClrDepth">
-      <para>Type: <b>DWORD</b></para>
-      <para>The recommended color depth in units of bits per pixel. Must not be <b>NULL</b>.</para>
-    </param>
+    <param name="prgSize">A pointer to a <see cref="SIZE" /> structure with the desired width and height of the image. Must not be <b>NULL</b>.</param>
+    <param name="dwRecClrDepth">The recommended color depth in units of bits per pixel. Must not be <b>NULL</b>.</param>
     <param name="pdwFlags">
-      <para>Type: <b>DWORD*</b></para>
       <para>Flags that specify how the image is to be handled. Value must be one or more of the following:</para>
       <h4>IEIFLAG_ASPECT</h4>
       <para>Used to ask the object to use the supplied aspect ratio. If this flag is set, a rectangle with the desired aspect ratio will be passed in <i>prgSize</i>. This flag cannot be used with <b>IEIFLAG_SCREEN</b>.</para>
       <h4>IEIFLAG_ASYNC</h4>
       <para>Not used. The thumbnail is always extracted on a background thread.</para>
       <para>
-        <b>Microsoft Windows XP and earlier.</b> Used to ask if this instance supports asynchronous (free-threaded) extraction. If this flag is set by the calling applications, <b>IExtractImage.GetLocation</b> may return <b>E_PENDING</b>, indicating to the calling application to  extract the image on another thread. If <b>E_PENDING</b> is returned, the priority of the item is returned in <i>pdwPriority</i>.</para>
+        <b>Microsoft Windows XP and earlier.</b> Used to ask if this instance supports asynchronous (free-threaded) extraction. If this flag is set by the calling applications, <b>IExtractImage.GetLocation</b> may return <b>E_PENDING</b>, indicating to the calling application to extract the image on another thread. If <b>E_PENDING</b> is returned, the priority of the item is returned in <i>pdwPriority</i>.</para>
       <h4>IEIFLAG_CACHE</h4>
       <para>Not supported.</para>
       <para>
@@ -79,57 +52,48 @@
         <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. Used to tell the object to render the image to the approximate size passed in <i>prgSize</i>, but crop it if necessary.</para>
       <h4>IEIFLAG_QUALITY (0x0200)</h4>
       <para>Passed to the <see cref="IExtractImage.Extract" /> method to indicate that a higher quality image is requested.</para>
-      <para>If  this flag is not set, <see cref="IExtractImage" /> retrieves an embedded thumbnail if the file has one, no matter what size the user requests. For example, if the file is 2000x2000 pixels but the embedded thumbnail is only 100x100 pixels and the user does not set this flag, yet requests a 1000x1000 pixel thumbnail, <b>IExtractImage</b> always returns the 100x100 pixel thumbnail. This is by design, since <b>IExtractImage</b> does not scale up. If a larger thumbnail is desired (usually embedded thumbnails are 160x160), this flag must be set.</para>
+      <para>If this flag is not set, <see cref="IExtractImage" /> retrieves an embedded thumbnail if the file has one, no matter what size the user requests. For example, if the file is 2000x2000 pixels but the embedded thumbnail is only 100x100 pixels and the user does not set this flag, yet requests a 1000x1000 pixel thumbnail, <b>IExtractImage</b> always returns the 100x100 pixel thumbnail. This is by design, since <b>IExtractImage</b> does not scale up. If a larger thumbnail is desired (usually embedded thumbnails are 160x160), this flag must be set.</para>
       <h4>IEIFLAG_REFRESH (0x0400)</h4>
       <para>Returned by the object to indicate that <b>Refresh Thumbnail</b> should be displayed on the item's shortcut menu.</para>
       <h4>IEIFLAG_SCREEN</h4>
       <para>Used to tell the object to render as if for the screen. This flag cannot be used with <b>IEIFLAG_ASPECT</b>.</para>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method may return a COM-defined error code or one of the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_PENDING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_PENDING</b>
-            </para>
-          </description>
-          <description>
-            <b>Windows XP and earlier:</b> If the <b>IEIFLAG_ASYNC</b> flag is set, this return value is used to indicate to the Shell that the object is free-threaded.
-</description>
-        </item>
+            <b>Windows XP and earlier:</b> If the <b>IEIFLAG_ASYNC</b> flag is set, this return value is used to indicate to the Shell that the object is free-threaded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Microsoft Windows XP and earlier:</b> This method returns the path to an image and specifies how the image should be rendered. <b>IExtractImage.GetLocation</b> is free-threaded—that is, supports the Multithreaded Apartment Model (MTA)— therefore it can be placed in a background thread. The object must also expose an <see cref="IRunnableTask" /> interface, so the calling application can start and stop the extraction process as needed.</para>
-      <para>You should return images that fit within the boundaries defined by <i>prgSize</i>. With Windows 2000 and later systems, you can set <b>IEIFLAG_ORIGSIZE</b> to use objects that do not have a standard aspect ratio, and they will be displayed properly. You do not need to fill in the unused part of the rectangle. If you try to use a nonstandard aspect ratio image with earlier versions of the Shell, it will be stretched to fit the <i>prgSize</i> rectangle. Depending on how much the aspect ratio differs from what is specified, the image may be badly distorted.</para>
-    </remarks>
   </member>
   <member name="IExtractImage">
-    <summary>
-      <para>Exposes methods that request a thumbnail image from a Shell folder.</para>
-    </summary>
-    <remarks>
-      <para>There are two steps in the process: First, use <see cref="GetLocation" /> to request the path description of an image and specify how the image should be rendered. Then, call <see cref="Extract" /> to extract the image.</para>
-      <para>If the object is free-threaded it must also expose an <see cref="IRunnableTask" /> interface so it can be stopped and started as needed. This feature can be particularly useful when extraction may be slow.</para>
-      <para>Implement <b>IExtractImage</b> if your namespace extension needs to provide thumbnail images to be displayed in a Shellview.</para>
-      <para>Use <b>IExtractImage</b> if you are implementing a view of namespace objects, and want to display thumbnail images. You can use a Shell folder's <see cref="IShellFolder.GetUIObjectOf" /> method to bind to its <b>IExtractImage</b> interface.</para>
-    </remarks>
+    <summary>Exposes methods that request a thumbnail image from a Shell folder.</summary>
   </member>
 </doc>

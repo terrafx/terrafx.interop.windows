@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_DEVICE_IO_CAPABILITY_DESCRIPTOR">
-    <summary>
-      <para>The output buffer for the StorageDeviceIoCapabilityProperty as defined in <see cref="STORAGE_PROPERTY_ID" />.</para>
-    </summary>
+    <summary>The output buffer for the StorageDeviceIoCapabilityProperty as defined in <see cref="STORAGE_PROPERTY_ID" />.</summary>
   </member>
   <member name="STORAGE_DEVICE_IO_CAPABILITY_DESCRIPTOR.Version">
-    <summary>
-      <para>The version of this structure. The Size serves as the version.</para>
-    </summary>
+    <summary>The version of this structure. The Size serves as the version.</summary>
   </member>
   <member name="STORAGE_DEVICE_IO_CAPABILITY_DESCRIPTOR.Size">
-    <summary>
-      <para>The size of this structure.</para>
-    </summary>
+    <summary>The size of this structure.</summary>
   </member>
   <member name="STORAGE_DEVICE_IO_CAPABILITY_DESCRIPTOR.LunMaxIoCount">
-    <summary>
-      <para>The logical unit number (LUN) max outstanding I/O count.</para>
-    </summary>
+    <summary>The logical unit number (LUN) max outstanding I/O count.</summary>
   </member>
   <member name="STORAGE_DEVICE_IO_CAPABILITY_DESCRIPTOR.AdapterMaxIoCount">
-    <summary>
-      <para>The adapter max outstanding I/O count.</para>
-    </summary>
+    <summary>The adapter max outstanding I/O count.</summary>
   </member>
 </doc>

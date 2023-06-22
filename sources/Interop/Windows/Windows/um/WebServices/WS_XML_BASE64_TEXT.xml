@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_BASE64_TEXT">
-    <summary>
-      <para>Represents base64 encoded data. (for example, the three bytes { 0, 0, 0 } represent the text "AAAA".)</para>
-    </summary>
+    <summary>Represents base64 encoded data. (for example, the three bytes { 0, 0, 0 } represent the text "AAAA".)</summary>
   </member>
   <member name="WS_XML_BASE64_TEXT.text">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</summary>
   </member>
   <member name="WS_XML_BASE64_TEXT.bytes">
-    <summary>
-      <para>The bytes of data.</para>
-    </summary>
+    <summary>The bytes of data.</summary>
   </member>
   <member name="WS_XML_BASE64_TEXT.length">
-    <summary>
-      <para>The length of the bytes of data.</para>
-    </summary>
+    <summary>The length of the bytes of data.</summary>
   </member>
 </doc>

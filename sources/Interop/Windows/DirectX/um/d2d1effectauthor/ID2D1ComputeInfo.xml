@@ -3,97 +3,63 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1ComputeInfo.SetComputeShader">
-    <summary>
-      <para>Sets the compute shader to the given shader resource.  The resource must be loaded before this call is made.</para>
-    </summary>
-    <param name="shaderId">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The GUID of the shader.</para>
-    </param>
+    <summary>Sets the compute shader to the given shader resource. The resource must be loaded before this call is made.</summary>
+    <param name="shaderId">The GUID of the shader.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1ComputeInfo" />
   </member>
   <member name="ID2D1ComputeInfo.SetComputeShaderConstantBuffer">
-    <summary>
-      <para>Establishes or changes the constant buffer data for this transform.</para>
-    </summary>
-    <param name="buffer">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>The data applied to the constant buffer.</para>
-    </param>
-    <param name="bufferCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of bytes of data in the constant buffer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID2D1ComputeInfo" />
+    <summary>Establishes or changes the constant buffer data for this transform.</summary>
+    <param name="buffer">The data applied to the constant buffer.</param>
+    <param name="bufferCount">The number of bytes of data in the constant buffer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1ComputeInfo.SetResourceTexture">
-    <summary>
-      <para>Sets the resource texture corresponding to the given shader texture index to the given texture resource.  The texture resource must already have been loaded with <see cref="ID2D1EffectContext.CreateResourceTexture" /> method. This call will fail if the specified index overlaps with any input. The input indices always precede the texture LUT indices.</para>
-    </summary>
-    <param name="textureIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index to set the resource texture on.</para>
-    </param>
-    <param name="resourceTexture">
-      <para>Type: <b><see cref="ID2D1ResourceTexture" />*</b></para>
-      <para>The resource texture object to set on the shader texture index.</para>
-    </param>
+    <summary>Sets the resource texture corresponding to the given shader texture index to the given texture resource. The texture resource must already have been loaded with <see cref="ID2D1EffectContext.CreateResourceTexture" /> method. This call will fail if the specified index overlaps with any input. The input indices always precede the texture LUT indices.</summary>
+    <param name="textureIndex">The index to set the resource texture on.</param>
+    <param name="resourceTexture">The resource texture object to set on the shader texture index.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1ComputeInfo" />
   </member>
   <member name="ID2D1ComputeInfo">
-    <summary>
-      <para>Enables specification of information for a compute-shader rendering pass.</para>
-    </summary>
-    <remarks>
-      <para>The transform changes the state on this render information to specify the compute shader and its dependent resources.</para>
-    </remarks>
+    <summary>Enables specification of information for a compute-shader rendering pass.</summary>
   </member>
 </doc>

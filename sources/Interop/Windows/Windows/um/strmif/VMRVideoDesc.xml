@@ -4,25 +4,19 @@
 <doc>
   <member name="VMRVideoDesc">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>This topic applies to Windows XP Service Pack 1 or later.</para>
       <para>The <code>VMRVideoDesc</code> structure describes a video stream to be deinterlaced.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="VMRVideoDesc.dwSize">
-    <summary>
-      <para>Size of the structure, in bytes.</para>
-    </summary>
+    <summary>Size of the structure, in bytes.</summary>
   </member>
   <member name="VMRVideoDesc.dwSampleWidth">
-    <summary>
-      <para>Width of the video to be deinterlaced, in pixels.</para>
-    </summary>
+    <summary>Width of the video to be deinterlaced, in pixels.</summary>
   </member>
   <member name="VMRVideoDesc.dwSampleHeight">
-    <summary>
-      <para>Height of the video to be deinterlaced, in pixels.</para>
-    </summary>
+    <summary>Height of the video to be deinterlaced, in pixels.</summary>
   </member>
   <member name="VMRVideoDesc.SingleFieldPerSample">
     <summary>
@@ -32,43 +26,44 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>
-              <b>TRUE</b>
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>TRUE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Each field is delivered as a separate sample.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Each field is delivered as a separate sample.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>FALSE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>
-              <b>FALSE</b>
-            </b>
-          </description>
-          <description>
-            <para>Pairs of fields are combined into single samples.</para>
-          </description>
-        </item>
+          <description>Pairs of fields are combined into single samples.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="VMRVideoDesc.dwFourCC">
-    <summary>
-      <para>Specifies a FOURCC code. Valid values include NV12, YV12, YUY2, UYVY, IMC1, IMC2, IMC3 and IMC4</para>
-    </summary>
+    <summary>Specifies a FOURCC code. Valid values include NV12, YV12, YUY2, UYVY, IMC1, IMC2, IMC3 and IMC4</summary>
   </member>
   <member name="VMRVideoDesc.InputSampleFreq">
-    <summary>
-      <para>A <see cref="VMRFrequency" /> structure that specifies the input frequency. For NTSC TV, the frequency would be expressed as 30,000:1001.</para>
-    </summary>
+    <summary>A [VMRFrequency](/windows/win32/api/strmif/ns-strmif-vmrfrequency structure that specifies the input frequency. For NTSC TV, the frequency would be expressed as 30,000:1001.</summary>
   </member>
   <member name="VMRVideoDesc.OutputFrameFreq">
-    <summary>
-      <para>A
-<see cref="VMRFrequency" /> structure that specifies the output frequency. For NTSC TV, the frequency would be expressed as 60,000:1001.</para>
-    </summary>
+    <summary>A <see cref="VMRFrequency" /> structure that specifies the output frequency. For NTSC TV, the frequency would be expressed as 60,000:1001.</summary>
   </member>
 </doc>

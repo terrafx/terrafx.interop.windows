@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_VECTOR_2F">
-    <summary>
-      <para>A vector of 2 FLOAT values (x, y).</para>
-    </summary>
+    <summary>A vector of 2 FLOAT values (x, y).</summary>
   </member>
   <member name="D2D1_VECTOR_2F.x">
-    <summary>
-      <para>The x value of the vector.</para>
-    </summary>
+    <summary>The x value of the vector.</summary>
   </member>
   <member name="D2D1_VECTOR_2F.y">
-    <summary>
-      <para>The y value of the vector.</para>
-    </summary>
+    <summary>The y value of the vector.</summary>
   </member>
 </doc>

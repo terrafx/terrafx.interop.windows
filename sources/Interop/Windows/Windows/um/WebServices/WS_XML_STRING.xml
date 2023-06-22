@@ -3,38 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_STRING">
-    <summary>
-      <para>Represents a string that optionally has <see cref="dictionary" /></para>
-      <para>information associated with it.  The xml APIs use WS_XML_STRINGs to identify prefixes,
-localNames and namespaces.</para>
-    </summary>
-    <remarks>
-      <para>The string is represented as UTF-8 encoded bytes, not WCHARs.  It is not required to be zero terminated.</para>
-      <para>The macros <see cref="WS_XML_STRING_VALUE" />, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd323562(v=vs.85)">WS_XML_STRING_NULL</a>  and
-<see cref="WS_XML_STRING_DICTIONARY_VALUE" /> can be used to initialize this structure.</para>
-      <para>The dictionary information is used by the binary encoding to write a more compact xml document.</para>
-    </remarks>
+    <summary>Represents a string that optionally has <see cref="dictionary" />information associated with it. The xml APIs use WS_XML_STRINGs to identify prefixes, localNames and namespaces.</summary>
   </member>
   <member name="WS_XML_STRING.length">
-    <summary>
-      <para>The number of bytes in the UTF-8 encoded representation of the string.</para>
-    </summary>
+    <summary>The number of bytes in the UTF-8 encoded representation of the string.</summary>
   </member>
   <member name="WS_XML_STRING.bytes">
-    <summary>
-      <para>The string encoded as UTF-8 bytes.</para>
-    </summary>
+    <summary>The string encoded as UTF-8 bytes.</summary>
   </member>
   <member name="WS_XML_STRING.dictionary">
-    <summary>
-      <para>A pointer to the dictionary that contains the string.  If the string is not part of a dictionary
-then the value may be <b>NULL</b>.</para>
-    </summary>
+    <summary>A pointer to the dictionary that contains the string. If the string is not part of a dictionary then the value may be <b>NULL</b>.</summary>
   </member>
   <member name="WS_XML_STRING.id">
     <summary>
-      <para>A value that uniquely identifies the string within the specified dictionary.
-The entry at dictionary-&gt;strings[id] should identify this string.</para>
+      <para>A value that uniquely identifies the string within the specified dictionary. The entry at dictionary-&gt;strings[id] should identify this string.</para>
       <para>If the dictionary is <b>NULL</b>, then this value is unused.</para>
     </summary>
   </member>

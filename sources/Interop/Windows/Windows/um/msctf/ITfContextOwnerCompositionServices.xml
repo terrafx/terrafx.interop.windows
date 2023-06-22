@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfContextOwnerCompositionServices.TerminateComposition">
-    <summary>
-      <para>Terminates a composition.</para>
-    </summary>
-    <param name="pComposition">
-      <para>Pointer to a <see cref="ITfCompositionView" /> interface that represents the composition to terminate. If this value is <b>NULL</b>, all compositions in the context are terminated.</para>
-    </param>
+    <summary>Terminates a composition.</summary>
+    <param name="pComposition">Pointer to a <see cref="ITfCompositionView" /> interface that represents the composition to terminate. If this value is <b>NULL</b>, all compositions in the context are terminated.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,109 +12,70 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The context is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A text service currently holds a lock on the document.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context is not on a document stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>This method was called during another composition operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A text service currently holds a lock on the document.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>This method was called during another composition operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A text service uses <see cref="ITfComposition.EndComposition" /> to terminate a composition that it created.</para>
-      <para>If the context owner implements the text store, the context owner must be able to grant a synchronous write lock before calling this method.</para>
-      <para>This method also does the following:</para>
-      <list type="bullet">
-        <item>
-          <description>For each composition terminated, <see cref="ITfCompositionSink.OnCompositionTerminated" /> is called for all installed composition advise sinks.</description>
-        </item>
-        <item>
-          <description>If the context owner installed a context owner composition advise sink, <see cref="ITfContextOwnerCompositionSink.OnEndComposition" /> is called for each terminated composition.</description>
-        </item>
-        <item>
-          <description>The GUID_PROP_COMPOSING property will be cleared for the text covered by each terminated composition.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ITfComposition.EndComposition" />
-    <seealso cref="nf-msctf-itfcompositionsink-oncompositionterminated" />
-    <seealso cref="ITfCompositionView interface" />
-    <seealso cref="ITfContextOwnerCompositionServices interface" />
-    <seealso cref="ITfContextOwnerCompositionSink.OnEndComposition" />
   </member>
   <member name="ITfContextOwnerCompositionServices">
-    <summary>
-      <para>The <b>ITfContextOwnerCompositionServices</b> interface is implemented by the TSF manager and used by a context owner to manipulate compositions created by a text service.</para>
-    </summary>
-    <remarks>
-      <para>Normally, an application creates a context and is the context owner. On occasion a text service will create a context. In this case, the text service is the context owner. For more information, see <a href="https://docs.microsoft.com//windows/desktop/TSF/edit-contexts">Edit Contexts</a>.</para>
-      <para>Obtain this interface by calling <b>ITfContext.QueryInterface</b> with IID_ITfContextOwnerCompositionServices.</para>
-      <h4>Examples</h4>
-      <para>
-        <see cref="ITfContext " />
-      </para>
-      <code>
-HRESULT hr;
-ITfContextOwnerCompositionServices *pCompServices;
-
-//Get the ITfContextOwnerCompositionServices interface pointer.
-hr = m_pContext-&gt;QueryInterface(IID_ITfContextOwnerCompositionServices, (LPVOID*)&amp;amp;amp;amp;amp;amp;pCompServices);
-if(SUCCEEDED(hr))
-{
-    //Use the interface.
-
-    //Release the interface.
-    pCompServices-&gt;Release();
-}
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/edit-contexts">Edit Contexts</seealso>
-    <seealso cref="ITfContext " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfContextOwnerCompositionServices</b> interface is implemented by the TSF manager and used by a context owner to manipulate compositions created by a text service.</summary>
   </member>
 </doc>

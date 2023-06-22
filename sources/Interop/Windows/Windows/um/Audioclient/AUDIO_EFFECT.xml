@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUDIO_EFFECT">
-    <summary>
-      <para>Represents an audio effect.</para>
-    </summary>
-    <remarks>
-      <para>Get a list of <b>AUDIO_EFFECT</b> structures by calling <see cref="IAudioEffectsManager.GetAudioEffects" />.</para>
-    </remarks>
-    <seealso cref="IAudioEffectsManager.GetAudioEffects" />
+    <summary>Represents an audio effect.</summary>
   </member>
   <member name="AUDIO_EFFECT.id">
-    <summary>
-      <para>The GUID identifier for an audio effect. Audio effect GUIDs are defined in <a href="https://docs.microsoft.com//windows-hardware/drivers/audio/ksmedia-h">ksmedia.h</a>.</para>
-    </summary>
+    <summary>The GUID identifier for an audio effect. Audio effect GUIDs are defined in <a href="https://docs.microsoft.com//windows-hardware/drivers/audio/ksmedia-h">ksmedia.h</a>.</summary>
   </member>
   <member name="AUDIO_EFFECT.canSetState">
-    <summary>
-      <para>A boolean value specifying whether the effect state can be modified.</para>
-    </summary>
+    <summary>A boolean value specifying whether the effect state can be modified.</summary>
   </member>
   <member name="AUDIO_EFFECT.state">
-    <summary>
-      <para>A member of the <see cref="AUDIO_EFFECT_STATE" /> enumeration specifying the state of the audio effect.</para>
-    </summary>
+    <summary>A member of the <see cref="AUDIO_EFFECT_STATE" /> enumeration specifying the state of the audio effect.</summary>
   </member>
 </doc>

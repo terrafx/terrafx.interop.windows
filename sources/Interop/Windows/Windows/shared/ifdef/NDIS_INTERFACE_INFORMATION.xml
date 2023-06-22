@@ -3,286 +3,102 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NDIS_INTERFACE_INFORMATION">
-    <summary>
-      <para>The NDIS_INTERFACE_INFORMATION structure provides information about a network interface for the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-interface-info">OID_GEN_INTERFACE_INFO</a> OID.</para>
-    </summary>
-    <remarks>
-      <para>NDIS interface providers populate an NDIS_INTERFACE_INFORMATION structure in response to a query of
-the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-interface-info">OID_GEN_INTERFACE_INFO</a> OID. This
-structure contains information that changes during the lifetime of the interface.</para>
-      <para>To register as an interface provider, an NDIS driver calls the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterprovider">NdisIfRegisterProvider</a> function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/introduction-to-network-drivers">Introduction to Network Drivers</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes">NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES</seealso>
-    <seealso cref="NET_IF_MEDIA_CONNECT_STATE" />
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifregisterprovider">NdisIfRegisterProvider</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-bytes-rcv">OID_GEN_BROADCAST_BYTES_RCV</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-bytes-xmit">OID_GEN_BROADCAST_BYTES_XMIT</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-frames-rcv">OID_GEN_BROADCAST_FRAMES_RCV</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-frames-xmit">OID_GEN_BROADCAST_FRAMES_XMIT</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-bytes-rcv">OID_GEN_BYTES_RCV</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-bytes-xmit">OID_GEN_BYTES_XMIT</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-bytes-rcv">OID_GEN_DIRECTED_BYTES_RCV</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-bytes-xmit">OID_GEN_DIRECTED_BYTES_XMIT</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-frames-rcv">OID_GEN_DIRECTED_FRAMES_RCV</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-frames-xmit">OID_GEN_DIRECTED_FRAMES_XMIT</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-discontinuity-time">OID_GEN_DISCONTINUITY_TIME</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-interface-info">OID_GEN_INTERFACE_INFO</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-last-change">OID_GEN_LAST_CHANGE</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-maximum-frame-size">OID_GEN_MAXIMUM_FRAME_SIZE</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-media-connect-status-ex">OID_GEN_MEDIA_CONNECT_STATUS_EX</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-media-duplex-state">OID_GEN_MEDIA_DUPLEX_STATE</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-bytes-rcv">OID_GEN_MULTICAST_BYTES_RCV</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-bytes-xmit">OID_GEN_MULTICAST_BYTES_XMIT</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-frames-rcv">OID_GEN_MULTICAST_FRAMES_RCV</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-frames-xmit">OID_GEN_MULTICAST_FRAMES_XMIT</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-operational-status">OID_GEN_OPERATIONAL_STATUS</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-promiscuous-mode">OID_GEN_PROMISCUOUS_MODE</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-rcv-discards">OID_GEN_RCV_DISCARDS</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-rcv-error">OID_GEN_RCV_ERROR</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-rcv-link-speed">OID_GEN_RCV_LINK_SPEED</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-unknown-protos">OID_GEN_UNKNOWN_PROTOS</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-xmit-discards">OID_GEN_XMIT_DISCARDS</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-xmit-error">OID_GEN_XMIT_ERROR</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-xmit-link-speed">OID_GEN_XMIT_LINK_SPEED</seealso>
+    <summary>The NDIS_INTERFACE_INFORMATION structure provides information about a network interface for the<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-interface-info">OID_GEN_INTERFACE_INFO</a> OID.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifOperStatus">
-    <summary>
-      <para>The operational status of the interface. This status is the same as the value that the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-operational-status">OID_GEN_OPERATIONAL_STATUS</a> OID
-returns.</para>
-    </summary>
+    <summary>The operational status of the interface. This status is the same as the value that the<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-operational-status">OID_GEN_OPERATIONAL_STATUS</a> OID returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifOperStatusFlags">
-    <summary>
-      <para>The operational status flags of the interface. This field is reserved for the NDIS proxy interface
-provider. Other interface providers should set this member to zero.</para>
-    </summary>
+    <summary>The operational status flags of the interface. This field is reserved for the NDIS proxy interface provider. Other interface providers should set this member to zero.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.MediaConnectState">
-    <summary>
-      <para>The
-<see cref="NET_IF_MEDIA_CONNECT_STATE" /> connection state type.</para>
-    </summary>
+    <summary>The<see cref="NET_IF_MEDIA_CONNECT_STATE" /> connection state type.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.MediaDuplexState">
-    <summary>
-      <para>The media duplex state of the interface. This state is the same as the value that the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-media-duplex-state">OID_GEN_MEDIA_DUPLEX_STATE</a> OID
-returns.</para>
-    </summary>
+    <summary>The media duplex state of the interface. This state is the same as the value that the<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-media-duplex-state">OID_GEN_MEDIA_DUPLEX_STATE</a> OID returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifMtu">
-    <summary>
-      <para>The maximum transmission unit (MTU) of the interface. This MTU is the same as the value that the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-maximum-frame-size">OID_GEN_MAXIMUM_FRAME_SIZE</a> OID
-returns.</para>
-    </summary>
+    <summary>The maximum transmission unit (MTU) of the interface. This MTU is the same as the value that the<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-maximum-frame-size">OID_GEN_MAXIMUM_FRAME_SIZE</a> OID returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifPromiscuousMode">
-    <summary>
-      <para>A Boolean value that is <b>TRUE</b> if the interface is in promiscuous mode or <b>FALSE</b> if it is not. This
-value is the same as the value that
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-promiscuous-mode">OID_GEN_PROMISCUOUS_MODE</a> OID query
-returns.</para>
-    </summary>
+    <summary>A Boolean value that is <b>TRUE</b> if the interface is in promiscuous mode or <b>FALSE</b> if it is not. This value is the same as the value that<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-promiscuous-mode">OID_GEN_PROMISCUOUS_MODE</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifDeviceWakeUpEnable">
-    <summary>
-      <para>A Boolean value that is <b>TRUE</b> if the interface supports wake-on-LAN capability and the capability is enabled, or <b>FALSE</b> if it does
-not.</para>
-    </summary>
+    <summary>A Boolean value that is <b>TRUE</b> if the interface supports wake-on-LAN capability and the capability is enabled, or <b>FALSE</b> if it does not.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.XmitLinkSpeed">
-    <summary>
-      <para>The transmit link speed, in bytes per second, of the interface. This speed is the same as the
-value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-xmit-link-speed">OID_GEN_XMIT_LINK_SPEED</a> OID query
-returns.</para>
-    </summary>
+    <summary>The transmit link speed, in bytes per second, of the interface. This speed is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-xmit-link-speed">OID_GEN_XMIT_LINK_SPEED</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.RcvLinkSpeed">
-    <summary>
-      <para>The receive link speed, in bytes per second, of the interface. This speed is the same as the value
-that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-rcv-link-speed">OID_GEN_RCV_LINK_SPEED</a> OID query
-returns.</para>
-    </summary>
+    <summary>The receive link speed, in bytes per second, of the interface. This speed is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-rcv-link-speed">OID_GEN_RCV_LINK_SPEED</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifLastChange">
-    <summary>
-      <para>The time that the interface entered its current operational state. This time is the same as the
-value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-last-change">OID_GEN_LAST_CHANGE</a> OID query
-returns.</para>
-    </summary>
+    <summary>The time that the interface entered its current operational state. This time is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-last-change">OID_GEN_LAST_CHANGE</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifCounterDiscontinuityTime">
-    <summary>
-      <para>The time of the last discontinuity of the interface's counters. This time is the same as the value
-that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-discontinuity-time">OID_GEN_DISCONTINUITY_TIME</a> OID
-query returns.</para>
-    </summary>
+    <summary>The time of the last discontinuity of the interface's counters. This time is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-discontinuity-time">OID_GEN_DISCONTINUITY_TIME</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifInUnknownProtos">
-    <summary>
-      <para>The number of packets that were received through the interface and that were discarded because of
-an unknown or unsupported protocol. This number is the same as the value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-unknown-protos">OID_GEN_UNKNOWN_PROTOS</a> OID query
-returns.</para>
-    </summary>
+    <summary>The number of packets that were received through the interface and that were discarded because of an unknown or unsupported protocol. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-unknown-protos">OID_GEN_UNKNOWN_PROTOS</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifInDiscards">
-    <summary>
-      <para>The number of inbound packets that were discarded even though no errors had been detected to
-prevent them from being deliverable to a higher-layer protocol. This number is the same as the value
-that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-rcv-discards">OID_GEN_RCV_DISCARDS</a> OID query
-returns.</para>
-    </summary>
+    <summary>The number of inbound packets that were discarded even though no errors had been detected to prevent them from being deliverable to a higher-layer protocol. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-rcv-discards">OID_GEN_RCV_DISCARDS</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifInErrors">
-    <summary>
-      <para>The number of inbound packets that contained errors that prevented them from being deliverable to
-a higher layer protocol. This number is the same as the value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-rcv-error">OID_GEN_RCV_ERROR</a> OID query returns.</para>
-    </summary>
+    <summary>The number of inbound packets that contained errors that prevented them from being deliverable to a higher layer protocol. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-rcv-error">OID_GEN_RCV_ERROR</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCInOctets">
-    <summary>
-      <para>The total number of bytes that are received on this interface. This number is the same as the
-value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-bytes-rcv">OID_GEN_BYTES_RCV</a> OID returns.</para>
-    </summary>
+    <summary>The total number of bytes that are received on this interface. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-bytes-rcv">OID_GEN_BYTES_RCV</a> OID returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCInUcastPkts">
-    <summary>
-      <para>The number of directed packets that are received without errors on the interface. This number is
-the same as the value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-frames-rcv">OID_GEN_DIRECTED_FRAMES_RCV</a> OID
-query returns.</para>
-    </summary>
+    <summary>The number of directed packets that are received without errors on the interface. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-frames-rcv">OID_GEN_DIRECTED_FRAMES_RCV</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCInMulticastPkts">
-    <summary>
-      <para>The number of multicast/functional packets that are received without errors on the interface. This
-number is the same as the value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-frames-rcv">OID_GEN_MULTICAST_FRAMES_RCV</a> OID
-query returns.</para>
-    </summary>
+    <summary>The number of multicast/functional packets that are received without errors on the interface. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-frames-rcv">OID_GEN_MULTICAST_FRAMES_RCV</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCInBroadcastPkts">
-    <summary>
-      <para>The number of broadcast packets that are received without errors on the interface. This number is
-the same as the value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-frames-rcv">OID_GEN_BROADCAST_FRAMES_RCV</a> OID
-query returns.</para>
-    </summary>
+    <summary>The number of broadcast packets that are received without errors on the interface. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-frames-rcv">OID_GEN_BROADCAST_FRAMES_RCV</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCOutOctets">
-    <summary>
-      <para>The number of bytes that are transmitted without errors on the interface. This number is the same
-as the value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-bytes-xmit">OID_GEN_BYTES_XMIT</a> OID query
-returns.</para>
-    </summary>
+    <summary>The number of bytes that are transmitted without errors on the interface. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-bytes-xmit">OID_GEN_BYTES_XMIT</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCOutUcastPkts">
-    <summary>
-      <para>The number of directed packets that are transmitted without errors on the interface. This number
-is the same as the value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-frames-xmit">OID_GEN_DIRECTED_FRAMES_XMIT</a> OID
-query returns.</para>
-    </summary>
+    <summary>The number of directed packets that are transmitted without errors on the interface. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-frames-xmit">OID_GEN_DIRECTED_FRAMES_XMIT</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCOutMulticastPkts">
-    <summary>
-      <para>The number of multicast/functional packets that are transmitted without errors on the interface.
-This number is the same as the value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-frames-xmit">OID_GEN_MULTICAST_FRAMES_XMIT</a> OID query returns.</para>
-    </summary>
+    <summary>The number of multicast/functional packets that are transmitted without errors on the interface. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-frames-xmit">OID_GEN_MULTICAST_FRAMES_XMIT</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCOutBroadcastPkts">
-    <summary>
-      <para>The number of broadcast packets that are transmitted without errors on the interface. This number
-is the same as the value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-frames-xmit">OID_GEN_BROADCAST_FRAMES_XMIT</a> OID query returns.</para>
-    </summary>
+    <summary>The number of broadcast packets that are transmitted without errors on the interface. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-frames-xmit">OID_GEN_BROADCAST_FRAMES_XMIT</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifOutErrors">
-    <summary>
-      <para>The number of packets that the interface fails to transmit. This number is the same as the value
-that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-xmit-error">OID_GEN_XMIT_ERROR</a> OID query
-returns.</para>
-    </summary>
+    <summary>The number of packets that the interface fails to transmit. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-xmit-error">OID_GEN_XMIT_ERROR</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifOutDiscards">
-    <summary>
-      <para>The number of packets that the interface discards. This number is the same as the value that an
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-xmit-discards">OID_GEN_XMIT_DISCARDS</a> OID query
-returns.</para>
-    </summary>
+    <summary>The number of packets that the interface discards. This number is the same as the value that an<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-xmit-discards">OID_GEN_XMIT_DISCARDS</a> OID query returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCInUcastOctets">
-    <summary>
-      <para>The number of bytes in directed packets that are received without errors. This count is the same
-value that
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-bytes-rcv">OID_GEN_DIRECTED_BYTES_RCV</a> returns.</para>
-    </summary>
+    <summary>The number of bytes in directed packets that are received without errors. This count is the same value that<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-bytes-rcv">OID_GEN_DIRECTED_BYTES_RCV</a> returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCInMulticastOctets">
-    <summary>
-      <para>The number of bytes in multicast/functional packets that are received without errors. This count
-is the same value that
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-bytes-rcv">OID_GEN_MULTICAST_BYTES_RCV</a> returns.</para>
-    </summary>
+    <summary>The number of bytes in multicast/functional packets that are received without errors. This count is the same value that<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-bytes-rcv">OID_GEN_MULTICAST_BYTES_RCV</a> returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCInBroadcastOctets">
-    <summary>
-      <para>The number of bytes in broadcast packets that are received without errors. This count is the same
-value that
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-bytes-rcv">OID_GEN_BROADCAST_BYTES_RCV</a> returns.</para>
-    </summary>
+    <summary>The number of bytes in broadcast packets that are received without errors. This count is the same value that<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-bytes-rcv">OID_GEN_BROADCAST_BYTES_RCV</a> returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCOutUcastOctets">
-    <summary>
-      <para>The number of bytes in directed packets that are transmitted without errors. This count is the
-same value that
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-bytes-xmit">OID_GEN_DIRECTED_BYTES_XMIT</a> returns.</para>
-    </summary>
+    <summary>The number of bytes in directed packets that are transmitted without errors. This count is the same value that<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-directed-bytes-xmit">OID_GEN_DIRECTED_BYTES_XMIT</a> returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCOutMulticastOctets">
-    <summary>
-      <para>The number of bytes in multicast/functional packets that are transmitted without errors. This
-count is the same value that
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-bytes-xmit">OID_GEN_MULTICAST_BYTES_XMIT</a> returns.</para>
-    </summary>
+    <summary>The number of bytes in multicast/functional packets that are transmitted without errors. This count is the same value that<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-multicast-bytes-xmit">OID_GEN_MULTICAST_BYTES_XMIT</a> returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.ifHCOutBroadcastOctets">
-    <summary>
-      <para>The number of bytes in broadcast packets that are transmitted without errors. This count is the
-same value that
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-bytes-xmit">OID_GEN_BROADCAST_BYTES_XMIT</a> returns.</para>
-    </summary>
+    <summary>The number of bytes in broadcast packets that are transmitted without errors. This count is the same value that<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-broadcast-bytes-xmit">OID_GEN_BROADCAST_BYTES_XMIT</a> returns.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.CompartmentId">
-    <summary>
-      <para>The compartment that the interface belongs to, if the interface provider can provide the ID of the
-compartment to which the interface belongs. Otherwise, it should return
-NET_IF_COMPARTMENT_ID_UNSPECIFIED. If the interface provider returns NET_IF_COMPARTMENT_ID_UNSPECIFIED
-for the compartment ID, NDIS will return the right compartment ID for this interface.</para>
-    </summary>
+    <summary>The compartment that the interface belongs to, if the interface provider can provide the ID of the compartment to which the interface belongs. Otherwise, it should return NET_IF_COMPARTMENT_ID_UNSPECIFIED. If the interface provider returns NET_IF_COMPARTMENT_ID_UNSPECIFIED for the compartment ID, NDIS will return the right compartment ID for this interface.</summary>
   </member>
   <member name="NDIS_INTERFACE_INFORMATION.SupportedStatistics">
-    <summary>
-      <para>The supported statistics. For more information, see the
-<b>SupportedStatistics</b> member of the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes">NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES</a> structure.</para>
-    </summary>
+    <summary>The supported statistics. For more information, see the<b>SupportedStatistics</b> member of the<a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes">NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES</a> structure.</summary>
   </member>
 </doc>

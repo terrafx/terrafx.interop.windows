@@ -3,43 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PAINTSTRUCT">
-    <summary>
-      <para>The <b>PAINTSTRUCT</b> structure contains information for an application. This information can be used to paint the client area of a window owned by that application.</para>
-    </summary>
-    <seealso cref="BeginPaint" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/painting-and-drawing">Painting and Drawing Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/painting-and-drawing-structures">Painting and Drawing Structures</seealso>
-    <seealso cref="RECT" />
-    <seealso cref="WNDCLASS" />
+    <summary>The <b>PAINTSTRUCT</b> structure contains information for an application. This information can be used to paint the client area of a window owned by that application.</summary>
   </member>
   <member name="PAINTSTRUCT.hdc">
-    <summary>
-      <para>A handle to the display DC to be used for painting.</para>
-    </summary>
+    <summary>A handle to the display DC to be used for painting.</summary>
   </member>
   <member name="PAINTSTRUCT.fErase">
-    <summary>
-      <para>Indicates whether the background must be erased. This value is nonzero if the application should erase the background. The application is responsible for erasing the background if a window class is created without a background brush. For more information, see the description of the <b>hbrBackground</b> member of the <see cref="WNDCLASS" /> structure.</para>
-    </summary>
+    <summary>Indicates whether the background must be erased. This value is nonzero if the application should erase the background. The application is responsible for erasing the background if a window class is created without a background brush. For more information, see the description of the <b>hbrBackground</b> member of the <see cref="WNDCLASS" /> structure.</summary>
   </member>
   <member name="PAINTSTRUCT.rcPaint">
-    <summary>
-      <para>A <see cref="RECT" /> structure that specifies the upper left and lower right corners of the rectangle in which the painting is requested, in device units relative to the upper-left corner of the client area.</para>
-    </summary>
+    <summary>A <see cref="RECT" /> structure that specifies the upper left and lower right corners of the rectangle in which the painting is requested, in device units relative to the upper-left corner of the client area.</summary>
   </member>
   <member name="PAINTSTRUCT.fRestore">
-    <summary>
-      <para>Reserved; used internally by the system.</para>
-    </summary>
+    <summary>Reserved; used internally by the system.</summary>
   </member>
   <member name="PAINTSTRUCT.fIncUpdate">
-    <summary>
-      <para>Reserved; used internally by the system.</para>
-    </summary>
+    <summary>Reserved; used internally by the system.</summary>
   </member>
   <member name="PAINTSTRUCT.rgbReserved">
-    <summary>
-      <para>Reserved; used internally by the system.</para>
-    </summary>
+    <summary>Reserved; used internally by the system.</summary>
   </member>
 </doc>

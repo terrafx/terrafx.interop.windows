@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_SET_DEFECT_MGMT_BUFFER">
-    <summary>
-      <para>Specifies the defect management state  to be set.</para>
-    </summary>
-    <seealso cref="DeviceIoControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_defect_management">FSCTL_SET_DEFECT_MANAGEMENT</seealso>
+    <summary>Specifies the defect management state to be set.</summary>
   </member>
   <member name="FILE_SET_DEFECT_MGMT_BUFFER.Disable">
-    <summary>
-      <para>If <b>TRUE</b>, indicates that defect management is disabled.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, indicates that defect management is disabled.</summary>
   </member>
 </doc>

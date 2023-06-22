@@ -3,59 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFRelativePanelWatcher.BeginGetReport">
-    <summary>
-      <para>Begins an asynchronous request to get an <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</para>
-    </summary>
-    <param name="pCallback">
-      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
-    </param>
-    <param name="pState">
-      <para>Pointer to the IUnknown interface of a state object, defined by the caller. This parameter can be NULL. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
-    </param>
+    <summary>Begins an asynchronous request to get an <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</summary>
+    <param name="pCallback">Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</param>
+    <param name="pState">Pointer to the IUnknown interface of a state object, defined by the caller. This parameter can be NULL. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</param>
     <returns>
       <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
-      <para>| Return code | Description |
-|--------------|------------------------|
-|S_OK | The function succeeded.|</para>
+      <para>| Return code | Description | |--------------|------------------------| |S_OK | The function succeeded.|</para>
     </returns>
   </member>
   <member name="IMFRelativePanelWatcher.EndGetReport">
-    <summary>
-      <para>Ends an asynchronous request to get an <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</para>
-    </summary>
-    <param name="pResult">
-      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the Invoke method.</para>
-    </param>
-    <param name="ppRelativePanelReport">
-      <para>A pointer to he <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</para>
-    </param>
+    <summary>Ends an asynchronous request to get an <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</summary>
+    <param name="pResult">Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the Invoke method.</param>
+    <param name="ppRelativePanelReport">A pointer to he <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</param>
     <returns>
       <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
-      <para>| Return code | Description |
-|--------------|------------------------|
-|S_OK | The function succeeded.|</para>
+      <para>| Return code | Description | |--------------|------------------------| |S_OK | The function succeeded.|</para>
     </returns>
   </member>
   <member name="IMFRelativePanelWatcher.GetReport">
-    <summary>
-      <para>Gets an <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</para>
-    </summary>
-    <param name="ppRelativePanelReport">
-      <para>A pointer to he <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</para>
-    </param>
+    <summary>Gets an <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</summary>
+    <param name="ppRelativePanelReport">A pointer to he <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</param>
     <returns>
       <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
-      <para>| Return code | Description |
-|--------------|------------------------|
-|S_OK | The function succeeded.|</para>
+      <para>| Return code | Description | |--------------|------------------------| |S_OK | The function succeeded.|</para>
     </returns>
   </member>
   <member name="IMFRelativePanelWatcher">
-    <summary>
-      <para>Monitors the panel associated with a display, so that the app receives notifications when the relative location of the panel changes.</para>
-    </summary>
-    <remarks>
-      <para>Get an instance of this interface by calling <see cref="MFCreateRelativePanelWatcher" />.</para>
-    </remarks>
+    <summary>Monitors the panel associated with a display, so that the app receives notifications when the relative location of the panel changes.</summary>
   </member>
 </doc>

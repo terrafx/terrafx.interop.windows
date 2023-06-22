@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CM_SET_WIDTH_VALUE">
-    <summary>
-      <para>Specifies width values in pixels and includes special support for default and autosize. Used by members of the <see cref="IColumnManager" /> interface through the <see cref="CM_COLUMNINFO" /> structure.</para>
-    </summary>
+    <summary>Specifies width values in pixels and includes special support for default and autosize. Used by members of the <see cref="IColumnManager" /> interface through the <see cref="CM_COLUMNINFO" /> structure.</summary>
   </member>
   <member name="CM_SET_WIDTH_VALUE.CM_WIDTH_USEDEFAULT">
-    <summary>
-      <para>Use the default width.</para>
-    </summary>
+    <summary>Use the default width.</summary>
   </member>
   <member name="CM_SET_WIDTH_VALUE.CM_WIDTH_AUTOSIZE">
-    <summary>
-      <para>Use the auto-size width.</para>
-    </summary>
+    <summary>Use the auto-size width.</summary>
   </member>
 </doc>

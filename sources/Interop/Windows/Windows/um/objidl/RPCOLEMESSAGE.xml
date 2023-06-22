@@ -3,45 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RPCOLEMESSAGE">
-    <summary>
-      <para>Contains marshaling invocation arguments and return values between COM components.</para>
-    </summary>
-    <seealso cref="IRpcChannelBuffer" />
-    <seealso cref="IRpcStubBuffer" />
+    <summary>Contains marshaling invocation arguments and return values between COM components.</summary>
   </member>
   <member name="RPCOLEMESSAGE.reserved1">
-    <summary>
-      <para>This member is reserved.</para>
-    </summary>
+    <summary>This member is reserved.</summary>
   </member>
   <member name="RPCOLEMESSAGE.dataRepresentation">
-    <summary>
-      <para>The data representation with which the data was marshaled.</para>
-    </summary>
+    <summary>The data representation with which the data was marshaled.</summary>
   </member>
   <member name="RPCOLEMESSAGE.Buffer">
-    <summary>
-      <para>A buffer for marshaled data.</para>
-    </summary>
+    <summary>A buffer for marshaled data.</summary>
   </member>
   <member name="RPCOLEMESSAGE.cbBuffer">
-    <summary>
-      <para>The size of the buffer, in bytes.</para>
-    </summary>
+    <summary>The size of the buffer, in bytes.</summary>
   </member>
   <member name="RPCOLEMESSAGE.iMethod">
-    <summary>
-      <para>The number of the method to be invoked.</para>
-    </summary>
+    <summary>The number of the method to be invoked.</summary>
   </member>
   <member name="RPCOLEMESSAGE.reserved2">
-    <summary>
-      <para>This member is reserved.</para>
-    </summary>
+    <summary>This member is reserved.</summary>
   </member>
   <member name="RPCOLEMESSAGE.rpcFlags">
-    <summary>
-      <para>Status flags for the RPC connection.</para>
-    </summary>
+    <summary>Status flags for the RPC connection.</summary>
   </member>
 </doc>

@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_COMMAND_QUEUE_FLAGS">
-    <summary>
-      <para>Specifies flags to be used when creating a command queue.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the <see cref="D3D12_COMMAND_QUEUE_DESC" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
+    <summary>Specifies flags to be used when creating a command queue.</summary>
   </member>
   <member name="D3D12_COMMAND_QUEUE_FLAGS.D3D12_COMMAND_QUEUE_FLAG_NONE">
-    <summary>
-      <para>Indicates a default command queue.</para>
-    </summary>
+    <summary>Indicates a default command queue.</summary>
   </member>
   <member name="D3D12_COMMAND_QUEUE_FLAGS.D3D12_COMMAND_QUEUE_FLAG_DISABLE_GPU_TIMEOUT">
-    <summary>
-      <para>Indicates that the GPU timeout should be disabled for this command queue.</para>
-    </summary>
+    <summary>Indicates that the GPU timeout should be disabled for this command queue.</summary>
   </member>
 </doc>

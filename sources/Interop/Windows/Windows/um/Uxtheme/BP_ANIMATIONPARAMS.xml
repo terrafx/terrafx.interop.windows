@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BP_ANIMATIONPARAMS">
-    <summary>
-      <para>Defines animation parameters for the <see cref="BP_PAINTPARAMS" /> structure used by <see cref="BeginBufferedPaint" />.</para>
-    </summary>
+    <summary>Defines animation parameters for the <see cref="BP_PAINTPARAMS" /> structure used by <see cref="BeginBufferedPaint" />.</summary>
   </member>
   <member name="BP_ANIMATIONPARAMS.cbSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="BP_ANIMATIONPARAMS.dwFlags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="BP_ANIMATIONPARAMS.style">
-    <summary>
-      <para>Type: <b><see cref="BP_ANIMATIONSTYLE" /></b></para>
-      <para>Animation style.</para>
-    </summary>
+    <summary>Animation style.</summary>
   </member>
   <member name="BP_ANIMATIONPARAMS.dwDuration">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>Length of the animation, in milliseconds.</para>
-    </summary>
+    <summary>Length of the animation, in milliseconds.</summary>
   </member>
 </doc>

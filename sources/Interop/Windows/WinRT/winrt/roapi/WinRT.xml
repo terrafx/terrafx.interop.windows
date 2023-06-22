@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.GetActivationFactory">
+    <summary>Gets the activation factory for the specified runtime class.</summary>
+    <param name="activatableClassId">The ID of the activatable class.</param>
+    <param name="factory">The activation factory.</param>
+    <param name="unnamedParam3">TBD</param>
+    <returns>Returns S_OK on success.</returns>
+  </member>
+  <member name="WinRT.WinRTGetActivationFactory">
+    <summary>Gets the activation factory for the specified runtime class.</summary>
+    <param name="activatableClassId">The ID of the activatable class.</param>
+    <param name="factory">The activation factory.</param>
+    <param name="unnamedParam3">TBD</param>
+    <returns>Returns S_OK on success.</returns>
+  </member>
+  <member name="WinRT.Initialize">
+    <summary>Initializes a thread to use Windows Runtime APIs.</summary>
+    <param name="initType">Specifies the apartment type of the thread to be initialized.</param>
+    <returns>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> - Successfully initialized for the first time on the current thread</description>
+        </item>
+        <item>
+          <description>
+            <b>S_FALSE</b> - Successful nested initialization (current thread was already initialized for the specified apartment type)</description>
+        </item>
+        <item>
+          <description>
+            <b>E_INVALIDARG</b> - Invalid <i>initType</i> value</description>
+        </item>
+        <item>
+          <description>
+            <b>CO_E_INIT_TLS</b> - Failed to allocate COM's internal TLS structure</description>
+        </item>
+        <item>
+          <description>
+            <b>E_OUTOFMEMORY</b> - Failed to allocate per-thread/per-apartment structures other than the TLS</description>
+        </item>
+        <item>
+          <description>
+            <b>RPC_E_CHANGED_MODE</b> - The current thread is already initialized for a different apartment type from what is specified.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoActivateInstance">
+    <summary>Activates the specified Windows Runtime class.</summary>
+    <param name="activatableClassId">The class identifier that is associated with the activatable runtime class.</param>
+    <param name="instance">A pointer to the activated instance of the runtime class.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The class was activated successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>instance</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_NOTINITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The thread has not been initialized in the Windows Runtime by calling the <see cref="RoInitialize" /> function.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="TrustLevel" /> for the class requires a full-trust process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IInspectable" /> interface is not implemented by the specified class.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to create an instance of the class.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WinRTActivateInstance">
+    <summary>Activates the specified Windows Runtime class.</summary>
+    <param name="activatableClassId">The class identifier that is associated with the activatable runtime class.</param>
+    <param name="instance">A pointer to the activated instance of the runtime class.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The class was activated successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>instance</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_NOTINITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The thread has not been initialized in the Windows Runtime by calling the <see cref="RoInitialize" /> function.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="TrustLevel" /> for the class requires a full-trust process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IInspectable" /> interface is not implemented by the specified class.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failed to create an instance of the class.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoGetActivationFactory">
+    <summary>Gets the activation factory for the specified runtime class.</summary>
+    <param name="activatableClassId">The ID of the activatable class.</param>
+    <param name="iid">The reference ID of the interface.</param>
+    <param name="factory">The activation factory.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.WinRTGetActivationFactory">
+    <summary>Gets the activation factory for the specified runtime class.</summary>
+    <param name="activatableClassId">The ID of the activatable class.</param>
+    <param name="iid">The reference ID of the interface.</param>
+    <param name="factory">The activation factory.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.RoGetApartmentIdentifier">
+    <summary>Gets a unique identifier for the current apartment.</summary>
+    <param name="apartmentIdentifier">A process-unique identifier for the current apartment.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.RoInitialize">
+    <summary>Initializes the Windows Runtime on the current thread with the specified concurrency model.</summary>
+    <param name="initType">The concurrency model for the thread. The default is <b>RO_INIT_MULTITHREADED</b>.</param>
+    <returns>
+      <para>This function can return the standard return values <b>E_INVALIDARG</b>, <b>E_OUTOFMEMORY</b>, and <b>E_UNEXPECTED</b>, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The Windows Runtime was initialized successfully on this thread.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The Windows Runtime is already initialized on this thread.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RPC_E_CHANGED_MODE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A previous call to <see cref="RoInitialize" /> specified the concurrency model for this thread as multithread apartment (MTA). This could also indicate that a change from neutral-threaded apartment to single-threaded apartment has occurred.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WinRTInitialize">
+    <summary>Initializes the Windows Runtime on the current thread with the specified concurrency model.</summary>
+    <param name="initType">The concurrency model for the thread. The default is <b>RO_INIT_MULTITHREADED</b>.</param>
+    <returns>
+      <para>This function can return the standard return values <b>E_INVALIDARG</b>, <b>E_OUTOFMEMORY</b>, and <b>E_UNEXPECTED</b>, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The Windows Runtime was initialized successfully on this thread.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The Windows Runtime is already initialized on this thread.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RPC_E_CHANGED_MODE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A previous call to <see cref="RoInitialize" /> specified the concurrency model for this thread as multithread apartment (MTA). This could also indicate that a change from neutral-threaded apartment to single-threaded apartment has occurred.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoRegisterActivationFactories">
+    <summary>Registers an array out-of-process activation factories for a Windows Runtime exe server.</summary>
+    <param name="activatableClassIds">An array of class identifiers that are associated with activatable runtime classes.</param>
+    <param name="activationFactoryCallbacks">An array of callback functions that you can use to retrieve the activation factories that correspond with <i>activatableClassIds</i>.</param>
+    <param name="count">The number of items in the <i>activatableClassIds</i> and <i>activationFactoryCallbacks</i> arrays.</param>
+    <param name="cookie">A cookie that identifies the registered factories.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The activation factory was registered successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>cookie</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_NOT_SUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The thread is in a neutral apartment.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_NOTINITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The thread has not been initialized in the Windows Runtime by calling the <see cref="RoInitialize" /> function.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_ALREADYINITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The factory has been initialized already.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>REGDB_E_CLASSNOTREG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The class is not registered as OutOfProc.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WinRTRegisterActivationFactories">
+    <summary>Registers an array out-of-process activation factories for a Windows Runtime exe server.</summary>
+    <param name="activatableClassIds">An array of class identifiers that are associated with activatable runtime classes.</param>
+    <param name="activationFactoryCallbacks">An array of callback functions that you can use to retrieve the activation factories that correspond with <i>activatableClassIds</i>.</param>
+    <param name="count">The number of items in the <i>activatableClassIds</i> and <i>activationFactoryCallbacks</i> arrays.</param>
+    <param name="cookie">A cookie that identifies the registered factories.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The activation factory was registered successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>cookie</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_NOT_SUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The thread is in a neutral apartment.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_NOTINITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The thread has not been initialized in the Windows Runtime by calling the <see cref="RoInitialize" /> function.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_ALREADYINITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The factory has been initialized already.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>REGDB_E_CLASSNOTREG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The class is not registered as OutOfProc.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoRegisterForApartmentShutdown">
+    <summary>Registers an <see cref="IApartmentShutdown" /> callback to be invoked when the current apartment shuts down.</summary>
+    <param name="callbackObject">The application-supplied <see cref="IApartmentShutdown" /> interface.</param>
+    <param name="apartmentIdentifier">The identifier for the current apartment.</param>
+    <param name="regCookie">A cookie that you can use to unregister the callback.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.RoRevokeActivationFactories">
+    <summary>Removes an array of registered activation factories from the Windows Runtime.</summary>
+  </member>
+  <member name="WinRT.WinRTRevokeActivationFactories">
+    <summary>Removes an array of registered activation factories from the Windows Runtime.</summary>
+  </member>
+  <member name="WinRT.RoUninitialize">
+    <summary>Closes the Windows Runtime on the current thread.</summary>
+  </member>
+  <member name="WinRT.WinRTUninitialize">
+    <summary>Closes the Windows Runtime on the current thread.</summary>
+  </member>
+  <member name="WinRT.RoUnregisterForApartmentShutdown">
+    <summary>Unregisters a previously registered <see cref="IApartmentShutdown" /> interface.</summary>
+    <param name="regCookie">A registration cookie obtained from a previous call to the <see cref="RoRegisterForApartmentShutdown" /> function.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+</doc>

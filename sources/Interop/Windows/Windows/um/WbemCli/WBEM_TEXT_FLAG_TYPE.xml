@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEM_TEXT_FLAG_TYPE">
-    <summary>
-      <para>Contains flags to control the execution of the <see cref="IWbemClassObject.GetObjectText" /> method.</para>
-    </summary>
-    <seealso cref="IWbemClassObject.GetObjectText" />
+    <summary>Contains flags to control the execution of the <see cref="IWbemClassObject.GetObjectText" /> method.</summary>
   </member>
   <member name="WBEM_TEXT_FLAG_TYPE.WBEM_FLAG_NO_FLAVORS">
-    <summary>
-      <para>Present qualifiers without propagation or flavor information.</para>
-    </summary>
+    <summary>Present qualifiers without propagation or flavor information.</summary>
   </member>
 </doc>

@@ -3,89 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontFileStream.GetFileSize">
-    <summary>
-      <para>Obtains the total size of a file.</para>
-    </summary>
-    <param name="fileSize">
-      <para>Type: <b>UINT64*</b></para>
-      <para>When this method returns, contains the total size of the file.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Implementing <b>GetFileSize</b>() for asynchronously loaded font files may require
-downloading the complete file contents. Therefore, this method should be used only for operations that
-either require a complete font file to be loaded (for example, copying a font file) or that need to make
-decisions based on the value of the file size (for example, validation against a persisted file size).</para>
-    </remarks>
-    <seealso cref="IDWriteFontFileStream" />
+    <summary>Obtains the total size of a file.</summary>
+    <param name="fileSize">When this method returns, contains the total size of the file.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFileStream.GetLastWriteTime">
-    <summary>
-      <para>Obtains the last modified time of the file.</para>
-    </summary>
-    <param name="lastWriteTime">
-      <para>Type: <b>UINT64*</b></para>
-      <para>When this method returns, contains  the last modified time of the file in the format that represents
-the number of 100-nanosecond intervals since January 1, 1601 (UTC).</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The "last modified time" is used by DirectWrite font selection algorithms
-to determine whether one font resource is more up to date than another one.</para>
-    </remarks>
-    <seealso cref="IDWriteFontFileStream" />
+    <summary>Obtains the last modified time of the file.</summary>
+    <param name="lastWriteTime">When this method returns, contains the last modified time of the file in the format that represents the number of 100-nanosecond intervals since January 1, 1601 (UTC).</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFileStream.ReadFileFragment">
-    <summary>
-      <para>Reads a fragment from a font file.</para>
-    </summary>
-    <param name="fragmentStart">
-      <para>Type: <b>const void**</b></para>
-      <para>When this method returns, contains an address of a  pointer to the start of the font file fragment.  This parameter is passed uninitialized.</para>
-    </param>
-    <param name="fileOffset">
-      <para>Type: <b>UINT64</b></para>
-      <para>The offset of the fragment, in bytes, from the beginning of the font file.</para>
-    </param>
-    <param name="fragmentSize">
-      <para>Type: <b>UINT64</b></para>
-      <para>The size of the file fragment, in bytes.</para>
-    </param>
-    <param name="fragmentContext">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address of a pointer to a pointer to the client-defined context to be passed to <see cref="ReleaseFileFragment" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Note that <b>ReadFileFragment</b> implementations must check whether the requested font file fragment
-is within the file bounds. Otherwise, an error should be returned from <b>ReadFileFragment</b>.</para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/win32/DirectWrite/direct-write-portal">DirectWrite</a> may invoke <see cref="IDWriteFontFileStream" /> methods on the same object from multiple threads simultaneously. Therefore, <b>ReadFileFragment</b> implementations that rely on internal mutable state must serialize access to such state across multiple threads. For example, an implementation that uses separate Seek and Read operations to read a file fragment must place the code block containing Seek and Read calls under a lock or a critical section.</para>
-    </remarks>
-    <seealso cref="IDWriteFontFileStream" />
+    <summary>Reads a fragment from a font file.</summary>
+    <param name="fragmentStart">When this method returns, contains an address of a pointer to the start of the font file fragment. This parameter is passed uninitialized.</param>
+    <param name="fileOffset">The offset of the fragment, in bytes, from the beginning of the font file.</param>
+    <param name="fragmentSize">The size of the file fragment, in bytes.</param>
+    <param name="fragmentContext">When this method returns, contains the address of a pointer to a pointer to the client-defined context to be passed to <see cref="ReleaseFileFragment" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFileStream.ReleaseFileFragment">
-    <summary>
-      <para>Releases a fragment from a file.</para>
-    </summary>
-    <param name="fragmentContext">
-      <para>Type: <b>void*</b></para>
-      <para>A pointer to the client-defined context of a font fragment returned from <see cref="ReadFileFragment" />.</para>
-    </param>
-    <seealso cref="IDWriteFontFileStream" />
+    <summary>Releases a fragment from a file.</summary>
+    <param name="fragmentContext">A pointer to the client-defined context of a font fragment returned from <see cref="ReadFileFragment" />.</param>
   </member>
   <member name="IDWriteFontFileStream">
-    <summary>
-      <para>Loads font file data from a custom font file loader.</para>
-    </summary>
+    <summary>Loads font file data from a custom font file loader.</summary>
   </member>
 </doc>

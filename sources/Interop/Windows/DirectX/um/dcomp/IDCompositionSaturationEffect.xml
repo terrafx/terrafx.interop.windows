@@ -3,43 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionSaturationEffect.SetSaturation">
-    <summary>
-      <para>Sets the saturation of the image.</para>
-    </summary>
+    <summary>Sets the saturation of the image.</summary>
     <param name="ratio">
-      <para>Type: <b>float</b></para>
       <para>The saturation of the image. You can set the saturation to a value between 0 and 1. If you set it to 1 the output image is fully saturated. If you set it to 0 the output image is monochrome. The saturation value is unitless. The effect calculates a color matrix based on the saturation value (s in the equation here) using the following equation:</para>
-      <para>
-        <img alt="Matrix equation" src="https://docs.microsoft.com/windows/win32/api/dcompmages/saturation_formula.png" />
-      </para>
+      <img alt="Matrix equation" src="https://docs.microsoft.com/windows/win32/api/dcomp/images/saturation_formula.png" />
     </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionSaturationEffect" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionSaturationEffect.SetSaturation">
-    <summary>
-      <para>Sets the saturation of the image.</para>
-    </summary>
+    <summary>Sets the saturation of the image.</summary>
     <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
       <para>An animation that represents how the saturation of the image changes over time. This parameter must not be NULL. You can set the saturation to a value between 0 and 1. If you set it to 1 the output image is fully saturated. If you set it to 0 the output image is monochrome. The saturation value is unitless. The effect calculates a color matrix based on the saturation value (s in the equation here) using the following equation:</para>
-      <para>
-        <img alt="Matrix equation" src="https://docs.microsoft.com/windows/win32/api/dcompmages/saturation_formula.png" />
-      </para>
+      <img alt="Matrix equation" src="https://docs.microsoft.com/windows/win32/api/dcomp/images/saturation_formula.png" />
     </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionSaturationEffect" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionSaturationEffect">
-    <summary>
-      <para>This effect is used to alter the saturation of an image. The saturation effect is a specialization of the color matrix effect.</para>
-    </summary>
-    <seealso cref="IDCompositionFilterEffect" />
+    <summary>This effect is used to alter the saturation of an image. The saturation effect is a specialization of the color matrix effect.</summary>
   </member>
 </doc>

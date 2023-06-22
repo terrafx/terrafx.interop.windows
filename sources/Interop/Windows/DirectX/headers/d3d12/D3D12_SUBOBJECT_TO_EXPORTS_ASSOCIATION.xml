@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION">
-    <summary>
-      <para>Associates a subobject defined directly in a state object with shader exports.</para>
-    </summary>
-    <remarks>
-      <para>Depending on the flags specified in the optional <see cref="D3D12_STATE_OBJECT_CONFIG" /> subobject for opting into cross linkage, the exports being associated don’t necessarily have to be present in the current state object, or one that has been seen yet, to be resolved later, on raytracing pipeline state object (RTPSO) creation for example.</para>
-    </remarks>
+    <summary>Associates a subobject defined directly in a state object with shader exports.</summary>
   </member>
   <member name="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION.pSubobjectToAssociate">
-    <summary>
-      <para>Pointer to the subobject in current state object to define an association to.</para>
-    </summary>
+    <summary>Pointer to the subobject in current state object to define an association to.</summary>
   </member>
   <member name="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION.NumExports">
-    <summary>
-      <para>Size of the <i>pExports</i> array.  If 0, this is being explicitly defined as a default association.  Another way to define a default association is to omit this subobject association for that subobject completely.</para>
-    </summary>
+    <summary>Size of the <i>pExports</i> array. If 0, this is being explicitly defined as a default association. Another way to define a default association is to omit this subobject association for that subobject completely.</summary>
   </member>
   <member name="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION.pExports">
-    <summary>
-      <para>The array of exports with which the subobject is associated.</para>
-    </summary>
+    <summary>The array of exports with which the subobject is associated.</summary>
   </member>
 </doc>

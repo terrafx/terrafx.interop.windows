@@ -3,22 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_GEOMETRY_SIMPLIFICATION_OPTION">
-    <summary>
-      <para>Specifies how a geometry is simplified to an <see cref="ID2D1SimplifiedGeometrySink" />.</para>
-    </summary>
-    <seealso cref="ID2D1Geometry.Simplify" />
+    <summary>Specifies how a geometry is simplified to an <see cref="ID2D1SimplifiedGeometrySink" />.</summary>
   </member>
   <member name="D2D1_GEOMETRY_SIMPLIFICATION_OPTION.D2D1_GEOMETRY_SIMPLIFICATION_OPTION_CUBICS_AND_LINES">
-    <summary>
-      <para>The output can contain cubic Bezier curves and line segments.</para>
-    </summary>
+    <summary>The output can contain cubic Bezier curves and line segments.</summary>
   </member>
   <member name="D2D1_GEOMETRY_SIMPLIFICATION_OPTION.D2D1_GEOMETRY_SIMPLIFICATION_OPTION_LINES">
-    <summary>
-      <para>The output is flattened so that it contains only line segments.</para>
-    </summary>
+    <summary>The output is flattened so that it contains only line segments.</summary>
   </member>
-  <member name="D2D1_GEOMETRY_SIMPLIFICATION_OPTION.D2D1_GEOMETRY_SIMPLIFICATION_OPTION_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_GEOMETRY_SIMPLIFICATION_OPTION.D2D1_GEOMETRY_SIMPLIFICATION_OPTION_FORCE_DWORD"></member>
 </doc>

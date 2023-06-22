@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfCompartmentMgr.ClearCompartment">
-    <summary>
-      <para>Removes the specified compartment.</para>
-    </summary>
-    <param name="tid">
-      <para>Contains a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfclientid">TfClientId</a> value that identifies the client.</para>
-    </param>
-    <param name="rguid">
-      <para>Contains a GUID that identifies the compartment.</para>
-    </param>
+    <summary>Removes the specified compartment.</summary>
+    <param name="tid">Contains a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfclientid">TfClientId</a> value that identifies the client.</param>
+    <param name="rguid">Contains a GUID that identifies the compartment.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,59 +13,60 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_NOCONNECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The compartment cannot be found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>CONNECT_E_NOCONNECTION</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The compartment cannot be found.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The owner must clear this compartment.</para>
-          </description>
-        </item>
+          <description>The owner must clear this compartment.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCompartmentMgr interface" />
-    <seealso cref="ITfCompartment interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/compartments">Compartments</seealso>
   </member>
   <member name="ITfCompartmentMgr.EnumCompartments">
-    <summary>
-      <para>The <b>ITfCompartmentMgr.EnumCompartments</b> method obtains an enumerator that contains the GUID of the compartments within the compartment manager.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Pointer to an <b>IEnumGUID</b> interface pointer that receives the enumerator object.</para>
-    </param>
+    <summary>The <b>ITfCompartmentMgr.EnumCompartments</b> method obtains an enumerator that contains the GUID of the compartments within the compartment manager.</summary>
+    <param name="ppEnum">Pointer to an <b>IEnumGUID</b> interface pointer that receives the enumerator object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -79,62 +74,62 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>ppcEnum</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>ppcEnum</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCompartmentMgr interface" />
-    <seealso cref="ITfCompartment interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/compartments">Compartments</seealso>
   </member>
   <member name="ITfCompartmentMgr.GetCompartment">
-    <summary>
-      <para>Obtains the compartment object for a specified compartment.</para>
-    </summary>
-    <param name="rguid">
-      <para>Contains a GUID that identifies the compartment.</para>
-    </param>
-    <param name="ppcomp">
-      <para>Pointer to an <see cref="ITfCompartment" /> interface pointer that receives the compartment object.</para>
-    </param>
+    <summary>Obtains the compartment object for a specified compartment.</summary>
+    <param name="rguid">Contains a GUID that identifies the compartment.</param>
+    <param name="ppcomp">Pointer to an <see cref="ITfCompartment" /> interface pointer that receives the compartment object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -142,69 +137,47 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>ppcomp</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>ppcomp</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCompartmentMgr interface" />
-    <seealso cref="ITfCompartment interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/compartments">Compartments</seealso>
   </member>
   <member name="ITfCompartmentMgr">
-    <summary>
-      <para>The <b>ITfCompartmentMgr</b> interface is implemented by the TSF manager and used by clients (applications and text services) to obtain and manipulate TSF compartments.</para>
-    </summary>
-    <remarks>
-      <para>The set of compartments that this interface is responsible for depends upon how the interface was obtained. An instance of this interface can be obtained in one of the following ways. For more information, see <a href="https://docs.microsoft.com//windows/desktop/TSF/compartments">Compartments</a>.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="ITfThreadMgr.GetGlobalCompartment " /> - Obtains the global compartment manager.</description>
-        </item>
-        <item>
-          <description>
-            <b>ITfThreadMgr.QueryInterface</b> with IID_ITfCompartmentMgr - Obtains the compartment manager for this specific thread manager.</description>
-        </item>
-        <item>
-          <description>
-            <b>ITfDocumentMgr.QueryInterface</b> with IID_ITfCompartmentMgr - Obtains the compartment manager for this specific document manager.</description>
-        </item>
-        <item>
-          <description>
-            <b>ITfContext.QueryInterface</b> with IID_ITfCompartmentMgr - Obtains the compartment manager for this specific context.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/compartments">Compartments</seealso>
-    <seealso cref="ITfThreadMgr.GetGlobalCompartment " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfCompartmentMgr</b> interface is implemented by the TSF manager and used by clients (applications and text services) to obtain and manipulate TSF compartments.</summary>
   </member>
 </doc>

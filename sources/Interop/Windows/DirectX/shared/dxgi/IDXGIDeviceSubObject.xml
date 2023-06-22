@@ -3,37 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIDeviceSubObject.GetDevice">
-    <summary>
-      <para>Retrieves the device.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The reference id for the device.</para>
-    </param>
-    <param name="ppDevice">
-      <para>Type: <b>void**</b></para>
-      <para>The address of a pointer to the device.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>A code that indicates success or failure (see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>).</para>
-    </returns>
-    <remarks>
-      <para>The type of interface that is returned can be any interface published by the device. For example, it could be an IDXGIDevice * called pDevice, and therefore the REFIID would be obtained by calling __uuidof(pDevice).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIDeviceSubObject" />
+    <summary>Retrieves the device.</summary>
+    <param name="riid">The reference id for the device.</param>
+    <param name="ppDevice">The address of a pointer to the device.</param>
+    <returns>A code that indicates success or failure (see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>).</returns>
   </member>
   <member name="IDXGIDeviceSubObject">
-    <summary>
-      <para>Inherited from objects that are tied to the device so that they can retrieve a pointer to it.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIObject" />
+    <summary>Inherited from objects that are tied to the device so that they can retrieve a pointer to it.</summary>
   </member>
 </doc>

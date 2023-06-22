@@ -1,0 +1,811 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GraphicsPath.AddArc">
+    <summary>The <b>GraphicsPath.AddArc</b> method adds an elliptical arc to the current figure of this path.</summary>
+    <param name="rect">Reference to a rectangle that bounds the ellipse that contains the arc.</param>
+    <param name="startAngle">Real number that specifies the clockwise angle, in degrees, between the horizontal axis of the ellipse and the starting point of the arc.</param>
+    <param name="sweepAngle">Real number that specifies the clockwise angle, in degrees, between the starting point (startAngle) and the ending point of the arc.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddArc">
+    <summary>The <b>GraphicsPath.AddArc</b> method adds an elliptical arc to the current figure of this path.</summary>
+    <param name="rect">Reference to a rectangle that bounds the ellipse that contains the arc.</param>
+    <param name="startAngle">Real number that specifies the clockwise angle, in degrees, between the horizontal axis of the ellipse and the starting point of the arc.</param>
+    <param name="sweepAngle">Real number that specifies the clockwise angle, in degrees, between the starting point (<i>startAngle</i>) and the ending point of the arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddArc">
+    <summary>The <b>GraphicsPath.AddArc</b> method adds an elliptical arc to the current figure of this path.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="width">Integer that specifies the width of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="height">Integer that specifies the height of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="startAngle">Real number that specifies the clockwise angle, in degrees, between the horizontal axis of the ellipse and the starting point of the arc.</param>
+    <param name="sweepAngle">Real number that specifies the clockwise angle, in degrees, between the starting point (<i>startAngle</i>) and ending point of the arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddArc">
+    <summary>The <b>GraphicsPath.AddArc</b> method adds an elliptical arc to the current figure of this path.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="width">Real number that specifies the width of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="height">Real number that specifies the height of the bounding rectangle for the ellipse that contains the arc.</param>
+    <param name="startAngle">Real number that specifies the clockwise angle, in degrees, between the horizontal axis of the ellipse and the starting point of the arc.</param>
+    <param name="sweepAngle">Real number that specifies the clockwise angle, in degrees, between the starting point (<i>startAngle</i>) and the ending point of the arc.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddBezier">
+    <summary>The <b>GraphicsPath.AddBezier</b> method adds a Bézier spline to the current figure of this path.</summary>
+    <param name="pt1">Reference to a point at which to start the Bézier spline.</param>
+    <param name="pt2">Reference to a point that is the first control point of the Bézier spline.</param>
+    <param name="pt3">Reference to a point that is the second control point of the Bézier spline.</param>
+    <param name="pt4">Reference to a point at which to end the Bézier spline.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddBezier">
+    <summary>The <b>GraphicsPath.AddBezier</b> method adds a Bézier spline to the current figure of this path.</summary>
+    <param name="pt1">Reference to a point at which to start the Bézier spline.</param>
+    <param name="pt2">Reference to a point that is the first control point of the Bézier spline.</param>
+    <param name="pt3">Reference to a point that is the second control point of the Bézier spline.</param>
+    <param name="pt4">Reference to a point at which to end the Bézier spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddBezier">
+    <summary>The <b>GraphicsPath.AddBezier</b> method adds a Bézier spline to the current figure of this path.</summary>
+    <param name="x1">Integer that specifies the x-coordinate of the starting point of the Bézier spline.</param>
+    <param name="y1">Integer that specifies the y-coordinate of the starting point of the Bézier spline.</param>
+    <param name="x2">Integer that specifies the x-coordinate of the first control point of the Bézier spline.</param>
+    <param name="y2">Integer that specifies the y-coordinate of the first control point of the Bézier spline.</param>
+    <param name="x3">Integer that specifies the x-coordinate of the second control point of the Bézier spline.</param>
+    <param name="y3">Integer that specifies the y-coordinate of the second control point of the Bézier spline.</param>
+    <param name="x4">Integer that specifies the x-coordinate of the ending point of the Bézier spline.</param>
+    <param name="y4">Integer that specifies the y-coordinate of the ending point of the Bézier spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddBezier">
+    <summary>The <b>GraphicsPath.AddBezier</b> method adds a Bézier spline to the current figure of this path.</summary>
+    <param name="x1">Real number that specifies the x-coordinate of the starting point of the Bézier spline.</param>
+    <param name="y1">Real number that specifies the y-coordinate of the starting point of the Bézier spline.</param>
+    <param name="x2">Real number that specifies the x-coordinate of the first control point of the Bézier spline.</param>
+    <param name="y2">Real number that specifies the y-coordinate of the first control point of the Bézier spline.</param>
+    <param name="x3">Real number that specifies the x-coordinate of the second control point of the Bézier spline.</param>
+    <param name="y3">Real number that specifies the y-coordinate of the second control point of the Bézier spline.</param>
+    <param name="x4">Real number that specifies the x-coordinate of the ending point of the Bézier spline.</param>
+    <param name="y4">Real number that specifies the y-coordinate of the ending point of the Bézier spline.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddBeziers">
+    <summary>The <b>GraphicsPath.AddBeziers</b> method adds a sequence of connected Bézier splines to the current figure of this path.</summary>
+    <param name="points">Pointer to an array of starting points, ending points, and control points for the connected splines. The first spline is constructed from the first point through the fourth point in the array and uses the second and third points as control points. Each subsequent spline in the sequence needs exactly three more points: the ending point of the previous spline is used as the starting point, the next two points in the sequence are control points, and the third point is the ending point.</param>
+    <param name="count">Integer that specifies the number of elements in the points array.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddBeziers">
+    <summary>The <b>GraphicsPath.AddBeziers</b> method adds a sequence of connected Bézier splines to the current figure of this path.</summary>
+    <param name="points">Pointer to an array of starting points, ending points, and control points for the connected splines. The first spline is constructed from the first point through the fourth point in the array and uses the second and third points as control points. Each subsequent spline in the sequence needs exactly three more points: the ending point of the previous spline is used as the starting point, the next two points in the sequence are control points, and the third point is the ending point.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddClosedCurve">
+    <summary>The <b>GraphicsPath.AddClosedCurve</b> method adds a closed cardinal spline to this path.</summary>
+    <param name="points">Pointer to an array of points that define the cardinal spline. The cardinal spline is a curve that passes through each point in the array.</param>
+    <param name="count">Integer that specifies the number of elements in the points array.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddClosedCurve">
+    <summary>The <b>GraphicsPath.AddClosedCurve</b> method adds a closed cardinal spline to this path.</summary>
+    <param name="points">Pointer to an array of points that define the cardinal spline. The cardinal spline is a curve that passes through each point in the array.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <param name="tension">Nonnegative real number that controls the length of the curve and how the curve bends. A value of 0 specifies that the spline is a sequence of straight line segments. As the value increases, the curve becomes fuller.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddClosedCurve">
+    <summary>The <b>GraphicsPath.AddClosedCurve</b> method adds a closed cardinal spline to this path.</summary>
+    <param name="points">Pointer to an array of points that define the cardinal spline. The cardinal spline is a curve that passes through each point in the array.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddClosedCurve">
+    <summary>The <b>GraphicsPath.AddClosedCurve</b> method adds a closed cardinal spline to this path.</summary>
+    <param name="points">Pointer to an array of points that define the cardinal spline. The cardinal spline is a curve that passes through each point in the array.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array.</param>
+    <param name="tension">Nonnegative real number that controls the length of the curve and how the curve bends. A value of 0 specifies that the spline is a sequence of straight lines. As the value increases, the curve becomes fuller.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddCurve">
+    <summary>The <b>GraphicsPath.AddCurve</b> method adds a cardinal spline to the current figure of this path.</summary>
+    <param name="points">Pointer to an array of points that define the cardinal spline. The cardinal spline is a curve that passes through each point in the array.</param>
+    <param name="count">Integer that specifies the number of elements in the points array.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddCurve">
+    <summary>The <b>GraphicsPath.AddCurve</b> method adds a cardinal spline to the current figure of this path.</summary>
+    <param name="points">Pointer to an array of points that define the cardinal spline. The cardinal spline is a curve that passes through a subset (specified by the <i>offset</i> and <i>numberOfSegments</i> parameters) of the points in the array.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <param name="offset">Integer that specifies the index of the array element that is used as the first point of the cardinal spline.</param>
+    <param name="numberOfSegments">Integer that specifies the number of segments in the cardinal spline. Segments are the curves that connect consecutive points in the array.</param>
+    <param name="tension">Nonnegative real number that controls the length of the curve and how the curve bends. A value of 0 specifies that the spline is a sequence of straight line segments. As the value increases, the curve becomes fuller.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddCurve">
+    <summary>The <b>GraphicsPath.AddCurve</b> method adds a cardinal spline to the current figure of this path.</summary>
+    <param name="points">Pointer to an array of points that define the cardinal spline. The cardinal spline is a curve that passes through each point in the array.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <param name="tension">Nonnegative real number that controls the length of the curve and how the curve bends. A value of 0 specifies that the spline is a sequence of straight line segments. As the value increases, the curve becomes fuller.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddCurve">
+    <summary>The <b>GraphicsPath.AddCurve</b> method adds a cardinal spline to the current figure of this path.</summary>
+    <param name="points">Pointer to an array of points that define the cardinal spline. The cardinal spline is a curve that passes through each point in the array.</param>
+    <param name="count">
+      <b>INT</b> that specifies the number of elements in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddCurve">
+    <summary>The <b>GraphicsPath.AddCurve</b> method adds a cardinal spline to the current figure of this path.</summary>
+    <param name="points">Pointer to an array of points that define the cardinal spline. The cardinal spline is a curve that passes through a subset (specified by the <i>offset</i> and <i>numberOfSegments</i> parameters) of the points in the array.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <param name="offset">Integer that specifies the index of the array element that is used as the first point of the cardinal spline.</param>
+    <param name="numberOfSegments">Integer that specifies the number of segments in the cardinal spline. Segments are the curves that connect consecutive points in the array.</param>
+    <param name="tension">Nonnegative real number that controls the length of the curve and how the curve bends. A value of 0 specifies that the spline is a sequence of straight line segments. As the value increases, the curve becomes fuller.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddCurve">
+    <summary>The <b>GraphicsPath.AddCurve</b> method adds a cardinal spline to the current figure of this path.</summary>
+    <param name="points">Pointer to an array of points that define the cardinal spline. The cardinal spline is a curve that passes through each point in the array.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <param name="tension">Nonnegative real number that controls the length of the curve and how the curve bends. A value of 0 specifies that the spline is a sequence of straight line segments. As the value increases, the curve becomes fuller.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddEllipse">
+    <summary>The <b>GraphicsPath.AddEllipse</b> method adds an ellipse to this path.</summary>
+    <param name="rect">Reference to a rectangle that bounds the ellipse.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddEllipse">
+    <summary>The <b>GraphicsPath.AddEllipse</b> method adds an ellipse to this path.</summary>
+    <param name="rect">Reference to a rectangle that bounds the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddEllipse">
+    <summary>The <b>GraphicsPath.AddEllipse</b> method adds an ellipse to this path.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the bounding rectangle for the ellipse.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the bounding rectangle for the ellipse.</param>
+    <param name="width">Integer that specifies the width of the bounding rectangle for the ellipse.</param>
+    <param name="height">Integer that specifies the height of the bounding rectangle for the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddEllipse">
+    <summary>The <b>GraphicsPath.AddEllipse</b> method adds an ellipse to this path.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the bounding rectangle for the ellipse.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the bounding rectangle for the ellipse.</param>
+    <param name="width">Real number that specifies the width of the bounding rectangle for the ellipse.</param>
+    <param name="height">Real number that specifies the height of the bounding rectangle for the ellipse.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddLine">
+    <summary>The <b>GraphicsPath.AddLine</b> method adds a line to the current figure of this path.</summary>
+    <param name="pt1">Reference to a point at which to start the line.</param>
+    <param name="pt2">Reference to a point at which to end the line.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddLine">
+    <summary>The <b>GraphicsPath.AddLine</b> method adds a line to the current figure of this path.</summary>
+    <param name="pt1">Reference to a point at which to start the line.</param>
+    <param name="pt2">Reference to a point at which to end the line.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddLine">
+    <summary>The <b>GraphicsPath.AddLine</b> method adds a line to the current figure of this path.</summary>
+    <param name="x1">Integer that specifies the x-coordinate of the starting point of the line.</param>
+    <param name="y1">Integer that specifies the y-coordinate of the starting point of the line.</param>
+    <param name="x2">Integer that specifies the x-coordinate of the ending point of the line.</param>
+    <param name="y2">Integer that specifies the y-coordinate of the ending point of the line.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddLine">
+    <summary>The <b>GraphicsPath.AddLine</b> method adds a line to the current figure of this path.</summary>
+    <param name="x1">Real number that specifies the x-coordinate of the starting point of the line.</param>
+    <param name="y1">Real number that specifies the y-coordinate of the starting point of the line.</param>
+    <param name="x2">Real number that specifies the x-coordinate of the ending point of the line.</param>
+    <param name="y2">Real number that specifies the y-coordinate of the ending point of the line.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddLines">
+    <summary>The <b>GraphicsPath.AddLines</b> method adds a sequence of connected lines to the current figure of this path.</summary>
+    <param name="points">Pointer to an array of points that specify the starting and ending points of the lines. The first point in the array is the starting point of the first line, and the last point in the array is the ending point of the last line. Each of the other points serves as ending point for one line and starting point for the next line.</param>
+    <param name="count">Integer that specifies the number of elements in the points array.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddLines">
+    <summary>The <b>GraphicsPath.AddLines</b> method adds a sequence of connected lines to the current figure of this path.</summary>
+    <param name="points">Pointer to an array of points that specify the starting and ending points of the lines. The first point in the array is the starting point of the first line, and the last point in the array is the ending point of the last line. Each of the other points serves as ending point for one line and starting point for the next line.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddPath">
+    <summary>The <b>GraphicsPath.AddPath</b> method adds a path to this path.</summary>
+    <param name="addingPath">Pointer to the path to be added.</param>
+    <param name="connect">
+      <para>
+        <b>BOOL</b> value that specifies whether the first figure in the added path is part of the last figure in this path.</para>
+      <h4>TRUE</h4>
+      <para>Specifies that (if possible) the first figure in the added path is part of the last figure in this path.</para>
+      <h4>FALSE</h4>
+      <para>Specifies that the first figure in the added path is separate from the last figure in this path.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddPie">
+    <summary>The <b>GraphicsPath.AddPie</b> method adds a pie to this path. An arc is a portion of an ellipse, and a pie is a portion of the area enclosed by an ellipse. A pie is bounded by an arc and two lines (edges) that go from the center of the ellipse to the endpoints of the arc.</summary>
+    <param name="rect">Reference to a rectangle that bounds the ellipse that bounds the pie.</param>
+    <param name="startAngle">Real number that specifies the clockwise angle, in degrees, between the horizontal axis of the ellipse and the starting point of the arc that defines the pie.</param>
+    <param name="sweepAngle">Real number that specifies the clockwise angle, in degrees, between the starting and ending points of the arc that defines the pie.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddPie">
+    <summary>The <b>GraphicsPath.AddPie</b> method adds a pie to this path. An arc is a portion of an ellipse, and a pie is a portion of the area enclosed by an ellipse. A pie is bounded by an arc and two lines (edges) that go from the center of the ellipse to the endpoints of the arc.</summary>
+    <param name="rect">Reference to a rectangle that bounds the ellipse that bounds the pie.</param>
+    <param name="startAngle">Real number that specifies the clockwise angle, in degrees, between the horizontal axis of the ellipse and the starting point of the arc that defines the pie.</param>
+    <param name="sweepAngle">Real number that specifies the clockwise angle, in degrees, between the starting and ending points of the arc that defines the pie.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddPie">
+    <summary>The <b>GraphicsPath.AddPie</b> method adds a pie to this path. An arc is a portion of an ellipse, and a pie is a portion of the area enclosed by an ellipse. A pie is bounded by an arc and two lines (edges) that go from the center of the ellipse to the endpoints of the arc.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rectangle that bounds the ellipse that bounds the pie.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rectangle that bounds the ellipse that bounds the pie.</param>
+    <param name="width">Integer that specifies the width of the rectangle that bounds the ellipse that bounds the pie.</param>
+    <param name="height">Integer that specifies the height of the rectangle that bounds the ellipse that bounds the pie.</param>
+    <param name="startAngle">Real number that specifies the clockwise angle, in degrees, between the horizontal axis of the ellipse and the starting point of the arc that defines the pie.</param>
+    <param name="sweepAngle">Real number that specifies the clockwise angle, in degrees, between the starting and ending points of the arc that defines the pie.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddPie">
+    <summary>The <b>GraphicsPath.AddPie</b> method adds a pie to this path. An arc is a portion of an ellipse, and a pie is a portion of the area enclosed by an ellipse. A pie is bounded by an arc and two lines (edges) that go from the center of the ellipse to the endpoints of the arc.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rectangle that bounds the ellipse that bounds the pie.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rectangle that bounds the ellipse that bounds the pie.</param>
+    <param name="width">Real number that specifies the width of the rectangle that bounds the ellipse that bounds the pie.</param>
+    <param name="height">Real number that specifies the height of the rectangle that bounds the ellipse that bounds the pie.</param>
+    <param name="startAngle">Real number that specifies the clockwise angle, in degrees, between the horizontal axis of the ellipse and the starting point of the arc that defines the pie.</param>
+    <param name="sweepAngle">Real number that specifies the clockwise angle, in degrees, between the starting and ending points of the arc that defines the pie.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddPolygon">
+    <summary>The <b>GraphicsPath.AddPolygon</b> method adds a polygon to this path.</summary>
+    <param name="points">Pointer to an array of points that specifies the vertices of the polygon.</param>
+    <param name="count">Integer that specifies the number of elements in the points array.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddPolygon">
+    <summary>The <b>GraphicsPath.AddPolygon</b> method adds a polygon to this path.</summary>
+    <param name="points">Pointer to an array of points that specifies the vertices of the polygon.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddRectangle">
+    <summary>The <b>GraphicsPath.AddRectangle</b> method adds a rectangle to this path.</summary>
+    <param name="rect">Reference to a rectangle to be added to the path.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddRectangle">
+    <summary>The <b>GraphicsPath.AddRectangle</b> method adds a rectangle to this path.</summary>
+    <param name="rect">Reference to a rectangle to be added to the path.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddRectangles">
+    <summary>The <b>GraphicsPath.AddRectangles</b> method adds a sequence of rectangles to this path.</summary>
+    <param name="rects">Pointer to an array of rectangles that will be added to the path.</param>
+    <param name="count">Integer that specifies the number of elements in the rects array.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddRectangles">
+    <summary>The <b>GraphicsPath.AddRectangles</b> method adds a sequence of rectangles to this path</summary>
+    <param name="rects">Pointer to an array of rectangles that will be added to the path.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>rects</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddString">
+    <summary>The <b>GraphicsPath.AddString</b> method adds the outline of a string to this path.</summary>
+    <param name="string">Pointer to a wide-character string.</param>
+    <param name="length">Integer that specifies the number of characters to display. If the string parameter points to a <b>NULL</b>-terminated string, this parameter can be set to –1.</param>
+    <param name="family">Pointer to a <b>FontFamily</b> object that specifies the font family for the string.</param>
+    <param name="style">Integer that specifies the style of the typeface. This value must be an element of the <b>FontStyle</b> enumeration or the result of a bitwise <b>OR</b> applied to two or more of these elements. For example, <code>FontStyleBold | FontStyleUnderline | FontStyleStrikeout</code> sets the style as a combination of the three styles.</param>
+    <param name="emSize">Real number that specifies the <b>em</b> size, in world units, of the string characters.</param>
+    <param name="origin">Reference to a <b>PointF</b> object that specifies, in world units, the location of the string.</param>
+    <param name="format">Pointer to a <b>StringFormat</b> object that specifies layout information (alignment, trimming, tab stops, and the like) for the string.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddString">
+    <summary>The <b>GraphicsPath.AddString</b> method adds the outlines of a string to this path.</summary>
+    <param name="string">Pointer to a wide-character string.</param>
+    <param name="length">Integer that specifies the number of characters to display. If the <i>string</i> parameter points to a <b>NULL</b>-terminated string, this parameter can be set to –1.</param>
+    <param name="family">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that specifies the font family for the string.</param>
+    <param name="style">Integer that specifies the style of the typeface. This value must be an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise<b>OR</b> applied to two or more of these elements. For example, <code>FontStyleBold | FontStyleUnderline | FontStyleStrikeout</code> sets the style as a combination of the three styles.</param>
+    <param name="emSize">Real number that specifies the em size, in world units, of the string characters.</param>
+    <param name="origin">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> object that specifies, in world units, the location of the string.</param>
+    <param name="format">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object that specifies layout information (alignment, trimming, tab stops, and the like) for the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddString">
+    <summary>The <b>GraphicsPath.AddString</b> method adds the outline of a string to this path.</summary>
+    <param name="string">Pointer to a wide-character string.</param>
+    <param name="length">Integer that specifies the number of characters to display. If the <i>string</i> parameter points to a <b>NULL</b>-terminated string, this parameter can be set to –1.</param>
+    <param name="family">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that specifies the font family for the string.</param>
+    <param name="style">Integer that specifies the style of the typeface. This value must be an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise <b>OR</b> applied to two or more of these elements. For example, <code>FontStyleBold | FontStyleUnderline | FontStyleStrikeout</code> sets the style as a combination of the three styles.</param>
+    <param name="emSize">Real number that specifies the em size, in world units, of the string characters.</param>
+    <param name="layoutRect">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that specifies, in world units, the bounding rectangle for the string.</param>
+    <param name="format">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object that specifies layout information (alignment, trimming, tab stops, and the like) for the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.AddString">
+    <summary>The <b>GraphicsPath.AddString</b> method adds the outline of a string to this path.</summary>
+    <param name="string">Pointer to a wide-character string.</param>
+    <param name="length">Integer that specifies the number of characters to display. If the <i>string</i> parameter points to a <b>NULL</b>-terminated string, this parameter can be set to –1.</param>
+    <param name="family">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that specifies the font family for the string.</param>
+    <param name="style">Integer that specifies the style of the typeface. This value must be an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise <b>OR</b> applied to two or more of these elements. For example, <code>FontStyleBold | FontStyleUnderline | FontStyleStrikeout</code> sets the style as a combination of the three styles.</param>
+    <param name="emSize">Real number that specifies the em size, in world units, of the string characters.</param>
+    <param name="layoutRect">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that specifies, in world units, the bounding rectangle for the string.</param>
+    <param name="format">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object that specifies layout information (alignment, trimming, tab stops, and the like) for the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.ClearMarkers">
+    <summary>The <b>GraphicsPath.ClearMarkers</b> method clears the markers from this path.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.Clone">
+    <summary>The <b>GraphicsPath.Clone</b> method creates a new <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object, and initializes it with the contents of this <b>GraphicsPath</b> object.</summary>
+    <returns>This method returns a pointer to the new <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object.</returns>
+  </member>
+  <member name="GraphicsPath.CloseAllFigures">
+    <summary>The <b>GraphicsPath.CloseAllFigures</b> method closes all open figures in this path.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.CloseFigure">
+    <summary>The <b>GraphicsPath.CloseFigure</b> method closes the current figure of this path.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.Flatten">
+    <summary>The <b>GraphicsPath.Flatten</b> method applies a transformation to this path and converts each curve in the path to a sequence of connected lines.</summary>
+    <param name="matrix">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies the transformation to be applied to the path's data points. The default value is <b>NULL</b>, which specifies that no transformation is to be applied.</param>
+    <param name="flatness">Optional. Real number that specifies the maximum error between the path and its flattened approximation. Reducing the flatness increases the number of line segments in the approximation. The default value is <code>FlatnessDefault</code>, which is a constant defined in Gdiplusenums.h.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.GetBounds">
+    <summary>The <b>GraphicsPath.GetBounds</b> method gets a bounding rectangle for this path.</summary>
+    <param name="bounds">Pointer to a <b>RectF</b> object that receives the bounding rectangle.</param>
+    <param name="matrix">Optional. Pointer to a <b>Matrix</b> object that specifies a transformation to be applied to this path before the bounding rectangle is calculated. This path is not permanently transformed; the transformation is used only during the process of calculating the bounding rectangle. The default value is <b>NULL</b>.</param>
+    <param name="pen">Optional. Pointer to a <b>Pen</b> object that influences the size of the bounding rectangle. The bounding rectangle received in bounds will be large enough to enclose this path when the path is drawn with the pen specified by this parameter. This ensures that the path is enclosed by the bounding rectangle even if the path is drawn with a wide pen. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.GetBounds">
+    <summary>The <b>GraphicsPath.GetBounds</b> method gets a bounding rectangle for this path.</summary>
+    <param name="bounds">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that receives the bounding rectangle.</param>
+    <param name="matrix">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies a transformation to be applied to this path before the bounding rectangle is calculated. This path is not permanently transformed; the transformation is used only during the process of calculating the bounding rectangle. The default value is <b>NULL</b>.</param>
+    <param name="pen">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object that influences the size of the bounding rectangle. The bounding rectangle received in <i>bounds</i> will be large enough to enclose this path when the path is drawn with the pen specified by this parameter. This ensures that the path is enclosed by the bounding rectangle even if the path is drawn with a wide pen. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.GetFillMode">
+    <summary>The <b>GraphicsPath.GetFillMode</b> method gets the fill mode of this path.</summary>
+    <returns>This method returns an element of the <see cref="FillMode" /> enumeration.</returns>
+  </member>
+  <member name="GraphicsPath.GetLastPoint">
+    <summary>The <b>GraphicsPath.GetLastPoint</b> method gets the ending point of the last figure in this path.</summary>
+    <param name="lastPoint">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object that receives the last point.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.GetLastStatus">
+    <summary>The <b>GraphicsPath.GetLastStatus</b> method returns a value that indicates the nature of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>GraphicsPath.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object have failed since the previous call to <b>GraphicsPath.GetLastStatus</b>, then <b>GraphicsPath.GetLastStatus</b> returns Ok.</para>
+      <para>If at least one method invoked on this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object has failed since the previous call to <b>GraphicsPath.GetLastStatus</b>, then <b>GraphicsPath.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.GetPathData">
+    <summary>The <b>GraphicsPath.GetPathData</b> method gets an array of points and an array of point types from this path. Together, these two arrays define the lines, curves, figures, and markers of this path.</summary>
+    <param name="pathData">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pathdata">PathData</a> object that receives the path data. The <i>Points</i> data member of the <b>PathData</b> object receives a pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects that contains the path points. The <i>Types</i> data member of the <b>PathData</b> object receives a pointer to an array of bytes that contains the point types. The <i>Count</i> data member of the <b>PathData</b> object receives an integer that indicates the number of elements in the <i>Points</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.GetPathPoints">
+    <summary>The <b>GraphicsPath.GetPathPoints</b> method gets this path's array of points. The array contains the endpoints and control points of the lines and Bézier splines that are used to draw the path.</summary>
+    <param name="points">Pointer to an array of <b>PointF</b> objects that receives the data points. You must allocate memory for this array. You can call the <b>GraphicsPath.GetPointCount</b> method to determine the required size of the array. The size, in bytes, should be the return value of <b>GraphicsPath.GetPointCount</b> multiplied by <code>sizeof(PointF)</code>.</param>
+    <param name="count">Integer that specifies the number of elements in the points array. Set this parameter equal to the return value of the <b>GraphicsPath.GetPointCount</b> method.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.GetPathPoints">
+    <summary>The <b>GraphicsPath.GetPathPoints</b> method gets this path's array of points. The array contains the endpoints and control points of the lines and Bézier splines that are used to draw the path.</summary>
+    <param name="points">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> objects that receives the data points. You must allocate memory for this array. You can call the <see cref="GraphicsPath.GetPointCount" /> method to determine the required size of the array. The size, in bytes, should be the return value of <b>GraphicsPath.GetPointCount</b> multiplied by <b>sizeof</b>(<b>Point</b>).</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array. Set this parameter equal to the return value of the <see cref="GraphicsPath.GetPointCount" /> method.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.GetPathTypes">
+    <summary>The <b>GraphicsPath.GetPathTypes</b> method gets this path's array of point types.</summary>
+    <param name="types">Pointer to an array that receives the point types. You must allocate memory for this array. You can call the <see cref="GraphicsPath.GetPointCount" /> method to determine the required size of the array.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>types</i> array. Set this parameter equal to the return value of the <see cref="GraphicsPath.GetPointCount" /> method.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.GetPointCount">
+    <summary>The <b>GraphicsPath.GetPointCount</b> method gets the number of points in this path's array of data points. This is the same as the number of types in the path's array of point types.</summary>
+    <returns>This method returns the number of points in the path's array of data points.</returns>
+  </member>
+  <member name="GraphicsPath.GraphicsPath">
+    <summary>Creates a <b>GraphicsPath.GraphicsPath</b> object based on an array of points, an array of types, and a fill mode.</summary>
+    <param name="points">Pointer to an array of points that specifies the endpoints and control points of the lines and Bezier splines that are used to draw the path.</param>
+    <param name="types">Pointer to an array of bytes that holds the point type and a set of flags for each point in the<i>points</i> array. The point type is stored in the three least significant bits, and the flags are stored in the four most significant bits. Possible point types and flags are listed in the <see cref="PathPointType" /> enumeration.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array. This is the same as the number of elements in the<i>types</i> array.</param>
+    <param name="fillMode">Optional. Element of the <see cref="FillMode" /> enumeration that specifies how areas are filled if the path intersects itself. The default value is <code>FillModeAlternate</code>.</param>
+  </member>
+  <member name="GraphicsPath.GraphicsPath">
+    <summary>Creates a <b>GraphicsPath.GraphicsPath</b> object based on an array of points, an array of types, and a fill mode.</summary>
+    <param name="points">Pointer to an array of points that specifies the endpoints and control points of the lines and Bezier splines that are used to draw the path.</param>
+    <param name="types">Pointer to an array of bytes that holds the point type and a set of flags for each point in the<i>points</i> array. The point type is stored in the three least significant bits, and the flags are stored in the four most significant bits. Possible point types and flags are listed in the <see cref="PathPointType" /> enumeration.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>points</i> array. This is the same as the number of elements in the<i>types</i> array.</param>
+    <param name="fillMode">Optional. Element of the <see cref="FillMode" /> enumeration that specifies how areas are filled if the path intersects itself. The default value is FillModeAlternate.</param>
+  </member>
+  <member name="GraphicsPath.GraphicsPath">
+    <summary>Creates a <b>GraphicsPath.GraphicsPath</b> object and initializes the fill mode. This is the default constructor.</summary>
+    <param name="fillMode">Optional. Element of the <see cref="FillMode" /> enumeration that specifies how areas are filled if the path intersects itself. The default value is <code>FillModeAlternate</code>.</param>
+  </member>
+  <member name="GraphicsPath.IsOutlineVisible">
+    <summary>The <b>GraphicsPath.IsOutlineVisible</b> method determines whether a specified point touches the outline of this path when the path is drawn by a specified <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object and a specified pen.</summary>
+    <param name="point">Reference to the point to be tested.</param>
+    <param name="pen">Pointer to a <b>Pen</b> object. This method determines whether the test point touches the path outline that would be drawn by this pen. More points will touch an outline drawn by a wide pen than will touch an outline drawn by a narrow pen.</param>
+    <param name="g">Optional. Pointer to a <b>Graphics</b> object that specifies a world-to-device transformation. If the value of this parameter is <b>NULL</b>, the test is done in world coordinates; otherwise, the test is done in device coordinates. The default value is <b>NULL</b>.</param>
+    <returns>If the test point touches the outline of this path, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="GraphicsPath.IsOutlineVisible">
+    <summary>The <b>GraphicsPath.IsOutlineVisible</b> method determines whether a specified point touches the outline of this path when the path is drawn by a specified <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object and a specified pen.</summary>
+    <param name="point">Reference to the point to be tested.</param>
+    <param name="pen">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object. This method determines whether the test point touches the path outline that would be drawn by this pen. More points will touch an outline drawn by a wide pen than will touch an outline drawn by a narrow pen.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that specifies a world-to-device transformation. If the value of this parameter is <b>NULL</b>, the test is done in world coordinates; otherwise, the test is done in device coordinates. The default value is <b>NULL</b>.</param>
+    <returns>If the test point touches the outline of this path, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="GraphicsPath.IsOutlineVisible">
+    <summary>The <b>GraphicsPath.IsOutlineVisible</b> method determines whether a specified point touches the outline of this path when the path is drawn by a specified <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object and a specified pen.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the point to be tested.</param>
+    <param name="y">Integer that specifies the y-coordinate of the point to be tested.</param>
+    <param name="pen">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object. This method determines whether the test point touches the path outline that would be drawn by this pen. More points will touch an outline drawn by a wide pen than will touch an outline drawn by a narrow pen.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that specifies a world-to-device transformation. If the value of this parameter is <b>NULL</b>, the test is done in world coordinates; otherwise, the test is done in device coordinates. The default value is <b>NULL</b>.</param>
+    <returns>If the test point touches the outline of this path, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="GraphicsPath.IsOutlineVisible">
+    <summary>The <b>GraphicsPath.IsOutlineVisible</b> method determines whether a specified point touches the outline of this path when the path is drawn by a specified <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object and a specified pen.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the point to be tested.</param>
+    <param name="y">Real number that specifies the x-coordinate of the point to be tested.</param>
+    <param name="pen">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object. This method determines whether the test point touches the path outline that would be drawn by this pen. More points will touch an outline drawn by a wide pen than will touch an outline drawn by a narrow pen.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that specifies a world-to-device transformation. If the value of this parameter is <b>NULL</b>, the test is done in world coordinates; otherwise, the test is done in device coordinates. The default value is <b>NULL</b>.</param>
+    <returns>If the test point touches the outline of this path, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="GraphicsPath.IsVisible">
+    <summary>The <b>GraphicsPath.IsVisible</b> method determines whether a specified point lies in the area that is filled when this path is filled by a specified <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="point">Reference to the point to be tested.</param>
+    <param name="g">Optional. Pointer to a <b>Graphics</b> object that specifies a world-to-device transformation. If the value of this parameter is <b>NULL</b>, the test is done in world coordinates; otherwise, the test is done in device coordinates. The default value is <b>NULL</b>.</param>
+    <returns>If the test point lies in the interior of this path, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="GraphicsPath.IsVisible">
+    <summary>The <b>GraphicsPath.IsVisible</b> method determines whether a specified point lies in the area that is filled when this path is filled by a specified <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="point">Reference to the point to be tested.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that specifies a world-to-device transformation. If the value of this parameter is <b>NULL</b>, the test is done in world coordinates; otherwise, the test is done in device coordinates. The default value is <b>NULL</b>.</param>
+    <returns>If the test point lies in the interior of this path, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="GraphicsPath.IsVisible">
+    <summary>The <b>GraphicsPath.IsVisible</b> method determines whether a specified point lies in the area that is filled when this path is filled by a specified<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the point to be tested.</param>
+    <param name="y">Integer that specifies the y-coordinate of the point to be tested.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that specifies a world-to-device transformation. If the value of this parameter is <b>NULL</b>, the test is done in world coordinates; otherwise, the test is done in device coordinates. The default value is <b>NULL</b>.</param>
+    <returns>If the test point lies in the interior of this path, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="GraphicsPath.IsVisible">
+    <summary>The <b>GraphicsPath.IsVisible</b> method determines whether a specified point lies in the area that is filled when this path is filled by a specified <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the point to be tested.</param>
+    <param name="y">Real number that specifies the y-coordinate of the point to be tested.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that specifies a world-to-device transformation. If the value of this parameter is <b>NULL</b>, the test is done in world coordinates; otherwise, the test is done in device coordinates. The default value is <b>NULL</b>.</param>
+    <returns>If the test point lies in the interior of this path, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="GraphicsPath.Outline">
+    <summary>The <b>GraphicsPath.Outline</b> method transforms and flattens this path, and then converts this path's data points so that they represent only the outline of the path.</summary>
+    <param name="matrix">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies the transformation. If this parameter is <b>NULL</b>, no transformation is applied. The default value is <b>NULL</b>.</param>
+    <param name="flatness">Optional. Real number that specifies the maximum error between the path and its flattened approximation. Reducing the flatness increases the number of line segments in the approximation. The default value is FlatnessDefault, which is a constant defined in Gdiplusenums.h.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.Reset">
+    <summary>The <b>GraphicsPath.Reset</b> method empties the path and sets the fill mode to FillModeAlternate.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.Reverse">
+    <summary>The <b>GraphicsPath.Reverse</b> method reverses the order of the points that define this path's lines and curves.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.SetFillMode">
+    <summary>The <b>GraphicsPath.SetFillMode</b> method sets the fill mode of this path.</summary>
+    <param name="fillmode">Element of the <see cref="FillMode" /> enumeration that specifies how to fill areas when the path intersects itself.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.SetMarker">
+    <summary>The <b>GraphicsPath.SetMarker</b> method designates the last point in this path as a marker point.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.StartFigure">
+    <summary>The <b>GraphicsPath.StartFigure</b> method starts a new figure without closing the current figure. Subsequent points added to this path are added to the new figure.</summary>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.Transform">
+    <summary>The <b>GraphicsPath.Transform</b> method multiplies each of this path's data points by a specified matrix.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies the transformation.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.Warp">
+    <summary>The <b>GraphicsPath.Warp</b> method applies a warp transformation to this path. The <b>GraphicsPath.Warp</b> method also flattens (converts to a sequence of straight lines) the path.</summary>
+    <param name="destPoints">Pointer to an array of points that, along with the <i>srcRect</i> parameter, defines the warp transformation.</param>
+    <param name="count">Integer that specifies the number of points in the<i>destPoints</i> array. The value of this parameter must be 3 or 4.</param>
+    <param name="srcRect">Reference to a rectangle that, along with the <i>destPoints</i> parameter, defines the warp transformation.</param>
+    <param name="matrix">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that represents a transformation to be applied along with the warp. If this parameter is <b>NULL</b>, no transformation is applied. The default value is <b>NULL</b>.</param>
+    <param name="warpMode">Optional. Element of the <see cref="WarpMode" /> enumeration that specifies the kind of warp to be applied. The default value is WarpModePerspective.</param>
+    <param name="flatness">Optional. Real number that influences the number of line segments that are used to approximate the original path. Small values specify that many line segments are used, and large values specify that few line segments are used. The default value is FlatnessDefault, which is a constant defined in Gdiplusenums.h.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPath.Widen">
+    <summary>The <b>GraphicsPath.Widen</b> method replaces this path with curves that enclose the area that is filled when this path is drawn by a specified pen. The <b>GraphicsPath.Widen</b> method also flattens the path.</summary>
+    <param name="pen">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object. The path is made as wide as it would be when drawn by this pen.</param>
+    <param name="matrix">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies a transformation to be applied along with the widening. If this parameter is <b>NULL</b>, no transformation is applied. The default value is <b>NULL</b>.</param>
+    <param name="flatness">Optional. Real number that specifies the maximum error between the path and its flattened approximation. Reducing the flatness increases the number of line segments in the approximation. The default value is FlatnessDefault, which is a constant defined in Gdiplusenums.h.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

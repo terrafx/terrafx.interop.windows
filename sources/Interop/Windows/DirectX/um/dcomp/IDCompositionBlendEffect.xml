@@ -3,23 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionBlendEffect.SetMode">
-    <summary>
-      <para>Sets the blend mode to use when the blend effect combines the two images.</para>
-    </summary>
-    <param name="mode">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/blend">D2D1_BLEND_MODE</a></b></para>
-      <para>The blend mode to use when the blend effect combines the two images.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBlendEffect" />
+    <summary>Sets the blend mode to use when the blend effect combines the two images.</summary>
+    <param name="mode">The blend mode to use when the blend effect combines the two images.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBlendEffect">
-    <summary>
-      <para>The Blend Effect is used to combine 2 images.</para>
-    </summary>
-    <seealso cref="IDCompositionFilterEffect" />
+    <summary>The Blend Effect is used to combine 2 images.</summary>
   </member>
 </doc>

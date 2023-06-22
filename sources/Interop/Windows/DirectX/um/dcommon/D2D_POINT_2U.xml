@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D_POINT_2U">
-    <summary>
-      <para>Represents an x-coordinate and y-coordinate pair, expressed as an unsigned 32-bit integer value, in two-dimensional space.</para>
-    </summary>
+    <summary>Represents an x-coordinate and y-coordinate pair, expressed as an unsigned 32-bit integer value, in two-dimensional space.</summary>
   </member>
   <member name="D2D_POINT_2U.x">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The x-coordinate value of the point.</para>
-    </summary>
+    <summary>The x-coordinate value of the point.</summary>
   </member>
   <member name="D2D_POINT_2U.y">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The y-coordinate value of the point.</para>
-    </summary>
+    <summary>The y-coordinate value of the point.</summary>
   </member>
 </doc>

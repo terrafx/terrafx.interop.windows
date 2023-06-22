@@ -3,34 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxContentGroupFilesEnumerator.GetCurrent">
-    <summary>
-      <para>Gets the file from the content group at the current position of the enumerator.</para>
-    </summary>
-    <param name="file">
-      <para>The file at the position of the enumerator.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxContentGroupFilesEnumerator" />
+    <summary>Gets the file from the content group at the current position of the enumerator.</summary>
+    <param name="file">The file at the position of the enumerator.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxContentGroupFilesEnumerator.GetHasCurrent">
-    <summary>
-      <para>Determines whether there is a file at the current position of the enumerator.</para>
-    </summary>
+    <summary>Determines whether there is a file at the current position of the enumerator.</summary>
     <param name="hasCurrent">
-      <para>
-        <b>TRUE</b> if the enumerator's current position references an item; <b>FALSE</b> if the enumerator has passed the last item in the collection.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxContentGroupFilesEnumerator" />
+      <b>TRUE</b> if the enumerator's current position references an item; <b>FALSE</b> if the enumerator has passed the last item in the collection.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxContentGroupFilesEnumerator.MoveNext">
-    <summary>
-      <para>Advances the position of the enumerator to the next file.</para>
-    </summary>
+    <summary>Advances the position of the enumerator to the next file.</summary>
     <param name="hasNext">
       <para>
         <b>TRUE</b> if the enumerator successfully advances</para>
@@ -39,14 +23,11 @@
     </param>
     <returns>
       <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code.</para>
-      <para>
-        <b>Note</b>  When the enumerator passes the end of the collection for the first time, <i>hasNext</i> = <b>FALSE</b>,  but the method succeeds and returns <b>S_OK</b>. However, the method returns <b>E_BOUNDS</b> if you subsequently call another MoveNext after you have already passed the end of the collection, and you have previously received  <i>hasNext</i> = <b>FALSE</b>.</para>
+      <div>
+        <b>Note</b>  When the enumerator passes the end of the collection for the first time, <i>hasNext</i> = <b>FALSE</b>, but the method succeeds and returns <b>S_OK</b>. However, the method returns <b>E_BOUNDS</b> if you subsequently call another MoveNext after you have already passed the end of the collection, and you have previously received <i>hasNext</i> = <b>FALSE</b>.</div>
     </returns>
-    <seealso cref="IAppxContentGroupFilesEnumerator" />
   </member>
   <member name="IAppxContentGroupFilesEnumerator">
-    <summary>
-      <para>Enumerates files in content groups from a content group map.</para>
-    </summary>
+    <summary>Enumerates files in content groups from a content group map.</summary>
   </member>
 </doc>

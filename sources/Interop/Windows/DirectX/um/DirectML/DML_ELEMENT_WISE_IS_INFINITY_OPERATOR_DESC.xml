@@ -5,29 +5,18 @@
   <member name="DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC">
     <summary>
       <para>Checks each element of <i>InputTensor</i> for IEEE-754 -inf, inf, or both, depending on the given <i>InfinityMode</i>, and places the result (1 for true, 0 for false) into the corresponding element of <i>OutputTensor</i>.</para>
-      <code>f(x) = isinf(x) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (
-       (x &gt; 0 &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; InfinityMode == DML_IS_INFINITY_MODE_POSITIVE) ||
-       (x &lt; 0 &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; InfinityMode == DML_IS_INFINITY_MODE_NEGATIVE) ||
-                 InfinityMode == DML_IS_INFINITY_MODE_EITHER)
-</code>
+      <code>f(x) = isinf(x) &amp;&amp; ( (x &gt; 0 &amp;&amp; InfinityMode == DML_IS_INFINITY_MODE_POSITIVE) || (x &lt; 0 &amp;&amp; InfinityMode == DML_IS_INFINITY_MODE_NEGATIVE) || InfinityMode == DML_IS_INFINITY_MODE_EITHER)</code>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input tensor to read from.</para>
-    </summary>
+    <summary>The input tensor to read from.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC.InfinityMode">
     <summary>
-      <para>Type: <b><see cref="DML_IS_INFINITY_MODE" /></b></para>
-      <para>A <see cref="DML_IS_INFINITY_MODE" /> determining the sign of the infinity to check for.</para>
+      <para>A <a href="https://microsoft.github.io/windows-docs-rs/doc/windows/win32/ai/machinelearning/directml/struct.dml_is_infinity_mode.html">DML_IS_INFINITY_MODE</a> determining the sign of the infinity to check for.</para>
       <list type="bullet">
         <item>
           <description>If <b>DML_IS_INFINITY_MODE_EITHER</b>, then 1 will be returned if the element is -inf or inf, otherwise 0.</description>

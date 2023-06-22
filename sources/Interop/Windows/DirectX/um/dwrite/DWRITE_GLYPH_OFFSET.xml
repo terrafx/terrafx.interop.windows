@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_GLYPH_OFFSET">
-    <summary>
-      <para>The optional adjustment to a glyph's position.</para>
-    </summary>
-    <remarks>
-      <para>An glyph offset changes the position of a glyph without affecting the pen position. Offsets are in logical, pre-transform units.</para>
-    </remarks>
+    <summary>The optional adjustment to a glyph's position.</summary>
   </member>
   <member name="DWRITE_GLYPH_OFFSET.advanceOffset">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The offset in the advance direction of the run. A positive advance offset moves the glyph to the right (in pre-transform coordinates) if the run is left-to-right or to the left if the run is right-to-left.</para>
-    </summary>
+    <summary>The offset in the advance direction of the run. A positive advance offset moves the glyph to the right (in pre-transform coordinates) if the run is left-to-right or to the left if the run is right-to-left.</summary>
   </member>
   <member name="DWRITE_GLYPH_OFFSET.ascenderOffset">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The offset in the ascent direction, that is, the direction ascenders point. A positive ascender offset moves the glyph up (in pre-transform coordinates).  A negative ascender offset moves the glyph down.</para>
-    </summary>
+    <summary>The offset in the ascent direction, that is, the direction ascenders point. A positive ascender offset moves the glyph up (in pre-transform coordinates). A negative ascender offset moves the glyph down.</summary>
   </member>
 </doc>

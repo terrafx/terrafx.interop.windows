@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyStore.Commit">
-    <summary>
-      <para>After a change has been made, this method saves the changes.</para>
-    </summary>
+    <summary>After a change has been made, this method saves the changes.</summary>
     <returns>
       <para>The <code>IPropertyStore.Commit</code> method returns any one of the following:</para>
       <list type="table">
@@ -13,119 +11,71 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>All of the property changes were successfully written to the stream or path. This includes the case where no changes were pending when the method was called and nothing was written.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>All of the property changes were successfully written to the stream or path. This includes the case where no changes were pending when the method was called and nothing was written.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The stream or file is read-only; the method was not able to set the value.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>STG_E_ACCESSDENIED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The stream or file is read-only; the method was not able to set the value.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>Some or all of the changes could not be written to the file. Another, more explanatory error can be used in place of E_FAIL.</para>
-          </description>
-        </item>
+          <description>Some or all of the changes could not be written to the file. Another, more explanatory error can be used in place of E_FAIL.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before the <code>Commit</code> method returns, it releases the file stream or path that was initialized to be used by the method. Therefore, no <b>IPropertyStore</b> methods succeed after <code>Commit</code> returns. At that point, they return E_FAIL.</para>
-      <para>Property handlers must ensure that property changes result in a valid destination file, even if the <code>Commit</code> process terminates abnormally, or encounters any errors.</para>
-    </remarks>
-    <seealso cref="IPropertyStore" />
   </member>
   <member name="IPropertyStore.GetAt">
-    <summary>
-      <para>Gets a property key from the property array of an item.</para>
-    </summary>
-    <param name="iProp">
-      <para>The index of the property key in the array of PROPERTYKEY structures. This is a zero-based index.</para>
-    </param>
-    <param name="pkey">
-      <para>TBD</para>
-    </param>
-    <param name="pKey">
-      <para>A pointer to a PROPERTYKEY structure and it can be used in subsequent calls to <see cref="IPropertyStore.GetValue" /> and <see cref="IPropertyStore.SetValue" />.</para>
-    </param>
-    <returns>
-      <para>The <code>IPropertyStore.GetAt</code> method returns a value of S_OK if successful. Otherwise, any other code it returns must be considered to be an error code.</para>
-    </returns>
-    <remarks>
-      <para>None</para>
-    </remarks>
-    <seealso cref="IPropertyStore" />
-    <seealso cref="IPropertyStore.GetValue" />
-    <seealso cref="IPropertyStore.SetValue" />
+    <summary>Gets a property key from the property array of an item.</summary>
+    <param name="iProp">The index of the property key in the array of PROPERTYKEY structures. This is a zero-based index.</param>
+    <param name="pkey">TBD</param>
+    <param name="pKey">A pointer to a PROPERTYKEY structure and it can be used in subsequent calls to <see cref="IPropertyStore.GetValue" /> and <see cref="IPropertyStore.SetValue" />.</param>
+    <returns>The <code>IPropertyStore.GetAt</code> method returns a value of S_OK if successful. Otherwise, any other code it returns must be considered to be an error code.</returns>
   </member>
   <member name="IPropertyStore.GetCount">
-    <summary>
-      <para>This method returns a count of the number of properties that are attached to the file.</para>
-    </summary>
-    <param name="cProps">
-      <para>A pointer to a value that indicates the property count.</para>
-    </param>
-    <returns>
-      <para>The <code>IpropertyStore.GetCount</code> method returns a value of S_OK when the call is successful, even if the file has no properties attached. Any other code returned is an error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>IPropertyStore</b> provides an abstraction over an array of property keys via the <code>IPropertyStore.GetCount</code> and <see cref="IPropertyStore.GetAt" /> methods. The property keys in this array represent the properties that are currently stored by the <b>IPropertyStore</b>.</para>
-      <para>When <code>GetCount</code> succeeds, the value pointed to by cProps is a count of property keys in the array. The caller can expect calls to <b>IPropertyStore.GetAt</b> to succeed for values of iProp less than cProps.</para>
-      <para>In the case of failures such as E_OUTOFMEMORY, you should set cProps to zero. It is preferable that errors are discovered during creation or initialization of the property store.</para>
-    </remarks>
-    <seealso cref="IPropertyStore" />
-    <seealso cref="IPropertyStore.GetAt" />
+    <summary>This method returns a count of the number of properties that are attached to the file.</summary>
+    <param name="cProps">A pointer to a value that indicates the property count.</param>
+    <returns>The <code>IpropertyStore.GetCount</code> method returns a value of S_OK when the call is successful, even if the file has no properties attached. Any other code returned is an error code.</returns>
   </member>
   <member name="IPropertyStore.GetValue">
-    <summary>
-      <para>This method retrieves the data for a specific property.</para>
-    </summary>
-    <param name="key">
-      <para>TBD</para>
-    </param>
-    <param name="pv">
-      <para>After the <code>IPropertyStore.GetValue</code> method returns successfully, this parameter points to a <a href="https://docs.microsoft.com//previous-versions/aa912007(v=msdn.10)">PROPVARIANT </a> structure that contains data about the property.</para>
-    </param>
-    <param name="Key">
-      <para>A reference to the PROPERTYKEY structure that is retrieved through <see cref="IPropertyStore.GetAt" />. The PROPERTYKEY structure also contains a globally unique identifier (GUID) for the property.</para>
-    </param>
+    <summary>This method retrieves the data for a specific property.</summary>
+    <param name="key">TBD</param>
+    <param name="pv">After the <code>IPropertyStore.GetValue</code> method returns successfully, this parameter points to a <a href="https://docs.microsoft.com//previous-versions/aa912007(v=msdn.10)">PROPVARIANT</a> structure that contains data about the property.</param>
+    <param name="Key">A reference to the PROPERTYKEY structure that is retrieved through <see cref="IPropertyStore.GetAt" />. The PROPERTYKEY structure also contains a globally unique identifier (GUID) for the property.</param>
     <returns>
       <para>Returns S_OK or INPLACE_S_TRUNCATED if successful, or an error value otherwise.</para>
       <para>INPLACE_S_TRUNCATED is returned to indicate that the returned PROPVARIANT was converted into a more canonical form. For example, this would be done to trim leading or trailing spaces from a string value. You must use the SUCCEEDED macro to check the return value, which treats INPLACE_S_TRUNCATED as a success code. The SUCCEEDED macro is defined in the Winerror.h file.</para>
     </returns>
-    <remarks>
-      <para>If the PROPERTYKEY referenced in key is not present in the property store, this method returns S_OK and the <a href="https://docs.microsoft.com//previous-versions/aa912007(v=msdn.10)">vt </a> member of the structure that is pointed to by pv is set to VT_EMPTY.</para>
-    </remarks>
-    <seealso cref="IPropertyStore" />
-    <seealso cref="IPropertyStore.GetAt" />
   </member>
   <member name="IPropertyStore.SetValue">
-    <summary>
-      <para>This method sets a property value or replaces or removes an existing value.</para>
-    </summary>
-    <param name="key">
-      <para>TBD</para>
-    </param>
-    <param name="propvar">
-      <para>TBD</para>
-    </param>
+    <summary>This method sets a property value or replaces or removes an existing value.</summary>
+    <param name="key">TBD</param>
+    <param name="propvar">TBD</param>
     <param name="Key">
       <para>A reference to the PROPERTYKEY structure that is retrieved through <see cref="IPropertyStore.GetAt" />. This structure contains a global unique identifier (GUID) for the property.</para>
       <h4>- pv</h4>
@@ -138,66 +88,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The property change was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The property change was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>INPLACE_S_TRUNCATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value was set but truncated.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>INPLACE_S_TRUNCATED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The value was set but truncated.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_ACCESSDENIED</b>
-            </para>
-          </description>
-          <description>
-            <para>This is an error code. The property store was read-only so the method was not able to set the value.</para>
-          </description>
-        </item>
+          <description>This is an error code. The property store was read-only so the method was not able to set the value.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <code>IPropertyStore.SetValue</code> affects the current property store instance only. A property handler implements <code>IPropertyStore.SetValue</code> by accumulating property changes in an in-memory data structure. Property changes are written to the stream only when <see cref="IPropertyStore.Commit" /> is called.</para>
-      <para>If <b>IPropertyStore.Commit</b> is called on a read-only property store, the property handler determines this and returns STG_E_ACCESSDENIED.</para>
-      <para>If a value was added or removed as a result of <code>SetValue</code>, subsequent enumerations by <see cref="IPropertyStore.GetCount" /> and <see cref="IPropertyStore.GetAt" /> reflect that change and subsequent calls to <code>IPropertyStore.SetValue</code> reflect the changed value.</para>
-      <para>
-        <b>Adding a New Property</b>
-      </para>
-      <para>If the property value that was pointed to by key does not exist in the store, <code>IPropertyStore.SetValue</code> adds the value to the store.</para>
-      <para>
-        <b>Replacing an Existing Property Value</b>
-      </para>
-      <para>If the property value that was pointed to by key already exists in the store, the stored value is replaced.</para>
-      <para>
-        <b>Removing an Existing Property</b>
-      </para>
-      <para>To remove a value from the property store, set the vt member of the structure that is pointed to by pv to VT_EMPTY. If that value is not present, do nothing and the method returns S_OK.</para>
-    </remarks>
-    <seealso cref="IPropertyStore" />
-    <seealso cref="IPropertyStore.Commit" />
-    <seealso cref="IPropertyStore.GetAt" />
-    <seealso cref="IPropertyStore.GetCount" />
   </member>
   <member name="IPropertyStore">
-    <summary>
-      <para>This interface exposes methods used to enumerate and manipulate property values.</para>
-    </summary>
-    <seealso cref="APOInitSystemEffects" />
-    <seealso cref="AudioFXExtensionParams" />
+    <summary>This interface exposes methods used to enumerate and manipulate property values.</summary>
   </member>
 </doc>

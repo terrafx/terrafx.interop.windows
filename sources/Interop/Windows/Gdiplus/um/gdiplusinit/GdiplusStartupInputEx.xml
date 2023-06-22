@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GdiplusStartupInputEx.GdiplusStartupInputEx">
+    <summary>
+      <para>Constructor for the <see cref="GdiplusStartupInputEx" /> structure.</para>
+      <para>The constructor sets the <b>GdiplusVersion</b> member to 2. All of the constructor parameters are optional, so you can declare a variable of type <b>GdiplusStartupInputEx</b> without passing any arguments to the constructor, and all of the members will be initialized with appropriate default values.</para>
+    </summary>
+    <param name="startupParameters">See <see cref="GdiplusStartupParams" />. The default value is <b>GdiplusStartupDefault</b> (0).</param>
+    <param name="debugEventCallback">Pointer to your <a href="https://docs.microsoft.com/nc-gdiplusinit-debugeventproc.md">DebugEventProc</a> callback function, which GDI+ can call on debug builds for assertions and warnings. The default value is <b>NULL</b>.</param>
+    <param name="suppressBackgroundThread">Boolean value that specifies whether to suppress the GDI+ background thread. If you pass <b>TRUE</b>, then <see cref="GdiplusStartup" /> returns (in its <i>output</i> parameter) a pointer to a hook function, and a pointer to an unhook function. You must call those functions appropriately to replace the background thread. If you don't want to be responsible for calling the hook and unhook functions, then set this member to <b>FALSE</b>. The default value is <b>FALSE</b>.</param>
+    <param name="suppressExternalCodecs">Boolean value that specifies whether you want GDI+ to suppress external image codecs. The default value is <b>FALSE</b>.</param>
+  </member>
+  <member name="GdiplusStartupInputEx">
+    <summary>The <b>GdiplusStartupInputEx</b> structure holds a block of arguments that are required by the <see cref="GdiplusStartup" /> function. <b>GdiplusStartupInputEx</b> derives from <see cref="GdiplusStartupInput" />.</summary>
+  </member>
+  <member name="GdiplusStartupInputEx.StartupParameters">
+    <summary>See <see cref="GdiplusStartupParams" />. The default value is <b>GdiplusStartupDefault</b> (0).</summary>
+  </member>
+</doc>

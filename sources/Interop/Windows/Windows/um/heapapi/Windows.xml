@@ -3,134 +3,78 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.GetProcessHeap">
-    <summary>
-      <para>Retrieves a handle to the default heap of the calling process. This handle can then be used in subsequent calls to the heap functions.</para>
-    </summary>
+    <summary>Retrieves a handle to the default heap of the calling process. This handle can then be used in subsequent calls to the heap functions.</summary>
     <returns>
       <para>If the function succeeds, the return value is a handle to the calling process's heap.</para>
-      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>The
-<b>GetProcessHeap</b> function obtains a handle to the default heap for the calling process. A process can use this handle to allocate memory from the process heap without having to first create a private heap using the
-<see cref="HeapCreate" /> function.</para>
-      <para>
-        <b>Windows Server 2003 and Windows XP:  </b>To enable the low-fragmentation heap for the default heap of the process, call the
-<see cref="HeapSetInformation" /> function with the handle returned by <b>GetProcessHeap</b>.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/Memory/getting-process-heaps">Getting Process Heaps</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapCreate" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
   </member>
   <member name="Windows.GetProcessHeaps">
-    <summary>
-      <para>Returns the number of active heaps and retrieves handles to all of the active heaps for the calling process.</para>
-    </summary>
-    <param name="NumberOfHeaps">
-      <para>The maximum number of heap handles that can be stored into the buffer pointed to by <i>ProcessHeaps</i>.</para>
-    </param>
-    <param name="ProcessHeaps">
-      <para>A pointer to a buffer that receives an array of heap handles.</para>
-    </param>
+    <summary>Returns the number of active heaps and retrieves handles to all of the active heaps for the calling process.</summary>
+    <param name="NumberOfHeaps">The maximum number of heap handles that can be stored into the buffer pointed to by <i>ProcessHeaps</i>.</param>
+    <param name="ProcessHeaps">A pointer to a buffer that receives an array of heap handles.</param>
     <returns>
       <para>The return value is the number of handles to heaps that are active for the calling process.</para>
       <para>If the return value is less than or equal to <i>NumberOfHeaps</i>, the function has stored that number of heap handles in the buffer pointed to by <i>ProcessHeaps</i>.</para>
       <para>If the return value is greater than <i>NumberOfHeaps</i>, the buffer pointed to by <i>ProcessHeaps</i> is too small to hold all the heap handles for the calling process, and the function stores <i>NumberOfHeaps</i> handles in the buffer. Use the return value to allocate a buffer that is large enough to receive all of the handles, and call the function again.</para>
-      <para>If the return value is zero, the function has failed because every process has at least one active heap, the default heap for the  process. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the return value is zero, the function has failed because every process has at least one active heap, the default heap for the process. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>The
-<b>GetProcessHeaps</b> function obtains a handle to the default heap of the calling process, plus handles to any additional private heaps  created by calling the
-<see cref="HeapCreate" /> function on any thread in the process.</para>
-      <para>The <b>GetProcessHeaps</b> function is primarily useful for debugging, because some of the private heaps retrieved by the function may have been created by other code running in the process and may be destroyed after <b>GetProcessHeaps</b> returns. Destroying a heap invalidates the handle to the heap, and continued use of such handles can cause undefined behavior in the application. Heap functions should be called only on the default heap of the calling process and on private heaps that the process creates and manages.</para>
-      <para>To obtain a handle to the process heap of the calling process, use the
-<see cref="GetProcessHeap" /> function.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/Memory/getting-process-heaps">Getting Process Heaps</a>.</para>
-    </remarks>
-    <seealso cref="GetProcessHeap" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapCreate" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
   </member>
   <member name="Windows.HeapAlloc">
-    <summary>
-      <para>Allocates a block of memory from a heap. The allocated memory is not movable.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap from which the memory will be allocated. This handle is returned by the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Allocates a block of memory from a heap. The allocated memory is not movable.</summary>
+    <param name="hHeap">A handle to the heap from which the memory will be allocated. This handle is returned by the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
     <param name="dwFlags">
-      <para>The heap allocation options. Specifying any of these values will override the corresponding value specified when the heap was created with
-<see cref="HeapCreate" />. This parameter can be one or more of the following values.</para>
+      <para>The heap allocation options. Specifying any of these values will override the corresponding value specified when the heap was created with<see cref="HeapCreate" />. This parameter can be one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_GENERATE_EXCEPTIONS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The system will raise an exception to indicate a function failure, such as an out-of-memory condition, instead of returning <b>NULL</b>.</para>
-            <para>To ensure that exceptions are generated for all calls to this function, specify <b>HEAP_GENERATE_EXCEPTIONS</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_GENERATE_EXCEPTIONS</b> in this function call.</para>
-          </description>
-        </item>
-        <item>
+          <description>The system will raise an exception to indicate a function failure, such as an out-of-memory condition, instead of returning <b>NULL</b>.<para>To ensure that exceptions are generated for all calls to this function, specify <b>HEAP_GENERATE_EXCEPTIONS</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_GENERATE_EXCEPTIONS</b> in this function call.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_NO_SERIALIZE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Serialized access will not be used for this allocation.</para>
-            <para>For more information, see Remarks.</para>
-            <para>To ensure that serialized access is disabled for all calls to this function, specify <b>HEAP_NO_SERIALIZE</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para>
-            <para>This value should not be specified when accessing the process's default heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process's default heap.</para>
-          </description>
-        </item>
-        <item>
+          <description>Serialized access will not be used for this allocation. <para>For more information, see Remarks.</para><para>To ensure that serialized access is disabled for all calls to this function, specify <b>HEAP_NO_SERIALIZE</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para><para>This value should not be specified when accessing the process's default heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process's default heap.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_ZERO_MEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The allocated memory will be initialized to zero. Otherwise, the memory is not initialized to zero.</para>
-          </description>
-        </item>
+          <description>The allocated memory will be initialized to zero. Otherwise, the memory is not initialized to zero.</description>
+        </listheader>
       </list>
     </param>
     <param name="dwBytes">
@@ -146,71 +90,23 @@ Management Functions</seealso>
           <description>Exception code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <b>STATUS_NO_MEMORY</b>
           </description>
           <description>The allocation attempt failed because of a lack of available memory or heap corruption.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>STATUS_ACCESS_VIOLATION</b>
           </description>
           <description>The allocation attempt failed because of heap corruption or improper function parameters.</description>
-        </item>
-      </list>
-      <para>If the function fails, it does not call <see cref="SetLastError" />. An application cannot call <see cref="GetLastError" /> for extended error information.</para>
-    </returns>
-    <remarks>
-      <para>If
-the <b>HeapAlloc</b> function succeeds, it allocates at least the amount of memory requested.</para>
-      <para>To allocate memory from the process's default heap, use  <b>HeapAlloc</b> with the handle returned by the <see cref="GetProcessHeap" /> function.</para>
-      <para>To free a block of memory allocated by
-<b>HeapAlloc</b>, use the
-<see cref="HeapFree" /> function.</para>
-      <para>Memory allocated by
-<b>HeapAlloc</b> is not movable. The address returned by
-<b>HeapAlloc</b> is valid until the memory block is freed or reallocated; the memory block does not need to be locked. Because the system cannot compact a private heap, it can become fragmented.</para>
-      <para>The alignment of memory returned by <b>HeapAlloc</b> is <b>MEMORY_ALLOCATION_ALIGNMENT</b> in WinNT.h:</para>
-      <code>#if defined(_WIN64) || defined(_M_ALPHA)
-#define MEMORY_ALLOCATION_ALIGNMENT 16
-#else
-#define MEMORY_ALLOCATION_ALIGNMENT 8
-#endif
-</code>
-      <para>Applications that allocate large amounts of memory in various allocation sizes can use the
-<a href="https://docs.microsoft.com//windows/desktop/Memory/low-fragmentation-heap">low-fragmentation heap</a> to reduce heap fragmentation.</para>
-      <para>Serialization ensures mutual exclusion when two or more threads attempt to simultaneously allocate or free blocks from the same heap. There is a small performance cost to serialization, but it must be used whenever multiple threads allocate and free memory from the same heap. Setting the <b>HEAP_NO_SERIALIZE</b> value eliminates mutual exclusion on the heap. Without serialization, two or more threads that use the same heap handle might attempt to allocate or free memory simultaneously, likely causing corruption in the heap. The <b>HEAP_NO_SERIALIZE</b> value can, therefore, be safely used only in the following situations:</para>
-      <list type="bullet">
-        <item>
-          <description>The process has only one thread.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, but only one thread calls the heap functions for a specific heap.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, and the application provides its own mechanism for mutual exclusion to a specific heap.</description>
-        </item>
-      </list>
-      <h4>Examples</h4>
-      <para>For an example, see
-<a href="https://docs.microsoft.com//windows/desktop/Memory/awe-example">AWE Example</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapFree" />
-    <seealso cref="HeapReAlloc" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
+        </listheader>
+      </list> <para>If the function fails, it does not call <see cref="SetLastError" />. An application cannot call <see cref="GetLastError" /> for extended error information.</para></returns>
   </member>
   <member name="Windows.HeapCompact">
-    <summary>
-      <para>Returns  the size of the largest committed free block in the specified heap.   If the <a href="https://msdn.microsoft.com/library/cc265897.aspx">Disable heap coalesce on free</a> global flag is set, this function also coalesces adjacent free blocks of memory in the heap.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap. This handle is returned by either the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Returns the size of the largest committed free block in the specified heap. If the <a href="https://msdn.microsoft.com/library/cc265897.aspx">Disable heap coalesce on free</a> global flag is set, this function also coalesces adjacent free blocks of memory in the heap.</summary>
+    <param name="hHeap">A handle to the heap. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
     <param name="dwFlags">
       <para>The heap access options. This parameter can be the following value.</para>
       <list type="table">
@@ -218,61 +114,31 @@ Management Functions</seealso>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_NO_SERIALIZE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Serialized access will not be used.</para>
-            <para>For more information, see Remarks.</para>
-            <para>To ensure that serialized access is disabled for all calls to this function, specify <b>HEAP_NO_SERIALIZE</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para>
-            <para>Do not specify this value when accessing the process heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process heap.</para>
-          </description>
-        </item>
+          <description>Serialized access will not be used. <para>For more information, see Remarks.</para><para>To ensure that serialized access is disabled for all calls to this function, specify <b>HEAP_NO_SERIALIZE</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para><para>Do not specify this value when accessing the process heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process heap.</para></description>
+        </listheader>
       </list>
     </param>
     <returns>
       <para>If the function succeeds, the return value is the size of the largest committed free block in the heap, in bytes.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
       <para>In the unlikely case that there is absolutely no space available in the heap, the function return value is zero, and <see cref="GetLastError" /> returns the value NO_ERROR.</para>
     </returns>
-    <remarks>
-      <para>The <b>HeapCompact</b> function is primarily useful for debugging. Ordinarily, the system compacts the heap whenever the <see cref="HeapFree" /> function is called, and the <b>HeapCompact</b> function returns the size of the largest free block in the heap but does not compact the heap any further. If the <a href="https://msdn.microsoft.com/library/cc265897.aspx">Disable heap coalesce on free</a> global flag is set during debugging, the system does not compact the heap and calling the <b>HeapCompact</b> function does compact the heap.  For more information about global flags, see the <a href="https://msdn.microsoft.com/library/cc265942.aspx">GFlags</a> documentation.</para>
-      <para>There is no guarantee that an application can successfully allocate a memory block of the size returned by
-<b>HeapCompact</b>. Other threads or the commit threshold might prevent such an allocation.</para>
-      <para>Serialization ensures mutual exclusion when two or more threads attempt to simultaneously allocate or free blocks from the same heap. There is a small performance cost to serialization, but it must be used whenever multiple threads allocate and free memory from the same heap. Setting the <b>HEAP_NO_SERIALIZE</b> value eliminates mutual exclusion on the heap. Without serialization, two or more threads that use the same heap handle might attempt to allocate or free memory simultaneously, likely causing corruption in the heap. The <b>HEAP_NO_SERIALIZE</b> value can, therefore, be safely used only in the following situations:</para>
-      <list type="bullet">
-        <item>
-          <description>The process has only one thread.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, but only one thread calls the heap functions for a specific heap.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, and the application provides its own mechanism for mutual exclusion to a specific heap.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapCreate" />
-    <seealso cref="HeapValidate" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
   </member>
   <member name="Windows.HeapCreate">
-    <summary>
-      <para>Creates a private heap object that can be used by the calling process. The function reserves space in the virtual address space of the process and allocates physical storage for a specified initial portion of this block.</para>
-    </summary>
+    <summary>Creates a private heap object that can be used by the calling process. The function reserves space in the virtual address space of the process and allocates physical storage for a specified initial portion of this block.</summary>
     <param name="flOptions">
       <para>The heap allocation options. These options affect subsequent access to the new heap through calls to the heap functions. This parameter can be 0 or one or more of the following values.</para>
       <list type="table">
@@ -280,267 +146,119 @@ Management Functions</seealso>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_CREATE_ENABLE_EXECUTE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00040000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>All memory blocks that are allocated from this heap allow code execution, if the hardware enforces <a href="https://docs.microsoft.com//windows/desktop/Memory/data-execution-prevention">data execution prevention</a>. Use this flag heap in applications that run code from the heap. If <b>HEAP_CREATE_ENABLE_EXECUTE</b> is not specified and an application attempts to run code from a protected page, the application receives an exception with the status code <b>STATUS_ACCESS_VIOLATION</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>All memory blocks that are allocated from this heap allow code execution, if the hardware enforces <a href="https://docs.microsoft.com//windows/desktop/Memory/data-execution-prevention">data execution prevention</a>. Use this flag heap in applications that run code from the heap. If <b>HEAP_CREATE_ENABLE_EXECUTE</b> is not specified and an application attempts to run code from a protected page, the application receives an exception with the status code <b>STATUS_ACCESS_VIOLATION</b>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_GENERATE_EXCEPTIONS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The system raises an exception to indicate failure (for example,  an out-of-memory condition) for calls to <see cref="HeapAlloc" /> and <see cref="HeapReAlloc" /> instead of returning <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The system raises an exception to indicate failure (for example, an out-of-memory condition) for calls to <see cref="HeapAlloc" /> and <see cref="HeapReAlloc" /> instead of returning <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_NO_SERIALIZE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Serialized access is not used when the heap functions access this heap. This option applies to all subsequent heap function calls. Alternatively, you can specify this option on individual heap function calls.</para>
-            <para>The low-fragmentation heap (LFH) cannot be enabled for a heap created with this option.</para>
-            <para>A heap created with this option cannot be locked.</para>
-            <para>For more information about serialized access, see the  Remarks section of this topic.</para>
-          </description>
-        </item>
+          <description>Serialized access is not used when the heap functions access this heap. This option applies to all subsequent heap function calls. Alternatively, you can specify this option on individual heap function calls. <para>The low-fragmentation heap (LFH) cannot be enabled for a heap created with this option.</para><para>A heap created with this option cannot be locked.</para><para>For more information about serialized access, see the Remarks section of this topic.</para></description>
+        </listheader>
       </list>
     </param>
     <param name="dwInitialSize">
       <para>The initial size of the heap, in bytes. This value determines the initial amount of memory that is committed for the heap. The value is rounded up to a multiple of the system page size. The value must be smaller than <i>dwMaximumSize</i>.</para>
-      <para>If this parameter is 0, the function commits one page. To determine the size of a page on the host computer, use the
-<see cref="GetSystemInfo" /> function.</para>
+      <para>If this parameter is 0, the function commits one page. To determine the size of a page on the host computer, use the<see cref="GetSystemInfo" /> function.</para>
     </param>
     <param name="dwMaximumSize">
-      <para>The maximum size of the heap, in bytes. The
-<b>HeapCreate</b> function rounds <i>dwMaximumSize</i> up to a multiple of the system page size and then reserves a block of that size in the process's virtual address space for the heap. If allocation requests made by the
-<see cref="HeapAlloc" /> or
-<see cref="HeapReAlloc" /> functions exceed the size specified by <i>dwInitialSize</i>, the system commits additional pages of memory for the heap, up to the heap's maximum size.</para>
+      <para>The maximum size of the heap, in bytes. The<b>HeapCreate</b> function rounds <i>dwMaximumSize</i> up to a multiple of the system page size and then reserves a block of that size in the process's virtual address space for the heap. If allocation requests made by the<see cref="HeapAlloc" /> or<see cref="HeapReAlloc" /> functions exceed the size specified by <i>dwInitialSize</i>, the system commits additional pages of memory for the heap, up to the heap's maximum size.</para>
       <para>If <i>dwMaximumSize</i> is not zero, the heap size is fixed and cannot grow beyond the maximum size. Also, the largest memory block that can be allocated from the heap is slightly less than 512 KB for a 32-bit process and slightly less than 1,024 KB for a 64-bit process. Requests to allocate larger blocks fail, even if the maximum size of the heap is large enough to contain the block.</para>
-      <para>If <i>dwMaximumSize</i> is 0, the heap can grow in size. The heap's size is limited only by the available memory. Requests to allocate memory blocks larger than the limit for a fixed-size heap do not automatically fail; instead, the system calls the
-<see cref="VirtualAlloc" /> function to obtain the memory that is needed for large blocks. Applications that need to allocate large memory blocks should set <i>dwMaximumSize</i> to 0.</para>
+      <para>If <i>dwMaximumSize</i> is 0, the heap can grow in size. The heap's size is limited only by the available memory. Requests to allocate memory blocks larger than the limit for a fixed-size heap do not automatically fail; instead, the system calls the<see cref="VirtualAlloc" /> function to obtain the memory that is needed for large blocks. Applications that need to allocate large memory blocks should set <i>dwMaximumSize</i> to 0.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the newly created heap.</para>
-      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>The
-<b>HeapCreate</b> function creates a private heap object from which the calling process can allocate memory blocks by using the
-<see cref="HeapAlloc" /> function. The initial size determines the number of committed pages that are allocated initially for the heap. The maximum size determines the total number of reserved pages. These pages create a block in the process's virtual address space into which the heap can grow. If requests by
-<b>HeapAlloc</b> exceed the current size of committed pages, additional pages are automatically committed from this reserved space, if the physical storage is available.</para>
-      <para>
-        <b>Windows Server 2003 and Windows XP:  </b>By default, the newly created private heap is a standard heap. To enable the low-fragmentation heap, call the
-<see cref="HeapSetInformation" /> function with a handle to the private heap.</para>
-      <para>The memory of a private heap object is accessible only to the process that created it. If a dynamic-link library (DLL) creates a private heap, the heap is created in the address space of the process that calls the DLL, and it is accessible only to that process.</para>
-      <para>The system uses memory from the private heap to store heap support structures, so not all of the specified heap size is available to the process. For example, if the
-<see cref="HeapAlloc" /> function requests 64 kilobytes (K) from a heap with a maximum size of 64K, the request may fail because of system overhead.</para>
-      <para>If <b>HEAP_NO_SERIALIZE</b> is not specified (the simple default), the heap serializes access within the calling process. Serialization ensures mutual exclusion when two or more threads attempt simultaneously to allocate or free blocks from the same heap. There is a small performance cost to serialization, but it must be used whenever multiple threads allocate and free memory from the same heap. The <see cref="HeapLock" /> and <see cref="HeapUnlock" /> functions can be used to block and permit access to a serialized heap.</para>
-      <para>Setting <b>HEAP_NO_SERIALIZE</b> eliminates mutual exclusion on the heap. Without serialization, two or more threads that use the same heap handle might attempt to allocate or free memory simultaneously, which may cause corruption in the heap. Therefore, <b>HEAP_NO_SERIALIZE</b> can safely be used only in the following situations:</para>
-      <list type="bullet">
-        <item>
-          <description>The process has only one thread.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, but only one thread calls the heap functions for a specific heap.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, and the application provides its own mechanism for mutual exclusion to a specific heap.</description>
-        </item>
-      </list>
-      <para>If the <see cref="HeapLock" /> and <see cref="HeapUnlock" /> functions are called on a heap created with the <b>HEAP_NO_SERIALIZE</b> flag, the results are undefined.</para>
-      <para>To obtain a handle to the default heap for a process, use the <see cref="GetProcessHeap" /> function. To obtain handles to the default heap and private heaps that are active for the calling process, use the <see cref="GetProcessHeaps" /> function.</para>
-      <h4>Examples</h4>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Memory/enumerating-a-heap">Enumerating a Heap</a>
-      </para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapAlloc" />
-    <seealso cref="HeapDestroy" />
-    <seealso cref="HeapValidate" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
   </member>
   <member name="Windows.HeapDestroy">
-    <summary>
-      <para>Destroys the specified heap object.
-It decommits and releases all the pages of a private heap object, and it invalidates the handle to the heap.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap to be destroyed. This handle is returned by the
-<see cref="HeapCreate" /> function. Do not use the handle to the process heap returned by the
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Destroys the specified heap object. It decommits and releases all the pages of a private heap object, and it invalidates the handle to the heap.</summary>
+    <param name="hHeap">A handle to the heap to be destroyed. This handle is returned by the<see cref="HeapCreate" /> function. Do not use the handle to the process heap returned by the<see cref="GetProcessHeap" /> function.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>Processes can call
-<b>HeapDestroy</b> without first calling the
-<see cref="HeapFree" /> function to free memory allocated from the heap.</para>
-      <h4>Examples</h4>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Memory/enumerating-a-heap">Enumerating a Heap</a>
-      </para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapCreate" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
   </member>
   <member name="Windows.HeapFree">
-    <summary>
-      <para>Frees a memory block allocated from a heap by the
-<see cref="HeapAlloc" /> or
-<see cref="HeapReAlloc" /> function.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap whose memory block is to be freed. This handle is returned by either the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Frees a memory block allocated from a heap by the<see cref="HeapAlloc" /> or<see cref="HeapReAlloc" /> function.</summary>
+    <param name="hHeap">A handle to the heap whose memory block is to be freed. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
     <param name="dwFlags">
-      <para>The heap free options. Specifying the following value overrides the corresponding value specified in the <i>flOptions</i> parameter when the heap was created by using the
-<see cref="HeapCreate" /> function.</para>
+      <para>The heap free options. Specifying the following value overrides the corresponding value specified in the <i>flOptions</i> parameter when the heap was created by using the<see cref="HeapCreate" /> function.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_NO_SERIALIZE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Serialized access will not be used. For more information, see Remarks.</para>
-            <para>To ensure that serialized access is disabled for all calls to this function, specify <b>HEAP_NO_SERIALIZE</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para>
-            <para>Do not specify this value when accessing the process heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process heap.</para>
-          </description>
-        </item>
+          <description>Serialized access will not be used. For more information, see Remarks.<para>To ensure that serialized access is disabled for all calls to this function, specify <b>HEAP_NO_SERIALIZE</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para><para>Do not specify this value when accessing the process heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process heap.</para></description>
+        </listheader>
       </list>
     </param>
-    <param name="lpMem">
-      <para>A pointer to the memory block to be freed. This pointer is returned by the
-<see cref="HeapAlloc" /> or
-<see cref="HeapReAlloc" /> function. This pointer can be <b>NULL</b>.</para>
-    </param>
+    <param name="lpMem">A pointer to the memory block to be freed. This pointer is returned by the<see cref="HeapAlloc" /> or<see cref="HeapReAlloc" /> function. This pointer can be <b>NULL</b>.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. An application can call
-<see cref="GetLastError" /> for extended error information.</para>
+      <para>If the function fails, the return value is zero. An application can call<see cref="GetLastError" /> for extended error information.</para>
     </returns>
-    <remarks>
-      <para>You should not refer in any way to memory that has been freed by
-<b>HeapFree</b>. After that memory is freed, any information that may have been in it is gone forever. If you require information, do not free memory containing the information. Function calls that return information about memory (such as
-<see cref="HeapSize" />) may not be used with freed memory, as they may return bogus data. Calling <b>HeapFree</b> twice with the same pointer can cause heap corruption, resulting in subsequent calls to <see cref="HeapAlloc" /> returning the same pointer twice.</para>
-      <para>Serialization ensures mutual exclusion when two or more threads attempt to simultaneously allocate or free blocks from the same heap. There is a small performance cost to serialization, but it must be used whenever multiple threads allocate and free memory from the same heap. Setting the <b>HEAP_NO_SERIALIZE</b> value eliminates mutual exclusion on the heap. Without serialization, two or more threads that use the same heap handle might attempt to allocate or free memory simultaneously, likely causing corruption in the heap. The <b>HEAP_NO_SERIALIZE</b> value can, therefore, be safely used only in the following situations:</para>
-      <list type="bullet">
-        <item>
-          <description>The process has only one thread.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, but only one thread calls the heap functions for a specific heap.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, and the application provides its own mechanism for mutual exclusion to a specific heap.</description>
-        </item>
-      </list>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/Memory/getting-process-heaps">Getting Process Heaps</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapAlloc" />
-    <seealso cref="HeapReAlloc" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
   </member>
   <member name="Windows.HeapLock">
-    <summary>
-      <para>Attempts to acquire the critical section object, or lock, that is associated with a specified heap.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap to be locked. This handle is returned by either the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Attempts to acquire the critical section object, or lock, that is associated with a specified heap.</summary>
+    <param name="hHeap">A handle to the heap to be locked. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>If the function succeeds, the calling thread owns the heap lock. Only the calling thread will be able to allocate or release memory from the heap. The execution of any other thread of the calling process will be blocked if that thread attempts to allocate or release memory from the heap. Such threads will remain blocked until the thread that owns the heap lock calls the
-<see cref="HeapUnlock" /> function.</para>
-      <para>The
-<b>HeapLock</b> function is primarily useful for preventing the allocation and release of heap memory by other threads while the calling thread uses the
-<see cref="HeapWalk" /> function.</para>
-      <para>If the <b>HeapLock</b> function is called on a heap created with the <see cref="HEAP_NO_SERIALIZE" /> flag, the results are undefined.</para>
-      <para>Each successful call to
-<b>HeapLock</b> must be matched by a corresponding call to <see cref="HeapUnlock" />. Failure to call
-<b>HeapUnlock</b> will block the execution of any other threads of the calling process that attempt to access the heap.</para>
-      <h4>Examples</h4>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Memory/enumerating-a-heap">Enumerating a Heap</a>
-      </para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapUnlock" />
-    <seealso cref="HeapWalk" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
   </member>
   <member name="Windows.HeapQueryInformation">
-    <summary>
-      <para>Retrieves information about the specified heap.</para>
-    </summary>
-    <param name="HeapHandle">
-      <para>A handle to the heap whose information is to be retrieved. This handle is returned by either the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Retrieves information about the specified heap.</summary>
+    <param name="HeapHandle">A handle to the heap whose information is to be retrieved. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
     <param name="HeapInformationClass">
       <para>The class of information to be retrieved. This parameter can be the following value from the <b>HEAP_INFORMATION_CLASS</b> enumeration type.</para>
       <list type="table">
@@ -548,226 +266,110 @@ Management Functions</seealso>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HeapCompatibilityInformation</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates the heap features that are enabled.</para>
-            <para>The <i>HeapInformation</i> parameter is a pointer to a <b>ULONG</b> variable.</para>
-            <para>If <i>HeapInformation</i> is 0, the heap is a standard heap that does not support look-aside lists.</para>
-            <para>If <i>HeapInformation</i> is 1, the heap supports look-aside lists. For more information, see Remarks.</para>
-            <para>If <i>HeapInformation</i> is 2, the <a href="https://docs.microsoft.com//windows/desktop/Memory/low-fragmentation-heap">low-fragmentation heap</a> (LFH) has been enabled for the heap. Enabling the LFH disables look-aside lists.</para>
-          </description>
-        </item>
+          <description>Indicates the heap features that are enabled. <para>The <i>HeapInformation</i> parameter is a pointer to a <b>ULONG</b> variable.</para><para>If <i>HeapInformation</i> is 0, the heap is a standard heap that does not support look-aside lists.</para><para>If <i>HeapInformation</i> is 1, the heap supports look-aside lists. For more information, see Remarks.</para><para>If <i>HeapInformation</i> is 2, the <a href="https://docs.microsoft.com//windows/desktop/Memory/low-fragmentation-heap">low-fragmentation heap</a> (LFH) has been enabled for the heap. Enabling the LFH disables look-aside lists.</para></description>
+        </listheader>
       </list>
     </param>
-    <param name="HeapInformation">
-      <para>A pointer to a buffer that receives the heap information. The format of this data depends on the value of the <i>HeapInformationClass</i> parameter.</para>
-    </param>
-    <param name="HeapInformationLength">
-      <para>The size of the heap information being queried, in bytes.</para>
-    </param>
+    <param name="HeapInformation">A pointer to a buffer that receives the heap information. The format of this data depends on the value of the <i>HeapInformationClass</i> parameter.</param>
+    <param name="HeapInformationLength">The size of the heap information being queried, in bytes.</param>
     <param name="ReturnLength">
       <para>A pointer to a variable that receives the length of data written to the <i>HeapInformation</i> buffer. If the buffer is too small, the function fails and <i>ReturnLength</i> specifies the minimum size required for the buffer.</para>
       <para>If you do not want to receive this information, specify <b>NULL</b>.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>To enable the
-LFH or the terminate-on-corruption feature, use the
-<see cref="HeapSetInformation" /> function.</para>
-      <para>
-        <b>Windows XP and Windows Server 2003:  </b> A look-aside list is a fast memory allocation mechanism that contains only fixed-sized blocks. Look-aside lists are enabled by default for heaps that support them. Starting with Windows Vista, look-aside lists are not used and the LFH is enabled by default.</para>
-      <para>Look-aside lists are faster than general pool allocations that vary in size, because the system does not search for free memory that fits the allocation. In addition, access to look-aside lists is generally synchronized using fast atomic processor exchange instructions instead of mutexes or spinlocks. Look-aside lists can be created by the system or drivers. They can be allocated from paged or nonpaged pool.</para>
-      <h4>Examples</h4>
-      <para>The following example uses <see cref="GetProcessHeap" /> to
-obtain a handle to the default process heap and
-<b>HeapQueryInformation</b> to retrieve information
-about the heap.</para>
-      <code>#include &lt;windows.h&gt;
-#include &lt;tchar.h&gt;
-#include &lt;stdio.h&gt;
-
-#define HEAP_STANDARD 0
-#define HEAP_LAL 1
-#define HEAP_LFH 2
-
-int __cdecl _tmain()
-{
-    BOOL bResult;
-    HANDLE hHeap;
-    ULONG HeapInformation;
-
-    //
-    // Get a handle to the default process heap.
-    //
-    hHeap = GetProcessHeap();
-    if (hHeap == NULL) {
-        _tprintf(TEXT("Failed to retrieve default process heap with LastError %d.\n"),
-                 GetLastError());
-        return 1;
-    }
-
-    //
-    // Query heap features that are enabled.
-    //
-    bResult = HeapQueryInformation(hHeap,
-                                   HeapCompatibilityInformation,
-                                   &amp;amp;amp;amp;amp;amp;HeapInformation,
-                                   sizeof(HeapInformation),
-                                   NULL);
-    if (bResult == FALSE) {
-        _tprintf(TEXT("Failed to retrieve heap features with LastError %d.\n"),
-                 GetLastError());
-        return 1;
-    }
-
-    //
-    // Print results of the query.
-    //
-    _tprintf(TEXT("HeapCompatibilityInformation is %d.\n"), HeapInformation);
-    switch(HeapInformation)
-    {
-    case HEAP_STANDARD:
-        _tprintf(TEXT("The default process heap is a standard heap.\n"));
-        break;
-    case HEAP_LAL:
-        _tprintf(TEXT("The default process heap supports look-aside lists.\n"));
-        break;
-    case HEAP_LFH:
-        _tprintf(TEXT("The default process heap has the low-fragmentation ") \
-                 TEXT("heap enabled.\n"));
-        break;
-    default:
-        _tprintf(TEXT("Unrecognized HeapInformation reported for the default ") \
-                 TEXT("process heap.\n"));
-        break;
-     }
-
-    return 0;
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetProcessHeap" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapCreate" />
-    <seealso cref="HeapSetInformation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory Management Functions</seealso>
   </member>
   <member name="Windows.HeapReAlloc">
-    <summary>
-      <para>Reallocates a block of memory from a heap. This function enables you to resize a memory block and change other memory block properties. The allocated memory is not movable.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap from which the memory is to be reallocated. This handle is a returned by either the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Reallocates a block of memory from a heap. This function enables you to resize a memory block and change other memory block properties. The allocated memory is not movable.</summary>
+    <param name="hHeap">A handle to the heap from which the memory is to be reallocated. This handle is a returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
     <param name="dwFlags">
-      <para>The heap reallocation options. Specifying a value overrides the corresponding value specified in the <i>flOptions</i> parameter when the heap was created by using the
-<see cref="HeapCreate" /> function. This parameter can be one or more of the following values.</para>
+      <para>The heap reallocation options. Specifying a value overrides the corresponding value specified in the <i>flOptions</i> parameter when the heap was created by using the<see cref="HeapCreate" /> function. This parameter can be one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_GENERATE_EXCEPTIONS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The operating-system raises an exception to indicate a function failure, such as an out-of-memory condition, instead of returning <b>NULL</b>.</para>
-            <para>To ensure that exceptions are generated for all calls to this function, specify <b>HEAP_GENERATE_EXCEPTIONS</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_GENERATE_EXCEPTIONS</b> in this function call.</para>
-          </description>
-        </item>
-        <item>
+          <description>The operating-system raises an exception to indicate a function failure, such as an out-of-memory condition, instead of returning <b>NULL</b>.<para>To ensure that exceptions are generated for all calls to this function, specify <b>HEAP_GENERATE_EXCEPTIONS</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_GENERATE_EXCEPTIONS</b> in this function call.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_NO_SERIALIZE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Serialized access will not be used. For more information, see Remarks.</para>
-            <para>To ensure that serialized access is disabled for all calls to this function, specify <b>HEAP_NO_SERIALIZE</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para>
-            <para>This value should not be specified when accessing the process heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process heap.</para>
-          </description>
-        </item>
-        <item>
+          <description>Serialized access will not be used. For more information, see Remarks.<para>To ensure that serialized access is disabled for all calls to this function, specify <b>HEAP_NO_SERIALIZE</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para><para>This value should not be specified when accessing the process heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process heap.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_REALLOC_IN_PLACE_ONLY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>There can be no movement when reallocating a memory block. If this value is not specified, the function may move the block to a new location. If this value is specified and the block cannot be resized without moving, the function fails, leaving the original memory block unchanged.</para>
-          </description>
-        </item>
-        <item>
+          <description>There can be no movement when reallocating a memory block. If this value is not specified, the function may move the block to a new location. If this value is specified and the block cannot be resized without moving, the function fails, leaving the original memory block unchanged.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_ZERO_MEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If the reallocation request is for a larger size, the additional region of memory beyond the original size be initialized to zero. The contents of the memory block up to its original size are unaffected.</para>
-          </description>
-        </item>
+          <description>If the reallocation request is for a larger size, the additional region of memory beyond the original size be initialized to zero. The contents of the memory block up to its original size are unaffected.</description>
+        </listheader>
       </list>
     </param>
-    <param name="lpMem">
-      <para>A pointer to the block of memory that the function reallocates. This pointer is returned by an earlier call to the
-<see cref="HeapAlloc" /> or
-<b>HeapReAlloc</b> function.</para>
-    </param>
+    <param name="lpMem">A pointer to the block of memory that the function reallocates. This pointer is returned by an earlier call to the<see cref="HeapAlloc" /> or<b>HeapReAlloc</b> function.</param>
     <param name="dwBytes">
       <para>The new size of the memory block, in bytes. A memory block's size can be increased or decreased by using this function.</para>
-      <para>If the heap specified by the <i>hHeap</i> parameter is a "non-growable" heap, <i>dwBytes</i> must be less than 0x7FFF8. You create a non-growable heap by calling the
-<see cref="HeapCreate" /> function with a nonzero value.</para>
+      <para>If the heap specified by the <i>hHeap</i> parameter is a "non-growable" heap, <i>dwBytes</i> must be less than 0x7FFF8. You create a non-growable heap by calling the<see cref="HeapCreate" /> function with a nonzero value.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is a pointer to the reallocated memory block.</para>
@@ -778,211 +380,72 @@ int __cdecl _tmain()
           <description>Exception code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <b>STATUS_NO_MEMORY</b>
           </description>
           <description>The allocation attempt failed because of a lack of available memory or heap corruption.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>STATUS_ACCESS_VIOLATION</b>
           </description>
           <description>The allocation attempt failed because of heap corruption or improper function parameters.</description>
-        </item>
-      </list>
-      <para>The alignment of memory returned by <b>HeapReAlloc</b> is <b>MEMORY_ALLOCATION_ALIGNMENT</b> in WinNT.h:</para>
-      <code>#if defined(_WIN64) || defined(_M_ALPHA)
-#define MEMORY_ALLOCATION_ALIGNMENT 16
-#else
-#define MEMORY_ALLOCATION_ALIGNMENT 8
-#endif
-</code>
-      <para>If the function fails, it does not call <see cref="SetLastError" />. An application cannot call <see cref="GetLastError" /> for extended error information.</para>
-    </returns>
-    <remarks>
-      <para>If
-<b>HeapReAlloc</b> succeeds, it allocates at least the amount of memory requested.</para>
-      <para>If
-<b>HeapReAlloc</b> fails, the original memory is not freed, and the original handle and pointer are still valid.</para>
-      <para>
-        <b>HeapReAlloc</b> is guaranteed to preserve the content of the memory being reallocated, even if the new memory is allocated at a different location. The process of preserving the memory content involves a memory copy operation that is potentially very time-consuming.</para>
-      <para>To free a block of memory allocated by
-<b>HeapReAlloc</b>, use the
-<see cref="HeapFree" /> function.</para>
-      <para>Serialization ensures mutual exclusion when two or more threads attempt to simultaneously allocate or free blocks from the same heap. There is a small performance cost to serialization, but it must be used whenever multiple threads allocate and free memory from the same heap. Setting the <b>HEAP_NO_SERIALIZE</b> value eliminates mutual exclusion on the heap. Without serialization, two or more threads that use the same heap handle might attempt to allocate or free memory simultaneously, likely causing corruption in the heap. The <b>HEAP_NO_SERIALIZE</b> value can, therefore, be safely used only in the following situations:</para>
-      <list type="bullet">
-        <item>
-          <description>The process has only one thread.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, but only one thread calls the heap functions for a specific heap.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, and the application provides its own mechanism for mutual exclusion to a specific heap.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapAlloc" />
-    <seealso cref="HeapFree" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
+        </listheader>
+      </list>  The alignment of memory returned by <b>HeapReAlloc</b> is <b>MEMORY_ALLOCATION_ALIGNMENT</b> in WinNT.h:<code>#if defined(_WIN64) || defined(_M_ALPHA) #define MEMORY_ALLOCATION_ALIGNMENT 16 #else #define MEMORY_ALLOCATION_ALIGNMENT 8 #endif</code><para>If the function fails, it does not call <see cref="SetLastError" />. An application cannot call <see cref="GetLastError" /> for extended error information.</para></returns>
   </member>
   <member name="Windows.HeapSize">
-    <summary>
-      <para>Retrieves the size of a memory block allocated from a heap by the
-<see cref="HeapAlloc" /> or
-<see cref="HeapReAlloc" /> function.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap in which the memory block resides. This handle is returned by either the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Retrieves the size of a memory block allocated from a heap by the<see cref="HeapAlloc" /> or<see cref="HeapReAlloc" /> function.</summary>
+    <param name="hHeap">A handle to the heap in which the memory block resides. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
     <param name="dwFlags">
-      <para>The heap size options. Specifying the following value overrides the corresponding value specified in the
-<i>flOptions</i> parameter when the heap was created by using the
-<see cref="HeapCreate" /> function.</para>
+      <para>The heap size options. Specifying the following value overrides the corresponding value specified in the<i>flOptions</i> parameter when the heap was created by using the<see cref="HeapCreate" /> function.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_NO_SERIALIZE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Serialized access will not be used. For more information, see Remarks.</para>
-            <para>To ensure that serialized access is disabled for all calls to this function, specify
-<b>HEAP_NO_SERIALIZE</b> in the call to
-<see cref="HeapCreate" />. In this case, it is not necessary to
-additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para>
-            <para>This value should not be specified when accessing the process heap. The system may create additional
-threads within the application's process, such as a CTRL+C handler, that simultaneously access the process
-heap.</para>
-          </description>
-        </item>
+          <description>Serialized access will not be used. For more information, see Remarks.<para>To ensure that serialized access is disabled for all calls to this function, specify<b>HEAP_NO_SERIALIZE</b> in the call to<see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para><para>This value should not be specified when accessing the process heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process heap.</para></description>
+        </listheader>
       </list>
     </param>
-    <param name="lpMem">
-      <para>A pointer to the memory block whose size the function will obtain. This is a pointer returned by the
-<see cref="HeapAlloc" /> or
-<see cref="HeapReAlloc" /> function. The memory block must
-be from the heap specified by the <i>hHeap</i> parameter.</para>
-    </param>
+    <param name="lpMem">A pointer to the memory block whose size the function will obtain. This is a pointer returned by the<see cref="HeapAlloc" /> or<see cref="HeapReAlloc" /> function. The memory block must be from the heap specified by the <i>hHeap</i> parameter.</param>
     <returns>
       <para>If the function succeeds, the return value is the requested size of the allocated memory block, in bytes.</para>
-      <para>If the function fails, the return value is <code>(SIZE_T)-1</code>.
-The function does not call <see cref="SetLastError" />. An
-application cannot call <see cref="GetLastError" /> for extended
-error information.</para>
-      <para>If the <i>lpMem</i> parameter refers to a heap allocation that is not in the heap
-specified by the <i>hHeap</i> parameter, the behavior of the
-<b>HeapSize</b> function is undefined.</para>
+      <para>If the function fails, the return value is <code>(SIZE_T)-1</code>. The function does not call <see cref="SetLastError" />. An application cannot call <see cref="GetLastError" /> for extended error information.</para>
+      <para>If the <i>lpMem</i> parameter refers to a heap allocation that is not in the heap specified by the <i>hHeap</i> parameter, the behavior of the<b>HeapSize</b> function is undefined.</para>
     </returns>
-    <remarks>
-      <para>Serialization ensures mutual exclusion when two or more threads attempt to simultaneously allocate or free
-blocks from the same heap. There is a small performance cost to serialization, but it must be used whenever
-multiple threads allocate and free memory from the same heap. Setting the
-<b>HEAP_NO_SERIALIZE</b> value eliminates mutual exclusion on the heap. Without serialization,
-two or more threads that use the same heap handle might attempt to allocate or free memory simultaneously, likely
-causing corruption in the heap. The <b>HEAP_NO_SERIALIZE</b> value can, therefore, be safely
-used only in the following situations:</para>
-      <list type="bullet">
-        <item>
-          <description>The process has only one thread.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, but only one thread calls the heap functions for a specific heap.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, and the application provides its own mechanism for mutual exclusion to a
-specific heap.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapAlloc" />
-    <seealso cref="HeapReAlloc" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory Management Functions</seealso>
   </member>
   <member name="Windows.HeapSummary">
-    <summary>
-      <para>Summarizes the specified heap.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap to be summarized. This handle is returned by either the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
-    <param name="dwFlags">
-      <para>The heap summary options.</para>
-    </param>
-    <param name="lpSummary">
-      <para>Receives a pointer to a <see cref="Heap_Summary" /> structure representing the heap summary.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
+    <summary>Summarizes the specified heap.</summary>
+    <param name="hHeap">A handle to the heap to be summarized. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
+    <param name="dwFlags">The heap summary options.</param>
+    <param name="lpSummary">Receives a pointer to a <see cref="Heap_Summary" /> structure representing the heap summary.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="Windows.HeapUnlock">
-    <summary>
-      <para>Releases ownership of the critical section object, or lock, that is associated with a specified heap. It reverses the action of the
-<see cref="HeapLock" /> function.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap to be unlocked. This handle is returned by either the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Releases ownership of the critical section object, or lock, that is associated with a specified heap. It reverses the action of the<see cref="HeapLock" /> function.</summary>
+    <param name="hHeap">A handle to the heap to be unlocked. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>The
-<see cref="HeapLock" /> function is primarily useful for preventing the allocation and release of heap memory by other threads while the calling thread uses the
-<see cref="HeapWalk" /> function. The
-<b>HeapUnlock</b> function is the inverse of
-<b>HeapLock</b>.</para>
-      <para>Each call to
-<see cref="HeapLock" /> must be matched by a corresponding call to the
-<b>HeapUnlock</b> function. Failure to call
-<b>HeapUnlock</b> will block the execution of any other threads of the calling process that attempt to access the heap.</para>
-      <para>If the <b>HeapUnlock</b> function is called on a heap created with the <see cref="HEAP_NO_SERIALIZATION" /> flag, the results are undefined.</para>
-      <h4>Examples</h4>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Memory/enumerating-a-heap">Enumerating a Heap</a>
-      </para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapLock" />
-    <seealso cref="HeapWalk" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
   </member>
   <member name="Windows.HeapValidate">
-    <summary>
-      <para>Validates the specified heap. The function scans all the memory blocks in the heap and verifies that the heap control structures maintained by the heap manager are in a consistent state. You can also use the
-<b>HeapValidate</b> function to validate a single memory block within a specified heap without checking the validity of the entire heap.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap to be validated. This handle is returned by either the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Validates the specified heap. The function scans all the memory blocks in the heap and verifies that the heap control structures maintained by the heap manager are in a consistent state. You can also use the<b>HeapValidate</b> function to validate a single memory block within a specified heap without checking the validity of the entire heap.</summary>
+    <param name="hHeap">A handle to the heap to be validated. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
     <param name="dwFlags">
       <para>The heap access options. This parameter can be the following value.</para>
       <list type="table">
@@ -990,25 +453,21 @@ Management Functions</seealso>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HEAP_NO_SERIALIZE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Serialized access will not be used. For more information, see Remarks.</para>
-            <para>To ensure that serialized access is disabled for all calls to this function, specify <b>HEAP_NO_SERIALIZE</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para>
-            <para>This value should not be specified when accessing the process default heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process default heap.</para>
-          </description>
-        </item>
+          <description>Serialized access will not be used. For more information, see Remarks.<para>To ensure that serialized access is disabled for all calls to this function, specify <b>HEAP_NO_SERIALIZE</b> in the call to <see cref="HeapCreate" />. In this case, it is not necessary to additionally specify <b>HEAP_NO_SERIALIZE</b> in this function call.</para><para>This value should not be specified when accessing the process default heap. The system may create additional threads within the application's process, such as a CTRL+C handler, that simultaneously access the process default heap.</para></description>
+        </listheader>
       </list>
     </param>
     <param name="lpMem">
@@ -1018,110 +477,21 @@ Management Functions</seealso>
     </param>
     <returns>
       <para>If the specified heap or memory block is valid, the return value is nonzero.</para>
-      <para>If the specified heap or memory block is invalid, the return value is zero. On a system set up for debugging, the
-<b>HeapValidate</b> function then displays debugging messages that describe the part of the heap or memory block that is invalid, and stops at a hard-coded breakpoint so that you can examine the system to determine the source of the invalidity. The
-<b>HeapValidate</b> function does not set the thread's last error value. There is no extended error information for this function; do not call <see cref="GetLastError" />.</para>
+      <para>If the specified heap or memory block is invalid, the return value is zero. On a system set up for debugging, the<b>HeapValidate</b> function then displays debugging messages that describe the part of the heap or memory block that is invalid, and stops at a hard-coded breakpoint so that you can examine the system to determine the source of the invalidity. The<b>HeapValidate</b> function does not set the thread's last error value. There is no extended error information for this function; do not call <see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>The <b>HeapValidate</b> function is primarily useful for debugging because validation is potentially time-consuming. Validating a heap can block other threads from accessing the heap and can degrade performance, especially on symmetric multiprocessing (SMP) computers. These side effects can last until <b>HeapValidate</b> returns.</para>
-      <para>There are heap control structures for each memory block in a heap, and for the heap as a whole. When you use the
-<b>HeapValidate</b> function to validate a complete heap, it checks all of these control structures for consistency.</para>
-      <para>When you use
-<b>HeapValidate</b> to validate a single memory block within a heap, it checks only the control structures pertaining to that element.
-<b>HeapValidate</b> can only validate allocated memory blocks. Calling
-<b>HeapValidate</b> on a freed memory block will return <b>FALSE</b> because there are no control structures to validate.</para>
-      <para>If you want to validate the heap elements enumerated by the
-<see cref="HeapWalk" /> function, you should only call
-<b>HeapValidate</b> on the elements that have <b>PROCESS_HEAP_ENTRY_BUSY</b> in the <b>wFlags</b> member of the
-<see cref="PROCESS_HEAP_ENTRY" /> structure.
-<b>HeapValidate</b> returns <b>FALSE</b> for all heap elements that do not have this bit set.</para>
-      <para>Serialization ensures mutual exclusion when two or more threads attempt to simultaneously allocate or free blocks from the same heap. There is a small performance cost to serialization, but it must be used whenever multiple threads allocate and free memory from the same heap. Setting the <b>HEAP_NO_SERIALIZE</b> value eliminates mutual exclusion on the heap. Without serialization, two or more threads that use the same heap handle might attempt to allocate or free memory simultaneously, likely causing corruption in the heap. The <b>HEAP_NO_SERIALIZE</b> value can, therefore, be safely used only in the following situations:</para>
-      <list type="bullet">
-        <item>
-          <description>The process has only one thread.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, but only one thread calls the heap functions for a specific heap.</description>
-        </item>
-        <item>
-          <description>The process has multiple threads, and the application provides its own mechanism for mutual exclusion to a specific heap.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapCreate" />
-    <seealso cref="HeapWalk" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
-    <seealso cref="PROCESS_HEAP_ENTRY" />
   </member>
   <member name="Windows.HeapWalk">
-    <summary>
-      <para>Enumerates the memory blocks in the specified heap.</para>
-    </summary>
-    <param name="hHeap">
-      <para>A handle to the heap. This handle is returned by either the
-<see cref="HeapCreate" /> or
-<see cref="GetProcessHeap" /> function.</para>
-    </param>
+    <summary>Enumerates the memory blocks in the specified heap.</summary>
+    <param name="hHeap">A handle to the heap. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
     <param name="lpEntry">
-      <para>A pointer to a <see cref="PROCESS_HEAP_ENTRY" /> structure
-that maintains state information for a particular heap enumeration.</para>
-      <para>If the <b>HeapWalk</b> function succeeds, returning the value
-<b>TRUE</b>, this structure's members contain information about the next memory block in the
-heap.</para>
-      <para>To initiate a heap enumeration, set the <b>lpData</b> field of the
-<see cref="PROCESS_HEAP_ENTRY" /> structure to
-<b>NULL</b>. To continue a particular heap enumeration, call the
-<b>HeapWalk</b> function repeatedly, with no changes to
-<i>hHeap</i>, <i>lpEntry</i>, or any of the members of the
-<b>PROCESS_HEAP_ENTRY</b> structure.</para>
+      <para>A pointer to a <see cref="PROCESS_HEAP_ENTRY" /> structure that maintains state information for a particular heap enumeration.</para>
+      <para>If the <b>HeapWalk</b> function succeeds, returning the value<b>TRUE</b>, this structure's members contain information about the next memory block in the heap.</para>
+      <para>To initiate a heap enumeration, set the <b>lpData</b> field of the<see cref="PROCESS_HEAP_ENTRY" /> structure to<b>NULL</b>. To continue a particular heap enumeration, call the<b>HeapWalk</b> function repeatedly, with no changes to<i>hHeap</i>, <i>lpEntry</i>, or any of the members of the<b>PROCESS_HEAP_ENTRY</b> structure.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
-      <para>If the heap enumeration terminates successfully by reaching the end of the heap, the function returns
-<b>FALSE</b>, and <see cref="GetLastError" /></para>
-      <para>returns the error code <b>ERROR_NO_MORE_ITEMS</b>.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
+      <para>If the heap enumeration terminates successfully by reaching the end of the heap, the function returns<b>FALSE</b>, and <see cref="GetLastError" />returns the error code <b>ERROR_NO_MORE_ITEMS</b>.</para>
     </returns>
-    <remarks>
-      <para>The <b>HeapWalk</b> function is primarily useful for debugging
-because enumerating a heap is a potentially time-consuming operation. Locking the heap during enumeration blocks
-other threads from accessing the heap and can degrade performance, especially on symmetric multiprocessing (SMP)
-computers. The side effects can last until the heap is unlocked. Use the
-<see cref="HeapLock" /> and
-<see cref="HeapUnlock" /> functions to control heap locking during heap
-enumeration.</para>
-      <para>To initiate a heap enumeration, call <b>HeapWalk</b> with the
-<b>lpData</b> field of the
-<see cref="PROCESS_HEAP_ENTRY" /> structure pointed to by
-<i>lpEntry</i> set to <b>NULL</b>.</para>
-      <para>To continue a heap enumeration, call <b>HeapWalk</b> with the same
-<i>hHeap</i> and <i>lpEntry</i> values, and with the
-<see cref="PROCESS_HEAP_ENTRY" /> structure unchanged from the
-preceding call to <b>HeapWalk</b>. Repeat this process until you
-have no need for further enumeration, or until the function returns <b>FALSE</b> and
-<see cref="GetLastError" /> returns
-<b>ERROR_NO_MORE_ITEMS</b>, indicating that all of the heap's memory blocks have been
-enumerated.</para>
-      <para>No special call of <b>HeapWalk</b> is needed to terminate the
-heap enumeration, since no enumeration state data is maintained outside the contents of the
-<see cref="PROCESS_HEAP_ENTRY" /> structure.</para>
-      <para>
-        <b>HeapWalk</b> can fail in a multithreaded application if the
-heap is not locked during the heap enumeration.</para>
-      <h4>Examples</h4>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Memory/enumerating-a-heap">Enumerating a Heap</a>
-      </para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">Heap Functions</seealso>
-    <seealso cref="HeapLock" />
-    <seealso cref="HeapReAlloc" />
-    <seealso cref="HeapUnlock" />
-    <seealso cref="HeapValidate" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory Management Functions</seealso>
-    <seealso cref="PROCESS_HEAP_ENTRY" />
   </member>
 </doc>

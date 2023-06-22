@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumProgressItems.Clone">
-    <summary>
-      <para>Creates another enumerator that contains the same enumeration state as the current one.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Receives the interface pointer to the enumeration object. If the method is unsuccessful, the value of this output variable is undefined. You must release <i>ppEnum</i> when done.</para>
-    </param>
+    <summary>Creates another enumerator that contains the same enumeration state as the current one.</summary>
+    <param name="ppEnum">Receives the interface pointer to the enumeration object. If the method is unsuccessful, the value of this output variable is undefined. You must release <i>ppEnum</i> when done.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,49 +12,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Using this method, a client can record a particular point in the enumeration sequence, and then return to that point at a later time. The new enumerator supports the same interface as the original one.</para>
-    </remarks>
-    <seealso cref="IEnumProgressItems" />
-    <seealso cref="IProgressItems" />
   </member>
   <member name="IEnumProgressItems.Next">
-    <summary>
-      <para>Retrieves a specified number of items in the enumeration sequence.</para>
-    </summary>
-    <param name="celt">
-      <para>Number of items to retrieve.</para>
-    </param>
-    <param name="rgelt">
-      <para>Array of <see cref="IProgressItem" /> interfaces. You must release each interface in rgelt when done.</para>
-    </param>
-    <param name="pceltFetched">
-      <para>Number of elements returned in rgelt. You can set <i>pceltFetched</i> to <b>NULL</b> if <i>celt</i> is one. Otherwise, initialize the value of <i>pceltFetched</i> to 0 before calling this method.</para>
-    </param>
+    <summary>Retrieves a specified number of items in the enumeration sequence.</summary>
+    <param name="celt">Number of items to retrieve.</param>
+    <param name="rgelt">Array of <see cref="IProgressItem" /> interfaces. You must release each interface in rgelt when done.</param>
+    <param name="pceltFetched">Number of elements returned in rgelt. You can set <i>pceltFetched</i> to <b>NULL</b> if <i>celt</i> is one. Otherwise, initialize the value of <i>pceltFetched</i> to 0 before calling this method.</param>
     <returns>
       <para>S_OK is returned when the number of requested elements (<i>celt</i>) are returned successfully or the number of returned items (<i>pceltFetched</i>) is less than the number of requested elements.</para>
       <para>Other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
@@ -67,63 +52,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more arguments are not valid.</para>
-            <para>Value: 0x80070057</para>
-          </description>
-        </item>
+          <description>One or more arguments are not valid.<para>Value: 0x80070057</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If there are fewer than the requested number of elements left in the sequence, it retrieves the remaining elements.</para>
-    </remarks>
-    <seealso cref="IEnumProgressItems" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/imapi/ienumprogressitems-remotenext">IEnumProgressItems.RemoteNext</seealso>
   </member>
   <member name="IEnumProgressItems.Reset">
-    <summary>
-      <para>Resets the enumeration sequence to the beginning.</para>
-    </summary>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
-    </returns>
-    <seealso cref="IEnumProgressItems" />
+    <summary>Resets the enumeration sequence to the beginning.</summary>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation.</returns>
   </member>
   <member name="IEnumProgressItems.Skip">
-    <summary>
-      <para>Skips a specified number of items in the enumeration sequence.</para>
-    </summary>
-    <param name="celt">
-      <para>Number of items to skip.</para>
-    </param>
+    <summary>Skips a specified number of items in the enumeration sequence.</summary>
+    <param name="celt">Number of items to skip.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -131,32 +105,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Skipped less than the number of requested elements.</para>
-          </description>
-        </item>
+          <description>Skipped less than the number of requested elements.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If there are fewer elements left in the sequence than the requested number of elements to skip, it skips past the last element in the sequence.</para>
-    </remarks>
-    <seealso cref="IEnumProgressItems" />
   </member>
   <member name="IEnumProgressItems">
     <summary>
       <para>Use this interface to enumerate a collection of progress items.</para>
       <para>To get this interface, call the <see cref="IProgressItems.get_EnumProgressItems" /> method.</para>
     </summary>
-    <remarks>
-      <para>This is a <b>EnumProgressItems</b> object in script.</para>
-    </remarks>
-    <seealso cref="IProgressItem" />
-    <seealso cref="IProgressItems" />
   </member>
 </doc>

@@ -3,83 +3,52 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SPACTION">
-    <summary>
-      <para>Describes an action being performed that requires progress to be shown to the user using an <see cref="IActionProgress" /> interface.</para>
-    </summary>
-    <seealso cref="IActionProgress" />
+    <summary>Describes an action being performed that requires progress to be shown to the user using an <see cref="IActionProgress" /> interface.</summary>
   </member>
   <member name="SPACTION.SPACTION_NONE">
-    <summary>
-      <para>No action is being performed.</para>
-    </summary>
+    <summary>No action is being performed.</summary>
   </member>
   <member name="SPACTION.SPACTION_MOVING">
-    <summary>
-      <para>Files are being moved.</para>
-    </summary>
+    <summary>Files are being moved.</summary>
   </member>
   <member name="SPACTION.SPACTION_COPYING">
-    <summary>
-      <para>Files are being copied.</para>
-    </summary>
+    <summary>Files are being copied.</summary>
   </member>
   <member name="SPACTION.SPACTION_RECYCLING">
-    <summary>
-      <para>Files are being deleted.</para>
-    </summary>
+    <summary>Files are being deleted.</summary>
   </member>
   <member name="SPACTION.SPACTION_APPLYINGATTRIBS">
-    <summary>
-      <para>A set of attributes are being applied to files.</para>
-    </summary>
+    <summary>A set of attributes are being applied to files.</summary>
   </member>
   <member name="SPACTION.SPACTION_DOWNLOADING">
-    <summary>
-      <para>A file is being downloaded from a remote source.</para>
-    </summary>
+    <summary>A file is being downloaded from a remote source.</summary>
   </member>
   <member name="SPACTION.SPACTION_SEARCHING_INTERNET">
-    <summary>
-      <para>An Internet search is being performed.</para>
-    </summary>
+    <summary>An Internet search is being performed.</summary>
   </member>
   <member name="SPACTION.SPACTION_CALCULATING">
-    <summary>
-      <para>A calculation is being performed.</para>
-    </summary>
+    <summary>A calculation is being performed.</summary>
   </member>
   <member name="SPACTION.SPACTION_UPLOADING">
-    <summary>
-      <para>A file is being uploaded to a remote source.</para>
-    </summary>
+    <summary>A file is being uploaded to a remote source.</summary>
   </member>
   <member name="SPACTION.SPACTION_SEARCHING_FILES">
-    <summary>
-      <para>A local search is being performed.</para>
-    </summary>
+    <summary>A local search is being performed.</summary>
   </member>
   <member name="SPACTION.SPACTION_DELETING">
     <summary>
-      <para>
-        <b>Windows Vista and later</b>. A deletion is being performed.</para>
-    </summary>
+      <b>Windows Vista and later</b>. A deletion is being performed.</summary>
   </member>
   <member name="SPACTION.SPACTION_RENAMING">
     <summary>
-      <para>
-        <b>Windows Vista and later</b>. A renaming action is being performed.</para>
-    </summary>
+      <b>Windows Vista and later</b>. A renaming action is being performed.</summary>
   </member>
   <member name="SPACTION.SPACTION_FORMATTING">
     <summary>
-      <para>
-        <b>Windows Vista and later</b>. A formatting action is being performed.</para>
-    </summary>
+      <b>Windows Vista and later</b>. A formatting action is being performed.</summary>
   </member>
   <member name="SPACTION.SPACTION_COPY_MOVING">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. A copy or move action is being performed.</para>
-    </summary>
+      <b>Windows 7 and later</b>. A copy or move action is being performed.</summary>
   </member>
 </doc>

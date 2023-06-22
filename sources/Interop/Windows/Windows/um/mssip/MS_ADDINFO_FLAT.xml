@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MS_ADDINFO_FLAT">
-    <summary>
-      <para>The <b>MS_ADDINFO_FLAT</b> structure provides additional information about flat or end-to-end subject types.</para>
-    </summary>
+    <summary>The <b>MS_ADDINFO_FLAT</b> structure provides additional information about flat or end-to-end subject types.</summary>
   </member>
   <member name="MS_ADDINFO_FLAT.cbStruct">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="MS_ADDINFO_FLAT.pIndirectData">
-    <summary>
-      <para>A <see cref="SIP_INDIRECT_DATA" /> structure that contains the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> of a flat file subject.</para>
-    </summary>
+    <summary>A <see cref="SIP_INDIRECT_DATA" /> structure that contains the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> of a flat file subject.</summary>
   </member>
 </doc>

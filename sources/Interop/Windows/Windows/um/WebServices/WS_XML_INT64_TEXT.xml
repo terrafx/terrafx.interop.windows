@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_INT64_TEXT">
-    <summary>
-      <para>Represents a signed 64 bit integer.  (e.g. The value 255 represents the text "255")</para>
-    </summary>
+    <summary>Represents a signed 64 bit integer. (e.g. The value 255 represents the text "255")</summary>
   </member>
   <member name="WS_XML_INT64_TEXT.text">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</summary>
   </member>
   <member name="WS_XML_INT64_TEXT.value">
-    <summary>
-      <para>The integer value.</para>
-    </summary>
+    <summary>The integer value.</summary>
   </member>
 </doc>

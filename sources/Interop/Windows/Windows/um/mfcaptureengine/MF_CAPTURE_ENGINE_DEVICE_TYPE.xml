@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_CAPTURE_ENGINE_DEVICE_TYPE">
-    <summary>
-      <para>Specifies a type of capture device.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies a type of capture device.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_DEVICE_TYPE.MF_CAPTURE_ENGINE_DEVICE_TYPE_AUDIO">
-    <summary>
-      <para>An audio capture device, such as a microphone.</para>
-    </summary>
+    <summary>An audio capture device, such as a microphone.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_DEVICE_TYPE.MF_CAPTURE_ENGINE_DEVICE_TYPE_VIDEO">
-    <summary>
-      <para>A video capture device, such as a webcam.</para>
-    </summary>
+    <summary>A video capture device, such as a webcam.</summary>
   </member>
 </doc>

@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_TRIANGLE">
-    <summary>
-      <para>Contains the three vertices that describe a triangle.</para>
-    </summary>
+    <summary>Contains the three vertices that describe a triangle.</summary>
   </member>
   <member name="D2D1_TRIANGLE.point1">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The first vertex of a triangle.</para>
-    </summary>
+    <summary>The first vertex of a triangle.</summary>
   </member>
   <member name="D2D1_TRIANGLE.point2">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The second vertex of a triangle.</para>
-    </summary>
+    <summary>The second vertex of a triangle.</summary>
   </member>
   <member name="D2D1_TRIANGLE.point3">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The third vertex of a triangle.</para>
-    </summary>
+    <summary>The third vertex of a triangle.</summary>
   </member>
 </doc>

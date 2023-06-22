@@ -3,59 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITrayDeskBand.DeskBandRegistrationChanged">
-    <summary>
-      <para>Refreshes the deskband registration cache.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call this method immediately after making a change to the deskband registration. For example, through the CLSID_StdComponentCategoriesMgr object.</para>
-    </remarks>
+    <summary>Refreshes the deskband registration cache.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITrayDeskBand.HideDeskBand">
-    <summary>
-      <para>Hides a specified deskband.</para>
-    </summary>
-    <param name="clsid">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>A reference to a deskband CLSID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Hides a specified deskband.</summary>
+    <param name="clsid">A reference to a deskband CLSID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITrayDeskBand.IsDeskBandShown">
-    <summary>
-      <para>Indicates whether a deskband is shown.</para>
-    </summary>
-    <param name="clsid">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>A reference to a deskband CLSID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the deskband is shown, S_FALSE if the deskband is not shown, or an error value otherwise.</para>
-    </returns>
+    <summary>Indicates whether a deskband is shown.</summary>
+    <param name="clsid">A reference to a deskband CLSID.</param>
+    <returns>Returns S_OK if the deskband is shown, S_FALSE if the deskband is not shown, or an error value otherwise.</returns>
   </member>
   <member name="ITrayDeskBand.ShowDeskBand">
-    <summary>
-      <para>Shows a specified deskband.</para>
-    </summary>
-    <param name="clsid">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>A reference to a deskband CLSID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Shows a specified deskband.</summary>
+    <param name="clsid">A reference to a deskband CLSID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITrayDeskBand">
-    <summary>
-      <para>Exposes methods that show, hide, and query deskbands.</para>
-    </summary>
+    <summary>Exposes methods that show, hide, and query deskbands.</summary>
   </member>
 </doc>

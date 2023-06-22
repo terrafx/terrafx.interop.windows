@@ -3,38 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITaskbarList2.MarkFullscreenWindow">
-    <summary>
-      <para>Marks a window as full-screen.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the window to be marked.</para>
-    </param>
-    <param name="fFullscreen">
-      <para>Type: <b>BOOL</b></para>
-      <para>A Boolean value marking the desired full-screen status of the window.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Setting the value of <i>fFullscreen</i> to <b>TRUE</b>, the Shell treats this window as a full-screen window, and the taskbar is moved to the bottom of the z-order when this window is active. Setting the value of <i>fFullscreen</i> to <b>FALSE</b> removes the full-screen marking, but <i>does not</i> cause the Shell to treat the window as though it were definitely not full-screen. With a <b>FALSE</b><i>fFullscreen</i> value, the Shell depends on its automatic detection facility to specify how the window should be treated, possibly still flagging the window as full-screen.</para>
-      <para>
-        <b>Since Windows 7,</b> call <code>SetProp(hwnd, L”NonRudeHWND”, reinterpret_cast&lt;HANDLE&gt;(TRUE))</code> before showing a window to indicate to the Shell that the window should not be treated as full-screen. This ensures the taskbar does not adjust itself to be below the window in z-order. This is similar to <code>ITaskbarList2.MarkFullscreenWindow(FALSE)</code> except the Shell will not fallback to its automatic detection facility and will not treat the window as full-screen.</para>
-    </remarks>
-    <seealso cref="ITaskbarList" />
-    <seealso cref="ITaskbarList2" />
-    <seealso cref="SetPropA" />
-    <seealso cref="SetPropW" />
+    <summary>Marks a window as full-screen.</summary>
+    <param name="hwnd">The handle of the window to be marked.</param>
+    <param name="fFullscreen">A Boolean value marking the desired full-screen status of the window.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITaskbarList2">
-    <summary>
-      <para>Extends the <see cref="ITaskbarList" /> interface by exposing a method to mark a window as a full-screen display.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="ITaskbarList" /> interface, from which it inherits.</para>
-      <para>The Shell also automatically attempts to detect full-screen applications, but it is not as reliable as using the <see cref="ITaskbarList2.MarkFullscreenWindow" /> method.</para>
-    </remarks>
+    <summary>Extends the <see cref="ITaskbarList" /> interface by exposing a method to mark a window as a full-screen display.</summary>
   </member>
 </doc>

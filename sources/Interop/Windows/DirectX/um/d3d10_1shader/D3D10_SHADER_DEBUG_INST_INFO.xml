@@ -3,66 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_SHADER_DEBUG_INST_INFO">
-    <summary>
-      <para>Contains instruction data.</para>
-    </summary>
-    <remarks>
-      <para>The <b>D3D10_SHADER_DEBUG_INST_INFO</b> structure is used with the <see cref="D3D10_SHADER_DEBUG_INFO" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+    <summary>Contains instruction data.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INST_INFO.Id">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Id of the instruction.</para>
-    </summary>
+    <summary>Id of the instruction.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INST_INFO.Opcode">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Type of instruction.</para>
-    </summary>
+    <summary>Type of instruction.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INST_INFO.uOutputs">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Must be 0, 1 or 2.</para>
-    </summary>
+    <summary>Must be 0, 1 or 2.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INST_INFO.pOutputs">
-    <summary>
-      <para>Type: <b><see cref="D3D10_SHADER_DEBUG_OUTPUTREG_INFO" /></b></para>
-      <para>Array containing the outputs of the instruction.</para>
-    </summary>
+    <summary>Array containing the outputs of the instruction.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INST_INFO.TokenId">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Index into the list of tokens for this instruction's token.</para>
-    </summary>
+    <summary>Index into the list of tokens for this instruction's token.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INST_INFO.NestingLevel">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of function calls deep this instruction is.</para>
-    </summary>
+    <summary>Number of function calls deep this instruction is.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INST_INFO.Scopes">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of scopes.</para>
-    </summary>
+    <summary>Number of scopes.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INST_INFO.ScopeInfo">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Offset to an array of UINT values with <b>Scopes</b> elements.</para>
-    </summary>
+    <summary>Offset to an array of UINT values with <b>Scopes</b> elements.</summary>
   </member>
-  <member name="D3D10_SHADER_DEBUG_INST_INFO.AccessedVars">
-    <summary></summary>
-  </member>
-  <member name="D3D10_SHADER_DEBUG_INST_INFO.AccessedVarsInfo">
-    <summary></summary>
-  </member>
+  <member name="D3D10_SHADER_DEBUG_INST_INFO.AccessedVars"></member>
+  <member name="D3D10_SHADER_DEBUG_INST_INFO.AccessedVarsInfo"></member>
 </doc>

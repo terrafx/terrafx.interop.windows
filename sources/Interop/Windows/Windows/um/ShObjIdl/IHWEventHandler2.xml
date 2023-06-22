@@ -3,42 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IHWEventHandler2.HandleEventWithHWND">
-    <summary>
-      <para>Handles AutoPlay device events that contain content types that the application is not registered to handle. This method provides a handle to the owner window so that UI can be displayed if the process requires elevated privileges.</para>
-    </summary>
-    <param name="pszDeviceID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string buffer that contains the device ID.</para>
-    </param>
-    <param name="pszAltDeviceID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string buffer that contains the alternate device ID. The alternate device ID is more human-readable than the primary device ID.</para>
-    </param>
-    <param name="pszEventType">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string buffer that contains the event type. The event types include DeviceArrival, DeviceRemoval, MediaArrival, and MediaRemoval.</para>
-    </param>
-    <param name="hwndOwner">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the AutoPlay dialog that was displayed.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When a handler is invoked and requires immediate privilege elevation in a new process, it requires an active parent window handle to display its consent UI. <see cref="IHWEventHandler.HandleEvent" /> cannot give a handle, so only a blinking taskbar appears. <b>IHWEventHandler2.HandleEventWithHWND</b> provides the HWND and enables the UI to be displayed.</para>
-      <para>Note that if the handler was launched by default instead of by direct user action, the HWND is not active and the dialog is not shown in the foreground.</para>
-      <para>The event types are not C/C++ language constants; they are literal text strings.</para>
-    </remarks>
+    <summary>Handles AutoPlay device events that contain content types that the application is not registered to handle. This method provides a handle to the owner window so that UI can be displayed if the process requires elevated privileges.</summary>
+    <param name="pszDeviceID">A pointer to a string buffer that contains the device ID.</param>
+    <param name="pszAltDeviceID">A pointer to a string buffer that contains the alternate device ID. The alternate device ID is more human-readable than the primary device ID.</param>
+    <param name="pszEventType">A pointer to a string buffer that contains the event type. The event types include DeviceArrival, DeviceRemoval, MediaArrival, and MediaRemoval.</param>
+    <param name="hwndOwner">A handle to the AutoPlay dialog that was displayed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IHWEventHandler2">
-    <summary>
-      <para>Extends the <see cref="IHWEventHandler" /> interface to address User Account Control (UAC) elevation for device handlers.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IHWEventHandler" /> interface, from which it inherits.</para>
-      <para>Handlers that implement this interface should return quickly from calls to <see cref="IHWEventHandler.HandleEvent" /> and <see cref="IHWEventHandler2.HandleEventWithHWND" /> so they do not block the AutoPlay dialog from closing. Also, if a local server must be launched for the creation of this handler, it should not block the CreateInstance call; it should return as soon as possible.</para>
-    </remarks>
+    <summary>Extends the <see cref="IHWEventHandler" /> interface to address User Account Control (UAC) elevation for device handlers.</summary>
   </member>
 </doc>

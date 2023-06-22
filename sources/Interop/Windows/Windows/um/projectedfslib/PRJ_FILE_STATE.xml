@@ -3,36 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_FILE_STATE">
-    <summary>
-      <para>The state of an item.</para>
-    </summary>
-    <remarks>
-      <para>The PRJ_FILE_STATE_FULL and PRJ_FILE_STATE_TOMBSTONE bits will not appear in combination with each other or any other bit.</para>
-    </remarks>
+    <summary>The state of an item.</summary>
   </member>
   <member name="PRJ_FILE_STATE.PRJ_FILE_STATE_PLACEHOLDER">
-    <summary>
-      <para>The item is a placeholder.</para>
-    </summary>
+    <summary>The item is a placeholder.</summary>
   </member>
   <member name="PRJ_FILE_STATE.PRJ_FILE_STATE_HYDRATED_PLACEHOLDER">
-    <summary>
-      <para>The item is a hydrated placeholder, i.e., the item's content has been written to disk.</para>
-    </summary>
+    <summary>The item is a hydrated placeholder, i.e., the item's content has been written to disk.</summary>
   </member>
   <member name="PRJ_FILE_STATE.PRJ_FILE_STATE_DIRTY_PLACEHOLDER">
-    <summary>
-      <para>The placeholder item's metadata has been modified.</para>
-    </summary>
+    <summary>The placeholder item's metadata has been modified.</summary>
   </member>
   <member name="PRJ_FILE_STATE.PRJ_FILE_STATE_FULL">
-    <summary>
-      <para>The item is full.</para>
-    </summary>
+    <summary>The item is full.</summary>
   </member>
   <member name="PRJ_FILE_STATE.PRJ_FILE_STATE_TOMBSTONE">
-    <summary>
-      <para>The item is a tombstone.</para>
-    </summary>
+    <summary>The item is a tombstone.</summary>
   </member>
 </doc>

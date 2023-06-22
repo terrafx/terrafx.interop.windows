@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICMetadataPattern">
-    <summary>
-      <para>Represents a metadata pattern.</para>
-    </summary>
+    <summary>Represents a metadata pattern.</summary>
   </member>
   <member name="WICMetadataPattern.Position">
-    <summary>
-      <para>Type: <b>ULARGE_INTEGER</b></para>
-      <para>The position of the pattern.</para>
-    </summary>
+    <summary>The position of the pattern.</summary>
   </member>
   <member name="WICMetadataPattern.Length">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The length of the pattern.</para>
-    </summary>
+    <summary>The length of the pattern.</summary>
   </member>
   <member name="WICMetadataPattern.Pattern">
-    <summary>
-      <para>Type: <b>BYTE*</b></para>
-      <para>Pointer to the pattern.</para>
-    </summary>
+    <summary>Pointer to the pattern.</summary>
   </member>
   <member name="WICMetadataPattern.Mask">
-    <summary>
-      <para>Type: <b>BYTE*</b></para>
-      <para>Pointer to the pattern mask.</para>
-    </summary>
+    <summary>Pointer to the pattern mask.</summary>
   </member>
   <member name="WICMetadataPattern.DataOffset">
-    <summary>
-      <para>Type: <b>ULARGE_INTEGER</b></para>
-      <para>The offset location of the pattern.</para>
-    </summary>
+    <summary>The offset location of the pattern.</summary>
   </member>
 </doc>

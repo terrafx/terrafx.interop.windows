@@ -3,77 +3,45 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_WEIGHT">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_WEIGHT</b> enumeration contains values that specify the weight of characters.</para>
-    </summary>
-    <remarks>
-      <para>The <b>DWRITE_PANOSE_WEIGHT</b> values roughly correspond to the <see cref="DWRITE_FONT_WEIGHT" /> values by using (panose_weight - 2) * 100 = font_weight.</para>
-    </remarks>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_WEIGHT</b> enumeration contains values that specify the weight of characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_ANY">
-    <summary>
-      <para>Any weight.</para>
-    </summary>
+    <summary>Any weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_NO_FIT">
-    <summary>
-      <para>No fit weight.</para>
-    </summary>
+    <summary>No fit weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_VERY_LIGHT">
-    <summary>
-      <para>Very light weight.</para>
-    </summary>
+    <summary>Very light weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_LIGHT">
-    <summary>
-      <para>Light weight.</para>
-    </summary>
+    <summary>Light weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_THIN">
-    <summary>
-      <para>Thin weight.</para>
-    </summary>
+    <summary>Thin weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_BOOK">
-    <summary>
-      <para>Book weight.</para>
-    </summary>
+    <summary>Book weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_MEDIUM">
-    <summary>
-      <para>Medium weight.</para>
-    </summary>
+    <summary>Medium weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_DEMI">
-    <summary>
-      <para>Demi weight.</para>
-    </summary>
+    <summary>Demi weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_BOLD">
-    <summary>
-      <para>Bold weight.</para>
-    </summary>
+    <summary>Bold weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_HEAVY">
-    <summary>
-      <para>Heavy weight.</para>
-    </summary>
+    <summary>Heavy weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_BLACK">
-    <summary>
-      <para>Black weight.</para>
-    </summary>
+    <summary>Black weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_EXTRA_BLACK">
-    <summary>
-      <para>Extra black weight.</para>
-    </summary>
+    <summary>Extra black weight.</summary>
   </member>
   <member name="DWRITE_PANOSE_WEIGHT.DWRITE_PANOSE_WEIGHT_NORD">
-    <summary>
-      <para>Extra black weight.</para>
-    </summary>
+    <summary>Extra black weight.</summary>
   </member>
 </doc>

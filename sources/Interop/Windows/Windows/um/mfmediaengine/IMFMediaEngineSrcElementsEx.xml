@@ -3,45 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEngineSrcElementsEx.AddElementEx">
-    <summary>
-      <para>Provides an enhanced version of <see cref="IMFMediaEngineSrcElements.AddElement" /> to add the key system intended to be used with content to an element.</para>
-    </summary>
-    <param name="pURL">
-      <para>The URL of the source element, or <b>NULL</b>.</para>
-    </param>
-    <param name="pType">
-      <para>The MIME type of the source element, or <b>NULL</b>.</para>
-    </param>
-    <param name="pMedia">
-      <para>A media-query string that specifies the intended media type, or <b>NULL</b>. If specified, the string should conform to the W3C <i>Media Queries</i> specification.</para>
-    </param>
-    <param name="keySystem">
-      <para>The media key session.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineSrcElementsEx" />
+    <summary>Provides an enhanced version of <see cref="IMFMediaEngineSrcElements.AddElement" /> to add the key system intended to be used with content to an element.</summary>
+    <param name="pURL">The URL of the source element, or <b>NULL</b>.</param>
+    <param name="pType">The MIME type of the source element, or <b>NULL</b>.</param>
+    <param name="pMedia">A media-query string that specifies the intended media type, or <b>NULL</b>. If specified, the string should conform to the W3C <i>Media Queries</i> specification.</param>
+    <param name="keySystem">The media key session.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineSrcElementsEx.GetKeySystem">
-    <summary>
-      <para>Gets the key system for the given source element index.</para>
-    </summary>
-    <param name="index">
-      <para>The source element index.</para>
-    </param>
-    <param name="pType">
-      <para>The MIME type of the source element.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineSrcElementsEx" />
+    <summary>Gets the key system for the given source element index.</summary>
+    <param name="index">The source element index.</param>
+    <param name="pType">The MIME type of the source element.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineSrcElementsEx">
-    <summary>
-      <para>Extends the <see cref="IMFMediaEngineSrcElements" /> interface to provide additional capabilities.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Extends the <see cref="IMFMediaEngineSrcElements" /> interface to provide additional capabilities.</summary>
   </member>
 </doc>

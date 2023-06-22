@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_POLICY_EXTENSION">
-    <summary>
-      <para>The base class for all policy extension structures. Policy extensions
-are assertions that are directly handled by applications such as custom assertions.</para>
-    </summary>
+    <summary>The base class for all policy extension structures. Policy extensions are assertions that are directly handled by applications such as custom assertions.</summary>
   </member>
   <member name="WS_POLICY_EXTENSION.type">
-    <summary>
-      <para>This value depends on which type of policy extension that is used.</para>
-    </summary>
+    <summary>This value depends on which type of policy extension that is used.</summary>
   </member>
 </doc>

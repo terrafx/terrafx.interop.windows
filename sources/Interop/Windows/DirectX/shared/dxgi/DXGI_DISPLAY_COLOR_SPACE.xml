@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_DISPLAY_COLOR_SPACE">
-    <summary>
-      <para>Don't use this structure; it is not supported and it will be removed from the header in a future release.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+    <summary>Don't use this structure; it is not supported and it will be removed from the header in a future release.</summary>
   </member>
   <member name="DXGI_DISPLAY_COLOR_SPACE.PrimaryCoordinates">
-    <summary>
-      <para>The primary coordinates, as an 8 by 2 array of FLOAT values.</para>
-    </summary>
+    <summary>The primary coordinates, as an 8 by 2 array of FLOAT values.</summary>
   </member>
   <member name="DXGI_DISPLAY_COLOR_SPACE.WhitePoints">
-    <summary>
-      <para>The white points, as a 16 by 2 array of FLOAT values.</para>
-    </summary>
+    <summary>The white points, as a 16 by 2 array of FLOAT values.</summary>
   </member>
 </doc>

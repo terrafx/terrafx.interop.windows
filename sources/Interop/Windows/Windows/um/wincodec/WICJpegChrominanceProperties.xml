@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICJpegChrominanceProperties">
-    <summary>
-      <para>Specifies the JPEG chrominance table property.</para>
-    </summary>
+    <summary>Specifies the JPEG chrominance table property.</summary>
   </member>
   <member name="WICJpegChrominanceProperties.WICJpegChrominanceTable">
-    <summary>
-      <para>[VT_UI2|VT_VECTOR] Indicates the metadata property is a chrominance table.</para>
-    </summary>
+    <summary>[VT_UI2|VT_VECTOR] Indicates the metadata property is a chrominance table.</summary>
   </member>
-  <member name="WICJpegChrominanceProperties.WICJpegChrominanceProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICJpegChrominanceProperties.WICJpegChrominanceProperties_FORCE_DWORD"></member>
 </doc>

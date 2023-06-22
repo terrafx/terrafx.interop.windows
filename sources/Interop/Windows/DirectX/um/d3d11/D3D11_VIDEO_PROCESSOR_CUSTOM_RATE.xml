@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE">
-    <summary>
-      <para>Specifies a custom rate for frame-rate conversion or inverse telecine (IVTC).</para>
-    </summary>
-    <remarks>
-      <para>The <b>CustomRate</b> member gives the rate conversion factor, while the remaining members define the pattern of input and output samples.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
-    <seealso cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCustomRate" />
+    <summary>Specifies a custom rate for frame-rate conversion or inverse telecine (IVTC).</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.CustomRate">
-    <summary>
-      <para>The ratio of the output frame rate to the input frame rate, expressed as a <see cref="DXGI_RATIONAL" /> structure that holds a rational number.</para>
-    </summary>
+    <summary>The ratio of the output frame rate to the input frame rate, expressed as a <see cref="DXGI_RATIONAL" /> structure that holds a rational number.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.OutputFrames">
-    <summary>
-      <para>The number of output frames that will be generated for every <i>N</i> input samples, where <i>N</i> = <b>InputFramesOrFields</b>.</para>
-    </summary>
+    <summary>The number of output frames that will be generated for every <i>N</i> input samples, where <i>N</i> = <b>InputFramesOrFields</b>.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.InputInterlaced">
-    <summary>
-      <para>If <b>TRUE</b>, the input stream must be interlaced. Otherwise, the input stream must be progressive.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, the input stream must be interlaced. Otherwise, the input stream must be progressive.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.InputFramesOrFields">
-    <summary>
-      <para>The number of input fields or frames for every <i>N</i> output frames that will be generated, where <i>N</i> = <b>OutputFrames</b>.</para>
-    </summary>
+    <summary>The number of input fields or frames for every <i>N</i> output frames that will be generated, where <i>N</i> = <b>OutputFrames</b>.</summary>
   </member>
 </doc>

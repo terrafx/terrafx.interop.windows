@@ -3,195 +3,70 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISearchFolderItemFactory.GetIDList">
-    <summary>
-      <para>Gets the search folder as an <see cref="ITEMIDLIST" />.</para>
-    </summary>
-    <param name="ppidl">
-      <para>Type: <b>PIDLIST_ABSOLUTE*</b></para>
-      <para>When this method returns successfully, contains a PIDL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
-    <seealso cref="ISearchFolderItemFactory" />
-    <seealso cref="SHGetIDListFromObject" />
+    <summary>Gets the search folder as an <see cref="ITEMIDLIST" />.</summary>
+    <param name="ppidl">When this method returns successfully, contains a PIDL.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.GetShellItem">
-    <summary>
-      <para>Gets the search folder as a <see cref="IShellItem" />.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the desired IID.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>The <see cref="IShellItem" /> interface pointer specified in <i>riid</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>When the retrieved <see cref="IShellItem" /> is enumerated, it returns the search results.</para>
-    </remarks>
-    <seealso cref="ISearchFolderItemFactory" />
-    <seealso cref="SHCreateItemFromIDList" />
+    <summary>Gets the search folder as a <see cref="IShellItem" />.</summary>
+    <param name="riid">A reference to the desired IID.</param>
+    <param name="ppv">The <see cref="IShellItem" /> interface pointer specified in <i>riid</i>.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.SetCondition">
-    <summary>
-      <para>Sets the  <see cref="ICondition" /> of the search.  When this method is not called, the resulting search will have no filters applied.</para>
-    </summary>
-    <param name="pCondition">
-      <para>Type: <b><see cref="ICondition" />*</b></para>
-      <para>A pointer to an <see cref="ICondition" /> interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns <b>S_OK</b> if successful, or an error value otherwise.</para>
-    </returns>
-    <seealso cref="ICondition.Clone" />
-    <seealso cref="ISearchFolderItemFactory" />
+    <summary>Sets the <see cref="ICondition" /> of the search. When this method is not called, the resulting search will have no filters applied.</summary>
+    <param name="pCondition">A pointer to an <see cref="ICondition" /> interface.</param>
+    <returns>Returns <b>S_OK</b> if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.SetDisplayName">
-    <summary>
-      <para>Sets the search folder display name, as specified.</para>
-    </summary>
-    <param name="pszDisplayName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a folder display name as a Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>Calling this method is required. A display name must be set.</para>
-    </remarks>
+    <summary>Sets the search folder display name, as specified.</summary>
+    <param name="pszDisplayName">A pointer to a folder display name as a Unicode string.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.SetFolderLogicalViewMode">
-    <summary>
-      <para>Sets folder logical view mode. The default settings are based on the <code>FolderTypeID</code> which is set by the <see cref="ISearchFolderItemFactory.SetFolderTypeID" /> method.</para>
-    </summary>
-    <param name="flvm">
-      <para>Type: <b><see cref="FOLDERLOGICALVIEWMODE" /></b></para>
-      <para>The <see cref="FOLDERLOGICALVIEWMODE" /> value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
+    <summary>Sets folder logical view mode. The default settings are based on the <code>FolderTypeID</code> which is set by the <see cref="ISearchFolderItemFactory.SetFolderTypeID" /> method.</summary>
+    <param name="flvm">The <see cref="FOLDERLOGICALVIEWMODE" /> value.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.SetFolderTypeID">
-    <summary>
-      <para>Sets a search folder type ID, as specified.</para>
-    </summary>
-    <param name="ftid">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/shell/foldertypeid">FOLDERTYPEID</a></b></para>
-      <para>The FOLDERTYPEID, which is a <b>GUID</b> used to identify folder types within the system. The default is <b>FOLDERTYPID_Library</b></para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
+    <summary>Sets a search folder type ID, as specified.</summary>
+    <param name="ftid">The FOLDERTYPEID, which is a <b>GUID</b> used to identify folder types within the system. The default is <b>FOLDERTYPID_Library</b></param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.SetGroupColumn">
-    <summary>
-      <para>Sets a group column, as specified. If no group column is specified, no grouping occurs.</para>
-    </summary>
-    <param name="keyGroup">
-      <para>Type: <b>REFPROPERTYKEY</b></para>
-      <para>A reference to a group column <see cref="PROPERTYKEY" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
+    <summary>Sets a group column, as specified. If no group column is specified, no grouping occurs.</summary>
+    <param name="keyGroup">A reference to a group column <see cref="PROPERTYKEY" />.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.SetIconSize">
-    <summary>
-      <para>Sets the search folder icon size, as specified. The default settings are based on the <code>FolderTypeID</code> which is set by the <see cref="ISearchFolderItemFactory.SetFolderTypeID" /> method.</para>
-    </summary>
-    <param name="iIconSize">
-      <para>Type: <b>int</b></para>
-      <para>The icon size.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
+    <summary>Sets the search folder icon size, as specified. The default settings are based on the <code>FolderTypeID</code> which is set by the <see cref="ISearchFolderItemFactory.SetFolderTypeID" /> method.</summary>
+    <param name="iIconSize">The icon size.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.SetScope">
-    <summary>
-      <para>Sets search scope, as specified.</para>
-    </summary>
-    <param name="psiaScope">
-      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
-      <para>A pointer to the list of locations to search. The search will include this location and all its subcontainers. The default is <b>FOLDERID_Profile</b></para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
+    <summary>Sets search scope, as specified.</summary>
+    <param name="psiaScope">A pointer to the list of locations to search. The search will include this location and all its subcontainers. The default is <b>FOLDERID_Profile</b></param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.SetSortColumns">
-    <summary>
-      <para>Creates a list of sort column directions, as specified.</para>
-    </summary>
-    <param name="cSortColumns">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of sort columns.</para>
-    </param>
-    <param name="rgSortColumns">
-      <para>Type: <b><see cref="SORTCOLUMN" />*</b></para>
-      <para>A pointer to an array of <see cref="SORTCOLUMN" /> structures containing sort direction.  The default is <b>PKEY_ItemNameDisplay</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
+    <summary>Creates a list of sort column directions, as specified.</summary>
+    <param name="cSortColumns">The number of sort columns.</param>
+    <param name="rgSortColumns">A pointer to an array of <see cref="SORTCOLUMN" /> structures containing sort direction. The default is <b>PKEY_ItemNameDisplay</b>.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.SetStacks">
-    <summary>
-      <para>Creates a list of stack keys, as specified. If this method is not called, by default the folder will not be stacked.</para>
-    </summary>
-    <param name="cStackKeys">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of stacks keys.</para>
-    </param>
-    <param name="rgStackKeys">
-      <para>Type: <b><see cref="PROPERTYKEY" />*</b></para>
-      <para>A pointer to an array of <see cref="PROPERTYKEY" /> structures containing stack key information.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
+    <summary>Creates a list of stack keys, as specified. If this method is not called, by default the folder will not be stacked.</summary>
+    <param name="cStackKeys">The number of stacks keys.</param>
+    <param name="rgStackKeys">A pointer to an array of <see cref="PROPERTYKEY" /> structures containing stack key information.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory.SetVisibleColumns">
-    <summary>
-      <para>Creates a new column list whose columns are all visible, given an array of <see cref="PROPERTYKEY" /> structures. The default is based on <b>FolderTypeID</b>.</para>
-    </summary>
-    <param name="cVisibleColumns">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of array elements.</para>
-    </param>
-    <param name="rgKey">
-      <para>Type: <b>const <see cref="PROPERTYKEY" />*</b></para>
-      <para>A pointer to an array of <see cref="PROPERTYKEY" /> structures.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
+    <summary>Creates a new column list whose columns are all visible, given an array of <see cref="PROPERTYKEY" /> structures. The default is based on <b>FolderTypeID</b>.</summary>
+    <param name="cVisibleColumns">The number of array elements.</param>
+    <param name="rgKey">A pointer to an array of <see cref="PROPERTYKEY" /> structures.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="ISearchFolderItemFactory">
-    <summary>
-      <para>Exposes methods that create and modify search folders. The Set methods are called first to set up the parameters of the search.  When not called, default values will be used instead.  <see cref="ISearchFolderItemFactory.GetIDList" /> and <see cref="ISearchFolderItemFactory.GetShellItem" /> return the two forms of the search specified by these parameters.</para>
-    </summary>
-    <remarks>
-      <para>To implement this interface use class ID <b>CLSID_SearchFolderItemFactory</b>.</para>
-    </remarks>
+    <summary>Exposes methods that create and modify search folders. The Set methods are called first to set up the parameters of the search. When not called, default values will be used instead. <see cref="ISearchFolderItemFactory.GetIDList" /> and <see cref="ISearchFolderItemFactory.GetShellItem" /> return the two forms of the search specified by these parameters.</summary>
   </member>
 </doc>

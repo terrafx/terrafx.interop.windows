@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcOperationResult.GetErrorBuffer">
+    <summary>Retrieves the error buffer from the operation, if there is one. This corresponds to calling <see cref="IDxcResult.GetOutput" /> with <see cref="DXC_OUT_ERRORS" />.</summary>
+  </member>
+  <member name="IDxcOperationResult.GetResult">
+    <summary>
+      <para>Retrieves the primary output of the operation. This corresponds to:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="DXC_OUT_OBJECT" />. <b>Compile</b> with shader or library target.</description>
+        </item>
+        <item>
+          <description>
+            <b>DXC_OUT_DISASSEMBLY</b>. <b>Disassemble</b>.</description>
+        </item>
+        <item>
+          <description>
+            <b>DXC_OUT_HLSL</b>. <b>Compile</b> with <code>-P</code>.</description>
+        </item>
+        <item>
+          <description>
+            <b>DXC_OUT_ROOT_SIGNATURE</b>. <b>Compile</b> with with <code>rootsig_* target</code>.</description>
+        </item>
+      </list>
+    </summary>
+    <param name="ppResult">The primary output of the operation.</param>
+  </member>
+  <member name="IDxcOperationResult.GetStatus">
+    <summary>Retrieves the overall status of the operation.</summary>
+    <param name="pStatus">The overall status of the operation.</param>
+  </member>
+  <member name="IDxcOperationResult">
+    <summary>
+      <para>The results of a DXC operation.</para>
+      <blockquote>[!NOTE]<see cref="IDxcResult" /> replaces <b>IDxcOperationResult</b>, and should be used wherever possible.</blockquote>
+    </summary>
+  </member>
+</doc>

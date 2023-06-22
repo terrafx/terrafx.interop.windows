@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ENCLAVE_CREATE_INFO_VBS">
-    <summary>
-      <para>Contains architecture-specific information to use to create an enclave when the enclave type is <b>ENCLAVE_TYPE_VBS</b>, which specifies a virtualization-based security (VBS) enclave.</para>
-    </summary>
-    <seealso cref="CreateEnclave" />
+    <summary>Contains architecture-specific information to use to create an enclave when the enclave type is <b>ENCLAVE_TYPE_VBS</b>, which specifies a virtualization-based security (VBS) enclave.</summary>
   </member>
   <member name="ENCLAVE_CREATE_INFO_VBS.Flags">
     <summary>
@@ -16,37 +13,35 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ENCLAVE_VBS_FLAG_DEBUG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
+          <description>The enclave permits debugging.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The enclave permits debugging.</para>
+            <list type="bullet">
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>0x00000000</para>
-          </description>
-          <description>
-            <para>The enclave does not permit debugging.</para>
-          </description>
-        </item>
+          <description>The enclave does not permit debugging.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="ENCLAVE_CREATE_INFO_VBS.OwnerID">
-    <summary>
-      <para>The identifier of the owner of the enclave.</para>
-    </summary>
+    <summary>The identifier of the owner of the enclave.</summary>
   </member>
 </doc>

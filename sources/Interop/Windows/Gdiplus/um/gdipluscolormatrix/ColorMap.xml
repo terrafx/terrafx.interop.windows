@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ColorMap">
+    <summary>The <b>ColorMap</b> structure contains two <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> objects. Several methods of the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> class adjust image colors by using a color remap table, which is an array of <b>ColorMap</b> structures.</summary>
+  </member>
+  <member name="ColorMap.oldColor">
+    <summary>The original color.</summary>
+  </member>
+  <member name="ColorMap.newColor">
+    <summary>The new color.</summary>
+  </member>
+</doc>

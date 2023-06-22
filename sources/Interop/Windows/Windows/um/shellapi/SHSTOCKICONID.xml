@@ -3,574 +3,288 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHSTOCKICONID">
-    <summary>
-      <para>Used by <see cref="SHGetStockIconInfo" /> to identify which stock system icon to retrieve.</para>
-    </summary>
-    <remarks>
-      <para>SIID_INVALID, with a value of -1, indicates an invalid <b>SHSTOCKICONID</b> value.</para>
-    </remarks>
+    <summary>Used by <see cref="SHGetStockIconInfo" /> to identify which stock system icon to retrieve.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DOCNOASSOC">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DOCNOASSOC.png".:
-Document of a type with no associated application.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DOCNOASSOC.png".: Document of a type with no associated application.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DOCASSOC">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DOCASSOC.jpg".:
-Document of a type with an associated application.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DOCASSOC.png".: Document of a type with an associated application.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_APPLICATION">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_APPLICATION.jpg".:
-Generic application with no custom icon.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_APPLICATION.png".: Generic application with no custom icon.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_FOLDER">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_FOLDER.jpg".:
-Folder (generic, unspecified state).</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_FOLDER.png".: Folder (generic, unspecified state).</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_FOLDEROPEN">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_FOLDEROPEN.jpg".:
-Folder (open).</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_FOLDEROPEN.png".: Folder (open).</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVE525">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVE525.jpg".:
-5.25-inch disk drive.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVE525.png".: 5.25-inch disk drive.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVE35">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVE35.jpg".:
-3.5-inch disk drive.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVE35.png".: 3.5-inch disk drive.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVEREMOVE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVEREMOVE.png".:
-Removable drive.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVEREMOVE.png".: Removable drive.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVEFIXED">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVEFIXED.jpg".:
-Fixed drive (hard disk).</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVEFIXED.png".: Fixed drive (hard disk).</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVENET">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVENET.jpg".:
-Network drive (connected).</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVENET.png".: Network drive (connected).</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVENETDISABLED">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVENETDISABLED.jpg".:
-Network drive (disconnected).</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVENETDISABLED.png".: Network drive (disconnected).</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVECD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVECD.jpg".:
-CD drive.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVECD.png".: CD drive.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVERAM">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVERAM.jpg".:
-RAM disk drive.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVERAM.png".: RAM disk drive.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_WORLD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_WORLD.jpg".:
-The entire network.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_WORLD.png".: The entire network.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_SERVER">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_SERVER.jpg".:
-A computer on the network.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_SERVER.png".: A computer on the network.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_PRINTER">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_PRINTER.jpg".:
-A local printer or print destination.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_PRINTER.png".: A local printer or print destination.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MYNETWORK">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MYNETWORK.jpg".:
-The <b>Network</b> virtual folder (<a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">FOLDERID_NetworkFolder</a>/<a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL_NETWORK</a>).</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MYNETWORK.png".: The <b>Network</b> virtual folder (<a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">FOLDERID_NetworkFolder</a>/<a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL_NETWORK</a>).</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_FIND">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_FIND.jpg".:
-The <b>Search</b> feature.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_FIND.png".: The <b>Search</b> feature.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_HELP">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_HELP.jpg".:
-The <b>Help and Support</b> feature.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_HELP.png".: The <b>Help and Support</b> feature.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_SHARE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_SHARE.jpg".:
-Overlay for a shared item.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_SHARE.png".: Overlay for a shared item.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_LINK">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_LINK.jpg".:
-Overlay for a shortcut.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_LINK.png".: Overlay for a shortcut.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_SLOWFILE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_SLOWFILE.png".:
-Overlay for items that are expected to be slow to access.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_SLOWFILE.png".: Overlay for items that are expected to be slow to access.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_RECYCLER">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_RECYCLER.jpg".:
-The Recycle Bin (empty).</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_RECYCLER.png".: The Recycle Bin (empty).</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_RECYCLERFULL">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_RECYCLERFULL.jpg".:
-The Recycle Bin (not empty).</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_RECYCLERFULL.png".: The Recycle Bin (not empty).</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIACDAUDIO">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIACDAUDIO.jpg".:
-Audio CD media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIACDAUDIO.png".: Audio CD media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_LOCK">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_LOCK.jpg".:
-Security lock.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_LOCK.png".: Security lock.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_AUTOLIST">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_AUTOLIST.jpg".:
-A virtual folder that contains the results of a search.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_AUTOLIST.png".: A virtual folder that contains the results of a search.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_PRINTERNET">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_PRINTERNET.jpg".:
-A network printer.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_PRINTERNET.png".: A network printer.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_SERVERSHARE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_SERVERSHARE.jpg".:
-A server shared on a network.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_SERVERSHARE.png".: A server shared on a network.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_PRINTERFAX">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_PRINTERFAX.jpg".:
-A local fax printer.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_PRINTERFAX.png".: A local fax printer.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_PRINTERFAXNET">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_PRINTERFAXNET.jpg".:
-A network fax printer.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_PRINTERFAXNET.png".: A network fax printer.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_PRINTERFILE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_PRINTERFILE.jpg".:
-A file that receives the output of a <b>Print to file</b> operation.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_PRINTERFILE.png".: A file that receives the output of a <b>Print to file</b> operation.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_STACK">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_STACK.jpg".:
-A category that results from a <b>Stack by</b> command to organize the contents of a folder.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_STACK.png".: A category that results from a <b>Stack by</b> command to organize the contents of a folder.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIASVCD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIASVCD.jpg".:
-Super Video CD (SVCD) media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIASVCD.png".: Super Video CD (SVCD) media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_STUFFEDFOLDER">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_STUFFEDFOLDER.jpg".:
-A folder that contains only subfolders as child items.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_STUFFEDFOLDER.png".: A folder that contains only subfolders as child items.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVEUNKNOWN">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVEUNKNOWN.jpg".:
-Unknown drive type.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVEUNKNOWN.png".: Unknown drive type.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVEDVD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVEDVD.jpg".:
-DVD drive.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVEDVD.png".: DVD drive.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIADVD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIADVD.jpg".:
-DVD media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIADVD.png".: DVD media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIADVDRAM">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIADVDRAM.jpg".:
-DVD-RAM media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIADVDRAM.png".: DVD-RAM media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIADVDRW">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIADVDRW.jpg".:
-DVD-RW media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIADVDRW.png".: DVD-RW media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIADVDR">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIADVDR.jpg".:
-DVD-R media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIADVDR.png".: DVD-R media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIADVDROM">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIADVDROM.jpg".:
-DVD-ROM media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIADVDROM.png".: DVD-ROM media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIACDAUDIOPLUS">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIACDAUDIOPLUS.jpg".:
-CD+ (enhanced audio CD) media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIACDAUDIOPLUS.png".: CD+ (enhanced audio CD) media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIACDRW">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIACDRW.jpg".:
-CD-RW media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIACDRW.png".: CD-RW media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIACDR">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIACDR.jpg".:
-CD-R media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIACDR.png".: CD-R media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIACDBURN">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIACDBURN.jpg".:
-A writable CD in the process of being burned.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIACDBURN.png".: A writable CD in the process of being burned.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIABLANKCD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIABLANKCD.jpg".:
-Blank writable CD media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIABLANKCD.png".: Blank writable CD media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIACDROM">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIACDROM.jpg".:
-CD-ROM media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIACDROM.png".: CD-ROM media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_AUDIOFILES">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_AUDIOFILES.jpg".:
-An audio file.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_AUDIOFILES.png".: An audio file.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_IMAGEFILES">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_IMAGEFILES.jpg".:
-An image file.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_IMAGEFILES.png".: An image file.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_VIDEOFILES">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_VIDEOFILES.jpg".:
-A video file.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_VIDEOFILES.png".: A video file.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MIXEDFILES">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MIXEDFILES.jpg".:
-A mixed file.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MIXEDFILES.png".: A mixed file.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_FOLDERBACK">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_FOLDERBACK.jpg".:
-Folder back.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_FOLDERBACK.png".: Folder back.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_FOLDERFRONT">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_FOLDERFRONT.jpg".:
-Folder front.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_FOLDERFRONT.png".: Folder front.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_SHIELD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_SHIELD.jpg".:
-Security shield. Use for UAC prompts only.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_SHIELD.png".: Security shield. Use for UAC prompts only.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_WARNING">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_WARNING.jpg".:
-Warning.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_WARNING.png".: Warning.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_INFO">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_INFO.jpg".:
-Informational.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_INFO.png".: Informational.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_ERROR">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_ERROR.jpg".:
-Error.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_ERROR.png".: Error.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_KEY">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_KEY.jpg".:
-Key.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_KEY.png".: Key.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_SOFTWARE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_SOFTWARE.jpg".:
-Software.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_SOFTWARE.png".: Software.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_RENAME">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_RENAME.jpg".:
-A UI item, such as a button, that issues a rename command.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_RENAME.png".: A UI item, such as a button, that issues a rename command.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DELETE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DELETE.jpg".:
-A UI item, such as a button, that issues a delete command.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DELETE.png".: A UI item, such as a button, that issues a delete command.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIAAUDIODVD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIAAUDIODVD.jpg".:
-Audio DVD media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIAAUDIODVD.png".: Audio DVD media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIAMOVIEDVD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIAMOVIEDVD.jpg".:
-Movie DVD media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIAMOVIEDVD.png".: Movie DVD media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIAENHANCEDCD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIAENHANCEDCD.jpg".:
-Enhanced CD media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIAENHANCEDCD.png".: Enhanced CD media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIAENHANCEDDVD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIAENHANCEDDVD.jpg".:
-Enhanced DVD media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIAENHANCEDDVD.png".: Enhanced DVD media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIAHDDVD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIAHDDVD.jpg".:
-High definition DVD media in the HD DVD format.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIAHDDVD.png".: High definition DVD media in the HD DVD format.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIABLURAY">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIABLURAY.jpg".:
-High definition DVD media in the Blu-ray Disc™ format.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIABLURAY.png".: High definition DVD media in the Blu-ray Disc™ format.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIAVCD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIAVCD.jpg".:
-Video CD (VCD) media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIAVCD.png".: Video CD (VCD) media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIADVDPLUSR">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIADVDPLUSR.jpg".:
-DVD+R media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIADVDPLUSR.png".: DVD+R media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIADVDPLUSRW">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIADVDPLUSRW.jpg".:
-DVD+RW media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIADVDPLUSRW.png".: DVD+RW media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DESKTOPPC">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DESKTOPPC.jpg".:
-A desktop computer.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DESKTOPPC.png".: A desktop computer.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MOBILEPC">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MOBILEPC.jpg".:
-A mobile computer (laptop).</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MOBILEPC.png".: A mobile computer (laptop).</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_USERS">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_USERS.jpg".:
-The <b>User Accounts</b> Control Panel item.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_USERS.png".: The <b>User Accounts</b> Control Panel item.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIASMARTMEDIA">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIASMARTMEDIA.jpg".:
-Smart media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIASMARTMEDIA.png".: Smart media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIACOMPACTFLASH">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIACOMPACTFLASH.jpg".:
-CompactFlash media.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIACOMPACTFLASH.png".: CompactFlash media.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DEVICECELLPHONE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DEVICECELLPHONE.jpg".:
-A cell phone.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DEVICECELLPHONE.png".: A cell phone.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DEVICECAMERA">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DEVICECAMERA.jpg".:
-A digital camera.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DEVICECAMERA.png".: A digital camera.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DEVICEVIDEOCAMERA">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DEVICEVIDEOCAMERA.jpg".:
-A digital video camera.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DEVICEVIDEOCAMERA.png".: A digital video camera.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DEVICEAUDIOPLAYER">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DEVICEAUDIOPLAYER.jpg".:
-An audio player.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DEVICEAUDIOPLAYER.png".: An audio player.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_NETWORKCONNECT">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_NETWORKCONNECT.jpg".:
-Connect to network.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_NETWORKCONNECT.png".: Connect to network.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_INTERNET">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_INTERNET.jpg".:
-The <b>Network and Internet</b> Control Panel item.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_INTERNET.png".: The <b>Network and Internet</b> Control Panel item.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_ZIPFILE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_ZIPFILE.jpg".:
-A compressed file with a .zip file name extension.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_ZIPFILE.png".: A compressed file with a .zip file name extension.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_SETTINGS">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_SETTINGS.jpg".:
-The <b>Additional Options</b> Control Panel item.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_SETTINGS.png".: The <b>Additional Options</b> Control Panel item.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVEHDDVD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVEHDDVD.jpg".:
-<b>Windows Vista with Service Pack 1 (SP1) and later</b>. High definition DVD drive (any type - HD DVD-ROM, HD DVD-R, HD-DVD-RAM) that uses the HD DVD format.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVEHDDVD.png".:<b>Windows Vista with Service Pack 1 (SP1) and later</b>. High definition DVD drive (any type - HD DVD-ROM, HD DVD-R, HD-DVD-RAM) that uses the HD DVD format.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_DRIVEBD">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_DRIVEBD.jpg".:
-<b>Windows Vista with SP1 and later</b>. High definition DVD drive (any type - BD-ROM, BD-R, BD-RE) that uses the Blu-ray Disc format.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_DRIVEBD.png".:<b>Windows Vista with SP1 and later</b>. High definition DVD drive (any type - BD-ROM, BD-R, BD-RE) that uses the Blu-ray Disc format.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIAHDDVDROM">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIAHDDVDROM.jpg".:
-<b>Windows Vista with SP1 and later</b>. High definition DVD-ROM media in the HD DVD-ROM format.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIAHDDVDROM.png".:<b>Windows Vista with SP1 and later</b>. High definition DVD-ROM media in the HD DVD-ROM format.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIAHDDVDR">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIAHDDVDR.jpg".:
-<b>Windows Vista with SP1 and later</b>. High definition DVD-R media in the HD DVD-R format.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIAHDDVDR.png".:<b>Windows Vista with SP1 and later</b>. High definition DVD-R media in the HD DVD-R format.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIAHDDVDRAM">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIAHDDVDRAM.jpg".:
-<b>Windows Vista with SP1 and later</b>. High definition DVD-RAM media in the HD DVD-RAM format.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIAHDDVDRAM.png".:<b>Windows Vista with SP1 and later</b>. High definition DVD-RAM media in the HD DVD-RAM format.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIABDROM">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIABDROM.jpg".:
-<b>Windows Vista with SP1 and later</b>. High definition DVD-ROM media in the Blu-ray Disc BD-ROM format.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIABDROM.png".:<b>Windows Vista with SP1 and later</b>. High definition DVD-ROM media in the Blu-ray Disc BD-ROM format.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIABDR">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIABDR.jpg".:
-<b>Windows Vista with SP1 and later</b>. High definition write-once media in the Blu-ray Disc BD-R format.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIABDR.png".:<b>Windows Vista with SP1 and later</b>. High definition write-once media in the Blu-ray Disc BD-R format.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MEDIABDRE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_MEDIABDRE.jpg".:
-<b>Windows Vista with SP1 and later</b>. High definition read/write media in the Blu-ray Disc BD-RE format.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_MEDIABDRE.png".:<b>Windows Vista with SP1 and later</b>. High definition read/write media in the Blu-ray Disc BD-RE format.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_CLUSTEREDDRIVE">
-    <summary>
-      <para>.:image type="icon" source="./images/SIID_CLUSTEREDDRIVE.jpg".:
-<b>Windows Vista with SP1 and later</b>. A cluster disk array.</para>
-    </summary>
+    <summary>.:image type="icon" source="./images/SIID_CLUSTEREDDRIVE.png".:<b>Windows Vista with SP1 and later</b>. A cluster disk array.</summary>
   </member>
   <member name="SHSTOCKICONID.SIID_MAX_ICONS">
-    <summary>
-      <para>The highest valid value in the enumeration. Values over 160 are Windows 7-only icons.</para>
-    </summary>
+    <summary>The highest valid value in the enumeration. Values over 160 are Windows 7-only icons.</summary>
   </member>
 </doc>

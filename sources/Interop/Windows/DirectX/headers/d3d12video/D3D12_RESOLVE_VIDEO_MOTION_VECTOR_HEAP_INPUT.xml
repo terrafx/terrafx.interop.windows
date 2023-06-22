@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT">
-    <summary>
-      <para>Provides input data for calls to <see cref="ID3D12VideoEncodeCommandList.ResolveMotionVectorHeap" />.</para>
-    </summary>
+    <summary>Provides input data for calls to <see cref="ID3D12VideoEncodeCommandList.ResolveMotionVectorHeap" />.</summary>
   </member>
   <member name="D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT.pMotionVectorHeap">
-    <summary>
-      <para>The <see cref="ID3D12VideoMotionVectorHeap" /> containing the hardware-dependent data layout of the motion search.</para>
-    </summary>
+    <summary>The <see cref="ID3D12VideoMotionVectorHeap" /> containing the hardware-dependent data layout of the motion search.</summary>
   </member>
   <member name="D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT.PixelWidth">
-    <summary>
-      <para>The pixel width of the texture that the motion estimation operation was performed on. The motion estimator heap may be allocated to support a size range, this parameter informs the size of the last motion estimation operation.</para>
-    </summary>
+    <summary>The pixel width of the texture that the motion estimation operation was performed on. The motion estimator heap may be allocated to support a size range, this parameter informs the size of the last motion estimation operation.</summary>
   </member>
   <member name="D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT.PixelHeight">
-    <summary>
-      <para>The pixel height of the texture that the motion estimation operation was performed on. The motion estimator heap may be allocated to support a size range, this parameter informs the size of the last motion estimation operation.</para>
-    </summary>
+    <summary>The pixel height of the texture that the motion estimation operation was performed on. The motion estimator heap may be allocated to support a size range, this parameter informs the size of the last motion estimation operation.</summary>
   </member>
 </doc>

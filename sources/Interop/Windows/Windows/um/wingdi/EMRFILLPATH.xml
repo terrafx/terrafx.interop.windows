@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRFILLPATH">
-    <summary>
-      <para>The <b>EMRFILLPATH</b>, <b>EMRSTROKEANDFILLPATH</b>,  and <b>EMRSTROKEPATH</b> structures contain members for the <see cref="FillPath" />, <see cref="StrokeAndFillPath" />, and <see cref="StrokePath" /> enhanced metafile records.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRFILLPATH</b>, <b>EMRSTROKEANDFILLPATH</b>,  and <b>EMRSTROKEPATH</b> structures contain members for the <see cref="FillPath" />, <see cref="StrokeAndFillPath" />, and <see cref="StrokePath" /> enhanced metafile records.</summary>
   </member>
   <member name="EMRFILLPATH.emr">
-    <summary>
-      <para>Base structure for all record types.</para>
-    </summary>
+    <summary>Base structure for all record types.</summary>
   </member>
   <member name="EMRFILLPATH.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
 </doc>

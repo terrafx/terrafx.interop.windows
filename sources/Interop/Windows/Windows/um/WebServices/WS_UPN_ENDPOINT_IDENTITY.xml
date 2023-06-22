@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_UPN_ENDPOINT_IDENTITY">
-    <summary>
-      <para>Type for specifying an endpoint identity represented by a UPN (user principal name).</para>
-    </summary>
+    <summary>Type for specifying an endpoint identity represented by a UPN (user principal name).</summary>
   </member>
   <member name="WS_UPN_ENDPOINT_IDENTITY.identity">
-    <summary>
-      <para>The base type from which this type and all other endpoint identity types derive.</para>
-    </summary>
+    <summary>The base type from which this type and all other endpoint identity types derive.</summary>
   </member>
   <member name="WS_UPN_ENDPOINT_IDENTITY.upn">
-    <summary>
-      <para>The UPN (user principal name) of the endpoint that is represented by this endpoint identity.</para>
-    </summary>
+    <summary>The UPN (user principal name) of the endpoint that is represented by this endpoint identity.</summary>
   </member>
 </doc>

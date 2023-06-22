@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_MAX_UNPOOLING_OPERATOR_DESC">
-    <summary>
-      <para>Inverts a max-pooling operation (see <see cref="DML_MAX_POOLING_OPERATOR1_DESC" /> for details) by filling the output tensor <i>OutputTensor</i> with the values in the input tensor <i>InputTensor</i>, as obtained from a max-pooling operation, according to the index values provided in the <i>IndicesTensor</i>. The elements in the output tensor untouched by this process are left with zero values.</para>
-    </summary>
+    <summary>Inverts a max-pooling operation (see <see cref="DML_MAX_POOLING_OPERATOR1_DESC" /> for details) by filling the output tensor <i>OutputTensor</i> with the values in the input tensor <i>InputTensor</i>, as obtained from a max-pooling operation, according to the index values provided in the <i>IndicesTensor</i>. The elements in the output tensor untouched by this process are left with zero values.</summary>
   </member>
   <member name="DML_MAX_UNPOOLING_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An input tensor of <i>Sizes</i><code>{ Batch, Channel, Height, Width }</code>. The tensor values are obtained from the values in the <i>OutputTensor</i> of a max-pooling operation.</para>
-    </summary>
+    <summary>An input tensor of <i>Sizes</i><code>{ Batch, Channel, Height, Width }</code>. The tensor values are obtained from the values in the <i>OutputTensor</i> of a max-pooling operation.</summary>
   </member>
   <member name="DML_MAX_UNPOOLING_OPERATOR_DESC.IndicesTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor of indices to the output tensor <i>OutputTensor</i> for the values given in the input tensor <i>InputTensor</i>. These index values are zero-based, and treat the output tensor as a contiguous one-dimensional array. Both the <i>InputTensor</i> and <i>IndicesTensor</i> have the same tensor sizes. The tensor values are obtained from the <i>OutputIndicesTensor</i> of a max-pooling operation.</para>
-    </summary>
+    <summary>A tensor of indices to the output tensor <i>OutputTensor</i> for the values given in the input tensor <i>InputTensor</i>. These index values are zero-based, and treat the output tensor as a contiguous one-dimensional array. Both the <i>InputTensor</i> and <i>IndicesTensor</i> have the same tensor sizes. The tensor values are obtained from the <i>OutputIndicesTensor</i> of a max-pooling operation.</summary>
   </member>
   <member name="DML_MAX_UNPOOLING_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An output tensor of the same number of dimensions as the input tensor.</para>
-    </summary>
+    <summary>An output tensor of the same number of dimensions as the input tensor.</summary>
   </member>
 </doc>

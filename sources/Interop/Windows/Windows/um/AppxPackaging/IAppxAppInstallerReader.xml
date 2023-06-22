@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxAppInstallerReader.GetXmlDom">
+    <summary>Gets the XML DOM for an App Installer file.</summary>
+    <param name="dom">Receives a pointer to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/ms756987(v=vs.85)">IXMLDOMDocument</a> representing the XML DOM for the App Installer file.</param>
+    <returns>Returns <b>S_OK</b> on success.</returns>
+  </member>
+  <member name="IAppxAppInstallerReader">
+    <summary>Provides access to the XML DOM for an App Installer file.</summary>
+  </member>
+</doc>

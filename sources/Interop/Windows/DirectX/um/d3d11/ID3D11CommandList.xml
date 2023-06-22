@@ -3,26 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11CommandList.GetContextFlags">
-    <summary>
-      <para>Gets the initialization flags associated with the deferred context that created the command list.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The context flag is reserved for future use and is always 0.</para>
-    </returns>
-    <remarks>
-      <para>The GetContextFlags method gets the flags that were supplied to the <i>ContextFlags</i> parameter of <see cref="ID3D11Device.CreateDeferredContext" />; however, the context flag is reserved for future use.</para>
-    </remarks>
-    <seealso cref="ID3D11CommandList" />
+    <summary>Gets the initialization flags associated with the deferred context that created the command list.</summary>
+    <returns>The context flag is reserved for future use and is always 0.</returns>
   </member>
   <member name="ID3D11CommandList">
-    <summary>
-      <para>The <b>ID3D11CommandList</b> interface encapsulates a list of graphics commands for play back.</para>
-    </summary>
-    <remarks>
-      <para>There is no explicit creation method, simply declare an <b>ID3D11CommandList</b> interface, then call <see cref="ID3D11DeviceContext.FinishCommandList" /> to record commands or <see cref="ID3D11DeviceContext.ExecuteCommandList" /> to play back commands.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D11DeviceChild" />
+    <summary>The <b>ID3D11CommandList</b> interface encapsulates a list of graphics commands for play back.</summary>
   </member>
 </doc>

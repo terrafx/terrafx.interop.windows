@@ -3,35 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFCaptureEngineClassFactory.CreateInstance">
-    <summary>
-      <para>Creates an instance of the capture engine.</para>
-    </summary>
+    <summary>Creates an instance of the capture engine.</summary>
     <param name="clsid">
       <para>The CLSID of the object to create.</para>
       <para>Currently, this parameter must equal <b>CLSID_MFCaptureEngine</b>.</para>
     </param>
-    <param name="riid">
-      <para>The IID of the requested interface. The capture engine supports the <see cref="IMFCaptureEngine" /> interface.</para>
-    </param>
-    <param name="ppvObject">
-      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Before calling this method, call the <see cref="MFStartup" /> function.</para>
-    </remarks>
-    <seealso cref="IMFCaptureEngineClassFactory" />
+    <param name="riid">The IID of the requested interface. The capture engine supports the <see cref="IMFCaptureEngine" /> interface.</param>
+    <param name="ppvObject">Receives a pointer to the requested interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCaptureEngineClassFactory">
-    <summary>
-      <para>Creates an instance of the capture engine.</para>
-    </summary>
-    <remarks>
-      <para>To get a pointer to this interface, call the <a href="https://docs.microsoft.com//windows/desktop/medfound/using-an-encoder-s-imftransform--interface">CoCreateInstance</a> function and specify the CLSID equal to <b>CLSID_MFCaptureEngineClassFactory</b>.</para>
-      <para>Calling the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfcreatecaptureengine">MFCreateCaptureEngine</a> function is equivalent to calling <see cref="IMFCaptureEngineClassFactory.CreateInstance" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Creates an instance of the capture engine.</summary>
   </member>
 </doc>

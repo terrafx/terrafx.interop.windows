@@ -3,29 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfMenu.AddMenuItem">
-    <summary>
-      <para>Adds an item to the menu that the language bar will display for the button.</para>
-    </summary>
-    <param name="uId">
-      <para>Contains the menu item identifier.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Contains zero or a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbmenuf--constants">TF_LBMENUF_*</a> values that specify the type and state of the menu item.</para>
-    </param>
-    <param name="hbmp">
-      <para>Contains the handle of the bitmap drawn for the menu item. If this is <b>NULL</b>, no bitmap is displayed for the menu item.</para>
-    </param>
+    <summary>Adds an item to the menu that the language bar will display for the button.</summary>
+    <param name="uId">Contains the menu item identifier.</param>
+    <param name="dwFlags">Contains zero or a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbmenuf--constants">TF_LBMENUF_*</a> values that specify the type and state of the menu item.</param>
+    <param name="hbmp">Contains the handle of the bitmap drawn for the menu item. If this is <b>NULL</b>, no bitmap is displayed for the menu item.</param>
     <param name="hbmpMask">
       <para>Contains the handle of the mask bitmap. This is a monochrome bitmap that functions as a mask for <i>hbmp</i>. Each black pixel in this bitmap will cause the corresponding pixel in <i>hbmp</i> to be displayed in its normal color. Each white pixel in this bitmap will cause the corresponding pixel in <i>hbmp</i> to be displayed in the inverse of its normal color.</para>
       <para>To have the bitmap displayed without any color conversion, create a monochrome bitmap the same size as <i>hbmp</i> and set each pixel to black (RGB(0, 0, 0)).</para>
       <para>If <i>hbmp</i> is <b>NULL</b>, this parameter is ignored.</para>
     </param>
-    <param name="pch">
-      <para>Pointer to a <b>WCHAR</b> buffer that contains the text to be displayed for the menu item. The length of the text is specified by <i>cch</i>.</para>
-    </param>
-    <param name="cch">
-      <para>Specifies the length, in <b>WCHAR</b>, of the menu item text in <i>pch</i>.</para>
-    </param>
+    <param name="pch">Pointer to a <b>WCHAR</b> buffer that contains the text to be displayed for the menu item. The length of the text is specified by <i>cch</i>.</param>
+    <param name="cch">Specifies the length, in <b>WCHAR</b>, of the menu item text in <i>pch</i>.</param>
     <param name="ppMenu">
       <para>[in, out] Pointer to an <see cref="ITfMenu" /> interface pointer that receives the submenu object. This parameter is not used and must be <b>NULL</b> if <i>dwFlags</i> does not contain <b>TF_LBMENUF_SUBMENU</b>.</para>
       <para>If the submenu item is successfully created, this parameter receives an <see cref="ITfMenu" /> object that the caller uses to add items to the submenu.</para>
@@ -38,49 +26,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfMenu" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbmenuf--constants">TF_LBMENUF_* Constants
-</seealso>
   </member>
   <member name="ITfMenu">
-    <summary>
-      <para>The <b>ITfMenu</b> interface is implemented by the language bar and used by a language bar button provider to add items to the menu that the language bar will display for the button.</para>
-    </summary>
-    <seealso cref="ITfLangBarItemBitmapButton.InitMenu " />
-    <seealso cref="ITfLangBarItemButton.InitMenu " />
-    <seealso cref="ITfSystemLangBarItemSink.InitMenu " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfMenu</b> interface is implemented by the language bar and used by a language bar button provider to add items to the menu that the language bar will display for the button.</summary>
   </member>
 </doc>

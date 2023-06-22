@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SCHANNEL_CERT_HASH">
-    <summary>
-      <para>Contains the hash store data for the certificate that Schannel uses.</para>
-    </summary>
+    <summary>Contains the hash store data for the certificate that Schannel uses.</summary>
   </member>
   <member name="SCHANNEL_CERT_HASH.dwLength">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="SCHANNEL_CERT_HASH.dwFlags">
     <summary>
@@ -20,34 +16,28 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SCH_MACHINE_CERT_HASH</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The certificate hash of the computer.</para>
-          </description>
-        </item>
+          <description>The certificate hash of the computer.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SCHANNEL_CERT_HASH.hProv">
-    <summary>
-      <para>Handle to the cryptography provider.</para>
-    </summary>
+    <summary>Handle to the cryptography provider.</summary>
   </member>
   <member name="SCHANNEL_CERT_HASH.ShaHash">
-    <summary>
-      <para>The secure hash algorithm.</para>
-    </summary>
+    <summary>The secure hash algorithm.</summary>
   </member>
 </doc>

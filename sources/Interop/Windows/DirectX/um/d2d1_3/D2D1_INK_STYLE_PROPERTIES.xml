@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_INK_STYLE_PROPERTIES">
-    <summary>
-      <para>Defines the general pen tip shape and the transform used in an <see cref="ID2D1InkStyle" /> object.</para>
-    </summary>
+    <summary>Defines the general pen tip shape and the transform used in an <see cref="ID2D1InkStyle" /> object.</summary>
   </member>
   <member name="D2D1_INK_STYLE_PROPERTIES.nibShape">
-    <summary>
-      <para>The pre-transform shape of the nib (pen tip) used to draw a given ink object.</para>
-    </summary>
+    <summary>The pre-transform shape of the nib (pen tip) used to draw a given ink object.</summary>
   </member>
   <member name="D2D1_INK_STYLE_PROPERTIES.nibTransform">
-    <summary>
-      <para>The transform applied to the nib.  Note that the translation components of the transform matrix are ignored for the purposes of rendering.</para>
-    </summary>
+    <summary>The transform applied to the nib. Note that the translation components of the transform matrix are ignored for the purposes of rendering.</summary>
   </member>
 </doc>

@@ -3,42 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFT_ENUM_DATA_V1">
-    <summary>
-      <para>Contains information defining the boundaries for and starting place of an enumeration of update
-sequence number (USN) change journal records for ReFS volumes. It is used as the input buffer for the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</a> control code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+    <summary>Contains information defining the boundaries for and starting place of an enumeration of update sequence number (USN) change journal records for ReFS volumes. It is used as the input buffer for the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</a> control code.</summary>
   </member>
   <member name="MFT_ENUM_DATA_V1.StartFileReferenceNumber">
     <summary>
       <para>The ordinal position within the files on the current volume at which the enumeration is to begin.</para>
-      <para>The first call to <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</a> during an
-enumeration must have the <b>StartFileReferenceNumber</b> member set to
-<code>(DWORDLONG)0</code>. Each call to
-<b>FSCTL_ENUM_USN_DATA</b> retrieves the starting point for
-the subsequent call as the first entry in the output buffer. Subsequent calls must be made with
-<b>StartFileReferenceNumber</b> set to this value. For more information, see
-<b>FSCTL_ENUM_USN_DATA</b>.</para>
+      <para>The first call to <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</a> during an enumeration must have the <b>StartFileReferenceNumber</b> member set to<code>(DWORDLONG)0</code>. Each call to<b>FSCTL_ENUM_USN_DATA</b> retrieves the starting point for the subsequent call as the first entry in the output buffer. Subsequent calls must be made with<b>StartFileReferenceNumber</b> set to this value. For more information, see<b>FSCTL_ENUM_USN_DATA</b>.</para>
     </summary>
   </member>
   <member name="MFT_ENUM_DATA_V1.LowUsn">
-    <summary>
-      <para>The lower boundary of the range of USN values used to filter which records are returned. Only records whose
-last change journal USN is between or equal to the <b>LowUsn</b> and
-<b>HighUsn</b> member values are returned.</para>
-    </summary>
+    <summary>The lower boundary of the range of USN values used to filter which records are returned. Only records whose last change journal USN is between or equal to the <b>LowUsn</b> and<b>HighUsn</b> member values are returned.</summary>
   </member>
   <member name="MFT_ENUM_DATA_V1.HighUsn">
-    <summary>
-      <para>The upper boundary of the range of USN values used to filter which files are returned.</para>
-    </summary>
+    <summary>The upper boundary of the range of USN values used to filter which files are returned.</summary>
   </member>
   <member name="MFT_ENUM_DATA_V1.MinMajorVersion">
-    <summary>
-      <para>Indicates the minimum supported major version for the USN change journal.</para>
-    </summary>
+    <summary>Indicates the minimum supported major version for the USN change journal.</summary>
   </member>
   <member name="MFT_ENUM_DATA_V1.MaxMajorVersion">
     <summary>
@@ -48,25 +28,26 @@ last change journal USN is between or equal to the <b>LowUsn</b> and
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>2</para>
+            <list type="bullet">
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
           </description>
+          <description>The data returned from the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</a> control code will contain <see cref="USN_RECORD_V2" /> structures.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The data returned from the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</a></para>
-            <para>control code will contain <see cref="USN_RECORD_V2" /></para>
-            <para>structures.</para>
+            <list type="bullet">
+              <listheader>
+                <term>3</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>3</para>
-          </description>
-          <description>
-            <para>The data returned from the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</a></para>
-            <para>control code will contain <see cref="USN_RECORD_V2" /> or <see cref="USN_RECORD_V3" /> structures.</para>
-          </description>
-        </item>
+          <description>The data returned from the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_enum_usn_data">FSCTL_ENUM_USN_DATA</a> control code will contain <see cref="USN_RECORD_V2" /> or <see cref="USN_RECORD_V3" /> structures.</description>
+        </listheader>
       </list>
     </summary>
   </member>

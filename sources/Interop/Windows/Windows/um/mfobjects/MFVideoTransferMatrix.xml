@@ -3,51 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFVideoTransferMatrix">
-    <summary>
-      <para>Describes the conversion matrices between Y'PbPr (component video) and studio R'G'B'.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-yuv-matrix-attribute">MF_MT_YUV_MATRIX</a> attribute.</para>
-      <para>For more information about these values, see the remarks for the <see cref="DXVA2_VideoTransferMatrix" /> enumeration, which is the DirectX Video Acceleration (DXVA) equivalent of this enumeration.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/extended-color-information">Extended Color Information</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/video-media-types">Video Media Types</seealso>
+    <summary>Describes the conversion matrices between Y'PbPr (component video) and studio R'G'B'.</summary>
   </member>
   <member name="MFVideoTransferMatrix.MFVideoTransferMatrix_Unknown">
-    <summary>
-      <para>Unknown transfer matrix. Treat as MFVideoTransferMatrix_BT709.</para>
-    </summary>
+    <summary>Unknown transfer matrix. Treat as MFVideoTransferMatrix_BT709.</summary>
   </member>
   <member name="MFVideoTransferMatrix.MFVideoTransferMatrix_BT709">
-    <summary>
-      <para>ITU-R BT.709 transfer matrix.</para>
-    </summary>
+    <summary>ITU-R BT.709 transfer matrix.</summary>
   </member>
   <member name="MFVideoTransferMatrix.MFVideoTransferMatrix_BT601">
-    <summary>
-      <para>ITU-R BT.601 transfer matrix. Also used for SMPTE 170 and ITU-R BT.470-2 System B,G.</para>
-    </summary>
+    <summary>ITU-R BT.601 transfer matrix. Also used for SMPTE 170 and ITU-R BT.470-2 System B,G.</summary>
   </member>
   <member name="MFVideoTransferMatrix.MFVideoTransferMatrix_SMPTE240M">
-    <summary>
-      <para>SMPTE 240M transfer matrix.</para>
-    </summary>
+    <summary>SMPTE 240M transfer matrix.</summary>
   </member>
-  <member name="MFVideoTransferMatrix.MFVideoTransferMatrix_BT2020_10">
-    <summary></summary>
-  </member>
-  <member name="MFVideoTransferMatrix.MFVideoTransferMatrix_BT2020_12">
-    <summary></summary>
-  </member>
+  <member name="MFVideoTransferMatrix.MFVideoTransferMatrix_BT2020_10"></member>
+  <member name="MFVideoTransferMatrix.MFVideoTransferMatrix_BT2020_12"></member>
   <member name="MFVideoTransferMatrix.MFVideoTransferMatrix_Last">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="MFVideoTransferMatrix.MFVideoTransferMatrix_ForceDWORD">
-    <summary>
-      <para>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</para>
-    </summary>
+    <summary>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</summary>
   </member>
 </doc>

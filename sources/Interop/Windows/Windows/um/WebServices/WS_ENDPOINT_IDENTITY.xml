@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_ENDPOINT_IDENTITY">
-    <summary>
-      <para>The base type for all endpoint identities.</para>
-    </summary>
+    <summary>The base type for all endpoint identities.</summary>
   </member>
   <member name="WS_ENDPOINT_IDENTITY.identityType">
-    <summary>
-      <para>The selector for the type of the endpoint identity.</para>
-    </summary>
+    <summary>The selector for the type of the endpoint identity.</summary>
   </member>
 </doc>

@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHARDAPPIDINFO">
-    <summary>
-      <para>Contains data used by <see cref="SHAddToRecentDocs" /> to identify both an item—in this case as an <see cref="IShellItem" />—and the process that it is associated with.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/appids">Application User Model IDs (AppUserModelIDs)</seealso>
-    <seealso cref="SHARDAPPIDINFOIDLIST" />
-    <seealso cref="SHARDAPPIDINFOLINK" />
-    <seealso cref="SHAddToRecentDocs" />
+    <summary>Contains data used by <see cref="SHAddToRecentDocs" /> to identify both an item—in this case as an <see cref="IShellItem" />—and the process that it is associated with.</summary>
   </member>
   <member name="SHARDAPPIDINFO.psi">
-    <summary>
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> object that represents the object in the Shell namespace.</para>
-    </summary>
+    <summary>Pointer to an <see cref="IShellItem" /> object that represents the object in the Shell namespace.</summary>
   </member>
   <member name="SHARDAPPIDINFO.pszAppID">
-    <summary>
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The application-defined AppUserModelID associated with the item.</para>
-    </summary>
+    <summary>The application-defined AppUserModelID associated with the item.</summary>
   </member>
 </doc>

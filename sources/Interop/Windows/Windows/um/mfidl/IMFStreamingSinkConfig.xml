@@ -3,47 +3,44 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFStreamingSinkConfig.StartStreaming">
-    <summary>
-      <para>Called by the streaming media client before the Media Session starts streaming to specify the byte offset or the time offset.</para>
-    </summary>
+    <summary>Called by the streaming media client before the Media Session starts streaming to specify the byte offset or the time offset.</summary>
     <param name="fSeekOffsetIsByteOffset">
-      <para>A Boolean value that specifies whether <i>qwSeekOffset</i> gives a byte offset of a time offset.</para>
+      <code>A Boolean value that specifies whether &lt;i&gt;qwSeekOffset&lt;/i&gt; gives a byte offset of a time offset.</code>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TRUE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>qwSeekOffset</i> parameter specifies a byte offset.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>qwSeekOffset</i> parameter specifies a byte offset.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>FALSE</b>
-          </description>
-          <description>
-            <para>The <i>qwSeekOffset</i> parameter specifies the time position in 100-nanosecond units.</para>
-          </description>
-        </item>
+          <description>The <i>qwSeekOffset</i> parameter specifies the time position in 100-nanosecond units.</description>
+        </listheader>
       </list>
     </param>
-    <param name="qwSeekOffset">
-      <para>A byte offset or a time offset, depending on the value passed in <i>fSeekOffsetIsByteOffset</i>.  Time offsets are specified in
-100-nanosecond units.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFStreamingSinkConfig" />
+    <param name="qwSeekOffset">A byte offset or a time offset, depending on the value passed in <i>fSeekOffsetIsByteOffset</i>. Time offsets are specified in 100-nanosecond units.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFStreamingSinkConfig">
-    <summary>
-      <para>Passes configuration information to the media sinks that are used for streaming the content.  Optionally, this interface is supported by media sinks. The built-in ASF streaming media sink and the MP3 media sink implement this interface.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Passes configuration information to the media sinks that are used for streaming the content. Optionally, this interface is supported by media sinks. The built-in ASF streaming media sink and the MP3 media sink implement this interface.</summary>
   </member>
 </doc>

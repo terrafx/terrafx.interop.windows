@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_FOREST_TRUST_RECORD_TYPE">
+    <summary>The <b>LSA_FOREST_TRUST_RECORD_TYPE</b> enumeration defines the type of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Local Security Authority</a> forest trust record.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_RECORD_TYPE.ForestTrustTopLevelName">
+    <summary>Record contains an included top-level name.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_RECORD_TYPE.ForestTrustTopLevelNameEx">
+    <summary>Record contains an excluded top-level name.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_RECORD_TYPE.ForestTrustDomainInfo">
+    <summary>Record contains an <see cref="LSA_FOREST_TRUST_DOMAIN_INFO" /> structure.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_RECORD_TYPE.ForestTrustRecordTypeLast">
+    <summary>Marks the end of an enumeration.</summary>
+  </member>
+</doc>

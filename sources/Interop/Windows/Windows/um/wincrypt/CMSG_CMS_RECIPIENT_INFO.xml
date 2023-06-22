@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSG_CMS_RECIPIENT_INFO">
-    <summary>
-      <para>The <b>CMSG_CMS_RECIPIENT_INFO</b> structure is used with the
-<see cref="CryptMsgGetParam" /> function to get information on a key transport, key agreement, or mail list envelope message recipient. This structure is returned in <i>pvData</i> when <see cref="CryptMsgGetParam" /> is called with <i>dwParamType</i> set to CMSG_CMS_RECIPIENT_INFO_PARAM.</para>
-    </summary>
+    <summary>The <b>CMSG_CMS_RECIPIENT_INFO</b> structure is used with the<see cref="CryptMsgGetParam" /> function to get information on a key transport, key agreement, or mail list envelope message recipient. This structure is returned in <i>pvData</i> when <see cref="CryptMsgGetParam" /> is called with <i>dwParamType</i> set to CMSG_CMS_RECIPIENT_INFO_PARAM.</summary>
   </member>
   <member name="CMSG_CMS_RECIPIENT_INFO.dwRecipientChoice">
     <summary>
@@ -17,52 +14,53 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CMSG_KEY_TRANS_RECIPIENT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CMSG_KEY_TRANS_RECIPIENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>pKeyTrans</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>pKeyTrans</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CMSG_KEY_AGREE_RECIPIENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>pKeyAgree</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CMSG_KEY_AGREE_RECIPIENT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CMSG_MAIL_LIST_RECIPIENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>pKeyAgree</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CMSG_MAIL_LIST_RECIPIENT</b>
-          </description>
-          <description>
-            <para>pMailList</para>
-          </description>
-        </item>
+          <description>pMailList</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="CMSG_CMS_RECIPIENT_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="CMSG_CMS_RECIPIENT_INFO.DUMMYUNIONNAME"></member>
   <member name="CMSG_CMS_RECIPIENT_INFO.DUMMYUNIONNAME.pKeyTrans">
-    <summary>
-      <para>A pointer to a
-<see cref="CMSG_KEY_TRANS_RECIPIENT_INFO" /> structure that identifies a key transport recipient. Used for RSA recipients.</para>
-    </summary>
+    <summary>A pointer to a<see cref="CMSG_KEY_TRANS_RECIPIENT_INFO" /> structure that identifies a key transport recipient. Used for RSA recipients.</summary>
   </member>
   <member name="CMSG_CMS_RECIPIENT_INFO.DUMMYUNIONNAME.pKeyAgree">
-    <summary>
-      <para>A pointer to a
-<see cref="CMSG_KEY_AGREE_RECIPIENT_INFO" /> structure that identifies a key agreement recipient. Used for Diffie-Hellman recipients.</para>
-    </summary>
+    <summary>A pointer to a<see cref="CMSG_KEY_AGREE_RECIPIENT_INFO" /> structure that identifies a key agreement recipient. Used for Diffie-Hellman recipients.</summary>
   </member>
   <member name="CMSG_CMS_RECIPIENT_INFO.DUMMYUNIONNAME.pMailList">
-    <summary>
-      <para>A pointer to a
-<see cref="CMSG_MAIL_LIST_RECIPIENT_INFO" /> structure that identifies a recipient using a previously distributed key encryption key for the encryption/decryption of the envelopes message's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric key</a>.</para>
-    </summary>
+    <summary>A pointer to a<see cref="CMSG_MAIL_LIST_RECIPIENT_INFO" /> structure that identifies a recipient using a previously distributed key encryption key for the encryption/decryption of the envelopes message's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric key</a>.</summary>
   </member>
 </doc>

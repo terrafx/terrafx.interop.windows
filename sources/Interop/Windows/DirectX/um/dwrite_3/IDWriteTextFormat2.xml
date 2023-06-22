@@ -3,37 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextFormat2.GetLineSpacing">
-    <summary>
-      <para>Gets the line spacing adjustment set for a multiline text paragraph.</para>
-    </summary>
-    <param name="lineSpacingOptions">
-      <para>Type: <b><see cref="DWRITE_LINE_SPACING" />*</b></para>
-      <para>A structure describing how the space between lines is managed for the paragraph.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat2">IDWriteTextFormat2</seealso>
+    <summary>Gets the line spacing adjustment set for a multiline text paragraph.</summary>
+    <param name="lineSpacingOptions">A structure describing how the space between lines is managed for the paragraph.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextFormat2.SetLineSpacing">
-    <summary>
-      <para>Set line spacing.</para>
-    </summary>
-    <param name="lineSpacingOptions">
-      <para>Type: <b>const <see cref="DWRITE_LINE_SPACING" />*</b></para>
-      <para>How to manage space between lines.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat2">IDWriteTextFormat2</seealso>
+    <summary>Set line spacing.</summary>
+    <param name="lineSpacingOptions">How to manage space between lines.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextFormat2">
-    <summary>
-      <para>Describes the font and paragraph properties used to format text, and it describes locale information.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat1">IDWriteTextFormat1</seealso>
+    <summary>Describes the font and paragraph properties used to format text, and it describes locale information.</summary>
   </member>
 </doc>

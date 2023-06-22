@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SERVICE_CONTRACT">
-    <summary>
-      <para>Specifies a service contract on an <see cref="endpoint" />.</para>
-    </summary>
+    <summary>Specifies a service contract on an <see cref="endpoint" />.</summary>
   </member>
   <member name="WS_SERVICE_CONTRACT.contractDescription">
-    <summary>
-      <para>The typed contract metadata. See <see cref="WS_CONTRACT_DESCRIPTION" />. Optional, if <b>defaultMessageHandlerCallback</b> is given.</para>
-    </summary>
+    <summary>The typed contract metadata. See <see cref="WS_CONTRACT_DESCRIPTION" />. Optional, if <b>defaultMessageHandlerCallback</b> is given.</summary>
   </member>
   <member name="WS_SERVICE_CONTRACT.defaultMessageHandlerCallback">
-    <summary>
-      <para>Callback for processing unhandled messages. Optional if contractDescription is given.</para>
-    </summary>
+    <summary>Callback for processing unhandled messages. Optional if contractDescription is given.</summary>
   </member>
   <member name="WS_SERVICE_CONTRACT.methodTable">
-    <summary>
-      <para>The function table. Mandatory, if <b>contractDescription</b> is given.</para>
-    </summary>
+    <summary>The function table. Mandatory, if <b>contractDescription</b> is given.</summary>
   </member>
 </doc>

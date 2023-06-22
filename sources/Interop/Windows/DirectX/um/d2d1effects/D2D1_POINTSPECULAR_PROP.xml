@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_POINTSPECULAR_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/point-specular">Point-specular lighting effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/point-specular">Point-specular lighting effect</a>.</summary>
   </member>
   <member name="D2D1_POINTSPECULAR_PROP.D2D1_POINTSPECULAR_PROP_LIGHT_POSITION">
     <summary>
@@ -44,9 +42,7 @@
   </member>
   <member name="D2D1_POINTSPECULAR_PROP.D2D1_POINTSPECULAR_PROP_KERNEL_UNIT_LENGTH">
     <summary>
-      <para>The size of an element in the Sobel kernel used to generate the surface normal in the X and Y directions. This property maps to the dx and dy values in the Sobel gradient.
-This property is a <see cref="D2D1_VECTOR_2F" />(Kernel Unit Length X, Kernel Unit Length Y) and is defined in (DIPs/Kernel Unit).
-The effect uses bilinear interpolation to scale the bitmap to match size of kernel elements.</para>
+      <para>The size of an element in the Sobel kernel used to generate the surface normal in the X and Y directions. This property maps to the dx and dy values in the Sobel gradient. This property is a <see cref="D2D1_VECTOR_2F" />(Kernel Unit Length X, Kernel Unit Length Y) and is defined in (DIPs/Kernel Unit). The effect uses bilinear interpolation to scale the bitmap to match size of kernel elements.</para>
       <para>The type is <see cref="D2D1_VECTOR_2F" />.</para>
       <para>The default value is {1.0f, 1.0f}.</para>
     </summary>
@@ -58,7 +54,5 @@ The effect uses bilinear interpolation to scale the bitmap to match size of kern
       <para>The default value is D2D1_POINTSPECULAR_SCALE_MODE_LINEAR.</para>
     </summary>
   </member>
-  <member name="D2D1_POINTSPECULAR_PROP.D2D1_POINTSPECULAR_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_POINTSPECULAR_PROP.D2D1_POINTSPECULAR_PROP_FORCE_DWORD"></member>
 </doc>

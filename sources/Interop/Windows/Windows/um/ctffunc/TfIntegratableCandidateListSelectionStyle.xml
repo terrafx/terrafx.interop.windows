@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TfIntegratableCandidateListSelectionStyle">
-    <summary>
-      <para>Elements of the <b>TfIntegratableCandidateListSelectionStyle</b> enumeration specify the integratable candidate list selection styles.</para>
-    </summary>
-    <seealso cref="GetSelectionStyle" />
+    <summary>Elements of the <b>TfIntegratableCandidateListSelectionStyle</b> enumeration specify the integratable candidate list selection styles.</summary>
   </member>
   <member name="TfIntegratableCandidateListSelectionStyle.STYLE_ACTIVE_SELECTION">
-    <summary>
-      <para>The selection can be changed with the arrow keys.</para>
-    </summary>
+    <summary>The selection can be changed with the arrow keys.</summary>
   </member>
   <member name="TfIntegratableCandidateListSelectionStyle.STYLE_IMPLIED_SELECTION">
-    <summary>
-      <para>The default selection key will choose the selection.</para>
-    </summary>
+    <summary>The default selection key will choose the selection.</summary>
   </member>
 </doc>

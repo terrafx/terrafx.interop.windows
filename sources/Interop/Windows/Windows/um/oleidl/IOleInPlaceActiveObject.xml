@@ -3,66 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleInPlaceActiveObject.EnableModeless">
-    <summary>
-      <para>Enables or disables modeless dialog boxes when the container creates or destroys a modal dialog box.</para>
-    </summary>
-    <param name="fEnable">
-      <para>Indicates whether to enable modeless dialog box windows (<b>TRUE</b>) or disable them <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK on success.</para>
-    </returns>
-    <seealso cref="IOleInPlaceActiveObject" />
-    <seealso cref="IOleInPlaceActiveObject.EnableModeless" />
+    <summary>Enables or disables modeless dialog boxes when the container creates or destroys a modal dialog box.</summary>
+    <param name="fEnable">Indicates whether to enable modeless dialog box windows (<b>TRUE</b>) or disable them <b>FALSE</b>.</param>
+    <returns>This method returns S_OK on success.</returns>
   </member>
   <member name="IOleInPlaceActiveObject.OnDocWindowActivate">
-    <summary>
-      <para>Notifies the active in-place object when the container's document window is activated or deactivated.</para>
-    </summary>
-    <param name="fActivate">
-      <para>The state of the MDI child document window. If this parameter is <b>TRUE</b>, the window is in the act of activating; if it is <b>FALSE</b>, it is in the act of deactivating.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <para>Call <b>IOleInPlaceActiveObject.OnDocWindowActivate</b> when the MDI child document window is activated or deactivated and the object is currently the active object for the document.</para>
-      <h3>Notes to Implementers</h3>
-      <para>You should include code in this method that installs frame-level tools during object activation. These tools include the shared composite menu and/or optional toolbars and frame adornments. You should then take focus. When deactivating, the object should remove the frame-level tools. Note that if you do not call <see cref="IOleInPlaceUIWindow.SetBorderSpace" /> with pborderwidths set to <b>NULL</b>, you can avoid having to renegotiate border space.</para>
-      <para>While executing <b>IOleInPlaceActiveObject.OnDocWindowActivate</b>, do not make calls to the <see cref="PeekMessage" /> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</a> functions, or a dialog box. Doing so may cause the system to deadlock. There are further restrictions on which OLE interface methods and functions can be called from within <b>IOleInPlaceActiveObject.OnDocWindowActivate</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</seealso>
-    <seealso cref="IOleInPlaceActiveObject" />
-    <seealso cref="PeekMessage" />
+    <summary>Notifies the active in-place object when the container's document window is activated or deactivated.</summary>
+    <param name="fActivate">The state of the MDI child document window. If this parameter is <b>TRUE</b>, the window is in the act of activating; if it is <b>FALSE</b>, it is in the act of deactivating.</param>
+    <returns>This method returns S_OK on success.</returns>
   </member>
   <member name="IOleInPlaceActiveObject.OnFrameWindowActivate">
-    <summary>
-      <para>Notifies the object when the container's top-level frame window is activated or deactivated.</para>
-    </summary>
-    <param name="fActivate">
-      <para>The state of the container's top-level frame window. This parameter is <b>TRUE</b> if the window is activating and <b>FALSE</b> if it is deactivating.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK on success.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</seealso>
-    <seealso cref="IOleInPlaceActiveObject" />
-    <seealso cref="PeekMessage" />
+    <summary>Notifies the object when the container's top-level frame window is activated or deactivated.</summary>
+    <param name="fActivate">The state of the container's top-level frame window. This parameter is <b>TRUE</b> if the window is activating and <b>FALSE</b> if it is deactivating.</param>
+    <returns>This method returns S_OK on success.</returns>
   </member>
   <member name="IOleInPlaceActiveObject.ResizeBorder">
-    <summary>
-      <para>Alerts the object that it needs to resize its border space.</para>
-    </summary>
-    <param name="prcBorder">
-      <para>A pointer to a <see cref="RECT" /> structure containing the new outer rectangle within which the object can request border space for its tools.</para>
-    </param>
-    <param name="pUIWindow">
-      <para>A pointer to an <see cref="IOleInPlaceUIWindow" /> interface pointer for the frame or document window object whose border has changed.</para>
-    </param>
-    <param name="fFrameWindow">
-      <para>This parameter is <b>TRUE</b> if the frame window object is calling <b>IOleInPlaceActiveObject.ResizeBorder</b>; otherwise, it is <b>FALSE</b>.</para>
-    </param>
+    <summary>Alerts the object that it needs to resize its border space.</summary>
+    <param name="prcBorder">A pointer to a <see cref="RECT" /> structure containing the new outer rectangle within which the object can request border space for its tools.</param>
+    <param name="pUIWindow">A pointer to an <see cref="IOleInPlaceUIWindow" /> interface pointer for the frame or document window object whose border has changed.</param>
+    <param name="fFrameWindow">This parameter is <b>TRUE</b> if the frame window object is calling <b>IOleInPlaceActiveObject.ResizeBorder</b>; otherwise, it is <b>FALSE</b>.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -70,54 +29,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified parameter values are not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified parameter values are not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>There is insufficient memory available for the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There is insufficient memory available for the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <b>IOleInPlaceActiveObject.ResizeBorder</b> is called by the top-level container's document or frame window object when the border space allocated to the object should change. Because the active in-place object is not informed about which window has changed (the frame- or document-level window), <b>IOleInPlaceActiveObject.ResizeBorder</b> must be passed the pointer to the window's <see cref="IOleInPlaceUIWindow" /> interface.
-<h3>Notes to Implementers</h3><para>In most cases, resizing only requires that you grow, shrink, or scale your object's frame adornments. However, for more complicated adornments, you may be required to renegotiate for border space with calls to <see cref="IOleInPlaceUIWindow.SetBorderSpace" /> and <b>IOleInPlaceUIWindow.SetBorderSpace</b>.</para><para><b>Note</b>  While executing <b>IOleInPlaceActiveObject.ResizeBorder</b>, do not make calls to the <see cref="PeekMessage" /> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</a> functions, or a dialog box. Doing so may cause the system to deadlock. There are further restrictions on which OLE interface methods and functions can be called from within <b>IOleInPlaceActiveObject.ResizeBorder</b>.</para></remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</seealso>
-    <seealso cref="IOleInPlaceActiveObject" />
-    <seealso cref="IOleInPlaceUIWindow.GetBorder" />
-    <seealso cref="PeekMessage" />
   </member>
   <member name="IOleInPlaceActiveObject.TranslateAccelerator">
-    <summary>
-      <para>Processes menu accelerator-key messages from the container's message queue. This method should only be used for objects created by a DLL object application.</para>
-    </summary>
-    <param name="lpmsg">
-      <para>A pointer to an <see cref="MSG" /> structure for the message that might need to be translated.</para>
-    </param>
+    <summary>Processes menu accelerator-key messages from the container's message queue. This method should only be used for objects created by a DLL object application.</summary>
+    <param name="lpmsg">A pointer to an <see cref="MSG" /> structure for the message that might need to be translated.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -125,64 +78,58 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The message was not translated.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The message was not translated.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified parameter values are not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>IThere is insufficient memory available for the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified parameter values are not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>IThere is insufficient memory available for the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <para>Active in-place objects must always be given the first chance at translating accelerator keystrokes. You can provide this opportunity by calling <b>IOleInPlaceActiveObject.TranslateAccelerator</b> from your container's message loop before doing any other translation. You should apply your own translation only when this method returns S_FALSE.</para>
-      <para>If you call <b>IOleInPlaceActiveObject.TranslateAccelerator</b> for an object that is not created by a DLL object application, the default object handler returns S_FALSE.</para>
-      <h3>Notes to Implementers</h3>
-      <para>An object created by an EXE object application gets keystrokes from its own message pump, so the container does not get those messages.</para>
-      <para>If you need to implement this method, you can do so by simply wrapping the call to the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepropertypage-translateaccelerator">TranslateAccelerator</a> function.</para>
-    </remarks>
-    <seealso cref="IOleInPlaceActiveObject" />
-    <seealso cref="OleTranslateAccelerator" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepropertypage-translateaccelerator">TranslateAccelerator</seealso>
   </member>
   <member name="IOleInPlaceActiveObject">
-    <summary>
-      <para>Provides a direct channel of communication between an in-place object and the associated application's outer-most frame window and the document window within the application that contains the embedded object. The communication involves the translation of messages, the state of the frame window (activated or deactivated), and the state of the document window (activated or deactivated). Also, it informs the object when it needs to resize its borders, and manages modeless dialog boxes.</para>
-    </summary>
-    <seealso cref="IOleWindow" />
+    <summary>Provides a direct channel of communication between an in-place object and the associated application's outer-most frame window and the document window within the application that contains the embedded object. The communication involves the translation of messages, the state of the frame window (activated or deactivated), and the state of the document window (activated or deactivated). Also, it informs the object when it needs to resize its borders, and manages modeless dialog boxes.</summary>
   </member>
 </doc>

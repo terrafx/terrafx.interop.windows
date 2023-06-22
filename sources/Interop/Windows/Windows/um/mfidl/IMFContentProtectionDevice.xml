@@ -4,53 +4,22 @@
 <doc>
   <member name="IMFContentProtectionDevice.GetPrivateDataByteCount">
     <summary>
-      <para>Gets the required number of bytes that need to be prepended to
-the  input and output buffers when you call the security processor through the <see cref="InvokeFunction" /> method.
-When you specify this number of bytes, the Media Foundation transform (MFT) decryptor can allocate the total amount of bytes and can avoid making copies of the data when the decryptor moves the data to the security processor.</para>
+      <code> Gets the required number of bytes that need to be prepended to the input and output buffers when you call the security processor through the &lt;a href="/windows/desktop/api/mfidl/nf-mfidl-imfcontentprotectiondevice-invokefunction"&gt;InvokeFunction&lt;/a&gt; method. When you specify this number of bytes, the Media Foundation transform (MFT) decryptor can allocate the total amount of bytes and can avoid making copies of the data when the decryptor moves the data to the security processor.</code>
     </summary>
-    <param name="PrivateInputByteCount">
-      <para>The required number of bytes that need to be prepended to
-the input buffer that you supply to content protection system.</para>
-    </param>
-    <param name="PrivateOutputByteCount">
-      <para>The required number of bytes that need to be prepended to
-the output buffer that you supply to content protection system.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFContentProtectionDevice" />
-    <seealso cref="InvokeFunction" />
+    <param name="PrivateInputByteCount">The required number of bytes that need to be prepended to<br />the input buffer that you supply to content protection system.</param>
+    <param name="PrivateOutputByteCount">The required number of bytes that need to be prepended to<br />the output buffer that you supply to content protection system.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFContentProtectionDevice.InvokeFunction">
-    <summary>
-      <para>Calls into the implementation of the protection system in the security processor.</para>
-    </summary>
-    <param name="FunctionId">
-      <para>The identifier of the function that you want to run. This identifier is defined by the implementation of the protection system.</para>
-    </param>
-    <param name="InputBufferByteCount">
-      <para>The number of bytes of in the buffer that <i>InputBuffer</i> specifies, including private data.</para>
-    </param>
-    <param name="InputBuffer">
-      <para>A pointer to the data that you want to provide as input.</para>
-    </param>
-    <param name="OutputBufferByteCount">
-      <para>Pointer to a value that specifies the length in bytes of the data that the function wrote to the buffer that <i>OutputBuffer</i> specifies, including the private data.</para>
-    </param>
-    <param name="OutputBuffer">
-      <para>Pointer to the buffer where you want the function to write its output.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFContentProtectionDevice" />
+    <summary>Calls into the implementation of the protection system in the security processor.</summary>
+    <param name="FunctionId">The identifier of the function that you want to run. This identifier is defined by the implementation of the protection system.</param>
+    <param name="InputBufferByteCount">The number of bytes of in the buffer that <i>InputBuffer</i> specifies, including private data.</param>
+    <param name="InputBuffer">A pointer to the data that you want to provide as input.</param>
+    <param name="OutputBufferByteCount">Pointer to a value that specifies the length in bytes of the data that the function wrote to the buffer that <i>OutputBuffer</i> specifies, including the private data.</param>
+    <param name="OutputBuffer">Pointer to the buffer where you want the function to write its output.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFContentProtectionDevice">
-    <summary>
-      <para>Allows a decryptor to communicate with the security processor that implements the hardware decryption for a protection system.</para>
-    </summary>
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Allows a decryptor to communicate with the security processor that implements the hardware decryption for a protection system.</summary>
   </member>
 </doc>

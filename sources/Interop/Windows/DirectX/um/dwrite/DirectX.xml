@@ -3,68 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.DWriteCreateFactory">
-    <summary>
-      <para>Creates a DirectWrite factory object that is used for subsequent creation of individual DirectWrite objects.</para>
-    </summary>
-    <param name="factoryType">
-      <para>Type: <b><see cref="DWRITE_FACTORY_TYPE" /></b></para>
-      <para>A value that specifies whether the factory object will be shared or isolated.</para>
-    </param>
-    <param name="iid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A GUID value that identifies the DirectWrite factory interface, such as __uuidof(<see cref="IDWriteFactory" />).</para>
-    </param>
-    <param name="factory">
-      <para>Type: <b>IUnknown**</b></para>
-      <para>An address of a pointer to the newly created DirectWrite factory object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This function creates a <a href="https://docs.microsoft.com//windows/win32/DirectWrite/direct-write-portal">DirectWrite</a> factory object that is used for subsequent creation of individual DirectWrite objects.
-DirectWrite factory contains internal state data such as font loader registration and cached font data.
-In most cases it is recommended you use the shared factory object, because it allows multiple components that use DirectWrite to share internal DirectWrite state data, and thereby reduce memory usage.
-However, there are cases when it is desirable to reduce the impact of a component,
-such as a plug-in from an untrusted source, on the rest of the process, by sandboxing and isolating it from the rest of the process components. In such cases, it is recommended you use an isolated factory for the sandboxed component.</para>
-      <para>The following example shows how to create a shared <a href="https://docs.microsoft.com//windows/win32/DirectWrite/direct-write-portal">DirectWrite</a> factory.</para>
-      <code>
-if (SUCCEEDED(hr))
-{
-    hr = DWriteCreateFactory(
-        DWRITE_FACTORY_TYPE_SHARED,
-        __uuidof(IDWriteFactory),
-        reinterpret_cast&lt;IUnknown**&gt;(&amp;amp;amp;amp;amp;amp;pDWriteFactory_)
-        );
-}
-
-
-</code>
-    </remarks>
+    <summary>Creates a DirectWrite factory object that is used for subsequent creation of individual DirectWrite objects.</summary>
+    <param name="factoryType">A value that specifies whether the factory object will be shared or isolated.</param>
+    <param name="iid">A GUID value that identifies the DirectWrite factory interface, such as __uuidof(<see cref="IDWriteFactory" />).</param>
+    <param name="factory">An address of a pointer to the newly created DirectWrite factory object.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="DirectX.DWRITE_MAKE_OPENTYPE_TAG">
-    <summary>
-      <para>Creates an OpenType tag as a 32-bit integer, such that the first character in the tag is the lowest byte (least significant on little-endian architectures), which can be used to compare with tags in the font file. This macro is compatible with <see cref="DWRITE_FONT_FEATURE_TAG" />.</para>
-    </summary>
-    <param name="a">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">CHAR</a></b></para>
-      <para>The first character in the tag.</para>
-    </param>
-    <param name="b">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">CHAR</a></b></para>
-      <para>The second character in the tag.</para>
-    </param>
-    <param name="c">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">CHAR</a></b></para>
-      <para>The third character in the tag.</para>
-    </param>
-    <param name="d">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">CHAR</a></b></para>
-      <para>The fourth character in the tag.</para>
-    </param>
-    <remarks>
-      <para>The OpenType language (such as "ROM ", "URD ", and "FAR " for Romanian, Urdu, and Persian) are determined from the locale, and the script ("latn" and "arab" for Latin and Arabic) is determined from the script analyzer. That's why these are not listed under OpenType tags; only the feature tags.</para>
-    </remarks>
+    <summary>Creates an OpenType tag as a 32-bit integer, such that the first character in the tag is the lowest byte (least significant on little-endian architectures), which can be used to compare with tags in the font file. This macro is compatible with <see cref="DWRITE_FONT_FEATURE_TAG" />.</summary>
+    <param name="a">The first character in the tag.</param>
+    <param name="b">The second character in the tag.</param>
+    <param name="c">The third character in the tag.</param>
+    <param name="d">The fourth character in the tag.</param>
   </member>
 </doc>

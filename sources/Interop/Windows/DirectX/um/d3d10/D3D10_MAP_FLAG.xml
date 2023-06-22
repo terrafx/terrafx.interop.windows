@@ -3,19 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_MAP_FLAG">
-    <summary>
-      <para>Specifies how the CPU should respond when Map is called on a resource being used by the GPU.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used by <see cref="ID3D10Buffer.Map" />, <see cref="ID3D10Texture1D.Map" />, <see cref="ID3D10Texture2D.Map" />, and <see cref="ID3D10Texture3D.Map" />.</para>
-      <para>D3D10_MAP_FLAG_DO_NOT_WAIT cannot be used with <see cref="D3D10_MAP_WRITE_DISCARD" /> or <see cref="D3D10_MAP_WRITE_NOOVERWRITE" />.</para>
-      <para>For more information about potential conflicts between the GPU and CPU during resource mapping, see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-mapping">Copying and Accessing Resource Data (Direct3D 10)</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-enums">Resource Enumerations</seealso>
+    <summary>Specifies how the CPU should respond when Map is called on a resource being used by the GPU.</summary>
   </member>
   <member name="D3D10_MAP_FLAG.D3D10_MAP_FLAG_DO_NOT_WAIT">
-    <summary>
-      <para>Specifies that Map should return <b>DXGI_ERROR_WAS_STILL_DRAWING</b> when the GPU blocks the CPU from accessing a resource.</para>
-    </summary>
+    <summary>Specifies that Map should return <b>DXGI_ERROR_WAS_STILL_DRAWING</b> when the GPU blocks the CPU from accessing a resource.</summary>
   </member>
 </doc>

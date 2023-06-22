@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WSABUF">
-    <summary>
-      <para>The
-<b>WSABUF</b> structure enables the creation or manipulation of a data buffer used by some Winsock functions.</para>
-    </summary>
+    <summary>The<b>WSABUF</b> structure enables the creation or manipulation of a data buffer used by some Winsock functions.</summary>
   </member>
   <member name="WSABUF.len">
-    <summary>
-      <para>The length of the buffer, in bytes.</para>
-    </summary>
+    <summary>The length of the buffer, in bytes.</summary>
   </member>
   <member name="WSABUF.buf">
-    <summary>
-      <para>A pointer to the buffer.</para>
-    </summary>
+    <summary>A pointer to the buffer.</summary>
   </member>
 </doc>

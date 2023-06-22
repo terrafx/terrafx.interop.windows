@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ILanguageExceptionErrorInfo.GetLanguageException">
+    <summary>Gets the stored <see cref="IUnknown" /> object from the error object.</summary>
+    <param name="languageException">The stored <see cref="IUnknown" /> object from the error object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ILanguageExceptionErrorInfo">
+    <summary>Enables retrieving the <see cref="IUnknown" /> pointer stored in the error info with the call to RoOriginateLanguageException.</summary>
+  </member>
+</doc>

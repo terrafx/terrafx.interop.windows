@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaSourceTopologyProvider.GetMediaSourceTopology">
-    <summary>
-      <para>Returns a topology for a media source that builds an internal topology.</para>
-    </summary>
-    <param name="pPresentationDescriptor">
-      <para>A pointer to the <see cref="IMFPresentationDescriptor" /> interface of the media source's presentation descriptor. To get this pointer, either call <see cref="IMFMediaSource.CreatePresentationDescriptor" /> on the media source, or get the pointer from the <a href="https://docs.microsoft.com//windows/desktop/medfound/menewpresentation">MENewPresentation</a> event.</para>
-    </param>
-    <param name="ppTopology">
-      <para>Receives a pointer to the topology's <see cref="IMFTopology" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Returns a topology for a media source that builds an internal topology.</summary>
+    <param name="pPresentationDescriptor">A pointer to the <see cref="IMFPresentationDescriptor" /> interface of the media source's presentation descriptor. To get this pointer, either call <see cref="IMFMediaSource.CreatePresentationDescriptor" /> on the media source, or get the pointer from the <a href="https://docs.microsoft.com//windows/desktop/medfound/menewpresentation">MENewPresentation</a> event.</param>
+    <param name="ppTopology">Receives a pointer to the topology's <see cref="IMFTopology" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -19,36 +13,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument. For example, a <b>NULL</b> input parameter, or the presentation descriptor is not valid.</para>
-          </description>
-        </item>
+          <description>Invalid argument. For example, a <b>NULL</b> input parameter, or the presentation descriptor is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMediaSourceTopologyProvider" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sequencer-source">Sequencer Source</seealso>
   </member>
   <member name="IMFMediaSourceTopologyProvider">
-    <summary>
-      <para>Enables an application to get a topology from the sequencer source. This interface is exposed by the sequencer source object.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sequencer-source">Sequencer Source</seealso>
+    <summary>Enables an application to get a topology from the sequencer source. This interface is exposed by the sequencer source object.</summary>
   </member>
 </doc>

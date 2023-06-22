@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WrapMode">
+    <summary>The <b>WrapMode</b> enumeration specifies how repeated copies of an image are used to tile an area.</summary>
+  </member>
+  <member name="WrapMode.WrapModeTile">
+    <summary>Specifies tiling without flipping.</summary>
+  </member>
+  <member name="WrapMode.WrapModeTileFlipX">
+    <summary>Specifies that tiles are flipped horizontally as you move from one tile to the next in a row.</summary>
+  </member>
+  <member name="WrapMode.WrapModeTileFlipY">
+    <summary>Specifies that tiles are flipped vertically as you move from one tile to the next in a column.</summary>
+  </member>
+  <member name="WrapMode.WrapModeTileFlipXY">
+    <summary>Specifies that tiles are flipped horizontally as you move along a row and flipped vertically as you move along a column.</summary>
+  </member>
+  <member name="WrapMode.WrapModeClamp">
+    <summary>Specifies that no tiling takes place.</summary>
+  </member>
+</doc>

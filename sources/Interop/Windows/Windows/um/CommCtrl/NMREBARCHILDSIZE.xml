@@ -3,41 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMREBARCHILDSIZE">
-    <summary>
-      <para>Contains information used in handling the <a href="https://docs.microsoft.com//windows/desktop/Controls/rbn-childsize">RBN_CHILDSIZE</a> notification code.</para>
-    </summary>
+    <summary>Contains information used in handling the <a href="https://docs.microsoft.com//windows/desktop/Controls/rbn-childsize">RBN_CHILDSIZE</a> notification code.</summary>
   </member>
   <member name="NMREBARCHILDSIZE.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains additional information about the notification.</summary>
   </member>
   <member name="NMREBARCHILDSIZE.uBand">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Zero-based index of the band affected by the notification. This will be -1 if no band is affected.</para>
-    </summary>
+    <summary>Zero-based index of the band affected by the notification. This will be -1 if no band is affected.</summary>
   </member>
   <member name="NMREBARCHILDSIZE.wID">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Application-defined identifier of the band.</para>
-    </summary>
+    <summary>Application-defined identifier of the band.</summary>
   </member>
   <member name="NMREBARCHILDSIZE.rcChild">
     <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>
-        <see cref="RECT" /> structure that contains the new size of the child window. This member can be changed during the notification to modify the child window's position and size.</para>
-    </summary>
+      <see cref="RECT" /> structure that contains the new size of the child window. This member can be changed during the notification to modify the child window's position and size.</summary>
   </member>
   <member name="NMREBARCHILDSIZE.rcBand">
     <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>
-        <see cref="RECT" /> structure that contains the new size of the band.</para>
-    </summary>
+      <see cref="RECT" /> structure that contains the new size of the band.</summary>
   </member>
 </doc>

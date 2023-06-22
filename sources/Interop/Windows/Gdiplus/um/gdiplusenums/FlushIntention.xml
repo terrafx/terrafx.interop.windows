@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FlushIntention">
+    <summary>The <b>FlushIntention</b> enumeration specifies when to flush the queue of graphics operations.</summary>
+  </member>
+  <member name="FlushIntention.FlushIntentionFlush">
+    <summary>When passed to the<see cref="Graphics.Flush" /> method, specifies that pending rendering operations are executed as soon as possible. The<b>Graphics.Flush</b> method is not synchronized with the completion of the rendering operations and might return before the rendering operations are completed.</summary>
+  </member>
+  <member name="FlushIntention.FlushIntentionSync">
+    <summary>When passed to the<see cref="Graphics.Flush" /> method, specifies that pending rendering operations are executed as soon as possible. The<b>Graphics.Flush</b> method is synchronized with the completion of the rendering operations; that is, it will not return until after the rendering operations are completed.</summary>
+  </member>
+</doc>

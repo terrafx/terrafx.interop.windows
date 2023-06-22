@@ -5,51 +5,30 @@
   <member name="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC">
     <summary>
       <para>Computes backpropagation gradients for <see cref="batch normalization" />. <b>DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC</b> performs multiple computations, which are detailed in the separate output descriptions.</para>
-      <para>Any dimension in <i>MeanTensor</i>, <i>VarianceTensor</i>, and <i>ScaleTensor</i> can be set to 1 and be automatically broadcast to match <i>InputTensor</i>, but otherwise must equal the corresponding dimension's size from <i>InputTensor</i>.</para>
       <para>
         <i>OutputScaleGradientTensor</i> and <i>OutputBiasGradientTensor</i> are computed using sums across the set of dimensions for which <i>MeanTensor</i>, <i>ScaleTensor</i> and <i>VarianceTensor</i> sizes equal one.</para>
     </summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the input data. This is typically the same tensor that was provided as the <i>InputTensor</i> to <see cref="DML_BATCH_NORMALIZATION_OPERATOR_DESC" /> in the forward pass.</para>
-    </summary>
+    <summary>A tensor containing the input data. This is typically the same tensor that was provided as the <i>InputTensor</i> to <see cref="DML_BATCH_NORMALIZATION_OPERATOR_DESC" /> in the forward pass.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC.InputGradientTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer.</para>
-    </summary>
+    <summary>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC.MeanTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the mean data. This is typically the same tensor that was provided as the <i>MeanTensor</i> to <see cref="DML_BATCH_NORMALIZATION_OPERATOR_DESC" /> in the forward pass.</para>
-    </summary>
+    <summary>A tensor containing the mean data. This is typically the same tensor that was provided as the <i>MeanTensor</i> to <see cref="DML_BATCH_NORMALIZATION_OPERATOR_DESC" /> in the forward pass.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC.VarianceTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the variance data. This is typically the same tensor that was provided as the <i>VarianceTensor</i> to <b>DML_OPERATOR_BATCH_NORMALIZATION</b> in the forward pass.</para>
-    </summary>
+    <summary>A tensor containing the variance data. This is typically the same tensor that was provided as the <i>VarianceTensor</i> to <b>DML_OPERATOR_BATCH_NORMALIZATION</b> in the forward pass.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC.ScaleTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the scale data. This is typically the same tensor that was provided as the <i>ScaleTensor</i> to <see cref="DML_BATCH_NORMALIZATION_OPERATOR_DESC" /> in the forward pass.</para>
-    </summary>
+    <summary>A tensor containing the scale data. This is typically the same tensor that was provided as the <i>ScaleTensor</i> to <see cref="DML_BATCH_NORMALIZATION_OPERATOR_DESC" /> in the forward pass.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC.OutputGradientTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>For every corresponding value in the inputs,
-<code>OutputGradient = InputGradient * (Scale / sqrt(Variance + Epsilon))</code>.</para>
-    </summary>
+    <summary>For every corresponding value in the inputs,<code>OutputGradient = InputGradient * (Scale / sqrt(Variance + Epsilon))</code>.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC.OutputScaleGradientTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>The following computation is done or every corresponding value in the inputs.</para>
       <para>
         <code>OutputScaleGradient = sum(InputGradient * (Input - Mean) / sqrt(Variance + Epsilon))</code>
@@ -58,7 +37,6 @@
   </member>
   <member name="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC.OutputBiasGradientTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>The following computation is done or every corresponding value in the inputs.</para>
       <para>
         <code>OutputBiasGradient = sum(InputGradient)</code>
@@ -66,9 +44,6 @@
     </summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC.Epsilon">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/api/winprog/windows-data-types.md">FLOAT</a></b></para>
-      <para>A small value added to the variance to avoid zero.</para>
-    </summary>
+    <summary>A small value added to the variance to avoid zero.</summary>
   </member>
 </doc>

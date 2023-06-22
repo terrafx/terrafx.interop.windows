@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FDAP">
-    <summary>
-      <para>Specifies list placement.</para>
-    </summary>
+    <summary>Specifies list placement.</summary>
   </member>
   <member name="FDAP.FDAP_BOTTOM">
-    <summary>
-      <para>The place is added to the bottom of the default list.</para>
-    </summary>
+    <summary>The place is added to the bottom of the default list.</summary>
   </member>
   <member name="FDAP.FDAP_TOP">
-    <summary>
-      <para>The place is added to the top of the default list.</para>
-    </summary>
+    <summary>The place is added to the top of the default list.</summary>
   </member>
 </doc>

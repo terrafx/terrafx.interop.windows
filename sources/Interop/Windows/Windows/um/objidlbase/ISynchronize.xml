@@ -3,38 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISynchronize.Reset">
-    <summary>
-      <para>Sets the synchronization object to the nonsignaled state.</para>
-    </summary>
-    <returns>
-      <para>This method returns S_OK to indicate that the method completed successfully.</para>
-    </returns>
-    <remarks>
-      <para>The <see cref="ISynchronize.Wait" /> method implemented on a standard event object (CLSID_StdEvent) automatically calls <b>Reset</b> when the synchronization object has been signaled.</para>
-      <para>The implementation of <see cref="ISynchronize.Wait" /> on the manual reset event object (CLSID_ManualResetEvent) does not automatically call <b>Reset</b>. A server object usually calls <b>Reset</b> from a method that clients call after they detect that the synchronization object was signaled.</para>
-      <para>In general, it is the server's responsibility to call <b>Reset</b>. If, however, the client needs to begin with the synchronization object in an unsignaled state, the client should call <b>Reset</b>.</para>
-    </remarks>
-    <seealso cref="ISynchronize" />
+    <summary>Sets the synchronization object to the nonsignaled state.</summary>
+    <returns>This method returns S_OK to indicate that the method completed successfully.</returns>
   </member>
   <member name="ISynchronize.Signal">
-    <summary>
-      <para>Sets the synchronization object to the signaled state and causes pending wait operations to return S_OK.</para>
-    </summary>
-    <returns>
-      <para>This method returns S_OK to indicate that the method completed successfully.</para>
-    </returns>
-    <seealso cref="ISynchronize" />
+    <summary>Sets the synchronization object to the signaled state and causes pending wait operations to return S_OK.</summary>
+    <returns>This method returns S_OK to indicate that the method completed successfully.</returns>
   </member>
   <member name="ISynchronize.Wait">
-    <summary>
-      <para>Waits for the synchronization object to be signaled or for a specified timeout period to elapse, whichever comes first.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>The wait options. Possible values are taken from the <see cref="COWAIT_FLAGS" /> enumeration.</para>
-    </param>
-    <param name="dwMilliseconds">
-      <para>The time this call will wait before returning, in milliseconds. If this parameter is INFINITE, the caller will wait until the synchronization object is signaled, no matter how long it takes. If this parameter is 0, the method returns immediately.</para>
-    </param>
+    <summary>Waits for the synchronization object to be signaled or for a specified timeout period to elapse, whichever comes first.</summary>
+    <param name="dwFlags">The wait options. Possible values are taken from the <see cref="COWAIT_FLAGS" /> enumeration.</param>
+    <param name="dwMilliseconds">The time this call will wait before returning, in milliseconds. If this parameter is INFINITE, the caller will wait until the synchronization object is signaled, no matter how long it takes. If this parameter is 0, the method returns immediately.</param>
     <returns>
       <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and E_FAIL, as well as the following values.</para>
       <list type="table">
@@ -42,38 +21,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The synchronization object was signaled.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The synchronization object was signaled.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RPC_E_CALLPENDING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>RPC_E_CALLPENDING</b>
-            </para>
-          </description>
-          <description>
-            <para>The time-out period elapsed before the synchronization object was signaled.</para>
-          </description>
-        </item>
+          <description>The time-out period elapsed before the synchronization object was signaled.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the caller is waiting in a single-thread apartment, <b>Wait</b> enters the COM modal loop. If the caller is waiting in a multithread apartment, the caller is blocked until <b>Wait</b> returns.</para>
-    </remarks>
-    <seealso cref="CoWaitForMultipleHandles" />
-    <seealso cref="ISynchronize" />
   </member>
   <member name="ISynchronize">
-    <summary>
-      <para>Provides asynchronous communication between objects about the occurrence of an event. Objects that implement <b>ISynchronize</b> can receive indications that an event has occurred, and they can respond to queries about the event. In this way, clients can make sure that one request has been processed before they submit a subsequent request that depends on completion of the first one.</para>
-    </summary>
-    <seealso cref="ISynchronizeContainer" />
+    <summary>Provides asynchronous communication between objects about the occurrence of an event. Objects that implement <b>ISynchronize</b> can receive indications that an event has occurred, and they can respond to queries about the event. In this way, clients can make sure that one request has been processed before they submit a subsequent request that depends on completion of the first one.</summary>
   </member>
 </doc>

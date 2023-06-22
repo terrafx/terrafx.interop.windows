@@ -3,48 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SOCKET_ADDRESS_LIST">
-    <summary>
-      <para>The SOCKET_ADDRESS_LIST structure defines a variable-sized list of transport addresses.</para>
-    </summary>
-    <remarks>
-      <para>A WSK application passes a buffer to the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket">WskControlSocket</a> function when the WSK
-application queries the current list of local transport addresses that match a socket's address family.
-If the call to the
-<b>WskControlSocket</b> function succeeds, the buffer contains a SOCKET_ADDRESS_LIST structure followed by
-the SOCKADDR structures for each of the local transport addresses that match the socket's address family.
-The WSK subsystem fills in the
-<b>Address</b> array and sets the
-<b>iAddressCount</b> member to the number of entries in the array. The
-<b>lpSockaddr</b> pointers in each of the SOCKET_ADDRESS structures in the array point to the specific
-SOCKADDR structure type that corresponds to the address family that the WSK application specified when it
-created the socket.</para>
-      <para>For more information about querying the current list of local transport addresses, see
-<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd877219(v=vs.85)">SIO_ADDRESS_LIST_QUERY</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd877219(v=vs.85)">SIO_ADDRESS_LIST_QUERY</seealso>
-    <seealso cref="SOCKADDR" />
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket">WskControlSocket</seealso>
+    <summary>The SOCKET_ADDRESS_LIST structure defines a variable-sized list of transport addresses.</summary>
   </member>
   <member name="SOCKET_ADDRESS_LIST.iAddressCount">
-    <summary>
-      <para>The number of transport addresses in the list.</para>
-    </summary>
+    <summary>The number of transport addresses in the list.</summary>
   </member>
   <member name="SOCKET_ADDRESS_LIST.Address">
     <summary>
-      <para>A variable-sized array of SOCKET_ADDRESS structures. The SOCKET_ADDRESS structure is defined as
-follows:</para>
-      <code>typedef struct _SOCKET_ADDRESS {
-  LPSOCKADDR  lpSockaddr;
-  INT  iSockaddrLength;
-} SOCKET_ADDRESS, *PSOCKET_ADDRESS, *LPSOCKET_ADDRESS;
-</code>
+      <para>A variable-sized array of SOCKET_ADDRESS structures. The SOCKET_ADDRESS structure is defined as follows:</para>
+      <code>typedef struct _SOCKET_ADDRESS { LPSOCKADDR lpSockaddr; INT iSockaddrLength; } SOCKET_ADDRESS, *PSOCKET_ADDRESS, *LPSOCKET_ADDRESS;</code>
       <h4>lpSockaddr</h4>
       <para>A pointer to a buffer that contains a transport address.</para>
       <h4>iSockaddrLength</h4>
-      <para>The size, in bytes, of the SOCKADDR structure type that is pointed to by the
-<b>lpSockaddr</b> member.</para>
+      <para>The size, in bytes, of the SOCKADDR structure type that is pointed to by the<b>lpSockaddr</b> member.</para>
     </summary>
   </member>
 </doc>

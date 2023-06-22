@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_GLOBAL_BARRIER">
+    <summary>Describes a resource memory access barrier. Used by global, texture, and buffer barriers to indicate when resource memory must be made visible for a specific access type.</summary>
+  </member>
+  <member name="D3D12_GLOBAL_BARRIER.SyncBefore">
+    <summary>Synchronization scope of all preceding GPU work that must be completed before executing the barrier.</summary>
+  </member>
+  <member name="D3D12_GLOBAL_BARRIER.SyncAfter">
+    <summary>Synchronization scope of all subsequent GPU work that must wait until the barrier execution is finished.</summary>
+  </member>
+  <member name="D3D12_GLOBAL_BARRIER.AccessBefore">
+    <summary>Access bits corresponding with any relevant resource usage since the preceding barrier or the start of <b>ExecuteCommandLists</b> scope.</summary>
+  </member>
+  <member name="D3D12_GLOBAL_BARRIER.AccessAfter">
+    <summary>Access bits corresponding with any relevant resource usage after the barrier completes.</summary>
+  </member>
+</doc>

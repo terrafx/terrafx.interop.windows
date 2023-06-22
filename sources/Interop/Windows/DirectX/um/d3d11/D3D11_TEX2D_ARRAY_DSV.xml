@@ -3,30 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TEX2D_ARRAY_DSV">
-    <summary>
-      <para>Specifies the subresources from an array 2D textures that are accessible to a depth-stencil view.</para>
-    </summary>
-    <remarks>
-      <para>This structure is one member of a depth-stencil-view description (see <see cref="D3D11_DEPTH_STENCIL_VIEW_DESC" />).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Specifies the subresources from an array 2D textures that are accessible to a depth-stencil view.</summary>
   </member>
   <member name="D3D11_TEX2D_ARRAY_DSV.MipSlice">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The index of the first mipmap level to use.</para>
-    </summary>
+    <summary>The index of the first mipmap level to use.</summary>
   </member>
   <member name="D3D11_TEX2D_ARRAY_DSV.FirstArraySlice">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The index of the first texture to use in an array of textures.</para>
-    </summary>
+    <summary>The index of the first texture to use in an array of textures.</summary>
   </member>
   <member name="D3D11_TEX2D_ARRAY_DSV.ArraySize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of textures to use.</para>
-    </summary>
+    <summary>Number of textures to use.</summary>
   </member>
 </doc>

@@ -3,1027 +3,749 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="READ_USN_JOURNAL_DATA_V0">
-    <summary>
-      <para>Contains information defining a set of update sequence number (USN) change journal records to return
-to the calling process. It is used by the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a> and
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> control codes. Prior to
-Windows 8 and Windows Server 2012 this structure was named
-<b>READ_USN_JOURNAL_DATA</b>. Use that name to compile
-with older SDKs and compilers. Windows Server 2012 introduced
-<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh802706(v=vs.85)">READ_USN_JOURNAL_DATA_V1</a> to support 128-bit file
-identifiers used by ReFS.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</seealso>
-    <seealso cref="USN_RECORD" />
+    <summary>Contains information defining a set of update sequence number (USN) change journal records to return to the calling process. It is used by the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a> and<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> control codes. Prior to Windows 8 and Windows Server 2012 this structure was named<b>READ_USN_JOURNAL_DATA</b>. Use that name to compile with older SDKs and compilers. Windows Server 2012 introduced<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh802706(v=vs.85)">READ_USN_JOURNAL_DATA_V1</a> to support 128-bit file identifiers used by ReFS.</summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.StartUsn">
     <summary>
       <para>The USN at which to begin reading the change journal.</para>
-      <para>To start the read operation at the first record in the journal, set the <b>StartUsn</b></para>
-      <para>member to zero. Because a USN is contained in every journal record, the output buffer tells at which record the
-read operation actually started.</para>
-      <para>To start the read operation at a specific record, set <b>StartUsn</b> to that record
-USN.</para>
-      <para>If a nonzero USN is specified that is less than the first USN in the change journal, then an error occurs and
-the <b>ERROR_JOURNAL_ENTRY_DELETED</b> error code is returned. This code may indicate a case
-in which the specified USN is valid at one time but has since been deleted.</para>
-      <para>For more information on navigating the change journal buffer returned in
-<b>READ_USN_JOURNAL_DATA_V0</b>, see
-<a href="https://docs.microsoft.com//windows/desktop/FileIO/walking-a-buffer-of-change-journal-records">Walking a Buffer of Change Journal Records</a>.</para>
+      <para>To start the read operation at the first record in the journal, set the <b>StartUsn</b>member to zero. Because a USN is contained in every journal record, the output buffer tells at which record the read operation actually started.</para>
+      <para>To start the read operation at a specific record, set <b>StartUsn</b> to that record USN.</para>
+      <para>If a nonzero USN is specified that is less than the first USN in the change journal, then an error occurs and the <b>ERROR_JOURNAL_ENTRY_DELETED</b> error code is returned. This code may indicate a case in which the specified USN is valid at one time but has since been deleted.</para>
+      <para>For more information on navigating the change journal buffer returned in<b>READ_USN_JOURNAL_DATA_V0</b>, see<a href="https://docs.microsoft.com//windows/desktop/FileIO/walking-a-buffer-of-change-journal-records">Walking a Buffer of Change Journal Records</a>.</para>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.ReasonMask">
     <summary>
-      <para>A mask of flags, each flag noting a change for which the file or directory has a record in the change
-journal. To be returned in a
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation, a
-change journal record must have at least one of these flags set.</para>
+      <para>A mask of flags, each flag noting a change for which the file or directory has a record in the change journal. To be returned in a<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation, a change journal record must have at least one of these flags set.</para>
       <para>The list of valid flags is as follows. Unused bits are reserved.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_BASIC_INFO_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00008000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A user has either changed one or more file or directory attributes (such as the read-only, hidden,
-system, archive, or sparse attribute), or one or more time stamps.</para>
-          </description>
-        </item>
-        <item>
+          <description>A user has either changed one or more file or directory attributes (such as the read-only, hidden, system, archive, or sparse attribute), or one or more time stamps.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_CLOSE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x80000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x80000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is closed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is closed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_COMPRESSION_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00020000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00020000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The compression state of the file or directory is changed from or to compressed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The compression state of the file or directory is changed from or to compressed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_DATA_EXTEND</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is added to.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is added to.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_DATA_OVERWRITE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Data in the file or directory is overwritten.</para>
-          </description>
-        </item>
-        <item>
+          <description>Data in the file or directory is overwritten.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_DATA_TRUNCATION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is truncated.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is truncated.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_EA_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The user makes a change to the file or directory extended attributes. These NTFS file system attributes
-are not accessible to Windows-based applications.</para>
-          </description>
-        </item>
-        <item>
+          <description>The user makes a change to the file or directory extended attributes. These NTFS file system attributes are not accessible to Windows-based applications.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_ENCRYPTION_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00040000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is encrypted or decrypted.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is encrypted or decrypted.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_FILE_CREATE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is created for the first time.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is created for the first time.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_FILE_DELETE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is deleted.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is deleted.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_HARD_LINK_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An NTFS file system hard link is added to or removed from the file or directory. An NTFS file system hard
-link, similar to a POSIX hard link, is one of several directory entries that see the same file or
-directory.</para>
-          </description>
-        </item>
-        <item>
+          <description>An NTFS file system hard link is added to or removed from the file or directory. An NTFS file system hard link, similar to a POSIX hard link, is one of several directory entries that see the same file or directory.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_INDEXABLE_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00004000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A user changed the <b>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED</b> attribute. That is, the
-user changed the file or directory from one that can be content indexed to one that cannot, or vice versa.
-(Content indexing permits rapid searching of data by building a database of selected content.)</para>
-          </description>
-        </item>
-        <item>
+          <description>A user changed the <b>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED</b> attribute. That is, the user changed the file or directory from one that can be content indexed to one that cannot, or vice versa. (Content indexing permits rapid searching of data by building a database of selected content.)</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_NAMED_DATA_EXTEND</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more named data streams for the file were added to.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more named data streams for the file were added to.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_NAMED_DATA_OVERWRITE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Data in one or more named data streams for the file is overwritten.</para>
-          </description>
-        </item>
-        <item>
+          <description>Data in one or more named data streams for the file is overwritten.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_NAMED_DATA_TRUNCATION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more named data streams for the file is truncated.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more named data streams for the file is truncated.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_OBJECT_ID_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00080000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00080000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The object identifier of the file or directory is changed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The object identifier of the file or directory is changed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_RENAME_NEW_NAME</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is renamed, and the file name in the
-<see cref="USN_RECORD_V2" /> or
-<see cref="USN_RECORD_V3" /> structure holding this journal record is the
-new name.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is renamed, and the file name in the <see cref="USN_RECORD_V2" /> or <see cref="USN_RECORD_V3" /> structure holding this journal record is the new name.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_RENAME_OLD_NAME</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00001000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is renamed, and the file name in the
-<see cref="USN_RECORD_V2" /> or
-<see cref="USN_RECORD_V3" /> structure holding this journal record is the
-previous name.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is renamed, and the file name in the <see cref="USN_RECORD_V2" /> or <see cref="USN_RECORD_V3" /> structure holding this journal record is the previous name.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_REPARSE_POINT_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00100000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00100000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The reparse point contained in the file or directory is changed, or a reparse point is added to or
-deleted from the file or directory.</para>
-          </description>
-        </item>
-        <item>
+          <description>The reparse point contained in the file or directory is changed, or a reparse point is added to or deleted from the file or directory.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_SECURITY_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A change is made in the access permissions to the file or directory.</para>
-          </description>
-        </item>
-        <item>
+          <description>A change is made in the access permissions to the file or directory.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_STREAM_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00200000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00200000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A named stream is added to or removed from the file or directory, or a named stream is renamed.</para>
-          </description>
-        </item>
+          <description>A named stream is added to or removed from the file or directory, or a named stream is renamed.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.ReturnOnlyOnClose">
     <summary>
       <para>A value that specifies when to return change journal records.</para>
-      <para>To receive notification when the final handle for the changed file or directory is closed, rather than at the
-time a change occurs, set <b>ReturnOnlyOnClose</b> to any nonzero value and specify the
-<b>USN_REASON_CLOSE</b> flag in the <b>ReasonMask</b> member.</para>
-      <para>All changes indicated by <b>ReasonMask</b> flags eventually generate a call to the change
-journal software when the file is closed. If your
-<see cref="DeviceIoControl" /> call is waiting for the file to be
-closed, that call in turn will allow your
-<b>DeviceIoControl</b> call to return. In the event that a
-file or directory is not closed prior to a volume failure, operating system failure, or shutdown, a cleanup
-call to the change journal software occurs the next time the volume is mounted. The call occurs even if there
-is an intervening system restart.</para>
-      <para>To receive notification the first time each change is logged, as well as at cleanup, set
-<b>ReturnOnlyOnClose</b> to zero.</para>
-      <para>Whether <b>ReturnOnlyOnClose</b> is zero or nonzero, the records generated at cleanup log
-within the change journal all reasons for USN changes that occurred to the file or directory. Each time a final
-close operation occurs for an item, a USN close record is written to the change journal, and the
-<b>ReasonMask</b> flags for the item are all reset.</para>
-      <para>For a file or directory for which no user data exists (for example, a mounted folder), the final close
-operation occurs when the <see cref="CloseHandle" /> function is
-called on the last user handle to the item.</para>
+      <para>To receive notification when the final handle for the changed file or directory is closed, rather than at the time a change occurs, set <b>ReturnOnlyOnClose</b> to any nonzero value and specify the<b>USN_REASON_CLOSE</b> flag in the <b>ReasonMask</b> member.</para>
+      <para>All changes indicated by <b>ReasonMask</b> flags eventually generate a call to the change journal software when the file is closed. If your<see cref="DeviceIoControl" /> call is waiting for the file to be closed, that call in turn will allow your<b>DeviceIoControl</b> call to return. In the event that a file or directory is not closed prior to a volume failure, operating system failure, or shutdown, a cleanup call to the change journal software occurs the next time the volume is mounted. The call occurs even if there is an intervening system restart.</para>
+      <para>To receive notification the first time each change is logged, as well as at cleanup, set<b>ReturnOnlyOnClose</b> to zero.</para>
+      <para>Whether <b>ReturnOnlyOnClose</b> is zero or nonzero, the records generated at cleanup log within the change journal all reasons for USN changes that occurred to the file or directory. Each time a final close operation occurs for an item, a USN close record is written to the change journal, and the<b>ReasonMask</b> flags for the item are all reset.</para>
+      <para>For a file or directory for which no user data exists (for example, a mounted folder), the final close operation occurs when the <see cref="CloseHandle" /> function is called on the last user handle to the item.</para>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.Timeout">
     <summary>
-      <para>The time-out value, in seconds, used with the <b>BytesToWaitFor</b> member to tell the
-operating system what to do if the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation
-requests more data than exists in the change journal.</para>
-      <para>If <b>Timeout</b> is zero and <b>BytesToWaitFor</b> is nonzero, and
-the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call reaches
-the end of the change journal without finding data to return,
-<b>FSCTL_READ_USN_JOURNAL</b> waits until
-<b>BytesToWaitFor</b> bytes of unfiltered data have been added to the change journal and
-then retrieves the specified records.</para>
-      <para>If <b>Timeout</b> is nonzero and <b>BytesToWaitFor</b> is nonzero,
-and the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call
-reaches the end of the change journal without finding data to return,
-<b>FSCTL_READ_USN_JOURNAL</b> waits
-<b>Timeout</b> seconds and then attempts to return the specified records. After
-<b>Timeout</b> seconds,
-<b>FSCTL_READ_USN_JOURNAL</b> retrieves any records
-available within the specified range.</para>
-      <para>In either case, after the time-out period any new data appended to the change journal is processed. If there
-are still no records to return from the specified set, the time-out period is repeated. In this mode,
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> remains outstanding until
-at least one record is returned or I/O is canceled.</para>
-      <para>If <b>BytesToWaitFor</b> is zero, then <b>Timeout</b> is ignored.
-<b>Timeout</b> is also ignored for asynchronously opened handles.</para>
+      <para>The time-out value, in seconds, used with the <b>BytesToWaitFor</b> member to tell the operating system what to do if the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation requests more data than exists in the change journal.</para>
+      <para>If <b>Timeout</b> is zero and <b>BytesToWaitFor</b> is nonzero, and the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call reaches the end of the change journal without finding data to return,<b>FSCTL_READ_USN_JOURNAL</b> waits until<b>BytesToWaitFor</b> bytes of unfiltered data have been added to the change journal and then retrieves the specified records.</para>
+      <para>If <b>Timeout</b> is nonzero and <b>BytesToWaitFor</b> is nonzero, and the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call reaches the end of the change journal without finding data to return,<b>FSCTL_READ_USN_JOURNAL</b> waits<b>Timeout</b> seconds and then attempts to return the specified records. After<b>Timeout</b> seconds,<b>FSCTL_READ_USN_JOURNAL</b> retrieves any records available within the specified range.</para>
+      <para>In either case, after the time-out period any new data appended to the change journal is processed. If there are still no records to return from the specified set, the time-out period is repeated. In this mode,<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> remains outstanding until at least one record is returned or I/O is canceled.</para>
+      <para>If <b>BytesToWaitFor</b> is zero, then <b>Timeout</b> is ignored.<b>Timeout</b> is also ignored for asynchronously opened handles.</para>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.BytesToWaitFor">
     <summary>
-      <para>The number of bytes of unfiltered data added to the change journal. Use this value with
-<b>Timeout</b> to tell the operating system what to do if the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation requests more
-data than exists in the change journal.</para>
-      <para>If <b>BytesToWaitFor</b> is zero, then <b>Timeout</b> is ignored. In
-this case, the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation
-always returns successfully when the end of the change journal file is encountered. It also retrieves the USN
-that should be used for the next
-<b>FSCTL_READ_USN_JOURNAL</b> operation. When the
-returned next USN is the same as the <b>StartUsn</b> supplied, there are no records
-available. The calling process should not use
-<b>FSCTL_READ_USN_JOURNAL</b> again immediately.</para>
-      <para>Because the amount of data returned cannot be predicted when <b>BytesToWaitFor</b> is
-zero, you run a risk of overflowing the output buffer. To reduce this risk, specify a nonzero
-<b>BytesToWaitFor</b> value in repeated
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operations until all
-records in the change journal are exhausted. Then specify zero to await new records.</para>
-      <para>Alternatively, use the <i>lpBytesReturned</i> parameter of
-<see cref="DeviceIoControl" /> in the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call to
-determine the amount of data available, reallocate the output buffer (with room to spare for new records), and
-call <b>DeviceIoControl</b> again.</para>
+      <para>The number of bytes of unfiltered data added to the change journal. Use this value with<b>Timeout</b> to tell the operating system what to do if the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation requests more data than exists in the change journal.</para>
+      <para>If <b>BytesToWaitFor</b> is zero, then <b>Timeout</b> is ignored. In this case, the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation always returns successfully when the end of the change journal file is encountered. It also retrieves the USN that should be used for the next<b>FSCTL_READ_USN_JOURNAL</b> operation. When the returned next USN is the same as the <b>StartUsn</b> supplied, there are no records available. The calling process should not use<b>FSCTL_READ_USN_JOURNAL</b> again immediately.</para>
+      <para>Because the amount of data returned cannot be predicted when <b>BytesToWaitFor</b> is zero, you run a risk of overflowing the output buffer. To reduce this risk, specify a nonzero<b>BytesToWaitFor</b> value in repeated<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operations until all records in the change journal are exhausted. Then specify zero to await new records.</para>
+      <para>Alternatively, use the <i>lpBytesReturned</i> parameter of<see cref="DeviceIoControl" /> in the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call to determine the amount of data available, reallocate the output buffer (with room to spare for new records), and call <b>DeviceIoControl</b> again.</para>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.UsnJournalID">
     <summary>
       <para>The identifier for the instance of the journal that is current for the volume.</para>
-      <para>The NTFS file system can miss putting events in the change journal if the change journal is stopped and
-restarted or deleted and re-created. If either of these events occurs, the NTFS file system gives the journal a
-new identifier. If the journal identifier does not agree with the current journal identifier, the call to
-<see cref="DeviceIoControl" /> fails and returns an appropriate
-error code. To retrieve the new journal identifier, call
-<b>DeviceIoControl</b> with the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a></para>
-      <para>operation.</para>
+      <para>The NTFS file system can miss putting events in the change journal if the change journal is stopped and restarted or deleted and re-created. If either of these events occurs, the NTFS file system gives the journal a new identifier. If the journal identifier does not agree with the current journal identifier, the call to<see cref="DeviceIoControl" /> fails and returns an appropriate error code. To retrieve the new journal identifier, call<b>DeviceIoControl</b> with the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a>operation.</para>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0">
-    <summary>
-      <para>Contains information defining a set of update sequence number (USN) change journal records to return
-to the calling process. It is used by the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a> and
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> control codes. Prior to
-Windows 8 and Windows Server 2012 this structure was named
-<b>READ_USN_JOURNAL_DATA</b>. Use that name to compile
-with older SDKs and compilers. Windows Server 2012 introduced
-<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh802706(v=vs.85)">READ_USN_JOURNAL_DATA_V1</a> to support 128-bit file
-identifiers used by ReFS.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</seealso>
-    <seealso cref="USN_RECORD" />
+    <summary>Contains information defining a set of update sequence number (USN) change journal records to return to the calling process. It is used by the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a> and<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> control codes. Prior to Windows 8 and Windows Server 2012 this structure was named<b>READ_USN_JOURNAL_DATA</b>. Use that name to compile with older SDKs and compilers. Windows Server 2012 introduced<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh802706(v=vs.85)">READ_USN_JOURNAL_DATA_V1</a> to support 128-bit file identifiers used by ReFS.</summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.StartUsn">
     <summary>
       <para>The USN at which to begin reading the change journal.</para>
-      <para>To start the read operation at the first record in the journal, set the <b>StartUsn</b></para>
-      <para>member to zero. Because a USN is contained in every journal record, the output buffer tells at which record the
-read operation actually started.</para>
-      <para>To start the read operation at a specific record, set <b>StartUsn</b> to that record
-USN.</para>
-      <para>If a nonzero USN is specified that is less than the first USN in the change journal, then an error occurs and
-the <b>ERROR_JOURNAL_ENTRY_DELETED</b> error code is returned. This code may indicate a case
-in which the specified USN is valid at one time but has since been deleted.</para>
-      <para>For more information on navigating the change journal buffer returned in
-<b>READ_USN_JOURNAL_DATA_V0</b>, see
-<a href="https://docs.microsoft.com//windows/desktop/FileIO/walking-a-buffer-of-change-journal-records">Walking a Buffer of Change Journal Records</a>.</para>
+      <para>To start the read operation at the first record in the journal, set the <b>StartUsn</b>member to zero. Because a USN is contained in every journal record, the output buffer tells at which record the read operation actually started.</para>
+      <para>To start the read operation at a specific record, set <b>StartUsn</b> to that record USN.</para>
+      <para>If a nonzero USN is specified that is less than the first USN in the change journal, then an error occurs and the <b>ERROR_JOURNAL_ENTRY_DELETED</b> error code is returned. This code may indicate a case in which the specified USN is valid at one time but has since been deleted.</para>
+      <para>For more information on navigating the change journal buffer returned in<b>READ_USN_JOURNAL_DATA_V0</b>, see<a href="https://docs.microsoft.com//windows/desktop/FileIO/walking-a-buffer-of-change-journal-records">Walking a Buffer of Change Journal Records</a>.</para>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.ReasonMask">
     <summary>
-      <para>A mask of flags, each flag noting a change for which the file or directory has a record in the change
-journal. To be returned in a
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation, a
-change journal record must have at least one of these flags set.</para>
+      <para>A mask of flags, each flag noting a change for which the file or directory has a record in the change journal. To be returned in a<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation, a change journal record must have at least one of these flags set.</para>
       <para>The list of valid flags is as follows. Unused bits are reserved.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_BASIC_INFO_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00008000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A user has either changed one or more file or directory attributes (such as the read-only, hidden,
-system, archive, or sparse attribute), or one or more time stamps.</para>
-          </description>
-        </item>
-        <item>
+          <description>A user has either changed one or more file or directory attributes (such as the read-only, hidden, system, archive, or sparse attribute), or one or more time stamps.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_CLOSE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x80000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x80000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is closed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is closed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_COMPRESSION_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00020000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00020000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The compression state of the file or directory is changed from or to compressed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The compression state of the file or directory is changed from or to compressed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_DATA_EXTEND</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is added to.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is added to.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_DATA_OVERWRITE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Data in the file or directory is overwritten.</para>
-          </description>
-        </item>
-        <item>
+          <description>Data in the file or directory is overwritten.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_DATA_TRUNCATION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is truncated.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is truncated.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_EA_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The user makes a change to the file or directory extended attributes. These NTFS file system attributes
-are not accessible to Windows-based applications.</para>
-          </description>
-        </item>
-        <item>
+          <description>The user makes a change to the file or directory extended attributes. These NTFS file system attributes are not accessible to Windows-based applications.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_ENCRYPTION_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00040000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is encrypted or decrypted.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is encrypted or decrypted.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_FILE_CREATE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is created for the first time.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is created for the first time.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_FILE_DELETE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is deleted.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is deleted.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_HARD_LINK_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An NTFS file system hard link is added to or removed from the file or directory. An NTFS file system hard
-link, similar to a POSIX hard link, is one of several directory entries that see the same file or
-directory.</para>
-          </description>
-        </item>
-        <item>
+          <description>An NTFS file system hard link is added to or removed from the file or directory. An NTFS file system hard link, similar to a POSIX hard link, is one of several directory entries that see the same file or directory.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_INDEXABLE_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00004000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A user changed the <b>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED</b> attribute. That is, the
-user changed the file or directory from one that can be content indexed to one that cannot, or vice versa.
-(Content indexing permits rapid searching of data by building a database of selected content.)</para>
-          </description>
-        </item>
-        <item>
+          <description>A user changed the <b>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED</b> attribute. That is, the user changed the file or directory from one that can be content indexed to one that cannot, or vice versa. (Content indexing permits rapid searching of data by building a database of selected content.)</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_NAMED_DATA_EXTEND</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more named data streams for the file were added to.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more named data streams for the file were added to.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_NAMED_DATA_OVERWRITE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Data in one or more named data streams for the file is overwritten.</para>
-          </description>
-        </item>
-        <item>
+          <description>Data in one or more named data streams for the file is overwritten.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_NAMED_DATA_TRUNCATION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more named data streams for the file is truncated.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more named data streams for the file is truncated.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_OBJECT_ID_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00080000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00080000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The object identifier of the file or directory is changed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The object identifier of the file or directory is changed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_RENAME_NEW_NAME</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is renamed, and the file name in the
-<see cref="USN_RECORD_V2" /> or
-<see cref="USN_RECORD_V3" /> structure holding this journal record is the
-new name.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is renamed, and the file name in the <see cref="USN_RECORD_V2" /> or <see cref="USN_RECORD_V3" /> structure holding this journal record is the new name.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_RENAME_OLD_NAME</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00001000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file or directory is renamed, and the file name in the
-<see cref="USN_RECORD_V2" /> or
-<see cref="USN_RECORD_V3" /> structure holding this journal record is the
-previous name.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file or directory is renamed, and the file name in the <see cref="USN_RECORD_V2" /> or <see cref="USN_RECORD_V3" /> structure holding this journal record is the previous name.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_REPARSE_POINT_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00100000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00100000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The reparse point contained in the file or directory is changed, or a reparse point is added to or
-deleted from the file or directory.</para>
-          </description>
-        </item>
-        <item>
+          <description>The reparse point contained in the file or directory is changed, or a reparse point is added to or deleted from the file or directory.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_SECURITY_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A change is made in the access permissions to the file or directory.</para>
-          </description>
-        </item>
-        <item>
+          <description>A change is made in the access permissions to the file or directory.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>USN_REASON_STREAM_CHANGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00200000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00200000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A named stream is added to or removed from the file or directory, or a named stream is renamed.</para>
-          </description>
-        </item>
+          <description>A named stream is added to or removed from the file or directory, or a named stream is renamed.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.ReturnOnlyOnClose">
     <summary>
       <para>A value that specifies when to return change journal records.</para>
-      <para>To receive notification when the final handle for the changed file or directory is closed, rather than at the
-time a change occurs, set <b>ReturnOnlyOnClose</b> to any nonzero value and specify the
-<b>USN_REASON_CLOSE</b> flag in the <b>ReasonMask</b> member.</para>
-      <para>All changes indicated by <b>ReasonMask</b> flags eventually generate a call to the change
-journal software when the file is closed. If your
-<see cref="DeviceIoControl" /> call is waiting for the file to be
-closed, that call in turn will allow your
-<b>DeviceIoControl</b> call to return. In the event that a
-file or directory is not closed prior to a volume failure, operating system failure, or shutdown, a cleanup
-call to the change journal software occurs the next time the volume is mounted. The call occurs even if there
-is an intervening system restart.</para>
-      <para>To receive notification the first time each change is logged, as well as at cleanup, set
-<b>ReturnOnlyOnClose</b> to zero.</para>
-      <para>Whether <b>ReturnOnlyOnClose</b> is zero or nonzero, the records generated at cleanup log
-within the change journal all reasons for USN changes that occurred to the file or directory. Each time a final
-close operation occurs for an item, a USN close record is written to the change journal, and the
-<b>ReasonMask</b> flags for the item are all reset.</para>
-      <para>For a file or directory for which no user data exists (for example, a mounted folder), the final close
-operation occurs when the <see cref="CloseHandle" /> function is
-called on the last user handle to the item.</para>
+      <para>To receive notification when the final handle for the changed file or directory is closed, rather than at the time a change occurs, set <b>ReturnOnlyOnClose</b> to any nonzero value and specify the<b>USN_REASON_CLOSE</b> flag in the <b>ReasonMask</b> member.</para>
+      <para>All changes indicated by <b>ReasonMask</b> flags eventually generate a call to the change journal software when the file is closed. If your<see cref="DeviceIoControl" /> call is waiting for the file to be closed, that call in turn will allow your<b>DeviceIoControl</b> call to return. In the event that a file or directory is not closed prior to a volume failure, operating system failure, or shutdown, a cleanup call to the change journal software occurs the next time the volume is mounted. The call occurs even if there is an intervening system restart.</para>
+      <para>To receive notification the first time each change is logged, as well as at cleanup, set<b>ReturnOnlyOnClose</b> to zero.</para>
+      <para>Whether <b>ReturnOnlyOnClose</b> is zero or nonzero, the records generated at cleanup log within the change journal all reasons for USN changes that occurred to the file or directory. Each time a final close operation occurs for an item, a USN close record is written to the change journal, and the<b>ReasonMask</b> flags for the item are all reset.</para>
+      <para>For a file or directory for which no user data exists (for example, a mounted folder), the final close operation occurs when the <see cref="CloseHandle" /> function is called on the last user handle to the item.</para>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.Timeout">
     <summary>
-      <para>The time-out value, in seconds, used with the <b>BytesToWaitFor</b> member to tell the
-operating system what to do if the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation
-requests more data than exists in the change journal.</para>
-      <para>If <b>Timeout</b> is zero and <b>BytesToWaitFor</b> is nonzero, and
-the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call reaches
-the end of the change journal without finding data to return,
-<b>FSCTL_READ_USN_JOURNAL</b> waits until
-<b>BytesToWaitFor</b> bytes of unfiltered data have been added to the change journal and
-then retrieves the specified records.</para>
-      <para>If <b>Timeout</b> is nonzero and <b>BytesToWaitFor</b> is nonzero,
-and the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call
-reaches the end of the change journal without finding data to return,
-<b>FSCTL_READ_USN_JOURNAL</b> waits
-<b>Timeout</b> seconds and then attempts to return the specified records. After
-<b>Timeout</b> seconds,
-<b>FSCTL_READ_USN_JOURNAL</b> retrieves any records
-available within the specified range.</para>
-      <para>In either case, after the time-out period any new data appended to the change journal is processed. If there
-are still no records to return from the specified set, the time-out period is repeated. In this mode,
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> remains outstanding until
-at least one record is returned or I/O is canceled.</para>
-      <para>If <b>BytesToWaitFor</b> is zero, then <b>Timeout</b> is ignored.
-<b>Timeout</b> is also ignored for asynchronously opened handles.</para>
+      <para>The time-out value, in seconds, used with the <b>BytesToWaitFor</b> member to tell the operating system what to do if the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation requests more data than exists in the change journal.</para>
+      <para>If <b>Timeout</b> is zero and <b>BytesToWaitFor</b> is nonzero, and the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call reaches the end of the change journal without finding data to return,<b>FSCTL_READ_USN_JOURNAL</b> waits until<b>BytesToWaitFor</b> bytes of unfiltered data have been added to the change journal and then retrieves the specified records.</para>
+      <para>If <b>Timeout</b> is nonzero and <b>BytesToWaitFor</b> is nonzero, and the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call reaches the end of the change journal without finding data to return,<b>FSCTL_READ_USN_JOURNAL</b> waits<b>Timeout</b> seconds and then attempts to return the specified records. After<b>Timeout</b> seconds,<b>FSCTL_READ_USN_JOURNAL</b> retrieves any records available within the specified range.</para>
+      <para>In either case, after the time-out period any new data appended to the change journal is processed. If there are still no records to return from the specified set, the time-out period is repeated. In this mode,<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> remains outstanding until at least one record is returned or I/O is canceled.</para>
+      <para>If <b>BytesToWaitFor</b> is zero, then <b>Timeout</b> is ignored.<b>Timeout</b> is also ignored for asynchronously opened handles.</para>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.BytesToWaitFor">
     <summary>
-      <para>The number of bytes of unfiltered data added to the change journal. Use this value with
-<b>Timeout</b> to tell the operating system what to do if the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation requests more
-data than exists in the change journal.</para>
-      <para>If <b>BytesToWaitFor</b> is zero, then <b>Timeout</b> is ignored. In
-this case, the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation
-always returns successfully when the end of the change journal file is encountered. It also retrieves the USN
-that should be used for the next
-<b>FSCTL_READ_USN_JOURNAL</b> operation. When the
-returned next USN is the same as the <b>StartUsn</b> supplied, there are no records
-available. The calling process should not use
-<b>FSCTL_READ_USN_JOURNAL</b> again immediately.</para>
-      <para>Because the amount of data returned cannot be predicted when <b>BytesToWaitFor</b> is
-zero, you run a risk of overflowing the output buffer. To reduce this risk, specify a nonzero
-<b>BytesToWaitFor</b> value in repeated
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operations until all
-records in the change journal are exhausted. Then specify zero to await new records.</para>
-      <para>Alternatively, use the <i>lpBytesReturned</i> parameter of
-<see cref="DeviceIoControl" /> in the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call to
-determine the amount of data available, reallocate the output buffer (with room to spare for new records), and
-call <b>DeviceIoControl</b> again.</para>
+      <para>The number of bytes of unfiltered data added to the change journal. Use this value with<b>Timeout</b> to tell the operating system what to do if the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation requests more data than exists in the change journal.</para>
+      <para>If <b>BytesToWaitFor</b> is zero, then <b>Timeout</b> is ignored. In this case, the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation always returns successfully when the end of the change journal file is encountered. It also retrieves the USN that should be used for the next<b>FSCTL_READ_USN_JOURNAL</b> operation. When the returned next USN is the same as the <b>StartUsn</b> supplied, there are no records available. The calling process should not use<b>FSCTL_READ_USN_JOURNAL</b> again immediately.</para>
+      <para>Because the amount of data returned cannot be predicted when <b>BytesToWaitFor</b> is zero, you run a risk of overflowing the output buffer. To reduce this risk, specify a nonzero<b>BytesToWaitFor</b> value in repeated<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operations until all records in the change journal are exhausted. Then specify zero to await new records.</para>
+      <para>Alternatively, use the <i>lpBytesReturned</i> parameter of<see cref="DeviceIoControl" /> in the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</a> operation call to determine the amount of data available, reallocate the output buffer (with room to spare for new records), and call <b>DeviceIoControl</b> again.</para>
     </summary>
   </member>
   <member name="READ_USN_JOURNAL_DATA_V0.UsnJournalID">
     <summary>
       <para>The identifier for the instance of the journal that is current for the volume.</para>
-      <para>The NTFS file system can miss putting events in the change journal if the change journal is stopped and
-restarted or deleted and re-created. If either of these events occurs, the NTFS file system gives the journal a
-new identifier. If the journal identifier does not agree with the current journal identifier, the call to
-<see cref="DeviceIoControl" /> fails and returns an appropriate
-error code. To retrieve the new journal identifier, call
-<b>DeviceIoControl</b> with the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a></para>
-      <para>operation.</para>
+      <para>The NTFS file system can miss putting events in the change journal if the change journal is stopped and restarted or deleted and re-created. If either of these events occurs, the NTFS file system gives the journal a new identifier. If the journal identifier does not agree with the current journal identifier, the call to<see cref="DeviceIoControl" /> fails and returns an appropriate error code. To retrieve the new journal identifier, call<b>DeviceIoControl</b> with the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a>operation.</para>
     </summary>
   </member>
-  <member name="READ_USN_JOURNAL_DATA_V0.MinMajorVersion">
-    <summary></summary>
-  </member>
-  <member name="READ_USN_JOURNAL_DATA_V0.MaxMajorVersion">
-    <summary></summary>
-  </member>
+  <member name="READ_USN_JOURNAL_DATA_V0.MinMajorVersion"></member>
+  <member name="READ_USN_JOURNAL_DATA_V0.MaxMajorVersion"></member>
 </doc>

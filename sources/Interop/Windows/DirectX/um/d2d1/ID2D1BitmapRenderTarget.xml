@@ -3,35 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1BitmapRenderTarget.GetBitmap">
-    <summary>
-      <para>Retrieves the bitmap for this render target. The returned bitmap can be used for drawing operations.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the bitmap for this render target. This bitmap can be used for drawing operations.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>The DPI for the <see cref="ID2D1Bitmap" /> obtained from <b>GetBitmap</b> will be the DPI of the <see cref="ID2D1BitmapRenderTarget" /> when the render target was created. Changing the DPI of the <b>ID2D1BitmapRenderTarget</b> by calling  <see cref="SetDpi" /> doesn't affect the DPI of the bitmap, even if <b>SetDpi</b> is called before <b>GetBitmap</b>. Using <b>SetDpi</b> to change the DPI of the <b>ID2D1BitmapRenderTarget</b> does affect how contents are rendered into the bitmap: it just doesn't affect the DPI of the bitmap retrieved by <b>GetBitmap</b>.</para>
-    </remarks>
-    <seealso cref="ID2D1BitmapRenderTarget" />
+    <summary>Retrieves the bitmap for this render target. The returned bitmap can be used for drawing operations.</summary>
+    <param name="bitmap">When this method returns, contains the address of a pointer to the bitmap for this render target. This bitmap can be used for drawing operations.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1BitmapRenderTarget">
-    <summary>
-      <para>Renders to an intermediate texture created by the <see cref="CreateCompatibleRenderTarget" /> method.</para>
-    </summary>
-    <remarks>
-      <para>An <b>ID2D1BitmapRenderTarget</b>  writes to an intermediate texture. It's useful for creating patterns for use with an <see cref="ID2D1BitmapBrush" /> or caching drawing data that will be used repeatedly.</para>
-      <para>To write directly to a WIC bitmap instead, use the <a href="https://docs.microsoft.com//windows/win32/Direct2D/id2d1factory-createwicbitmaprendertarget">ID2D1Factory.CreateWicBitmapRenderTarget</a> method. This method returns an <see cref="ID2D1RenderTarget" /> that writes to the specified WIC bitmap.</para>
-      <h3>Creating ID2D1BitmapRenderTarget Objects</h3>
-      <para>To create a bitmap render target, call the <see cref="ID2D1RenderTarget.CreateCompatibleRenderTarget" /> method.</para>
-      <para>Like other render targets, an <b>ID2D1BitmapRenderTarget</b> is a device-dependent resource and must be recreated when the associated device becomes unavailable. For more information, see the <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.</para>
-    </remarks>
-    <seealso cref="CreateCompatibleRenderTarget" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/id2d1factory-createwicbitmaprendertarget">ID2D1Factory.CreateWicBitmapRenderTarget</seealso>
-    <seealso cref="ID2D1RenderTarget" />
+    <summary>Renders to an intermediate texture created by the <see cref="CreateCompatibleRenderTarget" /> method.</summary>
   </member>
 </doc>

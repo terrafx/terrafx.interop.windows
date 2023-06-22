@@ -3,88 +3,54 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_VALUE_TYPE">
-    <summary>
-      <para>The types of fixed-size primitives.</para>
-    </summary>
+    <summary>The types of fixed-size primitives.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_BOOL_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a BOOL value.</para>
-    </summary>
+    <summary>Used to indicate a BOOL value.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_INT8_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a signed 8-bit integer.</para>
-    </summary>
+    <summary>Used to indicate a signed 8-bit integer.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_INT16_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a signed 16-bit integer.</para>
-    </summary>
+    <summary>Used to indicate a signed 16-bit integer.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_INT32_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a signed 32-bit integer.</para>
-    </summary>
+    <summary>Used to indicate a signed 32-bit integer.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_INT64_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a signed 64-bit integer.</para>
-    </summary>
+    <summary>Used to indicate a signed 64-bit integer.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_UINT8_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate an unsigned 8-bit integer.</para>
-    </summary>
+    <summary>Used to indicate an unsigned 8-bit integer.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_UINT16_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate an unsigned 16-bit integer.</para>
-    </summary>
+    <summary>Used to indicate an unsigned 16-bit integer.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_UINT32_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate an unsigned 32-bit integer.</para>
-    </summary>
+    <summary>Used to indicate an unsigned 32-bit integer.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_UINT64_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate an unsigned 64-bit integer.</para>
-    </summary>
+    <summary>Used to indicate an unsigned 64-bit integer.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_FLOAT_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a 32-bit floating point value.</para>
-    </summary>
+    <summary>Used to indicate a 32-bit floating point value.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_DOUBLE_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a 64-bit floating point value.</para>
-    </summary>
+    <summary>Used to indicate a 64-bit floating point value.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_DECIMAL_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a 96-bit fixed point value.</para>
-    </summary>
+    <summary>Used to indicate a 96-bit fixed point value.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_DATETIME_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a date and time.</para>
-    </summary>
+    <summary>Used to indicate a date and time.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_TIMESPAN_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a signed 64-bit time period in 100 nanosecond units.</para>
-    </summary>
+    <summary>Used to indicate a signed 64-bit time period in 100 nanosecond units.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_GUID_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a GUID.</para>
-    </summary>
+    <summary>Used to indicate a GUID.</summary>
   </member>
   <member name="WS_VALUE_TYPE.WS_DURATION_VALUE_TYPE">
-    <summary>
-      <para>Used to indicate a <see cref="WS_DURATION" />.</para>
-    </summary>
+    <summary>Used to indicate a <see cref="WS_DURATION" />.</summary>
   </member>
 </doc>

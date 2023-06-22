@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSAPI_WORKING_SET_INFORMATION">
-    <summary>
-      <para>Contains working set information for a process.</para>
-    </summary>
-    <seealso cref="PSAPI_WORKING_SET_BLOCK" />
-    <seealso cref="QueryWorkingSet" />
+    <summary>Contains working set information for a process.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_INFORMATION.NumberOfEntries">
-    <summary>
-      <para>The number of entries in the <b>WorkingSetInfo</b> array.</para>
-    </summary>
+    <summary>The number of entries in the <b>WorkingSetInfo</b> array.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_INFORMATION.WorkingSetInfo">
-    <summary>
-      <para>An array of <see cref="PSAPI_WORKING_SET_BLOCK" /> elements, one for each page in the process working set.</para>
-    </summary>
+    <summary>An array of <see cref="PSAPI_WORKING_SET_BLOCK" /> elements, one for each page in the process working set.</summary>
   </member>
 </doc>

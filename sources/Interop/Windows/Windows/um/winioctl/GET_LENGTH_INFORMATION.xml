@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GET_LENGTH_INFORMATION">
-    <summary>
-      <para>Contains disk, volume, or partition length information used by the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_length_info">IOCTL_DISK_GET_LENGTH_INFO</a> control code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_length_info">IOCTL_DISK_GET_LENGTH_INFO</seealso>
+    <summary>Contains disk, volume, or partition length information used by the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_length_info">IOCTL_DISK_GET_LENGTH_INFO</a> control code.</summary>
   </member>
   <member name="GET_LENGTH_INFORMATION.Length">
-    <summary>
-      <para>The length of the disk, volume, or partition, in bytes.</para>
-    </summary>
+    <summary>The length of the disk, volume, or partition, in bytes.</summary>
   </member>
 </doc>

@@ -3,56 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RID_DEVICE_INFO_KEYBOARD">
-    <summary>
-      <para>Defines the raw input data coming from the specified keyboard.</para>
-    </summary>
-    <remarks>
-      <para>For information about keyboard types, subtypes, scan code modes, and related keyboard layouts, see the documentation in <i>kbd.h</i>, <i>ntdd8042.h</i> and <i>ntddkbd.h</i> headers in Windows SDK, and the <a href="https://docs.microsoft.com//samples/microsoft/windows-driver-samples/keyboard-layout-samples/">Keyboard Layout Samples</a>.</para>
-    </remarks>
-    <seealso cref="RID_DEVICE_INFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/raw-input">Raw Input</seealso>
-    <seealso cref="KEYBOARD_ATTRIBUTES structure" />
+    <summary>Defines the raw input data coming from the specified keyboard.</summary>
   </member>
   <member name="RID_DEVICE_INFO_KEYBOARD.dwType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The type of keyboard. See <a href="https://docs.microsoft.com/#remarks">Remarks</a>.</para>
-      <para>| Value | Description                                          |
-|:-----:|------------------------------------------------------|
-|  0x4  | Enhanced 101- or 102-key keyboards (and compatibles) |
-|  0x7  | Japanese Keyboard                                    |
-|  0x8  | Korean Keyboard                                      |
-| 0x51  | Unknown type or HID keyboard                         |</para>
+      <para>| Value | Description | |:-----:|------------------------------------------------------| | 0x4 | Enhanced 101- or 102-key keyboards (and compatibles) | | 0x7 | Japanese Keyboard | | 0x8 | Korean Keyboard | | 0x51 | Unknown type or HID keyboard |</para>
     </summary>
   </member>
   <member name="RID_DEVICE_INFO_KEYBOARD.dwSubType">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The vendor-specific subtype of the keyboard. See <a href="https://docs.microsoft.com/#remarks">Remarks</a>.</para>
-    </summary>
+    <summary>The vendor-specific subtype of the keyboard. See <a href="https://docs.microsoft.com/#remarks">Remarks</a>.</summary>
   </member>
   <member name="RID_DEVICE_INFO_KEYBOARD.dwKeyboardMode">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The scan code mode. Usually 1, which means that <i>Scan Code Set 1</i> is used. See <a href="https://download.microsoft.com/download/1/6/1/161ba512-40e2-4cc9-843a-923143f3456c/scancode.doc">Keyboard Scan Code Specification</a>.</para>
-    </summary>
+    <summary>The scan code mode. Usually 1, which means that <i>Scan Code Set 1</i> is used. See <a href="https://download.microsoft.com/download/1/6/1/161ba512-40e2-4cc9-843a-923143f3456c/scancode.doc">Keyboard Scan Code Specification</a>.</summary>
   </member>
   <member name="RID_DEVICE_INFO_KEYBOARD.dwNumberOfFunctionKeys">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of function keys on the keyboard.</para>
-    </summary>
+    <summary>The number of function keys on the keyboard.</summary>
   </member>
   <member name="RID_DEVICE_INFO_KEYBOARD.dwNumberOfIndicators">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of LED indicators on the keyboard.</para>
-    </summary>
+    <summary>The number of LED indicators on the keyboard.</summary>
   </member>
   <member name="RID_DEVICE_INFO_KEYBOARD.dwNumberOfKeysTotal">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The total number of keys on the keyboard.</para>
-    </summary>
+    <summary>The total number of keys on the keyboard.</summary>
   </member>
 </doc>

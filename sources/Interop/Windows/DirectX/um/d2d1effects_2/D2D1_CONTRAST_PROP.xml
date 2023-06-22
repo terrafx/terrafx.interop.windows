@@ -3,25 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_CONTRAST_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/contrast-effect">Contrast effect</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/built-in-effects">Built-in Effects</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/contrast-effect">Contrast effect</seealso>
-    <seealso cref="CreateEffect" />
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/contrast-effect">Contrast effect</a>.</summary>
   </member>
   <member name="D2D1_CONTRAST_PROP.D2D1_CONTRAST_PROP_CONTRAST">
-    <summary>
-      <para>The D2D1_CONTRAST_PROP_CONTRAST property is a float value indicating the amount by which to adjust the contrast of the image. Negative values reduce contrast, while positive values increase contrast.
-Minimum value is -1.0f, maximum value is 1.0f.  The default value for the property is 0.0f.</para>
-    </summary>
+    <summary>The D2D1_CONTRAST_PROP_CONTRAST property is a float value indicating the amount by which to adjust the contrast of the image. Negative values reduce contrast, while positive values increase contrast.<br />Minimum value is -1.0f, maximum value is 1.0f. The default value for the property is 0.0f.</summary>
   </member>
   <member name="D2D1_CONTRAST_PROP.D2D1_CONTRAST_PROP_CLAMP_INPUT">
-    <summary>
-      <para>The D2D1_CONTRAST_PROP_CLAMP_INPUT property is a boolean value indicating whether or not to clamp the input to [0.0, 1.0]. The default value for the property is FALSE.</para>
-    </summary>
+    <summary>The D2D1_CONTRAST_PROP_CLAMP_INPUT property is a boolean value indicating whether or not to clamp the input to [0.0, 1.0]. The default value for the property is FALSE.</summary>
   </member>
-  <member name="D2D1_CONTRAST_PROP.D2D1_CONTRAST_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_CONTRAST_PROP.D2D1_CONTRAST_PROP_FORCE_DWORD"></member>
 </doc>

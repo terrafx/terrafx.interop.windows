@@ -3,218 +3,172 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IContactManager.GetContactCollection">
-    <summary>
-      <para>Returns an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactcollection">IContactCollection</a> object that contains all known contacts.</para>
-    </summary>
-    <param name="ppContactCollection">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactcollection">IContactCollection</a>**</b></para>
-      <para>On success, contains an enumeration of the contact collection.</para>
-    </param>
+    <summary>Returns an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactcollection">IContactCollection</a> object that contains all known contacts.</summary>
+    <param name="ppContactCollection">On success, contains an enumeration of the contact collection.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success. <i>ppContactCollection</i> contains the collection.</para>
-          </description>
-        </item>
+          <description>Success. <i>ppContactCollection</i> contains the collection.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The enumerator of the new collection is set before the first contact. You must first call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nf-icontact-icontactcollection-next">Next</a> before querying the collection with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nf-icontact-icontactcollection-getcurrent">GetCurrent</a>.</para>
-    </remarks>
   </member>
   <member name="IContactManager.GetMeContact">
-    <summary>
-      <para>Retrieves the local user account concept of 'me'.</para>
-    </summary>
-    <param name="ppMeContact">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontact">IContact</a>**</b></para>
-      <para>Specifies where to store a pointer to the 'me' contact.</para>
-    </param>
+    <summary>Retrieves the local user account concept of 'me'.</summary>
+    <param name="ppMeContact">Specifies where to store a pointer to the 'me' contact.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Retrieval was successful.</para>
-          </description>
-        </item>
+          <description>Retrieval was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IContactManager.Initialize">
-    <summary>
-      <para>Initializes the contact manager with the unique application name and application version
-being used to manipulate contacts.</para>
-    </summary>
-    <param name="pszAppName">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Specifies the application name.</para>
-    </param>
-    <param name="pszAppVersion">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Specifies the application version.</para>
-    </param>
+    <summary>Initializes the contact manager with the unique application name and application version being used to manipulate contacts.</summary>
+    <param name="pszAppName">Specifies the application name.</param>
+    <param name="pszAppVersion">Specifies the application version.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactmanager">IContactManager</a> is initialized.</para>
-          </description>
-        </item>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactmanager">IContactManager</a> is initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  This method MUST be called before other <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactmanager">IContactManager</a> methods.</para>
-    </remarks>
   </member>
   <member name="IContactManager.Load">
-    <summary>
-      <para>Loads an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontact">IContact</a> object with the data from the contact
-referenced by the computer-local contact ID.</para>
-    </summary>
-    <param name="pszContactID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Specifies the contact ID to load.</para>
-    </param>
-    <param name="ppContact">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontact">IContact</a>**</b></para>
-      <para>Specifies the destination <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontact">IContact</a> object.</para>
-    </param>
+    <summary>Loads an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontact">IContact</a> object with the data from the contact referenced by the computer-local contact ID.</summary>
+    <param name="pszContactID">Specifies the contact ID to load.</param>
+    <param name="ppContact">Specifies the destination <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontact">IContact</a> object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Contact was found and loaded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Contact was found and loaded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NO_MATCH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_NO_MATCH</b>
-            </para>
-          </description>
-          <description>
-            <para>Could not find this contact ID.</para>
-          </description>
-        </item>
+          <description>Could not find this contact ID.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nf-icontact-icontact-getcontactid">GetContactID</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactmanager">IContactManager</seealso>
   </member>
   <member name="IContactManager.MergeContactIDs">
-    <summary>
-      <para>Makes an old Contact ID resolve to the same value as a new Contact ID.
-Subsequent calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nf-icontact-icontactmanager-load">IContactManager.Load</a> with the old contact ID
-now loads the new contact ID contact.</para>
-    </summary>
-    <param name="pszNewContactID">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Specifies the ID of the new contact, representing both the old and new contacts.</para>
-    </param>
-    <param name="pszOldContactID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Specifies the ID representing the old contact.</para>
-    </param>
+    <summary>Makes an old Contact ID resolve to the same value as a new Contact ID. Subsequent calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nf-icontact-icontactmanager-load">IContactManager.Load</a> with the old contact ID now loads the new contact ID contact.</summary>
+    <param name="pszNewContactID">Specifies the ID of the new contact, representing both the old and new contacts.</param>
+    <param name="pszOldContactID">Specifies the ID representing the old contact.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Address change was successful.</para>
-          </description>
-        </item>
+          <description>Address change was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IContactManager.SetMeContact">
-    <summary>
-      <para>Sets the local user account concept of 'me' to specified user.</para>
-    </summary>
-    <param name="pMeContact">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontact">IContact</a>*</b></para>
-      <para>Specifies the contact to treat as 'me' for the current user.</para>
-    </param>
+    <summary>Sets the local user account concept of 'me' to specified user.</summary>
+    <param name="pMeContact">Specifies the contact to treat as 'me' for the current user.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Specification was successful.</para>
-          </description>
-        </item>
+          <description>Specification was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IContactManager">
-    <summary>
-      <para>Do not use. Used for retrieving a contact, based on a contact ID string.</para>
-    </summary>
+    <summary>Do not use. Used for retrieving a contact, based on a contact ID string.</summary>
   </member>
 </doc>

@@ -4,39 +4,26 @@
 <doc>
   <member name="eAVEncDDDynamicRangeCompressionControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the dynamic range control profile in a Dolby Digital audio stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencdddynamicrangecompressioncontrol-property">AVEncDDDynamicRangeCompressionControl</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_None">
-    <summary>
-      <para>No dynamic range compression.</para>
-    </summary>
+    <summary>No dynamic range compression.</summary>
   </member>
   <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_FilmStandard">
-    <summary>
-      <para>Film standard profile.</para>
-    </summary>
+    <summary>Film standard profile.</summary>
   </member>
   <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_FilmLight">
-    <summary>
-      <para>Film light profile.</para>
-    </summary>
+    <summary>Film light profile.</summary>
   </member>
   <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_MusicStandard">
-    <summary>
-      <para>Music standard profile.</para>
-    </summary>
+    <summary>Music standard profile.</summary>
   </member>
   <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_MusicLight">
-    <summary>
-      <para>Music light profile.</para>
-    </summary>
+    <summary>Music light profile.</summary>
   </member>
   <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_Speech">
-    <summary>
-      <para>Speech profile.</para>
-    </summary>
+    <summary>Speech profile.</summary>
   </member>
 </doc>

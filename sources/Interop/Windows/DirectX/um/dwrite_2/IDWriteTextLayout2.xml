@@ -3,101 +3,45 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextLayout2.GetFontFallback">
-    <summary>
-      <para>Get the current font fallback object.</para>
-    </summary>
-    <param name="fontFallback">
-      <para>The current font fallback object.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout2">IDWriteTextLayout2</seealso>
+    <summary>Get the current font fallback object.</summary>
+    <param name="fontFallback">The current font fallback object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout2.GetLastLineWrapping">
-    <summary>
-      <para>Get whether or not the last word on the last line is wrapped.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout2">IDWriteTextLayout2</seealso>
+    <summary>Get whether or not the last word on the last line is wrapped.</summary>
   </member>
   <member name="IDWriteTextLayout2.GetMetrics">
-    <summary>
-      <para>Retrieves overall metrics for the formatted string.</para>
-    </summary>
-    <param name="textMetrics">
-      <para>Type: <b><see cref="DWRITE_TEXT_METRICS1" />*</b></para>
-      <para>When this method returns, contains the measured distances of text and associated content after being formatted.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout2">IDWriteTextLayout2</seealso>
+    <summary>Retrieves overall metrics for the formatted string.</summary>
+    <param name="textMetrics">When this method returns, contains the measured distances of text and associated content after being formatted.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout2.GetOpticalAlignment">
-    <summary>
-      <para>Get how the glyphs align to the edges the margin.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout2">IDWriteTextLayout2</seealso>
+    <summary>Get how the glyphs align to the edges the margin.</summary>
   </member>
   <member name="IDWriteTextLayout2.GetVerticalGlyphOrientation">
-    <summary>
-      <para>Get the preferred orientation of glyphs when using a vertical reading direction.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout2">IDWriteTextLayout2</seealso>
+    <summary>Get the preferred orientation of glyphs when using a vertical reading direction.</summary>
   </member>
   <member name="IDWriteTextLayout2.SetFontFallback">
-    <summary>
-      <para>Apply a custom font fallback onto layout. If none is specified, the layout uses the system fallback list.</para>
-    </summary>
-    <param name="fontFallback">
-      <para>Custom font fallback created from <see cref="IDWriteFontFallbackBuilder.CreateFontFallback" /> or <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2-getsystemfontfallback">IDWriteFactory2.GetSystemFontFallback</a>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout2">IDWriteTextLayout2</seealso>
+    <summary>Apply a custom font fallback onto layout. If none is specified, the layout uses the system fallback list.</summary>
+    <param name="fontFallback">Custom font fallback created from <see cref="IDWriteFontFallbackBuilder.CreateFontFallback" /> or <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2-getsystemfontfallback">IDWriteFactory2.GetSystemFontFallback</a>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout2.SetLastLineWrapping">
-    <summary>
-      <para>Set whether or not the last word on the last line is wrapped.</para>
-    </summary>
-    <param name="isLastLineWrappingEnabled">
-      <para>Line wrapping option.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout2">IDWriteTextLayout2</seealso>
+    <summary>Set whether or not the last word on the last line is wrapped.</summary>
+    <param name="isLastLineWrappingEnabled">Line wrapping option.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout2.SetOpticalAlignment">
-    <summary>
-      <para>Set how the glyphs align to the edges the margin.  Default behavior is to align glyphs using their default glyphs metrics, which include side bearings.</para>
-    </summary>
-    <param name="opticalAlignment">
-      <para>Optical alignment option.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout2">IDWriteTextLayout2</seealso>
+    <summary>Set how the glyphs align to the edges the margin. Default behavior is to align glyphs using their default glyphs metrics, which include side bearings.</summary>
+    <param name="opticalAlignment">Optical alignment option.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout2.SetVerticalGlyphOrientation">
-    <summary>
-      <para>Set the preferred orientation of glyphs when using a vertical reading direction.</para>
-    </summary>
-    <param name="glyphOrientation">
-      <para>Preferred glyph orientation.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout2">IDWriteTextLayout2</seealso>
+    <summary>Set the preferred orientation of glyphs when using a vertical reading direction.</summary>
+    <param name="glyphOrientation">Preferred glyph orientation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout2">
-    <summary>
-      <para>Represents a block of text after it has been fully analyzed and formatted.</para>
-    </summary>
-    <seealso cref="IDWriteTextLayout1" />
+    <summary>Represents a block of text after it has been fully analyzed and formatted.</summary>
   </member>
 </doc>

@@ -3,305 +3,60 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0">
-    <summary>
-      <para>The <b>TCP_ESTATS_SND_CONG_ROD_v0</b> structure contains read-only dynamic information for extended TCP statistics on sender congestion related data for a TCP connection.</para>
-    </summary>
-    <remarks>
-      <para>The <b>TCP_ESTATS_SND_CONG_ROD_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
-      <para>The <b>TCP_ESTATS_SND_CONG_ROD_v0</b> is defined as version 0 of the structure for  read-only dynamic information on sender congestion related data for a TCP connection.  This information is available after the connection has been established.</para>
-      <para>The <b>TCP_ESTATS_SND_CONG_ROD_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsSndCong</b> is passed in the <i>EstatsType</i> parameter. Extended TCP statistics need to be enabled to retrieve this structure.</para>
-      <para>TCP congestion control and congestion control algorithms are discussed in detail in the IETF RFC on TCP Congestion Control. For more information, see <a href="http://tools.ietf.org/html/rfc2581">http://www.ietf.org/rfc/rfc2581.txt</a>.</para>
-      <para>The members of this structure are defined in the IETF RFC on the TCP Extended Statistics MIB. For more information, see <a href="http://tools.ietf.org/html/rfc4898">http://www.ietf.org/rfc/rfc4898.txt</a>.</para>
-      <para>The following is the mapping of the members in the <b>TCP_ESTATS_SND_CONG_ROD_v0</b> structure to the entries defined in RFC 4898 for extended TCP statistics:</para>
-      <list type="table">
-        <listheader>
-          <description>Term</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>
-            <b>SndLimTransRwin</b>
-          </description>
-          <description>
-            <para>tcpEStatsPerfSndLimTransRwin</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SndLimTimeRwin</b>
-          </description>
-          <description>
-            <para>tcpEStatsPerfSndLimTimeRwin</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SndLimBytesRwin</b>
-          </description>
-          <description>
-            <para>No mapping to this member.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SndLimTransCwnd</b>
-          </description>
-          <description>
-            <para>tcpEStatsPerfSndLimTransCwnd</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SndLimTimeCwnd</b>
-          </description>
-          <description>
-            <para>tcpEStatsPerfSndLimTimeCwnd</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SndLimBytesCwnd</b>
-          </description>
-          <description>
-            <para>No mapping to this member.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SndLimTransSnd</b>
-          </description>
-          <description>
-            <para>tcpEStatsPerfSndLimTransSnd</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SndLimTimeSnd</b>
-          </description>
-          <description>
-            <para>tcpEStatsPerfSndLimTimeSnd</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SndLimBytesSnd</b>
-          </description>
-          <description>
-            <para>No mapping to this member.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SlowStart</b>
-          </description>
-          <description>
-            <para>tcpEStatsStackSlowStart</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CongAvoid</b>
-          </description>
-          <description>
-            <para>tcpEStatsStackCongAvoid</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>OtherReductions</b>
-          </description>
-          <description>
-            <para>tcpEStatsStackOtherReductions</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CurCwnd</b>
-          </description>
-          <description>
-            <para>tcpEStatsPerfCurCwnd</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MaxSsCwnd</b>
-          </description>
-          <description>
-            <para>tcpEStatsStackMaxSsCwnd</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MaxCaCwnd</b>
-          </description>
-          <description>
-            <para>tcpEStatsStackMaxCaCwnd</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CurSsthresh</b>
-          </description>
-          <description>
-            <para>tcpEStatsPerfCurSsthresh</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MaxSsthresh</b>
-          </description>
-          <description>
-            <para>tcpEStatsStackMaxSsthresh</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MinSsthresh</b>
-          </description>
-          <description>
-            <para>tcpEStatsStackMinSsthresh</para>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="GetPerTcp6ConnectionEStats" />
-    <seealso cref="GetPerTcpConnectionEStats" />
-    <seealso cref="TCP_ESTATS_TYPE" />
+    <summary>The <b>TCP_ESTATS_SND_CONG_ROD_v0</b> structure contains read-only dynamic information for extended TCP statistics on sender congestion related data for a TCP connection.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.SndLimTransRwin">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of transitions into the "Receiver Limited" state
-from either the "Congestion Limited" or "Sender Limited"
-states.  This state is entered whenever TCP transmission
-stops because the sender has filled the announced receiver
-window.</para>
-    </summary>
+    <summary>The number of transitions into the "Receiver Limited" state from either the "Congestion Limited" or "Sender Limited" states. This state is entered whenever TCP transmission stops because the sender has filled the announced receiver window.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.SndLimTimeRwin">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The cumulative time, in milliseconds, spent in the "Receiver Limited" state where TCP transmission
-stops because the sender has filled the announced receiver
-window.</para>
-    </summary>
+    <summary>The cumulative time, in milliseconds, spent in the "Receiver Limited" state where TCP transmission stops because the sender has filled the announced receiver window.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.SndLimBytesRwin">
-    <summary>
-      <para>Type: <b>SIZE_T</b></para>
-      <para>The total number of bytes sent in the "Receiver Limited" state.</para>
-    </summary>
+    <summary>The total number of bytes sent in the "Receiver Limited" state.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.SndLimTransCwnd">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of transitions into the "Congestion Limited"
-state from either the "Receiver Limited" or "Sender
-Limited" states.  This state is entered whenever TCP
-transmission stops because the sender has reached some
-limit defined by TCP congestion control (the congestion window, for example) or other
-algorithms (retransmission timeouts) designed to control
-network traffic.</para>
-    </summary>
+    <summary>The number of transitions into the "Congestion Limited" state from either the "Receiver Limited" or "Sender Limited" states. This state is entered whenever TCP transmission stops because the sender has reached some limit defined by TCP congestion control (the congestion window, for example) or other algorithms (retransmission timeouts) designed to control network traffic.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.SndLimTimeCwnd">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The cumulative time, in milliseconds, spent in the "Congestion Limited"
-state.  When there is a
-retransmission timeout, it is counted in
-this member and not the cumulative time
-for some other state.</para>
-    </summary>
+    <summary>The cumulative time, in milliseconds, spent in the "Congestion Limited" state. When there is a retransmission timeout, it is counted in this member and not the cumulative time for some other state.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.SndLimBytesCwnd">
-    <summary>
-      <para>Type: <b>SIZE_T</b></para>
-      <para>The total number of bytes sent in the "Congestion Limited" state.</para>
-    </summary>
+    <summary>The total number of bytes sent in the "Congestion Limited" state.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.SndLimTransSnd">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of transitions into the "Sender Limited" state
-from either the "Receiver Limited" or "Congestion Limited"
-states.  This state is entered whenever TCP transmission
-stops due to some sender limit such as running out of
-application data or other resources and the Karn algorithm.
-When TCP stops sending data for any reason, which cannot be
-classified as "Receiver Limited" or "Congestion Limited", it
-is treated as "Sender Limited".</para>
-    </summary>
+    <summary>The number of transitions into the "Sender Limited" state from either the "Receiver Limited" or "Congestion Limited" states. This state is entered whenever TCP transmission stops due to some sender limit such as running out of application data or other resources and the Karn algorithm. When TCP stops sending data for any reason, which cannot be classified as "Receiver Limited" or "Congestion Limited", it is treated as "Sender Limited".</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.SndLimTimeSnd">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The cumulative time, in milliseconds, spent in the "Sender Limited" state.</para>
-    </summary>
+    <summary>The cumulative time, in milliseconds, spent in the "Sender Limited" state.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.SndLimBytesSnd">
-    <summary>
-      <para>Type: <b>SIZE_T</b></para>
-      <para>The total number of bytes sent in the "Sender Limited" state.</para>
-    </summary>
+    <summary>The total number of bytes sent in the "Sender Limited" state.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.SlowStart">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of times the congestion window has been
-increased by the "Slow Start" algorithm.</para>
-    </summary>
+    <summary>The number of times the congestion window has been increased by the "Slow Start" algorithm.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.CongAvoid">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of times the congestion window has been
-increased by the "Congestion Avoidance" algorithm.</para>
-    </summary>
+    <summary>The number of times the congestion window has been increased by the "Congestion Avoidance" algorithm.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.OtherReductions">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of congestion window reductions made as a result
-of anything other than congestion control algorithms other than "Slow Start" and "Congestion Avoidance" algorithms.</para>
-    </summary>
+    <summary>The number of congestion window reductions made as a result of anything other than congestion control algorithms other than "Slow Start" and "Congestion Avoidance" algorithms.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.CurCwnd">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The size, in bytes, of the current congestion window.</para>
-    </summary>
+    <summary>The size, in bytes, of the current congestion window.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.MaxSsCwnd">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The maximum size, in bytes, of the congestion window size used during "Slow Start."</para>
-    </summary>
+    <summary>The maximum size, in bytes, of the congestion window size used during "Slow Start."</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.MaxCaCwnd">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The maximum size, in bytes, of the congestion window used during "Congestion
-Avoidance."</para>
-    </summary>
+    <summary>The maximum size, in bytes, of the congestion window used during "Congestion Avoidance."</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.CurSsthresh">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The current size, in bytes, of the slow start threshold.</para>
-    </summary>
+    <summary>The current size, in bytes, of the slow start threshold.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.MaxSsthresh">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The maximum size, in bytes, of the slow start threshold, excluding the initial
-value.</para>
-    </summary>
+    <summary>The maximum size, in bytes, of the slow start threshold, excluding the initial value.</summary>
   </member>
   <member name="TCP_ESTATS_SND_CONG_ROD_v0.MinSsthresh">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The minimum size, in bytes, of the slow start threshold.</para>
-    </summary>
+    <summary>The minimum size, in bytes, of the slow start threshold.</summary>
   </member>
 </doc>

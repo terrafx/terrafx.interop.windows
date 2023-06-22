@@ -3,43 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_MITIGATION_ASLR_POLICY">
-    <summary>
-      <para>Contains process mitigation policy settings for Address Space Randomization Layout (ASLR). The <see cref="GetProcessMitigationPolicy" /> and <see cref="SetProcessMitigationPolicy" /> functions use this structure.</para>
-    </summary>
+    <summary>Contains process mitigation policy settings for Address Space Randomization Layout (ASLR). The <see cref="GetProcessMitigationPolicy" /> and <see cref="SetProcessMitigationPolicy" /> functions use this structure.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME"></member>
   <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.Flags">
-    <summary>
-      <para>This member is reserved for system use.</para>
-    </summary>
+    <summary>This member is reserved for system use.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
-  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.EnableBottomUpRandomization">
-    <summary></summary>
-  </member>
-  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.EnableForceRelocateImages">
-    <summary></summary>
-  </member>
-  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.EnableHighEntropy">
-    <summary></summary>
-  </member>
-  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisallowStrippedImages">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
+  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.EnableBottomUpRandomization"></member>
+  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.EnableForceRelocateImages"></member>
+  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.EnableHighEntropy"></member>
+  <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisallowStrippedImages"></member>
   <member name="PROCESS_MITIGATION_ASLR_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
     <summary>
       <h4>- DisallowStrippedImages : 1</h4>
       <para>Images that have not been built with /DYNAMICBASE and do not have relocation information will fail to load if this flag and <b>EnableForceRelocateImages</b> are set.</para>
       <h4>- EnableBottomUpRandomization : 1</h4>
-      <para>Thread stacks and other bottom-up allocations are subject to randomization by ASLR if this flag is set.  This flag is read-only and cannot be modified after a process has been created.</para>
+      <para>Thread stacks and other bottom-up allocations are subject to randomization by ASLR if this flag is set. This flag is read-only and cannot be modified after a process has been created.</para>
       <h4>- EnableForceRelocateImages : 1</h4>
       <para>Images that have not been built with /DYNAMICBASE are forcibly relocated on load if this flag is set.</para>
       <h4>- EnableHighEntropy : 1</h4>
-      <para>Bottom-up allocations are subject to higher degrees of entropy when randomized by ASLR if this flag is set.  This flag only applies to 64-bit processes and is read-only.</para>
+      <para>Bottom-up allocations are subject to higher degrees of entropy when randomized by ASLR if this flag is set. This flag only applies to 64-bit processes and is read-only.</para>
       <h4>- ReservedFlags : 28</h4>
       <para>This member is reserved for system use.</para>
     </summary>

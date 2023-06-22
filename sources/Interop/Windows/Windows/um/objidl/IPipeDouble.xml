@@ -3,66 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPipeDouble.Pull">
-    <summary>
-      <para>Retrieves data of the double integer type from the pipe source.</para>
-    </summary>
-    <param name="buf">
-      <para>A pointer to the memory buffer that receives the data. The buffer must be able to hold at least the number of double integers specified in <i>cRequest</i>.</para>
-    </param>
-    <param name="cRequest">
-      <para>The number of double integers requested.</para>
-    </param>
-    <param name="pcReturned">
-      <para>The actual number of double integers returned.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK to indicate that the data was retrieved successfully.</para>
-    </returns>
-    <remarks>
-      <para>When the <b>Pull</b> method is called, data is requested from the provider of the pipe. The caller must provide a buffer that will hold at least the number of double integers specified in the <i>cRequest</i> parameter. The proxy will unmarshal the data into the provided buffer and set the number of double integers actually provided in <i>pcReturned</i>. The <i>pcReturned</i> parameter can be less than or equal to <i>cRequest</i>, but it will never be greater. When <i>pcReturned</i> is 0, it indicates that there is no more data.</para>
-    </remarks>
-    <seealso cref="IPipeDouble" />
+    <summary>Retrieves data of the double integer type from the pipe source.</summary>
+    <param name="buf">A pointer to the memory buffer that receives the data. The buffer must be able to hold at least the number of double integers specified in <i>cRequest</i>.</param>
+    <param name="cRequest">The number of double integers requested.</param>
+    <param name="pcReturned">The actual number of double integers returned.</param>
+    <returns>This method returns S_OK to indicate that the data was retrieved successfully.</returns>
   </member>
   <member name="IPipeDouble.Push">
-    <summary>
-      <para>Sends data of the double integer type to the pipe source.</para>
-    </summary>
-    <param name="buf">
-      <para>A pointer to the memory buffer that holds the data to be sent.</para>
-    </param>
-    <param name="cSent">
-      <para>The number of double integers in the buffer.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK to indicate that the data was sent successfully.</para>
-    </returns>
-    <remarks>
-      <para>When the <b>Push</b> method is called, the data is being sent to the provider of the pipe. The caller fills the buffer with the data and then calls <b>Push</b>. The number of double integers being sent is specified in the <i>cSent</i> parameter. The caller is responsible for ensuring that the buffer is valid for the duration of the call.</para>
-      <para>When the last of the data has been pushed, the caller must do one last push of <i>cSent</i> equal to 0 to indicate that the data transfer is complete.</para>
-    </remarks>
-    <seealso cref="IPipeDouble" />
+    <summary>Sends data of the double integer type to the pipe source.</summary>
+    <param name="buf">A pointer to the memory buffer that holds the data to be sent.</param>
+    <param name="cSent">The number of double integers in the buffer.</param>
+    <returns>This method returns S_OK to indicate that the data was sent successfully.</returns>
   </member>
   <member name="IPipeDouble">
-    <summary>
-      <para>Transfers data of the double type (which is 64 bits wide).</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="IPipeByte" />, <b>IPipeDouble</b>, and <see cref="IPipeLong" /> interfaces are similar to the standard DCE/RPC pipes. However, the COM implementation of pipes offers more flexibility. With the COM implementation, the basic idea is that the pipe is simply another interface with two methods: <see cref="Pull" /> and <see cref="Push" />. This results in three main benefits:</para>
-      <list type="bullet">
-        <item>
-          <description>A COM pipe is another interface, so it can be received as an out parameter from a method call and then either <see cref="Pull" /> or <see cref="Push" /> can be called. </description>
-        </item>
-        <item>
-          <description>There are no restrictions on when to call the <see cref="Pull" /> and <see cref="Push" /> methods, so a pipe is in reality bidirectional.
-</description>
-        </item>
-        <item>
-          <description>Pipes are interfaces, so the method calls can be asynchronous and follow those rules.</description>
-        </item>
-      </list>
-      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/Rpc/pipes">Pipes</a> in the RPC documentation.</para>
-    </remarks>
-    <seealso cref="IPipeByte" />
-    <seealso cref="IPipeLong" />
+    <summary>Transfers data of the double type (which is 64 bits wide).</summary>
   </member>
 </doc>

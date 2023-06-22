@@ -3,31 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSTEM_POWER_CONDITION">
-    <summary>
-      <para>Used by the <b>GUID_ACDC_POWER_SOURCE</b> power event to indicate the current
-power source.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Power/power-management-enumeration-types">Power Management Enumeration Types</seealso>
+    <summary>Used by the <b>GUID_ACDC_POWER_SOURCE</b> power event to indicate the current power source.</summary>
   </member>
   <member name="SYSTEM_POWER_CONDITION.PoAc">
-    <summary>
-      <para>The computer is powered by an AC power source (or similar, such as a laptop powered by a 12V automotive
-adapter).</para>
-    </summary>
+    <summary>The computer is powered by an AC power source (or similar, such as a laptop powered by a 12V automotive adapter).</summary>
   </member>
   <member name="SYSTEM_POWER_CONDITION.PoDc">
-    <summary>
-      <para>The system is receiving power from built-in batteries.</para>
-    </summary>
+    <summary>The system is receiving power from built-in batteries.</summary>
   </member>
   <member name="SYSTEM_POWER_CONDITION.PoHot">
-    <summary>
-      <para>The computer is powered by a short-term power source such as a UPS device.</para>
-    </summary>
+    <summary>The computer is powered by a short-term power source such as a UPS device.</summary>
   </member>
   <member name="SYSTEM_POWER_CONDITION.PoConditionMaximum">
-    <summary>
-      <para>Values equal to or greater than this value indicate an out of range value.</para>
-    </summary>
+    <summary>Values equal to or greater than this value indicate an out of range value.</summary>
   </member>
 </doc>

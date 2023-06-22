@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_LOGOTYPE_INFO">
-    <summary>
-      <para>The <b>CERT_LOGOTYPE_INFO</b> structure contains information about logotype data.</para>
-    </summary>
-    <seealso cref="CERT_LOGOTYPE_EXT_INFO" />
+    <summary>The <b>CERT_LOGOTYPE_INFO</b> structure contains information about logotype data.</summary>
   </member>
   <member name="CERT_LOGOTYPE_INFO.dwLogotypeInfoChoice">
     <summary>
@@ -16,36 +13,38 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CERT_LOGOTYPE_DIRECT_INFO_CHOICE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_LOGOTYPE_DIRECT_INFO_CHOICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The logotype data is available directly. The <b>pLogotypeDirectInfo</b> member contains the actual logotype data.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The logotype data is available directly. The <b>pLogotypeDirectInfo</b> member contains the actual logotype data.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_LOGOTYPE_INDIRECT_INFO_CHOICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_LOGOTYPE_INDIRECT_INFO_CHOICE</b>
-          </description>
-          <description>
-            <para>The logotype data is available through a reference. The <b>pLogotypeIndirectInfo</b> member contains a reference to the logotype information.</para>
-          </description>
-        </item>
+          <description>The logotype data is available through a reference. The <b>pLogotypeIndirectInfo</b> member contains a reference to the logotype information.</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="CERT_LOGOTYPE_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="CERT_LOGOTYPE_INFO.DUMMYUNIONNAME"></member>
   <member name="CERT_LOGOTYPE_INFO.DUMMYUNIONNAME.pLogotypeDirectInfo">
-    <summary>
-      <para>The address of a <see cref="CERT_LOGOTYPE_DATA" /> structure that contains the actual logotype data. This member is only used if the <b>dwLogotypeInfoChoice</b> member contains <b>CERT_LOGOTYPE_DIRECT_INFO_CHOICE</b>.</para>
-    </summary>
+    <summary>The address of a <see cref="CERT_LOGOTYPE_DATA" /> structure that contains the actual logotype data. This member is only used if the <b>dwLogotypeInfoChoice</b> member contains <b>CERT_LOGOTYPE_DIRECT_INFO_CHOICE</b>.</summary>
   </member>
   <member name="CERT_LOGOTYPE_INFO.DUMMYUNIONNAME.pLogotypeIndirectInfo">
-    <summary>
-      <para>The address of a <see cref="CERT_LOGOTYPE_REFERENCE" /> structure that contains references to the logotype data. This member is only used if the <b>dwLogotypeInfoChoice</b> member contains <b>CERT_LOGOTYPE_INDIRECT_INFO_CHOICE</b>.</para>
-    </summary>
+    <summary>The address of a <see cref="CERT_LOGOTYPE_REFERENCE" /> structure that contains references to the logotype data. This member is only used if the <b>dwLogotypeInfoChoice</b> member contains <b>CERT_LOGOTYPE_INDIRECT_INFO_CHOICE</b>.</summary>
   </member>
 </doc>

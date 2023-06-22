@@ -4,28 +4,17 @@
 <doc>
   <member name="IAMPhysicalPinInfo.GetPhysicalType">
     <summary>
-      <para>
-        <b>Note</b>  The <code>IAMPhysicalPinInfo</code> interface is deprecated.</para>
-      <para>Retrieves the type and name of the physical pin.</para>
-    </summary>
-    <param name="pType">
-      <para>Pointer to a variable that receives a value indicating the pin's type. The <see cref="PhysicalConnectorType" /> enumeration defines the pin type values.</para>
-    </param>
-    <param name="ppszType">
-      <para>Address of a pointer to a buffer that receives a human-readable string identifying the pin type.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if a valid physical pin value is found. Otherwise, returns VFW_E_NO_ACCEPTABLE_TYPES.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMPhysicalPinInfo Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <code>IAMPhysicalPinInfo</code> interface is deprecated.</div>Retrieves the type and name of the physical pin.</summary>
+    <param name="pType">Pointer to a variable that receives a value indicating the pin's type. The <see cref="PhysicalConnectorType" /> enumeration defines the pin type values.</param>
+    <param name="ppszType">Address of a pointer to a buffer that receives a human-readable string identifying the pin type.</param>
+    <returns>Returns S_OK if a valid physical pin value is found. Otherwise, returns VFW_E_NO_ACCEPTABLE_TYPES.</returns>
   </member>
   <member name="IAMPhysicalPinInfo">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated. It will continue to be supported for backward compatibility with existing applications, but new applications and filters should not use it.</para>
-      <para>This interface enables an application or filter to retrieve information about a pin that represents a physical hardware connections.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated. It will continue to be supported for backward compatibility with existing applications, but new applications and filters should not use it.</div>This interface enables an application or filter to retrieve information about a pin that represents a physical hardware connections.</summary>
   </member>
 </doc>

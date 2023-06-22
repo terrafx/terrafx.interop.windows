@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SAML_AUTHENTICATOR_TYPE">
-    <summary>
-      <para>The type IDs of the SAML token authenticators used on the server side
-(For example, relying party) to validate incoming SAML tokens.</para>
-    </summary>
+    <summary>The type IDs of the SAML token authenticators used on the server side (For example, relying party) to validate incoming SAML tokens.</summary>
   </member>
   <member name="WS_SAML_AUTHENTICATOR_TYPE.WS_CERT_SIGNED_SAML_AUTHENTICATOR_TYPE">
-    <summary>
-      <para>Type ID for the SAML authenticator <see cref="WS_CERT_SIGNED_SAML_AUTHENTICATOR" />.</para>
-    </summary>
+    <summary>Type ID for the SAML authenticator <see cref="WS_CERT_SIGNED_SAML_AUTHENTICATOR" />.</summary>
   </member>
 </doc>

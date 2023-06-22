@@ -3,30 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LOCALMANAGEDAPPLICATION">
-    <summary>
-      <para>The <b>LOCALMANAGEDAPPLICATION</b> structure describes a managed application installed for a user or a computer. Returned by the <see cref="GetLocalManagedApplications" /> function.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/about-group-policy">Group Policy Overview</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-structures">Group Policy Structures</seealso>
+    <summary>The <b>LOCALMANAGEDAPPLICATION</b> structure describes a managed application installed for a user or a computer. Returned by the <see cref="GetLocalManagedApplications" /> function.</summary>
   </member>
   <member name="LOCALMANAGEDAPPLICATION.pszDeploymentName">
-    <summary>
-      <para>This is a Unicode string that gives the user friendly name of the application as it appears in the Application Deployment Editor (ADE).</para>
-    </summary>
+    <summary>This is a Unicode string that gives the user friendly name of the application as it appears in the Application Deployment Editor (ADE).</summary>
   </member>
   <member name="LOCALMANAGEDAPPLICATION.pszPolicyName">
-    <summary>
-      <para>This is the user-friendly name of the group policy object (GPO) from which the application originates.</para>
-    </summary>
+    <summary>This is the user-friendly name of the group policy object (GPO) from which the application originates.</summary>
   </member>
   <member name="LOCALMANAGEDAPPLICATION.pszProductId">
-    <summary>
-      <para>This is a Unicode string that gives the <a href="https://docs.microsoft.com//windows/desktop/Msi/windows-installer-portal">Windows Installer</a> product code GUID for the application.</para>
-    </summary>
+    <summary>This is a Unicode string that gives the <a href="https://docs.microsoft.com//windows/desktop/Msi/windows-installer-portal">Windows Installer</a> product code GUID for the application.</summary>
   </member>
   <member name="LOCALMANAGEDAPPLICATION.dwState">
     <summary>
-      <para>Indicates the  state of the installed application. This parameter can contain one or more of the following values.</para>
+      <para>Indicates the state of the installed application. This parameter can contain one or more of the following values.</para>
       <h4>LOCAL_STATE_ASSIGNED</h4>
       <para>The application is installed in the assigned state.</para>
       <h4>LOCAL_STATE_PUBLISHED</h4>
@@ -34,7 +24,7 @@
       <h4>LOCAL_STATE_UNINSTALL_UNMANAGED</h4>
       <para>The installation of this application uninstalled an unmanaged application with a conflicting transform.</para>
       <h4>LOCAL_STATE_POLICYREMOVE_ORPHAN</h4>
-      <para>If the policy from which this application originates is removed, the application is  left on the computer.</para>
+      <para>If the policy from which this application originates is removed, the application is left on the computer.</para>
       <h4>LOCAL_STATE_POLICYREMOVE_UNINSTALL</h4>
       <para>If the policy from which this application originates is removed, the application is uninstalled from the computer.</para>
     </summary>

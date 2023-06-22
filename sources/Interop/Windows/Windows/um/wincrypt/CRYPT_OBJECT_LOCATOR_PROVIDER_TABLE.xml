@@ -3,42 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE">
-    <summary>
-      <para>The <b>CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE</b> structure contains pointers to functions implemented by an object location provider. This structure is used by the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_initialize">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE</a> callback function.</para>
-    </summary>
-    <remarks>
-      <para>No pointers in this table can be <b>NULL</b>. The client application does not free this structure. It is expected that the provider will return a table that is not allocated on the heap.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_initialize">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE</seealso>
+    <summary>The <b>CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE</b> structure contains pointers to functions implemented by an object location provider. This structure is used by the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_initialize">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE</a> callback function.</summary>
   </member>
   <member name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.cbSize">
-    <summary>
-      <para>Size, in bytes, of this structure.</para>
-    </summary>
+    <summary>Size, in bytes, of this structure.</summary>
   </member>
   <member name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnGet">
-    <summary>
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_get">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET</a> function implemented by the provider.</para>
-    </summary>
+    <summary>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_get">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET</a> function implemented by the provider.</summary>
   </member>
   <member name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnRelease">
-    <summary>
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_release">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE</a>  function implemented by the provider.</para>
-    </summary>
+    <summary>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_release">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE</a> function implemented by the provider.</summary>
   </member>
   <member name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnFreePassword">
-    <summary>
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_free_password">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD</a>  function implemented by the provider.</para>
-    </summary>
+    <summary>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_free_password">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD</a> function implemented by the provider.</summary>
   </member>
   <member name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnFree">
-    <summary>
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_free">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE</a>  function implemented by the provider.</para>
-    </summary>
+    <summary>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_free">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE</a> function implemented by the provider.</summary>
   </member>
   <member name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnFreeIdentifier">
-    <summary>
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_free_identifier">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER</a>  function implemented by the provider.</para>
-    </summary>
+    <summary>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_crypt_object_locator_provider_free_identifier">PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER</a> function implemented by the provider.</summary>
   </member>
 </doc>

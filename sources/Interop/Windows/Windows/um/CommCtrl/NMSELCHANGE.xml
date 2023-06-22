@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMSELCHANGE">
-    <summary>
-      <para>Carries information required to process the <a href="https://docs.microsoft.com//windows/desktop/Controls/mcn-selchange">MCN_SELCHANGE</a> notification code.</para>
-    </summary>
+    <summary>Carries information required to process the <a href="https://docs.microsoft.com//windows/desktop/Controls/mcn-selchange">MCN_SELCHANGE</a> notification code.</summary>
   </member>
   <member name="NMSELCHANGE.nmhdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about this notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about this notification.</summary>
   </member>
   <member name="NMSELCHANGE.stSelStart">
     <summary>
-      <para>Type: <b><see cref="SYSTEMTIME" /></b></para>
-      <para>
-        <see cref="SYSTEMTIME" /> structure that contains the date for the first day in the user's selection range.</para>
-    </summary>
+      <see cref="SYSTEMTIME" /> structure that contains the date for the first day in the user's selection range.</summary>
   </member>
   <member name="NMSELCHANGE.stSelEnd">
     <summary>
-      <para>Type: <b><see cref="SYSTEMTIME" /></b></para>
-      <para>
-        <see cref="SYSTEMTIME" /> structure that contains the date for the last day in the user's selection range.</para>
-    </summary>
+      <see cref="SYSTEMTIME" /> structure that contains the date for the last day in the user's selection range.</summary>
   </member>
 </doc>

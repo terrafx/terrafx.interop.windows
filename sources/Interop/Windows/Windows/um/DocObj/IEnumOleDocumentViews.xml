@@ -7,9 +7,7 @@
       <para>Creates a new enumerator that contains the same enumeration state as the current one.</para>
       <para>This method makes it possible to record a particular point in the enumeration sequence and then return to that point at a later time. The caller must release this new enumerator separately from the first enumerator.</para>
     </summary>
-    <param name="ppEnum">
-      <para>A pointer to the <see cref="IEnumOleDocumentViews" /> interface pointer on the newly created enumerator. The caller must release this enumerator separately from the one from which it was cloned.</para>
-    </param>
+    <param name="ppEnum">A pointer to the <see cref="IEnumOleDocumentViews" /> interface pointer on the newly created enumerator. The caller must release this enumerator separately from the one from which it was cloned.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible values include the following.</para>
       <list type="table">
@@ -17,44 +15,47 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unexpected error has occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified enumerator is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The specified enumerator is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory available for this operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory available for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumOleDocumentViews" />
   </member>
   <member name="IEnumOleDocumentViews.Next">
-    <summary>
-      <para>Retrieves the specified number of items in the enumeration sequence.</para>
-    </summary>
+    <summary>Retrieves the specified number of items in the enumeration sequence.</summary>
     <param name="cViews">
       <para>The number of items to be retrieved. If there are fewer than the requested number of items left in the sequence, this method retrieves the remaining elements.</para>
       <para>If <i>pcFetched</i> is <b>NULL</b>, this parameter must be 1.</para>
@@ -63,45 +64,19 @@
       <para>An array of enumerated items.</para>
       <para>The enumerator is responsible for calling <see cref="AddRef" />, and the caller is responsible for calling <see cref="Release" /> through each pointer enumerated. If <i>cViews</i> is greater than 1, the caller must also pass a non-<b>NULL</b> pointer passed to <i>pcFetched</i> to know how many pointers to release.</para>
     </param>
-    <param name="pcFetched">
-      <para>The number of items that were retrieved. This parameter is always less than or equal to the number of items requested. This parameter can be <b>NULL</b>, in which case the <i>cViews</i> parameter must be 1.</para>
-    </param>
-    <returns>
-      <para>If the method retrieves the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
-    </returns>
-    <remarks>
-      <para>E_NOTIMPL is not allowed as a return value. If an error value is returned, no entries in the <i>rgpView</i> array are valid and no calls to Release are required.</para>
-    </remarks>
-    <seealso cref="IEnumOleDocumentViews" />
-    <seealso cref="IOleDocumentView" />
+    <param name="pcFetched">The number of items that were retrieved. This parameter is always less than or equal to the number of items requested. This parameter can be <b>NULL</b>, in which case the <i>cViews</i> parameter must be 1.</param>
+    <returns>If the method retrieves the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</returns>
   </member>
   <member name="IEnumOleDocumentViews.Reset">
-    <summary>
-      <para>Resets the enumeration sequence to the beginning.</para>
-    </summary>
-    <returns>
-      <para>This method returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>There is no guarantee that the same set of objects will be enumerated after the reset operation has completed. A static collection is reset to the beginning, but it can be too expensive for some collections, such as files in a directory, to guarantee this condition.</para>
-    </remarks>
-    <seealso cref="IEnumOleDocumentViews" />
+    <summary>Resets the enumeration sequence to the beginning.</summary>
+    <returns>This method returns S_OK on success.</returns>
   </member>
   <member name="IEnumOleDocumentViews.Skip">
-    <summary>
-      <para>Skips over the specified number of items in the enumeration sequence.</para>
-    </summary>
-    <param name="cViews">
-      <para>The number of items to be skipped.</para>
-    </param>
-    <returns>
-      <para>If the method skips the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
-    </returns>
-    <seealso cref="IEnumOleDocumentViews" />
+    <summary>Skips over the specified number of items in the enumeration sequence.</summary>
+    <param name="cViews">The number of items to be skipped.</param>
+    <returns>If the method skips the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</returns>
   </member>
   <member name="IEnumOleDocumentViews">
-    <summary>
-      <para>Enumerates the views supported by a document object.</para>
-    </summary>
+    <summary>Enumerates the views supported by a document object.</summary>
   </member>
 </doc>

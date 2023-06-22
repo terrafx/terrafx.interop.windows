@@ -3,109 +3,49 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextFormat1.GetFontFallback">
-    <summary>
-      <para>Gets the current fallback. If none was ever set since creating the layout, it will be nullptr.</para>
-    </summary>
-    <param name="fontFallback">
-      <para>Type: <b><see cref="IDWriteFontFallback" />**</b></para>
-      <para>Contains an address of a pointer to the the current font fallback object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat1">IDWriteTextFormat1</seealso>
+    <summary>Gets the current fallback. If none was ever set since creating the layout, it will be nullptr.</summary>
+    <param name="fontFallback">Contains an address of a pointer to the the current font fallback object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextFormat1.GetLastLineWrapping">
-    <summary>
-      <para>Gets the wrapping mode of the last line.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>Returns FALSE if the last line is not wrapped; TRUE if the last line is wrapped.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat1">IDWriteTextFormat1</seealso>
+    <summary>Gets the wrapping mode of the last line.</summary>
+    <returns>Returns FALSE if the last line is not wrapped; TRUE if the last line is wrapped.</returns>
   </member>
   <member name="IDWriteTextFormat1.GetOpticalAlignment">
-    <summary>
-      <para>Gets the optical margin alignment for the text format.</para>
-    </summary>
-    <returns>
-      <para>The optical alignment.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat1">IDWriteTextFormat1</seealso>
+    <summary>Gets the optical margin alignment for the text format.</summary>
+    <returns>The optical alignment.</returns>
   </member>
   <member name="IDWriteTextFormat1.GetVerticalGlyphOrientation">
-    <summary>
-      <para>Get the preferred orientation of glyphs when using a vertical reading direction.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="DWRITE_VERTICAL_GLYPH_ORIENTATION" /></b></para>
-      <para>The preferred orientation of glyphs when using a vertical reading direction.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat1">IDWriteTextFormat1</seealso>
+    <summary>Get the preferred orientation of glyphs when using a vertical reading direction.</summary>
+    <returns>The preferred orientation of glyphs when using a vertical reading direction.</returns>
   </member>
   <member name="IDWriteTextFormat1.SetFontFallback">
-    <summary>
-      <para>Applies the custom font fallback onto the layout. If none is set, it uses the default system fallback list.</para>
-    </summary>
-    <param name="fontFallback">
-      <para>Type: <b><see cref="IDWriteFontFallback" />*</b></para>
-      <para>The font fallback to apply to the layout.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat1">IDWriteTextFormat1</seealso>
+    <summary>Applies the custom font fallback onto the layout. If none is set, it uses the default system fallback list.</summary>
+    <param name="fontFallback">The font fallback to apply to the layout.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextFormat1.SetLastLineWrapping">
-    <summary>
-      <para>Sets the wrapping mode of the last line.</para>
-    </summary>
+    <summary>Sets the wrapping mode of the last line.</summary>
     <param name="isLastLineWrappingEnabled">
-      <para>Type: <b>BOOL</b></para>
       <para>If set to FALSE, the last line is not wrapped. If set to TRUE, the last line is wrapped.</para>
       <para>The last line is wrapped by default.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat1">IDWriteTextFormat1</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextFormat1.SetOpticalAlignment">
     <summary>
       <para>Sets the optical margin alignment for the text format.</para>
       <para>By default, glyphs are aligned to the margin by the default origin and side-bearings of the glyph. If you specify <b>DWRITE_OPTICAL_ALIGNMENT_USING_SIDE_BEARINGS</b>, then the alignment Suses the side bearings to offset the glyph from the aligned edge to ensure the ink of the glyphs are aligned.</para>
     </summary>
-    <param name="opticalAlignment">
-      <para>The optical alignment to set.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat1">IDWriteTextFormat1</seealso>
+    <param name="opticalAlignment">The optical alignment to set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextFormat1.SetVerticalGlyphOrientation">
-    <summary>
-      <para>Sets the orientation of a text format.</para>
-    </summary>
-    <param name="glyphOrientation">
-      <para>Type: <b><see cref="DWRITE_VERTICAL_GLYPH_ORIENTATION" /></b></para>
-      <para>The orientation to apply to the text format.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextformat1">IDWriteTextFormat1</seealso>
+    <summary>Sets the orientation of a text format.</summary>
+    <param name="glyphOrientation">The orientation to apply to the text format.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextFormat1">
-    <summary>
-      <para>Describes the font and paragraph properties used to format text, and it describes locale information.
-This interface has all the same methods as <see cref="IDWriteTextFormat" /> and  adds the ability for you to apply an explicit orientation.</para>
-    </summary>
-    <seealso cref="IDWriteTextFormat" />
+    <summary>Describes the font and paragraph properties used to format text, and it describes locale information. This interface has all the same methods as <see cref="IDWriteTextFormat" /> and adds the ability for you to apply an explicit orientation.</summary>
   </member>
 </doc>

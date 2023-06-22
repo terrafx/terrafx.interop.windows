@@ -3,41 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMOBJECTNOTIFY">
-    <summary>
-      <para>Contains information used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getobject">TBN_GETOBJECT</a>, <a href="https://docs.microsoft.com//windows/desktop/Controls/tcn-getobject">TCN_GETOBJECT</a>, and <a href="https://docs.microsoft.com//windows/desktop/Controls/psn-getobject">PSN_GETOBJECT</a> notification codes.</para>
-    </summary>
+    <summary>Contains information used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getobject">TBN_GETOBJECT</a>, <a href="https://docs.microsoft.com//windows/desktop/Controls/tcn-getobject">TCN_GETOBJECT</a>, and <a href="https://docs.microsoft.com//windows/desktop/Controls/psn-getobject">PSN_GETOBJECT</a> notification codes.</summary>
   </member>
   <member name="NMOBJECTNOTIFY.hdr">
-    <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>An <see cref="NMHDR" /> structure that contains additional information about this notification.</para>
-    </summary>
+    <summary>An <see cref="NMHDR" /> structure that contains additional information about this notification.</summary>
   </member>
   <member name="NMOBJECTNOTIFY.iItem">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>A control-specific item identifier. This value will comply to item identification standards for the control sending the notification. However, this member is not used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/psn-getobject">PSN_GETOBJECT</a> notification code.</para>
-    </summary>
+    <summary>A control-specific item identifier. This value will comply to item identification standards for the control sending the notification. However, this member is not used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/psn-getobject">PSN_GETOBJECT</a> notification code.</summary>
   </member>
   <member name="NMOBJECTNOTIFY.piid">
-    <summary>
-      <para>Type: <b>IID*</b></para>
-      <para>A pointer to an interface identifier of the requested object.</para>
-    </summary>
+    <summary>A pointer to an interface identifier of the requested object.</summary>
   </member>
   <member name="NMOBJECTNOTIFY.pObject">
-    <summary>
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to an object provided by the window processing the notification code. The application processing the notification code sets this member.</para>
-    </summary>
+    <summary>A pointer to an object provided by the window processing the notification code. The application processing the notification code sets this member.</summary>
   </member>
   <member name="NMOBJECTNOTIFY.hResult">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>COM success or failure flags. The application processing the notification code sets this member.</para>
-    </summary>
+    <summary>COM success or failure flags. The application processing the notification code sets this member.</summary>
   </member>
-  <member name="NMOBJECTNOTIFY.dwFlags">
-    <summary></summary>
-  </member>
+  <member name="NMOBJECTNOTIFY.dwFlags"></member>
 </doc>

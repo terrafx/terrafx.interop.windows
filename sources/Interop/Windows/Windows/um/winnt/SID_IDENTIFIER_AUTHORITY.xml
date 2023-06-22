@@ -3,55 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SID_IDENTIFIER_AUTHORITY">
-    <summary>
-      <para>The <b>SID_IDENTIFIER_AUTHORITY</b> structure represents the top-level authority of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID).</para>
-    </summary>
-    <remarks>
-      <para>The identifier authority value identifies the agency that issued the SID. The following identifier authorities are predefined.</para>
-      <list type="table">
-        <listheader>
-          <description>Identifier authority</description>
-          <description>Value</description>
-        </listheader>
-        <item>
-          <description>SECURITY_NULL_SID_AUTHORITY</description>
-          <description>0</description>
-        </item>
-        <item>
-          <description>SECURITY_WORLD_SID_AUTHORITY</description>
-          <description>1</description>
-        </item>
-        <item>
-          <description>SECURITY_LOCAL_SID_AUTHORITY</description>
-          <description>2</description>
-        </item>
-        <item>
-          <description>SECURITY_CREATOR_SID_AUTHORITY</description>
-          <description>3</description>
-        </item>
-        <item>
-          <description>SECURITY_NON_UNIQUE_AUTHORITY</description>
-          <description>4</description>
-        </item>
-        <item>
-          <description>SECURITY_NT_AUTHORITY</description>
-          <description>5</description>
-        </item>
-        <item>
-          <description>SECURITY_RESOURCE_MANAGER_AUTHORITY</description>
-          <description>9</description>
-        </item>
-      </list>
-      <para>A SID must contain a top-level authority and at least one <a href="https://docs.microsoft.com//windows/desktop/SecGloss/r-gly">relative identifier</a> (RID) value.</para>
-    </remarks>
-    <seealso cref="AllocateAndInitializeSid" />
-    <seealso cref="GetSidIdentifierAuthority" />
-    <seealso cref="InitializeSid" />
-    <seealso cref="SID" />
+    <summary>The <b>SID_IDENTIFIER_AUTHORITY</b> structure represents the top-level authority of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID).</summary>
   </member>
   <member name="SID_IDENTIFIER_AUTHORITY.Value">
-    <summary>
-      <para>An array of 6 bytes specifying a SID's top-level authority.</para>
-    </summary>
+    <summary>An array of 6 bytes specifying a SID's top-level authority.</summary>
   </member>
 </doc>

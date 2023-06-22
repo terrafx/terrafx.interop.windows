@@ -3,26 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_TCP6TABLE_OWNER_MODULE">
-    <summary>
-      <para>The <b>MIB_TCP6TABLE_OWNER_MODULE</b> structure contains a table of process IDs (PIDs) and the IPv6 TCP links context bound to these PIDs with any available ownership data.</para>
-    </summary>
-    <remarks>
-      <para>The <b>MIB_TCP6TABLE_OWNER_MODULE</b> structure is returned by a call to <see cref="GetExtendedTcpTable" /> with the <i>TableClass</i> parameter set to a  <b>TCP_TABLE_OWNER_MODULE_LISTENER</b>, <b>TCP_TABLE_OWNER_MODULE_CONNECTIONS</b>, or <b>TCP_TABLE_OWNER_MODULE_ALL</b> from the <see cref="TCP_TABLE_CLASS" /> enumeration and the <i>ulAf</i> parameter set to <b>AF_INET6</b>.</para>
-      <para>The <b>MIB_TCP6TABLE_OWNER_MODULE</b> structure may contain padding for alignment between the <b>dwNumEntries</b> member and the first <see cref="MIB_TCP6ROW_OWNER_MODULE" /> array entry in the <b>table</b> member. Padding for alignment may also be present between the <b>MIB_TCP6ROW_OWNER_MODULE</b> array entries in the <b>table</b> member. Any access to a <b>MIB_TCP6ROW_OWNER_MODULE</b> array entry should assume  padding may exist.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Tcpmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Tcpmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Tcpmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/mib/management-information-base-reference">MIB Reference</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/mib/mib-structures">MIB Structures</seealso>
+    <summary>The <b>MIB_TCP6TABLE_OWNER_MODULE</b> structure contains a table of process IDs (PIDs) and the IPv6 TCP links context bound to these PIDs with any available ownership data.</summary>
   </member>
   <member name="MIB_TCP6TABLE_OWNER_MODULE.dwNumEntries">
-    <summary>
-      <para>The number of <see cref="MIB_TCP6ROW_OWNER_MODULE" /> elements in the <b>table</b>.</para>
-    </summary>
+    <summary>The number of <see cref="MIB_TCP6ROW_OWNER_MODULE" /> elements in the <b>table</b>.</summary>
   </member>
   <member name="MIB_TCP6TABLE_OWNER_MODULE.table">
-    <summary>
-      <para>Array of <see cref="MIB_TCP6ROW_OWNER_MODULE" /> structures returned by a call to <see cref="GetExtendedTcpTable" />.</para>
-    </summary>
+    <summary>Array of <see cref="MIB_TCP6ROW_OWNER_MODULE" /> structures returned by a call to <see cref="GetExtendedTcpTable" />.</summary>
   </member>
 </doc>

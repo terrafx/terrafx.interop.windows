@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFileSystemImageResult.get_BlockSize">
-    <summary>
-      <para>Retrieves the size, in bytes, of a block of data.</para>
-    </summary>
-    <param name="pVal">
-      <para>Number of bytes in a block.</para>
-    </param>
+    <summary>Retrieves the size, in bytes, of a block of data.</summary>
+    <param name="pVal">Number of bytes in a block.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,29 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImageResult" />
-    <seealso cref="IFileSystemImageResult.get_TotalBlocks" />
   </member>
   <member name="IFileSystemImageResult.get_DiscId">
-    <summary>
-      <para>Retrieves the disc volume name for this file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>String that contains the volume name for this file system image.</para>
-    </param>
+    <summary>Retrieves the disc volume name for this file system image.</summary>
+    <param name="pVal">String that contains the volume name for this file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -46,29 +37,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage.get_VolumeName" />
-    <seealso cref="IFileSystemImageResult" />
   </member>
   <member name="IFileSystemImageResult.get_ImageStream">
-    <summary>
-      <para>Retrieves the burn image stream.</para>
-    </summary>
-    <param name="pVal">
-      <para>An <see cref="IStream" /> interface of the burn image.</para>
-    </param>
+    <summary>Retrieves the burn image stream.</summary>
+    <param name="pVal">An <see cref="IStream" /> interface of the burn image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -76,50 +62,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid or the <i>pstatstgis</i> parameter of the <see cref="IStream.Stat" /> method is <b>NULL</b>.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid or the  <i>pstatstgis</i> parameter of the <see cref="IStream.Stat" /> method is <b>NULL</b>.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Failed to allocate necessary memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_INVALIDFUNCTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Failed to allocate necessary memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_INVALIDFUNCTION</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>grfStateFlag</i> parameter of the <see cref="IStream.Stat" /> method is invalid.</para>
-          </description>
-        </item>
+          <description>The <i>grfStateFlag</i> parameter of the <see cref="IStream.Stat" /> method is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IDiscFormat2Data.Write" />
-    <seealso cref="IFileSystemImageResult" />
   </member>
   <member name="IFileSystemImageResult.get_ProgressItems">
-    <summary>
-      <para>Retrieves the progress item block mapping collection.</para>
-    </summary>
-    <param name="pVal">
-      <para>An <see cref="IProgressItems" /> interface that contains a collection of progress items. Each progress item identifies the blocks written since the previous progress status was taken.</para>
-    </param>
+    <summary>Retrieves the progress item block mapping collection.</summary>
+    <param name="pVal">An <see cref="IProgressItems" /> interface that contains a collection of progress items. Each progress item identifies the blocks written since the previous progress status was taken.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -127,41 +111,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate necessary memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate necessary memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumProgressItems" />
-    <seealso cref="IFileSystemImageResult" />
-    <seealso cref="IProgressItem" />
   </member>
   <member name="IFileSystemImageResult.get_TotalBlocks">
-    <summary>
-      <para>Retrieves the number of blocks in the result image.</para>
-    </summary>
-    <param name="pVal">
-      <para>Number of blocks to burn on the disc.</para>
-    </param>
+    <summary>Retrieves the number of blocks in the result image.</summary>
+    <param name="pVal">Number of blocks to burn on the disc.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -169,31 +148,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImageResult" />
-    <seealso cref="IFileSystemImageResult.get_BlockSize" />
   </member>
   <member name="IFileSystemImageResult">
     <summary>
       <para>Use this interface to get information about the burn image, the image data stream, and progress information.</para>
       <para>To get this interface, call the <see cref="IFileSystemImage.CreateResultImage" /> method.</para>
     </summary>
-    <remarks>
-      <para>This is an <b>FileSystemImageResult</b> object in script.</para>
-    </remarks>
-    <seealso cref="IDiscRecorder2" />
-    <seealso cref="IFileSystemImage.CreateResultImage" />
   </member>
 </doc>

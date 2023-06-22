@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_RSA_ENDPOINT_IDENTITY">
-    <summary>
-      <para>Type for RSA endpoint identity.</para>
-    </summary>
+    <summary>Type for RSA endpoint identity.</summary>
   </member>
   <member name="WS_RSA_ENDPOINT_IDENTITY.identity">
-    <summary>
-      <para>The base type from which this type and all other endpoint identity types derive.</para>
-    </summary>
+    <summary>The base type from which this type and all other endpoint identity types derive.</summary>
   </member>
   <member name="WS_RSA_ENDPOINT_IDENTITY.modulus">
-    <summary>
-      <para>The RSA key modulus of the endpoint that is represented by this endpoint identity.</para>
-    </summary>
+    <summary>The RSA key modulus of the endpoint that is represented by this endpoint identity.</summary>
   </member>
   <member name="WS_RSA_ENDPOINT_IDENTITY.exponent">
-    <summary>
-      <para>The RSA key exponent of the endpoint that is represented by this endpoint identity.</para>
-    </summary>
+    <summary>The RSA key exponent of the endpoint that is represented by this endpoint identity.</summary>
   </member>
 </doc>

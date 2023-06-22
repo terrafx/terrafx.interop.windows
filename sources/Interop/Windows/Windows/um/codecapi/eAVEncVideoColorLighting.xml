@@ -4,39 +4,26 @@
 <doc>
   <member name="eAVEncVideoColorLighting">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the intended lighting conditions for viewing a video source. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoinputcolorlighting-property">AVEncVideoInputColorLighting</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideooutputcolorlighting-property">AVEncVideoOutputColorLighting</a> properties.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncVideoColorLighting.eAVEncVideoColorLighting_SameAsSource">
-    <summary>
-      <para>Use the same lighting as the input video. This flag applies to the <b>AVEncVideoOutputColorLighting</b> property only.</para>
-    </summary>
+    <summary>Use the same lighting as the input video. This flag applies to the <b>AVEncVideoOutputColorLighting</b> property only.</summary>
   </member>
   <member name="eAVEncVideoColorLighting.eAVEncVideoColorLighting_Unknown">
-    <summary>
-      <para>The optimal lighting is unknown.</para>
-    </summary>
+    <summary>The optimal lighting is unknown.</summary>
   </member>
   <member name="eAVEncVideoColorLighting.eAVEncVideoColorLighting_Bright">
-    <summary>
-      <para>Bright lighting; for example, outdoors.</para>
-    </summary>
+    <summary>Bright lighting; for example, outdoors.</summary>
   </member>
   <member name="eAVEncVideoColorLighting.eAVEncVideoColorLighting_Office">
-    <summary>
-      <para>Medium brightness; for example, normal office lighting.</para>
-    </summary>
+    <summary>Medium brightness; for example, normal office lighting.</summary>
   </member>
   <member name="eAVEncVideoColorLighting.eAVEncVideoColorLighting_Dim">
-    <summary>
-      <para>Dim; for example, a living room with a television and additional low lighting.</para>
-    </summary>
+    <summary>Dim; for example, a living room with a television and additional low lighting.</summary>
   </member>
   <member name="eAVEncVideoColorLighting.eAVEncVideoColorLighting_Dark">
-    <summary>
-      <para>Dark; for example, a movie theater.</para>
-    </summary>
+    <summary>Dark; for example, a movie theater.</summary>
   </member>
 </doc>

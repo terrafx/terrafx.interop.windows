@@ -3,31 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SECURITY_QUALITY_OF_SERVICE">
-    <summary>
-      <para>The <b>SECURITY_QUALITY_OF_SERVICE</b> data structure contains information used to support client impersonation. A client can specify this information when it connects to a server; the information determines whether the server may impersonate the client, and if so, to what extent.</para>
-    </summary>
-    <seealso cref="DdeSetQualityOfService" />
-    <seealso cref="SECURITY_IMPERSONATION_LEVEL" />
+    <summary>The <b>SECURITY_QUALITY_OF_SERVICE</b> data structure contains information used to support client impersonation. A client can specify this information when it connects to a server; the information determines whether the server may impersonate the client, and if so, to what extent.</summary>
   </member>
   <member name="SECURITY_QUALITY_OF_SERVICE.Length">
-    <summary>
-      <para>Specifies the size, in bytes, of this structure.</para>
-    </summary>
+    <summary>Specifies the size, in bytes, of this structure.</summary>
   </member>
   <member name="SECURITY_QUALITY_OF_SERVICE.ImpersonationLevel">
-    <summary>
-      <para>Specifies the information given to the server about the client, and how the server may represent, or impersonate, the client. Security impersonation levels govern the degree to which a server process can act on behalf of a client <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">process</a>. This member is a
-<see cref="SECURITY_IMPERSONATION_LEVEL" /> enumeration type value.</para>
-    </summary>
+    <summary>Specifies the information given to the server about the client, and how the server may represent, or impersonate, the client. Security impersonation levels govern the degree to which a server process can act on behalf of a client <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">process</a>. This member is a<see cref="SECURITY_IMPERSONATION_LEVEL" /> enumeration type value.</summary>
   </member>
   <member name="SECURITY_QUALITY_OF_SERVICE.ContextTrackingMode">
-    <summary>
-      <para>Specifies whether the server is to be given a snapshot of the client's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security context</a> (called static tracking), or is to be continually updated to track changes to the client's security context (called dynamic tracking). The SECURITY_STATIC_TRACKING value  specifies static tracking, and the SECURITY_DYNAMIC_TRACKING value specifies dynamic tracking. Not all communications mechanisms support dynamic tracking; those that do not will default to static tracking.</para>
-    </summary>
+    <summary>Specifies whether the server is to be given a snapshot of the client's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security context</a> (called static tracking), or is to be continually updated to track changes to the client's security context (called dynamic tracking). The SECURITY_STATIC_TRACKING value specifies static tracking, and the SECURITY_DYNAMIC_TRACKING value specifies dynamic tracking. Not all communications mechanisms support dynamic tracking; those that do not will default to static tracking.</summary>
   </member>
   <member name="SECURITY_QUALITY_OF_SERVICE.EffectiveOnly">
-    <summary>
-      <para>Specifies whether the server may enable or disable <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">privileges</a> and groups that the client's security context may include.</para>
-    </summary>
+    <summary>Specifies whether the server may enable or disable <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">privileges</a> and groups that the client's security context may include.</summary>
   </member>
 </doc>

@@ -3,34 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_GRAPH_EDGE_TYPE">
-    <summary>
-      <para>Defines constants that specify a type of graph edge. See <see cref="DML_GRAPH_EDGE_DESC" /> for the usage of this enumeration.</para>
-    </summary>
-    <seealso cref="IDMLDevice1.CompileGraph method" />
-    <seealso cref="DML_GRAPH_DESC structure" />
-    <seealso cref="DML_GRAPH_EDGE_DESC structure" />
-    <seealso cref="DML_INPUT_GRAPH_EDGE_DESC structure" />
-    <seealso cref="DML_OUTPUT_GRAPH_EDGE_DESC structure" />
-    <seealso cref="DML_INTERMEDIATE_GRAPH_EDGE_DESC structure" />
+    <summary>Defines constants that specify a type of graph edge. See <see cref="DML_GRAPH_EDGE_DESC" /> for the usage of this enumeration.</summary>
   </member>
   <member name="DML_GRAPH_EDGE_TYPE.DML_GRAPH_EDGE_TYPE_INVALID">
-    <summary>
-      <para>Specifies an unknown graph edge type, and is never valid. Using this value results in an error.</para>
-    </summary>
+    <summary>Specifies an unknown graph edge type, and is never valid. Using this value results in an error.</summary>
   </member>
   <member name="DML_GRAPH_EDGE_TYPE.DML_GRAPH_EDGE_TYPE_INPUT">
-    <summary>
-      <para>Specifies that the graph edge is described by the <see cref="DML_INPUT_GRAPH_EDGE_DESC" /> structure.</para>
-    </summary>
+    <summary>Specifies that the graph edge is described by the <see cref="DML_INPUT_GRAPH_EDGE_DESC" /> structure.</summary>
   </member>
   <member name="DML_GRAPH_EDGE_TYPE.DML_GRAPH_EDGE_TYPE_OUTPUT">
-    <summary>
-      <para>Specifies that the graph edge is described by the <see cref="DML_OUTPUT_GRAPH_EDGE_DESC" /> structure.</para>
-    </summary>
+    <summary>Specifies that the graph edge is described by the <see cref="DML_OUTPUT_GRAPH_EDGE_DESC" /> structure.</summary>
   </member>
   <member name="DML_GRAPH_EDGE_TYPE.DML_GRAPH_EDGE_TYPE_INTERMEDIATE">
-    <summary>
-      <para>Specifies that the graph edge is described by the <see cref="DML_INTERMEDIATE_GRAPH_EDGE_DESC" /> structure.</para>
-    </summary>
+    <summary>Specifies that the graph edge is described by the <see cref="DML_INTERMEDIATE_GRAPH_EDGE_DESC" /> structure.</summary>
   </member>
 </doc>

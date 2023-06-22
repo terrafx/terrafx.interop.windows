@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEvent.GetExtendedType">
-    <summary>
-      <para>Retrieves the extended type of the event.</para>
-    </summary>
-    <param name="pguidExtendedType">
-      <para>Receives a <b>GUID</b> that identifies the extended type.</para>
-    </param>
+    <summary>Retrieves the extended type of the event.</summary>
+    <param name="pguidExtendedType">Receives a <b>GUID</b> that identifies the extended type.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,41 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To define a custom event, create a new extended-type GUID and send an <a href="https://docs.microsoft.com//windows/desktop/medfound/meextendedtype">MEExtendedType</a> event with that GUID.</para>
-      <para>Some standard Media Foundation events also use the extended type to differentiate between types of event data.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaEvent" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
   </member>
   <member name="IMFMediaEvent.GetStatus">
-    <summary>
-      <para>Retrieves an <b>HRESULT</b> that specifies the event status.</para>
-    </summary>
-    <param name="phrStatus">
-      <para>Receives the event status. If the operation that generated the event was successful, the value is a success code. A failure code means that an error condition triggered the event.</para>
-    </param>
+    <summary>Retrieves an <b>HRESULT</b> that specifies the event status.</summary>
+    <param name="phrStatus">Receives the event status. If the operation that generated the event was successful, the value is a success code. A failure code means that an error condition triggered the event.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -58,39 +37,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaEvent" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
   </member>
   <member name="IMFMediaEvent.GetType">
-    <summary>
-      <para>Retrieves the event type. The event type indicates what happened to trigger the event. It also defines the meaning of the event value.</para>
-    </summary>
-    <param name="pmet">
-      <para>Receives the event type. For a list of event types, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-events">Media Foundation Events</a>.</para>
-    </param>
+    <summary>Retrieves the event type. The event type indicates what happened to trigger the event. It also defines the meaning of the event value.</summary>
+    <param name="pmet">Receives the event type. For a list of event types, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-events">Media Foundation Events</a>.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -98,39 +62,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaEvent" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
   </member>
   <member name="IMFMediaEvent.GetValue">
-    <summary>
-      <para>Retrieves the value associated with the event, if any. The value is retrieved as a <b>PROPVARIANT</b> structure. The actual data type and the meaning of the value depend on the event.</para>
-    </summary>
-    <param name="pvValue">
-      <para>Pointer to a <b>PROPVARIANT</b> structure. The method fills this structure with the data.</para>
-    </param>
+    <summary>Retrieves the value associated with the event, if any. The value is retrieved as a <b>PROPVARIANT</b> structure. The actual data type and the meaning of the value depend on the event.</summary>
+    <param name="pvValue">Pointer to a <b>PROPVARIANT</b> structure. The method fills this structure with the data.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -138,85 +87,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before calling this method, call <b>PropVariantInit</b> to initialize the <b>PROPVARIANT</b> structure. After the method returns, call <b>PropVariantClear</b> to free the memory that was allocated for the <b>PROPVARIANT</b> data.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-      <h4>Examples</h4>
-      <para>The following function gets the event value if the value is an <b>IUnknown</b> pointer. If the <b>PROPVARIANT</b> type is not <b>VT_UNKOWN</b>, the function returns <b>MF_E_INVALIDTYPE</b>.</para>
-      <code>//  Gets an IUnknown pointer from an IMFMediaEvent event and queries
-//  the pointer for a specified interface.
-//
-//  NOTE: Applies only to events that contain IUnknown pointers.
-//        Otherwise, the function returns MF_E_INVALIDTYPE.
-
-template &lt;class Q&gt;
-HRESULT GetEventObject(IMFMediaEvent *pEvent, Q **ppObject)
-{
-    *ppObject = NULL;   // zero output
-
-    PROPVARIANT var;
-    HRESULT hr = pEvent-&gt;GetValue(&amp;amp;amp;amp;amp;amp;var);
-    if (SUCCEEDED(hr))
-    {
-        if (var.vt == VT_UNKNOWN)
-        {
-            hr = var.punkVal-&gt;QueryInterface(ppObject);
-        }
-        else
-        {
-            hr = MF_E_INVALIDTYPE;
-        }
-        PropVariantClear(&amp;amp;amp;amp;amp;amp;var);
-    }
-    return hr;
-}
-
-
-</code>
-    </remarks>
-    <seealso cref="IMFMediaEvent" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
   </member>
   <member name="IMFMediaEvent">
     <summary>
       <para>Represents an event generated by a Media Foundation object. Use this interface to get information about the event.</para>
       <para>To get a pointer to this interface, call <see cref="IMFMediaEventGenerator.BeginGetEvent" /> or <see cref="IMFMediaEventGenerator.GetEvent" /> on the event generator.</para>
     </summary>
-    <remarks>
-      <para>If you are implementing an object that generates events, call the <see cref="MFCreateMediaEvent" /> function to create a new event object.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/event-attributes">Event Attributes</seealso>
-    <seealso cref="IMFAttributes" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

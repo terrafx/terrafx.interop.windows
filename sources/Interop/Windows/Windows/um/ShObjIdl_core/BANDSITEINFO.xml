@@ -3,13 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BANDSITEINFO">
-    <summary>
-      <para>Contains information about a band site. This structure is used with the <see cref="IBandSite.GetBandSiteInfo" /> and <see cref="IBandSite.SetBandSiteInfo" /> methods.</para>
-    </summary>
+    <summary>Contains information about a band site. This structure is used with the <see cref="IBandSite.GetBandSiteInfo" /> and <see cref="IBandSite.SetBandSiteInfo" /> methods.</summary>
   </member>
   <member name="BANDSITEINFO.dwMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The mask values that determine the other fields in this structure that are being requested or set.</para>
       <h4>BSIM_STATE</h4>
       <para>The <b>dwState</b> value is being requested or set.</para>
@@ -19,7 +16,6 @@
   </member>
   <member name="BANDSITEINFO.dwState">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Bits that specify the state of the band.</para>
       <h4>BSSF_VISIBLE</h4>
       <para>The band is visible.</para>
@@ -31,7 +27,6 @@
   </member>
   <member name="BANDSITEINFO.dwStyle">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Bit flags that specify the style of the band.</para>
       <h4>BSIS_AUTOGRIPPER</h4>
       <para>Show the gripper if the band is neither fixed in size nor floating.</para>

@@ -3,59 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MKSYS">
-    <summary>
-      <para>Indicates the moniker's class.</para>
-    </summary>
-    <seealso cref="IMoniker.IsSystemMoniker" />
+    <summary>Indicates the moniker's class.</summary>
   </member>
   <member name="MKSYS.MKSYS_NONE">
-    <summary>
-      <para>Indicates a custom moniker implementation.</para>
-    </summary>
+    <summary>Indicates a custom moniker implementation.</summary>
   </member>
   <member name="MKSYS.MKSYS_GENERICCOMPOSITE">
-    <summary>
-      <para>Indicates the system's generic composite moniker class.</para>
-    </summary>
+    <summary>Indicates the system's generic composite moniker class.</summary>
   </member>
   <member name="MKSYS.MKSYS_FILEMONIKER">
-    <summary>
-      <para>Indicates the system's file moniker class.</para>
-    </summary>
+    <summary>Indicates the system's file moniker class.</summary>
   </member>
   <member name="MKSYS.MKSYS_ANTIMONIKER">
-    <summary>
-      <para>Indicates the system's anti-moniker class.</para>
-    </summary>
+    <summary>Indicates the system's anti-moniker class.</summary>
   </member>
   <member name="MKSYS.MKSYS_ITEMMONIKER">
-    <summary>
-      <para>Indicates the system's item moniker class.</para>
-    </summary>
+    <summary>Indicates the system's item moniker class.</summary>
   </member>
   <member name="MKSYS.MKSYS_POINTERMONIKER">
-    <summary>
-      <para>Indicates the system's pointer moniker class.</para>
-    </summary>
+    <summary>Indicates the system's pointer moniker class.</summary>
   </member>
   <member name="MKSYS.MKSYS_CLASSMONIKER">
-    <summary>
-      <para>Indicates the system's class moniker class.</para>
-    </summary>
+    <summary>Indicates the system's class moniker class.</summary>
   </member>
   <member name="MKSYS.MKSYS_OBJREFMONIKER">
-    <summary>
-      <para>Indicates the system's OBJREF moniker class.</para>
-    </summary>
+    <summary>Indicates the system's OBJREF moniker class.</summary>
   </member>
   <member name="MKSYS.MKSYS_SESSIONMONIKER">
-    <summary>
-      <para>Indicates the system's terminal server session moniker class.</para>
-    </summary>
+    <summary>Indicates the system's terminal server session moniker class.</summary>
   </member>
   <member name="MKSYS.MKSYS_LUAMONIKER">
-    <summary>
-      <para>Indicates the system's elevation moniker class.</para>
-    </summary>
+    <summary>Indicates the system's elevation moniker class.</summary>
   </member>
 </doc>

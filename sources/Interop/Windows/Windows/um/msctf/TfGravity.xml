@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TfGravity">
-    <summary>
-      <para>Elements of the <b>TfGravity</b> enumeration specify the type of gravity associated with the anchor of an <see cref="ITfRange" /> object.</para>
-    </summary>
-    <remarks>
-      <para>For more information about anchor gravity, see <a href="https://docs.microsoft.com//windows/desktop/TSF/ranges">Anchor Gravity</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ranges">Anchor Gravity</seealso>
-    <seealso cref="ITfRange" />
-    <seealso cref="ITfRange.GetGravity" />
-    <seealso cref="ITfRange.SetGravity" />
+    <summary>Elements of the <b>TfGravity</b> enumeration specify the type of gravity associated with the anchor of an <see cref="ITfRange" /> object.</summary>
   </member>
   <member name="TfGravity.TF_GRAVITY_BACKWARD">
-    <summary>
-      <para>The anchor has backward gravity.</para>
-    </summary>
+    <summary>The anchor has backward gravity.</summary>
   </member>
   <member name="TfGravity.TF_GRAVITY_FORWARD">
-    <summary>
-      <para>The anchor has forward gravity.</para>
-    </summary>
+    <summary>The anchor has forward gravity.</summary>
   </member>
 </doc>

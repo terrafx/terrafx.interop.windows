@@ -7,30 +7,17 @@
       <para>Contains information about the audio and video streams for the transcode sink activation object.</para>
       <para>To get the information stored in this structure, call <see cref="IMFTranscodeSinkInfoProvider.GetSinkInfo" />.</para>
     </summary>
-    <remarks>
-      <para>The <see cref="IMFTranscodeSinkInfoProvider.GetSinkInfo" /> method assigns <see cref="IMFMediaType" /> pointers to the <b>pAudioMediaType</b> and <b>pVideoMediaType</b> members of this structure. The method might set either member to <b>NULL</b>. If either member is non-<b>NULL</b> after the method returns, the caller must release the <b>IMFMediaType</b> pointers.</para>
-    </remarks>
-    <seealso cref="IMFTranscodeSinkInfoProvider.GetSinkInfo" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
   </member>
   <member name="MF_TRANSCODE_SINK_INFO.dwVideoStreamID">
-    <summary>
-      <para>The stream identifier of the video stream.</para>
-    </summary>
+    <summary>The stream identifier of the video stream.</summary>
   </member>
   <member name="MF_TRANSCODE_SINK_INFO.pVideoMediaType">
-    <summary>
-      <para>A pointer to the <see cref="IMFMediaType" /> interface of the media type for the  video stream. This member can be <b>NULL</b>.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IMFMediaType" /> interface of the media type for the video stream. This member can be <b>NULL</b>.</summary>
   </member>
   <member name="MF_TRANSCODE_SINK_INFO.dwAudioStreamID">
-    <summary>
-      <para>The stream identifier of the audio stream.</para>
-    </summary>
+    <summary>The stream identifier of the audio stream.</summary>
   </member>
   <member name="MF_TRANSCODE_SINK_INFO.pAudioMediaType">
-    <summary>
-      <para>A pointer to the <see cref="IMFMediaType" /> interface of the media type for the  audio stream. This member can be <b>NULL</b>.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IMFMediaType" /> interface of the media type for the audio stream. This member can be <b>NULL</b>.</summary>
   </member>
 </doc>

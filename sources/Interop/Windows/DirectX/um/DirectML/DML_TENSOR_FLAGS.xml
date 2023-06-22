@@ -3,15 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_TENSOR_FLAGS">
-    <summary>
-      <para>Specifies additional options in a tensor description. Values can be bitwise OR'd together.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <summary>Specifies additional options in a tensor description. Values can be bitwise OR'd together.</summary>
   </member>
   <member name="DML_TENSOR_FLAGS.DML_TENSOR_FLAG_NONE">
-    <summary>
-      <para>No options are specified.</para>
-    </summary>
+    <summary>No options are specified.</summary>
   </member>
   <member name="DML_TENSOR_FLAGS.DML_TENSOR_FLAG_OWNED_BY_DML">
     <summary>

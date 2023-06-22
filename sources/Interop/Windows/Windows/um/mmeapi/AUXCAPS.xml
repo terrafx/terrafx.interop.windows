@@ -3,29 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUXCAPS">
-    <summary>
-      <para>The <b>AUXCAPS</b> structure describes the capabilities of an auxiliary output device.</para>
-    </summary>
+    <summary>The <b>AUXCAPS</b> structure describes the capabilities of an auxiliary output device.</summary>
   </member>
   <member name="AUXCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier for the device driver for the auxiliary audio device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier for the device driver for the auxiliary audio device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="AUXCAPS.wPid">
-    <summary>
-      <para>Product identifier for the auxiliary audio device. Currently, no product identifiers are defined for auxiliary audio devices.</para>
-    </summary>
+    <summary>Product identifier for the auxiliary audio device. Currently, no product identifiers are defined for auxiliary audio devices.</summary>
   </member>
   <member name="AUXCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the auxiliary audio device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the auxiliary audio device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="AUXCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="AUXCAPS.wTechnology">
     <summary>
@@ -35,22 +25,30 @@
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>AUXCAPS_AUXIN</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_AUXIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Audio output from auxiliary input jacks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Audio output from auxiliary input jacks.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_CDAUDIO</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>AUXCAPS_CDAUDIO</b>
-          </description>
-          <description>
-            <para>Audio output from an internal CD-ROM drive.</para>
-          </description>
-        </item>
+          <description>Audio output from an internal CD-ROM drive.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -62,56 +60,46 @@
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>AUXCAPS_LRVOLUME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_LRVOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Supports separate left and right volume control.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Supports separate left and right volume control.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_VOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>AUXCAPS_VOLUME</b>
-          </description>
-          <description>
-            <para>Supports volume control.</para>
-          </description>
-        </item>
-      </list>
-      <para>If a device supports volume changes, the AUXCAPS_VOLUME flag will be set. If a device supports separate volume changes on the left and right channels, both AUXCAPS_VOLUME and the AUXCAPS_LRVOLUME will be set.</para>
-    </summary>
+          <description>Supports volume control.</description>
+        </listheader>
+      </list> <para>If a device supports volume changes, the AUXCAPS_VOLUME flag will be set. If a device supports separate volume changes on the left and right channels, both AUXCAPS_VOLUME and the AUXCAPS_LRVOLUME will be set.</para></summary>
   </member>
   <member name="AUXCAPS">
-    <summary>
-      <para>The <b>AUXCAPS</b> structure describes the capabilities of an auxiliary output device.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The mmeapi.h header defines AUXCAPS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>The <b>AUXCAPS</b> structure describes the capabilities of an auxiliary output device.</summary>
   </member>
   <member name="AUXCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier for the device driver for the auxiliary audio device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier for the device driver for the auxiliary audio device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="AUXCAPS.wPid">
-    <summary>
-      <para>Product identifier for the auxiliary audio device. Currently, no product identifiers are defined for auxiliary audio devices.</para>
-    </summary>
+    <summary>Product identifier for the auxiliary audio device. Currently, no product identifiers are defined for auxiliary audio devices.</summary>
   </member>
   <member name="AUXCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the auxiliary audio device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the auxiliary audio device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="AUXCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="AUXCAPS.wTechnology">
     <summary>
@@ -121,22 +109,30 @@ The mmeapi.h header defines AUXCAPS as an alias which automatically selects the 
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>AUXCAPS_AUXIN</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_AUXIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Audio output from auxiliary input jacks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Audio output from auxiliary input jacks.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_CDAUDIO</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>AUXCAPS_CDAUDIO</b>
-          </description>
-          <description>
-            <para>Audio output from an internal CD-ROM drive.</para>
-          </description>
-        </item>
+          <description>Audio output from an internal CD-ROM drive.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -148,56 +144,46 @@ The mmeapi.h header defines AUXCAPS as an alias which automatically selects the 
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>AUXCAPS_LRVOLUME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_LRVOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Supports separate left and right volume control.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Supports separate left and right volume control.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_VOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>AUXCAPS_VOLUME</b>
-          </description>
-          <description>
-            <para>Supports volume control.</para>
-          </description>
-        </item>
-      </list>
-      <para>If a device supports volume changes, the AUXCAPS_VOLUME flag will be set. If a device supports separate volume changes on the left and right channels, both AUXCAPS_VOLUME and the AUXCAPS_LRVOLUME will be set.</para>
-    </summary>
+          <description>Supports volume control.</description>
+        </listheader>
+      </list> <para>If a device supports volume changes, the AUXCAPS_VOLUME flag will be set. If a device supports separate volume changes on the left and right channels, both AUXCAPS_VOLUME and the AUXCAPS_LRVOLUME will be set.</para></summary>
   </member>
   <member name="AUXCAPS">
-    <summary>
-      <para>The <b>AUXCAPS</b> structure describes the capabilities of an auxiliary output device.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The mmeapi.h header defines AUXCAPS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>The <b>AUXCAPS</b> structure describes the capabilities of an auxiliary output device.</summary>
   </member>
   <member name="AUXCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier for the device driver for the auxiliary audio device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier for the device driver for the auxiliary audio device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="AUXCAPS.wPid">
-    <summary>
-      <para>Product identifier for the auxiliary audio device. Currently, no product identifiers are defined for auxiliary audio devices.</para>
-    </summary>
+    <summary>Product identifier for the auxiliary audio device. Currently, no product identifiers are defined for auxiliary audio devices.</summary>
   </member>
   <member name="AUXCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the auxiliary audio device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the auxiliary audio device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="AUXCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="AUXCAPS.wTechnology">
     <summary>
@@ -207,22 +193,30 @@ The mmeapi.h header defines AUXCAPS as an alias which automatically selects the 
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>AUXCAPS_AUXIN</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_AUXIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Audio output from auxiliary input jacks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Audio output from auxiliary input jacks.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_CDAUDIO</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>AUXCAPS_CDAUDIO</b>
-          </description>
-          <description>
-            <para>Audio output from an internal CD-ROM drive.</para>
-          </description>
-        </item>
+          <description>Audio output from an internal CD-ROM drive.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -234,24 +228,30 @@ The mmeapi.h header defines AUXCAPS as an alias which automatically selects the 
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>AUXCAPS_LRVOLUME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_LRVOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Supports separate left and right volume control.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Supports separate left and right volume control.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUXCAPS_VOLUME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>AUXCAPS_VOLUME</b>
-          </description>
-          <description>
-            <para>Supports volume control.</para>
-          </description>
-        </item>
-      </list>
-      <para>If a device supports volume changes, the AUXCAPS_VOLUME flag will be set. If a device supports separate volume changes on the left and right channels, both AUXCAPS_VOLUME and the AUXCAPS_LRVOLUME will be set.</para>
-    </summary>
+          <description>Supports volume control.</description>
+        </listheader>
+      </list> <para>If a device supports volume changes, the AUXCAPS_VOLUME flag will be set. If a device supports separate volume changes on the left and right channels, both AUXCAPS_VOLUME and the AUXCAPS_LRVOLUME will be set.</para></summary>
   </member>
 </doc>

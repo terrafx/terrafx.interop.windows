@@ -3,101 +3,38 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteInlineObject.Draw">
-    <summary>
-      <para>The application implemented rendering callback (<see cref="IDWriteTextRenderer.DrawInlineObject" />)
-can use this to draw the inline object without needing to cast or query the object
-type. The text layout does not call this method directly.</para>
-    </summary>
-    <param name="clientDrawingContext">
-      <para>Type: <b>void*</b></para>
-      <para>The drawing context passed to <see cref="IDWriteTextLayout.Draw" />.  This parameter may be <b>NULL</b>.</para>
-    </param>
-    <param name="renderer">
-      <para>Type: <b><see cref="IDWriteTextRenderer" />*</b></para>
-      <para>The same renderer passed to <see cref="IDWriteTextLayout.Draw" /> as the object's containing parent.  This is useful if the inline object is recursive such as a nested layout.</para>
-    </param>
-    <param name="originX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x-coordinate at the upper-left corner of the inline object.</para>
-    </param>
-    <param name="originY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y-coordinate at the upper-left corner of the inline object.</para>
-    </param>
-    <param name="isSideways">
-      <para>Type: <b>BOOL</b></para>
-      <para>A Boolean flag that indicates whether the object's baseline runs alongside the baseline axis of the line.</para>
-    </param>
-    <param name="isRightToLeft">
-      <para>Type: <b>BOOL</b></para>
-      <para>A Boolean flag that indicates whether the object is in a right-to-left context and should be drawn flipped.</para>
-    </param>
-    <param name="clientDrawingEffect">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>The drawing effect set in <see cref="IDWriteTextLayout.SetDrawingEffect" />.  Usually this effect is a foreground brush that  is used in glyph drawing.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteInlineObject" />
+    <summary>The application implemented rendering callback (<see cref="IDWriteTextRenderer.DrawInlineObject" />) can use this to draw the inline object without needing to cast or query the object type. The text layout does not call this method directly.</summary>
+    <param name="clientDrawingContext">The drawing context passed to <see cref="IDWriteTextLayout.Draw" />. This parameter may be <b>NULL</b>.</param>
+    <param name="renderer">The same renderer passed to <see cref="IDWriteTextLayout.Draw" /> as the object's containing parent. This is useful if the inline object is recursive such as a nested layout.</param>
+    <param name="originX">The x-coordinate at the upper-left corner of the inline object.</param>
+    <param name="originY">The y-coordinate at the upper-left corner of the inline object.</param>
+    <param name="isSideways">A Boolean flag that indicates whether the object's baseline runs alongside the baseline axis of the line.</param>
+    <param name="isRightToLeft">A Boolean flag that indicates whether the object is in a right-to-left context and should be drawn flipped.</param>
+    <param name="clientDrawingEffect">The drawing effect set in <see cref="IDWriteTextLayout.SetDrawingEffect" />. Usually this effect is a foreground brush that is used in glyph drawing.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteInlineObject.GetBreakConditions">
-    <summary>
-      <para>Layout uses this to determine the line-breaking behavior of the inline object
-among the text.</para>
-    </summary>
-    <param name="breakConditionBefore">
-      <para>Type: <b><see cref="DWRITE_BREAK_CONDITION" />*</b></para>
-      <para>When this method returns, contains a value which indicates the line-breaking condition between the object and the content immediately preceding it.</para>
-    </param>
-    <param name="breakConditionAfter">
-      <para>Type: <b><see cref="DWRITE_BREAK_CONDITION" />*</b></para>
-      <para>When this method returns, contains a value which indicates the line-breaking condition between the object and the content immediately following it.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteInlineObject" />
+    <summary>Layout uses this to determine the line-breaking behavior of the inline object among the text.</summary>
+    <param name="breakConditionBefore">When this method returns, contains a value which indicates the line-breaking condition between the object and the content immediately preceding it.</param>
+    <param name="breakConditionAfter">When this method returns, contains a value which indicates the line-breaking condition between the object and the content immediately following it.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteInlineObject.GetMetrics">
     <summary>
-      <para>
-        <see cref="IDWriteTextLayout" /> calls this callback function to get the measurement of the inline object.</para>
-    </summary>
-    <param name="metrics">
-      <para>Type: <b><see cref="DWRITE_INLINE_OBJECT_METRICS" />*</b></para>
-      <para>When this method returns, contains a structure describing the geometric measurement of an
-application-defined inline object.  These metrics are in relation to the baseline of the adjacent text.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteInlineObject" />
+      <see cref="IDWriteTextLayout" /> calls this callback function to get the measurement of the inline object.</summary>
+    <param name="metrics">When this method returns, contains a structure describing the geometric measurement of an application-defined inline object. These metrics are in relation to the baseline of the adjacent text.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteInlineObject.GetOverhangMetrics">
     <summary>
       <para>
-        <see cref="IDWriteTextLayout" /> calls this callback function to get the visible extents (in DIPs) of the inline object. In the case of a simple bitmap, with no padding and no overhang, all the overhangs will
-simply be zeroes.</para>
-      <para>The overhangs should be returned relative to the reported size of the object (see <see cref="DWRITE_INLINE_OBJECT_METRICS" />), and should not be baseline
-adjusted.</para>
+        <see cref="IDWriteTextLayout" /> calls this callback function to get the visible extents (in DIPs) of the inline object. In the case of a simple bitmap, with no padding and no overhang, all the overhangs will simply be zeroes.</para>
+      <para>The overhangs should be returned relative to the reported size of the object (see <see cref="DWRITE_INLINE_OBJECT_METRICS" />), and should not be baseline adjusted.</para>
     </summary>
-    <param name="overhangs">
-      <para>Type: <b><see cref="DWRITE_OVERHANG_METRICS" />*</b></para>
-      <para>Overshoot of visible extents (in DIPs) outside the object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteInlineObject" />
+    <param name="overhangs">Overshoot of visible extents (in DIPs) outside the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteInlineObject">
-    <summary>
-      <para>Wraps an application-defined inline graphic, allowing DWrite to query metrics as if the graphic were a glyph inline with the text.</para>
-    </summary>
+    <summary>Wraps an application-defined inline graphic, allowing DWrite to query metrics as if the graphic were a glyph inline with the text.</summary>
   </member>
 </doc>

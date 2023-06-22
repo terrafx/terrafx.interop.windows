@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfTextInputProcessorEx.ActivateEx">
-    <summary>
-      <para>The <b>ITfTextInputProcessorEx.ActivateEx</b> method activates a text service when a user session starts. If the text service implements <b>ITfTextInputProcessorEx</b> and <b>ActivateEx</b> is called, <see cref="ITfTextInputProcessor.Activate" /> will not be called.</para>
-    </summary>
-    <param name="ptim">
-      <para>[in] Pointer to the ITfThreadMgr interface for the thread manager that owns the text service.</para>
-    </param>
-    <param name="tid">
-      <para>[in] Specifies the client identifier for the text service.</para>
-    </param>
+    <summary>The <b>ITfTextInputProcessorEx.ActivateEx</b> method activates a text service when a user session starts. If the text service implements <b>ITfTextInputProcessorEx</b> and <b>ActivateEx</b> is called, <see cref="ITfTextInputProcessor.Activate" /> will not be called.</summary>
+    <param name="ptim">[in] Pointer to the ITfThreadMgr interface for the thread manager that owns the text service.</param>
+    <param name="tid">[in] Specifies the client identifier for the text service.</param>
     <param name="dwFlags">
       <para>[in] The combination of the following bits:</para>
       <list type="table">
@@ -19,47 +13,59 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TF_TMAE_SECUREMODE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_TMAE_SECUREMODE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A text service is activated as secure mode. A text service may not want to show the setting dialog box.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A text service is activated as secure mode. A text service may not want to show the setting dialog box.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_TMAE_COMLESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A text service is activated as com less mode. TSF was activated without COM. COM may not be initialized or COM may be initialized as MTA.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TF_TMAE_COMLESS</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_TMAE_WOW16</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The current thread is 16 bit task.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A text service is activated as com less mode. TSF was activated without COM. COM may not be initialized or COM may be initialized as MTA.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_TMAE_CONSOLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_TMAE_WOW16</b>
-          </description>
-          <description>
-            <para>The current thread is 16 bit task.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_TMAE_CONSOLE</b>
-          </description>
-          <description>
-            <para>A text service is activated for console usage.</para>
-          </description>
-        </item>
+          <description>A text service is activated for console usage.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>The TSF manager ignores the return value of this method.</para>
-    </returns>
+    <returns>The TSF manager ignores the return value of this method.</returns>
   </member>
   <member name="ITfTextInputProcessorEx">
-    <summary>
-      <para>The <b>ITfTextInputProcessorEx</b> interface is implemented by a text service and used by the TSF manager to activate and deactivate the text service. The manager obtains a pointer to this interface when it creates an instance of the text service for a thread with a call to CoCreateInstance.</para>
-    </summary>
+    <summary>The <b>ITfTextInputProcessorEx</b> interface is implemented by a text service and used by the TSF manager to activate and deactivate the text service. The manager obtains a pointer to this interface when it creates an instance of the text service for a thread with a call to CoCreateInstance.</summary>
   </member>
 </doc>

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VIDEO_STREAM_CONFIG_CAPS">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>The <b>VIDEO_STREAM_CONFIG_CAPS</b> structure describes a range of video formats. Video compression and video capture filters use this structure to describe what formats they can produce.</para>
+      <div>
+        <b>Note</b>   Most of this structure is deprecated, with the exception of the following structure members:<list type="bullet"><item><description><b>guid</b></description></item><item><description><b>VideoStandard</b></description></item><item><description><b>MinFrameInterval</b></description></item><item><description><b>MaxFrameInterval</b></description></item></list> Applications can use <b>MinFrameInterval</b> and <b>MaxFrameInterval</b> to get the range of supported frame rates from a video capture device. Applications should avoid using any of the other members of this structure. Instead, use the <see cref="AM_MEDIA_TYPE" /> structure returned by the <see cref="IAMStreamConfig.GetFormat" /> method.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.guid">
+    <summary>
+      <b>GUID</b> that identifies the format type. For example, <b>FORMAT_VideoInfo</b> or <b>FORMAT_VideoInfo2</b>. For more information, see the <b>formattype</b> member of the <see cref="AM_MEDIA_TYPE" /> structure.</summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.VideoStandard">
+    <summary>The analog video standard supported. The value is a bitwise combination of flags from the <see cref="AnalogVideoStandard" /> enumeration type, or zero.</summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.InputSize">
+    <summary>
+      <para>Native size of the incoming video signal. For a compressor, the size is taken from the input pin. For a capture filter, the size is the largest signal the filter can digitize with every pixel remaining unique.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.MinCroppingSize">
+    <summary>
+      <para>Smallest source rectangle allowed. The source rectangle is defined in the <b>rcSource</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a> structure.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.MaxCroppingSize">
+    <summary>
+      <para>Largest source rectangle allowed.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.CropGranularityX">
+    <summary>
+      <para>Horizontal granularity of the source rectangle. This value specifies the increments that are valid between <b>MinCroppingSize</b> and <b>MaxCroppingSize</b>.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.CropGranularityY">
+    <summary>
+      <para>Vertical granularity of the source rectangle. This value specifies the increments that are valid between <b>MinCroppingSize</b> and <b>MaxCroppingSize</b>.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.CropAlignX">
+    <summary>
+      <para>Required horizontal alignment of the source rectangle.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.CropAlignY">
+    <summary>
+      <para>Required vertical alignment of the source rectangle.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.MinOutputSize">
+    <summary>
+      <para>Minimum output size.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.MaxOutputSize">
+    <summary>
+      <para>Maximum output size.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.OutputGranularityX">
+    <summary>
+      <para>Granularity of the output width. This value specifies the increments that are valid between <b>MinOutputSize</b> and <b>MaxOutputSize</b>.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.OutputGranularityY">
+    <summary>
+      <para>Granularity of output height. This value specifies the increments that are valid between <b>MinOutputSize</b> and <b>MaxOutputSize</b>.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.StretchTapsX">
+    <summary>
+      <para>Indicates how well the filter can stretch the image horizontally.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.StretchTapsY">
+    <summary>
+      <para>Indicates how well the filter can stretch the image vertically.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.ShrinkTapsX">
+    <summary>
+      <para>Indicates how well the filter can shrink the image horizontally.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.ShrinkTapsY">
+    <summary>
+      <para>Indicates how well the filter can shrink the image vertically.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>The previous four structure members use the following values: <list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>0</b></term></listheader></list></description><description>Does not support stretching/shrinking.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>1</b></term></listheader></list></description><description>Uses pixel doubling (stretching) or eliminates pixels (shrinking)</description></listheader><listheader><description><list type="bullet"><listheader><term><b>2</b></term></listheader></list></description><description>Uses interpolation (2 taps)</description></listheader><listheader><description><list type="bullet"><listheader><term><b>3 and higher</b></term></listheader></list></description><description>Uses interpolation (&gt;2 taps)</description></listheader></list></summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.MinFrameInterval">
+    <summary>The minimum frame duration, in 100-nanosecond units. This value applies only to capture filters.</summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.MaxFrameInterval">
+    <summary>The maximum frame duration, in 100-nanosecond units. This value applies only to capture filters.</summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.MinBitsPerSecond">
+    <summary>
+      <para>Minimum data rate this pin can produce.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+  <member name="VIDEO_STREAM_CONFIG_CAPS.MaxBitsPerSecond">
+    <summary>
+      <para>Maximum data rate this pin can produce.</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>
+    </summary>
+  </member>
+</doc>

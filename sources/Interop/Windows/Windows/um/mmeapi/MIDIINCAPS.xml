@@ -3,111 +3,57 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIDIINCAPS">
-    <summary>
-      <para>The <b>MIDIINCAPS</b> structure describes the capabilities of a MIDI input device.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/midi-structures">MIDI Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/musical-instrument-digital-interface--midi">Musical Instrument Digital Interface (MIDI)</seealso>
+    <summary>The <b>MIDIINCAPS</b> structure describes the capabilities of a MIDI input device.</summary>
   </member>
   <member name="MIDIINCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier of the device driver for the MIDI input device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier of the device driver for the MIDI input device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIINCAPS.wPid">
-    <summary>
-      <para>Product identifier of the MIDI input device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Product identifier of the MIDI input device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIINCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the MIDI input device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the MIDI input device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="MIDIINCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="MIDIINCAPS.dwSupport">
-    <summary>
-      <para>Reserved; must be zero.</para>
-    </summary>
+    <summary>Reserved; must be zero.</summary>
   </member>
   <member name="MIDIINCAPS">
-    <summary>
-      <para>The <b>MIDIINCAPS</b> structure describes the capabilities of a MIDI input device.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The mmeapi.h header defines MIDIINCAPS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/midi-structures">MIDI Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/musical-instrument-digital-interface--midi">Musical Instrument Digital Interface (MIDI)</seealso>
+    <summary>The <b>MIDIINCAPS</b> structure describes the capabilities of a MIDI input device.</summary>
   </member>
   <member name="MIDIINCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier of the device driver for the MIDI input device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier of the device driver for the MIDI input device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIINCAPS.wPid">
-    <summary>
-      <para>Product identifier of the MIDI input device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Product identifier of the MIDI input device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIINCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the MIDI input device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the MIDI input device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="MIDIINCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="MIDIINCAPS.dwSupport">
-    <summary>
-      <para>Reserved; must be zero.</para>
-    </summary>
+    <summary>Reserved; must be zero.</summary>
   </member>
   <member name="MIDIINCAPS">
-    <summary>
-      <para>The <b>MIDIINCAPS</b> structure describes the capabilities of a MIDI input device.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The mmeapi.h header defines MIDIINCAPS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/midi-structures">MIDI Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/musical-instrument-digital-interface--midi">Musical Instrument Digital Interface (MIDI)</seealso>
+    <summary>The <b>MIDIINCAPS</b> structure describes the capabilities of a MIDI input device.</summary>
   </member>
   <member name="MIDIINCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier of the device driver for the MIDI input device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier of the device driver for the MIDI input device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIINCAPS.wPid">
-    <summary>
-      <para>Product identifier of the MIDI input device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Product identifier of the MIDI input device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="MIDIINCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the MIDI input device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the MIDI input device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="MIDIINCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="MIDIINCAPS.dwSupport">
-    <summary>
-      <para>Reserved; must be zero.</para>
-    </summary>
+    <summary>Reserved; must be zero.</summary>
   </member>
 </doc>

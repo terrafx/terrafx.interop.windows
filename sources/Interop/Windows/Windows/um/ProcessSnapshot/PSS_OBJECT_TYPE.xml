@@ -3,42 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSS_OBJECT_TYPE">
-    <summary>
-      <para>Specifies the object type in a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_handle_entry">PSS_HANDLE_ENTRY</a> structure.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+    <summary>Specifies the object type in a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_handle_entry">PSS_HANDLE_ENTRY</a> structure.</summary>
   </member>
   <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_UNKNOWN">
-    <summary>
-      <para>The object type is either unknown or unsupported.</para>
-    </summary>
+    <summary>The object type is either unknown or unsupported.</summary>
   </member>
   <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_PROCESS">
-    <summary>
-      <para>The object is a process.</para>
-    </summary>
+    <summary>The object is a process.</summary>
   </member>
   <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_THREAD">
-    <summary>
-      <para>The object is a thread.</para>
-    </summary>
+    <summary>The object is a thread.</summary>
   </member>
   <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_MUTANT">
-    <summary>
-      <para>The object is a mutant/mutex.</para>
-    </summary>
+    <summary>The object is a mutant/mutex.</summary>
   </member>
   <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_EVENT">
-    <summary>
-      <para>The object is an event.</para>
-    </summary>
+    <summary>The object is an event.</summary>
   </member>
   <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_SECTION">
-    <summary>
-      <para>The object is a file-mapping object.</para>
-    </summary>
+    <summary>The object is a file-mapping object.</summary>
   </member>
-  <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_SEMAPHORE">
-    <summary></summary>
-  </member>
+  <member name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_SEMAPHORE"></member>
 </doc>

@@ -9,18 +9,12 @@
     </summary>
   </member>
   <member name="UMS_CREATE_THREAD_ATTRIBUTES.UmsVersion">
-    <summary>
-      <para>The UMS version for which the application was built. This parameter must be <b>UMS_VERSION</b>.</para>
-    </summary>
+    <summary>The UMS version for which the application was built. This parameter must be <b>UMS_VERSION</b>.</summary>
   </member>
   <member name="UMS_CREATE_THREAD_ATTRIBUTES.UmsContext">
-    <summary>
-      <para>A pointer to a UMS thread context for the worker thread to be created. This pointer is provided by the <see cref="CreateUmsThreadContext" /> function.</para>
-    </summary>
+    <summary>A pointer to a UMS thread context for the worker thread to be created. This pointer is provided by the <see cref="CreateUmsThreadContext" /> function.</summary>
   </member>
   <member name="UMS_CREATE_THREAD_ATTRIBUTES.UmsCompletionList">
-    <summary>
-      <para>A pointer to a UMS completion list. This pointer is provided by the <see cref="CreateUmsCompletionList" /> function. The newly created worker thread is queued to the specified completion list.</para>
-    </summary>
+    <summary>A pointer to a UMS completion list. This pointer is provided by the <see cref="CreateUmsCompletionList" /> function. The newly created worker thread is queued to the specified completion list.</summary>
   </member>
 </doc>

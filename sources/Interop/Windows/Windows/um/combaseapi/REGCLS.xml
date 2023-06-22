@@ -3,66 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="REGCLS">
-    <summary>
-      <para>Controls the type of connections to a class object.</para>
-    </summary>
-    <remarks>
-      <para>In <see cref="CoRegisterClassObject" />, members of both the <b>REGCLS</b> and the <see cref="CLSCTX" /> enumerations, taken together, determine how the class object is registered.</para>
-      <para>An EXE surrogate (in which DLL servers are run) calls <see cref="CoRegisterClassObject" /> to register a class factory using a new <b>REGCLS</b> value, REGCLS_SURROGATE.</para>
-      <para>All class factories for DLL surrogates should be registered with REGCLS_SURROGATE set. Do not set REGCLS_SINGLUSE or REGCLS_MULTIPLEUSE when you register a surrogate for DLL servers.</para>
-      <para>The following table summarizes the allowable <b>REGCLS</b> value combinations and the object registrations affected by the combinations.</para>
-      <list type="table">
-        <listheader>
-          <description></description>
-          <description>REGCLS_SINGLEUSE</description>
-          <description>REGCLS_MULTIPLEUSE</description>
-          <description>REGCLS_MULTI_SEPARATE</description>
-          <description>Other</description>
-        </listheader>
-        <item>
-          <description>CLSCTX_INPROC_SERVER</description>
-          <description>Error</description>
-          <description>In-process</description>
-          <description>In-process</description>
-          <description>Error</description>
-        </item>
-        <item>
-          <description>CLSCTX_LOCAL_SERVER</description>
-          <description>Local</description>
-          <description>In-process/local</description>
-          <description>Local</description>
-          <description>Error</description>
-        </item>
-        <item>
-          <description>Both of the above</description>
-          <description>Error</description>
-          <description>In-process/local</description>
-          <description>In-process/local</description>
-          <description>Error</description>
-        </item>
-        <item>
-          <description>Other</description>
-          <description>Error</description>
-          <description>Error</description>
-          <description>Error</description>
-          <description>Error</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="CoGetClassObject" />
-    <seealso cref="CoRegisterClassObject" />
-    <seealso cref="DllGetClassObject" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/com/dllsurrogate">DllSurrogate</seealso>
+    <summary>Controls the type of connections to a class object.</summary>
   </member>
   <member name="REGCLS.REGCLS_SINGLEUSE">
-    <summary>
-      <para>After an application is connected to a class object with <see cref="CoGetClassObject" />, the class object is removed from public view so that no other applications can connect to it. This value is commonly used for single document interface (SDI) applications. Specifying this value does not affect the responsibility of the object application to call <see cref="CoRevokeClassObject" />; it must always call <b>CoRevokeClassObject</b> when it is finished with an object class.</para>
-    </summary>
+    <summary>After an application is connected to a class object with <see cref="CoGetClassObject" />, the class object is removed from public view so that no other applications can connect to it. This value is commonly used for single document interface (SDI) applications. Specifying this value does not affect the responsibility of the object application to call <see cref="CoRevokeClassObject" />; it must always call <b>CoRevokeClassObject</b> when it is finished with an object class.</summary>
   </member>
   <member name="REGCLS.REGCLS_MULTIPLEUSE">
-    <summary>
-      <para>Multiple applications can connect to the class object through calls to <see cref="CoGetClassObject" />. If both the REGCLS_MULTIPLEUSE and CLSCTX_LOCAL_SERVER are set in a call to <see cref="CoRegisterClassObject" />, the class object is also automatically registered as an in-process server, whether CLSCTX_INPROC_SERVER is explicitly set.</para>
-    </summary>
+    <summary>Multiple applications can connect to the class object through calls to <see cref="CoGetClassObject" />. If both the REGCLS_MULTIPLEUSE and CLSCTX_LOCAL_SERVER are set in a call to <see cref="CoRegisterClassObject" />, the class object is also automatically registered as an in-process server, whether CLSCTX_INPROC_SERVER is explicitly set.</summary>
   </member>
   <member name="REGCLS.REGCLS_MULTI_SEPARATE">
     <summary>
@@ -73,23 +20,14 @@
   <member name="REGCLS.REGCLS_SUSPENDED">
     <summary>
       <para>Suspends registration and activation requests for the specified CLSID until there is a call to <see cref="CoResumeClassObjects" />. This is used typically to register the CLSIDs for servers that can register multiple class objects to reduce the overall registration time, and thus the server application startup time, by making a single call to the SCM, no matter how many CLSIDs are registered for the server.</para>
-      <para>
-        <b>Note</b>  This flag prevents COM activation errors from a possible race condition between an application shutting down and that application attempting to register a COM class.</para>
+      <div>
+        <b>Note</b>  This flag prevents COM activation errors from a possible race condition between an application shutting down and that application attempting to register a COM class.</div>
     </summary>
   </member>
   <member name="REGCLS.REGCLS_SURROGATE">
-    <summary>
-      <para>The class object is a surrogate process used to run DLL servers. The class factory registered by the surrogate process is not the actual class factory implemented by the DLL server, but a generic class factory implemented by the surrogate. This generic class factory delegates instance creation and marshaling to the class factory of the DLL server running in the surrogate. For further information on DLL surrogates, see the <a href="https://docs.microsoft.com//windows/desktop/com/dllsurrogate">DllSurrogate</a> registry value.</para>
-    </summary>
+    <summary>The class object is a surrogate process used to run DLL servers. The class factory registered by the surrogate process is not the actual class factory implemented by the DLL server, but a generic class factory implemented by the surrogate. This generic class factory delegates instance creation and marshaling to the class factory of the DLL server running in the surrogate. For further information on DLL surrogates, see the <a href="https://docs.microsoft.com//windows/desktop/com/dllsurrogate">DllSurrogate</a> registry value.</summary>
   </member>
   <member name="REGCLS.REGCLS_AGILE">
-    <summary>
-      <para>The class object aggregates the free-threaded marshaler
-and will be made visible to all inproc apartments. Can be used together with other flags. For example, REGCLS_AGILE | REGCLS_MULTIPLEUSE to register a
-class object that can be used multiple times from
-different apartments. Without other flags, behavior
-will retain REGCLS_SINGLEUSE semantics in that only
-one instance can be generated.</para>
-    </summary>
+    <summary>The class object aggregates the free-threaded marshaler and will be made visible to all inproc apartments. Can be used together with other flags. For example, REGCLS_AGILE | REGCLS_MULTIPLEUSE to register a class object that can be used multiple times from different apartments. Without other flags, behavior will retain REGCLS_SINGLEUSE semantics in that only one instance can be generated.</summary>
   </member>
 </doc>

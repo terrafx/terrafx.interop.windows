@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IContentPrefetcherTaskTrigger.IsRegisteredForContentPrefetch">
+    <summary>Indicates if an app package has registered for the content prefetch background task.</summary>
+    <param name="packageFullName">The package ID.</param>
+    <param name="isRegistered">True if the app package has registered for the content prefetch background task; otherwise, false.</param>
+    <returns>
+      <para>Returns S_OK on success. Other possible values include:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method call was not made at the required Medium Integrity Level (Medium IL).</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IContentPrefetcherTaskTrigger.TriggerContentPrefetcherTask">
+    <summary>Triggers a content prefetch background task for the specified app package.</summary>
+    <param name="packageFullName">The package ID.</param>
+    <returns>
+      <para>Returns S_OK on success. Other possible values include:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The provided package ID is not an installed package that has registered for the content prefetch background task, or the package ID is empty or null.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method call was not made at the required Medium Integrity Level (Medium IL).</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IContentPrefetcherTaskTrigger">
+    <summary>
+      <para>The <b>IContentPrefetcherTaskTrigger</b> interface supports content prefetching behavior and performance testing by defining methods that allow you to verify that an installed app package is registered for this background task and manually trigger its content prefetch operations.</para>
+      <div>
+        <b>Note</b>  Use of this API requires that its methods are called at Medium Integrity Level (Medium IL).</div>
+    </summary>
+  </member>
+</doc>

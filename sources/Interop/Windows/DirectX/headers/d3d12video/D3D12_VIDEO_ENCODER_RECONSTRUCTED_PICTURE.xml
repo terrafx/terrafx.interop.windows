@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_RECONSTRUCTED_PICTURE">
-    <summary>
-      <para>Represents the reconstructed picture generated from the input frame passed to the encode operation.</para>
-    </summary>
+    <summary>Represents the reconstructed picture generated from the input frame passed to the encode operation.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_RECONSTRUCTED_PICTURE.pReconstructedPicture">
-    <summary>
-      <para>A <see cref="ID3D12Resource" /> representing the reconstructed picture generated from the input frame.</para>
-    </summary>
+    <summary>A <see cref="ID3D12Resource" /> representing the reconstructed picture generated from the input frame.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_RECONSTRUCTED_PICTURE.ReconstructedPictureSubresource">
-    <summary>
-      <para>A UINT64 specifying the subresource index for <i>pReconstructedPicture</i>.</para>
-    </summary>
+    <summary>A UINT64 specifying the subresource index for <i>pReconstructedPicture</i>.</summary>
   </member>
 </doc>

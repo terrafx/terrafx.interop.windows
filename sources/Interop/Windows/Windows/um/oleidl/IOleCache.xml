@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleCache.Cache">
-    <summary>
-      <para>Specifies the format and other data to be cached inside an embedded object.</para>
-    </summary>
-    <param name="pformatetc">
-      <para>A pointer to a <see cref="FORMATETC" /> structure that specifies the format and other data to be cached. View caching is specified by passing a zero clipboard format in <i>pformatetc</i>.</para>
-    </param>
-    <param name="advf">
-      <para>A group of flags that control the caching. Possible values come from the <see cref="ADVF" /> enumeration. When used in this context, for a cache, these values have specific meanings, which are outlined in Remarks. Refer to the <b>ADVF</b> enumeration for a more detailed description.</para>
-    </param>
-    <param name="pdwConnection">
-      <para>A pointer to a variable that receives the identifier of this connection, which can later be used to turn caching off (by passing it to <see cref="IOleCache.Uncache" />). If this value is 0, the connection was not established. The OLE-provided implementation uses nonzero numbers for connection identifiers.</para>
-    </param>
+    <summary>Specifies the format and other data to be cached inside an embedded object.</summary>
+    <param name="pformatetc">A pointer to a <see cref="FORMATETC" /> structure that specifies the format and other data to be cached. View caching is specified by passing a zero clipboard format in <i>pformatetc</i>.</param>
+    <param name="advf">A group of flags that control the caching. Possible values come from the <see cref="ADVF" /> enumeration. When used in this context, for a cache, these values have specific meanings, which are outlined in Remarks. Refer to the <b>ADVF</b> enumeration for a more detailed description.</param>
+    <param name="pdwConnection">A pointer to a variable that receives the identifier of this connection, which can later be used to turn caching off (by passing it to <see cref="IOleCache.Uncache" />). If this value is 0, the connection was not established. The OLE-provided implementation uses nonzero numbers for connection identifiers.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -22,219 +14,165 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The supplied <i>pformatetc</i> or <i>advf</i> arguments are not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The supplied <i>pformatetc</i> or <i>advf</i> arguments are not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory available for the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unexpected error has occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CACHE_S_FORMATETC_NOTSUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The cache was created, but the object application does not support the specified format. Cache creation succeeds even if the format is not supported, allowing the caller to fill the cache. If, however, the caller does not need to keep the cache, call <see cref="IOleCache.Uncache" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CACHE_S_SAMECACHE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A cache already exists for the <see cref="FORMATETC" /> passed to <see cref="IOleCache.Uncache" />. In this case, the new advise flags are assigned to the cache, and the previously assigned connection identifier is returned.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Insufficient memory available for the operation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_LINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid value for <i>pformatetc</i>-&gt;<b>lindex</b>; currently only -1 is supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>CACHE_S_FORMATETC_NOTSUPPORTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_TYMED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value is not valid for <i>pformatetc</i>-&gt;<b>tymed</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The cache was created, but the object application does not support the specified format. Cache creation succeeds even if the format is not supported, allowing the caller to fill the cache. If, however, the caller does not need to keep the cache, call <see cref="IOleCache.Uncache" />.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_DVASPECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value is not valid for <i>pformatetc</i>-&gt;<b>dwAspect</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>CACHE_S_SAMECACHE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_CLIPFORMAT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value is not valid for <i>pformatetc</i>-&gt;<b>cfFormat</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A cache already exists for the <see cref="FORMATETC" /> passed to <see cref="IOleCache.Uncache" />. In this case, the new advise flags are assigned to the cache, and the previously assigned connection identifier is returned.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CO_E_NOTINITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The cache's storage is not initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_LINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_DVTARGETDEVICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value is not valid for <i>pformatetc-</i>-&gt;<b>ptd</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid value for <i>pformatetc</i>-&gt;<b>lindex</b>; currently only -1 is supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_STATIC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>DV_E_TYMED</b>
-            </para>
-          </description>
-          <description>
-            <para>The value is not valid for <i>pformatetc</i>-&gt;<b>tymed</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>DV_E_DVASPECT</b>
-            </para>
-          </description>
-          <description>
-            <para>The value is not valid for <i>pformatetc</i>-&gt;<b>dwAspect</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>DV_E_CLIPFORMAT</b>
-            </para>
-          </description>
-          <description>
-            <para>The value is not valid for <i>pformatetc</i>-&gt;<b>cfFormat</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CO_E_NOTINITIALIZED</b>
-            </para>
-          </description>
-          <description>
-            <para>The cache's storage is not initialized.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>DV_E_DVTARGETDEVICE</b>
-            </para>
-          </description>
-          <description>
-            <para>The value is not valid for <i>pformatetc-</i>-&gt;<b>ptd</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>OLE_E_STATIC</b>
-            </para>
-          </description>
-          <description>
-            <para>The cache is for a static object and it already has a cache node.</para>
-          </description>
-        </item>
+          <description>The cache is for a static object and it already has a cache node.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>IOleCache.Cache</b> can specify either data caching or view (presentation) caching. To specify data caching, a valid data format must be passed in <i>pformatetc</i>. For view caching, the cache object itself decides on the format to cache, so a caller would pass a zero data format in <i>pformatetc</i> as follows:</para>
-      <code>pFormatetc-&gt;cfFormat == 0
-</code>
-      <para>A custom object handler can choose not to store data in a given format. Instead, it can synthesize it on demand when requested.</para>
-      <para>The <i>advf</i> value specifies a member of the <see cref="ADVF" /> enumeration. When one of these values (or an OR'd combination of more than one value) is used in this context, these values mean the following.</para>
-      <list type="table">
-        <listheader>
-          <description>ADVF Value</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>
-            <para>ADVF_NODATA</para>
-          </description>
-          <description>
-            <para>The cache is not to be updated by changes made to the running object. Instead, the container will update the cache by explicitly calling <see cref="IOleCache.SetData" />, <see cref="IDataObject.SetData" />, or <see cref="IOleCache2.UpdateCache" />. This flag is usually used when the iconic aspect of an object is being cached.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>ADVF_ONLYONCE</para>
-          </description>
-          <description>
-            <para>Update the cache one time only. After the update is complete, the advisory connection between the object and the cache is disconnected. The source object for the advisory connection calls the <see cref="Release" /> method.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>ADVF_PRIMEFIRST</para>
-          </description>
-          <description>
-            <para>The object is not to wait for the data or view to change before updating the cache. OR'd with ADVF_ONLYONCE, this parameter provides an asynchronous <see cref="IDataObject.GetData" /> call.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>ADVFCACHE_NOHANDLER</para>
-          </description>
-          <description>
-            <para>Synonym for ADVFCACHE_FORCEBUILTIN.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>ADVFCACHE_FORCEBUILTIN</para>
-          </description>
-          <description>
-            <para>Used by DLL object applications and object handlers that draw their objects to cache presentation data to ensure that there is a presentation in the cache. This ensures that the data can be retrieved even when the object or handler code is not available.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>ADVFCACHE_ONSAVE</para>
-          </description>
-          <description>
-            <para>Updates the cached representation only when the object containing the cache is saved. The cache is also updated when the OLE object changes from the running state back to the loaded state (because a subsequent save operation would require running the object again).</para>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IOleCache" />
-    <seealso cref="IOleCache.Uncache" />
   </member>
   <member name="IOleCache.EnumCache">
-    <summary>
-      <para>Creates an enumerator that can be used to enumerate the current cache connections.</para>
-    </summary>
-    <param name="ppenumSTATDATA">
-      <para>A pointer to an <see cref="IEnumSTATDATA" /> pointer variable that receives the interface pointer to the new enumerator object. If this parameter is <b>NULL</b>, there are no cache connections at this time.</para>
-    </param>
+    <summary>Creates an enumerator that can be used to enumerate the current cache connections.</summary>
+    <param name="ppenumSTATDATA">A pointer to an <see cref="IEnumSTATDATA" /> pointer variable that receives the interface pointer to the new enumerator object. If this parameter is <b>NULL</b>, there are no cache connections at this time.</param>
     <returns>
       <para>This method returns S_OK if enumerator object is successfully instantiated or there are no cache connections.</para>
-      <para>
-        <b>Note</b>  Check the <i>ppenumSTATDATA</i> parameter to determine which result occurred. If the <i>ppenumSTATDATA</i> parameter is <b>NULL</b>, then there are no cache connections at this time.</para>
+      <div>
+        <b>Note</b>  Check the <i>ppenumSTATDATA</i> parameter to determine which result occurred. If the <i>ppenumSTATDATA</i> parameter is <b>NULL</b>, then there are no cache connections at this time.</div>
     </returns>
-    <remarks>
-      <para>The enumerator object returned by this method implements the <see cref="IEnumSTATDATA" /> interface. <b>IEnumSTATDATA</b> enumerates the data stored in an array of <see cref="STATDATA" /> structures containing information about current cache connections.</para>
-    </remarks>
-    <seealso cref="IEnumSTATDATA" />
-    <seealso cref="IOleCache" />
-    <seealso cref="IOleCache.Cache" />
   </member>
   <member name="IOleCache.InitCache">
-    <summary>
-      <para>Fills the cache as needed using the data provided by the specified data object.</para>
-    </summary>
-    <param name="pDataObject">
-      <para>A pointer to the <see cref="IDataObject" /> interface on the data object from which the cache is to be initialized.</para>
-    </param>
+    <summary>Fills the cache as needed using the data provided by the specified data object.</summary>
+    <param name="pDataObject">A pointer to the <see cref="IDataObject" /> interface on the data object from which the cache is to be initialized.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -242,78 +180,74 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The pointer to the <see cref="IDataObject" /> interface is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The pointer to the <see cref="IDataObject" /> interface is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory is available for the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_NOTRUNNING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The cache is not running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Insufficient memory is available for the operation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CACHE_E_NOCACHE_UPDATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>None of the caches were updated.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>OLE_E_NOTRUNNING</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CACHE_S_SOMECACHES_NOTUPDATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The cache is not running.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CACHE_E_NOCACHE_UPDATED</b>
-            </para>
-          </description>
-          <description>
-            <para>None of the caches were updated.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CACHE_S_SOMECACHES_NOTUPDATED</b>
-            </para>
-          </description>
-          <description>
-            <para>Only some of the existing caches were updated.</para>
-          </description>
-        </item>
+          <description>Only some of the existing caches were updated.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>InitCache</b> is usually used when creating an object from a drag-and-drop operation or from a clipboard paste operation. It fills the cache as needed with presentation data from all the data formats provided by the data object provided on the clipboard or in the drag-and-drop operation. Helper functions like <see cref="OleCreateFromData" /> or <see cref="OleCreateLinkFromData" /> call this method when needed. If a container does not use these helper functions to create compound document objects, it can use <see cref="IOleCache.Cache" /> to set up the cache entries which are then filled by <b>InitCache</b>.</para>
-    </remarks>
-    <seealso cref="IOleCache" />
-    <seealso cref="IOleCache.Cache" />
   </member>
   <member name="IOleCache.SetData">
-    <summary>
-      <para>Initializes the cache with data in a specified format and on a specified medium.</para>
-    </summary>
-    <param name="pformatetc">
-      <para>A pointer to a <see cref="FORMATETC" /> structure that specifies the format of the presentation data being placed in the cache.</para>
-    </param>
-    <param name="pmedium">
-      <para>A pointer to a <see cref="STGMEDIUM" /> structure that specifies the storage medium that contains the presentation data.</para>
-    </param>
-    <param name="fRelease">
-      <para>Indicates the ownership of the storage medium after completion of the method. If <i>fRelease</i> is <b>TRUE</b>, the cache takes ownership, freeing the medium when it is finished using it. When <i>fRelease</i> is <b>FALSE</b>, the caller retains ownership and is responsible for freeing the medium. The cache can only use the storage medium for the duration of the call.</para>
-    </param>
+    <summary>Initializes the cache with data in a specified format and on a specified medium.</summary>
+    <param name="pformatetc">A pointer to a <see cref="FORMATETC" /> structure that specifies the format of the presentation data being placed in the cache.</param>
+    <param name="pmedium">A pointer to a <see cref="STGMEDIUM" /> structure that specifies the storage medium that contains the presentation data.</param>
+    <param name="fRelease">Indicates the ownership of the storage medium after completion of the method. If <i>fRelease</i> is <b>TRUE</b>, the cache takes ownership, freeing the medium when it is finished using it. When <i>fRelease</i> is <b>FALSE</b>, the caller retains ownership and is responsible for freeing the medium. The cache can only use the storage medium for the duration of the call.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -321,96 +255,96 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_LINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_LINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value is not valid for <i>pformatetc</i>-&gt;<b>lindex</b>. Currently, only -1 is supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value is not valid for <i>pformatetc</i>-&gt;<b>lindex</b>. Currently, only -1 is supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_FORMATETC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <see cref="FORMATETC" /> structure is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_FORMATETC</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_TYMED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value is not valid for <i>pformatetc</i>-&gt;<b>tymed</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="FORMATETC" /> structure is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_DVASPECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value is not valid for <i>pformatetc</i>-&gt;<b>dwAspect</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_TYMED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_BLANK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>There is an uninitialized object.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value is not valid for <i>pformatetc</i>-&gt;<b>tymed</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_TARGETDEVICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The object is static and <i>pformatetc</i>-&gt;<b>ptd</b> is non-<b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_DVASPECT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_MEDIUMFULL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The value is not valid for <i>pformatetc</i>-&gt;<b>dwAspect</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>OLE_E_BLANK</b>
-            </para>
-          </description>
-          <description>
-            <para>There is an uninitialized object.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>DV_E_TARGETDEVICE</b>
-            </para>
-          </description>
-          <description>
-            <para>The object is static and <i>pformatetc</i>-&gt;<b>ptd</b> is non-<b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_MEDIUMFULL</b>
-            </para>
-          </description>
-          <description>
-            <para>The storage medium is full.</para>
-          </description>
-        </item>
+          <description>The storage medium is full.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>IOleCache.SetData</b> is usually called when an object is created from the clipboard or through a drag-and-drop operation, and Embed Source data is used to create the object.</para>
-      <para>
-        <b>IOleCache.SetData</b> and <see cref="IOleCache.InitCache" /> are very similar. There are two main differences. The first difference is that while <b>IOleCache.InitCache</b> initializes the cache with the presentation format provided by the data object, <b>IOleCache.SetData</b> initializes it with a single format. Second, the <b>IOleCache.SetData</b> method ignores the ADVF_NODATA flag while <b>IOleCache.InitCache</b> obeys this flag.</para>
-      <para>A container can use this method to maintain a single aspect of an object, such as the icon aspect of the object.</para>
-    </remarks>
-    <seealso cref="IOleCache" />
-    <seealso cref="IOleCache.Cache" />
-    <seealso cref="IOleCache.SetData" />
   </member>
   <member name="IOleCache.Uncache">
-    <summary>
-      <para>Removes a cache connection created previously using <see cref="IOleCache.Cache" />.</para>
-    </summary>
-    <param name="dwConnection">
-      <para>The cache connection to be removed. This nonzero value was returned by <see cref="IOleCache.Cache" /> when the cache was originally established.</para>
-    </param>
+    <summary>Removes a cache connection created previously using <see cref="IOleCache.Cache" />.</summary>
+    <param name="dwConnection">The cache connection to be removed. This nonzero value was returned by <see cref="IOleCache.Cache" /> when the cache was originally established.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -418,30 +352,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>OLE_E_NOCONNECTION</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_NOCONNECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>No cache connection exists for <i>dwConnection</i>.</para>
-          </description>
-        </item>
+          <description>No cache connection exists for <i>dwConnection</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <b>IOleCache.Uncache</b> method removes a cache connection that was created in a prior call to <see cref="IOleCache.Cache" />. It uses the <i>dwConnection</i> parameter that was returned by the prior call to <b>IOleCache.Cache</b>.</para>
-    </remarks>
-    <seealso cref="IOleCache" />
-    <seealso cref="IOleCache.Cache" />
   </member>
   <member name="IOleCache">
-    <summary>
-      <para>Provides control of the presentation data that gets cached inside of an object. Cached presentation data is available to the container of the object even when the server application is not running or is unavailable.</para>
-    </summary>
-    <seealso cref="CreateDataCache" />
-    <seealso cref="IOleCache2" />
-    <seealso cref="IOleCacheControl" />
+    <summary>Provides control of the presentation data that gets cached inside of an object. Cached presentation data is available to the container of the object even when the server application is not running or is unavailable.</summary>
   </member>
 </doc>

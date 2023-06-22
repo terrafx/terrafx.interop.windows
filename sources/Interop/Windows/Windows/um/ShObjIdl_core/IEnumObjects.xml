@@ -7,69 +7,30 @@
       <para>Not implemented.</para>
       <para>Not implemented.</para>
     </summary>
-    <param name="ppenum">
-      <para>Type: <b><see cref="IEnumObjects" />**</b></para>
-      <para>Not used.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="ppenum">Not used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumObjects.Next">
-    <summary>
-      <para>Gets the next specified number and type of objects.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of objects to retrieve.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>Reference to the desired interface ID.</para>
-    </param>
-    <param name="rgelt">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the interface pointer requested in <i>riid</i>.</para>
-    </param>
-    <param name="pceltFetched">
-      <para>Type: <b>ULONG*</b></para>
-      <para>Pointer to a <b>ULONG</b> value that, when this method returns, states the actual number of objects retrieved. This value can be <b>NULL</b>.</para>
-    </param>
+    <summary>Gets the next specified number and type of objects.</summary>
+    <param name="celt">The number of objects to retrieve.</param>
+    <param name="riid">Reference to the desired interface ID.</param>
+    <param name="rgelt">When this method returns, contains the interface pointer requested in <i>riid</i>.</param>
+    <param name="pceltFetched">Pointer to a <b>ULONG</b> value that, when this method returns, states the actual number of objects retrieved. This value can be <b>NULL</b>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if the method successfully retrieved the requested objects. This method only returns S_OK if the full count of requested items are successfully retrieved.</para>
       <para>S_FALSE indicates that more items were requested than remained in the enumeration.</para>
     </returns>
   </member>
   <member name="IEnumObjects.Reset">
-    <summary>
-      <para>Resets the enumeration index to 0.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Resets the enumeration index to 0.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumObjects.Skip">
-    <summary>
-      <para>Skips a specified number of objects.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of objects to skip.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Enumeration index is advanced by the number of items skipped.</para>
-    </remarks>
+    <summary>Skips a specified number of objects.</summary>
+    <param name="celt">The number of objects to skip.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumObjects">
-    <summary>
-      <para>Exposes methods to enumerate unknown objects.</para>
-    </summary>
+    <summary>Exposes methods to enumerate unknown objects.</summary>
   </member>
 </doc>

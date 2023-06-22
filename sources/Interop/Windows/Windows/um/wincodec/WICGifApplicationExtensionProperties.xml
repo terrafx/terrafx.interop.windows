@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICGifApplicationExtensionProperties">
-    <summary>
-      <para>Specifies the application extension metadata properties for a Graphics Interchange Format (GIF) image.</para>
-    </summary>
+    <summary>Specifies the application extension metadata properties for a Graphics Interchange Format (GIF) image.</summary>
   </member>
   <member name="WICGifApplicationExtensionProperties.WICGifApplicationExtensionApplication">
-    <summary>
-      <para>[VT_UI1 | VT_VECTOR] Indicates a string that identifies the application.</para>
-    </summary>
+    <summary>[VT_UI1 | VT_VECTOR] Indicates a string that identifies the application.</summary>
   </member>
   <member name="WICGifApplicationExtensionProperties.WICGifApplicationExtensionData">
-    <summary>
-      <para>[VT_UI1 | VT_VECTOR] Indicates data that is exposed by the application.</para>
-    </summary>
+    <summary>[VT_UI1 | VT_VECTOR] Indicates data that is exposed by the application.</summary>
   </member>
-  <member name="WICGifApplicationExtensionProperties.WICGifApplicationExtensionProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICGifApplicationExtensionProperties.WICGifApplicationExtensionProperties_FORCE_DWORD"></member>
 </doc>

@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CM_ENUM_FLAGS">
-    <summary>
-      <para>Used by members of the <see cref="IColumnManager" /> interface to specify which set of columns are being requested, either all or only those currently visible.</para>
-    </summary>
+    <summary>Used by members of the <see cref="IColumnManager" /> interface to specify which set of columns are being requested, either all or only those currently visible.</summary>
   </member>
   <member name="CM_ENUM_FLAGS.CM_ENUM_ALL">
-    <summary>
-      <para>Enumerate all.</para>
-    </summary>
+    <summary>Enumerate all.</summary>
   </member>
   <member name="CM_ENUM_FLAGS.CM_ENUM_VISIBLE">
-    <summary>
-      <para>Enumerate visible.</para>
-    </summary>
+    <summary>Enumerate visible.</summary>
   </member>
 </doc>

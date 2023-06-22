@@ -4,31 +4,20 @@
 <doc>
   <member name="AM_DVD_YUV">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Contains DVD YUV subpicture data.</para>
     </summary>
-    <remarks>
-      <para>This structure is contained within the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-am_property_sppal">AM_PROPERTY_SPPAL</a> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-subpicture-property-set">DVD Subpicture Property Set</seealso>
   </member>
   <member name="AM_DVD_YUV.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="AM_DVD_YUV.Y">
-    <summary>
-      <para>Y color data.</para>
-    </summary>
+    <summary>Y color data.</summary>
   </member>
   <member name="AM_DVD_YUV.U">
-    <summary>
-      <para>U color data.</para>
-    </summary>
+    <summary>U color data.</summary>
   </member>
   <member name="AM_DVD_YUV.V">
-    <summary>
-      <para>V color data.</para>
-    </summary>
+    <summary>V color data.</summary>
   </member>
 </doc>

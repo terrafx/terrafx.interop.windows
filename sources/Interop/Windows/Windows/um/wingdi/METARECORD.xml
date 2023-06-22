@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="METARECORD">
-    <summary>
-      <para>The <b>METARECORD</b> structure contains a Windows-format metafile record.</para>
-    </summary>
-    <seealso cref="METAHEADER" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>METARECORD</b> structure contains a Windows-format metafile record.</summary>
   </member>
   <member name="METARECORD.rdSize">
-    <summary>
-      <para>The size, in words, of the record.</para>
-    </summary>
+    <summary>The size, in words, of the record.</summary>
   </member>
   <member name="METARECORD.rdFunction">
-    <summary>
-      <para>The function number.</para>
-    </summary>
+    <summary>The function number.</summary>
   </member>
   <member name="METARECORD.rdParm">
-    <summary>
-      <para>An array of words containing the function parameters, in reverse of the order they are passed to the function.</para>
-    </summary>
+    <summary>An array of words containing the function parameters, in reverse of the order they are passed to the function.</summary>
   </member>
 </doc>

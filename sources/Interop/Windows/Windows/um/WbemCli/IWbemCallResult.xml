@@ -3,110 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWbemCallResult.GetCallStatus">
-    <summary>
-      <para>The
-<b>IWbemCallResult.GetCallStatus</b> method returns to the user the status of the current outstanding semisynchronous call. When this call returns <b>WBEM_S_NO_ERROR</b>, the original call to the
-<see cref="IWbemServices" /> method is complete.</para>
-    </summary>
-    <param name="lTimeout">
-      <para>Specifies the maximum time in milliseconds that this call blocks before it returns. If you use the constant <b>WBEM_INFINITE</b> (0xFFFFFFFF), the call blocks until the original semisynchronous call to an
-<see cref="IWbemServices" /> method is complete. If you use 0 (zero), the call immediately returns the call status.</para>
-    </param>
-    <param name="plStatus">
-      <para>If <b>WBEM_S_NO_ERROR</b> returns in the HRESULT to this method, this parameter will receive the final result status of a call to one of the
-<see cref="IWbemServices" /> methods:
-<see cref="OpenNamespace" />,
-<see cref="PutInstance" />,
-<see cref="PutClass" />,
-<see cref="GetObject" />,
-<see cref="DeleteInstance" />,
-<see cref="DeleteClass" />, or
-<see cref="ExecMethod" />. On error, the value pointed to by <i>plStatus</i> will not be used.</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>On error, you can call the COM function <b>GetErrorInfo</b> to obtain more error information. COM-specific error codes may also be returned if network problems cause you to lose the remote connection to Windows Management.</para>
-      <para>After invoking an
-<see cref="IWbemServices" /> method semisynchronously, you can call
-<b>GetCallStatus</b> at any time to determine whether the call is complete. After
-<b>GetCallStatus</b> has returned <b>WBEM_S_NO_ERROR</b>, which indicates completion of the original
-<b>IWbemServices</b> operation, calls to other
-<see cref="IWbemCallResult" /> methods may be required to retrieve the result of the call, according to the following rules:</para>
-      <list type="bullet">
-        <item>
-          <description>For
-<see cref="IWbemServices.OpenNamespace" />, the
-<see cref="GetResultServices" /> method must be called to retrieve the new
-<see cref="IWbemServices" /> pointer.</description>
-        </item>
-        <item>
-          <description>For
-<see cref="IWbemServices.PutInstance" />, the
-<see cref="GetResultString" /> method must be called to obtain the object path that was assigned to the object.</description>
-        </item>
-        <item>
-          <description>For
-<see cref="IWbemServices.GetObject" />, the
-<see cref="GetResultObject" /> method must be called to retrieve the object.</description>
-        </item>
-        <item>
-          <description>For the
-<see cref="IWbemServices" /> methods
-<see cref="DeleteInstance" />,
-<see cref="DeleteClass" />, and
-<see cref="ExecMethod" />, the
-<b>GetCallStatus</b> method is the only call that returns information regarding these operations.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IWbemCallResult" />
-    <seealso cref="IWbemServices.DeleteClass" />
-    <seealso cref="IWbemServices.DeleteInstance" />
-    <seealso cref="IWbemServices.ExecMethod" />
-    <seealso cref="IWbemServices.GetObject" />
-    <seealso cref="IWbemServices.OpenNamespace" />
-    <seealso cref="IWbemServices.PutInstance" />
+    <summary>The<b>IWbemCallResult.GetCallStatus</b> method returns to the user the status of the current outstanding semisynchronous call. When this call returns <b>WBEM_S_NO_ERROR</b>, the original call to the<see cref="IWbemServices" /> method is complete.</summary>
+    <param name="lTimeout">Specifies the maximum time in milliseconds that this call blocks before it returns. If you use the constant <b>WBEM_INFINITE</b> (0xFFFFFFFF), the call blocks until the original semisynchronous call to an<see cref="IWbemServices" /> method is complete. If you use 0 (zero), the call immediately returns the call status.</param>
+    <param name="plStatus">If <b>WBEM_S_NO_ERROR</b> returns in the HRESULT to this method, this parameter will receive the final result status of a call to one of the<see cref="IWbemServices" /> methods:<see cref="OpenNamespace" />,<see cref="PutInstance" />,<see cref="PutClass" />,<see cref="GetObject" />,<see cref="DeleteInstance" />,<see cref="DeleteClass" />, or<see cref="ExecMethod" />. On error, the value pointed to by <i>plStatus</i> will not be used.</param>
+    <returns>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemCallResult.GetResultObject">
-    <summary>
-      <para>The
-<b>IWbemCallResult.GetResultObject</b> method attempts to retrieve an object from a previous semisynchronous call to
-<see cref="IWbemServices.GetObject" /> or
-<see cref="IWbemServices.ExecMethod" />. If the object is not yet available, the call returns <b>WBEM_S_TIMEDOUT</b>. Also, before invoking this method to get the resulting object, you may call
-<see cref="IWbemCallResult.GetCallStatus" /> until it returns <b>WBEM_S_NO_ERROR</b>, indicating that the original semisynchronous operation is complete.</para>
-    </summary>
-    <param name="lTimeout">
-      <para>Specifies the maximum time in milliseconds that this call blocks before returning. If you use the constant <b>WBEM_INFINITE</b> (0xFFFFFFFF), the call blocks until the object is available. If you use 0, the call immediately returns either the object or a status code.</para>
-    </param>
-    <param name="ppResultObject">
-      <para>This parameter cannot be <b>NULL</b>. It receives the copy of the object when it becomes available. You must call <b>IWbemClassObject.Release</b> on the returned object when the object is no longer required. A new object is not returned on error.</para>
-    </param>
+    <summary>The<b>IWbemCallResult.GetResultObject</b> method attempts to retrieve an object from a previous semisynchronous call to<see cref="IWbemServices.GetObject" /> or<see cref="IWbemServices.ExecMethod" />. If the object is not yet available, the call returns <b>WBEM_S_TIMEDOUT</b>. Also, before invoking this method to get the resulting object, you may call<see cref="IWbemCallResult.GetCallStatus" /> until it returns <b>WBEM_S_NO_ERROR</b>, indicating that the original semisynchronous operation is complete.</summary>
+    <param name="lTimeout">Specifies the maximum time in milliseconds that this call blocks before returning. If you use the constant <b>WBEM_INFINITE</b> (0xFFFFFFFF), the call blocks until the object is available. If you use 0, the call immediately returns either the object or a status code.</param>
+    <param name="ppResultObject">This parameter cannot be <b>NULL</b>. It receives the copy of the object when it becomes available. You must call <b>IWbemClassObject.Release</b> on the returned object when the object is no longer required. A new object is not returned on error.</param>
     <returns>
       <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
       <para>If the original semisynchronous operation failed (such as when the object was not found, or the method could not be invoked), this method returns the error code that the original function would have returned in its synchronous version.</para>
       <para>On error, you can call the COM function <b>GetErrorInfo</b> to obtain more error information.</para>
       <para>COM-specific error codes may also be returned if network problems cause you to lose the remote connection to Windows Management.</para>
     </returns>
-    <seealso cref="IWbemCallResult" />
-    <seealso cref="IWbemServices.ExecMethod" />
-    <seealso cref="IWbemServices.GetObject" />
   </member>
   <member name="IWbemCallResult.GetResultServices">
-    <summary>
-      <para>The
-<b>IWbemCallResult.GetResultServices</b> method  retrieves the
-<see cref="IWbemServices" /> pointer, which results from a semisynchronous call to
-<see cref="IWbemServices.OpenNamespace" /> when it becomes available.</para>
-    </summary>
-    <param name="lTimeout">
-      <para>The maximum time in milliseconds that this call blocks before it returns. If you use the constant <b>WBEM_INFINITE</b> (0xFFFFFFFF), the call blocks until the interface pointer is available. If you use 0, the call immediately returns either the pointer or a status code.</para>
-    </param>
+    <summary>The<b>IWbemCallResult.GetResultServices</b> method retrieves the<see cref="IWbemServices" /> pointer, which results from a semisynchronous call to<see cref="IWbemServices.OpenNamespace" /> when it becomes available.</summary>
+    <param name="lTimeout">The maximum time in milliseconds that this call blocks before it returns. If you use the constant <b>WBEM_INFINITE</b> (0xFFFFFFFF), the call blocks until the interface pointer is available. If you use 0, the call immediately returns either the pointer or a status code.</param>
     <param name="ppServices">
-      <para>Cannot be <b>NULL</b>. It receives a pointer to the
-<see cref="IWbemServices" /> interface requested by the original call to
-<see cref="OpenNamespace" /> when it becomes available The caller must call <see cref="IWbemServices.Release" /> on the returned object when it is no longer required.</para>
+      <para>Cannot be <b>NULL</b>. It receives a pointer to the<see cref="IWbemServices" /> interface requested by the original call to<see cref="OpenNamespace" /> when it becomes available The caller must call <see cref="IWbemServices.Release" /> on the returned object when it is no longer required.</para>
       <para>On error, a new object is not returned.</para>
     </param>
     <returns>
@@ -114,47 +31,26 @@
       <para>On error, the COM function <see cref="GetErrorInfo" /> can be called to obtain more error information.</para>
       <para>COM-specific error codes may also be returned if network problems cause you to lose the remote connection to Windows Management.</para>
     </returns>
-    <seealso cref="IWbemCallResult" />
-    <seealso cref="IWbemServices.OpenNamespace" />
   </member>
   <member name="IWbemCallResult.GetResultString">
     <summary>
-      <para>The
-<b>IWbemCallResult.GetResultString</b> method returns the assigned object path of an instance newly created by
-<see cref="IWbemServices.PutInstance" />.
-<b>Note</b>  The call result object is primarily used when the
-<see cref="PutInstance" /> call is carried out by a provider and the client needs to know the object path (the values of the key properties) assigned the provider. For example, if the class key property is a globally unique identifier (GUID), assigned by the provider during the
-<b>PutInstance</b> operation, the client would have no way of knowing this GUID unless the provider was able to return it in this way.</para>
+      <para>The<b>IWbemCallResult.GetResultString</b> method returns the assigned object path of an instance newly created by<see cref="IWbemServices.PutInstance" />.</para>
+      <div>
+        <b>Note</b>  The call result object is primarily used when the <see cref="PutInstance" /> call is carried out by a provider and the client needs to know the object path (the values of the key properties) assigned the provider. For example, if the class key property is a globally unique identifier (GUID), assigned by the provider during the <b>PutInstance</b> operation, the client would have no way of knowing this GUID unless the provider was able to return it in this way.</div>
     </summary>
-    <param name="lTimeout">
-      <para>Specifies the maximum time in milliseconds that this call blocks before returning. If you use the constant <b>WBEM_INFINITE</b> (0xFFFFFFFF), the call blocks until the object path is available. If you use 0, the call immediately returns either the object path or a status code.</para>
-    </param>
-    <param name="pstrResultString">
-      <para>Cannot be <b>NULL</b>. This parameter receives a pointer to the object path, which, in turn, leads to the newly created object. The returned string must be deallocated using the system call <i>SysFreeString</i>. On error, a new string is not returned.</para>
-    </param>
+    <param name="lTimeout">Specifies the maximum time in milliseconds that this call blocks before returning. If you use the constant <b>WBEM_INFINITE</b> (0xFFFFFFFF), the call blocks until the object path is available. If you use 0, the call immediately returns either the object path or a status code.</param>
+    <param name="pstrResultString">Cannot be <b>NULL</b>. This parameter receives a pointer to the object path, which, in turn, leads to the newly created object. The returned string must be deallocated using the system call <i>SysFreeString</i>. On error, a new string is not returned.</param>
     <returns>
       <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
       <para>On error, you can call the COM function <b>GetErrorInfo</b> to obtain more error information.</para>
       <para>COM-specific error codes may also be returned if network problems cause you to lose the remote connection to Windows Management.</para>
     </returns>
-    <seealso cref="IWbemCallResult" />
-    <seealso cref="IWbemServices.PutInstance" />
   </member>
   <member name="IWbemCallResult">
     <summary>
-      <para>The
-<b>IWbemCallResult</b> interface is used for semisynchronous calls of the
-<see cref="IWbemServices" /> interface. When making such calls, the called
-<b>IWbemServices</b> method returns immediately, along with an
-<b>IWbemCallResult</b> object. Periodically, you can poll the returned
-<b>IWbemCallResult</b> object to determine the status of the call. You can obtain the result of the original
-<see cref="IWbemServices" /> call after it is complete by calling
-<see cref="IWbemCallResult.GetCallStatus" />.</para>
+      <para>The<b>IWbemCallResult</b> interface is used for semisynchronous calls of the<see cref="IWbemServices" /> interface. When making such calls, the called<b>IWbemServices</b> method returns immediately, along with an<b>IWbemCallResult</b> object. Periodically, you can poll the returned<b>IWbemCallResult</b> object to determine the status of the call. You can obtain the result of the original<see cref="IWbemServices" /> call after it is complete by calling<see cref="IWbemCallResult.GetCallStatus" />.</para>
       <para>This call-return paradigm is useful in cases where a thread cannot afford to be blocked for more than a few seconds because it is servicing other tasks, such as processing window messages.</para>
-      <para>Not all
-<see cref="IWbemServices" /> methods support this interface because it is not required for all of them. The intent is to allow nonblocking, synchronous operation (semisynchronous operation) for all relevant operations. Because many of the
-<b>IWbemServices</b> methods are already nonblocking due to the use of enumerators or other constructs, only
-the following methods need this helper interface to support semisynchronous operation:</para>
+      <para>Not all<see cref="IWbemServices" /> methods support this interface because it is not required for all of them. The intent is to allow nonblocking, synchronous operation (semisynchronous operation) for all relevant operations. Because many of the<b>IWbemServices</b> methods are already nonblocking due to the use of enumerators or other constructs, only the following methods need this helper interface to support semisynchronous operation:</para>
       <list type="bullet">
         <item>
           <description>

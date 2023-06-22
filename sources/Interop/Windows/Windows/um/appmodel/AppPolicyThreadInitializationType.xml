@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AppPolicyThreadInitializationType">
-    <summary>
-      <para>The AppPolicyThreadInitializationType enumeration indicates the kind of initialization that should be automatically performed for a process when beginthread[ex] creates a thread.</para>
-    </summary>
+    <summary>The AppPolicyThreadInitializationType enumeration indicates the kind of initialization that should be automatically performed for a process when beginthread[ex] creates a thread.</summary>
   </member>
   <member name="AppPolicyThreadInitializationType.AppPolicyThreadInitializationType_None">
-    <summary>
-      <para>Indicates that no initialization should be performed.</para>
-    </summary>
+    <summary>Indicates that no initialization should be performed.</summary>
   </member>
   <member name="AppPolicyThreadInitializationType.AppPolicyThreadInitializationType_InitializeWinRT">
-    <summary>
-      <para>Indicates that Windows Runtime initialization should be performed.</para>
-    </summary>
+    <summary>Indicates that Windows Runtime initialization should be performed.</summary>
   </member>
 </doc>

@@ -3,79 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_HTTP_MESSAGE_MAPPING">
-    <summary>
-      <para>Specifies information about how an HTTP request or response should be
-represented in a message object.</para>
-    </summary>
-    <remarks>
-      <para>A message may contain additional transport-specific information that is
-not part of the message envelope.  This transport-specific information
-can be exposed programmatically as headers of the message object.
-These headers are referred to as mapped headers.</para>
-      <para>Each mapped header is stored as regular header element
-in the headers of the message (see <see cref="WS_MESSAGE_PROPERTY_HEADER_BUFFER" />).
-The empty XML namespace ("") is used for mapped headers.</para>
-      <para>This structure specifies how the mapping occurs between an HTTP request
-or response and the mapped headers of the message object.  The structure
-can be specified using the <see cref="WS_CHANNEL_PROPERTY_HTTP_MESSAGE_MAPPING" /> property.</para>
-      <para>The following diagram shows how HTTP headers are mapped into
-the headers of a message.</para>
-      <para>.:image type="content" source="images/MappedHeaders.png" border="false" alt-text="Diagram showing a Message object with the MyHeader element highlighted and an arrow pointing to the MyHeader line in an HTTP Request.".:</para>
-      <para>When a message is received, the HTTP channel
-will automatically copy the specified HTTP headers from the request
-or response to the headers of the message object.  The application
-can then use <see cref="WsGetMappedHeader" /> to get the values of
-the mapped headers.</para>
-      <para>Before a message is sent, an application can add mapped headers
-to the message object using <see cref="WsAddMappedHeader" />.
-When the message is sent, the HTTP channel will automatically
-remove the specified headers from the headers of message object (so they
-do not appear inside the envelope), and add them as HTTP
-request or response headers.</para>
-      <para>The HTTP channel will only perform this mapping for HTTP headers
-that have been specified in the requestHeaderMappings or
-responseHeaderMappings fields.  The <see cref="WS_HTTP_HEADER_MAPPING" /> is used to specify each header, and includes instructions about how
-the message header is transformed to/from an HTTP header.</para>
-      <para>Other information in an HTTP request or response that does not correspond
-to HTTP headers can be mapped into header of the message object by setting the
-requestMappingOptions or responseMappingOptions.  These mapped values can then be
-extracted using <see cref="WsGetMappedHeader" />.
-See <see cref="WS_HTTP_REQUEST_MAPPING_OPTIONS" /> or <see cref="WS_HTTP_RESPONSE_MAPPING_OPTIONS" /></para>
-      <para>for information about what information can be mapped into message headers.</para>
-    </remarks>
+    <summary>Specifies information about how an HTTP request or response should be represented in a message object.</summary>
   </member>
   <member name="WS_HTTP_MESSAGE_MAPPING.requestMappingOptions">
-    <summary>
-      <para>Options that control how information in the HTTP request is mapped to the message object.</para>
-    </summary>
+    <summary>Options that control how information in the HTTP request is mapped to the message object.</summary>
   </member>
   <member name="WS_HTTP_MESSAGE_MAPPING.responseMappingOptions">
-    <summary>
-      <para>Options that control how information in the HTTP response is mapped to the message object.</para>
-    </summary>
+    <summary>Options that control how information in the HTTP response is mapped to the message object.</summary>
   </member>
   <member name="WS_HTTP_MESSAGE_MAPPING.requestHeaderMappings">
-    <summary>
-      <para>An array of pointers to mappings which describe which
-HTTP headers are mapped to/from headers in the message object
-for an HTTP request.  The pointers in the array may not be <b>NULL</b>.</para>
-    </summary>
+    <summary>An array of pointers to mappings which describe which HTTP headers are mapped to/from headers in the message object for an HTTP request. The pointers in the array may not be <b>NULL</b>.</summary>
   </member>
   <member name="WS_HTTP_MESSAGE_MAPPING.requestHeaderMappingCount">
-    <summary>
-      <para>The number of items in the requestHeaderMappings array.</para>
-    </summary>
+    <summary>The number of items in the requestHeaderMappings array.</summary>
   </member>
   <member name="WS_HTTP_MESSAGE_MAPPING.responseHeaderMappings">
-    <summary>
-      <para>An array of pointers to mappings which describe which
-HTTP headers are mapped to/from headers in the message object
-for an HTTP response.  The pointers in the array may not be <b>NULL</b>.</para>
-    </summary>
+    <summary>An array of pointers to mappings which describe which HTTP headers are mapped to/from headers in the message object for an HTTP response. The pointers in the array may not be <b>NULL</b>.</summary>
   </member>
   <member name="WS_HTTP_MESSAGE_MAPPING.responseHeaderMappingCount">
-    <summary>
-      <para>The number of items in the responseHeaderMappings array.</para>
-    </summary>
+    <summary>The number of items in the responseHeaderMappings array.</summary>
   </member>
 </doc>

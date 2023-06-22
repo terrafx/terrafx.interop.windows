@@ -3,56 +3,34 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SIP_CAP_SET">
-    <summary>
-      <para>The <b>SIP_CAP_SET</b> structure defines the capabilities of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP).</para>
-    </summary>
+    <summary>The <b>SIP_CAP_SET</b> structure defines the capabilities of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP).</summary>
   </member>
   <member name="SIP_CAP_SET.cbSize">
-    <summary>
-      <para>Size, in bytes, of this structure.</para>
-    </summary>
+    <summary>Size, in bytes, of this structure.</summary>
   </member>
   <member name="SIP_CAP_SET.dwVersion">
-    <summary>
-      <para>The SIP version. By default, this value is two (2).</para>
-    </summary>
+    <summary>The SIP version. By default, this value is two (2).</summary>
   </member>
   <member name="SIP_CAP_SET.isMultiSign">
-    <summary>
-      <para>A value of one (1) indicates that the SIP supports multiple embedded signatures. Otherwise, set this value to zero (0).</para>
-    </summary>
+    <summary>A value of one (1) indicates that the SIP supports multiple embedded signatures. Otherwise, set this value to zero (0).</summary>
   </member>
   <member name="SIP_CAP_SET.dwReserved">
-    <summary>
-      <para>Reserved for future use. Set this value to zero (0).</para>
-    </summary>
+    <summary>Reserved for future use. Set this value to zero (0).</summary>
   </member>
   <member name="SIP_CAP_SET">
-    <summary>
-      <para>The <b>SIP_CAP_SET</b> structure defines the capabilities of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP).</para>
-    </summary>
+    <summary>The <b>SIP_CAP_SET</b> structure defines the capabilities of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP).</summary>
   </member>
   <member name="SIP_CAP_SET.cbSize">
-    <summary>
-      <para>Size, in bytes, of this structure.</para>
-    </summary>
+    <summary>Size, in bytes, of this structure.</summary>
   </member>
   <member name="SIP_CAP_SET.dwVersion">
-    <summary>
-      <para>The SIP version. By default, this value is two (2).</para>
-    </summary>
+    <summary>The SIP version. By default, this value is two (2).</summary>
   </member>
   <member name="SIP_CAP_SET.isMultiSign">
-    <summary>
-      <para>A value of one (1) indicates that the SIP supports multiple embedded signatures. Otherwise, set this value to zero (0).</para>
-    </summary>
+    <summary>A value of one (1) indicates that the SIP supports multiple embedded signatures. Otherwise, set this value to zero (0).</summary>
   </member>
-  <member name="SIP_CAP_SET.dwFlags">
-    <summary></summary>
-  </member>
+  <member name="SIP_CAP_SET.dwFlags"></member>
   <member name="SIP_CAP_SET.dwReserved">
-    <summary>
-      <para>Reserved for future use. Set this value to zero (0).</para>
-    </summary>
+    <summary>Reserved for future use. Set this value to zero (0).</summary>
   </member>
 </doc>

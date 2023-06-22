@@ -3,126 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BLENDFUNCTION">
-    <summary>
-      <para>The <b>BLENDFUNCTION</b> structure controls blending by specifying the blending functions for source and destination bitmaps.</para>
-    </summary>
-    <remarks>
-      <para>When the <b>AlphaFormat</b> member is AC_SRC_ALPHA, the source bitmap must be 32 bpp. If it is not, the <see cref="AlphaBlend" /> function will fail.</para>
-      <para>When the <b>BlendOp</b> member is AC_SRC_OVER, the source bitmap is placed over the destination bitmap based on the alpha values of the source pixels.</para>
-      <para>If the source bitmap has no per-pixel alpha value (that is, AC_SRC_ALPHA is not set), the <b>SourceConstantAlpha</b> value determines the blend of the source and destination bitmaps, as shown in the following table. Note that SCA is used for <b>SourceConstantAlpha</b> here. Also, SCA is divided by 255 because it has a value that ranges from 0 to 255.</para>
-      <list type="table">
-        <listheader>
-          <description>Dst.Red</description>
-          <description>= Src.Red * (SCA/255.0)</description>
-          <description>+ Dst.Red * (1.0 - (SCA/255.0))</description>
-        </listheader>
-        <item>
-          <description>Dst.Green</description>
-          <description>= Src.Green * (SCA/255.0)</description>
-          <description>+ Dst.Green * (1.0 - (SCA/255.0))</description>
-        </item>
-        <item>
-          <description>Dst.Blue</description>
-          <description>= Src.Blue * (SCA/255.0)</description>
-          <description>+ Dst.Blue * (1.0 - (SCA/255.0))</description>
-        </item>
-      </list>
-      <para>If the destination bitmap has an alpha channel, then the blend is as follows.</para>
-      <list type="table">
-        <listheader>
-          <description>Dst.Alpha</description>
-          <description>= Src.Alpha * (SCA/255.0)</description>
-          <description>+ Dst.Alpha * (1.0 - (SCA/255.0))</description>
-        </listheader>
-      </list>
-      <para>If the source bitmap does not use <b>SourceConstantAlpha</b> (that is, it equals 0xFF), the per-pixel alpha determines the blend of the source and destination bitmaps, as shown in the following table.</para>
-      <list type="table">
-        <listheader>
-          <description>Dst.Red</description>
-          <description>= Src.Red</description>
-          <description>+ (1 - Src.Alpha) * Dst.Red</description>
-        </listheader>
-        <item>
-          <description>Dst.Green</description>
-          <description>= Src.Green</description>
-          <description>+ (1 - Src.Alpha) * Dst.Green</description>
-        </item>
-        <item>
-          <description>Dst.Blue</description>
-          <description>= Src.Blue</description>
-          <description>+ (1 - Src.Alpha) * Dst.Blue</description>
-        </item>
-      </list>
-      <para>If the destination bitmap has an alpha channel, then the blend is as follows.</para>
-      <list type="table">
-        <listheader>
-          <description>Dest.alpha</description>
-          <description>= Src.Alpha</description>
-          <description>+ (1 - SrcAlpha) * Dst.Alpha</description>
-        </listheader>
-      </list>
-      <para>If the source has both the <b>SourceConstantAlpha</b> (that is, it is not 0xFF) and per-pixel alpha, the source is pre-multiplied by the <b>SourceConstantAlpha</b> and then the blend is based on the per-pixel alpha. The following tables show this. Note that <b>SourceConstantAlpha</b> is divided by 255 because it has a value that ranges from 0 to 255.</para>
-      <list type="table">
-        <listheader>
-          <description>Src.Red</description>
-          <description>= Src.Red</description>
-          <description>* SourceConstantAlpha / 255.0;</description>
-        </listheader>
-        <item>
-          <description>Src.Green</description>
-          <description>= Src.Green</description>
-          <description>* SourceConstantAlpha / 255.0;</description>
-        </item>
-        <item>
-          <description>Src.Blue</description>
-          <description>= Src.Blue</description>
-          <description>* SourceConstantAlpha / 255.0;</description>
-        </item>
-        <item>
-          <description>Src.Alpha</description>
-          <description>= Src.Alpha</description>
-          <description>* SourceConstantAlpha / 255.0;</description>
-        </item>
-        <item>
-          <description>Dst.Red</description>
-          <description>= Src.Red</description>
-          <description>+ (1 - Src.Alpha) * Dst.Red</description>
-        </item>
-        <item>
-          <description>Dst.Green</description>
-          <description>= Src.Green</description>
-          <description>+ (1 - Src.Alpha) * Dst.Green</description>
-        </item>
-        <item>
-          <description>Dst.Blue</description>
-          <description>= Src.Blue</description>
-          <description>+ (1 - Src.Alpha) * Dst.Blue</description>
-        </item>
-        <item>
-          <description>Dst.Alpha</description>
-          <description>= Src.Alpha</description>
-          <description>+ (1 - Src.Alpha) * Dst.Alpha</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="AlphaBlend" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmap-structures">Bitmap Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmaps">Bitmaps Overview</seealso>
+    <summary>The <b>BLENDFUNCTION</b> structure controls blending by specifying the blending functions for source and destination bitmaps.</summary>
   </member>
   <member name="BLENDFUNCTION.BlendOp">
-    <summary>
-      <para>The source blend operation. Currently, the only source and destination blend operation that has been defined is AC_SRC_OVER. For details, see the following Remarks section.</para>
-    </summary>
+    <summary>The source blend operation. Currently, the only source and destination blend operation that has been defined is AC_SRC_OVER. For details, see the following Remarks section.</summary>
   </member>
   <member name="BLENDFUNCTION.BlendFlags">
-    <summary>
-      <para>Must be zero.</para>
-    </summary>
+    <summary>Must be zero.</summary>
   </member>
   <member name="BLENDFUNCTION.SourceConstantAlpha">
-    <summary>
-      <para>Specifies an alpha transparency value to be used on the entire source bitmap. The <b>SourceConstantAlpha</b> value is combined with any per-pixel alpha values in the source bitmap. If you set <b>SourceConstantAlpha</b> to 0, it is assumed that your image is transparent. Set the <b>SourceConstantAlpha</b> value to 255 (opaque) when you only want to use per-pixel alpha values.</para>
-    </summary>
+    <summary>Specifies an alpha transparency value to be used on the entire source bitmap. The <b>SourceConstantAlpha</b> value is combined with any per-pixel alpha values in the source bitmap. If you set <b>SourceConstantAlpha</b> to 0, it is assumed that your image is transparent. Set the <b>SourceConstantAlpha</b> value to 255 (opaque) when you only want to use per-pixel alpha values.</summary>
   </member>
   <member name="BLENDFUNCTION.AlphaFormat">
     <summary>
@@ -132,10 +22,10 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>AC_SRC_ALPHA</description>
           <description>This flag is set when the bitmap has an Alpha channel (that is, per-pixel alpha). Note that the APIs use premultiplied alpha, which means that the red, green and blue channel values in the bitmap must be premultiplied with the alpha channel value. For example, if the alpha channel value is x, the red, green and blue channels must be multiplied by x and divided by 0xff prior to the call.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>

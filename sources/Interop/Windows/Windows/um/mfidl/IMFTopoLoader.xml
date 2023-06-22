@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFTopoLoader.Load">
-    <summary>
-      <para>Creates a fully loaded topology from the input partial topology.</para>
-    </summary>
-    <param name="pInputTopo">
-      <para>A pointer to the <see cref="IMFTopology" /> interface of the partial topology to be resolved.</para>
-    </param>
-    <param name="ppOutputTopo">
-      <para>Receives a pointer to the <see cref="IMFTopology" /> interface of the completed topology. The caller must release the interface.</para>
-    </param>
-    <param name="pCurrentTopo">
-      <para>A pointer to the <see cref="IMFTopology" /> interface of the previous full topology. The topology loader can re-use objects from this topology in the new topology. This parameter can be <b>NULL</b>. See Remarks.</para>
-    </param>
+    <summary>Creates a fully loaded topology from the input partial topology.</summary>
+    <param name="pInputTopo">A pointer to the <see cref="IMFTopology" /> interface of the partial topology to be resolved.</param>
+    <param name="ppOutputTopo">Receives a pointer to the <see cref="IMFTopology" /> interface of the completed topology. The caller must release the interface.</param>
+    <param name="pCurrentTopo">A pointer to the <see cref="IMFTopology" /> interface of the previous full topology. The topology loader can re-use objects from this topology in the new topology. This parameter can be <b>NULL</b>. See Remarks.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -22,46 +14,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_TOPO_SINK_ACTIVATES_UNSUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_TOPO_SINK_ACTIVATES_UNSUPPORTED</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more output nodes contain <see cref="IMFActivate" /> pointers. The caller must bind the output nodes to media sinks. See  <a href="https://docs.microsoft.com//windows/desktop/medfound/binding-output-nodes-to-media-sinks">Binding Output Nodes to Media Sinks</a>.</para>
-          </description>
-        </item>
+          <description>One or more output nodes contain <see cref="IMFActivate" /> pointers. The caller must bind the output nodes to media sinks. See <a href="https://docs.microsoft.com//windows/desktop/medfound/binding-output-nodes-to-media-sinks">Binding Output Nodes to Media Sinks</a>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method creates any intermediate transforms that are needed to complete the topology. It also sets the input and output media types on all of the objects in the topology. If the method succeeds, the full topology is returned in the <i>ppOutputTopo</i> parameter.</para>
-      <para>You can use the <i>pCurrentTopo</i> parameter to provide a full topology that was previously loaded. If this topology contains objects that are needed in the new topology, the topology loader can re-use them without creating them again. This caching can potentially make the process faster. The objects from <i>pCurrentTopo</i> will not be reconfigured, so you can specify a topology that is actively streaming data. For example, while a topology is still running, you can pre-load the next topology.</para>
-      <para>Before calling this method, you must ensure that the output nodes in the partial topology have valid <see cref="IMFStreamSink" /> pointers, not <see cref="IMFActivate" /> pointers. The Media Session automatically performs this action inside the <see cref="IMFMediaSession.SetTopology" /> method. However, if you call <b>Load</b> before calling <b>SetTopology</b>, you must bind the output nodes manually. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/binding-output-nodes-to-media-sinks">Binding Output Nodes to Media Sinks</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/advanced-topology-building">Advanced Topology Building</seealso>
-    <seealso cref="IMFTopoLoader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopoLoader">
-    <summary>
-      <para>Converts a partial topology into a full topology. The topology loader exposes this interface.</para>
-    </summary>
-    <remarks>
-      <para>To create the topology loader, call the <see cref="MFCreateTopoLoader" /> function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/advanced-topology-building">Advanced Topology Building</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
+    <summary>Converts a partial topology into a full topology. The topology loader exposes this interface.</summary>
   </member>
 </doc>

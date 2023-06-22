@@ -3,91 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteGdiInterop1.CreateFontFromLOGFONT">
-    <summary>
-      <para>Creates a font object that matches the properties specified by the LOGFONT structure.</para>
-    </summary>
-    <param name="logFont">
-      <para>Type: <b>LOGFONTW</b></para>
-      <para>Structure containing a GDI-compatible font description.</para>
-    </param>
-    <param name="fontCollection">
-      <para>Type: <b><see cref="IDWriteFontCollection" />*</b></para>
-      <para>The font collection to search. If NULL, the local system font collection is used.</para>
-    </param>
-    <param name="font">
-      <para>Type: <b><see cref="IDWriteFont" />**</b></para>
-      <para>Receives a newly created font object if successful, or NULL in case of error.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteGdiInterop1" />
+    <summary>Creates a font object that matches the properties specified by the LOGFONT structure.</summary>
+    <param name="logFont">Structure containing a GDI-compatible font description.</param>
+    <param name="fontCollection">The font collection to search. If NULL, the local system font collection is used.</param>
+    <param name="font">Receives a newly created font object if successful, or NULL in case of error.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteGdiInterop1.GetFontSignature">
-    <summary>
-      <para>Reads the font signature from the given font.</para>
-    </summary>
-    <param name="fontFace">
-      <para>Type: [in] <b><see cref="IDWriteFont" />*</b></para>
-      <para>Font to read font signature from.</para>
-    </param>
-    <param name="fontSignature">
-      <para>Type: [out] <b>FONTSIGNATURE*</b></para>
-      <para>Font signature from the OS/2 table, ulUnicodeRange, and ulCodePageRange.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteGdiInterop1" />
+    <summary>Reads the font signature from the given font.</summary>
+    <param name="fontFace">Font to read font signature from.</param>
+    <param name="fontSignature">Font signature from the OS/2 table, ulUnicodeRange, and ulCodePageRange.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteGdiInterop1.GetFontSignature">
-    <summary>
-      <para>Reads the font signature from the given font.</para>
-    </summary>
-    <param name="font">
-      <para>Type: <b><see cref="IDWriteFont" />*</b></para>
-      <para>Font to read font signature from.</para>
-    </param>
-    <param name="fontSignature">
-      <para>Type: [out] <b>FONTSIGNATURE*</b></para>
-      <para>Font signature from the OS/2 table, ulUnicodeRange, and ulCodePageRange.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteGdiInterop1" />
+    <summary>Reads the font signature from the given font.</summary>
+    <param name="font">Font to read font signature from.</param>
+    <param name="fontSignature">Font signature from the OS/2 table, ulUnicodeRange, and ulCodePageRange.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteGdiInterop1.GetMatchingFontsByLOGFONT">
-    <summary>
-      <para>Gets a list of matching fonts based on the specified LOGFONT values. Only fonts
-of that family name will be returned.</para>
-    </summary>
-    <param name="logFont">
-      <para>Type: <b>LOGFONT</b></para>
-      <para>Structure containing a GDI-compatible font description.</para>
-    </param>
-    <param name="fontSet">
-      <para>Type: <b><see cref="IDWriteFontSet" />*</b></para>
-      <para>The font set to search.</para>
-    </param>
-    <param name="filteredSet">
-      <para>Type: <b><see cref="IDWriteFontSet" />**</b></para>
-      <para>&gt;Receives the filtered font set if successful.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteGdiInterop1" />
+    <summary>Gets a list of matching fonts based on the specified LOGFONT values. Only fonts of that family name will be returned.</summary>
+    <param name="logFont">Structure containing a GDI-compatible font description.</param>
+    <param name="fontSet">The font set to search.</param>
+    <param name="filteredSet">&gt;Receives the filtered font set if successful.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteGdiInterop1">
-    <summary>
-      <para>Provides interoperability with GDI, such as methods to convert a font face to a LOGFONT structure, or to convert a GDI font description into a font face.
-It is also used to create bitmap render target objects.</para>
-    </summary>
-    <seealso cref="IDWriteGdiInterop" />
+    <summary>Provides interoperability with GDI, such as methods to convert a font face to a LOGFONT structure, or to convert a GDI font description into a font face. It is also used to create bitmap render target objects.</summary>
   </member>
 </doc>

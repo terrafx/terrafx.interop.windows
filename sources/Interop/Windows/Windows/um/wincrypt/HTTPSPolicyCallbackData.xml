@@ -3,24 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="HTTPSPolicyCallbackData">
-    <summary>
-      <para>The <b>SSL_EXTRA_CERT_CHAIN_POLICY_PARA</b> structure, also identified by the name <b>HTTPSPolicyCallbackData</b>,  holds policy information used in the verification of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">Secure Sockets Layer</a> (SSL) client/server certificate chains.</para>
-    </summary>
+    <summary>The <b>SSL_EXTRA_CERT_CHAIN_POLICY_PARA</b> structure, also identified by the name <b>HTTPSPolicyCallbackData</b>, holds policy information used in the verification of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">Secure Sockets Layer</a> (SSL) client/server certificate chains.</summary>
   </member>
-  <member name="HTTPSPolicyCallbackData.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="HTTPSPolicyCallbackData.DUMMYUNIONNAME"></member>
   <member name="HTTPSPolicyCallbackData.DUMMYUNIONNAME.cbStruct">
     <summary>
-      <para>
-        <b>DWORD</b> value that specifies the number of bytes in this structure.</para>
-    </summary>
+      <b>DWORD</b> value that specifies the number of bytes in this structure.</summary>
   </member>
   <member name="HTTPSPolicyCallbackData.DUMMYUNIONNAME.cbSize">
     <summary>
-      <para>
-        <b>DWORD</b> value that specifies the size, in bytes,  of this structure.</para>
-    </summary>
+      <b>DWORD</b> value that specifies the size, in bytes, of this structure.</summary>
   </member>
   <member name="HTTPSPolicyCallbackData.dwAuthType">
     <summary>
@@ -31,40 +23,36 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AUTHTYPE_CLIENT</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The client is being authenticated.</para>
-          </description>
-        </item>
-        <item>
+          <description>The client is being authenticated.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AUTHTYPE_SERVER</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The server is being authenticated.</para>
-          </description>
-        </item>
+          <description>The server is being authenticated.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -77,91 +65,81 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SECURITY_FLAG_IGNORE_REVOCATION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Ignore errors associated with a revoked certificate.</para>
-          </description>
-        </item>
-        <item>
+          <description>Ignore errors associated with a revoked certificate.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SECURITY_FLAG_IGNORE_UNKNOWN_CA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Ignore errors associated with an unknown <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a>.</para>
-          </description>
-        </item>
-        <item>
+          <description>Ignore errors associated with an unknown <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SECURITY_FLAG_IGNORE_WRONG_USAGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Ignore errors associated with the use of a certificate.</para>
-          </description>
-        </item>
-        <item>
+          <description>Ignore errors associated with the use of a certificate.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SECURITY_FLAG_IGNORE_CERT_CN_INVALID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00001000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Ignore errors associated with a certificate that contains a common name that is not valid.</para>
-          </description>
-        </item>
-        <item>
+          <description>Ignore errors associated with a certificate that contains a common name that is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SECURITY_FLAG_IGNORE_CERT_DATE_INVALID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Ignore errors associated with an expired certificate.</para>
-          </description>
-        </item>
+          <description>Ignore errors associated with an expired certificate.</description>
+        </listheader>
       </list>
     </summary>
   </member>

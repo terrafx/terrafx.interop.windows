@@ -5,289 +5,89 @@
   <member name="DirectX.D3D10CompileShader">
     <summary>
       <para>Compile an <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-reference">HLSL</a> shader.</para>
-      <para>
-        <b>Note</b>  Use <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10compilefrommemory">D3DX10CompileFromMemory</a> instead of this function.</para>
+      <div>
+        <b>Note</b>  Use <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10compilefrommemory">D3DX10CompileFromMemory</a> instead of this function.</div>
     </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>Pointer to a string containing the shader source code.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Size of pSrcData, in bytes.</para>
-    </param>
-    <param name="pFileName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The name of the file that contains the shader code.</para>
-    </param>
-    <param name="pDefines">
-      <para>Type: <b>const <see cref="D3D10_SHADER_MACRO" />*</b></para>
-      <para>Optional. Pointer to an array of macro definitions (see <see cref="D3D10_SHADER_MACRO" />).
-The last structure in the array serves as a terminator and must have all members set to 0.
-If not used, set <i>pDefines</i> to <b>NULL</b>.</para>
-    </param>
-    <param name="pInclude">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173775(v=vs.85)">LPD3D10INCLUDE</a>*</b></para>
-      <para>Optional. Pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173775(v=vs.85)">ID3D10Include Interface</a> interface for handling include files. Setting this to <b>NULL</b> will cause a compile error if a shader contains a #include.</para>
-    </param>
-    <param name="pFunctionName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>Name of the shader-entry point function where shader execution begins.</para>
-    </param>
-    <param name="pProfile">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>A string that specifies the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-models">shader profile</a> or shader model.</para>
-    </param>
-    <param name="Flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Shader <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-shader">compile options</a>.</para>
-    </param>
-    <param name="ppShader">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>A pointer to an <see cref="ID3D10Blob Interface" /> that contains the compiled shader, as well as any embedded debug and symbol-table information.</para>
-    </param>
-    <param name="ppErrorMsgs">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>A pointer to an <see cref="ID3D10Blob Interface" /> that contains a listing of errors and warnings that occurred during compilation. These errors and warnings are identical to the debug output from a debugger.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This function uses the version of the HLSL compiler released in the November 2006 DirectX SDK.</para>
-      <para>This function implements two ways to supply the input shader information. Either use <i>pSrcData</i> and <i>SrcDataLen</i> to specify a string that contains the shader HLSL code (and set <i>pFileName</i> to <b>NULL</b>) or use <i>pFileName</i> to specify the name of a shader or effect file (and set <i>pSrcData</i> to <b>NULL</b>).</para>
-      <para>To setup a programmable-pipeline stage, compile a shader and then bind the shader to the appropriate pipeline stage. For instance, here is an example compiling a geometry shader (see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage-getting-started">Compile a Geometry Shader</a>).</para>
-      <para>This function, D3D10CompileShader, calls the version of the shader compiler that is shipped each time the operating system releases. A more up-to-date version of the shader compiler ships when the DirectX SDK ships, which can be accessed from D3DX by calling a version of the shader compiler entry-point function such as <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10compilefromfile">D3DX10CompileFromFile</a>.  It is preferable to use the D3DX entry-point functions to ensure the latest version of the shader compiler will be used if you will be redistributing the DirectX redistributable libraries.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <param name="pSrcData">Pointer to a string containing the shader source code.</param>
+    <param name="SrcDataSize">Size of pSrcData, in bytes.</param>
+    <param name="pFileName">The name of the file that contains the shader code.</param>
+    <param name="pDefines">Optional. Pointer to an array of macro definitions (see <see cref="D3D10_SHADER_MACRO" />). The last structure in the array serves as a terminator and must have all members set to 0.<br />If not used, set <i>pDefines</i> to <b>NULL</b>.</param>
+    <param name="pInclude">Optional. Pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173775(v=vs.85)">ID3D10Include Interface</a> interface for handling include files. Setting this to <b>NULL</b> will cause a compile error if a shader contains a #include.</param>
+    <param name="pFunctionName">Name of the shader-entry point function where shader execution begins.</param>
+    <param name="pProfile">A string that specifies the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-models">shader profile</a> or shader model.</param>
+    <param name="Flags">Shader <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-shader">compile options</a>.</param>
+    <param name="ppShader">A pointer to an <see cref="ID3D10Blob Interface" /> that contains the compiled shader, as well as any embedded debug and symbol-table information.</param>
+    <param name="ppErrorMsgs">A pointer to an <see cref="ID3D10Blob Interface" /> that contains a listing of errors and warnings that occurred during compilation. These errors and warnings are identical to the debug output from a debugger.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10DisassembleShader">
-    <summary>
-      <para>This function -- which disassembles a compiled shader into a text string that contains assembly instructions and register assignments -- has been deprecated. Instead, use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3ddisassemble">D3DDisassemble</a>.</para>
-    </summary>
-    <param name="pShader">
-      <para>Type: <b>const void*</b></para>
-      <para>A pointer to the compiled shader.</para>
-    </param>
-    <param name="BytecodeLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The size of pShader.</para>
-    </param>
-    <param name="EnableColorCode">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Include HTML tags in the output to color code the result.</para>
-    </param>
-    <param name="pComments">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The comment string at the top of the shader that identifies the shader constants and variables.</para>
-    </param>
-    <param name="ppDisassembly">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>Address of a buffer which contains the disassembled shader.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Return value</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <summary>This function -- which disassembles a compiled shader into a text string that contains assembly instructions and register assignments -- has been deprecated. Instead, use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3ddisassemble">D3DDisassemble</a>.</summary>
+    <param name="pShader">A pointer to the compiled shader.</param>
+    <param name="BytecodeLength">The size of pShader.</param>
+    <param name="EnableColorCode">Include HTML tags in the output to color code the result.</param>
+    <param name="pComments">The comment string at the top of the shader that identifies the shader constants and variables.</param>
+    <param name="ppDisassembly">Address of a buffer which contains the disassembled shader.</param>
+    <returns>Return value</returns>
   </member>
   <member name="DirectX.D3D10GetGeometryShaderProfile">
-    <summary>
-      <para>Get the geometry <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-models">shader profile</a> best suited to a given device.</para>
-    </summary>
-    <param name="pDevice">
-      <para>Type: <b><see cref="ID3D10Device" />*</b></para>
-      <para>Pointer to the device (see <see cref="ID3D10Device Interface" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The shader profile.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <summary>Get the geometry <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-models">shader profile</a> best suited to a given device.</summary>
+    <param name="pDevice">Pointer to the device (see <see cref="ID3D10Device Interface" />).</param>
+    <returns>The shader profile.</returns>
   </member>
   <member name="DirectX.D3D10GetInputAndOutputSignatureBlob">
-    <summary>
-      <para>Get a buffer that contains shader signatures.</para>
-    </summary>
-    <param name="pShaderBytecode">
-      <para>Type: <b>const void*</b></para>
-      <para>A pointer to the compiled shader. To get this pointer see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-using-shaders-10">Getting a Pointer to a Compiled Shader</a>.</para>
-    </param>
-    <param name="BytecodeLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The size of the shader bytecode in bytes.</para>
-    </param>
-    <param name="ppSignatureBlob">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>The address of a pointer to the buffer (see <see cref="ID3D10Blob Interface" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <summary>Get a buffer that contains shader signatures.</summary>
+    <param name="pShaderBytecode">A pointer to the compiled shader. To get this pointer see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-using-shaders-10">Getting a Pointer to a Compiled Shader</a>.</param>
+    <param name="BytecodeLength">The size of the shader bytecode in bytes.</param>
+    <param name="ppSignatureBlob">The address of a pointer to the buffer (see <see cref="ID3D10Blob Interface" />).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10GetInputSignatureBlob">
-    <summary>
-      <para>Get a buffer that contains shader-input signatures.</para>
-    </summary>
-    <param name="pShaderBytecode">
-      <para>Type: <b>const void*</b></para>
-      <para>A pointer to the compiled shader. To get this pointer see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-using-shaders-10">Getting a Pointer to a Compiled Shader</a>.</para>
-    </param>
-    <param name="BytecodeLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The size of the shader bytecode in bytes.</para>
-    </param>
-    <param name="ppSignatureBlob">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>The address of a pointer to the buffer (see <see cref="ID3D10Blob Interface" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <summary>Get a buffer that contains shader-input signatures.</summary>
+    <param name="pShaderBytecode">A pointer to the compiled shader. To get this pointer see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-using-shaders-10">Getting a Pointer to a Compiled Shader</a>.</param>
+    <param name="BytecodeLength">The size of the shader bytecode in bytes.</param>
+    <param name="ppSignatureBlob">The address of a pointer to the buffer (see <see cref="ID3D10Blob Interface" />).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10GetOutputSignatureBlob">
-    <summary>
-      <para>Get a buffer that contains shader-output signatures.</para>
-    </summary>
-    <param name="pShaderBytecode">
-      <para>Type: <b>const void*</b></para>
-      <para>A pointer to the compiled shader. To get this pointer see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-using-shaders-10">Getting a Pointer to a Compiled Shader</a>.</para>
-    </param>
-    <param name="BytecodeLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The size of the shader bytecode in bytes.</para>
-    </param>
-    <param name="ppSignatureBlob">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>The address of a pointer to the buffer (see <see cref="ID3D10Blob Interface" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <summary>Get a buffer that contains shader-output signatures.</summary>
+    <param name="pShaderBytecode">A pointer to the compiled shader. To get this pointer see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-using-shaders-10">Getting a Pointer to a Compiled Shader</a>.</param>
+    <param name="BytecodeLength">The size of the shader bytecode in bytes.</param>
+    <param name="ppSignatureBlob">The address of a pointer to the buffer (see <see cref="ID3D10Blob Interface" />).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10GetPixelShaderProfile">
-    <summary>
-      <para>Get the pixel <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-models">shader profile</a> best suited to a given device.</para>
-    </summary>
-    <param name="pDevice">
-      <para>Type: <b><see cref="ID3D10Device" />*</b></para>
-      <para>Pointer to the device (see <see cref="ID3D10Device Interface" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The shader profile.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <summary>Get the pixel <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-models">shader profile</a> best suited to a given device.</summary>
+    <param name="pDevice">Pointer to the device (see <see cref="ID3D10Device Interface" />).</param>
+    <returns>The shader profile.</returns>
   </member>
   <member name="DirectX.D3D10GetShaderDebugInfo">
-    <summary>
-      <para>Get shader debug info. Debug info is generated by <see cref="D3D10CompileShader" /> and is embedded in the body of the shader.</para>
-    </summary>
-    <param name="pShaderBytecode">
-      <para>Type: <b>const void*</b></para>
-      <para>A pointer to the compiled shader. To get this pointer see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-using-shaders-10">Getting a Pointer to a Compiled Shader</a>.</para>
-    </param>
-    <param name="BytecodeLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of the shader bytecode buffer.</para>
-    </param>
-    <param name="ppDebugInfo">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>Pointer to an <see cref="ID3D10Blob Interface" /> used to return debug info.  For information about the layout of this buffer, see <see cref="D3D10_SHADER_DEBUG_INFO" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <summary>Get shader debug info. Debug info is generated by <see cref="D3D10CompileShader" /> and is embedded in the body of the shader.</summary>
+    <param name="pShaderBytecode">A pointer to the compiled shader. To get this pointer see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-using-shaders-10">Getting a Pointer to a Compiled Shader</a>.</param>
+    <param name="BytecodeLength">Length of the shader bytecode buffer.</param>
+    <param name="ppDebugInfo">Pointer to an <see cref="ID3D10Blob Interface" /> used to return debug info. For information about the layout of this buffer, see <see cref="D3D10_SHADER_DEBUG_INFO" />.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10GetVertexShaderProfile">
-    <summary>
-      <para>Get the vertex <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-models">shader profile</a> best suited to a given device.</para>
-    </summary>
-    <param name="pDevice">
-      <para>Type: <b><see cref="ID3D10Device" />*</b></para>
-      <para>Pointer to the device (see <see cref="ID3D10Device Interface" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The shader profile.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <summary>Get the vertex <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-models">shader profile</a> best suited to a given device.</summary>
+    <param name="pDevice">Pointer to the device (see <see cref="ID3D10Device Interface" />).</param>
+    <returns>The shader profile.</returns>
   </member>
   <member name="DirectX.D3D10PreprocessShader">
-    <summary>
-      <para>Generate a shader-text string that contains the shader tokens that would be found in a compiled shader.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>Pointer to a string containing the shader source code.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Size of pSrcData, in bytes.</para>
-    </param>
-    <param name="pFileName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The name of the file that contains the shader code.</para>
-    </param>
-    <param name="pDefines">
-      <para>Type: <b>const <see cref="D3D10_SHADER_MACRO" />*</b></para>
-      <para>Optional. Pointer to an array of macro definitions (see <see cref="D3D10_SHADER_MACRO" />).
-The last structure in the array serves as a terminator and must have all members set to 0.
-If not used, set <i>pDefines</i> to <b>NULL</b>.</para>
-    </param>
-    <param name="pInclude">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173775(v=vs.85)">LPD3D10INCLUDE</a></b></para>
-      <para>Optional. Pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173775(v=vs.85)">ID3D10Include Interface</a> interface for handling include files. Setting this to <b>NULL</b> will cause a compile error if a shader contains a #include.</para>
-    </param>
-    <param name="ppShaderText">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>A pointer to a buffer that receives a pointer to an <see cref="ID3D10Blob Interface" /> that contains a single string containing shader-tokens.</para>
-    </param>
-    <param name="ppErrorMsgs">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>A pointer to a buffer that receives a pointer to an <see cref="ID3D10Blob Interface" /> that contains a listing of errors and warnings that occurred during compilation. These errors and warnings are identical to the debug output from a debugger.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>Use this function to generate a shader-token stream, which is the compiled output of the shader compiler.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <summary>Generate a shader-text string that contains the shader tokens that would be found in a compiled shader.</summary>
+    <param name="pSrcData">Pointer to a string containing the shader source code.</param>
+    <param name="SrcDataSize">Size of pSrcData, in bytes.</param>
+    <param name="pFileName">The name of the file that contains the shader code.</param>
+    <param name="pDefines">Optional. Pointer to an array of macro definitions (see <see cref="D3D10_SHADER_MACRO" />). The last structure in the array serves as a terminator and must have all members set to 0.<br />If not used, set <i>pDefines</i> to <b>NULL</b>.</param>
+    <param name="pInclude">Optional. Pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173775(v=vs.85)">ID3D10Include Interface</a> interface for handling include files. Setting this to <b>NULL</b> will cause a compile error if a shader contains a #include.</param>
+    <param name="ppShaderText">A pointer to a buffer that receives a pointer to an <see cref="ID3D10Blob Interface" /> that contains a single string containing shader-tokens.</param>
+    <param name="ppErrorMsgs">A pointer to a buffer that receives a pointer to an <see cref="ID3D10Blob Interface" /> that contains a listing of errors and warnings that occurred during compilation. These errors and warnings are identical to the debug output from a debugger.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10ReflectShader">
-    <summary>
-      <para>This function -- which creates a shader-reflection object for retrieving information about a compiled shader -- has been deprecated. Instead, use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dreflect">D3DReflect</a>.</para>
-    </summary>
-    <param name="pShaderBytecode">
-      <para>Type: <b>const void*</b></para>
-      <para>A pointer to the compiled shader.</para>
-    </param>
-    <param name="BytecodeLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of pShaderBytecode.</para>
-    </param>
-    <param name="ppReflector">
-      <para>Type: <b><see cref="ID3D10ShaderReflection" />**</b></para>
-      <para>Address of a reflection interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Return value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-functions">Shader Functions</seealso>
+    <summary>This function -- which creates a shader-reflection object for retrieving information about a compiled shader -- has been deprecated. Instead, use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dreflect">D3DReflect</a>.</summary>
+    <param name="pShaderBytecode">A pointer to the compiled shader.</param>
+    <param name="BytecodeLength">Length of pShaderBytecode.</param>
+    <param name="ppReflector">Address of a reflection interface.</param>
+    <returns>Return value.</returns>
   </member>
 </doc>

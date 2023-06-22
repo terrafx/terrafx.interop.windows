@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROV_ENUMALGS">
-    <summary>
-      <para>The <b>PROV_ENUMALGS</b> structure is used with the <see cref="CryptGetProvParam" /> function when the <b>PP_ENUMALGS</b> parameter is retrieved to contain information about an algorithm supported by a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP).</para>
-    </summary>
+    <summary>The <b>PROV_ENUMALGS</b> structure is used with the <see cref="CryptGetProvParam" /> function when the <b>PP_ENUMALGS</b> parameter is retrieved to contain information about an algorithm supported by a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP).</summary>
   </member>
   <member name="PROV_ENUMALGS.aiAlgid">
-    <summary>
-      <para>One of the <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/alg-id">ALG_ID</a> values that identifies the algorithm.</para>
-    </summary>
+    <summary>One of the <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/alg-id">ALG_ID</a> values that identifies the algorithm.</summary>
   </member>
   <member name="PROV_ENUMALGS.dwBitLen">
-    <summary>
-      <para>The default <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key length</a>, in bits, of the algorithm.</para>
-    </summary>
+    <summary>The default <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key length</a>, in bits, of the algorithm.</summary>
   </member>
   <member name="PROV_ENUMALGS.dwNameLen">
-    <summary>
-      <para>The length, in <b>CHAR</b>s, of the <b>szName</b> string. This length includes the terminating null character.</para>
-    </summary>
+    <summary>The length, in <b>CHAR</b>s, of the <b>szName</b> string. This length includes the terminating null character.</summary>
   </member>
   <member name="PROV_ENUMALGS.szName">
-    <summary>
-      <para>A null-terminated ANSI string that contains the name of the algorithm.</para>
-    </summary>
+    <summary>A null-terminated ANSI string that contains the name of the algorithm.</summary>
   </member>
 </doc>

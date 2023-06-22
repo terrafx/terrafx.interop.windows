@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCameraControlNotify.OnChange">
+    <summary>Raised when a camera control value is changed.</summary>
+    <param name="controlSet">A GUID specifying the camera control set to which the changed control belongs.</param>
+    <param name="id">The ID of the changed control within the control set.</param>
+  </member>
+  <member name="IMFCameraControlNotify.OnError">
+    <summary>Raised when an unrecoverable error occurs within the associated <see cref="IMFCameraControlMonitor" />.</summary>
+    <param name="hrStatus">
+      <para>The internal error code associated with the error. Possible error values include the following:</para>
+      <para>| Value | Description | |-------|-------------| | E_OUTOFMEMORY | There were insufficient resources available for the monitor to function properly. | | MF_INVALID_STATE_ERR | A corruption of memory states has occurred. |</para>
+    </param>
+  </member>
+  <member name="IMFCameraControlNotify">
+    <summary>Represents the notification callback for changes to camera controls.</summary>
+  </member>
+</doc>

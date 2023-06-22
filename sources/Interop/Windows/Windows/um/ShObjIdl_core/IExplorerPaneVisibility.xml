@@ -3,11 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IExplorerPaneVisibility.GetPaneState">
-    <summary>
-      <para>Gets the visibility state of the given Windows Explorer pane.</para>
-    </summary>
+    <summary>Gets the visibility state of the given Windows Explorer pane.</summary>
     <param name="ep">
-      <para>Type: <b>REFEXPLORERPANE</b></para>
       <para>A reference to a GUID that uniquely identifies a Windows Explorer pane. One of the following constants as defined in Shlguid.h.</para>
       <h4>EP_NavPane (cb316b22-25f7-42b8-8a09-540d23a43c2f)</h4>
       <para>The pane on the left side of the Windows Explorer window that hosts the folders tree and <b>Favorites</b>.</para>
@@ -35,17 +32,8 @@
       <para>
         <b>Introduced in Windows 8</b>: The ribbon, which is the control that replaced menus and toolbars at the top of many Microsoft applications.</para>
     </param>
-    <param name="peps">
-      <para>Type: <b><see cref="EXPLORERPANESTATE" />*</b></para>
-      <para>When this method returns, contains the visibility state of the given Windows Explorer pane as one of the <see cref="EXPLORERPANESTATE" /> constants.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the implementer does not care about the state of a given pane and therefore does not want to change it, then the implementer should return a success code for the method and EPS_DONTCARE for the <i>peps</i> parameter. If the method fails, it is treated as if EPS_DONTCARE was returned for the <i>peps</i> parameter.</para>
-    </remarks>
+    <param name="peps">When this method returns, contains the visibility state of the given Windows Explorer pane as one of the <see cref="EXPLORERPANESTATE" /> constants.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerPaneVisibility">
     <summary>
@@ -53,6 +41,5 @@
       <para>The <b>IExplorerPaneVisibility</b> implementation is retrieved from the Shell folder. The Shell folder, in turn, is retrieved from the view. A namespace extension can elect to provide a custom view (<see cref="IShellView" />) rather than using the system folder view object (DefView). In that case, the <b>IShellView</b> implementation must include an implementation of <see cref="IFolderView.GetFolder" /> to return the <b>IExplorerPaneVisibility</b> object.</para>
       <para>A namespace extension can provide a custom view by implementing <see cref="IShellView" /> itself rather than using the system folder view object (DefView). In that case, the <b>IShellView</b> implementation must include an implementation of <see cref="IFolderView.GetFolder" /> to make use of <b>IExplorerPaneVisibility</b> .</para>
     </summary>
-    <seealso cref="SHCreateShellFolderView" />
   </member>
 </doc>

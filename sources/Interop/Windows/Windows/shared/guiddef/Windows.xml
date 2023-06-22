@@ -2,24 +2,25 @@
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
-  <member name="Windows.IsEqualGUID">
-    <summary>
-      <para>Determines whether two GUIDs are equal.</para>
-    </summary>
-    <param name="rguid1">
-      <para>The first GUID.</para>
-    </param>
-    <param name="rguid2">
-      <para>The second GUID.</para>
-    </param>
+  <member name="Windows.IsEqualCLSID">
+    <summary>Evaluates to a Boolean value that indicates whether two CLSIDs are equal.</summary>
+    <param name="rclsid1">The first CLSID.</param>
+    <param name="rclsid2">The second CLSID.</param>
     <returns>
-      <para>A Boolean value that indicates if the two GUID's are equal. TRUE if yes, otherwise FALSE.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>IsEqualGUID</b> is used by the <see cref="IsEqualCLSID" /> and <see cref="IsEqualIID" /> functions.</para>
-    </remarks>
-    <seealso cref="IsEqualCLSID" />
-    <seealso cref="IsEqualIID" />
+      <code>TRUE</code> if the two CLSIDs are equal; otherwise, <code>FALSE</code>.</returns>
+  </member>
+  <member name="Windows.IsEqualGUID">
+    <summary>Evaluates to a Boolean value that indicates whether two GUIDs are equal.</summary>
+    <param name="rguid1">The first GUID.</param>
+    <param name="rguid2">The second GUID.</param>
+    <returns>
+      <code>TRUE</code> if the two GUIDs are equal; otherwise, <code>FALSE</code>.</returns>
+  </member>
+  <member name="Windows.IsEqualIID">
+    <summary>Evaluates to a Boolean value that indicates whether two IIDs are equal.</summary>
+    <param name="riid1">The first IID.</param>
+    <param name="riid2">The second IID.</param>
+    <returns>
+      <code>TRUE</code> if the two IIDs are equal; otherwise, <code>FALSE</code>.</returns>
   </member>
 </doc>

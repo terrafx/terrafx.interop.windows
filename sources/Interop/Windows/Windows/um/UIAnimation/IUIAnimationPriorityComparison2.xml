@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IUIAnimationPriorityComparison2.HasPriority">
-    <summary>
-      <para>Determines the relative priority between a scheduled storyboard and a new storyboard.</para>
-    </summary>
-    <param name="scheduledStoryboard">
-      <para>The currently scheduled storyboard.</para>
-    </param>
-    <param name="newStoryboard">
-      <para>The new storyboard that is interrupting the scheduled storyboard specified by <i>scheduledStoryboard</i>.</para>
-    </param>
-    <param name="priorityEffect">
-      <para>The potential effect on <i>newStoryboard</i> if <i>scheduledStoryboard</i> has a higher priority.</para>
-    </param>
+    <summary>Determines the relative priority between a scheduled storyboard and a new storyboard.</summary>
+    <param name="scheduledStoryboard">The currently scheduled storyboard.</param>
+    <param name="newStoryboard">The new storyboard that is interrupting the scheduled storyboard specified by <i>scheduledStoryboard</i>.</param>
+    <param name="priorityEffect">The potential effect on <i>newStoryboard</i> if <i>scheduledStoryboard</i> has a higher priority.</param>
     <returns>
       <para>Returns the following if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
       <list type="table">
@@ -22,97 +14,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>newStoryboard</i> has priority.
-</description>
-        </item>
-        <item>
+            <i>newStoryboard</i> has priority.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>scheduledStoryboard</i> has priority.
-</description>
-        </item>
+            <i>scheduledStoryboard</i> has priority.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A single animation variable can be included in multiple storyboards, but multiple storyboards cannot animate the same variable at the same time.</para>
-      <para>If a new storyboard attempts to animate one or more variables that are currently scheduled for animation by a different storyboard, a scheduling conflict occurs.</para>
-      <para>To determine which storyboard has priority, the animation manager can call the <b>HasPriority</b> method on one or more  priority comparison handlers provided by the application.</para>
-      <para>Registering priority comparison objects is optional.  By default, all storyboards can be trimmed, concluded, or compressed to prevent failure, but none can be canceled, and by default no storyboards will be canceled or trimmed to prevent a delay.</para>
-      <para>By default, a call made in a callback method to any other animation method results in the call failing and returning <b>UI_E_ILLEGAL_REENTRANCY</b>. However, there are exceptions to this default. The following methods can be successfully called from <see cref="HasPriority" />:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IUIAnimationManager2.GetStoryboardFromTag" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IUIAnimationManager2.GetVariableFromTag" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IUIAnimationStoryboard.GetTag" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IUIAnimationVariable2.GetTag" />
-          </description>
-        </item>
-      </list>
-      <h3>Contention Management</h3>
-      <para>To resolve a scheduling conflict, the animation manager has the following options:</para>
-      <list type="bullet">
-        <item>
-          <description>Cancel the scheduled storyboard if it has not started playing and the priority comparison object that is registered with <see cref="IUIAnimationManager2.SetCancelPriorityComparison" /> returns <b>S_OK</b>. Canceled storyboards are completely removed from the schedule.</description>
-        </item>
-        <item>
-          <description>Trim the scheduled storyboard if the priority comparison object that is registered with <see cref="IUIAnimationManager2.SetTrimPriorityComparison" /> returns <b>S_OK</b>. If the new storyboard trims the scheduled storyboard, the scheduled storyboard can no longer affect a variable when the new storyboard begins to animate that variable.</description>
-        </item>
-        <item>
-          <description>Conclude the scheduled storyboard if the scheduled storyboard contains a loop with a repetition count of <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a> and the priority comparison object that is registered with <see cref="IUIAnimationManager2.SetConcludePriorityComparison" /> returns <b>S_OK</b>. If the storyboard is concluded, the current repetition of the loop completes, and the reminder of the storyboard then plays.</description>
-        </item>
-        <item>
-          <description>Compress the scheduled storyboard, and any other storyboards animating the same variables, if the priority comparison object that is registered with <see cref="IUIAnimationManager2.SetCompressPriorityComparison" />  returns <b>S_OK</b> for all scheduled storyboards that might be affected by the compression. When the storyboards are compressed, time is temporarily accelerated for affected storyboards, so they play faster.</description>
-        </item>
-      </list>
-      <para>If none of the  preceding options is allowed by the priority comparison objects, the attempt to schedule the storyboard fails and Windows Animation returns <see cref="UI_ANIMATION_SCHEDULING_INSUFFICIENT_PRIORITY" /> to the calling application.</para>
-      <para>Note that for the new storyboard to be successfully scheduled, it must begin before its longest acceptable delay has elapsed.  This is determined by <see cref="IUIAnimationStoryboard.SetLongestAcceptableDelay" /> or <see cref="IUIAnimationManager2.SetDefaultLongestAcceptableDelay" /> (if neither is called, the default is 0.0 seconds).  If the longest acceptable delay is <b>UI_ANIMATION_SECONDS_EVENTUALLY</b>, any finite delay will be sufficient.</para>
-      <para>The <i>priorityEffect</i> parameter describes the possible effect on the new storyboard if <b>HasPriority</b> were to return <b>S_FALSE</b>.  If <i>priorityEffect</i> is <see cref="UI_ANIMATION_PRIORITY_EFFECT_FAILURE" />, it is possible that returning <b>S_FALSE</b> will result in a failure to schedule the new storyboard. (It is also possible that the animation manager will be allowed to resolve the conflict in a different way by another priority comparison object.)  If <i>priorityEffect</i> is <b>UI_ANIMATION_PRIORITY_EFFECT_DELAY</b>, the only downside of returning <b>S_FALSE</b> is that the storyboard might begin later than it would have if <i>HasPriority</i> had returned <b>S_OK</b>.</para>
-      <para>When <see cref="UI_ANIMATION_PRIORITY_EFFECT_DELAY" /> is passed to <b>HasPriority</b>, the animation manager has already determined that it can schedule the new storyboard to begin before its longest acceptable delay has elapsed, but it is in effect asking the application if the storyboard should begin even earlier.  In some scenarios, it might be best to reduce the latency of an animation by returning <b>S_OK</b>.  In others, it might be preferable to let scheduled animations complete whenever possible, in which case <b>HasPriority</b> should return <b>S_FALSE</b>.  <b>UI_ANIMATION_PRIORITY_EFFECT_DELAY</b> is only passed to <b>HasPriority</b> when the animation manager is considering canceling or trimming a storyboard.</para>
-    </remarks>
-    <seealso cref="IUIAnimationManager2.SetCancelPriorityComparison" />
-    <seealso cref="IUIAnimationManager2.SetCompressPriorityComparison" />
-    <seealso cref="IUIAnimationManager2.SetConcludePriorityComparison" />
-    <seealso cref="IUIAnimationManager2.SetTrimPriorityComparison" />
-    <seealso cref="IUIAnimationPriorityComparison2" />
-    <seealso cref="UI_ANIMATION_PRIORITY_EFFECT" />
   </member>
   <member name="IUIAnimationPriorityComparison2">
-    <summary>
-      <para>Defines a method that resolves scheduling conflicts through priority comparison.</para>
-    </summary>
-    <remarks>
-      <para>A single animation variable can be included in multiple storyboards, but multiple storyboards cannot animate the same variable at the same time.</para>
-      <para>If a newly scheduled storyboard attempts to animate one or more variables that are currently scheduled for animation by  different storyboards, a scheduling conflict occurs.</para>
-      <para>To determine which storyboard has priority, the animation manager can call the <see cref="HasPriority" /> method on one or more  priority comparison handlers provided by the application.</para>
-    </remarks>
-    <seealso cref="IUIAnimationManager2.SetCancelPriorityComparison" />
-    <seealso cref="IUIAnimationManager2.SetCompressPriorityComparison" />
-    <seealso cref="IUIAnimationManager2.SetConcludePriorityComparison" />
-    <seealso cref="IUIAnimationManager2.SetTrimPriorityComparison" />
-    <seealso cref="IUnknown" />
+    <summary>Defines a method that resolves scheduling conflicts through priority comparison.</summary>
   </member>
 </doc>

@@ -3,82 +3,49 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MANAGEDAPPLICATION">
-    <summary>
-      <para>The <b>MANAGEDAPPLICATION</b> structure contains information about an application. The function <see cref="GetManagedApplications" /> returns an array of <b>MANAGEDAPPLICATION</b> structures.</para>
-    </summary>
-    <seealso cref="GetManagedApplications" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/about-group-policy">Group Policy Overview</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-structures">Group Policy Structures</seealso>
+    <summary>The <b>MANAGEDAPPLICATION</b> structure contains information about an application. The function <see cref="GetManagedApplications" /> returns an array of <b>MANAGEDAPPLICATION</b> structures.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.pszPackageName">
-    <summary>
-      <para>The user-friendly name of the application.</para>
-    </summary>
+    <summary>The user-friendly name of the application.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.pszPublisher">
-    <summary>
-      <para>The name of the application's publisher.</para>
-    </summary>
+    <summary>The name of the application's publisher.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.dwVersionHi">
-    <summary>
-      <para>The major version number of the application.</para>
-    </summary>
+    <summary>The major version number of the application.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.dwVersionLo">
-    <summary>
-      <para>The minor version number of the application.</para>
-    </summary>
+    <summary>The minor version number of the application.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.dwRevision">
-    <summary>
-      <para>The version number of the deployment. The version changes each time an application gets patched.</para>
-    </summary>
+    <summary>The version number of the deployment. The version changes each time an application gets patched.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.GpoId">
-    <summary>
-      <para>The GUID of the GPO from which this application is deployed.</para>
-    </summary>
+    <summary>The GUID of the GPO from which this application is deployed.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.pszPolicyName">
-    <summary>
-      <para>The user-friendly name for the GPO from which this application is deployed.</para>
-    </summary>
+    <summary>The user-friendly name for the GPO from which this application is deployed.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.ProductId">
-    <summary>
-      <para>If this application is installed by <a href="https://docs.microsoft.com//windows/desktop/Msi/windows-installer-portal">Windows Installer</a>, this member is the ProductId GUID.</para>
-    </summary>
+    <summary>If this application is installed by <a href="https://docs.microsoft.com//windows/desktop/Msi/windows-installer-portal">Windows Installer</a>, this member is the ProductId GUID.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.Language">
-    <summary>
-      <para>The numeric language identifier that indicates the language version of the application. For a list of language numeric identifiers, see the <a href="https://docs.microsoft.com//windows/desktop/Intl/language-identifier-constants-and-strings">Language Identifier Constants and Strings</a> topic.</para>
-    </summary>
+    <summary>The numeric language identifier that indicates the language version of the application. For a list of language numeric identifiers, see the <a href="https://docs.microsoft.com//windows/desktop/Intl/language-identifier-constants-and-strings">Language Identifier Constants and Strings</a> topic.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.pszOwner">
-    <summary>
-      <para>This member is unused.</para>
-    </summary>
+    <summary>This member is unused.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.pszCompany">
-    <summary>
-      <para>This member is unused.</para>
-    </summary>
+    <summary>This member is unused.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.pszComments">
-    <summary>
-      <para>This member is unused.</para>
-    </summary>
+    <summary>This member is unused.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.pszContact">
-    <summary>
-      <para>This member is unused.</para>
-    </summary>
+    <summary>This member is unused.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.pszSupportUrl">
-    <summary>
-      <para>This member is unused.</para>
-    </summary>
+    <summary>This member is unused.</summary>
   </member>
   <member name="MANAGEDAPPLICATION.dwPathType">
     <summary>
@@ -92,8 +59,6 @@
     </summary>
   </member>
   <member name="MANAGEDAPPLICATION.bInstalled">
-    <summary>
-      <para>This parameter is <b>TRUE</b> if the application is currently installed and  is <b>FALSE</b> otherwise.</para>
-    </summary>
+    <summary>This parameter is <b>TRUE</b> if the application is currently installed and is <b>FALSE</b> otherwise.</summary>
   </member>
 </doc>

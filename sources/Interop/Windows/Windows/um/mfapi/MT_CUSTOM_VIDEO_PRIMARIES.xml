@@ -3,52 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MT_CUSTOM_VIDEO_PRIMARIES">
-    <summary>
-      <para>Defines custom color primaries for a video source. The color primaries define how to convert colors from RGB color space to CIE XYZ color space.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-custom-video-primaries-attribute">MF_MT_CUSTOM_VIDEO_PRIMARIES</a> attribute.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Defines custom color primaries for a video source. The color primaries define how to convert colors from RGB color space to CIE XYZ color space.</summary>
   </member>
   <member name="MT_CUSTOM_VIDEO_PRIMARIES.fRx">
-    <summary>
-      <para>Red x-coordinate.</para>
-    </summary>
+    <summary>Red x-coordinate.</summary>
   </member>
   <member name="MT_CUSTOM_VIDEO_PRIMARIES.fRy">
-    <summary>
-      <para>Red y-coordinate.</para>
-    </summary>
+    <summary>Red y-coordinate.</summary>
   </member>
   <member name="MT_CUSTOM_VIDEO_PRIMARIES.fGx">
-    <summary>
-      <para>Green x-coordinate.</para>
-    </summary>
+    <summary>Green x-coordinate.</summary>
   </member>
   <member name="MT_CUSTOM_VIDEO_PRIMARIES.fGy">
-    <summary>
-      <para>Green y-coordinate.</para>
-    </summary>
+    <summary>Green y-coordinate.</summary>
   </member>
   <member name="MT_CUSTOM_VIDEO_PRIMARIES.fBx">
-    <summary>
-      <para>Blue x-coordinate.</para>
-    </summary>
+    <summary>Blue x-coordinate.</summary>
   </member>
   <member name="MT_CUSTOM_VIDEO_PRIMARIES.fBy">
-    <summary>
-      <para>Blue y-coordinate.</para>
-    </summary>
+    <summary>Blue y-coordinate.</summary>
   </member>
   <member name="MT_CUSTOM_VIDEO_PRIMARIES.fWx">
-    <summary>
-      <para>White point x-coordinate.</para>
-    </summary>
+    <summary>White point x-coordinate.</summary>
   </member>
   <member name="MT_CUSTOM_VIDEO_PRIMARIES.fWy">
-    <summary>
-      <para>White point y-coordinate.</para>
-    </summary>
+    <summary>White point y-coordinate.</summary>
   </member>
 </doc>

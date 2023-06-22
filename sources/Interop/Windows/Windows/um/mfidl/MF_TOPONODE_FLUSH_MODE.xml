@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TOPONODE_FLUSH_MODE">
-    <summary>
-      <para>Defines when a transform in a topology is flushed.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-flush-attribute">MF_TOPONODE_FLUSH</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines when a transform in a topology is flushed.</summary>
   </member>
   <member name="MF_TOPONODE_FLUSH_MODE.MF_TOPONODE_FLUSH_ALWAYS">
-    <summary>
-      <para>The transform is flushed whenever the stream changes, including seeks and new segments.</para>
-    </summary>
+    <summary>The transform is flushed whenever the stream changes, including seeks and new segments.</summary>
   </member>
   <member name="MF_TOPONODE_FLUSH_MODE.MF_TOPONODE_FLUSH_SEEK">
-    <summary>
-      <para>The transform is flushed when seeking is performed on the stream.</para>
-    </summary>
+    <summary>The transform is flushed when seeking is performed on the stream.</summary>
   </member>
   <member name="MF_TOPONODE_FLUSH_MODE.MF_TOPONODE_FLUSH_NEVER">
-    <summary>
-      <para>The transform is never flushed during streaming. It is flushed only when the object is released.</para>
-    </summary>
+    <summary>The transform is never flushed during streaming. It is flushed only when the object is released.</summary>
   </member>
 </doc>

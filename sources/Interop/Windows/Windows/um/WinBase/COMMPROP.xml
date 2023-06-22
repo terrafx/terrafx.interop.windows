@@ -3,424 +3,334 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COMMPROP">
-    <summary>
-      <para>Contains information about a communications driver.</para>
-    </summary>
-    <remarks>
-      <para>The contents of the <b>dwProvSpec1</b>, <b>dwProvSpec2</b>, and
-<b>wcProvChar</b> members depend on the provider subtype (specified by the
-<b>dwProvSubType</b> member).</para>
-      <para>If the provider subtype is <b>PST_MODEM</b>, these members are used as follows.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
-        </listheader>
-        <item>
-          <description>
-            <b>dwProvSpec1</b>
-          </description>
-          <description>Not used.</description>
-        </item>
-        <item>
-          <description>
-            <b>dwProvSpec2</b>
-          </description>
-          <description>Not used.</description>
-        </item>
-        <item>
-          <description>
-            <b>wcProvChar</b>
-          </description>
-          <description>Contains a <see cref="MODEMDEVCAPS" /> structure.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="GetCommProperties" />
+    <summary>Contains information about a communications driver.</summary>
   </member>
   <member name="COMMPROP.wPacketLength">
-    <summary>
-      <para>The size of the entire data packet, regardless of the amount of data requested, in bytes.</para>
-    </summary>
+    <summary>The size of the entire data packet, regardless of the amount of data requested, in bytes.</summary>
   </member>
   <member name="COMMPROP.wPacketVersion">
-    <summary>
-      <para>The version of the structure.</para>
-    </summary>
+    <summary>The version of the structure.</summary>
   </member>
   <member name="COMMPROP.dwServiceMask">
-    <summary>
-      <para>A bitmask indicating which services are implemented by this provider. The
-<b>SP_SERIALCOMM</b> value is always specified for communications providers, including modem
-providers.</para>
-    </summary>
+    <summary>A bitmask indicating which services are implemented by this provider. The<b>SP_SERIALCOMM</b> value is always specified for communications providers, including modem providers.</summary>
   </member>
   <member name="COMMPROP.dwReserved1">
-    <summary>
-      <para>Reserved; do not use.</para>
-    </summary>
+    <summary>Reserved; do not use.</summary>
   </member>
   <member name="COMMPROP.dwMaxTxQueue">
-    <summary>
-      <para>The maximum size of the driver's internal output buffer, in bytes. A value of zero indicates that no
-maximum value is imposed by the serial provider.</para>
-    </summary>
+    <summary>The maximum size of the driver's internal output buffer, in bytes. A value of zero indicates that no maximum value is imposed by the serial provider.</summary>
   </member>
   <member name="COMMPROP.dwMaxRxQueue">
-    <summary>
-      <para>The maximum size of the driver's internal input buffer, in bytes. A value of zero indicates that no maximum
-value is imposed by the serial provider.</para>
-    </summary>
+    <summary>The maximum size of the driver's internal input buffer, in bytes. A value of zero indicates that no maximum value is imposed by the serial provider.</summary>
   </member>
   <member name="COMMPROP.dwMaxBaud">
     <summary>
-      <para>The maximum allowable baud rate, in bits per second (bps). This member can be one of the following
-values.</para>
+      <para>The maximum allowable baud rate, in bits per second (bps). This member can be one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_075</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>75 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>75 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_110</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>110 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>110 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_134_5</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>134.5 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>134.5 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_150</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>150 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>150 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_300</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>300 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>300 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_600</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>600 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>600 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_1200</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>1200 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>1200 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_1800</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>1800 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>1800 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_2400</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>2400 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>2400 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_4800</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>4800 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>4800 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_7200</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>7200 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>7200 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_9600</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>9600 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>9600 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_14400</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00001000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>14400 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>14400 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_19200</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>19200 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>19200 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_38400</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00004000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>38400 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>38400 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_56K</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00008000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>56K bps</para>
-          </description>
-        </item>
-        <item>
+          <description>56K bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_57600</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00040000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>57600 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>57600 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_115200</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00020000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00020000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>115200 bps</para>
-          </description>
-        </item>
-        <item>
+          <description>115200 bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_128K</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>128K bps</para>
-          </description>
-        </item>
-        <item>
+          <description>128K bps</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>BAUD_USER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Programmable baud rate.</para>
-          </description>
-        </item>
+          <description>Programmable baud rate.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -432,841 +342,732 @@ values.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_FAX</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000021</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000021</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>FAX device</para>
-          </description>
-        </item>
-        <item>
+          <description>FAX device</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_LAT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000101</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000101</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>LAT protocol</para>
-          </description>
-        </item>
-        <item>
+          <description>LAT protocol</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_MODEM</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000006</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000006</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Modem device</para>
-          </description>
-        </item>
-        <item>
+          <description>Modem device</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_NETWORK_BRIDGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Unspecified network bridge</para>
-          </description>
-        </item>
-        <item>
+          <description>Unspecified network bridge</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_PARALLELPORT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Parallel port</para>
-          </description>
-        </item>
-        <item>
+          <description>Parallel port</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_RS232</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>RS-232 serial port</para>
-          </description>
-        </item>
-        <item>
+          <description>RS-232 serial port</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_RS422</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>RS-422 port</para>
-          </description>
-        </item>
-        <item>
+          <description>RS-422 port</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_RS423</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>RS-423 port</para>
-          </description>
-        </item>
-        <item>
+          <description>RS-423 port</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_RS449</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000005</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000005</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>RS-449 port</para>
-          </description>
-        </item>
-        <item>
+          <description>RS-449 port</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_SCANNER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000022</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000022</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Scanner device</para>
-          </description>
-        </item>
-        <item>
+          <description>Scanner device</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_TCPIP_TELNET</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000102</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000102</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>TCP/IP Telnet protocol</para>
-          </description>
-        </item>
-        <item>
+          <description>TCP/IP Telnet protocol</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_UNSPECIFIED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Unspecified</para>
-          </description>
-        </item>
-        <item>
+          <description>Unspecified</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PST_X25</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000103</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000103</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>X.25 standards</para>
-          </description>
-        </item>
+          <description>X.25 standards</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="COMMPROP.dwProvCapabilities">
     <summary>
-      <para>A bitmask indicating the capabilities offered by the provider. This member can be a combination of the
-following values.</para>
+      <para>A bitmask indicating the capabilities offered by the provider. This member can be a combination of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PCF_16BITMODE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Special 16-bit mode supported</para>
-          </description>
-        </item>
-        <item>
+          <description>Special 16-bit mode supported</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PCF_DTRDSR</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>DTR (data-terminal-ready)/DSR (data-set-ready) supported</para>
-          </description>
-        </item>
-        <item>
+          <description>DTR (data-terminal-ready)/DSR (data-set-ready) supported</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PCF_INTTIMEOUTS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Interval time-outs supported</para>
-          </description>
-        </item>
-        <item>
+          <description>Interval time-outs supported</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PCF_PARITY_CHECK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Parity checking supported</para>
-          </description>
-        </item>
-        <item>
+          <description>Parity checking supported</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PCF_RLSD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>RLSD (receive-line-signal-detect) supported</para>
-          </description>
-        </item>
-        <item>
+          <description>RLSD (receive-line-signal-detect) supported</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PCF_RTSCTS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>RTS (request-to-send)/CTS (clear-to-send) supported</para>
-          </description>
-        </item>
-        <item>
+          <description>RTS (request-to-send)/CTS (clear-to-send) supported</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PCF_SETXCHAR</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Settable XON/XOFF supported</para>
-          </description>
-        </item>
-        <item>
+          <description>Settable XON/XOFF supported</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PCF_SPECIALCHARS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Special character support provided</para>
-          </description>
-        </item>
-        <item>
+          <description>Special character support provided</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PCF_TOTALTIMEOUTS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The total (elapsed) time-outs supported</para>
-          </description>
-        </item>
-        <item>
+          <description>The total (elapsed) time-outs supported</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PCF_XONXOFF</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>XON/XOFF flow control supported</para>
-          </description>
-        </item>
+          <description>XON/XOFF flow control supported</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="COMMPROP.dwSettableParams">
     <summary>
-      <para>A bitmask indicating the communications parameters that can be changed. This member can be a combination of
-the following values.</para>
+      <para>A bitmask indicating the communications parameters that can be changed. This member can be a combination of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SP_BAUD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Baud rate</para>
-          </description>
-        </item>
-        <item>
+          <description>Baud rate</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SP_DATABITS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Data bits</para>
-          </description>
-        </item>
-        <item>
+          <description>Data bits</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SP_HANDSHAKING</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Handshaking (flow control)</para>
-          </description>
-        </item>
-        <item>
+          <description>Handshaking (flow control)</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SP_PARITY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Parity</para>
-          </description>
-        </item>
-        <item>
+          <description>Parity</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SP_PARITY_CHECK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Parity checking</para>
-          </description>
-        </item>
-        <item>
+          <description>Parity checking</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SP_RLSD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>RLSD (receive-line-signal-detect)</para>
-          </description>
-        </item>
-        <item>
+          <description>RLSD (receive-line-signal-detect)</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SP_STOPBITS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Stop bits</para>
-          </description>
-        </item>
+          <description>Stop bits</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="COMMPROP.dwSettableBaud">
-    <summary>
-      <para>The baud rates that can be used. For values, see the <b>dwMaxBaud</b> member.</para>
-    </summary>
+    <summary>The baud rates that can be used. For values, see the <b>dwMaxBaud</b> member.</summary>
   </member>
   <member name="COMMPROP.wSettableData">
     <summary>
-      <para>A bitmask indicating the number of data bits that can be set. This member can be a combination of the
-following values.</para>
+      <para>A bitmask indicating the number of data bits that can be set. This member can be a combination of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DATABITS_5</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>5 data bits</para>
-          </description>
-        </item>
-        <item>
+          <description>5 data bits</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DATABITS_6</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>6 data bits</para>
-          </description>
-        </item>
-        <item>
+          <description>6 data bits</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DATABITS_7</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>7 data bits</para>
-          </description>
-        </item>
-        <item>
+          <description>7 data bits</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DATABITS_8</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>8 data bits</para>
-          </description>
-        </item>
-        <item>
+          <description>8 data bits</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DATABITS_16</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>16 data bits</para>
-          </description>
-        </item>
-        <item>
+          <description>16 data bits</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DATABITS_16X</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Special wide path through serial hardware lines</para>
-          </description>
-        </item>
+          <description>Special wide path through serial hardware lines</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="COMMPROP.wSettableStopParity">
     <summary>
-      <para>A bitmask indicating the stop bit and parity settings that can be selected. This member can be a
-combination of the following values.</para>
+      <para>A bitmask indicating the stop bit and parity settings that can be selected. This member can be a combination of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>STOPBITS_10</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>1 stop bit</para>
-          </description>
-        </item>
-        <item>
+          <description>1 stop bit</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>STOPBITS_15</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>1.5 stop bits</para>
-          </description>
-        </item>
-        <item>
+          <description>1.5 stop bits</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>STOPBITS_20</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>2 stop bits</para>
-          </description>
-        </item>
-        <item>
+          <description>2 stop bits</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PARITY_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No parity</para>
-          </description>
-        </item>
-        <item>
+          <description>No parity</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PARITY_ODD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Odd parity</para>
-          </description>
-        </item>
-        <item>
+          <description>Odd parity</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PARITY_EVEN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Even parity</para>
-          </description>
-        </item>
-        <item>
+          <description>Even parity</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PARITY_MARK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Mark parity</para>
-          </description>
-        </item>
-        <item>
+          <description>Mark parity</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PARITY_SPACE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Space parity</para>
-          </description>
-        </item>
+          <description>Space parity</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="COMMPROP.dwCurrentTxQueue">
-    <summary>
-      <para>The size of the driver's internal output buffer, in bytes. A value of zero indicates that the value is
-unavailable.</para>
-    </summary>
+    <summary>The size of the driver's internal output buffer, in bytes. A value of zero indicates that the value is unavailable.</summary>
   </member>
   <member name="COMMPROP.dwCurrentRxQueue">
-    <summary>
-      <para>The size of the driver's internal input buffer, in bytes. A value of zero indicates that the value is
-unavailable.</para>
-    </summary>
+    <summary>The size of the driver's internal input buffer, in bytes. A value of zero indicates that the value is unavailable.</summary>
   </member>
   <member name="COMMPROP.dwProvSpec1">
     <summary>
-      <para>Any provider-specific data. Applications should ignore this member unless they have detailed information
-about the format of the data required by the provider.</para>
-      <para>Set this member to <b>COMMPROP_INITIALIZED</b> before calling the
-<see cref="GetCommProperties" /> function to indicate that the
-<b>wPacketLength</b> member is already valid.</para>
+      <para>Any provider-specific data. Applications should ignore this member unless they have detailed information about the format of the data required by the provider.</para>
+      <para>Set this member to <b>COMMPROP_INITIALIZED</b> before calling the<see cref="GetCommProperties" /> function to indicate that the<b>wPacketLength</b> member is already valid.</para>
     </summary>
   </member>
   <member name="COMMPROP.dwProvSpec2">
-    <summary>
-      <para>Any provider-specific data. Applications should ignore this member unless they have detailed information
-about the format of the data required by the provider.</para>
-    </summary>
+    <summary>Any provider-specific data. Applications should ignore this member unless they have detailed information about the format of the data required by the provider.</summary>
   </member>
   <member name="COMMPROP.wcProvChar">
-    <summary>
-      <para>Any provider-specific data. Applications should ignore this member unless they have detailed information
-about the format of the data required by the provider.</para>
-    </summary>
+    <summary>Any provider-specific data. Applications should ignore this member unless they have detailed information about the format of the data required by the provider.</summary>
   </member>
 </doc>

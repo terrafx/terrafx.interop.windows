@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_INK_NIB_SHAPE">
-    <summary>
-      <para>Specifies the appearance of the ink nib (pen tip) as part of an <see cref="D2D1_INK_STYLE_PROPERTIES" /> structure.</para>
-    </summary>
+    <summary>Specifies the appearance of the ink nib (pen tip) as part of an <see cref="D2D1_INK_STYLE_PROPERTIES" /> structure.</summary>
   </member>
   <member name="D2D1_INK_NIB_SHAPE.D2D1_INK_NIB_SHAPE_ROUND">
-    <summary>
-      <para>The pen tip is circular.</para>
-    </summary>
+    <summary>The pen tip is circular.</summary>
   </member>
   <member name="D2D1_INK_NIB_SHAPE.D2D1_INK_NIB_SHAPE_SQUARE">
-    <summary>
-      <para>The pen tip is square.</para>
-    </summary>
+    <summary>The pen tip is square.</summary>
   </member>
-  <member name="D2D1_INK_NIB_SHAPE.D2D1_INK_NIB_SHAPE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_INK_NIB_SHAPE.D2D1_INK_NIB_SHAPE_FORCE_DWORD"></member>
 </doc>

@@ -3,21 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="InputScope">
-    <summary>
-      <para>The <see cref="InputScope" /> enumeration contains values that specify which input scopes are applied to a given field.</para>
-    </summary>
-    <remarks>
-      <para>Whether a given input scope value is supported can vary across technologies.</para>
-    </remarks>
-    <seealso cref="ITfInputScope" />
-    <seealso cref="SetInputScope" />
-    <seealso cref="SetInputScopeXML" />
-    <seealso cref="SetInputScopes" />
+    <summary>The <see cref="InputScope" /> enumeration contains values that specify which input scopes are applied to a given field.</summary>
   </member>
   <member name="InputScope.IS_DEFAULT">
-    <summary>
-      <para>Indicates the standard recognition bias. Treated as default and uses the default lexicon. If combined with another input scope, it does not force coercion on the other input scope.</para>
-    </summary>
+    <summary>Indicates the standard recognition bias. Treated as default and uses the default lexicon. If combined with another input scope, it does not force coercion on the other input scope.</summary>
   </member>
   <member name="InputScope.IS_URL">
     <summary>
@@ -57,20 +46,7 @@
         <item>
           <description>Spaces are allowed.</description>
         </item>
-      </list>
-      <para>Examples include the following.</para>
-      <list type="bullet">
-        <item>
-          <description>\\servername\sharename\filename.txt</description>
-        </item>
-        <item>
-          <description>C:\temp\current work.doc</description>
-        </item>
-        <item>
-          <description>../images/hank.jpg</description>
-        </item>
-      </list>
-    </summary>
+      </list>Examples include the following.<list type="bullet"><item><description>\\servername\sharename\filename.txt</description></item><item><description>C:\temp\current work.doc</description></item><item><description>../images/hank.jpg</description></item></list></summary>
   </member>
   <member name="InputScope.IS_FILE_FILENAME">
     <summary>
@@ -85,20 +61,7 @@
         <item>
           <description>Spaces are allowed.</description>
         </item>
-      </list>
-      <para>Examples include the following:</para>
-      <list type="bullet">
-        <item>
-          <description>filename.txt</description>
-        </item>
-        <item>
-          <description>filename</description>
-        </item>
-        <item>
-          <description>file name.txt</description>
-        </item>
-      </list>
-    </summary>
+      </list>Examples include the following:<list type="bullet"><item><description>filename.txt</description></item><item><description>filename</description></item><item><description>file name.txt</description></item></list></summary>
   </member>
   <member name="InputScope.IS_EMAIL_USERNAME">
     <summary>
@@ -123,9 +86,7 @@
     </summary>
   </member>
   <member name="InputScope.IS_EMAIL_SMTPEMAILADDRESS">
-    <summary>
-      <para>Indicates a complete SMTP email address, for example, someone@example.com.</para>
-    </summary>
+    <summary>Indicates a complete SMTP email address, for example, someone@example.com.</summary>
   </member>
   <member name="InputScope.IS_LOGINNAME">
     <summary>
@@ -140,17 +101,7 @@
         <item>
           <description>Spaces are not allowed.</description>
         </item>
-      </list>
-      <para>Examples include the following.</para>
-      <list type="bullet">
-        <item>
-          <description>CHICAGO\JSMITH</description>
-        </item>
-        <item>
-          <description>JSMITH</description>
-        </item>
-      </list>
-    </summary>
+      </list>Examples include the following.<list type="bullet"><item><description>CHICAGO\JSMITH</description></item><item><description>JSMITH</description></item></list></summary>
   </member>
   <member name="InputScope.IS_PERSONALNAME_FULLNAME">
     <summary>
@@ -362,9 +313,7 @@
     </summary>
   </member>
   <member name="InputScope.IS_CURRENCY_AMOUNT">
-    <summary>
-      <para>Indicates a numeric value for currency, excluding currency symbols. For example, 2,100.25.</para>
-    </summary>
+    <summary>Indicates a numeric value for currency, excluding currency symbols. For example, 2,100.25.</summary>
   </member>
   <member name="InputScope.IS_DATE_FULLDATE">
     <summary>
@@ -478,9 +427,7 @@
     </summary>
   </member>
   <member name="InputScope.IS_DIGITS">
-    <summary>
-      <para>Indicates positive whole numbers, constrained to 0-9.</para>
-    </summary>
+    <summary>Indicates positive whole numbers, constrained to 0-9.</summary>
   </member>
   <member name="InputScope.IS_NUMBER">
     <summary>
@@ -507,8 +454,8 @@
   <member name="InputScope.IS_PASSWORD">
     <summary>
       <para>Indicates a password. <b>IS_PASSWORD</b> is not supported and may be altered or unavailable in the future.</para>
-      <para>
-        <b>Note</b>  <b>IS_PASSWORD</b> only indicates the password; it doesn't provide any security around the password. All passwords fields should have text services disabled to maintain password secrecy, and therefore it is not valid to have a password field with an <b>IS_PASSWORD</b> input scope.</para>
+      <div>
+        <b>Note</b>  <b>IS_PASSWORD</b> only indicates the password; it doesn't provide any security around the password. All passwords fields should have text services disabled to maintain password secrecy, and therefore it is not valid to have a password field with an <b>IS_PASSWORD</b> input scope.</div>
     </summary>
   </member>
   <member name="InputScope.IS_TELEPHONE_FULLTELEPHONENUMBER">
@@ -607,207 +554,133 @@
     </summary>
   </member>
   <member name="InputScope.IS_TIME_HOUR">
-    <summary>
-      <para>Indicates a numeric representation of hours, constrained to 0-24.</para>
-    </summary>
+    <summary>Indicates a numeric representation of hours, constrained to 0-24.</summary>
   </member>
   <member name="InputScope.IS_TIME_MINORSEC">
-    <summary>
-      <para>Indicates a numeric representation of minutes or seconds, constrained to 0-59.</para>
-    </summary>
+    <summary>Indicates a numeric representation of minutes or seconds, constrained to 0-59.</summary>
   </member>
   <member name="InputScope.IS_NUMBER_FULLWIDTH">
-    <summary>
-      <para>Indicates full-width number, used for Japanese only. Constrained to full-width numbers and Kanji numbers.</para>
-    </summary>
+    <summary>Indicates full-width number, used for Japanese only. Constrained to full-width numbers and Kanji numbers.</summary>
   </member>
   <member name="InputScope.IS_ALPHANUMERIC_HALFWIDTH">
-    <summary>
-      <para>Indicates half-width alphanumeric characters for East-Asian languages, constrained to half-width alphabetical characters and numbers.</para>
-    </summary>
+    <summary>Indicates half-width alphanumeric characters for East-Asian languages, constrained to half-width alphabetical characters and numbers.</summary>
   </member>
   <member name="InputScope.IS_ALPHANUMERIC_FULLWIDTH">
-    <summary>
-      <para>Indicates full-width alphanumeric characters for East-Asian languages, constrained to full-width alphabet characters and numbers.</para>
-    </summary>
+    <summary>Indicates full-width alphanumeric characters for East-Asian languages, constrained to full-width alphabet characters and numbers.</summary>
   </member>
   <member name="InputScope.IS_CURRENCY_CHINESE">
-    <summary>
-      <para>Indicates Chinese currency.</para>
-    </summary>
+    <summary>Indicates Chinese currency.</summary>
   </member>
   <member name="InputScope.IS_BOPOMOFO">
-    <summary>
-      <para>Indicates Bopomofo characters.</para>
-    </summary>
+    <summary>Indicates Bopomofo characters.</summary>
   </member>
   <member name="InputScope.IS_HIRAGANA">
-    <summary>
-      <para>Indicates Hiragana characters.</para>
-    </summary>
+    <summary>Indicates Hiragana characters.</summary>
   </member>
   <member name="InputScope.IS_KATAKANA_HALFWIDTH">
-    <summary>
-      <para>Indicates half-width Katakana characters.</para>
-    </summary>
+    <summary>Indicates half-width Katakana characters.</summary>
   </member>
   <member name="InputScope.IS_KATAKANA_FULLWIDTH">
-    <summary>
-      <para>Indicates full-width Katakana characters.</para>
-    </summary>
+    <summary>Indicates full-width Katakana characters.</summary>
   </member>
   <member name="InputScope.IS_HANJA">
-    <summary>
-      <para>Indicates Hanja characters.</para>
-    </summary>
+    <summary>Indicates Hanja characters.</summary>
   </member>
   <member name="InputScope.IS_HANGUL_HALFWIDTH">
-    <summary>
-      <para>Indicates half-width Hangul characters.</para>
-    </summary>
+    <summary>Indicates half-width Hangul characters.</summary>
   </member>
   <member name="InputScope.IS_HANGUL_FULLWIDTH">
-    <summary>
-      <para>Indicates full-width Hangul characters.</para>
-    </summary>
+    <summary>Indicates full-width Hangul characters.</summary>
   </member>
   <member name="InputScope.IS_SEARCH">
     <summary>
-      <para>
-        <b>Starting with Windows 8:</b> Indicates a search string.</para>
-    </summary>
+      <b>Starting with Windows 8:</b> Indicates a search string.</summary>
   </member>
   <member name="InputScope.IS_FORMULA">
     <summary>
-      <para>
-        <b>Starting with Windows 8:</b> Indicates a formula control, for example, a spreadsheet field.</para>
-    </summary>
+      <b>Starting with Windows 8:</b> Indicates a formula control, for example, a spreadsheet field.</summary>
   </member>
   <member name="InputScope.IS_SEARCH_INCREMENTAL">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for search boxes where incremental results are displayed as the user types.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for search boxes where incremental results are displayed as the user types.</summary>
   </member>
   <member name="InputScope.IS_CHINESE_HALFWIDTH">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for Chinese half-width characters.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for Chinese half-width characters.</summary>
   </member>
   <member name="InputScope.IS_CHINESE_FULLWIDTH">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for Chinese full-width characters.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for Chinese full-width characters.</summary>
   </member>
   <member name="InputScope.IS_NATIVE_SCRIPT">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for native script.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for native script.</summary>
   </member>
   <member name="InputScope.IS_YOMI">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for Japanese names.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for Japanese names.</summary>
   </member>
   <member name="InputScope.IS_TEXT">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for working with text.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for working with text.</summary>
   </member>
   <member name="InputScope.IS_CHAT">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for chat strings.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for chat strings.</summary>
   </member>
   <member name="InputScope.IS_NAME_OR_PHONENUMBER">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for working with a name or telephone number.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for working with a name or telephone number.</summary>
   </member>
   <member name="InputScope.IS_EMAILNAME_OR_ADDRESS">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for working with an email name or full email address.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for working with an email name or full email address.</summary>
   </member>
   <member name="InputScope.IS_PRIVATE">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for working with private data.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for working with private data.</summary>
   </member>
   <member name="InputScope.IS_MAPS">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates input scope is intended for working with a map location.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates input scope is intended for working with a map location.</summary>
   </member>
   <member name="InputScope.IS_NUMERIC_PASSWORD">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates expected input is a numeric password, or PIN.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates expected input is a numeric password, or PIN.</summary>
   </member>
   <member name="InputScope.IS_NUMERIC_PIN">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates expected input is a numeric PIN.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates expected input is a numeric PIN.</summary>
   </member>
   <member name="InputScope.IS_ALPHANUMERIC_PIN">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates expected input is an alphanumeric PIN.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates expected input is an alphanumeric PIN.</summary>
   </member>
   <member name="InputScope.IS_ALPHANUMERIC_PIN_SET">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates expected input is an alphanumeric PIN for lock screen.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates expected input is an alphanumeric PIN for lock screen.</summary>
   </member>
   <member name="InputScope.IS_FORMULA_NUMBER">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates expected input is a mathematical formula.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates expected input is a mathematical formula.</summary>
   </member>
   <member name="InputScope.IS_CHAT_WITHOUT_EMOJI">
     <summary>
-      <para>
-        <b>Starting with Windows 10:</b> Indicates expected input does not include emoji.</para>
-    </summary>
+      <b>Starting with Windows 10:</b> Indicates expected input does not include emoji.</summary>
   </member>
   <member name="InputScope.IS_PHRASELIST">
-    <summary>
-      <para>Indicates a phrase list.</para>
-    </summary>
+    <summary>Indicates a phrase list.</summary>
   </member>
   <member name="InputScope.IS_REGULAREXPRESSION">
-    <summary>
-      <para>Indicates a regular expression.</para>
-    </summary>
+    <summary>Indicates a regular expression.</summary>
   </member>
   <member name="InputScope.IS_SRGS">
-    <summary>
-      <para>Indicates an XML string that conforms to the Speech Recognition Grammar Specification (SRGS) standard. Information on SRGS can be found at <a href="https://www.w3.org/tr/speech-grammar">http://www.w3.org/TR/speech-grammar</a>.</para>
-    </summary>
+    <summary>Indicates an XML string that conforms to the Speech Recognition Grammar Specification (SRGS) standard. Information on SRGS can be found at <a href="https://www.w3.org/tr/speech-grammar">http://www.w3.org/TR/speech-grammar</a>.</summary>
   </member>
   <member name="InputScope.IS_XML">
-    <summary>
-      <para>Indicates a custom xml string.</para>
-    </summary>
+    <summary>Indicates a custom xml string.</summary>
   </member>
   <member name="InputScope.IS_ENUMSTRING">
-    <summary>
-      <para>The scope contains the IEnumString interface pointer. The Text Input Processor (TIP) can call <see cref="ITfInputScope2.EnumWordList" /> to retrieve it.</para>
-    </summary>
+    <summary>The scope contains the IEnumString interface pointer. The Text Input Processor (TIP) can call <see cref="ITfInputScope2.EnumWordList" /> to retrieve it.</summary>
   </member>
 </doc>

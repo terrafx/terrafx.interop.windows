@@ -3,18 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION">
-    <summary>
-      <para>Describes the relationship between the specified processor set. This structure is used with the <see cref="GetLogicalProcessorInformation" /> function.</para>
-    </summary>
-    <seealso cref="CACHE_DESCRIPTOR" />
-    <seealso cref="GetLogicalProcessorInformation" />
-    <seealso cref="GetLogicalProcessorInformationEx" />
-    <seealso cref="LOGICAL_PROCESSOR_RELATIONSHIP" />
-    <seealso cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" />
+    <summary>Describes the relationship between the specified processor set. This structure is used with the <see cref="GetLogicalProcessorInformation" /> function.</summary>
   </member>
   <member name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.ProcessorMask">
     <summary>
-      <para>The processor mask  identifying the processors described by this structure. A processor mask is a bit vector in which each set bit represents an active processor in the relationship. At least one bit will be set.</para>
+      <para>The processor mask identifying the processors described by this structure. A processor mask is a bit vector in which each set bit represents an active processor in the relationship. At least one bit will be set.</para>
       <para>On a system with more than 64 processors, the processor mask identifies processors in a single <a href="https://docs.microsoft.com//windows/desktop/ProcThread/processor-groups">processor group</a>.</para>
     </summary>
   </member>
@@ -26,106 +19,84 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>RelationCache</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The specified logical processors  share a cache. The <b>Cache</b> member contains additional information.</para>
-            <para>
-              <b>Windows Server 2003:  </b>This value is not supported until Windows Server 2003 with SP1 and Windows XP Professional x64 Edition.</para>
-          </description>
-        </item>
-        <item>
+          <description>The specified logical processors share a cache. The <b>Cache</b> member contains additional information.<para><b>Windows Server 2003:  </b>This value is not supported until Windows Server 2003 with SP1 and Windows XP Professional x64 Edition.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>RelationNumaNode</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The specified logical processors  are part of the same NUMA node. The <b>NumaNode</b> member  contains additional information.</para>
-          </description>
-        </item>
-        <item>
+          <description>The specified logical processors are part of the same NUMA node. The <b>NumaNode</b> member contains additional information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>RelationProcessorCore</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The specified logical processors share a single processor core. The <b>ProcessorCore</b> member contains additional information.</para>
-          </description>
-        </item>
-        <item>
+          <description>The specified logical processors share a single processor core. The <b>ProcessorCore</b> member contains additional information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>RelationProcessorPackage</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The specified logical processors share a physical package. There is no additional information available.</para>
-            <para>
-              <b>Windows Server 2003 and Windows XP Professional x64 Edition:  </b>This value is not supported until Windows Server 2003 with SP1 and Windows XP with SP3.</para>
-          </description>
-        </item>
-      </list>
-      <para>Future versions of Windows may support additional values for the <b>Relationship</b> member.</para>
-    </summary>
+          <description>The specified logical processors share a physical package. There is no additional information available.<para><b>Windows Server 2003 and Windows XP Professional x64 Edition:  </b>This value is not supported until Windows Server 2003 with SP1 and Windows XP with SP3.</para></description>
+        </listheader>
+      </list> <para>Future versions of Windows may support additional values for the <b>Relationship</b> member.</para></summary>
   </member>
-  <member name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.DUMMYUNIONNAME"></member>
   <member name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.DUMMYUNIONNAME.ProcessorCore">
-    <summary>
-      <para>This structure contains valid data only if the <b>Relationship</b> member is RelationProcessorCore.</para>
-    </summary>
+    <summary>This structure contains valid data only if the <b>Relationship</b> member is RelationProcessorCore.</summary>
   </member>
   <member name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.DUMMYUNIONNAME.ProcessorCore.Flags">
     <summary>
-      <para>If the value of this member is 1, the logical processors identified by the value of the <b>ProcessorMask</b> member share functional units, as in Hyperthreading or SMT. Otherwise, the identified logical processors do not share functional units.</para>
+      <code>						If the value of this member is 1, the logical processors identified by the value of the &lt;b&gt;ProcessorMask&lt;/b&gt; member share functional units, as in Hyperthreading or SMT. Otherwise, the identified logical processors do not share functional units.</code>
       <para>
         <b>Windows Server 2003 and Windows XP Professional x64 Edition:  </b>This member is also 1 for cores that share a physical package. Therefore, to determine whether the processor supports multiple cores or hyperthreading on systems prior to Windows Vista, use the CPUID instruction.</para>
     </summary>
   </member>
   <member name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.DUMMYUNIONNAME.NumaNode">
-    <summary>
-      <para>This structure contains valid data only if the <b>Relationship</b> member is RelationNumaNode.</para>
-    </summary>
+    <summary>This structure contains valid data only if the <b>Relationship</b> member is RelationNumaNode.</summary>
   </member>
   <member name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.DUMMYUNIONNAME.NumaNode.NodeNumber">
-    <summary>
-      <para>Identifies the <a href="https://docs.microsoft.com//windows/desktop/ProcThread/numa-support">NUMA</a> node. The valid values of this  parameter are 0 to the highest NUMA node number inclusive. A non-NUMA multiprocessor system will report that all processors belong to one NUMA node.</para>
-    </summary>
+    <summary>Identifies the <a href="https://docs.microsoft.com//windows/desktop/ProcThread/numa-support">NUMA</a> node. The valid values of this parameter are 0 to the highest NUMA node number inclusive. A non-NUMA multiprocessor system will report that all processors belong to one NUMA node.</summary>
   </member>
   <member name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.DUMMYUNIONNAME.Cache">
     <summary>
@@ -136,8 +107,6 @@
     </summary>
   </member>
   <member name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.DUMMYUNIONNAME.Reserved">
-    <summary>
-      <para>Reserved. Do not use.</para>
-    </summary>
+    <summary>Reserved. Do not use.</summary>
   </member>
 </doc>

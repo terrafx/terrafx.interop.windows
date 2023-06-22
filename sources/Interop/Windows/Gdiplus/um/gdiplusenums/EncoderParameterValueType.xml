@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EncoderParameterValueType">
+    <summary>The <b>EncoderParameterValueType</b> enumeration specifies data types for image codec (encoder/decoder) parameters. An element of this enumeration is assigned to the<a href="https://docs.microsoft.com//previous-versions/ms534434(v=vs.85)">Type</a> data member of an <b>EncoderParameter</b> object.</summary>
+  </member>
+  <member name="EncoderParameterValueType.EncoderParameterValueTypeByte">
+    <summary>Specifies that the parameter is an 8-bit unsigned integer.</summary>
+  </member>
+  <member name="EncoderParameterValueType.EncoderParameterValueTypeASCII">
+    <summary>Specifies that the parameter is a null-terminated character string.</summary>
+  </member>
+  <member name="EncoderParameterValueType.EncoderParameterValueTypeShort">
+    <summary>Specifies that the parameter is a 16-bit unsigned integer.</summary>
+  </member>
+  <member name="EncoderParameterValueType.EncoderParameterValueTypeLong">
+    <summary>Specifies that the parameter is a 32-bit unsigned integer.</summary>
+  </member>
+  <member name="EncoderParameterValueType.EncoderParameterValueTypeRational">
+    <summary>Specifies that the parameter is an array of two, 32-bit unsigned integers. The pair of integers represents a fraction. The first integer in the pair is the numerator, and the second integer in the pair is the denominator.</summary>
+  </member>
+  <member name="EncoderParameterValueType.EncoderParameterValueTypeLongRange">
+    <summary>Specifies that the parameter is an array of two, 32-bit unsigned integers. The pair of integers represents a range of numbers. The first integer is the smallest number in the range, and the second integer is the largest number in the range.</summary>
+  </member>
+  <member name="EncoderParameterValueType.EncoderParameterValueTypeUndefined">
+    <summary>Specifies that the parameter is an array of bytes that can hold values of any type.</summary>
+  </member>
+  <member name="EncoderParameterValueType.EncoderParameterValueTypeRationalRange">
+    <summary>Specifies that the parameter is an array of four, 32-bit unsigned integers. The first two integers represent one fraction, and the second two integers represent a second fraction. The two fractions represent a range of rational numbers. The first fraction is the smallest rational number in the range, and the second fraction is the largest rational number in the range.</summary>
+  </member>
+  <member name="EncoderParameterValueType.EncoderParameterValueTypePointer">
+    <summary>Specifies that the parameter is a pointer to a block of custom metadata.</summary>
+  </member>
+</doc>

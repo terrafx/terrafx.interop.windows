@@ -3,48 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IUserNotificationCallback.OnBalloonUserClick">
-    <summary>
-      <para>Called when the user clicks the balloon. The application may respond with an action that is suitable for the balloon being clicked.</para>
-    </summary>
-    <param name="pt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>Takes a pointer to the <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure which, upon method return, points to the position of the mouse in screen space where the mouse click occurred.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when the user clicks the balloon. The application may respond with an action that is suitable for the balloon being clicked.</summary>
+    <param name="pt">Takes a pointer to the <see cref="POINT" /> structure which, upon method return, points to the position of the mouse in screen space where the mouse click occurred.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IUserNotificationCallback.OnContextMenu">
-    <summary>
-      <para>Called when the user right-clicks (or presses SHIFT+F10) the icon in the notification area. The application should show its context menu in response.</para>
-    </summary>
+    <summary>Called when the user right-clicks (or presses SHIFT+F10) the icon in the notification area. The application should show its context menu in response.</summary>
     <param name="pt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>When returned by the method, takes a pointer to the <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure at the position of the mouse in the screen space where the click occurred.</para>
+      <para>When returned by the method, takes a pointer to the <see cref="POINT" /> structure at the position of the mouse in the screen space where the click occurred.</para>
       <para>In the case where user presses SHIFT+F10, the pointer points to the center of the icon in the screen space.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IUserNotificationCallback.OnLeftClick">
-    <summary>
-      <para>Called when the user clicks the icon in the notification area. The applications may launch some customary UI in response.</para>
-    </summary>
-    <param name="pt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>Takes a pointer to the <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure which, when the method returns, points to the position of the mouse in the screen space where the mouse click occurred.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when the user clicks the icon in the notification area. The applications may launch some customary UI in response.</summary>
+    <param name="pt">Takes a pointer to the <see cref="POINT" /> structure which, when the method returns, points to the position of the mouse in the screen space where the mouse click occurred.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IUserNotificationCallback">
-    <summary>
-      <para>Exposes a method for the handling of a mouse click or shortcut menu access in a notification balloon. Used with <see cref="IUserNotification2.Show" />.</para>
-    </summary>
+    <summary>Exposes a method for the handling of a mouse click or shortcut menu access in a notification balloon. Used with <see cref="IUserNotification2.Show" />.</summary>
   </member>
 </doc>

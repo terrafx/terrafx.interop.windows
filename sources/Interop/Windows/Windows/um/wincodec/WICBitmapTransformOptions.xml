@@ -3,41 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICBitmapTransformOptions">
-    <summary>
-      <para>Specifies the flip and rotation transforms.</para>
-    </summary>
+    <summary>Specifies the flip and rotation transforms.</summary>
   </member>
   <member name="WICBitmapTransformOptions.WICBitmapTransformRotate0">
-    <summary>
-      <para>A rotation of 0 degrees.</para>
-    </summary>
+    <summary>A rotation of 0 degrees.</summary>
   </member>
   <member name="WICBitmapTransformOptions.WICBitmapTransformRotate90">
-    <summary>
-      <para>A clockwise rotation of 90 degrees.</para>
-    </summary>
+    <summary>A clockwise rotation of 90 degrees.</summary>
   </member>
   <member name="WICBitmapTransformOptions.WICBitmapTransformRotate180">
-    <summary>
-      <para>A clockwise rotation of 180 degrees.</para>
-    </summary>
+    <summary>A clockwise rotation of 180 degrees.</summary>
   </member>
   <member name="WICBitmapTransformOptions.WICBitmapTransformRotate270">
-    <summary>
-      <para>A clockwise rotation of 270 degrees.</para>
-    </summary>
+    <summary>A clockwise rotation of 270 degrees.</summary>
   </member>
   <member name="WICBitmapTransformOptions.WICBitmapTransformFlipHorizontal">
-    <summary>
-      <para>A horizontal flip. Pixels are flipped around the vertical y-axis.</para>
-    </summary>
+    <summary>A horizontal flip. Pixels are flipped around the vertical y-axis.</summary>
   </member>
   <member name="WICBitmapTransformOptions.WICBitmapTransformFlipVertical">
-    <summary>
-      <para>A vertical flip. Pixels are flipped around the horizontal x-axis.</para>
-    </summary>
+    <summary>A vertical flip. Pixels are flipped around the horizontal x-axis.</summary>
   </member>
-  <member name="WICBitmapTransformOptions.WICBITMAPTRANSFORMOPTIONS_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICBitmapTransformOptions.WICBITMAPTRANSFORMOPTIONS_FORCE_DWORD"></member>
 </doc>

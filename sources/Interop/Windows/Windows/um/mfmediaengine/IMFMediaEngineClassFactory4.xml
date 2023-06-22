@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEngineClassFactory4.CreateContentDecryptionModuleFactory">
+    <summary>Creating an instance of <see cref="IMFContentDecryptionModuleFactory" />, a class factory for Content Decryption Module (CDM) objects, for a specified key system.</summary>
+    <param name="keySystem">An LPWSTR identifying the Key System for which the interface is created.</param>
+    <param name="riid">The IID of the <b>IMFContentDecryptionModuleFactory</b> interface to create.</param>
+    <param name="ppvObject">Receives a pointer to the created interface.</param>
+    <returns>Returns S_OK on success.</returns>
+  </member>
+  <member name="IMFMediaEngineClassFactory4">
+    <summary>Provides the <see cref="CreateContentDecryptionModuleFactory" /> method for creating an instance of <see cref="IMFContentDecryptionModuleFactory" />, a class factory for Content Decryption Module (CDM) objects, for a specified key system.</summary>
+  </member>
+</doc>

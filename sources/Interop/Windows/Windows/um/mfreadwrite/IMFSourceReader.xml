@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSourceReader.Flush">
-    <summary>
-      <para>Flushes one or more streams.</para>
-    </summary>
+    <summary>Flushes one or more streams.</summary>
     <param name="dwStreamIndex">
       <para>The stream to flush. The value can be any of the following.</para>
       <list type="table">
@@ -13,93 +11,73 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first audio stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_ALL_STREAMS</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFE</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFE</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>All streams.</para>
-          </description>
-        </item>
+          <description>All streams.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <b>Flush</b> method discards all queued samples and cancels all pending sample requests.</para>
-      <para>This method can complete either synchronously or asynchronously.</para>
-      <para>If you provide a callback pointer when you create the source reader, the method is asynchronous. Otherwise, the method is synchronous. For more information about the setting the callback pointer, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-source-reader-async-callback">MF_SOURCE_READER_ASYNC_CALLBACK</a>.</para>
-      <para>In synchronous mode, the method blocks until the operation is complete.</para>
-      <para>In asynchronous mode, the application's <see cref="IMFSourceReaderCallback.OnFlush" /> method is called when the flush operation completes. While a flush operation is pending, the <see cref="IMFSourceReader.ReadSample" /> method returns <b>MF_E_NOTACCEPTING</b>.</para>
-      <para>
-        <b>Note</b>  In Windows 7, there was a bug in the implementation of this method, which causes <see cref="OnFlush" /> to be called before the flush operation completes. A hotfix is available that fixes this bug. For more information, see <a href="https://support.microsoft.com/help/979567">http://support.microsoft.com/kb/979567</a>.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceReader.GetCurrentMediaType">
-    <summary>
-      <para>Gets the current media type for a stream.</para>
-    </summary>
+    <summary>Gets the current media type for a stream.</summary>
     <param name="dwStreamIndex">
       <para>The stream to query. The value can be any of the following.</para>
       <list type="table">
@@ -107,57 +85,53 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
+          <description>The first audio stream.</description>
+        </listheader>
       </list>
     </param>
-    <param name="ppMediaType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</para>
-    </param>
+    <param name="ppMediaType">Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -165,42 +139,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>S_OK</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>S_OK</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDSTREAMNUMBER</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDSTREAMNUMBER</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwStreamIndex</i> parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The <i>dwStreamIndex</i> parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
   </member>
   <member name="IMFSourceReader.GetNativeMediaType">
-    <summary>
-      <para>Gets a format that is supported natively by the media source.</para>
-    </summary>
+    <summary>Gets a format that is supported natively by the media source.</summary>
     <param name="dwStreamIndex">
       <para>Specifies which stream to query. The value can be any of the following.</para>
       <list type="table">
@@ -208,52 +179,50 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
+          <description>The first audio stream.</description>
+        </listheader>
       </list>
     </param>
     <param name="dwMediaTypeIndex">
@@ -263,38 +232,36 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFE</para>
-          </description>
-          <description>
-            <para>The zero-based index of a media type</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFE</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a media type</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_CURRENT_TYPE_INDEX</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFF</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFF</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The current native media type.</para>
-          </description>
-        </item>
+          <description>The current native media type.</description>
+        </listheader>
       </list>
     </param>
-    <param name="ppMediaType">
-      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</para>
-    </param>
+    <param name="ppMediaType">Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -302,57 +269,53 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>S_OK</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>S_OK</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDSTREAMNUMBER</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>dwStreamIndex</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDSTREAMNUMBER</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_NO_MORE_TYPES</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>dwStreamIndex</i> parameter is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_NO_MORE_TYPES</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwMediaTypeIndex</i> parameter is out of range.</para>
-          </description>
-        </item>
+          <description>The <i>dwMediaTypeIndex</i> parameter is out of range.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method queries the underlying media source for its native output format. Potentially, each source stream can produce more than one output format. Use the <i>dwMediaTypeIndex</i> parameter to loop through the available formats. Generally, file sources offer just one format per stream, but capture devices might offer several formats.</para>
-      <para>The method returns a copy of the media type, so it is safe to modify the object received in the <i> ppMediaType</i> parameter.</para>
-      <para>To set  the output type for a stream, call the <see cref="IMFSourceReader.SetCurrentMediaType" /> method.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
   </member>
   <member name="IMFSourceReader.GetPresentationAttribute">
-    <summary>
-      <para>Gets an attribute from the underlying media source.</para>
-    </summary>
+    <summary>Gets an attribute from the underlying media source.</summary>
     <param name="dwStreamIndex">
       <para>The stream or object to query. The value can be any of the following.</para>
       <list type="table">
@@ -360,75 +323,71 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first audio stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_MEDIASOURCE</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFF</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFF</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The media source.</para>
-          </description>
-        </item>
+          <description>The media source.</description>
+        </listheader>
       </list>
     </param>
     <param name="guidAttribute">
-      <para>A GUID that identifies the attribute to retrieve. If the <i>dwStreamIndex</i> parameter equals  <b>MF_SOURCE_READER_MEDIASOURCE</b>, <i>guidAttribute</i> can specify one of the following:</para>
+      <para>A GUID that identifies the attribute to retrieve. If the <i>dwStreamIndex</i> parameter equals <b>MF_SOURCE_READER_MEDIASOURCE</b>, <i>guidAttribute</i> can specify one of the following:</para>
       <list type="bullet">
         <item>
           <description>A presentation descriptor attribute. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptor-attributes">Presentation Descriptor Attributes</a>.</description>
@@ -437,26 +396,12 @@
           <description>
             <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-source-reader-mediasource-characteristics">MF_SOURCE_READER_MEDIASOURCE_CHARACTERISTICS</a>. Use this value to get characteristics flags from the media source.</description>
         </item>
-      </list>
-      <para>Otherwise, if the <i>dwStreamIndex</i> parameter specifies a stream, <i>guidAttribute</i> specifies a stream descriptor attribute. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/stream-descriptor-attributes">Stream Descriptor Attributes</a>.</para>
-    </param>
-    <param name="pvarAttribute">
-      <para>A pointer to a <b>PROPVARIANT</b> that receives the value of the attribute. Call the <b>PropVariantClear</b> function to free the <b>PROPVARIANT</b>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-attributes">Media Foundation Attributes</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+      </list>Otherwise, if the <i>dwStreamIndex</i> parameter specifies a stream, <i>guidAttribute</i> specifies a stream descriptor attribute. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/stream-descriptor-attributes">Stream Descriptor Attributes</a>.</param>
+    <param name="pvarAttribute">A pointer to a <b>PROPVARIANT</b> that receives the value of the attribute. Call the <b>PropVariantClear</b> function to free the <b>PROPVARIANT</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceReader.GetServiceForStream">
-    <summary>
-      <para>Queries the underlying media source or decoder for an interface.</para>
-    </summary>
+    <summary>Queries the underlying media source or decoder for an interface.</summary>
     <param name="dwStreamIndex">
       <para>The stream or object to query. If the value is <b>MF_SOURCE_READER_MEDIASOURCE</b>, the method queries the media source. Otherwise, it queries the decoder that is associated with the specified stream. The following values are possible.</para>
       <list type="table">
@@ -464,96 +409,76 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first audio stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_MEDIASOURCE</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFF</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFF</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The media source.</para>
-          </description>
-        </item>
+          <description>The media source.</description>
+        </listheader>
       </list>
     </param>
-    <param name="guidService">
-      <para>A service identifier GUID.  If the value is <b>GUID_NULL</b>, the method calls <b>QueryInterface</b> to get the requested interface. Otherwise, the method calls the <see cref="IMFGetService.GetService" /> method. For a list of service identifiers, see <a href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</a>.</para>
-    </param>
-    <param name="riid">
-      <para>The interface identifier (IID) of the interface being requested.</para>
-    </param>
-    <param name="ppvObject">
-      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+    <param name="guidService">A service identifier GUID. If the value is <b>GUID_NULL</b>, the method calls <b>QueryInterface</b> to get the requested interface. Otherwise, the method calls the <see cref="IMFGetService.GetService" /> method. For a list of service identifiers, see <a href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</a>.</param>
+    <param name="riid">The interface identifier (IID) of the interface being requested.</param>
+    <param name="ppvObject">Receives a pointer to the requested interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceReader.GetStreamSelection">
-    <summary>
-      <para>Queries whether a stream is selected.</para>
-    </summary>
+    <summary>Queries whether a stream is selected.</summary>
     <param name="dwStreamIndex">
       <para>The stream to query. The value can be any of the following.</para>
       <list type="table">
@@ -561,70 +486,57 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
+          <description>The first audio stream.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pfSelected">
-      <para>Receives <b>TRUE</b> if the stream is selected and will generate data. Receives <b>FALSE</b> if the stream is not selected and will not generate data.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+    <param name="pfSelected">Receives <b>TRUE</b> if the stream is selected and will generate data. Receives <b>FALSE</b> if the stream is not selected and will not generate data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceReader.ReadSample">
-    <summary>
-      <para>Reads the next sample from the media source.</para>
-    </summary>
+    <summary>Reads the next sample from the media source.</summary>
     <param name="dwStreamIndex">
       <para>The stream to pull data from. The value can be any of the following.</para>
       <list type="table">
@@ -632,88 +544,74 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first audio stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_ANY_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFE</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFE</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Get the next available sample, regardless of which stream.</para>
-          </description>
-        </item>
+          <description>Get the next available sample, regardless of which stream.</description>
+        </listheader>
       </list>
     </param>
-    <param name="dwControlFlags">
-      <para>A bitwise <b>OR</b> of zero or more flags from the <see cref="MF_SOURCE_READER_CONTROL_FLAG" /> enumeration.</para>
-    </param>
-    <param name="pdwActualStreamIndex">
-      <para>Receives the zero-based index of the stream.</para>
-    </param>
-    <param name="pdwStreamFlags">
-      <para>Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="MF_SOURCE_READER_FLAG" /> enumeration.</para>
-    </param>
-    <param name="pllTimestamp">
-      <para>Receives the time stamp of the sample, or the time of the stream event indicated in <i>pdwStreamFlags</i>. The time is given in 100-nanosecond units.</para>
-    </param>
-    <param name="ppSample">
-      <para>Receives a pointer to the <see cref="IMFSample" /> interface or the value <b>NULL</b> (see Remarks). If this parameter receives a non-<b>NULL</b> pointer, the caller must release the interface.</para>
-    </param>
+    <param name="dwControlFlags">A bitwise <b>OR</b> of zero or more flags from the <see cref="MF_SOURCE_READER_CONTROL_FLAG" /> enumeration.</param>
+    <param name="pdwActualStreamIndex">Receives the zero-based index of the stream.</param>
+    <param name="pdwStreamFlags">Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="MF_SOURCE_READER_FLAG" /> enumeration.</param>
+    <param name="pllTimestamp">Receives the time stamp of the sample, or the time of the stream event indicated in <i>pdwStreamFlags</i>. The time is given in 100-nanosecond units.</param>
+    <param name="ppSample">Receives a pointer to the <see cref="IMFSample" /> interface or the value <b>NULL</b> (see Remarks). If this parameter receives a non-<b>NULL</b> pointer, the caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -721,107 +619,78 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>S_OK</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>S_OK</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDREQUEST</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid request.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDREQUEST</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDSTREAMNUMBER</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>dwStreamIndex</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid request.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_NOTACCEPTING</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A flush operation is pending. See <see cref="IMFSourceReader.Flush" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDSTREAMNUMBER</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>E_INVALIDARG</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>dwStreamIndex</i> parameter is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_NOTACCEPTING</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>A flush operation is pending. See <see cref="IMFSourceReader.Flush" />.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>E_INVALIDARG</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument. See Remarks.</para>
-          </description>
-        </item>
+          <description>Invalid argument. See Remarks.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the requested stream is not selected, the return code is <b>MF_E_INVALIDREQUEST</b>. See <see cref="IMFSourceReader.SetStreamSelection" />.</para>
-      <para>This method can complete synchronously or asynchronously. If you provide a callback pointer when you create the source reader, the method is asynchronous. Otherwise, the method is synchronous. For more information about setting the callback pointer, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-source-reader-async-callback">MF_SOURCE_READER_ASYNC_CALLBACK</a>.</para>
-      <h3>Asynchronous Mode</h3>
-      <para>In asynchronous mode:</para>
-      <list type="bullet">
-        <item>
-          <description>All of the <code>[out]</code> parameters must be <b>NULL</b>. Otherwise, the method returns <b>E_INVALIDARG</b>.</description>
-        </item>
-        <item>
-          <description>The method returns immediately.</description>
-        </item>
-        <item>
-          <description>When the operation completes, the application's <see cref="IMFSourceReaderCallback.OnReadSample" /> method is called.</description>
-        </item>
-        <item>
-          <description>If an error occurs, the method can fail either synchronously or asynchronously. Check the return value of <b>ReadSample</b>, and also check the <i>hrStatus</i> parameter of <see cref="IMFSourceReaderCallback.OnReadSample" />.</description>
-        </item>
-      </list>
-      <h3>Synchronous Mode</h3>
-      <para>In synchronous mode:</para>
-      <list type="bullet">
-        <item>
-          <description>The <i>pdwStreamFlags</i> and <i>ppSample</i> parameters cannot be <b>NULL</b>. Otherwise, the method returns <b>E_POINTER</b>.</description>
-        </item>
-        <item>
-          <description>The <i>pdwActualStreamIndex</i> and <i>pllTimestamp</i> parameters can be <b>NULL</b>.</description>
-        </item>
-        <item>
-          <description>The method blocks until the next sample is available.</description>
-        </item>
-      </list>
-      <para>In synchronous mode, if the <i>dwStreamIndex</i> parameter is <b>MF_SOURCE_READER_ANY_STREAM</b>, you should pass a non-<b>NULL</b> value for <i>pdwActualStreamIndex</i>, so that you know which stream delivered the sample.</para>
-      <para>This method can return flags in the <i>pdwStreamFlags</i> parameter without returning a media sample in <i>ppSample</i>. Therefore, the <i>ppSample</i> parameter can receive a <b>NULL</b> pointer even when the method succeeds. For example, when the source reader reaches the end of the stream, it returns the <b>MF_SOURCE_READERF_ENDOFSTREAM</b> flag in <i>pdwStreamFlags</i> and sets <i>ppSample</i> to <b>NULL</b>.</para>
-      <para>If there is a gap in the stream, <i>pdwStreamFlags</i> receives the MF_SOURCE_READERF_STREAMTICK flag, <i>ppSample</i> is <b>NULL</b>, and <i>pllTimestamp</i> indicates the time when the gap occurred.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
   </member>
   <member name="IMFSourceReader.SetCurrentMediaType">
     <summary>
@@ -835,60 +704,54 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
+          <description>The first audio stream.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pdwReserved">
-      <para>Reserved. Set to <b>NULL</b>.</para>
-    </param>
-    <param name="pMediaType">
-      <para>A pointer to the <see cref="IMFMediaType" /> interface of the media type.</para>
-    </param>
+    <param name="pdwReserved">Reserved. Set to <b>NULL</b>.</param>
+    <param name="pMediaType">A pointer to the <see cref="IMFMediaType" /> interface of the media type.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -896,89 +759,81 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>S_OK</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>S_OK</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDMEDIATYPE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>At least one decoder was found for the native stream type, but the type specified by <i>pMediaType</i> was rejected.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDMEDIATYPE</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDREQUEST</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more sample requests are still pending.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>At least one decoder was found for the native stream type, but the type specified by <i>pMediaType</i> was rejected.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDSTREAMNUMBER</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>dwStreamIndex</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDREQUEST</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_TOPO_CODEC_NOT_FOUND</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more sample requests are still pending.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDSTREAMNUMBER</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwStreamIndex</i> parameter is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_TOPO_CODEC_NOT_FOUND</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>Could not find a decoder for the native stream type.</para>
-          </description>
-        </item>
+          <description>Could not find a decoder for the native stream type.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For each stream, you can set the media type to any of the following:</para>
-      <list type="bullet">
-        <item>
-          <description>One of the native types offered by the media source. To enumerate the native types, call <see cref="IMFSourceReader.GetNativeMediaType" />.</description>
-        </item>
-        <item>
-          <description>If the native media type is compressed, you can specify a corresponding uncompressed format. The Source Reader will search for a decoder that can decode from the native format to the specified uncompressed format.</description>
-        </item>
-      </list>
-      <para>Audio resampling support was added to the source reader with Windows 8.  In versions of Windows prior to  Windows 8, the source reader does not support audio resampling. If you need to resample the audio in versions of Windows earlier than Windows 8, you can use the <a href="https://docs.microsoft.com//windows/desktop/medfound/audioresampler">Audio Resampler DSP</a>.</para>
-      <para>If you set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-source-reader-enable-video-processing">MF_SOURCE_READER_ENABLE_VIDEO_PROCESSING</a> attribute to <b>TRUE</b> when you create the Source Reader, the Source Reader will convert YUV video to RGB-32. This conversion is not optimized for real-time video playback.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
   </member>
   <member name="IMFSourceReader.SetCurrentPosition">
-    <summary>
-      <para>Seeks to a new position in the media source.</para>
-    </summary>
+    <summary>Seeks to a new position in the media source.</summary>
     <param name="guidTimeFormat">
       <para>A GUID that specifies the <i>time format</i>. The time format defines the units for the <i>varPosition</i> parameter. The following value is defined for all media sources:</para>
       <list type="table">
@@ -986,20 +841,20 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>GUID_NULL</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GUID_NULL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>100-nanosecond units.</para>
-          </description>
-        </item>
-      </list>
-      <para>Some media sources might support additional values.</para>
-    </param>
-    <param name="varPosition">
-      <para>The position from which playback will be started. The units are specified by the <i>guidTimeFormat</i> parameter. If the <i>guidTimeFormat</i> parameter is <b>GUID_NULL</b>, set the variant type to <b>VT_I8</b>.</para>
-    </param>
+          <description>100-nanosecond units.</description>
+        </listheader>
+      </list> <para>Some media sources might support additional values.</para></param>
+    <param name="varPosition">The position from which playback will be started. The units are specified by the <i>guidTimeFormat</i> parameter. If the <i>guidTimeFormat</i> parameter is <b>GUID_NULL</b>, set the variant type to <b>VT_I8</b>.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -1007,44 +862,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>S_OK</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>S_OK</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDREQUEST</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDREQUEST</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>One or more sample requests are still pending.</para>
-          </description>
-        </item>
+          <description>One or more sample requests are still pending.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <b>SetCurrentPosition</b> method does not guarantee exact seeking. The accuracy of the seek depends on the media content. If the media content contains a video stream, the <b>SetCurrentPosition</b> method typically seeks to the nearest key frame before the desired position. The distance between key frames depends on several factors, including the encoder implementation, the video content, and the particular encoding settings used to encode the content. The distance between key frame can vary within a single video file (for example, depending on scene complexity).</para>
-      <para>After seeking, the application should call <see cref="IMFSourceReader.ReadSample" /> and advance to the desired position.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
   </member>
   <member name="IMFSourceReader.SetStreamSelection">
-    <summary>
-      <para>Selects or deselects one or more streams.</para>
-    </summary>
+    <summary>Selects or deselects one or more streams.</summary>
     <param name="dwStreamIndex">
       <para>The stream to set. The value can be any of the following.</para>
       <list type="table">
@@ -1052,125 +902,73 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first audio stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_ALL_STREAMS</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFE</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFE</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>All streams.</para>
-          </description>
-        </item>
+          <description>All streams.</description>
+        </listheader>
       </list>
     </param>
-    <param name="fSelected">
-      <para>Specify <b>TRUE</b> to select streams or <b>FALSE</b> to deselect streams. If a stream is deselected, it will not generate data.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>There are two common uses for this method:</para>
-      <list type="bullet">
-        <item>
-          <description>To change the default stream selection. Some media files contain multiple streams of the same type. For example, a file might include audio streams for multiple languages. You can use this method to change which of the streams is selected. To get information about each stream, call <see cref="IMFSourceReader.GetPresentationAttribute" />  or <see cref="IMFSourceReader.GetNativeMediaType" />.</description>
-        </item>
-        <item>
-          <description>If you will not need data from one of the streams, it is a good idea to deselect that stream. If the stream is selected, the media source might hold onto a queue of unread data, and the queue might grow indefinitely, consuming memory. </description>
-        </item>
-      </list>
-      <para>For an example of deselecting a stream, see <a href="https://docs.microsoft.com//windows/desktop/medfound/tutorial--decoding-audio">Tutorial: Decoding Audio</a>.</para>
-      <para>If a stream is deselected, the <see cref="IMFSourceReader.ReadSample" /> method returns <b>MF_E_INVALIDREQUEST</b> for that stream. Other <see cref="IMFSourceReader" /> methods are valid for deselected streams.</para>
-      <para>Stream selection does not affect how the source reader loads or unloads decoders in memory. In particular, deselecting a stream does not force the source reader to unload the decoder for that stream.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-    </remarks>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+    <param name="fSelected">Specify <b>TRUE</b> to select streams or <b>FALSE</b> to deselect streams. If a stream is deselected, it will not generate data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceReader">
-    <summary>
-      <para>Implemented by the Microsoft Media Foundation source reader object.</para>
-    </summary>
-    <remarks>
-      <para>To create the source reader, call one of the following functions:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="MFCreateSourceReaderFromByteStream" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="MFCreateSourceReaderFromMediaSource" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="MFCreateSourceReaderFromURL" />
-          </description>
-        </item>
-      </list>
-      <para>Alternatively, use the <see cref="IMFReadWriteClassFactory" /> interface.</para>
-      <para>This interface is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
-      <para>In Windows 8, this interface is extended with <see cref="IMFSourceReaderEx" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+    <summary>Implemented by the Microsoft Media Foundation source reader object.</summary>
   </member>
 </doc>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_FOREST_TRUST_BINARY_DATA">
+    <summary>The <b>LSA_FOREST_TRUST_BINARY_DATA</b> structure contains binary data used in <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Local Security Authority</a> forest trust operations.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_BINARY_DATA.Length.range"></member>
+  <member name="LSA_FOREST_TRUST_BINARY_DATA.Length.range.0"></member>
+  <member name="LSA_FOREST_TRUST_BINARY_DATA.Length.range.MAX_FOREST_TRUST_BINARY_DATA_SIZE"></member>
+  <member name="LSA_FOREST_TRUST_BINARY_DATA.Buffer.size_is"></member>
+  <member name="LSA_FOREST_TRUST_BINARY_DATA.Buffer.size_is.Length"></member>
+  <member name="LSA_FOREST_TRUST_BINARY_DATA.Length">
+    <summary>Size of the structure in bytes.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_BINARY_DATA.Buffer">
+    <summary>Pointer to an array of type <b>UCHAR</b> that contains the binary data. The buffer can contain at most 128 KB of data.</summary>
+  </member>
+</doc>

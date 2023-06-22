@@ -3,63 +3,48 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_METADATA_PROPERTY_ID">
-    <summary>
-      <para>Each metadata property is of type <see cref="WS_METADATA_PROPERTY" />, is identified by an ID, and has an associated value.  If a property is not specified when the metadata is created,
-then its default value is used.</para>
-    </summary>
+    <summary>Each metadata property is of type <see cref="WS_METADATA_PROPERTY" />, is identified by an ID, and has an associated value. If a property is not specified when the metadata is created, then its default value is used.</summary>
   </member>
   <member name="WS_METADATA_PROPERTY_ID.WS_METADATA_PROPERTY_STATE">
     <summary>
       <para>This property is used with <see cref="WsGetMetadataProperty" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> structure contains  the current <see cref="WS_METADATA_STATE" /> of the metadata object.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> structure contains the current <see cref="WS_METADATA_STATE" /> of the metadata object.</para>
     </summary>
   </member>
   <member name="WS_METADATA_PROPERTY_ID.WS_METADATA_PROPERTY_HEAP_PROPERTIES">
     <summary>
-      <para>This property is used with <see cref="WsCreateMetadata" /> to specify
-properties of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-heap">WS_HEAP</a> object used by the metadata
-object to store information about the metadata that was read.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> structure contains   a <see cref="WS_HEAP_PROPERTIES" /> structure.</para>
+      <para>This property is used with <see cref="WsCreateMetadata" /> to specify properties of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-heap">WS_HEAP</a> object used by the metadata object to store information about the metadata that was read.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> structure contains a <see cref="WS_HEAP_PROPERTIES" /> structure.</para>
       <para>The following heap properties may be specified:</para>
       <list type="bullet">
         <item>
           <description>
-            <see cref="WS_HEAP_PROPERTY_MAX_SIZE" />.  If not specified, the
-default value used is 256k bytes.
-</description>
+            <see cref="WS_HEAP_PROPERTY_MAX_SIZE" />. If not specified, the default value used is 256k bytes.</description>
         </item>
         <item>
           <description>
-            <see cref="WS_HEAP_PROPERTY_TRIM_SIZE" />.  If not specified, the
-default value used is 32k bytes.
-</description>
+            <see cref="WS_HEAP_PROPERTY_TRIM_SIZE" />. If not specified, the default value used is 32k bytes.</description>
         </item>
       </list>
     </summary>
   </member>
   <member name="WS_METADATA_PROPERTY_ID.WS_METADATA_PROPERTY_POLICY_PROPERTIES">
     <summary>
-      <para>This property is used with <see cref="WsCreateMetadata" /> to specify
-properties of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-policy">WS_POLICY</a> objects that are associated
-with the metadata object.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> structure contains   a <see cref="WS_POLICY_PROPERTIES" />  structure that specifies the
-set of policy properties.</para>
-      <para>See <see cref="WS_POLICY_PROPERTY_ID" /> for more information on the
-set of properties that may be specified here.</para>
+      <para>This property is used with <see cref="WsCreateMetadata" /> to specify properties of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-policy">WS_POLICY</a> objects that are associated with the metadata object.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> structure contains a <see cref="WS_POLICY_PROPERTIES" /> structure that specifies the set of policy properties.</para>
+      <para>See <see cref="WS_POLICY_PROPERTY_ID" /> for more information on the set of properties that may be specified here.</para>
     </summary>
   </member>
   <member name="WS_METADATA_PROPERTY_ID.WS_METADATA_PROPERTY_HEAP_REQUESTED_SIZE">
     <summary>
       <para>This property is used with <see cref="WsGetMetadataProperty" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> is a <b>SIZE_T</b> specifying the number of bytes allocated from the heap associated with the
-metadata object.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> is a <b>SIZE_T</b> specifying the number of bytes allocated from the heap associated with the metadata object.</para>
     </summary>
   </member>
   <member name="WS_METADATA_PROPERTY_ID.WS_METADATA_PROPERTY_MAX_DOCUMENTS">
     <summary>
       <para>This property is used with <see cref="WsCreateMetadata" />.</para>
-      <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> is a <b>ULONG</b> specifying  the maximum number of documents that may be added to
-the metadata object using <see cref="WsReadMetadata" />.</para>
+      <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> is a <b>ULONG</b> specifying the maximum number of documents that may be added to the metadata object using <see cref="WsReadMetadata" />.</para>
       <para>The default value is 32.</para>
     </summary>
   </member>
@@ -68,8 +53,7 @@ the metadata object using <see cref="WsReadMetadata" />.</para>
       <para>This property is used with <see cref="WsCreateMetadata" />.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> is a <see cref="WS_HOST_NAMES" /> structure.</para>
       <para>This property may only be specified if <see cref="WS_METADATA_PROPERTY_VERIFY_HOST_NAMES" /> is <b>TRUE</b>.</para>
-      <para>See <see cref="WsGetMissingMetadataDocumentAddress" /> for more information
-on verifying host names.</para>
+      <para>See <see cref="WsGetMissingMetadataDocumentAddress" /> for more information on verifying host names.</para>
       <para>If the property is not specified, then the list of host names is empty.</para>
     </summary>
   </member>
@@ -77,11 +61,9 @@ on verifying host names.</para>
     <summary>
       <para>This property is used with <see cref="WsCreateMetadata" />.</para>
       <para>The accompanying <b>value</b> member of the <see cref="WS_METADATA_PROPERTY" /> is a <b>BOOL</b> that specifies whether or not host names should be verified.</para>
-      <para>See <see cref="WsGetMissingMetadataDocumentAddress" /> for more information
-on verifying host names.</para>
+      <para>See <see cref="WsGetMissingMetadataDocumentAddress" /> for more information on verifying host names.</para>
       <para>The default value is <b>TRUE</b>.</para>
-      <para>Setting this value to <b>FALSE</b> may cause an application to use
-an address returned from <see cref="WsGetMissingMetadataDocumentAddress" /> that is from a host that it is not willing to accept metadata from.</para>
+      <para>Setting this value to <b>FALSE</b> may cause an application to use an address returned from <see cref="WsGetMissingMetadataDocumentAddress" /> that is from a host that it is not willing to accept metadata from.</para>
     </summary>
   </member>
 </doc>

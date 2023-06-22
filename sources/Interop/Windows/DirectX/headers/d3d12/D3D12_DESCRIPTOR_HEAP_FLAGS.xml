@@ -3,20 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_DESCRIPTOR_HEAP_FLAGS">
-    <summary>
-      <para>Specifies options for a heap.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the <see cref="D3D12_DESCRIPTOR_HEAP_DESC" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/creating-descriptor-heaps">Creating Descriptor Heaps</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/descriptor-heaps">Descriptor Heaps</seealso>
+    <summary>Specifies options for a heap.</summary>
   </member>
   <member name="D3D12_DESCRIPTOR_HEAP_FLAGS.D3D12_DESCRIPTOR_HEAP_FLAG_NONE">
-    <summary>
-      <para>Indicates default usage of a heap.</para>
-    </summary>
+    <summary>Indicates default usage of a heap.</summary>
   </member>
   <member name="D3D12_DESCRIPTOR_HEAP_FLAGS.D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE">
     <summary>

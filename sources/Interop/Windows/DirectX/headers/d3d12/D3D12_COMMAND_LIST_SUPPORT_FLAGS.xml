@@ -3,45 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_COMMAND_LIST_SUPPORT_FLAGS">
-    <summary>
-      <para>Used to determine which kinds of command lists are capable of supporting various operations. For example, whether a command list supports immediate writes.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
-    <seealso cref="D3D12_COMMAND_LIST_TYPE." />
+    <summary>Used to determine which kinds of command lists are capable of supporting various operations. For example, whether a command list supports immediate writes.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_SUPPORT_FLAGS.D3D12_COMMAND_LIST_SUPPORT_FLAG_NONE">
-    <summary>
-      <para>Specifies that no command list supports the operation in question.</para>
-    </summary>
+    <summary>Specifies that no command list supports the operation in question.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_SUPPORT_FLAGS.D3D12_COMMAND_LIST_SUPPORT_FLAG_DIRECT">
-    <summary>
-      <para>Specifies that direct command lists can support the operation in question.</para>
-    </summary>
+    <summary>Specifies that direct command lists can support the operation in question.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_SUPPORT_FLAGS.D3D12_COMMAND_LIST_SUPPORT_FLAG_BUNDLE">
-    <summary>
-      <para>Specifies that command list bundles can support the operation in question.</para>
-    </summary>
+    <summary>Specifies that command list bundles can support the operation in question.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_SUPPORT_FLAGS.D3D12_COMMAND_LIST_SUPPORT_FLAG_COMPUTE">
-    <summary>
-      <para>Specifies that compute command lists can support the operation in question.</para>
-    </summary>
+    <summary>Specifies that compute command lists can support the operation in question.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_SUPPORT_FLAGS.D3D12_COMMAND_LIST_SUPPORT_FLAG_COPY">
-    <summary>
-      <para>Specifies that copy command lists can support the operation in question.</para>
-    </summary>
+    <summary>Specifies that copy command lists can support the operation in question.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_SUPPORT_FLAGS.D3D12_COMMAND_LIST_SUPPORT_FLAG_VIDEO_DECODE">
-    <summary>
-      <para>Specifies that video-decode command lists can support the operation in question.</para>
-    </summary>
+    <summary>Specifies that video-decode command lists can support the operation in question.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_SUPPORT_FLAGS.D3D12_COMMAND_LIST_SUPPORT_FLAG_VIDEO_PROCESS">
-    <summary>
-      <para>Specifies that video-processing command lists can support the operation is question.</para>
-    </summary>
+    <summary>Specifies that video-processing command lists can support the operation is question.</summary>
   </member>
 </doc>

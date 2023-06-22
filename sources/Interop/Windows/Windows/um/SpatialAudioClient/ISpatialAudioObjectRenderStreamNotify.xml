@@ -3,32 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISpatialAudioObjectRenderStreamNotify.OnAvailableDynamicObjectCountChange">
-    <summary>
-      <para>Notifies the spatial audio client when the rendering capacity for an <see cref="ISpatialAudioObjectRenderStream" /> is about to change, specifies the time after which the change will occur, and specifies the number of dynamic audio objects that will be available after the change.</para>
-    </summary>
-    <param name="sender">
-      <para>The spatial audio render stream for which the available dynamic object count is changing.</para>
-    </param>
-    <param name="hnsComplianceDeadlineTime">
-      <para>The time after which the spatial resource limit will change, in 100-nanosecond units. A value of  0 means that the change will occur immediately.</para>
-    </param>
-    <param name="availableDynamicObjectCountChange">
-      <para>The number of dynamic spatial audio objects that will be available to the stream after <i>hnsComplianceDeadlineTime</i>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <remarks>
-      <para>A dynamic <see cref="ISpatialAudioObject" /> is one that was activated by setting the <i>type</i> parameter to the  <see cref="ISpatialAudioObjectRenderStream.ActivateSpatialAudioObject" /> method to <b>AudioObjectType_Dynamic</b>. The client has a limit of the maximum number of dynamic spatial audio objects that can be activated at one time. When the capacity of the audio rendering pipeline changes, the system will dynamically adjust the maximum number of concurrent dynamic spatial audio objects. Before doing so, the system will call <b>OnAvailableDynamicObjectCountChange</b> to notify clients of the resource limit change.</para>
-      <para>Call <see cref="Release" /> on an <b>ISpatialAudioObject</b> when it is no longer being used to free up the resource to create new dynamic spatial audio objects.</para>
-    </remarks>
-    <seealso cref="ISpatialAudioObjectRenderStreamNotify" />
+    <summary>Notifies the spatial audio client when the rendering capacity for an <see cref="ISpatialAudioObjectRenderStream" /> is about to change, specifies the time after which the change will occur, and specifies the number of dynamic audio objects that will be available after the change.</summary>
+    <param name="sender">The spatial audio render stream for which the available dynamic object count is changing.</param>
+    <param name="hnsComplianceDeadlineTime">The time after which the spatial resource limit will change, in 100-nanosecond units. A value of 0 means that the change will occur immediately.</param>
+    <param name="availableDynamicObjectCountChange">The number of dynamic spatial audio objects that will be available to the stream after <i>hnsComplianceDeadlineTime</i>.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="ISpatialAudioObjectRenderStreamNotify">
     <summary>
-      <para>Provides notifications for spatial audio clients to respond to changes in the state of an  <see cref="ISpatialAudioObjectRenderStream" />.</para>
+      <para>Provides notifications for spatial audio clients to respond to changes in the state of an <see cref="ISpatialAudioObjectRenderStream" />.</para>
       <para>You register the object that implements this interface by assigning it to the <i>NotifyObject</i> parameter of the <see cref="SpatialAudioClientActivationParams" /> structure passed into the <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" /> method. After registering its <b>ISpatialAudioObjectRenderStreamNotify</b> interface, the client receives event notifications in the form of callbacks through the <see cref="OnAvailableDynamicObjectCountChange" /> method in the interface.</para>
-      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+      <para>This interface is a part of Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
     </summary>
   </member>
 </doc>

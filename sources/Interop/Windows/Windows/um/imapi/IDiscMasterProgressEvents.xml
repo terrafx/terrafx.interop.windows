@@ -3,140 +3,53 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDiscMasterProgressEvents.NotifyAddProgress">
-    <summary>
-      <para>Notifies an application of its progress in response to calls to
-<see cref="IRedbookDiscMaster.AddAudioTrackBlocks" /> or
-<see cref="IJolietDiscMaster.AddData" />. Notifications are sent for the first and last steps, and at points in between.</para>
-    </summary>
-    <param name="nCompletedSteps">
-      <para>Number of arbitrary steps that have been completed in adding audio or data to a staged image.</para>
-    </param>
-    <param name="nTotalSteps">
-      <para>Total number of arbitrary steps that must be taken to add a full set of audio or data to the staged image.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IDiscMasterProgressEvents" />
+    <summary>Notifies an application of its progress in response to calls to<see cref="IRedbookDiscMaster.AddAudioTrackBlocks" /> or<see cref="IJolietDiscMaster.AddData" />. Notifications are sent for the first and last steps, and at points in between.</summary>
+    <param name="nCompletedSteps">Number of arbitrary steps that have been completed in adding audio or data to a staged image.</param>
+    <param name="nTotalSteps">Total number of arbitrary steps that must be taken to add a full set of audio or data to the staged image.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IDiscMasterProgressEvents.NotifyBlockProgress">
-    <summary>
-      <para>Notifies an application of its progress in burning a disc on the active recorder. Notifications are sent for the first and last blocks, and at points in between.</para>
-    </summary>
-    <param name="nCompleted">
-      <para>Number of blocks that have been burned onto a disc or track so far.</para>
-    </param>
-    <param name="nTotal">
-      <para>Total number of blocks to be burned to finish a disc or track.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IDiscMasterProgressEvents" />
+    <summary>Notifies an application of its progress in burning a disc on the active recorder. Notifications are sent for the first and last blocks, and at points in between.</summary>
+    <param name="nCompleted">Number of blocks that have been burned onto a disc or track so far.</param>
+    <param name="nTotal">Total number of blocks to be burned to finish a disc or track.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IDiscMasterProgressEvents.NotifyBurnComplete">
-    <summary>
-      <para>Notifies an application that a call to
-<see cref="IDiscMaster.RecordDisc" /> has finished.</para>
-    </summary>
-    <param name="status">
-      <para>Status code to be returned from
-<see cref="IDiscMaster.RecordDisc" />.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IDiscMasterProgressEvents" />
+    <summary>Notifies an application that a call to<see cref="IDiscMaster.RecordDisc" /> has finished.</summary>
+    <param name="status">Status code to be returned from<see cref="IDiscMaster.RecordDisc" />.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IDiscMasterProgressEvents.NotifyClosingDisc">
-    <summary>
-      <para>Notifies the application that it is has started closing the disc. No further notifications are sent until the burn is finished.</para>
-    </summary>
-    <param name="nEstimatedSeconds">
-      <para>Number of seconds from notification that IMAPI estimates it will take to close the disc.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IDiscMasterProgressEvents" />
+    <summary>Notifies the application that it is has started closing the disc. No further notifications are sent until the burn is finished.</summary>
+    <param name="nEstimatedSeconds">Number of seconds from notification that IMAPI estimates it will take to close the disc.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IDiscMasterProgressEvents.NotifyEraseComplete">
-    <summary>
-      <para>Notifies an application that a call to
-<see cref="IDiscRecorder.Erase" /> has finished.</para>
-    </summary>
-    <param name="status">
-      <para>Status code to be returned from
-<see cref="IDiscRecorder.Erase" />.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IDiscMasterProgressEvents" />
+    <summary>Notifies an application that a call to<see cref="IDiscRecorder.Erase" /> has finished.</summary>
+    <param name="status">Status code to be returned from<see cref="IDiscRecorder.Erase" />.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IDiscMasterProgressEvents.NotifyPnPActivity">
-    <summary>
-      <para>Notifies the application that there is a change to the list of valid disc recorders. (For example, a USB CD-R driver is removed from the system.)</para>
-    </summary>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <remarks>
-      <para>An application should respond by calling
-<see cref="IDiscMaster.EnumDiscRecorders" /> to update its list of valid recorders. If the current active recorder has been invalidated, then a new recorder should be chosen.</para>
-    </remarks>
-    <seealso cref="IDiscMasterProgressEvents" />
+    <summary>Notifies the application that there is a change to the list of valid disc recorders. (For example, a USB CD-R driver is removed from the system.)</summary>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IDiscMasterProgressEvents.NotifyPreparingBurn">
-    <summary>
-      <para>Notifies the application that it is preparing to burn a disc. No further notifications are sent until the burn starts.</para>
-    </summary>
-    <param name="nEstimatedSeconds">
-      <para>Number of seconds from notification that IMAPI estimates it will take to prepare to burn the disc.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IDiscMasterProgressEvents" />
+    <summary>Notifies the application that it is preparing to burn a disc. No further notifications are sent until the burn starts.</summary>
+    <param name="nEstimatedSeconds">Number of seconds from notification that IMAPI estimates it will take to prepare to burn the disc.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IDiscMasterProgressEvents.NotifyTrackProgress">
-    <summary>
-      <para>Notifies an application that a track has started or finished  during the burn of an audio disc.</para>
-    </summary>
-    <param name="nCurrentTrack">
-      <para>Number of tracks that have been completely burned.</para>
-    </param>
-    <param name="nTotalTracks">
-      <para>Total number of tracks that must be burned.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <remarks>
-      <para>The notification for zero out of <i>nTotalTracks</i> indicates the start of track 1. The notification for track N out of <i>nTotalTracks</i> indicates that track N is complete and track N+1 is beginning. Finally, the notification for <i>nTotalTracks</i> out of <i>nTotalTracks</i> indicates the last track has been written.</para>
-    </remarks>
-    <seealso cref="IDiscMasterProgressEvents" />
+    <summary>Notifies an application that a track has started or finished during the burn of an audio disc.</summary>
+    <param name="nCurrentTrack">Number of tracks that have been completely burned.</param>
+    <param name="nTotalTracks">Total number of tracks that must be burned.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IDiscMasterProgressEvents.QueryCancel">
-    <summary>
-      <para>Checks whether an
-<see cref="AddData" />,
-<see cref="AddAudioTrackBlocks" />, or
-<see cref="RecordDisc" /> operation should be canceled.</para>
-    </summary>
-    <param name="pbCancel">
-      <para>If this parameter is <b>TRUE</b>, cancel the burn. If this parameter is <b>FALSE</b>, continue the burn.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IDiscMasterProgressEvents" />
+    <summary>Checks whether an<see cref="AddData" />,<see cref="AddAudioTrackBlocks" />, or<see cref="RecordDisc" /> operation should be canceled.</summary>
+    <param name="pbCancel">If this parameter is <b>TRUE</b>, cancel the burn. If this parameter is <b>FALSE</b>, continue the burn.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IDiscMasterProgressEvents">
-    <summary>
-      <para>The
-<b>IDiscMasterProgressEvents</b> interface provides a single interface for all callbacks that can be made from IMAPI to an application. An application implements this interface on one of its objects and then registers it using
-<see cref="IDiscMaster.ProgressAdvise" />. All but one of the methods in this interface are related to progress during staging or burns. Even if an application is not interested in a particular callback, it must implement the callback function and return E_NOTIMPL on the call.</para>
-    </summary>
+    <summary>The<b>IDiscMasterProgressEvents</b> interface provides a single interface for all callbacks that can be made from IMAPI to an application. An application implements this interface on one of its objects and then registers it using<see cref="IDiscMaster.ProgressAdvise" />. All but one of the methods in this interface are related to progress during staging or burns. Even if an application is not interested in a particular callback, it must implement the callback function and return E_NOTIMPL on the call.</summary>
   </member>
 </doc>

@@ -5,23 +5,16 @@
   <member name="WS_XML_LIST_TEXT">
     <summary>
       <para>Represents a list of text values separated by a single whitespace character.</para>
-      <para>(e.g. The list { { WS_XML_TEXT_TYPE_INT32 }, 123},
-{ { WS_XML_TEXT_TYPE_BOOL }, 1 } represents the text "123 true")</para>
+      <para>(e.g. The list { { WS_XML_TEXT_TYPE_INT32 }, 123}, { { WS_XML_TEXT_TYPE_BOOL }, 1 } represents the text "123 true")</para>
     </summary>
   </member>
   <member name="WS_XML_LIST_TEXT.text">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</summary>
   </member>
   <member name="WS_XML_LIST_TEXT.itemCount">
-    <summary>
-      <para>The number of items in the list.</para>
-    </summary>
+    <summary>The number of items in the list.</summary>
   </member>
   <member name="WS_XML_LIST_TEXT.items">
-    <summary>
-      <para>The list of items.</para>
-    </summary>
+    <summary>The list of items.</summary>
   </member>
 </doc>

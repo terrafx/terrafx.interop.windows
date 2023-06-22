@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ObjectType">
+    <summary>The <b>ObjectType</b> enumeration indicates the object type value of an EMF+ record.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypeInvalid">
+    <summary>Object type is invalid.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypeBrush">
+    <summary>Object type is a brush.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypePen">
+    <summary>Object type is a pen.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypePath">
+    <summary>Object type is a path.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypeRegion">
+    <summary>Object type is a region.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypeImage"></member>
+  <member name="ObjectType.ObjectTypeFont">
+    <summary>Object type is a font.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypeStringFormat">
+    <summary>Object type is a string format.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypeImageAttributes">
+    <summary>Object type is an image attribute.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypeCustomLineCap">
+    <summary>Object type is a custom line cap.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypeGraphics">
+    <summary>Object type is graphics.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypeMax">
+    <summary>Maximum enumeration value. Currently, it is ObjectTypeGraphics.</summary>
+  </member>
+  <member name="ObjectType.ObjectTypeMin">
+    <summary>Minimum enumeration value. Currently, it is ObjectTypeBrush.</summary>
+  </member>
+</doc>

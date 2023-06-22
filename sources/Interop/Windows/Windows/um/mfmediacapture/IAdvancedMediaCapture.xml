@@ -3,19 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAdvancedMediaCapture.GetAdvancedMediaCaptureSettings">
-    <summary>
-      <para>Gets the advanced media capture settings.</para>
-    </summary>
-    <param name="value"></param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAdvancedMediaCapture" />
+    <summary>Gets the advanced media capture settings.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAdvancedMediaCapture">
-    <summary>
-      <para>Enables advanced media capture.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Enables advanced media capture.</summary>
   </member>
 </doc>

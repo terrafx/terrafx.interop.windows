@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMetadata.DeleteProperty">
-    <summary>
-      <para>Deletes a metadata property.</para>
-    </summary>
-    <param name="pwszName">
-      <para>Pointer to a null-terminated string containing the name of the property.</para>
-    </param>
+    <summary>Deletes a metadata property.</summary>
+    <param name="pwszName">Pointer to a null-terminated string containing the name of the property.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,98 +12,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_PROPERTY_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_PROPERTY_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The property was not found.</para>
-          </description>
-        </item>
+          <description>The property was not found.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For a media source, deleting a property from the metadata collection does not change the original content.</para>
-    </remarks>
-    <seealso cref="IMFMetadata" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-metadata">Media Metadata</seealso>
   </member>
   <member name="IMFMetadata.GetAllLanguages">
-    <summary>
-      <para>Gets a list of the languages in which metadata is available.</para>
-    </summary>
+    <summary>Gets a list of the languages in which metadata is available.</summary>
     <param name="ppvLanguages">
       <para>A pointer to a <b>PROPVARIANT</b> that receives the list of languages. The list is returned as an array of null-terminated wide-character strings. Each string in the array is an RFC 1766-compliant language tag.</para>
       <para>The returned <b>PROPVARIANT</b> type is VT_VECTOR | VT_LPWSTR. The list might be empty, if no language tags are present. The caller must free the <b>PROPVARIANT</b> by calling <see cref="PropVariantClear" />.</para>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For more information about language tags, see RFC 1766, "Tags for the Identification of Languages".</para>
-      <para>To set the current language, call <see cref="IMFMetadata.SetLanguage" />.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how to get the list of language tags and enumerate the list.</para>
-      <code>HRESULT DisplayLanguageList(IMFMetadata *pMetadata)
-{
-    PROPVARIANT varLangs;
-
-    HRESULT hr = pMetadata-&gt;GetAllLanguages(&amp;amp;amp;amp;amp;amp;varLangs);
-    if (SUCCEEDED(hr))
-    {
-        if (varLangs.vt == (VT_VECTOR | VT_LPWSTR))
-        {
-            for (ULONG i = 0; i &lt; varLangs.calpwstr.cElems; i++)
-            {
-                wprintf(L"%s\n", varLangs.calpwstr.pElems[i]);
-            }
-        }
-        else
-        {
-            hr = E_UNEXPECTED;
-        }
-        PropVariantClear(&amp;amp;amp;amp;amp;amp;varLangs);
-    }
-    return hr;
-}
-
-</code>
-    </remarks>
-    <seealso cref="IMFMetadata" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-metadata">Media Metadata</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMetadata.GetAllPropertyNames">
-    <summary>
-      <para>Gets a list of all the metadata property names on this object.</para>
-    </summary>
-    <param name="ppvNames">
-      <para>Pointer to a <b>PROPVARIANT</b> that receives an array of null-terminated wide-character strings. If no properties are available, the <b>PROPVARIANT</b> type is VT_EMPTY. Otherwise, the <b>PROPVARIANT</b> type is VT_VECTOR | VT_LPWSTR. The caller must free the <b>PROPVARIANT</b> by calling <see cref="PropVariantClear" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMetadata" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-metadata">Media Metadata</seealso>
+    <summary>Gets a list of all the metadata property names on this object.</summary>
+    <param name="ppvNames">Pointer to a <b>PROPVARIANT</b> that receives an array of null-terminated wide-character strings. If no properties are available, the <b>PROPVARIANT</b> type is VT_EMPTY. Otherwise, the <b>PROPVARIANT</b> type is VT_VECTOR | VT_LPWSTR. The caller must free the <b>PROPVARIANT</b> by calling <see cref="PropVariantClear" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMetadata.GetLanguage">
-    <summary>
-      <para>Gets the current language setting.</para>
-    </summary>
-    <param name="ppwszRFC1766">
-      <para>Receives a pointer to a null-terminated string containing an RFC 1766-compliant language tag. The caller must release the string by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
+    <summary>Gets the current language setting.</summary>
+    <param name="ppwszRFC1766">Receives a pointer to a null-terminated string containing an RFC 1766-compliant language tag. The caller must release the string by calling <see cref="CoTaskMemFree" />.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -115,56 +62,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The metadata provider does not support multiple languages.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The metadata provider does not support multiple languages.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>No language was set.</para>
-          </description>
-        </item>
+          <description>No language was set.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For more information about language tags, see RFC 1766, "Tags for the Identification of Languages."</para>
-      <para>The <see cref="IMFMetadata.SetLanguage" /> and <see cref="IMFMetadata.GetProperty" /> methods set and get metadata for the current language setting.</para>
-    </remarks>
-    <seealso cref="IMFMetadata" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-metadata">Media Metadata</seealso>
   </member>
   <member name="IMFMetadata.GetProperty">
-    <summary>
-      <para>Gets the value of a metadata property.</para>
-    </summary>
-    <param name="pwszName">
-      <para>A pointer to a null-terminated string that contains the name of the property.
-To get the list of property names, call <see cref="IMFMetadata.GetAllPropertyNames" />.</para>
-    </param>
-    <param name="ppvValue">
-      <para>Pointer to a <b>PROPVARIANT</b> that receives the value of the property. The <b>PROPVARIANT</b> type depends on the property. For multivalued properties, the <b>PROPVARIANT</b> is a <b>VT_VECTOR</b> type. The caller must free the <b>PROPVARIANT</b> by calling <see cref="PropVariantClear" />.</para>
-    </param>
+    <summary>Gets the value of a metadata property.</summary>
+    <param name="pwszName">A pointer to a null-terminated string that contains the name of the property. To get the list of property names, call <see cref="IMFMetadata.GetAllPropertyNames" />.</param>
+    <param name="ppvValue">Pointer to a <b>PROPVARIANT</b> that receives the value of the property. The <b>PROPVARIANT</b> type depends on the property. For multivalued properties, the <b>PROPVARIANT</b> is a <b>VT_VECTOR</b> type. The caller must free the <b>PROPVARIANT</b> by calling <see cref="PropVariantClear" />.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -172,70 +112,48 @@ To get the list of property names, call <see cref="IMFMetadata.GetAllPropertyNam
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_PROPERTY_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_PROPERTY_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested property was not found.</para>
-          </description>
-        </item>
+          <description>The requested property was not found.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMetadata" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-metadata">Media Metadata</seealso>
   </member>
   <member name="IMFMetadata.SetLanguage">
-    <summary>
-      <para>Sets the language for setting and retrieving metadata.</para>
-    </summary>
-    <param name="pwszRFC1766">
-      <para>Pointer to a null-terminated string containing an RFC 1766-compliant language tag.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For more information about language tags, see RFC 1766, "Tags for the Identification of Languages".</para>
-    </remarks>
-    <seealso cref="IMFMetadata" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-metadata">Media Metadata</seealso>
+    <summary>Sets the language for setting and retrieving metadata.</summary>
+    <param name="pwszRFC1766">Pointer to a null-terminated string containing an RFC 1766-compliant language tag.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMetadata.SetProperty">
-    <summary>
-      <para>Sets the value of a metadata property.</para>
-    </summary>
-    <param name="pwszName">
-      <para>Pointer to a null-terminated string containing the name of the property.</para>
-    </param>
-    <param name="ppvValue">
-      <para>Pointer to a <b>PROPVARIANT</b> that contains the value of the property. For multivalued properties, use a <b>PROPVARIANT</b> with a VT_VECTOR type.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMetadata" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-metadata">Media Metadata</seealso>
+    <summary>Sets the value of a metadata property.</summary>
+    <param name="pwszName">Pointer to a null-terminated string containing the name of the property.</param>
+    <param name="ppvValue">Pointer to a <b>PROPVARIANT</b> that contains the value of the property. For multivalued properties, use a <b>PROPVARIANT</b> with a VT_VECTOR type.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMetadata">
     <summary>
       <para>Manages metadata for an object. Metadata is information that describes a media file, stream, or other content. Metadata consists of individual properties, where each property contains a descriptive name and a value. A property may be associated with a particular language.</para>
       <para>To get this interface from a media source, use the <see cref="IMFMetadataProvider" /> interface.</para>
     </summary>
-    <seealso cref="IMFMetadataProvider" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-metadata">Media Metadata</seealso>
   </member>
 </doc>

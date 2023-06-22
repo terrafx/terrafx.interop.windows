@@ -4,22 +4,14 @@
 <doc>
   <member name="AM_QueryRate">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>AM_QueryRate</b> structure is used to query the decoder's maximum full-frame rate for forward and reverse playback.</para>
     </summary>
-    <remarks>
-      <para>Rate is the inverse of speed. For example, if the playback speed is 2x, the rate is 1/2, so the <b>Rate</b> member is set to 5000. Reverse rates are negative.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/am-rate-queryfullframerate-property">AM_RATE_QueryFullFrameRate Property</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/rate-change-property-set">Rate Change Property Set</seealso>
   </member>
   <member name="AM_QueryRate.lMaxForwardFullFrame">
-    <summary>
-      <para>Specifies the maximum forward full-frame rate, as rate x 10000.</para>
-    </summary>
+    <summary>Specifies the maximum forward full-frame rate, as rate x 10000.</summary>
   </member>
   <member name="AM_QueryRate.lMaxReverseFullFrame">
-    <summary>
-      <para>Specifies the maximum reverse full-frame rate, as rate x 10000.</para>
-    </summary>
+    <summary>Specifies the maximum reverse full-frame rate, as rate x 10000.</summary>
   </member>
 </doc>

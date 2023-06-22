@@ -3,84 +3,50 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxManifestApplicationsEnumerator.GetCurrent">
-    <summary>
-      <para>Gets the application at the current position of the enumerator.</para>
-    </summary>
-    <param name="application">
-      <para>Type: <b><see cref="IAppxManifestApplication" />**</b></para>
-      <para>The current application.</para>
-    </param>
+    <summary>Gets the application at the current position of the enumerator.</summary>
+    <param name="application">The current application.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_BOUNDS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_BOUNDS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The enumerator has passed the last item in the collection.</para>
-          </description>
-        </item>
+          <description>The enumerator has passed the last item in the collection.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The enumerator returned can be empty. In this case, a call to  <see cref="GetHasCurrent" /> returns <b>false</b>. If the enumerator is not empty, it points to the first element, and this method returns the first item. Subsequently, the user should use <see cref="MoveNext" /> to move through the items, and call <b>GetHasCurrent</b> before using <b>GetCurrent</b> to access the item.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
-    </remarks>
-    <seealso cref="IAppxManifestApplicationsEnumerator" />
   </member>
   <member name="IAppxManifestApplicationsEnumerator.GetHasCurrent">
-    <summary>
-      <para>Determines whether there is an application at the current position of the enumerator.</para>
-    </summary>
+    <summary>Determines whether there is an application at the current position of the enumerator.</summary>
     <param name="hasCurrent">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a>*</b></para>
-      <para>
-        <b>TRUE</b> if the enumerator's current position references an item; <b>FALSE</b> if the enumerator has passed the last item in the collection.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestApplicationsEnumerator" />
+      <b>TRUE</b> if the enumerator's current position references an item; <b>FALSE</b> if the enumerator has passed the last item in the collection.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestApplicationsEnumerator.MoveNext">
-    <summary>
-      <para>Advances the position of the enumerator to the next application.</para>
-    </summary>
+    <summary>Advances the position of the enumerator to the next application.</summary>
     <param name="hasNext">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a>*</b></para>
       <para>
         <b>TRUE</b> if the enumerator successfully advances</para>
       <para>
         <b>FALSE</b> if the enumerator has passed the end of the collection.</para>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code.</para>
-      <para>Note that when the enumerator passes the end of the collection for the first time, <i>hasNext</i> = <b>FALSE</b>,  but the method succeeds and returns <b>S_OK</b>. However, the method returns <b>E_BOUNDS</b> if you subsequently call another <b>MoveNext</b> after you have already passed the end of the collection, and you have previously received  <i>hasNext</i> = <b>FALSE</b>.</para>
+      <para>Note that when the enumerator passes the end of the collection for the first time, <i>hasNext</i> = <b>FALSE</b>, but the method succeeds and returns <b>S_OK</b>. However, the method returns <b>E_BOUNDS</b> if you subsequently call another <b>MoveNext</b> after you have already passed the end of the collection, and you have previously received <i>hasNext</i> = <b>FALSE</b>.</para>
     </returns>
-    <seealso cref="IAppxManifestApplicationsEnumerator" />
   </member>
   <member name="IAppxManifestApplicationsEnumerator">
-    <summary>
-      <para>Enumerates the applications defined in the package manifest.</para>
-    </summary>
-    <remarks>
-      <para>Applications are specified using the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-applications">Applications</a> element in the package manifest.</para>
-      <para>This object can be retrieved using the <see cref="IAppxManifestReader.GetApplications" /> method.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
-    </remarks>
-    <seealso cref="IAppxManifestApplication" />
-    <seealso cref="IAppxManifestReader.GetApplications" />
+    <summary>Enumerates the applications defined in the package manifest.</summary>
   </member>
 </doc>

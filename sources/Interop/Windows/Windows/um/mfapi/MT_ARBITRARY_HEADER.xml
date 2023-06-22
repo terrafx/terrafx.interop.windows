@@ -3,46 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MT_ARBITRARY_HEADER">
-    <summary>
-      <para>Contains format data for a binary stream in an Advanced Streaming Format (ASF) file.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-arbitrary-header">MF_MT_ARBITRARY_HEADER</a> media type attribute.</para>
-      <para>This structure corresponds to the first 60 bytes of the Type-Specific Data field of the Stream Properties Object, in files where the stream type is ASF_Binary_Media. For more information, see the ASF specification.</para>
-      <para>The Format Data field of the Type-Specific Data field is contained in the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-arbitrary-format">MF_MT_ARBITRARY_FORMAT</a> attribute of the media type.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Contains format data for a binary stream in an Advanced Streaming Format (ASF) file.</summary>
   </member>
   <member name="MT_ARBITRARY_HEADER.majortype">
-    <summary>
-      <para>Major media type. This value is the GUID stored in the Major Media Type field of the Type-Specific Data field of the ASF file. It might not match the major type GUID from the Media Foundation media type.</para>
-    </summary>
+    <summary>Major media type. This value is the GUID stored in the Major Media Type field of the Type-Specific Data field of the ASF file. It might not match the major type GUID from the Media Foundation media type.</summary>
   </member>
   <member name="MT_ARBITRARY_HEADER.subtype">
-    <summary>
-      <para>Media subtype.</para>
-    </summary>
+    <summary>Media subtype.</summary>
   </member>
   <member name="MT_ARBITRARY_HEADER.bFixedSizeSamples">
-    <summary>
-      <para>If <b>TRUE</b>, samples have a fixed size in bytes.
-Otherwise, samples have variable size.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, samples have a fixed size in bytes. Otherwise, samples have variable size.</summary>
   </member>
   <member name="MT_ARBITRARY_HEADER.bTemporalCompression">
-    <summary>
-      <para>If <b>TRUE</b>, the data in this stream uses temporal compression. Otherwise, samples are independent of each other.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, the data in this stream uses temporal compression. Otherwise, samples are independent of each other.</summary>
   </member>
   <member name="MT_ARBITRARY_HEADER.lSampleSize">
-    <summary>
-      <para>If <b>bFixedSizeSamples</b> is <b>TRUE</b>, this member specifies the sample size in bytes. Otherwise, the value is ignored and should be 0.</para>
-    </summary>
+    <summary>If <b>bFixedSizeSamples</b> is <b>TRUE</b>, this member specifies the sample size in bytes. Otherwise, the value is ignored and should be 0.</summary>
   </member>
   <member name="MT_ARBITRARY_HEADER.formattype">
-    <summary>
-      <para>Format type GUID. This GUID identifies the structure of the additional format data, which is stored in the
-<a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-arbitrary-format">MF_MT_ARBITRARY_FORMAT</a> attribute of the media type. If no additional format data is present, <b>formattype</b> equals GUID_NULL.</para>
-    </summary>
+    <summary>Format type GUID. This GUID identifies the structure of the additional format data, which is stored in the<a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-arbitrary-format">MF_MT_ARBITRARY_FORMAT</a> attribute of the media type. If no additional format data is present, <b>formattype</b> equals GUID_NULL.</summary>
   </member>
 </doc>

@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.GetRestrictedErrorInfo">
+    <summary>Gets the restricted error information object set by a previous call to <see cref="SetRestrictedErrorInfo" /> in the current logical thread.</summary>
+    <param name="ppRestrictedErrorInfo">The restricted error info object associated with the current thread.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The restricted error object was retrieved successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>There is no restricted error object associated with the current thread. Any other error object is removed from the thread.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.IsErrorPropagationEnabled">
+    <summary>
+      <div>
+        <b>Note</b>  This function is deprecated. Going forward, all Windows 8.1 and Windows 10 apps can operate automatically as if error propagation is enabled, and do not need to check dynamically whether error propagation is enabled.</div>Indicates whether the <a href="https://msdn.microsoft.com/863a06ac-b8ec-440a-8445-1dbbf1b04263">CoreApplication.UnhandledErrorDetected</a> event occurs for the errors that are returned by the delegate registered as a callback function for a Windows Runtime API event or the completion of an asynchronous method.</summary>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <a href="https://msdn.microsoft.com/863a06ac-b8ec-440a-8445-1dbbf1b04263">CoreApplication.UnhandledErrorDetected</a> event occurs for the errors that are returned by the delegate registered as a callback function for a Windows Runtime API event or the completion of an asynchronous method.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <a href="https://msdn.microsoft.com/863a06ac-b8ec-440a-8445-1dbbf1b04263">CoreApplication.UnhandledErrorDetected</a> event does not occur for the errors that are returned by the delegate registered as a callback function for a Windows Runtime API event or the completion of an asynchronous method.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoCaptureErrorContext">
+    <summary>Saves the current error context so that it's available for later calls to the <see cref="RoFailFastWithErrorContext" /> function.</summary>
+    <param name="hr">The <b>HRESULT</b> associated with the error.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.RoClearError">
+    <summary>Removes existing error information from the current thread environment block (TEB).</summary>
+  </member>
+  <member name="WinRT.RoFailFastWithErrorContext">
+    <summary>Raises a non-continuable exception in the current process.</summary>
+    <param name="hrError">The <b>HRESULT</b> associated with the current error. The exception is raised for any value of <i>hrError</i>.</param>
+  </member>
+  <member name="WinRT.RoGetErrorReportingFlags">
+    <summary>Gets the current reporting behavior of Windows Runtime error functions.</summary>
+    <param name="pflags">A pointer to the bitmask of <see cref="RO_ERROR_REPORTING_FLAGS" /> values that represents the current error-reporting behavior.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error-reporting behavior was retrieved successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>pflags</i> is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WinRTGetErrorReportingFlags">
+    <summary>Gets the current reporting behavior of Windows Runtime error functions.</summary>
+    <param name="pflags">A pointer to the bitmask of <see cref="RO_ERROR_REPORTING_FLAGS" /> values that represents the current error-reporting behavior.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error-reporting behavior was retrieved successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>pflags</i> is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoGetMatchingRestrictedErrorInfo">
+    <summary>Retrieves the restricted error information for the specified HRESULT.</summary>
+    <param name="hrIn">An HRESULT representing the error for which restricted error info is retrieved.</param>
+    <param name="ppRestrictedErrorInfo">Receives an instance of <see cref="IRestrictedErrorInfo" /> representing the details of an error, including restricted error information.</param>
+    <returns>Returns S_OK on success.</returns>
+  </member>
+  <member name="WinRT.RoInspectCapturedStackBackTrace">
+    <summary>Provides a way to for debuggers to inspect a call stack from a target process.</summary>
+    <param name="targetErrorInfoAddress">The address of the error info object in the target process. Get the <i>targetErrorInfoAddress</i> by calling the <see cref="RoInspectThreadErrorInfo" /> function.</param>
+    <param name="machine">The machine to debug.</param>
+    <param name="readMemoryCallback">A callback function to read the buffer from the target TEB address space.</param>
+    <param name="context">Custom context data.</param>
+    <param name="frameCount">The number of stack frames stored in the error object.</param>
+    <param name="targetBackTraceAddress">The stack back trace address in the target process.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.RoInspectThreadErrorInfo">
+    <summary>Gets the error object that represents the call stack at the point where the error originated</summary>
+    <param name="targetTebAddress">The target thread environment block (TEB).</param>
+    <param name="machine">The machine to debug.</param>
+    <param name="readMemoryCallback">A callback function to read the buffer from the target TEB address space.</param>
+    <param name="context">Custom context data.</param>
+    <param name="targetErrorInfoAddress">The address of the error object.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.RoOriginateError">
+    <summary>Reports an error and an informative string to an attached debugger.</summary>
+    <param name="error">The error code associated with the error condition. If <i>error</i> is a success code, such as <b>S_OK</b>, the function has no effect and returns <b>FALSE</b>. This behavior enables calling the function when no error has occurred without causing an unwanted error message.</param>
+    <param name="message">
+      <para>An informative string to help developers to correct the reported error condition. The maximum length is 512 characters, including the trailing <b>NUL</b> character; longer strings are truncated.</para>
+      <para>If the string is empty, the function succeeds but no error information is reported. It is recommended that you always provide an informative string.</para>
+      <para>If <i>message</i> is <b>NULL</b>, the function succeeds and reports the generic string in Winerror.h if available or the generic string associated with <b>E_FAIL</b>.</para>
+      <para>This function does not support embedded <b>NUL</b> characters, so only the characters before the first <b>NUL</b> are reported.</para>
+      <para>The <i>message</i> string should be localized.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error message was reported successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>message</i> is <b>NULL</b> or points to an empty string, or <i>error</i> is a success code.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WinRTOriginateError">
+    <summary>Reports an error and an informative string to an attached debugger.</summary>
+    <param name="error">The error code associated with the error condition. If <i>error</i> is a success code, such as <b>S_OK</b>, the function has no effect and returns <b>FALSE</b>. This behavior enables calling the function when no error has occurred without causing an unwanted error message.</param>
+    <param name="message">
+      <para>An informative string to help developers to correct the reported error condition. The maximum length is 512 characters, including the trailing <b>NUL</b> character; longer strings are truncated.</para>
+      <para>If the string is empty, the function succeeds but no error information is reported. It is recommended that you always provide an informative string.</para>
+      <para>If <i>message</i> is <b>NULL</b>, the function succeeds and reports the generic string in Winerror.h if available or the generic string associated with <b>E_FAIL</b>.</para>
+      <para>This function does not support embedded <b>NUL</b> characters, so only the characters before the first <b>NUL</b> are reported.</para>
+      <para>The <i>message</i> string should be localized.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error message was reported successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>message</i> is <b>NULL</b> or points to an empty string, or <i>error</i> is a success code.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoOriginateErrorW">
+    <summary>Reports an error and an informative string to an attached debugger.</summary>
+    <param name="error">The error code associated with the error condition. If <i>error</i> is a success code, such as <b>S_OK</b>, the function has no effect and returns <b>FALSE</b>. This behavior enables calling the function when no error has occurred without causing an unwanted error message.</param>
+    <param name="cchMax">The maximum number of characters in <i>message</i>, excluding the terminating <b>NUL</b> character. If the value is 0, the string is read to the first <b>NUL</b> character or 512 characters, whichever is less. If <i>cchMax</i> is greater than 512, all characters after 512 are ignored.</param>
+    <param name="message">
+      <para>An informative string to help developers to correct the reported error condition. The maximum length is 512 characters, including the trailing <b>NUL</b> character; longer strings are truncated.</para>
+      <para>If the string is empty, the function succeeds but no error information is reported. It is recommended that you always provide an informative string.</para>
+      <para>If <i>message</i> is <b>NULL</b>, the function succeeds and reports the generic string in Winerror.h if available or the generic string associated with <b>E_FAIL</b>.</para>
+      <para>This function does not support embedded <b>NUL</b> characters, so only the characters before the first <b>NUL</b> are reported.</para>
+      <para>The <i>message</i> string should be localized.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error message was reported successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>message</i> is <b>NULL</b> or points to an empty string, or <i>error</i> is a success code.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WinRTOriginateErrorW">
+    <summary>Reports an error and an informative string to an attached debugger.</summary>
+    <param name="error">The error code associated with the error condition. If <i>error</i> is a success code, such as <b>S_OK</b>, the function has no effect and returns <b>FALSE</b>. This behavior enables calling the function when no error has occurred without causing an unwanted error message.</param>
+    <param name="cchMax">The maximum number of characters in <i>message</i>, excluding the terminating <b>NUL</b> character. If the value is 0, the string is read to the first <b>NUL</b> character or 512 characters, whichever is less. If <i>cchMax</i> is greater than 512, all characters after 512 are ignored.</param>
+    <param name="message">
+      <para>An informative string to help developers to correct the reported error condition. The maximum length is 512 characters, including the trailing <b>NUL</b> character; longer strings are truncated.</para>
+      <para>If the string is empty, the function succeeds but no error information is reported. It is recommended that you always provide an informative string.</para>
+      <para>If <i>message</i> is <b>NULL</b>, the function succeeds and reports the generic string in Winerror.h if available or the generic string associated with <b>E_FAIL</b>.</para>
+      <para>This function does not support embedded <b>NUL</b> characters, so only the characters before the first <b>NUL</b> are reported.</para>
+      <para>The <i>message</i> string should be localized.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error message was reported successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>message</i> is <b>NULL</b> or points to an empty string, or <i>error</i> is a success code.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoOriginateLanguageException">
+    <summary>Reports an error, an informative string, and an error object to an attached debugger.</summary>
+    <param name="error">The error code associated with the error condition. If <i>error</i> is a success code, like <b>S_OK</b>, the function has no effect and returns <b>FALSE</b>. This behavior enables calling the function when no error has occurred without causing an unwanted error message.</param>
+    <param name="message">
+      <para>An informative string to help developers to correct the reported error condition. The maximum length is 512 characters, including the trailing <b>NUL</b> character; longer strings are truncated.</para>
+      <para>If the string is empty, the function succeeds but no error information is reported. It is recommended that you always provide an informative string.</para>
+      <para>If <i>message</i> is <b>NULL</b>, the function succeeds and reports the generic string in Winerror.h if available or the generic string associated with <b>E_FAIL</b>.</para>
+      <para>This function does not support embedded <b>NUL</b> characters, so only the characters before the first <b>NUL</b> are reported.</para>
+      <para>The <i>message</i> string should be localized.</para>
+    </param>
+    <param name="languageException">An error object that's apartment-agile, in-proc, and marshal-by-value across processes. This object should implement <see cref="ILanguageExceptionStackBackTrace" /> and <see cref="ILanguageExceptionTransform" /> if necessary.</param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error message was reported successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>message</i> is <b>NULL</b> or points to an empty string, or <i>error</i> is a success code.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoReportFailedDelegate">
+    <summary>Triggers the Global Error Handler when a delegate failure occurs.</summary>
+    <param name="punkDelegate">The delegate to report.</param>
+    <param name="pRestrictedErrorInfo">The error to report. Call the <see cref="GetRestrictedErrorInfo" /> function to get the <see cref="IRestrictedErrorInfo" /> that represents the error.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.RoReportUnhandledError">
+    <summary>Triggers the Global Error Handler when an unhandled exception occurs.</summary>
+    <param name="pRestrictedErrorInfo">The error to report. Call the <see cref="GetRestrictedErrorInfo" /> function to get the <see cref="IRestrictedErrorInfo" /> that represents the error.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.RoResolveRestrictedErrorInfoReference">
+    <summary>Returns the <see cref="IRestrictedErrorInfo" /> interface pointer based on the given reference.</summary>
+    <param name="reference">Identifies an error object which contains relevant information for the specific error.</param>
+    <param name="ppRestrictedErrorInfo">The output parameter for the object associated with the given reference.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The operation succeeded.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CLASS_E_NOAGGREGATION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>object does not support aggregation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The reference is invalid.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoSetErrorReportingFlags">
+    <summary>Sets the reporting behavior of Windows Runtime error functions.</summary>
+    <param name="flags">A bitmask of <see cref="RO_ERROR_REPORTING_FLAGS" /> values.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error-reporting behavior was set successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>flags</i> has invalid or undefined bits set.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WinRTSetErrorReportingFlags">
+    <summary>Sets the reporting behavior of Windows Runtime error functions.</summary>
+    <param name="flags">A bitmask of <see cref="RO_ERROR_REPORTING_FLAGS" /> values.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error-reporting behavior was set successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>flags</i> has invalid or undefined bits set.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoTransformError">
+    <summary>Reports a modified error and an informative string to an attached debugger.</summary>
+    <param name="oldError">The original error code associated with the error condition.</param>
+    <param name="newError">A different error code to associate with the error condition. If <i>oldError</i> and <i>newError</i> are the same, or both are success codes, such as <b>S_OK</b>, the function has no effect and returns <b>FALSE</b>.</param>
+    <param name="message">
+      <para>An informative string to help developers to correct the reported error condition. The maximum length is 512 characters, including the trailing null character; longer strings are truncated.</para>
+      <para>If the string is empty, the function succeeds but no error information is reported. It is recommended that you always provide an informative string.</para>
+      <para>If <i>message</i> is <b>NULL</b>, the function succeeds and reports the generic string in Winerror.h if available or the generic string associated with E_FAIL.</para>
+      <para>Although the <i>message</i> string is an <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a>, the <b>RoTransformError</b> function does not support embedded null characters, so only the characters before the first null are reported.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error message was reported successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>message</i> is <b>NULL</b> or points to an empty string, or <i>oldError</i> and <i>newError</i> are the same, or both are success codes.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WinRTTransformError">
+    <summary>Reports a modified error and an informative string to an attached debugger.</summary>
+    <param name="oldError">The original error code associated with the error condition.</param>
+    <param name="newError">A different error code to associate with the error condition. If <i>oldError</i> and <i>newError</i> are the same, or both are success codes, such as <b>S_OK</b>, the function has no effect and returns <b>FALSE</b>.</param>
+    <param name="message">
+      <para>An informative string to help developers to correct the reported error condition. The maximum length is 512 characters, including the trailing null character; longer strings are truncated.</para>
+      <para>If the string is empty, the function succeeds but no error information is reported. It is recommended that you always provide an informative string.</para>
+      <para>If <i>message</i> is <b>NULL</b>, the function succeeds and reports the generic string in Winerror.h if available or the generic string associated with E_FAIL.</para>
+      <para>Although the <i>message</i> string is an <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a>, the <b>RoTransformError</b> function does not support embedded null characters, so only the characters before the first null are reported.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error message was reported successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>message</i> is <b>NULL</b> or points to an empty string, or <i>oldError</i> and <i>newError</i> are the same, or both are success codes.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.RoTransformErrorW">
+    <summary>Reports a transformed error and an informative string to an attached debugger.</summary>
+    <param name="oldError">The original error code associated with the error condition.</param>
+    <param name="newError">The custom error code to associate with the error condition. If <i>oldError</i> and <i>newError</i> are the same, or both are success codes, such as <b>S_OK</b>, the function has no effect and returns <b>FALSE</b>.</param>
+    <param name="cchMax">The maximum number of characters in <i>message</i>, excluding the terminating null character. If the value is 0, the string is read to the first null character or 512 characters, whichever is less. If <i>cchMax</i> is greater than 512, all characters after 512 are ignored.</param>
+    <param name="message">
+      <para>An informative string to help developers to correct the reported error condition. The maximum length is 512 characters, including the trailing null character; longer strings are truncated.</para>
+      <para>If the string is empty, the function succeeds but no error information is reported. It is recommended that you always provide an informative string.</para>
+      <para>If <i>message</i> is <b>NULL</b>, the function succeeds and reports the generic string in Winerror.h if available or the generic string associated with E_FAIL.</para>
+      <para>This function does not support embedded null characters, so only the characters before the first null are reported.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error message was reported successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>message</i> is <b>NULL</b> or points to an empty string, or <i>oldError</i> and <i>newError</i> are the same, or both are success codes.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.WinRTTransformErrorW">
+    <summary>Reports a transformed error and an informative string to an attached debugger.</summary>
+    <param name="oldError">The original error code associated with the error condition.</param>
+    <param name="newError">The custom error code to associate with the error condition. If <i>oldError</i> and <i>newError</i> are the same, or both are success codes, such as <b>S_OK</b>, the function has no effect and returns <b>FALSE</b>.</param>
+    <param name="cchMax">The maximum number of characters in <i>message</i>, excluding the terminating null character. If the value is 0, the string is read to the first null character or 512 characters, whichever is less. If <i>cchMax</i> is greater than 512, all characters after 512 are ignored.</param>
+    <param name="message">
+      <para>An informative string to help developers to correct the reported error condition. The maximum length is 512 characters, including the trailing null character; longer strings are truncated.</para>
+      <para>If the string is empty, the function succeeds but no error information is reported. It is recommended that you always provide an informative string.</para>
+      <para>If <i>message</i> is <b>NULL</b>, the function succeeds and reports the generic string in Winerror.h if available or the generic string associated with E_FAIL.</para>
+      <para>This function does not support embedded null characters, so only the characters before the first null are reported.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The error message was reported successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>message</i> is <b>NULL</b> or points to an empty string, or <i>oldError</i> and <i>newError</i> are the same, or both are success codes.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.SetRestrictedErrorInfo">
+    <summary>Sets the restricted error information object for the current thread.</summary>
+    <param name="pRestrictedErrorInfo">The restricted error information object associated with the current thread.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+</doc>

@@ -3,883 +3,586 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="VS_FIXEDFILEINFO">
-    <summary>
-      <para>Contains version information for a file. This information is language and code page independent.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/string-str">String</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/stringfileinfo">StringFileInfo</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/vs-versioninfo">VS_VERSIONINFO</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/version-information">Version Information</seealso>
+    <summary>Contains version information for a file. This information is language and code page independent.</summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwSignature">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Contains the value 0xFEEF04BD. This is used with the
-<b>szKey</b> member of the <a href="https://docs.microsoft.com//windows/desktop/menurc/vs-versioninfo">VS_VERSIONINFO</a> structure when searching a file for the <b>VS_FIXEDFILEINFO</b> structure.</para>
-    </summary>
+    <summary>Contains the value 0xFEEF04BD. This is used with the<b>szKey</b> member of the <a href="https://docs.microsoft.com//windows/desktop/menurc/vs-versioninfo">VS_VERSIONINFO</a> structure when searching a file for the <b>VS_FIXEDFILEINFO</b> structure.</summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwStrucVersion">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The binary version number of this structure. The high-order word of this member contains the major version number, and the low-order word contains the minor version number.</para>
-    </summary>
+    <summary>The binary version number of this structure. The high-order word of this member contains the major version number, and the low-order word contains the minor version number.</summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwFileVersionMS">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The most significant 32 bits of the file's binary version number. This member is used with
-<b>dwFileVersionLS</b> to form a 64-bit value used for numeric comparisons.</para>
-    </summary>
+    <summary>The most significant 32 bits of the file's binary version number. This member is used with<b>dwFileVersionLS</b> to form a 64-bit value used for numeric comparisons.</summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwFileVersionLS">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The least significant 32 bits of the file's binary version number. This member is used with
-<b>dwFileVersionMS</b> to form a 64-bit value used for numeric comparisons.</para>
-    </summary>
+    <summary>The least significant 32 bits of the file's binary version number. This member is used with<b>dwFileVersionMS</b> to form a 64-bit value used for numeric comparisons.</summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwProductVersionMS">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The most significant 32 bits of the binary version number of the product with which this file was distributed. This member is used with
-<b>dwProductVersionLS</b> to form a 64-bit value used for numeric comparisons.</para>
-    </summary>
+    <summary>The most significant 32 bits of the binary version number of the product with which this file was distributed. This member is used with<b>dwProductVersionLS</b> to form a 64-bit value used for numeric comparisons.</summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwProductVersionLS">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The least significant 32 bits of the binary version number of the product with which this file was distributed. This member is used with
-<b>dwProductVersionMS</b> to form a 64-bit value used for numeric comparisons.</para>
-    </summary>
+    <summary>The least significant 32 bits of the binary version number of the product with which this file was distributed. This member is used with<b>dwProductVersionMS</b> to form a 64-bit value used for numeric comparisons.</summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwFileFlagsMask">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Contains a bitmask that specifies the valid bits in
-<b>dwFileFlags</b>. A bit is valid only if it was defined when the file was created.</para>
-    </summary>
+    <summary>Contains a bitmask that specifies the valid bits in<b>dwFileFlags</b>. A bit is valid only if it was defined when the file was created.</summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwFileFlags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Contains a bitmask that specifies the Boolean attributes of the file. This member can include one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VS_FF_DEBUG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains debugging information or is compiled with debugging features enabled.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file contains debugging information or is compiled with debugging features enabled.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VS_FF_INFOINFERRED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file's version structure was created dynamically; therefore, some of the members in this structure may be empty or incorrect. This flag should never be set in a file's <a href="https://docs.microsoft.com//windows/desktop/menurc/vs-versioninfo">VS_VERSIONINFO</a> data.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file's version structure was created dynamically; therefore, some of the members in this structure may be empty or incorrect. This flag should never be set in a file's <a href="https://docs.microsoft.com//windows/desktop/menurc/vs-versioninfo">VS_VERSIONINFO</a> data.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VS_FF_PATCHED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file has been modified and is not identical to the original shipping file of the same version number.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file has been modified and is not identical to the original shipping file of the same version number.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VS_FF_PRERELEASE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file is a development version, not a commercially released product.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file is a development version, not a commercially released product.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VS_FF_PRIVATEBUILD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was not built using standard release procedures. If this flag is set, the <a href="https://docs.microsoft.com//windows/desktop/menurc/stringfileinfo">StringFileInfo</a> structure should contain a PrivateBuild entry.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file was not built using standard release procedures. If this flag is set, the <a href="https://docs.microsoft.com//windows/desktop/menurc/stringfileinfo">StringFileInfo</a> structure should contain a PrivateBuild entry.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VS_FF_SPECIALBUILD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was built by the original company using standard release procedures but is a variation of the normal file of the same version number. If this flag is set, the <a href="https://docs.microsoft.com//windows/desktop/menurc/stringfileinfo">StringFileInfo</a> structure should contain a SpecialBuild entry.</para>
-          </description>
-        </item>
+          <description>The file was built by the original company using standard release procedures but is a variation of the normal file of the same version number. If this flag is set, the <a href="https://docs.microsoft.com//windows/desktop/menurc/stringfileinfo">StringFileInfo</a> structure should contain a SpecialBuild entry.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwFileOS">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The operating system for which this file was designed. This member can be one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS_DOS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010000L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file was designed for MS-DOS.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS_NT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00040000L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file was designed for Windows NT.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS__WINDOWS16</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file was designed for 16-bit Windows.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS__WINDOWS32</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file was designed for 32-bit Windows.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS_OS216</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00020000L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file was designed for 16-bit OS/2.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS_OS232</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00030000L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file was designed for 32-bit OS/2.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS__PM16</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file was designed for 16-bit Presentation Manager.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS__PM32</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000003L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file was designed for 32-bit Presentation Manager.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS_UNKNOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The operating system for which the file was designed is unknown to the system.</para>
-          </description>
-        </item>
-      </list>
-      <para>An application can combine these values to indicate that the file was designed for one operating system running on another. The following
-<b>dwFileOS</b> values are examples of this, but are not a complete list.</para>
-      <list type="table">
         <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VOS_DOS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file was designed for MS-DOS.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS_DOS_WINDOWS16</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010001L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>VOS_NT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was designed for 16-bit Windows running on MS-DOS.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file was designed for Windows NT.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS_DOS_WINDOWS32</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010004L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>VOS__WINDOWS16</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was designed for 32-bit Windows running on MS-DOS.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file was designed for 16-bit Windows.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS_NT_WINDOWS32</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00040004L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>VOS__WINDOWS32</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was designed for Windows NT.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file was designed for 32-bit Windows.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS_OS216_PM16</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00020002L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>VOS_OS216</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00020000L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was designed for 16-bit Presentation Manager running on 16-bit OS/2.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file was designed for 16-bit OS/2.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>VOS_OS232_PM32</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00030003L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>VOS_OS232</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00030000L</term>
+              </listheader>
             </list>
           </description>
+          <description>The file was designed for 32-bit OS/2.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The file was designed for 32-bit Presentation Manager running on 32-bit OS/2.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VOS__PM16</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002L</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-      </list>
-    </summary>
+          <description>The file was designed for 16-bit Presentation Manager.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VOS__PM32</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000003L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file was designed for 32-bit Presentation Manager.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VOS_UNKNOWN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The operating system for which the file was designed is unknown to the system.</description>
+        </listheader>
+      </list> <para>An application can combine these values to indicate that the file was designed for one operating system running on another. The following<b>dwFileOS</b> values are examples of this, but are not a complete list.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>VOS_DOS_WINDOWS16</b></term></listheader><listheader><term>0x00010001L</term></listheader></list></description><description>The file was designed for 16-bit Windows running on MS-DOS.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>VOS_DOS_WINDOWS32</b></term></listheader><listheader><term>0x00010004L</term></listheader></list></description><description>The file was designed for 32-bit Windows running on MS-DOS.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>VOS_NT_WINDOWS32</b></term></listheader><listheader><term>0x00040004L</term></listheader></list></description><description>The file was designed for Windows NT.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>VOS_OS216_PM16</b></term></listheader><listheader><term>0x00020002L</term></listheader></list></description><description>The file was designed for 16-bit Presentation Manager running on 16-bit OS/2.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>VOS_OS232_PM32</b></term></listheader><listheader><term>0x00030003L</term></listheader></list></description><description>The file was designed for 32-bit Presentation Manager running on 32-bit OS/2.</description></listheader></list></summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwFileType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The general type of file. This member can be one of the following values. All other values are reserved.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VFT_APP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains an application.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file contains an application.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VFT_DLL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains a DLL.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file contains a DLL.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VFT_DRV</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000003L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000003L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains a device driver. If
-<b>dwFileType</b> is <b>VFT_DRV</b>,
-<b>dwFileSubtype</b> contains a more specific description of the driver.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file contains a device driver. If 						<b>dwFileType</b> is <b>VFT_DRV</b>, 						<b>dwFileSubtype</b> contains a more specific description of the driver.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VFT_FONT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains a font. If
-<b>dwFileType</b> is <b>VFT_FONT</b>,
-<b>dwFileSubtype</b> contains a more specific description of the font file.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file contains a font. If 						<b>dwFileType</b> is <b>VFT_FONT</b>, 						<b>dwFileSubtype</b> contains a more specific description of the font file.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VFT_STATIC_LIB</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000007L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000007L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains a static-link library.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file contains a static-link library.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VFT_UNKNOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file type is unknown to the system.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file type is unknown to the system.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VFT_VXD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000005L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000005L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains a virtual device.</para>
-          </description>
-        </item>
+          <description>The file contains a virtual device.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwFileSubtype">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The function of the file. The possible values depend on the value of
-<b>dwFileType</b>. For all values of
-<b>dwFileType</b> not described in the following list,
-<b>dwFileSubtype</b> is zero.</para>
-      <para>If
-<b>dwFileType</b> is <b>VFT_DRV</b>,
-<b>dwFileSubtype</b> can be one of the following values.</para>
+      <para>The function of the file. The possible values depend on the value of<b>dwFileType</b>. For all values of<b>dwFileType</b> not described in the following list,<b>dwFileSubtype</b> is zero.</para>
+      <para>If<b>dwFileType</b> is <b>VFT_DRV</b>,<b>dwFileSubtype</b> can be one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>VFT2_DRV_COMM</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000000AL</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000000AL</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains a communications driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_DRV_DISPLAY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file contains a display driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_DRV_INSTALLABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file contains an installable driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_DRV_KEYBOARD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file contains a keyboard driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_DRV_LANGUAGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000003L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file contains a language driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_DRV_MOUSE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000005L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file contains a mouse driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_DRV_NETWORK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000006L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file contains a network driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_DRV_PRINTER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file contains a printer driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_DRV_SOUND</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000009L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file contains a sound driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_DRV_SYSTEM</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000007L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file contains a system driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_DRV_VERSIONED_PRINTER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000000CL</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The file contains a versioned printer driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_UNKNOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The driver type is unknown by the system.</para>
-          </description>
-        </item>
-      </list>
-      <para>If
-<b>dwFileType</b> is <b>VFT_FONT</b>,
-<b>dwFileSubtype</b> can be one of the following values.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
+          <description>The file contains a communications driver.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_FONT_RASTER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>VFT2_DRV_DISPLAY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains a raster font.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file contains a display driver.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_FONT_TRUETYPE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000003L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>VFT2_DRV_INSTALLABLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains a TrueType font.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file contains an installable driver.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>VFT2_FONT_VECTOR</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>VFT2_DRV_KEYBOARD</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file contains a vector font.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file contains a keyboard driver.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
+                  <b>VFT2_DRV_LANGUAGE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000003L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file contains a language driver.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFT2_DRV_MOUSE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000005L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file contains a mouse driver.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFT2_DRV_NETWORK</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000006L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file contains a network driver.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFT2_DRV_PRINTER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file contains a printer driver.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFT2_DRV_SOUND</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000009L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file contains a sound driver.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFT2_DRV_SYSTEM</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000007L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file contains a system driver.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFT2_DRV_VERSIONED_PRINTER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000000CL</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file contains a versioned printer driver.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>VFT2_UNKNOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The font type is unknown by the system.</para>
-          </description>
-        </item>
-      </list>
-      <para>If
-<b>dwFileType</b> is <b>VFT_VXD</b>,
-<b>dwFileSubtype</b> contains the virtual device identifier included in the virtual device control block.</para>
-      <para>All
-<b>dwFileSubtype</b> values not listed here are reserved.</para>
-    </summary>
+          <description>The driver type is unknown by the system.</description>
+        </listheader>
+      </list> <para>If<b>dwFileType</b> is <b>VFT_FONT</b>,<b>dwFileSubtype</b> can be one of the following values.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>VFT2_FONT_RASTER</b></term></listheader><listheader><term>0x00000001L</term></listheader></list></description><description>The file contains a raster font.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>VFT2_FONT_TRUETYPE</b></term></listheader><listheader><term>0x00000003L</term></listheader></list></description><description>The file contains a TrueType font.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>VFT2_FONT_VECTOR</b></term></listheader><listheader><term>0x00000002L</term></listheader></list></description><description>The file contains a vector font.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>VFT2_UNKNOWN</b></term></listheader><listheader><term>0x00000000L</term></listheader></list></description><description>The font type is unknown by the system.</description></listheader></list> <para>If<b>dwFileType</b> is <b>VFT_VXD</b>,<b>dwFileSubtype</b> contains the virtual device identifier included in the virtual device control block.</para><para>All<b>dwFileSubtype</b> values not listed here are reserved.</para></summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwFileDateMS">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The most significant 32 bits of the file's 64-bit binary creation date and time stamp.</para>
-    </summary>
+    <summary>The most significant 32 bits of the file's 64-bit binary creation date and time stamp.</summary>
   </member>
   <member name="VS_FIXEDFILEINFO.dwFileDateLS">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The least significant 32 bits of the file's 64-bit binary creation date and time stamp.</para>
-    </summary>
+    <summary>The least significant 32 bits of the file's 64-bit binary creation date and time stamp.</summary>
   </member>
 </doc>

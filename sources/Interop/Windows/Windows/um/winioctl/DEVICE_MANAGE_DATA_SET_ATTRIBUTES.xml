@@ -3,197 +3,139 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEVICE_MANAGE_DATA_SET_ATTRIBUTES">
-    <summary>
-      <para>Input structure for the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a></para>
-      <para>control code.</para>
-    </summary>
-    <remarks>
-      <para>The total length of the buffer that contains this structure must be at least
-<code>(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES) + ParameterBlockLength + DataSetRangesLength)</code>.</para>
-    </remarks>
-    <seealso cref="DEVICE_DATA_SET_RANGE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DevIO/device-management-structures">Device Management Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</seealso>
+    <summary>Input structure for the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a>control code.</summary>
   </member>
   <member name="DEVICE_MANAGE_DATA_SET_ATTRIBUTES.Size">
-    <summary>
-      <para>Size of this data structure. Must be set to
-<code>sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES)</code>.</para>
-    </summary>
+    <summary>Size of this data structure. Must be set to<code>sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES)</code>.</summary>
   </member>
   <member name="DEVICE_MANAGE_DATA_SET_ATTRIBUTES.Action">
     <summary>
-      <para>A valid value of type
-<a href="https://docs.microsoft.com//windows/desktop/DevIO/device-data-management-set-action">DEVICE_DATA_MANAGEMENT_SET_ACTION</a>.</para>
+      <para>A valid value of type<a href="https://docs.microsoft.com//windows/desktop/DevIO/device-data-management-set-action">DEVICE_DATA_MANAGEMENT_SET_ACTION</a>.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DeviceDsmAction_Trim</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A trim action is performed. This value is not supported for user-mode applications.</para>
-          </description>
-        </item>
-        <item>
+          <description>A trim action is performed. This value is not supported for user-mode applications.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DeviceDsmAction_Notification</b>
-                </description>
-              </item>
-              <item>
-                <description>2 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000002)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000002)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A notification action is performed. The additional parameters are in a
-<see cref="DEVICE_DSM_NOTIFICATION_PARAMETERS" /></para>
-            <para>structure. The <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000000) is a bit flag to
-indicate to the driver stack that this operation is non-destructive.</para>
-          </description>
-        </item>
-        <item>
+          <description>A notification action is performed. The additional parameters are in a <see cref="DEVICE_DSM_NOTIFICATION_PARAMETERS" /> structure. The <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000000) is a bit flag to indicate to the driver stack that this operation is non-destructive.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DeviceDsmAction_OffloadRead</b>
-                </description>
-              </item>
-              <item>
-                <description>3 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000003)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000003)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An offload read action is performed. The additional parameters are in a
-<see cref="DEVICE_DSM_OFFLOAD_READ_PARAMETERS" /></para>
-            <para>structure. The <b>DeviceDsmActionFlag_NonDestructive</b></para>
-            <para>(0x80000000) is a bit flag to indicate to the driver stack that this operation is non-destructive.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
-        <item>
+          <description>An offload read action is performed. The additional parameters are in a <see cref="DEVICE_DSM_OFFLOAD_READ_PARAMETERS" /> structure. The <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000000) is a bit flag to indicate to the driver stack that this operation is non-destructive.<para><b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DeviceDsmAction_OffloadWrite</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An offload write action is performed. The additional parameters are in a
-<see cref="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS" /></para>
-            <para>structure.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
-        <item>
+          <description>An offload write action is performed. The additional parameters are in a <see cref="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS" /> structure.<para><b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DeviceDsmAction_Allocation</b>
-                </description>
-              </item>
-              <item>
-                <description>5 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000005)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000005)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An allocation bitmap is retrieved for the first data set range specified. The
-<b>DeviceDsmActionFlag_NonDestructive</b> (0x80000000) is a bit flag to indicate to the
-driver stack that this operation is non-destructive.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
-        <item>
+          <description>An allocation bitmap is retrieved for the first data set range specified. The <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000000) is a bit flag to indicate to the driver stack that this operation is non-destructive.<para><b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DeviceDsmAction_Repair</b>
-                </description>
-              </item>
-              <item>
-                <description>6 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000006)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000006)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A repair action is performed. The additional parameters are in a
-<see cref="DEVICE_DATA_SET_REPAIR_PARAMETERS" /></para>
-            <para>structure. The <b>DeviceDsmActionFlag_NonDestructive</b></para>
-            <para>(0x80000000) is a bit flag to indicate to the driver stack that this operation is non-destructive.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
-        <item>
+          <description>A repair action is performed. The additional parameters are in a <see cref="DEVICE_DATA_SET_REPAIR_PARAMETERS" /> structure. The <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000000) is a bit flag to indicate to the driver stack that this operation is non-destructive.<para><b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DeviceDsmAction_Scrub</b>
-                </description>
-              </item>
-              <item>
-                <description>7 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000007)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>7 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000007)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A scrub action is performed. The <b>DeviceDsmActionFlag_NonDestructive</b></para>
-            <para>(0x80000000) is a bit flag to indicate to the driver stack that this operation is non-destructive.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
-        <item>
+          <description>A scrub action is performed. The <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000000) is a bit flag to indicate to the driver stack that this operation is non-destructive.<para><b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DeviceDsmAction_Resiliency</b>
-                </description>
-              </item>
-              <item>
-                <description>8 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000008)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>8 | <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000008)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A resiliency action is performed. The <b>DeviceDsmActionFlag_NonDestructive</b></para>
-            <para>(0x80000000) is a bit flag to indicate to the driver stack that this operation is non-destructive.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
+          <description>A resiliency action is performed. The <b>DeviceDsmActionFlag_NonDestructive</b> (0x80000000) is a bit flag to indicate to the driver stack that this operation is non-destructive.<para><b>Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -205,90 +147,64 @@ driver stack that this operation is non-destructive.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DEVICE_DSM_FLAG_TRIM_NOT_FS_ALLOCATED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x80000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x80000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set then the described ranges are not allocated by a file system. This flag is specific to the
-<b>DeviceDsmAction_Trim</b> action.</para>
-          </description>
-        </item>
-        <item>
+          <description>If set then the described ranges are not allocated by a file system. This flag is specific to the <b>DeviceDsmAction_Trim</b> action.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DEVICE_DSM_FLAG_RESILIENCY_START_RESYNC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Starts a resync operation on the storage device. This flag is specific to the
-<b>DeviceDsmAction_Resiliency</b> action.</para>
-          </description>
-        </item>
-        <item>
+          <description>Starts a resync operation on the storage device. This flag is specific to the <b>DeviceDsmAction_Resiliency</b> action.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DEVICE_DSM_FLAG_RESILIENCY_START_LOAD_BALANCING</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Starts a load balancing operation on the storage device. This flag is specific to the
-<b>DeviceDsmAction_Resiliency</b> action.</para>
-          </description>
-        </item>
+          <description>Starts a load balancing operation on the storage device. This flag is specific to the <b>DeviceDsmAction_Resiliency</b> action.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="DEVICE_MANAGE_DATA_SET_ATTRIBUTES.ParameterBlockOffset">
-    <summary>
-      <para>Byte offset to the start of the parameter block stored in the buffer contiguous to this structure. Must be
-aligned to the corresponding structure alignment. A value of zero indicates there is no parameter block and the
-<b>ParameterBlockLength</b> member must also be zero.</para>
-    </summary>
+    <summary>Byte offset to the start of the parameter block stored in the buffer contiguous to this structure. Must be aligned to the corresponding structure alignment. A value of zero indicates there is no parameter block and the<b>ParameterBlockLength</b> member must also be zero.</summary>
   </member>
   <member name="DEVICE_MANAGE_DATA_SET_ATTRIBUTES.ParameterBlockLength">
-    <summary>
-      <para>Length of the parameter block, in bytes. A value of zero indicates there is no parameter block and the
-<b>ParameterBlockOffset</b> member must also be zero.</para>
-    </summary>
+    <summary>Length of the parameter block, in bytes. A value of zero indicates there is no parameter block and the<b>ParameterBlockOffset</b> member must also be zero.</summary>
   </member>
   <member name="DEVICE_MANAGE_DATA_SET_ATTRIBUTES.DataSetRangesOffset">
-    <summary>
-      <para>Byte offset to the start of the data set ranges block made up of an array of
-<see cref="DEVICE_DATA_SET_RANGE" /> structures stored in the
-buffer contiguous to this structure. Must be aligned to the
-<b>DEVICE_DATA_SET_RANGE</b> structure alignment. A
-value of zero indicates there is no data set ranges block and the
-<b>DataSetRangesLength</b> member must also be zero.</para>
-    </summary>
+    <summary>Byte offset to the start of the data set ranges block made up of an array of<see cref="DEVICE_DATA_SET_RANGE" /> structures stored in the buffer contiguous to this structure. Must be aligned to the<b>DEVICE_DATA_SET_RANGE</b> structure alignment. A value of zero indicates there is no data set ranges block and the<b>DataSetRangesLength</b> member must also be zero.</summary>
   </member>
   <member name="DEVICE_MANAGE_DATA_SET_ATTRIBUTES.DataSetRangesLength">
-    <summary>
-      <para>Length of the data set ranges block, in bytes. A value of zero indicates there is no data set ranges block
-and the <b>DataSetRangesOffset</b> member must also be zero.</para>
-    </summary>
+    <summary>Length of the data set ranges block, in bytes. A value of zero indicates there is no data set ranges block and the <b>DataSetRangesOffset</b> member must also be zero.</summary>
   </member>
 </doc>

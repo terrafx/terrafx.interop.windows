@@ -3,31 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GROUP_RELATIONSHIP">
-    <summary>
-      <para>Represents information about processor groups. This structure is used with the <see cref="GetLogicalProcessorInformationEx" /> function.</para>
-    </summary>
-    <seealso cref="GetLogicalProcessorInformationEx" />
-    <seealso cref="PROCESSOR_GROUP_INFO" />
-    <seealso cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" />
+    <summary>Represents information about processor groups. This structure is used with the <see cref="GetLogicalProcessorInformationEx" /> function.</summary>
   </member>
   <member name="GROUP_RELATIONSHIP.MaximumGroupCount">
-    <summary>
-      <para>The maximum number of processor groups on the system.</para>
-    </summary>
+    <summary>The maximum number of processor groups on the system.</summary>
   </member>
   <member name="GROUP_RELATIONSHIP.ActiveGroupCount">
-    <summary>
-      <para>The number of active groups on the system. This member indicates the number of <see cref="PROCESSOR_GROUP_INFO" /> structures in the <b>GroupInfo</b> array.</para>
-    </summary>
+    <summary>The number of active groups on the system. This member indicates the number of <see cref="PROCESSOR_GROUP_INFO" /> structures in the <b>GroupInfo</b> array.</summary>
   </member>
   <member name="GROUP_RELATIONSHIP.Reserved">
-    <summary>
-      <para>This member is reserved.</para>
-    </summary>
+    <summary>This member is reserved.</summary>
   </member>
   <member name="GROUP_RELATIONSHIP.GroupInfo">
-    <summary>
-      <para>An array of <see cref="PROCESSOR_GROUP_INFO" /> structures. Each structure represents the number and affinity of processors in an active group on the system.</para>
-    </summary>
+    <summary>An array of <see cref="PROCESSOR_GROUP_INFO" /> structures. Each structure represents the number and affinity of processors in an active group on the system.</summary>
   </member>
 </doc>

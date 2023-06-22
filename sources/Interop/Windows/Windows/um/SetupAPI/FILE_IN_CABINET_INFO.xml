@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_IN_CABINET_INFO">
+    <summary>The<b>FILE_IN_CABINET_INFO</b> structure provides information about a file found in the cabinet. The<see cref="SetupIterateCabinet" /> function sends this structure as one of the parameters when it sends a<a href="https://docs.microsoft.com//windows/desktop/SetupApi/spfilenotify-fileincabinet">SPFILENOTIFY_FILEINCABINET</a> notification to the cabinet callback routine.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.NameInCabinet">
+    <summary>File name as it exists within the cabinet file.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.FileSize">
+    <summary>Uncompressed size of the file in the cabinet, in bytes.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.Win32Error">
+    <summary>If an error occurs, this member is the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>. If no error has occurred, it is NO_ERROR.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.DosDate">
+    <summary>Date that the file was last saved.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.DosTime">
+    <summary>MS-DOS time stamp of the file in the cabinet.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.DosAttribs">
+    <summary>Attributes of the file in the cabinet.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.FullTargetName">
+    <summary>Target path and file name.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO">
+    <summary>The<b>FILE_IN_CABINET_INFO</b> structure provides information about a file found in the cabinet. The<see cref="SetupIterateCabinet" /> function sends this structure as one of the parameters when it sends a<a href="https://docs.microsoft.com//windows/desktop/SetupApi/spfilenotify-fileincabinet">SPFILENOTIFY_FILEINCABINET</a> notification to the cabinet callback routine.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.NameInCabinet">
+    <summary>File name as it exists within the cabinet file.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.FileSize">
+    <summary>Uncompressed size of the file in the cabinet, in bytes.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.Win32Error">
+    <summary>If an error occurs, this member is the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>. If no error has occurred, it is NO_ERROR.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.DosDate">
+    <summary>Date that the file was last saved.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.DosTime">
+    <summary>MS-DOS time stamp of the file in the cabinet.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.DosAttribs">
+    <summary>Attributes of the file in the cabinet.</summary>
+  </member>
+  <member name="FILE_IN_CABINET_INFO.FullTargetName">
+    <summary>Target path and file name.</summary>
+  </member>
+</doc>

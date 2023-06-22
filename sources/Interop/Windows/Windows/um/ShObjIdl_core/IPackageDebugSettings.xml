@@ -3,238 +3,76 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPackageDebugSettings.ActivateBackgroundTask">
-    <summary>
-      <para>Activates the specified background task.</para>
-    </summary>
-    <param name="taskId">
-      <para>The identifier of the background task to activate.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use the <b>ActivateBackgroundTask</b> method to test the code that handles your  background tasks.</para>
-    </remarks>
-    <seealso cref="IPackageDebugSettings" />
+    <summary>Activates the specified background task.</summary>
+    <param name="taskId">The identifier of the background task to activate.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.DisableDebugging">
-    <summary>
-      <para>Disables debug mode for the processes of the specified package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method has no effect if the <a href="https://docs.microsoft.com//previous-versions/hh438395(v=vs.85)">EnableDebugging</a> method was not previously called for this package.</para>
-    </remarks>
-    <seealso cref="EnableDebugging" />
-    <seealso cref="IPackageDebugSettings" />
+    <summary>Disables debug mode for the processes of the specified package.</summary>
+    <param name="packageFullName">The package full name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.EnableDebugging">
-    <summary>
-      <para>Enables debug mode for the processes of the specified package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
-    <param name="debuggerCommandLine">
-      <para>The command line to use to launch processes from this package. This parameter is optional.</para>
-    </param>
-    <param name="environment">
-      <para>Any environment strings to pass to processes. This parameter is optional.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Enabling debug mode has the following effects:</para>
-      <list type="bullet">
-        <item>
-          <description>Optionally enables debugger attach on activation.</description>
-        </item>
-        <item>
-          <description>Disables activation timeouts.</description>
-        </item>
-        <item>
-          <description>Disables automatic process suspension.</description>
-        </item>
-        <item>
-          <description>Disables automatic process termination.</description>
-        </item>
-        <item>
-          <description>Disables automatic process resumption.</description>
-        </item>
-      </list>
-      <para>To restore normal operation, call the <a href="https://docs.microsoft.com//previous-versions/hh438394(v=vs.85)">DisableDebugging</a> method.</para>
-    </remarks>
-    <seealso cref="DisableDebugging" />
-    <seealso cref="IPackageDebugSettings" />
+    <summary>Enables debug mode for the processes of the specified package.</summary>
+    <param name="packageFullName">The package full name.</param>
+    <param name="debuggerCommandLine">The command line to use to launch processes from this package. This parameter is optional.</param>
+    <param name="environment">Any environment strings to pass to processes. This parameter is optional.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.EnumerateBackgroundTasks">
-    <summary>
-      <para>Gets the background tasks that are provided by the specified package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name to query for background tasks.</para>
-    </param>
-    <param name="taskCount">
-      <para>The count of <i>taskIds</i> and <i>taskNames</i> entries.</para>
-    </param>
-    <param name="taskIds">
-      <para>An array of background task identifiers. You can use these identifiers in the <see cref="ActivateBackgroundTask" /> method to activate specified tasks.</para>
-    </param>
-    <param name="taskNames">
-      <para>An array of task names that corresponds with background <i>taskIds</i>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Both parameters <i>taskIds</i> and <i>taskNames</i> have the same ordering of tasks. If you need to know the user-readable task name associated with <i>taskId[0]</i>, refer to <i>taskNames[0]</i>.</para>
-    </remarks>
-    <seealso cref="IPackageDebugSettings" />
+    <summary>Gets the background tasks that are provided by the specified package.</summary>
+    <param name="packageFullName">The package full name to query for background tasks.</param>
+    <param name="taskCount">The count of <i>taskIds</i> and <i>taskNames</i> entries.</param>
+    <param name="taskIds">An array of background task identifiers. You can use these identifiers in the <see cref="ActivateBackgroundTask" /> method to activate specified tasks.</param>
+    <param name="taskNames">An array of task names that corresponds with background <i>taskIds</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.GetPackageExecutionState">
-    <summary>
-      <para>Returns the current execution state of the specified package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The package full name.</para>
-    </param>
-    <param name="packageExecutionState">
-      <para>Type: <b><see cref="PACKAGE_EXECUTION_STATE" />*</b></para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Debuggers can use the <b>GetPackageExecutionState</b> to understand if the application currently is running, suspending, suspended, or terminated. The <b>GetPackageExecutionState</b> function doesn't provide the state of background tasks running in the package.</para>
-    </remarks>
-    <seealso cref="IPackageDebugSettings" />
+    <summary>Returns the current execution state of the specified package.</summary>
+    <param name="packageFullName">The package full name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.RegisterForPackageStateChanges">
-    <summary>
-      <para>Register for package state-change notifications.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
-    <param name="pPackageExecutionStateChangeNotification">
-      <para>Package state-change notifications are delivered by the <see cref="OnStateChanged" /> function on <i>pPackageExecutionStateChangeNotification</i>.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>A unique registration identifier for the current listener. Use this identifier  to unregister for package state-change notifications by using the <see cref="UnregisterForPackageStateChanges" /> method.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Notifications are raised when the package enters the running,
-suspending, and
-suspended states.</para>
-    </remarks>
-    <seealso cref="IPackageDebugSettings" />
-    <seealso cref="IPackageExecutionStateChangeNotification" />
-    <seealso cref="UnregisterForPackageStateChanges" />
+    <summary>Register for package state-change notifications.</summary>
+    <param name="packageFullName">The package full name.</param>
+    <param name="pPackageExecutionStateChangeNotification">Package state-change notifications are delivered by the <see cref="OnStateChanged" /> function on <i>pPackageExecutionStateChangeNotification</i>.</param>
+    <param name="pdwCookie">A unique registration identifier for the current listener. Use this identifier to unregister for package state-change notifications by using the <see cref="UnregisterForPackageStateChanges" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.Resume">
-    <summary>
-      <para>Resumes the processes of the package if they are currently suspended.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Each process receives the <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.core.coreapplication.resuming">Resuming</a> event, which is useful for stepping through your apps as they respond to this event.</para>
-    </remarks>
-    <seealso cref="IPackageDebugSettings" />
-    <seealso cref="Suspend" />
+    <summary>Resumes the processes of the package if they are currently suspended.</summary>
+    <param name="packageFullName">The package full name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.SetTargetSessionId">
-    <summary>
-      <para>Sets the session identifier.</para>
-    </summary>
-    <param name="sessionId">
-      <para>The session identifier.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IPackageDebugSettings" />
+    <summary>Sets the session identifier.</summary>
+    <param name="sessionId">The session identifier.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.StartServicing">
-    <summary>
-      <para>Suspends and terminates the non-background portion of the apps associated with the specified package and cancels the background tasks associated with the package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use the <b>StartServicing</b> method to simulate what happens when a package is updated to a newer version. New background task activations are buffered (delayed) until you call the <see cref="StopServicing" /> method.</para>
-    </remarks>
-    <seealso cref="IPackageDebugSettings" />
-    <seealso cref="StopServicing" />
+    <summary>Suspends and terminates the non-background portion of the apps associated with the specified package and cancels the background tasks associated with the package.</summary>
+    <param name="packageFullName">The package full name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.StartSessionRedirection">
-    <summary>
-      <para>Causes background tasks for the specified package to activate  in the specified user session.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
-    <param name="sessionId">
-      <para>The identifier of the session which background tasks are redirected to.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IPackageDebugSettings" />
-    <seealso cref="StopSessionRedirection" />
+    <summary>Causes background tasks for the specified package to activate in the specified user session.</summary>
+    <param name="packageFullName">The package full name.</param>
+    <param name="sessionId">The identifier of the session which background tasks are redirected to.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.StopServicing">
-    <summary>
-      <para>Completes the previous servicing operation that was started by a call to the  <see cref="StartServicing" /> method.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IPackageDebugSettings" />
-    <seealso cref="StartServicing" />
+    <summary>Completes the previous servicing operation that was started by a call to the <see cref="StartServicing" /> method.</summary>
+    <param name="packageFullName">The package full name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.StopSessionRedirection">
-    <summary>
-      <para>Stops redirection of background tasks for the specified package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IPackageDebugSettings" />
-    <seealso cref="StartSessionRedirection" />
+    <summary>Stops redirection of background tasks for the specified package.</summary>
+    <param name="packageFullName">The package full name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.Suspend">
-    <summary>
-      <para>Suspends the processes of the package if they are currently running.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
+    <summary>Suspends the processes of the package if they are currently running.</summary>
+    <param name="packageFullName">The package full name.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -242,72 +80,44 @@ suspended states.</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The system has successfully started suspending the package.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The operation succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <i>A failing HRESULT value</i>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_ILLEGAL_STATECHANGE</b>
-            </para>
-          </description>
-          <description>
-            <para>The process is not currently running.</para>
-          </description>
-        </item>
+          <description>No process in the package is currently running, or another error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Each process receives the <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.core.coreapplication.suspending">Suspending</a> event, which is useful for stepping through your apps as they respond to this event.</para>
-    </remarks>
-    <seealso cref="IPackageDebugSettings" />
-    <seealso cref="Resume" />
   </member>
   <member name="IPackageDebugSettings.TerminateAllProcesses">
-    <summary>
-      <para>Terminates all processes for the specified package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method does not suspend the processes first. To test suspension followed by termination, call the <a href="https://docs.microsoft.com//windows/desktop/WinRT/ipackagedebugsettings-suspend">Suspend</a> method before calling <a href="https://docs.microsoft.com//previous-versions/hh438399(v=vs.85)">TerminateAllProcesses</a>.</para>
-    </remarks>
-    <seealso cref="IPackageDebugSettings" />
+    <summary>Terminates all processes for the specified package.</summary>
+    <param name="packageFullName">The package full name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings.UnregisterForPackageStateChanges">
-    <summary>
-      <para>Stops receiving package state-change notifications associated with a previous call to <see cref="RegisterForPackageStateChanges" />.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>The notification to cancel. This identifier is returned by a previous call to the  <see cref="RegisterForPackageStateChanges" /> method.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call the <b>UnregisterForPackageStateChanges</b> to stop receiving package state-change notifications associated with a previous call to the <see cref="RegisterForPackageStateChanges" /> method.</para>
-    </remarks>
-    <seealso cref="IPackageDebugSettings" />
-    <seealso cref="RegisterForPackageStateChanges" />
+    <summary>Stops receiving package state-change notifications associated with a previous call to <see cref="RegisterForPackageStateChanges" />.</summary>
+    <param name="dwCookie">The notification to cancel. This identifier is returned by a previous call to the <see cref="RegisterForPackageStateChanges" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPackageDebugSettings">
-    <summary>
-      <para>Enables debugger developers to control the life cycle of a Windows Store app, such as suspending or resuming.</para>
-    </summary>
-    <remarks>
-      <para>Any debug options set remain in effect until they are cleared or this interface is released.</para>
-      <para>For debug settings to take effect on Internet Explorer in the new Windows UI, use "DefaultBrowser_NOPUBLISHERID" as the <i>packageFullName</i> parameter  for  <a href="https://docs.microsoft.com//previous-versions/hh438393(v=vs.85)">IPackageDebugSettings</a> methods.</para>
-    </remarks>
+    <summary>Enables debugger developers to control the life cycle of a Windows Store app, such as suspending or resuming.</summary>
   </member>
 </doc>

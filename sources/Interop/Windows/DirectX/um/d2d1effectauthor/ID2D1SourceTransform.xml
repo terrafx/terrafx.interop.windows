@@ -3,71 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1SourceTransform.Draw">
-    <summary>
-      <para>Draws the transform to the graphics processing unit (GPU)–based Direct2D pipeline.</para>
-    </summary>
-    <param name="target">
-      <para>Type: <b><see cref="ID2D1Bitmap1" />*</b></para>
-      <para>The target to which the transform should be written.</para>
-    </param>
-    <param name="drawRect">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
-      <para>The area within the source from which the image should be drawn.</para>
-    </param>
-    <param name="targetOrigin">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2u">D2D1_POINT_2U</a></b></para>
-      <para>The origin within the target bitmap to which the source data should be drawn.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The implementation of the rasterizer guarantees that adding the <i>renderRect</i> to the <i>targetOrigin</i> does not exceed the bounds of the bitmap.</para>
-      <para>When implementing this method you must update the bitmap in this way:</para>
-      <list type="number">
-        <item>
-          <description>Call the <see cref="ID2D1Bitmap.Map" /> method with the  D2D1_MAP_OPTIONS_DISCARD and D2D1_MAP_OPTIONS_WRITE
-flags.</description>
-        </item>
-        <item>
-          <description>Update the buffer this method returns.</description>
-        </item>
-        <item>
-          <description>Call the <see cref="ID2D1Bitmap.Unmap" /> method.</description>
-        </item>
-      </list>
-      <para>If you  set the buffer precision manually on the associated <see cref="ID2D1RenderInfo" /> object, it must handle different pixel formats in this method by calling <see cref="ID2D1Bitmap.GetPixelFormat" />.  If you set the buffer precision manually, then you can rely on that format always being the one you provided.</para>
-    </remarks>
-    <seealso cref="ID2D1EffectImpl" />
-    <seealso cref="ID2D1SourceTransform" />
+    <summary>Draws the transform to the graphics processing unit (GPU)–based Direct2D pipeline.</summary>
+    <param name="target">The target to which the transform should be written.</param>
+    <param name="drawRect">The area within the source from which the image should be drawn.</param>
+    <param name="targetOrigin">The origin within the target bitmap to which the source data should be drawn.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1SourceTransform.SetRenderInfo">
-    <summary>
-      <para>Sets the render information for the transform.</para>
-    </summary>
-    <param name="renderInfo">
-      <para>Type: <b><see cref="ID2D1RenderInfo" />*</b></para>
-      <para>The interface supplied to the transform to allow specifying the CPU based transform pass.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Provides a render information interface to the source transform to allow it to specify state to the rendering system.</para>
-    </remarks>
-    <seealso cref="ID2D1EffectImpl" />
-    <seealso cref="ID2D1SourceTransform" />
+    <summary>Sets the render information for the transform.</summary>
+    <param name="renderInfo">The interface supplied to the transform to allow specifying the CPU based transform pass.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1SourceTransform">
-    <summary>
-      <para>Represents a CPU-based rasterization stage in the transform  pipeline graph.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>ID2D1SourceTransform</b> specializes an implementation of the Shantzis calculations to a transform implemented as the source of an effect graph with the data being provided from sytem memory.</para>
-    </remarks>
-    <seealso cref="ID2D1Transform" />
+    <summary>Represents a CPU-based rasterization stage in the transform pipeline graph.</summary>
   </member>
 </doc>

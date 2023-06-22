@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfFnLangProfileUtil.IsProfileAvailableForLang">
-    <summary>
-      <para>Determines if the speech text service has a profile available for a specific language.</para>
-    </summary>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> that specifies the language that the query applies to.</para>
-    </param>
-    <param name="pfAvailable">
-      <para>Pointer to a <b>BOOL</b> that receives nonzero if a profile is available for the language identified by langid or zero otherwise.</para>
-    </param>
+    <summary>Determines if the speech text service has a profile available for a specific language.</summary>
+    <param name="langid">Contains a <b>LANGID</b> that specifies the language that the query applies to.</param>
+    <param name="pfAvailable">Pointer to a <b>BOOL</b> that receives nonzero if a profile is available for the language identified by langid or zero otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,33 +13,36 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pfAvailable</i> is invalid.
-</description>
-        </item>
+            <i>pfAvailable</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfFnLangProfileUtil.RegisterActiveProfiles">
-    <summary>
-      <para>Causes the speech text service to register its active profiles.</para>
-    </summary>
+    <summary>Causes the speech text service to register its active profiles.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -53,42 +50,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The speech text service removed its active profiles based on user actions.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The speech text service removed its active profiles based on user actions.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfFnLangProfileUtil">
-    <summary>
-      <para>The <b>ITfFnLangProfileUtil</b> interface is implemented by the speech text service and used to provide utility methods for the speech text service. A text service can create an instance of this interface by calling CoCreateInstance with CLSID_SapiLayr and IID_ITfFnLangProfileUtil.</para>
-    </summary>
+    <summary>The <b>ITfFnLangProfileUtil</b> interface is implemented by the speech text service and used to provide utility methods for the speech text service. A text service can create an instance of this interface by calling CoCreateInstance with CLSID_SapiLayr and IID_ITfFnLangProfileUtil.</summary>
   </member>
 </doc>

@@ -3,83 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IP_INTERFACE_INFO">
-    <summary>
-      <para>The
-<b>IP_INTERFACE_INFO</b> structure contains a list of the network interface adapters with IPv4 enabled on the local system.</para>
-    </summary>
-    <remarks>
-      <para>The
-<b>IP_INTERFACE_INFO</b> structure is specific to network adapters with IPv4 enabled. The <b>IP_INTERFACE_INFO</b> structure contains the number of network adapters with IPv4 enabled on the local system and an array of <see cref="IP_ADAPTER_INDEX_MAP" /> structures with information on each network adapter with IPv4 enabled. The <b>IP_INTERFACE_INFO</b> structure contains at least one <b>IP_ADAPTER_INDEX_MAP</b> structure even if the <b>NumAdapters</b> member of the <b>IP_INTERFACE_INFO</b> structure indicates that no network adapters with IPv4 are enabled. When the <b>NumAdapters</b> member of the <b>IP_INTERFACE_INFO</b> structure is zero, the value of the members of the single  <b>IP_ADAPTER_INDEX_MAP</b> structure returned in the <b>IP_INTERFACE_INFO</b> structure is undefined.</para>
-      <para>The
-<b>IP_INTERFACE_INFO</b> structure can't be used to return information about the loopback interface.</para>
-      <para>On Windows Vista and later, the <b>Name</b> member of the <see cref="IP_ADAPTER_INDEX_MAP" /> structure in the <b>IP_INTERFACE_INFO</b> structure may be a Unicode string of the GUID for the network interface (the string begins with the '{' character).</para>
-      <para>This structure is defined in the <i>Ipexport.h</i> header file which is automatically included in the <i>Iphlpapi.h</i> header file. The <i>Ipexport.h</i> header file should never be used directly.</para>
-      <h4>Examples</h4>
-      <para>The following example retrieves the list of network adapters with IPv4 enabled on the local system and prints various properties of the first adapter.</para>
-      <code>// Declare and initialize variables
-PIP_INTERFACE_INFO pInfo;
-pInfo = (IP_INTERFACE_INFO *) malloc( sizeof(IP_INTERFACE_INFO) );
-ULONG ulOutBufLen = 0;
-DWORD dwRetVal = 0;
-
-
-// Make an initial call to GetInterfaceInfo to get
-// the necessary size in the ulOutBufLen variable
-if ( GetInterfaceInfo(pInfo, &amp;amp;amp;amp;amp;amp;ulOutBufLen) == ERROR_INSUFFICIENT_BUFFER) {
-  free(pInfo);
-  pInfo = (IP_INTERFACE_INFO *) malloc (ulOutBufLen);
-}
-
-// Make a second call to GetInterfaceInfo to get
-// the actual data we need
-if ((dwRetVal = GetInterfaceInfo(pInfo, &amp;amp;amp;amp;amp;amp;ulOutBufLen)) == NO_ERROR ) {
-  printf("\tAdapter Name: %ws\n", pInfo-&gt;Adapter[0].Name);
-  printf("\tAdapter Index: %ld\n", pInfo-&gt;Adapter[0].Index);
-  printf("\tNum Adapters: %ld\n", pInfo-&gt;NumAdapters);
-
-  // free memory allocated
-  free(pInfo);
-  pInfo = NULL;
-}
-else if (dwRetVal == ERROR_NO_DATA) {
-  printf("There are no network adapters with IPv4 enabled on the local system\n");
-}
-
-else {
-  printf("GetInterfaceInfo failed.\n");
-  LPVOID lpMsgBuf;
-
-  if (FormatMessage(
-    FORMAT_MESSAGE_ALLOCATE_BUFFER |
-    FORMAT_MESSAGE_FROM_SYSTEM |
-    FORMAT_MESSAGE_IGNORE_INSERTS,
-    NULL,
-    dwRetVal,
-    MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), // Default language
-    (LPTSTR) &amp;amp;amp;amp;amp;amp;lpMsgBuf,
-    0,
-    NULL ))  {
-    printf("\tError: %s", lpMsgBuf);
-  }
-  LocalFree( lpMsgBuf );
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetInterfaceInfo" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
-    <seealso cref="IP_ADAPTER_INDEX_MAP" />
+    <summary>The<b>IP_INTERFACE_INFO</b> structure contains a list of the network interface adapters with IPv4 enabled on the local system.</summary>
   </member>
   <member name="IP_INTERFACE_INFO.NumAdapters">
-    <summary>
-      <para>The number of adapters listed in the array pointed to by the <b>Adapter</b> member.</para>
-    </summary>
+    <summary>The number of adapters listed in the array pointed to by the <b>Adapter</b> member.</summary>
   </member>
   <member name="IP_INTERFACE_INFO.Adapter">
-    <summary>
-      <para>An array of
-<see cref="IP_ADAPTER_INDEX_MAP" /> structures. Each structure maps an adapter index to that adapter's name.  The adapter index  may change when an adapter is disabled and then enabled, or under other circumstances, and should not be considered persistent.</para>
-    </summary>
+    <summary>An array of<see cref="IP_ADAPTER_INDEX_MAP" /> structures. Each structure maps an adapter index to that adapter's name. The adapter index may change when an adapter is disabled and then enabled, or under other circumstances, and should not be considered persistent.</summary>
   </member>
 </doc>

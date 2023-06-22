@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_AUTHENTICATED_QUERY_INPUT">
-    <summary>
-      <para>Contains input data for the <see cref="ID3D11VideoContext.QueryAuthenticatedChannel" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Contains input data for the <see cref="ID3D11VideoContext.QueryAuthenticatedChannel" /> method.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_QUERY_INPUT.QueryType">
     <summary>
@@ -16,139 +13,169 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ATTRIBUTES</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ATTRIBUTES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Returns the type of I/O bus that is used to send data to the GPU.<para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Returns the type of I/O bus that is used to send data to the GPU.</para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT" /></para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Returns the type of authenticated channel.<para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <b>D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Returns handles to the cryptographic session and Direct3D device that are associated with a specified decoder device.<para>Input data structure: <see cref="D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_INPUT" /></para><para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Returns the type of authenticated channel.</para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT" /></para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_CURRENT_ENCRYPTION_WHEN_ACCESSIBLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Returns the encryption type that is applied before content becomes accessible to the CPU or bus.<para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <b>D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_DEVICE_HANDLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Returns a handle to the device that is associated with this authenticated channel.<para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_DEVICE_HANDLE_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Returns handles to the cryptographic session and Direct3D device that are associated with a specified decoder device.</para>
-            <para>Input data structure: <see cref="D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_INPUT" /></para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT" /></para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_ENCRYPTION_WHEN_ACCESSIBLE_GUID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Returns one of the encryption types that can be used to encrypt content before it becomes accessible to the CPU or bus.<para>Input data structure: <see cref="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_INPUT" /></para><para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <b>D3D11_AUTHENTICATED_QUERY_CURRENT_ENCRYPTION_WHEN_ACCESSIBLE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_ENCRYPTION_WHEN_ACCESSIBLE_GUID_COUNT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Returns the number of encryption types that can be used to encrypt content before it becomes accessible to the CPU or bus.<para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Returns the encryption type that is applied before content becomes accessible to the CPU or bus.</para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT" /></para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_OUTPUT_ID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Returns one of the output identifiers that is associated with a specified cryptographic session and Direct3D device.<para>Input data structure: <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_INPUT" /></para><para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <b>D3D11_AUTHENTICATED_QUERY_DEVICE_HANDLE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Returns the number of output identifiers that are associated with a specified cryptographic session and Direct3D device.<para>Input data structure: <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT" /></para><para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Returns a handle to the device that is associated with this authenticated channel.</para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_DEVICE_HANDLE_OUTPUT" /></para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_PROTECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Returns the current protection level for the device.<para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <b>D3D11_AUTHENTICATED_QUERY_ENCRYPTION_WHEN_ACCESSIBLE_GUID</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Returns information about a process that is allowed to open shared resources with restricted access.<para>Input data structure: <see cref="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_INPUT" /></para><para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Returns one of the encryption types that can be used to encrypt content before it becomes accessible to the CPU or bus.</para>
-            <para>Input data structure: <see cref="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_INPUT" /></para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_OUTPUT" /></para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_COUNT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Returns the number of processes that are allowed to open shared resources with restricted access.<para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_COUNT_OUTPUT" /></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <b>D3D11_AUTHENTICATED_QUERY_ENCRYPTION_WHEN_ACCESSIBLE_GUID_COUNT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3D11_AUTHENTICATED_QUERY_UNRESTRICTED_PROTECTED_SHARED_RESOURCE_COUNT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Returns the number of encryption types that can be used to encrypt content before it becomes accessible to the CPU or bus.</para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT" /></para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>D3D11_AUTHENTICATED_QUERY_OUTPUT_ID</b>
-          </description>
-          <description>
-            <para>Returns one of the output identifiers that is associated with a specified cryptographic session and Direct3D device.</para>
-            <para>Input data structure: <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_INPUT" /></para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_OUTPUT" /></para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT</b>
-          </description>
-          <description>
-            <para>Returns the number of output identifiers that are associated with a specified cryptographic session and Direct3D device.</para>
-            <para>Input data structure: <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT" /></para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_OUTPUT" /></para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>D3D11_AUTHENTICATED_QUERY_PROTECTION</b>
-          </description>
-          <description>
-            <para>Returns the current protection level for the device.</para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT" /></para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS</b>
-          </description>
-          <description>
-            <para>Returns information about a process that is allowed to open shared resources with restricted access.</para>
-            <para>Input data structure: <see cref="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_INPUT" /></para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_OUTPUT" /></para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_COUNT</b>
-          </description>
-          <description>
-            <para>Returns the number of processes that are allowed to open shared resources with restricted access.</para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_COUNT_OUTPUT" /></para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>D3D11_AUTHENTICATED_QUERY_UNRESTRICTED_PROTECTED_SHARED_RESOURCE_COUNT</b>
-          </description>
-          <description>
-            <para>Returns the number of protected shared resources that can be opened by any process with no restrictions.</para>
-            <para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_UNRESTRICTED_PROTECTED_SHARED_RESOURCE_COUNT_OUTPUT" /></para>
-          </description>
-        </item>
+          <description>Returns the number of protected shared resources that can be opened by any process with no restrictions.<para>Output data structure: <see cref="D3D11_AUTHENTICATED_QUERY_UNRESTRICTED_PROTECTED_SHARED_RESOURCE_COUNT_OUTPUT" /></para></description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="D3D11_AUTHENTICATED_QUERY_INPUT.hChannel">
-    <summary>
-      <para>A handle to the authenticated channel. To get the handle, call the <see cref="ID3D11AuthenticatedChannel.GetChannelHandle" /> method.</para>
-    </summary>
+    <summary>A handle to the authenticated channel. To get the handle, call the <see cref="ID3D11AuthenticatedChannel.GetChannelHandle" /> method.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_QUERY_INPUT.SequenceNumber">
-    <summary>
-      <para>The query sequence number. At the start of the session, generate a cryptographically secure 32-bit random number to use as the starting sequence number. For each query, increment the sequence number by 1.</para>
-    </summary>
+    <summary>The query sequence number. At the start of the session, generate a cryptographically secure 32-bit random number to use as the starting sequence number. For each query, increment the sequence number by 1.</summary>
   </member>
 </doc>

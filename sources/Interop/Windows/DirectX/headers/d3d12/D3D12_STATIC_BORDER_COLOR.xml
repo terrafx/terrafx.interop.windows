@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_STATIC_BORDER_COLOR">
-    <summary>
-      <para>Specifies the border color for a static sampler.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the <see cref="D3D12_STATIC_SAMPLER_DESC" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
+    <summary>Specifies the border color for a static sampler.</summary>
   </member>
   <member name="D3D12_STATIC_BORDER_COLOR.D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK">
-    <summary>
-      <para>Indicates black, with the alpha component as fully transparent.</para>
-    </summary>
+    <summary>Indicates black, with the alpha component as fully transparent.</summary>
   </member>
   <member name="D3D12_STATIC_BORDER_COLOR.D3D12_STATIC_BORDER_COLOR_OPAQUE_BLACK">
-    <summary>
-      <para>Indicates black, with the alpha component as fully opaque.</para>
-    </summary>
+    <summary>Indicates black, with the alpha component as fully opaque.</summary>
   </member>
   <member name="D3D12_STATIC_BORDER_COLOR.D3D12_STATIC_BORDER_COLOR_OPAQUE_WHITE">
-    <summary>
-      <para>Indicates white, with the alpha component as fully opaque.</para>
-    </summary>
+    <summary>Indicates white, with the alpha component as fully opaque.</summary>
   </member>
 </doc>

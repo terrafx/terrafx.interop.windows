@@ -3,24 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontSetBuilder1.AddFontFile">
-    <summary>
-      <para>Adds references to all the fonts in the specified font file.  The method parses the font file to determine the fonts and their properties.</para>
-    </summary>
-    <param name="fontFile">
-      <para>Type: <b>IDWriteFontFile*</b></para>
-      <para>Font file reference object to add to the set. If the file is not a supported OpenType font file, then a DWRITE_E_FILEFORMAT error will be returned.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/directwrite/custom-font-sets-win10#creating-a-custom-font-set-using-font-data-loaded-into-memory">Creating a custom font set using font data loaded into memory</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/directwrite/custom-font-sets-win10#creating-a-font-set-using-arbitrary-fonts-in-the-local-file-system">Creating a font set using arbitrary fonts in the local file system</seealso>
-    <seealso cref="IDWriteFontSetBuilder1" />
+    <summary>Adds references to all the fonts in the specified font file. The method parses the font file to determine the fonts and their properties.</summary>
+    <param name="fontFile">Font file reference object to add to the set. If the file is not a supported OpenType font file, then a DWRITE_E_FILEFORMAT error will be returned.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="IDWriteFontSetBuilder1">
-    <summary>
-      <para>Contains methods for building a font set.</para>
-    </summary>
+    <summary>Contains methods for building a font set.</summary>
   </member>
 </doc>

@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICBitmapLockFlags">
-    <summary>
-      <para>Specifies access to an <see cref="IWICBitmap" />.</para>
-    </summary>
+    <summary>Specifies access to an <see cref="IWICBitmap" />.</summary>
   </member>
   <member name="WICBitmapLockFlags.WICBitmapLockRead">
-    <summary>
-      <para>A read access lock.</para>
-    </summary>
+    <summary>A read access lock.</summary>
   </member>
   <member name="WICBitmapLockFlags.WICBitmapLockWrite">
-    <summary>
-      <para>A write access lock.</para>
-    </summary>
+    <summary>A write access lock.</summary>
   </member>
-  <member name="WICBitmapLockFlags.WICBITMAPLOCKFLAGS_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICBitmapLockFlags.WICBITMAPLOCKFLAGS_FORCE_DWORD"></member>
 </doc>

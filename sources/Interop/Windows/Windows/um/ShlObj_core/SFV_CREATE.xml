@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SFV_CREATE">
-    <summary>
-      <para>This structure is used with the <see cref="SHCreateShellFolderView" /> function.</para>
-    </summary>
-    <seealso cref="ICommDlgBrowser" />
+    <summary>This structure is used with the <see cref="SHCreateShellFolderView" /> function.</summary>
   </member>
   <member name="SFV_CREATE.cbSize">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the <b>SFV_CREATE</b> structure, in bytes.</para>
-    </summary>
+    <summary>The size of the <b>SFV_CREATE</b> structure, in bytes.</summary>
   </member>
   <member name="SFV_CREATE.pshf">
-    <summary>
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>The <see cref="IShellFolder" /> interface of the folder for which to create the view.</para>
-    </summary>
+    <summary>The <see cref="IShellFolder" /> interface of the folder for which to create the view.</summary>
   </member>
   <member name="SFV_CREATE.psvOuter">
-    <summary>
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to the parent <see cref="IShellView" /> interface. This parameter may be <b>NULL</b>. This parameter is used only when the view created by <see cref="SHCreateShellFolderView" /> is hosted in a common dialog box.</para>
-    </summary>
+    <summary>A pointer to the parent <see cref="IShellView" /> interface. This parameter may be <b>NULL</b>. This parameter is used only when the view created by <see cref="SHCreateShellFolderView" /> is hosted in a common dialog box.</summary>
   </member>
   <member name="SFV_CREATE.psfvcb">
-    <summary>
-      <para>Type: <b><see cref="IShellFolderViewCB" />*</b></para>
-      <para>A pointer to the <see cref="IShellFolderViewCB" /> interface that handles the view's callbacks when various events occur. This parameter may be <b>NULL</b>.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IShellFolderViewCB" /> interface that handles the view's callbacks when various events occur. This parameter may be <b>NULL</b>.</summary>
   </member>
 </doc>

@@ -3,51 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFContentDecryptionModuleFactory.CreateContentDecryptionModuleAccess">
-    <summary>
-      <para>Creates an instance of the <see cref="IMFContentDecryptionModuleAccess" /> interface.</para>
-    </summary>
-    <param name="keySystem">
-      <para>An <b>LPWSTR</b> identifying the Key System for which the interface is created.</para>
-    </param>
-    <param name="configurations">
-      <para>An <see cref="IPropertyStore" /> object containing the configuration options for the CDM.</para>
-    </param>
-    <param name="numConfigurations">
-      <para>A <b>DWORD</b> specifying the number of properties in the <i>configurations</i> parameter.</para>
-    </param>
-    <param name="contentDecryptionModuleAccess">
-      <para>Receives the created <b>IMFContentDecryptionModuleAccess</b> object.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>IMFContentDecryptionModuleAccess</b> is based on the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/2017/rec-encrypted-media-20170918/#mediakeysystemaccess-interface">MediaKeySystemAccess.getConfiguration</a>.</para>
-    </remarks>
-    <seealso cref="IMFContentDecryptionModuleAccess" />
+    <summary>Creates an instance of the <see cref="IMFContentDecryptionModuleAccess" /> interface.</summary>
+    <param name="keySystem">An <b>LPWSTR</b> identifying the Key System for which the interface is created.</param>
+    <param name="configurations">An <see cref="IPropertyStore" /> object containing the configuration options for the CDM.</param>
+    <param name="numConfigurations">A <b>DWORD</b> specifying the number of properties in the <i>configurations</i> parameter.</param>
+    <param name="contentDecryptionModuleAccess">Receives the created <b>IMFContentDecryptionModuleAccess</b> object.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModuleFactory.IsTypeSupported">
-    <summary>
-      <para>Queries whether the specified Key System and, optionally, content type are supported.</para>
-    </summary>
-    <param name="keySystem">
-      <para>An <b>LPCWSTR</b> specifying the Key System for which support is being queried.</para>
-    </param>
-    <param name="contentType">
-      <para>Optional. An <b>LPCWSTR</b> specifying the content type for which support is being queried.</para>
-    </param>
-    <returns>
-      <para>True if the specified Key System and content type are supported; otherwise, false.</para>
-    </returns>
-    <remarks>
-      <para>For information about Key Systems, see the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/2017/rec-encrypted-media-20170918/#key-system">Key System</a></para>
-    </remarks>
+    <summary>Queries whether the specified Key System and, optionally, content type are supported.</summary>
+    <param name="keySystem">An <b>LPCWSTR</b> specifying the Key System for which support is being queried.</param>
+    <param name="contentType">Optional. An <b>LPCWSTR</b> specifying the content type for which support is being queried.</param>
+    <returns>True if the specified Key System and content type are supported; otherwise, false.</returns>
   </member>
   <member name="IMFContentDecryptionModuleFactory">
-    <summary>
-      <para>A factory interface for creating <see cref="IMFContentDecryptionModuleAccess" /> objects.</para>
-    </summary>
-    <seealso cref="IMFContentDecryptionModuleAccess" />
+    <summary>A factory interface for creating <see cref="IMFContentDecryptionModuleAccess" /> objects.</summary>
   </member>
 </doc>

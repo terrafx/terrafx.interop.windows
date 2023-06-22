@@ -3,38 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FINDEX_SEARCH_OPS">
-    <summary>
-      <para>Defines values that are used with the
-<see cref="FindFirstFileEx" /> function to specify the type of
-filtering to perform.</para>
-    </summary>
-    <seealso cref="FindFirstFileEx" />
+    <summary>Defines values that are used with the<see cref="FindFirstFileEx" /> function to specify the type of filtering to perform.</summary>
   </member>
   <member name="FINDEX_SEARCH_OPS.FindExSearchNameMatch">
     <summary>
       <para>The search for a file that matches a specified file name.</para>
-      <para>The <i>lpSearchFilter</i> parameter of
-<see cref="FindFirstFileEx" /> must be
-<b>NULL</b> when this search operation is used.</para>
+      <para>The <i>lpSearchFilter</i> parameter of<see cref="FindFirstFileEx" /> must be<b>NULL</b> when this search operation is used.</para>
     </summary>
   </member>
   <member name="FINDEX_SEARCH_OPS.FindExSearchLimitToDirectories">
     <summary>
-      <para>This is an advisory flag.
-If the file system supports directory filtering, the function searches for a file that matches the specified  name and is also a directory.
-If the file system does not support directory filtering, this flag is silently ignored.</para>
+      <para>This is an advisory flag. If the file system supports directory filtering, the function searches for a file that matches the specified name and is also a directory. If the file system does not support directory filtering, this flag is silently ignored.</para>
       <para>The <i>lpSearchFilter</i> parameter of the <see cref="FindFirstFileEx" /> function must be <b>NULL</b> when this search value is used.</para>
-      <para>If directory filtering is desired, this flag can be used on all file systems, but because it is  an advisory flag and  only affects file systems that support it, the application must examine the file attribute data stored in the <i>lpFindFileData</i> parameter of the <see cref="FindFirstFileEx" /> function to determine whether the function has  returned a handle to a directory.</para>
+      <para>If directory filtering is desired, this flag can be used on all file systems, but because it is an advisory flag and only affects file systems that support it, the application must examine the file attribute data stored in the <i>lpFindFileData</i> parameter of the <see cref="FindFirstFileEx" /> function to determine whether the function has returned a handle to a directory.</para>
     </summary>
   </member>
   <member name="FINDEX_SEARCH_OPS.FindExSearchLimitToDevices">
     <summary>
       <para>This filtering type is not available.</para>
-      <para>For more information, see
-<a href="https://docs.microsoft.com//windows-hardware/drivers/install/overview-of-device-interface-classes">Device Interface Classes</a>.</para>
+      <para>For more information, see<a href="https://docs.microsoft.com//windows-hardware/drivers/install/overview-of-device-interface-classes">Device Interface Classes</a>.</para>
     </summary>
   </member>
-  <member name="FINDEX_SEARCH_OPS.FindExSearchMaxSearchOp">
-    <summary></summary>
-  </member>
+  <member name="FINDEX_SEARCH_OPS.FindExSearchMaxSearchOp"></member>
 </doc>

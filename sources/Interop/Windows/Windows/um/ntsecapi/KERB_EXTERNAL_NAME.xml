@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_EXTERNAL_NAME">
+    <summary>
+      <para>The <b>KERB_EXTERNAL_NAME</b> structure contains information about an external name.</para>
+      <para>An external name is one used by external users. This structure is used by the<see cref="KERB_EXTERNAL_TICKET" /> structure.</para>
+    </summary>
+  </member>
+  <member name="KERB_EXTERNAL_NAME.NameType">
+    <summary>
+      <para>Indicates the type of the names stored in this structure.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KRB_NT_UNKNOWN</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Unknown name type.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KRB_NT_PRINCIPAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Name of the user or a Kerberos name type principal in the case of a DCE.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KRB_NT_SRV_INST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Service name and other unique name as instance (krbtgt).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KRB_NT_SRV_HST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Service name with host name as instance (telnet, rcommands).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KRB_NT_SRV_XHST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Service name with host as instance other than krbtgt, telnet, or rcommands.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KRB_NT_UID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Unique ID.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KRB_NT_ENTERPRISE_PRINCIPAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>User principal name (UPN) or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">service principal name</a> (SPN).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KRB_NT_ENT_PRINCIPAL_AND_ID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>UPN and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KRB_NT_MS_PRINICPAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Windows NT 4.0–style name.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KRB_NT_MS_PRINCIPAL_AND_ID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Windows NT 4.0–style name with SID.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="KERB_EXTERNAL_NAME.NameCount">
+    <summary>Indicates the number of names stored in <b>Names</b>.</summary>
+  </member>
+  <member name="KERB_EXTERNAL_NAME.Names">
+    <summary>Array of<see cref="UNICODE_STRINGS" /> containing the names.</summary>
+  </member>
+</doc>

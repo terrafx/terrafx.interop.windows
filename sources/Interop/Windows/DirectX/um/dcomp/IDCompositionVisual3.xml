@@ -3,153 +3,46 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionVisual3.SetDepthMode">
-    <summary>
-      <para>Sets the depth mode property associated with this visual.</para>
-    </summary>
-    <param name="mode">
-      <para>Type: <b>DCOMPOSITION_DEPTH_MODE</b></para>
-      <para>The new depth mode.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionVisual3" />
+    <summary>Sets the depth mode property associated with this visual.</summary>
+    <param name="mode">The new depth mode.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionVisual3.SetOffsetZ">
-    <summary>
-      <para>Changes the value of OffsetZ property.</para>
-    </summary>
-    <param name="offsetZ">
-      <para>Type: <b>float</b></para>
-      <para>The new value.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionVisual3" />
+    <summary>Changes the value of OffsetZ property.</summary>
+    <param name="offsetZ">The new value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionVisual3.SetOffsetZ">
-    <summary>
-      <para>Animates the value of the OffsetZ property.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>The animation to control the OffsetZ property.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionVisual3" />
+    <summary>Animates the value of the OffsetZ property.</summary>
+    <param name="animation">The animation to control the OffsetZ property.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionVisual3.SetOpacity">
-    <summary>
-      <para>Sets the value of the visual's opacity property.</para>
-    </summary>
-    <param name="opacity">
-      <para>Type: <b>float</b></para>
-      <para>The new value for the opacity property.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionVisual3" />
+    <summary>Sets the value of the visual's opacity property.</summary>
+    <param name="opacity">The new value for the opacity property.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionVisual3.SetOpacity">
-    <summary>
-      <para>Animates the value of the visual's opacity property.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>The animation that will be used to control the value of the opacity property.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionVisual3" />
+    <summary>Animates the value of the visual's opacity property.</summary>
+    <param name="animation">The animation that will be used to control the value of the opacity property.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionVisual3.SetTransform">
-    <summary>
-      <para>Sets the Transform property of this visual to the specified 4-by-4 transform matrix.</para>
-    </summary>
-    <param name="matrix">
-      <para>Type: <b>const <see cref="D2D_MATRIX_4X4_F" /></b></para>
-      <para>The 4-by-4 transform matrix that is used to modify  the coordinate system of this visual.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Setting the Transform property transforms the coordinate system of the entire visual subtree that is rooted at this visual. If the Clip property of this visual is specified, the clip rectangle is also transformed.</para>
-      <para>If the Transform property previously specified a transform object, the newly specified transform matrix replaces the transform object.</para>
-    </remarks>
-    <seealso cref="IDCompositionMatrixTransform" />
-    <seealso cref="IDCompositionRotateTransform" />
-    <seealso cref="IDCompositionScaleTransform" />
-    <seealso cref="IDCompositionSkewTransform" />
-    <seealso cref="IDCompositionTransform" />
-    <seealso cref="IDCompositionTranslateTransform" />
-    <seealso cref="IDCompositionVisual" />
-    <seealso cref="IDCompositionVisual3" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449165(v=vs.85)">IDCompositionVisual.SetOffsetX</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449171(v=vs.85)">IDCompositionVisual.SetOffsetY</seealso>
+    <summary>Sets the Transform property of this visual to the specified 4-by-4 transform matrix.</summary>
+    <param name="matrix">The 4-by-4 transform matrix that is used to modify the coordinate system of this visual.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionVisual3.SetTransform">
-    <summary>
-      <para>Sets the Transform property of this visual to the specified 3D transform object.</para>
-    </summary>
-    <param name="transform">
-      <para>Type: <b><see cref="IDCompositionTransform3D" />*</b></para>
-      <para>The transform object that is used to modify  the coordinate system of this visual. This parameter can point to
-an <see cref="IDCompositionTransform" /> interface or one of its derived interfaces. This parameter can be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Setting the Transform property transforms the coordinate system of the entire visual subtree that is rooted at this visual. If the Clip property of this visual is specified, the clip rectangle is also transformed.</para>
-      <para>If the Transform property previously specified a transform matrix, the newly specified transform object replaces the transform matrix.</para>
-      <para>A transformation specified by the Transform property is applied after the OffsetX and OffsetY properties. In other words, the effect of setting the Transform property and the OffsetX and OffsetY properties is the same as setting only the Transform property on a transform group where the first member of the group is an <see cref="IDCompositionTranslateTransform" /> object that has those same OffsetX and OffsetY values. However, you should use the <see cref="IDCompositionVisual.SetOffsetX" /> and <see cref="SetOffsetY" /> methods whenever possible because they are slightly faster.</para>
-      <para>This method fails if <i>transform</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface that created this visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
-      <para>If the <i>transform</i> parameter is NULL, the coordinate system of this visual is transformed only by its OffsetX and OffsetY properties. Setting the Transform property to NULL is equivalent to setting it to an <see cref="IDCompositionMatrixTransform" /> object where the specified matrix is the identity matrix. However, an application should set the Transform property to NULL whenever possible because it is slightly faster.</para>
-      <para>If the OffsetX and OffsetY properties are set to 0, and the Transform property is set to NULL, the coordinate system of the visual is the same as that of its parent.</para>
-    </remarks>
-    <seealso cref="IDCompositionMatrixTransform" />
-    <seealso cref="IDCompositionRotateTransform" />
-    <seealso cref="IDCompositionScaleTransform" />
-    <seealso cref="IDCompositionSkewTransform" />
-    <seealso cref="IDCompositionTransform" />
-    <seealso cref="IDCompositionTranslateTransform" />
-    <seealso cref="IDCompositionVisual" />
-    <seealso cref="IDCompositionVisual3" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449165(v=vs.85)">IDCompositionVisual.SetOffsetX</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449171(v=vs.85)">IDCompositionVisual.SetOffsetY</seealso>
+    <summary>Sets the Transform property of this visual to the specified 3D transform object.</summary>
+    <param name="transform">The transform object that is used to modify the coordinate system of this visual. This parameter can point to an <see cref="IDCompositionTransform" /> interface or one of its derived interfaces. This parameter can be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionVisual3.SetVisible">
-    <summary>
-      <para>Changes the value of the visual's Visible property.</para>
-    </summary>
-    <param name="visible">
-      <para>Type: <b>BOOL</b></para>
-      <para>The new value for the visible property.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionVisual3" />
+    <summary>Changes the value of the visual's Visible property.</summary>
+    <param name="visible">The new value for the visible property.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionVisual3">
-    <summary>
-      <para>Represents one DirectComposition visual in a visual tree.</para>
-    </summary>
-    <seealso href="https://github.com/microsoft/windows-classic-samples/tree/master/samples/dcompv2backfaceandd2dbatching">DirectComposition Backface and D2D Batching</seealso>
-    <seealso cref="IDCompositionVisual2" />
+    <summary>Represents one DirectComposition visual in a visual tree.</summary>
   </member>
 </doc>

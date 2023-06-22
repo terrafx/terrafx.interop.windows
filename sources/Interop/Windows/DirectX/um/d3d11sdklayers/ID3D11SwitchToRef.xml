@@ -4,36 +4,23 @@
 <doc>
   <member name="ID3D11SwitchToRef.GetUseRef">
     <summary>
-      <para>
-        <b>Note</b>  The <see cref="ID3D11SwitchToRef" /> interface and its methods are not supported in Direct3D 11.</para>
+      <div>
+        <b>Note</b>  The <see cref="ID3D11SwitchToRef" /> interface and its methods are not supported in Direct3D 11.</div>
     </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Reserved.</para>
-    </returns>
-    <seealso cref="ID3D11SwitchToRef Interface" />
+    <returns>Reserved.</returns>
   </member>
   <member name="ID3D11SwitchToRef.SetUseRef">
     <summary>
-      <para>
-        <b>Note</b>  The <see cref="ID3D11SwitchToRef" /> interface and its methods are not supported in Direct3D 11.</para>
+      <div>
+        <b>Note</b>  The <see cref="ID3D11SwitchToRef" /> interface and its methods are not supported in Direct3D 11.</div>
     </summary>
-    <param name="UseRef">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Reserved.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Reserved.</para>
-    </returns>
-    <seealso cref="ID3D11SwitchToRef Interface" />
+    <param name="UseRef">Reserved.</param>
+    <returns>Reserved.</returns>
   </member>
   <member name="ID3D11SwitchToRef">
     <summary>
-      <para>
-        <b>Note</b>  The <b>ID3D11SwitchToRef</b> interface and its methods are not supported in Direct3D 11.</para>
+      <div>
+        <b>Note</b>  The <b>ID3D11SwitchToRef</b> interface and its methods are not supported in Direct3D 11.</div>
     </summary>
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-layer-interfaces">Layer Interfaces</seealso>
   </member>
 </doc>

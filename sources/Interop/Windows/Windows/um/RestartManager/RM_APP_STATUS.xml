@@ -3,57 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RM_APP_STATUS">
-    <summary>
-      <para>Describes the current status of an application that is acted upon by the Restart Manager.</para>
-    </summary>
-    <remarks>
-      <para>The constants  of <b>RM_APP_STATUS</b> can be combined with OR operators. The combination describes the history of actions taken by Restart Manager on the application.</para>
-    </remarks>
-    <seealso cref="RM_PROCESS_INFO" />
+    <summary>Describes the current status of an application that is acted upon by the Restart Manager.</summary>
   </member>
   <member name="RM_APP_STATUS.RmStatusUnknown">
-    <summary>
-      <para>The application is in a state that is not described by any other enumerated state.</para>
-    </summary>
+    <summary>The application is in a state that is not described by any other enumerated state.</summary>
   </member>
   <member name="RM_APP_STATUS.RmStatusRunning">
-    <summary>
-      <para>The application is currently running.</para>
-    </summary>
+    <summary>The application is currently running.</summary>
   </member>
   <member name="RM_APP_STATUS.RmStatusStopped">
-    <summary>
-      <para>The Restart Manager has stopped the application.</para>
-    </summary>
+    <summary>The Restart Manager has stopped the application.</summary>
   </member>
   <member name="RM_APP_STATUS.RmStatusStoppedOther">
-    <summary>
-      <para>An action outside the Restart Manager has stopped the application.</para>
-    </summary>
+    <summary>An action outside the Restart Manager has stopped the application.</summary>
   </member>
   <member name="RM_APP_STATUS.RmStatusRestarted">
-    <summary>
-      <para>The Restart Manager has restarted the application.</para>
-    </summary>
+    <summary>The Restart Manager has restarted the application.</summary>
   </member>
   <member name="RM_APP_STATUS.RmStatusErrorOnStop">
-    <summary>
-      <para>The Restart Manager encountered an error when stopping the application.</para>
-    </summary>
+    <summary>The Restart Manager encountered an error when stopping the application.</summary>
   </member>
   <member name="RM_APP_STATUS.RmStatusErrorOnRestart">
-    <summary>
-      <para>The Restart Manager encountered an error when restarting the application.</para>
-    </summary>
+    <summary>The Restart Manager encountered an error when restarting the application.</summary>
   </member>
   <member name="RM_APP_STATUS.RmStatusShutdownMasked">
-    <summary>
-      <para>Shutdown is masked by a filter.</para>
-    </summary>
+    <summary>Shutdown is masked by a filter.</summary>
   </member>
   <member name="RM_APP_STATUS.RmStatusRestartMasked">
-    <summary>
-      <para>Restart is masked by a filter.</para>
-    </summary>
+    <summary>Restart is masked by a filter.</summary>
   </member>
 </doc>

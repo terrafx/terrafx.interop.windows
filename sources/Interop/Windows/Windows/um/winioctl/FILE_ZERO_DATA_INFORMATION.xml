@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_ZERO_DATA_INFORMATION">
-    <summary>
-      <para>Contains a range of a file to set to zeros. This structure is used by the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_zero_data">FSCTL_SET_ZERO_DATA</a> control code</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_zero_data">FSCTL_SET_ZERO_DATA</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/sparse-files">Sparse Files</seealso>
+    <summary>Contains a range of a file to set to zeros. This structure is used by the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_zero_data">FSCTL_SET_ZERO_DATA</a> control code</summary>
   </member>
   <member name="FILE_ZERO_DATA_INFORMATION.FileOffset">
-    <summary>
-      <para>The file offset of the start of the range to set to zeros, in bytes.</para>
-    </summary>
+    <summary>The file offset of the start of the range to set to zeros, in bytes.</summary>
   </member>
   <member name="FILE_ZERO_DATA_INFORMATION.BeyondFinalZero">
-    <summary>
-      <para>The byte offset of the first byte beyond the last zeroed byte.</para>
-    </summary>
+    <summary>The byte offset of the first byte beyond the last zeroed byte.</summary>
   </member>
 </doc>

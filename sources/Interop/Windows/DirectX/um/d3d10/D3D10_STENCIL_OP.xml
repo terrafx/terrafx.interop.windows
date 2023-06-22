@@ -3,49 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_STENCIL_OP">
-    <summary>
-      <para>The stencil operations that can be performed during <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">depth-stencil</a> testing.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+    <summary>The stencil operations that can be performed during <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">depth-stencil</a> testing.</summary>
   </member>
   <member name="D3D10_STENCIL_OP.D3D10_STENCIL_OP_KEEP">
-    <summary>
-      <para>Keep the existing stencil data.</para>
-    </summary>
+    <summary>Keep the existing stencil data.</summary>
   </member>
   <member name="D3D10_STENCIL_OP.D3D10_STENCIL_OP_ZERO">
-    <summary>
-      <para>Set the stencil data to 0.</para>
-    </summary>
+    <summary>Set the stencil data to 0.</summary>
   </member>
   <member name="D3D10_STENCIL_OP.D3D10_STENCIL_OP_REPLACE">
-    <summary>
-      <para>Set the stencil data to the reference value set by calling <see cref="ID3D10Device.OMSetDepthStencilState" />.</para>
-    </summary>
+    <summary>Set the stencil data to the reference value set by calling <see cref="ID3D10Device.OMSetDepthStencilState" />.</summary>
   </member>
   <member name="D3D10_STENCIL_OP.D3D10_STENCIL_OP_INCR_SAT">
-    <summary>
-      <para>Increment the stencil value by 1, and clamp the result.</para>
-    </summary>
+    <summary>Increment the stencil value by 1, and clamp the result.</summary>
   </member>
   <member name="D3D10_STENCIL_OP.D3D10_STENCIL_OP_DECR_SAT">
-    <summary>
-      <para>Decrement the stencil value by 1, and clamp the result.</para>
-    </summary>
+    <summary>Decrement the stencil value by 1, and clamp the result.</summary>
   </member>
   <member name="D3D10_STENCIL_OP.D3D10_STENCIL_OP_INVERT">
-    <summary>
-      <para>Invert the stencil data.</para>
-    </summary>
+    <summary>Invert the stencil data.</summary>
   </member>
   <member name="D3D10_STENCIL_OP.D3D10_STENCIL_OP_INCR">
-    <summary>
-      <para>Increment the stencil value by 1, and wrap the result if necessary.</para>
-    </summary>
+    <summary>Increment the stencil value by 1, and wrap the result if necessary.</summary>
   </member>
   <member name="D3D10_STENCIL_OP.D3D10_STENCIL_OP_DECR">
-    <summary>
-      <para>Increment the stencil value by 1, and wrap the result if necessary.</para>
-    </summary>
+    <summary>Increment the stencil value by 1, and wrap the result if necessary.</summary>
   </member>
 </doc>

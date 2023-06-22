@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PARAMDESC">
-    <summary>
-      <para>Contains information needed for transferring a structure element, parameter, or function return value between processes.</para>
-    </summary>
+    <summary>Contains information needed for transferring a structure element, parameter, or function return value between processes.</summary>
   </member>
   <member name="PARAMDESC.pparamdescex">
-    <summary>
-      <para>The default value for the parameter, if PARAMFLAG_FHASDEFAULT is specified in <b>wParamFlags</b>.</para>
-    </summary>
+    <summary>The default value for the parameter, if PARAMFLAG_FHASDEFAULT is specified in <b>wParamFlags</b>.</summary>
   </member>
   <member name="PARAMDESC.wParamFlags">
-    <summary>
-      <para>The parameter flags. See <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/paramflags">PARAMFLAG Constants</a>.</para>
-    </summary>
+    <summary>The parameter flags. See <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/paramflags">PARAMFLAG Constants</a>.</summary>
   </member>
 </doc>

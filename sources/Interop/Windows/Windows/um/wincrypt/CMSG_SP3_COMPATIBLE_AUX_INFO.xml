@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSG_SP3_COMPATIBLE_AUX_INFO">
-    <summary>
-      <para>The <b>CMSG_SP3_COMPATIBLE_AUX_INFO</b> structure contains information needed for SP3 compatible encryption.</para>
-    </summary>
+    <summary>The <b>CMSG_SP3_COMPATIBLE_AUX_INFO</b> structure contains information needed for SP3 compatible encryption.</summary>
   </member>
   <member name="CMSG_SP3_COMPATIBLE_AUX_INFO.cbSize">
-    <summary>
-      <para>Size of this structure in bytes.</para>
-    </summary>
+    <summary>Size of this structure in bytes.</summary>
   </member>
   <member name="CMSG_SP3_COMPATIBLE_AUX_INFO.dwFlags">
-    <summary>
-      <para>Setting CMSG_SP3_COMPATIBLE_ENCRYPT_FLAG enables SP3 compatible encryption. Zero <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">salt</a> instead of no salt and the encryption algorithm parameters are <b>NULL</b> instead of containing encoded RC2 parameters or encoded IV octet string. The encrypted <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric key</a> is encoded <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">little-endian</a> instead of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">big-endian</a> form.</para>
-    </summary>
+    <summary>Setting CMSG_SP3_COMPATIBLE_ENCRYPT_FLAG enables SP3 compatible encryption. Zero <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">salt</a> instead of no salt and the encryption algorithm parameters are <b>NULL</b> instead of containing encoded RC2 parameters or encoded IV octet string. The encrypted <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric key</a> is encoded <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">little-endian</a> instead of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">big-endian</a> form.</summary>
   </member>
 </doc>

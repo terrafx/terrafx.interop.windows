@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_FEATURE_DATA_DISPLAYABLE">
+    <summary>Describes the level of displayable surfaces supported in the current graphics driver. See <a href="https://docs.microsoft.com//windows/win32/direct3d11/displayable-surfaces">Displayable surfaces</a>.</summary>
+  </member>
+  <member name="D3D11_FEATURE_DATA_DISPLAYABLE.DisplayableTexture">
+    <summary>
+      <code>true</code> if the driver supports displayable surfaces; otherwise, <code>false</code>.</summary>
+  </member>
+  <member name="D3D11_FEATURE_DATA_DISPLAYABLE.SharedResourceTier">
+    <summary>The level of support for shared resources in the current graphics driver.</summary>
+  </member>
+</doc>

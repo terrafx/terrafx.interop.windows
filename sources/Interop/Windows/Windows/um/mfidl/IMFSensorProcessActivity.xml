@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSensorProcessActivity.GetProcessId">
-    <summary>
-      <para>Gets the ID of the process with which the activity is associated.</para>
-    </summary>
-    <param name="pPID">
-      <para>Receives the process ID.</para>
-    </param>
+    <summary>Gets the ID of the process with which the activity is associated.</summary>
+    <param name="pPID">Receives the process ID.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,37 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pPID</i> parameter is null.</para>
-          </description>
-        </item>
+          <description>The <i>pPID</i> parameter is null.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorProcessActivity" />
   </member>
   <member name="IMFSensorProcessActivity.GetReportTime">
-    <summary>
-      <para>Gets the time associated with the sensor activity report.</para>
-    </summary>
-    <param name="pft">
-      <para>Receives the time associated with the sensor activity report.</para>
-    </param>
+    <summary>Gets the time associated with the sensor activity report.</summary>
+    <param name="pft">Receives the time associated with the sensor activity report.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -54,75 +49,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pft</i> parameter is null.</para>
-          </description>
-        </item>
-      </list>
-    </returns>
-    <seealso cref="IMFSensorProcessActivity" />
-  </member>
-  <member name="IMFSensorProcessActivity.GetStreamingMode">
-    <summary>
-      <para>Gets the streaming mode of the sensor process.</para>
-    </summary>
-    <param name="pMode">
-      <para>Receives the process ID.</para>
-    </param>
-    <returns>
-      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
-      <list type="table">
         <listheader>
-          <description>Return code</description>
-          <description>Description</description>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pMode</i> parameter is null.</para>
-          </description>
-        </item>
+          <description>The <i>pft</i> parameter is null.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorProcessActivity" />
   </member>
   <member name="IMFSensorProcessActivity.GetStreamingState">
-    <summary>
-      <para>Gets a value indicating whether the sensor is currently streaming.</para>
-    </summary>
-    <param name="pfStreaming">
-      <para>Receives a value indicating whether the sensor is currently streaming.</para>
-    </param>
+    <summary>Gets a value indicating whether the sensor is currently streaming.</summary>
+    <param name="pfStreaming">Receives a value indicating whether the sensor is currently streaming.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -130,33 +86,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pfStreaming</i> parameter is null.</para>
-          </description>
-        </item>
+          <description>The <i>pfStreaming</i> parameter is null.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorProcessActivity" />
   </member>
   <member name="IMFSensorProcessActivity">
-    <summary>
-      <para>Represents the activity of a process associated with a sensor.</para>
-    </summary>
+    <summary>Represents the activity of a process associated with a sensor.</summary>
   </member>
 </doc>

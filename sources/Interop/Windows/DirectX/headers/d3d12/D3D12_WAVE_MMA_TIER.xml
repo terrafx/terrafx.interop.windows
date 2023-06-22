@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_WAVE_MMA_TIER">
-    <summary>
-      <para>Defines constants that specify a level of support for WaveMMA (wave_matrix) operations.</para>
-    </summary>
+    <summary>Defines constants that specify a level of support for WaveMMA (wave_matrix) operations.</summary>
   </member>
   <member name="D3D12_WAVE_MMA_TIER.D3D12_WAVE_MMA_TIER_NOT_SUPPORTED">
-    <summary>
-      <para>Specifies that WaveMMA (wave_matrix) operations are not supported.</para>
-    </summary>
+    <summary>Specifies that WaveMMA (wave_matrix) operations are not supported.</summary>
   </member>
   <member name="D3D12_WAVE_MMA_TIER.D3D12_WAVE_MMA_TIER_1_0">
-    <summary>
-      <para>Specifies that WaveMMA (wave_matrix) operations are supported.</para>
-    </summary>
+    <summary>Specifies that WaveMMA (wave_matrix) operations are supported.</summary>
   </member>
 </doc>

@@ -3,39 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_SUBRESOURCE_DATA">
-    <summary>
-      <para>Specifies data for initializing a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource</a>.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used in calls to create buffers (<see cref="ID3D10Device.CreateBuffer" />) and textures (<see cref="ID3D10Device.CreateTexture1D" />,
-<see cref="ID3D10Device.CreateTexture2D" />, and <see cref="ID3D10Device.CreateTexture3D" />).
-If the resource being created does not require a system-memory pitch or a system-memory-pitch slice, then you are free to use those members to
-pass size information which may help you when debugging a problem creating a resource.</para>
-      <para>Note that an application should not rely on <b>SysMemPitch</b> being exactly equal to the number of texels in a line times the size of a texel.
-In some cases <b>SysMemPitch</b> will include padding to skip past additional data in a line.  This could be padding for alignment or
-the texture could be a subsection of a larger texture.  For example the D3D10_SUBRESOURCE_DATA structure could represent a 32 by 32 subsection of a 128 by 128 texture.
-The value for <b>SysMemSlicePitch</b> will reflect any padding included in <b>SysMemPitch</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Specifies data for initializing a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource</a>.</summary>
   </member>
   <member name="D3D10_SUBRESOURCE_DATA.pSysMem">
-    <summary>
-      <para>Type: <b>const void*</b></para>
-      <para>Pointer to the initialization data.</para>
-    </summary>
+    <summary>Pointer to the initialization data.</summary>
   </member>
   <member name="D3D10_SUBRESOURCE_DATA.SysMemPitch">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The distance (in bytes) from the beginning of one line of a texture to the next line.
-System-memory pitch is used only for 2D and 3D texture data as it is has no meaning for the other resource types.</para>
-    </summary>
+    <summary>The distance (in bytes) from the beginning of one line of a texture to the next line.<br />System-memory pitch is used only for 2D and 3D texture data as it is has no meaning for the other resource types.</summary>
   </member>
   <member name="D3D10_SUBRESOURCE_DATA.SysMemSlicePitch">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The distance (in bytes) from the beginning of one depth level to the next.
-System-memory-slice pitch is only used for 3D texture data as it has no meaning for the other resource types.</para>
-    </summary>
+    <summary>The distance (in bytes) from the beginning of one depth level to the next.<br />System-memory-slice pitch is only used for 3D texture data as it has no meaning for the other resource types.</summary>
   </member>
 </doc>

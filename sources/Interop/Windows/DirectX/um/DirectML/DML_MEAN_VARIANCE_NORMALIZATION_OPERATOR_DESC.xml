@@ -5,62 +5,32 @@
   <member name="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC">
     <summary>
       <para>Performs a mean variance normalization function on the input tensor. This operator will calculate the mean and variance of the input tensor to perform normalization. This operator performs the following computation.</para>
-      <code>Output = FusedActivation(Scale * ((Input - Mean) / sqrt(Variance + Epsilon)) + Bias).
-</code>
+      <code>Output = FusedActivation(Scale * ((Input - Mean) / sqrt(Variance + Epsilon)) + Bias).</code>
     </summary>
-    <remarks>
-      <para>A newer version of this operator, <see cref="DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC" />, was introduced in <code>DML_FEATURE_LEVEL_2_1</code>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-fused-activations">Using fused operators for improved performance</seealso>
   </member>
   <member name="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the Input data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, Height, Width }</code>.</para>
-    </summary>
+    <summary>A tensor containing the Input data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, Height, Width }</code>.</summary>
   </member>
   <member name="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC.ScaleTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing the Scale data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, Height, Width }</code>. Any dimension can be replaced with 1 to broadcast in that dimension. This tensor is required if the <i>BiasTensor</i> is used.</para>
-    </summary>
+    <summary>An optional tensor containing the Scale data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, Height, Width }</code>. Any dimension can be replaced with 1 to broadcast in that dimension. If <b>DML_FEATURE_LEVEL</b> is less than <b>DML_FEATURE_LEVEL_5_2</b>, then this tensor is required if <i>BiasTensor</i> is present. If <b>DML_FEATURE_LEVEL</b> is greater than or equal to <b>DML_FEATURE_LEVEL_5_2</b>, then this tensor can be null regardless of the value of <i>BiasTensor</i>.</summary>
   </member>
   <member name="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC.BiasTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing the bias data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, Height, Width }</code>. Any dimension can be replaced with 1 to broadcast in that dimension. This tensor is required if the <i>ScaleTensor</i> is used.</para>
-    </summary>
+    <summary>An optional tensor containing the bias data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, Height, Width }</code>. Any dimension can be replaced with 1 to broadcast in that dimension. If <b>DML_FEATURE_LEVEL</b> is less than <b>DML_FEATURE_LEVEL_5_2</b>, then this tensor is required if <i>ScaleTensor</i> is present. If <b>DML_FEATURE_LEVEL</b> is greater than or equal to <b>DML_FEATURE_LEVEL_5_2</b>, then this tensor can be null regardless of the value of <i>ScaleTensor</i>.</summary>
   </member>
   <member name="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor to write the results to. This tensor's dimensions are <code>{ BatchCount, ChannelCount, Height, Width }</code>.</para>
-    </summary>
+    <summary>A tensor to write the results to. This tensor's dimensions are <code>{ BatchCount, ChannelCount, Height, Width }</code>.</summary>
   </member>
   <member name="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC.CrossChannel">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> if the MeanVariance layer includes channels in the Mean and Variance calculations. Otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>When <b>TRUE</b>, the MeanVariance layer includes channels in the Mean and Variance calculations, meaning they are normalized across axes <code>{ChannelCount, Height, Width}</code>. When <b>FALSE</b>, Mean and Variance calculations are normalized across axes <code>{Height, Width}</code> with each channel being independent.</summary>
   </member>
   <member name="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC.NormalizeVariance">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> if the Normalization layer includes Variance in the normalization calculation. Otherwise, <b>FALSE</b>. If <b>FALSE</b>, then normalization equation is <code>Output = FusedActivation(Scale * (Input - Mean) + Bias)</code>.</para>
-    </summary>
+      <b>TRUE</b> if the Normalization layer includes Variance in the normalization calculation. Otherwise, <b>FALSE</b>. If <b>FALSE</b>, then normalization equation is <code>Output = FusedActivation(Scale * (Input - Mean) + Bias)</code>.</summary>
   </member>
   <member name="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC.Epsilon">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>The epsilon value to use to avoid division by zero. A value of 0.00001 is recommended as default.</para>
-    </summary>
+    <summary>The epsilon value to use to avoid division by zero. A value of 0.00001 is recommended as default.</summary>
   </member>
   <member name="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC.FusedActivation">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_OPERATOR_DESC" />*</b></para>
-      <para>An optional fused activation layer to apply after the normalization.</para>
-    </summary>
+    <summary>An optional fused activation layer to apply after the normalization. For more info, see <a href="https://docs.microsoft.com//windows/ai/directml/dml-fused-activations">Using fused operators for improved performance</a>.</summary>
   </member>
 </doc>

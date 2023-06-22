@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCameraControlMonitor.AddControlSubscription">
+    <summary>Adds a camera control to the list of controls for which <see cref="IMFCameraControlNotify.OnChange" /> notifications will be raised.</summary>
+    <param name="controlSet">The GUID for the camera control set to which the added control belongs.</param>
+    <param name="id">The ID of the control within the control set.</param>
+    <returns>
+      <para>An HRESULT including the following:</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success | | MF_E_INVALIDREQUEST | The camera control monitor is in the running or shutdown state. | | MF_E_INVALIDARG | An invalid value was supplied for <i>controlSet</i>. See Remarks for more information. |</para>
+    </returns>
+  </member>
+  <member name="IMFCameraControlMonitor.RemoveControlSubscription">
+    <summary>Removes a camera control from the list of controls for which <see cref="IMFCameraControlNotify.OnChange" /> notifications will be raised.</summary>
+    <param name="controlSet">The GUID for the camera control set to which the added control belongs.</param>
+    <param name="id">The ID of the control within the control set.</param>
+    <returns>
+      <para>An HRESULT including the following:</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success | | MF_E_INVALIDREQUEST | The camera control monitor is in the running or shutdown state. | | MF_E_INVALIDARG | An invalid value was supplied for <i>controlSet</i>. See Remarks for more information. | | MF_E_NOT_FOUND | No subscription was found for the specified control.</para>
+    </returns>
+  </member>
+  <member name="IMFCameraControlMonitor.Shutdown">
+    <summary>Shuts down the camera control monitor and cleans up associated resources.</summary>
+  </member>
+  <member name="IMFCameraControlMonitor.Start">
+    <summary>Starts the camera control monitor, raising <see cref="IMFCameraControlNotify.OnChange" /> notifications for changes to controls registered with <see cref="IMFCameraControlMonitor.AddControlSubscription" />.</summary>
+    <returns>
+      <para>An HRESULT including the following:</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success | | MF_E_INVALIDREQUEST | The camera control monitor has already been started or has been shut down. |</para>
+    </returns>
+  </member>
+  <member name="IMFCameraControlMonitor.Stop">
+    <summary>Stops the camera control monitor.</summary>
+    <returns>
+      <para>An HRESULT including the following:</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success | | MF_E_INVALIDREQUEST | The camera control monitor has already been stopped or has been shut down. |</para>
+    </returns>
+  </member>
+  <member name="IMFCameraControlMonitor">
+    <summary>Represents a camera control monitor that is used to subscribe and unsubscribe to notifications when the state of a camera control changes.</summary>
+  </member>
+</doc>

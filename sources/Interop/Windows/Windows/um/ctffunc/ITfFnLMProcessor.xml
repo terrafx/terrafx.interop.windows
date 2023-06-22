@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfFnLMProcessor.GetReconversion">
-    <summary>
-      <para>Obtains an ITfCandidateList object for a range from the language model text service.</para>
-    </summary>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> object that covers the text to be reconverted. To obtain this range object, call <see cref="ITfFnReconversion.QueryRange" />.</para>
-    </param>
-    <param name="ppCandList">
-      <para>Pointer to an <b>ITfCandidateList</b> pointer that receives the candidate list object.</para>
-    </param>
+    <summary>Obtains an ITfCandidateList object for a range from the language model text service.</summary>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> object that covers the text to be reconverted. To obtain this range object, call <see cref="ITfFnReconversion.QueryRange" />.</param>
+    <param name="ppCandList">Pointer to an <b>ITfCandidateList</b> pointer that receives the candidate list object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,66 +13,61 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unspecified error occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is identical to <see cref="ITfFnReconversion.GetReconversion" />. When <b>ITfFnReconversion.GetReconversion</b> is called in the text service, the text service should forward the call to this method if a language model processor is installed. If no language model processor is installed, the text service should perform its default processing.</para>
-    </remarks>
-    <seealso cref="ITfCandidateList " />
-    <seealso cref="ITfFnLMProcessor" />
-    <seealso cref="ITfFnReconversion.GetReconversion " />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfFnLMProcessor.InvokeFunc">
-    <summary>
-      <para>Invokes a function of the language model text service.</para>
-    </summary>
-    <param name="pic">
-      <para>Pointer to an <see cref="ITfContext" /> interface that represents context to perform the function on.</para>
-    </param>
-    <param name="refguidFunc">
-      <para>Contains a GUID that specifies the function to invoke. Possible values for this parameter are defined by the language model text service provider.</para>
-    </param>
+    <summary>Invokes a function of the language model text service.</summary>
+    <param name="pic">Pointer to an <see cref="ITfContext" /> interface that represents context to perform the function on.</param>
+    <param name="refguidFunc">Contains a GUID that specifies the function to invoke. Possible values for this parameter are defined by the language model text service provider.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -86,34 +75,26 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfFnLMProcessor" />
   </member>
   <member name="ITfFnLMProcessor.InvokeKey">
-    <summary>
-      <para>Called to enable the language model text service to process a key event.</para>
-    </summary>
-    <param name="fUp">
-      <para>Contains a <b>BOOL</b> that specifies if this is a key-down or a key-up event. Contains zero if this is a key-down event or nonzero otherwise.</para>
-    </param>
-    <param name="vKey">
-      <para>Contains the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="lparamKeyData">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
+    <summary>Called to enable the language model text service to process a key event.</summary>
+    <param name="fUp">Contains a <b>BOOL</b> that specifies if this is a key-down or a key-up event. Contains zero if this is a key-down event or nonzero otherwise.</param>
+    <param name="vKey">Contains the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="lparamKeyData">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -121,38 +102,27 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfFnLMProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</seealso>
   </member>
   <member name="ITfFnLMProcessor.QueryKey">
-    <summary>
-      <para>Called to determine if the language model text service handles a key event.</para>
-    </summary>
-    <param name="fUp">
-      <para>Contains a <b>BOOL</b> that specifies if this is a key-down or a key-up event. Contains zero if this is a key-down event or nonzero otherwise.</para>
-    </param>
-    <param name="vKey">
-      <para>Contains the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="lparamKeydata">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="pfInterested">
-      <para>Pointer to a <b>BOOL</b> that receives nonzero if the language model text service will handle the key event or zero otherwise.</para>
-    </param>
+    <summary>Called to determine if the language model text service handles a key event.</summary>
+    <param name="fUp">Contains a <b>BOOL</b> that specifies if this is a key-down or a key-up event. Contains zero if this is a key-down event or nonzero otherwise.</param>
+    <param name="vKey">Contains the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="lparamKeydata">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="pfInterested">Pointer to a <b>BOOL</b> that receives nonzero if the language model text service will handle the key event or zero otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -160,32 +130,25 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfFnLMProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</seealso>
   </member>
   <member name="ITfFnLMProcessor.QueryLangID">
-    <summary>
-      <para>Determines if the language model text service supports a particular language.</para>
-    </summary>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> that specifies the identifier of the language that the query applies to.</para>
-    </param>
-    <param name="pfAccepted">
-      <para>Pointer to a <b>BOOL</b> value that receives nonzero if the language model text service supports the language identified by <i>langid</i> or zero otherwise.</para>
-    </param>
+    <summary>Determines if the language model text service supports a particular language.</summary>
+    <param name="langid">Contains a <b>LANGID</b> that specifies the identifier of the language that the query applies to.</param>
+    <param name="pfAccepted">Pointer to a <b>BOOL</b> value that receives nonzero if the language model text service supports the language identified by <i>langid</i> or zero otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -193,46 +156,42 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pfAccepted</i> is invalid.
-</description>
-        </item>
+            <i>pfAccepted</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If a client can possibly generate more than one language identifier of text, it should query all with this method.</para>
-    </remarks>
   </member>
   <member name="ITfFnLMProcessor.QueryRange">
-    <summary>
-      <para>Obtains the range of text that a reconversion applies to.</para>
-    </summary>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> object that covers all or part of the text to be reconverted.</para>
-    </param>
+    <summary>Obtains the range of text that a reconversion applies to.</summary>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> object that covers all or part of the text to be reconverted.</param>
     <param name="ppNewRange">
       <para>Pointer to an <see cref="ITfRange" /> pointer that receives a range object that covers all of the text that can be reconverted. If none of the text covered by <i>pRange</i> can be reconverted, this parameters receives <b>NULL</b>. In this case, the method will return S_OK; the caller must verify that this parameter is not <b>NULL</b> before using the pointer.</para>
       <para>This parameter is optional and can be <b>NULL</b>. In this case, the range is not required.</para>
     </param>
-    <param name="pfAccepted">
-      <para>Pointer to a <b>BOOL</b> value that receives zero if none of the text covered by <i>pRange</i> can be reconverted or nonzero otherwise.</para>
-    </param>
+    <param name="pfAccepted">Pointer to a <b>BOOL</b> value that receives zero if none of the text covered by <i>pRange</i> can be reconverted or nonzero otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -240,52 +199,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is identical to <see cref="ITfFnReconversion.QueryRange" />. When <b>ITfFnReconversion.QueryRange</b> is called in the text service, the text service should forward the call to this method if a language model processor is installed. If no language model processor is installed, the text service should perform its default processing.</para>
-    </remarks>
-    <seealso cref="ITfFnLMProcessor" />
-    <seealso cref="ITfFnReconversion.QueryRange" />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfFnLMProcessor.Reconvert">
-    <summary>
-      <para>Invokes the reconversion process in the language model text service for a range.</para>
-    </summary>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> object that covers the text to reconvert.</para>
-    </param>
+    <summary>Invokes the reconversion process in the language model text service for a range.</summary>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> object that covers the text to reconvert.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -293,52 +248,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pRange</i> is invalid.
-</description>
-        </item>
+            <i>pRange</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is identical to <see cref="ITfFnReconversion.Reconvert" />. When <b>ITfFnReconversion.Reconvert</b> is called in the text service, the text service should forward the call to this method if a language model processor is installed. If no language model processor is installed, the text service should perform its default processing.</para>
-    </remarks>
-    <seealso cref="ITfFnLMProcessor" />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfFnLMProcessor">
     <summary>
       <para>The <b>ITfFnLMProcessor</b> interface is implemented by the language model text service and is used by an application or text service to enable alternate language model processing.</para>
       <para>The application or text service obtains this interface from a thread manager object by calling <see cref="ITfThreadMgr.GetFunctionProvider" /> with GUID_MASTERLM_FUNCTIONPROVIDER and then calling <see cref="ITfFunctionProvider.GetFunction" /> interface with IID_ITfFnLMProcessor. If <b>ITfThreadMgr.GetFunctionProvider</b> fails, then no language model processor is installed.</para>
     </summary>
-    <seealso cref="ITfCandidateList " />
-    <seealso cref="ITfFunctionProvider.GetFunction " />
-    <seealso cref="ITfThreadMgr.GetFunctionProvider" />
-    <seealso cref="IUnknown" />
   </member>
 </doc>

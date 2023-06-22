@@ -3,60 +3,57 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISharingConfigurationManager.ArePrintersShared">
-    <summary>
-      <para>Determines whether any printers connected to this computer are shared.</para>
-    </summary>
+    <summary>Determines whether any printers connected to this computer are shared.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns standard HRESULT values, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Shared printers were detected.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Shared printers were detected.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>No shared printers were found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_FILE_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>No shared printers were found.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_FILE_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>No printers capable of being shared were found.</para>
-          </description>
-        </item>
+          <description>No printers capable of being shared were found.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ISharingConfigurationManager.CreateShare">
-    <summary>
-      <para>Shares the <b>Users</b> or <b>Public</b> folder. If the folder is already shared, this method updates its sharing status.</para>
-    </summary>
-    <param name="dsid">
-      <para>Type: <b><see cref="DEF_SHARE_ID" /></b></para>
-      <para>One of the <see cref="DEF_SHARE_ID" /> values that indicates the folder to share or update.</para>
-    </param>
+    <summary>Shares the <b>Users</b> or <b>Public</b> folder. If the folder is already shared, this method updates its sharing status.</summary>
+    <param name="dsid">One of the <see cref="DEF_SHARE_ID" /> values that indicates the folder to share or update.</param>
     <param name="role">
-      <para>Type: <b><see cref="SHARE_ROLE" /></b></para>
       <para>One of the following <see cref="SHARE_ROLE" /> values that sets the access permissions of the share for the <i>Everyone</i> ACE. <b>CreateShare</b> accepts only these values.</para>
       <h4>SHARE_ROLE_READER (0)</h4>
       <para>Read-only. The contents of the folder can be read, but not altered or added to.</para>
@@ -64,112 +61,52 @@
       <para>Read/Write. The contents of the folder can be read, changed, or added to.</para>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>role</i> parameter specifies a value other than SHARE_ROLE_READER or SHARE_ROLE_CO_OWNER.</para>
-          </description>
-        </item>
+          <description>The <i>role</i> parameter specifies a value other than SHARE_ROLE_READER or SHARE_ROLE_CO_OWNER.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Running this method requires an Administrator privilege level.</para>
-      <para>If the folder named in <i>dsid</i> is not shared, this method shares the folder using the permission level provided in the <i>role</i> parameter.</para>
-      <para>If the folder named in <i>dsid</i> is already shared, this method updates the permissions on the share with the value provided in the <i>role</i> parameter.</para>
-      <para>Because as of Windows 7 the <b>Public</b> folder is shared through <b>Users</b> rather than directly, creating a share on <b>Public</b> causes an Server Message Block (SMB) share to be created on <b>Users</b>.</para>
-    </remarks>
   </member>
   <member name="ISharingConfigurationManager.DeleteShare">
-    <summary>
-      <para>Removes sharing from either the <b>Users</b> or <b>Public</b> folder.</para>
-    </summary>
-    <param name="dsid">
-      <para>Type: <b><see cref="DEF_SHARE_ID" /></b></para>
-      <para>One of the <see cref="DEF_SHARE_ID" /> values that specifies the folder to no longer share.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Running this method requires an Administrator privilege level.</para>
-    </remarks>
+    <summary>Removes sharing from either the <b>Users</b> or <b>Public</b> folder.</summary>
+    <param name="dsid">One of the <see cref="DEF_SHARE_ID" /> values that specifies the folder to no longer share.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISharingConfigurationManager.GetSharePermissions">
-    <summary>
-      <para>Gets the access permissions currently associated with the <b>User</b> or <b>Public</b> folder for the <i>Everyone</i> access control entry (ACE).</para>
-    </summary>
-    <param name="dsid">
-      <para>Type: <b><see cref="DEF_SHARE_ID" /></b></para>
-      <para>One of the <see cref="DEF_SHARE_ID" /> values that specifies the folder.</para>
-    </param>
-    <param name="pRole">
-      <para>Type: <b><see cref="SHARE_ROLE" />*</b></para>
-      <para>A pointer to a value that, when this method returns successfully, receives one of the <see cref="SHARE_ROLE" /> values that indicate the sharing permissions set for the folder specified in the <i>dsid</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the access permissions currently associated with the <b>User</b> or <b>Public</b> folder for the <i>Everyone</i> access control entry (ACE).</summary>
+    <param name="dsid">One of the <see cref="DEF_SHARE_ID" /> values that specifies the folder.</param>
+    <param name="pRole">A pointer to a value that, when this method returns successfully, receives one of the <see cref="SHARE_ROLE" /> values that indicate the sharing permissions set for the folder specified in the <i>dsid</i> parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISharingConfigurationManager.ShareExists">
-    <summary>
-      <para>Queries whether the <b>Users</b> or <b>Public</b> folder is shared.</para>
-    </summary>
-    <param name="dsid">
-      <para>Type: <b><see cref="DEF_SHARE_ID" /></b></para>
-      <para>One of the <see cref="DEF_SHARE_ID" /> values that indicates the folder whose sharing state is being checked.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>S_OK if the folder is shared; otherwise, S_FALSE.</para>
-    </returns>
-    <remarks>
-      <para>Because as of Windows 7 <b>Public</b> is shared in-place through <b>Users</b>, callers should always check for the Users share first. If a share is found to exist on <b>Users</b>, then it follows that a share exists on <b>Public</b> as well.</para>
-    </remarks>
+    <summary>Queries whether the <b>Users</b> or <b>Public</b> folder is shared.</summary>
+    <param name="dsid">One of the <see cref="DEF_SHARE_ID" /> values that indicates the folder whose sharing state is being checked.</param>
+    <returns>S_OK if the folder is shared; otherwise, S_FALSE.</returns>
   </member>
   <member name="ISharingConfigurationManager.SharePrinters">
-    <summary>
-      <para>Shares all local printers connected to a computer, enabling them to be discovered by other computers on the network.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Running this method requires an Administrator privilege level.</para>
-    </remarks>
+    <summary>Shares all local printers connected to a computer, enabling them to be discovered by other computers on the network.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISharingConfigurationManager.StopSharingPrinters">
-    <summary>
-      <para>Stops sharing all local, shared printers connected to a computer.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Running this method requires an Administrator privilege level.</para>
-    </remarks>
+    <summary>Stops sharing all local, shared printers connected to a computer.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISharingConfigurationManager">
-    <summary>
-      <para>Exposes methods that set and retrieve information about a computer's default sharing settings for the <b>Users</b> (<code>C:\Users</code>) or <b>Public</b> (<code>C:\Users\Public</code>) folder. Also exposes a set of methods that allow control of printer sharing.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>An implementation of this interface is included in the <b>CSharingConfiguration</b> class. Third parties do not provide their own implementation.</para>
-    </remarks>
+    <summary>Exposes methods that set and retrieve information about a computer's default sharing settings for the <b>Users</b> (<code>C:\Users</code>) or <b>Public</b> (<code>C:\Users\Public</code>) folder. Also exposes a set of methods that allow control of printer sharing.</summary>
   </member>
 </doc>

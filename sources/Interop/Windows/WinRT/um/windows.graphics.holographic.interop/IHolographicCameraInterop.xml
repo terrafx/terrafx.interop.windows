@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IHolographicCameraInterop.AcquireDirect3D12BufferResource">
+    <summary>
+      <para>The <b>AcquireDirect3D12BufferResource</b> method transitions ownership of a Direct3D 12 back buffer resource from the platform to your application. If your application already owns control of the resource, then the acquisition is still considered to be a success.</para>
+      <para>After committing a resource to a <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicframe">HolographicFrame</a> by calling <see cref="IHolographicQuadLayerUpdateParametersInterop.CommitDirect3D12Resource" />, your application should consider control of that resource to be owned by the system until such a time as the resource is reacquired by your application using this method. The system owns the buffer until the frame that the buffer was committed to makes its way through the presentation queue. To determine whether the system has relinquished control of the buffer, call <b>AcquireDirect3D12BufferResource</b> or <b>AcquireDirect3D12BufferResourceWithTimeout</b>. If the buffer can't be acquired by the time your application is ready to start rendering a new <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicframe">HolographicFrame</a>, then you should create a new resource and add it to the buffer queue, or limit the queue size by waiting for a buffer to become available.</para>
+      <para>If the buffer isn't ready to be acquired when <b>AcquireDirect3D12BufferResource</b> is called, then the method call will fail and immediately return the error code <b>E_NOTREADY</b>.</para>
+      <para>Your application can limit the queue size by calling <see cref="AcquireDirect3D12BufferResourceWithTimeout" /> to wait until a resource becomes available before queuing more work.</para>
+    </summary>
+    <param name="pResourceToAcquire">The Direct3D 12 resource to acquire.</param>
+    <param name="pCommandQueue">The Direct3D 12 command queue to use for transitioning the state of this resource when acquiring it for your application. The resource will be in the <b>D3D12_RESOURCE_STATE_COMMON</b> state when it is acquired. The resource transition command may not be queued if the resource is already in the common state when it is being acquired.</param>
+    <returns>
+      <b>S_OK</b> if successful, otherwise returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a> error code indicating the reason for failure. Also see <a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">COM Error Codes (UI, Audio, DirectX, Codec)</a>.</returns>
+  </member>
+  <member name="IHolographicCameraInterop.AcquireDirect3D12BufferResourceWithTimeout">
+    <summary>
+      <para>The <b>AcquireDirect3D12BufferResourceWithTimeout</b> method transitions ownership of a Direct3D 12 back buffer resource from the platform to your application, waiting up to the amount of time indicated by the <i>duration</i> argument for the resource to become available. If your application already owns control of the resource, the acquisition is considered to be a success, and the method returns immediately.</para>
+      <para>After committing a resource to a <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicframe">HolographicFrame</a> by calling <see cref="IHolographicQuadLayerUpdateParametersInterop.CommitDirect3D12Resource" />, your application should consider control of that resource to be owned by the system until such a time as it is reacquired by your application using <b>AcquireDirect3D12BufferResourceWithTimeout</b>. The system owns the buffer until the frame that the buffer was committed to makes its way through the presentation queue. To determine whether the system has relinquished control of the buffer, call <b>AcquireDirect3D12BufferResource</b> or <b>AcquireDirect3D12BufferResourceWithTimeout</b>. If the buffer can't be acquired by the time your application is ready to start rendering a new <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicframe">HolographicFrame</a>, then you should create a new resource and add it to the buffer queue, or limit the queue size by waiting for a buffer to become available.</para>
+      <para>This method accepts an optional timeout value. When a nonzero value is present in the <i>duration</i> argument, the system waits for that many milliseconds for the buffer to become available. The default behavior is to not wait. When a timeout value of zero is specified and the buffer is not ready to be acquired, the method call fails with the error code <b>E_NOTREADY</b>.</para>
+    </summary>
+    <param name="pResourceToAcquire">The Direct3D 12 resource to acquire.</param>
+    <param name="pCommandQueue">The Direct3D 12 command queue to use for transitioning the state of this resource when acquiring it for your application. The resource will be in the <b>D3D12_RESOURCE_STATE_COMMON</b> state when it is acquired.</param>
+    <param name="duration">If this parameter is set to a non-zero value, the call will wait for that amount of time for the buffer to be acquired. If the timeout period elapses before the buffer can be acquired, the method will fail with the error code <b>E_TIMEOUT</b>. This parameter is specified in 100-nanosecond units, similar to the <a href="https://docs.microsoft.com//uwp/api/windows.foundation.timespan.duration">TimeSpan.Duration</a> field.</param>
+    <returns>
+      <b>S_OK</b> if successful, otherwise returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a> error code indicating the reason for failure. Also see <a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">COM Error Codes (UI, Audio, DirectX, Codec)</a>.</returns>
+  </member>
+  <member name="IHolographicCameraInterop.CreateDirect3D12BackBufferResource">
+    <summary>
+      <para>The <b>CreateDirect3D12BackBufferResource</b> method creates a Direct3D 12 resource for use as a back buffer for the corresponding <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamera">HolographicCamera</a> API object.</para>
+      <para>The <see cref="D3D12_RESOURCE_DESC" /> structure can contain any set of valid initial values. Any values that won't work with this <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamera">HolographicCamera</a> will be overridden in the struct indicated by <i>pTexture2DDesc</i>, which is not an optional parameter. The resource is created so that it is already committed to a heap.</para>
+    </summary>
+    <param name="pDevice">A Direct3D 12 device, which will be used to create the resource.</param>
+    <param name="pTexture2DDesc">
+      <para>The Direct3D 12 resource description. This parameter is not optional.</para>
+      <para>
+        <b>CreateDirect3D12BackBufferResource</b> adjusts the description as needed to comply with platform requirements, such as buffer size or format restrictions, which are determined at runtime. Your application should inspect the descriptor for the texture returned in <i>ppCreatedTexture2DResource</i>, and respond appropriately to any differences from what was specified.</para>
+    </param>
+    <param name="ppCreatedTexture2DResource">If successful, the Direct3D 12 2D texture resource for use as a content buffer. Otherwise, <code>nullptr</code>.</param>
+    <returns>
+      <b>S_OK</b> if successful, otherwise returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a> error code indicating the reason for failure. Also see <a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">COM Error Codes (UI, Audio, DirectX, Codec)</a>.</returns>
+  </member>
+  <member name="IHolographicCameraInterop.CreateDirect3D12HardwareProtectedBackBufferResource">
+    <summary>
+      <para>The <b>CreateDirect3D12HardwareProtectedBackBufferResource</b> method creates a Direct3D 12 resource for use as a back buffer for the corresponding <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamera">HolographicCamera</a> API object, with optional hardware-based content protection.</para>
+      <para>The behavior of <b>CreateDirect3D12HardwareProtectedBackBufferResource</b> is the same as that of <see cref="CreateDirect3D12BackBufferResource" />, except that it accepts an optional <see cref="ID3D12ProtectedResourceSession" /> API object interface pointer. Provide a Direct3D 12 protected resource session via this optional parameter to create a resource buffer with hardware-based content protection enabled.</para>
+    </summary>
+    <param name="pDevice">A Direct3D 12 device, which will be used to create the resource.</param>
+    <param name="pTexture2DDesc">
+      <para>The Direct3D 12 resource description.</para>
+      <para>
+        <b>CreateDirect3D12HardwareProtectedBackBufferResource</b> adjusts the description as needed to comply with platform requirements, such as buffer size or format restrictions, which are determined at runtime. Your application should inspect the descriptor for the texture returned in <i>ppCreatedTexture2DResource</i> and respond appropriately to any differences from what was specified.</para>
+    </param>
+    <param name="pProtectedResourceSession">An optional Direct3D 12 protected resource session. Passing in a valid protected session will cause this method to create a Direct3D 12 hardware-protected resource.</param>
+    <param name="ppCreatedTexture2DResource">If successful, the hardware-protected Direct3D 12 2D texture resource for use as a back buffer. Otherwise, <code>nullptr</code>.</param>
+    <returns>
+      <b>S_OK</b> if successful, otherwise returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a> error code indicating the reason for failure. Also see <a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">COM Error Codes (UI, Audio, DirectX, Codec)</a>.</returns>
+  </member>
+  <member name="IHolographicCameraInterop.UnacquireDirect3D12BufferResource">
+    <summary>
+      <para>The <b>UnacquireDirect3D12BufferResource</b> method relinquishes control of a Direct3D 12 buffer resource to the platform.</para>
+      <para>A resource that has been acquired, but not submitted, can be un-acquired to return control of the buffer back to the platform. A resource that has been un-acquired can be re-acquired at a later time.</para>
+    </summary>
+    <param name="pResourceToUnacquire">The Direct3D 12 resource to relinquish control of.</param>
+    <returns>
+      <b>S_OK</b> if successful, otherwise returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a> error code indicating the reason for failure. Also see <a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">COM Error Codes (UI, Audio, DirectX, Codec)</a>.</returns>
+  </member>
+  <member name="IHolographicCameraInterop">
+    <summary>
+      <para>The <b>IHolographicCameraInterop</b> interface is a nano-COM interface, used to create Direct3D 12 back buffer resources for a <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamera">HolographicCamera</a> Windows Runtime object. This is an initialization step for using Direct3D 12 with Windows Mixed Reality. This interface also allows your application to acquire ownership of content buffers for rendering, prior to committing them with the <see cref="HolographicCameraRenderingParametersInterop" /> interface.</para>
+      <para>Your application can use this interface to initialize holographic rendering using Direct3D 12. Nano-COM allows pointers to Direct3D 12 objects to be passed directly as parameters for API calls, instead of using a Windows Runtime container object.</para>
+      <para>Your application manages its own pool of holographic buffer resources for use as render targets (back buffers) for each <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamera">HolographicCamera</a>. It can create additional buffers as needed in order to continue rendering smoothly. On most devices, this will be three or four surfaces. Your application should start with at least two buffers in the pool. Your application can dynamically detect when it needs to create a new buffer by looking for unsuccessful attempts to immediately acquire buffers that were previously committed for presentation. Your application must commit a buffer for a <b>HolographicCamera</b> that is included on the <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicframe">HolographicFrame</a> unless the primary layer is disabled for that camera, in which case your application must not commit a buffer for that camera.</para>
+      <para>A buffer created by a <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamera">HolographicCamera</a> object can be used only with that object. It should be released when the <b>HolographicCamera</b> is released, or when the Direct3D 12 device needs to be recreated—whichever happens first. The buffer must not be in the GPU pipeline when it is released—Direct3D 12 fences should be used to ensure that this condition is met prior to releasing the buffer object.</para>
+    </summary>
+  </member>
+</doc>

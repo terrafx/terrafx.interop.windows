@@ -3,72 +3,29 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICEnumMetadataItem.Clone">
-    <summary>
-      <para>Creates a copy of the current <see cref="IWICEnumMetadataItem" />.</para>
-    </summary>
-    <param name="ppIEnumMetadataItem">
-      <para>Type: <b><see cref="IWICEnumMetadataItem" />**</b></para>
-      <para>A pointer that receives a pointer to the <see cref="IWICEnumMetadataItem" /> copy.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a copy of the current <see cref="IWICEnumMetadataItem" />.</summary>
+    <param name="ppIEnumMetadataItem">A pointer that receives a pointer to the <see cref="IWICEnumMetadataItem" /> copy.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICEnumMetadataItem.Next">
-    <summary>
-      <para>Advanced the current position in the enumeration.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of items to be retrieved.</para>
-    </param>
-    <param name="rgeltSchema">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>An array of enumerated items. This parameter is optional.</para>
-    </param>
-    <param name="rgeltId">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>An array of enumerated items.</para>
-    </param>
-    <param name="rgeltValue">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>An array of enumerated items. This parameter is optional.</para>
-    </param>
-    <param name="pceltFetched">
-      <para>Type: <b>ULONG*</b></para>
-      <para>The number of items that were retrieved. This value is always less than or equal to the number of items requested.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Advanced the current position in the enumeration.</summary>
+    <param name="celt">The number of items to be retrieved.</param>
+    <param name="rgeltSchema">An array of enumerated items. This parameter is optional.</param>
+    <param name="rgeltId">An array of enumerated items.</param>
+    <param name="rgeltValue">An array of enumerated items. This parameter is optional.</param>
+    <param name="pceltFetched">The number of items that were retrieved. This value is always less than or equal to the number of items requested.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICEnumMetadataItem.Reset">
-    <summary>
-      <para>Resets the current position to the beginning of the enumeration.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Resets the current position to the beginning of the enumeration.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICEnumMetadataItem.Skip">
-    <summary>
-      <para>Skips to given number of objects.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of objects to skip.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Skips to given number of objects.</summary>
+    <param name="celt">The number of objects to skip.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICEnumMetadataItem">
-    <summary>
-      <para>Exposes methods that provide enumeration services for individual metadata items.</para>
-    </summary>
+    <summary>Exposes methods that provide enumeration services for individual metadata items.</summary>
   </member>
 </doc>

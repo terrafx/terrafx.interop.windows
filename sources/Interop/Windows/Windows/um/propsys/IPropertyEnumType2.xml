@@ -3,25 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyEnumType2.GetImageReference">
-    <summary>
-      <para>Retrieves the image reference associated with a property enumeration.</para>
-    </summary>
-    <param name="ppszImageRes">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>A pointer to a buffer that, when this method returns successfully, receives a string of the form &lt;dll name&gt;,-&lt;resid&gt; that is suitable to be passed to <see cref="PathParseIconLocation" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves the image reference associated with a property enumeration.</summary>
+    <param name="ppszImageRes">A pointer to a buffer that, when this method returns successfully, receives a string of the form &lt;dll name&gt;,-&lt;resid&gt; that is suitable to be passed to <see cref="PathParseIconLocation" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyEnumType2">
-    <summary>
-      <para>Exposes methods that extract data from enumeration information. <see cref="IPropertyEnumType2" /> extends <see cref="IPropertyEnumType" />.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IPropertyEnumType" /> interface, from which it inherits.</para>
-      <para>For additional information, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>.</para>
-    </remarks>
+    <summary>Exposes methods that extract data from enumeration information. <see cref="IPropertyEnumType2" /> extends <see cref="IPropertyEnumType" />.</summary>
   </member>
 </doc>

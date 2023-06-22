@@ -3,142 +3,55 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFTimedTextTrack.GetDataFormat">
-    <summary>
-      <para>Gets a GUID that identifies the track's underlying data format.</para>
-    </summary>
-    <param name="format">
-      <para>Type: <b>GUID*</b></para>
-      <para>A GUID that identifies the track's underlying data format.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Gets a GUID that identifies the track's underlying data format.</summary>
+    <param name="format">A GUID that identifies the track's underlying data format.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTimedTextTrack.GetErrorCode">
-    <summary>
-      <para>Gets a value indicating the error type of the latest error associated with the track.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="MF_TIMED_TEXT_ERROR_CODE" /></b></para>
-      <para>A value indicating the error type of the latest error associated with the track.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Gets a value indicating the error type of the latest error associated with the track.</summary>
+    <returns>A value indicating the error type of the latest error associated with the track.</returns>
   </member>
   <member name="IMFTimedTextTrack.GetExtendedErrorCode">
-    <summary>
-      <para>Gets the extended error code for the latest error associated with the track.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>The extended error code for the latest error associated with the track.</para>
-    </returns>
-    <remarks>
-      <para>If the most recent error was associated with a track, this value will be the same <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a> as returned by the <see cref="IMFTimedTextNotify.Error" /> method.</para>
-    </remarks>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Gets the extended error code for the latest error associated with the track.</summary>
+    <returns>The extended error code for the latest error associated with the track.</returns>
   </member>
   <member name="IMFTimedTextTrack.GetId">
-    <summary>
-      <para>Gets the identifier of the track of timed text.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>DWORD</b></para>
-      <para>Returns the identifier of the track.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Gets the identifier of the track of timed text.</summary>
+    <returns>Returns the identifier of the track.</returns>
   </member>
   <member name="IMFTimedTextTrack.GetInBandMetadataTrackDispatchType">
-    <summary>
-      <para>Gets the in-band metadata of the track.</para>
-    </summary>
-    <param name="dispatchType">
-      <para>Type: <b>LPCWSTR*</b></para>
-      <para>A pointer to a variable that receives the null-terminated wide-character string that contains the in-band metadata of the track.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Gets the in-band metadata of the track.</summary>
+    <param name="dispatchType">A pointer to a variable that receives the null-terminated wide-character string that contains the in-band metadata of the track.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTimedTextTrack.GetLabel">
-    <summary>
-      <para>Gets the label of the track.</para>
-    </summary>
-    <param name="label">
-      <para>Type: <b>LPCWSTR*</b></para>
-      <para>A pointer to a variable that receives the null-terminated wide-character string that contains the label of the track.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Gets the label of the track.</summary>
+    <param name="label">A pointer to a variable that receives the null-terminated wide-character string that contains the label of the track.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTimedTextTrack.GetLanguage">
-    <summary>
-      <para>Gets the language of the track.</para>
-    </summary>
-    <param name="language">
-      <para>Type: <b>LPCWSTR*</b></para>
-      <para>A pointer to a variable that receives the null-terminated wide-character string that contains the language of the track.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Gets the language of the track.</summary>
+    <param name="language">A pointer to a variable that receives the null-terminated wide-character string that contains the language of the track.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTimedTextTrack.GetTrackKind">
-    <summary>
-      <para>Gets the kind of timed-text track.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="MF_TIMED_TEXT_TRACK_KIND" /></b></para>
-      <para>Returns a <see cref="MF_TIMED_TEXT_TRACK_KIND" />-typed value that specifies the kind of timed-text track.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Gets the kind of timed-text track.</summary>
+    <returns>Returns a <see cref="MF_TIMED_TEXT_TRACK_KIND" />-typed value that specifies the kind of timed-text track.</returns>
   </member>
   <member name="IMFTimedTextTrack.IsActive">
-    <summary>
-      <para>Determines whether the timed-text track is active.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>Returns whether the timed-text track is active. If <b>TRUE</b>, the timed-text track is active; otherwise, <b>FALSE</b>.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Determines whether the timed-text track is active.</summary>
+    <returns>Returns whether the timed-text track is active. If <b>TRUE</b>, the timed-text track is active; otherwise, <b>FALSE</b>.</returns>
   </member>
   <member name="IMFTimedTextTrack.IsInBand">
-    <summary>
-      <para>Determines whether the timed-text track is inband.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>Returns whether the timed-text track is inband. If <b>TRUE</b>, the timed-text track is inband; otherwise, <b>FALSE</b>.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Determines whether the timed-text track is inband.</summary>
+    <returns>Returns whether the timed-text track is inband. If <b>TRUE</b>, the timed-text track is inband; otherwise, <b>FALSE</b>.</returns>
   </member>
   <member name="IMFTimedTextTrack.SetLabel">
-    <summary>
-      <para>Sets the label of a timed-text track.</para>
-    </summary>
-    <param name="label">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated wide-character string that contains the label of the track.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTimedTextTrack" />
+    <summary>Sets the label of a timed-text track.</summary>
+    <param name="label">A pointer to a null-terminated wide-character string that contains the label of the track.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTimedTextTrack">
-    <summary>
-      <para>Represents a track of timed text.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Represents a track of timed text.</summary>
   </member>
 </doc>

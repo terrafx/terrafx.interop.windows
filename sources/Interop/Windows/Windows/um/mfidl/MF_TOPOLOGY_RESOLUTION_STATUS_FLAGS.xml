@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TOPOLOGY_RESOLUTION_STATUS_FLAGS">
-    <summary>
-      <para>Defines status flags for the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-topology-resolution-status-attribute">MF_TOPOLOGY_RESOLUTION_STATUS</a> attribute.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines status flags for the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-topology-resolution-status-attribute">MF_TOPOLOGY_RESOLUTION_STATUS</a> attribute.</summary>
   </member>
   <member name="MF_TOPOLOGY_RESOLUTION_STATUS_FLAGS.MF_TOPOLOGY_RESOLUTION_SUCCEEDED">
-    <summary>
-      <para>The topology was resolved successfully.</para>
-    </summary>
+    <summary>The topology was resolved successfully.</summary>
   </member>
   <member name="MF_TOPOLOGY_RESOLUTION_STATUS_FLAGS.MF_OPTIONAL_NODE_REJECTED_MEDIA_TYPE">
-    <summary>
-      <para>An optional topology node was rejected because the topology loader could not find a media type for the connection.</para>
-    </summary>
+    <summary>An optional topology node was rejected because the topology loader could not find a media type for the connection.</summary>
   </member>
   <member name="MF_TOPOLOGY_RESOLUTION_STATUS_FLAGS.MF_OPTIONAL_NODE_REJECTED_PROTECTED_PROCESS">
-    <summary>
-      <para>An optional topology node was rejected because it could not be loaded into a protected process.</para>
-    </summary>
+    <summary>An optional topology node was rejected because it could not be loaded into a protected process.</summary>
   </member>
 </doc>

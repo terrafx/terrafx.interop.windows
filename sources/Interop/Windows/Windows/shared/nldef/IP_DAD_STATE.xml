@@ -3,53 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IP_DAD_STATE">
-    <summary>
-      <para>The <b>IP_DAD_STATE</b> enumeration specifies information about the duplicate address detection (DAD) state for an IPv4 or IPv6 address.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IP_DAD_STATE</b> enumeration is used in the <b>DadState</b> member of the <see cref="IP_ADAPTER_UNICAST_ADDRESS" />  structure.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>IP_DAD_STATE</b> enumeration is defined in the <i>Nldef.h</i> header file which is automatically included by the <i>Iptypes.h</i> header file. The  <i>Nldef.h</i> and <i>Iptypes.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="IP_ADAPTER_UNICAST_ADDRESS" />
+    <summary>The <b>IP_DAD_STATE</b> enumeration specifies information about the duplicate address detection (DAD) state for an IPv4 or IPv6 address.</summary>
   </member>
-  <member name="IP_DAD_STATE.NldsInvalid">
-    <summary></summary>
-  </member>
-  <member name="IP_DAD_STATE.NldsTentative">
-    <summary></summary>
-  </member>
-  <member name="IP_DAD_STATE.NldsDuplicate">
-    <summary></summary>
-  </member>
-  <member name="IP_DAD_STATE.NldsDeprecated">
-    <summary></summary>
-  </member>
-  <member name="IP_DAD_STATE.NldsPreferred">
-    <summary></summary>
-  </member>
+  <member name="IP_DAD_STATE.NldsInvalid"></member>
+  <member name="IP_DAD_STATE.NldsTentative"></member>
+  <member name="IP_DAD_STATE.NldsDuplicate"></member>
+  <member name="IP_DAD_STATE.NldsDeprecated"></member>
+  <member name="IP_DAD_STATE.NldsPreferred"></member>
   <member name="IP_DAD_STATE.IpDadStateInvalid">
-    <summary>
-      <para>The DAD state is invalid.</para>
-    </summary>
+    <summary>The DAD state is invalid.</summary>
   </member>
   <member name="IP_DAD_STATE.IpDadStateTentative">
-    <summary>
-      <para>The DAD state is tentative.</para>
-    </summary>
+    <summary>The DAD state is tentative.</summary>
   </member>
   <member name="IP_DAD_STATE.IpDadStateDuplicate">
-    <summary>
-      <para>A duplicate IP address has been detected.</para>
-    </summary>
+    <summary>A duplicate IP address has been detected.</summary>
   </member>
   <member name="IP_DAD_STATE.IpDadStateDeprecated">
-    <summary>
-      <para>The IP address has been deprecated.</para>
-    </summary>
+    <summary>The IP address has been deprecated.</summary>
   </member>
   <member name="IP_DAD_STATE.IpDadStatePreferred">
-    <summary>
-      <para>The IP address is the preferred address.</para>
-    </summary>
+    <summary>The IP address is the preferred address.</summary>
   </member>
 </doc>

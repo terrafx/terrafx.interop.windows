@@ -4,49 +4,32 @@
 <doc>
   <member name="eAVDecDDOperationalMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the compression control mode for a Dolby AC-3 or Dolby Enhanced AC-3 audio stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecddoperationalmode-property">AVDecDDOperationalMode</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVDecDDOperationalMode.eAVDecDDOperationalMode_NONE">
-    <summary>
-      <para>No dynamic range control or dialogue normalization (dialnorm). This mode should be used only for signal tests.</para>
-    </summary>
+    <summary>No dynamic range control or dialogue normalization (dialnorm). This mode should be used only for signal tests.</summary>
   </member>
   <member name="eAVDecDDOperationalMode.eAVDecDDOperationalMode_LINE">
-    <summary>
-      <para>Line mode. Dialnorm is enabled with a reference level of -31 decibels full scale (dBFS). Dynamic range control is applied, and high-level/low-level scaling is enabled. To set the high-level scaling factor, set the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecdddynamicrangescalehigh-property">AVDecDDDynamicRangeScaleHigh</a> property. To set the low-level scaling factor, set the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecdddynamicrangescalelow-property">AVDecDDDynamicRangeScaleLow</a> property.</para>
-    </summary>
+    <summary>Line mode. Dialnorm is enabled with a reference level of -31 decibels full scale (dBFS). Dynamic range control is applied, and high-level/low-level scaling is enabled. To set the high-level scaling factor, set the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecdddynamicrangescalehigh-property">AVDecDDDynamicRangeScaleHigh</a> property. To set the low-level scaling factor, set the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecdddynamicrangescalelow-property">AVDecDDDynamicRangeScaleLow</a> property.</summary>
   </member>
   <member name="eAVDecDDOperationalMode.eAVDecDDOperationalMode_RF">
-    <summary>
-      <para>RF mode. Dialnorm is enabled with a reference level of -20 dBFS. Dynamic range control is applied. High-level/low-level scaling is disabled; instead, the maximum dynamic range reduction is applied.</para>
-    </summary>
+    <summary>RF mode. Dialnorm is enabled with a reference level of -20 dBFS. Dynamic range control is applied. High-level/low-level scaling is disabled; instead, the maximum dynamic range reduction is applied.</summary>
   </member>
   <member name="eAVDecDDOperationalMode.eAVDecDDOperationalMode_CUSTOM0">
-    <summary>
-      <para>Custom mode 0 (analog dialnorm).</para>
-    </summary>
+    <summary>Custom mode 0 (analog dialnorm).</summary>
   </member>
   <member name="eAVDecDDOperationalMode.eAVDecDDOperationalMode_CUSTOM1">
-    <summary>
-      <para>Custom mode 1 (digital dialnorm).</para>
-    </summary>
+    <summary>Custom mode 1 (digital dialnorm).</summary>
   </member>
   <member name="eAVDecDDOperationalMode.eAVDecDDOperationalMode_PORTABLE8">
-    <summary>
-      <para>Dialnorm enabled, dialogue at -8dBFS. Dynamic range and compression used. High-level/low-level scaling is not allowed (always fully compressed).</para>
-    </summary>
+    <summary>Dialnorm enabled, dialogue at -8dBFS. Dynamic range and compression used. High-level/low-level scaling is not allowed (always fully compressed).</summary>
   </member>
   <member name="eAVDecDDOperationalMode.eAVDecDDOperationalMode_PORTABLE11">
-    <summary>
-      <para>Dialnorm enabled, dialogue at -11dBFS. Dynamic range and compression used. High-level/low-level scaling is not allowed (always fully compressed).</para>
-    </summary>
+    <summary>Dialnorm enabled, dialogue at -11dBFS. Dynamic range and compression used. High-level/low-level scaling is not allowed (always fully compressed).</summary>
   </member>
   <member name="eAVDecDDOperationalMode.eAVDecDDOperationalMode_PORTABLE14">
-    <summary>
-      <para>Dialnorm enabled, dialogue at -14dBFS. Dynamic range and compression used. High-level/low-level scaling is not allowed (always fully compressed).</para>
-    </summary>
+    <summary>Dialnorm enabled, dialogue at -14dBFS. Dynamic range and compression used. High-level/low-level scaling is not allowed (always fully compressed).</summary>
   </member>
 </doc>

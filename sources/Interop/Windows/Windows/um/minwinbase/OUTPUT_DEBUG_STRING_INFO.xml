@@ -3,22 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OUTPUT_DEBUG_STRING_INFO">
-    <summary>
-      <para>Contains the address, format, and length, in bytes, of a debugging string.</para>
-    </summary>
-    <seealso cref="DEBUG_EVENT" />
-    <seealso cref="ReadProcessMemory" />
+    <summary>Contains the address, format, and length, in bytes, of a debugging string.</summary>
   </member>
   <member name="OUTPUT_DEBUG_STRING_INFO.lpDebugStringData">
-    <summary>
-      <para>The debugging string in the calling process's address space. The debugger can use the
-<see cref="ReadProcessMemory" /> function to retrieve the value of the string.</para>
-    </summary>
+    <summary>The debugging string in the calling process's address space. The debugger can use the<see cref="ReadProcessMemory" /> function to retrieve the value of the string.</summary>
   </member>
   <member name="OUTPUT_DEBUG_STRING_INFO.fUnicode">
-    <summary>
-      <para>The format of the debugging string. If this member is zero, the debugging string is ANSI; if it is nonzero, the string is Unicode.</para>
-    </summary>
+    <summary>The format of the debugging string. If this member is zero, the debugging string is ANSI; if it is nonzero, the string is Unicode.</summary>
   </member>
   <member name="OUTPUT_DEBUG_STRING_INFO.nDebugStringLength">
     <summary>

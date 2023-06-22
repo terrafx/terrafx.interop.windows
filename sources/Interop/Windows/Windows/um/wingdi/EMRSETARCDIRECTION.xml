@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRSETARCDIRECTION">
-    <summary>
-      <para>The <b>EMRSETARCDIRECTION</b> structure contains members for the <b>SetArcDirection</b> enhanced metafile record.</para>
-    </summary>
-    <seealso cref="Arc" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="SetArcDirection" />
+    <summary>The <b>EMRSETARCDIRECTION</b> structure contains members for the <b>SetArcDirection</b> enhanced metafile record.</summary>
   </member>
   <member name="EMRSETARCDIRECTION.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRSETARCDIRECTION.iArcDirection">
-    <summary>
-      <para>Arc direction. This member can be either the AD_CLOCKWISE or AD_COUNTERCLOCKWISE value.</para>
-    </summary>
+    <summary>Arc direction. This member can be either the AD_CLOCKWISE or AD_COUNTERCLOCKWISE value.</summary>
   </member>
 </doc>

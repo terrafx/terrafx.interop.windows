@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STREAM_SEEK">
-    <summary>
-      <para>The
-<b>STREAM_SEEK</b> enumeration values specify the origin from which to calculate the new seek-pointer location. They are used for the <i>dworigin</i> parameter in the
-<see cref="IStream.Seek" /> method. The new seek position is calculated using this value and the <i>dlibMove</i> parameter.</para>
-    </summary>
-    <seealso cref="IStream.Seek" />
+    <summary>The<b>STREAM_SEEK</b> enumeration values specify the origin from which to calculate the new seek-pointer location. They are used for the <i>dworigin</i> parameter in the<see cref="IStream.Seek" /> method. The new seek position is calculated using this value and the <i>dlibMove</i> parameter.</summary>
   </member>
   <member name="STREAM_SEEK.STREAM_SEEK_SET">
-    <summary>
-      <para>The new seek pointer is an offset relative to the beginning of the stream. In this case, the <i>dlibMove</i> parameter is the new seek position relative to the beginning of the stream.</para>
-    </summary>
+    <summary>The new seek pointer is an offset relative to the beginning of the stream. In this case, the <i>dlibMove</i> parameter is the new seek position relative to the beginning of the stream.</summary>
   </member>
   <member name="STREAM_SEEK.STREAM_SEEK_CUR">
-    <summary>
-      <para>The new seek pointer is an offset relative to the current seek pointer location. In this case, the <i>dlibMove</i> parameter is the signed displacement from the current seek position.</para>
-    </summary>
+    <summary>The new seek pointer is an offset relative to the current seek pointer location. In this case, the <i>dlibMove</i> parameter is the signed displacement from the current seek position.</summary>
   </member>
   <member name="STREAM_SEEK.STREAM_SEEK_END">
-    <summary>
-      <para>The new seek pointer is an offset relative to the end of the stream. In this case, the <i>dlibMove</i> parameter is the new seek position relative to the end of the stream.</para>
-    </summary>
+    <summary>The new seek pointer is an offset relative to the end of the stream. In this case, the <i>dlibMove</i> parameter is the new seek position relative to the end of the stream.</summary>
   </member>
 </doc>

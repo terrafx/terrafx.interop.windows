@@ -3,75 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="KDHELP">
-    <summary>
-      <para>Information that is used by kernel debuggers to trace through user-mode callbacks in a thread's kernel stack.</para>
-    </summary>
-    <remarks>
-      <para>This structure supersedes the <b>KDHELP</b> structure. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>KDHELP</b> is defined as follows in Dbghelp.h.</para>
-      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
-#define KDHELP KDHELP64
-#define PKDHELP PKDHELP64
-#else
-typedef struct _KDHELP {
-    DWORD   Thread;
-    DWORD   ThCallbackStack;
-    DWORD   NextCallback;
-    DWORD   FramePointer;
-    DWORD   KiCallUserMode;
-    DWORD   KeUserCallbackDispatcher;
-    DWORD   SystemRangeStart;
-    DWORD   ThCallbackBStore;
-    DWORD   KiUserExceptionDispatcher;
-    DWORD   StackBase;
-    DWORD   StackLimit;
-    DWORD   Reserved[5];
-} KDHELP, *PKDHELP;
-#endif
-</code>
-    </remarks>
-    <seealso cref="STACKFRAME64" />
+    <summary>Information that is used by kernel debuggers to trace through user-mode callbacks in a thread's kernel stack.</summary>
   </member>
   <member name="KDHELP.Thread">
-    <summary>
-      <para>The address of the kernel thread object, as provided in the WAIT_STATE_CHANGE packet.</para>
-    </summary>
+    <summary>The address of the kernel thread object, as provided in the WAIT_STATE_CHANGE packet.</summary>
   </member>
   <member name="KDHELP.ThCallbackStack">
-    <summary>
-      <para>The offset in the thread object to the pointer to the current callback frame in the kernel stack.</para>
-    </summary>
+    <summary>The offset in the thread object to the pointer to the current callback frame in the kernel stack.</summary>
   </member>
   <member name="KDHELP.NextCallback">
-    <summary>
-      <para>The address of the next callback frame.</para>
-    </summary>
+    <summary>The address of the next callback frame.</summary>
   </member>
   <member name="KDHELP.FramePointer">
-    <summary>
-      <para>The address of the saved frame pointer, if applicable.</para>
-    </summary>
+    <summary>The address of the saved frame pointer, if applicable.</summary>
   </member>
   <member name="KDHELP.KiCallUserMode">
-    <summary>
-      <para>The address of the kernel function that calls out to user mode.</para>
-    </summary>
+    <summary>The address of the kernel function that calls out to user mode.</summary>
   </member>
   <member name="KDHELP.KeUserCallbackDispatcher">
-    <summary>
-      <para>The address of the user-mode dispatcher function.</para>
-    </summary>
+    <summary>The address of the user-mode dispatcher function.</summary>
   </member>
   <member name="KDHELP.SystemRangeStart">
-    <summary>
-      <para>The lowest kernel-mode address.</para>
-    </summary>
+    <summary>The lowest kernel-mode address.</summary>
   </member>
   <member name="KDHELP.ThCallbackBStore">
     <summary>
-      <para>
-        <b>Intel Itanium:  </b>The offset in the thread object to a pointer to the current callback backing store frame in the kernel stack.</para>
-    </summary>
+      <b>Intel Itanium:  </b>The offset in the thread object to a pointer to the current callback backing store frame in the kernel stack.</summary>
   </member>
   <member name="KDHELP.KiUserExceptionDispatcher">
     <summary>
@@ -81,90 +38,41 @@ typedef struct _KDHELP {
     </summary>
   </member>
   <member name="KDHELP.StackBase">
-    <summary>
-      <para>The address of the stack base.</para>
-    </summary>
+    <summary>The address of the stack base.</summary>
   </member>
   <member name="KDHELP.StackLimit">
-    <summary>
-      <para>The stack limit.</para>
-    </summary>
+    <summary>The stack limit.</summary>
   </member>
   <member name="KDHELP.Reserved">
-    <summary>
-      <para>This member is reserved for use by the operating system.</para>
-    </summary>
+    <summary>This member is reserved for use by the operating system.</summary>
   </member>
   <member name="KDHELP">
-    <summary>
-      <para>Information that is used by kernel debuggers to trace through user-mode callbacks in a thread's kernel stack.</para>
-    </summary>
-    <remarks>
-      <para>This structure supersedes the <b>KDHELP</b> structure. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>KDHELP</b> is defined as follows in Dbghelp.h.</para>
-      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
-#define KDHELP KDHELP64
-#define PKDHELP PKDHELP64
-#else
-typedef struct _KDHELP {
-    DWORD   Thread;
-    DWORD   ThCallbackStack;
-    DWORD   NextCallback;
-    DWORD   FramePointer;
-    DWORD   KiCallUserMode;
-    DWORD   KeUserCallbackDispatcher;
-    DWORD   SystemRangeStart;
-    DWORD   ThCallbackBStore;
-    DWORD   KiUserExceptionDispatcher;
-    DWORD   StackBase;
-    DWORD   StackLimit;
-    DWORD   Reserved[5];
-} KDHELP, *PKDHELP;
-#endif
-</code>
-    </remarks>
-    <seealso cref="STACKFRAME64" />
+    <summary>Information that is used by kernel debuggers to trace through user-mode callbacks in a thread's kernel stack.</summary>
   </member>
   <member name="KDHELP.Thread">
-    <summary>
-      <para>The address of the kernel thread object, as provided in the WAIT_STATE_CHANGE packet.</para>
-    </summary>
+    <summary>The address of the kernel thread object, as provided in the WAIT_STATE_CHANGE packet.</summary>
   </member>
   <member name="KDHELP.ThCallbackStack">
-    <summary>
-      <para>The offset in the thread object to the pointer to the current callback frame in the kernel stack.</para>
-    </summary>
+    <summary>The offset in the thread object to the pointer to the current callback frame in the kernel stack.</summary>
   </member>
   <member name="KDHELP.ThCallbackBStore">
     <summary>
-      <para>
-        <b>Intel Itanium:  </b>The offset in the thread object to a pointer to the current callback backing store frame in the kernel stack.</para>
-    </summary>
+      <b>Intel Itanium:  </b>The offset in the thread object to a pointer to the current callback backing store frame in the kernel stack.</summary>
   </member>
   <member name="KDHELP.NextCallback">
-    <summary>
-      <para>The address of the next callback frame.</para>
-    </summary>
+    <summary>The address of the next callback frame.</summary>
   </member>
   <member name="KDHELP.FramePointer">
-    <summary>
-      <para>The address of the saved frame pointer, if applicable.</para>
-    </summary>
+    <summary>The address of the saved frame pointer, if applicable.</summary>
   </member>
   <member name="KDHELP.KiCallUserMode">
-    <summary>
-      <para>The address of the kernel function that calls out to user mode.</para>
-    </summary>
+    <summary>The address of the kernel function that calls out to user mode.</summary>
   </member>
   <member name="KDHELP.KeUserCallbackDispatcher">
-    <summary>
-      <para>The address of the user-mode dispatcher function.</para>
-    </summary>
+    <summary>The address of the user-mode dispatcher function.</summary>
   </member>
   <member name="KDHELP.SystemRangeStart">
-    <summary>
-      <para>The lowest kernel-mode address.</para>
-    </summary>
+    <summary>The lowest kernel-mode address.</summary>
   </member>
   <member name="KDHELP.KiUserExceptionDispatcher">
     <summary>
@@ -174,43 +82,27 @@ typedef struct _KDHELP {
     </summary>
   </member>
   <member name="KDHELP.StackBase">
-    <summary>
-      <para>The address of the stack base.</para>
-    </summary>
+    <summary>The address of the stack base.</summary>
   </member>
   <member name="KDHELP.StackLimit">
-    <summary>
-      <para>The stack limit.</para>
-    </summary>
+    <summary>The stack limit.</summary>
   </member>
   <member name="KDHELP.BuildVersion">
-    <summary>
-      <para>TBD</para>
-    </summary>
+    <summary>TBD</summary>
   </member>
   <member name="KDHELP.RetpolineStubFunctionTableSize">
-    <summary>
-      <para>TBD</para>
-    </summary>
+    <summary>TBD</summary>
   </member>
   <member name="KDHELP.RetpolineStubFunctionTable">
-    <summary>
-      <para>TBD</para>
-    </summary>
+    <summary>TBD</summary>
   </member>
   <member name="KDHELP.RetpolineStubOffset">
-    <summary>
-      <para>TBD</para>
-    </summary>
+    <summary>TBD</summary>
   </member>
   <member name="KDHELP.RetpolineStubSize">
-    <summary>
-      <para>TBD</para>
-    </summary>
+    <summary>TBD</summary>
   </member>
   <member name="KDHELP.Reserved0">
-    <summary>
-      <para>This member is reserved for use by the operating system.</para>
-    </summary>
+    <summary>This member is reserved for use by the operating system.</summary>
   </member>
 </doc>

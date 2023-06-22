@@ -3,220 +3,193 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellImageDataFactory.CreateImageFromFile">
-    <summary>
-      <para>Creates an instance of the <see cref="IShellImageData" /> interface based on a given file.</para>
-    </summary>
-    <param name="pszPath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The path of the file containing the image. If this parameter is <b>NULL</b>, an unhandled exception results.</para>
-    </param>
-    <param name="ppshimg">
-      <para>Type: <b><see cref="IShellImageData" />**</b></para>
-      <para>The address of a pointer to an instance of <see cref="IShellImageData" />.</para>
-    </param>
+    <summary>Creates an instance of the <see cref="IShellImageData" /> interface based on a given file.</summary>
+    <param name="pszPath">The path of the file containing the image. If this parameter is <b>NULL</b>, an unhandled exception results.</param>
+    <param name="ppshimg">The address of a pointer to an instance of <see cref="IShellImageData" />.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The internal object cannot be instantiated.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The internal object cannot be instantiated.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The internal object does not support the <see cref="IShellImageData" /> or <see cref="IPersistFile" /> interfaces.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The internal object does not support the <see cref="IShellImageData" /> or <see cref="IPersistFile" /> interfaces.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>ppshimg</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The <i>ppshimg</i> parameter is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An access violation occurs if <i>pszPath</i> is <b>NULL</b>.</para>
-    </remarks>
   </member>
   <member name="IShellImageDataFactory.CreateImageFromStream">
-    <summary>
-      <para>Creates an instance of the <see cref="IShellImageData" /> interface based on a given file stream.</para>
-    </summary>
-    <param name="pStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>A pointer to the image stream.</para>
-    </param>
-    <param name="ppshimg">
-      <para>Type: <b><see cref="IShellImageData" />**</b></para>
-      <para>The address of a pointer to an instance of <see cref="IShellImageData" />.</para>
-    </param>
+    <summary>Creates an instance of the <see cref="IShellImageData" /> interface based on a given file stream.</summary>
+    <param name="pStream">A pointer to the image stream.</param>
+    <param name="ppshimg">The address of a pointer to an instance of <see cref="IShellImageData" />.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The internal object cannot be instantiated.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The internal object cannot be instantiated.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The internal object does not support the <see cref="IShellImageData" /> or <see cref="IPersistFile" /> interfaces.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The internal object does not support the <see cref="IShellImageData" /> or <see cref="IPersistFile" /> interfaces.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>ppshimg</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The <i>ppshimg</i> parameter is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>pStream</i> is <b>NULL</b> or an invalid pointer, later calls to <see cref="Decode" /> will cause an access violation.</para>
-    </remarks>
   </member>
   <member name="IShellImageDataFactory.CreateIShellImageData">
-    <summary>
-      <para>Creates an instance of the <see cref="IShellImageData" /> interface.</para>
-    </summary>
-    <param name="ppshimg">
-      <para>Type: <b><see cref="IShellImageData" />**</b></para>
-      <para>The address of a pointer to an instance of <see cref="IShellImageData" />.</para>
-    </param>
+    <summary>Creates an instance of the <see cref="IShellImageData" /> interface.</summary>
+    <param name="ppshimg">The address of a pointer to an instance of <see cref="IShellImageData" />.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The internal object cannot be instantiated.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The internal object cannot be instantiated.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The internal object does not support <see cref="IShellImageData" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The internal object does not support <see cref="IShellImageData" />.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>ppshimg</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The <i>ppshimg</i> parameter is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IShellImageDataFactory.GetDataFormatFromPath">
-    <summary>
-      <para>Determines a file's format based on its extension.</para>
-    </summary>
-    <param name="pszPath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A path to the file.</para>
-    </param>
-    <param name="pDataFormat">
-      <para>Type: <b>GUID*</b></para>
-      <para>A pointer to a GUID identifying the image format of the file.</para>
-    </param>
+    <summary>Determines a file's format based on its extension.</summary>
+    <param name="pszPath">A path to the file.</param>
+    <param name="pDataFormat">A pointer to a GUID identifying the image format of the file.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>pszPath</i> parameter is <b>NULL</b>, the file name extension does not correspond to any defined GDI+ decoder, or an internal error has occurred. In any of these cases, <i>pDataFormat</i> is set to GUID_NULL.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>pszPath</i> parameter is <b>NULL</b>, the file name extension does not correspond to any defined GDI+ decoder, or an internal error has occurred. In any of these cases, <i>pDataFormat</i> is set to GUID_NULL.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>The internal object cannot be instantiated.</para>
-          </description>
-        </item>
+          <description>The internal object cannot be instantiated.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>IShellImageDataFactory.GetDataFormatFromPath</b> should only be used to determine whether data can be saved to a particular format on the current system.</para>
-    </remarks>
   </member>
   <member name="IShellImageDataFactory">
-    <summary>
-      <para>Exposes methods that create <see cref="IShellImageData" /> instances based on various image sources.</para>
-    </summary>
-    <remarks>
-      <para>This interface is not expected to be available in later versions of Windows. It is recommended that Windows GDI+ APIs be used in place of <b>IShellImageDataFactory</b> methods.</para>
-      <para>This interface was not included in a public header file prior to Windows Vista.</para>
-    </remarks>
+    <summary>Exposes methods that create <see cref="IShellImageData" /> instances based on various image sources.</summary>
   </member>
 </doc>

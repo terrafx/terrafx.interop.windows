@@ -3,68 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_RESOURCE_DESC1">
-    <summary>
-      <para>Describes a resource, such as a texture, including a mip region. This structure is used in several methods.</para>
-    </summary>
-    <remarks>
-      <para>For remarks, see <see cref="D3D12_RESOURCE_DESC1" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/direct3d12/direct3d-12-structures">Core structures</seealso>
-    <seealso href="https://microsoft.github.io/directx-specs/d3d/samplerfeedback.html">Sampler feedback specification</seealso>
+    <summary>Describes a resource, such as a texture, including a mip region. This structure is used in several methods.</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.Dimension">
-    <summary>
-      <para>One member of <see cref="D3D12_RESOURCE_DIMENSION" />, specifying the dimensions of the resource (for example, D3D12_RESOURCE_DIMENSION_TEXTURE1D), or whether it is a buffer ((D3D12_RESOURCE_DIMENSION_BUFFER).</para>
-    </summary>
+    <summary>One member of <see cref="D3D12_RESOURCE_DIMENSION" />, specifying the dimensions of the resource (for example, D3D12_RESOURCE_DIMENSION_TEXTURE1D), or whether it is a buffer ((D3D12_RESOURCE_DIMENSION_BUFFER).</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.Alignment">
-    <summary>
-      <para>Specifies the alignment.</para>
-    </summary>
+    <summary>Specifies the alignment.</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.Width">
-    <summary>
-      <para>Specifies the width of the resource.</para>
-    </summary>
+    <summary>Specifies the width of the resource.</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.Height">
-    <summary>
-      <para>Specifies the height of the resource.</para>
-    </summary>
+    <summary>Specifies the height of the resource.</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.DepthOrArraySize">
-    <summary>
-      <para>Specifies the depth of the resource, if it is 3D, or the array size if it is an array of 1D or 2D resources.</para>
-    </summary>
+    <summary>Specifies the depth of the resource, if it is 3D, or the array size if it is an array of 1D or 2D resources.</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.MipLevels">
-    <summary>
-      <para>Specifies the number of MIP levels.</para>
-    </summary>
+    <summary>Specifies the number of MIP levels.</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.Format">
-    <summary>
-      <para>Specifies one member of <see cref="DXGI_FORMAT" />.</para>
-    </summary>
+    <summary>Specifies one member of <see cref="DXGI_FORMAT" />.</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.SampleDesc">
-    <summary>
-      <para>Specifies a <see cref="DXGI_SAMPLE_DESC" /> structure.</para>
-    </summary>
+    <summary>Specifies a <see cref="DXGI_SAMPLE_DESC" /> structure.</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.Layout">
-    <summary>
-      <para>Specifies one member of <see cref="D3D12_TEXTURE_LAYOUT" />.</para>
-    </summary>
+    <summary>Specifies one member of <see cref="D3D12_TEXTURE_LAYOUT" />.</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.Flags">
-    <summary>
-      <para>Bitwise-OR'd flags, as <see cref="D3D12_RESOURCE_FLAGS" /> enumeration constants.</para>
-    </summary>
+    <summary>Bitwise-OR'd flags, as <see cref="D3D12_RESOURCE_FLAGS" /> enumeration constants.</summary>
   </member>
   <member name="D3D12_RESOURCE_DESC1.SamplerFeedbackMipRegion">
-    <summary>
-      <para>A <see cref="D3D12_MIP_REGION" /> struct.</para>
-    </summary>
+    <summary>A <see cref="D3D12_MIP_REGION" /> struct.</summary>
   </member>
 </doc>

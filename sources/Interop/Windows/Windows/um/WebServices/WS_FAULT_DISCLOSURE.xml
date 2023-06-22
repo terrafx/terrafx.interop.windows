@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_FAULT_DISCLOSURE">
-    <summary>
-      <para>Controls how much error information is included in a fault.
-Since the error object may contain sensitive
-data as part of the error string, it is not
-always appropriate to include the error strings
-information in all faults.</para>
-    </summary>
+    <summary>Controls how much error information is included in a fault. Since the error object may contain sensitive data as part of the error string, it is not always appropriate to include the error strings information in all faults.</summary>
   </member>
   <member name="WS_FAULT_DISCLOSURE.WS_MINIMAL_FAULT_DISCLOSURE">
-    <summary>
-      <para>Use a generic fault string for all errors.</para>
-    </summary>
+    <summary>Use a generic fault string for all errors.</summary>
   </member>
   <member name="WS_FAULT_DISCLOSURE.WS_FULL_FAULT_DISCLOSURE">
-    <summary>
-      <para>Use the error string as the fault string.</para>
-    </summary>
+    <summary>Use the error string as the fault string.</summary>
   </member>
 </doc>

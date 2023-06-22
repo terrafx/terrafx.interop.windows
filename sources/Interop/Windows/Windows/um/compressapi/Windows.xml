@@ -3,421 +3,227 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.CloseCompressor">
-    <summary>
-      <para>Call to close an open <b>COMPRESSOR_HANDLE</b>.</para>
-    </summary>
-    <param name="CompressorHandle">
-      <para>Handle to the compressor to be closed. This is the handle to the compressor that was returned by <see cref="CreateCompressor" />.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>.    If the  system cannot locate the compression algorithm handle, the error can be <b>ERROR_INVALID_HANDLE</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <summary>Call to close an open <b>COMPRESSOR_HANDLE</b>.</summary>
+    <param name="CompressorHandle">Handle to the compressor to be closed. This is the handle to the compressor that was returned by <see cref="CreateCompressor" />.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
   <member name="Windows.CloseDecompressor">
-    <summary>
-      <para>Call to close an open <b>DECOMPRESSOR_HANDLE</b>.</para>
-    </summary>
-    <param name="DecompressorHandle">
-      <para>Handle to the decompressor to be closed. This is the handle to the compressor that was returned by <see cref="CreateDecompressor" />.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>.    If the  system cannot locate the compression algorithm handle, the error can be <b>ERROR_INVALID_HANDLE</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <summary>Call to close an open <b>DECOMPRESSOR_HANDLE</b>.</summary>
+    <param name="DecompressorHandle">Handle to the decompressor to be closed. This is the handle to the compressor that was returned by <see cref="CreateDecompressor" />.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
   <member name="Windows.Compress">
-    <summary>
-      <para>Takes a block of information and compresses it.</para>
-    </summary>
-    <param name="CompressorHandle">
-      <para>Handle to a compressor returned by <see cref="CreateCompressor" />.</para>
-    </param>
-    <param name="UncompressedData">
-      <para>Contains the block of information that is to be compressed. The size in bytes of the uncompressed block is given by <i>UncompressedDataSize</i>.</para>
-    </param>
-    <param name="UncompressedDataSize">
-      <para>Size in bytes  of the uncompressed information.</para>
-    </param>
-    <param name="CompressedBuffer">
-      <para>The buffer that receives the compressed information. The maximum size in bytes of the buffer is given by <i>CompressedBufferSize</i>.</para>
-    </param>
-    <param name="CompressedBufferSize">
-      <para>Maximum size  in bytes of the buffer that receives the compressed information.</para>
-    </param>
-    <param name="CompressedDataSize">
-      <para>Actual size  in bytes of the compressed information received.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>.    If the  system cannot locate the compression algorithm handle, the error can be <b>ERROR_INVALID_HANDLE</b>. If the output buffer is too small to hold the compressed data, the error can be <b>ERROR_INSUFFICIENT_BUFFER</b>.</para>
-      <para>If <i>CompressedBuffer</i> output buffer is too small to hold the compressed data, the function fails and the error from <see cref="GetLastError" /> can be <b>ERROR_INSUFFICIENT_BUFFER</b>. In this case, the <i>CompressedDataSize</i> parameter receives with the size that the  <i>CompressedBuffer</i> needs to be to guarantee success for that input buffer. You can set <i>CompressedBufferSize</i> to zero to determine the size of the output buffer to allocate.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <summary>Takes a block of information and compresses it.</summary>
+    <param name="CompressorHandle">Handle to a compressor returned by <see cref="CreateCompressor" />.</param>
+    <param name="UncompressedData">Contains the block of information that is to be compressed. The size in bytes of the uncompressed block is given by <i>UncompressedDataSize</i>.</param>
+    <param name="UncompressedDataSize">Size in bytes of the uncompressed information.</param>
+    <param name="CompressedBuffer">The buffer that receives the compressed information. The maximum size in bytes of the buffer is given by <i>CompressedBufferSize</i>.</param>
+    <param name="CompressedBufferSize">Maximum size in bytes of the buffer that receives the compressed information.</param>
+    <param name="CompressedDataSize">Actual size in bytes of the compressed information received.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
   <member name="Windows.CreateCompressor">
-    <summary>
-      <para>Generates a new <b>COMPRESSOR_HANDLE</b>.</para>
-    </summary>
+    <summary>Generates a new <b>COMPRESSOR_HANDLE</b>.</summary>
     <param name="Algorithm">
       <para>The type of compression algorithm and mode to be used by this compressor.</para>
-      <para>This parameter can have one of the following values optionally combined with the <b>COMPRESS_RAW</b> flag.  Use a "bitwise OR" operator to include <b>COMPRESS_RAW</b> and to create a  block mode compressor.  If <b>COMPRESS_RAW</b> is not included, the Compression API creates a buffer mode compressor. For more information about selecting a compression algorithm and mode, see <a href="https://docs.microsoft.com//windows/desktop/cmpapi/using-the-compression-api">Using the Compression API</a>.</para>
+      <para>This parameter can have one of the following values optionally combined with the <b>COMPRESS_RAW</b> flag. Use a "bitwise OR" operator to include <b>COMPRESS_RAW</b> and to create a block mode compressor. If <b>COMPRESS_RAW</b> is not included, the Compression API creates a buffer mode compressor. For more information about selecting a compression algorithm and mode, see <a href="https://docs.microsoft.com//windows/desktop/cmpapi/using-the-compression-api">Using the Compression API</a>.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COMPRESS_ALGORITHM_MSZIP</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>MSZIP compression algorithm</para>
-          </description>
-        </item>
-        <item>
+          <description>MSZIP compression algorithm</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COMPRESS_ALGORITHM_XPRESS</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>XPRESS compression algorithm</para>
-          </description>
-        </item>
-        <item>
+          <description>XPRESS compression algorithm</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COMPRESS_ALGORITHM_XPRESS_HUFF</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>XPRESS compression algorithm with Huffman encoding</para>
-          </description>
-        </item>
-        <item>
+          <description>XPRESS compression algorithm with Huffman encoding</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COMPRESS_ALGORITHM_LZMS</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>LZMS compression algorithm</para>
-          </description>
-        </item>
+          <description>LZMS compression algorithm</description>
+        </listheader>
       </list>
     </param>
-    <param name="AllocationRoutines">
-      <para>Optional memory allocation and deallocation routines in a <see cref="COMPRESS_ALLOCATION_ROUTINES" /> structure.</para>
-    </param>
-    <param name="CompressorHandle">
-      <para>If the function succeeds, the handle to the specified compressor.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>.  If the system can find no compression algorithm matching the specified name and version, the error  can be <b>ERROR_NOT_SUPPORTED</b>.</para>
-    </remarks>
-    <seealso cref="COMPRESS_ALLOCATION_ROUTINES" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <param name="AllocationRoutines">Optional memory allocation and deallocation routines in a <see cref="COMPRESS_ALLOCATION_ROUTINES" /> structure.</param>
+    <param name="CompressorHandle">If the function succeeds, the handle to the specified compressor.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
   <member name="Windows.CreateDecompressor">
-    <summary>
-      <para>Generates a new <b>DECOMPRESSOR_HANDLE</b>.</para>
-    </summary>
+    <summary>Generates a new <b>DECOMPRESSOR_HANDLE</b>.</summary>
     <param name="Algorithm">
       <para>The type of compression algorithm and mode to be used by this decompressor.</para>
-      <para>This parameter can have one of the following values optionally combined with the <b>COMPRESS_RAW</b> flag.  Use a "bitwise OR" operator to include <b>COMPRESS_RAW</b> and to create a  block mode decompressor.  If <b>COMPRESS_RAW</b> is not included, the Compression API creates a buffer mode decompressor. For more information about selecting a compression algorithm and mode, see <a href="https://docs.microsoft.com//windows/desktop/cmpapi/using-the-compression-api">Using the Compression API</a>.</para>
+      <para>This parameter can have one of the following values optionally combined with the <b>COMPRESS_RAW</b> flag. Use a "bitwise OR" operator to include <b>COMPRESS_RAW</b> and to create a block mode decompressor. If <b>COMPRESS_RAW</b> is not included, the Compression API creates a buffer mode decompressor. For more information about selecting a compression algorithm and mode, see <a href="https://docs.microsoft.com//windows/desktop/cmpapi/using-the-compression-api">Using the Compression API</a>.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COMPRESS_ALGORITHM_MSZIP</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>MSZIP compression algorithm</para>
-          </description>
-        </item>
-        <item>
+          <description>MSZIP compression algorithm</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COMPRESS_ALGORITHM_XPRESS</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>XPRESS compression algorithm</para>
-          </description>
-        </item>
-        <item>
+          <description>XPRESS compression algorithm</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COMPRESS_ALGORITHM_XPRESS_HUFF</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>XPRESS compression algorithm with Huffman encoding</para>
-          </description>
-        </item>
-        <item>
+          <description>XPRESS compression algorithm with Huffman encoding</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COMPRESS_ALGORITHM_LZMS</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>LZMS compression algorithm</para>
-          </description>
-        </item>
+          <description>LZMS compression algorithm</description>
+        </listheader>
       </list>
     </param>
-    <param name="AllocationRoutines">
-      <para>Optional memory allocation and deallocation routines in a <see cref="COMPRESS_ALLOCATION_ROUTINES" /> structure.</para>
-    </param>
-    <param name="DecompressorHandle">
-      <para>If the function succeeds, the handle to the specified decompressor.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>.  If the system can find no compression algorithm matching the specified name and version, the error  can be <b>ERROR_NOT_SUPPORTED</b>.</para>
-    </remarks>
-    <seealso cref="COMPRESS_ALLOCATION_ROUTINES" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <param name="AllocationRoutines">Optional memory allocation and deallocation routines in a <see cref="COMPRESS_ALLOCATION_ROUTINES" /> structure.</param>
+    <param name="DecompressorHandle">If the function succeeds, the handle to the specified decompressor.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
   <member name="Windows.Decompress">
-    <summary>
-      <para>Takes a block of compressed information and decompresses it.</para>
-    </summary>
-    <param name="DecompressorHandle">
-      <para>Handle to a decompressor returned by <see cref="CreateDecompressor" />.</para>
-    </param>
-    <param name="CompressedData">
-      <para>Contains the block of information that is to be decompressed. The size in bytes of the compressed block is given by <i>CompressedDataSize</i>.</para>
-    </param>
-    <param name="CompressedDataSize">
-      <para>The size in bytes  of the compressed information.</para>
-    </param>
-    <param name="UncompressedBuffer">
-      <para>The buffer that receives the uncompressed information. The size in bytes of the buffer is given by <i>UncompressedBufferSize</i>.</para>
-    </param>
-    <param name="UncompressedBufferSize">
-      <para>Size  in bytes of the buffer that receives the uncompressed information.</para>
-    </param>
-    <param name="UncompressedDataSize">
-      <para>Actual size  in bytes of the uncompressed information received.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the block of compressed data pointed to by <i>CompressedData</i> is corrupted, the function can fail and the error from <see cref="GetLastError" /> can be <b>ERROR_BAD_COMPRESSION_BUFFER</b>. It is also possible that the function will produce  a block of uncompressed data that does not match the original data.</para>
-      <para>It is recommended that compressors and decompressors not use the <b>COMPRESS_RAW</b> flag. If the compressor is created with the <b>COMPRESS_RAW</b> flag,  the decompressor must also be created with the <b>COMPRESS_RAW</b> flag.</para>
-      <para>If the compressor and decompressor are created using the <b>COMPRESS_RAW</b> flag, the value of <i>UncompressedBufferSize</i> must be exactly equal to the original size of the uncompressed data and not just the size of the output buffer. This means you should save the exact original size of the uncompressed data, as well as the   compressed data and compressed size, when using the <b>COMPRESS_RAW</b> flag. If  <i>UncompressedBufferSize</i> does not equal the original size of the uncompressed data, the uncompressed data will not match the original data. In this case, the function can return success or it can return <b>ERROR_BAD_COMPRESSION_BUFFER</b>.</para>
-      <para>If the <b>COMPRESS_RAW</b> flag is not used, <i>UncompressedBufferSize</i> is not required to be exactly equal to the original size of the uncompressed data.  In this case, <i>UncompressedDataSize</i> returns the original size of the uncompressed data. If <i>UncompressedBufferSize</i> is smaller than the original data size, the function will fail and set <i>UncompressedDataSize</i> to the size of the original data and the error from <see cref="GetLastError" /> is <b>ERROR_INSUFFICIENT_BUFFER</b>.</para>
-      <para>To determine how large the <i>UncompressedBuffer</i> needs to be, call the function with <i>UncompressedBufferSize</i> set to zero.  In this case, the function will fail and set <i>UncompressedDataSize</i> to the size of the original data and the error from <see cref="GetLastError" /> is <b>ERROR_INSUFFICIENT_BUFFER</b>.  Note that the original size returned by the function is extracted from the buffer itself and should be treated as untrusted and tested against reasonable limits.</para>
-      <para>If the function is called with the <i>CompressedDataSize</i> parameter set to zero, the function fails and the error from <see cref="GetLastError" /> is <b>ERROR_INSUFFICIENT_BUFFER</b>. When it fails the function returns with <i>UncompressedDataSize</i> set to a value that you can use to avoid allocating too large a buffer for the compressed data. You must know the maximum possible size of the original data to use this method.</para>
-      <para>If you set <i>CompressedDataSize</i> to zero, and set <i>UncompressedBufferSize</i> to the maximum possible size of the original uncompressed data, the <b>Decompress</b> function will fail as described and the value of <i>UncompressedDataSize</i> will be set to the maximum size for the compressed data buffer.</para>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>.     If the  system cannot locate the compression algorithm handle, the error can be <b>ERROR_INVALID_HANDLE</b>. If the output buffer is too small to hold the uncompressed data, the error can be <b>ERROR_INSUFFICIENT_BUFFER</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <summary>Takes a block of compressed information and decompresses it.</summary>
+    <param name="DecompressorHandle">Handle to a decompressor returned by <see cref="CreateDecompressor" />.</param>
+    <param name="CompressedData">Contains the block of information that is to be decompressed. The size in bytes of the compressed block is given by <i>CompressedDataSize</i>.</param>
+    <param name="CompressedDataSize">The size in bytes of the compressed information.</param>
+    <param name="UncompressedBuffer">The buffer that receives the uncompressed information. The size in bytes of the buffer is given by <i>UncompressedBufferSize</i>.</param>
+    <param name="UncompressedBufferSize">Size in bytes of the buffer that receives the uncompressed information.</param>
+    <param name="UncompressedDataSize">Actual size in bytes of the uncompressed information received.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
   <member name="Windows.QueryCompressorInformation">
-    <summary>
-      <para>Queries a compressor for information for a particular compression algorithm.</para>
-    </summary>
-    <param name="CompressorHandle">
-      <para>Handle to the compressor being queried for information.</para>
-    </param>
-    <param name="CompressInformationClass">
-      <para>A value of the  <see cref="COMPRESS_INFORMATION_CLASS" /> enumeration that identifies the type of information.</para>
-    </param>
-    <param name="CompressInformation">
-      <para>Information for the compression algorithm written as bytes. The maximum size in bytes of this information is given by <i>CompressInformationSize</i>.</para>
-    </param>
-    <param name="CompressInformationSize">
-      <para>Maximum size  in bytes of the information.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>. If the  system cannot locate the compression algorithm handle, the error can be <b>ERROR_INVALID_HANDLE</b>. If the compression algorithm does not allow the information class, the error can be <b>ERROR_UNSUPPORTED_TYPE</b>. If the buffer is too small to hold the value, the error can be <b>ERROR_INSUFFICIENT_BUFFER</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <summary>Queries a compressor for information for a particular compression algorithm.</summary>
+    <param name="CompressorHandle">Handle to the compressor being queried for information.</param>
+    <param name="CompressInformationClass">A value of the <see cref="COMPRESS_INFORMATION_CLASS" /> enumeration that identifies the type of information.</param>
+    <param name="CompressInformation">Information for the compression algorithm written as bytes. The maximum size in bytes of this information is given by <i>CompressInformationSize</i>.</param>
+    <param name="CompressInformationSize">Maximum size in bytes of the information.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
   <member name="Windows.QueryDecompressorInformation">
-    <summary>
-      <para>Use this function to query information about a particular compression algorithm.</para>
-    </summary>
-    <param name="DecompressorHandle">
-      <para>Handle to the decompressor being queried for information.</para>
-    </param>
-    <param name="CompressInformationClass">
-      <para>A value of the  <see cref="COMPRESS_INFORMATION_CLASS" /> enumeration that identifies the type of information.</para>
-    </param>
-    <param name="CompressInformation">
-      <para>Information for the compression algorithm written as bytes. The maximum size in bytes of this information is given by <i>CompressInformationSize</i>.</para>
-    </param>
-    <param name="CompressInformationSize">
-      <para>Maximum size  in bytes of the information.</para>
-    </param>
-    <returns>
-      <para>Returns <b>TRUE</b> to indicate success and <b>FALSE</b> otherwise. Call <see cref="GetLastError" /> to determine cause of failure.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>.    If the  system cannot locate the compression algorithm handle, the error can be <b>ERROR_INVALID_HANDLE</b>. If the compression algorithm does not allow the information class, the error can be <b>ERROR_UNSUPPORTED_TYPE</b>. If the buffer is too small to hold the value, the error can be <b>ERROR_INSUFFICIENT_BUFFER</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <summary>Use this function to query information about a particular compression algorithm.</summary>
+    <param name="DecompressorHandle">Handle to the decompressor being queried for information.</param>
+    <param name="CompressInformationClass">A value of the <see cref="COMPRESS_INFORMATION_CLASS" /> enumeration that identifies the type of information.</param>
+    <param name="CompressInformation">Information for the compression algorithm written as bytes. The maximum size in bytes of this information is given by <i>CompressInformationSize</i>.</param>
+    <param name="CompressInformationSize">Maximum size in bytes of the information.</param>
+    <returns>Returns <b>TRUE</b> to indicate success and <b>FALSE</b> otherwise. Call <see cref="GetLastError" /> to determine cause of failure.</returns>
   </member>
   <member name="Windows.ResetCompressor">
-    <summary>
-      <para>Prepares the compressor for the compression of a new stream. The compressor object retains properties set with <see cref="SetCompressorInformation" />. The sequence of blocks generated is independent of previous blocks.</para>
-    </summary>
-    <param name="CompressorHandle">
-      <para>Handle to the compressor returned by <see cref="CreateCompressor" />.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>.    If the  system cannot locate the compression algorithm handle, the error can be <b>ERROR_INVALID_HANDLE</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <summary>Prepares the compressor for the compression of a new stream. The compressor object retains properties set with <see cref="SetCompressorInformation" />. The sequence of blocks generated is independent of previous blocks.</summary>
+    <param name="CompressorHandle">Handle to the compressor returned by <see cref="CreateCompressor" />.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
   <member name="Windows.ResetDecompressor">
-    <summary>
-      <para>Prepares the decompressor for the decompression of a new stream.</para>
-    </summary>
-    <param name="DecompressorHandle">
-      <para>Handle to the decompressor returned by <see cref="CreateDecompressor" />.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>.    If the  system cannot locate the compression algorithm handle, the error can be <b>ERROR_INVALID_HANDLE</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <summary>Prepares the decompressor for the decompression of a new stream.</summary>
+    <param name="DecompressorHandle">Handle to the decompressor returned by <see cref="CreateDecompressor" />.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
   <member name="Windows.SetCompressorInformation">
-    <summary>
-      <para>Sets information in a compressor for a particular compression algorithm.</para>
-    </summary>
-    <param name="CompressorHandle">
-      <para>Handle to the compressor.</para>
-    </param>
-    <param name="CompressInformationClass">
-      <para>A value that identifies the type of information. of the  enumeration that identifies the type of information.</para>
-    </param>
-    <param name="CompressInformation">
-      <para>The information being set read as bytes. The maximum size in bytes is given by <i>CompressInformationSize</i>.</para>
-    </param>
-    <param name="CompressInformationSize">
-      <para>Maximum size  of the information in bytes.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>. If the system cannot locate the compression algorithm handle, the error can be <b>ERROR_INVALID_HANDLE</b>. If the compression algorithm does not allow changing the value of this information class, the error can be <b>ERROR_NOT_SUPPORTED</b>. If the compression algorithm does not allow the information class, the error can be <b>ERROR_UNSUPPORTED_TYPE</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <summary>Sets information in a compressor for a particular compression algorithm.</summary>
+    <param name="CompressorHandle">Handle to the compressor.</param>
+    <param name="CompressInformationClass">A value that identifies the type of information. of the enumeration that identifies the type of information.</param>
+    <param name="CompressInformation">The information being set read as bytes. The maximum size in bytes is given by <i>CompressInformationSize</i>.</param>
+    <param name="CompressInformationSize">Maximum size of the information in bytes.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
   <member name="Windows.SetDecompressorInformation">
-    <summary>
-      <para>Sets information in a decompressor for a particular compression algorithm.</para>
-    </summary>
-    <param name="DecompressorHandle">
-      <para>Handle to the decompressor.</para>
-    </param>
-    <param name="CompressInformationClass">
-      <para>A value that identifies the type of information. of the  enumeration that identifies the type of information.</para>
-    </param>
-    <param name="CompressInformation">
-      <para>The information being set read as bytes. The maximum size in bytes is given by <i>CompressInformationSize</i>.</para>
-    </param>
-    <param name="CompressInformationSize">
-      <para>Maximum size  of the information in bytes.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
-    </returns>
-    <remarks>
-      <para>If the compression algorithm fails for some internal reason, the error from <see cref="GetLastError" /> can be <b>ERROR_FUNCTION_FAILED</b>. If the system cannot locate the compression algorithm handle, the error can be <b>ERROR_INVALID_HANDLE</b>. If the compression algorithm does not allow changing the value of this information class, the error can be <b>ERROR_NOT_SUPPORTED</b>. If the compression algorithm does not allow the information class, the error can be <b>ERROR_UNSUPPORTED_TYPE</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/cmpapi/compression-api-functions">Compression API Functions</seealso>
+    <summary>Sets information in a decompressor for a particular compression algorithm.</summary>
+    <param name="DecompressorHandle">Handle to the decompressor.</param>
+    <param name="CompressInformationClass">A value that identifies the type of information. of the enumeration that identifies the type of information.</param>
+    <param name="CompressInformation">The information being set read as bytes. The maximum size in bytes is given by <i>CompressInformationSize</i>.</param>
+    <param name="CompressInformationSize">Maximum size of the information in bytes.</param>
+    <returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</returns>
   </member>
 </doc>

@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXTRASEARCH">
-    <summary>
-      <para>Used by an <see cref="IEnumExtraSearch" /> enumerator object to return information on the search objects supported by a Shell Folder object.</para>
-    </summary>
+    <summary>Used by an <see cref="IEnumExtraSearch" /> enumerator object to return information on the search objects supported by a Shell Folder object.</summary>
   </member>
   <member name="EXTRASEARCH.guidSearch">
-    <summary>
-      <para>Type: <b>GUID</b></para>
-      <para>A search object's GUID.</para>
-    </summary>
+    <summary>A search object's GUID.</summary>
   </member>
   <member name="EXTRASEARCH.wszFriendlyName">
-    <summary>
-      <para>Type: <b>WCHAR[80]</b></para>
-      <para>A Unicode string containing the search object's friendly name. It will be used to identify the search engine on the Search Assistant menu.</para>
-    </summary>
+    <summary>A Unicode string containing the search object's friendly name. It will be used to identify the search engine on the Search Assistant menu.</summary>
   </member>
   <member name="EXTRASEARCH.wszUrl">
-    <summary>
-      <para>Type: <b>WCHAR[2084]</b></para>
-      <para>The URL that will be displayed in the search pane.</para>
-    </summary>
+    <summary>The URL that will be displayed in the search pane.</summary>
   </member>
 </doc>

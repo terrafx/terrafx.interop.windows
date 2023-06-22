@@ -3,29 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFCameraOcclusionStateReport.GetOcclusionState">
-    <summary>
-      <para>Gets the camera occlusion state associated with the occlusion state report.</para>
-    </summary>
-    <param name="occlusionState">
-      <para>A <b>DWORD</b> output parameter containing a value from the <see cref="MFCameraOcclusionState" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>| Error code | Description |
-|------------|-------------|
-| S_OK    | Succeeded |
-| E_INVALIDARG | <i>occlusionState</i> is nullptr. |</para>
-    </returns>
-    <seealso cref="MFCameraOcclusionState" />
+    <summary>Gets the camera occlusion state associated with the occlusion state report.</summary>
+    <param name="occlusionState">A <b>DWORD</b> output parameter containing a value from the <see cref="MFCameraOcclusionState" /> enumeration.</param>
+    <returns>| Error code | Description | |------------|-------------| | S_OK | Succeeded | | E_INVALIDARG | <i>occlusionState</i> is nullptr. |</returns>
   </member>
   <member name="IMFCameraOcclusionStateReport">
-    <summary>
-      <para>Provides the camera occlusion state associated with a state change detected by an <see cref="IMFCameraOcclusionStateMonitor" />.</para>
-    </summary>
-    <remarks>
-      <para>An instance of this class is passed into <see cref="IMFCameraOcclusionStateReportCallback.OnOcclusionStateReport" /> callback. Register the callback interface when you create the camera occlusion state monitor with a call to <see cref="MFCreateCameraOcclusionStateMonitor" />.</para>
-    </remarks>
-    <seealso cref="IMFCameraOcclusionStateMonitor" />
-    <seealso cref="IMFCameraOcclusionStateReportCallback.OnOcclusionStateReport" />
-    <seealso cref="MFCreateCameraOcclusionStateMonitor" />
+    <summary>Provides the camera occlusion state associated with a state change detected by an <see cref="IMFCameraOcclusionStateMonitor" />.</summary>
   </member>
 </doc>

@@ -3,77 +3,60 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IActiveDesktop.AddDesktopItem">
-    <summary>
-      <para>Adds a desktop item.</para>
-    </summary>
-    <param name="pcomp">
-      <para>Type: <b>LPCCOMPONENT</b></para>
-      <para>A pointer to the <see cref="COMPONENT" /> structure that specifies the item to be added.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
+    <summary>Adds a desktop item.</summary>
+    <param name="pcomp">A pointer to the <see cref="COMPONENT" /> structure that specifies the item to be added.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failed to add the desktop item, or an instance of the desktop item already exists on the Active Desktop.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failed to add the desktop item, or an instance of the desktop item already exists on the Active Desktop.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVAILDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description> One or more of the parameters were invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVAILDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more of the parameters were invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Desktop item has been added successfully.</para>
-          </description>
-        </item>
+          <description>Desktop item has been added successfully.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The desktop item is added to the desktop, but it does not save it to the registry. The client application must call <see cref="IActiveDesktop.ApplyChanges" /> separately to update the registry.</para>
-    </remarks>
-    <seealso cref="IActiveDesktop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/lwef/active-desktop-interface">Using the Active Desktop Object</seealso>
   </member>
   <member name="IActiveDesktop.AddDesktopItemWithUI">
-    <summary>
-      <para>Adds a desktop item to the Active Desktop after  displaying user interfaces that confirm the addition of the desktop item, verifying security zone permissions, and asking if the user wants to create a subscription.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the parent window. If <b>NULL</b>, the desktop item is added without displaying any user interface, in accordance with the corresponding security zone permissions. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537183(v=vs.85)">About URL Security Zones</a>.</para>
-    </param>
-    <param name="pcomp">
-      <para>Type: <b>LPCOMPONENT</b></para>
-      <para>Address of the <see cref="COMPONENT" /> structure containing the details of the desktop item to be added.</para>
-    </param>
+    <summary>Adds a desktop item to the Active Desktop after displaying user interfaces that confirm the addition of the desktop item, verifying security zone permissions, and asking if the user wants to create a subscription.</summary>
+    <param name="hwnd">The handle of the parent window. If <b>NULL</b>, the desktop item is added without displaying any user interface, in accordance with the corresponding security zone permissions. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537183(v=vs.85)">About URL Security Zones</a>.</param>
+    <param name="pcomp">Address of the <see cref="COMPONENT" /> structure containing the details of the desktop item to be added.</param>
     <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
       <para>Unsigned long integer value that contains the flags that control how the desktop item is added. Can be one of the following values.</para>
       <h4>DTI_ADDUI_DEFAULT</h4>
       <para>Do default action. Identical to using zero.</para>
@@ -83,123 +66,106 @@
       <para>Instruct the system to look at the <see cref="COMPPOS" /> structure passed to the <b>cpPos</b> member of the <see cref="COMPONENT" /> structure to ensure that the values are within reasonable limits. This value was added for Internet Explorer 5.</para>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failed to add the desktop item, or an instance of the desktop item already exists on the Active Desktop.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failed to add the desktop item, or an instance of the desktop item already exists on the Active Desktop.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVAILDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the parameters were invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVAILDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more of the parameters were invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>If the <b>ADDURL_SILENT</b> flag has been set, the desktop item has either been added successfully or it already exists on the Active Desktop. Otherwise, the desktop item has been added successfully.</para>
-          </description>
-        </item>
+          <description>If the <b>ADDURL_SILENT</b> flag has been set, the desktop item has either been added successfully or it already exists on the Active Desktop. Otherwise, the desktop item has been added successfully.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method creates a second instance of the <a href="https://docs.microsoft.com//windows/desktop/lwef/active-desktop-interface">Active Desktop</a> to add the desktop item, so the desktop item does not appear in the current instance. The application must call the <see cref="IUnknown.Release" /> method on this <see cref="IActiveDesktop" /> interface and then use the <see cref="CoCreateInstance" /> function to retrieve the Active Desktop object with the newly added component.</para>
-    </remarks>
-    <seealso cref="IActiveDesktop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/lwef/active-desktop-interface">Using the Active Desktop Object</seealso>
   </member>
   <member name="IActiveDesktop.AddUrl">
-    <summary>
-      <para>Adds the desktop item associated with the specified URL.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the parent window for the user interface.</para>
-    </param>
-    <param name="pszSource">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a string that contains the URL of the desktop item.</para>
-    </param>
-    <param name="pcomp">
-      <para>Type: <b>LPCOMPONENT</b></para>
-      <para>A pointer to the <see cref="COMPONENT" /> structure that contains the details of the desktop item to be added.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>An unsigned long integer value that controls this method. Can be set to ADDURL_SILENT to add a desktop item without displaying any user interfaces.</para>
-    </param>
+    <summary>Adds the desktop item associated with the specified URL.</summary>
+    <param name="hwnd">A handle to the parent window for the user interface.</param>
+    <param name="pszSource">A pointer to a string that contains the URL of the desktop item.</param>
+    <param name="pcomp">A pointer to the <see cref="COMPONENT" /> structure that contains the details of the desktop item to be added.</param>
+    <param name="dwFlags">An unsigned long integer value that controls this method. Can be set to ADDURL_SILENT to add a desktop item without displaying any user interfaces.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failed to add the desktop item or an instance of the desktop item already exists on the Active Desktop.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failed to add the desktop item or an instance of the desktop item already exists on the Active Desktop.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVAILDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the parameters were invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVAILDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more of the parameters were invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>If the ADDURL_SILENT flag has been set, the desktop item has either been added successfully or it already exists on the Active Desktop. Otherwise, the desktop item has been added successfully.</para>
-          </description>
-        </item>
+          <description>If the ADDURL_SILENT flag has been set, the desktop item has either been added successfully or it already exists on the Active Desktop. Otherwise, the desktop item has been added successfully.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>By default, this method will display some user interface and then add the desktop item to the Active Desktop. Like <see cref="IActiveDesktop.AddDesktopItem" />, the client application must call <see cref="IActiveDesktop.ApplyChanges" /> to have the changes saved to the registry.</para>
-    </remarks>
-    <seealso cref="IActiveDesktop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/lwef/active-desktop-interface">Using the Active Desktop Object</seealso>
   </member>
   <member name="IActiveDesktop.ApplyChanges">
-    <summary>
-      <para>Applies changes to the Active Desktop and saves them in the registry.</para>
-    </summary>
+    <summary>Applies changes to the Active Desktop and saves them in the registry.</summary>
     <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>An unsigned long integer value that contains the changes to be applied. Can be one of the following values.</para>
       <h4>AD_APPLY_ALL</h4>
       <h4>AD_APPLY_BUFFERED_REFRESH</h4>
@@ -209,180 +175,60 @@
       <h4>AD_APPLY_REFRESH</h4>
       <h4>AD_APPLY_SAVE</h4>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IActiveDesktop" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.GenerateDesktopItemHtml">
-    <summary>
-      <para>Generates a generic HTML page containing the given desktop item.</para>
-    </summary>
-    <param name="pwszFileName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A string value that contains the name under which to store the HTML file.</para>
-    </param>
-    <param name="pcomp">
-      <para>Type: <b>LPCOMPONENT</b></para>
-      <para>A pointer to the <see cref="COMPONENT" /> structure of the desktop item to insert in the HTML page.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IActiveDesktop" />
+    <summary>Generates a generic HTML page containing the given desktop item.</summary>
+    <param name="pwszFileName">A string value that contains the name under which to store the HTML file.</param>
+    <param name="pcomp">A pointer to the <see cref="COMPONENT" /> structure of the desktop item to insert in the HTML page.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.GetDesktopItem">
-    <summary>
-      <para>Gets the specified desktop item.</para>
-    </summary>
-    <param name="nComponent">
-      <para>Type: <b>int</b></para>
-      <para>An unsigned long integer value that contains the desktop item's index. The index values start at zero. Use <see cref="IActiveDesktop.GetDesktopItemCount" /> to retrieve a count on the total number of desktop items.</para>
-    </param>
-    <param name="pcomp">
-      <para>Type: <b>LPCOMPONENT</b></para>
-      <para>The address of the <see cref="COMPONENT" /> structure of the retrieved desktop item.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The index values will change as desktop items are added and removed from the Active Desktop. Applications cannot assume that an index value will always be associated with a particular desktop item.</para>
-    </remarks>
-    <seealso cref="IActiveDesktop" />
+    <summary>Gets the specified desktop item.</summary>
+    <param name="nComponent">An unsigned long integer value that contains the desktop item's index. The index values start at zero. Use <see cref="IActiveDesktop.GetDesktopItemCount" /> to retrieve a count on the total number of desktop items.</param>
+    <param name="pcomp">The address of the <see cref="COMPONENT" /> structure of the retrieved desktop item.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.GetDesktopItemByID">
-    <summary>
-      <para>Gets the desktop item that matches the given identification.</para>
-    </summary>
-    <param name="dwID">
-      <para>Type: <b>ULONG_PTR</b></para>
-      <para>An unsigned long integer value that contains the desktop item's identification.</para>
-    </param>
-    <param name="pcomp">
-      <para>Type: <b>LPCOMPONENT</b></para>
-      <para>The address of the <see cref="COMPONENT" /> structure of the retrieved desktop item.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The desktop item's identification is returned in the <b>dwID</b> member of the <see cref="COMPONENT" /> structure that is returned from the <see cref="IActiveDesktop.GetDesktopItem" /> method. This identification is only valid until the <see cref="IActiveDesktop.ApplyChanges" /> method is called. Applications that must retrieve the same desktop item consistently should enumerate the desktop items using the <b>IActiveDesktop.GetDesktopItem</b> and <see cref="IActiveDesktop.GetDesktopItemCount" /> methods.</para>
-    </remarks>
-    <seealso cref="IActiveDesktop" />
+    <summary>Gets the desktop item that matches the given identification.</summary>
+    <param name="dwID">An unsigned long integer value that contains the desktop item's identification.</param>
+    <param name="pcomp">The address of the <see cref="COMPONENT" /> structure of the retrieved desktop item.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.GetDesktopItemBySource">
-    <summary>
-      <para>Gets a desktop item using its source URL.</para>
-    </summary>
-    <param name="pwszSource">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a string that contains the source URL of the desktop item.</para>
-    </param>
-    <param name="pcomp">
-      <para>Type: <b>LPCOMPONENT</b></para>
-      <para>A pointer to the <see cref="COMPONENT" /> structure that, when this method returns successfully, receives the details about the desktop item. On entry, the size of the structure must be set.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IActiveDesktop" />
+    <summary>Gets a desktop item using its source URL.</summary>
+    <param name="pwszSource">A pointer to a string that contains the source URL of the desktop item.</param>
+    <param name="pcomp">A pointer to the <see cref="COMPONENT" /> structure that, when this method returns successfully, receives the details about the desktop item. On entry, the size of the structure must be set.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.GetDesktopItemCount">
-    <summary>
-      <para>Gets a count of the desktop items.</para>
-    </summary>
-    <param name="pcItems">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to an <b>int</b> value that, when this method returns successfully, contains the count.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The value pointed to by <i>pcItems</i> can be used to enumerate all desktop items. Desktop items have index values which start at zero and go to one less than the value pointed to by <i>pcItems</i>.</para>
-    </remarks>
-    <seealso cref="IActiveDesktop" />
+    <summary>Gets a count of the desktop items.</summary>
+    <param name="pcItems">A pointer to an <b>int</b> value that, when this method returns successfully, contains the count.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.GetDesktopItemOptions">
-    <summary>
-      <para>Gets the options for the desktop item.</para>
-    </summary>
-    <param name="pco">
-      <para>Type: <b>LPCOMPONENTSOPT</b></para>
-      <para>The address of the <see cref="COMPONENTSOPT" /> structure containing the options that are currently set.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IActiveDesktop" />
+    <summary>Gets the options for the desktop item.</summary>
+    <param name="pco">The address of the <see cref="COMPONENTSOPT" /> structure containing the options that are currently set.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.GetPattern">
-    <summary>
-      <para>Gets the current pattern.</para>
-    </summary>
-    <param name="pwszPattern">
-      <para>Type: <b>PWSTR</b></para>
-      <para>A pointer to a null-terminated, Unicode buffer containing a string of decimals whose bit pattern represents a picture. Each decimal represents the on/off state of the 8 pixels in that row.</para>
-    </param>
-    <param name="cchPattern">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the <i>pwszPattern</i> string, in characters.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the current pattern.</summary>
+    <param name="pwszPattern">A pointer to a null-terminated, Unicode buffer containing a string of decimals whose bit pattern represents a picture. Each decimal represents the on/off state of the 8 pixels in that row.</param>
+    <param name="cchPattern">The size of the <i>pwszPattern</i> string, in characters.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.GetWallpaper">
-    <summary>
-      <para>Gets the current wallpaper.</para>
-    </summary>
-    <param name="pwszWallpaper">
-      <para>Type: <b>PWSTR</b></para>
-      <para>When this method returns, contains a pointer to a null-terminated, Unicode buffer that contains the file name of the wallpaper.</para>
-    </param>
-    <param name="cchWallpaper">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the <i>pwszWallpaper</i> string, in characters.</para>
-    </param>
+    <summary>Gets the current wallpaper.</summary>
+    <param name="pwszWallpaper">When this method returns, contains a pointer to a null-terminated, Unicode buffer that contains the file name of the wallpaper.</param>
+    <param name="cchWallpaper">The size of the <i>pwszWallpaper</i> string, in characters.</param>
     <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>The type of wallpaper to get. One of the following values.</para>
       <h4>AD_GETWP_BMP (0x00000000)</h4>
       <para>Get a bitmap.</para>
@@ -391,39 +237,18 @@
       <h4>AD_GETWP_LAST_APPLIED (0x00000002)</h4>
       <para>Get the type of wallpaper that was last applied.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.GetWallpaperOptions">
-    <summary>
-      <para>Gets the wallpaper options.</para>
-    </summary>
-    <param name="pwpo">
-      <para>Type: <b>LPWALLPAPEROPT</b></para>
-      <para>The address of a <see cref="WALLPAPEROPT" /> structure containing the options currently set.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IActiveDesktop" />
+    <summary>Gets the wallpaper options.</summary>
+    <param name="pwpo">The address of a <see cref="WALLPAPEROPT" /> structure containing the options currently set.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.ModifyDesktopItem">
-    <summary>
-      <para>Modifies the desktop item.</para>
-    </summary>
-    <param name="pcomp">
-      <para>Type: <b>LPCCOMPONENT</b></para>
-      <para>The address of the <see cref="COMPONENT" /> structure that contains the modifications. The desktop item associated with the <b>wszSource</b> member of the structure will be modified.</para>
-    </param>
+    <summary>Modifies the desktop item.</summary>
+    <param name="pcomp">The address of the <see cref="COMPONENT" /> structure that contains the modifications. The desktop item associated with the <b>wszSource</b> member of the structure will be modified.</param>
     <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>An unsigned long integer value containing the flags used for the modification. This can be one of the following values.</para>
       <h4>COMP_ELEM_ALL</h4>
       <h4>COMP_ELEM_CHECKED</h4>
@@ -440,112 +265,39 @@
       <h4>COMP_ELEM_SOURCE</h4>
       <h4>COMP_ELEM_TYPE</h4>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The client application must call <see cref="IActiveDesktop.ApplyChanges" /> separately to update the registry. For example, to change the friendly name, first call this function with either <b>COMP_ELEM_FRIENDLYNAME</b> or <b>COMP_ELEM_ALL</b> in the <b>dwFlags</b> member of <see cref="COMPONENT" />. Then call <b>IActiveDesktop.ApplyChanges</b>.</para>
-    </remarks>
-    <seealso cref="IActiveDesktop" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.RemoveDesktopItem">
-    <summary>
-      <para>Removes the specified desktop item from the desktop.</para>
-    </summary>
-    <param name="pcomp">
-      <para>Type: <b>LPCCOMPONENT</b></para>
-      <para>The address of the <see cref="COMPONENT" /> structure that specifies the item to be removed. The desktop item associated with the <b>wszSource</b> member of the structure will be removed.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IActiveDesktop" />
+    <summary>Removes the specified desktop item from the desktop.</summary>
+    <param name="pcomp">The address of the <see cref="COMPONENT" /> structure that specifies the item to be removed. The desktop item associated with the <b>wszSource</b> member of the structure will be removed.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.SetDesktopItemOptions">
-    <summary>
-      <para>Sets the item's options.</para>
-    </summary>
-    <param name="pco">
-      <para>Type: <b>LPCCOMPONENTSOPT</b></para>
-      <para>The address of the <see cref="COMPONENTSOPT" /> structure that contains the options to set.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IActiveDesktop" />
+    <summary>Sets the item's options.</summary>
+    <param name="pco">The address of the <see cref="COMPONENTSOPT" /> structure that contains the options to set.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.SetPattern">
-    <summary>
-      <para>Sets the Active Desktop pattern.</para>
-    </summary>
-    <param name="pwszPattern">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The address of a string value that contains a string of decimals whose bit pattern represents a picture. Each decimal represents the on/off state of the 8 pixels in that row.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IActiveDesktop" />
+    <summary>Sets the Active Desktop pattern.</summary>
+    <param name="pwszPattern">The address of a string value that contains a string of decimals whose bit pattern represents a picture. Each decimal represents the on/off state of the 8 pixels in that row.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.SetWallpaper">
-    <summary>
-      <para>Sets the wallpaper for the Active Desktop.</para>
-    </summary>
-    <param name="pwszWallpaper">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A string value containing the file name of the wallpaper to be set.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IActiveDesktop" />
+    <summary>Sets the wallpaper for the Active Desktop.</summary>
+    <param name="pwszWallpaper">A string value containing the file name of the wallpaper to be set.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop.SetWallpaperOptions">
-    <summary>
-      <para>Sets the wallpaper options.</para>
-    </summary>
-    <param name="pwpo">
-      <para>Type: <b>LPCWALLPAPEROPT</b></para>
-      <para>The address of the <see cref="WALLPAPEROPT" /> structure containing the options to be set.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Must be set to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IActiveDesktop" />
+    <summary>Sets the wallpaper options.</summary>
+    <param name="pwpo">The address of the <see cref="WALLPAPEROPT" /> structure containing the options to be set.</param>
+    <param name="dwReserved">Reserved. Must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActiveDesktop">
-    <summary>
-      <para>Allows a client program to manage the desktop items and wallpaper on a local computer.</para>
-    </summary>
-    <remarks>
-      <para>Your code must include Wininet.h before it includes Shlobj.h. Failure to do so will result in a compiler error.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/lwef/active-desktop-interface">Using the Active Desktop Object</seealso>
+    <summary>Allows a client program to manage the desktop items and wallpaper on a local computer.</summary>
   </member>
 </doc>

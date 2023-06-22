@@ -3,39 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFNETSOURCE_PROTOCOL_TYPE">
-    <summary>
-      <para>Indicates the type of control protocol that is used in streaming or downloading.</para>
-    </summary>
-    <seealso cref="IMFNetSchemeHandlerConfig.GetSupportedProtocolType" />
-    <seealso cref="MFNETSOURCE_STATISTICS_IDS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/supported-protocols">Supported Protocols</seealso>
+    <summary>Indicates the type of control protocol that is used in streaming or downloading.</summary>
   </member>
   <member name="MFNETSOURCE_PROTOCOL_TYPE.MFNETSOURCE_UNDEFINED">
-    <summary>
-      <para>The protocol type has not yet been determined.</para>
-    </summary>
+    <summary>The protocol type has not yet been determined.</summary>
   </member>
   <member name="MFNETSOURCE_PROTOCOL_TYPE.MFNETSOURCE_HTTP">
-    <summary>
-      <para>The protocol type is HTTP. This includes HTTPv9, WMSP, and HTTP download.</para>
-    </summary>
+    <summary>The protocol type is HTTP. This includes HTTPv9, WMSP, and HTTP download.</summary>
   </member>
   <member name="MFNETSOURCE_PROTOCOL_TYPE.MFNETSOURCE_RTSP">
-    <summary>
-      <para>The protocol type is Real Time Streaming Protocol (RTSP).</para>
-    </summary>
+    <summary>The protocol type is Real Time Streaming Protocol (RTSP).</summary>
   </member>
   <member name="MFNETSOURCE_PROTOCOL_TYPE.MFNETSOURCE_FILE">
-    <summary>
-      <para>The content is read from a file. The file might be local or on a remote share.</para>
-    </summary>
+    <summary>The content is read from a file. The file might be local or on a remote share.</summary>
   </member>
   <member name="MFNETSOURCE_PROTOCOL_TYPE.MFNETSOURCE_MULTICAST">
     <summary>
       <para>The protocol type is multicast.</para>
-      <para>
-        <b>Note</b>  Requires Windows 7 or later.</para>
+      <div>
+        <b>Note</b>  Requires Windows 7 or later.</div>
     </summary>
   </member>
 </doc>

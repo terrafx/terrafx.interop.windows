@@ -2,89 +2,31 @@
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
-  <member name="IDXGIOutput1.DuplicateOutput">
-    <summary>
-      <para>Creates a desktop duplication interface from the <see cref="IDXGIOutput1" /> interface that represents an adapter output.</para>
-    </summary>
-    <param name="pDevice">
-      <para>A pointer to the Direct3D device interface that you can use to process the desktop image. This device must be created from the adapter to which the output is connected.</para>
-    </param>
-    <param name="ppOutputDuplication">
-      <para>A pointer to a variable that receives the new <see cref="IDXGIOutputDuplication" /> interface.</para>
-    </param>
-    <returns>
-      <para>
-        <b>DuplicateOutput</b> returns:</para>
-      <list type="bullet">
-        <item>
-          <description>S_OK if <b>DuplicateOutput</b> successfully created the desktop duplication interface.</description>
-        </item>
-        <item>
-          <description>E_INVALIDARG for one of the following reasons: <list type="bullet"><item><description>The specified device (<i>pDevice</i>) is invalid, was not created on the correct adapter, or was not created from <see cref="IDXGIFactory1" /> (or a later version of a DXGI factory interface that inherits from <b>IDXGIFactory1</b>).</description></item><item><description>The calling application is already duplicating this desktop output.</description></item></list></description>
-        </item>
-        <item>
-          <description>E_ACCESSDENIED if the application does not have access privilege  to the current desktop image.  For example, only an application that runs at LOCAL_SYSTEM can access the secure desktop.</description>
-        </item>
-        <item>
-          <description>DXGI_ERROR_UNSUPPORTED if the created <see cref="IDXGIOutputDuplication" /> interface does not support the current desktop mode or scenario.  For example, 8bpp and non-DWM desktop modes are not supported. If <b>DuplicateOutput</b> fails with DXGI_ERROR_UNSUPPORTED, the application can wait for system notification of desktop switches and mode changes and then call <b>DuplicateOutput</b> again after such a notification occurs.  For more information, refer to <a href="https://docs.microsoft.com//windows/desktop/WinAuto/event-constants">EVENT_SYSTEM_DESKTOPSWITCH</a> and mode change notification (<a href="https://docs.microsoft.com//windows/desktop/gdi/wm-displaychange">WM_DISPLAYCHANGE</a>). </description>
-        </item>
-        <item>
-          <description>DXGI_ERROR_NOT_CURRENTLY_AVAILABLE if DXGI reached the limit on the maximum number of concurrent duplication applications (default of four). Therefore, the calling application cannot create any desktop duplication interfaces until the other applications close.</description>
-        </item>
-        <item>
-          <description>DXGI_ERROR_SESSION_DISCONNECTED if <b>DuplicateOutput</b> failed because the session is currently disconnected.</description>
-        </item>
-        <item>
-          <description>Other error codes are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</description>
-        </item>
-      </list>
-      <para>
-        <b>Platform Update for Windows 7:  </b>On Windows 7 or Windows Server 2008 R2 with the <a href="https://support.microsoft.com/help/2670838">Platform Update for Windows 7</a> installed, <b>DuplicateOutput</b> fails with E_NOTIMPL. For more info about the Platform Update for Windows 7, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/platform-update-for-windows-7">Platform Update for Windows 7</a>.</para>
-    </returns>
-    <remarks>
-      <para>If an application wants to duplicate the entire desktop, it must create a desktop duplication interface on each active output on the desktop. This interface does not provide an explicit way to synchronize the timing of each output image. Instead, the application must use the time stamp of each output, and then determine how to combine the images.</para>
-      <para>For <b>DuplicateOutput</b> to succeed, you must create <i>pDevice</i> from <see cref="IDXGIFactory1" /> or a later version of a DXGI factory interface that inherits from <b>IDXGIFactory1</b>.</para>
-      <para>If the current mode is a stereo mode, the desktop duplication interface provides the image for the left stereo image only.</para>
-      <para>By default, only four processes can use a <see cref="IDXGIOutputDuplication" /> interface at the same time within a single session. A process can have only one desktop duplication interface on a single desktop output; however, that process can have a desktop duplication interface for each output that is part of the desktop.</para>
-      <para>For improved performance, consider using <see cref="DuplicateOutput1" />.</para>
-    </remarks>
-    <seealso cref="DuplicateOutput1" />
-    <seealso cref="IDXGIOutput1" />
-  </member>
   <member name="IDXGIOutput1.FindClosestMatchingMode1">
-    <summary>
-      <para>Finds the display mode that most closely matches the requested display mode.</para>
-    </summary>
-    <param name="pModeToMatch">
-      <para>A pointer to the <see cref="DXGI_MODE_DESC1" /> structure that describes the display mode to match. Members of <b>DXGI_MODE_DESC1</b> can be unspecified, which indicates no preference for
-that member.  A value of 0 for <b>Width</b> or <b>Height</b> indicates that the value is unspecified.  If either <b>Width</b> or
-<b>Height</b> is 0, both must be 0.  A numerator and denominator of 0 in <b>RefreshRate</b> indicate it is unspecified. Other members
-of <b>DXGI_MODE_DESC1</b> have enumeration values that indicate that the member is unspecified.  If <i>pConcernedDevice</i> is <b>NULL</b>, the <b>Format</b> member of <b>DXGI_MODE_DESC1</b> cannot be <b>DXGI_FORMAT_UNKNOWN</b>.</para>
-    </param>
-    <param name="pClosestMatch">
-      <para>A pointer to the <see cref="DXGI_MODE_DESC1" /> structure that receives a description of the display mode that most closely matches the display mode described at <i>pModeToMatch</i>.</para>
-    </param>
+    <summary>Finds the display mode that most closely matches the requested display mode.</summary>
+    <param name="pModeToMatch">A pointer to the <see cref="DXGI_MODE_DESC1" /> structure that describes the display mode to match. Members of <b>DXGI_MODE_DESC1</b> can be unspecified, which indicates no preference for that member. A value of 0 for <b>Width</b> or <b>Height</b> indicates that the value is unspecified. If either <b>Width</b> or<b>Height</b> is 0, both must be 0. A numerator and denominator of 0 in <b>RefreshRate</b> indicate it is unspecified. Other members of <b>DXGI_MODE_DESC1</b> have enumeration values that indicate that the member is unspecified. If <i>pConcernedDevice</i> is <b>NULL</b>, the <b>Format</b> member of <b>DXGI_MODE_DESC1</b> cannot be <b>DXGI_FORMAT_UNKNOWN</b>.</param>
+    <param name="pClosestMatch">A pointer to the <see cref="DXGI_MODE_DESC1" /> structure that receives a description of the display mode that most closely matches the display mode described at <i>pModeToMatch</i>.</param>
     <param name="pConcernedDevice">
       <para>A pointer to the Direct3D device interface. If this parameter is <b>NULL</b>, <b>FindClosestMatchingMode1</b> returns only modes whose format matches that of <i>pModeToMatch</i>; otherwise, <b>FindClosestMatchingMode1</b> returns only those formats that are supported for scan-out by the device. For info about the formats that are supported for scan-out by the device at each feature level:</para>
       <list type="bullet">
         <item>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/hardware-support-for-direct3d-12-1-formats">DXGI Format  Support for Direct3D Feature Level 12.1 Hardware</a>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/hardware-support-for-direct3d-12-1-formats">DXGI Format Support for Direct3D Feature Level 12.1 Hardware</a>
           </description>
         </item>
         <item>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/hardware-support-for-direct3d-12-0-formats">DXGI Format  Support for Direct3D Feature Level 12.0 Hardware</a>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/hardware-support-for-direct3d-12-0-formats">DXGI Format Support for Direct3D Feature Level 12.0 Hardware</a>
           </description>
         </item>
         <item>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/format-support-for-direct3d-11-1-feature-level-hardware">DXGI Format  Support for Direct3D Feature Level 11.1 Hardware</a>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/format-support-for-direct3d-11-1-feature-level-hardware">DXGI Format Support for Direct3D Feature Level 11.1 Hardware</a>
           </description>
         </item>
         <item>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/format-support-for-direct3d-11-0-feature-level-hardware">DXGI Format  Support for Direct3D Feature Level 11.0 Hardware</a>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/format-support-for-direct3d-11-0-feature-level-hardware">DXGI Format Support for Direct3D Feature Level 11.0 Hardware</a>
           </description>
         </item>
         <item>
@@ -104,131 +46,22 @@ of <b>DXGI_MODE_DESC1</b> have enumeration values that indicate that the member 
         </item>
       </list>
     </param>
-    <returns>
-      <para>Returns one of the error codes described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</para>
-    </returns>
-    <remarks>
-      <para>Direct3D devices require UNORM formats.</para>
-      <para>
-        <b>FindClosestMatchingMode1</b> finds the closest matching available display mode to the mode that you specify in <i>pModeToMatch</i>.</para>
-      <para>If you set the <b>Stereo</b> member in the <see cref="DXGI_MODE_DESC1" /> structure to which <i>pModeToMatch</i> points to specify a stereo mode as input, <b>FindClosestMatchingMode1</b> considers only stereo modes. <b>FindClosestMatchingMode1</b> considers only mono modes if <b>Stereo</b> is not set.</para>
-      <para>
-        <b>FindClosestMatchingMode1</b> resolves similarly ranked members of display modes (that is, all specified, or all unspecified, and so on) in the following order:</para>
-      <list type="number">
-        <item>
-          <description>
-            <b>ScanlineOrdering</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>Scaling</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>Format</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>Resolution</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RefreshRate</b>
-          </description>
-        </item>
-      </list>
-      <para>When <b>FindClosestMatchingMode1</b> determines the closest value for a particular member, it uses previously matched members to filter the display mode list choices, and
-ignores other members. For example, when <b>FindClosestMatchingMode1</b> matches <b>Resolution</b>, it already filtered the display mode list by a certain <b>ScanlineOrdering</b>,
-<b>Scaling</b>, and <b>Format</b>, while it ignores <b>RefreshRate</b>. This ordering doesn't define the absolute ordering for every usage scenario of <b>FindClosestMatchingMode1</b>, because
-the application can choose some values initially, which effectively changes the order of resolving members.</para>
-      <para>
-        <b>FindClosestMatchingMode1</b> matches members of the display mode one at a time, generally in a specified order.</para>
-      <para>If a member is unspecified, <b>FindClosestMatchingMode1</b> gravitates toward the values for the desktop related to this output.
-If this output is not part of the desktop, <b>FindClosestMatchingMode1</b> uses the default desktop output to find values. If an application uses a fully unspecified
-display mode, <b>FindClosestMatchingMode1</b> typically returns a display mode that matches the desktop settings for this output.
-Because unspecified members are lower priority than specified members, <b>FindClosestMatchingMode1</b> resolves unspecified members later than specified members.</para>
-    </remarks>
-    <seealso cref="IDXGIOutput1" />
+    <returns>Returns one of the error codes described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</returns>
   </member>
   <member name="IDXGIOutput1.GetDisplayModeList1">
-    <summary>
-      <para>Gets the display modes that match the requested format and other input options.</para>
-    </summary>
-    <param name="EnumFormat">
-      <para>A <see cref="DXGI_FORMAT" />-typed value for the color format.</para>
-    </param>
-    <param name="Flags">
-      <para>A combination of <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-enum-modes">DXGI_ENUM_MODES</a>-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for display modes to include. You must specify DXGI_ENUM_MODES_SCALING to expose the display modes that require scaling.  Centered modes that require no
-scaling and correspond directly to the display output are enumerated by default.</para>
-    </param>
-    <param name="pNumModes">
-      <para>A pointer to a variable that receives the number of display modes that <b>GetDisplayModeList1</b> returns in the memory block to which <i>pDesc</i> points. Set <i>pDesc</i> to <b>NULL</b> so that <i>pNumModes</i> returns the number of display modes that match the format and the options.
-Otherwise, <i>pNumModes</i> returns the number of display modes returned in <i>pDesc</i>.</para>
-    </param>
-    <param name="pDesc">
-      <para>A pointer to a list of display modes; set to <b>NULL</b> to get the number of display modes.</para>
-    </param>
-    <returns>
-      <para>Returns one of the error codes described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic. It is rare, but possible, that the display modes available can change immediately after calling
-this method, in which case DXGI_ERROR_MORE_DATA is returned (if there is not enough room for all the display modes).</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>GetDisplayModeList1</b> is updated from  <see cref="GetDisplayModeList" /> to return a list of <see cref="DXGI_MODE_DESC1" /> structures, which are updated mode descriptions.  <b>GetDisplayModeList</b> behaves as though it calls <b>GetDisplayModeList1</b> because  <b>GetDisplayModeList</b> can return all of the modes that are specified by <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-enum-modes">DXGI_ENUM_MODES</a>, including stereo mode.  However, <b>GetDisplayModeList</b> returns a list of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173064(v=vs.85)">DXGI_MODE_DESC</a> structures, which are the former mode descriptions and do not indicate stereo mode.</para>
-      <para>The <b>GetDisplayModeList1</b> method does not enumerate stereo modes unless you specify the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-enum-modes">DXGI_ENUM_MODES_STEREO</a> flag in the <i>Flags</i> parameter.  If you specify DXGI_ENUM_MODES_STEREO, stereo modes are included in the list of returned modes that the <i>pDesc</i> parameter points to.  In other words, the method returns both stereo and mono modes.</para>
-      <para>In general, when you switch from windowed to full-screen mode, a swap chain automatically chooses a display mode that meets (or exceeds) the resolution, color
-depth, and refresh rate of the swap chain. To exercise more control over the display mode, use <b>GetDisplayModeList1</b> to poll the set of display modes that are validated
-against monitor capabilities, or all modes that match the desktop (if the desktop settings are not validated against the monitor).</para>
-      <para>The following example code shows that you need to call <b>GetDisplayModeList1</b> twice. First call <b>GetDisplayModeList1</b> to get the number of modes available, and second call <b>GetDisplayModeList1</b> to return a description of the modes.</para>
-      <code>
-UINT num = 0;
-DXGI_FORMAT format = DXGI_FORMAT_R32G32B32A32_FLOAT;
-UINT flags         = DXGI_ENUM_MODES_INTERLACED;
-
-pOutput-&gt;GetDisplayModeList1( format, flags, &amp;amp;amp;amp;amp;amp;num, 0);
-
-...
-
-DXGI_MODE_DESC1 * pDescs = new DXGI_MODE_DESC1[num];
-pOutput-&gt;GetDisplayModeList1( format, flags, &amp;amp;amp;amp;amp;amp;num, pDescs);
-
-</code>
-    </remarks>
-    <seealso cref="IDXGIOutput1" />
+    <summary>Gets the display modes that match the requested format and other input options.</summary>
+    <param name="EnumFormat">A <see cref="DXGI_FORMAT" />-typed value for the color format.</param>
+    <param name="Flags">A combination of <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-enum-modes">DXGI_ENUM_MODES</a>-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for display modes to include. You must specify DXGI_ENUM_MODES_SCALING to expose the display modes that require scaling. Centered modes that require no scaling and correspond directly to the display output are enumerated by default.</param>
+    <param name="pNumModes">A pointer to a variable that receives the number of display modes that <b>GetDisplayModeList1</b> returns in the memory block to which <i>pDesc</i> points. Set <i>pDesc</i> to <b>NULL</b> so that <i>pNumModes</i> returns the number of display modes that match the format and the options. Otherwise, <i>pNumModes</i> returns the number of display modes returned in <i>pDesc</i>.</param>
+    <param name="pDesc">A pointer to a list of display modes; set to <b>NULL</b> to get the number of display modes.</param>
+    <returns>Returns one of the error codes described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic. It is rare, but possible, that the display modes available can change immediately after calling this method, in which case DXGI_ERROR_MORE_DATA is returned (if there is not enough room for all the display modes).</returns>
   </member>
   <member name="IDXGIOutput1.GetDisplaySurfaceData1">
-    <summary>
-      <para>Copies the display surface (front buffer) to a user-provided resource.</para>
-    </summary>
-    <param name="pDestination">
-      <para>A pointer to a resource interface that represents the resource to which <b>GetDisplaySurfaceData1</b> copies the display surface.</para>
-    </param>
-    <returns>
-      <para>Returns one of the error codes described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>GetDisplaySurfaceData1</b> is similar to <see cref="IDXGIOutput.GetDisplaySurfaceData" /> except <b>GetDisplaySurfaceData1</b> takes an <see cref="IDXGIResource" /> and <b>IDXGIOutput.GetDisplaySurfaceData</b> takes an <see cref="IDXGISurface" />.</para>
-      <para>
-        <b>GetDisplaySurfaceData1</b> returns an error if the input resource is not a 2D texture (represented by the <see cref="ID3D11Texture2D" /> interface) with an array size (<b>ArraySize</b> member of the <see cref="D3D11_TEXTURE2D_DESC" /> structure) that is equal to the swap chain buffers.</para>
-      <para>The original <see cref="IDXGIOutput.GetDisplaySurfaceData" /> and the updated <b>GetDisplaySurfaceData1</b> behave exactly the same. <b>GetDisplaySurfaceData1</b> was required because textures with an array size equal to 2 (<b>ArraySize</b> = 2) do not implement <see cref="IDXGISurface" />.</para>
-      <para>You can call <b>GetDisplaySurfaceData1</b> only when an output is in full-screen mode. If <b>GetDisplaySurfaceData1</b> succeeds, it fills the destination resource.</para>
-      <para>Use <see cref="IDXGIOutput.GetDesc" /> to determine the size (width and height) of the output when you want to allocate space for the destination resource. This is true regardless of target monitor rotation. A destination resource created by a graphics component (such as Direct3D 11) must be created with CPU write permission (see <see cref="D3D11_CPU_ACCESS_WRITE" />). Other surfaces can be created with CPU read-write permission (<b>D3D11_CPU_ACCESS_READ</b> | <b>D3D11_CPU_ACCESS_WRITE</b>). <b>GetDisplaySurfaceData1</b> modifies the surface data to fit the destination resource (stretch, shrink, convert format, rotate). <b>GetDisplaySurfaceData1</b> performs the stretch and shrink with point sampling.</para>
-    </remarks>
-    <seealso cref="IDXGIOutput1" />
+    <summary>Copies the display surface (front buffer) to a user-provided resource.</summary>
+    <param name="pDestination">A pointer to a resource interface that represents the resource to which <b>GetDisplaySurfaceData1</b> copies the display surface.</param>
+    <returns>Returns one of the error codes described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</returns>
   </member>
   <member name="IDXGIOutput1">
-    <summary>
-      <para>An <b>IDXGIOutput1</b> interface represents an adapter output (such as a monitor).</para>
-    </summary>
-    <remarks>
-      <para>To determine  the outputs that are available from the adapter, use <see cref="IDXGIAdapter.EnumOutputs" />. To determine the specific output that the swap chain will update, use <see cref="IDXGISwapChain.GetContainingOutput" />. You can then call <see cref="QueryInterface" /> from any  <see cref="IDXGIOutput" /> object to obtain an <b>IDXGIOutput1</b> object.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIOutput" />
+    <summary>An <b>IDXGIOutput1</b> interface represents an adapter output (such as a monitor).</summary>
   </member>
 </doc>

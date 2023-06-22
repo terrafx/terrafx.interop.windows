@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFClockConsumer.GetPresentationClock">
-    <summary>
-      <para>Called by the media pipeline to get an instance of <see cref="IMFPresentationClock" />.</para>
-    </summary>
-    <param name="ppPresentationClock">
-      <para>Pointer to an object that implements the <see cref="IMFPresentationClock" /> interface. This value can be null.</para>
-    </param>
+    <summary>Called by the media pipeline to get an instance of <see cref="IMFPresentationClock" />.</summary>
+    <param name="ppPresentationClock">Pointer to an object that implements the <see cref="IMFPresentationClock" /> interface. This value can be null.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,37 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The app does not implement this method.</para>
-          </description>
-        </item>
+          <description>The app does not implement this method.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFClockConsumer" />
   </member>
   <member name="IMFClockConsumer.SetPresentationClock">
-    <summary>
-      <para>Called by the media pipeline to provide the app with an instance of <see cref="IMFPresentationClock" />.</para>
-    </summary>
-    <param name="pPresentationClock">
-      <para>An instance of <see cref="IMFPresentationClock" />.</para>
-    </param>
+    <summary>Called by the media pipeline to provide the app with an instance of <see cref="IMFPresentationClock" />.</summary>
+    <param name="pPresentationClock">An instance of <see cref="IMFPresentationClock" />.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -54,26 +49,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFClockConsumer" />
   </member>
   <member name="IMFClockConsumer">
-    <summary>
-      <para>Implemented by an app in order to get access to the <see cref="IMFPresentationClock" />.</para>
-    </summary>
-    <remarks>
-      <para>The media pipeline checks for the presence of this interface by calling <see cref="QueryInterface" />. Components can use the presentation clock supplied through this interface to determine how much buffering there is in the pipeline after the component. You can do  this in the <see cref="IMFTransform.ProcessInput" /> method by calculating the difference between the value returned by <see cref="IMFPresentationClock.GetTime" /> and the value returned by <see cref="IMFSample.GetSampleTime" />. This difference represents the amount of buffered data after the MFT in the pipeline.</para>
-    </remarks>
+    <summary>Implemented by an app in order to get access to the <see cref="IMFPresentationClock" />.</summary>
   </member>
 </doc>

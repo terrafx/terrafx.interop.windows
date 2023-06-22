@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_POWER_THROTTLING_STATE">
-    <summary>
-      <para>Specifies the throttling policies and how to apply them to a target process when that process is subject to power management. This structure is used by the <see cref="SetProcessInformation" /> function.</para>
-    </summary>
+    <summary>Specifies the throttling policies and how to apply them to a target process when that process is subject to power management. This structure is used by the <see cref="SetProcessInformation" /> function.</summary>
   </member>
   <member name="PROCESS_POWER_THROTTLING_STATE.Version">
     <summary>
@@ -15,23 +13,19 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PROCESS_POWER_THROTTLING_CURRENT_VERSION</b>
-                </description>
-              </item>
-              <item>
-                <description></description>
-              </item>
+                </term>
+              </listheader>
+              <listheader></listheader>
             </list>
           </description>
-          <description>
-            <para>The current version.</para>
-          </description>
-        </item>
+          <description>The current version.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -43,23 +37,19 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PROCESS_POWER_THROTTLING_EXECUTION_SPEED</b>
-                </description>
-              </item>
-              <item>
-                <description></description>
-              </item>
+                </term>
+              </listheader>
+              <listheader></listheader>
             </list>
           </description>
-          <description>
-            <para>Manages the execution speed of the process.</para>
-          </description>
-        </item>
+          <description>Manages the execution speed of the process.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -71,23 +61,19 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PROCESS_POWER_THROTTLING_EXECUTION_SPEED</b>
-                </description>
-              </item>
-              <item>
-                <description></description>
-              </item>
+                </term>
+              </listheader>
+              <listheader></listheader>
             </list>
           </description>
-          <description>
-            <para>Manages the execution speed of the process.</para>
-          </description>
-        </item>
+          <description>Manages the execution speed of the process.</description>
+        </listheader>
       </list>
     </summary>
   </member>

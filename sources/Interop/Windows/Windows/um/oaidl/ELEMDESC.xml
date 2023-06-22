@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ELEMDESC">
-    <summary>
-      <para>Contains the type description and process-transfer information for a variable, a function, or a function parameter.</para>
-    </summary>
+    <summary>Contains the type description and process-transfer information for a variable, a function, or a function parameter.</summary>
   </member>
   <member name="ELEMDESC.tdesc">
-    <summary>
-      <para>The type of the element.</para>
-    </summary>
+    <summary>The type of the element.</summary>
   </member>
-  <member name="ELEMDESC.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="ELEMDESC.DUMMYUNIONNAME"></member>
   <member name="ELEMDESC.idldesc">
-    <summary>
-      <para>The information for remoting the element. This information is for backward compatibility.</para>
-    </summary>
+    <summary>The information for remoting the element. This information is for backward compatibility.</summary>
   </member>
   <member name="ELEMDESC.paramdesc">
-    <summary>
-      <para>The parameter information.</para>
-    </summary>
+    <summary>The parameter information.</summary>
   </member>
 </doc>

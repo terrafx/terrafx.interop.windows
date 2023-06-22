@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFByteStreamBuffering.EnableBuffering">
-    <summary>
-      <para>Enables or disables buffering.</para>
-    </summary>
-    <param name="fEnable">
-      <para>Specifies whether the byte stream buffers data. If <b>TRUE</b>, buffering is enabled. If <b>FALSE</b>, buffering is disabled.</para>
-    </param>
+    <summary>Enables or disables buffering.</summary>
+    <param name="fEnable">Specifies whether the byte stream buffers data. If <b>TRUE</b>, buffering is enabled. If <b>FALSE</b>, buffering is disabled.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,30 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before calling this method, call <see cref="IMFByteStreamBuffering.SetBufferingParams" /> to set the buffering parameters on the byte stream.</para>
-    </remarks>
-    <seealso cref="IMFByteStreamBuffering" />
   </member>
   <member name="IMFByteStreamBuffering.SetBufferingParams">
-    <summary>
-      <para>Sets the buffering parameters.</para>
-    </summary>
-    <param name="pParams">
-      <para>Pointer to an <see cref="MFBYTESTREAM_BUFFERING_PARAMS" /> structure that contains the buffering parameters. The byte stream uses this information to calculate how much data to buffer from the network.</para>
-    </param>
+    <summary>Sets the buffering parameters.</summary>
+    <param name="pParams">Pointer to an <see cref="MFBYTESTREAM_BUFFERING_PARAMS" /> structure that contains the buffering parameters. The byte stream uses this information to calculate how much data to buffer from the network.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -47,24 +37,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFByteStreamBuffering" />
   </member>
   <member name="IMFByteStreamBuffering.StopBuffering">
-    <summary>
-      <para>Stops any buffering that is in progress.</para>
-    </summary>
+    <summary>Stops any buffering that is in progress.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -72,68 +61,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The byte stream successfully stopped buffering.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The byte stream successfully stopped buffering.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>No buffering was in progress.</para>
-          </description>
-        </item>
+          <description>No buffering was in progress.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the byte stream is currently buffering data, it stops and sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstopped">MEBufferingStopped</a> event. If the byte stream is not currently buffering, this method has no effect.</para>
-    </remarks>
-    <seealso cref="IMFByteStreamBuffering" />
   </member>
   <member name="IMFByteStreamBuffering">
     <summary>
       <para>Controls how a byte stream buffers data from a network.</para>
       <para>To get a pointer to this interface, call <b>QueryInterface</b> on the byte stream object.</para>
     </summary>
-    <remarks>
-      <para>If a byte stream implements this interface, a media source can use it to control how the byte stream buffers data. This interface is designed for byte streams that read data from a network.</para>
-      <para>A byte stream that implements this interface should also implement the <see cref="IMFMediaEventGenerator" /> interface. When the byte stream starts buffering, it sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstarted">MEBufferingStarted</a> event. When it stops buffering, it sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstopped">MEBufferingStopped</a> event.</para>
-      <para>The byte stream must send a matching <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstopped">MEBufferingStopped</a> event for every <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstarted">MEBufferingStarted</a> event. The byte stream must not send MEBufferingStarted events unless the media source has enabled buffering by calling <see cref="EnableBuffering" /> with the value <b>TRUE</b>.</para>
-      <para>After the byte stream sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstarted">MEBufferingStarted</a> event, it should send <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstopped">MEBufferingStopped</a> if any of the following occur:</para>
-      <list type="bullet">
-        <item>
-          <description>The byte stream finishes buffering data.
-</description>
-        </item>
-        <item>
-          <description>The byte stream reaches the end of the stream.
-</description>
-        </item>
-        <item>
-          <description>The media source calls <see cref="EnableBuffering" /> with the value <b>FALSE</b>.
-</description>
-        </item>
-        <item>
-          <description>The media source calls <see cref="StopBuffering" />.
-</description>
-        </item>
-      </list>
-      <para>The byte stream should not send any more buffering events after it reaches the end of the file.</para>
-      <para>If buffering is disabled, the byte stream does not send any buffering events. Internally, however, it might still buffer data while it waits for I/O requests to complete. Therefore, <see cref="IMFByteStream" /> methods might take an indefinite length of time to complete.</para>
-      <para>If the byte stream is buffering data internally and the media source calls <see cref="EnableBuffering" /> with the value <b>TRUE</b>, the byte stream can send <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstarted">MEBufferingStarted</a> immediately.</para>
-      <para>After the presentation has started, the media source should forward and <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstarted">MEBufferingStarted</a> and <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstopped">MEBufferingStopped</a> events that it receives while started. The Media Session will pause the presentation clock while buffering is progress and restart the presentation clock when buffering completes. The media source should only forward these events while the presentation is playing. The purpose of sending these events to the Media Session is to pause the presentation time while the source buffers data.</para>
-    </remarks>
-    <seealso cref="IMFByteStream" />
-    <seealso cref="IMFByteStreamCacheControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

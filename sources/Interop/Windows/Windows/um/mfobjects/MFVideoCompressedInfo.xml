@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFVideoCompressedInfo">
-    <summary>
-      <para>Contains information about a video compression format. This structure is used in the <see cref="MFVIDEOFORMAT" /> structure.</para>
-    </summary>
-    <remarks>
-      <para>For uncompressed video formats, set the structure members to zero.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</seealso>
+    <summary>Contains information about a video compression format. This structure is used in the <see cref="MFVIDEOFORMAT" /> structure.</summary>
   </member>
   <member name="MFVideoCompressedInfo.AvgBitrate">
-    <summary>
-      <para>Average bit rate of the encoded video stream, in bits per second.</para>
-    </summary>
+    <summary>Average bit rate of the encoded video stream, in bits per second.</summary>
   </member>
   <member name="MFVideoCompressedInfo.AvgBitErrorRate">
-    <summary>
-      <para>Expected error rate, in bits per second.</para>
-    </summary>
+    <summary>Expected error rate, in bits per second.</summary>
   </member>
   <member name="MFVideoCompressedInfo.MaxKeyFrameSpacing">
-    <summary>
-      <para>Number of frames between key frames.</para>
-    </summary>
+    <summary>Number of frames between key frames.</summary>
   </member>
 </doc>

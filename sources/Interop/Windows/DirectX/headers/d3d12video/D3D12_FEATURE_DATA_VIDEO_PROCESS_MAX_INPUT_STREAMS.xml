@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMS">
-    <summary>
-      <para>Provides data for calls to <see cref="ID3D12VideoDevice.CheckFeatureSupport" /> when the feature specified is <see cref="D3D12_FEATURE_VIDEO_PROCESS_MAX_INPUT_STREAMS" />. Retrieves the maximum number of enabled input streams supported by the video processor.</para>
-    </summary>
+    <summary>Provides data for calls to <see cref="ID3D12VideoDevice.CheckFeatureSupport" /> when the feature specified is <see cref="D3D12_FEATURE_VIDEO_PROCESS_MAX_INPUT_STREAMS" />. Retrieves the maximum number of enabled input streams supported by the video processor.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMS.NodeIndex">
-    <summary>
-      <para>An integer indicating which physical adapter of the device the operation applies to, in a multi-adapter operation.</para>
-    </summary>
+    <summary>An integer indicating which physical adapter of the device the operation applies to, in a multi-adapter operation.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMS.MaxInputStreams">
-    <summary>
-      <para>The maximum number of streams that can be enabled for the video processor at the same time.</para>
-    </summary>
+    <summary>The maximum number of streams that can be enabled for the video processor at the same time.</summary>
   </member>
 </doc>

@@ -3,37 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CWPSTRUCT">
-    <summary>
-      <para>Defines the message parameters passed to a <b>WH_CALLWNDPROC</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644975(v=vs.85)">CallWndProc</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644975(v=vs.85)">CallWndProc</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/hooks">Hooks</seealso>
-    <seealso cref="SetWindowsHookEx" />
+    <summary>Defines the message parameters passed to a <b>WH_CALLWNDPROC</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644975(v=vs.85)">CallWndProc</a>.</summary>
   </member>
   <member name="CWPSTRUCT.lParam">
-    <summary>
-      <para>Type: <b>LPARAM</b></para>
-      <para>Additional information about the message. The exact meaning depends on the
-<b>message</b> value.</para>
-    </summary>
+    <summary>Additional information about the message. The exact meaning depends on the<b>message</b> value.</summary>
   </member>
   <member name="CWPSTRUCT.wParam">
-    <summary>
-      <para>Type: <b>WPARAM</b></para>
-      <para>Additional information about the message. The exact meaning depends on the
-<b>message</b> value.</para>
-    </summary>
+    <summary>Additional information about the message. The exact meaning depends on the<b>message</b> value.</summary>
   </member>
   <member name="CWPSTRUCT.message">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The message.</para>
-    </summary>
+    <summary>The message.</summary>
   </member>
   <member name="CWPSTRUCT.hwnd">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window to receive the message.</para>
-    </summary>
+    <summary>A handle to the window to receive the message.</summary>
   </member>
 </doc>

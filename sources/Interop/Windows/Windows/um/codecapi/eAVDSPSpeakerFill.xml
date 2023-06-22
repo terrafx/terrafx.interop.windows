@@ -4,27 +4,17 @@
 <doc>
   <member name="eAVDSPSpeakerFill">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies whether speaker fill is enabled in an audio decoder or digital signal processor (DSP). This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdspspeakerfill-property">AVDSPSpeakerFill</a> property.</para>
     </summary>
-    <remarks>
-      <para>Speaker fill is a DSP process that converts mono or stereo audio into multichannel audio.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVDSPSpeakerFill.eAVDSPSpeakerFill_OFF">
-    <summary>
-      <para>Speaker fill is disabled.</para>
-    </summary>
+    <summary>Speaker fill is disabled.</summary>
   </member>
   <member name="eAVDSPSpeakerFill.eAVDSPSpeakerFill_ON">
-    <summary>
-      <para>Speaker fill is enabled.</para>
-    </summary>
+    <summary>Speaker fill is enabled.</summary>
   </member>
   <member name="eAVDSPSpeakerFill.eAVDSPSpeakerFill_AUTO">
-    <summary>
-      <para>The decoder or DSP automatically selects the speaker fill mode.</para>
-    </summary>
+    <summary>The decoder or DSP automatically selects the speaker fill mode.</summary>
   </member>
 </doc>

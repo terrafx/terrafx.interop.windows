@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM">
-    <summary>
-      <para>Contains input information for the video processor blend functionality.</para>
-    </summary>
+    <summary>Contains input information for the video processor blend functionality.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM.pTexture2D">
-    <summary>
-      <para>An <see cref="ID3D12Resource" /> representing the current input field or frame.</para>
-    </summary>
+    <summary>An <see cref="ID3D12Resource" /> representing the current input field or frame.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM.Subresource">
-    <summary>
-      <para>The subresource index to use of the <i>pTexture2D</i> argument.</para>
-    </summary>
+    <summary>The subresource index to use of the <i>pTexture2D</i> argument.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM.ReferenceSet">
-    <summary>
-      <para>A <see cref="D3D12_VIDEO_PROCESS_REFERENCE_SET" /> containing the set of references for video processing. Some video processing algorithms require forward or backward frame references. For more information, see <see cref="D3D12_FEATURE_VIDEO_PROCESS_REFERENCE_INFO" />.</para>
-    </summary>
+    <summary>A <see cref="D3D12_VIDEO_PROCESS_REFERENCE_SET" /> containing the set of references for video processing. Some video processing algorithms require forward or backward frame references. For more information, see <see cref="D3D12_FEATURE_VIDEO_PROCESS_REFERENCE_INFO" />.</summary>
   </member>
 </doc>

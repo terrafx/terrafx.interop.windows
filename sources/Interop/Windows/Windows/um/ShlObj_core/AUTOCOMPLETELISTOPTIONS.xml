@@ -3,50 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUTOCOMPLETELISTOPTIONS">
-    <summary>
-      <para>Specifies which objects are enumerated for autocompletion lists.</para>
-    </summary>
+    <summary>Specifies which objects are enumerated for autocompletion lists.</summary>
   </member>
   <member name="AUTOCOMPLETELISTOPTIONS.ACLO_NONE">
-    <summary>
-      <para>No enumeration should take place.</para>
-    </summary>
+    <summary>No enumeration should take place.</summary>
   </member>
   <member name="AUTOCOMPLETELISTOPTIONS.ACLO_CURRENTDIR">
-    <summary>
-      <para>Only the current directory should be enumerated.</para>
-    </summary>
+    <summary>Only the current directory should be enumerated.</summary>
   </member>
   <member name="AUTOCOMPLETELISTOPTIONS.ACLO_MYCOMPUTER">
-    <summary>
-      <para>Only MyComputer should be enumerated.</para>
-    </summary>
+    <summary>Only MyComputer should be enumerated.</summary>
   </member>
   <member name="AUTOCOMPLETELISTOPTIONS.ACLO_DESKTOP">
-    <summary>
-      <para>Only the Desktop Folder should be enumerated.</para>
-    </summary>
+    <summary>Only the Desktop Folder should be enumerated.</summary>
   </member>
   <member name="AUTOCOMPLETELISTOPTIONS.ACLO_FAVORITES">
-    <summary>
-      <para>Only the Favorites Folder should be enumerated.</para>
-    </summary>
+    <summary>Only the Favorites Folder should be enumerated.</summary>
   </member>
   <member name="AUTOCOMPLETELISTOPTIONS.ACLO_FILESYSONLY">
-    <summary>
-      <para>Only the file system should be enumerated.</para>
-    </summary>
+    <summary>Only the file system should be enumerated.</summary>
   </member>
   <member name="AUTOCOMPLETELISTOPTIONS.ACLO_FILESYSDIRS">
     <summary>
-      <para>
-        <b>Internet Explorer 6 or greater:</b> The file system dirs, UNC shares, and UNC servers should be enumerated.</para>
-    </summary>
+      <b>Internet Explorer 6 or greater:</b> The file system dirs, UNC shares, and UNC servers should be enumerated.</summary>
   </member>
   <member name="AUTOCOMPLETELISTOPTIONS.ACLO_VIRTUALNAMESPACE">
     <summary>
-      <para>
-        <b>Windows Internet Explorer 7 or greater:</b> The virtual namespace should be enumerated.</para>
-    </summary>
+      <b>Windows Internet Explorer 7 or greater:</b> The virtual namespace should be enumerated.</summary>
   </member>
 </doc>

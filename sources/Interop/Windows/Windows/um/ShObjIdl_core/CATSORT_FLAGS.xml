@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CATSORT_FLAGS">
-    <summary>
-      <para>Specifies methods for sorting category data.</para>
-    </summary>
+    <summary>Specifies methods for sorting category data.</summary>
   </member>
   <member name="CATSORT_FLAGS.CATSORT_DEFAULT">
-    <summary>
-      <para>Use the default sort order.</para>
-    </summary>
+    <summary>Use the default sort order.</summary>
   </member>
   <member name="CATSORT_FLAGS.CATSORT_NAME">
-    <summary>
-      <para>Use a method that sorts on category names.</para>
-    </summary>
+    <summary>Use a method that sorts on category names.</summary>
   </member>
 </doc>

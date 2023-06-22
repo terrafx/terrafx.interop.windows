@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioViewManagerService.SetAudioStreamWindow">
+    <summary>Associates the specified <a href="https://docs.microsoft.com/en-us/windows/win32/winprog/windows-data-types">HWND</a> window handle with an audio stream.</summary>
+    <param name="hwnd">The <a href="https://docs.microsoft.com/en-us/windows/win32/winprog/windows-data-types">HWND</a> with which the audio stream wll be associated.</param>
+  </member>
+  <member name="IAudioViewManagerService">
+    <summary>Provides APIs for associating an <a href="https://docs.microsoft.com/en-us/windows/win32/winprog/windows-data-types">HWND</a> with an audio stream.</summary>
+  </member>
+</doc>

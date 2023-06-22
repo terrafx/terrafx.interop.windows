@@ -7,28 +7,17 @@
       <para>A GUID identifies an object such as a COM interfaces, or a COM class object, or a manager entry-point vector (EPV). A GUID is a 128-bit value consisting of one group of 8 hexadecimal digits, followed by three groups of 4 hexadecimal digits each, followed by one group of 12 hexadecimal digits. The following example GUID shows the groupings of hexadecimal digits in a GUID: 6B29FC40-CA47-1067-B31D-00DD010662DA.</para>
       <para>The <b>GUID</b> structure stores a GUID.</para>
     </summary>
-    <remarks>
-      <para>GUIDs are the Microsoft implementation of the distributed computing environment (DCE) universally unique identifier (<a href="https://docs.microsoft.com//windows/win32/rpc/rpcdce/ns-rpcdce-uuid">UUID</a>). The RPC run-time libraries use UUIDs to check for compatibility between clients and servers and to select among multiple implementations of an interface. The Windows access-control functions use GUIDs to identify the type of object that an object-specific ACE in an access-control list (ACL) protects.</para>
-    </remarks>
   </member>
   <member name="GUID.Data1">
-    <summary>
-      <para>Specifies the first 8 hexadecimal digits of the GUID.</para>
-    </summary>
+    <summary>Specifies the first 8 hexadecimal digits of the GUID.</summary>
   </member>
   <member name="GUID.Data2">
-    <summary>
-      <para>Specifies the first group of 4 hexadecimal digits.</para>
-    </summary>
+    <summary>Specifies the first group of 4 hexadecimal digits.</summary>
   </member>
   <member name="GUID.Data3">
-    <summary>
-      <para>Specifies the second group of 4 hexadecimal digits.</para>
-    </summary>
+    <summary>Specifies the second group of 4 hexadecimal digits.</summary>
   </member>
   <member name="GUID.Data4">
-    <summary>
-      <para>Array of 8 bytes. The first 2 bytes contain the third group of 4 hexadecimal digits. The remaining 6 bytes contain the final 12 hexadecimal digits.</para>
-    </summary>
+    <summary>Array of 8 bytes. The first 2 bytes contain the third group of 4 hexadecimal digits. The remaining 6 bytes contain the final 12 hexadecimal digits.</summary>
   </member>
 </doc>

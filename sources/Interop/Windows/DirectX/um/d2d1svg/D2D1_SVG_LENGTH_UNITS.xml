@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_LENGTH_UNITS">
-    <summary>
-      <para>Specifies the units for an SVG length.</para>
-    </summary>
+    <summary>Specifies the units for an SVG length.</summary>
   </member>
   <member name="D2D1_SVG_LENGTH_UNITS.D2D1_SVG_LENGTH_UNITS_NUMBER">
-    <summary>
-      <para>The length is unitless.</para>
-    </summary>
+    <summary>The length is unitless.</summary>
   </member>
   <member name="D2D1_SVG_LENGTH_UNITS.D2D1_SVG_LENGTH_UNITS_PERCENTAGE">
-    <summary>
-      <para>The length is a percentage value.</para>
-    </summary>
+    <summary>The length is a percentage value.</summary>
   </member>
-  <member name="D2D1_SVG_LENGTH_UNITS.D2D1_SVG_LENGTH_UNITS_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SVG_LENGTH_UNITS.D2D1_SVG_LENGTH_UNITS_FORCE_DWORD"></member>
 </doc>

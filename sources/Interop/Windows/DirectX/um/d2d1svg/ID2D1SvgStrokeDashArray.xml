@@ -3,120 +3,43 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1SvgStrokeDashArray.GetDashes">
-    <summary>
-      <para>Gets dashes from the array.</para>
-    </summary>
-    <param name="dashes">
-      <para>Type: <b><see cref="D2D1_SVG_LENGTH" />*</b></para>
-      <para>Buffer to contain the dashes.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The element count of the array in the dashes argument.</para>
-    </param>
-    <param name="startIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the first dash to retrieve.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgStrokeDashArray" />
+    <summary>Gets dashes from the array.</summary>
+    <param name="dashes">Buffer to contain the dashes.</param>
+    <param name="dashesCount">The element count of the array in the dashes argument.</param>
+    <param name="startIndex">The index of the first dash to retrieve.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgStrokeDashArray.GetDashes">
-    <summary>
-      <para>Gets dashes from the array.</para>
-    </summary>
-    <param name="dashes">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>Buffer to contain the dashes.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The element count of the array in the dashes argument.</para>
-    </param>
-    <param name="startIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the first dash to retrieve.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgStrokeDashArray" />
+    <summary>Gets dashes from the array.</summary>
+    <param name="dashes">Buffer to contain the dashes.</param>
+    <param name="dashesCount">The element count of the array in the dashes argument.</param>
+    <param name="startIndex">The index of the first dash to retrieve.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgStrokeDashArray.GetDashesCount">
-    <summary>
-      <para>Gets the number of the dashes in the array.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>Returns the number of the dashes in the array.</para>
-    </returns>
-    <seealso cref="ID2D1SvgStrokeDashArray" />
+    <summary>Gets the number of the dashes in the array.</summary>
+    <returns>Returns the number of the dashes in the array.</returns>
   </member>
   <member name="ID2D1SvgStrokeDashArray.RemoveDashesAtEnd">
-    <summary>
-      <para>Removes dashes from the end of the array.</para>
-    </summary>
-    <param name="dashesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>Specifies how many dashes to remove.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgStrokeDashArray" />
+    <summary>Removes dashes from the end of the array.</summary>
+    <param name="dashesCount">Specifies how many dashes to remove.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgStrokeDashArray.UpdateDashes">
-    <summary>
-      <para>Updates the array. Existing dashes not updated by this method are preserved. The array is resized larger if necessary to accommodate the new dashes.</para>
-    </summary>
-    <param name="dashes">
-      <para>Type: <b>const FLOAT*</b></para>
-      <para>The dashes array.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of dashes to update.</para>
-    </param>
-    <param name="startIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index at which to begin updating dashes. Must be less than or equal to the size of the array.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgStrokeDashArray" />
+    <summary>Updates the array. Existing dashes not updated by this method are preserved. The array is resized larger if necessary to accommodate the new dashes.</summary>
+    <param name="dashes">The dashes array.</param>
+    <param name="dashesCount">The number of dashes to update.</param>
+    <param name="startIndex">The index at which to begin updating dashes. Must be less than or equal to the size of the array.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgStrokeDashArray.UpdateDashes">
-    <summary>
-      <para>Updates the array. Existing dashes not updated by this method are preserved. The array is resized larger if necessary to accommodate the new dashes.</para>
-    </summary>
-    <param name="dashes">
-      <para>Type: <b>const FLOAT*</b></para>
-      <para>The dashes array.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of dashes to update.</para>
-    </param>
-    <param name="startIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index at which to begin updating dashes. Must be less than or equal to the size of the array.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgStrokeDashArray" />
+    <summary>Updates the array. Existing dashes not updated by this method are preserved. The array is resized larger if necessary to accommodate the new dashes.</summary>
+    <param name="dashes">The dashes array.</param>
+    <param name="dashesCount">The number of dashes to update.</param>
+    <param name="startIndex">The index at which to begin updating dashes. Must be less than or equal to the size of the array.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgStrokeDashArray">
-    <summary>
-      <para>Interface describing an SVG stroke-dasharray value.</para>
-    </summary>
+    <summary>Interface describing an SVG stroke-dasharray value.</summary>
   </member>
 </doc>

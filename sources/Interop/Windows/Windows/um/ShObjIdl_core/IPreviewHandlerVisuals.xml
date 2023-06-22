@@ -3,63 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPreviewHandlerVisuals.SetBackgroundColor">
-    <summary>
-      <para>Sets the background color of the preview handler.</para>
-    </summary>
-    <param name="color">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
-      <para>A value of type <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> to use for the preview handler background.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  These are suggestions. It is not compulsory for this method to be called. The preview handlers must be able to make their own decisions.</para>
-    </remarks>
+    <summary>Sets the background color of the preview handler.</summary>
+    <param name="color">A value of type <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> to use for the preview handler background.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPreviewHandlerVisuals.SetFont">
-    <summary>
-      <para>Sets the font attributes to be used for text within the preview handler.</para>
-    </summary>
-    <param name="plf">
-      <para>Type: <b>const LOGFONTW*</b></para>
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa741231(v=vs.85)">LOGFONTW Structure</a> containing the necessary attributes for the font to use.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  These are suggestions. It is not compulsory for this method to be called. The preview handlers must be able to make their own decisions.</para>
-    </remarks>
+    <summary>Sets the font attributes to be used for text within the preview handler.</summary>
+    <param name="plf">A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa741231(v=vs.85)">LOGFONTW Structure</a> containing the necessary attributes for the font to use.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPreviewHandlerVisuals.SetTextColor">
-    <summary>
-      <para>Sets the color of the text within the preview handler.</para>
-    </summary>
-    <param name="color">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
-      <para>A value of type <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> to use for the preview handler text color.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  These are suggestions. It is not compulsory for this method to be called; the preview handlers must be able to make their own decisions.</para>
-    </remarks>
+    <summary>Sets the color of the text within the preview handler.</summary>
+    <param name="color">A value of type <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> to use for the preview handler text color.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPreviewHandlerVisuals">
-    <summary>
-      <para>Exposes methods for applying color and font information to preview handlers.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  These are suggestions. It is not compulsory for this interface to be called. The preview handlers must be able to make their own decisions.</para>
-    </remarks>
+    <summary>Exposes methods for applying color and font information to preview handlers.</summary>
   </member>
 </doc>

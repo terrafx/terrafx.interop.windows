@@ -3,17 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_QUERY_MISC_FLAG">
-    <summary>
-      <para>Flags that describe miscellaneous query behavior.</para>
-    </summary>
-    <remarks>
-      <para>This flag is part of a query description (see <see cref="D3D10_QUERY_DESC" />).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+    <summary>Flags that describe miscellaneous query behavior.</summary>
   </member>
   <member name="D3D10_QUERY_MISC_FLAG.D3D10_QUERY_MISC_PREDICATEHINT">
-    <summary>
-      <para>Tell the hardware that if it is not yet sure if something is hidden or not to draw it anyway. This is only used with an occlusion predicate. Predication data cannot be returned to your application via <see cref="ID3D10Asynchronous.GetData" /> when using this flag.</para>
-    </summary>
+    <summary>Tell the hardware that if it is not yet sure if something is hidden or not to draw it anyway. This is only used with an occlusion predicate. Predication data cannot be returned to your application via <see cref="ID3D10Asynchronous.GetData" /> when using this flag.</summary>
   </member>
 </doc>

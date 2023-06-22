@@ -3,51 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyDescriptionList.GetAt">
-    <summary>
-      <para>Gets the property description at the specified index in a property description list.</para>
-    </summary>
-    <param name="iElem">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of the property in the list string.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the requested property description interface, typically IID_IPropertyDescription.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the interface pointer requested in <i>riid</i>. Typically, this is <see cref="IPropertyDescription" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>It is recommended that you use the IID_PPV_ARGS macro, defined in objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, eliminating the possibility of a coding error.</para>
-    </remarks>
+    <summary>Gets the property description at the specified index in a property description list.</summary>
+    <param name="iElem">The number of the property in the list string.</param>
+    <param name="riid">A reference to the IID of the requested property description interface, typically IID_IPropertyDescription.</param>
+    <param name="ppv">When this method returns, contains the interface pointer requested in <i>riid</i>. Typically, this is <see cref="IPropertyDescription" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescriptionList.GetCount">
-    <summary>
-      <para>Gets the number of properties included in the property list.</para>
-    </summary>
-    <param name="pcElem">
-      <para>Type: <b>UINT*</b></para>
-      <para>When this method returns, contains a pointer to the count of properties.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the number of properties included in the property list.</summary>
+    <param name="pcElem">When this method returns, contains a pointer to the count of properties.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescriptionList">
-    <summary>
-      <para>Exposes methods that extract information from a collection of property descriptions presented as a list.</para>
-    </summary>
-    <remarks>
-      <para>Ordered lists of properties are used to select which properties are shown in various UI locations such as the details pane or an infotip.  The IPropertyDescriptionList interface provides access to the individual properties in such a list.</para>
-      <para>To get an instance of the subsystem object that implements <see cref="IPropertyDescriptionList" />, obtain an <see cref="IShellItem2" /> interface and call <see cref="IShellItem2.GetPropertyDescriptionList" />, or obtain the list in string form and call <see cref="PSGetPropertyDescriptionListFromString" />.</para>
-      <para>To obtain a property description list in string form, call <see cref="IShellItem2.GetString" /> with one of the PKEY_PropList keys.  For example, <code>PKEY_PropList_InfoTip</code> (<a href="https://docs.microsoft.com//windows/desktop/properties/props-system-proplist-infotip">System.PropList.InfoTip</a>) will return the string form of a list of properties suitable for showing in an infotip.  If you are reading multiple values from an item, it is more efficient to call <see cref="IPropertyStore.GetValue" /> with a PKEY_PropList key so that the item is not reopened multiple times.  See Property Lists for details on how to register a property list string for a file type.</para>
-    </remarks>
-    <seealso cref="PSGetPropertyDescriptionListFromString" />
+    <summary>Exposes methods that extract information from a collection of property descriptions presented as a list.</summary>
   </member>
 </doc>

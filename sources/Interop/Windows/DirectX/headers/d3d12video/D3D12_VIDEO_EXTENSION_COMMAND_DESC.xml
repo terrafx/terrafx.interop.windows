@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_EXTENSION_COMMAND_DESC">
-    <summary>
-      <para>Describes a video extension command.</para>
-    </summary>
-    <remarks>
-      <para>Pass this structure to <see cref="ID3D12VideoDevice2.CreateVideoExtensionCommand" /> to create an instance of <see cref="ID3D12VideoExtensionCommand" />.</para>
-    </remarks>
+    <summary>Describes a video extension command.</summary>
   </member>
   <member name="D3D12_VIDEO_EXTENSION_COMMAND_DESC.NodeMask">
-    <summary>
-      <para>For single GPU operation, set this to zero. If there are multiple GPU nodes, set a bit to identify the node (the device's physical adapter) to which the command queue applies. Each bit in the mask corresponds to a single node. Only 1 bit may be set.</para>
-    </summary>
+    <summary>For single GPU operation, set this to zero. If there are multiple GPU nodes, set a bit to identify the node (the device's physical adapter) to which the command queue applies. Each bit in the mask corresponds to a single node. Only 1 bit may be set.</summary>
   </member>
   <member name="D3D12_VIDEO_EXTENSION_COMMAND_DESC.CommandId">
-    <summary>
-      <para>The unique identifier for the video extension command.</para>
-    </summary>
+    <summary>The unique identifier for the video extension command.</summary>
   </member>
 </doc>

@@ -3,39 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHCOLUMNINFO">
-    <summary>
-      <para>Contains information about the properties of a column. It is used by <see cref="IColumnProvider.GetColumnInfo" />.</para>
-    </summary>
-    <seealso cref="IColumnProvider.GetColumnInfo" />
+    <summary>Contains information about the properties of a column. It is used by <see cref="IColumnProvider.GetColumnInfo" />.</summary>
   </member>
   <member name="SHCOLUMNINFO.scid">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure that uniquely identifies the column.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure that uniquely identifies the column.</summary>
   </member>
   <member name="SHCOLUMNINFO.vt">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a></b></para>
-      <para>The native <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARIANT</a> type of the column's data.</para>
-    </summary>
+    <summary>The native <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARIANT</a> type of the column's data.</summary>
   </member>
   <member name="SHCOLUMNINFO.fmt">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>
-        <see cref="List view format" />. This member is normally set to LVCFMT_LEFT.</para>
-    </summary>
+      <see cref="List view format" />. This member is normally set to LVCFMT_LEFT.</summary>
   </member>
   <member name="SHCOLUMNINFO.cChars">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The default width of the column, in characters.</para>
-    </summary>
+    <summary>The default width of the column, in characters.</summary>
   </member>
   <member name="SHCOLUMNINFO.csFlags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Flags indicating the default column state. It can be a combination of the following flags.</para>
       <h4>SHCOLSTATE_TYPE_STR</h4>
       <para>A string.</para>
@@ -56,15 +40,9 @@
     </summary>
   </member>
   <member name="SHCOLUMNINFO.wszTitle">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_COLUMN_NAME_LEN]</b></para>
-      <para>A null-terminated Unicode string with the column's title. It must contain no more than MAX_COLUMN_NAME_LEN characters, including the terminating <b>NULL</b>.</para>
-    </summary>
+    <summary>A null-terminated Unicode string with the column's title. It must contain no more than MAX_COLUMN_NAME_LEN characters, including the terminating <b>NULL</b>.</summary>
   </member>
   <member name="SHCOLUMNINFO.wszDescription">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_COLUMN_DESC_LEN]</b></para>
-      <para>A null-terminated Unicode string with the column's description. It must contain no more than MAX_COLUMN_DESC_LEN characters, including the terminating <b>NULL</b>.</para>
-    </summary>
+    <summary>A null-terminated Unicode string with the column's description. It must contain no more than MAX_COLUMN_DESC_LEN characters, including the terminating <b>NULL</b>.</summary>
   </member>
 </doc>

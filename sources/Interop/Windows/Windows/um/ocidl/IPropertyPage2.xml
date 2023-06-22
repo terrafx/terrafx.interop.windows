@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyPage2.EditProperty">
-    <summary>
-      <para>Specifies which field is to receive the focus when the property page is activated.</para>
-    </summary>
-    <param name="dispID">
-      <para>The property that is to receive the focus.</para>
-    </param>
+    <summary>Specifies which field is to receive the focus when the property page is activated.</summary>
+    <param name="dispID">The property that is to receive the focus.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -16,42 +12,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>This method is not currently implemented; the interface is probably provided in anticipation of future work on this page.</para>
-          </description>
-        </item>
+          <description>This method is not currently implemented; the interface is probably provided in anticipation of future work on this page.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Implementers</h3>
-      <para>If this method is called before a page is activated, the page should store the property and set the focus to it in the next call to <see cref="IPropertyPage.Activate" />. If the page is already active, <b>EditProperty</b> should set the focus to the specific property field.</para>
-    </remarks>
-    <seealso cref="IPropertyPage2" />
   </member>
   <member name="IPropertyPage2">
     <summary>
       <para>An extension to <see cref="IPropertyPage" /> to support initial selection of a property on a page.</para>
       <para>This method works in conjunction with the implementation of <see cref="IPerPropertyBrowsing.MapPropertyToPage" /> on an object that supplies properties and specifies property pages through <see cref="ISpecifyPropertyPages" />. This interface has only one extra method in addition to those in <see cref="IPropertyPage" />. That method, <see cref="IPropertyPage2.EditProperty" /> tells the page which property to highlight.</para>
     </summary>
-    <seealso cref="IPerPropertyBrowsing" />
-    <seealso cref="IPropertyPage" />
-    <seealso cref="IPropertyPageSite" />
-    <seealso cref="ISpecifyPropertyPage" />
   </member>
 </doc>

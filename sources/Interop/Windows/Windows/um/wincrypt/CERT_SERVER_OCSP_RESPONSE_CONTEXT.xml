@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_SERVER_OCSP_RESPONSE_CONTEXT">
-    <summary>
-      <para>The <b>CERT_SERVER_OCSP_RESPONSE_CONTEXT</b> structure contains an encoded OCSP response.</para>
-    </summary>
+    <summary>The <b>CERT_SERVER_OCSP_RESPONSE_CONTEXT</b> structure contains an encoded OCSP response.</summary>
   </member>
   <member name="CERT_SERVER_OCSP_RESPONSE_CONTEXT.cbSize">
-    <summary>
-      <para>The size in bytes of this structure.</para>
-    </summary>
+    <summary>The size in bytes of this structure.</summary>
   </member>
   <member name="CERT_SERVER_OCSP_RESPONSE_CONTEXT.pbEncodedOcspResponse">
-    <summary>
-      <para>A pointer to the data buffer that contains the encoded OCSP response.</para>
-    </summary>
+    <summary>A pointer to the data buffer that contains the encoded OCSP response.</summary>
   </member>
   <member name="CERT_SERVER_OCSP_RESPONSE_CONTEXT.cbEncodedOcspResponse">
-    <summary>
-      <para>The size in bytes of <b>pbEncodedOcspResponse</b>.</para>
-    </summary>
+    <summary>The size in bytes of <b>pbEncodedOcspResponse</b>.</summary>
   </member>
 </doc>

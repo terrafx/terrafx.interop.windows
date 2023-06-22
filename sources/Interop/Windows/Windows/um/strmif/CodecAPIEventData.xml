@@ -4,28 +4,17 @@
 <doc>
   <member name="CodecAPIEventData">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>CodecAPIEventData</b> structure contains event data for the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-codecapi-event">EC_CODECAPI_EVENT</a> event. This event is sent by codecs that support the <see cref="ICodecAPI" /> interface.</para>
     </summary>
-    <remarks>
-      <para>This structure may be followed by addition data, depending on the codec event. For more information, see <see cref="ICodecAPI.RegisterForEvent" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso cref="ICodecAPI.RegisterForEvent" />
   </member>
   <member name="CodecAPIEventData.guid">
-    <summary>
-      <para>A GUID that identifies the codec event.</para>
-    </summary>
+    <summary>A GUID that identifies the codec event.</summary>
   </member>
   <member name="CodecAPIEventData.dataLength">
-    <summary>
-      <para>The length of the additional data that follows this structure, in bytes.
-The value can be zero.</para>
-    </summary>
+    <summary>The length of the additional data that follows this structure, in bytes. The value can be zero.</summary>
   </member>
   <member name="CodecAPIEventData.reserved">
-    <summary>
-      <para>Reserved; do not use.</para>
-    </summary>
+    <summary>Reserved; do not use.</summary>
   </member>
 </doc>

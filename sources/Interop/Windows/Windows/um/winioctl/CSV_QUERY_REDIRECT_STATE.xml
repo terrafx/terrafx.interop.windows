@@ -3,36 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CSV_QUERY_REDIRECT_STATE">
-    <summary>
-      <para>Contains information about whether files in a stream have been redirected.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used if the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_csv_control">FSCTL_CSV_CONTROL</a></para>
-      <para>control code is called with a <see cref="CSV_CONTROL_OP" /> enumeration
-value of <b>CsvControlQueryRedirectState</b>, or if the control code is used with an
-<see cref="CSV_CONTROL_PARAM" /> structure containing that enumeration
-value.</para>
-    </remarks>
-    <seealso cref="CSV_CONTROL_OP" />
-    <seealso cref="CSV_CONTROL_PARAM" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_csv_control">FSCTL_CSV_CONTROL</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-structures">File Management Structures</seealso>
+    <summary>Contains information about whether files in a stream have been redirected.</summary>
   </member>
   <member name="CSV_QUERY_REDIRECT_STATE.MdsNodeId">
-    <summary>
-      <para>The identifier of an MDS node.</para>
-    </summary>
+    <summary>The identifier of an MDS node.</summary>
   </member>
   <member name="CSV_QUERY_REDIRECT_STATE.DsNodeId">
-    <summary>
-      <para>The identifier of a DS node.</para>
-    </summary>
+    <summary>The identifier of a DS node.</summary>
   </member>
   <member name="CSV_QUERY_REDIRECT_STATE.FileRedirected">
     <summary>
-      <para>
-        <b>TRUE</b> if the file has been redirected; otherwise,
-<b>FALSE</b>.</para>
-    </summary>
+      <b>TRUE</b> if the file has been redirected; otherwise,<b>FALSE</b>.</summary>
   </member>
 </doc>

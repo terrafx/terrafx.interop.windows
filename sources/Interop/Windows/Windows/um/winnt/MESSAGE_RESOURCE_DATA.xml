@@ -3,28 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MESSAGE_RESOURCE_DATA">
-    <summary>
-      <para>Contains information about formatted text for display as an error message or in a message box in a message table resource.</para>
-    </summary>
-    <remarks>
-      <para>A <b>MESSAGE_RESOURCE_DATA</b> structure can contain one or more
-<see cref="MESSAGE_RESOURCE_BLOCK" /> structures, which can each contain one or more <see cref="MESSAGE_RESOURCE_ENTRY" /> structures.</para>
-    </remarks>
-    <seealso cref="MESSAGE_RESOURCE_BLOCK" />
-    <seealso cref="MESSAGE_RESOURCE_ENTRY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/resources">Resources</seealso>
+    <summary>Contains information about formatted text for display as an error message or in a message box in a message table resource.</summary>
   </member>
   <member name="MESSAGE_RESOURCE_DATA.NumberOfBlocks">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of <see cref="MESSAGE_RESOURCE_BLOCK" /> structures.</para>
-    </summary>
+    <summary>The number of <see cref="MESSAGE_RESOURCE_BLOCK" /> structures.</summary>
   </member>
   <member name="MESSAGE_RESOURCE_DATA.Blocks">
-    <summary>
-      <para>Type: <b><see cref="MESSAGE_RESOURCE_BLOCK" />[1]</b></para>
-      <para>An array of structures. The array is the size indicated by the
-<b>NumberOfBlocks</b>  member.</para>
-    </summary>
+    <summary>An array of structures. The array is the size indicated by the<b>NumberOfBlocks</b> member.</summary>
   </member>
 </doc>

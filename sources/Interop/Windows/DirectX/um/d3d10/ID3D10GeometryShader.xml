@@ -3,15 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10GeometryShader">
-    <summary>
-      <para>A geometry-shader interface manages an executable program (a geometry shader) that controls the <a href="https://docs.microsoft.com//previous-versions/bb205146(v=vs.85)">geometry-shader stage</a>.</para>
-    </summary>
-    <remarks>
-      <para>The geometry-shader interface has no methods; use HLSL to implement your shader functionality. All shaders in Direct3D 10 are implemented from a common set of features referred to as the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core">common shader core</a>.</para>
-      <para>To create a geometry shader interface, call either <see cref="ID3D10Device.CreateGeometryShader" /> or <see cref="ID3D10Device.CreateGeometryShaderWithStreamOutput" />. Before using a geometry shader you must bind it to the device by calling <see cref="ID3D10Device.GSSetShader" />.</para>
-      <para>This interface is defined in D3D10.h.</para>
-    </remarks>
-    <seealso cref="ID3D10DeviceChild" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-interfaces">Shader Interfaces</seealso>
+    <summary>A geometry-shader interface manages an executable program (a geometry shader) that controls the <a href="https://docs.microsoft.com//previous-versions/bb205146(v=vs.85)">geometry-shader stage</a>.</summary>
   </member>
 </doc>

@@ -3,54 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_SHADER_TYPE_DESC">
-    <summary>
-      <para>Describes a shader-variable type.</para>
-    </summary>
-    <remarks>
-      <para>Get a shader-variable-type description by calling <see cref="ID3D10ShaderReflectionType.GetDesc" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+    <summary>Describes a shader-variable type.</summary>
   </member>
   <member name="D3D10_SHADER_TYPE_DESC.Class">
-    <summary>
-      <para>Type: <b><see cref="D3D10_SHADER_VARIABLE_CLASS" /></b></para>
-      <para>Identifies the variable class as one of scalar, vector, matrix or object. See <see cref="D3D10_SHADER_VARIABLE_CLASS" />.</para>
-    </summary>
+    <summary>Identifies the variable class as one of scalar, vector, matrix or object. See <see cref="D3D10_SHADER_VARIABLE_CLASS" />.</summary>
   </member>
   <member name="D3D10_SHADER_TYPE_DESC.Type">
-    <summary>
-      <para>Type: <b><see cref="D3D10_SHADER_VARIABLE_TYPE" /></b></para>
-      <para>The variable type. See <see cref="D3D10_SHADER_VARIABLE_TYPE" />.</para>
-    </summary>
+    <summary>The variable type. See <see cref="D3D10_SHADER_VARIABLE_TYPE" />.</summary>
   </member>
   <member name="D3D10_SHADER_TYPE_DESC.Rows">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of rows in a matrix. Otherwise a numeric type returns 1, any other type returns 0.</para>
-    </summary>
+    <summary>Number of rows in a matrix. Otherwise a numeric type returns 1, any other type returns 0.</summary>
   </member>
   <member name="D3D10_SHADER_TYPE_DESC.Columns">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of columns in a matrix. Otherwise a numeric type returns 1, any other type returns 0.</para>
-    </summary>
+    <summary>Number of columns in a matrix. Otherwise a numeric type returns 1, any other type returns 0.</summary>
   </member>
   <member name="D3D10_SHADER_TYPE_DESC.Elements">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of elements in an array; otherwise 0.</para>
-    </summary>
+    <summary>Number of elements in an array; otherwise 0.</summary>
   </member>
   <member name="D3D10_SHADER_TYPE_DESC.Members">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of members in the structure; otherwise 0.</para>
-    </summary>
+    <summary>Number of members in the structure; otherwise 0.</summary>
   </member>
   <member name="D3D10_SHADER_TYPE_DESC.Offset">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Offset, in bytes, between the start of the parent structure and this variable.</para>
-    </summary>
+    <summary>Offset, in bytes, between the start of the parent structure and this variable.</summary>
   </member>
 </doc>

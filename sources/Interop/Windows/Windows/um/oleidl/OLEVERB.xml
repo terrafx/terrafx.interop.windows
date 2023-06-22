@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OLEVERB">
-    <summary>
-      <para>Defines a verb that an object supports. The <see cref="IOleObject.EnumVerbs" /> method creates an enumerator that can enumerate these structures for an object, and supplies a pointer to the enumerator's <see cref="IEnumOLEVERB" />.</para>
-    </summary>
-    <seealso cref="IEnumOLEVERB" />
-    <seealso cref="IOleObject.EnumVerbs" />
+    <summary>Defines a verb that an object supports. The <see cref="IOleObject.EnumVerbs" /> method creates an enumerator that can enumerate these structures for an object, and supplies a pointer to the enumerator's <see cref="IEnumOLEVERB" />.</summary>
   </member>
   <member name="OLEVERB.lVerb">
-    <summary>
-      <para>Integer identifier associated with this verb.</para>
-    </summary>
+    <summary>Integer identifier associated with this verb.</summary>
   </member>
   <member name="OLEVERB.lpszVerbName">
-    <summary>
-      <para>Pointer to a string that contains the verb's name.</para>
-    </summary>
+    <summary>Pointer to a string that contains the verb's name.</summary>
   </member>
   <member name="OLEVERB.fuFlags">
-    <summary>
-      <para>In Windows, a group of flags taken from the flag constants beginning with MF_ defined in <a href="https://docs.microsoft.com//windows/desktop/menurc/u">AppendMenu</a>. Containers should use these flags in building an object's verb menu. All Flags defined in <b>AppendMenu</b> are supported except for MF_BITMAP, MF_OWNERDRAW, and MF_POPUP.</para>
-    </summary>
+    <summary>In Windows, a group of flags taken from the flag constants beginning with MF_ defined in <a href="https://docs.microsoft.com//windows/desktop/menurc/u">AppendMenu</a>. Containers should use these flags in building an object's verb menu. All Flags defined in <b>AppendMenu</b> are supported except for MF_BITMAP, MF_OWNERDRAW, and MF_POPUP.</summary>
   </member>
   <member name="OLEVERB.grfAttribs">
-    <summary>
-      <para>Combination of the verb attributes in the <see cref="OLEVERBATTRIB" /> enumeration.</para>
-    </summary>
+    <summary>Combination of the verb attributes in the <see cref="OLEVERBATTRIB" /> enumeration.</summary>
   </member>
 </doc>

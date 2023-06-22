@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BNSTATE">
-    <summary>
-      <para>Deprecated. Used by <see cref="IBrowserService.SetNavigateState" /> and <see cref="IBrowserService.GetNavigateState" /> to specify navigation states.</para>
-    </summary>
+    <summary>Deprecated. Used by <see cref="IBrowserService.SetNavigateState" /> and <see cref="IBrowserService.GetNavigateState" /> to specify navigation states.</summary>
   </member>
   <member name="BNSTATE.BNS_NORMAL">
-    <summary>
-      <para>Indicates the normal state.</para>
-    </summary>
+    <summary>Indicates the normal state.</summary>
   </member>
   <member name="BNSTATE.BNS_BEGIN_NAVIGATE">
-    <summary>
-      <para>A begin navigation event has occurred.</para>
-    </summary>
+    <summary>A begin navigation event has occurred.</summary>
   </member>
   <member name="BNSTATE.BNS_NAVIGATE">
-    <summary>
-      <para>The navigation event has occurred.</para>
-    </summary>
+    <summary>The navigation event has occurred.</summary>
   </member>
 </doc>

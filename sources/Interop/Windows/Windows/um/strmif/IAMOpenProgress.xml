@@ -4,24 +4,18 @@
 <doc>
   <member name="IAMOpenProgress.AbortOperation">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>AbortOperation</code> method cancels the file-open operation.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMOpenProgress Interface" />
+    <returns>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</returns>
   </member>
   <member name="IAMOpenProgress.QueryProgress">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>QueryProgress</code> method retrieves the progress of the file-open operation.</para>
     </summary>
-    <param name="pllTotal">
-      <para>Pointer to a variable that receives the length of the entire file, in bytes.</para>
-    </param>
-    <param name="pllCurrent">
-      <para>Pointer to a variable that receives the length of the downloaded portion of the file, in bytes.</para>
-    </param>
+    <param name="pllTotal">Pointer to a variable that receives the length of the entire file, in bytes.</param>
+    <param name="pllCurrent">Pointer to a variable that receives the length of the downloaded portion of the file, in bytes.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
       <list type="table">
@@ -29,43 +23,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_S_ESTIMATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The returned values are estimates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_S_ESTIMATED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The returned values are estimates.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>Unexpected error.</para>
-          </description>
-        </item>
+          <description>Unexpected error.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMOpenProgress Interface" />
   </member>
   <member name="IAMOpenProgress">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IAMOpenProgress</code> interface reports the progress of a file-open operation and enables the application to cancel the operation.</para>
       <para>Filters that open files over a network can expose this interface. An application can use it to query the progress of the download, or to cancel the download. If the network is not responsive, a method such as <see cref="IGraphBuilder.RenderFile" /> might block for an indefinite period. To prevent your application from blocking, create a worker thread that uses <code>IAMOpenProgress</code> to monitor the progress. The worker thread can cancel the operation if a predefined timeout occurs, or in response to a command from the user.</para>
       <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/file-source--url--filter">File Source (URL)</a> filter supports this interface.</para>

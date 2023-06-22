@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_CONSTANT_BUFFER_VIEW_DESC">
-    <summary>
-      <para>Describes a constant buffer to view.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used by <see cref="CreateConstantBufferView" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-structures">Core Structures</seealso>
+    <summary>Describes a constant buffer to view.</summary>
   </member>
   <member name="D3D12_CONSTANT_BUFFER_VIEW_DESC.BufferLocation">
-    <summary>
-      <para>The D3D12_GPU_VIRTUAL_ADDRESS of the constant buffer.
-D3D12_GPU_VIRTUAL_ADDRESS is a typedef'd alias of UINT64.</para>
-    </summary>
+    <summary>The D3D12_GPU_VIRTUAL_ADDRESS of the constant buffer. D3D12_GPU_VIRTUAL_ADDRESS is a typedef'd alias of UINT64.</summary>
   </member>
   <member name="D3D12_CONSTANT_BUFFER_VIEW_DESC.SizeInBytes">
-    <summary>
-      <para>The size in bytes of the constant buffer.</para>
-    </summary>
+    <summary>The size in bytes of the constant buffer.</summary>
   </member>
 </doc>

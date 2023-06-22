@@ -3,147 +3,48 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10EffectPass.Apply">
-    <summary>
-      <para>Set the state contained in a pass to the device.</para>
-    </summary>
-    <param name="Flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Unused.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10Effect Interface" />
-    <seealso cref="ID3D10EffectPass" />
+    <summary>Set the state contained in a pass to the device.</summary>
+    <param name="Flags">Unused.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectPass.ComputeStateBlockMask">
-    <summary>
-      <para>Generate a mask for allowing/preventing state changes.</para>
-    </summary>
-    <param name="pStateBlockMask">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>A pointer to a state-block mask (see <see cref="D3D10_STATE_BLOCK_MASK" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10Effect Interface" />
-    <seealso cref="ID3D10EffectPass" />
+    <summary>Generate a mask for allowing/preventing state changes.</summary>
+    <param name="pStateBlockMask">A pointer to a state-block mask (see <see cref="D3D10_STATE_BLOCK_MASK" />).</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectPass.GetAnnotationByIndex">
-    <summary>
-      <para>Get an annotation by index.</para>
-    </summary>
-    <param name="Index">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A zero-based index.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</para>
-    </returns>
-    <seealso cref="ID3D10Effect Interface" />
-    <seealso cref="ID3D10EffectPass" />
+    <summary>Get an annotation by index.</summary>
+    <param name="Index">A zero-based index.</param>
+    <returns>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</returns>
   </member>
   <member name="ID3D10EffectPass.GetAnnotationByName">
-    <summary>
-      <para>Get an annotation by name.</para>
-    </summary>
-    <param name="Name">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The name of the annotation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</para>
-    </returns>
-    <seealso cref="ID3D10Effect Interface" />
-    <seealso cref="ID3D10EffectPass" />
+    <summary>Get an annotation by name.</summary>
+    <param name="Name">The name of the annotation.</param>
+    <returns>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</returns>
   </member>
   <member name="ID3D10EffectPass.GetDesc">
-    <summary>
-      <para>Get a pass description.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D10_PASS_DESC" />*</b></para>
-      <para>A pointer to a pass description (see <see cref="D3D10_PASS_DESC" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>A pass is a block of code that sets render state and shaders (which in turn sets constant buffers, samplers and textures). An effect technique contains one or more passes. See <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-organize">techniques and passes</a>.</para>
-    </remarks>
-    <seealso cref="ID3D10Effect Interface" />
-    <seealso cref="ID3D10EffectPass" />
+    <summary>Get a pass description.</summary>
+    <param name="pDesc">A pointer to a pass description (see <see cref="D3D10_PASS_DESC" />).</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectPass.GetGeometryShaderDesc">
-    <summary>
-      <para>Get a geometry-shader description.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D10_PASS_SHADER_DESC" />*</b></para>
-      <para>A pointer to a geometry-shader description (see <see cref="D3D10_PASS_SHADER_DESC" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>An effect pass can contain render state assignments and shader object assignments.</para>
-    </remarks>
-    <seealso cref="ID3D10Effect Interface" />
-    <seealso cref="ID3D10EffectPass" />
+    <summary>Get a geometry-shader description.</summary>
+    <param name="pDesc">A pointer to a geometry-shader description (see <see cref="D3D10_PASS_SHADER_DESC" />).</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectPass.GetPixelShaderDesc">
-    <summary>
-      <para>Get a pixel-shader description.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D10_PASS_SHADER_DESC" />*</b></para>
-      <para>A pointer to a pixel-shader description (see <see cref="D3D10_PASS_SHADER_DESC" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>An effect pass can contain render state assignments and shader object assignments.</para>
-    </remarks>
-    <seealso cref="ID3D10Effect Interface" />
-    <seealso cref="ID3D10EffectPass" />
+    <summary>Get a pixel-shader description.</summary>
+    <param name="pDesc">A pointer to a pixel-shader description (see <see cref="D3D10_PASS_SHADER_DESC" />).</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectPass.GetVertexShaderDesc">
-    <summary>
-      <para>Get a vertex-shader description.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D10_PASS_SHADER_DESC" />*</b></para>
-      <para>A pointer to a vertex-shader description (see <see cref="D3D10_PASS_SHADER_DESC" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>An effect pass can contain render state assignments and shader object assignments.</para>
-    </remarks>
-    <seealso cref="ID3D10Effect Interface" />
-    <seealso cref="ID3D10EffectPass" />
+    <summary>Get a vertex-shader description.</summary>
+    <param name="pDesc">A pointer to a vertex-shader description (see <see cref="D3D10_PASS_SHADER_DESC" />).</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectPass.IsValid">
-    <summary>
-      <para>Test a pass to see if it contains valid syntax.</para>
-    </summary>
+    <summary>Test a pass to see if it contains valid syntax.</summary>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> if the code syntax is valid; otherwise <b>FALSE</b>.</para>
-    </returns>
-    <seealso cref="ID3D10Effect Interface" />
-    <seealso cref="ID3D10EffectPass" />
+      <b>TRUE</b> if the code syntax is valid; otherwise <b>FALSE</b>.</returns>
   </member>
 </doc>

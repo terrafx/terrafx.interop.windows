@@ -3,35 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SERVICE_PROPERTY_ID">
-    <summary>
-      <para>The optional parameters for configuring the service host.
-This enumeration is used within the <see cref="WS_SERVICE_PROPERTY" /> structure when calling <see cref="WsCreateServiceHost" /> or by itself when calling <see cref="WsGetServiceHostProperty" />.</para>
-    </summary>
+    <summary>The optional parameters for configuring the service host. This enumeration is used within the <see cref="WS_SERVICE_PROPERTY" /> structure when calling <see cref="WsCreateServiceHost" /> or by itself when calling <see cref="WsGetServiceHostProperty" />.</summary>
   </member>
   <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_HOST_USER_STATE">
-    <summary>
-      <para>A void pointer
-used with <see cref="WsCreateServiceHost" />. This property
-is made available to different callbacks and service operations as part of the  <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-operation-context">WS_OPERATION_CONTEXT</a> structure</para>
-    </summary>
+    <summary>A void pointer used with <see cref="WsCreateServiceHost" />. This property is made available to different callbacks and service operations as part of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-operation-context">WS_OPERATION_CONTEXT</a> structure</summary>
   </member>
   <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_FAULT_DISCLOSURE">
-    <summary>
-      <para>A <see cref="WS_FAULT_DISCLOSURE" /> value used with <see cref="WsCreateServiceHost" />.
-This property is used to specify the disclosure level of the error object when its converted into a fault. The default is <b>WS_MINIMAL_FAULT_DISCLOSURE</b>.</para>
-    </summary>
+    <summary>A <see cref="WS_FAULT_DISCLOSURE" /> value used with <see cref="WsCreateServiceHost" />. This property is used to specify the disclosure level of the error object when its converted into a fault. The default is <b>WS_MINIMAL_FAULT_DISCLOSURE</b>.</summary>
   </member>
   <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_FAULT_LANGID">
-    <summary>
-      <para>A LANGID used with <see cref="WsGetServiceHostProperty" /> to create a fault. If none is specified, the default user locale will be used.</para>
-    </summary>
+    <summary>A LANGID used with <see cref="WsGetServiceHostProperty" /> to create a fault. If none is specified, the default user locale will be used.</summary>
   </member>
   <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_HOST_STATE">
     <summary>
-      <para>A <see cref="WS_SERVICE_HOST_STATE" /> value  used with <see cref="WsGetServiceHostProperty" /> that specifies the current state of the service host.</para>
-      <para>The returned value is a snapshot of the current state, so it is
-possible that the state may have changed before the caller has
-had a chance to examine the value.</para>
+      <para>A <see cref="WS_SERVICE_HOST_STATE" /> value used with <see cref="WsGetServiceHostProperty" /> that specifies the current state of the service host.</para>
+      <para>The returned value is a snapshot of the current state, so it is possible that the state may have changed before the caller has had a chance to examine the value.</para>
     </summary>
   </member>
   <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_METADATA">
@@ -42,9 +28,6 @@ had a chance to examine the value.</para>
     </summary>
   </member>
   <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_CLOSE_TIMEOUT">
-    <summary>
-      <para>A <b>ULONG</b> used with <see cref="WsCreateServiceHost" /> that specifies the maximum amount of time a service model will wait after <see cref="WsCloseServiceHost" /> is called. Once the timeout expires service host will abort itself.
-The default is 5 seconds specified in milliseconds as 5000.</para>
-    </summary>
+    <summary>A <b>ULONG</b> used with <see cref="WsCreateServiceHost" /> that specifies the maximum amount of time a service model will wait after <see cref="WsCloseServiceHost" /> is called. Once the timeout expires service host will abort itself. The default is 5 seconds specified in milliseconds as 5000.</summary>
   </member>
 </doc>

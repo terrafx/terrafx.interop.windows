@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWriteEngine2EventArgs.get_FreeSystemBuffer">
-    <summary>
-      <para>Retrieves the number of unused bytes in the internal data buffer that is used for writing to disc.</para>
-    </summary>
-    <param name="value">
-      <para>Size, in bytes, of the unused portion  of the internal data buffer that is used for writing to disc.</para>
-    </param>
+    <summary>Retrieves the number of unused bytes in the internal data buffer that is used for writing to disc.</summary>
+    <param name="value">Size, in bytes, of the unused portion of the internal data buffer that is used for writing to disc.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,33 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns the same value as if you subtracted <see cref="IWriteEngine2EventArgs.get_UsedSystemBuffer" /> from <see cref="IWriteEngine2EventArgs.get_TotalSystemBuffer" />.</para>
-    </remarks>
-    <seealso cref="IWriteEngine2EventArgs" />
-    <seealso cref="IWriteEngine2EventArgs.get_TotalSystemBuffer" />
-    <seealso cref="IWriteEngine2EventArgs.get_UsedSystemBuffer" />
   </member>
   <member name="IWriteEngine2EventArgs.get_LastReadLba">
-    <summary>
-      <para>Retrieves the address of the sector most recently read from the burn image.</para>
-    </summary>
-    <param name="value">
-      <para>Logical block address of the sector most recently read from the input data stream.</para>
-    </param>
+    <summary>Retrieves the address of the sector most recently read from the burn image.</summary>
+    <param name="value">Logical block address of the sector most recently read from the input data stream.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -50,30 +37,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2EventArgs" />
-    <seealso cref="IWriteEngine2EventArgs.get_LastWrittenLba" />
-    <seealso cref="IWriteEngine2EventArgs.get_StartLba" />
   </member>
   <member name="IWriteEngine2EventArgs.get_LastWrittenLba">
-    <summary>
-      <para>Retrieves the address of the sector most recently written to the device.</para>
-    </summary>
-    <param name="value">
-      <para>Logical block address of the sector most recently written to the device.</para>
-    </param>
+    <summary>Retrieves the address of the sector most recently written to the device.</summary>
+    <param name="value">Logical block address of the sector most recently written to the device.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -81,30 +62,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2EventArgs" />
-    <seealso cref="IWriteEngine2EventArgs.get_LastReadLba" />
-    <seealso cref="IWriteEngine2EventArgs.get_StartLba" />
   </member>
   <member name="IWriteEngine2EventArgs.get_SectorCount">
-    <summary>
-      <para>Retrieves the number of sectors to write to the device in the current write operation.</para>
-    </summary>
-    <param name="value">
-      <para>The number of sectors to write in the current write operation.</para>
-    </param>
+    <summary>Retrieves the number of sectors to write to the device in the current write operation.</summary>
+    <param name="value">The number of sectors to write in the current write operation.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -112,32 +87,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This is the same value passed to the <see cref="IWriteEngine2.WriteSection" /> method.</para>
-    </remarks>
-    <seealso cref="IWriteEngine2.WriteSection" />
-    <seealso cref="IWriteEngine2EventArgs" />
   </member>
   <member name="IWriteEngine2EventArgs.get_StartLba">
-    <summary>
-      <para>Retrieves the starting logical block address (LBA) of the current write operation.</para>
-    </summary>
-    <param name="value">
-      <para>Starting logical block address of the write operation. Negative values for LBAs are supported.</para>
-    </param>
+    <summary>Retrieves the starting logical block address (LBA) of the current write operation.</summary>
+    <param name="value">Starting logical block address of the write operation. Negative values for LBAs are supported.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -145,34 +112,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This is the same value passed to the <see cref="IWriteEngine2.WriteSection" /> method.</para>
-    </remarks>
-    <seealso cref="IWriteEngine2.WriteSection" />
-    <seealso cref="IWriteEngine2EventArgs" />
-    <seealso cref="IWriteEngine2EventArgs.get_LastReadLba" />
-    <seealso cref="IWriteEngine2EventArgs.get_LastWrittenLba" />
   </member>
   <member name="IWriteEngine2EventArgs.get_TotalSystemBuffer">
-    <summary>
-      <para>Retrieves the size of the internal data buffer that is used for writing to disc.</para>
-    </summary>
-    <param name="value">
-      <para>Size, in bytes, of the internal data buffer that is used for writing to disc.</para>
-    </param>
+    <summary>Retrieves the size of the internal data buffer that is used for writing to disc.</summary>
+    <param name="value">Size, in bytes, of the internal data buffer that is used for writing to disc.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -180,30 +137,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2EventArgs" />
-    <seealso cref="IWriteEngine2EventArgs.get_FreeSystemBuffer" />
-    <seealso cref="IWriteEngine2EventArgs.get_UsedSystemBuffer" />
   </member>
   <member name="IWriteEngine2EventArgs.get_UsedSystemBuffer">
-    <summary>
-      <para>Retrieves the number of used bytes in the internal data buffer that is used for writing to disc.</para>
-    </summary>
-    <param name="value">
-      <para>Size, in bytes, of the used portion  of the internal data buffer that is used for writing to disc.</para>
-    </param>
+    <summary>Retrieves the number of used bytes in the internal data buffer that is used for writing to disc.</summary>
+    <param name="value">Size, in bytes, of the used portion of the internal data buffer that is used for writing to disc.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -211,30 +162,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This value increases as data is read into the buffer and decreases as data is written to disc.</para>
-    </remarks>
-    <seealso cref="IWriteEngine2EventArgs" />
-    <seealso cref="IWriteEngine2EventArgs.get_FreeSystemBuffer" />
-    <seealso cref="IWriteEngine2EventArgs.get_TotalSystemBuffer" />
   </member>
   <member name="IWriteEngine2EventArgs">
-    <summary>
-      <para>Use this interface to retrieve information about the current write operation. This interface is passed to the <see cref="DWriteEngine2Events.Update" /> method that you implement.</para>
-    </summary>
-    <seealso cref="DWriteEngine2Events" />
+    <summary>Use this interface to retrieve information about the current write operation. This interface is passed to the <see cref="DWriteEngine2Events.Update" /> method that you implement.</summary>
   </member>
 </doc>

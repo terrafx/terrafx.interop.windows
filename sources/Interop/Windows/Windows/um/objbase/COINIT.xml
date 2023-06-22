@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COINIT">
+    <summary>Determines the concurrency model used for incoming calls to objects created by this thread. This concurrency model can be either apartment-threaded or multithreaded.</summary>
+  </member>
+  <member name="COINIT.COINIT_APARTMENTTHREADED">
+    <summary>Initializes the thread for apartment-threaded object concurrency (see Remarks).</summary>
+  </member>
+  <member name="COINIT.COINIT_MULTITHREADED">
+    <summary>Initializes the thread for multithreaded object concurrency (see Remarks).</summary>
+  </member>
+  <member name="COINIT.COINIT_DISABLE_OLE1DDE">
+    <summary>Disables DDE for OLE1 support.</summary>
+  </member>
+  <member name="COINIT.COINIT_SPEED_OVER_MEMORY">
+    <summary>Increase memory usage in an attempt to increase performance.</summary>
+  </member>
+</doc>

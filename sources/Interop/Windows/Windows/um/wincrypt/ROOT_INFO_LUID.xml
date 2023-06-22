@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ROOT_INFO_LUID">
-    <summary>
-      <para>The <b>ROOT_INFO_LUID</b> structure contains a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">locally unique identifier</a> (<see cref="LUID" />) for Cryptographic Smart Card Root Information. The <see cref="CRYPT_SMART_CARD_ROOT_INFO" /> structure includes a <b>ROOT_INFO_LUID</b> structure.</para>
-    </summary>
-    <seealso cref="LUID" />
+    <summary>The <b>ROOT_INFO_LUID</b> structure contains a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">locally unique identifier</a> (<see cref="LUID" />) for Cryptographic Smart Card Root Information. The <see cref="CRYPT_SMART_CARD_ROOT_INFO" /> structure includes a <b>ROOT_INFO_LUID</b> structure.</summary>
   </member>
   <member name="ROOT_INFO_LUID.LowPart">
-    <summary>
-      <para>Low-order bits.</para>
-    </summary>
+    <summary>Low-order bits.</summary>
   </member>
   <member name="ROOT_INFO_LUID.HighPart">
-    <summary>
-      <para>High-order bits.</para>
-    </summary>
+    <summary>High-order bits.</summary>
   </member>
 </doc>

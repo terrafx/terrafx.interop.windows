@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP">
-    <summary>
-      <para>Identifiers for the properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/3d-perspective-transform">3D perspective transform effect</a>.</para>
-    </summary>
+    <summary>Identifiers for the properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/3d-perspective-transform">3D perspective transform effect</a>.</summary>
   </member>
   <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_INTERPOLATION_MODE">
     <summary>
@@ -30,8 +28,7 @@
   </member>
   <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_PERSPECTIVE_ORIGIN">
     <summary>
-      <para>The X and Y location of the viewer in the 3D scene. This property is a D2D1_VECTOR_2F defined as: (point X, point Y). The units are in DIPs.
-You set the Z value with the Depth property.</para>
+      <para>The X and Y location of the viewer in the 3D scene. This property is a D2D1_VECTOR_2F defined as: (point X, point Y). The units are in DIPs. You set the Z value with the Depth property.</para>
       <para>Type is D2D1_VECTOR_2F.</para>
       <para>Default value is {0.0f, 0.0f}.</para>
     </summary>
@@ -64,7 +61,5 @@ You set the Z value with the Depth property.</para>
       <para>Default value is {0.0f, 0.0f, 0.0f}.</para>
     </summary>
   </member>
-  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_3DPERSPECTIVETRANSFORM_PROP.D2D1_3DPERSPECTIVETRANSFORM_PROP_FORCE_DWORD"></member>
 </doc>

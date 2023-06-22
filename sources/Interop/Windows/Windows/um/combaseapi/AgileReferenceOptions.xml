@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AgileReferenceOptions">
-    <summary>
-      <para>Specifies options for the <see cref="RoGetAgileReference" /> function.</para>
-    </summary>
-    <seealso cref="RoGetAgileReference" />
+    <summary>Specifies options for the <see cref="RoGetAgileReference" /> function.</summary>
   </member>
   <member name="AgileReferenceOptions.AGILEREFERENCE_DEFAULT">
-    <summary>
-      <para>Use the default marshaling behavior, which is to marshal interfaces when an agile reference to the interface is obtained.</para>
-    </summary>
+    <summary>Use the default marshaling behavior, which is to marshal interfaces when an agile reference to the interface is obtained.</summary>
   </member>
   <member name="AgileReferenceOptions.AGILEREFERENCE_DELAYEDMARSHAL">
-    <summary>
-      <para>Marshaling happens on demand.  Use this option only in situations where it's known that an object is only resolved from the same apartment in which it was registered.</para>
-    </summary>
+    <summary>Marshaling happens on demand. Use this option only in situations where it's very likely that an object is resolved only from the same apartment in which it was registered.</summary>
   </member>
 </doc>

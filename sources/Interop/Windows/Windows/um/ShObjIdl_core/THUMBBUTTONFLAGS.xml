@@ -3,40 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="THUMBBUTTONFLAGS">
-    <summary>
-      <para>Used by <see cref="THUMBBUTTON" /> to control specific states and behaviors of the button.</para>
-    </summary>
-    <seealso cref="THUMBBUTTON" />
-    <seealso cref="THUMBBUTTONMASK" />
+    <summary>Used by <see cref="THUMBBUTTON" /> to control specific states and behaviors of the button.</summary>
   </member>
   <member name="THUMBBUTTONFLAGS.THBF_ENABLED">
-    <summary>
-      <para>The button is active and available to the user.</para>
-    </summary>
+    <summary>The button is active and available to the user.</summary>
   </member>
   <member name="THUMBBUTTONFLAGS.THBF_DISABLED">
-    <summary>
-      <para>The button is disabled. It is present, but has a visual state that indicates that it will not respond to user action.</para>
-    </summary>
+    <summary>The button is disabled. It is present, but has a visual state that indicates that it will not respond to user action.</summary>
   </member>
   <member name="THUMBBUTTONFLAGS.THBF_DISMISSONCLICK">
-    <summary>
-      <para>When the button is clicked, the taskbar button's flyout closes immediately.</para>
-    </summary>
+    <summary>When the button is clicked, the taskbar button's flyout closes immediately.</summary>
   </member>
   <member name="THUMBBUTTONFLAGS.THBF_NOBACKGROUND">
-    <summary>
-      <para>Do not draw a button border, use only the image.</para>
-    </summary>
+    <summary>Do not draw a button border, use only the image.</summary>
   </member>
   <member name="THUMBBUTTONFLAGS.THBF_HIDDEN">
-    <summary>
-      <para>The button is not shown to the user.</para>
-    </summary>
+    <summary>The button is not shown to the user.</summary>
   </member>
   <member name="THUMBBUTTONFLAGS.THBF_NONINTERACTIVE">
-    <summary>
-      <para>The button is enabled but not interactive; no pressed button state is drawn. This value is intended for instances where the button is used in a notification.</para>
-    </summary>
+    <summary>The button is enabled but not interactive; no pressed button state is drawn. This value is intended for instances where the button is used in a notification.</summary>
   </member>
 </doc>

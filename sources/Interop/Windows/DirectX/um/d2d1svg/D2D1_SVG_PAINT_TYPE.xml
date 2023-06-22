@@ -3,46 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_PAINT_TYPE">
-    <summary>
-      <para>Specifies the paint type for an SVG fill or stroke.</para>
-    </summary>
+    <summary>Specifies the paint type for an SVG fill or stroke.</summary>
   </member>
   <member name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_NONE">
-    <summary>
-      <para>The fill or stroke is not rendered.</para>
-    </summary>
+    <summary>The fill or stroke is not rendered.</summary>
   </member>
   <member name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_COLOR">
-    <summary>
-      <para>A solid color is rendered.</para>
-    </summary>
+    <summary>A solid color is rendered.</summary>
   </member>
   <member name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_CURRENT_COLOR">
-    <summary>
-      <para>The current color is rendered.</para>
-    </summary>
+    <summary>The current color is rendered.</summary>
   </member>
   <member name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_URI">
-    <summary>
-      <para>A paint server, defined by another element in the SVG document, is used.</para>
-    </summary>
+    <summary>A paint server, defined by another element in the SVG document, is used.</summary>
   </member>
   <member name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_URI_NONE">
-    <summary>
-      <para>A paint server, defined by another element in the SVG document, is used. If the paint server reference is invalid, fall back to D2D1_SVG_PAINT_TYPE_NONE.</para>
-    </summary>
+    <summary>A paint server, defined by another element in the SVG document, is used. If the paint server reference is invalid, fall back to D2D1_SVG_PAINT_TYPE_NONE.</summary>
   </member>
   <member name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_URI_COLOR">
-    <summary>
-      <para>A paint server, defined by another element in the SVG document, is used. If the paint server reference is invalid, fall back to D2D1_SVG_PAINT_TYPE_COLOR.</para>
-    </summary>
+    <summary>A paint server, defined by another element in the SVG document, is used. If the paint server reference is invalid, fall back to D2D1_SVG_PAINT_TYPE_COLOR.</summary>
   </member>
   <member name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_URI_CURRENT_COLOR">
-    <summary>
-      <para>A paint server, defined by another element in the SVG document, is used. If the paint server reference is invalid, fall back to D2D1_SVG_PAINT_TYPE_CURRENT_COLOR.</para>
-    </summary>
+    <summary>A paint server, defined by another element in the SVG document, is used. If the paint server reference is invalid, fall back to D2D1_SVG_PAINT_TYPE_CURRENT_COLOR.</summary>
   </member>
-  <member name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_FORCE_DWORD"></member>
 </doc>

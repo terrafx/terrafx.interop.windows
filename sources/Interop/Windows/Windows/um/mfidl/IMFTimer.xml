@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFTimer.CancelTimer">
-    <summary>
-      <para>Cancels a timer that was set using the <see cref="IMFTimer.SetTimer" /> method.</para>
-    </summary>
-    <param name="punkKey">
-      <para>Pointer to the <b>IUnknown</b> interface that was returned in the <i>ppunkKey</i> parameter of the <see cref="SetTimer" /> method.</para>
-    </param>
+    <summary>Cancels a timer that was set using the <see cref="IMFTimer.SetTimer" /> method.</summary>
+    <param name="punkKey">Pointer to the <b>IUnknown</b> interface that was returned in the <i>ppunkKey</i> parameter of the <see cref="SetTimer" /> method.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,42 +12,28 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Because the timer is dispatched asynchronously, the application's timer callback might get invoked even if this method succeeds.</para>
-    </remarks>
-    <seealso cref="IMFTimer" />
   </member>
   <member name="IMFTimer.SetTimer">
-    <summary>
-      <para>Sets a timer that invokes a callback at the specified time.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Bitwise OR of zero or more flags from the <see cref="MFTIMER_FLAGS" /> enumeration.</para>
-    </param>
-    <param name="llClockTime">
-      <para>The time at which the timer should fire, in units of the clock's frequency. The time is either absolute or relative to the current time, depending on the value of <i>dwFlags</i>.</para>
-    </param>
-    <param name="pCallback">
-      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface. The callback's <see cref="Invoke" /> method is called at the time specified in the <i>llClockTime</i> parameter.</para>
-    </param>
-    <param name="punkState">
-      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
-    </param>
-    <param name="ppunkKey">
-      <para>Receives a pointer to the <b>IUnknown</b> interface of a cancellation object. The caller must release the interface. To cancel the timer, pass this pointer to the <see cref="IMFTimer.CancelTimer" /> method. This parameter can be <b>NULL</b>.</para>
-    </param>
+    <summary>Sets a timer that invokes a callback at the specified time.</summary>
+    <param name="dwFlags">Bitwise OR of zero or more flags from the <see cref="MFTIMER_FLAGS" /> enumeration.</param>
+    <param name="llClockTime">The time at which the timer should fire, in units of the clock's frequency. The time is either absolute or relative to the current time, depending on the value of <i>dwFlags</i>.</param>
+    <param name="pCallback">Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface. The callback's <see cref="Invoke" /> method is called at the time specified in the <i>llClockTime</i> parameter.</param>
+    <param name="punkState">Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</param>
+    <param name="ppunkKey">Receives a pointer to the <b>IUnknown</b> interface of a cancellation object. The caller must release the interface. To cancel the timer, pass this pointer to the <see cref="IMFTimer.CancelTimer" /> method. This parameter can be <b>NULL</b>.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -59,51 +41,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SHUTDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The clock was shut down.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_SHUTDOWN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_S_CLOCK_STOPPED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The clock was shut down.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_S_CLOCK_STOPPED</b>
-            </para>
-          </description>
-          <description>
-            <para>The method succeeded, but the clock is stopped.</para>
-          </description>
-        </item>
+          <description>The method succeeded, but the clock is stopped.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the clock is stopped, the method returns MF_S_CLOCK_STOPPED. The callback will not be invoked until the clock is started.</para>
-    </remarks>
-    <seealso cref="IMFTimer" />
   </member>
   <member name="IMFTimer">
-    <summary>
-      <para>Provides a timer that invokes a callback at a specified time.</para>
-    </summary>
-    <remarks>
-      <para>The presentation clock exposes this interface. To get a pointer to the interface, call <b>QueryInterface</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
+    <summary>Provides a timer that invokes a callback at a specified time.</summary>
   </member>
 </doc>

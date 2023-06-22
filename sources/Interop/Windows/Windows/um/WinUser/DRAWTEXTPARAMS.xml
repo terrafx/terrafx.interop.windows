@@ -3,36 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DRAWTEXTPARAMS">
-    <summary>
-      <para>The <b>DRAWTEXTPARAMS</b> structure contains extended formatting options for the <see cref="DrawTextEx" /> function.</para>
-    </summary>
-    <seealso cref="DrawTextEx" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
+    <summary>The <b>DRAWTEXTPARAMS</b> structure contains extended formatting options for the <see cref="DrawTextEx" /> function.</summary>
   </member>
   <member name="DRAWTEXTPARAMS.cbSize">
-    <summary>
-      <para>The structure size, in bytes.</para>
-    </summary>
+    <summary>The structure size, in bytes.</summary>
   </member>
   <member name="DRAWTEXTPARAMS.iTabLength">
-    <summary>
-      <para>The size of each tab stop, in units equal to the average character width.</para>
-    </summary>
+    <summary>The size of each tab stop, in units equal to the average character width.</summary>
   </member>
   <member name="DRAWTEXTPARAMS.iLeftMargin">
-    <summary>
-      <para>The left margin, in units equal to the average character width.</para>
-    </summary>
+    <summary>The left margin, in units equal to the average character width.</summary>
   </member>
   <member name="DRAWTEXTPARAMS.iRightMargin">
-    <summary>
-      <para>The right margin, in units equal to the average character width.</para>
-    </summary>
+    <summary>The right margin, in units equal to the average character width.</summary>
   </member>
   <member name="DRAWTEXTPARAMS.uiLengthDrawn">
-    <summary>
-      <para>Receives the number of characters processed by <see cref="DrawTextEx" />, including white-space characters. The number can be the <a href="https://docs.microsoft.com//windows/desktop/gdi/specifying-length-of-text-output-string">length of the string</a> or the index of the first line that falls below the drawing area. Note that <b>DrawTextEx</b> always processes the entire string if the DT_NOCLIP formatting flag is specified.</para>
-    </summary>
+    <summary>Receives the number of characters processed by <see cref="DrawTextEx" />, including white-space characters. The number can be the <a href="https://docs.microsoft.com//windows/desktop/gdi/specifying-length-of-text-output-string">length of the string</a> or the index of the first line that falls below the drawing area. Note that <b>DrawTextEx</b> always processes the entire string if the DT_NOCLIP formatting flag is specified.</summary>
   </member>
 </doc>

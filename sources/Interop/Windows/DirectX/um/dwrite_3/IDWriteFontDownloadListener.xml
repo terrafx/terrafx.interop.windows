@@ -3,31 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontDownloadListener.DownloadCompleted">
-    <summary>
-      <para>The DownloadCompleted method is called back on an arbitrary thread when a
-download operation ends.</para>
-    </summary>
-    <param name="downloadQueue">
-      <para>Type: <b><see cref="IDWriteFontDownloadQueue" />*</b></para>
-      <para>Pointer to the download queue interface on which
-the BeginDownload method was called.</para>
-    </param>
-    <param name="context">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>Optional context object that was passed to BeginDownload.
-AddRef is called on the context object by BeginDownload and Release is called
-after the DownloadCompleted method returns.</para>
-    </param>
-    <param name="downloadResult">
-      <para>Type: <b>HRESULT</b></para>
-      <para>Result of the download operation.</para>
-    </param>
-    <seealso cref="IDWriteFontDownloadListener" />
+    <summary>The DownloadCompleted method is called back on an arbitrary thread when a<br />download operation ends.</summary>
+    <param name="downloadQueue">Pointer to the download queue interface on which<br />the BeginDownload method was called.</param>
+    <param name="context">Optional context object that was passed to BeginDownload.<br />AddRef is called on the context object by BeginDownload and Release is called<br />after the DownloadCompleted method returns.</param>
+    <param name="downloadResult">Result of the download operation.</param>
   </member>
   <member name="IDWriteFontDownloadListener">
-    <summary>
-      <para>Application-defined callback interface that receives notifications from the font  download queue (<see cref="IDWriteFontDownloadQueue" /></para>
-      <para>interface). Callbacks will occur on the downloading thread, and objects must be prepared to handle calls on their methods from other threads at any time.</para>
-    </summary>
+    <summary>Application-defined callback interface that receives notifications from the font download queue (<see cref="IDWriteFontDownloadQueue" />interface). Callbacks will occur on the downloading thread, and objects must be prepared to handle calls on their methods from other threads at any time.</summary>
   </member>
 </doc>

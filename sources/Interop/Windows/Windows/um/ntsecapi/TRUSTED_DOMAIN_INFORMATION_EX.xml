@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRUSTED_DOMAIN_INFORMATION_EX">
+    <summary>The <b>TRUSTED_DOMAIN_INFORMATION_EX</b> structure is used to retrieve extended information about a trusted domain. The<see cref="LsaQueryTrustedDomainInfo" /> function uses this structure when its <i>InformationClass</i> parameter is set to TrustedDomainInformationEx.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_INFORMATION_EX.Name">
+    <summary>An<see cref="LSA_UNICODE_STRING" /> structure that contains the name of the trusted domain. This is the DNS domain name. For non-Microsoft trusted domains, this is the identifying name of the domain.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_INFORMATION_EX.FlatName">
+    <summary>An <see cref="LSA_UNICODE_STRING" /> structure that contains the flat name of the trusted domain. For non-Microsoft trusted domains, this is the identifying name of the domain or it is <b>NULL</b>.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_INFORMATION_EX.Sid">
+    <summary>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) of the trusted domain. For non-Microsoft trusted domains, this member can be <b>NULL</b>.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_INFORMATION_EX.TrustDirection">
+    <summary>
+      <para>A value that indicates the direction of the trust. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_DIRECTION_DISABLED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The trust relationship exists, but it has been disabled.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_DIRECTION_INBOUND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The trusted domain trusts the primary domain to perform operations such as name lookups and authentication.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_DIRECTION_OUTBOUND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The primary domain trusts the trusted domain to perform operations such as name lookups and authentication.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_DIRECTION_BIDIRECTIONAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Both domains trust each other.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_INFORMATION_EX.TrustType">
+    <summary>
+      <para>A value that indicates the type of the trust relationship. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_TYPE_DOWNLEVEL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The domain controller of the trusted domain is a computer running an operating system earlier than Windows 2000.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_TYPE_UPLEVEL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The domain controller of the Microsoft trusted domain is a computer running Windows 2000 or later.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_TYPE_MIT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The trusted domain is an MIT Kerberos realm.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_TYPE_DCE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The trusted domain is a DCE realm.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0x5 - 0x000FFFFF</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved for future use.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0x00100000 to 0xFFF00000</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Provider-specific trust levels.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_INFORMATION_EX.TrustAttributes">
+    <summary>
+      <para>A value that indicates the attributes of a trust relationship. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_ATTRIBUTE_NON_TRANSITIVE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disallow transitivity.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_ATTRIBUTE_UPLEVEL_ONLY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The trust link is not valid for client operating systems earlier than Windows 2000.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_ATTRIBUTE_FILTER_SIDS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Quarantine domains.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_ATTRIBUTE_FOREST_TRANSITIVE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The trust link may contain forest trust information.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_ATTRIBUTE_CROSS_ORGANIZATION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>This trust is to a domain/forest that is not part of this enterprise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_ATTRIBUTE_TREAT_AS_EXTERNAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Trust is treated as external for trust boundary purposes.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_ATTRIBUTE_WITHIN_FOREST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description> Trust is internal to this forest.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+</doc>

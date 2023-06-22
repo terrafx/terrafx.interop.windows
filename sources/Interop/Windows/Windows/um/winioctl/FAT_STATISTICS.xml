@@ -3,55 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FAT_STATISTICS">
-    <summary>
-      <para>Contains statistical information from the FAT file system.</para>
-    </summary>
-    <seealso cref="EXFAT_STATISTICS" />
-    <seealso cref="FILESYSTEM_STATISTICS" />
+    <summary>Contains statistical information from the FAT file system.</summary>
   </member>
   <member name="FAT_STATISTICS.CreateHits">
-    <summary>
-      <para>The number of create operations.</para>
-    </summary>
+    <summary>The number of create operations.</summary>
   </member>
   <member name="FAT_STATISTICS.SuccessfulCreates">
-    <summary>
-      <para>The number of successful create operations.</para>
-    </summary>
+    <summary>The number of successful create operations.</summary>
   </member>
   <member name="FAT_STATISTICS.FailedCreates">
-    <summary>
-      <para>The number of failed create operations.</para>
-    </summary>
+    <summary>The number of failed create operations.</summary>
   </member>
   <member name="FAT_STATISTICS.NonCachedReads">
-    <summary>
-      <para>The number of read operations that were not cached.</para>
-    </summary>
+    <summary>The number of read operations that were not cached.</summary>
   </member>
   <member name="FAT_STATISTICS.NonCachedReadBytes">
-    <summary>
-      <para>The number of bytes read from a file that were not cached.</para>
-    </summary>
+    <summary>The number of bytes read from a file that were not cached.</summary>
   </member>
   <member name="FAT_STATISTICS.NonCachedWrites">
-    <summary>
-      <para>The number of write operations that were not cached.</para>
-    </summary>
+    <summary>The number of write operations that were not cached.</summary>
   </member>
   <member name="FAT_STATISTICS.NonCachedWriteBytes">
-    <summary>
-      <para>The number of bytes written to a file that were not cached.</para>
-    </summary>
+    <summary>The number of bytes written to a file that were not cached.</summary>
   </member>
   <member name="FAT_STATISTICS.NonCachedDiskReads">
-    <summary>
-      <para>The number of read operations that were not cached. This value includes sub-read operations.</para>
-    </summary>
+    <summary>The number of read operations that were not cached. This value includes sub-read operations.</summary>
   </member>
   <member name="FAT_STATISTICS.NonCachedDiskWrites">
-    <summary>
-      <para>The number of write operations that were not cached. This value includes sub-write operations.</para>
-    </summary>
+    <summary>The number of write operations that were not cached. This value includes sub-write operations.</summary>
   </member>
 </doc>

@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxPackageWriter2.Close">
-    <summary>
-      <para>Closes the package writer object's output stream.</para>
-    </summary>
-    <param name="manifest">
-      <para>The stream that provides the contents of the manifest for the package. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</para>
-    </param>
-    <param name="contentGroupMap">
-      <para>The stream that provides the contents of the content group map for the package.</para>
-    </param>
+    <summary>Closes the package writer object's output stream.</summary>
+    <param name="manifest">The stream that provides the contents of the manifest for the package. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</param>
+    <param name="contentGroupMap">The stream that provides the contents of the content group map for the package.</param>
     <returns>
       <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
       <list type="table">
@@ -19,33 +13,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOT_VALID_STATE </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOT_VALID_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The writer is closed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The writer is closed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPX_E_INVALID_MANIFEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>APPX_E_INVALID_MANIFEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The input stream contains a manifest that is not valid.</para>
-          </description>
-        </item>
+          <description>The input stream contains a manifest that is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAppxPackageWriter2" />
   </member>
   <member name="IAppxPackageWriter2">
-    <summary>
-      <para>Provides a write-only object model for app packages.</para>
-    </summary>
+    <summary>Provides a write-only object model for app packages.</summary>
   </member>
 </doc>

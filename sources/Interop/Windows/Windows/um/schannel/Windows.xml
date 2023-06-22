@@ -7,146 +7,62 @@
       <para>Removes the specified string from the Schannel cache.</para>
       <para>This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Schannel.dll.</para>
     </summary>
-    <param name="pszTargetName">
-      <para>A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</para>
-    </param>
-    <param name="dwFlags">
-      <para>This parameter is not used.</para>
-    </param>
-    <returns>
-      <para>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</para>
-    </returns>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The schannel.h header defines SslEmptyCache as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <param name="pszTargetName">A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</param>
+    <param name="dwFlags">This parameter is not used.</param>
+    <returns>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</returns>
   </member>
   <member name="Windows.SslEmptyCacheA">
     <summary>
       <para>Removes the specified string from the Schannel cache.</para>
       <para>This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Schannel.dll.</para>
     </summary>
-    <param name="pszTargetName">
-      <para>A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</para>
-    </param>
-    <param name="dwFlags">
-      <para>This parameter is not used.</para>
-    </param>
-    <returns>
-      <para>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</para>
-    </returns>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The schannel.h header defines SslEmptyCache as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <param name="pszTargetName">A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</param>
+    <param name="dwFlags">This parameter is not used.</param>
+    <returns>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</returns>
   </member>
   <member name="Windows.SslEmptyCacheW">
     <summary>
       <para>Removes the specified string from the Schannel cache.</para>
       <para>This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Schannel.dll.</para>
     </summary>
-    <param name="pszTargetName">
-      <para>A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</para>
-    </param>
-    <param name="dwFlags">
-      <para>This parameter is not used.</para>
-    </param>
-    <returns>
-      <para>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</para>
-    </returns>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The schannel.h header defines SslEmptyCache as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <param name="pszTargetName">A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</param>
+    <param name="dwFlags">This parameter is not used.</param>
+    <returns>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</returns>
   </member>
   <member name="Windows.SslEmptyCache">
     <summary>
       <para>Removes the specified string from the Schannel cache.</para>
       <para>This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Schannel.dll.</para>
     </summary>
-    <param name="pszTargetName">
-      <para>A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</para>
-    </param>
-    <param name="dwFlags">
-      <para>This parameter is not used.</para>
-    </param>
-    <returns>
-      <para>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</para>
-    </returns>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The schannel.h header defines SslEmptyCache as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <param name="pszTargetName">A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</param>
+    <param name="dwFlags">This parameter is not used.</param>
+    <returns>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</returns>
   </member>
   <member name="Windows.SslEmptyCacheA">
     <summary>
       <para>Removes the specified string from the Schannel cache.</para>
       <para>This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Schannel.dll.</para>
     </summary>
-    <param name="pszTargetName">
-      <para>A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</para>
-    </param>
-    <param name="dwFlags">
-      <para>This parameter is not used.</para>
-    </param>
-    <returns>
-      <para>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</para>
-    </returns>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The schannel.h header defines SslEmptyCache as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <param name="pszTargetName">A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</param>
+    <param name="dwFlags">This parameter is not used.</param>
+    <returns>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</returns>
   </member>
   <member name="Windows.SslEmptyCacheW">
     <summary>
       <para>Removes the specified string from the Schannel cache.</para>
       <para>This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Schannel.dll.</para>
     </summary>
-    <param name="pszTargetName">
-      <para>A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</para>
-    </param>
-    <param name="dwFlags">
-      <para>This parameter is not used.</para>
-    </param>
-    <returns>
-      <para>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</para>
-    </returns>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The schannel.h header defines SslEmptyCache as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <param name="pszTargetName">A pointer to a null-terminated string that specifies the entry to remove from the cache. If the value of this parameter is <b>NULL</b>, all entries are removed from the cache.</param>
+    <param name="dwFlags">This parameter is not used.</param>
+    <returns>Returns nonzero if the specified entries are removed from the Schannel cache or zero otherwise.</returns>
   </member>
   <member name="Windows.SslGetServerIdentity">
-    <summary>
-      <para>The <b>SslGetServerIdentity</b> function gets the identity of the server. This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Schannel.dll.</para>
-    </summary>
-    <param name="ClientHello">
-      <para>The message from the client.</para>
-    </param>
-    <param name="ClientHelloSize">
-      <para>The size of the client message.</para>
-    </param>
-    <param name="ServerIdentity">
-      <para>The pointer inside the message where the server name starts.</para>
-    </param>
-    <param name="ServerIdentitySize">
-      <para>The length of the server name.</para>
-    </param>
-    <param name="Flags">
-      <para>This parameter is reserved and must be zero.</para>
-    </param>
+    <summary>The <b>SslGetServerIdentity</b> function gets the identity of the server. This function has no associated import library. You must use the <see cref="LoadLibrary" /> and <see cref="GetProcAddress" /> functions to dynamically link to Schannel.dll.</summary>
+    <param name="ClientHello">The message from the client.</param>
+    <param name="ClientHelloSize">The size of the client message.</param>
+    <param name="ServerIdentity">The pointer inside the message where the server name starts.</param>
+    <param name="ServerIdentitySize">The length of the server name.</param>
+    <param name="Flags">This parameter is reserved and must be zero.</param>
     <returns>
       <para>The status of the call to the function.</para>
       <list type="table">
@@ -154,36 +70,42 @@ The schannel.h header defines SslEmptyCache as an alias which automatically sele
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SEC_E_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SEC_E_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The function was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The function was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SEC_E_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One of the parameters <i>ClientHello</i>, <i>ServerIdentity</i>, or <i>ServerIdentitySize</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>SEC_E_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SEC_E_INCOMPLETE_MESSAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One of the parameters <i>ClientHello</i>, <i>ServerIdentity</i>, or <i>ServerIdentitySize</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>SEC_E_INCOMPLETE_MESSAGE</b>
-            </para>
-          </description>
-          <description>
-            <para>The  <i>ServerIdentitySize</i> parameter is smaller than the <i>ClientHelloSize</i> parameter.</para>
-          </description>
-        </item>
+          <description>The <i>ServerIdentitySize</i> parameter is smaller than the <i>ClientHelloSize</i> parameter.</description>
+        </listheader>
       </list>
     </returns>
   </member>

@@ -3,51 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IProfferService.ProfferService">
-    <summary>
-      <para>Makes a service available to other objects on the same host.</para>
-    </summary>
-    <param name="guidService">
-      <para>Type: <b>REFGUID</b></para>
-      <para>A value of type <b>GUID</b> that specifies the service being offered.</para>
-    </param>
-    <param name="psp">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678965(v=vs.85)">IServiceProvider</a>*</b></para>
-      <para>A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678965(v=vs.85)">IServiceProvider</a> interface.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to a <b>DWORD</b> that receives an implementation-defined value used for identification purposes. The calling application must keep track of this value for possible use in <see cref="IProfferService.RevokeService" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IProfferService" />
-    <seealso cref="IProfferService.RevokeService" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678965(v=vs.85)">IServiceProvider</seealso>
+    <summary>Makes a service available to other objects on the same host.</summary>
+    <param name="guidService">A value of type <b>GUID</b> that specifies the service being offered.</param>
+    <param name="psp">A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678965(v=vs.85)">IServiceProvider</a> interface.</param>
+    <param name="pdwCookie">A pointer to a <b>DWORD</b> that receives an implementation-defined value used for identification purposes. The calling application must keep track of this value for possible use in <see cref="IProfferService.RevokeService" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IProfferService.RevokeService">
-    <summary>
-      <para>Makes a service unavailable that had previously been available to other objects through <see cref="IProfferService.ProfferService" />.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Type: <b>DWORD</b></para>
-      <para>A value of type <b>DWORD</b> that specifies an implementation-defined value used for identification purposes. The calling application receives this value from <see cref="IProfferService.ProfferService" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IProfferService" />
-    <seealso cref="IProfferService.ProfferService" />
+    <summary>Makes a service unavailable that had previously been available to other objects through <see cref="IProfferService.ProfferService" />.</summary>
+    <param name="dwCookie">A value of type <b>DWORD</b> that specifies an implementation-defined value used for identification purposes. The calling application receives this value from <see cref="IProfferService.ProfferService" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IProfferService">
-    <summary>
-      <para>Exposes a general mechanism for objects to offer services to other objects on the same host.</para>
-    </summary>
-    <remarks>
-      <para>Objects that expose a service first call <see cref="QueryInterface" /> on their host for this interface, then execute <see cref="IProfferService.ProfferService" />.</para>
-    </remarks>
-    <seealso cref="IObjectWithSite" />
+    <summary>Exposes a general mechanism for objects to offer services to other objects on the same host.</summary>
   </member>
 </doc>

@@ -4,31 +4,14 @@
 <doc>
   <member name="IWICProgressCallback.Notify">
     <summary>
-      <para>
-        <b>Notify</b> method is documented only for compliance; its use is not recommended and may be altered or unavailable in the future. Instead, and use <see cref="RegisterProgressNotification" />.</para>
-    </summary>
-    <param name="uFrameNum">
-      <para>Type: <b>ULONG</b></para>
-      <para>The current frame number.</para>
-    </param>
-    <param name="operation">
-      <para>Type: <b><see cref="WICProgressOperation" /></b></para>
-      <para>The operation on which progress is being reported.</para>
-    </param>
-    <param name="dblProgress">
-      <para>Type: <b>double</b></para>
-      <para>The progress value ranging from is 0.0 to 1.0. 0.0 indicates the beginning of the operation. 1.0 indicates the end of the operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IWICProgressCallback" />
+      <b>Notify</b> method is documented only for compliance; its use is not recommended and may be altered or unavailable in the future. Instead, and use <see cref="RegisterProgressNotification" />.</summary>
+    <param name="uFrameNum">The current frame number.</param>
+    <param name="operation">The operation on which progress is being reported.</param>
+    <param name="dblProgress">The progress value ranging from is 0.0 to 1.0. 0.0 indicates the beginning of the operation. 1.0 indicates the end of the operation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICProgressCallback">
     <summary>
-      <para>
-        <b>IWICProgressCallback</b> interface is documented only for compliance; its use is not recommended and may be altered or unavailable in the future. Instead, and use <see cref="RegisterProgressNotification" />.</para>
-    </summary>
+      <b>IWICProgressCallback</b> interface is documented only for compliance; its use is not recommended and may be altered or unavailable in the future. Instead, and use <see cref="RegisterProgressNotification" />.</summary>
   </member>
 </doc>

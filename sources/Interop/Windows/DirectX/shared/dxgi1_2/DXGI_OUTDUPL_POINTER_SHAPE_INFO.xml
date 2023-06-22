@@ -3,39 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_OUTDUPL_POINTER_SHAPE_INFO">
-    <summary>
-      <para>The <b>DXGI_OUTDUPL_POINTER_SHAPE_INFO</b> structure describes information about the cursor shape.</para>
-    </summary>
-    <remarks>
-      <para>An application draws the cursor shape with the top-left-hand corner drawn at the position that the <b>Position</b> member of the  <see cref="DXGI_OUTDUPL_POINTER_POSITION" /> structure specifies; the application does not use the hot spot to draw the cursor shape.</para>
-      <para>An application calls the  <see cref="IDXGIOutputDuplication.GetFramePointerShape" /> method to retrieve cursor shape information in a  <b>DXGI_OUTDUPL_POINTER_SHAPE_INFO</b> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
-    <seealso cref="IDXGIOutputDuplication.GetFramePointerShape" />
+    <summary>The <b>DXGI_OUTDUPL_POINTER_SHAPE_INFO</b> structure describes information about the cursor shape.</summary>
   </member>
   <member name="DXGI_OUTDUPL_POINTER_SHAPE_INFO.Type">
-    <summary>
-      <para>A <see cref="DXGI_OUTDUPL_POINTER_SHAPE_TYPE" />-typed value that specifies the type of cursor shape.</para>
-    </summary>
+    <summary>A <see cref="DXGI_OUTDUPL_POINTER_SHAPE_TYPE" />-typed value that specifies the type of cursor shape.</summary>
   </member>
   <member name="DXGI_OUTDUPL_POINTER_SHAPE_INFO.Width">
-    <summary>
-      <para>The width in pixels of the mouse cursor.</para>
-    </summary>
+    <summary>The width in pixels of the mouse cursor.</summary>
   </member>
   <member name="DXGI_OUTDUPL_POINTER_SHAPE_INFO.Height">
-    <summary>
-      <para>The height in scan lines of the mouse cursor.</para>
-    </summary>
+    <summary>The height in scan lines of the mouse cursor.</summary>
   </member>
   <member name="DXGI_OUTDUPL_POINTER_SHAPE_INFO.Pitch">
-    <summary>
-      <para>The width in bytes of the mouse cursor.</para>
-    </summary>
+    <summary>The width in bytes of the mouse cursor.</summary>
   </member>
   <member name="DXGI_OUTDUPL_POINTER_SHAPE_INFO.HotSpot">
-    <summary>
-      <para>The position of the cursor's hot spot relative to its upper-left pixel. An application does not use the hot spot when it determines where to draw the cursor shape.</para>
-    </summary>
+    <summary>The position of the cursor's hot spot relative to its upper-left pixel. An application does not use the hot spot when it determines where to draw the cursor shape.</summary>
   </member>
 </doc>

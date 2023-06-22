@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_SCRIPT_SHAPES">
-    <summary>
-      <para>Indicates additional shaping requirements for text.</para>
-    </summary>
+    <summary>Indicates additional shaping requirements for text.</summary>
   </member>
   <member name="DWRITE_SCRIPT_SHAPES.DWRITE_SCRIPT_SHAPES_DEFAULT">
-    <summary>
-      <para>Indicates that there is no additional shaping requirements for text. Text is shaped with the writing system default behavior.</para>
-    </summary>
+    <summary>Indicates that there is no additional shaping requirements for text. Text is shaped with the writing system default behavior.</summary>
   </member>
   <member name="DWRITE_SCRIPT_SHAPES.DWRITE_SCRIPT_SHAPES_NO_VISUAL">
-    <summary>
-      <para>Indicates that text should leave no visible control or format control characters.</para>
-    </summary>
+    <summary>Indicates that text should leave no visible control or format control characters.</summary>
   </member>
 </doc>

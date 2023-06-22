@@ -3,47 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COAUTHINFO">
-    <summary>
-      <para>Contains the authentication settings used while making a remote activation request from the client computer to the server computer.</para>
-    </summary>
-    <remarks>
-      <para>If <b>pAuthInfo</b> in <see cref="COSERVERINFO" /> is set to <b>NULL</b>, Snego will be used to negotiate an authentication service that will work between the client and server. However, a non-<b>NULL</b><b>COAUTHINFO</b> structure can be specified for <b>pAuthInfo</b> to meet any one of the following needs:</para>
-      <list type="bullet">
-        <item>
-          <description>To specify a different client identity for computer remote activations. The specified identity will be used for the launch permission check on the server rather than the real client identity.
-</description>
-        </item>
-        <item>
-          <description>To specify that Kerberos, rather than NTLMSSP, is used for machine remote activation. A nondefault client identity may or may not be specified.
-</description>
-        </item>
-        <item>
-          <description>To request unsecure activation.
-</description>
-        </item>
-        <item>
-          <description>To specify a proprietary authentication service.</description>
-        </item>
-      </list>
-      <para>Specifying a <b>COAUTHINFO</b> structure allows DCOM activations to work correctly with security providers other than NTLMSSP. You can also specify additional security information used during remote activations for interoperability with alternate implementations of DCOM.</para>
-      <para>If you set <b>dwAuthzSvc</b>, <b>pwszServerPrincName</b>, <b>dwImpersonationLevel</b>, or <b>dwCapabilities</b> to incorrect values and call either <see cref="CoGetClassObject" /> or <see cref="CoCreateInstanceEx" />, these functions do not return E_INVALIDARG or a similar error. Default values are used instead of the incorrect values.</para>
-    </remarks>
-    <seealso cref="COSERVERINFO" />
+    <summary>Contains the authentication settings used while making a remote activation request from the client computer to the server computer.</summary>
   </member>
   <member name="COAUTHINFO.dwAuthnSvc">
-    <summary>
-      <para>The authentication service to be used. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/com/com-authentication-service-constants">Authentication Service Constants</a>. Use RPC_C_AUTHN_NONE if no authentication is required. RPC_C_AUTHN_WINNT is the default and RPC_C_AUTHN_GSS_KERBEROS is also supported.</para>
-    </summary>
+    <summary>The authentication service to be used. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/com/com-authentication-service-constants">Authentication Service Constants</a>. Use RPC_C_AUTHN_NONE if no authentication is required. RPC_C_AUTHN_WINNT is the default and RPC_C_AUTHN_GSS_KERBEROS is also supported.</summary>
   </member>
   <member name="COAUTHINFO.dwAuthzSvc">
-    <summary>
-      <para>The authorization service to be used. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/com/com-authorization-constants">Authorization Constants</a>. To use the NT authentication service, specify RPC_C_AUTHZ_NONE.</para>
-    </summary>
+    <summary>The authorization service to be used. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/com/com-authorization-constants">Authorization Constants</a>. To use the NT authentication service, specify RPC_C_AUTHZ_NONE.</summary>
   </member>
   <member name="COAUTHINFO.pwszServerPrincName">
-    <summary>
-      <para>The server principal name to use with the authentication service. If you are using RPC_C_AUTHN_WINNT, the principal name must be <b>NULL</b>.</para>
-    </summary>
+    <summary>The server principal name to use with the authentication service. If you are using RPC_C_AUTHN_WINNT, the principal name must be <b>NULL</b>.</summary>
   </member>
   <member name="COAUTHINFO.dwAuthnLevel">
     <summary>
@@ -52,18 +21,12 @@
     </summary>
   </member>
   <member name="COAUTHINFO.dwImpersonationLevel">
-    <summary>
-      <para>The impersonation level to be used. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/com/com-impersonation-level-constants">Impersonation Level Constants</a>. This value must be RPC_C_IMP_LEVEL_IMPERSONATE or above.</para>
-    </summary>
+    <summary>The impersonation level to be used. For a list of values, see <a href="https://docs.microsoft.com//windows/desktop/com/com-impersonation-level-constants">Impersonation Level Constants</a>. This value must be RPC_C_IMP_LEVEL_IMPERSONATE or above.</summary>
   </member>
   <member name="COAUTHINFO.pAuthIdentityData">
-    <summary>
-      <para>A pointer to a <see cref="COAUTHIDENTITY" /> structure that establishes a nondefault client identity. If this parameter is <b>NULL</b>, the actual identity of the client is used. Values of structure members are authentication-service specific. This value must be <b>NULL</b> if <b>dwAuthnSvc</b> does not specify either the NTLMSSP or Kerberos network authentication protocol is used as the authorization service.</para>
-    </summary>
+    <summary>A pointer to a <see cref="COAUTHIDENTITY" /> structure that establishes a nondefault client identity. If this parameter is <b>NULL</b>, the actual identity of the client is used. Values of structure members are authentication-service specific. This value must be <b>NULL</b> if <b>dwAuthnSvc</b> does not specify either the NTLMSSP or Kerberos network authentication protocol is used as the authorization service.</summary>
   </member>
   <member name="COAUTHINFO.dwCapabilities">
-    <summary>
-      <para>Indicates additional capabilities of this proxy. Currently, this member must be EOAC_NONE (0x0) or RPC_C_QOS_CAPABILITIES_MUTUAL_AUTH (0x1). Use RPC_C_QOS_CAPABILITIES_MUTUAL_AUTH if Kerberos is required.</para>
-    </summary>
+    <summary>Indicates additional capabilities of this proxy. Currently, this member must be EOAC_NONE (0x0) or RPC_C_QOS_CAPABILITIES_MUTUAL_AUTH (0x1). Use RPC_C_QOS_CAPABILITIES_MUTUAL_AUTH if Kerberos is required.</summary>
   </member>
 </doc>

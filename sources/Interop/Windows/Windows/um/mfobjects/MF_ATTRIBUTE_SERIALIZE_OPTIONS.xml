@@ -3,17 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_ATTRIBUTE_SERIALIZE_OPTIONS">
-    <summary>
-      <para>Defines flags for serializing and deserializing attribute stores.</para>
-    </summary>
-    <seealso cref="IMFAttributes" />
-    <seealso cref="MFDeserializeAttributesFromStream" />
-    <seealso cref="MFSerializeAttributesToStream" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines flags for serializing and deserializing attribute stores.</summary>
   </member>
   <member name="MF_ATTRIBUTE_SERIALIZE_OPTIONS.MF_ATTRIBUTE_SERIALIZE_UNKNOWN_BYREF">
-    <summary>
-      <para>If this flag is set, <b>IUnknown</b> pointers in the attribute store are marshaled to and from the stream. If this flag is absent, <b>IUnknown</b> pointers in the attribute store are not marshaled or serialized.</para>
-    </summary>
+    <summary>If this flag is set, <b>IUnknown</b> pointers in the attribute store are marshaled to and from the stream. If this flag is absent, <b>IUnknown</b> pointers in the attribute store are not marshaled or serialized.</summary>
   </member>
 </doc>

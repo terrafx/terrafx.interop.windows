@@ -3,49 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PACKAGE_INFO">
-    <summary>
-      <para>Represents package identification information that includes the package identifier, full name, and install location.</para>
-    </summary>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-    </remarks>
-    <seealso cref="GetCurrentPackageInfo" />
-    <seealso cref="GetPackageInfo" />
+    <summary>Represents package identification information that includes the package identifier, full name, and install location.</summary>
   </member>
   <member name="PACKAGE_INFO.reserved">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT32</a></b></para>
-      <para>Reserved; do not use.</para>
-    </summary>
+    <summary>Reserved; do not use.</summary>
   </member>
   <member name="PACKAGE_INFO.flags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT32</a></b></para>
-      <para>Properties of the package.</para>
-    </summary>
+    <summary>Properties of the package.</summary>
   </member>
   <member name="PACKAGE_INFO.path">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PWSTR</a></b></para>
-      <para>The location of the package.</para>
-    </summary>
+    <summary>The location of the package.</summary>
   </member>
   <member name="PACKAGE_INFO.packageFullName">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PWSTR</a></b></para>
-      <para>The package full name.</para>
-    </summary>
+    <summary>The package full name.</summary>
   </member>
   <member name="PACKAGE_INFO.packageFamilyName">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PWSTR</a></b></para>
-      <para>The package family name.</para>
-    </summary>
+    <summary>The package family name.</summary>
   </member>
   <member name="PACKAGE_INFO.packageId">
-    <summary>
-      <para>Type: <b><see cref="PACKAGE_ID" /></b></para>
-      <para>The package identifier (ID).</para>
-    </summary>
+    <summary>The package identifier (ID).</summary>
   </member>
 </doc>

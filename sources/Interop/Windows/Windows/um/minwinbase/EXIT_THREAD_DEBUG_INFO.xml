@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXIT_THREAD_DEBUG_INFO">
-    <summary>
-      <para>Contains the exit code for a terminating thread.</para>
-    </summary>
-    <seealso cref="DEBUG_EVENT" />
+    <summary>Contains the exit code for a terminating thread.</summary>
   </member>
   <member name="EXIT_THREAD_DEBUG_INFO.dwExitCode">
-    <summary>
-      <para>The exit code for the thread.</para>
-    </summary>
+    <summary>The exit code for the thread.</summary>
   </member>
 </doc>

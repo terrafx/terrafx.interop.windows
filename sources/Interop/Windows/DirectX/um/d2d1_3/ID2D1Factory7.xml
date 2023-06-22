@@ -3,27 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Factory7.CreateDevice">
-    <summary>
-      <para>Creates a new Direct2D device from the given IDXGIDevice</para>
-    </summary>
-    <param name="dxgiDevice">
-      <para>Type: <b>IDXGIDevice*</b></para>
-      <para>The IDXGIDevice from which to create the Direct2D device.</para>
-    </param>
-    <param name="d2dDevice6">
-      <para>Type: <b>ID2D1Device6**</b></para>
-      <para>The created device.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory7" />
+    <summary>Creates a new Direct2D device from the given IDXGIDevice</summary>
+    <param name="dxgiDevice">The IDXGIDevice from which to create the Direct2D device.</param>
+    <param name="d2dDevice6">The created device.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1Factory7">
-    <summary>
-      <para>Creates Direct2D resources. This interface performs all the same functions as the <see cref="ID2D1Factory6" /> interface,
-plus it enables the creation of <see cref="ID2D1Device6" /> objects.</para>
-    </summary>
+    <summary>Creates Direct2D resources. This interface performs all the same functions as the <see cref="ID2D1Factory6" /> interface, plus it enables the creation of <see cref="ID2D1Device6" /> objects.</summary>
   </member>
 </doc>

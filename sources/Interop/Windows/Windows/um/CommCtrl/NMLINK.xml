@@ -3,25 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMLINK">
-    <summary>
-      <para>The <b>NMLINK</b> Contains notification information. Send this structure with the <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-click-syslink">NM_CLICK</a> or <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-return">NM_RETURN</a> messages.</para>
-    </summary>
-    <seealso cref="LITEM" />
-    <seealso cref="NMHDR" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/nm-click-syslink">NM_CLICK (syslink)</seealso>
+    <summary>The <b>NMLINK</b> Contains notification information. Send this structure with the <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-click-syslink">NM_CLICK</a> or <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-return">NM_RETURN</a> messages.</summary>
   </member>
   <member name="NMLINK.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about the notification.</summary>
   </member>
   <member name="NMLINK.item">
     <summary>
-      <para>Type: <b><see cref="LITEM" /></b></para>
-      <para>
-        <see cref="LITEM" /> structure that contains information about the link item.</para>
-    </summary>
+      <see cref="LITEM" /> structure that contains information about the link item.</summary>
   </member>
 </doc>

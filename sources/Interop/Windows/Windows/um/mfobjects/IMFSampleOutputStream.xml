@@ -3,64 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSampleOutputStream.BeginWriteSample">
-    <summary>
-      <para>Begins an asynchronous request to write a media sample to the stream.</para>
-    </summary>
-    <param name="pSample">
-      <para>A pointer to the <see cref="IMFSample" /> interface of the sample.</para>
-    </param>
-    <param name="pCallback">
-      <para>A pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
-    </param>
-    <param name="punkState">
-      <para>A pointer to the <see cref="IUnknown" /> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When the sample has been written to the stream, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. At that point, the caller should call <see cref="IMFSampleOutputStream.EndWriteSample" /> to complete the asynchronous request.</para>
-    </remarks>
-    <seealso cref="IMFSampleOutputStream" />
+    <summary>Begins an asynchronous request to write a media sample to the stream.</summary>
+    <param name="pSample">A pointer to the <see cref="IMFSample" /> interface of the sample.</param>
+    <param name="pCallback">A pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</param>
+    <param name="punkState">A pointer to the <see cref="IUnknown" /> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSampleOutputStream.EndWriteSample">
-    <summary>
-      <para>Completes an asynchronous request to write a media sample to the stream.</para>
-    </summary>
-    <param name="pResult">
-      <para>A pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call this method when the <see cref="IMFSampleOutputStream.BeginWriteSample" /> method completes asynchronously.</para>
-    </remarks>
-    <seealso cref="IMFSampleOutputStream" />
+    <summary>Completes an asynchronous request to write a media sample to the stream.</summary>
+    <param name="pResult">A pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSampleOutputStream">
-    <summary>
-      <para>Writes media samples to a byte stream.</para>
-    </summary>
-    <remarks>
-      <para>A writable byte stream can optionally implement this interface.</para>
-      <para>This interface enables the caller to send media samples to the byte stream for writing, instead of using the <see cref="IMFByteStream.BeginWrite" /> method to write blobs of untyped data. The byte stream can use the information contained in the media sample to optimize how it writes the data. For example, a byte stream that sends media data over a network can optimize based on the time stamp.</para>
-      <para>To get a pointer to this interface, call <see cref="QueryInterface" /> on the byte stream object.</para>
-      <para>Any implementation of <see cref="IMFByteStream" /> that exposes <b>IMFSampleOutputStream</b> as an interface needs to honor the following requirements:</para>
-      <list type="bullet">
-        <item>
-          <description> All writes from either interface always go to the exact same byte stream object.
-</description>
-        </item>
-        <item>
-          <description>The current position for both <b>IMFSampleOutputStream</b> and <see cref="IMFByteStream" /> shall always be the same. For example, writing to <b>IMFSampleOutputStream</b> will also update the current position of  <b>IMFByteStream</b>.
-</description>
-        </item>
-        <item>
-          <description>Writing a sample using <see cref="BeginWriteSample" /> and <see cref="EndWriteSample" /> shall serialize the sample by writing the data from all the buffers in the sample, in the order in which the buffers are stored in the sample.  (Use <see cref="IMFSample.GetBufferByIndex" /> to get the individual buffers by index value.) The total bytes copied shall be the number of bytes written from all the buffers. </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Writes media samples to a byte stream.</summary>
   </member>
 </doc>

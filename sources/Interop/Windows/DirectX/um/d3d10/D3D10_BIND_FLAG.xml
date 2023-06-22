@@ -3,58 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_BIND_FLAG">
-    <summary>
-      <para>Identifies how to bind a resource to the pipeline.</para>
-    </summary>
-    <remarks>
-      <para>In general, binding flags can be combined using a logical OR (except the constant-buffer flag); however, you should use a single flag to allow the device to optimize the resource usage.</para>
-      <para>This enumeration is used by a:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="Buffer description" /> when creating a buffer.</description>
-        </item>
-        <item>
-          <description>Texture description when creating a texture (see <see cref="D3D10_TEXTURE1D_DESC" /> or <see cref="D3D10_TEXTURE2D_DESC" /> or <see cref="D3D10_TEXTURE3D_DESC" />).</description>
-        </item>
-      </list>
-      <para>A shader-resource buffer is NOT a constant buffer; rather, it is a texture or buffer resource that is bound to a shader, that contains texture or buffer data (it is not limited to a single element type in the buffer). A shader-resource buffer is created with the D3D10_BIND_SHADER_RESOURCE flag and is bound to the pipeline using one of these APIs: <see cref="ID3D10Device.GSSetShaderResources" />, <see cref="ID3D10Device.PSSetShaderResources" />, or <see cref="ID3D10Device.VSSetShaderResources" />. Furthermore, a shader-resource buffer cannot use the <see cref="D3D10_MAP_WRITE_NO_OVERWRITE" /> flag.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-enums">Resource Enumerations</seealso>
+    <summary>Identifies how to bind a resource to the pipeline.</summary>
   </member>
   <member name="D3D10_BIND_FLAG.D3D10_BIND_VERTEX_BUFFER">
-    <summary>
-      <para>Bind a buffer as a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">vertex buffer</a> to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage">input-assembler stage</a>.</para>
-    </summary>
+    <summary>Bind a buffer as a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">vertex buffer</a> to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage">input-assembler stage</a>.</summary>
   </member>
   <member name="D3D10_BIND_FLAG.D3D10_BIND_INDEX_BUFFER">
-    <summary>
-      <para>Bind a buffer as an <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">index buffer</a> to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage">input-assembler stage</a>.</para>
-    </summary>
+    <summary>Bind a buffer as an <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">index buffer</a> to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage">input-assembler stage</a>.</summary>
   </member>
   <member name="D3D10_BIND_FLAG.D3D10_BIND_CONSTANT_BUFFER">
-    <summary>
-      <para>Bind a buffer as a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">constant buffer</a> to a <a href="https://docs.microsoft.com//previous-versions/bb205146(v=vs.85)">shader stage</a>; this flag may NOT be combined with any other bind flag.</para>
-    </summary>
+    <summary>Bind a buffer as a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">constant buffer</a> to a <a href="https://docs.microsoft.com//previous-versions/bb205146(v=vs.85)">shader stage</a>; this flag may NOT be combined with any other bind flag.</summary>
   </member>
   <member name="D3D10_BIND_FLAG.D3D10_BIND_SHADER_RESOURCE">
-    <summary>
-      <para>Bind a buffer or texture to a <a href="https://docs.microsoft.com//previous-versions/bb205146(v=vs.85)">shader stage</a>; this flag cannot be used with the <see cref="D3D10_MAP_WRITE_NO_OVERWRITE" /> flag.</para>
-    </summary>
+    <summary>Bind a buffer or texture to a <a href="https://docs.microsoft.com//previous-versions/bb205146(v=vs.85)">shader stage</a>; this flag cannot be used with the <see cref="D3D10_MAP_WRITE_NO_OVERWRITE" /> flag.</summary>
   </member>
   <member name="D3D10_BIND_FLAG.D3D10_BIND_STREAM_OUTPUT">
-    <summary>
-      <para>Bind an output buffer for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage">stream-output stage</a>.</para>
-    </summary>
+    <summary>Bind an output buffer for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage">stream-output stage</a>.</summary>
   </member>
   <member name="D3D10_BIND_FLAG.D3D10_BIND_RENDER_TARGET">
-    <summary>
-      <para>Bind a texture as a render target for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>.</para>
-    </summary>
+    <summary>Bind a texture as a render target for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>.</summary>
   </member>
   <member name="D3D10_BIND_FLAG.D3D10_BIND_DEPTH_STENCIL">
-    <summary>
-      <para>Bind a texture as a depth-stencil target for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>.</para>
-    </summary>
+    <summary>Bind a texture as a depth-stencil target for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a>.</summary>
   </member>
 </doc>

@@ -3,50 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_ENDPOINT_POLICY_EXTENSION">
-    <summary>
-      <para>This structure is used to specify an endpoint policy extension.</para>
-    </summary>
-    <remarks>
-      <para>This extension can be used to specify a custom assertion or an assertion that is
-supported by this library so that the application can
-retrieve the original XML form of the assertion. If one of the supported assertions
-is specified as an extension, the corresponding constraint should not be specified.
-For example, if http://schemas.xmlsoap.org/ws/2005/07/securitypolicy:TransportBinding
-is specified as an endpoint extension, <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT" /> cannot be specified as a constraint.</para>
-      <para>The following assertions are not allowed as policy extension because they might affect constraint
-matching result if the assertion is handled as assertion.</para>
-      <code>
-&lt;wsa09p:UsingAddressing.../&gt;
-&lt;wsa10p:UsingAddressing.../&gt;
-&lt;binp:BinaryEncoding.../&gt;
-&lt;mtomp:OptimizedMimeSerialization.../&gt;
-</code>
-    </remarks>
+    <summary>This structure is used to specify an endpoint policy extension.</summary>
   </member>
   <member name="WS_ENDPOINT_POLICY_EXTENSION.policyExtension">
-    <summary>
-      <para>The base policy extension that this policy extension derives from.</para>
-    </summary>
+    <summary>The base policy extension that this policy extension derives from.</summary>
   </member>
   <member name="WS_ENDPOINT_POLICY_EXTENSION.assertionName">
-    <summary>
-      <para>Name of the assertion to be retrieved as an extension.</para>
-    </summary>
+    <summary>Name of the assertion to be retrieved as an extension.</summary>
   </member>
   <member name="WS_ENDPOINT_POLICY_EXTENSION.assertionNs">
-    <summary>
-      <para>Namespace of the assertion to be retrieved as an extension.</para>
-    </summary>
+    <summary>Namespace of the assertion to be retrieved as an extension.</summary>
   </member>
   <member name="WS_ENDPOINT_POLICY_EXTENSION.out">
-    <summary>
-      <para>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR, the
-fields of this structure will be filled out as follows:</para>
-    </summary>
+    <summary>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR, the fields of this structure will be filled out as follows:</summary>
   </member>
   <member name="WS_ENDPOINT_POLICY_EXTENSION.out.assertionValue">
-    <summary>
-      <para>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR and if the specified assertion is found in the policy alternative, <b>assertionValue</b> returns the read-only content. Returned buffer should not be modified or freed. If not found, it is set to NULL.</para>
-    </summary>
+    <summary>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR and if the specified assertion is found in the policy alternative, <b>assertionValue</b> returns the read-only content. Returned buffer should not be modified or freed. If not found, it is set to NULL.</summary>
   </member>
 </doc>

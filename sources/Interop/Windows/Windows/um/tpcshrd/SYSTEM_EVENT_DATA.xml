@@ -3,40 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSTEM_EVENT_DATA">
-    <summary>
-      <para>Contains information about a tablet system event.</para>
-    </summary>
-    <seealso cref="IStylusPlugin.SystemEvent Method" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/tablet/itableteventsink-systemevent">ITabletEventSink.SystemEvent Method</seealso>
+    <summary>Contains information about a tablet system event.</summary>
   </member>
   <member name="SYSTEM_EVENT_DATA.bModifier">
-    <summary>
-      <para>Bit values for the modifiers. Possible values include SE_MODIFIER_CTRL (the Control key was pressed), SE_MODIFIER_ALT (the Alt key was pressed), and SE_MODIFIER_SHIFT (the Shift key was pressed).</para>
-    </summary>
+    <summary>Bit values for the modifiers. Possible values include SE_MODIFIER_CTRL (the Control key was pressed), SE_MODIFIER_ALT (the Alt key was pressed), and SE_MODIFIER_SHIFT (the Shift key was pressed).</summary>
   </member>
   <member name="SYSTEM_EVENT_DATA.wKey">
-    <summary>
-      <para>Scan code for the keyboard character.</para>
-    </summary>
+    <summary>Scan code for the keyboard character.</summary>
   </member>
   <member name="SYSTEM_EVENT_DATA.xPos">
-    <summary>
-      <para>X position of the event.</para>
-    </summary>
+    <summary>X position of the event.</summary>
   </member>
   <member name="SYSTEM_EVENT_DATA.yPos">
-    <summary>
-      <para>Y position of the event.</para>
-    </summary>
+    <summary>Y position of the event.</summary>
   </member>
   <member name="SYSTEM_EVENT_DATA.bCursorMode">
-    <summary>
-      <para>The type of cursor that caused the event. Possible values include SE_NORMAL_CURSOR (the pen tip) and SE_ERASER_CURSOR (the eraser).</para>
-    </summary>
+    <summary>The type of cursor that caused the event. Possible values include SE_NORMAL_CURSOR (the pen tip) and SE_ERASER_CURSOR (the eraser).</summary>
   </member>
   <member name="SYSTEM_EVENT_DATA.dwButtonState">
-    <summary>
-      <para>State of the buttons at the time of the system event.</para>
-    </summary>
+    <summary>State of the buttons at the time of the system event.</summary>
   </member>
 </doc>

@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GROUP_AFFINITY">
-    <summary>
-      <para>Represents a processor group-specific affinity, such as the affinity of a thread.</para>
-    </summary>
-    <seealso cref="CACHE_RELATIONSHIP" />
-    <seealso cref="NUMA_NODE_RELATIONSHIP" />
-    <seealso cref="PROCESSOR_RELATIONSHIP" />
+    <summary>Represents a processor group-specific affinity, such as the affinity of a thread.</summary>
   </member>
   <member name="GROUP_AFFINITY.Mask">
-    <summary>
-      <para>A bitmap that specifies the affinity for zero or more processors within the specified group.</para>
-    </summary>
+    <summary>A bitmap that specifies the affinity for zero or more processors within the specified group.</summary>
   </member>
   <member name="GROUP_AFFINITY.Group">
-    <summary>
-      <para>The processor group number.</para>
-    </summary>
+    <summary>The processor group number.</summary>
   </member>
   <member name="GROUP_AFFINITY.Reserved">
-    <summary>
-      <para>This member is reserved.</para>
-    </summary>
+    <summary>This member is reserved.</summary>
   </member>
 </doc>

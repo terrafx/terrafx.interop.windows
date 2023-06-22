@@ -3,91 +3,92 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_IPMCAST_SCOPE">
-    <summary>
-      <para>The <b>MIB_IPMCAST_SCOPE</b> structure contains a multicast scope name and the associated IPv4 multicast group address and mask that define the scope.</para>
-    </summary>
-    <remarks>
-      <para>Note that the <i>Iprtrmib.h</i> header file is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
+    <summary>The <b>MIB_IPMCAST_SCOPE</b> structure contains a multicast scope name and the associated IPv4 multicast group address and mask that define the scope.</summary>
   </member>
   <member name="MIB_IPMCAST_SCOPE.dwGroupAddress">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>A 32-bit integer representation of the IPv4 group address which, when combined with the corresponding value in <b>dwGroupMask</b>, identifies the group range for which the multicast scope exists.</para>
-      <para>
-        <b>Note</b>  Scoped addresses must come from the range 239.<i>.</i>.* as specified in <a href="https://www.ietf.org/rfc/rfc2365.txt">RFC 2365</a>.</para>
+      <div>
+        <b>Note</b>  Scoped addresses must come from the range 239.*.*.* as specified in <a href="https://www.ietf.org/rfc/rfc2365.txt">RFC 2365</a>.</div>
     </summary>
   </member>
   <member name="MIB_IPMCAST_SCOPE.dwGroupMask">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A 32-bit integer representation of the IPv4 group address mask which, when combined with the corresponding value in <b>dwGroupAddress</b>, identifies the group range for which the multicast scope exists.</para>
-    </summary>
+    <summary>A 32-bit integer representation of the IPv4 group address mask which, when combined with the corresponding value in <b>dwGroupAddress</b>, identifies the group range for which the multicast scope exists.</summary>
   </member>
   <member name="MIB_IPMCAST_SCOPE.snNameBuffer">
     <summary>
-      <para>Type: <b>WCHAR[256]</b></para>
       <para>A Unicode character array that contains the text name associated with the multicast scope. The name should be suitable for display to multicast application users.</para>
       <para>If no name is specified, the default name is the string representation of the scoped address in <b>dwGroupAddress</b> with the address and mask length appended and separated by a slash "/" character, of the form "239.<i>.</i>.*.x/y", where <b>x</b> is the address length and <b>y</b> is the mask length.</para>
     </summary>
   </member>
   <member name="MIB_IPMCAST_SCOPE.dwStatus">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>A status value that describes the current status of this row in a MFE scope table.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>1</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
+          <description>Row has <b>active</b> status.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Row has <b>active</b> status.</para>
+            <list type="bullet">
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Row has <b>notInService</b> status.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>2</para>
+            <list type="bullet">
+              <listheader>
+                <term>3</term>
+              </listheader>
+            </list>
           </description>
+          <description>Row has <b>notReady</b> status.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Row has <b>notInService</b> status.</para>
+            <list type="bullet">
+              <listheader>
+                <term>4</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Row has <b>createAndGo</b> status.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>3</para>
+            <list type="bullet">
+              <listheader>
+                <term>5</term>
+              </listheader>
+            </list>
           </description>
+          <description>Row has <b>createAndWait</b> status.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Row has <b>notReady</b> status.</para>
+            <list type="bullet">
+              <listheader>
+                <term>6</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>4</para>
-          </description>
-          <description>
-            <para>Row has <b>createAndGo</b> status.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>5</para>
-          </description>
-          <description>
-            <para>Row has <b>createAndWait</b> status.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>6</para>
-          </description>
-          <description>
-            <para>Row has <b>destroy</b> status.</para>
-          </description>
-        </item>
+          <description>Row has <b>destroy</b> status.</description>
+        </listheader>
       </list>
     </summary>
   </member>

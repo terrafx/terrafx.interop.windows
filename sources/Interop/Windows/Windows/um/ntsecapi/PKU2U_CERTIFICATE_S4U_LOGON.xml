@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PKU2U_CERTIFICATE_S4U_LOGON">
+    <summary>Specifies a certificate used for S4U logon.</summary>
+  </member>
+  <member name="PKU2U_CERTIFICATE_S4U_LOGON.MessageType">
+    <summary>A value of the <see cref="PKU2U_LOGON_SUBMIT_TYPE" /> enumeration that indicates the logon type.</summary>
+  </member>
+  <member name="PKU2U_CERTIFICATE_S4U_LOGON.Flags">
+    <summary>This member is reserved. Do not use it.</summary>
+  </member>
+  <member name="PKU2U_CERTIFICATE_S4U_LOGON.UserPrincipalName">
+    <summary>The name of the user who is attempting to authenticate.</summary>
+  </member>
+  <member name="PKU2U_CERTIFICATE_S4U_LOGON.DomainName">
+    <summary>This member is reserved. Do not use it.</summary>
+  </member>
+  <member name="PKU2U_CERTIFICATE_S4U_LOGON.CertificateLength">
+    <summary>The size, in bytes, of the <b>Certificate</b> buffer.</summary>
+  </member>
+  <member name="PKU2U_CERTIFICATE_S4U_LOGON.Certificate">
+    <summary>The certificate data.</summary>
+  </member>
+</doc>

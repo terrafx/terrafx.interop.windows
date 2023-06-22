@@ -3,100 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION">
-    <summary>
-      <para>The
-<b>ACTIVATION_CONTEXT_DETAILED_INFORMATION</b> structure is used by the
-<see cref="QueryActCtxW" /> function.</para>
-    </summary>
-    <remarks>
-      <para>If
-<see cref="QueryActCtxW" /> is called with the ActivationContextDetailedInformation option, and the function succeeds, the information in the returned buffer is in the form of the
-<b>ACTIVATION_CONTEXT_DETAILED_INFORMATION</b> structure. The following is an example of a structure used to hold detailed information about the activation context and a call from
-<b>QueryActCtxW</b>.</para>
-      <code>PACTIVATION_CONTEXT_DETAILED_INFORMATION pAssemblyInfo = NULL;
-ACTIVATION_CONTEXT_QUERY_INDEX QueryIndex;
-BOOL fSuccess = FALSE;
-SIZE_T cbRequired;
-HANDLE hActCtx = INVALID_HANDLE_VALUE;
-BYTE bTemporaryBuffer[512];
-PVOID pvDataBuffer = (PVOID)bTemporaryBuffer;
-SIZE_T cbAvailable = sizeof(bTemporaryBuffer);
-
-// Request the first file in the root assembly
-QueryIndex.ulAssemblyIndex = 1;
-QueryIndex.ulFileIndexInAssembly = 0;
-
-if (GetCurrentActCtx(&amp;amp;amp;amp;amp;amp;hActCtx)) {
-
-    // Attempt to use our stack-based buffer first - if that's not large
-    // enough, allocate from the heap and try again.
-    fSuccess = QueryActCtxW(
-        0,
-        hActCtx,
-        (PVOID)&amp;amp;amp;amp;amp;amp;QueryIndex,
-        AssemblyDetailedInformationInActivationContext,
-        pvDataBuffer,
-        cbAvailable,
-        &amp;amp;amp;amp;amp;amp;cbRequired);
-
-    // Failed, because the buffer was too small.
-    if (!fSuccess &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (GetLastError() == ERROR_INSUFFICIENT_BUFFER)) {
-
-        // Allocate what we need from the heap - fail if there isn't enough
-        // memory to do so.
-        pvDataBuffer = HeapAlloc(GetProcessHeap(), 0, cbRequired);
-        if (pvDataBuffer == NULL) {
-            fSuccess = FALSE;
-            goto DoneQuerying;
-        }
-        cbAvailable = cbRequired;
-
-        // If this fails again, exit out.
-        fSuccess = QueryActCtxW(
-            0,
-            hActCtx,
-            (PVOID)&amp;amp;amp;amp;amp;amp;QueryIndex,
-            AssemblyDetailedInformationInActivationContext,
-            pvDataBuffer,
-            cbAvailable,
-            &amp;amp;amp;amp;amp;amp;cbRequired);
-
-    }
-
-    if (fSuccess) {
-        // Now that we've found the assembly info, cast our target buffer back to
-        // the assembly info pointer.  Use pAssemblyInfo-&gt;lpFileName
-        pAssemblyInfo = (PACTIVATION_CONTEXT_DETAILED_INFORMATION)pvDataBuffer;
-    }
-}
-
-DoneQuerying:
-    if (hActCtx != INVALID_HANDLE_VALUE)
-        ReleaseActCtx(hActCtx);
-
-    if (pvDataBuffer &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (pvDataBuffer != bTemporaryBuffer)) {
-        HeapFree(GetProcessHeap(), 0, pvDataBuffer);
-        pvDataBuffer = 0;
-    }
-
-
-</code>
-    </remarks>
+    <summary>The<b>ACTIVATION_CONTEXT_DETAILED_INFORMATION</b> structure is used by the<see cref="QueryActCtxW" /> function.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.dwFlags">
-    <summary>
-      <para>This value is always 0.</para>
-    </summary>
+    <summary>This value is always 0.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.ulFormatVersion">
-    <summary>
-      <para>This value specifies the format of the returned information. On WindowsÂ XP and WindowsÂ Server 2003 this member is always 1.</para>
-    </summary>
+    <summary>This value specifies the format of the returned information. On WindowsÂ XP and WindowsÂ Server 2003 this member is always 1.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.ulAssemblyCount">
-    <summary>
-      <para>Number of assemblies in the activation context.</para>
-    </summary>
+    <summary>Number of assemblies in the activation context.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.ulRootManifestPathType">
     <summary>
@@ -105,9 +21,7 @@ DoneQuerying:
     </summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.ulRootManifestPathChars">
-    <summary>
-      <para>Number of characters in the manifest path.</para>
-    </summary>
+    <summary>Number of characters in the manifest path.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.ulRootConfigurationPathType">
     <summary>
@@ -116,9 +30,7 @@ DoneQuerying:
     </summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.ulRootConfigurationPathChars">
-    <summary>
-      <para>Number of characters in any application configuration file path.</para>
-    </summary>
+    <summary>Number of characters in any application configuration file path.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.ulAppDirPathType">
     <summary>
@@ -127,23 +39,15 @@ DoneQuerying:
     </summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.ulAppDirPathChars">
-    <summary>
-      <para>Number of characters in the application directory.</para>
-    </summary>
+    <summary>Number of characters in the application directory.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.lpRootManifestPath">
-    <summary>
-      <para>Path of the application manifest.</para>
-    </summary>
+    <summary>Path of the application manifest.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.lpRootConfigurationPath">
-    <summary>
-      <para>Path of the configuration file.</para>
-    </summary>
+    <summary>Path of the configuration file.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.lpAppDirPath">
-    <summary>
-      <para>Path of the application directory.</para>
-    </summary>
+    <summary>Path of the application directory.</summary>
   </member>
 </doc>

@@ -10,30 +10,20 @@
     </summary>
   </member>
   <member name="DML_NONZERO_COORDINATES_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An input tensor.</para>
-    </summary>
+    <summary>An input tensor.</summary>
   </member>
   <member name="DML_NONZERO_COORDINATES_OPERATOR_DESC.OutputCountTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An output tensor that holds the count of non-zero elements in the input tensor. This tensor must be a scalar—that is, the Sizes of this tensor must all be 1. The type of this tensor must be <b>UINT32</b>.</para>
-    </summary>
+    <summary>An output tensor that holds the count of non-zero elements in the input tensor. This tensor must be a scalar—that is, the Sizes of this tensor must all be 1. The type of this tensor must be <b>UINT32</b>.</summary>
   </member>
   <member name="DML_NONZERO_COORDINATES_OPERATOR_DESC.OutputCoordinatesTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>An output tensor that holds the N-dimensional coordinates of the input elements which are non-zero.</para>
       <para>This tensor must have <i>Sizes</i> of <code>{1,1,M,N}</code> (if <i>DimensionCount</i> is 4), or <code>{1,1,1,M,N}</code> (if <i>DimensionCount</i> is 5), where M is the total number of elements in the <i>InputTensor</i>, and N is greater or equal to the <i>effective rank</i> of <i>InputTensor</i>, up to the <i>DimensionCount</i> of the input.</para>
       <para>The effective rank of a tensor is determined by the <i>DimensionCount</i> of that tensor excluding leading dimensions of size 1. For example a tensor with sizes of <code>{1,2,3,4}</code> has effective rank 3, as does a tensor with sizes of <code>{1,1,5,5,5}</code>. A tensor with sizes <code>{1,1,1,1}</code> has effective rank 0.</para>
       <para>Consider an <i>InputTensor</i> with <i>Sizes</i> of <code>{1,1,12,5}</code>. This input tensor contains 60 elements, and has an effective rank of 2. In this example all valid sizes of <i>OutputCoordinatesTensor</i> are of the form <code>{1,1,60,N}</code>, where N &gt;= 2 but no greater than the <i>DimensionCount</i> (4 in this example).</para>
       <para>The coordinates written into this tensor are guaranteed to be ordered by ascending element index. For example if the input tensor has 3 non-zero values at coordinates {1,0}, {1,2}, and {0,5}, the values written to the <i>OutputCoordinatesTensor</i> will be <code>[[0,5], [1,0], [1,2]]</code>.</para>
       <para>While this tensor requires its dimension M to equal the number of elements in the input tensor, this operator will only write a maximum of OutputCount elements to this tensor. The OutputCount is returned through the scalar <i>OutputCountTensor</i>.</para>
-      <blockquote>
-        <para>[!NOTE]
-The remaining elements of this tensor beyond the OutputCount are undefined once this operator completes. You shouldn't rely on the values of these elements.</para>
-      </blockquote>
+      <blockquote>[!NOTE] The remaining elements of this tensor beyond the OutputCount are undefined once this operator completes. You shouldn't rely on the values of these elements.</blockquote>
     </summary>
   </member>
 </doc>

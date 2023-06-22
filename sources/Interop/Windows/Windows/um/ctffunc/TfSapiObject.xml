@@ -3,39 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TfSapiObject">
-    <summary>
-      <para>Elements of the <b>TfSapiObject</b> enumeration are used with the <see cref="ITfFnGetSAPIObject.Get" /> method to specify a specific type of Speech API (SAPI) object.</para>
-    </summary>
-    <seealso cref="ITfFnGetSAPIObject.Get " />
+    <summary>Elements of the <b>TfSapiObject</b> enumeration are used with the <see cref="ITfFnGetSAPIObject.Get" /> method to specify a specific type of Speech API (SAPI) object.</summary>
   </member>
   <member name="TfSapiObject.GETIF_RESMGR">
-    <summary>
-      <para>Specifies an ISpResourceManager object.</para>
-    </summary>
+    <summary>Specifies an ISpResourceManager object.</summary>
   </member>
   <member name="TfSapiObject.GETIF_RECOCONTEXT">
-    <summary>
-      <para>Specifies an ISpRecoContext object.</para>
-    </summary>
+    <summary>Specifies an ISpRecoContext object.</summary>
   </member>
   <member name="TfSapiObject.GETIF_RECOGNIZER">
-    <summary>
-      <para>Specifies an ISpRecognizer object.</para>
-    </summary>
+    <summary>Specifies an ISpRecognizer object.</summary>
   </member>
   <member name="TfSapiObject.GETIF_VOICE">
-    <summary>
-      <para>Specifies an ISpVoice object.</para>
-    </summary>
+    <summary>Specifies an ISpVoice object.</summary>
   </member>
   <member name="TfSapiObject.GETIF_DICTGRAM">
-    <summary>
-      <para>Specifies an ISpRecoGrammar object.</para>
-    </summary>
+    <summary>Specifies an ISpRecoGrammar object.</summary>
   </member>
   <member name="TfSapiObject.GETIF_RECOGNIZERNOINIT">
-    <summary>
-      <para>Specifies an ISpRecognizer object. SAPI will not be initialized if it is not already.</para>
-    </summary>
+    <summary>Specifies an ISpRecognizer object. SAPI will not be initialized if it is not already.</summary>
   </member>
 </doc>

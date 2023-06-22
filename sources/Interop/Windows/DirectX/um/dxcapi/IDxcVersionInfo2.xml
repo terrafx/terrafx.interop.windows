@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcVersionInfo2.GetCommitInfo">
+    <param name="pCommitCount">The total number of commits.</param>
+    <param name="pCommitHash">The SHA of the latest commit. You must free this memory by using <see cref="CoTaskMemFree" />.</param>
+  </member>
+  <member name="IDxcVersionInfo2">
+    <summary>
+      <para>Represents PDB version information.</para>
+      <para>To obtain an instance of this interface, call <see cref="IDxcPdbUtils.GetVersionInfo" /> to obtain a <b>IDxcVersionInfo</b> interface, and then use <b>QueryInterface</b> to obtain an instance of this interface from it.</para>
+    </summary>
+  </member>
+</doc>

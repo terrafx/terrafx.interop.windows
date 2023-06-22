@@ -3,203 +3,120 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_REQUEST_TIME_ENTRY">
-    <summary>
-      <para>The <b>WINHTTP_REQUEST_TIME_ENTRY</b> enumeration lists the available types of request timing information.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with <see cref="WinHttpQueryOption" /> to retrieve timing information for a request by specifying the <b>WINHTTP_OPTION_REQUEST_TIMES</b> flag.</para>
-    </remarks>
-    <seealso cref="WinHttpQueryOption" />
-    <seealso cref="WINHTTP_REQUEST_TIMES" />
+    <summary>The <b>WINHTTP_REQUEST_TIME_ENTRY</b> enumeration lists the available types of request timing information.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpProxyDetectionStart">
-    <summary>
-      <para>Start of proxy detection.</para>
-    </summary>
+    <summary>Start of proxy detection.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpProxyDetectionEnd">
-    <summary>
-      <para>End of proxy detection.</para>
-    </summary>
+    <summary>End of proxy detection.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpConnectionAcquireStart">
-    <summary>
-      <para>Start of connection acquisition.</para>
-    </summary>
+    <summary>Start of connection acquisition.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpConnectionAcquireWaitEnd">
-    <summary>
-      <para>End waiting for an available connection.</para>
-    </summary>
+    <summary>End waiting for an available connection.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpConnectionAcquireEnd">
-    <summary>
-      <para>End of connection acquisition.</para>
-    </summary>
+    <summary>End of connection acquisition.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpNameResolutionStart">
-    <summary>
-      <para>Start of name resolution.</para>
-    </summary>
+    <summary>Start of name resolution.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpNameResolutionEnd">
-    <summary>
-      <para>End of name resolution.</para>
-    </summary>
+    <summary>End of name resolution.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpConnectionEstablishmentStart">
-    <summary>
-      <para>Start of connection establishment.</para>
-    </summary>
+    <summary>Start of connection establishment.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpConnectionEstablishmentEnd">
-    <summary>
-      <para>End of connection establishment.</para>
-    </summary>
+    <summary>End of connection establishment.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpTlsHandshakeClientLeg1Start">
-    <summary>
-      <para>Start of the first leg of the TLS handshake.</para>
-    </summary>
+    <summary>Start of the first leg of the TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpTlsHandshakeClientLeg1End">
-    <summary>
-      <para>End of the first leg of the TLS handshake.</para>
-    </summary>
+    <summary>End of the first leg of the TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpTlsHandshakeClientLeg2Start">
-    <summary>
-      <para>Start of the second leg of the TLS handshake.</para>
-    </summary>
+    <summary>Start of the second leg of the TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpTlsHandshakeClientLeg2End">
-    <summary>
-      <para>End of the second leg of the TLS handshake.</para>
-    </summary>
+    <summary>End of the second leg of the TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpTlsHandshakeClientLeg3Start">
-    <summary>
-      <para>Start of the third leg of the TLS handshake.</para>
-    </summary>
+    <summary>Start of the third leg of the TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpTlsHandshakeClientLeg3End">
-    <summary>
-      <para>End of the third leg of the TLS handshake.</para>
-    </summary>
+    <summary>End of the third leg of the TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpStreamWaitStart">
-    <summary>
-      <para>Start waiting for an available stream.</para>
-    </summary>
+    <summary>Start waiting for an available stream.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpStreamWaitEnd">
-    <summary>
-      <para>End waiting for an available stream.</para>
-    </summary>
+    <summary>End waiting for an available stream.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpSendRequestStart">
-    <summary>
-      <para>Start sending a request.</para>
-    </summary>
+    <summary>Start sending a request.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpSendRequestHeadersCompressionStart">
-    <summary>
-      <para>Start of request header compression.</para>
-    </summary>
+    <summary>Start of request header compression.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpSendRequestHeadersCompressionEnd">
-    <summary>
-      <para>End of request header compression.</para>
-    </summary>
+    <summary>End of request header compression.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpSendRequestHeadersEnd">
-    <summary>
-      <para>End sending request headers.</para>
-    </summary>
+    <summary>End sending request headers.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpSendRequestEnd">
-    <summary>
-      <para>End sending a request.</para>
-    </summary>
+    <summary>End sending a request.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpReceiveResponseStart">
-    <summary>
-      <para>Start receiving a response.</para>
-    </summary>
+    <summary>Start receiving a response.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpReceiveResponseHeadersDecompressionStart">
-    <summary>
-      <para>Start of response header decompression.</para>
-    </summary>
+    <summary>Start of response header decompression.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpReceiveResponseHeadersDecompressionEnd">
-    <summary>
-      <para>End of response header decompression.</para>
-    </summary>
+    <summary>End of response header decompression.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpReceiveResponseHeadersEnd">
-    <summary>
-      <para>End receiving response headers.</para>
-    </summary>
+    <summary>End receiving response headers.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpReceiveResponseBodyDecompressionDelta">
-    <summary>
-      <para>Delta between start and end times for response body decompression.</para>
-    </summary>
+    <summary>Delta between start and end times for response body decompression.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpReceiveResponseEnd">
-    <summary>
-      <para>End receiving a response.</para>
-    </summary>
+    <summary>End receiving a response.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpProxyTunnelStart">
-    <summary>
-      <para>Start establishing a proxy tunnel.</para>
-    </summary>
+    <summary>Start establishing a proxy tunnel.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpProxyTunnelEnd">
-    <summary>
-      <para>End establishing a proxy tunnel.</para>
-    </summary>
+    <summary>End establishing a proxy tunnel.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpProxyTlsHandshakeClientLeg1Start">
-    <summary>
-      <para>Start of the first leg of the proxy TLS handshake.</para>
-    </summary>
+    <summary>Start of the first leg of the proxy TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpProxyTlsHandshakeClientLeg1End">
-    <summary>
-      <para>End of the first leg of the proxy TLS handshake.</para>
-    </summary>
+    <summary>End of the first leg of the proxy TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpProxyTlsHandshakeClientLeg2Start">
-    <summary>
-      <para>Start of the second leg of the proxy TLS handshake.</para>
-    </summary>
+    <summary>Start of the second leg of the proxy TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpProxyTlsHandshakeClientLeg2End">
-    <summary>
-      <para>End of the second leg of the proxy TLS handshake.</para>
-    </summary>
+    <summary>End of the second leg of the proxy TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpProxyTlsHandshakeClientLeg3Start">
-    <summary>
-      <para>Start of the third leg of the proxy TLS handshake.</para>
-    </summary>
+    <summary>Start of the third leg of the proxy TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpProxyTlsHandshakeClientLeg3End">
-    <summary>
-      <para>End of the third leg of the proxy TLS handshake.</para>
-    </summary>
+    <summary>End of the third leg of the proxy TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpRequestTimeLast">
-    <summary>
-      <para>Marker for the end of the list of available timings.</para>
-    </summary>
+    <summary>Marker for the end of the list of available timings.</summary>
   </member>
   <member name="WINHTTP_REQUEST_TIME_ENTRY.WinHttpRequestTimeMax">
-    <summary>
-      <para>The maximum number of timings available.</para>
-    </summary>
+    <summary>The maximum number of timings available.</summary>
   </member>
 </doc>

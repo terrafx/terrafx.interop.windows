@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_VIRTUALIZATION_INSTANCE_INFO">
-    <summary>
-      <para>Information about a virtualization instance.</para>
-    </summary>
+    <summary>Information about a virtualization instance.</summary>
   </member>
   <member name="PRJ_VIRTUALIZATION_INSTANCE_INFO.InstanceID">
-    <summary>
-      <para>An ID corresponding to a specific virtualization instance.</para>
-    </summary>
+    <summary>An ID corresponding to a specific virtualization instance.</summary>
   </member>
   <member name="PRJ_VIRTUALIZATION_INSTANCE_INFO.WriteAlignment">
-    <summary>
-      <para>The value used for the byteOffset and length parameters of <see cref="PrjWriteFileData" />.</para>
-    </summary>
+    <summary>The value used for the byteOffset and length parameters of <see cref="PrjWriteFileData" />.</summary>
   </member>
 </doc>

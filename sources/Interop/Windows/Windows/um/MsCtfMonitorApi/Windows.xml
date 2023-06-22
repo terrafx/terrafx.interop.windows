@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.InitLocalMsCtfMonitor">
-    <summary>
-      <para>The <b>InitLocalMsCtfMonitor</b> function initializes TextServicesFramework on the current desktop and prepares the floating language bar, if necessary. This function must be called on the app's desktop.</para>
-    </summary>
+    <summary>The <b>InitLocalMsCtfMonitor</b> function initializes TextServicesFramework on the current desktop and prepares the floating language bar, if necessary. This function must be called on the app's desktop.</summary>
     <param name="dwFlags">
       <para>This is a combination of the following flags:</para>
       <list type="table">
@@ -13,22 +11,32 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ILMCM_CHECKLAYOUTANDTIPENABLED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ILMCM_CHECKLAYOUTANDTIPENABLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>InitLocalMsCtfMonitor</b> forcefully checks the available keyboard layout or text service. If there is no secondary keyboard layout or text services, it does not initialize TextServicesFramework on the desktop.
-</description>
-        </item>
-        <item>
+            <b>InitLocalMsCtfMonitor</b> forcefully checks the available keyboard layout or text service. If there is no secondary keyboard layout or text services, it does not initialize TextServicesFramework on the desktop.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ILMCM_LANGUAGEBAROFF</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ILMCM_LANGUAGEBAROFF</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>Starting with Windows 8:</b> A local language bar is not started for the current desktop.
-</description>
-        </item>
+            <b>Starting with Windows 8:</b> A local language bar is not started for the current desktop.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -37,34 +45,29 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The function was successful.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_FAIL</description>
           <description>An unspecified error occurred.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If this function was successful, <see cref="UninitLocalMsCtfMonitor" /> needs to be called before the caller thread is terminated or the desktop is switched.</para>
-    </remarks>
   </member>
   <member name="Windows.UninitLocalMsCtfMonitor">
-    <summary>
-      <para>The UninitLocalMsCtfMonitor function uninitializes TextServicesFramework on the current desktop.</para>
-    </summary>
+    <summary>The UninitLocalMsCtfMonitor function uninitializes TextServicesFramework on the current desktop.</summary>
     <returns>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The function was successful.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
   </member>

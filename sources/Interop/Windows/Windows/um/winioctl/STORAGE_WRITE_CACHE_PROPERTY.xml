@@ -3,227 +3,194 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_WRITE_CACHE_PROPERTY">
-    <summary>
-      <para>Used with the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code to retrieve information about a device's write cache property.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <summary>Used with the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code to retrieve information about a device's write cache property.</summary>
   </member>
   <member name="STORAGE_WRITE_CACHE_PROPERTY.Version">
-    <summary>
-      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
-the structure.</para>
-    </summary>
+    <summary>Contains the size of this structure, in bytes. The value of this member will change as members are added to the structure.</summary>
   </member>
   <member name="STORAGE_WRITE_CACHE_PROPERTY.Size">
-    <summary>
-      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
-structure.</para>
-    </summary>
+    <summary>Specifies the total size of the data returned, in bytes. This may include data that follows this structure.</summary>
   </member>
   <member name="STORAGE_WRITE_CACHE_PROPERTY.WriteCacheType">
     <summary>
-      <para>A value from the <see cref="WRITE_CACHE_TYPE" /> enumeration
-that indicates the current write cache type.</para>
+      <para>A value from the <see cref="WRITE_CACHE_TYPE" /> enumeration that indicates the current write cache type.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteCacheTypeUnknown</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The system cannot report the type of the write cache.</para>
-          </description>
-        </item>
-        <item>
+          <description>The system cannot report the type of the write cache.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteCacheTypeNone</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The device does not have a write cache.</para>
-          </description>
-        </item>
-        <item>
+          <description>The device does not have a write cache.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteCacheTypeWriteBack</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The device has a write-back cache.</para>
-          </description>
-        </item>
-        <item>
+          <description>The device has a write-back cache.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteCacheTypeWriteThrough</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The device has a write-through cache.</para>
-          </description>
-        </item>
+          <description>The device has a write-through cache.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="STORAGE_WRITE_CACHE_PROPERTY.WriteCacheEnabled">
     <summary>
-      <para>A value from the <see cref="WRITE_CACHE_ENABLE" /> enumeration
-that indicates whether the write cache is enabled.</para>
+      <para>A value from the <see cref="WRITE_CACHE_ENABLE" /> enumeration that indicates whether the write cache is enabled.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteCacheEnableUnknown</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The system cannot report whether the device's write cache is enabled or disabled.</para>
-          </description>
-        </item>
-        <item>
+          <description>The system cannot report whether the device's write cache is enabled or disabled.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteCacheDisabled</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The device's write cache is disabled.</para>
-          </description>
-        </item>
-        <item>
+          <description>The device's write cache is disabled.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteCacheEnabled</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The device's write cache is enabled.</para>
-          </description>
-        </item>
+          <description>The device's write cache is enabled.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="STORAGE_WRITE_CACHE_PROPERTY.WriteCacheChangeable">
     <summary>
-      <para>A value from the <see cref="WRITE_CACHE_CHANGE" /> enumeration that
-indicates whether if the host can change the write cache characteristics.</para>
+      <para>A value from the <see cref="WRITE_CACHE_CHANGE" /> enumeration that indicates whether if the host can change the write cache characteristics.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteCacheChangeUnknown</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The system cannot report the write cache change capability of the device.</para>
-          </description>
-        </item>
-        <item>
+          <description>The system cannot report the write cache change capability of the device.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteCacheNotChangeable</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Host software cannot change the characteristics of the device's write cache</para>
-          </description>
-        </item>
-        <item>
+          <description>Host software cannot change the characteristics of the device's write cache</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteCacheChangeable</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Host software can change the characteristics of the device's write cache</para>
-          </description>
-        </item>
+          <description>Host software can change the characteristics of the device's write cache</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -235,80 +202,61 @@ indicates whether if the host can change the write cache characteristics.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteThroughUnknown</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates that no information is available concerning the write-through capabilities of the device.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates that no information is available concerning the write-through capabilities of the device.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteThroughNotSupported</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates that the device does not support write-through operations.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates that the device does not support write-through operations.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>WriteThroughSupported</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates that the device supports write-through operations.</para>
-          </description>
-        </item>
+          <description>Indicates that the device supports write-through operations.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="STORAGE_WRITE_CACHE_PROPERTY.FlushCacheSupported">
-    <summary>
-      <para>A <b>BOOLEAN</b> value that indicates whether the device allows host software to
-flush the device cache. If <b>TRUE</b>, the device allows host software to flush the device
-cache. If <b>FALSE</b>, host software cannot flush the device cache.</para>
-    </summary>
+    <summary>A <b>BOOLEAN</b> value that indicates whether the device allows host software to flush the device cache. If <b>TRUE</b>, the device allows host software to flush the device cache. If <b>FALSE</b>, host software cannot flush the device cache.</summary>
   </member>
   <member name="STORAGE_WRITE_CACHE_PROPERTY.UserDefinedPowerProtection">
-    <summary>
-      <para>A <b>BOOLEAN</b> value that indicates whether a user can configure the device's power
-protection characteristics in the registry. If <b>TRUE</b>, a user can configure the device's
-power protection characteristics in the registry. If <b>FALSE</b>, the user cannot configure
-the device's power protection characteristics in the registry.</para>
-    </summary>
+    <summary>A <b>BOOLEAN</b> value that indicates whether a user can configure the device's power protection characteristics in the registry. If <b>TRUE</b>, a user can configure the device's power protection characteristics in the registry. If <b>FALSE</b>, the user cannot configure the device's power protection characteristics in the registry.</summary>
   </member>
   <member name="STORAGE_WRITE_CACHE_PROPERTY.NVCacheEnabled">
-    <summary>
-      <para>A <b>BOOLEAN</b> value that indicates whether the device has a battery backup for the
-write cache. If <b>TRUE</b>, the device has a battery backup for the write cache. If
-<b>FALSE</b>, the device does not have a battery backup for the writer cache.</para>
-    </summary>
+    <summary>A <b>BOOLEAN</b> value that indicates whether the device has a battery backup for the write cache. If <b>TRUE</b>, the device has a battery backup for the write cache. If<b>FALSE</b>, the device does not have a battery backup for the writer cache.</summary>
   </member>
 </doc>

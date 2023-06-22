@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICompositionDrawingSurfaceInterop.BeginDraw">
+    <summary>Initiates drawing on the surface.</summary>
+    <param name="updateRect">The section of the surface to update. The update rectangle must be within the boundaries of the surface. Specifying nullptr indicates the entire surface should be updated.</param>
+    <param name="iid">The identifier of the interface to retrieve.</param>
+    <param name="updateObject">Receives an interface pointer of the type specified in the iid parameter. This parameter must not be NULL.</param>
+    <param name="updateOffset">The offset into the surface where the application should draw updated content. This offset will reference the upper left corner of the update rectangle.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="ICompositionDrawingSurfaceInterop.EndDraw">
+    <summary>Marks the end of drawing on the surface object.</summary>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="ICompositionDrawingSurfaceInterop.Resize">
+    <summary>Changes the size of the surface.</summary>
+    <param name="sizePixels">Width and height of the surface in pixels.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="ICompositionDrawingSurfaceInterop.ResumeDraw">
+    <summary>Resumes drawing on the surface object.</summary>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="ICompositionDrawingSurfaceInterop.Scroll">
+    <summary>Scrolls a rectangular area of the logical surface.</summary>
+    <param name="scrollRect">The rectangular area of the surface to be scrolled, relative to the upper-left corner of the surface. If this parameter is NULL, the entire surface is scrolled.</param>
+    <param name="clipRect">The clipRect clips the destination (scrollRect after offset) of the scroll. The only bitmap content that will be scrolled are those that remain inside the clip rectangle after the scroll is completed.</param>
+    <param name="offsetX">The amount of horizontal scrolling, in pixels. Use positive values to scroll right, and negative values to scroll left.</param>
+    <param name="offsetY">The amount of vertical scrolling, in pixels. Use positive values to scroll down, and negative values to scroll up.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="ICompositionDrawingSurfaceInterop.SuspendDraw">
+    <summary>Suspends drawing on the surface object.</summary>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="ICompositionDrawingSurfaceInterop">
+    <summary>Native interoperation interface that allows drawing on a surface object using a RECT to define the area to draw into. This interface is available in C++ only.</summary>
+  </member>
+</doc>

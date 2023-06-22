@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MULTIPLE_TRUSTEE_OPERATION">
+    <summary>The <b>MULTIPLE_TRUSTEE_OPERATION</b> enumeration contains values that indicate whether a<see cref="TRUSTEE" /> structure is an impersonation trustee.</summary>
+  </member>
+  <member name="MULTIPLE_TRUSTEE_OPERATION.NO_MULTIPLE_TRUSTEE">
+    <summary>The trustee is not an impersonation trustee.</summary>
+  </member>
+  <member name="MULTIPLE_TRUSTEE_OPERATION.TRUSTEE_IS_IMPERSONATE">
+    <summary>The trustee is an impersonation trustee. The <b>pMultipleTrustee</b> member of the <see cref="TRUSTEE" /> structure points to a trustee for a server that can impersonate the client trustee.</summary>
+  </member>
+</doc>

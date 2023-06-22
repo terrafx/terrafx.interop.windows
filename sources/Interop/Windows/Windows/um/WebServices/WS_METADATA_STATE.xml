@@ -3,32 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_METADATA_STATE">
-    <summary>
-      <para>The state of the metadata object.</para>
-    </summary>
-    <remarks>
-      <para>The following diagram illustrates the functions that
-cause state transitions in the metadata object.</para>
-      <para>.:image type="content" source="./images/MetadataStates.png" border="false" alt-text="Diagram of the state transitions for a Metadata object showing the functions that cause transitions between the Created, Faulted, and Resolved states.".:</para>
-    </remarks>
+    <summary>The state of the metadata object.</summary>
   </member>
   <member name="WS_METADATA_STATE.WS_METADATA_STATE_CREATED">
-    <summary>
-      <para>The initial state of the metadata object.</para>
-    </summary>
+    <summary>The initial state of the metadata object.</summary>
   </member>
   <member name="WS_METADATA_STATE.WS_METADATA_STATE_RESOLVED">
-    <summary>
-      <para>All references between metadata documents have been
-resolved and no more metadata documents may be added
-to the metadata object.  See <see cref="WsGetMetadataEndpoints" /> for
-more information.</para>
-    </summary>
+    <summary>All references between metadata documents have been resolved and no more metadata documents may be added to the metadata object. See <see cref="WsGetMetadataEndpoints" /> for more information.</summary>
   </member>
   <member name="WS_METADATA_STATE.WS_METADATA_STATE_FAULTED">
-    <summary>
-      <para>The metadata object not usable due to a previous error.  See
-See <see cref="WsGetMetadataEndpoints" /> and <see cref="WsReadMetadata" /> for more information.</para>
-    </summary>
+    <summary>The metadata object not usable due to a previous error. See See <see cref="WsGetMetadataEndpoints" /> and <see cref="WsReadMetadata" /> for more information.</summary>
   </member>
 </doc>

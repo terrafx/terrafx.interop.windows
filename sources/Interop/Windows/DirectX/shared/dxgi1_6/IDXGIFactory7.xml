@@ -3,37 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIFactory7.RegisterAdaptersChangedEvent">
-    <summary>
-      <para>Registers to receive notification of changes whenever the adapter enumeration state changes.</para>
-    </summary>
-    <param name="hEvent">
-      <para>A handle to the event object.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>A key value for the registered event.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> if successful; an error code otherwise.</para>
-    </returns>
-    <seealso cref="IDXGIFactory7" />
-    <seealso cref="UnregisterAdaptersChangedEvent" />
+    <summary>Registers to receive notification of changes whenever the adapter enumeration state changes.</summary>
+    <param name="hEvent">A handle to the event object.</param>
+    <param name="pdwCookie">A key value for the registered event.</param>
+    <returns>Returns <b>S_OK</b> if successful; an error code otherwise.</returns>
   </member>
   <member name="IDXGIFactory7.UnregisterAdaptersChangedEvent">
-    <summary>
-      <para>Unregisters  an event to stop receiving notifications when the adapter enumeration state changes.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>A key value for the event to unregister.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> if successful; an error code otherwise.</para>
-    </returns>
-    <seealso cref="IDXGIFactory7" />
-    <seealso cref="RegisterAdaptersChangedEvent" />
+    <summary>Unregisters an event to stop receiving notifications when the adapter enumeration state changes.</summary>
+    <param name="dwCookie">A key value for the event to unregister.</param>
+    <returns>Returns <b>S_OK</b> if successful; an error code otherwise.</returns>
   </member>
   <member name="IDXGIFactory7">
-    <summary>
-      <para>This interface enables registration for notifications to detect adapter enumeration state changes.</para>
-    </summary>
+    <summary>This interface enables registration for notifications to detect adapter enumeration state changes.</summary>
   </member>
 </doc>

@@ -3,40 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSG_MAIL_LIST_RECIPIENT_INFO">
-    <summary>
-      <para>The <b>CMSG_MAIL_LIST_RECIPIENT_INFO</b> structure contains information used for previously distributed <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric</a> key-encryption keys (KEK).</para>
-    </summary>
+    <summary>The <b>CMSG_MAIL_LIST_RECIPIENT_INFO</b> structure contains information used for previously distributed <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric</a> key-encryption keys (KEK).</summary>
   </member>
   <member name="CMSG_MAIL_LIST_RECIPIENT_INFO.dwVersion">
-    <summary>
-      <para>Indicates the version of the structure. This member is always four.</para>
-    </summary>
+    <summary>Indicates the version of the structure. This member is always four.</summary>
   </member>
   <member name="CMSG_MAIL_LIST_RECIPIENT_INFO.KeyId">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that identifies a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric key</a>-encryption key previously distributed to the sender and one or more recipients.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that identifies a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric key</a>-encryption key previously distributed to the sender and one or more recipients.</summary>
   </member>
   <member name="CMSG_MAIL_LIST_RECIPIENT_INFO.KeyEncryptionAlgorithm">
     <summary>
-      <para>
-        <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> that identifies the key-encryption algorithm and any associated parameters used to encrypt the content encryption key.</para>
-    </summary>
+      <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> that identifies the key-encryption algorithm and any associated parameters used to encrypt the content encryption key.</summary>
   </member>
   <member name="CMSG_MAIL_LIST_RECIPIENT_INFO.EncryptedKey">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains the encrypted content encryption key.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains the encrypted content encryption key.</summary>
   </member>
   <member name="CMSG_MAIL_LIST_RECIPIENT_INFO.Date">
-    <summary>
-      <para>Optional. When present, this member specifies a single key-encryption key from a previously distributed set.</para>
-    </summary>
+    <summary>Optional. When present, this member specifies a single key-encryption key from a previously distributed set.</summary>
   </member>
   <member name="CMSG_MAIL_LIST_RECIPIENT_INFO.pOtherAttr">
-    <summary>
-      <para>Optional pointer to a
-<see cref="CRYPT_ATTRIBUTE_TYPE_VALUE" /> structure containing additional information.</para>
-    </summary>
+    <summary>Optional pointer to a<see cref="CRYPT_ATTRIBUTE_TYPE_VALUE" /> structure containing additional information.</summary>
   </member>
 </doc>

@@ -4,20 +4,14 @@
 <doc>
   <member name="DDCOLORKEY">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Describes a color key as a range of values.</para>
     </summary>
-    <remarks>
-      <para>This structure is used by the Video Mixing Renderer (VMR) filter. The VMR uses this structure to support the DirectDraw capability of specifying a range of values for a color key by using two <b>DWORD</b>s. The VMR and the graphics card automatically determine whether the two <b>DWORD</b>s are interpreted as RGB or YUV color space values. Not all hardware may support this capability. To ensure compatibility with all hardware, set <b>dw1</b> and <b>dw2</b> to the same value.</para>
-    </remarks>
   </member>
   <member name="DDCOLORKEY.dw1">
-    <summary>
-      <para>Specifies the lower bound of the color key range.</para>
-    </summary>
+    <summary>Specifies the lower bound of the color key range.</summary>
   </member>
   <member name="DDCOLORKEY.dw2">
-    <summary>
-      <para>Specifies the upper bound of the color key range.</para>
-    </summary>
+    <summary>Specifies the upper bound of the color key range.</summary>
   </member>
 </doc>

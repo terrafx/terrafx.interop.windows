@@ -3,202 +3,87 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY">
-    <summary>
-      <para>Contains the load configuration data of an image.</para>
-    </summary>
-    <remarks>
-      <para>If <b>_WIN64</b> is defined, then <b>IMAGE_LOAD_CONFIG_DIRECTORY</b> is defined as <b>IMAGE_LOAD_CONFIG_DIRECTORY64</b>. However, if <b>_WIN64</b> is not defined,  then <b>IMAGE_LOAD_CONFIG_DIRECTORY</b> is defined as <b>IMAGE_LOAD_CONFIG_DIRECTORY32</b>.</para>
-      <code>typedef struct {
-    DWORD   Size;
-    DWORD   TimeDateStamp;
-    WORD    MajorVersion;
-    WORD    MinorVersion;
-    DWORD   GlobalFlagsClear;
-    DWORD   GlobalFlagsSet;
-    DWORD   CriticalSectionDefaultTimeout;
-    DWORD   DeCommitFreeBlockThreshold;
-    DWORD   DeCommitTotalFreeThreshold;
-    DWORD   LockPrefixTable;            // VA
-    DWORD   MaximumAllocationSize;
-    DWORD   VirtualMemoryThreshold;
-    DWORD   ProcessHeapFlags;
-    DWORD   ProcessAffinityMask;
-    WORD    CSDVersion;
-    WORD    Reserved1;
-    DWORD   EditList;                   // VA
-    DWORD   SecurityCookie;             // VA
-    DWORD   SEHandlerTable;             // VA
-    DWORD   SEHandlerCount;
-} IMAGE_LOAD_CONFIG_DIRECTORY32, *PIMAGE_LOAD_CONFIG_DIRECTORY32;
-</code>
-    </remarks>
-    <seealso cref="GetImageConfigInformation" />
-    <seealso cref="GetProcessAffinityMask" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
-    <seealso cref="SetImageConfigInformation" />
+    <summary>Contains the load configuration data of an image.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.Size">
-    <summary>
-      <para>The size of the structure. For Windows XP, the size must be specified as 64 for x86 images.</para>
-    </summary>
+    <summary>The size of the structure. For Windows XP, the size must be specified as 64 for x86 images.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.TimeDateStamp">
-    <summary>
-      <para>The date and time stamp value. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock. The time stamp can be printed using the C run-time (CRT) function <b>ctime</b>.</para>
-    </summary>
+    <summary>The date and time stamp value. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock. The time stamp can be printed using the C run-time (CRT) function <b>ctime</b>.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.MajorVersion">
-    <summary>
-      <para>The major version number.</para>
-    </summary>
+    <summary>The major version number.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.MinorVersion">
-    <summary>
-      <para>The minor version number.</para>
-    </summary>
+    <summary>The minor version number.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GlobalFlagsClear">
-    <summary>
-      <para>The global flags that control system behavior. For more information, see Gflags.exe.</para>
-    </summary>
+    <summary>The global flags that control system behavior. For more information, see Gflags.exe.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GlobalFlagsSet">
-    <summary>
-      <para>The global flags that control system behavior. For more information, see Gflags.exe.</para>
-    </summary>
+    <summary>The global flags that control system behavior. For more information, see Gflags.exe.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CriticalSectionDefaultTimeout">
-    <summary>
-      <para>The critical section default time-out value.</para>
-    </summary>
+    <summary>The critical section default time-out value.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DeCommitFreeBlockThreshold">
-    <summary>
-      <para>The size of the minimum block that must be freed before it is freed (de-committed), in bytes. This value is advisory.</para>
-    </summary>
+    <summary>The size of the minimum block that must be freed before it is freed (de-committed), in bytes. This value is advisory.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DeCommitTotalFreeThreshold">
-    <summary>
-      <para>The size of the minimum total memory that must be freed in the process heap before it is freed (de-committed), in bytes. This value is advisory.</para>
-    </summary>
+    <summary>The size of the minimum total memory that must be freed in the process heap before it is freed (de-committed), in bytes. This value is advisory.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.LockPrefixTable">
-    <summary>
-      <para>The VA of a list of addresses where the LOCK prefix is used. These will be replaced by NOP on single-processor systems. This member is available only for x86.</para>
-    </summary>
+    <summary>The VA of a list of addresses where the LOCK prefix is used. These will be replaced by NOP on single-processor systems. This member is available only for x86.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.MaximumAllocationSize">
-    <summary>
-      <para>The maximum allocation size, in bytes. This member is obsolete and is used only for debugging purposes.</para>
-    </summary>
+    <summary>The maximum allocation size, in bytes. This member is obsolete and is used only for debugging purposes.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.VirtualMemoryThreshold">
-    <summary>
-      <para>The maximum block size that can be allocated from heap segments, in bytes.</para>
-    </summary>
+    <summary>The maximum block size that can be allocated from heap segments, in bytes.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.ProcessHeapFlags">
-    <summary>
-      <para>The process heap flags. For more information, see <see cref="HeapCreate" />.</para>
-    </summary>
+    <summary>The process heap flags. For more information, see <see cref="HeapCreate" />.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.ProcessAffinityMask">
-    <summary>
-      <para>The process affinity mask. For more information, see
-<see cref="GetProcessAffinityMask" />. This member is available only for .exe files.</para>
-    </summary>
+    <summary>The process affinity mask. For more information, see<see cref="GetProcessAffinityMask" />. This member is available only for .exe files.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CSDVersion">
-    <summary>
-      <para>The service pack version.</para>
-    </summary>
+    <summary>The service pack version.</summary>
   </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DependentLoadFlags">
-    <summary></summary>
-  </member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DependentLoadFlags"></member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.EditList">
-    <summary>
-      <para>Reserved for use by the system.</para>
-    </summary>
+    <summary>Reserved for use by the system.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.SecurityCookie">
-    <summary>
-      <para>A pointer to a cookie that is used by Visual C++ or GS implementation.</para>
-    </summary>
+    <summary>A pointer to a cookie that is used by Visual C++ or GS implementation.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.SEHandlerTable">
-    <summary>
-      <para>The VA of the sorted table of RVAs of each valid, unique handler in the image. This member is available only for x86.</para>
-    </summary>
+    <summary>The VA of the sorted table of RVAs of each valid, unique handler in the image. This member is available only for x86.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.SEHandlerCount">
-    <summary>
-      <para>The count of unique handlers in the table. This member is available only for x86.</para>
-    </summary>
+    <summary>The count of unique handlers in the table. This member is available only for x86.</summary>
   </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFCheckFunctionPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFDispatchFunctionPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFFunctionTable">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFFunctionCount">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardFlags">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CodeIntegrity">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardAddressTakenIatEntryTable">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardAddressTakenIatEntryCount">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardLongJumpTargetTable">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardLongJumpTargetCount">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTable">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CHPEMetadataPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFFailureRoutine">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFFailureRoutineFunctionPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTableOffset">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTableSection">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.Reserved2">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFVerifyStackPointerFunctionPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.HotPatchTableOffset">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.Reserved3">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.EnclaveConfigurationPointer">
-    <summary></summary>
-  </member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFCheckFunctionPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFDispatchFunctionPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFFunctionTable"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFFunctionCount"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardFlags"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CodeIntegrity"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardAddressTakenIatEntryTable"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardAddressTakenIatEntryCount"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardLongJumpTargetTable"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardLongJumpTargetCount"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTable"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CHPEMetadataPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFFailureRoutine"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFFailureRoutineFunctionPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTableOffset"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTableSection"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.Reserved2"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFVerifyStackPointerFunctionPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.HotPatchTableOffset"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.Reserved3"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.EnclaveConfigurationPointer"></member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.VolatileMetadataPointer">
     <summary>
       <h4>- Reserved1</h4>
@@ -206,205 +91,88 @@
     </summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY">
-    <summary>
-      <para>Contains the load configuration data of an image.</para>
-    </summary>
-    <remarks>
-      <para>If <b>_WIN64</b> is defined, then <b>IMAGE_LOAD_CONFIG_DIRECTORY</b> is defined as <b>IMAGE_LOAD_CONFIG_DIRECTORY64</b>. However, if <b>_WIN64</b> is not defined,  then <b>IMAGE_LOAD_CONFIG_DIRECTORY</b> is defined as <b>IMAGE_LOAD_CONFIG_DIRECTORY32</b>.</para>
-      <code>typedef struct {
-    DWORD   Size;
-    DWORD   TimeDateStamp;
-    WORD    MajorVersion;
-    WORD    MinorVersion;
-    DWORD   GlobalFlagsClear;
-    DWORD   GlobalFlagsSet;
-    DWORD   CriticalSectionDefaultTimeout;
-    DWORD   DeCommitFreeBlockThreshold;
-    DWORD   DeCommitTotalFreeThreshold;
-    DWORD   LockPrefixTable;            // VA
-    DWORD   MaximumAllocationSize;
-    DWORD   VirtualMemoryThreshold;
-    DWORD   ProcessHeapFlags;
-    DWORD   ProcessAffinityMask;
-    WORD    CSDVersion;
-    WORD    DependentLoadFlags;
-    DWORD   EditList;                   // VA
-    DWORD   SecurityCookie;             // VA
-    DWORD   SEHandlerTable;             // VA
-    DWORD   SEHandlerCount;
-} IMAGE_LOAD_CONFIG_DIRECTORY32, *PIMAGE_LOAD_CONFIG_DIRECTORY32;
-</code>
-    </remarks>
-    <seealso cref="GetImageConfigInformation" />
-    <seealso cref="GetProcessAffinityMask" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
-    <seealso cref="SetImageConfigInformation" />
+    <summary>Contains the load configuration data of an image.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.Size">
-    <summary>
-      <para>The size of the structure. For Windows XP, the size must be specified as 64 for x86 images.</para>
-    </summary>
+    <summary>The size of the structure. For Windows XP, the size must be specified as 64 for x86 images.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.TimeDateStamp">
-    <summary>
-      <para>The date and time stamp value. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock. The time stamp can be printed using the C run-time (CRT) function <b>ctime</b>.</para>
-    </summary>
+    <summary>The date and time stamp value. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock. The time stamp can be printed using the C run-time (CRT) function <b>ctime</b>.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.MajorVersion">
-    <summary>
-      <para>The major version number.</para>
-    </summary>
+    <summary>The major version number.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.MinorVersion">
-    <summary>
-      <para>The minor version number.</para>
-    </summary>
+    <summary>The minor version number.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GlobalFlagsClear">
-    <summary>
-      <para>The global flags that control system behavior. For more information, see Gflags.exe.</para>
-    </summary>
+    <summary>The global flags that control system behavior. For more information, see Gflags.exe.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GlobalFlagsSet">
-    <summary>
-      <para>The global flags that control system behavior. For more information, see Gflags.exe.</para>
-    </summary>
+    <summary>The global flags that control system behavior. For more information, see Gflags.exe.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CriticalSectionDefaultTimeout">
-    <summary>
-      <para>The critical section default time-out value.</para>
-    </summary>
+    <summary>The critical section default time-out value.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DeCommitFreeBlockThreshold">
-    <summary>
-      <para>The size of the minimum block that must be freed before it is freed (de-committed), in bytes. This value is advisory.</para>
-    </summary>
+    <summary>The size of the minimum block that must be freed before it is freed (de-committed), in bytes. This value is advisory.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DeCommitTotalFreeThreshold">
-    <summary>
-      <para>The size of the minimum total memory that must be freed in the process heap before it is freed (de-committed), in bytes. This value is advisory.</para>
-    </summary>
+    <summary>The size of the minimum total memory that must be freed in the process heap before it is freed (de-committed), in bytes. This value is advisory.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.LockPrefixTable">
-    <summary>
-      <para>The VA of a list of addresses where the LOCK prefix is used. These will be replaced by NOP on single-processor systems. This member is available only for x86.</para>
-    </summary>
+    <summary>The VA of a list of addresses where the LOCK prefix is used. These will be replaced by NOP on single-processor systems. This member is available only for x86.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.MaximumAllocationSize">
-    <summary>
-      <para>The maximum allocation size, in bytes. This member is obsolete and is used only for debugging purposes.</para>
-    </summary>
+    <summary>The maximum allocation size, in bytes. This member is obsolete and is used only for debugging purposes.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.VirtualMemoryThreshold">
-    <summary>
-      <para>The maximum block size that can be allocated from heap segments, in bytes.</para>
-    </summary>
+    <summary>The maximum block size that can be allocated from heap segments, in bytes.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.ProcessAffinityMask">
-    <summary>
-      <para>The process affinity mask. For more information, see
-<see cref="GetProcessAffinityMask" />. This member is available only for .exe files.</para>
-    </summary>
+    <summary>The process affinity mask. For more information, see<see cref="GetProcessAffinityMask" />. This member is available only for .exe files.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.ProcessHeapFlags">
-    <summary>
-      <para>The process heap flags. For more information, see <see cref="HeapCreate" />.</para>
-    </summary>
+    <summary>The process heap flags. For more information, see <see cref="HeapCreate" />.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CSDVersion">
-    <summary>
-      <para>The service pack version.</para>
-    </summary>
+    <summary>The service pack version.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DependentLoadFlags">
-    <summary>
-      <para>The default load flags used when the operating system resolves the statically linked imports of a module. For more information, see <see cref="LoadLibraryEx" />.</para>
-    </summary>
+    <summary>The default load flags used when the operating system resolves the statically linked imports of a module. For more information, see <see cref="LoadLibraryEx" />.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.EditList">
-    <summary>
-      <para>Reserved for use by the system.</para>
-    </summary>
+    <summary>Reserved for use by the system.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.SecurityCookie">
-    <summary>
-      <para>A pointer to a cookie that is used by Visual C++ or GS implementation.</para>
-    </summary>
+    <summary>A pointer to a cookie that is used by Visual C++ or GS implementation.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.SEHandlerTable">
-    <summary>
-      <para>The VA of the sorted table of RVAs of each valid, unique handler in the image. This member is available only for x86.</para>
-    </summary>
+    <summary>The VA of the sorted table of RVAs of each valid, unique handler in the image. This member is available only for x86.</summary>
   </member>
   <member name="IMAGE_LOAD_CONFIG_DIRECTORY.SEHandlerCount">
-    <summary>
-      <para>The count of unique handlers in the table. This member is available only for x86.</para>
-    </summary>
+    <summary>The count of unique handlers in the table. This member is available only for x86.</summary>
   </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFCheckFunctionPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFDispatchFunctionPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFFunctionTable">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFFunctionCount">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardFlags">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CodeIntegrity">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardAddressTakenIatEntryTable">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardAddressTakenIatEntryCount">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardLongJumpTargetTable">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardLongJumpTargetCount">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTable">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CHPEMetadataPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFFailureRoutine">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFFailureRoutineFunctionPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTableOffset">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTableSection">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.Reserved2">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFVerifyStackPointerFunctionPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.HotPatchTableOffset">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.Reserved3">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.EnclaveConfigurationPointer">
-    <summary></summary>
-  </member>
-  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.VolatileMetadataPointer">
-    <summary></summary>
-  </member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFCheckFunctionPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFDispatchFunctionPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFFunctionTable"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardCFFunctionCount"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardFlags"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CodeIntegrity"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardAddressTakenIatEntryTable"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardAddressTakenIatEntryCount"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardLongJumpTargetTable"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardLongJumpTargetCount"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTable"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.CHPEMetadataPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFFailureRoutine"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFFailureRoutineFunctionPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTableOffset"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.DynamicValueRelocTableSection"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.Reserved2"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.GuardRFVerifyStackPointerFunctionPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.HotPatchTableOffset"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.Reserved3"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.EnclaveConfigurationPointer"></member>
+  <member name="IMAGE_LOAD_CONFIG_DIRECTORY.VolatileMetadataPointer"></member>
 </doc>

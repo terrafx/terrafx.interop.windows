@@ -3,46 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POINTER_DEVICE_INFO">
-    <summary>
-      <para>Contains information about a pointer device. An array of these structures is returned  from the <see cref="GetPointerDevices" /> function. A single structure is returned from a call to the <see cref="GetPointerDevice" /> function.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_pointerdevice/structures">Structures</seealso>
+    <summary>Contains information about a pointer device. An array of these structures is returned from the <see cref="GetPointerDevices" /> function. A single structure is returned from a call to the <see cref="GetPointerDevice" /> function.</summary>
   </member>
   <member name="POINTER_DEVICE_INFO.displayOrientation">
     <summary>
       <para>One of the values from <see cref="DISPLAYCONFIG_ROTATION" />, which identifies the orientation of the input digitizer.</para>
-      <para>
-        <b>Note</b>  This value is 0 when the source of input is <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_touchinjection/touch-injection-portal">Touch Injection</a>.</para>
+      <div>
+        <b>Note</b>  This value is 0 when the source of input is <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_touchinjection/touch-injection-portal">Touch Injection</a>.</div>
     </summary>
   </member>
   <member name="POINTER_DEVICE_INFO.device">
-    <summary>
-      <para>The handle to the pointer device.</para>
-    </summary>
+    <summary>The handle to the pointer device.</summary>
   </member>
   <member name="POINTER_DEVICE_INFO.pointerDeviceType">
-    <summary>
-      <para>The device type.</para>
-    </summary>
+    <summary>The device type.</summary>
   </member>
   <member name="POINTER_DEVICE_INFO.monitor">
-    <summary>
-      <para>The HMONITOR for the display that the device is mapped to. This is not necessarily the monitor that the pointer device is physically connected to.</para>
-    </summary>
+    <summary>The HMONITOR for the display that the device is mapped to. This is not necessarily the monitor that the pointer device is physically connected to.</summary>
   </member>
   <member name="POINTER_DEVICE_INFO.startingCursorId">
-    <summary>
-      <para>The lowest ID that's assigned to the device.</para>
-    </summary>
+    <summary>The lowest ID that's assigned to the device.</summary>
   </member>
   <member name="POINTER_DEVICE_INFO.maxActiveContacts">
-    <summary>
-      <para>The number of supported simultaneous contacts.</para>
-    </summary>
+    <summary>The number of supported simultaneous contacts.</summary>
   </member>
   <member name="POINTER_DEVICE_INFO.productString">
-    <summary>
-      <para>The string that identifies the product.</para>
-    </summary>
+    <summary>The string that identifies the product.</summary>
   </member>
 </doc>

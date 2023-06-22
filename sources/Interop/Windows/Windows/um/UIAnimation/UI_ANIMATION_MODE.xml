@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UI_ANIMATION_MODE">
-    <summary>
-      <para>Defines animation modes.</para>
-    </summary>
-    <seealso cref="IUIAnimationManager.SetAnimationMode" />
+    <summary>Defines animation modes.</summary>
   </member>
   <member name="UI_ANIMATION_MODE.UI_ANIMATION_MODE_DISABLED">
-    <summary>
-      <para>Animation is disabled.</para>
-    </summary>
+    <summary>Animation is disabled.</summary>
   </member>
   <member name="UI_ANIMATION_MODE.UI_ANIMATION_MODE_SYSTEM_DEFAULT">
-    <summary>
-      <para>The animation mode is managed by the system.</para>
-    </summary>
+    <summary>The animation mode is managed by the system.</summary>
   </member>
   <member name="UI_ANIMATION_MODE.UI_ANIMATION_MODE_ENABLED">
-    <summary>
-      <para>Animation is enabled.</para>
-    </summary>
+    <summary>Animation is enabled.</summary>
   </member>
 </doc>

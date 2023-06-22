@@ -3,36 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICGifGraphicControlExtensionProperties">
-    <summary>
-      <para>Specifies the graphic control extension metadata properties that define the transitions between each frame animation for Graphics Interchange Format (GIF) images.</para>
-    </summary>
+    <summary>Specifies the graphic control extension metadata properties that define the transitions between each frame animation for Graphics Interchange Format (GIF) images.</summary>
   </member>
   <member name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionDisposal">
-    <summary>
-      <para>[VT_UI1] Indicates  the disposal requirements. 0 - no disposal, 1 - do not dispose, 2 - restore to background color, 3 - restore to previous.</para>
-    </summary>
+    <summary>[VT_UI1] Indicates the disposal requirements. 0 - no disposal, 1 - do not dispose, 2 - restore to background color, 3 - restore to previous.</summary>
   </member>
   <member name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionUserInputFlag">
-    <summary>
-      <para>[VT_BOOL] Indicates the user input flag. <b>TRUE</b> if user input should advance to the next frame; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>[VT_BOOL] Indicates the user input flag. <b>TRUE</b> if user input should advance to the next frame; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionTransparencyFlag">
-    <summary>
-      <para>[VT_BOOL] Indicates the transparency flag. <b>TRUE</b> if a transparent color in is in the color table for this frame; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>[VT_BOOL] Indicates the transparency flag. <b>TRUE</b> if a transparent color in is in the color table for this frame; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionDelay">
-    <summary>
-      <para>[VT_UI2] Indicates  how long to display the next frame before advancing to the next frame, in units of 1/100th of a second.</para>
-    </summary>
+    <summary>[VT_UI2] Indicates how long to display the next frame before advancing to the next frame, in units of 1/100th of a second.</summary>
   </member>
   <member name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionTransparentColorIndex">
-    <summary>
-      <para>[VT_UI1] Indicates which color in the palette should be treated as transparent.</para>
-    </summary>
+    <summary>[VT_UI1] Indicates which color in the palette should be treated as transparent.</summary>
   </member>
-  <member name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionProperties_FORCE_DWORD"></member>
 </doc>

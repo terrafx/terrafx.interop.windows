@@ -3,48 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_SHADER_DEBUG_INPUT_INFO">
-    <summary>
-      <para>Describes a shader input.</para>
-    </summary>
-    <remarks>
-      <para>The <b>D3D10_SHADER_DEBUG_INPUT_INFO</b> structure is used with the <see cref="D3D10_SHADER_DEBUG_INFO" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+    <summary>Describes a shader input.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INPUT_INFO.Var">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Index into array of variables to initialize.</para>
-    </summary>
+    <summary>Index into array of variables to initialize.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INPUT_INFO.InitialRegisterSet">
-    <summary>
-      <para>Type: <b><see cref="D3D10_SHADER_DEBUG_REGTYPE" /></b></para>
-      <para>Must be D3D10_SHADER_DEBUG_REG_INPUT, D3D10_SHADER_DEBUG_REG_CBUFFER or D3D10_SHADER_DEBUG_REG_TBUFFER.</para>
-    </summary>
+    <summary>Must be D3D10_SHADER_DEBUG_REG_INPUT, D3D10_SHADER_DEBUG_REG_CBUFFER or D3D10_SHADER_DEBUG_REG_TBUFFER.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INPUT_INFO.InitialBank">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Will contain a cbuffer or tbuffer slot, geometry shader input primitive number, identifying register for an indexable temp, or -1.</para>
-    </summary>
+    <summary>Will contain a cbuffer or tbuffer slot, geometry shader input primitive number, identifying register for an indexable temp, or -1.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INPUT_INFO.InitialRegister">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Register in register set.  <b>InitialRegister</b> will be -1 if it is temporary.</para>
-    </summary>
+    <summary>Register in register set. <b>InitialRegister</b> will be -1 if it is temporary.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INPUT_INFO.InitialComponent">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Gives the component.  <b>InitialComponent</b> will be -1 it is temporary.</para>
-    </summary>
+    <summary>Gives the component. <b>InitialComponent</b> will be -1 it is temporary.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_INPUT_INFO.InitialValue">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Initial value if the variable is a literal.</para>
-    </summary>
+    <summary>Initial value if the variable is a literal.</summary>
   </member>
 </doc>

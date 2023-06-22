@@ -4,53 +4,36 @@
 <doc>
   <member name="AM_DVD_RENDERSTATUS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The AM_DVD_RENDERSTATUS structure contains codes indicating the status of DVD-Video playback. These codes are used in the <see cref="IDvdGraphBuilder.RenderDvdVideoVolume" /> method.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso cref="IDvdGraphBuilder.RenderDvdVideoVolume" />
   </member>
   <member name="AM_DVD_RENDERSTATUS.hrVPEStatus">
-    <summary>
-      <para>Overlay/VPE error code. Zero indicates success; any other value is failure.</para>
-    </summary>
+    <summary>Overlay/VPE error code. Zero indicates success; any other value is failure.</summary>
   </member>
   <member name="AM_DVD_RENDERSTATUS.bDvdVolInvalid">
     <summary>
-      <para>
-        <b>TRUE</b> if the specified DVD volume to be played does not exist; <b>FALSE</b> otherwise.</para>
-    </summary>
+      <b>TRUE</b> if the specified DVD volume to be played does not exist; <b>FALSE</b> otherwise.</summary>
   </member>
   <member name="AM_DVD_RENDERSTATUS.bDvdVolUnknown">
     <summary>
-      <para>
-        <b>TRUE</b> if no DVD volume is specified or if it isn't found; <b>FALSE</b> otherwise.</para>
-    </summary>
+      <b>TRUE</b> if no DVD volume is specified or if it isn't found; <b>FALSE</b> otherwise.</summary>
   </member>
   <member name="AM_DVD_RENDERSTATUS.bNoLine21In">
     <summary>
-      <para>
-        <b>TRUE</b> if the video decoder doesn't produce line 21 (closed captioning) data; <b>FALSE</b> otherwise.</para>
-    </summary>
+      <b>TRUE</b> if the video decoder doesn't produce line 21 (closed captioning) data; <b>FALSE</b> otherwise.</summary>
   </member>
   <member name="AM_DVD_RENDERSTATUS.bNoLine21Out">
     <summary>
-      <para>
-        <b>TRUE</b> if the video decoder can't be shown as closed captioning on video due to a problem with graph building; <b>FALSE</b> otherwise.</para>
-    </summary>
+      <b>TRUE</b> if the video decoder can't be shown as closed captioning on video due to a problem with graph building; <b>FALSE</b> otherwise.</summary>
   </member>
   <member name="AM_DVD_RENDERSTATUS.iNumStreams">
-    <summary>
-      <para>Number of DVD streams to render.</para>
-    </summary>
+    <summary>Number of DVD streams to render.</summary>
   </member>
   <member name="AM_DVD_RENDERSTATUS.iNumStreamsFailed">
-    <summary>
-      <para>Number of streams that failed to render.</para>
-    </summary>
+    <summary>Number of streams that failed to render.</summary>
   </member>
   <member name="AM_DVD_RENDERSTATUS.dwFailedStreamsFlag">
-    <summary>
-      <para>Combination of <see cref="AM_DVD_STREAM_FLAGS" /> flags indicating which streams failed.</para>
-    </summary>
+    <summary>Combination of <see cref="AM_DVD_STREAM_FLAGS" /> flags indicating which streams failed.</summary>
   </member>
 </doc>

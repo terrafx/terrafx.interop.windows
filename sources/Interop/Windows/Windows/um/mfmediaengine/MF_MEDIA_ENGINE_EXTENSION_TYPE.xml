@@ -3,15 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIA_ENGINE_EXTENSION_TYPE">
-    <summary>
-      <para>Specifies media engine extension types.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies media engine extension types.</summary>
   </member>
-  <member name="MF_MEDIA_ENGINE_EXTENSION_TYPE.MF_MEDIA_ENGINE_EXTENSION_TYPE_MEDIASOURCE">
-    <summary></summary>
-  </member>
-  <member name="MF_MEDIA_ENGINE_EXTENSION_TYPE.MF_MEDIA_ENGINE_EXTENSION_TYPE_BYTESTREAM">
-    <summary></summary>
-  </member>
+  <member name="MF_MEDIA_ENGINE_EXTENSION_TYPE.MF_MEDIA_ENGINE_EXTENSION_TYPE_MEDIASOURCE"></member>
+  <member name="MF_MEDIA_ENGINE_EXTENSION_TYPE.MF_MEDIA_ENGINE_EXTENSION_TYPE_BYTESTREAM"></member>
 </doc>

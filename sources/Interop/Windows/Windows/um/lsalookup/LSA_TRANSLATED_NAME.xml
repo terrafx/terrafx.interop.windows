@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_TRANSLATED_NAME">
+    <summary>The <b>LSA_TRANSLATED_NAME</b> structure is used with the<see cref="LsaLookupSids" /> function to return information about the account identified by a <see cref="SID" />.</summary>
+  </member>
+  <member name="LSA_TRANSLATED_NAME.Use">
+    <summary>
+      <para>A value from the<see cref="SID_NAME_USE" /> enumeration that identifies the type of SID.</para>
+      <para>If <b>Use</b> has one of the following values, one or both of the <b>Name</b> or <b>DomainIndex</b> members of <b>LSA_TRANSLATED_NAME</b> is not valid. These members are valid if <b>Use</b> has any other value.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SidTypeDomain</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>DomainIndex</b> member is valid, but the <b>Name</b> member is not valid and must be ignored.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SidTypeInvalid</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Both <b>DomainIndex</b> and <b>Name</b> are not valid and must be ignored.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SidTypeUnknown</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Both <b>DomainIndex</b> and <b>Name</b> are not valid and must be ignored.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SidTypeWellKnownGroup</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>Name</b> member is valid, but the <b>DomainIndex</b> member is not valid and must be ignored.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="LSA_TRANSLATED_NAME.Name">
+    <summary>An<see cref="LSA_UNICODE_STRING" /> structure that contains the isolated name of the translated SID. An isolated name is a user, group, or local group account name without the domain name (for example, user_name, rather than Acctg\user_name).</summary>
+  </member>
+  <member name="LSA_TRANSLATED_NAME.DomainIndex">
+    <summary>
+      <para>Specifies the zero-based index of an entry in the<see cref="LSA_REFERENCED_DOMAIN_LIST" /> structure returned by the<see cref="LsaLookupSids" /> function. The entry contains the name and SID of the domain in which the account was found.</para>
+      <para>If there is no corresponding domain for an account, this member contains a negative value.</para>
+    </summary>
+  </member>
+</doc>

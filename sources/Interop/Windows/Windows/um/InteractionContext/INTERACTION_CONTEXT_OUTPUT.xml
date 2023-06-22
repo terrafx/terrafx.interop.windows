@@ -3,58 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INTERACTION_CONTEXT_OUTPUT">
-    <summary>
-      <para>Defines the output of the  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_arguments_cross_slide">INTERACTION_ARGUMENTS_CROSS_SLIDE</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_arguments_manipulation">INTERACTION_ARGUMENTS_MANIPULATION</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_arguments_tap">INTERACTION_ARGUMENTS_TAP</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nc-interactioncontext-interaction_context_output_callback">INTERACTION_CONTEXT_OUTPUT_CALLBACK</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-interaction_flags">INTERACTION_FLAGS</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/structures">Interaction Context Structures</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-registeroutputcallbackinteractioncontext">RegisterOutputCallbackInteractionContext</seealso>
+    <summary>Defines the output of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_OUTPUT.interactionId">
-    <summary>
-      <para>ID of the  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
-    </summary>
+    <summary>ID of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_OUTPUT.interactionFlags">
-    <summary>
-      <para>One of the constants from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-interaction_flags">INTERACTION_FLAGS</a>.</para>
-    </summary>
+    <summary>One of the constants from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-interaction_flags">INTERACTION_FLAGS</a>.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_OUTPUT.inputType">
-    <summary>
-      <para>One of the constants from <see cref="POINTER_INPUT_TYPE" />.</para>
-    </summary>
+    <summary>One of the constants from <see cref="POINTER_INPUT_TYPE" />.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_OUTPUT.x">
-    <summary>
-      <para>The x-coordinate of the input pointer, in HIMETRIC units.</para>
-    </summary>
+    <summary>The x-coordinate of the input pointer, in HIMETRIC units.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_OUTPUT.y">
-    <summary>
-      <para>The y-coordinate of the input pointer, in HIMETRIC units.</para>
-    </summary>
+    <summary>The y-coordinate of the input pointer, in HIMETRIC units.</summary>
   </member>
-  <member name="INTERACTION_CONTEXT_OUTPUT.arguments">
-    <summary></summary>
-  </member>
+  <member name="INTERACTION_CONTEXT_OUTPUT.arguments"></member>
   <member name="INTERACTION_CONTEXT_OUTPUT.arguments.manipulation">
-    <summary>
-      <para>The state of the manipulation.</para>
-    </summary>
+    <summary>The state of the manipulation.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_OUTPUT.arguments.tap">
-    <summary>
-      <para>The state of the tap gesture.</para>
-    </summary>
+    <summary>The state of the tap gesture.</summary>
   </member>
   <member name="INTERACTION_CONTEXT_OUTPUT.arguments.crossSlide">
-    <summary>
-      <para>The state of the cross-slide interaction.</para>
-    </summary>
+    <summary>The state of the cross-slide interaction.</summary>
   </member>
 </doc>

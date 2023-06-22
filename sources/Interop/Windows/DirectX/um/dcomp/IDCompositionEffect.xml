@@ -3,14 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionEffect">
-    <summary>
-      <para>Represents a bitmap effect that modifies the rasterization of a visual's subtree.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IDCompositionEffect</b> is an abstract interface that represents a bitmap effect. An effect applies to the entire visual subtree rooted at the visual that the effect is associated with. An effect object can be associated with multiple visuals. When an effect object is modified, all affected visuals are recomposed to reflect the change.</para>
-      <para>More than one effect can be simultaneously applied to a visual by using the <see cref="IDCompositionEffectGroup" /> interface.</para>
-    </remarks>
-    <seealso cref="IDCompositionVisual.SetEffect" />
+    <summary>Represents a bitmap effect that modifies the rasterization of a visual's subtree.</summary>
   </member>
 </doc>

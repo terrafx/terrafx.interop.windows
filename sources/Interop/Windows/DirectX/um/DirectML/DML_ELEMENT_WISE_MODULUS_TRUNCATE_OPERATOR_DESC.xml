@@ -6,27 +6,17 @@
     <summary>
       <para>Computes the C modulus operator for each pair of corresponding elements of the input tensors, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
       <para>Because the quotient is rounded towards 0, the result will have the same sign as the dividend.</para>
-      <code>f(a, b) = a - (b * trunc(a / b))
-</code>
+      <code>f(a, b) = a - (b * trunc(a / b))</code>
       <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the the input tensors during binding.</para>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC.ATensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the left-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the left-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC.BTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the right-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the right-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
 </doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MSV1_0_PROFILE_TYPE">
+    <summary>The <b>MSV1_0_PROFILE_BUFFER_TYPE</b> enumeration lists the kind of logon profile returned.</summary>
+  </member>
+  <member name="MSV1_0_PROFILE_TYPE.MsV1_0InteractiveProfile">
+    <summary>The profile describes an interactive <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>.</summary>
+  </member>
+  <member name="MSV1_0_PROFILE_TYPE.MsV1_0Lm20LogonProfile">
+    <summary>The profile describes a network logon session.</summary>
+  </member>
+  <member name="MSV1_0_PROFILE_TYPE.MsV1_0SmartCardProfile">
+    <summary>The profile describes a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">smart card</a> logon session.</summary>
+  </member>
+</doc>

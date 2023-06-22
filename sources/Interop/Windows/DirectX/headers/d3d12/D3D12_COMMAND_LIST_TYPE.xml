@@ -3,59 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_COMMAND_LIST_TYPE">
-    <summary>
-      <para>Specifies the type of a command list.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the following methods:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="CreateCommandAllocator" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="CreateCommandQueue" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="CreateCommandList" />
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
+    <summary>Specifies the type of a command list.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_TYPE.D3D12_COMMAND_LIST_TYPE_DIRECT">
-    <summary>
-      <para>Specifies a command buffer that the GPU can execute. A direct command list doesn't inherit any GPU state.</para>
-    </summary>
+    <summary>Specifies a command buffer that the GPU can execute. A direct command list doesn't inherit any GPU state.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_TYPE.D3D12_COMMAND_LIST_TYPE_BUNDLE">
-    <summary>
-      <para>Specifies a command buffer that can be executed only directly via a direct command list. A bundle command list inherits all GPU state (except for the currently set pipeline state object and primitive topology).</para>
-    </summary>
+    <summary>Specifies a command buffer that can be executed only directly via a direct command list. A bundle command list inherits all GPU state (except for the currently set pipeline state object and primitive topology).</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_TYPE.D3D12_COMMAND_LIST_TYPE_COMPUTE">
-    <summary>
-      <para>Specifies a command buffer for computing.</para>
-    </summary>
+    <summary>Specifies a command buffer for computing.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_TYPE.D3D12_COMMAND_LIST_TYPE_COPY">
-    <summary>
-      <para>Specifies a command buffer for copying.</para>
-    </summary>
+    <summary>Specifies a command buffer for copying.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_TYPE.D3D12_COMMAND_LIST_TYPE_VIDEO_DECODE">
-    <summary>
-      <para>Specifies a command buffer for video decoding.</para>
-    </summary>
+    <summary>Specifies a command buffer for video decoding.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_TYPE.D3D12_COMMAND_LIST_TYPE_VIDEO_PROCESS">
-    <summary>
-      <para>Specifies a command buffer for video processing.</para>
-    </summary>
+    <summary>Specifies a command buffer for video processing.</summary>
   </member>
 </doc>

@@ -4,66 +4,41 @@
 <doc>
   <member name="IVMRVideoStreamControl.GetColorKey">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetColorKey</code> method retrieves the source color key currently set for this stream.</para>
     </summary>
-    <param name="lpClrKey">
-      <para>Address of a <see cref="DDCOLORKEY" /> structure that receives the source color key.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRVideoStreamControl Interface" />
-    <seealso cref="IVMRVideoStreamControl.SetColorKey" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+    <param name="lpClrKey">Address of a <see cref="DDCOLORKEY" /> structure that receives the source color key.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IVMRVideoStreamControl.GetStreamActiveState">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetStreamActiveState</code> method retrieves the state of the stream.</para>
     </summary>
-    <param name="lpfActive">
-      <para>Receives the current state of the stream. <b>TRUE</b> means the stream is active; <b>FALSE</b> means that it is inactive.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <seealso cref="IVMRVideoStreamControl Interface" />
-    <seealso cref="IVMRVideoStreamControl.SetStreamActiveState" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+    <param name="lpfActive">Receives the current state of the stream. <b>TRUE</b> means the stream is active; <b>FALSE</b> means that it is inactive.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IVMRVideoStreamControl.SetColorKey">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetColorKey</code> method sets the source color key that the VMR will use when compositing the video image.</para>
     </summary>
-    <param name="lpClrKey">
-      <para>Specifies the source color key as a <see cref="DDCOLORKEY" /> type.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <seealso cref="IVMRVideoStreamControl Interface" />
-    <seealso cref="IVMRVideoStreamControl.GetColorKey" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+    <param name="lpClrKey">Specifies the source color key as a <see cref="DDCOLORKEY" /> type.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IVMRVideoStreamControl.SetStreamActiveState">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetStreamActiveState</code> method activates or inactivates an input stream.</para>
     </summary>
-    <param name="fActive">
-      <para>Specifies the state of the stream. <b>TRUE</b> means active; <b>FALSE</b> means inactive.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <seealso cref="IVMRVideoStreamControl Interface" />
-    <seealso cref="IVMRVideoStreamControl.GetStreamActiveState" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+    <param name="fActive">Specifies the state of the stream. <b>TRUE</b> means active; <b>FALSE</b> means inactive.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IVMRVideoStreamControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IVMRVideoStreamControl</code> interface is implemented on each input pin of the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7). The interface operates on the input stream represented by the pin. This interface is used by upstream filters (typically decoders) to get or set the active state of individual streams, or the source color key for the composited image. Applications in general should not use this interface.</para>
-      <para>The VMR-9 input pins expose the <see cref="IVMRVideoStreamControl9" /> interface.</para>
+      <para>The VMR-9 input pins expose the <a href="https://docs.microsoft.com//previous-versions/ms787140(v=vs.85)">IVMRVideoStreamControl9</a> interface.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
 </doc>

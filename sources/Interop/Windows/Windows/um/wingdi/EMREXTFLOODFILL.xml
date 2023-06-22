@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMREXTFLOODFILL">
-    <summary>
-      <para>The <b>EMREXTFLOODFILL</b> structure contains members for the <see cref="ExtFloodFill" /> enhanced metafile record.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
-    <seealso cref="ExtFloodFill" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="RGB" />
+    <summary>The <b>EMREXTFLOODFILL</b> structure contains members for the <see cref="ExtFloodFill" /> enhanced metafile record.</summary>
   </member>
   <member name="EMREXTFLOODFILL.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMREXTFLOODFILL.ptlStart">
-    <summary>
-      <para>Coordinates, in logical units, where filling begins.</para>
-    </summary>
+    <summary>Coordinates, in logical units, where filling begins.</summary>
   </member>
   <member name="EMREXTFLOODFILL.crColor">
-    <summary>
-      <para>Color of fill. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</para>
-    </summary>
+    <summary>Color of fill. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</summary>
   </member>
   <member name="EMREXTFLOODFILL.iMode">
-    <summary>
-      <para>Type of fill operation to be performed. This member must be either the FLOODFILLBORDER or FLOODFILLSURFACE value.</para>
-    </summary>
+    <summary>Type of fill operation to be performed. This member must be either the FLOODFILLBORDER or FLOODFILLSURFACE value.</summary>
   </member>
 </doc>

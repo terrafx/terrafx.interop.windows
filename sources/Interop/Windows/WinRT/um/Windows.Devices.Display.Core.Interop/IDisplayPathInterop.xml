@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDisplayPathInterop.CreateSourcePresentationHandle">
+    <summary>Creates an NT handle for controlling access to scanout on this path. A compositor application can choose to broker access to paths that it controls using these objects. Your application can call <see cref="IDisplayDeviceInterop.OpenSharedHandle" /> to create a <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core.displaysource">DisplaySource</a> object from this handle.</summary>
+    <param name="pValue">A pointer to a <b>HANDLE</b> that receives the newly created source presentation object.</param>
+    <returns>This method returns <b>S_OK</b> if it succeeded, otherwise a failure code indicating why it failed. If it succeeded, then <i>pValue</i> will always point to the newly created handle.</returns>
+  </member>
+  <member name="IDisplayPathInterop.GetSourceId">
+    <summary>Gets the unique identifier of the <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core.displaysource">DisplaySource</a> object.</summary>
+    <param name="pSourceId">The unique identifier.</param>
+    <returns>This method returns <b>S_OK</b> if it succeeded, otherwise a failure code indicating why it failed.</returns>
+  </member>
+  <member name="IDisplayPathInterop">
+    <summary>Provides methods for interoperating between the Windows Runtime class <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core.displaypath">DisplayPath</a> and other display-related APIs.</summary>
+  </member>
+</doc>

@@ -3,30 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEngineNotify.EventNotify">
-    <summary>
-      <para>Notifies the application when a playback event occurs.</para>
-    </summary>
-    <param name="event">
-      <para>A member of the <see cref="MF_MEDIA_ENGINE_EVENT" /> enumeration that specifies the event.</para>
-    </param>
-    <param name="param1">
-      <para>The first event parameter. The meaning of this parameter depends on the event code.</para>
-    </param>
-    <param name="param2">
-      <para>The second event parameter. The meaning of this parameter depends on the event code.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineNotify" />
+    <summary>Notifies the application when a playback event occurs.</summary>
+    <param name="event">A member of the <see cref="MF_MEDIA_ENGINE_EVENT" /> enumeration that specifies the event.</param>
+    <param name="param1">The first event parameter. The meaning of this parameter depends on the event code.</param>
+    <param name="param2">The second event parameter. The meaning of this parameter depends on the event code.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineNotify">
-    <summary>
-      <para>Callback interface for the <see cref="IMFMediaEngine" /> interface.</para>
-    </summary>
-    <remarks>
-      <para>To set the callback pointer on the Media Engine, set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-media-engine-callback">MF_MEDIA_ENGINE_CALLBACK</a> attribute in the <see cref="IMFMediaEngineClassFactory.CreateInstance" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Callback interface for the <see cref="IMFMediaEngine" /> interface.</summary>
   </member>
 </doc>

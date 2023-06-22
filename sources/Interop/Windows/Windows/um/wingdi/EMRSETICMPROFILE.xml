@@ -3,40 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRSETICMPROFILE">
-    <summary>
-      <para>The <b>EMRSETICMPROFILE</b> structure contains members for the <see cref="SetICMProfile" /> enhanced metafile record.</para>
-    </summary>
-    <remarks>
-      <para>This structure is to be used during metafile playback.</para>
-    </remarks>
-    <seealso cref="EMR" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="SetICMProfile" />
+    <summary>The <b>EMRSETICMPROFILE</b> structure contains members for the <see cref="SetICMProfile" /> enhanced metafile record.</summary>
   </member>
   <member name="EMRSETICMPROFILE.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRSETICMPROFILE.dwFlags">
-    <summary>
-      <para>The profile flags. This member can be SETICMPROFILE_EMBEDED (0x00000001).</para>
-    </summary>
+    <summary>The profile flags. This member can be SETICMPROFILE_EMBEDED (0x00000001).</summary>
   </member>
   <member name="EMRSETICMPROFILE.cbName">
-    <summary>
-      <para>The size of the desired profile name.</para>
-    </summary>
+    <summary>The size of the desired profile name.</summary>
   </member>
   <member name="EMRSETICMPROFILE.cbData">
-    <summary>
-      <para>The size of profile data, if attached.</para>
-    </summary>
+    <summary>The size of profile data, if attached.</summary>
   </member>
   <member name="EMRSETICMPROFILE.Data">
-    <summary>
-      <para>An array that contains the profile data. The length of this array is <b>cbName</b> plus <b>cbData</b>.</para>
-    </summary>
+    <summary>An array that contains the profile data. The length of this array is <b>cbName</b> plus <b>cbData</b>.</summary>
   </member>
 </doc>

@@ -3,70 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFactory1.CreateCustomRenderingParams">
-    <summary>
-      <para>Creates a rendering parameters object with the specified properties.</para>
-    </summary>
-    <param name="gamma">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The gamma level to be set for the new rendering parameters object.</para>
-    </param>
-    <param name="enhancedContrast">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The enhanced contrast level to be set for the new rendering parameters object.</para>
-    </param>
-    <param name="enhancedContrastGrayscale">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The amount of contrast enhancement to use for grayscale antialiasing, zero or greater.</para>
-    </param>
-    <param name="clearTypeLevel">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The ClearType level to be set for the new rendering parameters object.</para>
-    </param>
-    <param name="pixelGeometry">
-      <para>Type: <b><see cref="DWRITE_PIXEL_GEOMETRY" /></b></para>
-      <para>Represents the internal structure of a device pixel (that is, the physical arrangement of red, green, and blue color components) that is assumed for purposes of rendering text.</para>
-    </param>
-    <param name="renderingMode">
-      <para>Type: <b><see cref="DWRITE_RENDERING_MODE" /></b></para>
-      <para>A value that represents the method (for example, ClearType natural quality) for rendering glyphs.</para>
-    </param>
-    <param name="renderingParams">
-      <para>Type: <b><see cref="IDWriteRenderingParams1" />**</b></para>
-      <para>When this method returns, contains an address of a pointer to the newly created rendering parameters object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Standard HRESULT error code.</para>
-    </returns>
-    <seealso cref="IDWriteFactory1" />
+    <summary>Creates a rendering parameters object with the specified properties.</summary>
+    <param name="gamma">The gamma level to be set for the new rendering parameters object.</param>
+    <param name="enhancedContrast">The enhanced contrast level to be set for the new rendering parameters object.</param>
+    <param name="enhancedContrastGrayscale">The amount of contrast enhancement to use for grayscale antialiasing, zero or greater.</param>
+    <param name="clearTypeLevel">The ClearType level to be set for the new rendering parameters object.</param>
+    <param name="pixelGeometry">Represents the internal structure of a device pixel (that is, the physical arrangement of red, green, and blue color components) that is assumed for purposes of rendering text.</param>
+    <param name="renderingMode">A value that represents the method (for example, ClearType natural quality) for rendering glyphs.</param>
+    <param name="renderingParams">When this method returns, contains an address of a pointer to the newly created rendering parameters object.</param>
+    <returns>Standard HRESULT error code.</returns>
   </member>
   <member name="IDWriteFactory1.GetEudcFontCollection">
-    <summary>
-      <para>Gets a font collection representing the set of EUDC (end-user defined characters) fonts.</para>
-    </summary>
-    <param name="fontCollection">
-      <para>Type: <b><see cref="IDWriteFontCollection" />**</b></para>
-      <para>The font collection to fill.</para>
-    </param>
-    <param name="checkForUpdates">
-      <para>Type: <b>BOOL</b></para>
-      <para>Whether to check for updates.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Note that if no EUDC is set on the system,
-the returned collection will be empty, meaning it will return success
-but GetFontFamilyCount will be zero.</para>
-    </remarks>
-    <seealso cref="IDWriteFactory1" />
+    <summary>Gets a font collection representing the set of EUDC (end-user defined characters) fonts.</summary>
+    <param name="fontCollection">The font collection to fill.</param>
+    <param name="checkForUpdates">Whether to check for updates.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFactory1">
-    <summary>
-      <para>The root factory interface for all <a href="https://docs.microsoft.com//windows/win32/DirectWrite/direct-write-portal">DirectWrite</a> objects.</para>
-    </summary>
-    <seealso cref="IDWriteFactory" />
+    <summary>The root factory interface for all <a href="https://docs.microsoft.com//windows/win32/DirectWrite/direct-write-portal">DirectWrite</a> objects.</summary>
   </member>
 </doc>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_FOREST_TRUST_COLLISION_INFORMATION">
+    <summary>The <b>LSA_FOREST_TRUST_COLLISION_INFORMATION</b> structure contains information about <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Local Security Authority</a> forest trust collisions.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_COLLISION_INFORMATION.RecordCount">
+    <summary>Number of <see cref="LSA_FOREST_TRUST_COLLISION_RECORD" /> structures in the array pointed to by the <b>Entries</b> member.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_COLLISION_INFORMATION.Entries">
+    <summary>Pointer to a pointer to an array of <see cref="LSA_FOREST_TRUST_COLLISION_RECORD" /> structures, each of which contains information about a single collision.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_COLLISION_INFORMATION.Entries.size_is"></member>
+  <member name="LSA_FOREST_TRUST_COLLISION_INFORMATION.Entries.size_is.RecordCount"></member>
+</doc>

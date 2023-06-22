@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.EventActivityIdControl">
+    <summary>Creates, queries, and sets activity identifiers for use in ETW events.</summary>
+    <param name="ControlCode">
+      <para>A control code that specifies the operation to perform.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>
+              <b>EVENT_ACTIVITY_CTRL_GET_ID</b>
+            </para>
+            <para>Sets the <i>ActivityId</i> parameter to the value of the current thread's activity ID.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>EVENT_ACTIVITY_CTRL_SET_ID</b>
+            </para>
+            <para>Sets the current thread's activity ID to the value of the <i>ActivityId</i>parameter.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>EVENT_ACTIVITY_CTRL_CREATE_ID</b>
+            </para>
+            <para>Sets the <i>ActivityId</i> parameter to the value of a newly-generated locally-unique activity ID.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>EVENT_ACTIVITY_CTRL_GET_SET_ID</b>
+            </para>
+            <para>Swaps the values of the <i>ActivityId</i> parameter and the current thread's activity ID. (Saves the value of the current thread's activity ID, then sets the current thread's activity ID to the value of the <i>ActivityId</i> parameter, then sets the <i>ActivityId</i> parameter to the saved value.)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>EVENT_ACTIVITY_CTRL_CREATE_SET_ID</b>
+            </para>
+            <para>Sets the <i>ActivityId</i> parameter to the value of the current thread's activity ID, then sets the current thread's activity ID to the value of a newly-generated locally-unique activity ID.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ActivityId">A pointer to a buffer that contains a 128-bit activity ID. This buffer may be read-from and/or written-to, depending on the value of the <i>ControlCode</i>parameter.</param>
+    <returns>Returns <b>ERROR_SUCCESS</b> if successful.</returns>
+  </member>
+  <member name="Windows.EventDataDescCreate">
+    <summary>Sets the values of an<see cref="EVENT_DATA_DESCRIPTOR" />.</summary>
+    <param name="EventDataDescriptor">The data descriptor whose member values are set to those of the remaining parameters. For details, see<see cref="EVENT_DATA_DESCRIPTOR" />.</param>
+    <param name="DataPtr">
+      <para>A pointer to the event data. This value is used to set the <i>Ptr</i> member of the descriptor.</para>
+      <para>
+        <i>DataPtr</i> parameter may be <b>NULL</b> if and only if <i>DataSize</i> is 0.</para>
+    </param>
+    <param name="DataSize">The size (in bytes) of the event data. The value is used to set the <i>Size</i>member of the descriptor.</param>
+    <returns>This function does not return a value.</returns>
+  </member>
+  <member name="Windows.EventDescCreate">
+    <summary>Sets the values of an event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor whose member values are set to those of the remaining parameters. For details, see<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Id">Event identifier. The value is used to set the <b>Id</b> member of<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Version">Version of the event. The value is used to set the <b>Version</b> member of<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Channel">The category of events to which this event belongs. The value is used to set the<b>Channel</b> member of<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Level">Specifies the severity of the event. The value is used to set the <b>Level</b>member of<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Task">Identifies a logical component of the application whose events you want to enable. The value is used to set the <b>Task</b> member of<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Opcode">Operation being performed at the time the event was written. The value is used to set the <b>Opcode</b> member of<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Keyword">Bitmask that further defines the category of events to which the event belongs. The value is used to set the <b>Keyword</b> member of<see cref="EVENT_DESCRIPTOR" />.</param>
+    <returns>This function does not return a value.</returns>
+  </member>
+  <member name="Windows.EventDescGetChannel">
+    <summary>Retrieves the channel from the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor from which to retrieve the channel. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <returns>Channel that defines the category of events to which this event belongs.</returns>
+  </member>
+  <member name="Windows.EventDescGetId">
+    <summary>Retrieves the event identifier from the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor from which to retrieve the event identifier. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <returns>The event identifier.</returns>
+  </member>
+  <member name="Windows.EventDescGetKeyword">
+    <summary>Retrieves the keyword from the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor from which to retrieve the keyword. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <returns>Keyword that is a bitmask that further defines the category of events to which the event belongs.</returns>
+  </member>
+  <member name="Windows.EventDescGetLevel">
+    <summary>Retrieves the severity level from the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor from which to retrieve the severity level. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <returns>Severity level that indicates the verboseness with which to log the event.</returns>
+  </member>
+  <member name="Windows.EventDescGetOpcode">
+    <summary>Retrieves the operation code from the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor from which to retrieve the operation code. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <returns>Operation code that identifies the operation being performed at the time the event was written.</returns>
+  </member>
+  <member name="Windows.EventDescGetTask">
+    <summary>Retrieves the task from the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor from which to retrieve the task. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <returns>Task that identifies the logical component of the application whose events you want to enable.</returns>
+  </member>
+  <member name="Windows.EventDescGetVersion">
+    <summary>Retrieves the version from the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor from which to retrieve the version. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <returns>Version that identifies the revision level of the event definition.</returns>
+  </member>
+  <member name="Windows.EventDescOrKeyword">
+    <summary>Adds another keyword to the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor to modify. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Keyword">New keyword to add to the current keyword bitmask.</param>
+    <returns>The modified event descriptor.</returns>
+  </member>
+  <member name="Windows.EventDescSetChannel">
+    <summary>Sets the <b>Channel</b> member of the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor to modify. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Channel">Channel that defines the category of events to which this event belongs.</param>
+    <returns>The modified event descriptor.</returns>
+  </member>
+  <member name="Windows.EventDescSetId">
+    <summary>Sets the <b>Id</b> member of the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor to modify. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Id">The event identifier.</param>
+    <returns>The modified event descriptor.</returns>
+  </member>
+  <member name="Windows.EventDescSetKeyword">
+    <summary>Sets the <b>Keyword</b> member of the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor to modify. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Keyword">Keyword that is a bitmask that further defines the category of events to which the event belongs.</param>
+    <returns>The modified event descriptor.</returns>
+  </member>
+  <member name="Windows.EventDescSetLevel">
+    <summary>Sets the <b>Level</b> member of the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor to modify. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Level">Severity level that indicates the verboseness with which to log the event. For details, see the Level parameter of<a href="https://docs.microsoft.com//windows/desktop/ETW/enabletraceex-func">EnableTraceEx</a>.</param>
+    <returns>The modified event descriptor.</returns>
+  </member>
+  <member name="Windows.EventDescSetOpcode">
+    <summary>Sets the <b>Opcode</b> member of the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor to modify. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Opcode">Operation code that identifies the operation being performed at the time the event was written.</param>
+    <returns>The modified event descriptor.</returns>
+  </member>
+  <member name="Windows.EventDescSetTask">
+    <summary>Sets the <b>Task</b> member of the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor to modify. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Task">Task that identifies the logical component of the application whose events you want to enable.</param>
+    <returns>The modified event descriptor.</returns>
+  </member>
+  <member name="Windows.EventDescSetVersion">
+    <summary>Sets the <b>Version</b> member of the event descriptor.</summary>
+    <param name="EventDescriptor">Event descriptor to modify. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <param name="Version">Version that identifies the revision level of the event definition. The first version of an event is zero.</param>
+    <returns>The modified event descriptor.</returns>
+  </member>
+  <member name="Windows.EventDescZero">
+    <summary>Initializes an event descriptor to zero.</summary>
+    <param name="EventDescriptor">The event descriptor. See<see cref="EVENT_DESCRIPTOR" />.</param>
+    <returns>This function does not return a value.</returns>
+  </member>
+  <member name="Windows.EventEnabled">
+    <summary>
+      <para>Determines whether an event provider should generate a particular event based on the event's EVENT_DESCRIPTOR.</para>
+      <para>Returns <b>FALSE</b> if ETW can quickly determine that no session is listening for a specified event from the given provider. Otherwise returns <b>TRUE</b>.</para>
+    </summary>
+    <param name="RegHandle">
+      <para>Registration handle of the provider. The handle comes from<see cref="EventRegister" />.</para>
+      <para>If <i>RegHandle</i> is <b>NULL</b>, <b>EventEnabled</b> will return <b>FALSE</b>.</para>
+    </param>
+    <param name="EventDescriptor">
+      <see cref="EVENT_DESCRIPTOR" />that provides information that will be used to determine whether the event is enabled. This includes the event's Level (severity) and Keyword (categories).</param>
+    <returns>Returns <b>FALSE</b> if the provider should skip generating the event, i.e. returns<b>FALSE</b> if ETW can quickly determine that no event collection session would record an event from the given provider with the specified descriptor. Otherwise returns <b>TRUE</b>, indicating that the provider should generate the event.</returns>
+  </member>
+  <member name="Windows.EventProviderEnabled">
+    <summary>
+      <para>Determines whether an event provider should generate a particular event based on the event's Level and Keyword.</para>
+      <para>Returns <b>FALSE</b> if ETW can quickly determine that no session is listening for a specified event from the given provider. Otherwise returns <b>TRUE</b>.</para>
+    </summary>
+    <param name="RegHandle">
+      <para>Registration handle of the provider. The handle comes from<see cref="EventRegister" />.</para>
+      <para>If <i>RegHandle</i> is <b>NULL</b>, <b>EventProviderEnabled</b> will return <b>FALSE</b>.</para>
+    </param>
+    <param name="Level">An 8-bit number used to describe an event's severity or importance. See<see cref="EVENT_DESCRIPTOR" />for more information about event level values.</param>
+    <param name="Keyword">A 64-bit bitmask used to indicate an event's membership in a set of event categories. See<see cref="EVENT_DESCRIPTOR" />for more information about event keyword values.</param>
+    <returns>Returns <b>FALSE</b> if ETW can quickly determine that no session is listening for a specified event from the given provider. Otherwise returns <b>TRUE</b>.</returns>
+  </member>
+  <member name="Windows.EventRegister">
+    <summary>Registers an ETW event provider, creating a handle that can be used to write ETW events.</summary>
+    <param name="ProviderId">GUID that uniquely identifies the provider, sometimes called a control GUID. This must be a stable identifier so that trace controllers can use the GUID to subscribe to events from this provider.</param>
+    <param name="EnableCallback">Optional<a href="https://docs.microsoft.com//windows/win32/api/evntprov/nc-evntprov-penablecallback">EnableCallback</a> that ETW will invoke when a trace session enables or disables this provider. Use<code>NULL</code> if no callback is needed.</param>
+    <param name="CallbackContext">Optional context data that ETW will provide when invoking <i>EnableCallback</i>. Use<code>NULL</code> if no callback context is needed.</param>
+    <param name="RegHandle">
+      <para>Receives the event provider registration handle. The handle is used in subsequent calls to provider APIs such as <b>EventWrite</b>,<b>EventProviderEnabled</b>, and <b>EventRegister</b>.</para>
+      <para>Before your provider unloads or exits, free the provider registration handle by calling<see cref="EventUnregister" />. A DLL that unloads without freeing all of the provider handles that it registered may cause the process to crash.</para>
+    </param>
+    <returns>
+      <para>Returns <b>ERROR_SUCCESS</b> if successful.</para>
+      <para>The error code returned by <b>EventRegister</b> is primarily intended for use in debugging and diagnostic scenarios. Most production code should continue to run even if an ETW provider failed to register, so release builds should usually ignore the error code returned by <b>EventRegister</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.EtwSetInformation">
+    <summary>Configures an ETW event provider.</summary>
+    <param name="RegHandle">Event provider registration handle. This is a handle returned by<see cref="EventRegister" />.</param>
+    <param name="InformationClass">
+      <see cref="EVENT_INFO_CLASS" />value that specifies the configuration operation to be performed on the event provider.</param>
+    <param name="EventInformation">
+      <para>Pointer to a buffer that contains data to be used when configuring the event provider. The format of the data in this buffer depends on the value specified in the <i>InformationClass</i> parameter.</para>
+      <para>This value may be <code>NULL</code> if <i>InformationLength</i> is zero.</para>
+    </param>
+    <param name="InformationLength">The size (in bytes) of the data in the <i>EventInformation</i> buffer.</param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>ERROR_INVALID_PARAMETER</b>: The parameter is incorrect. For example, this error is returned if the <i>RegHandle</i> parameter is not a valid provider registration handle, if <i>EventInformation</i> is <b>NULL</b> but <i>InformationLength</i>is nonzero, or if the specified <i>InformationLength</i> is not valid for the given<i>InformationClass</i>.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_NOT_SUPPORTED</b>: The request is not supported. This error is returned if the <i>InformationClass</i> parameter is not a recognized value.</description>
+        </item>
+        <item>
+          <description>
+            <b>Other</b>: Use<see cref="FormatMessage" /> to obtain the message string for the returned error.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.EventSetInformation">
+    <summary>Configures an ETW event provider.</summary>
+    <param name="RegHandle">Event provider registration handle. This is a handle returned by<see cref="EventRegister" />.</param>
+    <param name="InformationClass">
+      <see cref="EVENT_INFO_CLASS" />value that specifies the configuration operation to be performed on the event provider.</param>
+    <param name="EventInformation">
+      <para>Pointer to a buffer that contains data to be used when configuring the event provider. The format of the data in this buffer depends on the value specified in the <i>InformationClass</i> parameter.</para>
+      <para>This value may be <code>NULL</code> if <i>InformationLength</i> is zero.</para>
+    </param>
+    <param name="InformationLength">The size (in bytes) of the data in the <i>EventInformation</i> buffer.</param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>ERROR_INVALID_PARAMETER</b>: The parameter is incorrect. For example, this error is returned if the <i>RegHandle</i> parameter is not a valid provider registration handle, if <i>EventInformation</i> is <b>NULL</b> but <i>InformationLength</i>is nonzero, or if the specified <i>InformationLength</i> is not valid for the given<i>InformationClass</i>.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_NOT_SUPPORTED</b>: The request is not supported. This error is returned if the <i>InformationClass</i> parameter is not a recognized value.</description>
+        </item>
+        <item>
+          <description>
+            <b>Other</b>: Use<see cref="FormatMessage" /> to obtain the message string for the returned error.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.EventUnregister">
+    <summary>
+      <para>Unregisters an ETW event provider.</para>
+      <para>All event providers registered by a component must be unregistered before the component unloads. If a DLL registers an event provider and then unloads without unregistering the event provider, the process may crash.</para>
+    </summary>
+    <param name="RegHandle">Event provider registration handle returned by<see cref="EventRegister" />.</param>
+    <returns>Returns <b>ERROR_SUCCESS</b> if successful.</returns>
+  </member>
+  <member name="Windows.EventWrite">
+    <summary>Writes an ETW event that uses the current thread's activity ID.</summary>
+    <param name="RegHandle">Registration handle of the provider. The handle comes from<see cref="EventRegister" />. The generated event will use the ProviderId associated with the handle.</param>
+    <param name="EventDescriptor">
+      <para>
+        <see cref="EVENT_DESCRIPTOR" />with event information (metadata) including ID, Version, Level, Keyword, Channel, Opcode, and Task.</para>
+      <blockquote>[!Important] ProviderId, Level and Keyword are the primary means for filtering events. Other kinds of filtering are possible but have much higher overhead. Always assign a nonzero level and keyword to every event.</blockquote>
+    </param>
+    <param name="UserDataCount">Number of<see cref="EVENT_DATA_DESCRIPTOR" />structures in <i>UserData</i>. The maximum number is 128.</param>
+    <param name="UserData">
+      <para>An array of <i>UserDataCount</i><see cref="EVENT_DATA_DESCRIPTOR" />structures that describe the data to be included in the event. <i>UserData</i> may be<b>NULL</b> if <i>UserDataCount</i> is zero.</para>
+      <para>Each <b>EVENT_DATA_DESCRIPTOR</b> describes one block of memory to be included in the event. The specified blocks will be concatenated in order with no padding or alignment to form the event content. If using manifest-based decoding, the event content must match the layout specified in the template associated with the event in the manifest.</para>
+    </param>
+    <returns>
+      <para>Returns <b>ERROR_SUCCESS</b> if successful or an error code. Possible error codes include the following:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>ERROR_INVALID_PARAMETER</b>: One or more of the parameters is not valid.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_INVALID_HANDLE</b>: The registration handle of the provider is not valid.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_ARITHMETIC_OVERFLOW</b>: The event size is larger than the allowed maximum (64KB - header).</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_MORE_DATA</b>: The session buffer size is too small for the event.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_NOT_ENOUGH_MEMORY</b>: Occurs when filled buffers are trying to flush to disk, but disk IOs are not happening fast enough. This happens when the disk is slow and event traffic is heavy. Eventually, there are no more free (empty) buffers and the event is dropped.</description>
+        </item>
+        <item>
+          <description>
+            <b>STATUS_LOG_FILE_FULL</b>: The real-time playback file is full. Events are not logged to the session until a real-time consumer consumes the events from the playback file.</description>
+        </item>
+      </list>
+      <para>The error code is primarily intended for use in debugging and diagnostic scenarios. Most production code should continue to run and continue to report events even if an ETW event could not be written, so release builds should usually ignore the error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.EventWriteEx">
+    <summary>Writes an ETW event with an activity ID, an optional related activity ID, session filters, and special options.</summary>
+    <param name="RegHandle">Registration handle of the provider. The handle comes from<see cref="EventRegister" />. The generated event will use the ProviderId associated with the handle.</param>
+    <param name="EventDescriptor">
+      <para>
+        <see cref="EVENT_DESCRIPTOR" />with event information (metadata) including ID, Version, Level, Keyword, Channel, Opcode, and Task.</para>
+      <blockquote>[!Important] ProviderId, Level and Keyword are the primary means for filtering events. Other kinds of filtering are possible but have much higher overhead. Always assign a nonzero level and keyword to every event.</blockquote>
+    </param>
+    <param name="Filter">
+      <para>A 64-bit bitmask value. Each set bit indicates that this event should be excluded from a particular trace session.</para>
+      <para>The <i>Filter</i> parameter is used with event providers that perform custom event filtering based on the <i>FilterData</i> from<a href="https://docs.microsoft.com//windows/desktop/api/evntprov/nc-evntprov-penablecallback">EnableCallback</a>.</para>
+      <para>Set <i>Filter</i> to zero if you do not support custom event filters or if the event should be written to all trace sessions. Otherwise, set <i>Filter</i> to the bitwise-OR of the identifiers of sessions that should NOT receive the event.</para>
+    </param>
+    <param name="Flags">
+      <para>Set <i>Flags</i> to zero for normal event handling.</para>
+      <para>Set <i>Flags</i> to a combination of <b>EVENT_WRITE_FLAG</b> values for special event handling.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>
+              <b>EVENT_WRITE_FLAG_INPRIVATE</b> (0x2)</para>
+            <para>Indicates that this event should be excluded from any logger that has set the<b>EVENT_ENABLE_PROPERTY_EXCLUDE_INPRIVATE</b> option.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ActivityId">
+      <para>An optional pointer to a 128-bit activity ID for this event. If this is non-NULL, <b>EventWriteEx</b> will use the specified value for the event's activity ID. If this is NULL, <b>EventWriteEx</b> will use the current thread's activity ID.</para>
+      <para>Trace processing tools can use the event's activity ID to organize events into groups called activities. For additional information about the activity ID, see<see cref="EventActivityIdControl" />.</para>
+    </param>
+    <param name="RelatedActivityId">
+      <para>An optional pointer to a 128-bit activity ID that is the parent of this event's activity. If this is non-NULL, <b>EventWriteEx</b> will use the specified value for the event's related activity ID. If this is NULL, the event will not have a related activity ID. The related activity ID is usually set on the activity's START event (the first event of the activity, logged with Opcode = START).</para>
+      <para>Trace processing tools can use the event's related activity ID to determine the relationship between activities, e.g. the related activity is the parent of the newly-started activity. For additional information about the related activity ID, see<see cref="EventActivityIdControl" />.</para>
+    </param>
+    <param name="UserDataCount">Number of<see cref="EVENT_DATA_DESCRIPTOR" />structures in <i>UserData</i>. The maximum number is 128.</param>
+    <param name="UserData">
+      <para>An array of <i>UserDataCount</i><see cref="EVENT_DATA_DESCRIPTOR" />structures that describe the data to be included in the event. <i>UserData</i> may be<b>NULL</b> if <i>UserDataCount</i> is zero.</para>
+      <para>Each <b>EVENT_DATA_DESCRIPTOR</b> describes one block of memory to be included in the event. The specified blocks will be concatenated in order with no padding or alignment to form the event content. If using manifest-based decoding, the event content must match the layout specified in the template associated with the event in the manifest.</para>
+    </param>
+    <returns>
+      <para>Returns <b>ERROR_SUCCESS</b> if successful or an error code. Possible error codes include the following:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>ERROR_INVALID_PARAMETER</b>: One or more of the parameters is not valid.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_INVALID_HANDLE</b>: The registration handle of the provider is not valid.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_ARITHMETIC_OVERFLOW</b>: The event size is larger than the allowed maximum (64KB - header).</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_MORE_DATA</b>: The session buffer size is too small for the event.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_NOT_ENOUGH_MEMORY</b>: Occurs when filled buffers are trying to flush to disk, but disk IOs are not happening fast enough. This happens when the disk is slow and event traffic is heavy. Eventually, there are no more free (empty) buffers and the event is dropped.</description>
+        </item>
+        <item>
+          <description>
+            <b>STATUS_LOG_FILE_FULL</b>: The real-time playback file is full. Events are not logged to the session until a real-time consumer consumes the events from the playback file.</description>
+        </item>
+      </list>
+      <para>The error code is primarily intended for use in debugging and diagnostic scenarios. Most production code should continue to run and continue to report events even if an ETW event could not be written, so release builds should usually ignore the error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.EventWriteString">
+    <summary>Writes an ETW event that contains a string as its data. This function should not be used.</summary>
+    <param name="RegHandle">Registration handle of the provider. The handle comes from<see cref="EventRegister" />. The generated event will use the ProviderId associated with the handle.</param>
+    <param name="Level">
+      <para>An 8-bit number used to describe an event's severity or importance.</para>
+      <blockquote>[!Important] ProviderId, Level and Keyword are the primary means for filtering events. Other kinds of filtering are possible but have much higher overhead. Always assign a nonzero level and keyword to every event.</blockquote>
+      <para>See <see cref="EVENT_DESCRIPTOR" /> for details about the event level.</para>
+    </param>
+    <param name="Keyword">
+      <para>A 64-bit bitmask used to indicate an event's membership in a set of event categories.</para>
+      <blockquote>[!Important] ProviderId, Level and Keyword are the primary means for filtering events. Other kinds of filtering are possible but have much higher overhead. Always assign a nonzero level and keyword to every event.</blockquote>
+      <para>See <see cref="EVENT_DESCRIPTOR" /> for details about the event keyword.</para>
+    </param>
+    <param name="String">NUL-terminated string to write as the event data.</param>
+    <returns>
+      <para>Returns <b>ERROR_SUCCESS</b> if successful or an error code. Possible error codes include the following:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>ERROR_INVALID_PARAMETER</b>: One or more of the parameters is not valid.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_INVALID_HANDLE</b>: The registration handle of the provider is not valid.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_ARITHMETIC_OVERFLOW</b>: The event size is larger than the allowed maximum (64KB - header).</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_MORE_DATA</b>: The session buffer size is too small for the event.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_NOT_ENOUGH_MEMORY</b>: Occurs when filled buffers are trying to flush to disk, but disk IOs are not happening fast enough. This happens when the disk is slow and event traffic is heavy. Eventually, there are no more free (empty) buffers and the event is dropped.</description>
+        </item>
+        <item>
+          <description>
+            <b>STATUS_LOG_FILE_FULL</b>: The real-time playback file is full. Events are not logged to the session until a real-time consumer consumes the events from the playback file.</description>
+        </item>
+      </list>
+      <para>The error code is primarily intended for use in debugging and diagnostic scenarios. Most production code should continue to run and continue to report events even if an ETW event could not be written, so release builds should usually ignore the error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.EventWriteTransfer">
+    <summary>Writes an ETW event with an activity ID and an optional related activity ID.</summary>
+    <param name="RegHandle">Registration handle of the provider. The handle comes from<see cref="EventRegister" />. The generated event will use the ProviderId associated with the handle.</param>
+    <param name="EventDescriptor">
+      <para>
+        <see cref="EVENT_DESCRIPTOR" />with event information (metadata) including ID, Version, Level, Keyword, Channel, Opcode, and Task.</para>
+      <blockquote>[!Important] ProviderId, Level and Keyword are the primary means for filtering events. Other kinds of filtering are possible but have much higher overhead. Always assign a nonzero level and keyword to every event.</blockquote>
+    </param>
+    <param name="ActivityId">
+      <para>An optional pointer to a 128-bit activity ID for this event. If this is non-NULL, <b>EventWriteTransfer</b> will use the specified value for the event's activity ID. If this is NULL, <b>EventWriteTransfer</b> will use the current thread's activity ID.</para>
+      <para>Trace processing tools can use the event's activity ID to organize events into groups called activities. For additional information about the activity ID, see<see cref="EventActivityIdControl" />.</para>
+    </param>
+    <param name="RelatedActivityId">
+      <para>An optional pointer to a 128-bit activity ID that is the parent of this event's activity. If this is non-NULL, <b>EventWriteTransfer</b> will use the specified value for the event's related activity ID. If this is NULL, the event will not have a related activity ID. The related activity ID is usually set on the activity's START event (the first event of the activity, logged with Opcode = START).</para>
+      <para>Trace processing tools can use the event's related activity ID to determine the relationship between activities, e.g. the related activity is the parent of the newly-started activity. For additional information about the related activity ID, see<see cref="EventActivityIdControl" />.</para>
+    </param>
+    <param name="UserDataCount">Number of<see cref="EVENT_DATA_DESCRIPTOR" />structures in <i>UserData</i>. The maximum number is 128.</param>
+    <param name="UserData">
+      <para>An array of <i>UserDataCount</i><see cref="EVENT_DATA_DESCRIPTOR" />structures that describe the data to be included in the event. <i>UserData</i> may be<b>NULL</b> if <i>UserDataCount</i> is zero.</para>
+      <para>Each <b>EVENT_DATA_DESCRIPTOR</b> describes one block of memory to be included in the event. The specified blocks will be concatenated in order with no padding or alignment to form the event content. If using manifest-based decoding, the event content must match the layout specified in the template associated with the event in the manifest.</para>
+    </param>
+    <returns>
+      <para>Returns <b>ERROR_SUCCESS</b> if successful or an error code. Possible error codes include the following:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>ERROR_INVALID_PARAMETER</b>: One or more of the parameters is not valid.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_INVALID_HANDLE</b>: The registration handle of the provider is not valid.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_ARITHMETIC_OVERFLOW</b>: The event size is larger than the allowed maximum (64KB - header).</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_MORE_DATA</b>: The session buffer size is too small for the event.</description>
+        </item>
+        <item>
+          <description>
+            <b>ERROR_NOT_ENOUGH_MEMORY</b>: Occurs when filled buffers are trying to flush to disk, but disk IOs are not happening fast enough. This happens when the disk is slow and event traffic is heavy. Eventually, there are no more free (empty) buffers and the event is dropped.</description>
+        </item>
+        <item>
+          <description>
+            <b>STATUS_LOG_FILE_FULL</b>: The real-time playback file is full. Events are not logged to the session until a real-time consumer consumes the events from the playback file.</description>
+        </item>
+      </list>
+      <para>The error code is primarily intended for use in debugging and diagnostic scenarios. Most production code should continue to run and continue to report events even if an ETW event could not be written, so release builds should usually ignore the error code.</para>
+    </returns>
+  </member>
+</doc>

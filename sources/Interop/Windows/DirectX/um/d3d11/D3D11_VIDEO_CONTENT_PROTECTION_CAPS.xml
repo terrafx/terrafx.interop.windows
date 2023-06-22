@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_CONTENT_PROTECTION_CAPS">
-    <summary>
-      <para>Describes the content-protection capabilities of a graphics driver.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
-    <seealso cref="ID3D11VideoDevice.GetContentProtectionCaps" />
+    <summary>Describes the content-protection capabilities of a graphics driver.</summary>
   </member>
   <member name="D3D11_VIDEO_CONTENT_PROTECTION_CAPS.Caps">
-    <summary>
-      <para>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_CONTENT_PROTECTION_CAPS" /> enumeration.</para>
-    </summary>
+    <summary>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_CONTENT_PROTECTION_CAPS" /> enumeration.</summary>
   </member>
   <member name="D3D11_VIDEO_CONTENT_PROTECTION_CAPS.KeyExchangeTypeCount">
-    <summary>
-      <para>The number of cryptographic key-exchange types that are supported by the driver. To get the list of key-exchange types, call the <see cref="ID3D11VideoDevice.CheckCryptoKeyExchange" /> method.</para>
-    </summary>
+    <summary>The number of cryptographic key-exchange types that are supported by the driver. To get the list of key-exchange types, call the <see cref="ID3D11VideoDevice.CheckCryptoKeyExchange" /> method.</summary>
   </member>
   <member name="D3D11_VIDEO_CONTENT_PROTECTION_CAPS.BlockAlignmentSize">
-    <summary>
-      <para>The encryption block size, in bytes. The size of data to be encrypted must be a multiple of this value.</para>
-    </summary>
+    <summary>The encryption block size, in bytes. The size of data to be encrypted must be a multiple of this value.</summary>
   </member>
   <member name="D3D11_VIDEO_CONTENT_PROTECTION_CAPS.ProtectedMemorySize">
-    <summary>
-      <para>The total amount of memory, in bytes, that can be used to hold protected surfaces.</para>
-    </summary>
+    <summary>The total amount of memory, in bytes, that can be used to hold protected surfaces.</summary>
   </member>
 </doc>

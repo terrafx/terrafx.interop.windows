@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OLELINKBIND">
-    <summary>
-      <para>Controls binding operations to a link source.</para>
-    </summary>
-    <seealso cref="IOleLink.BindToSource" />
+    <summary>Controls binding operations to a link source.</summary>
   </member>
   <member name="OLELINKBIND.OLELINKBIND_EVENIFCLASSDIFF">
-    <summary>
-      <para>The binding operation should proceed even if the current class of the link source is different from the last time the link was bound. For example, the link source could be a Lotus spreadsheet that was converted to an Excel spreadsheet.</para>
-    </summary>
+    <summary>The binding operation should proceed even if the current class of the link source is different from the last time the link was bound. For example, the link source could be a Lotus spreadsheet that was converted to an Excel spreadsheet.</summary>
   </member>
 </doc>

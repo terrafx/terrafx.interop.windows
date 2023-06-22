@@ -3,73 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumExtraSearch.Clone">
-    <summary>
-      <para>Used to request a duplicate of the enumerator object to preserve its current state.</para>
-    </summary>
-    <param name="ppenum">
-      <para>Type: <b><see cref="IEnumExtraSearch" />**</b></para>
-      <para>A pointer to the <see cref="IEnumExtraSearch" /> interface of a new enumerator object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
-    <remarks>
-      <para>The new enumerator should be created with the same state as the current one. Use the <see cref="IEnumExtraSearch.Skip" /> method to advance the enumeration index to the appropriate value before returning.</para>
-    </remarks>
+    <summary>Used to request a duplicate of the enumerator object to preserve its current state.</summary>
+    <param name="ppenum">A pointer to the <see cref="IEnumExtraSearch" /> interface of a new enumerator object.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IEnumExtraSearch.Next">
-    <summary>
-      <para>Used to request information on one or more search objects.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of search objects to be enumerated, starting from the current object. If <i>celt</i> is too large, the method should stop and return the actual number of search objects in <i>pceltFetched</i>.</para>
-    </param>
-    <param name="rgelt">
-      <para>Type: <b><see cref="EXTRASEARCH" />*</b></para>
-      <para>A pointer to an array of <i>pceltFetched</i><see cref="EXTRASEARCH" /> structures containing information on the enumerated objects.</para>
-    </param>
-    <param name="pceltFetched">
-      <para>Type: <b>ULONG*</b></para>
-      <para>The number of objects actually enumerated. This may be less than <i>celt</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
+    <summary>Used to request information on one or more search objects.</summary>
+    <param name="celt">The number of search objects to be enumerated, starting from the current object. If <i>celt</i> is too large, the method should stop and return the actual number of search objects in <i>pceltFetched</i>.</param>
+    <param name="rgelt">A pointer to an array of <i>pceltFetched</i><see cref="EXTRASEARCH" /> structures containing information on the enumerated objects.</param>
+    <param name="pceltFetched">The number of objects actually enumerated. This may be less than <i>celt</i>.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IEnumExtraSearch.Reset">
-    <summary>
-      <para>Used to reset the enumeration index to zero.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
+    <summary>Used to reset the enumeration index to zero.</summary>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IEnumExtraSearch.Skip">
-    <summary>
-      <para>Skip a specified number of objects.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of objects to skip.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
+    <summary>Skip a specified number of objects.</summary>
+    <param name="celt">The number of objects to skip.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IEnumExtraSearch">
-    <summary>
-      <para>A standard OLE enumerator used by a client to determine the available search objects for a folder.</para>
-    </summary>
-    <remarks>
-      <para>Implement <b>IEnumExtraSearch</b> if your namespace extension supports one or more search objects.</para>
-      <para>You do not call this interface directly. An <b>IEnumExtraSearch</b> interface is requested by a client only after it has determined that the <see cref="IShellFolder2" /> interface is exposed. Clients retrieve a pointer to this interface by calling <see cref="IShellFolder2.EnumSearches" />.</para>
-      <para>
-        <b>IEnumExtraSearch</b> implements <see cref="IUnknown" /> and the standard OLE enumeration methods.</para>
-    </remarks>
+    <summary>A standard OLE enumerator used by a client to determine the available search objects for a folder.</summary>
   </member>
 </doc>

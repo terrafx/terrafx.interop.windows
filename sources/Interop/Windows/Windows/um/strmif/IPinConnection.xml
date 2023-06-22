@@ -4,6 +4,7 @@
 <doc>
   <member name="IPinConnection.DynamicDisconnect">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DynamicDisconnect</code> method disconnects the pin when the filter is active (paused or running). Call this method instead of <see cref="IPin.Disconnect" /> to disconnect a pin when the graph is running or paused.</para>
       <para>The caller must ensure that no data is flowing to the pin when it calls this method. Call the <see cref="IPinFlowControl.Block" /> method on an upstream pin to block the data flow, or use some other mechanism to make sure that no samples are delivered until this pin is reconnected.</para>
     </summary>
@@ -14,39 +15,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The pin is already disconnected.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The pin is already disconnected.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-reconnection">Dynamic Reconnection</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IPinConnection Interface" />
   </member>
   <member name="IPinConnection.DynamicQueryAccept">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DynamicQueryAccept</code> method queries whether the pin can accept the specified media type while the graph is running with the current connection to this pin.</para>
     </summary>
-    <param name="pmt">
-      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the media type.</para>
-    </param>
+    <param name="pmt">Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the media type.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -54,39 +55,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Media type is acceptable.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Media type is acceptable.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_TYPE_NOT_ACCEPTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_TYPE_NOT_ACCEPTED</b>
-            </para>
-          </description>
-          <description>
-            <para>Media type is not acceptable.</para>
-          </description>
-        </item>
+          <description>Media type is not acceptable.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If this method succeeds, the pin can accept the media type on the next sample or in a call to <see cref="IPin.ReceiveConnection" />.</para>
-      <para>An application or filter can call this method to determine whether the filter graph must be reconfigured. If the pin can accept the specified media type, there is no need to reconfigure the graph.</para>
-      <para>Although the <see cref="IPin.QueryAccept" /> method also determines whether a pin can accept a format type, it does not guarantee that the pin can switch to that format while the filter is running. If you need to switch formats while the filter is running, call <code>DynamicQueryAccept</code> instead.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-format-changes">Dynamic Format Changes</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IPinConnection Interface" />
   </member>
   <member name="IPinConnection.IsEndPin">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IsEndPin</code> method indicates whether a reconnection search should end at this pin.</para>
     </summary>
     <returns>
@@ -96,43 +94,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This pin is not a candidate for reconnection. (The reconnection search should not stop at this pin.)</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This pin is not a candidate for reconnection. (The reconnection search should not stop at this pin.)</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>This pin is a candidate for reconnection. (The reconnection search should stop at this pin.)</para>
-          </description>
-        </item>
+          <description>This pin is a candidate for reconnection. (The reconnection search should stop at this pin.)</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A filter or application can call this method to determine whether the pin is a candidate for dynamic reconnection.</para>
-      <para>Generally, a sink filter or a filter that splits or merges data should return S_OK. Other filters (for example, simple transform filters) should return S_FALSE.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-reconnection">Dynamic Reconnection</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IPinConnection Interface" />
   </member>
   <member name="IPinConnection.NotifyEndOfStream">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>NotifyEndOfStream</code> method requests notification from the pin when the next end-of-stream condition occurs.</para>
     </summary>
-    <param name="hNotifyEvent">
-      <para>Handle to an event object that the pin will signal.</para>
-    </param>
+    <param name="hNotifyEvent">Handle to an event object that the pin will signal.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -140,63 +134,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Event handle was <b>NULL</b>, but there was no existing event handle to reset.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Event handle was <b>NULL</b>, but there was no existing event handle to reset.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Event handle was set. (If event handle was <b>NULL</b>, event notification was canceled.)</para>
-          </description>
-        </item>
+          <description>Event handle was set. (If event handle was <b>NULL</b>, event notification was canceled.)</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method enables the caller to push data through a portion of the filter graph ending with this pin.</para>
-      <para>For example, suppose the caller is pushing data from an output pin called "A" on one filter, to an input pin called "B" on another filter, possibly with intermediate filters connecting them. The following sequence of events would take place.</para>
-      <list type="number">
-        <item>
-          <description>The caller blocks the data flow at pin A.</description>
-        </item>
-        <item>
-          <description>It calls <code>NotifyEndOfStream</code> on pin B.</description>
-        </item>
-        <item>
-          <description>It calls <see cref="IPin.EndOfStream" /> on the input pin connected to pin A.</description>
-        </item>
-        <item>
-          <description>As the remaining data travels downstream through any intermediate filters, those filters propagate the end-of-stream notification.</description>
-        </item>
-        <item>
-          <description>When pin B receives the end-of-stream notification, it signals the event given in the <i>hNotifyEvent</i> parameter. At that point, the caller can safely reconfigure the graph between pin A and pin B.</description>
-        </item>
-      </list>
-      <para>Because the purpose of this method is to enable the caller to rebuild the graph dynamically and then restart the connection, the end-of-stream notification does not represent the actual end of the stream. Therefore, pin B does not propagate the end-of-stream condition or signal EC_COMPLETE. This is an exception to the usual rules for data flow in the filter graph.</para>
-      <para>It is the caller's responsibility to cancel notification by calling this method again with a <b>NULL</b> event handle.</para>
-      <para>The filter graph calls this method inside the <see cref="IGraphConfig.Reconnect" /> method. If an application or filter does any specialized dynamic reconfiguration to the graph (using the <see cref="IGraphConfig.Reconfigure" /> method), it might call this method first in order to push data through the portion of the graph that is being reconfigured.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-reconnection">Dynamic Reconnection</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IPinConnection Interface" />
   </member>
   <member name="IPinConnection">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>This interface provides methods for reconnecting an input pin while the filter is still running. The Filter Graph Manager calls methods on this interface when it performs dynamic reconnections (see the <see cref="IGraphConfig" /> interface). Applications might also use this interface to perform dynamic pin reconnections.</para>
       <para>
-        <b>Filter developers: </b>Implement this interface on any input pin that allows dynamic reconnection or dynamic changes in format.</para>
+        <b>Filter developers:</b>Implement this interface on any input pin that allows dynamic reconnection or dynamic changes in format.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-graph-building">Dynamic Graph Building</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-reconnection">Dynamic Reconnection</seealso>
   </member>
 </doc>

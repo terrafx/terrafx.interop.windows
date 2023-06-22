@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.DxcCreateInstance">
+    <summary>Creates a single uninitialized object of the class associated with a specified CLSID. Also see <see cref="DxcCreateInstance2" />.</summary>
+    <param name="rclsid">The CLSID associated with the data and code that will be used to create the object.</param>
+    <param name="riid">A reference to the identifier of the interface to be used to communicate with the object.</param>
+    <param name="ppv">Address of pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, <code>*ppv</code> contains the requested interface pointer. Upon failure, <code>*ppv</code> contains NULL.</param>
+    <returns>While this function is similar to <b>CoCreateInstance</b>, there's no COM involvement.</returns>
+  </member>
+  <member name="DirectX.DxcCreateInstance2">
+    <summary>Creates a single uninitialized object of the class associated with a specified CLSID (can be used to create an instance of the compiler with a custom memory allocator). Also see <see cref="DxcCreateInstance" />.</summary>
+    <param name="pMalloc">An <b>IMalloc</b> interface pointer representing a custom memory allocator.</param>
+    <param name="rclsid">The CLSID associated with the data and code that will be used to create the object.</param>
+    <param name="riid">A reference to the identifier of the interface to be used to communicate with the object.</param>
+    <param name="ppv">Address of pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, <code>*ppv</code> contains the requested interface pointer. Upon failure, <code>*ppv</code> contains NULL.</param>
+    <returns>While this function is similar to <b>CoCreateInstance</b>, there's no COM involvement.</returns>
+  </member>
+</doc>

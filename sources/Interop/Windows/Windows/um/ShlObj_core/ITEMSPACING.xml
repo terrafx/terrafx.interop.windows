@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITEMSPACING">
-    <summary>
-      <para>Stores the dimensions of the two possible sizes of icon spacing that are available for display: small and large. Used by <see cref="IShellFolderView.GetItemSpacing" />.</para>
-    </summary>
+    <summary>Stores the dimensions of the two possible sizes of icon spacing that are available for display: small and large. Used by <see cref="IShellFolderView.GetItemSpacing" />.</summary>
   </member>
   <member name="ITEMSPACING.cxSmall">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The width of the spacing between icons in small icon mode, in pixels.</para>
-    </summary>
+    <summary>The width of the spacing between icons in small icon mode, in pixels.</summary>
   </member>
   <member name="ITEMSPACING.cySmall">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The height of the spacing between icons in small icon mode, in pixels.</para>
-    </summary>
+    <summary>The height of the spacing between icons in small icon mode, in pixels.</summary>
   </member>
   <member name="ITEMSPACING.cxLarge">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The width of the spacing between icons in large icon mode, in pixels.</para>
-    </summary>
+    <summary>The width of the spacing between icons in large icon mode, in pixels.</summary>
   </member>
   <member name="ITEMSPACING.cyLarge">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The height of the spacing between icons in large icon mode, in pixels.</para>
-    </summary>
+    <summary>The height of the spacing between icons in large icon mode, in pixels.</summary>
   </member>
 </doc>

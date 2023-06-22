@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_OBJECT_TYPE">
-    <summary>
-      <para>Defines the object types that are created by the source resolver.</para>
-    </summary>
-    <seealso cref="IMFSourceResolver" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-resolver">Source Resolver</seealso>
+    <summary>Defines the object types that are created by the source resolver.</summary>
   </member>
   <member name="MF_OBJECT_TYPE.MF_OBJECT_MEDIASOURCE">
-    <summary>
-      <para>Media source. You can query the object for the <see cref="IMFMediaSource" /> interface.</para>
-    </summary>
+    <summary>Media source. You can query the object for the <see cref="IMFMediaSource" /> interface.</summary>
   </member>
   <member name="MF_OBJECT_TYPE.MF_OBJECT_BYTESTREAM">
-    <summary>
-      <para>Byte stream. You can query the object for the <see cref="IMFByteStream" /> interface.</para>
-    </summary>
+    <summary>Byte stream. You can query the object for the <see cref="IMFByteStream" /> interface.</summary>
   </member>
   <member name="MF_OBJECT_TYPE.MF_OBJECT_INVALID">
-    <summary>
-      <para>Invalid type.</para>
-    </summary>
+    <summary>Invalid type.</summary>
   </member>
 </doc>

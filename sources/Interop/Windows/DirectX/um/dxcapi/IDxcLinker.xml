@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcLinker.Link">
+    <summary>Links the shader, and produces a shader blob that the Direct3D runtime can use.</summary>
+    <param name="pEntryName">Entry point name.</param>
+    <param name="pTargetProfile">Shader profile to link.</param>
+    <param name="pLibNames">An array of library names to link.</param>
+    <param name="libCount">The number of libraries to link.</param>
+    <param name="pArguments">An array of pointers to arguments.</param>
+    <param name="argCount">The number of arguments.</param>
+    <param name="ppResult">The linker output status, buffer, and errors.</param>
+  </member>
+  <member name="IDxcLinker.RegisterLibrary">
+    <summary>Register a library with a name so that you can later reference it by that name.</summary>
+    <param name="pLibName">The name of the library.</param>
+    <param name="pLib">The library blob.</param>
+  </member>
+  <member name="IDxcLinker">
+    <summary>
+      <para>The DXC linker interface.</para>
+      <para>To obtain an instance of this interface, call <see cref="DxcCreateInstance" />.</para>
+    </summary>
+  </member>
+</doc>

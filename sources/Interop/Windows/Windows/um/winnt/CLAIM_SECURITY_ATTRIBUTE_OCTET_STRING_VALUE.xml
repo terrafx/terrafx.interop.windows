@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE">
-    <summary>
-      <para>The     <b>CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE</b> structure specifies  the <b>OCTET_STRING</b> value type of the claim security attribute.</para>
-    </summary>
+    <summary>The 	<b>CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE</b> structure specifies the <b>OCTET_STRING</b> value type of the claim security attribute.</summary>
   </member>
   <member name="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE.pValue">
-    <summary>
-      <para>A pointer buffer that contains the <b>OCTET_STRING</b> value. The value is a series of bytes of the length indicated in the <b>ValueLength</b>  member.</para>
-    </summary>
+    <summary>A pointer buffer that contains the <b>OCTET_STRING</b> value. The value is a series of bytes of the length indicated in the <b>ValueLength</b> member.</summary>
   </member>
   <member name="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE.ValueLength">
-    <summary>
-      <para>The length, in bytes, of the <b>OCTET_STRING</b>  value.</para>
-    </summary>
+    <summary>The length, in bytes, of the <b>OCTET_STRING</b> value.</summary>
   </member>
 </doc>

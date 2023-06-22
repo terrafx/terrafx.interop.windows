@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_URL">
-    <summary>
-      <para>The abstract base type for all URL schemes used with <see cref="WsDecodeUrl" /> and <see cref="WsEncodeUrl" /> APIs.</para>
-    </summary>
+    <summary>The abstract base type for all URL schemes used with <see cref="WsDecodeUrl" /> and <see cref="WsEncodeUrl" /> APIs.</summary>
   </member>
   <member name="WS_URL.scheme">
-    <summary>
-      <para>A <see cref="WS_URL_SCHEME_TYPE" /> structure that describes the type of URL scheme.</para>
-    </summary>
+    <summary>A <see cref="WS_URL_SCHEME_TYPE" /> structure that describes the type of URL scheme.</summary>
   </member>
 </doc>

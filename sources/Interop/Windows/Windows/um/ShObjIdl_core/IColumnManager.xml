@@ -3,240 +3,201 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IColumnManager.GetColumnCount">
-    <summary>
-      <para>Gets the column count for either the visible columns or the complete set of columns.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b><see cref="CM_ENUM_FLAGS" /></b></para>
-      <para>A value from the <see cref="CM_ENUM_FLAGS" /> enumeration that specifies whether to show only visible columns or all columns regardless of visibility.</para>
-    </param>
-    <param name="puCount">
-      <para>Type: <b>UINT*</b></para>
-      <para>Contains a pointer to the column count.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns S_OK.</para>
-    </returns>
+    <summary>Gets the column count for either the visible columns or the complete set of columns.</summary>
+    <param name="dwFlags">A value from the <see cref="CM_ENUM_FLAGS" /> enumeration that specifies whether to show only visible columns or all columns regardless of visibility.</param>
+    <param name="puCount">Contains a pointer to the column count.</param>
+    <returns>Always returns S_OK.</returns>
   </member>
   <member name="IColumnManager.GetColumnInfo">
-    <summary>
-      <para>Gets information about each column: width, visibility, display name, and state.</para>
-    </summary>
-    <param name="propkey">
-      <para>Type: <b>REFPROPERTYKEY</b></para>
-      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
-    </param>
-    <param name="pcmci">
-      <para>Type: <b><see cref="CM_COLUMNINFO" />*</b></para>
-      <para>A pointer to a <see cref="CM_COLUMNINFO" /> structure. On entry, set this structure's <b>dwMask</b> member to specify the information to retrieve. Also set its <b>cbSize</b> member. When this method returns successfully, the structure contains the requested information.</para>
-    </param>
+    <summary>Gets information about each column: width, visibility, display name, and state.</summary>
+    <param name="propkey">A reference to a <see cref="PROPERTYKEY" /> structure.</param>
+    <param name="pcmci">A pointer to a <see cref="CM_COLUMNINFO" /> structure. On entry, set this structure's <b>dwMask</b> member to specify the information to retrieve. Also set its <b>cbSize</b> member. When this method returns successfully, the structure contains the requested information.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Column information obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Column information obtained.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>failure</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Column information not obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>failure</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Column information not obtained.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Indicates that cbSize member of <i>pcmci</i> does not equal the size of CM_COLUMNINFO.</para>
-          </description>
-        </item>
+          <description>Indicates that cbSize member of <i>pcmci</i> does not equal the size of CM_COLUMNINFO.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IColumnManager.GetColumns">
-    <summary>
-      <para>Gets an array of <see cref="PROPERTYKEY" /> structures that represent the columns that the view supports. Includes either all columns or only those currently visible.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b><see cref="CM_ENUM_FLAGS" /></b></para>
-      <para>A value from the <see cref="CM_ENUM_FLAGS" /> enumeration that specifies whether to show only visible columns or all columns regardless of visibility.</para>
-    </param>
-    <param name="rgkeyOrder">
-      <para>Type: <b><see cref="PROPERTYKEY" />*</b></para>
-      <para>On success, contains a pointer to an array of <see cref="PROPERTYKEY" /> structures that represent the columns.</para>
-    </param>
-    <param name="cColumns">
-      <para>Type: <b>UINT</b></para>
-      <para>The length of the <i>rgkeyOrder</i> array.</para>
-    </param>
+    <summary>Gets an array of <see cref="PROPERTYKEY" /> structures that represent the columns that the view supports. Includes either all columns or only those currently visible.</summary>
+    <param name="dwFlags">A value from the <see cref="CM_ENUM_FLAGS" /> enumeration that specifies whether to show only visible columns or all columns regardless of visibility.</param>
+    <param name="rgkeyOrder">On success, contains a pointer to an array of <see cref="PROPERTYKEY" /> structures that represent the columns.</param>
+    <param name="cColumns">The length of the <i>rgkeyOrder</i> array.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Collection retrieved.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Collection retrieved.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>failure</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>All columns were not mapped to <see cref="PROPERTYKEY" /> structures.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>failure</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>All columns were not mapped to <see cref="PROPERTYKEY" /> structures.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The value in <i>cColumns</i> is inconsistent with the value in <i>dwFlags</i>.</para>
-          </description>
-        </item>
+          <description>The value in <i>cColumns</i> is inconsistent with the value in <i>dwFlags</i>.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IColumnManager.SetColumnInfo">
-    <summary>
-      <para>Sets the state for a specified column.</para>
-    </summary>
-    <param name="propkey">
-      <para>Type: <b>REFPROPERTYKEY</b></para>
-      <para>A reference to a <see cref="PROPERTYKEY" /> structure that identifies the column.</para>
-    </param>
-    <param name="pcmci">
-      <para>Type: <b>const <see cref="CM_COLUMNINFO" />*</b></para>
-      <para>A pointer to a <see cref="CM_COLUMNINFO" /> structure that contains the state to set for this column.</para>
-    </param>
+    <summary>Sets the state for a specified column.</summary>
+    <param name="propkey">A reference to a <see cref="PROPERTYKEY" /> structure that identifies the column.</param>
+    <param name="pcmci">A pointer to a <see cref="CM_COLUMNINFO" /> structure that contains the state to set for this column.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Column state set.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Column state set.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>failure</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Column state not set.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>failure</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Column state not set.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pcmci</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The <i>pcmci</i> parameter is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IColumnManager.SetColumns">
-    <summary>
-      <para>Sets the collection of columns for the view to display.</para>
-    </summary>
-    <param name="rgkeyOrder">
-      <para>Type: <b>const <see cref="PROPERTYKEY" />*</b></para>
-      <para>A pointer to an array of <see cref="PROPERTYKEY" /> structures that specify the columns to display.</para>
-    </param>
-    <param name="cVisible">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the <i>rgkeyOrder</i> array.</para>
-    </param>
+    <summary>Sets the collection of columns for the view to display.</summary>
+    <param name="rgkeyOrder">A pointer to an array of <see cref="PROPERTYKEY" /> structures that specify the columns to display.</param>
+    <param name="cVisible">The size of the <i>rgkeyOrder</i> array.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Collection set.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Collection set.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>failure</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>failure</b>
-            </para>
-          </description>
-          <description>
-            <para>Collection not set.</para>
-          </description>
-        </item>
+          <description>Collection not set.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  <b>IColumnManager.SetColumns</b> clears the state of all columns, so <see cref="IColumnManager.SetColumnInfo" /> must be called afterward to set the state of individual columns.</para>
-    </remarks>
   </member>
   <member name="IColumnManager">
-    <summary>
-      <para>Exposes methods that enable inspection and manipulation of columns in the Windows Explorer Details view. Each column is referenced by a <see cref="PROPERTYKEY" /> structure, which names a property.</para>
-    </summary>
-    <remarks>
-      <para>This interface can be accessed even when the Windows Explorer window is in a non-column view mode such as icons, thumbnails, or tiles. It affects those views, as well as views in which the column header control displays the set of columns to which <b>IColumnManager</b> provides access.</para>
-      <para>The default implementation of the Windows Explorer view object, created by <see cref="SHCreateShellFolderViewEx" />, supports this interface retrieved through <see cref="QueryInterface" />. Code that runs in the Windows Explorer (such as view callbacks, context menus or drop targets) can access the view object using <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678966(v=vs.85)">IServiceProvider.QueryService</a>, querying for <b>SID_SFolderView</b>.</para>
-    </remarks>
-    <seealso cref="IFolderView2" />
+    <summary>Exposes methods that enable inspection and manipulation of columns in the Windows Explorer Details view. Each column is referenced by a <see cref="PROPERTYKEY" /> structure, which names a property.</summary>
   </member>
 </doc>

@@ -3,64 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_NODE_TYPE">
-    <summary>
-      <para>The type of <see cref="WS_XML_NODE" /> structure.</para>
-    </summary>
-    <remarks>
-      <para>The BNF for node types within a document is:</para>
-      <code>
-Xml := StartInput Whitespace Element Whitespace EndInput
-Whitespace := (Text | Comment)* // Text is whitespace only
-Element := StartElement ElementContent EndElement
-ElementContent := (Element | Text | Comment | CData)*
-StartElement := WS_XML_NODE_TYPE_ELEMENT
-EndElement := WS_XML_NODE_TYPE_END_ELEMENT
-Text := WS_XML_NODE_TYPE_TEXT
-Comment := WS_XML_NODE_TYPE_COMMENT
-CData := WS_XML_NODE_TYPE_CDATA Text* WS_XML_NODE_TYPE_END_CDATA
-StartInput := WS_XML_NODE_TYPE_BOF
-EndInput := WS_XML_NODE_TYPE_EOF
-</code>
-    </remarks>
+    <summary>The type of <see cref="WS_XML_NODE" /> structure.</summary>
   </member>
   <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_ELEMENT">
-    <summary>
-      <para>A start element. (e.g. &lt;a:purchaseOrder xmlns:a="http://tempuri.org" id="5"&gt;)</para>
-    </summary>
+    <summary>A start element. (e.g. &lt;a:purchaseOrder xmlns:a="http://tempuri.org" id="5"&gt;)</summary>
   </member>
   <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_TEXT">
-    <summary>
-      <para>Element, attribute, or CDATA content.</para>
-    </summary>
+    <summary>Element, attribute, or CDATA content.</summary>
   </member>
   <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_END_ELEMENT">
-    <summary>
-      <para>An end element. (e.g. &lt;/purchaseOrder&gt;)</para>
-    </summary>
+    <summary>An end element. (e.g. &lt;/purchaseOrder&gt;)</summary>
   </member>
   <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_COMMENT">
-    <summary>
-      <para>A comment. (For example, &lt;!--The message follows--&gt;)</para>
-    </summary>
+    <summary>A comment. (For example, &lt;!--The message follows--&gt;)</summary>
   </member>
   <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_CDATA">
-    <summary>
-      <para>The start of a CDATA section (i.e. &lt;![CDATA[)</para>
-    </summary>
+    <summary>The start of a CDATA section (i.e. &lt;![CDATA[)</summary>
   </member>
   <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_END_CDATA">
-    <summary>
-      <para>The end of a CDATA section (i.e. ]]&gt;)</para>
-    </summary>
+    <summary>The end of a CDATA section (i.e. ]]&gt;)</summary>
   </member>
   <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_EOF">
-    <summary>
-      <para>The final node of an xml stream.</para>
-    </summary>
+    <summary>The final node of an xml stream.</summary>
   </member>
   <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_BOF">
-    <summary>
-      <para>The first node of an xml stream.</para>
-    </summary>
+    <summary>The first node of an xml stream.</summary>
   </member>
 </doc>

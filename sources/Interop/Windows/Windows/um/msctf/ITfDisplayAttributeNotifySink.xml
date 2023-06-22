@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfDisplayAttributeNotifySink.OnUpdateInfo">
-    <summary>
-      <para>Called when display attribute information is updated.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when display attribute information is updated.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfDisplayAttributeNotifySink">
-    <summary>
-      <para>The <b>ITfDisplayAttributeNotifySink</b> interface is implemented by an application to receive a notification when display attribute information is updated. This advise sink is installed by calling the TSF manager's <see cref="ITfSource.AdviseSink" /> with IID_ITfDisplayAttributeNotifySink.</para>
-    </summary>
-    <seealso cref="ITfSource.AdviseSink " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfDisplayAttributeNotifySink</b> interface is implemented by an application to receive a notification when display attribute information is updated. This advise sink is installed by calling the TSF manager's <see cref="ITfSource.AdviseSink" /> with IID_ITfDisplayAttributeNotifySink.</summary>
   </member>
 </doc>

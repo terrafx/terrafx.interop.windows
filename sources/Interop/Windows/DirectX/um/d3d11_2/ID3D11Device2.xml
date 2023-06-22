@@ -3,155 +3,53 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11Device2.CheckMultisampleQualityLevels1">
-    <summary>
-      <para>Get the number of quality levels available during multisampling.</para>
-    </summary>
-    <param name="Format">
-      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
-      <para>The texture format during multisampling.</para>
-    </param>
-    <param name="SampleCount">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of samples during multisampling.</para>
-    </param>
-    <param name="Flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A combination of <see cref="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAGS" /> values that are combined by using a bitwise OR operation. Currently, only <see cref="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_TILED_RESOURCE" /> is supported.</para>
-    </param>
-    <param name="pNumQualityLevels">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>A pointer to a variable the receives the number of quality levels supported by the adapter. See Remarks.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>When you multisample a texture, the number of quality levels available for an adapter is dependent on the texture format that you use and the number of
-samples that you request. The maximum number of quality levels is defined by <b>D3D11_MAX_MULTISAMPLE_SAMPLE_COUNT</b> in D3D11.h. If this method returns 0, the format
-and sample count combination is not supported for the installed adapter.</para>
-      <para>Furthermore, the definition of a quality level is up to each hardware vendor to define, however no facility is provided by Direct3D to help discover
-this information.</para>
-      <para>Note that FEATURE_LEVEL_10_1 devices are required to support 4x MSAA for all render targets except R32G32B32A32 and R32G32B32.
-FEATURE_LEVEL_11_0 devices are required to support 4x MSAA for all render target formats, and 8x MSAA for all render target formats
-except R32G32B32A32 formats.</para>
-    </remarks>
-    <seealso cref="ID3D11Device2" />
+    <summary>Get the number of quality levels available during multisampling.</summary>
+    <param name="Format">The texture format during multisampling.</param>
+    <param name="SampleCount">The number of samples during multisampling.</param>
+    <param name="Flags">A combination of <see cref="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAGS" /> values that are combined by using a bitwise OR operation. Currently, only <see cref="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_TILED_RESOURCE" /> is supported.</param>
+    <param name="pNumQualityLevels">A pointer to a variable the receives the number of quality levels supported by the adapter. See Remarks.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11Device2.CreateDeferredContext2">
-    <summary>
-      <para>Creates a deferred context, which can record <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-command-list">command lists</a>.</para>
-    </summary>
-    <param name="ContextFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Reserved for future use.
-Pass 0.</para>
-    </param>
-    <param name="ppDeferredContext">
-      <para>Type: <b><see cref="ID3D11DeviceContext2" />**</b></para>
-      <para>Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext2" /> interface pointer is initialized.</para>
-    </param>
+    <summary>Creates a deferred context, which can record <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-command-list">command lists</a>.</summary>
+    <param name="ContextFlags">Reserved for future use. Pass 0.</param>
+    <param name="ppDeferredContext">Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext2" /> interface pointer is initialized.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>Returns S_OK if successful; otherwise, returns one of the following:</para>
       <list type="bullet">
         <item>
-          <description>Returns <b>DXGI_ERROR_DEVICE_REMOVED</b> if the video card has been physically removed from the system, or a driver upgrade for the video card has occurred.
-If this error occurs, you should destroy and recreate the device.
-</description>
+          <description>Returns <b>DXGI_ERROR_DEVICE_REMOVED</b> if the video card has been physically removed from the system, or a driver upgrade for the video card has occurred. If this error occurs, you should destroy and recreate the device.</description>
         </item>
         <item>
-          <description>Returns <b>DXGI_ERROR_INVALID_CALL</b> if the <b>CreateDeferredContext2</b> method can't be called from the current context.
-For example, if the device was created with the <see cref="D3D11_CREATE_DEVICE_SINGLETHREADED" /> value,  <b>CreateDeferredContext2</b> returns <b>DXGI_ERROR_INVALID_CALL</b>.
-</description>
+          <description>Returns <b>DXGI_ERROR_INVALID_CALL</b> if the <b>CreateDeferredContext2</b> method can't be called from the current context. For example, if the device was created with the <see cref="D3D11_CREATE_DEVICE_SINGLETHREADED" /> value, <b>CreateDeferredContext2</b> returns <b>DXGI_ERROR_INVALID_CALL</b>.</description>
         </item>
         <item>
-          <description>Returns <b>E_INVALIDARG</b> if the <i>ContextFlags</i> parameter is invalid.
-</description>
+          <description>Returns <b>E_INVALIDARG</b> if the <i>ContextFlags</i> parameter is invalid.</description>
         </item>
         <item>
-          <description>Returns <b>E_OUTOFMEMORY</b> if the app has exhausted available memory.
-</description>
+          <description>Returns <b>E_OUTOFMEMORY</b> if the app has exhausted available memory.</description>
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>A deferred context is a thread-safe context that you can use to record graphics commands on a thread other than the main rendering thread.
-By using a deferred context, you can record graphics commands into a command list that is encapsulated by the <see cref="ID3D11CommandList" /> interface.
-After you record all scene items, you can then submit them to the main render thread for final rendering.
-In this manner, you can perform rendering tasks concurrently across multiple threads and potentially improve performance in multi-core CPU scenarios.</para>
-      <para>You can create multiple deferred contexts.</para>
-      <para>
-        <b>Note</b>  If you use the <see cref="D3D11_CREATE_DEVICE_SINGLETHREADED" /> value to create the device,
-<b>CreateDeferredContext2</b> fails with <b>DXGI_ERROR_INVALID_CALL</b>, and you can't create a deferred context.</para>
-      <para>For more information about deferred contexts, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-render">Immediate and Deferred Rendering</a>.</para>
-    </remarks>
-    <seealso cref="ID3D11Device1.CreateDeferredContext1" />
-    <seealso cref="ID3D11Device2" />
-    <seealso cref="ID3D11Device3.CreateDeferredContext3" />
-    <seealso cref="ID3D11Device.CreateDeferredContext" />
   </member>
   <member name="ID3D11Device2.GetImmediateContext2">
-    <summary>
-      <para>Gets an immediate context, which can play back <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-command-list">command lists</a>.</para>
-    </summary>
-    <param name="ppImmediateContext">
-      <para>Type: <b><see cref="ID3D11DeviceContext2" />**</b></para>
-      <para>Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext2" /> interface pointer is initialized.</para>
-    </param>
-    <remarks>
-      <para>The <b>GetImmediateContext2</b> method returns an <see cref="ID3D11DeviceContext2" /> object that represents an immediate context, which is used to perform rendering that you want immediately submitted to a device. For most apps, an immediate context is the primary object that is used to draw your scene.</para>
-      <para>The <b>GetImmediateContext2</b> method increments the reference count of the immediate context by one. Therefore, you must call <see cref="Release" /> on the returned interface pointer when you are done with it to avoid a memory leak.</para>
-    </remarks>
-    <seealso cref="ID3D11Device2" />
+    <summary>Gets an immediate context, which can play back <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-command-list">command lists</a>.</summary>
+    <param name="ppImmediateContext">Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext2" /> interface pointer is initialized.</param>
   </member>
   <member name="ID3D11Device2.GetResourceTiling">
-    <summary>
-      <para>Gets info about how a tiled resource is broken into tiles.</para>
-    </summary>
-    <param name="pTiledResource">
-      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
-      <para>A pointer to the tiled resource to get info about.</para>
-    </param>
-    <param name="pNumTilesForEntireResource">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>A pointer to a variable that receives the number of tiles needed to store the entire tiled resource.</para>
-    </param>
-    <param name="pPackedMipDesc">
-      <para>Type: <b><see cref="D3D11_PACKED_MIP_DESC" />*</b></para>
-      <para>A pointer to a <see cref="D3D11_PACKED_MIP_DESC" /> structure that <b>GetResourceTiling</b> fills with info about how the tiled resource's mipmaps are packed.</para>
-    </param>
-    <param name="pStandardTileShapeForNonPackedMips">
-      <para>Type: <b><see cref="D3D11_TILE_SHAPE" />*</b></para>
-      <para>A pointer to a <see cref="D3D11_TILE_SHAPE" /> structure that <b>GetResourceTiling</b> fills with info about the tile shape. This is info about how pixels fit in the tiles, independent of tiled resource's dimensions,
-not including packed mipmaps.  If the entire tiled resource is packed, this parameter is meaningless because the tiled resource has no defined layout
-for packed mipmaps.
-In this situation, <b>GetResourceTiling</b> sets the members of <b>D3D11_TILE_SHAPE</b> to zeros.</para>
-    </param>
-    <param name="pNumSubresourceTilings">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>A pointer to a variable that contains the number of tiles in the subresource. On input, this is the number of subresources to query tilings for; on output, this is the number that was actually retrieved at <i>pSubresourceTilingsForNonPackedMips</i> (clamped to what's available).</para>
-    </param>
-    <param name="FirstSubresourceTilingToGet">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of the first subresource tile to get. <b>GetResourceTiling</b> ignores this parameter if the number that <i>pNumSubresourceTilings</i> points to is 0.</para>
-    </param>
+    <summary>Gets info about how a tiled resource is broken into tiles.</summary>
+    <param name="pTiledResource">A pointer to the tiled resource to get info about.</param>
+    <param name="pNumTilesForEntireResource">A pointer to a variable that receives the number of tiles needed to store the entire tiled resource.</param>
+    <param name="pPackedMipDesc">A pointer to a <see cref="D3D11_PACKED_MIP_DESC" /> structure that <b>GetResourceTiling</b> fills with info about how the tiled resource's mipmaps are packed.</param>
+    <param name="pStandardTileShapeForNonPackedMips">A pointer to a <see cref="D3D11_TILE_SHAPE" /> structure that <b>GetResourceTiling</b> fills with info about the tile shape. This is info about how pixels fit in the tiles, independent of tiled resource's dimensions, not including packed mipmaps. If the entire tiled resource is packed, this parameter is meaningless because the tiled resource has no defined layout for packed mipmaps. In this situation, <b>GetResourceTiling</b> sets the members of <b>D3D11_TILE_SHAPE</b> to zeros.</param>
+    <param name="pNumSubresourceTilings">A pointer to a variable that contains the number of tiles in the subresource. On input, this is the number of subresources to query tilings for; on output, this is the number that was actually retrieved at <i>pSubresourceTilingsForNonPackedMips</i> (clamped to what's available).</param>
+    <param name="FirstSubresourceTilingToGet">The number of the first subresource tile to get. <b>GetResourceTiling</b> ignores this parameter if the number that <i>pNumSubresourceTilings</i> points to is 0.</param>
     <param name="pSubresourceTilingsForNonPackedMips">
-      <para>Type: <b><see cref="D3D11_SUBRESOURCE_TILING" />*</b></para>
       <para>A pointer to a <see cref="D3D11_SUBRESOURCE_TILING" /> structure that <b>GetResourceTiling</b> fills with info about subresource tiles.</para>
-      <para>If subresource tiles are part of packed mipmaps, <b>GetResourceTiling</b> sets the members of <see cref="D3D11_SUBRESOURCE_TILING" /> to zeros, except the <b>StartTileIndexInOverallResource</b> member, which <b>GetResourceTiling</b> sets to <b>D3D11_PACKED_TILE</b> (0xffffffff). The <b>D3D11_PACKED_TILE</b> constant indicates that the whole
-<b>D3D11_SUBRESOURCE_TILING</b> structure is meaningless for this situation, and the info that the <i>pPackedMipDesc</i> parameter points to applies.</para>
+      <para>If subresource tiles are part of packed mipmaps, <b>GetResourceTiling</b> sets the members of <see cref="D3D11_SUBRESOURCE_TILING" /> to zeros, except the <b>StartTileIndexInOverallResource</b> member, which <b>GetResourceTiling</b> sets to <b>D3D11_PACKED_TILE</b> (0xffffffff). The <b>D3D11_PACKED_TILE</b> constant indicates that the whole<b>D3D11_SUBRESOURCE_TILING</b> structure is meaningless for this situation, and the info that the <i>pPackedMipDesc</i> parameter points to applies.</para>
     </param>
-    <remarks>
-      <para>For more info about tiled resources, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/tiled-resources">Tiled resources</a>.</para>
-    </remarks>
-    <seealso cref="ID3D11Device2" />
   </member>
   <member name="ID3D11Device2">
-    <summary>
-      <para>The device interface represents a virtual adapter; it is used to create resources. <b>ID3D11Device2</b> adds new methods to those in <see cref="ID3D11Device1" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D11Device1" />
+    <summary>The device interface represents a virtual adapter; it is used to create resources. <b>ID3D11Device2</b> adds new methods to those in <see cref="ID3D11Device1" />.</summary>
   </member>
 </doc>

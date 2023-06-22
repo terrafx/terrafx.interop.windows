@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ImageLockMode">
+    <summary>The <b>ImageLockMode</b> enumeration specifies flags that are passed to the<i>flags</i> parameter of the<see cref="Bitmap.LockBits" /> method. The <b>Bitmap.LockBits</b> method locks a portion of an image so that you can read or write the pixel data.</summary>
+  </member>
+  <member name="ImageLockMode.ImageLockModeRead">
+    <summary>Specifies that a portion of the image is locked for reading.</summary>
+  </member>
+  <member name="ImageLockMode.ImageLockModeWrite">
+    <summary>Specifies that a portion of the image is locked for writing.</summary>
+  </member>
+  <member name="ImageLockMode.ImageLockModeUserInputBuf">
+    <summary>Specifies that the buffer used for reading or writing pixel data is allocated by the user. If this flag is set, then the<i>lockedBitmapData</i> parameter of the<see cref="Bitmap.LockBits" /> method serves as an input parameter (and possibly as an output parameter). If this flag is cleared, then the<i>lockedBitmapData</i> parameter serves only as an output parameter.</summary>
+  </member>
+</doc>

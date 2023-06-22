@@ -3,36 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POINTERINACTIVE">
-    <summary>
-      <para>Indicate the activation policy of the object and are used in the <see cref="IPointerInactive.GetActivationPolicy" /> method.</para>
-    </summary>
-    <remarks>
-      <para>For more information on using the <b>POINTERINACTIVE_ACTIVATEONENTRY</b> and <b>POINTERINACTIVE_DEACTIVATEONLEAVE</b> values, see the <see cref="IPointerInactive.GetActivationPolicy" /> method.</para>
-      <para>
-        <b>The POINTERINACTIVE_ACTIVATEONDRAG</b> value can be used to support drag and drop operations on an inactive object. An inactive object has no window to register itself as a potential drop target. Most containers ignore embedded, inactive objects as drop targets because of the overhead associated with activating them.</para>
-      <para>As an alternative to activating an object when the mouse pointer is over it during a drag and drop operation, the container can first <see cref="QueryInterface" /> to determine if the inactive object supports <see cref="IPointerInactive" />. Then, if the object does not support IPointerInactive, the container can assume that it is not a drop target. If the object does support <b>IPointerInactive</b>, the container calls the <see cref="IPointerInactive.GetActivationPolicy" /> method. If the <b>POINTERINACTIVE_ACTIVATEONDRAG</b> value is set, the container activates the object in-place so the object can register its own <see cref="IDropTarget" /> interface.</para>
-      <para>The container is processing its own <see cref="IDropTarget.DragOver" /> method when all these actions occur. To complete that method, the container returns <b>DROPEFFECT_NONE</b> for the <i>pdwEffect</i> parameter. Then, the drag and drop operation continues by calling the container's <see cref="IDropTarget.DragLeave" /> and then calling the object's <see cref="IDropTarget.DragEnter" />.</para>
-      <para>
-        <b>Important</b>  For windowless OLE objects this mechanism is slightly different. See I<see cref="OleInPlaceSiteWindowless" /> for more information on drag and drop operations for windowless objects.</para>
-      <para>If the drop occurs on the embedded object, the object is UI-activated and will get UI-deactivated when the focus changes again. If the drop does not occur on the object, the container should deactivate the object the next time it gets a call to its own <see cref="IDropTarget.DragEnter" />. It is possible for the drop to occur on a third active object without an intervening call to the container's IDropTarget.DragEnter. In this case, the container should try to deactivate the object as soon as it can, for example, when it UI-activates another object.</para>
-    </remarks>
-    <seealso cref="IDropTarget" />
-    <seealso cref="IPointerInactive" />
-    <seealso cref="IPointerInactive.GetActivationPolicy" />
+    <summary>Indicate the activation policy of the object and are used in the <see cref="IPointerInactive.GetActivationPolicy" /> method.</summary>
   </member>
   <member name="POINTERINACTIVE.POINTERINACTIVE_ACTIVATEONENTRY">
-    <summary>
-      <para>The object should be in-place activated when the mouse enters it during a mouse move operation.</para>
-    </summary>
+    <summary>The object should be in-place activated when the mouse enters it during a mouse move operation.</summary>
   </member>
   <member name="POINTERINACTIVE.POINTERINACTIVE_DEACTIVATEONLEAVE">
-    <summary>
-      <para>The object should be deactivated when the mouse leaves the object during a mouse move operation.</para>
-    </summary>
+    <summary>The object should be deactivated when the mouse leaves the object during a mouse move operation.</summary>
   </member>
   <member name="POINTERINACTIVE.POINTERINACTIVE_ACTIVATEONDRAG">
-    <summary>
-      <para>The object should be in-place activated when the mouse is dragged over it during a drag and drop operation.</para>
-    </summary>
+    <summary>The object should be in-place activated when the mouse is dragged over it during a drag and drop operation.</summary>
   </member>
 </doc>

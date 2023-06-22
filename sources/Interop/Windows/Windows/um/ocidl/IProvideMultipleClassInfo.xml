@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IProvideMultipleClassInfo.GetInfoOfIndex">
-    <summary>
-      <para>Retrieves the type information from the specified index.</para>
-    </summary>
-    <param name="iti">
-      <para>The index of the type information for which you want to obtain information. Index 0 is the default interface of the extender object; index *pcti-1 is the index of the base object.</para>
-    </param>
+    <summary>Retrieves the type information from the specified index.</summary>
+    <param name="iti">The index of the type information for which you want to obtain information. Index 0 is the default interface of the extender object; index *pcti-1 is the index of the base object.</param>
     <param name="dwFlags">
       <para>A bitfield indicating which out parameters are being requested. Indicating a particular flag results in the appropriate information being assigned to the associated out parameter. This parameter can be one of the following values.</para>
       <list type="table">
@@ -16,111 +12,81 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MULTICLASSINFO_GETTYPEINFO</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates a request for <i>pptiCoClass</i> information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates a request for <i>pptiCoClass</i> information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MULTICLASSINFO_GETNUMRESERVEDDISPIDS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates a request for <i>pcdispidReserved</i> and <i>pdwTIFlags</i> information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates a request for <i>pcdispidReserved</i> and <i>pdwTIFlags</i> information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MULTICLASSINFO_GETIIDPRIMARY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates a request for <i>piidPrimary</i> information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates a request for <i>piidPrimary</i> information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MULTICLASSINFO_GETIIDSOURCE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates a request for <i>piidSource</i> information.</para>
-          </description>
-        </item>
+          <description>Indicates a request for <i>piidSource</i> information.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pptiCoClass">
-      <para>The <a href="https://msdn.microsoft.com/">coclass</a> type information for the requested contributor. See <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a>.</para>
-    </param>
-    <param name="pdwTIFlags">
-      <para>The bitfield flag.</para>
-    </param>
-    <param name="pcdispidReserved">
-      <para>The number of DISPIDs the default interface of <i>pptiCoClass</i> reserves for its own use. This number can be used to calculate the amount to offset DISPIDs in the reserved range implemented by the object this class is extending.</para>
-    </param>
-    <param name="piidPrimary">
-      <para>The IID of the primary interface for the requested contributor.</para>
-    </param>
-    <param name="piidSource">
-      <para>The IID of the default source interface for the requested contributor.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_POINTER, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IProvideMultipleClassInfo" />
+    <param name="pptiCoClass">The <a href="https://msdn.microsoft.com/">coclass</a> type information for the requested contributor. See <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a>.</param>
+    <param name="pdwTIFlags">The bitfield flag.</param>
+    <param name="pcdispidReserved">The number of DISPIDs the default interface of <i>pptiCoClass</i> reserves for its own use. This number can be used to calculate the amount to offset DISPIDs in the reserved range implemented by the object this class is extending.</param>
+    <param name="piidPrimary">The IID of the primary interface for the requested contributor.</param>
+    <param name="piidSource">The IID of the default source interface for the requested contributor.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_POINTER, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IProvideMultipleClassInfo.GetMultiTypeInfoCount">
-    <summary>
-      <para>Retrieves the number of type information blocks that this object must provide.</para>
-    </summary>
-    <param name="pcti">
-      <para>The number of type information blocks that this object must provide.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_POINTER, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IProvideMultipleClassInfo" />
+    <summary>Retrieves the number of type information blocks that this object must provide.</summary>
+    <param name="pcti">The number of type information blocks that this object must provide.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_POINTER, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IProvideMultipleClassInfo">
-    <summary>
-      <para>An extension to <see cref="IProvideClassInfo2" /> that makes it faster and easier to retrieve type information from a component that may have multiple coclasses that determine its behavior.</para>
-    </summary>
+    <summary>An extension to <see cref="IProvideClassInfo2" /> that makes it faster and easier to retrieve type information from a component that may have multiple coclasses that determine its behavior.</summary>
   </member>
 </doc>

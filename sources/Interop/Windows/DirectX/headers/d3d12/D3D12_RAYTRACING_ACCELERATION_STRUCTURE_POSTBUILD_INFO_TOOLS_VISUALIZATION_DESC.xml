@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TOOLS_VISUALIZATION_DESC">
-    <summary>
-      <para>Describes the space requirement for decoding an acceleration structure into a form that can be visualized by tools.</para>
-    </summary>
+    <summary>Describes the space requirement for decoding an acceleration structure into a form that can be visualized by tools.</summary>
   </member>
   <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TOOLS_VISUALIZATION_DESC.DecodedSizeInBytes">
-    <summary>
-      <para>The space requirement for decoding an acceleration structure into a form that can be visualized by tools.</para>
-    </summary>
+    <summary>The space requirement for decoding an acceleration structure into a form that can be visualized by tools.</summary>
   </member>
 </doc>

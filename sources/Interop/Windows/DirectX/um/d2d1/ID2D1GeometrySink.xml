@@ -3,105 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1GeometrySink.AddArc">
-    <summary>
-      <para>Adds a single arc to the path geometry.</para>
-    </summary>
-    <param name="arc">
-      <para>Type: [in] <b>const <see cref="D2D1_ARC_SEGMENT" />*</b></para>
-      <para>The arc segment to add to the figure.</para>
-    </param>
-    <seealso cref="ID2D1GeometrySink" />
+    <summary>Adds a single arc to the path geometry.</summary>
+    <param name="arc">The arc segment to add to the figure.</param>
   </member>
   <member name="ID2D1GeometrySink.AddArc">
-    <summary>
-      <para>Adds a single arc to the path geometry.</para>
-    </summary>
-    <param name="arc">
-      <para>Type: [in] <b>const <see cref="D2D1_ARC_SEGMENT" /> &amp;</b></para>
-      <para>The arc segment to add to the figure.</para>
-    </param>
-    <seealso cref="ID2D1GeometrySink" />
+    <summary>Adds a single arc to the path geometry.</summary>
+    <param name="arc">The arc segment to add to the figure.</param>
   </member>
   <member name="ID2D1GeometrySink.AddBezier">
-    <summary>
-      <para>Creates a cubic Bezier curve between the current point and the specified end point.</para>
-    </summary>
-    <param name="bezier">
-      <para>Type: [in] <b>const <see cref="D2D1_BEZIER_SEGMENT" />*</b></para>
-      <para>A structure that describes the control points and end point of the Bezier curve to add.</para>
-    </param>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-geometries-overview">Geometries Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/how-to-draw-and-fill-a-complex-shape">How to Draw and Fill a Complex Shape</seealso>
-    <seealso cref="ID2D1GeometrySink" />
+    <summary>Creates a cubic Bezier curve between the current point and the specified end point.</summary>
+    <param name="bezier">A structure that describes the control points and end point of the Bezier curve to add.</param>
   </member>
   <member name="ID2D1GeometrySink.AddBezier">
-    <summary>
-      <para>Creates a cubic Bezier curve between the current point and the specified end point.</para>
-    </summary>
-    <param name="bezier">
-      <para>Type: [in] <b>const <see cref="D2D1_BEZIER_SEGMENT" /> &amp;</b></para>
-      <para>A structure that describes the control points and end point of the Bezier curve to add.</para>
-    </param>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-geometries-overview">Geometries Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/how-to-draw-and-fill-a-complex-shape">How to Draw and Fill a Complex Shape</seealso>
-    <seealso cref="ID2D1GeometrySink" />
+    <summary>Creates a cubic Bezier curve between the current point and the specified end point.</summary>
+    <param name="bezier">A structure that describes the control points and end point of the Bezier curve to add.</param>
   </member>
   <member name="ID2D1GeometrySink.AddLine">
-    <summary>
-      <para>Creates a line segment between the current point and the specified end point and adds it to the geometry sink.</para>
-    </summary>
-    <param name="point">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The end point of the line to draw.</para>
-    </param>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-geometries-overview">Geometries Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/how-to-draw-and-fill-a-complex-shape">How to Draw and Fill a Complex Shape</seealso>
-    <seealso cref="ID2D1GeometrySink" />
+    <summary>Creates a line segment between the current point and the specified end point and adds it to the geometry sink.</summary>
+    <param name="point">The end point of the line to draw.</param>
   </member>
   <member name="ID2D1GeometrySink.AddQuadraticBezier">
-    <summary>
-      <para>Creates a quadratic Bezier curve between the current point and the specified end point.</para>
-    </summary>
-    <param name="bezier">
-      <para>Type: [in] <b>const <see cref="D2D1_QUADRATIC_BEZIER_SEGMENT" />*</b></para>
-      <para>A structure that describes the control point and the end point of the quadratic Bezier curve to add.</para>
-    </param>
-    <seealso cref="ID2D1GeometrySink" />
+    <summary>Creates a quadratic Bezier curve between the current point and the specified end point.</summary>
+    <param name="bezier">A structure that describes the control point and the end point of the quadratic Bezier curve to add.</param>
   </member>
   <member name="ID2D1GeometrySink.AddQuadraticBezier">
-    <summary>
-      <para>Creates a quadratic Bezier curve between the current point and the specified end point.</para>
-    </summary>
-    <param name="bezier">
-      <para>Type: [in] <b>const <see cref="D2D1_QUADRATIC_BEZIER_SEGMENT" /> &amp;</b></para>
-      <para>A structure that describes the control point and the end point of the quadratic Bezier curve to add.</para>
-    </param>
-    <seealso cref="ID2D1GeometrySink" />
+    <summary>Creates a quadratic Bezier curve between the current point and the specified end point.</summary>
+    <param name="bezier">A structure that describes the control point and the end point of the quadratic Bezier curve to add.</param>
   </member>
   <member name="ID2D1GeometrySink.AddQuadraticBeziers">
-    <summary>
-      <para>Adds a sequence of quadratic Bezier segments as an array in a single call.</para>
-    </summary>
-    <param name="beziers">
-      <para>Type: <b>const <see cref="D2D1_QUADRATIC_BEZIER_SEGMENT" />*</b></para>
-      <para>An array of a sequence of quadratic Bezier segments.</para>
-    </param>
-    <param name="beziersCount">
-      <para>Type: <b>UINT</b></para>
-      <para>A value indicating the number of quadratic Bezier segments in <i>beziers</i>.</para>
-    </param>
-    <seealso cref="ID2D1GeometrySink" />
+    <summary>Adds a sequence of quadratic Bezier segments as an array in a single call.</summary>
+    <param name="beziers">An array of a sequence of quadratic Bezier segments.</param>
+    <param name="beziersCount">A value indicating the number of quadratic Bezier segments in <i>beziers</i>.</param>
   </member>
   <member name="ID2D1GeometrySink">
-    <summary>
-      <para>Describes a geometric path that can contain lines, arcs, cubic Bezier curves, and quadratic Bezier curves.</para>
-    </summary>
-    <remarks>
-      <para>The <b>ID2D1GeometrySink</b> interface extends the <see cref="ID2D1SimplifiedGeometrySink" /> interface to add support for arcs and quadratic beziers, as well as functions for adding single lines and cubic beziers.</para>
-      <para>A geometry sink consists of one or more figures. Each figure is made up of one or more line, curve, or arc segments. To create a figure, call the <see cref="BeginFigure" /> method, specify the figure's start point, and then use its Add methods (such as AddLine and AddBezier) to add segments. When you are finished adding segments, call the <see cref="EndFigure" /> method. You can repeat this sequence to create additional figures. When you are finished creating figures, call the <see cref="Close" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-geometries-overview">Geometries Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/how-to-draw-and-fill-a-complex-shape">How to Draw and Fill a Complex Shape</seealso>
-    <seealso cref="ID2D1SimplifiedGeometrySink" />
+    <summary>Describes a geometric path that can contain lines, arcs, cubic Bezier curves, and quadratic Bezier curves.</summary>
   </member>
 </doc>

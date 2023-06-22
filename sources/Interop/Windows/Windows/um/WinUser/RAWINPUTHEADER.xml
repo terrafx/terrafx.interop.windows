@@ -3,47 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RAWINPUTHEADER">
-    <summary>
-      <para>Contains the header information that is part of the raw input data.</para>
-    </summary>
-    <remarks>
-      <para>To get more information on the device, use <b>hDevice</b> in a call to <see cref="GetRawInputDeviceInfo" />.</para>
-    </remarks>
-    <seealso cref="GetRawInputDeviceInfo" />
-    <seealso cref="RAWINPUT structure" />
-    <seealso cref="RAWKEYBOARD structure" />
-    <seealso cref="RAWMOUSE structure" />
-    <seealso cref="RAWHID structure" />
-    <seealso href="https://docs.microsoft.com//windows/win32/inputdev/raw-input">Raw Input</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/inputdev/wm-input">WM_INPUT</seealso>
+    <summary>Contains the header information that is part of the raw input data.</summary>
   </member>
   <member name="RAWINPUTHEADER.dwType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The type of raw input. It can be one of the following values:</para>
-      <para>| Value                   | Meaning                                                             |
-|-------------------------|---------------------------------------------------------------------|
-| <b>RIM_TYPEMOUSE</b> 0    | Raw input comes from the mouse.                                     |
-| <b>RIM_TYPEKEYBOARD</b> 1 | Raw input comes from the keyboard.                                  |
-| <b>RIM_TYPEHID</b> 2      | Raw input comes from some device that is not a keyboard or a mouse. |</para>
+      <para>| Value | Meaning | |-------------------------|---------------------------------------------------------------------| | <b>RIM_TYPEMOUSE</b> 0 | Raw input comes from the mouse. | | <b>RIM_TYPEKEYBOARD</b> 1 | Raw input comes from the keyboard. | | <b>RIM_TYPEHID</b> 2 | Raw input comes from some device that is not a keyboard or a mouse. |</para>
     </summary>
   </member>
   <member name="RAWINPUTHEADER.dwSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size, in bytes, of the entire input packet of data. This includes <see cref="RAWINPUT" /> plus possible extra input reports in the <see cref="RAWHID" /> variable length array.</para>
-    </summary>
+    <summary>The size, in bytes, of the entire input packet of data. This includes <see cref="RAWINPUT" /> plus possible extra input reports in the <see cref="RAWHID" /> variable length array.</summary>
   </member>
   <member name="RAWINPUTHEADER.hDevice">
-    <summary>
-      <para>Type: <b>HANDLE</b></para>
-      <para>A handle to the device generating the raw input data.</para>
-    </summary>
+    <summary>A handle to the device generating the raw input data.</summary>
   </member>
   <member name="RAWINPUTHEADER.wParam">
-    <summary>
-      <para>Type: <b>WPARAM</b></para>
-      <para>The value passed in the <i>wParam</i> parameter of the <a href="https://docs.microsoft.com//windows/win32/inputdev/wm-input">WM_INPUT</a> message.</para>
-    </summary>
+    <summary>The value passed in the <i>wParam</i> parameter of the <a href="https://docs.microsoft.com//windows/win32/inputdev/wm-input">WM_INPUT</a> message.</summary>
   </member>
 </doc>

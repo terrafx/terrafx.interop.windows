@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFCaptureEngine.GetSink">
-    <summary>
-      <para>Gets a pointer to one of the capture sink objects. You can use the capture sinks to configure preview, recording, or still-image capture.</para>
-    </summary>
-    <param name="mfCaptureEngineSinkType">
-      <para>An <see cref="MF_CAPTURE_ENGINE_SINK_TYPE" /> value that specifies the capture sink to retrieve.</para>
-    </param>
-    <param name="ppSink">
-      <para>Receives a pointer to the <see cref="IMFCaptureSink" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets a pointer to one of the capture sink objects. You can use the capture sinks to configure preview, recording, or still-image capture.</summary>
+    <param name="mfCaptureEngineSinkType">An <see cref="MF_CAPTURE_ENGINE_SINK_TYPE" /> value that specifies the capture sink to retrieve.</param>
+    <param name="ppSink">Receives a pointer to the <see cref="IMFCaptureSink" /> interface. The caller must release the interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,49 +13,41 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
+          <description>Invalid argument.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFCaptureEngine" />
   </member>
   <member name="IMFCaptureEngine.GetSource">
-    <summary>
-      <para>Gets a pointer to the capture source object. Use the capture source to configure the capture devices.</para>
-    </summary>
-    <param name="ppSource">
-      <para>Receives a pointer to the <see cref="IMFCaptureSource" /> interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFCaptureEngine" />
+    <summary>Gets a pointer to the capture source object. Use the capture source to configure the capture devices.</summary>
+    <param name="ppSource">Receives a pointer to the <see cref="IMFCaptureSource" /> interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCaptureEngine.Initialize">
-    <summary>
-      <para>Initializes the capture engine.</para>
-    </summary>
-    <param name="pEventCallback">
-      <para>A pointer to the <see cref="IMFCaptureEngineOnEventCallback" /> interface. The caller must implement this interface. The capture engine uses this interface to send asynchronous events to the caller.</para>
-    </param>
+    <summary>Initializes the capture engine.</summary>
+    <param name="pEventCallback">A pointer to the <see cref="IMFCaptureEngineOnEventCallback" /> interface. The caller must implement this interface. The capture engine uses this interface to send asynchronous events to the caller.</param>
     <param name="pAttributes">
       <para>A pointer to the <see cref="IMFAttributes" /> interface. This parameter can be <b>NULL</b>.</para>
       <para>You can use this parameter to configure the capture engine. Call <see cref="MFCreateAttributes" /> to create an attribute store, and then set any of the following attributes.</para>
@@ -152,58 +138,59 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <see cref="Initialize" /> method was already called.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_CAPTURE_DEVICES_AVAILABLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>No capture devices are available.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="Initialize" /> method was already called.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_UNSUPPORTED_CAPTURE_DEVICE_PRESENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_CAPTURE_DEVICES_AVAILABLE</b>
-            </para>
-          </description>
-          <description>
-            <para>No capture devices are available.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_UNSUPPORTED_CAPTURE_DEVICE_PRESENT</b>
-            </para>
-          </description>
-          <description>
-            <para>An unsupported capture device is present on the system. This error will only be returned if NULL is specified for the <i>pVideoSource</i> parameter, indicating that the system should pick the capture device, and if no supported capture device has already been attached. It is recommended that apps show users a specific unsupported capture device message if this error is returned, rather than a general failure message.</para>
-          </description>
-        </item>
+          <description>An unsupported capture device is present on the system. This error will only be returned if NULL is specified for the <i>pVideoSource</i> parameter, indicating that the system should pick the capture device, and if no supported capture device has already been attached. It is recommended that apps show users a specific unsupported capture device message if this error is returned, rather than a general failure message.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You must call this method once before using the capture engine. Calling the method a second time returns <b>MF_E_INVALIDREQUEST</b>.</para>
-      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_INITIALIZED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
-    </remarks>
-    <seealso cref="IMFCaptureEngine" />
   </member>
   <member name="IMFCaptureEngine.StartPreview">
-    <summary>
-      <para>Starts preview.</para>
-    </summary>
+    <summary>Starts preview.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -211,39 +198,35 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The preview sink was not initialized.</para>
-          </description>
-        </item>
+          <description>The preview sink was not initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before calling this method, configure the preview sink by calling <see cref="IMFCaptureSink.AddStream" />. To get a pointer to the preview sink, call <see cref="IMFCaptureEngine.GetSink" />.</para>
-      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_PREVIEW_STARTED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
-      <para>After the preview sink is configured, you can stop and start preview by calling <see cref="IMFCaptureEngine.StopPreview" /> and <b>IMFCaptureEngine.StartPreview</b>.</para>
-    </remarks>
-    <seealso cref="IMFCaptureEngine" />
   </member>
   <member name="IMFCaptureEngine.StartRecord">
-    <summary>
-      <para>Starts recording audio and/or video to a file.</para>
-    </summary>
+    <summary>Starts recording audio and/or video to a file.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -251,39 +234,35 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The recording sink was not initialized.</para>
-          </description>
-        </item>
+          <description>The recording sink was not initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before calling this method, configure the recording sink by calling <see cref="IMFCaptureSink.AddStream" />. To get a pointer to the recording sink, call <see cref="IMFCaptureEngine.GetSink" />.</para>
-      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_RECORD_STARTED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
-      <para>To stop recording, call <see cref="IMFCaptureEngine.StopRecord" />.</para>
-    </remarks>
-    <seealso cref="IMFCaptureEngine" />
   </member>
   <member name="IMFCaptureEngine.StopPreview">
-    <summary>
-      <para>Stops preview.</para>
-    </summary>
+    <summary>Stops preview.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -291,72 +270,44 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The capture engine is not currently previewing.</para>
-          </description>
-        </item>
+          <description>The capture engine is not currently previewing.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_PREVIEW_STOPPED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
-    </remarks>
-    <seealso cref="IMFCaptureEngine" />
   </member>
   <member name="IMFCaptureEngine.StopRecord">
-    <summary>
-      <para>Stops recording.</para>
-    </summary>
-    <param name="bFinalize">
-      <para>A Boolean value that specifies whether to finalize the output file. To create a valid output file, specify <b>TRUE</b>. Specify <b>FALSE</b> only if you want to interrupt the recording and discard the output file. If the value is <b>FALSE</b>, the operation completes more quickly, but the file will not be playable.</para>
-    </param>
-    <param name="bFlushUnprocessedSamples">
-      <para>A Boolean value that specifies if the unprocessed samples waiting to be encoded should be flushed.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_RECORD_STOPPED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
-    </remarks>
-    <seealso cref="IMFCaptureEngine" />
+    <summary>Stops recording.</summary>
+    <param name="bFinalize">A Boolean value that specifies whether to finalize the output file. To create a valid output file, specify <b>TRUE</b>. Specify <b>FALSE</b> only if you want to interrupt the recording and discard the output file. If the value is <b>FALSE</b>, the operation completes more quickly, but the file will not be playable.</param>
+    <param name="bFlushUnprocessedSamples">A Boolean value that specifies if the unprocessed samples waiting to be encoded should be flushed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCaptureEngine.TakePhoto">
-    <summary>
-      <para>Captures a still image from the video stream.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Before calling this method, configure the photo sink by calling <see cref="IMFCaptureSink.AddStream" />. To get a pointer to the photo sink, call <see cref="IMFCaptureEngine.GetSink" />.</para>
-      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_PHOTO_TAKEN</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
-    </remarks>
-    <seealso cref="IMFCaptureEngine" />
+    <summary>Captures a still image from the video stream.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCaptureEngine">
-    <summary>
-      <para>Controls one or more capture devices. The capture engine implements this interface. To get a pointer to this interface, call either <a href="https://docs.microsoft.com//windows/desktop/medfound/mfcreatecaptureengine">MFCreateCaptureEngine</a> or <see cref="IMFCaptureEngineClassFactory.CreateInstance" />.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IMFCaptureEngine</b> only supports one pass CBR encoding.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Controls one or more capture devices. The capture engine implements this interface. To get a pointer to this interface, call either <a href="https://docs.microsoft.com//windows/desktop/medfound/mfcreatecaptureengine">MFCreateCaptureEngine</a> or <see cref="IMFCaptureEngineClassFactory.CreateInstance" />.</summary>
   </member>
 </doc>

@@ -3,47 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_MESSAGE_CATEGORY">
-    <summary>
-      <para>Categories of debug messages. This will identify the category of a message when retrieving a message with <see cref="ID3D10InfoQueue.GetMessage" /> and when adding a message with <see cref="ID3D10InfoQueue.AddMessage" />. When creating an <see cref="info queue filter" />, these values can be used to allow or deny any categories of messages to pass through the storage and retrieval filters.</para>
-    </summary>
-    <remarks>
-      <para>This is part of the Information Queue feature. See <see cref="ID3D10InfoQueue Interface" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+    <summary>Categories of debug messages. This will identify the category of a message when retrieving a message with <see cref="ID3D10InfoQueue.GetMessage" /> and when adding a message with <see cref="ID3D10InfoQueue.AddMessage" />. When creating an <see cref="info queue filter" />, these values can be used to allow or deny any categories of messages to pass through the storage and retrieval filters.</summary>
   </member>
   <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_APPLICATION_DEFINED">
-    <summary>
-      <para>User defined message. See <see cref="ID3D10InfoQueue.AddMessage" />.</para>
-    </summary>
+    <summary>User defined message. See <see cref="ID3D10InfoQueue.AddMessage" />.</summary>
   </member>
-  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_MISCELLANEOUS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_INITIALIZATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_CLEANUP">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_COMPILATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_STATE_CREATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_STATE_SETTING">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_STATE_GETTING">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_RESOURCE_MANIPULATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_EXECUTION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_SHADER">
-    <summary></summary>
-  </member>
+  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_MISCELLANEOUS"></member>
+  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_INITIALIZATION"></member>
+  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_CLEANUP"></member>
+  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_COMPILATION"></member>
+  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_STATE_CREATION"></member>
+  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_STATE_SETTING"></member>
+  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_STATE_GETTING"></member>
+  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_RESOURCE_MANIPULATION"></member>
+  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_EXECUTION"></member>
+  <member name="D3D10_MESSAGE_CATEGORY.D3D10_MESSAGE_CATEGORY_SHADER"></member>
 </doc>

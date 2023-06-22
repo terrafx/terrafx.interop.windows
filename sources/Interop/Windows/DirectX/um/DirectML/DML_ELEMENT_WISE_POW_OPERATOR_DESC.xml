@@ -5,40 +5,22 @@
   <member name="DML_ELEMENT_WISE_POW_OPERATOR_DESC">
     <summary>
       <para>Computes each element of <i>InputTensor</i> raised to the power of the corresponding element of <i>ExponentTensor</i>, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
-      <code>f(input, exponent) = pow(input, exponent)
-</code>
+      <code>f(input, exponent) = pow(input, exponent)</code>
       <para>Negative bases are supported for exponents with integral values (though datatype can still be float), otherwise this operator returns NaN.</para>
       <para>When the input tensor and exponent tensor both have integral data type, this operator guarantees exact results.</para>
       <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias <i>InputTensor</i> during binding.</para>
     </summary>
-    <remarks>
-      <para>Until <code>DML_FEATURE_LEVEL_3_0</code>, <i>ExponentTensor</i><i>must</i> match the type of <i>InputTensor</i>.</para>
-      <para>See <see cref="DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC" /> for a POW operator that accepts a <code>FLOAT</code> constant for the exponent.</para>
-    </remarks>
-    <seealso cref="DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC" />
   </member>
   <member name="DML_ELEMENT_WISE_POW_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor containing the input values.</para>
-    </summary>
+    <summary>The tensor containing the input values.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_POW_OPERATOR_DESC.ExponentTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor containing the exponent values.</para>
-    </summary>
+    <summary>The tensor containing the exponent values.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_POW_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_POW_OPERATOR_DESC.ScaleBias">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_SCALE_BIAS" />*</b></para>
-      <para>An optional scale and bias to apply to the input. If present, this has the effect of applying the function <code>g(x) = x * scale + bias</code> to each <i>input</i> element prior to computing this operator.</para>
-    </summary>
+    <summary>An optional scale and bias to apply to the input. If present, this has the effect of applying the function <code>g(x) = x * scale + bias</code> to each <i>input</i> element prior to computing this operator.</summary>
   </member>
 </doc>

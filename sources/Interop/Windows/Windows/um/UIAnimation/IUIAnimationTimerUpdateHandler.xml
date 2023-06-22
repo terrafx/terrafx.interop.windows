@@ -3,62 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IUIAnimationTimerUpdateHandler.ClearTimerClientEventHandler">
-    <summary>
-      <para>Clears the handler for timer client status change events.</para>
-    </summary>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <seealso cref="IUIAnimationTimerUpdateHandler" />
-    <seealso cref="IUIAnimationTimerUpdateHandler.SetTimerClientEventHandler" />
+    <summary>Clears the handler for timer client status change events.</summary>
+    <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationTimerUpdateHandler.OnUpdate">
-    <summary>
-      <para>Handles update events from the timer.</para>
-    </summary>
-    <param name="timeNow">
-      <para>The current timer time, in seconds.</para>
-    </param>
-    <param name="result">
-      <para>Receives a member of the <see cref="UI_ANIMATION_UPDATE_RESULT" /> enumeration, indicating whether any animation variables changed as a result of the update.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method is used by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd317021(v=vs.85)">UIAnimationTimer</a> object to update the state of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd317019(v=vs.85)">UIAnimationManager</a> object. The <b>UIAnimationTimer</b> object calls <see cref="UIAnimationTimerEventHandler.OnPostUpdate" /> only when calls to this method return a result of <b>UI_ANIMATION_UPDATE_VARIABLES_CHANGED</b>.</para>
-    </remarks>
-    <seealso cref="IUIAnimationTimerEventHandler.OnPostUpdate" />
-    <seealso cref="IUIAnimationTimerEventHandler.OnPreUpdate" />
-    <seealso cref="IUIAnimationTimerUpdateHandler" />
+    <summary>Handles update events from the timer.</summary>
+    <param name="timeNow">The current timer time, in seconds.</param>
+    <param name="result">Receives a member of the <see cref="UI_ANIMATION_UPDATE_RESULT" /> enumeration, indicating whether any animation variables changed as a result of the update.</param>
+    <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationTimerUpdateHandler.SetTimerClientEventHandler">
-    <summary>
-      <para>Specifies a handler for timer client status change events.</para>
-    </summary>
-    <param name="handler">
-      <para>A handler for timer client events.  The specified object must implement
-<see cref="IUIAnimationTimerUpdateHandler" />.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>If the update handler is already connected to the timer, this method returns <b>UI_E_TIMER_CLIENT_ALREADY_CONNECTED.</b></para>
-    </remarks>
-    <seealso cref="IUIAnimationTimerUpdateHandler" />
-    <seealso cref="IUIAnimationTimerUpdateHandler.ClearTimerClientEventHandler" />
+    <summary>Specifies a handler for timer client status change events.</summary>
+    <param name="handler">A handler for timer client events. The specified object must implement<see cref="IUIAnimationTimerUpdateHandler" />.</param>
+    <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationTimerUpdateHandler">
-    <summary>
-      <para>Defines methods for handling timing update events.</para>
-    </summary>
-    <remarks>
-      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd317019(v=vs.85)">UIAnimationManager</a> object implements this interface, so a client application can query the <b>UIAnimationManager</b> object for this interface and then pass the interface to <see cref="IUIAnimationTimer.SetTimerUpdateHandler" />.  It is not necessary to disconnect the <b>UIAnimationManager</b> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd317021(v=vs.85)">UIAnimationTimer</a> objects; releasing them both is sufficient to clean up.</para>
-    </remarks>
-    <seealso cref="IUIAnimationTimer" />
-    <seealso cref="IUIAnimationTimerClientEventHandler" />
-    <seealso cref="IUIAnimationTimerEventHandler" />
-    <seealso cref="IUnknown" />
+    <summary>Defines methods for handling timing update events.</summary>
   </member>
 </doc>

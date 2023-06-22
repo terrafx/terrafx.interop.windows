@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING">
+    <summary>Indicates how a strongly-typed effect property maps to an underlying Direct2D effect property. This enumeration supports the Windows.UI.Composition API and is not meant to be used directly in your code.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_UNKNOWN">
+    <summary>Specifies that the value cannot be mapped to a Direct2D effect property.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_DIRECT">
+    <summary>Specifies that the value can be set as-is on the Direct2D effect property.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_VECTORX">
+    <summary>Specifies that the value maps to the X component of a vector-typed Direct2D effect property.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_VECTORY">
+    <summary>Specifies that the value maps to the Y component of a vector-typed Direct2D effect property.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_VECTORZ">
+    <summary>Specifies that the value maps to the Z component of a vector-typed Direct2D effect property.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_VECTORW">
+    <summary>Specifies that the value maps to the W component of a vector-typed Direct2D effect property.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_RECT_TO_VECTOR4">
+    <summary>Specifies that a rect value maps to a Vector4 Direct2D effect property.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_RADIANS_TO_DEGREES">
+    <summary>Specifies that the value needs to be converted from radians to degrees before being set on the Direct2D effect property.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_COLORMATRIX_ALPHA_MODE">
+    <summary>Specifies a color matrix alpha mode enum value needs to be converted to the equivalent Direct2D enum value before being set on the effect property.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_COLOR_TO_VECTOR3">
+    <summary>Specifies that a Windows.UI.Color value needs to be converted to an RGB Vector3 before being set on the Direct2D effect property.</summary>
+  </member>
+  <member name="GRAPHICS_EFFECT_PROPERTY_MAPPING.GRAPHICS_EFFECT_PROPERTY_MAPPING_COLOR_TO_VECTOR4">
+    <summary>Specifies that a Windows.UI.Color value needs to be converted to an RGBA Vector4 before being set on the Direct2D effect property.</summary>
+  </member>
+</doc>

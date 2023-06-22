@@ -3,28 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPPARAMS">
-    <summary>
-      <para>Contains the arguments passed to a method or property.</para>
-    </summary>
+    <summary>Contains the arguments passed to a method or property.</summary>
   </member>
   <member name="DISPPARAMS.rgvarg">
     <summary>
       <para>An array of arguments.</para>
+      <para>
+        <b>Note</b>: these arguments appear in reverse order</para>
     </summary>
   </member>
   <member name="DISPPARAMS.rgdispidNamedArgs">
-    <summary>
-      <para>The dispatch IDs of the named arguments.</para>
-    </summary>
+    <summary>The dispatch IDs of the named arguments.</summary>
   </member>
   <member name="DISPPARAMS.cArgs">
-    <summary>
-      <para>The number of arguments.</para>
-    </summary>
+    <summary>The number of arguments.</summary>
   </member>
   <member name="DISPPARAMS.cNamedArgs">
-    <summary>
-      <para>The number of named arguments.</para>
-    </summary>
+    <summary>The number of named arguments.</summary>
   </member>
 </doc>

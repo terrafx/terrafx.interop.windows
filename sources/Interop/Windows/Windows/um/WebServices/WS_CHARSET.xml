@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_CHARSET">
-    <summary>
-      <para>Identifies the character set of a document.</para>
-    </summary>
+    <summary>Identifies the character set of a document.</summary>
   </member>
   <member name="WS_CHARSET.WS_CHARSET_AUTO">
-    <summary>
-      <para>Specifies that the charset of a document should be determined automatically by inspecting
-the BOM (Byte Order Marks) of the document and the xml declaration if present.</para>
-    </summary>
+    <summary>Specifies that the charset of a document should be determined automatically by inspecting the BOM (Byte Order Marks) of the document and the xml declaration if present.</summary>
   </member>
   <member name="WS_CHARSET.WS_CHARSET_UTF8">
-    <summary>
-      <para>Specifies that the charset of a document is UTF-8.</para>
-    </summary>
+    <summary>Specifies that the charset of a document is UTF-8.</summary>
   </member>
   <member name="WS_CHARSET.WS_CHARSET_UTF16LE">
-    <summary>
-      <para>Specifies that the charset of a document is UTF-16LE.</para>
-    </summary>
+    <summary>Specifies that the charset of a document is UTF-16LE.</summary>
   </member>
   <member name="WS_CHARSET.WS_CHARSET_UTF16BE">
-    <summary>
-      <para>Specifies that the charset of a document is UTF-16BE.</para>
-    </summary>
+    <summary>Specifies that the charset of a document is UTF-16BE.</summary>
   </member>
 </doc>

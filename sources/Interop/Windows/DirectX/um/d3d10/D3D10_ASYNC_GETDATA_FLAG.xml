@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_ASYNC_GETDATA_FLAG">
-    <summary>
-      <para>Optional flags that control the behavior of <see cref="ID3D10Asynchronous.GetData" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+    <summary>Optional flags that control the behavior of <see cref="ID3D10Asynchronous.GetData" />.</summary>
   </member>
   <member name="D3D10_ASYNC_GETDATA_FLAG.D3D10_ASYNC_GETDATA_DONOTFLUSH">
-    <summary>
-      <para>Do not flush the command buffer. This can potentially cause an infinite loop if GetData is continually called until it returns S_OK as there may still be commands in the command buffer that need to be processed in order for GetData to return S_OK. Since the commands in the command buffer are not flushed they will not be processed and therefore GetData will never return S_OK.</para>
-    </summary>
+    <summary>Do not flush the command buffer. This can potentially cause an infinite loop if GetData is continually called until it returns S_OK as there may still be commands in the command buffer that need to be processed in order for GetData to return S_OK. Since the commands in the command buffer are not flushed they will not be processed and therefore GetData will never return S_OK.</summary>
   </member>
 </doc>

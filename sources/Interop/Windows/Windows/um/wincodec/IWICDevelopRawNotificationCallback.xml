@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICDevelopRawNotificationCallback.Notify">
-    <summary>
-      <para>An application-defined callback method used for raw image parameter change notifications.</para>
-    </summary>
-    <param name="NotificationMask">
-      <para>Type: <b>UINT</b></para>
-      <para>A set of <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-iwicdeveloprawnotification-constants">IWICDevelopRawNotificationCallback Constants</a> parameter notification flags.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>An application-defined callback method used for raw image parameter change notifications.</summary>
+    <param name="NotificationMask">A set of <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-iwicdeveloprawnotification-constants">IWICDevelopRawNotificationCallback Constants</a> parameter notification flags.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICDevelopRawNotificationCallback">
-    <summary>
-      <para>Exposes a callback method for raw image change nofications.</para>
-    </summary>
+    <summary>Exposes a callback method for raw image change nofications.</summary>
   </member>
 </doc>

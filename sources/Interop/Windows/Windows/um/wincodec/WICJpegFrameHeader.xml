@@ -3,43 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICJpegFrameHeader">
-    <summary>
-      <para>Represents a JPEG frame header.</para>
-    </summary>
-    <remarks>
-      <para>Get the frame header for an image by calling <see cref="IWICJpegFrameDecode.GetFrameHeader" />.</para>
-    </remarks>
-    <seealso cref="IWICJpegFrameDecode.GetFrameHeader" />
+    <summary>Represents a JPEG frame header.</summary>
   </member>
   <member name="WICJpegFrameHeader.Width">
-    <summary>
-      <para>The width of the JPEG frame.</para>
-    </summary>
+    <summary>The width of the JPEG frame.</summary>
   </member>
   <member name="WICJpegFrameHeader.Height">
-    <summary>
-      <para>The height of the JPEG frame.</para>
-    </summary>
+    <summary>The height of the JPEG frame.</summary>
   </member>
   <member name="WICJpegFrameHeader.TransferMatrix">
-    <summary>
-      <para>The transfer matrix of the JPEG frame.</para>
-    </summary>
+    <summary>The transfer matrix of the JPEG frame.</summary>
   </member>
   <member name="WICJpegFrameHeader.ScanType">
-    <summary>
-      <para>The scan type of the JPEG frame.</para>
-    </summary>
+    <summary>The scan type of the JPEG frame.</summary>
   </member>
   <member name="WICJpegFrameHeader.cComponents">
-    <summary>
-      <para>The number of components in the frame.</para>
-    </summary>
+    <summary>The number of components in the frame.</summary>
   </member>
   <member name="WICJpegFrameHeader.ComponentIdentifiers">
-    <summary>
-      <para>The component identifiers.</para>
-    </summary>
+    <summary>The component identifiers.</summary>
   </member>
   <member name="WICJpegFrameHeader.SampleFactors">
     <summary>
@@ -71,7 +53,7 @@
           <description>WIC_JPEG_QUANTIZATION_BASELINE_ONE</description>
         </item>
         <item>
-          <description>WIC_JPEG_QUANTIZATION_BASELINE_THREE </description>
+          <description>WIC_JPEG_QUANTIZATION_BASELINE_THREE</description>
         </item>
       </list>
     </summary>

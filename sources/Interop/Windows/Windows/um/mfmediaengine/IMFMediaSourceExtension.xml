@@ -3,124 +3,52 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaSourceExtension.AddSourceBuffer">
-    <summary>
-      <para>Adds a <see cref="IMFSourceBuffer" /> to the collection of buffers associated with the <see cref="IMFMediaSourceExtension" />.</para>
-    </summary>
-    <param name="type"></param>
-    <param name="pNotify"></param>
-    <param name="ppSourceBuffer"></param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaSourceExtension" />
+    <summary>Adds a <see cref="IMFSourceBuffer" /> to the collection of buffers associated with the <see cref="IMFMediaSourceExtension" />.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaSourceExtension.GetActiveSourceBuffers">
-    <summary>
-      <para>Gets the source buffers that are actively supplying media data to the media source.</para>
-    </summary>
-    <returns>
-      <para>The list of active source buffers.</para>
-    </returns>
-    <seealso cref="IMFMediaSourceExtension" />
+    <summary>Gets the source buffers that are actively supplying media data to the media source.</summary>
+    <returns>The list of active source buffers.</returns>
   </member>
   <member name="IMFMediaSourceExtension.GetDuration">
-    <summary>
-      <para>Gets the duration of the media source in 100-nanosecond units.</para>
-    </summary>
-    <returns>
-      <para>The duration of the media source in 100-nanosecond units.</para>
-    </returns>
-    <seealso cref="IMFMediaSourceExtension" />
+    <summary>Gets the duration of the media source in 100-nanosecond units.</summary>
+    <returns>The duration of the media source in 100-nanosecond units.</returns>
   </member>
   <member name="IMFMediaSourceExtension.GetReadyState">
-    <summary>
-      <para>Gets the ready state of the media source.</para>
-    </summary>
-    <returns>
-      <para>The ready state of the media source.</para>
-    </returns>
-    <seealso cref="IMFMediaSourceExtension" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mf-mse-ready">MF_MSE_READY</seealso>
+    <summary>Gets the ready state of the media source.</summary>
+    <returns>The ready state of the media source.</returns>
   </member>
   <member name="IMFMediaSourceExtension.GetSourceBuffer">
-    <summary>
-      <para>Gets the <see cref="IMFSourceBuffer" /> at the specified index in the collection of buffers.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>The location of the buffer in the collection.</para>
-    </param>
-    <returns>
-      <para>The source buffer.</para>
-    </returns>
-    <seealso cref="IMFMediaSourceExtension" />
+    <summary>Gets the <see cref="IMFSourceBuffer" /> at the specified index in the collection of buffers.</summary>
+    <param name="dwStreamIndex">The location of the buffer in the collection.</param>
+    <returns>The source buffer.</returns>
   </member>
   <member name="IMFMediaSourceExtension.GetSourceBuffers">
-    <summary>
-      <para>Gets the collection of source buffers associated with this media source.</para>
-    </summary>
-    <returns>
-      <para>The collection of source buffers.</para>
-    </returns>
-    <seealso cref="IMFMediaSourceExtension" />
+    <summary>Gets the collection of source buffers associated with this media source.</summary>
+    <returns>The collection of source buffers.</returns>
   </member>
   <member name="IMFMediaSourceExtension.IsTypeSupported">
-    <summary>
-      <para>Gets a value that indicates if the specified MIME type is supported by the media source.</para>
-    </summary>
-    <param name="type">
-      <para>The media type to check support for.</para>
-    </param>
+    <summary>Gets a value that indicates if the specified MIME type is supported by the media source.</summary>
+    <param name="type">The media type to check support for.</param>
     <returns>
-      <para>
-        <b>true</b> if the media type is supported; otherwise, <b>false</b>.</para>
-    </returns>
-    <seealso cref="IMFMediaSourceExtension" />
+      <b>true</b> if the media type is supported; otherwise, <b>false</b>.</returns>
   </member>
   <member name="IMFMediaSourceExtension.RemoveSourceBuffer">
-    <summary>
-      <para>Removes the specified source buffer from the collection of source buffers managed by the <see cref="IMFMediaSourceExtension" /> object.</para>
-    </summary>
-    <param name="pSourceBuffer">
-      <para>The buffer to remove.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaSourceExtension" />
+    <summary>Removes the specified source buffer from the collection of source buffers managed by the <see cref="IMFMediaSourceExtension" /> object.</summary>
+    <param name="pSourceBuffer">The buffer to remove.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaSourceExtension.SetDuration">
-    <summary>
-      <para>Sets the duration of the media source in 100-nanosecond units.</para>
-    </summary>
-    <param name="duration">
-      <para>The duration of the media source in 100-nanosecond units.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaSourceExtension" />
+    <summary>Sets the duration of the media source in 100-nanosecond units.</summary>
+    <param name="duration">The duration of the media source in 100-nanosecond units.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaSourceExtension.SetEndOfStream">
-    <summary>
-      <para>Indicate that the end of the media stream has been reached.</para>
-    </summary>
-    <param name="error">
-      <para>Used to pass error information.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaSourceExtension" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mf-mse-error">MF_MSE_ERROR</seealso>
+    <summary>Indicate that the end of the media stream has been reached.</summary>
+    <param name="error">Used to pass error information.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaSourceExtension">
-    <summary>
-      <para>Provides functionality for the Media Source Extension (MSE).</para>
-    </summary>
-    <remarks>
-      <para>Media Source Extensions (MSE) is a World Wide Web Consortium (W3C) standard that extends the HTML5 media  elements to enable dynamically changing the media stream without the use of plug-ins. The   <b>IMFMediaSourceExtension</b> interface  and the related Microsoft Win32 API implement MSE and are expected to only be called by web browsers implementing MSE.</para>
-      <para>The MSE media source keeps track of the ready state of the of the source as well as a list of <see cref="IMFSourceBuffer" /> objects which provide media data for the source.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Provides functionality for the Media Source Extension (MSE).</summary>
   </member>
 </doc>

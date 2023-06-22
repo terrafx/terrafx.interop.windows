@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISK_SPACE_INFORMATION">
+    <summary>The <b>DISK_SPACE_INFORMATION</b> structure contains information about the disk space for a particular volume.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.ActualTotalAllocationUnits">
+    <summary>The <code>ActualTotalAllocationUnits</code> is the total volume size without considering Quota setting.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.ActualAvailableAllocationUnits">
+    <summary>The <code>ActualTotalAllocationUnits</code> is the available space for the volume without considering Quota setting.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.ActualPoolUnavailableAllocationUnits">
+    <summary>The <code>ActualPoolUnavailableAllocationUnits</code> is the unavailable space for the volume due to insufficient free pool space</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.CallerTotalAllocationUnits">
+    <summary>The <code>CallerTotalAllocationUnits</code> is the total volume size limited by Quota setting.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.CallerAvailableAllocationUnits">
+    <summary>The <code>CallerAvailableAllocationUnits</code> is the available space for the volume limited by Quota setting.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.CallerPoolUnavailableAllocationUnits">
+    <summary>The <code>CallerAvailableAllocationUnits</code> is the unavailable space for the volume due to insufficient free pool space.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.UsedAllocationUnits">
+    <summary>The used space of the volume.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.TotalReservedAllocationUnits">
+    <summary>Total reserved space.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.VolumeStorageReserveAllocationUnits">
+    <summary>A special type of reserved space for per-volume storage reserve. This is included in the <code>TotalReservedAllocationUnits</code>.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.AvailableCommittedAllocationUnits">
+    <summary>The space that has been committed by storage pool but has not been allocated by file system.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.PoolAvailableAllocationUnits">
+    <summary>Available space in corresponding storage pool. If the volume is not a spaces volume, the <code>PoolAvailableAllocationUnits</code> is set to <code>0</code>.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.SectorsPerAllocationUnit">
+    <summary>The number of sectors per allocation unit for the volume.</summary>
+  </member>
+  <member name="DISK_SPACE_INFORMATION.BytesPerSector">
+    <summary>The number of bytes per sector for the volume.</summary>
+  </member>
+</doc>

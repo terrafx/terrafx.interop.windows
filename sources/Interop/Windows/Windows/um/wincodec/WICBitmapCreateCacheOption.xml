@@ -3,29 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICBitmapCreateCacheOption">
-    <summary>
-      <para>Specifies the desired cache usage.</para>
-    </summary>
-    <remarks>
-      <para>The <b>CreateBitmap</b> of the <see cref="IWICImagingFactory" /> interface does not support WICBitmapNoCache when the <i>pixelFormat</i> is a native pixel format provided by Windows Imaging Component (WIC).</para>
-    </remarks>
+    <summary>Specifies the desired cache usage.</summary>
   </member>
   <member name="WICBitmapCreateCacheOption.WICBitmapNoCache">
-    <summary>
-      <para>Do not cache the bitmap.</para>
-    </summary>
+    <summary>Do not cache the bitmap.</summary>
   </member>
   <member name="WICBitmapCreateCacheOption.WICBitmapCacheOnDemand">
-    <summary>
-      <para>Cache the bitmap when needed.</para>
-    </summary>
+    <summary>Cache the bitmap when needed.</summary>
   </member>
   <member name="WICBitmapCreateCacheOption.WICBitmapCacheOnLoad">
-    <summary>
-      <para>Cache the bitmap at initialization.</para>
-    </summary>
+    <summary>Cache the bitmap at initialization.</summary>
   </member>
-  <member name="WICBitmapCreateCacheOption.WICBITMAPCREATECACHEOPTION_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICBitmapCreateCacheOption.WICBITMAPCREATECACHEOPTION_FORCE_DWORD"></member>
 </doc>

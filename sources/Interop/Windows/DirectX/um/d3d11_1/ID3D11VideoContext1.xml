@@ -3,400 +3,176 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11VideoContext1.CheckCryptoSessionStatus">
-    <summary>
-      <para>Checks the status of a crypto session.</para>
-    </summary>
-    <param name="pCryptoSession">
-      <para>Type: <b>ID3D11CryptoSession*</b></para>
-      <para>Specifies a <see cref="ID3D11CryptoSession" /> for which status is checked.</para>
-    </param>
-    <param name="pStatus">
-      <para>Type: <b><see cref="D3D11_CRYPTO_SESSION_STATUS" />*</b></para>
-      <para>A D3D11_CRYPTO_SESSION_STATUS that is populated with the crypto session status upon completion.</para>
-    </param>
+    <summary>Checks the status of a crypto session.</summary>
+    <param name="pCryptoSession">Specifies a <see cref="ID3D11CryptoSession" /> for which status is checked.</param>
+    <param name="pStatus">A D3D11_CRYPTO_SESSION_STATUS that is populated with the crypto session status upon completion.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>This method returns one of the following error codes.</para>
       <list type="table">
         <listheader>
           <description>S_OK</description>
           <description>The operation completed successfully.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed or this function was called using an invalid calling pattern.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>There is insufficient memory to complete the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID3D11VideoContext1" />
   </member>
   <member name="ID3D11VideoContext1.DecoderEnableDownsampling">
-    <summary>
-      <para>Indicates that decoder downsampling will be used and that the driver should allocate the appropriate reference frames.</para>
-    </summary>
-    <param name="pDecoder">
-      <para>Type: <b>ID3D11VideoDecoder*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoDecoder" /> interface.</para>
-    </param>
-    <param name="InputColorSpace">
-      <para>Type: <b>DXGI_COLOR_SPACE_TYPE</b></para>
-      <para>The color space information of the reference frame data.</para>
-    </param>
-    <param name="pOutputDesc">
-      <para>Type: <b>const <see cref="D3D11_VIDEO_SAMPLE_DESC" />*</b></para>
-      <para>The resolution, format, and colorspace of the output/display frames.  This is the destination resolution and format of the downsample operation.</para>
-    </param>
-    <param name="ReferenceFrameCount">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of reference frames to be used in the operation.</para>
-    </param>
+    <summary>Indicates that decoder downsampling will be used and that the driver should allocate the appropriate reference frames.</summary>
+    <param name="pDecoder">A pointer to the <see cref="ID3D11VideoDecoder" /> interface.</param>
+    <param name="InputColorSpace">The color space information of the reference frame data.</param>
+    <param name="pOutputDesc">The resolution, format, and colorspace of the output/display frames. This is the destination resolution and format of the downsample operation.</param>
+    <param name="ReferenceFrameCount">The number of reference frames to be used in the operation.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>This method returns one of the following error codes.</para>
       <list type="table">
         <listheader>
           <description>S_OK</description>
           <description>The operation completed successfully.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed or this function was called using an invalid calling pattern.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>There is insufficient memory to complete the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This function can only be called once for a specific <see cref="ID3D11VideoDecoder" /> interface. This method must be called prior to the first call to <see cref="DecoderBeginFrame" />. To update the downsampling parameters, use <see cref="DecoderUpdateDownsampling" />.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext1" />
   </member>
   <member name="ID3D11VideoContext1.DecoderUpdateDownsampling">
-    <summary>
-      <para>Updates the decoder downsampling parameters.</para>
-    </summary>
-    <param name="pDecoder">
-      <para>Type: <b>ID3D11VideoDecoder*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoDecoder" /> interface.</para>
-    </param>
-    <param name="pOutputDesc">
-      <para>Type: <b>const <see cref="D3D11_VIDEO_SAMPLE_DESC" />*</b></para>
-      <para>The resolution, format, and colorspace of the output/display frames.  This is the destination resolution and format of the downsample operation.</para>
-    </param>
+    <summary>Updates the decoder downsampling parameters.</summary>
+    <param name="pDecoder">A pointer to the <see cref="ID3D11VideoDecoder" /> interface.</param>
+    <param name="pOutputDesc">The resolution, format, and colorspace of the output/display frames. This is the destination resolution and format of the downsample operation.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>This method returns one of the following error codes.</para>
       <list type="table">
         <listheader>
           <description>S_OK</description>
           <description>The operation completed successfully.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed or this function was called using an invalid calling pattern.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>There is insufficient memory to complete the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method can only be called after decode downsampling is enabled by calling <see cref="DecoderEnableDownsampling" />. This method is only supported if the <see cref="D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE_DYNAMIC" /> capability is reported.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext1" />
   </member>
   <member name="ID3D11VideoContext1.GetDataForNewHardwareKey">
-    <summary>
-      <para>Allows the driver to return IHV specific information used when initializing the new hardware key.</para>
-    </summary>
-    <param name="pCryptoSession">
-      <para>Type: <b>ID3D11CryptoSession*</b></para>
-      <para>A pointer to the ID3D11CryptoSession interface.  To get this pointer, call <see cref="ID3D11VideoDevice1.CreateCryptoSession" />.</para>
-    </param>
-    <param name="PrivateInputSize">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the memory referenced by the <i>pPrivateInputData</i> parameter.</para>
-    </param>
-    <param name="pPrivatInputData">
-      <para>Type: <b>const void*</b></para>
-      <para>The private input data. The contents of this parameter is defined by the implementation of the secure execution environment. It may contain data about the license or about the stream properties.</para>
-    </param>
-    <param name="pPrivateOutputData">
-      <para>Type: <b>UINT64*</b></para>
-      <para>A pointer to the private output data. The return data is defined by the implementation of the secure execution environment. It may contain graphics-specific data to be associated with the underlying hardware key.</para>
-    </param>
+    <summary>Allows the driver to return IHV specific information used when initializing the new hardware key.</summary>
+    <param name="pCryptoSession">A pointer to the ID3D11CryptoSession interface. To get this pointer, call <see cref="ID3D11VideoDevice1.CreateCryptoSession" />.</param>
+    <param name="PrivateInputSize">The size of the memory referenced by the <i>pPrivateInputData</i> parameter.</param>
+    <param name="pPrivatInputData">The private input data. The contents of this parameter is defined by the implementation of the secure execution environment. It may contain data about the license or about the stream properties.</param>
+    <param name="pPrivateOutputData">A pointer to the private output data. The return data is defined by the implementation of the secure execution environment. It may contain graphics-specific data to be associated with the underlying hardware key.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>This method returns one of the following error codes.</para>
       <list type="table">
         <listheader>
           <description>S_OK</description>
           <description>The operation completed successfully.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>There is insufficient memory to complete the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID3D11VideoContext1" />
   </member>
   <member name="ID3D11VideoContext1.SubmitDecoderBuffers1">
-    <summary>
-      <para>Submits one or more buffers for decoding.</para>
-    </summary>
-    <param name="pDecoder">
-      <para>Type: <b>ID3D11VideoDecoder*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call the <see cref="ID3D11VideoDevice.CreateVideoDecoder" /> method.</para>
-    </param>
-    <param name="NumBuffers">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of buffers submitted for decoding.</para>
-    </param>
-    <param name="pBufferDesc">
-      <para>Type: <b>const <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" />*</b></para>
-      <para>A pointer to an array of <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" /> structures. The <i>NumBuffers</i> parameter specifies the number of elements in the array. Each element in the array describes a compressed buffer for decoding.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</para>
-    </returns>
-    <remarks>
-      <para>This function does not honor any D3D11 predicate that may have been set.</para>
-      <para>
-        <see cref="D3D11_QUERY_DATA_PIPELINE_STATISTICS" /> will not include this function for any feature level.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext1" />
+    <summary>Submits one or more buffers for decoding.</summary>
+    <param name="pDecoder">A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call the <see cref="ID3D11VideoDevice.CreateVideoDecoder" /> method.</param>
+    <param name="NumBuffers">The number of buffers submitted for decoding.</param>
+    <param name="pBufferDesc">A pointer to an array of <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" /> structures. The <i>NumBuffers</i> parameter specifies the number of elements in the array. Each element in the array describes a compressed buffer for decoding.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
   </member>
   <member name="ID3D11VideoContext1.VideoProcessorGetBehaviorHints">
-    <summary>
-      <para>Returns driver hints that indicate which of the video processor operations are best performed using multi-plane overlay hardware rather than <see cref="ID3D11VideoContext.VideoProcessorBlt" /> method.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>Type: <b>ID3D11VideoProcessor*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
-    </param>
-    <param name="OutputWidth">
-      <para>Type: <b>UINT</b></para>
-      <para>The width of the output stream.</para>
-    </param>
-    <param name="OutputHeight">
-      <para>Type: <b>UINT</b></para>
-      <para>The height of the output stream.</para>
-    </param>
-    <param name="OutputFormat">
-      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
-      <para>The format of the output stream.</para>
-    </param>
-    <param name="StreamCount">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of input streams to process.</para>
-    </param>
-    <param name="pStreams">
-      <para>Type: <b>const <see cref="D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT" />*</b></para>
-      <para>An array of structures that specifies the format of each input stream and whether each stream should be used when computing behavior hints.</para>
-    </param>
-    <param name="pBehaviorHints">
-      <para>Type: <b>UINT*</b></para>
-      <para>A pointer to a bitwise OR combination of <see cref="D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINTS" /> values indicating which video processor operations would best be performed using multi-plane overlay hardware rather than the <see cref="ID3D11VideoContext.VideoProcessorBlt" /> method.</para>
-    </param>
+    <summary>Returns driver hints that indicate which of the video processor operations are best performed using multi-plane overlay hardware rather than <see cref="ID3D11VideoContext.VideoProcessorBlt" /> method.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</param>
+    <param name="OutputWidth">The width of the output stream.</param>
+    <param name="OutputHeight">The height of the output stream.</param>
+    <param name="OutputFormat">The format of the output stream.</param>
+    <param name="StreamCount">The number of input streams to process.</param>
+    <param name="pStreams">An array of structures that specifies the format of each input stream and whether each stream should be used when computing behavior hints.</param>
+    <param name="pBehaviorHints">A pointer to a bitwise OR combination of <see cref="D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINTS" /> values indicating which video processor operations would best be performed using multi-plane overlay hardware rather than the <see cref="ID3D11VideoContext.VideoProcessorBlt" /> method.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>This method returns one of the following error codes.</para>
       <list type="table">
         <listheader>
           <description>S_OK</description>
           <description>The operation completed successfully.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed or this function was called using an invalid calling pattern.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>There is insufficient memory to complete the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method computes the behavior hints using the current state of the video processor as set by the "SetOutput" and "SetStream" methods of <see cref="ID3D11VideoContext" /> and <see cref="ID3D11VideoContext1" />. You must set the proper state before calling this method to ensure that the returned hints contain useful data.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext1" />
   </member>
   <member name="ID3D11VideoContext1.VideoProcessorGetOutputColorSpace1">
-    <summary>
-      <para>Gets the color space information for the video processor output surface.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>Type: <b>ID3D11VideoProcessor*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
-    </param>
-    <param name="pColorSpace">
-      <para>Type: <b>DXGI_COLOR_SPACE_TYPE*</b></para>
-      <para>A pointer to a <see cref="DXGI_COLOR_SPACE_TYPE" /> value that indicates the colorspace for the video processor output surface.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext1" />
+    <summary>Gets the color space information for the video processor output surface.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</param>
+    <param name="pColorSpace">A pointer to a <see cref="DXGI_COLOR_SPACE_TYPE" /> value that indicates the colorspace for the video processor output surface.</param>
   </member>
   <member name="ID3D11VideoContext1.VideoProcessorGetOutputShaderUsage">
-    <summary>
-      <para>Gets a value indicating whether the output surface from a call to <see cref="ID3D11VideoContext.VideoProcessorBlt" /> can be read by Direct3D shaders.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>Type: <b>ID3D11VideoProcessor*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
-    </param>
-    <param name="pShaderUsage">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A pointer to a boolean value indicating if the output surface can be read by Direct3D shaders. True if the surface rendered using <see cref="ID3D11VideoContext.VideoProcessorBlt" /> can be read by Direct3D shaders; otherwise, false.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext1" />
+    <summary>Gets a value indicating whether the output surface from a call to <see cref="ID3D11VideoContext.VideoProcessorBlt" /> can be read by Direct3D shaders.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</param>
+    <param name="pShaderUsage">A pointer to a boolean value indicating if the output surface can be read by Direct3D shaders. True if the surface rendered using <see cref="ID3D11VideoContext.VideoProcessorBlt" /> can be read by Direct3D shaders; otherwise, false.</param>
   </member>
   <member name="ID3D11VideoContext1.VideoProcessorGetStreamColorSpace1">
-    <summary>
-      <para>Gets the color space information for the video processor input stream.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>Type: <b>ID3D11VideoProcessor*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>An index identifying the input stream.</para>
-    </param>
-    <param name="pColorSpace">
-      <para>Type: <b>DXGI_COLOR_SPACE_TYPE*</b></para>
-      <para>A pointer to a  <see cref="DXGI_COLOR_SPACE_TYPE" /> value that specifies the colorspace for the video processor input stream.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext1" />
+    <summary>Gets the color space information for the video processor input stream.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</param>
+    <param name="StreamIndex">An index identifying the input stream.</param>
+    <param name="pColorSpace">A pointer to a <see cref="DXGI_COLOR_SPACE_TYPE" /> value that specifies the colorspace for the video processor input stream.</param>
   </member>
   <member name="ID3D11VideoContext1.VideoProcessorGetStreamMirror">
-    <summary>
-      <para>Gets values that indicate whether the video processor input stream is  being flipped vertically or horizontally.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>Type: <b>ID3D11VideoProcessor*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>An index identifying the input stream.</para>
-    </param>
-    <param name="pEnable">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A pointer to a boolean value indicating whether mirroring is enabled. True if mirroring is enabled; otherwise, false.</para>
-    </param>
-    <param name="pFlipHorizontal">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A pointer to a boolean value indicating whether the stream is being flipped horizontally. True if the stream is being flipped horizontally; otherwise, false.</para>
-    </param>
-    <param name="pFlipVertical">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A pointer to a boolean value indicating whether the stream is being flipped vertically. True if the stream is being flipped vertically; otherwise, false.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext1" />
+    <summary>Gets values that indicate whether the video processor input stream is being flipped vertically or horizontally.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</param>
+    <param name="StreamIndex">An index identifying the input stream.</param>
+    <param name="pEnable">A pointer to a boolean value indicating whether mirroring is enabled. True if mirroring is enabled; otherwise, false.</param>
+    <param name="pFlipHorizontal">A pointer to a boolean value indicating whether the stream is being flipped horizontally. True if the stream is being flipped horizontally; otherwise, false.</param>
+    <param name="pFlipVertical">A pointer to a boolean value indicating whether the stream is being flipped vertically. True if the stream is being flipped vertically; otherwise, false.</param>
   </member>
   <member name="ID3D11VideoContext1.VideoProcessorSetOutputColorSpace1">
-    <summary>
-      <para>Sets the color space information for the video processor output surface.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>Type: <b>ID3D11VideoProcessor*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
-    </param>
-    <param name="ColorSpace">
-      <para>Type: <b>DXGI_COLOR_SPACE_TYPE</b></para>
-      <para>A  <see cref="DXGI_COLOR_SPACE_TYPE" /> value that specifies the colorspace for the video processor output surface.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext1" />
+    <summary>Sets the color space information for the video processor output surface.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</param>
+    <param name="ColorSpace">A <see cref="DXGI_COLOR_SPACE_TYPE" /> value that specifies the colorspace for the video processor output surface.</param>
   </member>
   <member name="ID3D11VideoContext1.VideoProcessorSetOutputShaderUsage">
-    <summary>
-      <para>Sets a value indicating whether the output surface from a call to <see cref="ID3D11VideoContext.VideoProcessorBlt" /> will be read by Direct3D shaders.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>Type: <b>ID3D11VideoProcessor*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
-    </param>
-    <param name="ShaderUsage">
-      <para>Type: <b>BOOL</b></para>
-      <para>True if the surface rendered using <see cref="ID3D11VideoContext.VideoProcessorBlt" /> will be read by Direct3D shaders; otherwise, false. This may be set to false when multi-plane overlay hardware is supported.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext1" />
+    <summary>Sets a value indicating whether the output surface from a call to <see cref="ID3D11VideoContext.VideoProcessorBlt" /> will be read by Direct3D shaders.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</param>
+    <param name="ShaderUsage">True if the surface rendered using <see cref="ID3D11VideoContext.VideoProcessorBlt" /> will be read by Direct3D shaders; otherwise, false. This may be set to false when multi-plane overlay hardware is supported.</param>
   </member>
   <member name="ID3D11VideoContext1.VideoProcessorSetStreamColorSpace1">
-    <summary>
-      <para>Sets the color space information for the video processor input stream.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>Type: <b>ID3D11VideoProcessor*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>An index identifying the input stream.</para>
-    </param>
-    <param name="ColorSpace">
-      <para>Type: <b>DXGI_COLOR_SPACE_TYPE</b></para>
-      <para>A  <see cref="DXGI_COLOR_SPACE_TYPE" /> value that specifies the colorspace for the video processor input stream.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext1" />
+    <summary>Sets the color space information for the video processor input stream.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</param>
+    <param name="StreamIndex">An index identifying the input stream.</param>
+    <param name="ColorSpace">A <see cref="DXGI_COLOR_SPACE_TYPE" /> value that specifies the colorspace for the video processor input stream.</param>
   </member>
   <member name="ID3D11VideoContext1.VideoProcessorSetStreamMirror">
-    <summary>
-      <para>Specifies whether the video processor input stream should be flipped vertically or horizontally.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>Type: <b>ID3D11VideoProcessor*</b></para>
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>An index identifying the input stream.</para>
-    </param>
-    <param name="Enable">
-      <para>Type: <b>BOOL</b></para>
-      <para>True if mirroring should be enabled; otherwise, false.</para>
-    </param>
-    <param name="FlipHorizontal">
-      <para>Type: <b>BOOL</b></para>
-      <para>True if the stream should be flipped horizontally; otherwise, false.</para>
-    </param>
-    <param name="FlipVertical">
-      <para>Type: <b>BOOL</b></para>
-      <para>True if the stream should be flipped vertically; otherwise, false.</para>
-    </param>
-    <remarks>
-      <para>When used in combination, transformations on the processor input stream should be applied in the following order:</para>
-      <list type="bullet">
-        <item>
-          <description>Rotation</description>
-        </item>
-        <item>
-          <description>Mirroring</description>
-        </item>
-        <item>
-          <description>Source clipping</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ID3D11VideoContext1" />
+    <summary>Specifies whether the video processor input stream should be flipped vertically or horizontally.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</param>
+    <param name="StreamIndex">An index identifying the input stream.</param>
+    <param name="Enable">True if mirroring should be enabled; otherwise, false.</param>
+    <param name="FlipHorizontal">True if the stream should be flipped horizontally; otherwise, false.</param>
+    <param name="FlipVertical">True if the stream should be flipped vertically; otherwise, false.</param>
   </member>
   <member name="ID3D11VideoContext1">
-    <summary>
-      <para>Provides the video functionality of a Microsoft Direct3D 11 device.</para>
-    </summary>
-    <remarks>
-      <para>To get a pointer to this interface, call <see cref="QueryInterface" /> with an <see cref="ID3D11DeviceContext1" />  interface pointer.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
-    <seealso cref="ID3D11DeviceContext" />
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Provides the video functionality of a Microsoft Direct3D 11 device.</summary>
   </member>
 </doc>
