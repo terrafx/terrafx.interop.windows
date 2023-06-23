@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COLORDATATYPE">
+    <summary>Used by WCS functions to indicate the data type of vector content.</summary>
+  </member>
+  <member name="COLORDATATYPE.COLOR_BYTE">
+    <summary>Color data is stored as 8 bits per channel, with a value from 0 to 255, inclusive.</summary>
+  </member>
+  <member name="COLORDATATYPE.COLOR_WORD">
+    <summary>Color data is stored as 16 bits per channel, with a value from 0 to 65535, inclusive.</summary>
+  </member>
+  <member name="COLORDATATYPE.COLOR_FLOAT">
+    <summary>Color data is stored as 32 bits value per channel, as defined by the IEEE 32-bit floating point standard.</summary>
+  </member>
+  <member name="COLORDATATYPE.COLOR_S2DOT13FIXED">
+    <summary>Color data is stored as 16 bits per channel, with a fixed range of -4 to +4, inclusive. A signed format is used, with 1 bit for the sign, 2 bits for the integer portion, and 13 bits for the fractional portion.</summary>
+  </member>
+  <member name="COLORDATATYPE.COLOR_10b_R10G10B10A2">
+    <summary>Color data is stored as 10 bits per channel. The two most significant bits are alpha.</summary>
+  </member>
+  <member name="COLORDATATYPE.COLOR_10b_R10G10B10A2_XR">
+    <summary>
+      <para>Color data is stored as 10 bits per channel, 32 bits per pixel. The 10 bits of each color channel are 2.8 fixed point with a -0.75 bias, giving a range of [-0.76 .. 1.25]. This range corresponds to [-0.5 .. 1.5] in a gamma = 1 space. The two most significant bits are preserved for alpha.</para>
+      <para>This uses an extended range (XR) sRGB color space. It has the same RGB primaries, white point, and gamma as sRGB.</para>
+    </summary>
+  </member>
+  <member name="COLORDATATYPE.COLOR_FLOAT16">
+    <summary>Color data is stored as 16 bits value per channel, as defined by the IEEE 16-bit floating point standard.</summary>
+  </member>
+</doc>

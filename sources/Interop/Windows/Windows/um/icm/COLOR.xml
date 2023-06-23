@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COLOR">
+    <summary>Description of the COLOR union.</summary>
+  </member>
+  <member name="COLOR.gray">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLOR.rgb">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLOR.cmyk">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLOR.XYZ">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLOR.Yxy">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLOR.Lab">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLOR.gen3ch">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLOR.named">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLOR.hifi">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLOR.reserved1">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLOR.reserved2">
+    <summary>TBD</summary>
+  </member>
+</doc>

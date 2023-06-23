@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WCS_PROFILE_MANAGEMENT_SCOPE">
+    <summary>Specifies the scope of a profile management operation, such as associating a profile with a device.</summary>
+  </member>
+  <member name="WCS_PROFILE_MANAGEMENT_SCOPE.WCS_PROFILE_MANAGEMENT_SCOPE_SYSTEM_WIDE">
+    <summary>Indicates that the profile management operation affects all users.</summary>
+  </member>
+  <member name="WCS_PROFILE_MANAGEMENT_SCOPE.WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER">
+    <summary>Indicates that the profile management operation affects only the current user.</summary>
+  </member>
+</doc>

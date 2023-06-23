@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROFILEHEADER">
+    <summary>Contains information that describes the contents of a device profile file. This header occurs at the beginning of a device profile file.</summary>
+  </member>
+  <member name="PROFILEHEADER.phSize">
+    <summary>The size of the profile in bytes.</summary>
+  </member>
+  <member name="PROFILEHEADER.phCMMType">
+    <summary>The identification number of the CMM that is used in the profile. Identification numbers are registered with the ICC.</summary>
+  </member>
+  <member name="PROFILEHEADER.phVersion">
+    <summary>
+      <para>The version number of the profile. The version number is determined by the ICC. The current major version number is 02h. The current minor version number is 10h. The major and minor version numbers are in binary coded decimal (BCD). They must be stored in the following format.</para>
+      <para>| Byte Number | Contents | |-------------|---------------------------------------------------------------------------------------------------------------------------| | 0 | Major version number in BCD. | | 1 | Minor version number in the most significant nibble of this byte. Bug fix version number in the least significant nibble. | | 2 | Reserved. Must be set to 0. | | 3 | Reserved. Must be set to 0. |</para>
+    </summary>
+  </member>
+  <member name="PROFILEHEADER.phClass">
+    <summary>
+      <para>Indicates the profile class. For a description of profile classes, see <a href="https://docs.microsoft.com//windows/win32/wcs/using-device-profiles-with-wcs">Using Device Profiles with WCS</a>. A profile class may have any of the following values.</para>
+      <para>| Profile Class | Signature | |--------------------------------|-------------------| | Input Device Profile | CLASS_SCANNER | | Display Device Profile | CLASS_MONITOR | | Output Device Profile | CLASS_PRINTER | | Device Link Profile | CLASS_LINK | | Color Space Conversion Profile | CLASS_COLORSPACE | | Abstract Profile | CLASS_ABSTRACT | | Named Color Profile | CLASS_NAMED | | Color Appearance Model Profile | CLASS_CAMP | | Color Gamut Map Model Profile | CLASS_GMMP |</para>
+    </summary>
+  </member>
+  <member name="PROFILEHEADER.phDataColorSpace">
+    <summary>A signature value that indicates the color space in which the profile data is defined. The member can be any of value from the <a href="https://docs.microsoft.com//windows/win32/wcs/color-space-constants">Color Space Constants</a>.</summary>
+  </member>
+  <member name="PROFILEHEADER.phConnectionSpace">
+    <summary>
+      <para>A signature value that indicates the color space in which the profile connection space (PCS) is defined. The member can be any of the following values.</para>
+      <para>| Profile Class | Signature | |---------------|------------| | XYZ | SPACE_XYZ | | Lab | SPACE_Lab |</para>
+      <para>When the <b>phClass</b> member is set to CLASS_LINK, the PCS is taken from the <b>phDataColorSpace</b> member.</para>
+    </summary>
+  </member>
+  <member name="PROFILEHEADER.phDateTime">
+    <summary>The date and time that the profile was created.</summary>
+  </member>
+  <member name="PROFILEHEADER.phSignature">
+    <summary>Reserved for internal use.</summary>
+  </member>
+  <member name="PROFILEHEADER.phPlatform">
+    <summary>
+      <para>The primary platform for which the profile was created. The primary platform can be set to any of the following values.</para>
+      <para>| Platform | Value | |------------------------|--------| | Apple Computer, Inc. | 'APPL' | | Microsoft Corp. | 'MSFT' | | Silicon Graphics, Inc. | 'SGI' | | Sun Microsystems, Inc. | 'SUNW' | | Taligent | 'TGNT' |</para>
+    </summary>
+  </member>
+  <member name="PROFILEHEADER.phProfileFlags">
+    <summary>
+      <para>Bit flags containing hints that the CMM uses to interpret the profile data. The member can be set to the following values.</para>
+    </summary>
+  </member>
+  <member name="PROFILEHEADER.phManufacturer">
+    <summary>The identification number of the device profile manufacturer. All manufacturer identification numbers are registered with the ICC.</summary>
+  </member>
+  <member name="PROFILEHEADER.phModel">
+    <summary>The device manufacturer's device model number. All model identification numbers are registered with the ICC.</summary>
+  </member>
+  <member name="PROFILEHEADER.phAttributes">
+    <summary>
+      <para>Attributes of profile. The profile attributes can be any of the following values.</para>
+      <para>| Constant | Meaning | |----------------------|------------------------------------------------------------------------------------------| | ATTRIB_TRANSPARENCY | Turns transparency on. If this flag is not used, the attribute is reflective by default. | | ATTRIB_MATTE | Turns matte display on. If this flag is not used, the attribute is glossy by default. |</para>
+    </summary>
+  </member>
+  <member name="PROFILEHEADER.phRenderingIntent">
+    <summary>
+      <para>The profile rendering intent. The member can be set to one of the following values:</para>
+      <para>INTENT_PERCEPTUAL</para>
+      <para>INTENT_SATURATION</para>
+      <para>INTENT_RELATIVE_COLORIMETRIC</para>
+      <para>INTENT_ABSOLUTE_COLORIMETRIC</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering intents</a>.</para>
+    </summary>
+  </member>
+  <member name="PROFILEHEADER.phIlluminant">
+    <summary>Profile illuminant.</summary>
+  </member>
+  <member name="PROFILEHEADER.phCreator">
+    <summary>Signature of the software that created the profile. Signatures are registered with the ICC.</summary>
+  </member>
+  <member name="PROFILEHEADER.phReserved">
+    <summary>Reserved.</summary>
+  </member>
+</doc>

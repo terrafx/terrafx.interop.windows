@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PENUMTYPEW">
+    <summary>Contains information that defines the profile enumeration constraints.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwSize">
+    <summary>The size of this structure in bytes.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwVersion">
+    <summary>The version number of the <b>ENUMTYPE</b> structure. Should be set to ENUM_TYPE_VERSION.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwFields">
+    <summary>
+      <para>Indicates which fields in this structure are being used. Can be set to any combination of the following constant values.</para>
+      <para>ET_DEVICENAME</para>
+      <para>ET_MEDIATYPE</para>
+      <para>ET_DITHERMODE</para>
+      <para>ET_RESOLUTION</para>
+      <para>ET_CMMTYPE</para>
+      <para>ET_CLASS</para>
+      <para>ET_DATACOLORSPACE</para>
+      <para>ET_CONNECTIONSPACE</para>
+      <para>ET_SIGNATURE</para>
+      <para>ET_PLATFORM</para>
+      <para>ET_PROFILEFLAGS</para>
+      <para>ET_MANUFACTURER</para>
+      <para>ET_MODEL</para>
+      <para>ET_ATTRIBUTES</para>
+      <para>ET_RENDERINGINTENT</para>
+      <para>ET_CREATOR</para>
+      <para>ET_DEVICECLASS</para>
+    </summary>
+  </member>
+  <member name="PENUMTYPEW.pDeviceName">
+    <summary>User friendly name of the device.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwMediaType">
+    <summary>Indicates which type of media is associated with the profile, such as a printer or screen.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwDitheringMode">
+    <summary>Indicates the style of dithering that will be used when an image is displayed.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwResolution">
+    <summary>The horizontal (x) and vertical (y) resolution in pixels of the device on which the image will be displayed. The x resolution is stored in <b>dwResolution[0]</b>, and the y resolution is kept in <b>dwResolution[1]</b>.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwCMMType">
+    <summary>The identification number of the CMM that is used in the profile. Identification numbers are registered with the ICC.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwClass">
+    <summary>
+      <para>Indicates the profile class. For a description of profile classes, see <a href="https://docs.microsoft.com//windows/win32/wcs/using-device-profiles-with-wcs">Using Device Profiles with WCS</a>. A profile class may have any of the following values.</para>
+      <para>| Profile Class | Signature | |--------------------------------|-------------------| | Input Device Profile | CLASS_SCANNER | | Display Device Profile | CLASS_MONITOR | | Output Device Profile | CLASS_PRINTER | | Device Link Profile | CLASS_LINK | | Color Space Conversion Profile | CLASS_COLORSPACE | | Abstract Profile | CLASS_ABSTRACT | | Named Color Profile | CLASS_NAMED | | Color Appearance Model Profile | CLASS_CAMP | | Color Gamut Map Model Profile | CLASS_GMMP |</para>
+    </summary>
+  </member>
+  <member name="PENUMTYPEW.dwDataColorSpace">
+    <summary>A signature value that indicates the color space in which the profile data is defined. Can be any value from the <a href="https://docs.microsoft.com//windows/win32/wcs/color-space-constants">Color Space Constants</a>.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwConnectionSpace">
+    <summary>
+      <para>A signature value that indicates the color space in which the profile connection space (PCS) is defined. Can be any of the following values.</para>
+      <para>| Profile Class | Signature | |---------------|------------| | XYZ | SPACE_XYZ | | Lab | SPACE_Lab |</para>
+      <para>When the <b>dwClass</b> member is set to CLASS_LINK, the PCS is taken from the <b>dwDataColorSpace</b> member.</para>
+    </summary>
+  </member>
+  <member name="PENUMTYPEW.dwSignature">
+    <summary>Reserved for internal use.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwPlatform">
+    <summary>
+      <para>The primary platform for which the profile was created. The member can be set to any of the following values.</para>
+      <para>| Platform | Value | |------------------------|--------| | Apple Computer, Inc. | 'APPL' | | Microsoft Corp. | 'MSFT' | | Silicon Graphics, Inc. | 'SGI' | | Sun Microsystems, Inc. | 'SUNW' | | Taligent | 'TGNT' |</para>
+    </summary>
+  </member>
+  <member name="PENUMTYPEW.dwProfileFlags">
+    <summary>
+      <para>Bit flags containing hints that the CMM uses to interpret the profile data and can be set to one of the following values.</para>
+      <para>| Constant | Meaning | |-----------------------|--------------------------------------------------------------------------------------------------------------------------| | FLAG_EMBEDDEDPROFILE | The profile is embedded in a bitmap file. | | FLAG_DEPENDENTONDATA | The profile can't be used independently of the embedded color data. Used for profiles that are embedded in bitmap files. |</para>
+    </summary>
+  </member>
+  <member name="PENUMTYPEW.dwManufacturer">
+    <summary>The identification number of the device profile manufacturer. All manufacturer identification numbers are registered with the ICC.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwModel">
+    <summary>The device manufacturer's device model number. All model identification numbers are registered with the ICC.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwAttributes">
+    <summary>
+      <para>Attributes of profile that can be any of the following values.</para>
+      <para>| Constant | Meaning | |----------------------|------------------------------------------------------------------------------------------| | ATTRIB_TRANSPARENCY | Turns transparency on. If this flag is not used, the attribute is reflective by default. | | ATTRIB_MATTE | Turns matte display on. If this flag is not used, the attribute is glossy by default. |</para>
+    </summary>
+  </member>
+  <member name="PENUMTYPEW.dwRenderingIntent">
+    <summary>
+      <para>The profile rendering intent that can be set to one of the following values:</para>
+      <para>INTENT_PERCEPTUAL</para>
+      <para>INTENT_SATURATION</para>
+      <para>INTENT_RELATIVE_COLORIMETRIC</para>
+      <para>INTENT_ABSOLUTE_COLORIMETRIC</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering intents</a>.</para>
+    </summary>
+  </member>
+  <member name="PENUMTYPEW.dwCreator">
+    <summary>Signature of the software that created the profile. Signatures are registered with the ICC.</summary>
+  </member>
+  <member name="PENUMTYPEW.dwDeviceClass">
+    <summary>
+      <para>Indicates the device class. A device class may have one of the following values.</para>
+      <para>| Profile Class | Signature | |------------------------|----------------| | Input Device Profile | CLASS_SCANNER | | Display Device Profile | CLASS_MONITOR | | Output Device Profile | CLASS_PRINTER |</para>
+    </summary>
+  </member>
+</doc>

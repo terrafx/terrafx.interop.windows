@@ -1,0 +1,1217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CHOOSEFONTA">
+    <summary>Contains information that the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> function uses to initialize the <b>Font</b> dialog box. After the user closes the dialog box, the system returns information about the user's selection in this structure.</summary>
+  </member>
+  <member name="CHOOSEFONTA.lStructSize">
+    <summary>The length of the structure, in bytes.</summary>
+  </member>
+  <member name="CHOOSEFONTA.hwndOwner">
+    <summary>A handle to the window that owns the dialog box. This member can be any valid window handle, or it can be <b>NULL</b> if the dialog box has no owner.</summary>
+  </member>
+  <member name="CHOOSEFONTA.hDC">
+    <summary>
+      <para>This member is ignored by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> function.</para>
+      <para>
+        <b>Windows Vista and Windows XP/2000:  </b>A handle to the device context or information context of the printer whose fonts will be listed in the dialog box. This member is used only if the <b>Flags</b> member specifies the <b>CF_PRINTERFONTS</b> or <b>CF_BOTH</b> flag; otherwise, this member is ignored.</para>
+    </summary>
+  </member>
+  <member name="CHOOSEFONTA.lpLogFont">
+    <summary>A pointer to a <see cref="LOGFONT" /> structure. If you set the <b>CF_INITTOLOGFONTSTRUCT</b> flag in the <b>Flags</b> member and initialize the other members, the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> function initializes the dialog box with a font that matches the <b>LOGFONT</b> members. If the user clicks the <b>OK</b> button, <b>ChooseFont</b> sets the members of the <b>LOGFONT</b> structure based on the user's selections.</summary>
+  </member>
+  <member name="CHOOSEFONTA.iPointSize">
+    <summary>The size of the selected font, in units of 1/10 of a point. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> function sets this value after the user closes the dialog box.</summary>
+  </member>
+  <member name="CHOOSEFONTA.Flags">
+    <summary>
+      <para>A set of bit flags that you can use to initialize the <b>Font</b> dialog box. When the dialog box returns, it sets these flags to indicate the user input. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_APPLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the <b>Apply</b> button. You should provide a hook procedure to process <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> messages for the <b>Apply</b> button. The hook procedure can send the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-choosefont-getlogfont">WM_CHOOSEFONT_GETLOGFONT</a> message to the dialog box to retrieve the address of the structure that contains the current selections for the font.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_ANSIONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag is obsolete. To limit font selections to all scripts except those that use the OEM or Symbol character sets, use <b>CF_SCRIPTSONLY</b>. To get the original <b>CF_ANSIONLY</b> behavior, use <b>CF_SELECTSCRIPT</b> and specify <b>ANSI_CHARSET</b> in the <b>lfCharSet</b> member of the <see cref="LOGFONT" /> structure pointed to by <b>lpLogFont</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_BOTH</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000003</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag is ignored for font enumeration.<para><b>Windows Vista and Windows XP/2000:  </b>Causes the dialog box to list the available printer and screen fonts. The <b>hDC</b> member is a handle to the device context or information context associated with the printer. This flag is a combination of the <b>CF_SCREENFONTS</b> and <b>CF_PRINTERFONTS</b> flags.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_EFFECTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the controls that allow the user to specify strikeout, underline, and text color options. If this flag is set, you can use the <b>rgbColors</b> member to specify the initial text color. You can use the <b>lfStrikeOut</b> and <b>lfUnderline</b> members of the structure pointed to by <b>lpLogFont</b> to specify the initial settings of the strikeout and underline check boxes. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> can use these members to return the user's selections.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_ENABLEHOOK</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables the hook procedure specified in the <b>lpfnHook</b> member of this structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_ENABLETEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> and <b>lpTemplateName</b> members specify a dialog box template to use in place of the default template.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_ENABLETEMPLATEHANDLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> member identifies a data block that contains a preloaded dialog box template. The system ignores the <b>lpTemplateName</b> member if this flag is specified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_FIXEDPITCHONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should enumerate and allow selection of only fixed-pitch fonts.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_FORCEFONTEXIST</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should indicate an error condition if the user attempts to select a font or style that is not listed in the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_INACTIVEFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x02000000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should additionally display fonts that are set to Hide in Fonts Control Panel.</para>
+            <para>
+              <b>Windows Vista and Windows XP/2000:  </b>This flag is not supported until Windows 7.</para>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_INITTOLOGFONTSTRUCT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should use the structure pointed to by the <b>lpLogFont</b> member to initialize the dialog box controls.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_LIMITSIZE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should select only font sizes within the range specified by the <b>nSizeMin</b> and <b>nSizeMax</b> members.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOOEMFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Same as the <b>CF_NOVECTORFONTS</b> flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOFACESEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00080000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>When using a <see cref="LOGFONT" /> structure to initialize the dialog box controls, use this flag to prevent the dialog box from displaying an initial selection for the font name combo box. This is useful when there is no single font name that applies to the text selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOSCRIPTSEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00800000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Script</b> combo box. When this flag is set, the <b>lfCharSet</b> member of the <see cref="LOGFONT" /> structure is set to <b>DEFAULT_CHARSET</b> when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> returns. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOSIMULATIONS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should not display or allow selection of font simulations.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOSIZESEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00200000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>When using a structure to initialize the dialog box controls, use this flag to prevent the dialog box from displaying an initial selection for the <b>Font Size</b> combo box. This is useful when there is no single font size that applies to the text selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOSTYLESEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00100000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>When using a <see cref="LOGFONT" /> structure to initialize the dialog box controls, use this flag to prevent the dialog box from displaying an initial selection for the <b>Font Style</b> combo box. This is useful when there is no single font style that applies to the text selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOVECTORFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should not allow vector font selections.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOVERTFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x01000000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the <b>Font</b> dialog box to list only horizontally oriented fonts.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_PRINTERFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag is ignored for font enumeration.<para><b>Windows Vista and Windows XP/2000:  </b>Causes the dialog box to list only the fonts supported by the printer associated with the device context or information context identified by the <b>hDC</b> member. It also causes the font type description label to appear at the bottom of the <b>Font</b> dialog box.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_SCALABLEONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00020000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Specifies that <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should allow only the selection of scalable fonts. Scalable fonts include vector fonts, scalable printer fonts, TrueType fonts, and fonts scaled by other technologies.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_SCREENFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag is ignored for font enumeration.<para><b>Windows Vista and Windows XP/2000:  </b>Causes the dialog box to list only the screen fonts supported by the system.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_SCRIPTSONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should allow selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set. This supersedes the <b>CF_ANSIONLY</b> value.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_SELECTSCRIPT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00400000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>When specified on input, only fonts with the character set identified in the <b>lfCharSet</b> member of the <see cref="LOGFONT" /> structure are displayed. The user will not be allowed to change the character set specified in the <b>Scripts</b> combo box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_SHOWHELP</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the <b>Help</b> button. The <b>hwndOwner</b> member must specify the window to receive the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/helpmsgstring">HELPMSGSTRING</a> registered messages that the dialog box sends when the user clicks the <b>Help</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_TTONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should only enumerate and allow the selection of TrueType fonts.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_USESTYLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>lpszStyle</b> member is a pointer to a buffer that contains style data that <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should use to initialize the <b>Font Style</b> combo box. When the user closes the dialog box, <b>ChooseFont</b> copies style data for the user's selection to this buffer.<div><b>Note</b>  To globalize your application, you should specify the style by using the <b>lfWeight</b> and <b>lfItalic</b> members of the <see cref="LOGFONT" /> structure pointed to by <b>lpLogFont</b>. The style name may change depending on the system user interface language.</div></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_WYSIWYG</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description> Obsolete. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> ignores this flag.<para><b>Windows Vista and Windows XP/2000:  </b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should allow only the selection of fonts available on both the printer and the display. If this flag is specified, the <b>CF_SCREENSHOTS</b> and <b>CF_PRINTERFONTS</b>, or <b>CF_BOTH</b> flags should also be specified.</para></description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="CHOOSEFONTA.rgbColors">
+    <summary>If the <b>CF_EFFECTS</b> flag is set, <b>rgbColors</b> specifies the initial text color. When <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> returns successfully, this member contains the RGB value of the text color that the user selected. To create a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> color value, use the <see cref="RGB" /> macro.</summary>
+  </member>
+  <member name="CHOOSEFONTA.lCustData">
+    <summary>Application-defined data that the system passes to the hook procedure identified by the <b>lpfnHook</b> member. When the system sends the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-initdialog">WM_INITDIALOG</a> message to the hook procedure, the message's <i>lParam</i> parameter is a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">CHOOSEFONT</a> structure specified when the dialog was created. The hook procedure can use this pointer to get the <b>lCustData</b> value.</summary>
+  </member>
+  <member name="CHOOSEFONTA.lpfnHook">
+    <summary>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/commdlg/nc-commdlg-lpcfhookproc">CFHookProc</a> hook procedure that can process messages intended for the dialog box. This member is ignored unless the <b>CF_ENABLEHOOK</b> flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="CHOOSEFONTA.lpTemplateName">
+    <summary>The name of the dialog box template resource in the module identified by the <b>hInstance</b> member. This template is substituted for the standard dialog box template. For numbered dialog box resources, <b>lpTemplateName</b> can be a value returned by the <see cref="MAKEINTRESOURCE" /> macro. This member is ignored unless the <b>CF_ENABLETEMPLATE</b> flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="CHOOSEFONTA.hInstance">
+    <summary>If the <b>CF_ENABLETEMPLATEHANDLE</b> flag is set in the <b>Flags</b> member, <b>hInstance</b> is a handle to a memory object containing a dialog box template. If the <b>CF_ENABLETEMPLATE</b> flag is set, <b>hInstance</b> is a handle to a module that contains a dialog box template named by the <b>lpTemplateName</b> member. If neither <b>CF_ENABLETEMPLATEHANDLE</b> nor <b>CF_ENABLETEMPLATE</b> is set, this member is ignored.</summary>
+  </member>
+  <member name="CHOOSEFONTA.lpszStyle">
+    <summary>The style data. If the <b>CF_USESTYLE</b> flag is specified, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> uses the data in this buffer to initialize the <b>Font Style</b> combo box. When the user closes the dialog box, <b>ChooseFont</b> copies the string in the <b>Font Style</b> combo box into this buffer.</summary>
+  </member>
+  <member name="CHOOSEFONTA.nFontType">
+    <summary>
+      <para>The type of the selected font when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> returns. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>BOLD_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The font weight is bold. This information is duplicated in the <b>lfWeight</b> member of the <see cref="LOGFONT" /> structure and is equivalent to <b>FW_BOLD</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ITALIC_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The italic font attribute is set. This information is duplicated in the <b>lfItalic</b> member of the <see cref="LOGFONT" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PRINTER_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The font is a printer font.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>REGULAR_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0400</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The font weight is normal. This information is duplicated in the <b>lfWeight</b> member of the <see cref="LOGFONT" /> structure and is equivalent to <b>FW_REGULAR</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SCREEN_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The font is a screen font.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SIMULATED_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The font is simulated by the graphics device interface (GDI).</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="CHOOSEFONTA.nSizeMin">
+    <summary>The minimum point size a user can select. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> recognizes this member only if the <b>CF_LIMITSIZE</b> flag is specified.</summary>
+  </member>
+  <member name="CHOOSEFONTA.nSizeMax">
+    <summary>The maximum point size a user can select. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> recognizes this member only if the <b>CF_LIMITSIZE</b> flag is specified.</summary>
+  </member>
+  <member name="CHOOSEFONTA">
+    <summary>Contains information that the <a href="https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> function uses to initialize the <b>Font</b> dialog box. After the user closes the dialog box, the system returns information about the user's selection in this structure.</summary>
+  </member>
+  <member name="CHOOSEFONTA.lStructSize">
+    <summary>The length of the structure, in bytes.</summary>
+  </member>
+  <member name="CHOOSEFONTA.hwndOwner">
+    <summary>A handle to the window that owns the dialog box. This member can be any valid window handle, or it can be <b>NULL</b> if the dialog box has no owner.</summary>
+  </member>
+  <member name="CHOOSEFONTA.hDC">
+    <summary>
+      <para>This member is ignored by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> function.</para>
+      <para>
+        <b>Windows Vista and Windows XP/2000:  </b>A handle to the device context or information context of the printer whose fonts will be listed in the dialog box. This member is used only if the <b>Flags</b> member specifies the <b>CF_PRINTERFONTS</b> or <b>CF_BOTH</b> flag; otherwise, this member is ignored.</para>
+    </summary>
+  </member>
+  <member name="CHOOSEFONTA.lpLogFont">
+    <summary>A pointer to a <see cref="LOGFONT" /> structure. If you set the <b>CF_INITTOLOGFONTSTRUCT</b> flag in the <b>Flags</b> member and initialize the other members, the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> function initializes the dialog box with a font that matches the <b>LOGFONT</b> members. If the user clicks the <b>OK</b> button, <b>ChooseFont</b> sets the members of the <b>LOGFONT</b> structure based on the user's selections.</summary>
+  </member>
+  <member name="CHOOSEFONTA.iPointSize">
+    <summary>The size of the selected font, in units of 1/10 of a point. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> function sets this value after the user closes the dialog box.</summary>
+  </member>
+  <member name="CHOOSEFONTA.Flags">
+    <summary>
+      <para>A set of bit flags that you can use to initialize the <b>Font</b> dialog box. When the dialog box returns, it sets these flags to indicate the user input. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_APPLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the <b>Apply</b> button. You should provide a hook procedure to process <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> messages for the <b>Apply</b> button. The hook procedure can send the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-choosefont-getlogfont">WM_CHOOSEFONT_GETLOGFONT</a> message to the dialog box to retrieve the address of the structure that contains the current selections for the font.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_ANSIONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag is obsolete. To limit font selections to all scripts except those that use the OEM or Symbol character sets, use <b>CF_SCRIPTSONLY</b>. To get the original <b>CF_ANSIONLY</b> behavior, use <b>CF_SELECTSCRIPT</b> and specify <b>ANSI_CHARSET</b> in the <b>lfCharSet</b> member of the <see cref="LOGFONT" /> structure pointed to by <b>lpLogFont</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_BOTH</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000003</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag is ignored for font enumeration.<para><b>Windows Vista and Windows XP/2000:  </b>Causes the dialog box to list the available printer and screen fonts. The <b>hDC</b> member is a handle to the device context or information context associated with the printer. This flag is a combination of the <b>CF_SCREENFONTS</b> and <b>CF_PRINTERFONTS</b> flags.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_EFFECTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the controls that allow the user to specify strikeout, underline, and text color options. If this flag is set, you can use the <b>rgbColors</b> member to specify the initial text color. You can use the <b>lfStrikeOut</b> and <b>lfUnderline</b> members of the structure pointed to by <b>lpLogFont</b> to specify the initial settings of the strikeout and underline check boxes. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> can use these members to return the user's selections.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_ENABLEHOOK</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables the hook procedure specified in the <b>lpfnHook</b> member of this structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_ENABLETEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> and <b>lpTemplateName</b> members specify a dialog box template to use in place of the default template.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_ENABLETEMPLATEHANDLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> member identifies a data block that contains a preloaded dialog box template. The system ignores the <b>lpTemplateName</b> member if this flag is specified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_FIXEDPITCHONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should enumerate and allow selection of only fixed-pitch fonts.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_FORCEFONTEXIST</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should indicate an error condition if the user attempts to select a font or style that is not listed in the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_INACTIVEFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x02000000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should additionally display fonts that are set to Hide in Fonts Control Panel.</para>
+            <para>
+              <b>Windows Vista and Windows XP/2000:  </b>This flag is not supported until Windows 7.</para>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_INITTOLOGFONTSTRUCT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should use the structure pointed to by the <b>lpLogFont</b> member to initialize the dialog box controls.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_LIMITSIZE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should select only font sizes within the range specified by the <b>nSizeMin</b> and <b>nSizeMax</b> members.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOOEMFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Same as the <b>CF_NOVECTORFONTS</b> flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOFACESEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00080000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>When using a <see cref="LOGFONT" /> structure to initialize the dialog box controls, use this flag to prevent the dialog box from displaying an initial selection for the font name combo box. This is useful when there is no single font name that applies to the text selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOSCRIPTSEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00800000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Script</b> combo box. When this flag is set, the <b>lfCharSet</b> member of the <see cref="LOGFONT" /> structure is set to <b>DEFAULT_CHARSET</b> when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> returns. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOSIMULATIONS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should not display or allow selection of font simulations.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOSIZESEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00200000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>When using a structure to initialize the dialog box controls, use this flag to prevent the dialog box from displaying an initial selection for the <b>Font Size</b> combo box. This is useful when there is no single font size that applies to the text selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOSTYLESEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00100000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>When using a <see cref="LOGFONT" /> structure to initialize the dialog box controls, use this flag to prevent the dialog box from displaying an initial selection for the <b>Font Style</b> combo box. This is useful when there is no single font style that applies to the text selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOVECTORFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should not allow vector font selections.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_NOVERTFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x01000000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the <b>Font</b> dialog box to list only horizontally oriented fonts.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_PRINTERFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag is ignored for font enumeration.<para><b>Windows Vista and Windows XP/2000:  </b>Causes the dialog box to list only the fonts supported by the printer associated with the device context or information context identified by the <b>hDC</b> member. It also causes the font type description label to appear at the bottom of the <b>Font</b> dialog box.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_SCALABLEONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00020000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Specifies that <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should allow only the selection of scalable fonts. Scalable fonts include vector fonts, scalable printer fonts, TrueType fonts, and fonts scaled by other technologies.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_SCREENFONTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag is ignored for font enumeration.<para><b>Windows Vista and Windows XP/2000:  </b>Causes the dialog box to list only the screen fonts supported by the system.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_SCRIPTSONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should allow selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set. This supersedes the <b>CF_ANSIONLY</b> value.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_SELECTSCRIPT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00400000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>When specified on input, only fonts with the character set identified in the <b>lfCharSet</b> member of the <see cref="LOGFONT" /> structure are displayed. The user will not be allowed to change the character set specified in the <b>Scripts</b> combo box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_SHOWHELP</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the <b>Help</b> button. The <b>hwndOwner</b> member must specify the window to receive the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/helpmsgstring">HELPMSGSTRING</a> registered messages that the dialog box sends when the user clicks the <b>Help</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_TTONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should only enumerate and allow the selection of TrueType fonts.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_USESTYLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>lpszStyle</b> member is a pointer to a buffer that contains style data that <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should use to initialize the <b>Font Style</b> combo box. When the user closes the dialog box, <b>ChooseFont</b> copies style data for the user's selection to this buffer.<div><b>Note</b>  To globalize your application, you should specify the style by using the <b>lfWeight</b> and <b>lfItalic</b> members of the <see cref="LOGFONT" /> structure pointed to by <b>lpLogFont</b>. The style name may change depending on the system user interface language.</div></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CF_WYSIWYG</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description> Obsolete. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> ignores this flag.<para><b>Windows Vista and Windows XP/2000:  </b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> should allow only the selection of fonts available on both the printer and the display. If this flag is specified, the <b>CF_SCREENSHOTS</b> and <b>CF_PRINTERFONTS</b>, or <b>CF_BOTH</b> flags should also be specified.</para></description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="CHOOSEFONTA.rgbColors">
+    <summary>If the <b>CF_EFFECTS</b> flag is set, <b>rgbColors</b> specifies the initial text color. When <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> returns successfully, this member contains the RGB value of the text color that the user selected. To create a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> color value, use the <see cref="RGB" /> macro.</summary>
+  </member>
+  <member name="CHOOSEFONTA.lCustData">
+    <summary>Application-defined data that the system passes to the hook procedure identified by the <b>lpfnHook</b> member. When the system sends the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-initdialog">WM_INITDIALOG</a> message to the hook procedure, the message's <i>lParam</i> parameter is a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">CHOOSEFONT</a> structure specified when the dialog was created. The hook procedure can use this pointer to get the <b>lCustData</b> value.</summary>
+  </member>
+  <member name="CHOOSEFONTA.lpfnHook">
+    <summary>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/commdlg/nc-commdlg-lpcfhookproc">CFHookProc</a> hook procedure that can process messages intended for the dialog box. This member is ignored unless the <b>CF_ENABLEHOOK</b> flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="CHOOSEFONTA.lpTemplateName">
+    <summary>The name of the dialog box template resource in the module identified by the <b>hInstance</b> member. This template is substituted for the standard dialog box template. For numbered dialog box resources, <b>lpTemplateName</b> can be a value returned by the <see cref="MAKEINTRESOURCE" /> macro. This member is ignored unless the <b>CF_ENABLETEMPLATE</b> flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="CHOOSEFONTA.hInstance">
+    <summary>If the <b>CF_ENABLETEMPLATEHANDLE</b> flag is set in the <b>Flags</b> member, <b>hInstance</b> is a handle to a memory object containing a dialog box template. If the <b>CF_ENABLETEMPLATE</b> flag is set, <b>hInstance</b> is a handle to a module that contains a dialog box template named by the <b>lpTemplateName</b> member. If neither <b>CF_ENABLETEMPLATEHANDLE</b> nor <b>CF_ENABLETEMPLATE</b> is set, this member is ignored.</summary>
+  </member>
+  <member name="CHOOSEFONTA.lpszStyle">
+    <summary>The style data. If the <b>CF_USESTYLE</b> flag is specified, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> uses the data in this buffer to initialize the <b>Font Style</b> combo box. When the user closes the dialog box, <b>ChooseFont</b> copies the string in the <b>Font Style</b> combo box into this buffer.</summary>
+  </member>
+  <member name="CHOOSEFONTA.nFontType">
+    <summary>
+      <para>The type of the selected font when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> returns. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>BOLD_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The font weight is bold. This information is duplicated in the <b>lfWeight</b> member of the <see cref="LOGFONT" /> structure and is equivalent to <b>FW_BOLD</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ITALIC_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The italic font attribute is set. This information is duplicated in the <b>lfItalic</b> member of the <see cref="LOGFONT" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PRINTER_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The font is a printer font.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>REGULAR_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0400</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The font weight is normal. This information is duplicated in the <b>lfWeight</b> member of the <see cref="LOGFONT" /> structure and is equivalent to <b>FW_REGULAR</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SCREEN_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The font is a screen font.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SIMULATED_FONTTYPE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The font is simulated by the graphics device interface (GDI).</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="CHOOSEFONTA.nSizeMin">
+    <summary>The minimum point size a user can select. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> recognizes this member only if the <b>CF_LIMITSIZE</b> flag is specified.</summary>
+  </member>
+  <member name="CHOOSEFONTA.nSizeMax">
+    <summary>The maximum point size a user can select. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> recognizes this member only if the <b>CF_LIMITSIZE</b> flag is specified.</summary>
+  </member>
+</doc>

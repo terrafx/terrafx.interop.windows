@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COLORPROFILETYPE">
+    <summary>Specifies the type of color profile.</summary>
+  </member>
+  <member name="COLORPROFILETYPE.CPT_ICC">
+    <summary>An International Color Consortium (ICC) profile. If you specify this value, only the CPST_RGB_WORKING_SPACE and CPST_CUSTOM_WORKING_SPACE values of <see cref="COLORPROFILESUBTYPE" /> are valid.</summary>
+  </member>
+  <member name="COLORPROFILETYPE.CPT_DMP">
+    <summary>A device model profile (DMP) defined in WCS. If you specify this value, only the CPST_RGB_WORKING_SPACE and CPST_CUSTOM_WORKING_SPACE values of <see cref="COLORPROFILESUBTYPE" /> are valid.</summary>
+  </member>
+  <member name="COLORPROFILETYPE.CPT_CAMP">
+    <summary>A color appearance model profile (CAMP) defined in WCS. If you specify this value, only the CPST_NONE value of <see cref="COLORPROFILESUBTYPE" /> is valid.</summary>
+  </member>
+  <member name="COLORPROFILETYPE.CPT_GMMP">
+    <summary>Specifies a WCS gamut map model profile (GMMP). If this value is specified, only the CPST_PERCEPTUAL, CPST_SATURATION, CPST_RELATIVE_COLORIMETRIC, and CPST_ABSOLUTE_COLORIMETRIC values of <see cref="COLORPROFILESUBTYPE" /> are valid. Any of these values may optionally be combined (in a bitwise <b>OR</b> operation) with CPST_DEFAULT.</summary>
+  </member>
+</doc>

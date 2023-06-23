@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FINDREPLACEA">
+    <summary>Contains information that the <see cref="FindText" /> and <see cref="ReplaceText" /> functions use to initialize the <b>Find</b> and <b>Replace</b> dialog boxes. The <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> registered message uses this structure to pass the user's search or replacement input to the owner window of a <b>Find</b> or <b>Replace</b> dialog box.</summary>
+  </member>
+  <member name="FINDREPLACEA.lStructSize">
+    <summary>The length, in bytes, of the structure.</summary>
+  </member>
+  <member name="FINDREPLACEA.hwndOwner">
+    <summary>A handle to the window that owns the dialog box. The window procedure of the specified window receives <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> messages from the dialog box. This member can be any valid window handle, but it must not be <b>NULL</b>.</summary>
+  </member>
+  <member name="FINDREPLACEA.hInstance">
+    <summary>If the <b>FR_ENABLETEMPLATEHANDLE</b> flag is set in the <b>Flags</b>, <b>hInstance</b> is a handle to a memory object containing a dialog box template. If the <b>FR_ENABLETEMPLATE</b> flag is set, <b>hInstance</b> is a handle to a module that contains a dialog box template named by the <b>lpTemplateName</b> member. If neither flag is set, this member is ignored.</summary>
+  </member>
+  <member name="FINDREPLACEA.Flags">
+    <summary>
+      <para>A set of bit flags that you can use to initialize the dialog box. The dialog box sets these flags when it sends the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> registered message to indicate the user's input. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_DIALOGTERM</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates that the dialog box is closing. When you receive a message with this flag set, the dialog box handle returned by the <see cref="FindText" /> or <see cref="ReplaceText" /> function is no longer valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_DOWN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set, the <b>Down</b> button of the direction radio buttons in a <b>Find</b> dialog box is selected indicating that you should search from the current location to the end of the document. If not set, the <b>Up</b> button is selected so you should search to the beginning of the document. You can set this flag to initialize the dialog box. If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates the user's selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_ENABLEHOOK</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables the hook function specified in the <b>lpfnHook</b> member. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_ENABLETEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> and <b>lpTemplateName</b> members specify a dialog box template to use in place of the default template. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_ENABLETEMPLATEHANDLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> member identifies a data block that contains a preloaded dialog box template. The system ignores the <b>lpTemplateName</b> member if this flag is specified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_FINDNEXT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates that the user clicked the <b>Find Next</b> button in a <b>Find</b> or <b>Replace</b> dialog box. The <b>lpstrFindWhat</b> member specifies the string to search for.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_HIDEUPDOWN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> dialog box, hides the search direction radio buttons.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_HIDEMATCHCASE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> or <b>Replace</b> dialog box, hides the <b>Match Case</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_HIDEWHOLEWORD</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> or <b>Replace</b> dialog box, hides the <b>Match Whole Word Only</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_MATCHCASE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set, the <b>Match Case</b> check box is selected indicating that the search should be case-sensitive. If not set, the check box is unselected so the search should be case-insensitive. You can set this flag to initialize the dialog box. If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates the user's selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_NOMATCHCASE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> or <b>Replace</b> dialog box, disables the <b>Match Case</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_NOUPDOWN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> dialog box, disables the search direction radio buttons.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_NOWHOLEWORD</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> or <b>Replace</b> dialog box, disables the <b>Whole Word</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_REPLACE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates that the user clicked the <b>Replace</b> button in a <b>Replace</b> dialog box. The <b>lpstrFindWhat</b> member specifies the string to be replaced and the <b>lpstrReplaceWith</b> member specifies the replacement string.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_REPLACEALL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates that the user clicked the <b>Replace All</b> button in a <b>Replace</b> dialog box. The <b>lpstrFindWhat</b> member specifies the string to be replaced and the <b>lpstrReplaceWith</b> member specifies the replacement string.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_SHOWHELP</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the <b>Help</b> button. The <b>hwndOwner</b> member must specify the window to receive the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/helpmsgstring">HELPMSGSTRING</a> registered messages that the dialog box sends when the user clicks the <b>Help</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_WHOLEWORD</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set, the <b>Match Whole Word Only</b> check box is selected indicating that you should search only for whole words that match the search string. If not set, the check box is unselected so you should also search for word fragments that match the search string. You can set this flag to initialize the dialog box. If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates the user's selection.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="FINDREPLACEA.lpstrFindWhat">
+    <summary>The search string that the user typed in the <b>Find What</b> edit control. You must dynamically allocate the buffer or use a global or static array so it does not go out of scope before the dialog box closes. The buffer should be at least 80 characters long. If the buffer contains a string when you initialize the dialog box, the string is displayed in the <b>Find What</b> edit control. If a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message specifies the <b>FR_FINDNEXT</b> flag, <b>lpstrFindWhat</b> contains the string to search for. The <b>FR_DOWN</b>, <b>FR_WHOLEWORD</b>, and <b>FR_MATCHCASE</b> flags indicate the direction and type of search. If a <b>FINDMSGSTRING</b> message specifies the <b>FR_REPLACE</b> or <b>FR_REPLACE</b> flags, <b>lpstrFindWhat</b> contains the string to be replaced.</summary>
+  </member>
+  <member name="FINDREPLACEA.lpstrReplaceWith">
+    <summary>
+      <para>The replacement string that the user typed in the <b>Replace With</b> edit control. You must dynamically allocate the buffer or use a global or static array so it does not go out of scope before the dialog box closes. If the buffer contains a string when you initialize the dialog box, the string is displayed in the <b>Replace With</b> edit control.</para>
+      <para>If a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message specifies the <b>FR_REPLACE</b> or <b>FR_REPLACEALL</b> flags, <b>lpstrReplaceWith</b> contains the replacement string .</para>
+      <para>The <see cref="FindText" /> function ignores this member.</para>
+    </summary>
+  </member>
+  <member name="FINDREPLACEA.wFindWhatLen">
+    <summary>The length, in bytes, of the buffer pointed to by the <b>lpstrFindWhat</b> member.</summary>
+  </member>
+  <member name="FINDREPLACEA.wReplaceWithLen">
+    <summary>The length, in bytes, of the buffer pointed to by the <b>lpstrReplaceWith</b> member.</summary>
+  </member>
+  <member name="FINDREPLACEA.lCustData">
+    <summary>Application-defined data that the system passes to the hook procedure identified by the <b>lpfnHook</b> member. When the system sends the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-initdialog">WM_INITDIALOG</a> message to the hook procedure, the message's <i>lParam</i> parameter is a pointer to the <b>FINDREPLACE</b> structure specified when the dialog was created. The hook procedure can use this pointer to get the <b>lCustData</b> value.</summary>
+  </member>
+  <member name="FINDREPLACEA.lpfnHook">
+    <summary>A pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/commdlg/nc-commdlg-lpfrhookproc">FRHookProc</a> hook procedure that can process messages intended for the dialog box. This member is ignored unless the <b>FR_ENABLEHOOK</b> flag is set in the <b>Flags</b> member. If the hook procedure returns <b>FALSE</b> in response to the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-initdialog">WM_INITDIALOG</a> message, the hook procedure must display the dialog box or else the dialog box will not be shown. To do this, first perform any other paint operations, and then call the <see cref="ShowWindow" /> and <see cref="UpdateWindow" /> functions.</summary>
+  </member>
+  <member name="FINDREPLACEA.lpTemplateName">
+    <summary>The name of the dialog box template resource in the module identified by the <b>hInstance</b> member. This template is substituted for the standard dialog box template. For numbered dialog box resources, this can be a value returned by the <see cref="MAKEINTRESOURCE" /> macro. This member is ignored unless the <b>FR_ENABLETEMPLATE</b> flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="FINDREPLACEA">
+    <summary>Contains information that the <see cref="FindText" /> and <see cref="ReplaceText" /> functions use to initialize the <b>Find</b> and <b>Replace</b> dialog boxes. The <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> registered message uses this structure to pass the user's search or replacement input to the owner window of a <b>Find</b> or <b>Replace</b> dialog box.</summary>
+  </member>
+  <member name="FINDREPLACEA.lStructSize">
+    <summary>The length, in bytes, of the structure.</summary>
+  </member>
+  <member name="FINDREPLACEA.hwndOwner">
+    <summary>A handle to the window that owns the dialog box. The window procedure of the specified window receives <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> messages from the dialog box. This member can be any valid window handle, but it must not be <b>NULL</b>.</summary>
+  </member>
+  <member name="FINDREPLACEA.hInstance">
+    <summary>If the <b>FR_ENABLETEMPLATEHANDLE</b> flag is set in the <b>Flags</b>, <b>hInstance</b> is a handle to a memory object containing a dialog box template. If the <b>FR_ENABLETEMPLATE</b> flag is set, <b>hInstance</b> is a handle to a module that contains a dialog box template named by the <b>lpTemplateName</b> member. If neither flag is set, this member is ignored.</summary>
+  </member>
+  <member name="FINDREPLACEA.Flags">
+    <summary>
+      <para>A set of bit flags that you can use to initialize the dialog box. The dialog box sets these flags when it sends the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> registered message to indicate the user's input. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_DIALOGTERM</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates that the dialog box is closing. When you receive a message with this flag set, the dialog box handle returned by the <see cref="FindText" /> or <see cref="ReplaceText" /> function is no longer valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_DOWN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set, the <b>Down</b> button of the direction radio buttons in a <b>Find</b> dialog box is selected indicating that you should search from the current location to the end of the document. If not set, the <b>Up</b> button is selected so you should search to the beginning of the document. You can set this flag to initialize the dialog box. If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates the user's selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_ENABLEHOOK</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables the hook function specified in the <b>lpfnHook</b> member. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_ENABLETEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> and <b>lpTemplateName</b> members specify a dialog box template to use in place of the default template. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_ENABLETEMPLATEHANDLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> member identifies a data block that contains a preloaded dialog box template. The system ignores the <b>lpTemplateName</b> member if this flag is specified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_FINDNEXT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates that the user clicked the <b>Find Next</b> button in a <b>Find</b> or <b>Replace</b> dialog box. The <b>lpstrFindWhat</b> member specifies the string to search for.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_HIDEUPDOWN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> dialog box, hides the search direction radio buttons.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_HIDEMATCHCASE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> or <b>Replace</b> dialog box, hides the <b>Match Case</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_HIDEWHOLEWORD</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> or <b>Replace</b> dialog box, hides the <b>Match Whole Word Only</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_MATCHCASE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set, the <b>Match Case</b> check box is selected indicating that the search should be case-sensitive. If not set, the check box is unselected so the search should be case-insensitive. You can set this flag to initialize the dialog box. If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates the user's selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_NOMATCHCASE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> or <b>Replace</b> dialog box, disables the <b>Match Case</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_NOUPDOWN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> dialog box, disables the search direction radio buttons.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_NOWHOLEWORD</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set when initializing a <b>Find</b> or <b>Replace</b> dialog box, disables the <b>Whole Word</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_REPLACE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates that the user clicked the <b>Replace</b> button in a <b>Replace</b> dialog box. The <b>lpstrFindWhat</b> member specifies the string to be replaced and the <b>lpstrReplaceWith</b> member specifies the replacement string.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_REPLACEALL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates that the user clicked the <b>Replace All</b> button in a <b>Replace</b> dialog box. The <b>lpstrFindWhat</b> member specifies the string to be replaced and the <b>lpstrReplaceWith</b> member specifies the replacement string.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_SHOWHELP</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the <b>Help</b> button. The <b>hwndOwner</b> member must specify the window to receive the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/helpmsgstring">HELPMSGSTRING</a> registered messages that the dialog box sends when the user clicks the <b>Help</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FR_WHOLEWORD</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set, the <b>Match Whole Word Only</b> check box is selected indicating that you should search only for whole words that match the search string. If not set, the check box is unselected so you should also search for word fragments that match the search string. You can set this flag to initialize the dialog box. If set in a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message, indicates the user's selection.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="FINDREPLACEA.lpstrFindWhat">
+    <summary>The search string that the user typed in the <b>Find What</b> edit control. You must dynamically allocate the buffer or use a global or static array so it does not go out of scope before the dialog box closes. The buffer should be at least 80 characters long. If the buffer contains a string when you initialize the dialog box, the string is displayed in the <b>Find What</b> edit control. If a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message specifies the <b>FR_FINDNEXT</b> flag, <b>lpstrFindWhat</b> contains the string to search for. The <b>FR_DOWN</b>, <b>FR_WHOLEWORD</b>, and <b>FR_MATCHCASE</b> flags indicate the direction and type of search. If a <b>FINDMSGSTRING</b> message specifies the <b>FR_REPLACE</b> or <b>FR_REPLACE</b> flags, <b>lpstrFindWhat</b> contains the string to be replaced.</summary>
+  </member>
+  <member name="FINDREPLACEA.lpstrReplaceWith">
+    <summary>
+      <para>The replacement string that the user typed in the <b>Replace With</b> edit control. You must dynamically allocate the buffer or use a global or static array so it does not go out of scope before the dialog box closes. If the buffer contains a string when you initialize the dialog box, the string is displayed in the <b>Replace With</b> edit control.</para>
+      <para>If a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/findmsgstring">FINDMSGSTRING</a> message specifies the <b>FR_REPLACE</b> or <b>FR_REPLACEALL</b> flags, <b>lpstrReplaceWith</b> contains the replacement string .</para>
+      <para>The <see cref="FindText" /> function ignores this member.</para>
+    </summary>
+  </member>
+  <member name="FINDREPLACEA.wFindWhatLen">
+    <summary>The length, in bytes, of the buffer pointed to by the <b>lpstrFindWhat</b> member.</summary>
+  </member>
+  <member name="FINDREPLACEA.wReplaceWithLen">
+    <summary>The length, in bytes, of the buffer pointed to by the <b>lpstrReplaceWith</b> member.</summary>
+  </member>
+  <member name="FINDREPLACEA.lCustData">
+    <summary>Application-defined data that the system passes to the hook procedure identified by the <b>lpfnHook</b> member. When the system sends the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-initdialog">WM_INITDIALOG</a> message to the hook procedure, the message's <i>lParam</i> parameter is a pointer to the <b>FINDREPLACE</b> structure specified when the dialog was created. The hook procedure can use this pointer to get the <b>lCustData</b> value.</summary>
+  </member>
+  <member name="FINDREPLACEA.lpfnHook">
+    <summary>A pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/commdlg/nc-commdlg-lpfrhookproc">FRHookProc</a> hook procedure that can process messages intended for the dialog box. This member is ignored unless the <b>FR_ENABLEHOOK</b> flag is set in the <b>Flags</b> member. If the hook procedure returns <b>FALSE</b> in response to the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-initdialog">WM_INITDIALOG</a> message, the hook procedure must display the dialog box or else the dialog box will not be shown. To do this, first perform any other paint operations, and then call the <see cref="ShowWindow" /> and <see cref="UpdateWindow" /> functions.</summary>
+  </member>
+  <member name="FINDREPLACEA.lpTemplateName">
+    <summary>The name of the dialog box template resource in the module identified by the <b>hInstance</b> member. This template is substituted for the standard dialog box template. For numbered dialog box resources, this can be a value returned by the <see cref="MAKEINTRESOURCE" /> macro. This member is ignored unless the <b>FR_ENABLETEMPLATE</b> flag is set in the <b>Flags</b> member.</summary>
+  </member>
+</doc>
