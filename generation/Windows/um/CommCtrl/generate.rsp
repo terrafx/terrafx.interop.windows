@@ -23,6 +23,8 @@ Button_SetNote
 Button_SetSplitInfo
 Button_SetTextMargin
 CCSIZEOF_STRUCT
+CDN_FIRST
+CDN_LAST
 ComboBox_GetCueBannerText
 ComboBox_GetMinVisible
 ComboBox_SetCueBannerText
