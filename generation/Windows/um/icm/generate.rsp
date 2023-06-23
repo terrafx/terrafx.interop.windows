@@ -1,5 +1,9 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+CMGetPS2ColorRenderingDictionary(HPROFILE, DWORD, LPBYTE, LPDWORD, LPBOOL):BOOL
+CMGetPS2ColorRenderingIntent(HPROFILE, DWORD, LPBYTE, LPDWORD):BOOL
+CMGetPS2ColorSpaceArray(HPROFILE, DWORD, DWORD, LPBYTE, LPDWORD, LPBOOL):BOOL
 --file
 um-icm.h
 --methodClassName
@@ -18,8 +22,6 @@ AssociateColorProfileWithDeviceA=SupportedOSPlatform("windows10.0.19043.0")
 CMCheckRGBs=SupportedOSPlatform("windows10.0.19043.0")
 CMCreateTransform=SupportedOSPlatform("windows10.0.19043.0")
 CMCreateTransformW=SupportedOSPlatform("windows10.0.19043.0")
-CMGetPS2ColorRenderingDictionary=SupportedOSPlatform("windows10.0.19043.0")
-CMGetPS2ColorSpaceArray=SupportedOSPlatform("windows10.0.19043.0")
 ColorProfileAddDisplayAssociation=SupportedOSPlatform("windows10.0.19043.0")
 ColorProfileGetDisplayDefault=SupportedOSPlatform("windows10.0.19043.0")
 ColorProfileGetDisplayList=SupportedOSPlatform("windows10.0.19043.0")
@@ -49,9 +51,6 @@ CMCreateTransformW=icm32
 CMDeleteTransform=icm32
 CMGetInfo=icm32
 CMGetNamedProfileInfo=icm32
-CMGetPS2ColorRenderingDictionary=icm32
-CMGetPS2ColorRenderingIntent=icm32
-CMGetPS2ColorSpaceArray=icm32
 CMIsProfileValid=icm32
 CMTranslateColors=icm32
 CMTranslateRGB=icm32

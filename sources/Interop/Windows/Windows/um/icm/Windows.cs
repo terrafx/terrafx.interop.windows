@@ -425,20 +425,6 @@ public static unsafe partial class Windows
     [DllImport("icm32", ExactSpelling = true)]
     public static extern BOOL CMGetNamedProfileInfo(HPROFILE hProfile, [NativeTypeName("PNAMED_PROFILE_INFO")] NAMED_PROFILE_INFO* pNamedProfileInfo);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMGetPS2ColorRenderingDictionary"]/*' />
-    [DllImport("icm32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows10.0.19043.0")]
-    public static extern BOOL CMGetPS2ColorRenderingDictionary(HPROFILE hProfile, [NativeTypeName("DWORD")] uint dwIntent, [NativeTypeName("LPBYTE")] byte* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbSize, [NativeTypeName("LPBOOL")] BOOL* lpbBinary);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMGetPS2ColorRenderingIntent"]/*' />
-    [DllImport("icm32", ExactSpelling = true)]
-    public static extern BOOL CMGetPS2ColorRenderingIntent(HPROFILE hProfile, [NativeTypeName("DWORD")] uint dwIntent, [NativeTypeName("LPBYTE")] byte* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbSize);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMGetPS2ColorSpaceArray"]/*' />
-    [DllImport("icm32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows10.0.19043.0")]
-    public static extern BOOL CMGetPS2ColorSpaceArray(HPROFILE hProfile, [NativeTypeName("DWORD")] uint dwIntent, [NativeTypeName("DWORD")] uint dwCSAType, [NativeTypeName("LPBYTE")] byte* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbSize, [NativeTypeName("LPBOOL")] BOOL* lpbBinary);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMIsProfileValid"]/*' />
     [DllImport("icm32", ExactSpelling = true)]
     public static extern BOOL CMIsProfileValid(HPROFILE hProfile, [NativeTypeName("LPBOOL")] BOOL* lpbValid);
