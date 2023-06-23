@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BlackInformation">
+    <summary>Contains information for device models that have a black color channel.</summary>
+  </member>
+  <member name="BlackInformation.fBlackOnly"></member>
+  <member name="BlackInformation.blackWeight">
+    <summary>
+      <para>A value between 0.0 and 1.0 that indicates the relative amount of black to use in the output. A value of 0.0 means that no black is used; a value of 1.0 means that the maximum amount of black is used.</para>
+      <h4>- bBlackOnly</h4>
+      <para>An indicator whether the source color contains only black. This value can only be true if both of the following apply:</para>
+      <list type="bullet">
+        <item>
+          <description>the source device has a black channel</description>
+        </item>
+        <item>
+          <description>the <a href="https://docs.microsoft.com//previous-versions/ms536577(v=vs.85)">PRESERVEBLACK</a> flag is set to <b>true</b>. This flag is in the <i>dwFlags</i> parameter of a Color Management Module (CMM) transform function.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

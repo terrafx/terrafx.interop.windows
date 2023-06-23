@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PrimaryJabColors">
+    <summary>This structure contains eight primary colors in Jab coordinates.</summary>
+  </member>
+  <member name="PrimaryJabColors.red">
+    <summary>Red primary.</summary>
+  </member>
+  <member name="PrimaryJabColors.yellow">
+    <summary>Yellow primary.</summary>
+  </member>
+  <member name="PrimaryJabColors.green">
+    <summary>Green primary.</summary>
+  </member>
+  <member name="PrimaryJabColors.cyan">
+    <summary>Cyan primary.</summary>
+  </member>
+  <member name="PrimaryJabColors.blue">
+    <summary>Blue primary.</summary>
+  </member>
+  <member name="PrimaryJabColors.magenta">
+    <summary>Magenta primary.</summary>
+  </member>
+  <member name="PrimaryJabColors.black">
+    <summary>Black primary.</summary>
+  </member>
+  <member name="PrimaryJabColors.white">
+    <summary>White primary.</summary>
+  </member>
+</doc>

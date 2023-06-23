@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-wcsplugin.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/wcsplugin
+--test-output
+../../../../tests/Interop/Windows/Windows/um/wcsplugin
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wcsplugin.h
