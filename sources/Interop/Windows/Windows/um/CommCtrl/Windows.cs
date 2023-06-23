@@ -355,12 +355,6 @@ public static unsafe partial class Windows
     [NativeTypeName("#define TCN_LAST (0U-580U)")]
     public const uint TCN_LAST = unchecked(0U - 580U);
 
-    [NativeTypeName("#define CDN_FIRST (0U-601U)")]
-    public const uint CDN_FIRST = unchecked(0U - 601U);
-
-    [NativeTypeName("#define CDN_LAST (0U-699U)")]
-    public const uint CDN_LAST = unchecked(0U - 699U);
-
     [NativeTypeName("#define UDN_FIRST (0U-721U)")]
     public const uint UDN_FIRST = unchecked(0U - 721U);
 

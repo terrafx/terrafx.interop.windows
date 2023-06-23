@@ -2908,12 +2908,6 @@ public static unsafe partial class Windows
     [NativeTypeName("#define RemoveFontResourceEx RemoveFontResourceExW")]
     public static delegate*<ushort*, uint, void*, BOOL> RemoveFontResourceEx => &RemoveFontResourceExW;
 
-    [NativeTypeName("#define FR_PRIVATE 0x10")]
-    public const int FR_PRIVATE = 0x10;
-
-    [NativeTypeName("#define FR_NOT_ENUM 0x20")]
-    public const int FR_NOT_ENUM = 0x20;
-
     [NativeTypeName("#define CreateFontIndirectEx CreateFontIndirectExW")]
     public static delegate*<ENUMLOGFONTEXDVW*, HFONT> CreateFontIndirectEx => &CreateFontIndirectExW;
 

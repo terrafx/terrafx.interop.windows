@@ -2076,12 +2076,6 @@ public static unsafe partial class Windows
     [NativeTypeName("#define SetupDiGetDeviceInfoListDetail SetupDiGetDeviceInfoListDetailW")]
     public static delegate*<HDEVINFO, void*, BOOL> SetupDiGetDeviceInfoListDetail => &SetupDiGetDeviceInfoListDetailW;
 
-    [NativeTypeName("#define DICD_GENERATE_ID 0x00000001")]
-    public const int DICD_GENERATE_ID = 0x00000001;
-
-    [NativeTypeName("#define DICD_INHERIT_CLASSDRVS 0x00000002")]
-    public const int DICD_INHERIT_CLASSDRVS = 0x00000002;
-
     [NativeTypeName("#define SetupDiCreateDeviceInfo SetupDiCreateDeviceInfoW")]
     public static delegate*<HDEVINFO, ushort*, Guid*, ushort*, HWND, uint, void*, BOOL> SetupDiCreateDeviceInfo => &SetupDiCreateDeviceInfoW;
 
