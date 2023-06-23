@@ -346,20 +346,20 @@ public static unsafe partial class Windows
     public static extern BOOL WcsCheckColors(HTRANSFORM hColorTransform, [NativeTypeName("DWORD")] uint nColors, [NativeTypeName("DWORD")] uint nInputChannels, COLORDATATYPE cdtInput, [NativeTypeName("DWORD")] uint cbInput, [NativeTypeName("PVOID")] void* pInputData, [NativeTypeName("PBYTE")] byte* paResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMCheckColors"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     public static extern BOOL CMCheckColors(HCMTRANSFORM hcmTransform, [NativeTypeName("LPCOLOR")] COLOR* lpaInputColors, [NativeTypeName("DWORD")] uint nColors, COLORTYPE ctInput, [NativeTypeName("LPBYTE")] byte* lpaResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMCheckRGBs"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL CMCheckRGBs(HCMTRANSFORM hcmTransform, [NativeTypeName("LPVOID")] void* lpSrcBits, BMFORMAT bmInput, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwStride, [NativeTypeName("LPBYTE")] byte* lpaResult, [NativeTypeName("PBMCALLBACKFN")] delegate* unmanaged<uint, uint, LPARAM, BOOL> pfnCallback, LPARAM ulCallbackData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMConvertColorNameToIndex"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     public static extern BOOL CMConvertColorNameToIndex(HPROFILE hProfile, [NativeTypeName("PCOLOR_NAME")] sbyte** paColorName, [NativeTypeName("PDWORD")] uint* paIndex, [NativeTypeName("DWORD")] uint dwCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMConvertIndexToColorName"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     public static extern BOOL CMConvertIndexToColorName(HPROFILE hProfile, [NativeTypeName("PDWORD")] uint* paIndex, [NativeTypeName("PCOLOR_NAME")] sbyte** paColorName, [NativeTypeName("DWORD")] uint dwCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMCreateDeviceLinkProfile"]/*' />
@@ -371,17 +371,17 @@ public static unsafe partial class Windows
     public static extern HCMTRANSFORM CMCreateMultiProfileTransform([NativeTypeName("PHPROFILE")] HPROFILE* pahProfiles, [NativeTypeName("DWORD")] uint nProfiles, [NativeTypeName("PDWORD")] uint* padwIntents, [NativeTypeName("DWORD")] uint nIntents, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMCreateProfileW"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CMCreateProfileW([NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACEW* lpColorSpace, [NativeTypeName("LPDEVCHARACTER *")] void** lpProfileData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMCreateTransform"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HCMTRANSFORM CMCreateTransform([NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lpColorSpace, [NativeTypeName("LPDEVCHARACTER")] void* lpDevCharacter, [NativeTypeName("LPDEVCHARACTER")] void* lpTargetDevCharacter);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMCreateTransformW"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HCMTRANSFORM CMCreateTransformW([NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACEW* lpColorSpace, [NativeTypeName("LPDEVCHARACTER")] void* lpDevCharacter, [NativeTypeName("LPDEVCHARACTER")] void* lpTargetDevCharacter);
 
@@ -390,12 +390,12 @@ public static unsafe partial class Windows
     public static extern HCMTRANSFORM CMCreateTransformExt([NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lpColorSpace, [NativeTypeName("LPDEVCHARACTER")] void* lpDevCharacter, [NativeTypeName("LPDEVCHARACTER")] void* lpTargetDevCharacter, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMCheckColorsInGamut"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CMCheckColorsInGamut(HCMTRANSFORM hcmTransform, RGBTRIPLE* lpaRGBTriple, [NativeTypeName("LPBYTE")] byte* lpaResult, uint nCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMCreateProfile"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CMCreateProfile([NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lpColorSpace, [NativeTypeName("LPDEVCHARACTER *")] void** lpProfileData);
 
@@ -417,7 +417,7 @@ public static unsafe partial class Windows
     public static extern BOOL CMDeleteTransform(HCMTRANSFORM hcmTransform);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMGetInfo"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint CMGetInfo([NativeTypeName("DWORD")] uint dwInfo);
 
@@ -426,21 +426,21 @@ public static unsafe partial class Windows
     public static extern BOOL CMGetNamedProfileInfo(HPROFILE hProfile, [NativeTypeName("PNAMED_PROFILE_INFO")] NAMED_PROFILE_INFO* pNamedProfileInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMGetPS2ColorRenderingDictionary"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL CMGetPS2ColorRenderingDictionary(HPROFILE hProfile, [NativeTypeName("DWORD")] uint dwIntent, [NativeTypeName("LPBYTE")] byte* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbSize, [NativeTypeName("LPBOOL")] BOOL* lpbBinary);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMGetPS2ColorRenderingIntent"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     public static extern BOOL CMGetPS2ColorRenderingIntent(HPROFILE hProfile, [NativeTypeName("DWORD")] uint dwIntent, [NativeTypeName("LPBYTE")] byte* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMGetPS2ColorSpaceArray"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL CMGetPS2ColorSpaceArray(HPROFILE hProfile, [NativeTypeName("DWORD")] uint dwIntent, [NativeTypeName("DWORD")] uint dwCSAType, [NativeTypeName("LPBYTE")] byte* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbSize, [NativeTypeName("LPBOOL")] BOOL* lpbBinary);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMIsProfileValid"]/*' />
-    [DllImport("mscms", ExactSpelling = true)]
+    [DllImport("icm32", ExactSpelling = true)]
     public static extern BOOL CMIsProfileValid(HPROFILE hProfile, [NativeTypeName("LPBOOL")] BOOL* lpbValid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CMTranslateColors"]/*' />
