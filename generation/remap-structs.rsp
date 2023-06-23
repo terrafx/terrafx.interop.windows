@@ -1,4 +1,5 @@
 --with-type
+COLOR=struct
 DDBLTFX=struct
 DDSCAPS=struct
 DDSCAPS2=struct

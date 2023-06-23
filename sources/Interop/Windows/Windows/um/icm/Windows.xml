@@ -1,0 +1,1703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.AssociateColorProfileWithDevice">
+    <summary>
+      <para>Associates a specified color profile with a specified device.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileAddDisplayAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which to associate the specified profile and device. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pProfileName">Points to the file name of the profile to associate.</param>
+    <param name="pDeviceName">Points to the name of the device to associate.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.AssociateColorProfileWithDeviceA">
+    <summary>
+      <para>Associates a specified color profile with a specified device.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileAddDisplayAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which to associate the specified profile and device. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pProfileName">Points to the file name of the profile to associate.</param>
+    <param name="pDeviceName">Points to the name of the device to associate.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.AssociateColorProfileWithDevice">
+    <summary>
+      <para>Associates a specified color profile with a specified device.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileAddDisplayAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which to associate the specified profile and device. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pProfileName">Points to the file name of the profile to associate.</param>
+    <param name="pDeviceName">Points to the name of the device to associate.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.AssociateColorProfileWithDeviceW">
+    <summary>
+      <para>Associates a specified color profile with a specified device.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileAddDisplayAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which to associate the specified profile and device. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pProfileName">Points to the file name of the profile to associate.</param>
+    <param name="pDeviceName">Points to the name of the device to associate.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.CheckBitmapBits">
+    <summary>Checks whether the pixels in a specified bitmap lie within the output <a href="https://docs.microsoft.com//windows/win32/wcs/g">gamut</a> of a specified transform.</summary>
+    <param name="hColorTransform">Handle to the color transform to use.</param>
+    <param name="pSrcBits">Pointer to the bitmap to check against the output gamut.</param>
+    <param name="bmInput">Specifies the format of the bitmap. Must be set to one of the values of the <see cref="BMFORMAT" /> enumerated type.</param>
+    <param name="dwWidth">Specifies the number of pixels per scan line of the bitmap.</param>
+    <param name="dwHeight">Specifies the number of scan lines of the bitmap.</param>
+    <param name="dwStride">Specifies the number of bytes from the beginning one scan line to the beginning of the next one. If set to zero, the bitmap scan lines are assumed to be padded so as to be <b>DWORD</b>-aligned.</param>
+    <param name="paResult">Pointer to an array of bytes where the test results are to be placed. This results buffer must contain at least as many bytes as there are pixels in the bitmap.</param>
+    <param name="pfnCallback">Pointer to a callback function called periodically by <b>CheckBitmapBits</b> to report progress and allow the calling process to cancel the bitmap test. (See <a href="https://docs.microsoft.com//windows/win32/wcs/icmprogressproccallback">ICMProgressProcCallback</a>).</param>
+    <param name="lpCallbackData">Data passed back to the callback function, for example, to identify the bitmap test about which progress is being reported.</param>
+    <returns>
+      <para>If this function succeeds, the return value is a nonzero value.</para>
+      <para>If this function fails, the return value is zero. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.CheckColors">
+    <summary>Determines whether the colors in an array lie within the output <a href="https://docs.microsoft.com//windows/win32/wcs/g">gamut</a> of a specified transform.</summary>
+    <param name="hColorTransform">Handle to the color transform to use.</param>
+    <param name="paInputColors">Pointer to an array of <i>nColors</i><see cref="COLOR" /> structures to translate.</param>
+    <param name="nColors">Contains the number of elements in the arrays pointed to by <i>paInputColors</i> and <i>paResult</i>.</param>
+    <param name="ctInput">Specifies the input color type.</param>
+    <param name="paResult">Pointer to an array of <i>nColors</i> bytes that receives the results of the test.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.CloseColorProfile">
+    <summary>Closes an open profile handle.</summary>
+    <param name="hProfile">Handle to the profile to be closed. The function determines whether the HPROFILE contains ICC or WCS profile information.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMCheckColors">
+    <summary>Determines whether given colors lie within the output <a href="https://docs.microsoft.com//windows/win32/wcs/g">gamut</a> of a specified transform.</summary>
+    <param name="hcmTransform">Handle to the color transform to use.</param>
+    <param name="lpaInputColors">Pointer to an array of <see cref="COLOR" /> structures to check against the output gamut.</param>
+    <param name="nColors">Specifies the number of elements in the array.</param>
+    <param name="ctInput">Specifies the input color type.</param>
+    <param name="lpaResult">Pointer to a buffer in which to place an array of bytes containing the test results. Each byte in the buffer corresponds to a <b>COLOR</b> structure, and on exit has been set to an unsigned value between 0 and 255. The value 0 denotes that the color is in gamut, while a nonzero value indicates that it is out of gamut. For any integer <i>n</i> such that 0 &lt; <i>n</i> &lt; 255, a result value of <i>n</i> + 1 indicates that the corresponding color is at least as far out of gamut as would be indicated by a result value of <i>n</i>. These values are usually generated from the <i>gamutTag</i> in the ICC profile.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. If the function is not successful, the CMM should call <see cref="SetLastError" /> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMCheckColorsInGamut">
+    <summary>
+      <para>[<b>CMCheckColorsInGamut</b> is no longer available for use as of Windows Vista.]</para>
+      <para>Determines whether specified RGB triples lie in the output <a href="https://docs.microsoft.com//windows/win32/wcs/g">gamut</a> of a specified transform.</para>
+    </summary>
+    <param name="hcmTransform">Specifies the transform to use.</param>
+    <param name="lpaRGBTriple">Points to an array of RGB triples to check.</param>
+    <param name="lpaResult">
+      <para>Points to the buffer in which to put results.</para>
+      <para>The results are represented by an array of bytes. Each byte in the array corresponds to an RGB triple and has an unsigned value between 0 and 255. The value 0 denotes that the color is in gamut, while a nonzero value denotes that it is out of gamut. For any integer <i>n</i> in the range 0 &lt; <i>n</i> &lt; 255, a result value of <i>n</i> + 1 indicates that the corresponding color is at least as far out of gamut as would be indicated by a result value of <i>n</i>.</para>
+    </param>
+    <param name="nCount">Specifies the number of elements in the array.</param>
+    <returns>
+      <para>Beginning with Windows Vista, the default CMM (Icm32.dll) will return <b>FALSE</b> and <see cref="GetLastError" /> will report ERROR_NOT_SUPPORTED.</para>
+      <para>
+        <b>Windows Server 2003, Windows XP and Windows 2000:</b>
+      </para>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. Call <see cref="GetLastError" /> to retrieve the error.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMCheckRGBs">
+    <summary>Checks bitmap colors against an output gamut.</summary>
+  </member>
+  <member name="Windows.CMConvertColorNameToIndex">
+    <summary>Converts color names in a named color space to index numbers in a color profile.</summary>
+    <param name="hProfile">The handle to a named color profile.</param>
+    <param name="paColorName">Pointer to an array of color name structures.</param>
+    <param name="paIndex">Pointer to an array of <b>DWORDS</b> that this function fills with the indices.</param>
+    <param name="dwCount">The number of color names to convert.</param>
+    <returns>
+      <para>If this function succeeds with the conversion, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. When this occurs, the CMM should call <b>SetLastError</b> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMConvertIndexToColorName">
+    <summary>Transforms indices in a color space to an array of names in a named color space.</summary>
+    <param name="hProfile">The handle to a color space profile.</param>
+    <param name="paIndex">Pointer to an array of color-space index numbers.</param>
+    <param name="paColorName">Pointer to an array of color name structures.</param>
+    <param name="dwCount">The number of indices to convert.</param>
+    <returns>
+      <para>If this conversion function succeeds, the return value is TRUE.</para>
+      <para>If this function fails, the return value is FALSE. When this occurs, the CMM should call <b>SetLastError</b> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMCreateDeviceLinkProfile">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/win32/wcs/d">device link profile</a> in the format specified by the International Color Consortium in its ICC Profile Format Specification.</summary>
+    <param name="pahProfiles">Pointer to an array of profile handles.</param>
+    <param name="nProfiles">Specifies the number of profiles in the array.</param>
+    <param name="padwIntents">An array of rendering intents.</param>
+    <param name="nIntents">The number of elements in the array of intents.</param>
+    <param name="dwFlags">Specifies flags to used control creation of the transform. For details, see <a href="https://docs.microsoft.com//windows/win32/wcs/cmm-transform-creation-flags">CMM Transform Creation Flags</a>.</param>
+    <param name="lpProfileData">Pointer to a pointer to a buffer. If successful the function allocates and fills this buffer. The calling application must free this buffer when it is no longer needed. Use the <b>GlobalFree</b> function to free this buffer.</param>
+    <returns>
+      <para>If the function succeeds, the return value is a nonzero value.</para>
+      <para>If this function fails, the return value is zero. If the function is not successful, the CMM should call <b>SetLastError</b> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMCreateMultiProfileTransform">
+    <summary>Accepts an array of profiles or a single <a href="https://docs.microsoft.com//windows/win32/wcs/d">device link profile</a> and creates a color transform. This transform is a mapping from the color space specified by the first profile to that of the second profile and so on to the last one.</summary>
+    <param name="pahProfiles">Points to an array of profile handles.</param>
+    <param name="nProfiles">Specifies the number of profiles in the array.</param>
+    <param name="padwIntents">
+      <para>Points to an array of rendering intents. Each rendering intent is represented by one of the following values:</para>
+      <para>INTENT_PERCEPTUAL<br />INTENT_SATURATION<br />INTENT_RELATIVE_COLORIMETRIC<br />INTENT_ABSOLUTE_COLORIMETRIC</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering intents</a>.</para>
+    </param>
+    <param name="nIntents">Specifies the number of intents in the intent array. Can be 1, or the same value as <i>nProfiles</i>.</param>
+    <param name="dwFlags">Specifies flags to used control creation of the transform. For details, see <a href="https://docs.microsoft.com//windows/win32/wcs/cmm-transform-creation-flags">CMM Transform Creation Flags</a>.</param>
+    <returns>
+      <para>If this function succeeds, the return value is a color transform in the range 256 to 65,535. Since only the low <b>WORD</b> of the transform is retained, valid transforms cannot exceed this range.</para>
+      <para>If this function fails, the return value is an error code having a value less than 256. When the return value is less than 256, signaling an error, the CMM should use <b>SetLastError</b> to set the last error to a valid error value as defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMCreateProfile">
+    <summary>
+      <para>[<b>CMCreateProfile</b> is no longer available for use as of Windows Vista.]</para>
+      <para>Creates a display color profile from a <see cref="LOGCOLORSPACEA" /> structure.</para>
+    </summary>
+    <param name="lpColorSpace">Pointer to a color logical space, of which the <b>lcsFilename</b> member will be <b>NULL</b>.</param>
+    <param name="lpProfileData">Pointer to a pointer to a buffer. If successful the function allocates and fills this buffer. It is the calling application's responsibility to free this buffer when it is no longer needed.</param>
+    <returns>
+      <para>Beginning with Windows Vista, the default CMM (Icm32.dll) will return <b>FALSE</b> and <see cref="GetLastError" /> will report ERROR_NOT_SUPPORTED.</para>
+      <para>
+        <b>Windows Server 2003, Windows XP and Windows 2000:</b>
+      </para>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. Call <see cref="GetLastError" /> to retrieve the error.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMCreateProfileW">
+    <summary>
+      <para>[<b>CMCreateProfileW</b> is no longer available for use as of Windows Vista.]</para>
+      <para>Creates a display color profile from a <see cref="LOGCOLORSPACEW" /> structure.</para>
+    </summary>
+    <param name="lpColorSpace">Pointer to a color logical space, of which the <b>lcsFilename</b> member will be <b>NULL</b>.</param>
+    <param name="lpProfileData">Pointer to a pointer to a buffer. If successful the function allocates and fills this buffer. It is the calling application's responsibility to free this buffer when it is no longer needed.</param>
+    <returns>
+      <para>Beginning with Windows Vista, the default CMM (Icm32.dll) will return <b>FALSE</b> and <see cref="GetLastError" /> will report ERROR_NOT_SUPPORTED.</para>
+      <para>
+        <b>Windows Server 2003, Windows XP and Windows 2000:</b>
+      </para>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. Call <see cref="GetLastError" /> to retrieve the error.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMCreateTransform">
+    <summary>Deprecated. There is no replacement API because this one was no longer being used. Developers of alternate CMM modules are not required to implement it.</summary>
+  </member>
+  <member name="Windows.CMCreateTransformExt">
+    <summary>Creates a color transform that maps from an input <see cref="LOGCOLORSPACEA" /> to an optional target space and then to an output device, using a set of flags that define how the transform should be created.</summary>
+    <param name="lpColorSpace">Pointer to an input logical color space structure.</param>
+    <param name="lpDevCharacter">Pointer to a memory-mapped device profile.</param>
+    <param name="lpTargetDevCharacter">Pointer to a memory-mapped target profile.</param>
+    <param name="dwFlags">Specifies flags to used control creation of the transform. For details, see <a href="https://docs.microsoft.com//windows/win32/wcs/cmm-transform-creation-flags">CMM transform creation flags</a>.</param>
+    <returns>
+      <para>If this function succeeds, the return value is a color transform in the range 256 to 65,535. Since only the low <b>WORD</b> of the transform is retained, valid transforms cannot exceed this range.</para>
+      <para>If this function fails, the return value is an error code having a value less than 256. When the return value is less than 256, signaling an error, the CMM should use <b>SetLastError</b> to set the last error to a valid error value as defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMCreateTransformExtW">
+    <summary>Creates a color transform that maps from an input <see cref="LOGCOLORSPACEW" /> to an optional target space and then to an output device, using a set of flags that define how the transform should be created.</summary>
+    <param name="lpColorSpace">Pointer to an input logical color space structure.</param>
+    <param name="lpDevCharacter">Pointer to a memory-mapped device profile.</param>
+    <param name="lpTargetDevCharacter">Pointer to a memory-mapped target profile.</param>
+    <param name="dwFlags">Specifies flags to used control creation of the transform. For details, see <a href="https://docs.microsoft.com//windows/win32/wcs/cmm-transform-creation-flags">CMM transform creation flags</a>.</param>
+    <returns>
+      <para>If this function succeeds, the return value is a color transform in the range 256 to 65,535. Since only the low <b>WORD</b> of the transform is retained, valid transforms cannot exceed this range.</para>
+      <para>If this function fails, the return value is an error code having a value less than 256. When the return value is less than 256, signaling an error, the CMM should use <b>SetLastError</b> to set the last error to a valid error value as defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMCreateTransformW">
+    <summary>Deprecated. There is no replacement API because this one was no longer being used. Developers of alternate CMM modules are not required to implement it.</summary>
+  </member>
+  <member name="Windows.CMDeleteTransform">
+    <summary>Deletes a specified color transform, and frees any memory associated with it.</summary>
+    <param name="hcmTransform">Identifies the color transform to be deleted.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If the function fails, the return value is <b>FALSE</b>. If the <b>CMDeleteTransform</b> function is not successful, the CMM should call <b>SetLastError</b> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMGetInfo">
+    <summary>
+      <para>Retrieves various information about the color management module (CMM).</para>
+      <para>Every CMM is required to export this function.</para>
+    </summary>
+    <param name="dwInfo">
+      <para>Specifies what information should be retrieved. This parameter can take one of the following constant values.</para>
+    </param>
+    <returns>If this function succeeds, the return value is the same nonzero value that was passed in through the <i>dwInfo</i> parameter. If the function fails, the return value is zero.</returns>
+  </member>
+  <member name="Windows.CMGetNamedProfileInfo">
+    <summary>Retrieves information about the specified named color profile.</summary>
+    <param name="hProfile">The handle to the profile from which the information will be retrieved.</param>
+    <param name="pNamedProfileInfo">A pointer to a <b>NAMED_PROFILE_INFO</b> structure.</param>
+    <returns>
+      <para>If this function succeeds, the return value is TRUE.</para>
+      <para>If this function fails, the return value is FALSE. When this occurs, the CMM should call <b>SetLastError</b> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMGetPS2ColorRenderingDictionary"></member>
+  <member name="Windows.CMGetPS2ColorRenderingIntent">
+    <summary>Retrieves the PostScript Level 2 color rendering intent from a profile.</summary>
+    <param name="hProfile">Specifies the profile to use.</param>
+    <param name="dwIntent">
+      <para>Specifies the desired rendering intent to retrieve. Can be one of the following values:</para>
+      <para>INTENT_PERCEPTUAL<br />INTENT_SATURATION<br />INTENT_RELATIVE_COLORIMETRIC<br />INTENT_ABSOLUTE_COLORIMETRIC</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering Intents</a>.</para>
+    </param>
+    <param name="lpBuffer">Points to a buffer in which the color rendering intent is to be placed. If the pointer is NULL, the function returns the size required for this buffer in <i>*lpcbSize</i>.</param>
+    <param name="lpcbSize">Points to a variable specifying the size of the buffer. On return, the variable contains has the number of bytes actually copied to the buffer.</param>
+    <returns>
+      <para>If this function succeeds, the return value is TRUE. It also returns TRUE if it is called with <i>lpBuffer</i> set to NULL and the size of the required buffer is copied into <i>lpcbSize</i>.</para>
+      <para>If this function fails, the return value is FALSE. When this occurs, the CMM should call <b>SetLastError</b> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMGetPS2ColorSpaceArray"></member>
+  <member name="Windows.CMIsProfileValid">
+    <summary>Reports whether the given profile is a valid ICC profile that can be used for color management.</summary>
+    <param name="hProfile">Specifies the profile to check.</param>
+    <param name="lpbValid">Pointer to a variable that is set on exit to TRUE if the profile is a valid ICC profile, or FALSE if not.</param>
+    <returns>
+      <para>If this function succeeds, the return value is TRUE.</para>
+      <para>If this function fails, the return value is FALSE. If the function fails, the CMM should call <b>SetLastError</b> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMTranslateColors">
+    <summary>Translates an array of colors from a source <a href="https://docs.microsoft.com//windows/win32/wcs/color-spaces">color space</a> to a destination color space using a color transform.</summary>
+    <param name="hcmTransform">Specifies the color transform to use.</param>
+    <param name="lpaInputColors">Points to an array of <see cref="COLOR" /> structures to translate.</param>
+    <param name="nColors">Specifies the number of elements in the array.</param>
+    <param name="ctInput">Specifies the color type of the input.</param>
+    <param name="lpaOutputColors">Points to a buffer in which an array of translated <b>COLOR</b> structures is to be placed.</param>
+    <param name="ctOutput">Specifies the output color type.</param>
+    <returns>
+      <para>If this function succeeds, the return value is TRUE.</para>
+      <para>If this function fails, the return value is FALSE. The CMM should call <b>SetLastError</b> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMTranslateRGB">
+    <summary>Translates an application-supplied RGBQuad into the device <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a>.</summary>
+    <param name="hcmTransform">Specifies the transform to be used.</param>
+    <param name="ColorRef">The RGBQuad to translate.</param>
+    <param name="lpColorRef">Points to a buffer in which to place the translation.</param>
+    <param name="dwFlags">
+      <para>Specifies how the transform should be used to make the translation. This parameter can take one of the following meanings.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. The CMM should call <b>SetLastError</b> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMTranslateRGBs">
+    <summary>
+      <para>[<b>CMTranslateRGBs</b> is no longer available for use as of Windows Vista.]</para>
+      <para>Translates a bitmap from one <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a> to another using a color transform.</para>
+    </summary>
+    <param name="hcmTransform">Specifies the color transform to use.</param>
+    <param name="lpSrcBits">Points to the bitmap to translate.</param>
+    <param name="bmInput">Specifies the input bitmap format.</param>
+    <param name="dwWidth">Specifies the number of pixels per scan line in the input bitmap.</param>
+    <param name="dwHeight">Specifies the number of scan lines in the input bitmap.</param>
+    <param name="dwStride">Specifies the number of bytes from the beginning of one scan line to the beginning of the next in the input bitmap. If <i>dwStride</i> is set to zero, the CMM should assume that scan lines are padded so as to be <b>DWORD</b>-aligned.</param>
+    <param name="lpDestBits">Points to a destination buffer in which to place the translated bitmap.</param>
+    <param name="bmOutput">Specifies the output bitmap format.</param>
+    <param name="dwTranslateDirection">
+      <para>Specifies the direction of the transform being used for the translation. This parameter must take one of the following values.</para>
+    </param>
+    <returns>
+      <para>Beginning with Windows Vista, the default CMM (Icm32.dll) will return <b>FALSE</b> and <see cref="GetLastError" /> will report ERROR_NOT_SUPPORTED.</para>
+      <para>
+        <b>Windows Server 2003, Windows XP and Windows 2000:</b>
+      </para>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. If the function is not successful, the CMM should call <see cref="SetLastError" /> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.CMTranslateRGBsExt">
+    <summary>Translates a bitmap from one defined format into a different defined format and calls a callback function periodically, if one is specified, to report progress and permit the calling application to terminate the translation.</summary>
+    <param name="hcmTransform">Specifies the color transform to use.</param>
+    <param name="lpSrcBits">Pointer to the bitmap to translate.</param>
+    <param name="bmInput">Specifies the input bitmap format.</param>
+    <param name="dwWidth">Specifies the number of pixels per scan line in the input bitmap.</param>
+    <param name="dwHeight">Specifies the number of scan lines in the input bitmap.</param>
+    <param name="dwInputStride">Specifies the number of bytes from the beginning of one scan line to the beginning of the next in the input bitmap. If <i>dwInputStride</i> is set to zero, the CMM should assume that scan lines are padded so as to be <b>DWORD</b>-aligned.</param>
+    <param name="lpDestBits">Points to a destination buffer in which to place the translated bitmap.</param>
+    <param name="bmOutput">Specifies the output bitmap format.</param>
+    <param name="dwOutputStride">Specifies the number of bytes from the beginning of one scan line to the beginning of the next in the input bitmap. If <i>dwOutputStride</i> is set to zero, the CMM should pad scan lines so that they are <b>DWORD</b>-aligned.</param>
+    <param name="lpfnCallback">Pointer to an application-supplied callback function called periodically by <b>CMTranslateRGBsExt</b> to report progress and allow the calling process to cancel the translation. (See <a href="https://docs.microsoft.com//windows/win32/wcs/icmprogressproccallback">ICMProgressProcCallback</a>.)</param>
+    <param name="ulCallbackData">Data passed back to the callback function, for example to identify the translation that is reporting progress.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b> and the CMM should call <b>SetLastError</b> to set the last error to a valid error value defined in Winerror.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.ColorProfileAddDisplayAssociation">
+    <summary>Associates an installed color profile with a specified display in the given scope.</summary>
+    <param name="scope">Specifies the association as system-wide or the current user.</param>
+    <param name="profileName">Identifies the installed profile to associate.</param>
+    <param name="targetAdapterID">An identifier assigned to the adapter (e.g. GPU) of the target display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="sourceID">An identifier assigned to the source of the display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="setAsDefault">Whether or not to set the newly associated profile as the default.</param>
+    <param name="associateAsAdvancedColor">Specifies to which association list the new profile is added.</param>
+    <returns>
+      <b>S_OK</b> for success, or a failure <b>HRESULT</b> value</returns>
+  </member>
+  <member name="Windows.ColorProfileGetDisplayDefault">
+    <summary>Gets the default color profile for a given display in the specified scope.</summary>
+    <param name="scope">Specifies the association as system-wide or the current user.</param>
+    <param name="targetAdapterID">An identifier assigned to the adapter (e.g. GPU) of the target display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="sourceID">An identifier assigned to the source of the display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="profileType">The type of color profile to return (currently only CPT_ICC is supported).</param>
+    <param name="profileSubType">The subtype of the color profile to return.</param>
+    <param name="profileName">Receives a pointer to the default color profile name, which must be freed with <see cref="LocalFree" />.</param>
+  </member>
+  <member name="Windows.ColorProfileGetDisplayList">
+    <summary>Retrieves the list of profiles associated with a given display in the specified scope.</summary>
+    <param name="scope">Specifies the association as system-wide or the current user.</param>
+    <param name="targetAdapterID">An identifier assigned to the adapter (e.g. GPU) of the target display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="sourceID">An identifier assigned to the source of the display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="profileList">Pointer to a buffer where the profile names are placed, must be freed with <see cref="LocalFree" />.</param>
+    <param name="profileCount">Receives the number of profiles names copied into profileList.</param>
+    <returns>
+      <b>S_OK</b> for success, or a failure <b>HRESULT</b> value</returns>
+  </member>
+  <member name="Windows.ColorProfileGetDisplayUserScope">
+    <summary>Gets the currently selected color profile scope of the provided display - either user or system.</summary>
+    <param name="targetAdapterID">An identifier assigned to the adapter (e.g. GPU) of the target display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="sourceID">An identifier assigned to the source of the display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="scope">Returns the scope of the currently selected color profile - either the current user or system.</param>
+    <returns>
+      <b>S_OK</b> for success, or a failure <b>HRESULT</b> value</returns>
+  </member>
+  <member name="Windows.ColorProfileRemoveDisplayAssociation">
+    <summary>Disassociates an installed color profile from a specified display in the given scope.</summary>
+    <param name="scope">Specifies the association as system-wide or the current user.</param>
+    <param name="profileName">Identifies the installed profile to associate.</param>
+    <param name="targetAdapterID">An identifier assigned to the adapter (e.g. GPU) of the target display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="sourceID">An identifier assigned to the source of the display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="dissociateAdvancedColor">Specifies to which association list the new profile is added.</param>
+    <returns>
+      <b>S_OK</b> for success, or a failure <b>HRESULT</b> value</returns>
+  </member>
+  <member name="Windows.ColorProfileSetDisplayDefaultAssociation">
+    <summary>Sets an installed color profile as the default profile for a specified display in the given scope.</summary>
+    <param name="scope">Specifies the association as system-wide or the current user.</param>
+    <param name="profileName">Identifies the installed profile to associate.</param>
+    <param name="profileType">The type of color profile to set as default (currently only CPT_ICC is supported).</param>
+    <param name="profileSubType">The subtype of the color profile to set as default.</param>
+    <param name="targetAdapterID">An identifier assigned to the adapter (e.g. GPU) of the target display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <param name="sourceID">An identifier assigned to the source of the display. See <a href="https://docs.microsoft.com/#remarks">Remarks</a> for more details.</param>
+    <returns>
+      <b>S_OK</b> for success, or a failure <b>HRESULT</b> value</returns>
+  </member>
+  <member name="Windows.ConvertColorNameToIndex">
+    <summary>Converts color names in a named color space to index numbers in an International Color Consortium (ICC) color profile.</summary>
+    <param name="hProfile">The handle to an ICC named color profile.</param>
+    <param name="paColorName">Pointer to an array of color name structures.</param>
+    <param name="paIndex">Pointer to an array of <b>DWORDS</b> that this function fills with the indices. The indices begin with one, not zero.</param>
+    <param name="dwCount">The number of color names to convert.</param>
+    <returns>
+      <para>If this function succeeds with the conversion, the return value is <b>TRUE</b>.</para>
+      <para>If the conversion function fails, the return value is <b>FALSE</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.ConvertIndexToColorName">
+    <summary>Transforms indices in a color space to an array of names in a named color space.</summary>
+    <param name="hProfile">The handle to an International Color Consortium (ICC) color space profile.</param>
+    <param name="paIndex">Pointer to an array of color-space index numbers. The indices begin with one, not zero.</param>
+    <param name="paColorName">Pointer to an array of color name structures.</param>
+    <param name="dwCount">The number of indices to convert.</param>
+    <returns>
+      <para>If this conversion function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this conversion function fails, the return value is <b>FALSE</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.CreateColorTransform">
+    <summary>Creates a color transform that applications can use to perform color management.</summary>
+    <param name="pLogColorSpace">Pointer to the input <see cref="LOGCOLORSPACEA" />.</param>
+    <param name="hDestProfile">Handle to the profile of the destination device. The function determines whether the HPROFILE contains International Color Consortium (ICC) or Windows Color System (WCS) profile information.</param>
+    <param name="hTargetProfile">Handle to the profile of the target device. The function determines whether the HPROFILE contains ICC or WCS profile information.</param>
+    <param name="dwFlags">Specifies flags to used control creation of the transform. See Remarks.</param>
+    <returns>
+      <para>If this function succeeds, the return value is a handle to the color transform.</para>
+      <para>If this function fails, the return value is <b>NULL</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.CreateColorTransformA">
+    <summary>Creates a color transform that applications can use to perform color management.</summary>
+    <param name="pLogColorSpace">Pointer to the input <see cref="LOGCOLORSPACEA" />.</param>
+    <param name="hDestProfile">Handle to the profile of the destination device. The function determines whether the HPROFILE contains International Color Consortium (ICC) or Windows Color System (WCS) profile information.</param>
+    <param name="hTargetProfile">Handle to the profile of the target device. The function determines whether the HPROFILE contains ICC or WCS profile information.</param>
+    <param name="dwFlags">Specifies flags to used control creation of the transform. See Remarks.</param>
+    <returns>
+      <para>If this function succeeds, the return value is a handle to the color transform.</para>
+      <para>If this function fails, the return value is <b>NULL</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.CreateColorTransform">
+    <summary>Creates a color transform that applications can use to perform color management.</summary>
+    <param name="pLogColorSpace">Pointer to the input <see cref="LOGCOLORSPACEA" />.</param>
+    <param name="hDestProfile">Handle to the profile of the destination device. The function determines whether the HPROFILE contains International Color Consortium (ICC) or Windows Color System (WCS) profile information.</param>
+    <param name="hTargetProfile">Handle to the profile of the target device. The function determines whether the HPROFILE contains ICC or WCS profile information.</param>
+    <param name="dwFlags">Specifies flags to used control creation of the transform. See Remarks.</param>
+    <returns>
+      <para>If this function succeeds, the return value is a handle to the color transform.</para>
+      <para>If this function fails, the return value is <b>NULL</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.CreateColorTransformW">
+    <summary>Creates a color transform that applications can use to perform color management.</summary>
+    <param name="pLogColorSpace">Pointer to the input <see cref="LOGCOLORSPACEA" />.</param>
+    <param name="hDestProfile">Handle to the profile of the destination device. The function determines whether the HPROFILE contains International Color Consortium (ICC) or Windows Color System (WCS) profile information.</param>
+    <param name="hTargetProfile">Handle to the profile of the target device. The function determines whether the HPROFILE contains ICC or WCS profile information.</param>
+    <param name="dwFlags">Specifies flags to used control creation of the transform. See Remarks.</param>
+    <returns>
+      <para>If this function succeeds, the return value is a handle to the color transform.</para>
+      <para>If this function fails, the return value is <b>NULL</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.CreateDeviceLinkProfile">
+    <summary>Creates an International Color Consortium (ICC) <i>device link profile</i> from a set of color profiles, using the specified intents.</summary>
+    <param name="hProfile">Pointer to an array of handles of the color profiles to be used. The function determines whether the HPROFILEs contain ICC profile information and, if so, it processes them appropriately.</param>
+    <param name="nProfiles">Specifies the number of profiles in the array pointed to by <i>hProfile</i>.</param>
+    <param name="padwIntent">Pointer to an array of <b>DWORDS</b> containing the intents to be used. See <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering intents</a>.</param>
+    <param name="nIntents">The number of intents in the array pointed to by <i>padwIntent</i>.</param>
+    <param name="dwFlags">Specifies flags to used control creation of the transform. For details, see <a href="https://docs.microsoft.com//windows/win32/wcs/cmm-transform-creation-flags">CMM Transform Creation Flags</a>.</param>
+    <param name="pProfileData">Pointer to a pointer to a buffer. If successful, this function allocates the buffer, places its address in <i>*pProfileData</i>, and fills it with a device link profile. If the function succeeds, the calling application must free the buffer after it is no longer needed.</param>
+    <param name="indexPreferredCMM">Specifies the one-based index of the color profile that indicates what color management module (CMM) to use. The application developer may allow Windows to choose the CMM by setting this parameter to INDEX_DONT_CARE. See <a href="https://docs.microsoft.com//windows/win32/wcs/using-color-management-modules--cmm">Using Color Management Modules (CMM)</a>.</param>
+    <returns>
+      <para>If this function succeeds, the return value is a nonzero value.</para>
+      <para>If this function fails, the return value is zero. For extended error information, call GetLastError.</para>
+    </returns>
+  </member>
+  <member name="Windows.CreateMultiProfileTransform">
+    <summary>Accepts an array of profiles or a single <a href="https://docs.microsoft.com//windows/win32/wcs/using-device-profiles-with-wcs">device link profile</a> and creates a color transform that applications can use to perform color mapping.</summary>
+    <param name="pahProfiles">Pointer to an array of handles to the profiles to be used. The function determines whether the HPROFILEs contain International Color Consortium (ICC) or Windows Color System (WCS) profile information and processes them appropriately. When valid WCS profiles are returned by <see cref="OpenColorProfileW" /> and <a href="https://github.com/microsoftdocs/sdk-api/blob/docs/sdk-api-src/content/icm/nf-icm-wcsopencolorprofilew.md">WcsOpenColorProfileW</a>, these profile handles contain the combination of DMP, CAMP, and GMMP profiles.</param>
+    <param name="nProfiles">Specifies the number of profiles in the array. The maximum is 10.</param>
+    <param name="padwIntent">
+      <para>Pointer to an array of intents to use. Each intent is one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <term>
+            <b>INTENT_PERCEPTUAL</b>
+          </term>
+        </listheader>
+        <listheader>
+          <term>
+            <b>INTENT_SATURATION</b>
+          </term>
+        </listheader>
+        <listheader>
+          <term>
+            <b>INTENT_RELATIVE_COLORIMETRIC</b>
+          </term>
+        </listheader>
+        <listheader>
+          <term>
+            <b>INTENT_ABSOLUTE_COLORIMETRIC</b>
+          </term>
+        </listheader>
+      </list>
+      <para>GMMPs are a generalization of intents. There are two possible sources of intents: the "destination" profile and the intent list parameter to <b>CreateMultiProfileTransform</b>. The term "destination" is not used since all but two of the profiles in the profile list parameter will serve as first destination and then source.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering Intents</a>.</para>
+    </param>
+    <param name="nIntents">Specifies the number of elements in the intents array: can either be 1 or the same value as <i>nProfiles</i>. For profile arrays that contain any WCS profiles, the first rendering intent is ignored and only <i>nProfiles</i> -1 elements are used for these profile arrays. The maximum number of <i>nIntents</i> is 10.</param>
+    <param name="dwFlags">Specifies flags used to control creation of the transform. See Remarks.</param>
+    <param name="indexPreferredCMM">Specifies the one-based index of the color profile that indicates what color management module (CMM) to use. The application developer may allow Windows to choose the CMM by setting this parameter to INDEX_DONT_CARE. See <a href="https://docs.microsoft.com//windows/win32/wcs/using-color-management-modules--cmm">Using Color Management Modules (CMM)</a> Third party CMMs are only available for ICC workflows. Profile arrays containing WCS profiles will ignore this flag. It is also ignored when only ICC profiles are used and when the WCS_ALWAYS flag is used.</param>
+    <returns>
+      <para>If this function succeeds, the return value is a handle to the color transform.</para>
+      <para>If this function fails, the return value is <b>NULL</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.CreateProfileFromLogColorSpace">
+    <summary>Converts a logical <a href="https://docs.microsoft.com//windows/win32/wcs/color-spaces">color space</a> to a <a href="https://docs.microsoft.com//windows/win32/wcs/using-device-profiles-with-wcs">device profile</a>.</summary>
+    <param name="pLogColorSpace">A pointer to a logical color space structure. See <see cref="LOGCOLORSPACEA" /> for details. The <b>lcsFilename</b> [0] member of the structure must be set to the <b>null</b> character ('\0') or this function call will fail with the return value of INVALID_PARAMETER.</param>
+    <param name="pProfile">A pointer to a pointer to a buffer where the device profile will be created. This function allocates the buffer and fills it with profile information if it is successful. If not, the pointer is set to <b>NULL</b>. The caller is responsible for freeing this buffer when it is no longer needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>.</para>
+      <para>If the <b>lcsFilename</b> [0] member if the <see cref="LOGCOLORSPACEA" /> structure pointed to by <i>pLogColorSpace</i> is not '\0', this function returns INVALID_PARAMETER.</para>
+    </returns>
+  </member>
+  <member name="Windows.CreateProfileFromLogColorSpaceA">
+    <summary>Converts a logical <a href="https://docs.microsoft.com//windows/win32/wcs/color-spaces">color space</a> to a <a href="https://docs.microsoft.com//windows/win32/wcs/using-device-profiles-with-wcs">device profile</a>.</summary>
+    <param name="pLogColorSpace">A pointer to a logical color space structure. See <see cref="LOGCOLORSPACEA" /> for details. The <b>lcsFilename</b> [0] member of the structure must be set to the <b>null</b> character ('\0') or this function call will fail with the return value of INVALID_PARAMETER.</param>
+    <param name="pProfile">A pointer to a pointer to a buffer where the device profile will be created. This function allocates the buffer and fills it with profile information if it is successful. If not, the pointer is set to <b>NULL</b>. The caller is responsible for freeing this buffer when it is no longer needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>.</para>
+      <para>If the <b>lcsFilename</b> [0] member if the <see cref="LOGCOLORSPACEA" /> structure pointed to by <i>pLogColorSpace</i> is not '\0', this function returns INVALID_PARAMETER.</para>
+    </returns>
+  </member>
+  <member name="Windows.CreateProfileFromLogColorSpace">
+    <summary>Converts a logical <a href="https://docs.microsoft.com//windows/win32/wcs/color-spaces">color space</a> to a <a href="https://docs.microsoft.com//windows/win32/wcs/using-device-profiles-with-wcs">device profile</a>.</summary>
+    <param name="pLogColorSpace">A pointer to a logical color space structure. See <see cref="LOGCOLORSPACEA" /> for details. The <b>lcsFilename</b> [0] member of the structure must be set to the <b>null</b> character ('\0') or this function call will fail with the return value of INVALID_PARAMETER.</param>
+    <param name="pProfile">A pointer to a pointer to a buffer where the device profile will be created. This function allocates the buffer and fills it with profile information if it is successful. If not, the pointer is set to <b>NULL</b>. The caller is responsible for freeing this buffer when it is no longer needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>.</para>
+      <para>If the <b>lcsFilename</b> [0] member if the <see cref="LOGCOLORSPACEA" /> structure pointed to by <i>pLogColorSpace</i> is not '\0', this function returns INVALID_PARAMETER.</para>
+    </returns>
+  </member>
+  <member name="Windows.CreateProfileFromLogColorSpaceW">
+    <summary>Converts a logical <a href="https://docs.microsoft.com//windows/win32/wcs/color-spaces">color space</a> to a <a href="https://docs.microsoft.com//windows/win32/wcs/using-device-profiles-with-wcs">device profile</a>.</summary>
+    <param name="pLogColorSpace">A pointer to a logical color space structure. See <see cref="LOGCOLORSPACEA" /> for details. The <b>lcsFilename</b> [0] member of the structure must be set to the <b>null</b> character ('\0') or this function call will fail with the return value of INVALID_PARAMETER.</param>
+    <param name="pProfile">A pointer to a pointer to a buffer where the device profile will be created. This function allocates the buffer and fills it with profile information if it is successful. If not, the pointer is set to <b>NULL</b>. The caller is responsible for freeing this buffer when it is no longer needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>.</para>
+      <para>If the <b>lcsFilename</b> [0] member if the <see cref="LOGCOLORSPACEA" /> structure pointed to by <i>pLogColorSpace</i> is not '\0', this function returns INVALID_PARAMETER.</para>
+    </returns>
+  </member>
+  <member name="Windows.DeleteColorTransform">
+    <summary>Deletes a given color transform.</summary>
+    <param name="hxform">Identifies the color transform to delete.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.DisassociateColorProfileFromDevice">
+    <summary>
+      <para>Disassociates a specified color profile with a specified device on a specified computer.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileRemoveDisplayAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to disassociate the specified profile and device. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pProfileName">Pointer to the file name of the profile to disassociate.</param>
+    <param name="pDeviceName">Pointer to the name of the device to disassociate.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.DisassociateColorProfileFromDeviceA">
+    <summary>
+      <para>Disassociates a specified color profile with a specified device on a specified computer.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileRemoveDisplayAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to disassociate the specified profile and device. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pProfileName">Pointer to the file name of the profile to disassociate.</param>
+    <param name="pDeviceName">Pointer to the name of the device to disassociate.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.DisassociateColorProfileFromDevice">
+    <summary>
+      <para>Disassociates a specified color profile with a specified device on a specified computer.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileRemoveDisplayAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to disassociate the specified profile and device. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pProfileName">Pointer to the file name of the profile to disassociate.</param>
+    <param name="pDeviceName">Pointer to the name of the device to disassociate.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.DisassociateColorProfileFromDeviceW">
+    <summary>
+      <para>Disassociates a specified color profile with a specified device on a specified computer.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileRemoveDisplayAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to disassociate the specified profile and device. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pProfileName">Pointer to the file name of the profile to disassociate.</param>
+    <param name="pDeviceName">Pointer to the name of the device to disassociate.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.EnumColorProfiles">
+    <summary>Enumerates all the profiles satisfying the given enumeration criteria.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to enumerate profiles. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pEnumRecord">Pointer to a structure specifying the enumeration criteria.</param>
+    <param name="pEnumerationBuffer">Pointer to a buffer in which the profiles are to be enumerated. A MULTI_SZ string of profile names satisfying the criteria specified in <i>*pEnumRecord</i> will be placed in this buffer.</param>
+    <param name="pdwSizeOfEnumerationBuffer">Pointer to a variable containing the size of the buffer pointed to by <i>pBuffer</i>. On return, <i>*pdwSize</i> contains the size of buffer actually used or needed.</param>
+    <param name="pnProfiles">Pointer to a variable that will contain, on return, the number of profile names actually copied to the buffer.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.EnumColorProfilesA">
+    <summary>Enumerates all the profiles satisfying the given enumeration criteria.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to enumerate profiles. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pEnumRecord">Pointer to a structure specifying the enumeration criteria.</param>
+    <param name="pEnumerationBuffer">Pointer to a buffer in which the profiles are to be enumerated. A MULTI_SZ string of profile names satisfying the criteria specified in <i>*pEnumRecord</i> will be placed in this buffer.</param>
+    <param name="pdwSizeOfEnumerationBuffer">Pointer to a variable containing the size of the buffer pointed to by <i>pBuffer</i>. On return, <i>*pdwSize</i> contains the size of buffer actually used or needed.</param>
+    <param name="pnProfiles">Pointer to a variable that will contain, on return, the number of profile names actually copied to the buffer.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.EnumColorProfiles">
+    <summary>Enumerates all the profiles satisfying the given enumeration criteria.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to enumerate profiles. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pEnumRecord">Pointer to a structure specifying the enumeration criteria.</param>
+    <param name="pEnumerationBuffer">Pointer to a buffer in which the profiles are to be enumerated. A MULTI_SZ string of profile names satisfying the criteria specified in <i>*pEnumRecord</i> will be placed in this buffer.</param>
+    <param name="pdwSizeOfEnumerationBuffer">Pointer to a variable containing the size of the buffer pointed to by <i>pBuffer</i>. On return, <i>*pdwSize</i> contains the size of buffer actually used or needed.</param>
+    <param name="pnProfiles">Pointer to a variable that will contain, on return, the number of profile names actually copied to the buffer.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.EnumColorProfilesW">
+    <summary>Enumerates all the profiles satisfying the given enumeration criteria.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to enumerate profiles. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pEnumRecord">Pointer to a structure specifying the enumeration criteria.</param>
+    <param name="pEnumerationBuffer">Pointer to a buffer in which the profiles are to be enumerated. A MULTI_SZ string of profile names satisfying the criteria specified in <i>*pEnumRecord</i> will be placed in this buffer.</param>
+    <param name="pdwSizeOfEnumerationBuffer">Pointer to a variable containing the size of the buffer pointed to by <i>pBuffer</i>. On return, <i>*pdwSize</i> contains the size of buffer actually used or needed.</param>
+    <param name="pnProfiles">Pointer to a variable that will contain, on return, the number of profile names actually copied to the buffer.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetCMMInfo">
+    <summary>Retrieves various information about the color management module (CMM) that created the specified color transform.</summary>
+    <param name="hColorTransform">Identifies the transform for which to find CMM information.</param>
+    <param name="unnamedParam2">
+      <para>Specifies the information to be retrieved. This parameter can take one of the following constant values.</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>CMM_WIN_VERSION</b></term></listheader></list> | Retrieves the version of Windows targeted by the color management module (CMM).<br /> | | <list type="bullet"><listheader><term><b>CMM_DLL_VERSION</b></term></listheader></list> | Retrieves the version number of the CMM.<br /> | | <list type="bullet"><listheader><term><b>CMM_IDENT</b></term></listheader></list> | Retrieves the CMM signature registered with the International Color Consortium (ICC).<br /> |</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is the information specified in <i>dwInfo.</i></para>
+      <para>If this function fails, the return value is zero.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetColorDirectory">
+    <summary>
+      <blockquote>
+        <para>[!NOTE] This API may be unavailable in future releases. We encourage new and existing software to use other APIs for color profile interactions. Please refer to the below table for some examples.</para>
+        <para>| Scenario | Mechanism | | :------: | :------: | | Enumerating all installed profiles | Use <see cref="WcsEnumColorProfilesSize" /> and <see cref="WcsEnumColorProfiles" />, or <see cref="EnumColorProfilesA" /> | | Installing/Uninstalling color profiles | Use <see cref="InstallColorProfileA" />/<see cref="UninstallColorProfileA" /> | | Opening a color profile file directly | Use <see cref="OpenColorProfileA" /> with dwType=PROFILE_FILENAME in the PROFILE struct parameter.<br /> Or use <see cref="WcsOpenColorProfileA" />. contains many APIs that accept the returned HPROFILE for color profile manipulation |</para>
+      </blockquote>
+      <para>
+        <br />
+      </para>
+      <para>Retrieves the path of the Windows COLOR directory on a specified machine.</para>
+    </summary>
+    <param name="pMachineName">Reserved; must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which the profile is to be installed. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pBuffer">Points to the buffer in which the color directory path is to be placed.</param>
+    <param name="pdwSize">Points to a variable containing the size in bytes of the buffer pointed to by <i>pBuffer</i>. On return, the variable contains the size of the buffer actually used or needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetColorDirectoryA">
+    <summary>
+      <blockquote>
+        <para>[!NOTE] This API may be unavailable in future releases. We encourage new and existing software to use other APIs for color profile interactions. Please refer to the below table for some examples.</para>
+        <para>| Scenario | Mechanism | | :------: | :------: | | Enumerating all installed profiles | Use <see cref="WcsEnumColorProfilesSize" /> and <see cref="WcsEnumColorProfiles" />, or <see cref="EnumColorProfilesA" /> | | Installing/Uninstalling color profiles | Use <see cref="InstallColorProfileA" />/<see cref="UninstallColorProfileA" /> | | Opening a color profile file directly | Use <see cref="OpenColorProfileA" /> with dwType=PROFILE_FILENAME in the PROFILE struct parameter.<br /> Or use <see cref="WcsOpenColorProfileA" />. contains many APIs that accept the returned HPROFILE for color profile manipulation |</para>
+      </blockquote>
+      <para>
+        <br />
+      </para>
+      <para>Retrieves the path of the Windows COLOR directory on a specified machine.</para>
+    </summary>
+    <param name="pMachineName">Reserved; must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which the profile is to be installed. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pBuffer">Points to the buffer in which the color directory path is to be placed.</param>
+    <param name="pdwSize">Points to a variable containing the size in bytes of the buffer pointed to by <i>pBuffer</i>. On return, the variable contains the size of the buffer actually used or needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetColorDirectory">
+    <summary>
+      <blockquote>
+        <para>[!NOTE] This API may be unavailable in future releases. We encourage new and existing software to use other APIs for color profile interactions. Please refer to the below table for some examples.</para>
+        <para>| Scenario | Mechanism | | :------: | :------: | | Enumerating all installed profiles | Use <see cref="WcsEnumColorProfilesSize" /> and <see cref="WcsEnumColorProfiles" />, or <see cref="EnumColorProfilesW" /> | | Installing/Uninstalling color profiles | Use <see cref="InstallColorProfileW" />/<see cref="UninstallColorProfileW" /> | | Opening a color profile file directly | Use <see cref="OpenColorProfileW" /> with dwType=PROFILE_FILENAME in the PROFILE struct parameter.<br /> Or use <see cref="WcsOpenColorProfileW" />. contains many APIs that accept the returned HPROFILE for color profile manipulation |</para>
+      </blockquote>
+      <para>
+        <br />
+      </para>
+      <para>Retrieves the path of the Windows COLOR directory on a specified machine.</para>
+    </summary>
+    <param name="pMachineName">Reserved; must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which the profile is to be installed. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pBuffer">Points to the buffer in which the color directory path is to be placed.</param>
+    <param name="pdwSize">Points to a variable containing the size in bytes of the buffer pointed to by <i>pBuffer</i>. On return, the variable contains the size of the buffer actually used or needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetColorDirectoryW">
+    <summary>
+      <blockquote>
+        <para>[!NOTE] This API may be unavailable in future releases. We encourage new and existing software to use other APIs for color profile interactions. Please refer to the below table for some examples.</para>
+        <para>| Scenario | Mechanism | | :------: | :------: | | Enumerating all installed profiles | Use <see cref="WcsEnumColorProfilesSize" /> and <see cref="WcsEnumColorProfiles" />, or <see cref="EnumColorProfilesW" /> | | Installing/Uninstalling color profiles | Use <see cref="InstallColorProfileW" />/<see cref="UninstallColorProfileW" /> | | Opening a color profile file directly | Use <see cref="OpenColorProfileW" /> with dwType=PROFILE_FILENAME in the PROFILE struct parameter.<br /> Or use <see cref="WcsOpenColorProfileW" />. contains many APIs that accept the returned HPROFILE for color profile manipulation |</para>
+      </blockquote>
+      <para>
+        <br />
+      </para>
+      <para>Retrieves the path of the Windows COLOR directory on a specified machine.</para>
+    </summary>
+    <param name="pMachineName">Reserved; must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which the profile is to be installed. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pBuffer">Points to the buffer in which the color directory path is to be placed.</param>
+    <param name="pdwSize">Points to a variable containing the size in bytes of the buffer pointed to by <i>pBuffer</i>. On return, the variable contains the size of the buffer actually used or needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetColorProfileElement">
+    <summary>Copies data from a specified tagged profile element of a specified color profile into a buffer.</summary>
+    <param name="hProfile">Specifies a handle to the International Color Consortium (ICC) color profile in question.</param>
+    <param name="tag">Identifies the tagged element from which to copy.</param>
+    <param name="dwOffset">Specifies the offset from the first byte of the tagged element data at which to begin copying.</param>
+    <param name="pcbElement">Pointer to a variable specifying the number of bytes to copy. On return, the variable contains the number of bytes actually copied.</param>
+    <param name="pElement">Pointer to a buffer into which the tagged element data is to be copied. The buffer must contain at least as many bytes as are specified by the variable pointed to by <i>pcbSize</i>. If the <i>pBuffer</i> pointer is set to <b>NULL</b>, the size of the entire tagged element data in bytes is returned in the memory location pointed to by <i>pcbSize,</i> and <i>dwOffset</i> is ignored. In this case, the function will return <b>FALSE</b>.</param>
+    <param name="pbReference">Points to a Boolean value that is set to <b>TRUE</b> if more than one tag in the color profile refers to the same data as the specified tag refers to, or <b>FALSE</b> if not.</param>
+    <returns>
+      <para>If this function succeeds, the return value is nonzero.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetColorProfileElementTag">
+    <summary>Retrieves the tag name specified by <i>dwIndex</i> in the tag table of a given International Color Consortium (ICC) color profile, where <i>dwIndex</i> is a one-based index into that table.</summary>
+    <param name="hProfile">Specifies a handle to the ICC color profile in question.</param>
+    <param name="dwIndex">Specifies the one-based index of the tag to retrieve.</param>
+    <param name="pTag">Pointer to a variable in which the tag name is to be placed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetColorProfileFromHandle">
+    <summary>Given a handle to an open color profile, the <b>GetColorProfileFromHandle</b> function copies the contents of the profile into a buffer supplied by the application. If the handle is a Windows Color System (WCS) handle, then the DMP is returned and the CAMP and GMMP associated with the HPROFILE are ignored.</summary>
+    <param name="hProfile">Handle to an open color profile. The function determines whether the HPROFILE contains ICC or WCS profile information.</param>
+    <param name="pProfile">Pointer to buffer to receive raw ICC or DMP profile data. Can be <b>NULL</b>. If it is, the size required for the buffer will be stored in the memory location pointed to by <i>pcbSize</i>. The buffer can be allocated to the appropriate size, and this function called again with <i>pBuffer</i> containing the address of the buffer.</param>
+    <param name="pcbProfile">Pointer to a <b>DWORD</b> that holds the size of buffer pointed at by <i>pBuffer</i>. On return it is filled with size of buffer that was actually used if the function succeeds. If this function is called with <i>pBuffer</i> set to <b>NULL</b>, this parameter will contain the size of the buffer required.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>. It returns <b>FALSE</b> if the <i>pBuffer</i> parameter is <b>NULL</b> and the size required for the buffer is copied into <i>pcbSize.</i></para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetColorProfileHeader">
+    <summary>Retrieves or derives ICC header structure from either ICC color profile or WCS XML profile. Drivers and applications should assume returning <b>TRUE</b> only indicates that a properly structured header is returned. Each tag will still need to be validated independently using either legacy ICM2 APIs or XML schema APIs.</summary>
+    <param name="hProfile">Specifies a handle to the color profile in question.</param>
+    <param name="pHeader">Points to a variable in which the ICC header structure is to be placed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. This function will fail is an invalid ICC or WCS XML profile is referenced in the hProfile parameter. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetCountColorProfileElements">
+    <summary>Retrieves the number of tagged elements in a given color profile.</summary>
+    <param name="hProfile">Specifies a handle to the profile in question.</param>
+    <param name="pnElementCount">Pointer to a variable in which to place the number of tagged elements in the profile.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetNamedProfileInfo">
+    <summary>Retrieves information about the International Color Consortium (ICC) named color profile that is specified in the first parameter.</summary>
+    <param name="hProfile">The handle to the ICC profile from which the information will be retrieved.</param>
+    <param name="pNamedProfileInfo">A pointer to a <b>NAMED_PROFILE_INFO</b> structure.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetPS2ColorRenderingDictionary">
+    <summary>Retrieves the PostScript Level 2 color rendering dictionary from the specified ICC color profile.</summary>
+    <param name="hProfile">Specifies a handle to the ICC color profile in question.</param>
+    <param name="dwIntent">
+      <para>Specifies the desired rendering intent for the color rendering dictionary. Valid values are:</para>
+      <list type="bullet">
+        <item>
+          <description>INTENT_PERCEPTUAL</description>
+        </item>
+        <item>
+          <description>INTENT_SATURATION</description>
+        </item>
+        <item>
+          <description>INTENT_RELATIVE_COLORIMETRIC</description>
+        </item>
+        <item>
+          <description>INTENT_ABSOLUTE_COLORIMETRIC</description>
+        </item>
+      </list>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering intents</a>.</para>
+    </param>
+    <param name="pPS2ColorRenderingDictionary">Pointer to a buffer in which the color rendering dictionary is to be placed. If the <i>pBuffer</i> pointer is set to <b>NULL</b>, the required buffer size is returned in <i>*pcbSize</i>.</param>
+    <param name="pcbPS2ColorRenderingDictionary">Pointer to a variable containing the size of the buffer in bytes. On return, the variable contains the number of bytes actually copied.</param>
+    <param name="pbBinary">Pointer to a Boolean variable. If <b>TRUE</b>, the color rendering dictionary could be copied in binary form. If <b>FALSE</b>, the dictionary will be encoded in ASCII85 form. On return, this Boolean variable indicates whether the dictionary was actually binary (<b>TRUE</b>) or ASCII85 (<b>FALSE</b>).</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>. It also returns <b>TRUE</b> if the <i>pBuffer</i> parameter is <b>NULL</b> and the size required for the buffer is copied into <i>pcbSize.</i></para>
+      <para>If this function fails, the return value is <b>FALSE</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetPS2ColorRenderingIntent">
+    <summary>Retrieves the PostScript Level 2 color <a href="https://docs.microsoft.com//windows/win32/wcs/r">rendering intent</a> from an ICC color profile.</summary>
+    <param name="hProfile">Specifies a handle to the ICC color profile in question.</param>
+    <param name="dwIntent">
+      <para>Specifies the desired rendering intent to retrieve. Valid values are:</para>
+      <para>INTENT_PERCEPTUAL</para>
+      <para>INTENT_SATURATION</para>
+      <para>INTENT_RELATIVE_COLORIMETRIC</para>
+      <para>INTENT_ABSOLUTE_COLORIMETRIC</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering Intents</a>.</para>
+    </param>
+    <param name="pBuffer">Points to a buffer in which the color rendering intent is to be placed. If the <i>pBuffer</i> pointer is set to <b>NULL</b>, the buffer size required is returned in <i>*pcbSize</i>.</param>
+    <param name="pcbPS2ColorRenderingIntent">Points to a variable containing the buffer size in bytes. On return, this variable contains the number of bytes actually copied.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>. If this function succeeds, the return value is <b>TRUE</b>. It also returns <b>TRUE</b> if the <i>pBuffer</i> parameter is <b>NULL</b> and the size required for the buffer is copied into <i>pcbSize.</i></para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetPS2ColorSpaceArray">
+    <summary>Retrieves the PostScript Level 2 <a href="https://docs.microsoft.com//windows/win32/wcs/color-spaces">color space</a> array from an ICC color profile.</summary>
+    <param name="hProfile">Specifies a handle to the ICC profile from which to retrieve the PostScript Level 2 color space array.</param>
+    <param name="dwIntent">
+      <para>Specifies the desired rendering intent for the color space array. This field may take one of the following values:</para>
+      <para>INTENT_PERCEPTUAL</para>
+      <para>INTENT_SATURATION</para>
+      <para>INTENT_RELATIVE_COLORIMETRIC</para>
+      <para>INTENT_ABSOLUTE_COLORIMETRIC</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering Intents</a>.</para>
+    </param>
+    <param name="dwCSAType">Specifies the type of color space array. See <a href="https://docs.microsoft.com//windows/win32/wcs/color-space-type-identifiers">Color Space Type Identifiers</a>.</param>
+    <param name="pPS2ColorSpaceArray">Pointer to a buffer in which the color space array is to be placed. If the <i>pBuffer</i> pointer is set to <b>NULL</b>, the function returns the required size of the buffer in the memory location pointed to by <i>pcbSize</i>.</param>
+    <param name="pcbPS2ColorSpaceArray">Pointer to a variable containing the size of the buffer in bytes. On return, it contains the number of bytes copied into the buffer.</param>
+    <param name="pbBinary">Pointer to a Boolean variable. If set to <b>TRUE</b>, the data copied could be binary. If set to <b>FALSE</b>, data should be encoded as ASCII85. On return, the memory location pointed to by <i>pbBinary</i> indicates whether the data returned actually is binary (<b>TRUE</b>) or ASCII85 (<b>FALSE</b>).</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>. It also returns <b>TRUE</b> if the <i>pBuffer</i> parameter is <b>NULL</b> and the size required for the buffer is copied into <i>pcbSize.</i></para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetStandardColorSpaceProfile">
+    <summary>Retrieves the color profile registered for the specified standard <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a>.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to get a standard color space profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="dwSCS">Specifies the ID value of the standard color space for which to retrieve the profile. The only valid values for this parameter are LCS_sRGB and LCS_WINDOWS_COLOR_SPACE.</param>
+    <param name="pBuffer">Pointer to the buffer in which the name of the profile is to be placed. If <b>NULL</b>, the call will return <b>TRUE</b> and the required size of the buffer is placed in <i>pdwSize.</i></param>
+    <param name="pcbSize">Pointer to a variable containing the size in bytes of the buffer pointed to by <i>pProfileName</i>. On return, the variable contains the size of the buffer actually used or needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetStandardColorSpaceProfileA">
+    <summary>Retrieves the color profile registered for the specified standard <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a>.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to get a standard color space profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="dwSCS">Specifies the ID value of the standard color space for which to retrieve the profile. The only valid values for this parameter are LCS_sRGB and LCS_WINDOWS_COLOR_SPACE.</param>
+    <param name="pBuffer">Pointer to the buffer in which the name of the profile is to be placed. If <b>NULL</b>, the call will return <b>TRUE</b> and the required size of the buffer is placed in <i>pdwSize.</i></param>
+    <param name="pcbSize">Pointer to a variable containing the size in bytes of the buffer pointed to by <i>pProfileName</i>. On return, the variable contains the size of the buffer actually used or needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetStandardColorSpaceProfile">
+    <summary>Retrieves the color profile registered for the specified standard <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a>.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to get a standard color space profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="dwSCS">Specifies the ID value of the standard color space for which to retrieve the profile. The only valid values for this parameter are LCS_sRGB and LCS_WINDOWS_COLOR_SPACE.</param>
+    <param name="pBuffer">Pointer to the buffer in which the name of the profile is to be placed. If <b>NULL</b>, the call will return <b>TRUE</b> and the required size of the buffer is placed in <i>pdwSize.</i></param>
+    <param name="pcbSize">Pointer to a variable containing the size in bytes of the buffer pointed to by <i>pProfileName</i>. On return, the variable contains the size of the buffer actually used or needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetStandardColorSpaceProfileW">
+    <summary>Retrieves the color profile registered for the specified standard <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a>.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which to get a standard color space profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="dwSCS">Specifies the ID value of the standard color space for which to retrieve the profile. The only valid values for this parameter are LCS_sRGB and LCS_WINDOWS_COLOR_SPACE.</param>
+    <param name="pBuffer">Pointer to the buffer in which the name of the profile is to be placed. If <b>NULL</b>, the call will return <b>TRUE</b> and the required size of the buffer is placed in <i>pdwSize.</i></param>
+    <param name="pcbSize">Pointer to a variable containing the size in bytes of the buffer pointed to by <i>pProfileName</i>. On return, the variable contains the size of the buffer actually used or needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.InstallColorProfile">
+    <summary>Installs a given profile for use on a specified machine. The profile is also copied to the COLOR directory.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which the profile is to be installed. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pProfileName">Pointer to the fully qualified path name of the profile to install.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.InstallColorProfileA">
+    <summary>Installs a given profile for use on a specified machine. The profile is also copied to the COLOR directory.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which the profile is to be installed. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pProfileName">Pointer to the fully qualified path name of the profile to install.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.InstallColorProfile">
+    <summary>Installs a given profile for use on a specified machine. The profile is also copied to the COLOR directory.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which the profile is to be installed. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pProfileName">Pointer to the fully qualified path name of the profile to install.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.InstallColorProfileW">
+    <summary>Installs a given profile for use on a specified machine. The profile is also copied to the COLOR directory.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the computer on which the profile is to be installed. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="pProfileName">Pointer to the fully qualified path name of the profile to install.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.IsColorProfileTagPresent">
+    <summary>Reports whether a specified International Color Consortium (ICC) tag is present in the specified color profile.</summary>
+    <param name="hProfile">Specifies a handle to the ICC profile in question.</param>
+    <param name="tag">Specifies the ICC tag to check.</param>
+    <param name="pbPresent">Pointer to a variable that is set to <b>TRUE</b> on return if the specified ICC tag is present, or <b>FALSE</b> if not.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.IsColorProfileValid">
+    <summary>Allows you to determine whether the specified profile is a valid International Color Consortium (ICC) profile, or a valid Windows Color System (WCS) profile handle that can be used for color management. WCS profile validation doesn't invoke the underlying device models, but instead simply validates against the XML schema and the schema element range limits.</summary>
+    <param name="hProfile">Specifies a handle to the profile to be validated. The function determines whether the HPROFILE contains ICC or WCS profile information.</param>
+    <param name="pbValid">Pointer to a variable that is set to <b>TRUE</b> on return if the operation succeeds and the profile is a valid ICC or WCS profile. If the operation fails or the profile is not valid the variable is <b>FALSE</b>.</param>
+    <returns>
+      <para>If this function succeeds and the profile is valid, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails (or succeeds and the profile is not valid), the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.OpenColorProfile">
+    <summary>Creates a handle to a specified color profile. The handle can then be used in other profile management functions.</summary>
+    <param name="pProfile">Pointer to a color profile structure specifying the profile. The <i>pProfile</i> pointer can be freed as soon as the handle is created.</param>
+    <param name="dwDesiredAccess">
+      <para>Specifies how to access the given profile. This parameter must take one the following constant values.</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>PROFILE_READ</b></term></listheader></list> | Opens the profile for read access.<br /> | | <list type="bullet"><listheader><term><b>PROFILE_READWRITE</b></term></listheader></list> | Opens the profile for both read and write access. Has no effect for WCS XML profiles.<br /> |</para>
+    </param>
+    <param name="dwShareMode">
+      <para>Specifies how the profile should be shared, if the profile is contained in a file. A value of zero prevents the profile from being shared at all. The parameter can contain one or both of the following constants (combined by addition or logical OR).</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>FILE_SHARE_READ</b></term></listheader></list> | Other open operations can be performed on the profile for read access.<br /> | | <list type="bullet"><listheader><term><b>FILE_SHARE_WRITE</b></term></listheader></list> | Other open operations can be performed on the profile for write access. Has no effect for WCS XML profiles.<br /> |</para>
+    </param>
+    <param name="dwCreationMode">
+      <para>Specifies which actions to take on the profile while opening it, if it is contained in a file. This parameter must take one of the following constant values.</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>CREATE_NEW</b></term></listheader></list> | Creates a new profile. Fails if the profile already exists.<br /> | | <list type="bullet"><listheader><term><b>CREATE_ALWAYS</b></term></listheader></list> | Creates a new profile. Overwrites the profile if it exists.<br /> | | <list type="bullet"><listheader><term><b>OPEN_EXISTING</b></term></listheader></list> | Opens the profile. Fails if it does not exist<br /> | | <list type="bullet"><listheader><term><b>OPEN_ALWAYS</b></term></listheader></list> | Opens the profile if it exists. For ICC profiles, if the profile does not exist, creates the profile. For WCS XML profiles, if the profile does not exist, returns an error.<br /> | | <list type="bullet"><listheader><term><b>TRUNCATE_EXISTING</b></term></listheader></list> | Opens the profile, and truncates it to zero bytes, returning a blank ICC profile. Fails if the profile doesn't exist.<br /> |</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is the handle of the color profile that is opened. For ICC and WCS profiles, a CAMP and GMMP are provided by the function based on the current default CAMP and GMMP in the registry.</para>
+      <para>When OpenColorProfile encounters an ICC profile with an embedded WCS profile, and if the dwType member within the Profile structure does not take the value DONT_USE_EMBEDDED_WCS_PROFILES, it should extract and use the WCS profile(s) contained in this WcsProfilesTag. The HPROFILE returned would be a WCS HPROFILE.</para>
+      <para>If this function fails, the return value is <b>NULL</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.OpenColorProfileA">
+    <summary>Creates a handle to a specified color profile. The handle can then be used in other profile management functions.</summary>
+    <param name="pProfile">Pointer to a color profile structure specifying the profile. The <i>pProfile</i> pointer can be freed as soon as the handle is created.</param>
+    <param name="dwDesiredAccess">
+      <para>Specifies how to access the given profile. This parameter must take one the following constant values.</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>PROFILE_READ</b></term></listheader></list> | Opens the profile for read access.<br /> | | <list type="bullet"><listheader><term><b>PROFILE_READWRITE</b></term></listheader></list> | Opens the profile for both read and write access. Has no effect for WCS XML profiles.<br /> |</para>
+    </param>
+    <param name="dwShareMode">
+      <para>Specifies how the profile should be shared, if the profile is contained in a file. A value of zero prevents the profile from being shared at all. The parameter can contain one or both of the following constants (combined by addition or logical OR).</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>FILE_SHARE_READ</b></term></listheader></list> | Other open operations can be performed on the profile for read access.<br /> | | <list type="bullet"><listheader><term><b>FILE_SHARE_WRITE</b></term></listheader></list> | Other open operations can be performed on the profile for write access. Has no effect for WCS XML profiles.<br /> |</para>
+    </param>
+    <param name="dwCreationMode">
+      <para>Specifies which actions to take on the profile while opening it, if it is contained in a file. This parameter must take one of the following constant values.</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>CREATE_NEW</b></term></listheader></list> | Creates a new profile. Fails if the profile already exists.<br /> | | <list type="bullet"><listheader><term><b>CREATE_ALWAYS</b></term></listheader></list> | Creates a new profile. Overwrites the profile if it exists.<br /> | | <list type="bullet"><listheader><term><b>OPEN_EXISTING</b></term></listheader></list> | Opens the profile. Fails if it does not exist<br /> | | <list type="bullet"><listheader><term><b>OPEN_ALWAYS</b></term></listheader></list> | Opens the profile if it exists. For ICC profiles, if the profile does not exist, creates the profile. For WCS XML profiles, if the profile does not exist, returns an error.<br /> | | <list type="bullet"><listheader><term><b>TRUNCATE_EXISTING</b></term></listheader></list> | Opens the profile, and truncates it to zero bytes, returning a blank ICC profile. Fails if the profile doesn't exist.<br /> |</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is the handle of the color profile that is opened. For ICC and WCS profiles, a CAMP and GMMP are provided by the function based on the current default CAMP and GMMP in the registry.</para>
+      <para>When OpenColorProfile encounters an ICC profile with an embedded WCS profile, and if the dwType member within the Profile structure does not take the value DONT_USE_EMBEDDED_WCS_PROFILES, it should extract and use the WCS profile(s) contained in this WcsProfilesTag. The HPROFILE returned would be a WCS HPROFILE.</para>
+      <para>If this function fails, the return value is <b>NULL</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.OpenColorProfile">
+    <summary>Creates a handle to a specified color profile. The handle can then be used in other profile management functions.</summary>
+    <param name="pProfile">Pointer to a color profile structure specifying the profile. The <i>pProfile</i> pointer can be freed as soon as the handle is created.</param>
+    <param name="dwDesiredAccess">
+      <para>Specifies how to access the given profile. This parameter must take one the following constant values.</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>PROFILE_READ</b></term></listheader></list> | Opens the profile for read access.<br /> | | <list type="bullet"><listheader><term><b>PROFILE_READWRITE</b></term></listheader></list> | Opens the profile for both read and write access. Has no effect for WCS XML profiles.<br /> |</para>
+    </param>
+    <param name="dwShareMode">
+      <para>Specifies how the profile should be shared, if the profile is contained in a file. A value of zero prevents the profile from being shared at all. The parameter can contain one or both of the following constants (combined by addition or logical OR).</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>FILE_SHARE_READ</b></term></listheader></list> | Other open operations can be performed on the profile for read access.<br /> | | <list type="bullet"><listheader><term><b>FILE_SHARE_WRITE</b></term></listheader></list> | Other open operations can be performed on the profile for write access. Has no effect for WCS XML profiles.<br /> |</para>
+    </param>
+    <param name="dwCreationMode">
+      <para>Specifies which actions to take on the profile while opening it, if it is contained in a file. This parameter must take one of the following constant values.</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>CREATE_NEW</b></term></listheader></list> | Creates a new profile. Fails if the profile already exists.<br /> | | <list type="bullet"><listheader><term><b>CREATE_ALWAYS</b></term></listheader></list> | Creates a new profile. Overwrites the profile if it exists.<br /> | | <list type="bullet"><listheader><term><b>OPEN_EXISTING</b></term></listheader></list> | Opens the profile. Fails if it does not exist<br /> | | <list type="bullet"><listheader><term><b>OPEN_ALWAYS</b></term></listheader></list> | Opens the profile if it exists. For ICC profiles, if the profile does not exist, creates the profile. For WCS XML profiles, if the profile does not exist, returns an error.<br /> | | <list type="bullet"><listheader><term><b>TRUNCATE_EXISTING</b></term></listheader></list> | Opens the profile, and truncates it to zero bytes, returning a blank ICC profile. Fails if the profile doesn't exist.<br /> |</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is the handle of the color profile that is opened. For ICC and WCS profiles, a CAMP and GMMP are provided by the function based on the current default CAMP and GMMP in the registry.</para>
+      <para>When OpenColorProfile encounters an ICC profile with an embedded WCS profile, and if the dwType member within the Profile structure does not take the value DONT_USE_EMBEDDED_WCS_PROFILES, it should extract and use the WCS profile(s) contained in this WcsProfilesTag. The HPROFILE returned would be a WCS HPROFILE.</para>
+      <para>If this function fails, the return value is <b>NULL</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.OpenColorProfileW">
+    <summary>Creates a handle to a specified color profile. The handle can then be used in other profile management functions.</summary>
+    <param name="pProfile">Pointer to a color profile structure specifying the profile. The <i>pProfile</i> pointer can be freed as soon as the handle is created.</param>
+    <param name="dwDesiredAccess">
+      <para>Specifies how to access the given profile. This parameter must take one the following constant values.</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>PROFILE_READ</b></term></listheader></list> | Opens the profile for read access.<br /> | | <list type="bullet"><listheader><term><b>PROFILE_READWRITE</b></term></listheader></list> | Opens the profile for both read and write access. Has no effect for WCS XML profiles.<br /> |</para>
+    </param>
+    <param name="dwShareMode">
+      <para>Specifies how the profile should be shared, if the profile is contained in a file. A value of zero prevents the profile from being shared at all. The parameter can contain one or both of the following constants (combined by addition or logical OR).</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>FILE_SHARE_READ</b></term></listheader></list> | Other open operations can be performed on the profile for read access.<br /> | | <list type="bullet"><listheader><term><b>FILE_SHARE_WRITE</b></term></listheader></list> | Other open operations can be performed on the profile for write access. Has no effect for WCS XML profiles.<br /> |</para>
+    </param>
+    <param name="dwCreationMode">
+      <para>Specifies which actions to take on the profile while opening it, if it is contained in a file. This parameter must take one of the following constant values.</para>
+      <para>| Value | Meaning | |-|-| | <list type="bullet"><listheader><term><b>CREATE_NEW</b></term></listheader></list> | Creates a new profile. Fails if the profile already exists.<br /> | | <list type="bullet"><listheader><term><b>CREATE_ALWAYS</b></term></listheader></list> | Creates a new profile. Overwrites the profile if it exists.<br /> | | <list type="bullet"><listheader><term><b>OPEN_EXISTING</b></term></listheader></list> | Opens the profile. Fails if it does not exist<br /> | | <list type="bullet"><listheader><term><b>OPEN_ALWAYS</b></term></listheader></list> | Opens the profile if it exists. For ICC profiles, if the profile does not exist, creates the profile. For WCS XML profiles, if the profile does not exist, returns an error.<br /> | | <list type="bullet"><listheader><term><b>TRUNCATE_EXISTING</b></term></listheader></list> | Opens the profile, and truncates it to zero bytes, returning a blank ICC profile. Fails if the profile doesn't exist.<br /> |</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is the handle of the color profile that is opened. For ICC and WCS profiles, a CAMP and GMMP are provided by the function based on the current default CAMP and GMMP in the registry.</para>
+      <para>When OpenColorProfile encounters an ICC profile with an embedded WCS profile, and if the dwType member within the Profile structure does not take the value DONT_USE_EMBEDDED_WCS_PROFILES, it should extract and use the WCS profile(s) contained in this WcsProfilesTag. The HPROFILE returned would be a WCS HPROFILE.</para>
+      <para>If this function fails, the return value is <b>NULL</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.RegisterCMM">
+    <summary>Associates a specified identification value with the specified color management module dynamic link library (CMM DLL). When this ID appears in a color profile, Windows can then locate the corresponding CMM so as to create a transform.</summary>
+    <param name="pMachineName">Reserved; must currently be set to <b>NULL</b>, until non-local registration is supported. This parameter is intended to point to the name of the machine on which a CMM DLL should be registered. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="cmmID">Specifies the ID signature of the CMM registered with the International Color Consortium (ICC).</param>
+    <param name="pCMMdll">Pointer to the fully qualified path name of the CMM DLL.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.RegisterCMMA">
+    <summary>Associates a specified identification value with the specified color management module dynamic link library (CMM DLL). When this ID appears in a color profile, Windows can then locate the corresponding CMM so as to create a transform.</summary>
+    <param name="pMachineName">Reserved; must currently be set to <b>NULL</b>, until non-local registration is supported. This parameter is intended to point to the name of the machine on which a CMM DLL should be registered. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="cmmID">Specifies the ID signature of the CMM registered with the International Color Consortium (ICC).</param>
+    <param name="pCMMdll">Pointer to the fully qualified path name of the CMM DLL.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.RegisterCMM">
+    <summary>Associates a specified identification value with the specified color management module dynamic link library (CMM DLL). When this ID appears in a color profile, Windows can then locate the corresponding CMM so as to create a transform.</summary>
+    <param name="pMachineName">Reserved; must currently be set to <b>NULL</b>, until non-local registration is supported. This parameter is intended to point to the name of the machine on which a CMM DLL should be registered. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="cmmID">Specifies the ID signature of the CMM registered with the International Color Consortium (ICC).</param>
+    <param name="pCMMdll">Pointer to the fully qualified path name of the CMM DLL.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.RegisterCMMW">
+    <summary>Associates a specified identification value with the specified color management module dynamic link library (CMM DLL). When this ID appears in a color profile, Windows can then locate the corresponding CMM so as to create a transform.</summary>
+    <param name="pMachineName">Reserved; must currently be set to <b>NULL</b>, until non-local registration is supported. This parameter is intended to point to the name of the machine on which a CMM DLL should be registered. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="cmmID">Specifies the ID signature of the CMM registered with the International Color Consortium (ICC).</param>
+    <param name="pCMMdll">Pointer to the fully qualified path name of the CMM DLL.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SelectCMM">
+    <summary>Allows you to select the preferred color management module (CMM) to use.</summary>
+    <param name="dwCMMType">
+      <para>Specifies the signature of the desired CMM as registered with the International Color Consortium (ICC).</para>
+      <para>
+        <b>Windows 2000 only:</b> Setting this parameter to <b>NULL</b> causes the WCS system to select the default CMM.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetColorProfileElement">
+    <summary>Sets the element data for a tagged profile element in an ICC color profile.</summary>
+    <param name="hProfile">Specifies a handle to the ICC profile in question.</param>
+    <param name="tag">Identifies the tagged element.</param>
+    <param name="dwOffset">Specifies the offset from the first byte of the tagged element data at which to start writing.</param>
+    <param name="pcbElement">Pointer to a variable containing the number of bytes of data to write. On return, it contains the number of bytes actually written.</param>
+    <param name="pElement">Pointer to a buffer containing the data to write to the tagged element in the color profile.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetColorProfileElementReference">
+    <summary>Creates in a specified ICC color profile a new tag that references the same data as an existing tag.</summary>
+    <param name="hProfile">Specifies a handle to the ICC color profile in question.</param>
+    <param name="newTag">Identifies the new tag to create.</param>
+    <param name="refTag">Identifies the existing tag whose data is to be referenced by the new tag.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetColorProfileElementSize">
+    <summary>Sets the size of a tagged element in an ICC color profile.</summary>
+    <param name="hProfile">Specifies a handle to the ICC color profile in question.</param>
+    <param name="tagType">Identifies the tagged element.</param>
+    <param name="pcbElement">Specifies the size to set the tagged element to. If <i>cbSize</i> is zero, this function deletes the specified tagged element. If the tag is a reference, only the tag table entry is deleted, not the data.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetColorProfileHeader">
+    <summary>Sets the header data in a specified ICC color profile.</summary>
+    <param name="hProfile">Specifies a handle to the ICC color profile in question.</param>
+    <param name="pHeader">Pointer to the profile header data to write to the specified profile.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetStandardColorSpaceProfile">
+    <summary>Registers a specified profile for a given standard <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a>. The profile can be queried using <see cref="GetStandardColorSpaceProfileW" />.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which to set a standard color space profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="dwProfileID">Specifies the ID value of the standard color space that the given profile represents. This is a custom ID value used to uniquely identify the color space profile within your application.</param>
+    <param name="pProfilename">Points to a fully qualified path to the profile file.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetStandardColorSpaceProfileA">
+    <summary>Registers a specified profile for a given standard <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a>. The profile can be queried using <see cref="GetStandardColorSpaceProfileW" />.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which to set a standard color space profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="dwProfileID">Specifies the ID value of the standard color space that the given profile represents. This is a custom ID value used to uniquely identify the color space profile within your application.</param>
+    <param name="pProfilename">Points to a fully qualified path to the profile file.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetStandardColorSpaceProfile">
+    <summary>Registers a specified profile for a given standard <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a>. The profile can be queried using <see cref="GetStandardColorSpaceProfileW" />.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which to set a standard color space profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="dwProfileID">Specifies the ID value of the standard color space that the given profile represents. This is a custom ID value used to uniquely identify the color space profile within your application.</param>
+    <param name="pProfilename">Points to a fully qualified path to the profile file.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetStandardColorSpaceProfileW">
+    <summary>Registers a specified profile for a given standard <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a>. The profile can be queried using <see cref="GetStandardColorSpaceProfileW" />.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine on which to set a standard color space profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="dwProfileID">Specifies the ID value of the standard color space that the given profile represents. This is a custom ID value used to uniquely identify the color space profile within your application.</param>
+    <param name="pProfilename">Points to a fully qualified path to the profile file.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetupColorMatching">
+    <summary>Creates a Color Management dialog box that lets the user choose whether to enable color management and, if so, provides control over the color profiles used and over the <a href="https://docs.microsoft.com//windows/win32/wcs/r">rendering intent</a>.</summary>
+    <param name="pcms">
+      <para>Pointer to a <see cref="COLORMATCHSETUPW" /> structure that on entry contains information used to initialize the dialog box.</para>
+      <para>When <b>SetupColorMatching</b> returns, if the user clicked the OK button, this structure contains information about the user's selection. Otherwise, if an error occurred or the user canceled the dialog box, the structure is left unchanged.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b> indicating that no errors occurred and the user clicked the OK button.</para>
+      <para>If this function fails, the return value is <b>FALSE</b> indicating that an error occurred or the dialog was canceled. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetupColorMatchingA">
+    <summary>Creates a Color Management dialog box that lets the user choose whether to enable color management and, if so, provides control over the color profiles used and over the <a href="https://docs.microsoft.com//windows/win32/wcs/r">rendering intent</a>.</summary>
+    <param name="pcms">
+      <para>Pointer to a <see cref="COLORMATCHSETUPW" /> structure that on entry contains information used to initialize the dialog box.</para>
+      <para>When <b>SetupColorMatching</b> returns, if the user clicked the OK button, this structure contains information about the user's selection. Otherwise, if an error occurred or the user canceled the dialog box, the structure is left unchanged.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b> indicating that no errors occurred and the user clicked the OK button.</para>
+      <para>If this function fails, the return value is <b>FALSE</b> indicating that an error occurred or the dialog was canceled. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetupColorMatching">
+    <summary>Creates a Color Management dialog box that lets the user choose whether to enable color management and, if so, provides control over the color profiles used and over the <a href="https://docs.microsoft.com//windows/win32/wcs/r">rendering intent</a>.</summary>
+    <param name="pcms">
+      <para>Pointer to a <see cref="COLORMATCHSETUPW" /> structure that on entry contains information used to initialize the dialog box.</para>
+      <para>When <b>SetupColorMatching</b> returns, if the user clicked the OK button, this structure contains information about the user's selection. Otherwise, if an error occurred or the user canceled the dialog box, the structure is left unchanged.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b> indicating that no errors occurred and the user clicked the OK button.</para>
+      <para>If this function fails, the return value is <b>FALSE</b> indicating that an error occurred or the dialog was canceled. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetupColorMatchingW">
+    <summary>Creates a Color Management dialog box that lets the user choose whether to enable color management and, if so, provides control over the color profiles used and over the <a href="https://docs.microsoft.com//windows/win32/wcs/r">rendering intent</a>.</summary>
+    <param name="pcms">
+      <para>Pointer to a <see cref="COLORMATCHSETUPW" /> structure that on entry contains information used to initialize the dialog box.</para>
+      <para>When <b>SetupColorMatching</b> returns, if the user clicked the OK button, this structure contains information about the user's selection. Otherwise, if an error occurred or the user canceled the dialog box, the structure is left unchanged.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b> indicating that no errors occurred and the user clicked the OK button.</para>
+      <para>If this function fails, the return value is <b>FALSE</b> indicating that an error occurred or the dialog was canceled. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.TranslateBitmapBits">
+    <summary>Translates the colors of a bitmap having a defined format so as to produce another bitmap in a requested format.</summary>
+    <param name="hColorTransform">Identifies the color transform to use.</param>
+    <param name="pSrcBits">Pointer to the bitmap to translate.</param>
+    <param name="bmInput">
+      <para>Specifies the format of the input bitmap. Must be set to one of the values of the <see cref="BMFORMAT" /> enumerated type.</para>
+      <blockquote>[!Note]<br />This function doesn't support <see cref="BM_XYZTRIPLETS" /> or <b>BM_YxyTRIPLETS</b> as inputs.</blockquote>
+    </param>
+    <param name="dwWidth">Specifies the number of pixels per scan line in the input bitmap.</param>
+    <param name="dwHeight">Specifies the number of scan lines in the input bitmap.</param>
+    <param name="dwInputStride">Specifies the number of bytes from the beginning of one scan line to the beginning of the next in the input bitmap; if set to zero, the function assumes that scan lines are padded so as to be <b>DWORD</b>-aligned.</param>
+    <param name="pDestBits">Pointer to the buffer in which to place the translated bitmap.</param>
+    <param name="bmOutput">Specifies the format of the output bitmap. Must be set to one of the values of the <see cref="BMFORMAT" /> enumerated type.</param>
+    <param name="dwOutputStride">Specifies the number of bytes from the beginning of one scan line to the beginning of the next in the output bitmap; if set to zero, the function assumes that scan lines should be padded to be <b>DWORD</b>-aligned.</param>
+    <param name="pfnCallBack">Pointer to a callback function called periodically by <b>TranslateBitmapBits</b> to report progress and allow the calling process to cancel the translation. (See <a href="https://docs.microsoft.com//windows/win32/wcs/icmprogressproccallback">ICMProgressProcCallback</a> )</param>
+    <param name="ulCallbackData">Data passed back to the callback function, for example, to identify the translation that is reporting progress.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.TranslateColors">
+    <summary>Translates an array of colors from the source <a href="https://docs.microsoft.com//windows/win32/wcs/c#color-space">color space</a> to the destination color space as defined by a color transform.</summary>
+    <param name="hColorTransform">Identifies the color transform to use.</param>
+    <param name="paInputColors">Pointer to an array of <i>nColors</i><see cref="COLOR" /> structures to translate.</param>
+    <param name="nColors">Contains the number of elements in the arrays pointed to by <i>paInputColors</i> and <i>paOutputColors</i>.</param>
+    <param name="ctInput">Specifies the input color type.</param>
+    <param name="paOutputColors">Pointer to an array of <i>nColors</i><b>COLOR</b> structures that receive the translated colors.</param>
+    <param name="ctOutput">Specifies the output color type.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.UninstallColorProfile">
+    <summary>Removes a specified color profile from a specified computer. Associated files are optionally deleted from the system.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine from which to uninstall the specified profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pProfileName">Points to the file name of the profile to uninstall.</param>
+    <param name="bDelete">If set to <b>TRUE</b>, the function deletes the profile from the COLOR directory. If set to <b>FALSE</b>, this function has no effect.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.UninstallColorProfileA">
+    <summary>Removes a specified color profile from a specified computer. Associated files are optionally deleted from the system.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine from which to uninstall the specified profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pProfileName">Points to the file name of the profile to uninstall.</param>
+    <param name="bDelete">If set to <b>TRUE</b>, the function deletes the profile from the COLOR directory. If set to <b>FALSE</b>, this function has no effect.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.UninstallColorProfile">
+    <summary>Removes a specified color profile from a specified computer. Associated files are optionally deleted from the system.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine from which to uninstall the specified profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pProfileName">Points to the file name of the profile to uninstall.</param>
+    <param name="bDelete">If set to <b>TRUE</b>, the function deletes the profile from the COLOR directory. If set to <b>FALSE</b>, this function has no effect.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.UninstallColorProfileW">
+    <summary>Removes a specified color profile from a specified computer. Associated files are optionally deleted from the system.</summary>
+    <param name="pMachineName">Reserved. Must be <b>NULL</b>. This parameter is intended to point to the name of the machine from which to uninstall the specified profile. A <b>NULL</b> pointer indicates the local machine.</param>
+    <param name="pProfileName">Points to the file name of the profile to uninstall.</param>
+    <param name="bDelete">If set to <b>TRUE</b>, the function deletes the profile from the COLOR directory. If set to <b>FALSE</b>, this function has no effect.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.UnregisterCMM">
+    <summary>Dissociates a specified ID value from a given color management module dynamic-link library (CMM DLL).</summary>
+    <param name="pMachineName">Reserved; must currently be set to <b>NULL</b>, until non-local registration is supported. This parameter is intended to point to the name of the computer on which a CMM DLLs registration should be removed. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="cmmID">Specifies the ID value identifying the CMM whose registration is to be removed. This is the signature of the CMM registered with the International Color Consortium (ICC).</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.UnregisterCMMA">
+    <summary>Dissociates a specified ID value from a given color management module dynamic-link library (CMM DLL).</summary>
+    <param name="pMachineName">Reserved; must currently be set to <b>NULL</b>, until non-local registration is supported. This parameter is intended to point to the name of the computer on which a CMM DLLs registration should be removed. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="cmmID">Specifies the ID value identifying the CMM whose registration is to be removed. This is the signature of the CMM registered with the International Color Consortium (ICC).</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.UnregisterCMM">
+    <summary>Dissociates a specified ID value from a given color management module dynamic-link library (CMM DLL).</summary>
+    <param name="pMachineName">Reserved; must currently be set to <b>NULL</b>, until non-local registration is supported. This parameter is intended to point to the name of the computer on which a CMM DLLs registration should be removed. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="cmmID">Specifies the ID value identifying the CMM whose registration is to be removed. This is the signature of the CMM registered with the International Color Consortium (ICC).</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.UnregisterCMMW">
+    <summary>Dissociates a specified ID value from a given color management module dynamic-link library (CMM DLL).</summary>
+    <param name="pMachineName">Reserved; must currently be set to <b>NULL</b>, until non-local registration is supported. This parameter is intended to point to the name of the computer on which a CMM DLLs registration should be removed. A <b>NULL</b> pointer indicates the local computer.</param>
+    <param name="cmmID">Specifies the ID value identifying the CMM whose registration is to be removed. This is the signature of the CMM registered with the International Color Consortium (ICC).</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsAssociateColorProfileWithDevice">
+    <summary>
+      <para>Associates a specified WCS color profile with a specified device.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileAddDisplayAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="scope">A <see cref="WCS_PROFILE_MANAGEMENT_SCOPE" /> value that specifies the scope of this profile management operation, which could be system-wide or for the current user.</param>
+    <param name="pProfileName">A pointer to the file name of the profile to associate.</param>
+    <param name="pDeviceName">A pointer to the name of the device with which the profile is to be associated.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsCheckColors">
+    <summary>Determines whether the colors in an array are within the output gamut of a specified WCS color transform.</summary>
+    <param name="hColorTransform">A handle to the specified WCS color transform.</param>
+    <param name="nColors">The number of elements in the array pointed to by <i>pInputData</i> and <i>paResult</i>.</param>
+    <param name="nInputChannels">The number of channels per element in the array pointed to by <i>pInputData</i>.</param>
+    <param name="cdtInput">The input COLORDATATYPE color data type.</param>
+    <param name="cbInput">The buffer size of <i>pInputData</i>.</param>
+    <param name="pInputData">A pointer to an array of input colors. Colors in this array correspond to the color space of the source profile. The size of the buffer for this array will be the number of bytes indicated by <i>cbInput</i>.</param>
+    <param name="paResult">A pointer to an array of <i>nColors</i> bytes that receives the results of the test.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsCreateIccProfile">
+    <summary>Converts a WCS profile into an International Color Consortium (ICC) profile.</summary>
+    <param name="hWcsProfile">A handle to the WCS color profile that is converted. See Remarks.</param>
+    <param name="dwOptions">
+      <para>A flag value that specifies the profile conversion options.</para>
+      <para>By default, the original WCS profiles used for the conversion are embedded in the output ICC profile in a Microsoft private tag, <i>WcsProfilesTag</i> (with signature "MS000". This produces an ICC profile that is compatible with ICC software, yet retains the original WCS profile data available to code designed to parse it.</para>
+      <para>The possible values of this parameter are as follows. Any bits not defined in this list are reserved and should be set to zero:</para>
+      <para>| Value | Description | |--------------|------------------------------------------------------------------------------------------------------------| | WCS_DEFAULT | Specifies that the new ICC profile contains the original WCS profile in a private WcsProfilesTag. | | WCS_ICCONLY | Specifies that the new ICC profile does not contain either the WcsProfilesTag or the original WCS profile. |</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is the handle of the new color profile.</para>
+      <para>If this function fails, the return value is <b>NULL</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsDisassociateColorProfileFromDevice">
+    <summary>
+      <para>Disassociates a specified WCS color profile from a specified device on a computer.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileRemoveDisplayAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="scope">A <see cref="WCS_PROFILE_MANAGEMENT_SCOPE" /> value that specifies the scope of this profile management operation, which could be system-wide or for the current user.</param>
+    <param name="pProfileName">A pointer to the file name of the profile to disassociate.</param>
+    <param name="pDeviceName">A pointer to the name of the device from which to disassociate the profile.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsEnumColorProfiles">
+    <summary>
+      <para>Enumerates color profiles associated with any device, in the specified scope.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileGetDisplayList" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="scope">A <see cref="WCS_PROFILE_MANAGEMENT_SCOPE" /> value specifying the scope of this profile management operation.</param>
+    <param name="pEnumRecord">A pointer to a structure specifying the enumeration criteria.</param>
+    <param name="pBuffer">A pointer to a buffer in which the profile names are to be enumerated. The <b>WcsEnumColorProfiles</b> function places, in this buffer, a MULTI_SZ string that consists of profile names that satisfy the criteria specified in <i>*pEnumRecord</i>.</param>
+    <param name="dwSize">A variable that contains the size, in bytes, of the buffer that is pointed to by <i>pBuffer</i>. See <b>Remarks</b>.</param>
+    <param name="pnProfiles">An optional pointer to a variable that receives the number of profile names that are copied to the buffer to which <i>pBuffer</i> points. Can be <b>NULL</b> if this information is not needed.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsEnumColorProfilesSize">
+    <summary>
+      <para>Returns the size, in bytes, of the buffer that is required by the <see cref="WcsEnumColorProfiles" /> function to enumerate color profiles.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileGetDisplayList" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="scope">A <see cref="WCS_PROFILE_MANAGEMENT_SCOPE" /> value that specifies the scope of the profile management operation that is performed by this function.</param>
+    <param name="pEnumRecord">A pointer to a structure that specifies the enumeration criteria.</param>
+    <param name="pdwSize">A pointer to a variable that receives the size of the buffer that is required to receive all enumerated profile names. This value is used by the <i>dwSize</i> parameter of the <see cref="WcsEnumColorProfiles" /> function.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsGetCalibrationManagementState">
+    <summary>Determines whether system management of the display calibration state is enabled.</summary>
+    <param name="pbIsEnabled">
+      <b>TRUE</b> if system management of the display calibration state is enabled; otherwise <b>FALSE</b>.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsGetDefaultColorProfile">
+    <summary>
+      <para>Retrieves the default color profile for a device, or for a device-independent default if the device is not specified.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileGetDisplayDefault" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="scope">A <see cref="WCS_PROFILE_MANAGEMENT_SCOPE" /> value specifying the scope of this profile management operation.</param>
+    <param name="pDeviceName">A pointer to the name of the device for which the default color profile is obtained. If <b>NULL</b>, a device-independent default profile is obtained.</param>
+    <param name="cptColorProfileType">A <see cref="COLORPROFILETYPE" /> value specifying the color profile type.</param>
+    <param name="cpstColorProfileSubType">A <see cref="COLORPROFILESUBTYPE" /> value specifying the color profile subtype.</param>
+    <param name="dwProfileID">The ID of the color space that the color profile represents.</param>
+    <param name="cbProfileName">The buffer size, in bytes, of the buffer that is pointed to by <i>pProfileName</i>.</param>
+    <param name="pProfileName">A pointer to a buffer to receive the name of the color profile. The size of the buffer, in bytes, will be the indicated by <i>cbProfileName</i>.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsGetDefaultColorProfileSize">
+    <summary>
+      <para>Returns the size, in bytes, of the default color profile name (including the <b>NULL</b> terminator), for a device.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileGetDisplayDefault" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="scope">A <see cref="WCS_PROFILE_MANAGEMENT_SCOPE" /> value that specifies the scope of this profile management operation.</param>
+    <param name="pDeviceName">A pointer to the name of the device for which the default color profile is to be obtained. If <b>NULL</b>, a device-independent default profile will be used.</param>
+    <param name="cptColorProfileType">A <see cref="COLORPROFILETYPE" /> value specifying the color profile type.</param>
+    <param name="cpstColorProfileSubType">A <see cref="COLORPROFILESUBTYPE" /> value specifying the color profile subtype.</param>
+    <param name="dwProfileID">The ID of the color space that the color profile represents.</param>
+    <param name="pcbProfileName">A pointer to a location that receives the size, in bytes, of the path name of the default color profile, including the <b>NULL</b> terminator.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsGetDefaultRenderingIntent">
+    <summary>Retrieves the default rendering intent in the specified profile management scope.</summary>
+    <param name="scope">The profile management scope for this operation, which can be system-wide or the current user only.</param>
+    <param name="pdwRenderingIntent">
+      <para>A pointer to the variable that will hold the rendering intent.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering intents</a>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsGetUsePerUserProfiles">
+    <summary>Determines whether the user chose to use a per-user profile association list for the specified device.</summary>
+    <param name="pDeviceName">A pointer to a string containing the user-friendly name of the device.</param>
+    <param name="dwDeviceClass">
+      <para>A flag value specifying the class of the device. This parameter must take one of the following values.</para>
+      <para>| Value | Description | |----------------|------------------------------------| | CLASS_MONITOR | Specifies a display device. | | CLASS_PRINTER | Specifies a printer. | | CLASS_SCANNER | Specifies an image-capture device. |</para>
+    </param>
+    <param name="pUsePerUserProfiles">A pointer to a location to receive a Boolean value that is <b>TRUE</b> if the user chose to use a per-user profile association list for the specified device; otherwise <b>FALSE</b>.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsOpenColorProfile">
+    <summary>Creates a handle to a specified color profile.</summary>
+    <param name="pCDMPProfile">Pointer to a WCS DMP or an ICC color profile structure specifying the profile. You can free the <i>pCDMPProfile</i> pointer after you create the handle. If the profile is ICC and its <b>dwType</b> member is set to DONT_USE_EMBEDDED_WCS_PROFILES, <b>WcsOpenColorProfile</b> ignores any embedded WCS profile within the ICC profile.</param>
+    <param name="pCAMPProfile">A pointer to a profile structure that specifies a WCS color appearance model profile (CAMP). You can free the <i>pCAMPProfile</i> pointer after you create the handle. If <b>NULL</b>, the default CAMP is used, and the current user setting, WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER, is used while querying the default CAMP.</param>
+    <param name="pGMMPProfile">A pointer to a profile structure that specifies a WCS gamut map model profile (GMMP). You can free the <i>pGMMPProfile</i> pointer after you create the handle. If <b>NULL</b>, the default GMMP for the default rendering intent is used, and the current user setting, WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER, is used while querying the default GMMP. For a description of rendering intents, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering Intents</a>.</param>
+    <param name="dwDesireAccess">
+      <para>A flag value that specifies how to access the specified color profile. This parameter must take one of the following values:</para>
+      <para>| Value | Description | |-|-| | PROFILE_READ | Specifies that the color profile opens for read-only access. | | PROFILE_READWRITE | Specifies that the color profile opens for both read and write access. The value of this flag is ignored if the profile is a WCS profile. |</para>
+    </param>
+    <param name="dwShareMode">
+      <para>A flag value that specifies actions to take while opening a color profile contained in a file. This parameter must take one of the following values, which are defined in <i>winnt.h</i>:</para>
+      <para>| Value | Description | |-|-| | FILE_SHARE_READ | Specifies that you can perform other open (for read access) operations on the profile. | | FILE_SHARE_WRITE | Specifies that you can perform other open (for write access) operations on the profile. This flag value is ignored when a WCS profile is opened. |</para>
+    </param>
+    <param name="dwCreationMode">
+      <para>A flag value that specifies the actions to take while opening a color profile if it is contained in a file. This parameter must take one of the following values, which are defined in <i>winbase.h</i>:</para>
+      <para>| Value | Description | |-|-| | CREATE_NEW | Specifies that a new profile is created. This function fails if the profile already exists. | | CREATE_ALWAYS | Specifies that a new profile is created. If a profile already exists, it is overwritten. | | OPEN_EXISTING | Specifies that the profile is opened. This function fails if the profile does not exist. | | OPEN_ALWAYS | Specifies that the profile is to be opened if an International Color Consortium (ICC) file exists. If an ICC profile does not exist, WCS creates a new ICC profile. The function will fail for WCS profiles if this flag is set and a WCS profile does not exist. | | TRUNCATE_EXISTING | Specifies that the profile is to be opened and truncated to zero bytes. The function fails if the profile does not exist. |</para>
+    </param>
+    <param name="dwFlags">
+      <para>A flag value that specifies whether to use the embedded WCS profile. This parameter has no effect unless <i>pCDMProfile</i> specifies an ICC profile that contains an embedded WCS profile.</para>
+      <para>This parameter takes one of the following values:</para>
+      <para>| Value | Description | |-|-| | 0 | Specifies that the embedded WCS profile will be used and the ICC profile specfied by pCDMPProfile will be ignored. | | DONT_USE_EMBEDDED_WCS_PROFILES | Specifies that the ICC profile specified by pCDMPProfile will be used and the embedded WCS profile will be ignored. |</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is the handle of the color profile that is opened.</para>
+      <para>If this function fails, the return value is <b>NULL</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsOpenColorProfileA">
+    <summary>Creates a handle to a specified color profile.</summary>
+    <param name="pCDMPProfile">Pointer to a WCS DMP or an ICC color profile structure specifying the profile. You can free the <i>pCDMPProfile</i> pointer after you create the handle. If the profile is ICC and its <b>dwType</b> member is set to DONT_USE_EMBEDDED_WCS_PROFILES, <b>WcsOpenColorProfile</b> ignores any embedded WCS profile within the ICC profile.</param>
+    <param name="pCAMPProfile">A pointer to a profile structure that specifies a WCS color appearance model profile (CAMP). You can free the <i>pCAMPProfile</i> pointer after you create the handle. If <b>NULL</b>, the default CAMP is used, and the current user setting, WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER, is used while querying the default CAMP.</param>
+    <param name="pGMMPProfile">A pointer to a profile structure that specifies a WCS gamut map model profile (GMMP). You can free the <i>pGMMPProfile</i> pointer after you create the handle. If <b>NULL</b>, the default GMMP for the default rendering intent is used, and the current user setting, WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER, is used while querying the default GMMP. For a description of rendering intents, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering Intents</a>.</param>
+    <param name="dwDesireAccess">
+      <para>A flag value that specifies how to access the specified color profile. This parameter must take one of the following values:</para>
+      <para>| Value | Description | |-|-| | PROFILE_READ | Specifies that the color profile opens for read-only access. | | PROFILE_READWRITE | Specifies that the color profile opens for both read and write access. The value of this flag is ignored if the profile is a WCS profile. |</para>
+    </param>
+    <param name="dwShareMode">
+      <para>A flag value that specifies actions to take while opening a color profile contained in a file. This parameter must take one of the following values, which are defined in <i>winnt.h</i>:</para>
+      <para>| Value | Description | |-|-| | FILE_SHARE_READ | Specifies that you can perform other open (for read access) operations on the profile. | | FILE_SHARE_WRITE | Specifies that you can perform other open (for write access) operations on the profile. This flag value is ignored when a WCS profile is opened. |</para>
+    </param>
+    <param name="dwCreationMode">
+      <para>A flag value that specifies the actions to take while opening a color profile if it is contained in a file. This parameter must take one of the following values, which are defined in <i>winbase.h</i>:</para>
+      <para>| Value | Description | |-|-| | CREATE_NEW | Specifies that a new profile is created. This function fails if the profile already exists. | | CREATE_ALWAYS | Specifies that a new profile is created. If a profile already exists, it is overwritten. | | OPEN_EXISTING | Specifies that the profile is opened. This function fails if the profile does not exist. | | OPEN_ALWAYS | Specifies that the profile is to be opened if an International Color Consortium (ICC) file exists. If an ICC profile does not exist, WCS creates a new ICC profile. The function will fail for WCS profiles if this flag is set and a WCS profile does not exist. | | TRUNCATE_EXISTING | Specifies that the profile is to be opened and truncated to zero bytes. The function fails if the profile does not exist. |</para>
+    </param>
+    <param name="dwFlags">
+      <para>A flag value that specifies whether to use the embedded WCS profile. This parameter has no effect unless <i>pCDMProfile</i> specifies an ICC profile that contains an embedded WCS profile.</para>
+      <para>This parameter takes one of the following values:</para>
+      <para>| Value | Description | |-|-| | 0 | Specifies that the embedded WCS profile will be used and the ICC profile specfied by pCDMPProfile will be ignored. | | DONT_USE_EMBEDDED_WCS_PROFILES | Specifies that the ICC profile specified by pCDMPProfile will be used and the embedded WCS profile will be ignored. |</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is the handle of the color profile that is opened.</para>
+      <para>If this function fails, the return value is <b>NULL</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsOpenColorProfile">
+    <summary>Creates a handle to a specified color profile.</summary>
+    <param name="pCDMPProfile">Pointer to a WCS DMP or an ICC color profile structure specifying the profile. You can free the <i>pCDMPProfile</i> pointer after you create the handle. If the profile is ICC and its <b>dwType</b> member is set to DONT_USE_EMBEDDED_WCS_PROFILES, <b>WcsOpenColorProfile</b> ignores any embedded WCS profile within the ICC profile.</param>
+    <param name="pCAMPProfile">A pointer to a profile structure that specifies a WCS color appearance model profile (CAMP). You can free the <i>pCAMPProfile</i> pointer after you create the handle. If <b>NULL</b>, the default CAMP is used, and the current user setting, WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER, is used while querying the default CAMP.</param>
+    <param name="pGMMPProfile">A pointer to a profile structure that specifies a WCS gamut map model profile (GMMP). You can free the <i>pGMMPProfile</i> pointer after you create the handle. If <b>NULL</b>, the default GMMP for the default rendering intent is used, and the current user setting, WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER, is used while querying the default GMMP. For a description of rendering intents, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering Intents</a>.</param>
+    <param name="dwDesireAccess">
+      <para>A flag value that specifies how to access the specified color profile. This parameter must take one of the following values:</para>
+      <para>| Value | Description | |-|-| | PROFILE_READ | Specifies that the color profile opens for read-only access. | | PROFILE_READWRITE | Specifies that the color profile opens for both read and write access. The value of this flag is ignored if the profile is a WCS profile. |</para>
+    </param>
+    <param name="dwShareMode">
+      <para>A flag value that specifies actions to take while opening a color profile contained in a file. This parameter must take one of the following values, which are defined in <i>winnt.h</i>:</para>
+      <para>| Value | Description | |-|-| | FILE_SHARE_READ | Specifies that you can perform other open (for read access) operations on the profile. | | FILE_SHARE_WRITE | Specifies that you can perform other open (for write access) operations on the profile. This flag value is ignored when a WCS profile is opened. |</para>
+    </param>
+    <param name="dwCreationMode">
+      <para>A flag value that specifies the actions to take while opening a color profile if it is contained in a file. This parameter must take one of the following values, which are defined in <i>winbase.h</i>:</para>
+      <para>| Value | Description | |-|-| | CREATE_NEW | Specifies that a new profile is created. This function fails if the profile already exists. | | CREATE_ALWAYS | Specifies that a new profile is created. If a profile already exists, it is overwritten. | | OPEN_EXISTING | Specifies that the profile is opened. This function fails if the profile does not exist. | | OPEN_ALWAYS | Specifies that the profile is to be opened if an International Color Consortium (ICC) file exists. If an ICC profile does not exist, WCS creates a new ICC profile. The function will fail for WCS profiles if this flag is set and a WCS profile does not exist. | | TRUNCATE_EXISTING | Specifies that the profile is to be opened and truncated to zero bytes. The function fails if the profile does not exist. |</para>
+    </param>
+    <param name="dwFlags">
+      <para>A flag value that specifies whether to use the embedded WCS profile. This parameter has no effect unless <i>pCDMProfile</i> specifies an ICC profile that contains an embedded WCS profile.</para>
+      <para>This parameter takes one of the following values:</para>
+      <para>| Value | Description | |-|-| | 0 | Specifies that the embedded WCS profile will be used and the ICC profile specfied by pCDMPProfile will be ignored. | | DONT_USE_EMBEDDED_WCS_PROFILES | Specifies that the ICC profile specified by pCDMPProfile will be used and the embedded WCS profile will be ignored. |</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is the handle of the color profile that is opened.</para>
+      <para>If this function fails, the return value is <b>NULL</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsOpenColorProfileW">
+    <summary>Creates a handle to a specified color profile.</summary>
+    <param name="pCDMPProfile">Pointer to a WCS DMP or an ICC color profile structure specifying the profile. You can free the <i>pCDMPProfile</i> pointer after you create the handle. If the profile is ICC and its <b>dwType</b> member is set to DONT_USE_EMBEDDED_WCS_PROFILES, <b>WcsOpenColorProfile</b> ignores any embedded WCS profile within the ICC profile.</param>
+    <param name="pCAMPProfile">A pointer to a profile structure that specifies a WCS color appearance model profile (CAMP). You can free the <i>pCAMPProfile</i> pointer after you create the handle. If <b>NULL</b>, the default CAMP is used, and the current user setting, WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER, is used while querying the default CAMP.</param>
+    <param name="pGMMPProfile">A pointer to a profile structure that specifies a WCS gamut map model profile (GMMP). You can free the <i>pGMMPProfile</i> pointer after you create the handle. If <b>NULL</b>, the default GMMP for the default rendering intent is used, and the current user setting, WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER, is used while querying the default GMMP. For a description of rendering intents, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering Intents</a>.</param>
+    <param name="dwDesireAccess">
+      <para>A flag value that specifies how to access the specified color profile. This parameter must take one of the following values:</para>
+      <para>| Value | Description | |-|-| | PROFILE_READ | Specifies that the color profile opens for read-only access. | | PROFILE_READWRITE | Specifies that the color profile opens for both read and write access. The value of this flag is ignored if the profile is a WCS profile. |</para>
+    </param>
+    <param name="dwShareMode">
+      <para>A flag value that specifies actions to take while opening a color profile contained in a file. This parameter must take one of the following values, which are defined in <i>winnt.h</i>:</para>
+      <para>| Value | Description | |-|-| | FILE_SHARE_READ | Specifies that you can perform other open (for read access) operations on the profile. | | FILE_SHARE_WRITE | Specifies that you can perform other open (for write access) operations on the profile. This flag value is ignored when a WCS profile is opened. |</para>
+    </param>
+    <param name="dwCreationMode">
+      <para>A flag value that specifies the actions to take while opening a color profile if it is contained in a file. This parameter must take one of the following values, which are defined in <i>winbase.h</i>:</para>
+      <para>| Value | Description | |-|-| | CREATE_NEW | Specifies that a new profile is created. This function fails if the profile already exists. | | CREATE_ALWAYS | Specifies that a new profile is created. If a profile already exists, it is overwritten. | | OPEN_EXISTING | Specifies that the profile is opened. This function fails if the profile does not exist. | | OPEN_ALWAYS | Specifies that the profile is to be opened if an International Color Consortium (ICC) file exists. If an ICC profile does not exist, WCS creates a new ICC profile. The function will fail for WCS profiles if this flag is set and a WCS profile does not exist. | | TRUNCATE_EXISTING | Specifies that the profile is to be opened and truncated to zero bytes. The function fails if the profile does not exist. |</para>
+    </param>
+    <param name="dwFlags">
+      <para>A flag value that specifies whether to use the embedded WCS profile. This parameter has no effect unless <i>pCDMProfile</i> specifies an ICC profile that contains an embedded WCS profile.</para>
+      <para>This parameter takes one of the following values:</para>
+      <para>| Value | Description | |-|-| | 0 | Specifies that the embedded WCS profile will be used and the ICC profile specfied by pCDMPProfile will be ignored. | | DONT_USE_EMBEDDED_WCS_PROFILES | Specifies that the ICC profile specified by pCDMPProfile will be used and the embedded WCS profile will be ignored. |</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is the handle of the color profile that is opened.</para>
+      <para>If this function fails, the return value is <b>NULL</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsSetCalibrationManagementState">
+    <summary>Enables or disables system management of the display calibration state.</summary>
+    <param name="bIsEnabled">
+      <b>TRUE</b> to enable system management of the display calibration state. <b>FALSE</b> to disable system management of the display calibration state.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsSetDefaultColorProfile">
+    <summary>
+      <para>Sets the default color profile name for the specified profile type in the specified profile management scope.</para>
+      <blockquote>[!NOTE] This API does not support "advanced color" profiles for HDR monitors. Use <see cref="ColorProfileSetDisplayDefaultAssociation" /> for managing advanced color profiles.</blockquote>
+    </summary>
+    <param name="scope">A <see cref="WCS_PROFILE_MANAGEMENT_SCOPE" /> value that specifies the scope of this profile management operation.</param>
+    <param name="pDeviceName">A pointer to the name of the device for which the default color profile is to be set. If <b>NULL</b>, a device-independent default profile is used.</param>
+    <param name="cptColorProfileType">A <see cref="COLORPROFILETYPE" /> value that specifies the color profile type.</param>
+    <param name="cpstColorProfileSubType">A <see cref="COLORPROFILESUBTYPE" /> value that specifies the color profile subtype.</param>
+    <param name="dwProfileID">The ID of the color space that the color profile represents. This is a custom ID value used to uniquely identify the color space profile within your application.</param>
+    <param name="pProfileName">A pointer to a buffer that holds the name of the color profile. See Remarks.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsSetDefaultRenderingIntent">
+    <summary>Sets the default rendering intent in the specified profile management scope.</summary>
+    <param name="scope">The profile management scope for this operation, which can be system-wide or the current user only.</param>
+    <param name="dwRenderingIntent">
+      <para>The rendering intent. It can be set to one of the following values:</para>
+      <para>INTENT_PERCEPTUAL</para>
+      <para>INTENT_RELATIVE_COLORIMETRIC</para>
+      <para>INTENT_SATURATION</para>
+      <para>INTENT_ABSOLUTE_COLORIMETRIC</para>
+      <para>DWORD_MAX</para>
+      <para>If <i>dwRenderingIntent</i> is DWORD_MAX and <i>scope</i> is WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER, the default rendering intent for the current user reverts to the system-wide default.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/win32/wcs/rendering-intents">Rendering intents</a>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsSetUsePerUserProfiles">
+    <summary>Enables a user to specify whether or not to use a per-user profile association list for the specified device.</summary>
+    <param name="pDeviceName">A pointer to a string that contains the user-friendly name of the device.</param>
+    <param name="dwDeviceClass">
+      <para>A flag value that specifies the class of the device. This parameter must take one of the following values:</para>
+      <para>| Value | Description | |----------------|------------------------------------| | CLASS_MONITOR | Specifies a display device. | | CLASS_PRINTER | Specifies a printer. | | CLASS_SCANNER | Specifies an image capture device. |</para>
+    </param>
+    <param name="usePerUserProfiles">A Boolean value that is <b>TRUE</b> if the user wants to use a per-user profile association list for the specified device; otherwise <b>FALSE</b>.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="Windows.WcsTranslateColors">
+    <summary>Translates an array of colors from the source color space to the destination color space as defined by a color transform.</summary>
+    <param name="hColorTransform">A handle for the WCS color transform.</param>
+    <param name="nColors">The number of elements in the array to which <i>pInputData</i> and <i>pOutputData</i> point.</param>
+    <param name="nInputChannels">The number of channels per element in the array to which <i>pInputData</i> points.</param>
+    <param name="cdtInput">The input <see cref="COLORDATATYPE" /> color data type.</param>
+    <param name="cbInput">The buffer size, in bytes, of <i>pInputData</i>.</param>
+    <param name="pInputData">A pointer to an array of input colors. The size of the buffer for this array, in bytes, is the <b>DWORD</b> value of <i>cbInput</i>.</param>
+    <param name="nOutputChannels">The number of channels per element in the array to which <i>pOutputData</i> points.</param>
+    <param name="cdtOutput">The <see cref="COLORDATATYPE" /> output that specified the color data type.</param>
+    <param name="cbOutput">The buffer size, in bytes, of <i>pOutputData</i>.</param>
+    <param name="pOutputData">A pointer to an array of colors that receives the results of the color translation.The size of the buffer for this array, in bytes, is the <b>DWORD</b> value of <i>cbOutput</i>.</param>
+    <returns>
+      <para>If this function succeeds, the return value is <b>TRUE</b>.</para>
+      <para>If this function fails, the return value is <b>FALSE</b>. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+</doc>

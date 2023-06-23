@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROFILE">
+    <summary>Contains information that defines a color profile. See <a href="https://docs.microsoft.com//windows/win32/wcs/using-device-profiles-with-wcs">Using device profiles with WCS</a> for more information.</summary>
+  </member>
+  <member name="PROFILE.dwType">
+    <summary>
+      <para>Must be set to one of the following values.</para>
+      <para>| Value | Meaning | |--------------------|----------------------------------------------------------------------------------------------------------------------------| | PROFILE_FILENAME | Indicates that the <b>pProfileData</b> member contains a null-terminated string that holds the name of a device profile file. | | PROFILE_MEMBUFFER | Indicates that the <b>pProfileData</b> member contains a pointer to a device profile in a memory buffer. |</para>
+    </summary>
+  </member>
+  <member name="PROFILE.pProfileData">
+    <summary>The contents of this member is indicated by the <b>dwTYPE</b> member. It will either be a pointer to a null-terminated string containing the file name of the device profile, or it will be a pointer to a buffer in memory containing the device profile data.</summary>
+  </member>
+  <member name="PROFILE.cbDataSize">
+    <summary>The size in bytes of the data buffer pointed to by the <b>pProfileData</b> member.</summary>
+  </member>
+</doc>

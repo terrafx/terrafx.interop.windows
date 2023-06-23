@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CHOOSECOLORA">
+    <summary>Contains information the <a href="https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms646912(v=vs.85)">ChooseColor</a> function uses to initialize the <b>Color</b> dialog box. After the user closes the dialog box, the system returns information about the user's selection in this structure.</summary>
+  </member>
+  <member name="CHOOSECOLORA.lStructSize">
+    <summary>The length, in bytes, of the structure.</summary>
+  </member>
+  <member name="CHOOSECOLORA.hwndOwner">
+    <summary>A handle to the window that owns the dialog box. This member can be any valid window handle, or it can be <b>NULL</b> if the dialog box has no owner.</summary>
+  </member>
+  <member name="CHOOSECOLORA.hInstance">
+    <summary>If the <b>CC_ENABLETEMPLATEHANDLE</b> flag is set in the <b>Flags</b> member, <b>hInstance</b> is a handle to a memory object containing a dialog box template. If the <b>CC_ENABLETEMPLATE</b> flag is set, <b>hInstance</b> is a handle to a module that contains a dialog box template named by the <b>lpTemplateName</b> member. If neither <b>CC_ENABLETEMPLATEHANDLE</b> nor <b>CC_ENABLETEMPLATE</b> is set, this member is ignored.</summary>
+  </member>
+  <member name="CHOOSECOLORA.rgbResult">
+    <summary>If the <b>CC_RGBINIT</b> flag is set, <b>rgbResult</b> specifies the color initially selected when the dialog box is created. If the specified color value is not among the available colors, the system selects the nearest solid color available. If <b>rgbResult</b> is zero or <b>CC_RGBINIT</b> is not set, the initially selected color is black. If the user clicks the <b>OK</b> button, <b>rgbResult</b> specifies the user's color selection. To create a <a href="https://docs.microsoft.com/windows/desktop/gdi/colorref">COLORREF</a> color value, use the <a href="https://docs.microsoft.com/windows/desktop/api/wingdi/nf-wingdi-rgb">RGB</a> macro.</summary>
+  </member>
+  <member name="CHOOSECOLORA.lpCustColors">
+    <summary>A pointer to an array of 16 values that contain red, green, blue (RGB) values for the custom color boxes in the dialog box. If the user modifies these colors, the system updates the array with the new RGB values. To preserve new custom colors between calls to the <a href="https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms646912(v=vs.85)">ChooseColor</a> function, you should allocate static memory for the array. To create a <a href="https://docs.microsoft.com/windows/desktop/gdi/colorref">COLORREF</a> color value, use the <a href="https://docs.microsoft.com/windows/desktop/api/wingdi/nf-wingdi-rgb">RGB</a> macro.</summary>
+  </member>
+  <member name="CHOOSECOLORA.Flags">
+    <summary>
+      <para>A set of bit flags that you can use to initialize the <b>Color</b> dialog box. When the dialog box returns, it sets these flags to indicate the user's input. This member can be a combination of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_ANYCOLOR</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display all available colors in the set of basic colors.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_ENABLEHOOK</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables the hook procedure specified in the <b>lpfnHook</b> member of this structure. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_ENABLETEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>hInstance</b> and <b>lpTemplateName</b> members specify a dialog box template to use in place of the default template. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_ENABLETEMPLATEHANDLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>hInstance</b> member identifies a data block that contains a preloaded dialog box template. The system ignores the <b>lpTemplateName</b> member if this flag is specified. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_FULLOPEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the additional controls that allow the user to create custom colors. If this flag is not set, the user must click the <b>Define Custom Color</b> button to display the custom color controls.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_PREVENTFULLOPEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Define Custom Color</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_RGBINIT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to use the color specified in the <b>rgbResult</b> member as the initial color selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_SHOWHELP</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the Help button. The <b>hwndOwner</b> member must specify the window to receive the <a href="https://docs.microsoft.com/windows/desktop/dlgbox/helpmsgstring">HELPMSGSTRING</a> registered messages that the dialog box sends when the user clicks the <b>Help</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_SOLIDCOLOR</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display only solid colors in the set of basic colors.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="CHOOSECOLORA.lCustData">
+    <summary>Application-defined data that the system passes to the hook procedure identified by the <b>lpfnHook</b> member. When the system sends the <a href="https://docs.microsoft.com/windows/desktop/dlgbox/wm-initdialog">WM_INITDIALOG</a> message to the hook procedure, the message's <i>lParam</i> parameter is a pointer to the <b>CHOOSECOLOR</b> structure specified when the dialog was created. The hook procedure can use this pointer to get the <b>lCustData</b> value.</summary>
+  </member>
+  <member name="CHOOSECOLORA.lpfnHook">
+    <summary>A pointer to a <a href="https://docs.microsoft.com/windows/desktop/api/commdlg/nc-commdlg-lpcchookproc">CCHookProc</a> hook procedure that can process messages intended for the dialog box. This member is ignored unless the <b>CC_ENABLEHOOK</b> flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="CHOOSECOLORA.lpTemplateName">
+    <summary>The name of the dialog box template resource in the module identified by the <b>hInstance</b> member. This template is substituted for the standard dialog box template. For numbered dialog box resources, <b>lpTemplateName</b> can be a value returned by the <a href="https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-makeintresourcea">MAKEINTRESOURCE</a> macro. This member is ignored unless the <b>CC_ENABLETEMPLATE</b> flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="CHOOSECOLORA.lpEditInfo"></member>
+  <member name="CHOOSECOLORA">
+    <summary>Contains information the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646912(v=vs.85)">ChooseColor</a> function uses to initialize the <b>Color</b> dialog box. After the user closes the dialog box, the system returns information about the user's selection in this structure.</summary>
+  </member>
+  <member name="CHOOSECOLORA.lStructSize">
+    <summary>The length, in bytes, of the structure.</summary>
+  </member>
+  <member name="CHOOSECOLORA.hwndOwner">
+    <summary>A handle to the window that owns the dialog box. This member can be any valid window handle, or it can be <b>NULL</b> if the dialog box has no owner.</summary>
+  </member>
+  <member name="CHOOSECOLORA.hInstance">
+    <summary>If the <b>CC_ENABLETEMPLATEHANDLE</b> flag is set in the <b>Flags</b> member, <b>hInstance</b> is a handle to a memory object containing a dialog box template. If the <b>CC_ENABLETEMPLATE</b> flag is set, <b>hInstance</b> is a handle to a module that contains a dialog box template named by the <b>lpTemplateName</b> member. If neither <b>CC_ENABLETEMPLATEHANDLE</b> nor <b>CC_ENABLETEMPLATE</b> is set, this member is ignored.</summary>
+  </member>
+  <member name="CHOOSECOLORA.rgbResult">
+    <summary>If the <b>CC_RGBINIT</b> flag is set, <b>rgbResult</b> specifies the color initially selected when the dialog box is created. If the specified color value is not among the available colors, the system selects the nearest solid color available. If <b>rgbResult</b> is zero or <b>CC_RGBINIT</b> is not set, the initially selected color is black. If the user clicks the <b>OK</b> button, <b>rgbResult</b> specifies the user's color selection. To create a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> color value, use the <see cref="RGB" /> macro.</summary>
+  </member>
+  <member name="CHOOSECOLORA.lpCustColors">
+    <summary>A pointer to an array of 16 values that contain red, green, blue (RGB) values for the custom color boxes in the dialog box. If the user modifies these colors, the system updates the array with the new RGB values. To preserve new custom colors between calls to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646912(v=vs.85)">ChooseColor</a> function, you should allocate static memory for the array. To create a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> color value, use the <see cref="RGB" /> macro.</summary>
+  </member>
+  <member name="CHOOSECOLORA.Flags">
+    <summary>
+      <para>A set of bit flags that you can use to initialize the <b>Color</b> dialog box. When the dialog box returns, it sets these flags to indicate the user's input. This member can be a combination of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_ANYCOLOR</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display all available colors in the set of basic colors.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_ENABLEHOOK</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables the hook procedure specified in the <b>lpfnHook</b> member of this structure. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_ENABLETEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>hInstance</b> and <b>lpTemplateName</b> members specify a dialog box template to use in place of the default template. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_ENABLETEMPLATEHANDLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>hInstance</b> member identifies a data block that contains a preloaded dialog box template. The system ignores the <b>lpTemplateName</b> member if this flag is specified. This flag is used only to initialize the dialog box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_FULLOPEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the additional controls that allow the user to create custom colors. If this flag is not set, the user must click the <b>Define Custom Color</b> button to display the custom color controls.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_PREVENTFULLOPEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Define Custom Color</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_RGBINIT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to use the color specified in the <b>rgbResult</b> member as the initial color selection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_SHOWHELP</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display the Help button. The <b>hwndOwner</b> member must specify the window to receive the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/helpmsgstring">HELPMSGSTRING</a> registered messages that the dialog box sends when the user clicks the <b>Help</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CC_SOLIDCOLOR</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the dialog box to display only solid colors in the set of basic colors.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="CHOOSECOLORA.lCustData">
+    <summary>Application-defined data that the system passes to the hook procedure identified by the <b>lpfnHook</b> member. When the system sends the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-initdialog">WM_INITDIALOG</a> message to the hook procedure, the message's <i>lParam</i> parameter is a pointer to the <b>CHOOSECOLOR</b> structure specified when the dialog was created. The hook procedure can use this pointer to get the <b>lCustData</b> value.</summary>
+  </member>
+  <member name="CHOOSECOLORA.lpfnHook">
+    <summary>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/commdlg/nc-commdlg-lpcchookproc">CCHookProc</a> hook procedure that can process messages intended for the dialog box. This member is ignored unless the <b>CC_ENABLEHOOK</b> flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="CHOOSECOLORA.lpTemplateName">
+    <summary>The name of the dialog box template resource in the module identified by the <b>hInstance</b> member. This template is substituted for the standard dialog box template. For numbered dialog box resources, <b>lpTemplateName</b> can be a value returned by the <see cref="MAKEINTRESOURCE" /> macro. This member is ignored unless the <b>CC_ENABLETEMPLATE</b> flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="CHOOSECOLORA.lpEditInfo"></member>
+</doc>

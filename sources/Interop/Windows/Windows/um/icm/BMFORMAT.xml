@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BMFORMAT">
+    <summary>The values of the <b>BMFORMAT</b> enumerated type are used by several WCS functions to indicate the format that particular bitmaps are in.</summary>
+  </member>
+  <member name="BMFORMAT.BM_x555RGB">
+    <summary>16 bits per pixel. RGB color space. 5 bits per channel. The most significant bit is ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_x555XYZ">
+    <summary>16 bits per pixel. CIE device-independent XYZ color space. 5 bits per channel. The most significant bit is ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_x555Yxy">
+    <summary>16 bits per pixel. Yxy color space. 5 bits per channel. The most significant bit is ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_x555Lab">
+    <summary>16 bits per pixel. L*a*b color space. 5 bits per channel. The most significant bit is ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_x555G3CH">
+    <summary>16 bits per pixel. G3CH color space. 5 bits per channel. The most significant bit is ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_RGBTRIPLETS">
+    <summary>24 bits per pixel maximum. For three channel colors, such as Red,Green,Blue, the total size is 24 bits per pixel. For single channel colors, such as gray, the total size is 8 bits per pixel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_BGRTRIPLETS">
+    <summary>24 bits per pixel maximum. For three channel colors, such as Red,Green,Blue, the total size is 24 bits per pixel. For single channel colors, such as gray, the total size is 8 bits per pixel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_XYZTRIPLETS">
+    <summary>
+      <para>24 bits per pixel maximum. For three channel, X, Y and Z values, the total size is 24 bits per pixel. For single channel gray scale, the total size is 8 bits per pixel.</para>
+      <blockquote>[!Note]<br />The <see cref="TranslateBitmapBits" /> function does not support <see cref="BM_XYZTRIPLETS" /> as an input.</blockquote>
+    </summary>
+  </member>
+  <member name="BMFORMAT.BM_YxyTRIPLETS">
+    <summary>
+      <para>24 bits per pixel maximum. For three channel, Y, x and y values, the total size is 24 bits per pixel. For single channel gray scale, the total size is 8 bits per pixel.</para>
+      <blockquote>[!Note]<br />The <see cref="TranslateBitmapBits" /> function does not support <see cref="BM_YxyTRIPLETS" /> as an input.</blockquote>
+    </summary>
+  </member>
+  <member name="BMFORMAT.BM_LabTRIPLETS">
+    <summary>24 bits per pixel maximum. For three channel, L, a and b values, the total size is 24 bits per pixel. For single channel gray scale, the total size is 8 bits per pixel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_G3CHTRIPLETS">
+    <summary>24 bits per pixel maximum. For three channel values, the total size is 24 bits per pixel. For single channel gray scale, the total size is 8 bits per pixel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_5CHANNEL">
+    <summary>40 bits per pixel. 8 bits apiece are used for each channel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_6CHANNEL">
+    <summary>48 bits per pixel. 8 bits apiece are used for each channel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_7CHANNEL">
+    <summary>56 bits per pixel. 8 bits apiece are used for each channel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_8CHANNEL">
+    <summary>64 bits per pixel. 8 bits apiece are used for each channel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_GRAY">
+    <summary>32 bits per pixel. Only the 8 bit gray-scale value is used.</summary>
+  </member>
+  <member name="BMFORMAT.BM_xRGBQUADS">
+    <summary>32 bits per pixel. 8 bits are used for each color channel. The most significant byte is ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_xBGRQUADS">
+    <summary>32 bits per pixel. 8 bits are used for each color channel. The most significant byte is ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_xG3CHQUADS">
+    <summary>32 bits per pixel. 8 bits are used for each color channel. The most significant byte is ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_KYMCQUADS">
+    <summary>32 bits per pixel. 8 bits are used for each color channel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_CMYKQUADS">
+    <summary>32 bits per pixel. 8 bits are used for each color channel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_10b_RGB">
+    <summary>32 bits per pixel. 10 bits are used for each color channel. The 2 most significant bits are ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_10b_XYZ">
+    <summary>32 bits per pixel. 10 bits are used for each color channel. The 2 most significant bits are ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_10b_Yxy">
+    <summary>32 bits per pixel. 10 bits are used for each color channel. The 2 most significant bits are ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_10b_Lab">
+    <summary>32 bits per pixel. 10 bits are used for each color channel. The 2 most significant bits are ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_10b_G3CH">
+    <summary>32 bits per pixel. 10 bits are used for each color channel. The 2 most significant bits are ignored.</summary>
+  </member>
+  <member name="BMFORMAT.BM_NAMED_INDEX">
+    <summary>32 bits per pixel. Named color indices. Index numbering begins at 1.</summary>
+  </member>
+  <member name="BMFORMAT.BM_16b_RGB">
+    <summary>48 bits per pixel. Each channel uses 16 bits.</summary>
+  </member>
+  <member name="BMFORMAT.BM_16b_XYZ">
+    <summary>48 bits per pixel. Each channel uses 16 bits.</summary>
+  </member>
+  <member name="BMFORMAT.BM_16b_Yxy">
+    <summary>48 bits per pixel. Each channel uses 16 bits.</summary>
+  </member>
+  <member name="BMFORMAT.BM_16b_Lab">
+    <summary>48 bits per pixel. Each channel uses 16 bits.</summary>
+  </member>
+  <member name="BMFORMAT.BM_16b_G3CH">
+    <summary>48 bits per pixel. Each channel uses 16 bits.</summary>
+  </member>
+  <member name="BMFORMAT.BM_16b_GRAY">
+    <summary>16 bits per pixel.</summary>
+  </member>
+  <member name="BMFORMAT.BM_565RGB">
+    <summary>16 bits per pixel. 5 bits are used for red, 6 for green, and 5 for blue.</summary>
+  </member>
+  <member name="BMFORMAT.BM_32b_scRGB">
+    <summary>96 bits per pixel, 32 bit per channel IEEE floating point.</summary>
+  </member>
+  <member name="BMFORMAT.BM_32b_scARGB">
+    <summary>128 bits per pixel, 32 bit per channel IEEE floating point.</summary>
+  </member>
+  <member name="BMFORMAT.BM_S2DOT13FIXED_scRGB">
+    <summary>48 bits per pixel, Fixed point integer ranging from -4 to +4 with a sign bit and 2 bit exponent and 13 bit mantissa.</summary>
+  </member>
+  <member name="BMFORMAT.BM_S2DOT13FIXED_scARGB">
+    <summary>64 bits per pixel, Fixed point integer ranging from -4 to +4 with a sign bit and 2 bit exponent and 13 bit mantissa.</summary>
+  </member>
+  <member name="BMFORMAT.BM_R10G10B10A2">
+    <summary>32 bits per pixel. 10 bits are used for each color channel. The two most significant bits are alpha.</summary>
+  </member>
+  <member name="BMFORMAT.BM_R10G10B10A2_XR">
+    <summary>
+      <para>32 bits per pixel. 10 bits are used for each color channel. The 10 bits of each color channel are 2.8 fixed point with a -0.75 bias, giving a range of [-0.76 .. 1.25]. This range corresponds to [-0.5 .. 1.5] in a gamma = 1 space. The two most significant bits are preserved for alpha.</para>
+      <para>This uses an extended range (XR) sRGB color space. It has the same RGB primaries, white point, and gamma as sRGB.</para>
+    </summary>
+  </member>
+  <member name="BMFORMAT.BM_R16G16B16A16_FLOAT">
+    <summary>64 bits per pixel. Each channel is a 16-bit float. The last WORD is alpha.</summary>
+  </member>
+</doc>

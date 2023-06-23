@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRINTDLGEXA">
+    <summary>Contains information that the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function uses to initialize the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/print-property-sheet">Print property sheet</a>. After the user closes the property sheet, the system uses this structure to return information about the user's selections.</summary>
+  </member>
+  <member name="PRINTDLGEXA.lStructSize">
+    <summary>The structure size, in bytes.</summary>
+  </member>
+  <member name="PRINTDLGEXA.hwndOwner">
+    <summary>A handle to the window that owns the property sheet. This member must be a valid window handle; it cannot be <b>NULL</b>.</summary>
+  </member>
+  <member name="PRINTDLGEXA.hDevMode">
+    <summary>
+      <para>A handle to a movable global memory object that contains a <see cref="DEVMODE" /> structure. If <b>hDevMode</b> is not <b>NULL</b> on input, you must allocate a movable block of memory for the <b>DEVMODE</b> structure and initialize its members. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function uses the input data to initialize the controls in the property sheet. When <b>PrintDlgEx</b> returns, the <b>DEVMODE</b> members indicate the user's input.</para>
+      <para>If <b>hDevMode</b> is <b>NULL</b> on input, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> allocates memory for the <see cref="DEVMODE" /> structure, initializes its members to indicate the user's input, and returns a handle that identifies it.</para>
+      <para>For more information about the <b>hDevMode</b> and <b>hDevNames</b> members, see the Remarks section at the end of this topic.</para>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA.hDevNames">
+    <summary>
+      <para>A handle to a movable global memory object that contains a <see cref="DEVNAMES" /> structure. If <b>hDevNames</b> is not <b>NULL</b> on input, you must allocate a movable block of memory for the <b>DEVNAMES</b> structure and initialize its members. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function uses the input data to initialize the controls in the property sheet. When <b>PrintDlgEx</b> returns, the <b>DEVNAMES</b> members contain information for the printer chosen by the user. You can use this information to create a device context or an information context.</para>
+      <para>The <b>hDevNames</b> member can be <b>NULL</b>, in which case, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> allocates memory for the <see cref="DEVNAMES" /> structure, initializes its members to indicate the user's input, and returns a handle that identifies it.</para>
+      <para>For more information about the <b>hDevMode</b> and <b>hDevNames</b> members, see the Remarks section at the end of this topic.</para>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA.hDC">
+    <summary>A handle to a device context or an information context, depending on whether the <b>Flags</b> member specifies the <b>PD_RETURNDC</b> or <b>PC_RETURNIC</b> flag. If neither flag is specified, the value of this member is undefined. If both flags are specified, <b>PD_RETURNDC</b> has priority.</summary>
+  </member>
+  <member name="PRINTDLGEXA.Flags">
+    <summary>
+      <para>A set of bit flags that you can use to initialize the <b>Print</b> property sheet. When the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, it sets these flags to indicate the user's input. This member can be one or more of the following values.</para>
+      <para>To ensure that <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> returns the correct values in the <b>dmCopies</b> and <b>dmCollate</b> members of the <see cref="DEVMODE" /> structure, set <b>PD_RETURNDC</b> = <b>TRUE</b> and <b>PD_USEDEVMODECOPIESANDCOLLATE</b> = <b>TRUE</b>. In so doing, the <b>nCopies</b> member of the <see cref="PRINTDLG" /> structure is always 1 and <b>PD_COLLATE</b> is always <b>FALSE</b>.</para>
+      <para>To ensure that <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> returns the correct values in <b>nCopies</b> and <b>PD_COLLATE</b>, set <b>PD_RETURNDC</b> = <b>TRUE</b> and <b>PD_USEDEVMODECOPIESANDCOLLATE</b> = <b>FALSE</b>. In so doing, <b>dmCopies</b> is always 1 and <b>dmCollate</b> is always <b>FALSE</b>.</para>
+      <para>Starting with Windows Vista, when you call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> with <b>PD_RETURNDC</b> set to <b>TRUE</b> and <b>PD_USEDEVMODECOPIESANDCOLLATE</b> set to <b>FALSE</b>, the <b>PrintDlg</b> or <b>PrintDlgEx</b> function sets the number of copies in the <b>nCopies</b> member of the <see cref="PRINTDLG" /> structure, and it sets the number of copies in the structure represented by the <b>hDC</b> member of the <b>PRINTDLG</b> structure.</para>
+      <para>When making calls to GDI, you must ignore the value of <b>nCopies</b>, consider the value as 1, and use the returned <b>hDC</b> to avoid printing duplicate copies.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_ALLPAGES</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The default flag that indicates that the <b>All</b> radio button is initially selected. This flag is used as a placeholder to indicate that the <b>PD_PAGENUMS</b>, <b>PD_SELECTION</b>, and <b>PD_CURRENTPAGE</b> flags are not specified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_COLLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <b>Collate</b> check box is selected.<para>If this flag is set when the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, the application must simulate collation of multiple copies. For more information, see the description of the <b>PD_USEDEVMODECOPIESANDCOLLATE</b> flag.</para><para>See <b>PD_NOPAGENUMS</b>.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_CURRENTPAGE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00400000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <b>Current Page</b> radio button is selected. If none of the <b>PD_PAGENUMS</b>, <b>PD_SELECTION</b>, or <b>PD_CURRENTPAGE</b> flags is set, the <b>All</b> radio button is selected.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_DISABLEPRINTTOFILE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00080000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Print to File</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_ENABLEPRINTTEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> and <b>lpPrintTemplateName</b> members specify a replacement for the default dialog box template in the lower portion of the <b>General</b> page. The default template contains controls similar to those of the <b>Print</b> dialog box. The system uses the specified template to create a window that is a child of the <b>General</b> page.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_ENABLEPRINTTEMPLATEHANDLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> member identifies a data block that contains a preloaded dialog box template. This template replaces the default dialog box template in the lower portion of the <b>General</b> page. The system uses the specified template to create a window that is a child of the <b>General</b> page. The system ignores the <b>lpPrintTemplateName</b> member if this flag is specified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_EXCLUSIONFLAGS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x01000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>ExclusionFlags</b> member identifies items to be excluded from the printer driver property pages. If this flag is not set, items will be excluded by default from the printer driver property pages. The exclusions prevent the duplication of items among the <b>General</b> page, any application-specified pages, and the printer driver pages.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_HIDEPRINTTOFILE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00100000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Hides the <b>Print to File</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_NOCURRENTPAGE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00800000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Current Page</b> radio button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_NOPAGENUMS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Pages</b> radio button and the associated edit controls. Also, it causes the <b>Collate</b> check box to appear in the dialog.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_NOSELECTION</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Selection</b> radio button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_NOWARNING</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Prevents the warning message from being displayed when an error occurs.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_PAGENUMS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <b>Pages</b> radio button is selected. If none of the <b>PD_PAGENUMS</b>, <b>PD_SELECTION</b>, or <b>PD_CURRENTPAGE</b> flags is set, the <b>All</b> radio button is selected. If this flag is set when the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, the <b>lpPageRanges</b> member indicates the page ranges specified by the user.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_PRINTTOFILE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <b>Print to File</b> check box is selected. If this flag is set when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> returns, the offset indicated by the <b>wOutputOffset</b> member of the <see cref="DEVNAMES" /> structure contains the string "FILE:". When you call the <see cref="StartDoc" /> function to start the printing operation, specify this "FILE:" string in the <b>lpszOutput</b> member of the <see cref="DOCINFO" /> structure. Specifying this string causes the print subsystem to query the user for the name of the output file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_RETURNDC</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> to return a device context matching the selections the user made in the property sheet. The device context is returned in <b>hDC</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_RETURNDEFAULT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function does not display the property sheet. Instead, it sets the <b>hDevNames</b> and <b>hDevMode</b> members to handles to <see cref="DEVNAMES" /> and <see cref="DEVMODE" /> structures that are initialized for the system default printer. Both <b>hDevNames</b> and <b>hDevMode</b> must be <b>NULL</b>, or <b>PrintDlgEx</b> returns an error.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_RETURNIC</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Similar to the <b>PD_RETURNDC</b> flag, except this flag returns an information context rather than a device context. If neither <b>PD_RETURNDC</b> nor <b>PD_RETURNIC</b> is specified, <b>hDC</b> is undefined on output.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_SELECTION</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <b>Selection</b> radio button is selected. If none of the <b>PD_PAGENUMS</b>, <b>PD_SELECTION</b>, or <b>PD_CURRENTPAGE</b> flags is set, the <b>All</b> radio button is selected.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_USEDEVMODECOPIES</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Same as <b>PD_USEDEVMODECOPIESANDCOLLATE</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_USEDEVMODECOPIESANDCOLLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag indicates whether your application supports multiple copies and collation. Set this flag on input to indicate that your application does not support multiple copies and collation. In this case, the <b>nCopies</b> member of the <b>PRINTDLGEX</b> structure always returns 1, and <b>PD_COLLATE</b> is never set in the <b>Flags</b> member.<para>If this flag is not set, the application is responsible for printing and collating multiple copies. In this case, the <b>nCopies</b> member of the <b>PRINTDLGEX</b> structure indicates the number of copies the user wants to print, and the <b>PD_COLLATE</b> flag in the <b>Flags</b> member indicates whether the user wants collation.</para><para>Regardless of whether this flag is set, an application can determine from <b>nCopies</b> and <b>PD_COLLATE</b> how many copies to render and whether to print them collated.</para><para>If this flag is set and the printer driver does not support multiple copies, the <b>Copies</b> edit control is disabled. Similarly, if this flag is set and the printer driver does not support collation, the <b>Collate</b> check box is disabled.</para><para>The <b>dmCopies</b> and <b>dmCollate</b> members of the <see cref="DEVMODE" /> structure contain the copies and collate information used by the printer driver. If this flag is set and the printer driver supports multiple copies, the	<b>dmCopies</b> member indicates the number of copies requested by the user. If this flag is set and the printer driver supports collation, the <b>dmCollate</b> member of the <b>DEVMODE</b> structure indicates whether the user wants collation. If this flag is not set, the <b>dmCopies</b> member always returns 1, and the <b>dmCollate</b> member is always zero.</para><para>In Windows versions prior to Windows Vista, if this flag is not set by the calling application and the <b>dmCopies</b> member of the <see cref="DEVMODE" /> structure is greater than 1, use that value for the number of copies; otherwise, use the value of the <b>nCopies</b> member of the <b>PRINTDLGEX</b> structure.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_USELARGETEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Forces the property sheet to use a large template for the <b>General</b> page. The larger template provides more space for applications that specify a custom template for the lower portion of the <b>General</b> page.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA.Flags2"></member>
+  <member name="PRINTDLGEXA.ExclusionFlags">
+    <summary>
+      <para>A set of bit flags that can exclude items from the printer driver property pages in the <b>Print</b> property sheet. This value is used only if the <b>PD_EXCLUSIONFLAGS</b> flag is set in the <b>Flags</b> member. Exclusion flags should be used only if the item to be excluded will be included on either the <b>General</b> page or on an application-defined page in the <b>Print</b> property sheet. This member can specify the following flag.</para>
+      <h4>PD_EXCL_COPIESANDCOLLATE</h4>
+      <para>Excludes the <b>Copies</b> and <b>Collate</b> controls from the printer driver property pages in a <b>Print</b> property sheet. This flag should always be set when the application uses the default <b>Copies</b> and <b>Collate</b> controls provided by the lower portion of the <b>General</b> page of the <b>Print</b> property sheet.</para>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA.nPageRanges">
+    <summary>On input, set this member to the initial number of page ranges specified in the <b>lpPageRanges</b> array. When the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, <b>nPageRanges</b> indicates the number of user-specified page ranges stored in the <b>lpPageRanges</b> array. If the <b>PD_NOPAGENUMS</b> flag is specified, this value is not valid.</summary>
+  </member>
+  <member name="PRINTDLGEXA.nMaxPageRanges">
+    <summary>The size, in array elements, of the <b>lpPageRanges</b> buffer. This value indicates the maximum number of page ranges that can be stored in the array. If the <b>PD_NOPAGENUMS</b> flag is specified, this value is not valid. If the <b>PD_NOPAGENUMS</b> flag is not specified, this value must be greater than zero.</summary>
+  </member>
+  <member name="PRINTDLGEXA.lpPageRanges">
+    <summary>Pointer to a buffer containing an array of <see cref="PRINTPAGERANGE" /> structures. On input, the array contains the initial page ranges to display in the <b>Pages</b> edit control. When the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, the array contains the page ranges specified by the user. If the <b>PD_NOPAGENUMS</b> flag is specified, this value is not valid. If the <b>PD_NOPAGENUMS</b> flag is not specified, <b>lpPageRanges</b> must be non-<b>NULL</b>.</summary>
+  </member>
+  <member name="PRINTDLGEXA.nMinPage">
+    <summary>The minimum value for the page ranges specified in the <b>Pages</b> edit control. If the <b>PD_NOPAGENUMS</b> flag is specified, this value is not valid.</summary>
+  </member>
+  <member name="PRINTDLGEXA.nMaxPage">
+    <summary>The maximum value for the page ranges specified in the <b>Pages</b> edit control. If the <b>PD_NOPAGENUMS</b> flag is specified, this value is not valid.</summary>
+  </member>
+  <member name="PRINTDLGEXA.nCopies">
+    <summary>Contains the initial number of copies for the <b>Copies</b> edit control if <b>hDevMode</b> is <b>NULL</b>; otherwise, the <b>dmCopies</b> member of the <see cref="DEVMODE" /> structure contains the initial value. When <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> returns, <b>nCopies</b> contains the actual number of copies the application must print. This value depends on whether the application or the printer driver is responsible for printing multiple copies. If the <b>PD_USEDEVMODECOPIESANDCOLLATE</b> flag is set in the <b>Flags</b> member, <b>nCopies</b> is always 1 on return, and the printer driver is responsible for printing multiple copies. If the flag is not set, the application is responsible for printing the number of copies specified by <b>nCopies</b>. For more information, see the description of the <b>PD_USEDEVMODECOPIESANDCOLLATE</b> flag.</summary>
+  </member>
+  <member name="PRINTDLGEXA.hInstance">
+    <summary>If the <b>PD_ENABLEPRINTTEMPLATE</b> flag is set in the <b>Flags</b> member, <b>hInstance</b> is a handle to the application or module instance that contains the dialog box template named by the <b>lpPrintTemplateName</b> member. If the <b>PD_ENABLEPRINTTEMPLATEHANDLE</b> flag is set in the <b>Flags</b> member, <b>hInstance</b> is a handle to a memory object containing a dialog box template. If neither of the template flags is set in the <b>Flags</b> member, <b>hInstance</b> should be <b>NULL</b>.</summary>
+  </member>
+  <member name="PRINTDLGEXA.lpPrintTemplateName">
+    <summary>The name of the dialog box template resource in the module identified by the <b>hInstance</b> member. This template replaces the default dialog box template in the lower portion of the <b>General</b> page. The default template contains controls similar to those of the <b>Print</b> dialog box. This member is ignored unless the PD_ENABLEPRINTTEMPLATE flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="PRINTDLGEXA.lpCallback">
+    <summary>
+      <para>A pointer to an application-defined callback object.</para>
+      <para>The object should contain the <see cref="IPrintDialogCallback" /> class to receive messages for the child dialog box in the lower portion of the <b>General</b> page.</para>
+      <para>The callback object should also contain the <see cref="IObjectWithSite" /> class to receive a pointer to the <see cref="IPrintDialogServices" /> interface. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function calls <see cref="IUnknown.QueryInterface" /> on the callback object for both <b>IID_IPrintDialogCallback</b> and <b>IID_IObjectWithSite</b> to determine which interfaces are supported.</para>
+      <para>If you do not want to retrieve any of the callback information, set <b>lpCallback</b> to <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA.nPropertyPages">
+    <summary>The number of property page handles in the<b>lphPropertyPages</b> array.</summary>
+  </member>
+  <member name="PRINTDLGEXA.lphPropertyPages">
+    <summary>Contains an array of property page handles to add to the <b>Print</b> property sheet. The additional property pages follow the <b>General</b> page. Use the <see cref="CreatePropertySheetPage" /> function to create these additional pages. When the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, all the <b>HPROPSHEETPAGE</b> handles in the <b>lphPropertyPages</b> array have been destroyed. If <b>nPropertyPages</b> is zero, <b>lphPropertyPages</b> should be <b>NULL</b>.</summary>
+  </member>
+  <member name="PRINTDLGEXA.nStartPage">
+    <summary>The property page that is initially displayed. To display the <b>General</b> page, specify <b>START_PAGE_GENERAL</b>. Otherwise, specify the zero-based index of a property page in the array specified in the <b>lphPropertyPages</b> member. For consistency, it is recommended that the property sheet always be started on the <b>General</b> page.</summary>
+  </member>
+  <member name="PRINTDLGEXA.dwResultAction">
+    <summary>
+      <para>On input, set this member to zero. If the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns S_OK, <b>dwResultAction</b> contains the outcome of the dialog. If <b>PrintDlgEx</b> returns an error, this member should be ignored. The <b>dwResultAction</b> member can be one of the following values.</para>
+      <h4>PD_RESULT_APPLY</h4>
+      <para>The user clicked the <b>Apply</b> button and later clicked the <b>Cancel</b> button. This indicates that the user wants to apply the changes made in the property sheet, but does not want to print yet. The <b>PRINTDLGEX</b> structure contains the information specified by the user at the time the <b>Apply</b> button was clicked.</para>
+      <h4>PD_RESULT_CANCEL</h4>
+      <para>The user clicked the <b>Cancel</b> button. The information in the <b>PRINTDLGEX</b> structure is unchanged.</para>
+      <h4>PD_RESULT_PRINT</h4>
+      <para>The user clicked the <b>Print</b> button. The <b>PRINTDLGEX</b> structure contains the information specified by the user.</para>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA">
+    <summary>Contains information that the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function uses to initialize the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/print-property-sheet">Print property sheet</a>. After the user closes the property sheet, the system uses this structure to return information about the user's selections.</summary>
+  </member>
+  <member name="PRINTDLGEXA.lStructSize">
+    <summary>The structure size, in bytes.</summary>
+  </member>
+  <member name="PRINTDLGEXA.hwndOwner">
+    <summary>A handle to the window that owns the property sheet. This member must be a valid window handle; it cannot be <b>NULL</b>.</summary>
+  </member>
+  <member name="PRINTDLGEXA.hDevMode">
+    <summary>
+      <para>A handle to a movable global memory object that contains a <see cref="DEVMODE" /> structure. If <b>hDevMode</b> is not <b>NULL</b> on input, you must allocate a movable block of memory for the <b>DEVMODE</b> structure and initialize its members. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function uses the input data to initialize the controls in the property sheet. When <b>PrintDlgEx</b> returns, the <b>DEVMODE</b> members indicate the user's input.</para>
+      <para>If <b>hDevMode</b> is <b>NULL</b> on input, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> allocates memory for the <see cref="DEVMODE" /> structure, initializes its members to indicate the user's input, and returns a handle that identifies it.</para>
+      <para>For more information about the <b>hDevMode</b> and <b>hDevNames</b> members, see the Remarks section at the end of this topic.</para>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA.hDevNames">
+    <summary>
+      <para>A handle to a movable global memory object that contains a <see cref="DEVNAMES" /> structure. If <b>hDevNames</b> is not <b>NULL</b> on input, you must allocate a movable block of memory for the <b>DEVNAMES</b> structure and initialize its members. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function uses the input data to initialize the controls in the property sheet. When <b>PrintDlgEx</b> returns, the <b>DEVNAMES</b> members contain information for the printer chosen by the user. You can use this information to create a device context or an information context.</para>
+      <para>The <b>hDevNames</b> member can be <b>NULL</b>, in which case, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> allocates memory for the <see cref="DEVNAMES" /> structure, initializes its members to indicate the user's input, and returns a handle that identifies it.</para>
+      <para>For more information about the <b>hDevMode</b> and <b>hDevNames</b> members, see the Remarks section at the end of this topic.</para>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA.hDC">
+    <summary>A handle to a device context or an information context, depending on whether the <b>Flags</b> member specifies the <b>PD_RETURNDC</b> or <b>PC_RETURNIC</b> flag. If neither flag is specified, the value of this member is undefined. If both flags are specified, <b>PD_RETURNDC</b> has priority.</summary>
+  </member>
+  <member name="PRINTDLGEXA.Flags">
+    <summary>
+      <para>A set of bit flags that you can use to initialize the <b>Print</b> property sheet. When the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, it sets these flags to indicate the user's input. This member can be one or more of the following values.</para>
+      <para>To ensure that <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> returns the correct values in the <b>dmCopies</b> and <b>dmCollate</b> members of the <see cref="DEVMODE" /> structure, set <b>PD_RETURNDC</b> = <b>TRUE</b> and <b>PD_USEDEVMODECOPIESANDCOLLATE</b> = <b>TRUE</b>. In so doing, the <b>nCopies</b> member of the <see cref="PRINTDLG" /> structure is always 1 and <b>PD_COLLATE</b> is always <b>FALSE</b>.</para>
+      <para>To ensure that <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> returns the correct values in <b>nCopies</b> and <b>PD_COLLATE</b>, set <b>PD_RETURNDC</b> = <b>TRUE</b> and <b>PD_USEDEVMODECOPIESANDCOLLATE</b> = <b>FALSE</b>. In so doing, <b>dmCopies</b> is always 1 and <b>dmCollate</b> is always <b>FALSE</b>.</para>
+      <para>Starting with Windows Vista, when you call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> with <b>PD_RETURNDC</b> set to <b>TRUE</b> and <b>PD_USEDEVMODECOPIESANDCOLLATE</b> set to <b>FALSE</b>, the <b>PrintDlg</b> or <b>PrintDlgEx</b> function sets the number of copies in the <b>nCopies</b> member of the <see cref="PRINTDLG" /> structure, and it sets the number of copies in the structure represented by the <b>hDC</b> member of the <b>PRINTDLG</b> structure.</para>
+      <para>When making calls to GDI, you must ignore the value of <b>nCopies</b>, consider the value as 1, and use the returned <b>hDC</b> to avoid printing duplicate copies.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_ALLPAGES</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The default flag that indicates that the <b>All</b> radio button is initially selected. This flag is used as a placeholder to indicate that the <b>PD_PAGENUMS</b>, <b>PD_SELECTION</b>, and <b>PD_CURRENTPAGE</b> flags are not specified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_COLLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <b>Collate</b> check box is selected.<para>If this flag is set when the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, the application must simulate collation of multiple copies. For more information, see the description of the <b>PD_USEDEVMODECOPIESANDCOLLATE</b> flag.</para><para>See <b>PD_NOPAGENUMS</b>.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_CURRENTPAGE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00400000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <b>Current Page</b> radio button is selected. If none of the <b>PD_PAGENUMS</b>, <b>PD_SELECTION</b>, or <b>PD_CURRENTPAGE</b> flags is set, the <b>All</b> radio button is selected.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_DISABLEPRINTTOFILE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00080000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Print to File</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_ENABLEPRINTTEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> and <b>lpPrintTemplateName</b> members specify a replacement for the default dialog box template in the lower portion of the <b>General</b> page. The default template contains controls similar to those of the <b>Print</b> dialog box. The system uses the specified template to create a window that is a child of the <b>General</b> page.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_ENABLEPRINTTEMPLATEHANDLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>hInstance</b> member identifies a data block that contains a preloaded dialog box template. This template replaces the default dialog box template in the lower portion of the <b>General</b> page. The system uses the specified template to create a window that is a child of the <b>General</b> page. The system ignores the <b>lpPrintTemplateName</b> member if this flag is specified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_EXCLUSIONFLAGS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x01000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Indicates that the <b>ExclusionFlags</b> member identifies items to be excluded from the printer driver property pages. If this flag is not set, items will be excluded by default from the printer driver property pages. The exclusions prevent the duplication of items among the <b>General</b> page, any application-specified pages, and the printer driver pages.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_HIDEPRINTTOFILE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00100000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Hides the <b>Print to File</b> check box.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_NOCURRENTPAGE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00800000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Current Page</b> radio button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_NOPAGENUMS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Pages</b> radio button and the associated edit controls. Also, it causes the <b>Collate</b> check box to appear in the dialog.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_NOSELECTION</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Disables the <b>Selection</b> radio button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_NOWARNING</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Prevents the warning message from being displayed when an error occurs.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_PAGENUMS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <b>Pages</b> radio button is selected. If none of the <b>PD_PAGENUMS</b>, <b>PD_SELECTION</b>, or <b>PD_CURRENTPAGE</b> flags is set, the <b>All</b> radio button is selected. If this flag is set when the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, the <b>lpPageRanges</b> member indicates the page ranges specified by the user.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_PRINTTOFILE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <b>Print to File</b> check box is selected. If this flag is set when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> returns, the offset indicated by the <b>wOutputOffset</b> member of the <see cref="DEVNAMES" /> structure contains the string "FILE:". When you call the <see cref="StartDoc" /> function to start the printing operation, specify this "FILE:" string in the <b>lpszOutput</b> member of the <see cref="DOCINFO" /> structure. Specifying this string causes the print subsystem to query the user for the name of the output file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_RETURNDC</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> to return a device context matching the selections the user made in the property sheet. The device context is returned in <b>hDC</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_RETURNDEFAULT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function does not display the property sheet. Instead, it sets the <b>hDevNames</b> and <b>hDevMode</b> members to handles to <see cref="DEVNAMES" /> and <see cref="DEVMODE" /> structures that are initialized for the system default printer. Both <b>hDevNames</b> and <b>hDevMode</b> must be <b>NULL</b>, or <b>PrintDlgEx</b> returns an error.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_RETURNIC</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Similar to the <b>PD_RETURNDC</b> flag, except this flag returns an information context rather than a device context. If neither <b>PD_RETURNDC</b> nor <b>PD_RETURNIC</b> is specified, <b>hDC</b> is undefined on output.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_SELECTION</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, the <b>Selection</b> radio button is selected. If none of the <b>PD_PAGENUMS</b>, <b>PD_SELECTION</b>, or <b>PD_CURRENTPAGE</b> flags is set, the <b>All</b> radio button is selected.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_USEDEVMODECOPIES</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Same as <b>PD_USEDEVMODECOPIESANDCOLLATE</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_USEDEVMODECOPIESANDCOLLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag indicates whether your application supports multiple copies and collation. Set this flag on input to indicate that your application does not support multiple copies and collation. In this case, the <b>nCopies</b> member of the <b>PRINTDLGEX</b> structure always returns 1, and <b>PD_COLLATE</b> is never set in the <b>Flags</b> member.<para>If this flag is not set, the application is responsible for printing and collating multiple copies. In this case, the <b>nCopies</b> member of the <b>PRINTDLGEX</b> structure indicates the number of copies the user wants to print, and the <b>PD_COLLATE</b> flag in the <b>Flags</b> member indicates whether the user wants collation.</para><para>Regardless of whether this flag is set, an application can determine from <b>nCopies</b> and <b>PD_COLLATE</b> how many copies to render and whether to print them collated.</para><para>If this flag is set and the printer driver does not support multiple copies, the <b>Copies</b> edit control is disabled. Similarly, if this flag is set and the printer driver does not support collation, the <b>Collate</b> check box is disabled.</para><para>The <b>dmCopies</b> and <b>dmCollate</b> members of the <see cref="DEVMODE" /> structure contain the copies and collate information used by the printer driver. If this flag is set and the printer driver supports multiple copies, the	<b>dmCopies</b> member indicates the number of copies requested by the user. If this flag is set and the printer driver supports collation, the <b>dmCollate</b> member of the <b>DEVMODE</b> structure indicates whether the user wants collation. If this flag is not set, the <b>dmCopies</b> member always returns 1, and the <b>dmCollate</b> member is always zero.</para><para>In Windows versions prior to Windows Vista, if this flag is not set by the calling application and the <b>dmCopies</b> member of the <see cref="DEVMODE" /> structure is greater than 1, use that value for the number of copies; otherwise, use the value of the <b>nCopies</b> member of the <b>PRINTDLGEX</b> structure.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PD_USELARGETEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Forces the property sheet to use a large template for the <b>General</b> page. The larger template provides more space for applications that specify a custom template for the lower portion of the <b>General</b> page.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA.Flags2"></member>
+  <member name="PRINTDLGEXA.ExclusionFlags">
+    <summary>
+      <para>A set of bit flags that can exclude items from the printer driver property pages in the <b>Print</b> property sheet. This value is used only if the <b>PD_EXCLUSIONFLAGS</b> flag is set in the <b>Flags</b> member. Exclusion flags should be used only if the item to be excluded will be included on either the <b>General</b> page or on an application-defined page in the <b>Print</b> property sheet. This member can specify the following flag.</para>
+      <h4>PD_EXCL_COPIESANDCOLLATE</h4>
+      <para>Excludes the <b>Copies</b> and <b>Collate</b> controls from the printer driver property pages in a <b>Print</b> property sheet. This flag should always be set when the application uses the default <b>Copies</b> and <b>Collate</b> controls provided by the lower portion of the <b>General</b> page of the <b>Print</b> property sheet.</para>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA.nPageRanges">
+    <summary>On input, set this member to the initial number of page ranges specified in the <b>lpPageRanges</b> array. When the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, <b>nPageRanges</b> indicates the number of user-specified page ranges stored in the <b>lpPageRanges</b> array. If the <b>PD_NOPAGENUMS</b> flag is specified, this value is not valid.</summary>
+  </member>
+  <member name="PRINTDLGEXA.nMaxPageRanges">
+    <summary>The size, in array elements, of the <b>lpPageRanges</b> buffer. This value indicates the maximum number of page ranges that can be stored in the array. If the <b>PD_NOPAGENUMS</b> flag is specified, this value is not valid. If the <b>PD_NOPAGENUMS</b> flag is not specified, this value must be greater than zero.</summary>
+  </member>
+  <member name="PRINTDLGEXA.lpPageRanges">
+    <summary>Pointer to a buffer containing an array of <see cref="PRINTPAGERANGE" /> structures. On input, the array contains the initial page ranges to display in the <b>Pages</b> edit control. When the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, the array contains the page ranges specified by the user. If the <b>PD_NOPAGENUMS</b> flag is specified, this value is not valid. If the <b>PD_NOPAGENUMS</b> flag is not specified, <b>lpPageRanges</b> must be non-<b>NULL</b>.</summary>
+  </member>
+  <member name="PRINTDLGEXA.nMinPage">
+    <summary>The minimum value for the page ranges specified in the <b>Pages</b> edit control. If the <b>PD_NOPAGENUMS</b> flag is specified, this value is not valid.</summary>
+  </member>
+  <member name="PRINTDLGEXA.nMaxPage">
+    <summary>The maximum value for the page ranges specified in the <b>Pages</b> edit control. If the <b>PD_NOPAGENUMS</b> flag is specified, this value is not valid.</summary>
+  </member>
+  <member name="PRINTDLGEXA.nCopies">
+    <summary>Contains the initial number of copies for the <b>Copies</b> edit control if <b>hDevMode</b> is <b>NULL</b>; otherwise, the <b>dmCopies</b> member of the <see cref="DEVMODE" /> structure contains the initial value. When <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> returns, <b>nCopies</b> contains the actual number of copies the application must print. This value depends on whether the application or the printer driver is responsible for printing multiple copies. If the <b>PD_USEDEVMODECOPIESANDCOLLATE</b> flag is set in the <b>Flags</b> member, <b>nCopies</b> is always 1 on return, and the printer driver is responsible for printing multiple copies. If the flag is not set, the application is responsible for printing the number of copies specified by <b>nCopies</b>. For more information, see the description of the <b>PD_USEDEVMODECOPIESANDCOLLATE</b> flag.</summary>
+  </member>
+  <member name="PRINTDLGEXA.hInstance">
+    <summary>If the <b>PD_ENABLEPRINTTEMPLATE</b> flag is set in the <b>Flags</b> member, <b>hInstance</b> is a handle to the application or module instance that contains the dialog box template named by the <b>lpPrintTemplateName</b> member. If the <b>PD_ENABLEPRINTTEMPLATEHANDLE</b> flag is set in the <b>Flags</b> member, <b>hInstance</b> is a handle to a memory object containing a dialog box template. If neither of the template flags is set in the <b>Flags</b> member, <b>hInstance</b> should be <b>NULL</b>.</summary>
+  </member>
+  <member name="PRINTDLGEXA.lpPrintTemplateName">
+    <summary>The name of the dialog box template resource in the module identified by the <b>hInstance</b> member. This template replaces the default dialog box template in the lower portion of the <b>General</b> page. The default template contains controls similar to those of the <b>Print</b> dialog box. This member is ignored unless the PD_ENABLEPRINTTEMPLATE flag is set in the <b>Flags</b> member.</summary>
+  </member>
+  <member name="PRINTDLGEXA.lpCallback">
+    <summary>
+      <para>A pointer to an application-defined callback object.</para>
+      <para>The object should contain the <see cref="IPrintDialogCallback" /> class to receive messages for the child dialog box in the lower portion of the <b>General</b> page.</para>
+      <para>The callback object should also contain the <see cref="IObjectWithSite" /> class to receive a pointer to the <see cref="IPrintDialogServices" /> interface. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function calls <see cref="IUnknown.QueryInterface" /> on the callback object for both <b>IID_IPrintDialogCallback</b> and <b>IID_IObjectWithSite</b> to determine which interfaces are supported.</para>
+      <para>If you do not want to retrieve any of the callback information, set <b>lpCallback</b> to <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="PRINTDLGEXA.nPropertyPages">
+    <summary>The number of property page handles in the<b>lphPropertyPages</b> array.</summary>
+  </member>
+  <member name="PRINTDLGEXA.lphPropertyPages">
+    <summary>Contains an array of property page handles to add to the <b>Print</b> property sheet. The additional property pages follow the <b>General</b> page. Use the <see cref="CreatePropertySheetPage" /> function to create these additional pages. When the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns, all the <b>HPROPSHEETPAGE</b> handles in the <b>lphPropertyPages</b> array have been destroyed. If <b>nPropertyPages</b> is zero, <b>lphPropertyPages</b> should be <b>NULL</b>.</summary>
+  </member>
+  <member name="PRINTDLGEXA.nStartPage">
+    <summary>The property page that is initially displayed. To display the <b>General</b> page, specify <b>START_PAGE_GENERAL</b>. Otherwise, specify the zero-based index of a property page in the array specified in the <b>lphPropertyPages</b> member. For consistency, it is recommended that the property sheet always be started on the <b>General</b> page.</summary>
+  </member>
+  <member name="PRINTDLGEXA.dwResultAction">
+    <summary>
+      <para>On input, set this member to zero. If the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function returns S_OK, <b>dwResultAction</b> contains the outcome of the dialog. If <b>PrintDlgEx</b> returns an error, this member should be ignored. The <b>dwResultAction</b> member can be one of the following values.</para>
+      <h4>PD_RESULT_APPLY</h4>
+      <para>The user clicked the <b>Apply</b> button and later clicked the <b>Cancel</b> button. This indicates that the user wants to apply the changes made in the property sheet, but does not want to print yet. The <b>PRINTDLGEX</b> structure contains the information specified by the user at the time the <b>Apply</b> button was clicked.</para>
+      <h4>PD_RESULT_CANCEL</h4>
+      <para>The user clicked the <b>Cancel</b> button. The information in the <b>PRINTDLGEX</b> structure is unchanged.</para>
+      <h4>PD_RESULT_PRINT</h4>
+      <para>The user clicked the <b>Print</b> button. The <b>PRINTDLGEX</b> structure contains the information specified by the user.</para>
+      <h5>- ExclusionFlags.PD_EXCL_COPIESANDCOLLATE</h5>
+      <para>Excludes the <b>Copies</b> and <b>Collate</b> controls from the printer driver property pages in a <b>Print</b> property sheet. This flag should always be set when the application uses the default <b>Copies</b> and <b>Collate</b> controls provided by the lower portion of the <b>General</b> page of the <b>Print</b> property sheet.</para>
+      <h5>- dwResultAction.PD_RESULT_APPLY</h5>
+      <para>The user clicked the <b>Apply</b> button and later clicked the <b>Cancel</b> button. This indicates that the user wants to apply the changes made in the property sheet, but does not want to print yet. The <b>PRINTDLGEX</b> structure contains the information specified by the user at the time the <b>Apply</b> button was clicked.</para>
+      <h5>- dwResultAction.PD_RESULT_CANCEL</h5>
+      <para>The user clicked the <b>Cancel</b> button. The information in the <b>PRINTDLGEX</b> structure is unchanged.</para>
+      <h5>- dwResultAction.PD_RESULT_PRINT</h5>
+      <para>The user clicked the <b>Print</b> button. The <b>PRINTDLGEX</b> structure contains the information specified by the user.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDeviceModelPlugIn.ColorimetricToDeviceColors">
+    <summary>Returns the appropriate XYZ colors in response to the specified number of colors, channels, device colors and the proprietary plug-in algorithms.</summary>
+    <param name="cColors">The number of colors in the <i>pXYZColors</i> and <i>pDeviceValues</i> arrays.</param>
+    <param name="cChannels">The number of color channels in the <i>pDeviceValues</i> arrays.</param>
+    <param name="pXYZColors">The pointer to the array of incoming XYZColors to convert to device colors.</param>
+    <param name="pDeviceValues">The pointer to an array that contains the resulting outgoing device color values.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn.ColorimetricToDeviceColorsWithBlack">
+    <summary>Returns the appropriate device colors in response to the incoming number of colors, channels, black information, Commission Internationale l'Eclairge XYZ (CIEXYZ) colors and the proprietary plug-in algorithms.</summary>
+    <param name="cColors">The number of colors in the <i>pXYZColors</i> and <i>pDeviceValues</i> arrays.</param>
+    <param name="cChannels">The number of color channels in the <i>pDeviceValues</i> arrays.</param>
+    <param name="pXYZColors">A pointer to the array of outgoing <see cref="XYZColorF" /> structures.</param>
+    <param name="pBlackInformation">A pointer to the <see cref="BlackInformation" />.</param>
+    <param name="pDeviceValues">A pointer to the array of incoming device colors that are to be converted to <see cref="XYZColorF" /> structures.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn.DeviceToColorimetricColors">
+    <summary>Returns the appropriate XYZ colors in response to the specified number of colors, channels, device colors and the proprietary plug-in algorithms.</summary>
+    <param name="cColors">The number of colors in the <i>pXYZColors</i> and <i>pDeviceValues</i> arrays.</param>
+    <param name="cChannels">The number of color channels in the <i>pDeviceValues</i> arrays.</param>
+    <param name="pDeviceValues">A pointer to the array of outgoing XYZColors.</param>
+    <param name="pXYZColors">A pointer to the array of incoming device colors to convert to XYZColors.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL. For extended error information, call <b>GetLastError</b>.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn.GetGamutBoundaryMesh">
+    <summary>Returns the triangular mesh from the plug-in. This function is used to compute the GamutBoundaryDescription.</summary>
+    <param name="cChannels">The number of channels.</param>
+    <param name="cVertices">The number of vertices.</param>
+    <param name="cTriangles">The number of triangles.</param>
+    <param name="pVertices">A pointer to the array of vertices in the plug-in model gamut shell.</param>
+    <param name="pTriangles">A pointer to the array of triangles in the plug-in model gamut shell.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn.GetGamutBoundaryMeshSize">
+    <summary>Returns the required data structure sizes for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-getgamutboundarymesh">GetGamutBoundaryMesh</a> function.</summary>
+    <param name="pNumVertices">The required number of vertices.</param>
+    <param name="pNumTriangles">The required number of triangles.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If the plug-in device model wants WCS to compute its gamut boundary mesh, the return value is S_FALSE.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn.GetNeutralAxis">
+    <summary>The <see cref="IDeviceModelPlugIn.GetNeutralAxis" /> return the XYZ colorimetry of sample points along the device's neutral axis.</summary>
+    <param name="cColors">The number of points that are returned.</param>
+    <param name="pXYZColors">A pointer to an array of <see cref="XYZColorF" /> structures.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn.GetNeutralAxisSize">
+    <summary>The <see cref="IDeviceModelPlugIn.GetNeutralAxisSize" /> function returns the number of data points along the neutral axis that are returned by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-getneutralaxis">GetNeutralAxis</a> function. It is provided so that a Color Management Module (CMM) can allocate an appropriately sized buffer.</summary>
+    <param name="pcColors">The number of points that will be returned by a call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-getneutralaxis">GetNeutralAxis</a>. Minimum is 2 (black and white).</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn.GetNumChannels">
+    <summary>Returns the number of device channels in the parameter <i>pNumChannels</i>.</summary>
+    <param name="pNumChannels">A pointer to an unsigned integer representing the number of color channels for your device.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn.GetPrimarySamples">
+    <summary>Returns the measurement color for the primary sample.</summary>
+    <param name="pPrimaryColor">The primary color type, which is determined by using the hue circle order. If the plugin device model does not natively support primaries for red, yellow, green, cyan, blue, magenta, black and white, it must still return virtual primary data.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn.Initialize">
+    <summary>Takes a pointer to a Stream that contains the whole device model plug-in as input, and initializes any internal parameters required by the plug-in.</summary>
+    <param name="bstrXml">A string that contains the BSTR XML device model plug-in profile. This parameter stores data as little-endian Unicode XML; however, it may have no leading bytes to tag it as such. Also, the encoding keyword in the XML may not reflect that this is formatted as little-endian Unicode. Furthermore, due to the action of the MSXML engine, the BSTR XML file is processed and might not have exactly the same contents as the original XML file.</param>
+    <param name="cNumModels">The number of total models in the transform sequence.</param>
+    <param name="iModelPosition">The one-based model position of the other device model in the workflow of <i>uiNumModels</i> as provided in the <b>Initialize</b> function.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn.SetTransformDeviceModelInfo">
+    <summary>Provides the plug-in with parameters to determine where in the transform sequence the specific plug-in occurs.</summary>
+    <param name="iModelPosition">The one-based model position of the other device model in the workflow of <i>uiNumModels</i>, as provided in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-initialize">Initialize</a> function.</param>
+    <param name="pIDeviceModelOther">A pointer to a <b>IDeviceModelPlugIn</b> interface that contains the other device model in the transform sequence.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IDeviceModelPlugIn">
+    <summary>
+      <para>Describes the methods that are defined for the <b>IDeviceModelPlugIn</b> Component Object Model (COM) interface.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-colorimetrictodevicecolors">ColorimetricToDeviceColors</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="DeviceToColorimetricColors" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-colorimetrictodevicecolorswithblack">DeviceToColorimetricColorsWithBlack</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-getgamutboundarymesh">GetGamutBoundaryMesh</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-getgamutboundarymeshsize">GetGamutBoundaryMeshSize</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-getneutralaxis">GetNeutralAxis</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-getneutralaxissize">GetNeutralAxisSize</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-getnumchannels">GetNumChannels</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-getprimarysamples">GetPrimarySamples</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-initialize">Initialize</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-idevicemodelplugin-settransformdevicemodelinfo">SetTransformDeviceModelInfo</a>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

@@ -63,6 +63,7 @@ TerraFX.Interop.Windows
 ../../../../tests/Interop/Windows/Windows/um/WinBase
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinBase.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinBase.inl
 --with-attribute
 CopyFile2=SupportedOSPlatform("windows6.2")
 CopyFile2ProgressRoutine=SupportedOSPlatform("windows6.2")

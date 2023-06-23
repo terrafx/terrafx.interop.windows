@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class COLOR
+public partial struct COLOR
 {
     [NativeTypeName("#define COLOR_ADJ_MIN (SHORT)-100")]
     public const short COLOR_ADJ_MIN = (short)(-100);

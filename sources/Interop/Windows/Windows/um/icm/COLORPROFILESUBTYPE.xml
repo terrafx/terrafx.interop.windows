@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COLORPROFILESUBTYPE">
+    <summary>Specifies the subtype of the color profile.</summary>
+  </member>
+  <member name="COLORPROFILESUBTYPE.CPST_PERCEPTUAL">
+    <summary>A perceptual rendering intent for gamut map model profiles (GMMPs) defined in WCS.</summary>
+  </member>
+  <member name="COLORPROFILESUBTYPE.CPST_RELATIVE_COLORIMETRIC">
+    <summary>A relative colorimetric rendering intent for GMMPs defined in WCS.</summary>
+  </member>
+  <member name="COLORPROFILESUBTYPE.CPST_SATURATION">
+    <summary>A saturation rendering intent for GMMPs defined in WCS.</summary>
+  </member>
+  <member name="COLORPROFILESUBTYPE.CPST_ABSOLUTE_COLORIMETRIC">
+    <summary>An absolute colorimetric rendering intent for GMMPs defined in WCS.</summary>
+  </member>
+  <member name="COLORPROFILESUBTYPE.CPST_NONE">
+    <summary>The color profile subtype is not applicable to the selected color profile type.</summary>
+  </member>
+  <member name="COLORPROFILESUBTYPE.CPST_RGB_WORKING_SPACE">
+    <summary>The RGB color working space for International Color Consortium (ICC) profiles or device model profiles (DMPs) defined in WCS.</summary>
+  </member>
+  <member name="COLORPROFILESUBTYPE.CPST_CUSTOM_WORKING_SPACE">
+    <summary>A custom color working space.</summary>
+  </member>
+  <member name="COLORPROFILESUBTYPE.CPST_STANDARD_DISPLAY_COLOR_MODE">
+    <summary>TBD</summary>
+  </member>
+  <member name="COLORPROFILESUBTYPE.CPST_EXTENDED_DISPLAY_COLOR_MODE">
+    <summary>TBD</summary>
+  </member>
+</doc>

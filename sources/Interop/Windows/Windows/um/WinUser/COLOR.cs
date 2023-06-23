@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class COLOR
+public partial struct COLOR
 {
     [NativeTypeName("#define COLOR_SCROLLBAR 0")]
     public const int COLOR_SCROLLBAR = 0;

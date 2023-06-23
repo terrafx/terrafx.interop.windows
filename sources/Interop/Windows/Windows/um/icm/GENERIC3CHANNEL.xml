@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GENERIC3CHANNEL">
+    <summary>TBD</summary>
+  </member>
+  <member name="GENERIC3CHANNEL.ch1">
+    <summary>TBD</summary>
+  </member>
+  <member name="GENERIC3CHANNEL.ch2">
+    <summary>TBD</summary>
+  </member>
+  <member name="GENERIC3CHANNEL.ch3">
+    <summary>TBD</summary>
+  </member>
+</doc>

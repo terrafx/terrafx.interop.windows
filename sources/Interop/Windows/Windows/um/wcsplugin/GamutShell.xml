@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GamutShell">
+    <summary>Contains information that defines a gamut shell, which is represented by a list of indexed triangles. The vertex buffer contains the vertices data.</summary>
+  </member>
+  <member name="GamutShell.JMin">
+    <summary>The minimum lightness of the shell.</summary>
+  </member>
+  <member name="GamutShell.JMax">
+    <summary>The maximum lightness of the shell.</summary>
+  </member>
+  <member name="GamutShell.cVertices">
+    <summary>The number of vertices in the shell.</summary>
+  </member>
+  <member name="GamutShell.cTriangles">
+    <summary>The number of triangles in the shell.</summary>
+  </member>
+  <member name="GamutShell.pVertices"></member>
+  <member name="GamutShell.pTriangles">
+    <summary>
+      <h4>- *pTriangles</h4>
+      <para>A pointer to the indexed triangles.</para>
+      <h4>- *pVertices</h4>
+      <para>A pointer to the vertices data.</para>
+    </summary>
+  </member>
+</doc>
