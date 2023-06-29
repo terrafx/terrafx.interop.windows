@@ -31,11 +31,22 @@
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
 
-  <!-- Assembly attributes to include for every project -->
-  <ItemGroup>
-    <AssemblyAttribute Include="System.Runtime.Versioning.SupportedOSPlatformAttribute">
-      <_Parameter1>windows6.1</_Parameter1>
-    </AssemblyAttribute>
-  </ItemGroup>
+  <!-- Support for removing analyzers from the build -->
+  <PropertyGroup>
+    <RemoveAnalyzersOutputFile>$(IntermediateOutputPath)$(MSBuildProjectName).RemoveAnalyzers.cache</RemoveAnalyzersOutputFile>
+  </PropertyGroup>
+
+  <Target Name="RemoveAnalyzers"
+          BeforeTargets="BeforeCompile;CoreCompile"
+          DependsOnTargets="PrepareForBuild"
+          Inputs="$(MSBuildAllProjects)"
+          Outputs="%(RemoveAnalyzer.Identity)">
+    <PropertyGroup>
+      <RemoveAnalyzerFilename>%(RemoveAnalyzer.Identity)</RemoveAnalyzerFilename>
+    </PropertyGroup>
+    <ItemGroup>
+      <Analyzer Remove="@(Analyzer->WithMetadataValue('Filename', '$(RemoveAnalyzerFilename)'))" />
+    </ItemGroup>
+  </Target>
 
 </Project>

@@ -36,10 +36,11 @@
           Condition="'$(Language)' == 'C#'"
           Inputs="$(MSBuildAllProjects)"
           Outputs="$(GeneratedSkipLocalsInitFile)">
-    <WriteLinesToFile Lines="$(GeneratedSkipLocalsInitFileLines)" Overwrite="true" WriteOnlyWhenDifferent="true" File="$(GeneratedSkipLocalsInitFile)" />
+    <WriteLinesToFile Lines="$(GeneratedSkipLocalsInitFileLines)" File="$(GeneratedSkipLocalsInitFile)" Overwrite="true" WriteOnlyWhenDifferent="true" />
 
     <ItemGroup>
       <Compile Include="$(GeneratedSkipLocalsInitFile)" />
+      <FileWrites Include="$(GeneratedSkipLocalsInitFile)" />
     </ItemGroup>
   </Target>
 

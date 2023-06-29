@@ -72,4 +72,9 @@
     <UseSharedCompilation>true</UseSharedCompilation>
   </PropertyGroup>
 
+  <!-- Default analyzers to remove -->
+  <ItemGroup>
+    <RemoveAnalyzer Include="Microsoft.Interop.JavaScript.JSImportGenerator" />
+  </ItemGroup>
+
 </Project>
