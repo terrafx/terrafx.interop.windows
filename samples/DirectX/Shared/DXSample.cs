@@ -102,10 +102,7 @@ public abstract unsafe class DXSample : IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static double GetFrequency()
-    {
-        return (double)TimeSpan.TicksPerSecond / Stopwatch.Frequency;
-    }
+    private static double GetFrequency() => (double)TimeSpan.TicksPerSecond / Stopwatch.Frequency;
 
     private static DXSample[] GetSamples()
     {
@@ -211,15 +208,9 @@ public abstract unsafe class DXSample : IDisposable
 
     public abstract void OnUpdate(TimeSpan delta);
 
-    public void OnVisibilityChanged(bool isVisible)
-    {
-        _isWindowVisible = isVisible;
-    }
+    public void OnVisibilityChanged(bool isVisible) => _isWindowVisible = isVisible;
 
-    public override string ToString()
-    {
-        return Name;
-    }
+    public override string ToString() => Name;
 
     protected abstract void CreateDeviceDependentResources();
 

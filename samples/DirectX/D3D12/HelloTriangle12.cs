@@ -44,7 +44,8 @@ public unsafe class HelloTriangle12 : HelloWindow12
 
     protected virtual void CreateBuffers()
     {
-        _vertexBuffer = CreateVertexBuffer(out _vertexBufferView);
+        var vertexBuffers = CreateVertexBuffer(out _vertexBufferView);
+        _vertexBuffer = vertexBuffers;
     }
 
     protected override unsafe ID3D12PipelineState* CreatePipelineState()
@@ -194,10 +195,7 @@ public unsafe class HelloTriangle12 : HelloWindow12
         return vertexBuffer;
     }
 
-    protected override void DestroyAssets()
-    {
-        DestroyBuffers();
-    }
+    protected override void DestroyAssets() => DestroyBuffers();
 
     protected virtual void DestroyBuffers()
     {

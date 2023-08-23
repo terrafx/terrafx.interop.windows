@@ -87,8 +87,5 @@ public unsafe class HelloBundles12 : HelloTriangle12
     }
 
     protected override void Draw()
-    {
-        // Execute the commands stored in the bundle.
-        GraphicsCommandList->ExecuteBundle(_bundle);
-    }
+        => GraphicsCommandList->ExecuteBundle(_bundle);
 }

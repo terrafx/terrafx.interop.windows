@@ -89,7 +89,8 @@ public unsafe class HelloTriangle11 : HelloWindow11
 
     protected virtual void CreateBuffers()
     {
-        _vertexBuffer = CreateVertexBuffer();
+        var vertexBuffer = CreateVertexBuffer();
+        _vertexBuffer = vertexBuffer;
     }
 
     protected virtual ID3D11Buffer* CreateVertexBuffer()
